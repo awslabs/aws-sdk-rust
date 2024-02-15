@@ -22,7 +22,7 @@ impl ListInvestigationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListInvestigations`.
 ///
-/// <p>List all Investigations.</p>
+/// <p>Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a high level of confidence) identify malicious activity or a security incident. <code>ListInvestigations</code> lists all active Detective investigations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInvestigationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,62 +108,62 @@ impl ListInvestigationsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.graph_arn(input.into());
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_graph_arn(input);
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_graph_arn()
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>List the maximum number of investigations in a page.</p>
+    /// <p>Lists the maximum number of investigations in a page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>List the maximum number of investigations in a page.</p>
+    /// <p>Lists the maximum number of investigations in a page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>List the maximum number of investigations in a page.</p>
+    /// <p>Lists the maximum number of investigations in a page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>Filter the investigation results based on a criteria.</p>
+    /// <p>Filters the investigation results based on a criteria.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
         self.inner = self.inner.filter_criteria(input);
         self
     }
-    /// <p>Filter the investigation results based on a criteria.</p>
+    /// <p>Filters the investigation results based on a criteria.</p>
     pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::FilterCriteria>) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
-    /// <p>Filter the investigation results based on a criteria.</p>
+    /// <p>Filters the investigation results based on a criteria.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
         self.inner.get_filter_criteria()
     }

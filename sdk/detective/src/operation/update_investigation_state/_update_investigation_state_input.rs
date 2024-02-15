@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInvestigationStateInput {
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The investigation ID of the investigation report.</p>
     pub investigation_id: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct UpdateInvestigationStateInput {
     pub state: ::std::option::Option<crate::types::State>,
 }
 impl UpdateInvestigationStateInput {
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn graph_arn(&self) -> ::std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct UpdateInvestigationStateInputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::State>,
 }
 impl UpdateInvestigationStateInputBuilder {
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.graph_arn = input;
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.graph_arn
     }

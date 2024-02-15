@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIndicatorsOutput {
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
     /// <p>The investigation ID of the investigation report.</p>
     pub investigation_id: ::std::option::Option<::std::string::String>,
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Indicators of compromise listed based on severity.</p>
+    /// <p>Lists the indicators of compromise.</p>
     pub indicators: ::std::option::Option<::std::vec::Vec<crate::types::Indicator>>,
     _request_id: Option<String>,
 }
 impl ListIndicatorsOutput {
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn graph_arn(&self) -> ::std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
@@ -23,12 +23,12 @@ impl ListIndicatorsOutput {
     pub fn investigation_id(&self) -> ::std::option::Option<&str> {
         self.investigation_id.as_deref()
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Indicators of compromise listed based on severity.</p>
+    /// <p>Lists the indicators of compromise.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.indicators.is_none()`.
     pub fn indicators(&self) -> &[crate::types::Indicator] {
@@ -58,17 +58,17 @@ pub struct ListIndicatorsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListIndicatorsOutputBuilder {
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.graph_arn = input;
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.graph_arn
     }
@@ -86,19 +86,19 @@ impl ListIndicatorsOutputBuilder {
     pub fn get_investigation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.investigation_id
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
@@ -107,19 +107,19 @@ impl ListIndicatorsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_indicators`](Self::set_indicators).
     ///
-    /// <p>Indicators of compromise listed based on severity.</p>
+    /// <p>Lists the indicators of compromise.</p>
     pub fn indicators(mut self, input: crate::types::Indicator) -> Self {
         let mut v = self.indicators.unwrap_or_default();
         v.push(input);
         self.indicators = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicators of compromise listed based on severity.</p>
+    /// <p>Lists the indicators of compromise.</p>
     pub fn set_indicators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Indicator>>) -> Self {
         self.indicators = input;
         self
     }
-    /// <p>Indicators of compromise listed based on severity.</p>
+    /// <p>Lists the indicators of compromise.</p>
     pub fn get_indicators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Indicator>> {
         &self.indicators
     }

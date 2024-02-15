@@ -6,7 +6,7 @@
 pub struct DateFilter {
     /// <p>A timestamp representing the start of the time period from when data is filtered, including the start date.</p>
     pub start_inclusive: ::aws_smithy_types::DateTime,
-    /// <p>A timestamp representing the end date of the time period until when data is filtered , including the end date.</p>
+    /// <p>A timestamp representing the end date of the time period until when data is filtered, including the end date.</p>
     pub end_inclusive: ::aws_smithy_types::DateTime,
 }
 impl DateFilter {
@@ -14,7 +14,7 @@ impl DateFilter {
     pub fn start_inclusive(&self) -> &::aws_smithy_types::DateTime {
         &self.start_inclusive
     }
-    /// <p>A timestamp representing the end date of the time period until when data is filtered , including the end date.</p>
+    /// <p>A timestamp representing the end date of the time period until when data is filtered, including the end date.</p>
     pub fn end_inclusive(&self) -> &::aws_smithy_types::DateTime {
         &self.end_inclusive
     }
@@ -49,18 +49,18 @@ impl DateFilterBuilder {
     pub fn get_start_inclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_inclusive
     }
-    /// <p>A timestamp representing the end date of the time period until when data is filtered , including the end date.</p>
+    /// <p>A timestamp representing the end date of the time period until when data is filtered, including the end date.</p>
     /// This field is required.
     pub fn end_inclusive(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_inclusive = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp representing the end date of the time period until when data is filtered , including the end date.</p>
+    /// <p>A timestamp representing the end date of the time period until when data is filtered, including the end date.</p>
     pub fn set_end_inclusive(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_inclusive = input;
         self
     }
-    /// <p>A timestamp representing the end date of the time period until when data is filtered , including the end date.</p>
+    /// <p>A timestamp representing the end date of the time period until when data is filtered, including the end date.</p>
     pub fn get_end_inclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_inclusive
     }

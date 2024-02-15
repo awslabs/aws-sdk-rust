@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFhirImportJobsOutput {
-    /// <p>The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the progress report of the job.</p>
     pub import_job_properties_list: ::std::vec::Vec<crate::types::ImportJobProperties>,
     /// <p>A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFhirImportJobsOutput {
-    /// <p>The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the progress report of the job.</p>
     pub fn import_job_properties_list(&self) -> &[crate::types::ImportJobProperties] {
         use std::ops::Deref;
         self.import_job_properties_list.deref()
@@ -45,19 +45,19 @@ impl ListFhirImportJobsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_import_job_properties_list`](Self::set_import_job_properties_list).
     ///
-    /// <p>The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the progress report of the job.</p>
     pub fn import_job_properties_list(mut self, input: crate::types::ImportJobProperties) -> Self {
         let mut v = self.import_job_properties_list.unwrap_or_default();
         v.push(input);
         self.import_job_properties_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the progress report of the job.</p>
     pub fn set_import_job_properties_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>>) -> Self {
         self.import_job_properties_list = input;
         self
     }
-    /// <p>The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of a listed FHIR import jobs, including the ID, ARN, name, the status of the job, and the progress report of the job.</p>
     pub fn get_import_job_properties_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImportJobProperties>> {
         &self.import_job_properties_list
     }

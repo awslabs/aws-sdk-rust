@@ -10,9 +10,9 @@ pub struct TtPsObservedDetail {
     pub technique: ::std::option::Option<::std::string::String>,
     /// <p>The procedure used, identified by the investigation.</p>
     pub procedure: ::std::option::Option<::std::string::String>,
-    /// <p>The IP address where the TTP was observed.</p>
+    /// <p>The IP address where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the API where the TTP was observed.</p>
+    /// <p>The name of the API where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub api_name: ::std::option::Option<::std::string::String>,
     /// <p>The total number of successful API requests.</p>
     pub api_success_count: i64,
@@ -32,11 +32,11 @@ impl TtPsObservedDetail {
     pub fn procedure(&self) -> ::std::option::Option<&str> {
         self.procedure.as_deref()
     }
-    /// <p>The IP address where the TTP was observed.</p>
+    /// <p>The IP address where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>The name of the API where the TTP was observed.</p>
+    /// <p>The name of the API where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn api_name(&self) -> ::std::option::Option<&str> {
         self.api_name.as_deref()
     }
@@ -111,31 +111,31 @@ impl TtPsObservedDetailBuilder {
     pub fn get_procedure(&self) -> &::std::option::Option<::std::string::String> {
         &self.procedure
     }
-    /// <p>The IP address where the TTP was observed.</p>
+    /// <p>The IP address where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IP address where the TTP was observed.</p>
+    /// <p>The IP address where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
-    /// <p>The IP address where the TTP was observed.</p>
+    /// <p>The IP address where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
-    /// <p>The name of the API where the TTP was observed.</p>
+    /// <p>The name of the API where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn api_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the API where the TTP was observed.</p>
+    /// <p>The name of the API where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn set_api_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_name = input;
         self
     }
-    /// <p>The name of the API where the TTP was observed.</p>
+    /// <p>The name of the API where the tactics, techniques, and procedure (TTP) was observed.</p>
     pub fn get_api_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_name
     }

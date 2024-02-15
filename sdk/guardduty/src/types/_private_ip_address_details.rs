@@ -2,7 +2,7 @@
 
 /// <p>Contains other private IP address information of the EC2 instance.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PrivateIpAddressDetails {
     /// <p>The private DNS name of the EC2 instance.</p>
     pub private_dns_name: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl PrivateIpAddressDetails {
         self.private_ip_address.as_deref()
     }
 }
+impl ::std::fmt::Debug for PrivateIpAddressDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PrivateIpAddressDetails");
+        formatter.field("private_dns_name", &self.private_dns_name);
+        formatter.field("private_ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl PrivateIpAddressDetails {
     /// Creates a new builder-style object to manufacture [`PrivateIpAddressDetails`](crate::types::PrivateIpAddressDetails).
     pub fn builder() -> crate::types::builders::PrivateIpAddressDetailsBuilder {
@@ -28,7 +36,7 @@ impl PrivateIpAddressDetails {
 
 /// A builder for [`PrivateIpAddressDetails`](crate::types::PrivateIpAddressDetails).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PrivateIpAddressDetailsBuilder {
     pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl PrivateIpAddressDetailsBuilder {
             private_dns_name: self.private_dns_name,
             private_ip_address: self.private_ip_address,
         }
+    }
+}
+impl ::std::fmt::Debug for PrivateIpAddressDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PrivateIpAddressDetailsBuilder");
+        formatter.field("private_dns_name", &self.private_dns_name);
+        formatter.field("private_ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the remote IP address of the connection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RemoteIpDetails {
     /// <p>The city information of the remote IP address.</p>
     pub city: ::std::option::Option<crate::types::City>,
@@ -37,6 +37,17 @@ impl RemoteIpDetails {
         self.organization.as_ref()
     }
 }
+impl ::std::fmt::Debug for RemoteIpDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RemoteIpDetails");
+        formatter.field("city", &self.city);
+        formatter.field("country", &self.country);
+        formatter.field("geo_location", &self.geo_location);
+        formatter.field("ip_address_v4", &"*** Sensitive Data Redacted ***");
+        formatter.field("organization", &self.organization);
+        formatter.finish()
+    }
+}
 impl RemoteIpDetails {
     /// Creates a new builder-style object to manufacture [`RemoteIpDetails`](crate::types::RemoteIpDetails).
     pub fn builder() -> crate::types::builders::RemoteIpDetailsBuilder {
@@ -46,7 +57,7 @@ impl RemoteIpDetails {
 
 /// A builder for [`RemoteIpDetails`](crate::types::RemoteIpDetails).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RemoteIpDetailsBuilder {
     pub(crate) city: ::std::option::Option<crate::types::City>,
     pub(crate) country: ::std::option::Option<crate::types::Country>,
@@ -134,5 +145,16 @@ impl RemoteIpDetailsBuilder {
             ip_address_v4: self.ip_address_v4,
             organization: self.organization,
         }
+    }
+}
+impl ::std::fmt::Debug for RemoteIpDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RemoteIpDetailsBuilder");
+        formatter.field("city", &self.city);
+        formatter.field("country", &self.country);
+        formatter.field("geo_location", &self.geo_location);
+        formatter.field("ip_address_v4", &"*** Sensitive Data Redacted ***");
+        formatter.field("organization", &self.organization);
+        formatter.finish()
     }
 }

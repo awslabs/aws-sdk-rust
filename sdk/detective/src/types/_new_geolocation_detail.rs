@@ -8,7 +8,7 @@ pub struct NewGeolocationDetail {
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>IP address using which the resource was accessed.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>Checks if the gelocation is new for the entire account.</p>
+    /// <p>Checks if the geolocation is new for the entire account.</p>
     pub is_new_for_entire_account: bool,
 }
 impl NewGeolocationDetail {
@@ -20,7 +20,7 @@ impl NewGeolocationDetail {
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>Checks if the gelocation is new for the entire account.</p>
+    /// <p>Checks if the geolocation is new for the entire account.</p>
     pub fn is_new_for_entire_account(&self) -> bool {
         self.is_new_for_entire_account
     }
@@ -69,17 +69,17 @@ impl NewGeolocationDetailBuilder {
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
-    /// <p>Checks if the gelocation is new for the entire account.</p>
+    /// <p>Checks if the geolocation is new for the entire account.</p>
     pub fn is_new_for_entire_account(mut self, input: bool) -> Self {
         self.is_new_for_entire_account = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Checks if the gelocation is new for the entire account.</p>
+    /// <p>Checks if the geolocation is new for the entire account.</p>
     pub fn set_is_new_for_entire_account(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_new_for_entire_account = input;
         self
     }
-    /// <p>Checks if the gelocation is new for the entire account.</p>
+    /// <p>Checks if the geolocation is new for the entire account.</p>
     pub fn get_is_new_for_entire_account(&self) -> &::std::option::Option<bool> {
         &self.is_new_for_entire_account
     }

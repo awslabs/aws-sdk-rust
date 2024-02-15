@@ -22,7 +22,7 @@ impl UpdateClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCluster`.
 ///
-/// <p>Update a SageMaker HyperPod cluster.</p>
+/// <p>Updates a SageMaker HyperPod cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

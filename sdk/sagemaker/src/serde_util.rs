@@ -1949,6 +1949,15 @@ pub(crate) fn update_cluster_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_cluster_software_output_output_correct_errors(
+    mut builder: crate::operation::update_cluster_software::builders::UpdateClusterSoftwareOutputBuilder,
+) -> crate::operation::update_cluster_software::builders::UpdateClusterSoftwareOutputBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_code_repository_output_output_correct_errors(
     mut builder: crate::operation::update_code_repository::builders::UpdateCodeRepositoryOutputBuilder,
 ) -> crate::operation::update_code_repository::builders::UpdateCodeRepositoryOutputBuilder {

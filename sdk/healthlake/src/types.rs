@@ -11,6 +11,8 @@ pub use crate::types::_input_data_config::InputDataConfig;
 
 pub use crate::types::_import_job_properties::ImportJobProperties;
 
+pub use crate::types::_job_progress_report::JobProgressReport;
+
 pub use crate::types::_export_job_properties::ExportJobProperties;
 
 pub use crate::types::_datastore_properties::DatastoreProperties;
@@ -54,6 +56,8 @@ mod _identity_provider_configuration;
 mod _import_job_properties;
 
 mod _input_data_config;
+
+mod _job_progress_report;
 
 mod _job_status;
 

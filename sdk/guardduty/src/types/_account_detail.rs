@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the account.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AccountDetail {
     /// <p>The member account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl AccountDetail {
         self.email.as_deref()
     }
 }
+impl ::std::fmt::Debug for AccountDetail {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AccountDetail");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("email", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl AccountDetail {
     /// Creates a new builder-style object to manufacture [`AccountDetail`](crate::types::AccountDetail).
     pub fn builder() -> crate::types::builders::AccountDetailBuilder {
@@ -28,7 +36,7 @@ impl AccountDetail {
 
 /// A builder for [`AccountDetail`](crate::types::AccountDetail).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AccountDetailBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) email: ::std::option::Option<::std::string::String>,
@@ -70,5 +78,13 @@ impl AccountDetailBuilder {
             account_id: self.account_id,
             email: self.email,
         }
+    }
+}
+impl ::std::fmt::Debug for AccountDetailBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AccountDetailBuilder");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("email", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

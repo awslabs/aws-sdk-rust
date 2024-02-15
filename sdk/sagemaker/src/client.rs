@@ -737,6 +737,8 @@ mod update_artifact;
 
 mod update_cluster;
 
+mod update_cluster_software;
+
 mod update_code_repository;
 
 mod update_context;

@@ -62,6 +62,14 @@
 ///     OpenSearchPartitionInstanceType::M6g8xlargeSearch => { /* ... */ },
 ///     OpenSearchPartitionInstanceType::M6gLargeSearch => { /* ... */ },
 ///     OpenSearchPartitionInstanceType::M6gXlargeSearch => { /* ... */ },
+///     OpenSearchPartitionInstanceType::Or112xlargeSearch => { /* ... */ },
+///     OpenSearchPartitionInstanceType::Or116xlargeSearch => { /* ... */ },
+///     OpenSearchPartitionInstanceType::Or12xlargeSearch => { /* ... */ },
+///     OpenSearchPartitionInstanceType::Or14xlargeSearch => { /* ... */ },
+///     OpenSearchPartitionInstanceType::Or18xlargeSearch => { /* ... */ },
+///     OpenSearchPartitionInstanceType::Or1LargeSearch => { /* ... */ },
+///     OpenSearchPartitionInstanceType::Or1MediumSearch => { /* ... */ },
+///     OpenSearchPartitionInstanceType::Or1XlargeSearch => { /* ... */ },
 ///     OpenSearchPartitionInstanceType::R32xlargeSearch => { /* ... */ },
 ///     OpenSearchPartitionInstanceType::R34xlargeSearch => { /* ... */ },
 ///     OpenSearchPartitionInstanceType::R38xlargeSearch => { /* ... */ },
@@ -235,6 +243,22 @@ pub enum OpenSearchPartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     M6gXlargeSearch,
     #[allow(missing_docs)] // documentation missing in model
+    Or112xlargeSearch,
+    #[allow(missing_docs)] // documentation missing in model
+    Or116xlargeSearch,
+    #[allow(missing_docs)] // documentation missing in model
+    Or12xlargeSearch,
+    #[allow(missing_docs)] // documentation missing in model
+    Or14xlargeSearch,
+    #[allow(missing_docs)] // documentation missing in model
+    Or18xlargeSearch,
+    #[allow(missing_docs)] // documentation missing in model
+    Or1LargeSearch,
+    #[allow(missing_docs)] // documentation missing in model
+    Or1MediumSearch,
+    #[allow(missing_docs)] // documentation missing in model
+    Or1XlargeSearch,
+    #[allow(missing_docs)] // documentation missing in model
     R32xlargeSearch,
     #[allow(missing_docs)] // documentation missing in model
     R34xlargeSearch,
@@ -381,6 +405,14 @@ impl ::std::convert::From<&str> for OpenSearchPartitionInstanceType {
             "m6g.8xlarge.search" => OpenSearchPartitionInstanceType::M6g8xlargeSearch,
             "m6g.large.search" => OpenSearchPartitionInstanceType::M6gLargeSearch,
             "m6g.xlarge.search" => OpenSearchPartitionInstanceType::M6gXlargeSearch,
+            "or1.12xlarge.search" => OpenSearchPartitionInstanceType::Or112xlargeSearch,
+            "or1.16xlarge.search" => OpenSearchPartitionInstanceType::Or116xlargeSearch,
+            "or1.2xlarge.search" => OpenSearchPartitionInstanceType::Or12xlargeSearch,
+            "or1.4xlarge.search" => OpenSearchPartitionInstanceType::Or14xlargeSearch,
+            "or1.8xlarge.search" => OpenSearchPartitionInstanceType::Or18xlargeSearch,
+            "or1.large.search" => OpenSearchPartitionInstanceType::Or1LargeSearch,
+            "or1.medium.search" => OpenSearchPartitionInstanceType::Or1MediumSearch,
+            "or1.xlarge.search" => OpenSearchPartitionInstanceType::Or1XlargeSearch,
             "r3.2xlarge.search" => OpenSearchPartitionInstanceType::R32xlargeSearch,
             "r3.4xlarge.search" => OpenSearchPartitionInstanceType::R34xlargeSearch,
             "r3.8xlarge.search" => OpenSearchPartitionInstanceType::R38xlargeSearch,
@@ -491,6 +523,14 @@ impl OpenSearchPartitionInstanceType {
             OpenSearchPartitionInstanceType::M6g8xlargeSearch => "m6g.8xlarge.search",
             OpenSearchPartitionInstanceType::M6gLargeSearch => "m6g.large.search",
             OpenSearchPartitionInstanceType::M6gXlargeSearch => "m6g.xlarge.search",
+            OpenSearchPartitionInstanceType::Or112xlargeSearch => "or1.12xlarge.search",
+            OpenSearchPartitionInstanceType::Or116xlargeSearch => "or1.16xlarge.search",
+            OpenSearchPartitionInstanceType::Or12xlargeSearch => "or1.2xlarge.search",
+            OpenSearchPartitionInstanceType::Or14xlargeSearch => "or1.4xlarge.search",
+            OpenSearchPartitionInstanceType::Or18xlargeSearch => "or1.8xlarge.search",
+            OpenSearchPartitionInstanceType::Or1LargeSearch => "or1.large.search",
+            OpenSearchPartitionInstanceType::Or1MediumSearch => "or1.medium.search",
+            OpenSearchPartitionInstanceType::Or1XlargeSearch => "or1.xlarge.search",
             OpenSearchPartitionInstanceType::R32xlargeSearch => "r3.2xlarge.search",
             OpenSearchPartitionInstanceType::R34xlargeSearch => "r3.4xlarge.search",
             OpenSearchPartitionInstanceType::R38xlargeSearch => "r3.8xlarge.search",
@@ -592,6 +632,14 @@ impl OpenSearchPartitionInstanceType {
             "m6g.8xlarge.search",
             "m6g.large.search",
             "m6g.xlarge.search",
+            "or1.12xlarge.search",
+            "or1.16xlarge.search",
+            "or1.2xlarge.search",
+            "or1.4xlarge.search",
+            "or1.8xlarge.search",
+            "or1.large.search",
+            "or1.medium.search",
+            "or1.xlarge.search",
             "r3.2xlarge.search",
             "r3.4xlarge.search",
             "r3.8xlarge.search",

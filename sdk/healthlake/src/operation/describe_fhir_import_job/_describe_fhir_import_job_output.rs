@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFhirImportJobOutput {
-    /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of the Import job request, including the ID, ARN, name, status of the job, and the progress report of the job.</p>
     pub import_job_properties: ::std::option::Option<crate::types::ImportJobProperties>,
     _request_id: Option<String>,
 }
 impl DescribeFhirImportJobOutput {
-    /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of the Import job request, including the ID, ARN, name, status of the job, and the progress report of the job.</p>
     pub fn import_job_properties(&self) -> ::std::option::Option<&crate::types::ImportJobProperties> {
         self.import_job_properties.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeFhirImportJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeFhirImportJobOutputBuilder {
-    /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of the Import job request, including the ID, ARN, name, status of the job, and the progress report of the job.</p>
     /// This field is required.
     pub fn import_job_properties(mut self, input: crate::types::ImportJobProperties) -> Self {
         self.import_job_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of the Import job request, including the ID, ARN, name, status of the job, and the progress report of the job.</p>
     pub fn set_import_job_properties(mut self, input: ::std::option::Option<crate::types::ImportJobProperties>) -> Self {
         self.import_job_properties = input;
         self
     }
-    /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
+    /// <p>The properties of the Import job request, including the ID, ARN, name, status of the job, and the progress report of the job.</p>
     pub fn get_import_job_properties(&self) -> &::std::option::Option<crate::types::ImportJobProperties> {
         &self.import_job_properties
     }

@@ -22,7 +22,8 @@ impl ListFindingsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFindings`.
 ///
-/// <p>Lists Amazon GuardDuty findings for the specified detector ID.</p>
+/// <p>Lists GuardDuty findings for the specified detector ID.</p>
+/// <p>There might be regional differences because some flags might not be available in all the Regions where GuardDuty is currently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

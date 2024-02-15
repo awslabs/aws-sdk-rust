@@ -1,12 +1,12 @@
 [workspace]
 exclude = [
-    "examples/cross_service",
-    "examples/webassembly",
     "examples/test-utils",
     "examples/lambda",
     "examples/examples",
-    "tests/webassembly",
-    "tests/no-default-features"
+    "examples/webassembly",
+    "examples/cross_service",
+    "tests/no-default-features",
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -35,6 +35,7 @@ members = [
     "sdk/appstream",
     "sdk/appsync",
     "sdk/arczonalshift",
+    "sdk/artifact",
     "sdk/athena",
     "sdk/auditmanager",
     "sdk/autoscaling",

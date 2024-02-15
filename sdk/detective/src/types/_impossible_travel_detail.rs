@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImpossibleTravelDetail {
-    /// <p>IP address where the resource was first used in the impossible travel</p>
+    /// <p>IP address where the resource was first used in the impossible travel.</p>
     pub starting_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>IP address where the resource was last used in the impossible travel.</p>
     pub ending_ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>Location where the resource was first used in the impossible travel</p>
+    /// <p>Location where the resource was first used in the impossible travel.</p>
     pub starting_location: ::std::option::Option<::std::string::String>,
     /// <p>Location where the resource was last used in the impossible travel.</p>
     pub ending_location: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct ImpossibleTravelDetail {
     pub hourly_time_delta: ::std::option::Option<i32>,
 }
 impl ImpossibleTravelDetail {
-    /// <p>IP address where the resource was first used in the impossible travel</p>
+    /// <p>IP address where the resource was first used in the impossible travel.</p>
     pub fn starting_ip_address(&self) -> ::std::option::Option<&str> {
         self.starting_ip_address.as_deref()
     }
@@ -24,7 +24,7 @@ impl ImpossibleTravelDetail {
     pub fn ending_ip_address(&self) -> ::std::option::Option<&str> {
         self.ending_ip_address.as_deref()
     }
-    /// <p>Location where the resource was first used in the impossible travel</p>
+    /// <p>Location where the resource was first used in the impossible travel.</p>
     pub fn starting_location(&self) -> ::std::option::Option<&str> {
         self.starting_location.as_deref()
     }
@@ -55,17 +55,17 @@ pub struct ImpossibleTravelDetailBuilder {
     pub(crate) hourly_time_delta: ::std::option::Option<i32>,
 }
 impl ImpossibleTravelDetailBuilder {
-    /// <p>IP address where the resource was first used in the impossible travel</p>
+    /// <p>IP address where the resource was first used in the impossible travel.</p>
     pub fn starting_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>IP address where the resource was first used in the impossible travel</p>
+    /// <p>IP address where the resource was first used in the impossible travel.</p>
     pub fn set_starting_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.starting_ip_address = input;
         self
     }
-    /// <p>IP address where the resource was first used in the impossible travel</p>
+    /// <p>IP address where the resource was first used in the impossible travel.</p>
     pub fn get_starting_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.starting_ip_address
     }
@@ -83,17 +83,17 @@ impl ImpossibleTravelDetailBuilder {
     pub fn get_ending_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ending_ip_address
     }
-    /// <p>Location where the resource was first used in the impossible travel</p>
+    /// <p>Location where the resource was first used in the impossible travel.</p>
     pub fn starting_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.starting_location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Location where the resource was first used in the impossible travel</p>
+    /// <p>Location where the resource was first used in the impossible travel.</p>
     pub fn set_starting_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.starting_location = input;
         self
     }
-    /// <p>Location where the resource was first used in the impossible travel</p>
+    /// <p>Location where the resource was first used in the impossible travel.</p>
     pub fn get_starting_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.starting_location
     }

@@ -7175,6 +7175,31 @@ impl From<crate::operation::update_cluster::UpdateClusterError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cluster_software::UpdateClusterSoftwareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cluster_software::UpdateClusterSoftwareError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cluster_software::UpdateClusterSoftwareError> for Error {
+    fn from(err: crate::operation::update_cluster_software::UpdateClusterSoftwareError) -> Self {
+        match err {
+            crate::operation::update_cluster_software::UpdateClusterSoftwareError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_cluster_software::UpdateClusterSoftwareError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::update_cluster_software::UpdateClusterSoftwareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_code_repository::UpdateCodeRepositoryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

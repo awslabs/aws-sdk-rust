@@ -3,33 +3,33 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInvestigationsInput {
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub graph_arn: ::std::option::Option<::std::string::String>,
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>List the maximum number of investigations in a page.</p>
+    /// <p>Lists the maximum number of investigations in a page.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Filter the investigation results based on a criteria.</p>
+    /// <p>Filters the investigation results based on a criteria.</p>
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>Sorts the investigation results based on a criteria.</p>
     pub sort_criteria: ::std::option::Option<crate::types::SortCriteria>,
 }
 impl ListInvestigationsInput {
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn graph_arn(&self) -> ::std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>List the maximum number of investigations in a page.</p>
+    /// <p>Lists the maximum number of investigations in a page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Filter the investigation results based on a criteria.</p>
+    /// <p>Filters the investigation results based on a criteria.</p>
     pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -56,63 +56,63 @@ pub struct ListInvestigationsInputBuilder {
     pub(crate) sort_criteria: ::std::option::Option<crate::types::SortCriteria>,
 }
 impl ListInvestigationsInputBuilder {
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     /// This field is required.
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.graph_arn = input;
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.graph_arn
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return a Validation Exception error.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>List the maximum number of investigations in a page.</p>
+    /// <p>Lists the maximum number of investigations in a page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>List the maximum number of investigations in a page.</p>
+    /// <p>Lists the maximum number of investigations in a page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>List the maximum number of investigations in a page.</p>
+    /// <p>Lists the maximum number of investigations in a page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Filter the investigation results based on a criteria.</p>
+    /// <p>Filters the investigation results based on a criteria.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
         self.filter_criteria = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filter the investigation results based on a criteria.</p>
+    /// <p>Filters the investigation results based on a criteria.</p>
     pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::FilterCriteria>) -> Self {
         self.filter_criteria = input;
         self
     }
-    /// <p>Filter the investigation results based on a criteria.</p>
+    /// <p>Filters the investigation results based on a criteria.</p>
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::FilterCriteria> {
         &self.filter_criteria
     }

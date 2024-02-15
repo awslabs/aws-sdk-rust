@@ -14,6 +14,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS AppSync | [aws-sdk-appsync](https://crates.io/crates/aws-sdk-appsync) ([docs](https://docs.rs/aws-sdk-appsync)) |
 | AWS Application Cost Profiler | [aws-sdk-applicationcostprofiler](https://crates.io/crates/aws-sdk-applicationcostprofiler) ([docs](https://docs.rs/aws-sdk-applicationcostprofiler)) |
 | AWS Application Discovery Service | [aws-sdk-applicationdiscovery](https://crates.io/crates/aws-sdk-applicationdiscovery) ([docs](https://docs.rs/aws-sdk-applicationdiscovery)) |
+| AWS Artifact | [aws-sdk-artifact](https://crates.io/crates/aws-sdk-artifact) ([docs](https://docs.rs/aws-sdk-artifact)) |
 | AWS Audit Manager | [aws-sdk-auditmanager](https://crates.io/crates/aws-sdk-auditmanager) ([docs](https://docs.rs/aws-sdk-auditmanager)) |
 | AWS Auto Scaling Plans | [aws-sdk-autoscalingplans](https://crates.io/crates/aws-sdk-autoscalingplans) ([docs](https://docs.rs/aws-sdk-autoscalingplans)) |
 | AWS B2B Data Interchange | [aws-sdk-b2bi](https://crates.io/crates/aws-sdk-b2bi) ([docs](https://docs.rs/aws-sdk-b2bi)) |

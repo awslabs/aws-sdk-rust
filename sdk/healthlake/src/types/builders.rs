@@ -5,6 +5,8 @@ pub use crate::types::_s3_configuration::S3ConfigurationBuilder;
 
 pub use crate::types::_import_job_properties::ImportJobPropertiesBuilder;
 
+pub use crate::types::_job_progress_report::JobProgressReportBuilder;
+
 pub use crate::types::_export_job_properties::ExportJobPropertiesBuilder;
 
 pub use crate::types::_datastore_properties::DatastorePropertiesBuilder;

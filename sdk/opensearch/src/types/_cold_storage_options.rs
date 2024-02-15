@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColdStorageOptions {
-    /// <p>Whether to enable or disable cold storage on the domain.</p>
+    /// <p>Whether to enable or disable cold storage on the domain. You must enable UltraWarm storage to enable cold storage.</p>
     pub enabled: bool,
 }
 impl ColdStorageOptions {
-    /// <p>Whether to enable or disable cold storage on the domain.</p>
+    /// <p>Whether to enable or disable cold storage on the domain. You must enable UltraWarm storage to enable cold storage.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -27,18 +27,18 @@ pub struct ColdStorageOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl ColdStorageOptionsBuilder {
-    /// <p>Whether to enable or disable cold storage on the domain.</p>
+    /// <p>Whether to enable or disable cold storage on the domain. You must enable UltraWarm storage to enable cold storage.</p>
     /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to enable or disable cold storage on the domain.</p>
+    /// <p>Whether to enable or disable cold storage on the domain. You must enable UltraWarm storage to enable cold storage.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>Whether to enable or disable cold storage on the domain.</p>
+    /// <p>Whether to enable or disable cold storage on the domain. You must enable UltraWarm storage to enable cold storage.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

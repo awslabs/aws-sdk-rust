@@ -123,6 +123,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_job_progress_report;
+
 pub(crate) mod shape_kms_encryption_config;
 
 pub(crate) mod shape_s3_configuration;

@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInvestigationsOutput {
-    /// <p>Investigations details lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
+    /// <p>Lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
     pub investigation_details: ::std::option::Option<::std::vec::Vec<crate::types::InvestigationDetail>>,
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Each pagination token expires after 24 hours.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListInvestigationsOutput {
-    /// <p>Investigations details lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
+    /// <p>Lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.investigation_details.is_none()`.
     pub fn investigation_details(&self) -> &[crate::types::InvestigationDetail] {
         self.investigation_details.as_deref().unwrap_or_default()
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Each pagination token expires after 24 hours.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -48,36 +48,36 @@ impl ListInvestigationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_investigation_details`](Self::set_investigation_details).
     ///
-    /// <p>Investigations details lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
+    /// <p>Lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
     pub fn investigation_details(mut self, input: crate::types::InvestigationDetail) -> Self {
         let mut v = self.investigation_details.unwrap_or_default();
         v.push(input);
         self.investigation_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Investigations details lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
+    /// <p>Lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
     pub fn set_investigation_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InvestigationDetail>>) -> Self {
         self.investigation_details = input;
         self
     }
-    /// <p>Investigations details lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
+    /// <p>Lists the summary of uncommon behavior or malicious activity which indicates a compromise.</p>
     pub fn get_investigation_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InvestigationDetail>> {
         &self.investigation_details
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Each pagination token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Each pagination token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
+    /// <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
+    /// <p>Each pagination token expires after 24 hours.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

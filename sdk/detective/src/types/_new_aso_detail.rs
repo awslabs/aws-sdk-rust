@@ -6,7 +6,7 @@
 pub struct NewAsoDetail {
     /// <p>Details about the new Autonomous System Organization (ASO).</p>
     pub aso: ::std::option::Option<::std::string::String>,
-    /// <p>Checks if the ASO is for new for the entire account.</p>
+    /// <p>Checks if the Autonomous System Organization (ASO) is new for the entire account.</p>
     pub is_new_for_entire_account: bool,
 }
 impl NewAsoDetail {
@@ -14,7 +14,7 @@ impl NewAsoDetail {
     pub fn aso(&self) -> ::std::option::Option<&str> {
         self.aso.as_deref()
     }
-    /// <p>Checks if the ASO is for new for the entire account.</p>
+    /// <p>Checks if the Autonomous System Organization (ASO) is new for the entire account.</p>
     pub fn is_new_for_entire_account(&self) -> bool {
         self.is_new_for_entire_account
     }
@@ -48,17 +48,17 @@ impl NewAsoDetailBuilder {
     pub fn get_aso(&self) -> &::std::option::Option<::std::string::String> {
         &self.aso
     }
-    /// <p>Checks if the ASO is for new for the entire account.</p>
+    /// <p>Checks if the Autonomous System Organization (ASO) is new for the entire account.</p>
     pub fn is_new_for_entire_account(mut self, input: bool) -> Self {
         self.is_new_for_entire_account = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Checks if the ASO is for new for the entire account.</p>
+    /// <p>Checks if the Autonomous System Organization (ASO) is new for the entire account.</p>
     pub fn set_is_new_for_entire_account(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_new_for_entire_account = input;
         self
     }
-    /// <p>Checks if the ASO is for new for the entire account.</p>
+    /// <p>Checks if the Autonomous System Organization (ASO) is new for the entire account.</p>
     pub fn get_is_new_for_entire_account(&self) -> &::std::option::Option<bool> {
         &self.is_new_for_entire_account
     }

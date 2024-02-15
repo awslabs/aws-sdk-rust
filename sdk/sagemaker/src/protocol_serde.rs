@@ -597,6 +597,8 @@ pub(crate) mod shape_update_artifact;
 
 pub(crate) mod shape_update_cluster;
 
+pub(crate) mod shape_update_cluster_software;
+
 pub(crate) mod shape_update_code_repository;
 
 pub(crate) mod shape_update_context;
@@ -1244,6 +1246,8 @@ pub(crate) mod shape_update_app_image_config_input;
 pub(crate) mod shape_update_artifact_input;
 
 pub(crate) mod shape_update_cluster_input;
+
+pub(crate) mod shape_update_cluster_software_input;
 
 pub(crate) mod shape_update_code_repository_input;
 

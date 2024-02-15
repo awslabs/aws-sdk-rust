@@ -22,7 +22,7 @@ impl StartInvestigationInputBuilder {
 }
 /// Fluent builder constructing a request to `StartInvestigation`.
 ///
-/// <p>initiate an investigation on an entity in a graph</p>
+/// <p>Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a high level of confidence) identify malicious activity or a security incident. <code>StartInvestigation</code> initiates an investigation on an entity in a behavior graph.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartInvestigationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl StartInvestigationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.graph_arn(input.into());
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_graph_arn(input);
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_graph_arn()
     }
@@ -150,17 +150,17 @@ impl StartInvestigationFluentBuilder {
     pub fn get_scope_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_scope_start_time()
     }
-    /// <p>The data and time when the investigation began. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    /// <p>The data and time when the investigation ended. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn scope_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.scope_end_time(input);
         self
     }
-    /// <p>The data and time when the investigation began. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    /// <p>The data and time when the investigation ended. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn set_scope_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scope_end_time(input);
         self
     }
-    /// <p>The data and time when the investigation began. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
+    /// <p>The data and time when the investigation ended. The value is an UTC ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn get_scope_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_scope_end_time()
     }

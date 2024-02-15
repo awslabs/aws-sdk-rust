@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the elastic network interface of the EC2 instance.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NetworkInterface {
     /// <p>A list of IPv6 addresses for the EC2 instance.</p>
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -73,6 +73,22 @@ impl NetworkInterface {
         self.vpc_id.as_deref()
     }
 }
+impl ::std::fmt::Debug for NetworkInterface {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkInterface");
+        formatter.field("ipv6_addresses", &self.ipv6_addresses);
+        formatter.field("network_interface_id", &self.network_interface_id);
+        formatter.field("private_dns_name", &self.private_dns_name);
+        formatter.field("private_ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("private_ip_addresses", &self.private_ip_addresses);
+        formatter.field("public_dns_name", &self.public_dns_name);
+        formatter.field("public_ip", &self.public_ip);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("subnet_id", &self.subnet_id);
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.finish()
+    }
+}
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn builder() -> crate::types::builders::NetworkInterfaceBuilder {
@@ -82,7 +98,7 @@ impl NetworkInterface {
 
 /// A builder for [`NetworkInterface`](crate::types::NetworkInterface).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct NetworkInterfaceBuilder {
     pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
@@ -268,5 +284,21 @@ impl NetworkInterfaceBuilder {
             subnet_id: self.subnet_id,
             vpc_id: self.vpc_id,
         }
+    }
+}
+impl ::std::fmt::Debug for NetworkInterfaceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("NetworkInterfaceBuilder");
+        formatter.field("ipv6_addresses", &self.ipv6_addresses);
+        formatter.field("network_interface_id", &self.network_interface_id);
+        formatter.field("private_dns_name", &self.private_dns_name);
+        formatter.field("private_ip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("private_ip_addresses", &self.private_ip_addresses);
+        formatter.field("public_dns_name", &self.public_dns_name);
+        formatter.field("public_ip", &self.public_ip);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("subnet_id", &self.subnet_id);
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.finish()
     }
 }

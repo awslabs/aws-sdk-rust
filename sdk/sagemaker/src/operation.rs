@@ -862,6 +862,9 @@ pub mod update_artifact;
 /// Types for the `UpdateCluster` operation.
 pub mod update_cluster;
 
+/// Types for the `UpdateClusterSoftware` operation.
+pub mod update_cluster_software;
+
 /// Types for the `UpdateCodeRepository` operation.
 pub mod update_code_repository;
 

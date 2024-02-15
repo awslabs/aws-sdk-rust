@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the member account.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Member {
     /// <p>The ID of the member account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -55,6 +55,20 @@ impl Member {
         self.administrator_id.as_deref()
     }
 }
+impl ::std::fmt::Debug for Member {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Member");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("detector_id", &self.detector_id);
+        formatter.field("master_id", &self.master_id);
+        formatter.field("email", &"*** Sensitive Data Redacted ***");
+        formatter.field("relationship_status", &self.relationship_status);
+        formatter.field("invited_at", &self.invited_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("administrator_id", &self.administrator_id);
+        formatter.finish()
+    }
+}
 impl Member {
     /// Creates a new builder-style object to manufacture [`Member`](crate::types::Member).
     pub fn builder() -> crate::types::builders::MemberBuilder {
@@ -64,7 +78,7 @@ impl Member {
 
 /// A builder for [`Member`](crate::types::Member).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MemberBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
@@ -205,5 +219,19 @@ impl MemberBuilder {
             updated_at: self.updated_at,
             administrator_id: self.administrator_id,
         }
+    }
+}
+impl ::std::fmt::Debug for MemberBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MemberBuilder");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("detector_id", &self.detector_id);
+        formatter.field("master_id", &self.master_id);
+        formatter.field("email", &"*** Sensitive Data Redacted ***");
+        formatter.field("relationship_status", &self.relationship_status);
+        formatter.field("invited_at", &self.invited_at);
+        formatter.field("updated_at", &self.updated_at);
+        formatter.field("administrator_id", &self.administrator_id);
+        formatter.finish()
     }
 }

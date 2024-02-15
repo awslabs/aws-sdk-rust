@@ -22,7 +22,7 @@ impl GetInvestigationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetInvestigation`.
 ///
-/// <p>Returns the investigation results of an investigation for a behavior graph.</p>
+/// <p>Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a high level of confidence) identify malicious activity or a security incident. <code>GetInvestigation</code> returns the investigation results of an investigation for a behavior graph.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInvestigationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetInvestigationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn graph_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.graph_arn(input.into());
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn set_graph_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_graph_arn(input);
         self
     }
-    /// <p>The ARN of the behavior graph.</p>
+    /// <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
     pub fn get_graph_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_graph_arn()
     }

@@ -61,6 +61,10 @@ where
                             builder =
                                 builder.set_job_output_data_config(crate::protocol_serde::shape_output_data_config::de_output_data_config(tokens)?);
                         }
+                        "JobProgressReport" => {
+                            builder =
+                                builder.set_job_progress_report(crate::protocol_serde::shape_job_progress_report::de_job_progress_report(tokens)?);
+                        }
                         "DataAccessRoleArn" => {
                             builder = builder.set_data_access_role_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -23,6 +23,7 @@
 ///     VoiceId::Ayanda => { /* ... */ },
 ///     VoiceId::Bianca => { /* ... */ },
 ///     VoiceId::Brian => { /* ... */ },
+///     VoiceId::Burcu => { /* ... */ },
 ///     VoiceId::Camila => { /* ... */ },
 ///     VoiceId::Carla => { /* ... */ },
 ///     VoiceId::Carmen => { /* ... */ },
@@ -156,6 +157,8 @@ pub enum VoiceId {
     Bianca,
     #[allow(missing_docs)] // documentation missing in model
     Brian,
+    #[allow(missing_docs)] // documentation missing in model
+    Burcu,
     #[allow(missing_docs)] // documentation missing in model
     Camila,
     #[allow(missing_docs)] // documentation missing in model
@@ -342,6 +345,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Ayanda" => VoiceId::Ayanda,
             "Bianca" => VoiceId::Bianca,
             "Brian" => VoiceId::Brian,
+            "Burcu" => VoiceId::Burcu,
             "Camila" => VoiceId::Camila,
             "Carla" => VoiceId::Carla,
             "Carmen" => VoiceId::Carmen,
@@ -452,6 +456,7 @@ impl VoiceId {
             VoiceId::Ayanda => "Ayanda",
             VoiceId::Bianca => "Bianca",
             VoiceId::Brian => "Brian",
+            VoiceId::Burcu => "Burcu",
             VoiceId::Camila => "Camila",
             VoiceId::Carla => "Carla",
             VoiceId::Carmen => "Carmen",
@@ -553,6 +558,7 @@ impl VoiceId {
             "Ayanda",
             "Bianca",
             "Brian",
+            "Burcu",
             "Camila",
             "Carla",
             "Carmen",

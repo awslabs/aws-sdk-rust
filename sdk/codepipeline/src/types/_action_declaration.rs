@@ -25,6 +25,8 @@ pub struct ActionDeclaration {
     pub region: ::std::option::Option<::std::string::String>,
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
+    /// <p>A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified in <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline </a>. This attribute is available only to the manual approval ActionType.</p>
+    pub timeout_in_minutes: ::std::option::Option<i32>,
 }
 impl ActionDeclaration {
     /// <p>The action declaration's name.</p>
@@ -71,6 +73,10 @@ impl ActionDeclaration {
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
+    /// <p>A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified in <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline </a>. This attribute is available only to the manual approval ActionType.</p>
+    pub fn timeout_in_minutes(&self) -> ::std::option::Option<i32> {
+        self.timeout_in_minutes
+    }
 }
 impl ActionDeclaration {
     /// Creates a new builder-style object to manufacture [`ActionDeclaration`](crate::types::ActionDeclaration).
@@ -92,6 +98,7 @@ pub struct ActionDeclarationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) timeout_in_minutes: ::std::option::Option<i32>,
 }
 impl ActionDeclarationBuilder {
     /// <p>The action declaration's name.</p>
@@ -252,6 +259,20 @@ impl ActionDeclarationBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
+    /// <p>A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified in <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline </a>. This attribute is available only to the manual approval ActionType.</p>
+    pub fn timeout_in_minutes(mut self, input: i32) -> Self {
+        self.timeout_in_minutes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified in <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline </a>. This attribute is available only to the manual approval ActionType.</p>
+    pub fn set_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.timeout_in_minutes = input;
+        self
+    }
+    /// <p>A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified in <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline </a>. This attribute is available only to the manual approval ActionType.</p>
+    pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
+        &self.timeout_in_minutes
+    }
     /// Consumes the builder and constructs a [`ActionDeclaration`](crate::types::ActionDeclaration).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ActionDeclarationBuilder::name)
@@ -271,6 +292,7 @@ impl ActionDeclarationBuilder {
             role_arn: self.role_arn,
             region: self.region,
             namespace: self.namespace,
+            timeout_in_minutes: self.timeout_in_minutes,
         })
     }
 }

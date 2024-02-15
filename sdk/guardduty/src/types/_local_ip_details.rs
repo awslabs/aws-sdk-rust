@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the local IP address of the connection.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LocalIpDetails {
     /// <p>The IPv4 local address of the connection.</p>
     pub ip_address_v4: ::std::option::Option<::std::string::String>,
@@ -11,6 +11,13 @@ impl LocalIpDetails {
     /// <p>The IPv4 local address of the connection.</p>
     pub fn ip_address_v4(&self) -> ::std::option::Option<&str> {
         self.ip_address_v4.as_deref()
+    }
+}
+impl ::std::fmt::Debug for LocalIpDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("LocalIpDetails");
+        formatter.field("ip_address_v4", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl LocalIpDetails {
@@ -22,7 +29,7 @@ impl LocalIpDetails {
 
 /// A builder for [`LocalIpDetails`](crate::types::LocalIpDetails).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct LocalIpDetailsBuilder {
     pub(crate) ip_address_v4: ::std::option::Option<::std::string::String>,
 }
@@ -46,5 +53,12 @@ impl LocalIpDetailsBuilder {
         crate::types::LocalIpDetails {
             ip_address_v4: self.ip_address_v4,
         }
+    }
+}
+impl ::std::fmt::Debug for LocalIpDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("LocalIpDetailsBuilder");
+        formatter.field("ip_address_v4", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
