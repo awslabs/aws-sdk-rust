@@ -85,6 +85,10 @@ where
                         "TerminationProtected" => {
                             builder = builder.set_termination_protected(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "UnhealthyNodeReplacement" => {
+                            builder =
+                                builder.set_unhealthy_node_replacement(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "HadoopVersion" => {
                             builder = builder.set_hadoop_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

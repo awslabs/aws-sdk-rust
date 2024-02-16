@@ -6,7 +6,7 @@
 pub struct OrcSerDe {
     /// <p>The number of bytes in each stripe. The default is 64 MiB and the minimum is 8 MiB.</p>
     pub stripe_size_bytes: ::std::option::Option<i32>,
-    /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
+    /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding calculations.</p>
     pub block_size_bytes: ::std::option::Option<i32>,
     /// <p>The number of rows between index entries. The default is 10,000 and the minimum is 1,000.</p>
     pub row_index_stride: ::std::option::Option<i32>,
@@ -14,11 +14,11 @@ pub struct OrcSerDe {
     pub enable_padding: ::std::option::Option<bool>,
     /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p>
     /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p>
-    /// <p>Kinesis Data Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
+    /// <p>Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
     pub padding_tolerance: ::std::option::Option<f64>,
     /// <p>The compression code to use over data blocks. The default is <code>SNAPPY</code>.</p>
     pub compression: ::std::option::Option<crate::types::OrcCompression>,
-    /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
+    /// <p>The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.</p>
     pub bloom_filter_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Bloom filter false positive probability (FPP). The lower the FPP, the bigger the Bloom filter. The default value is 0.05, the minimum is 0, and the maximum is 1.</p>
     pub bloom_filter_false_positive_probability: ::std::option::Option<f64>,
@@ -32,7 +32,7 @@ impl OrcSerDe {
     pub fn stripe_size_bytes(&self) -> ::std::option::Option<i32> {
         self.stripe_size_bytes
     }
-    /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
+    /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding calculations.</p>
     pub fn block_size_bytes(&self) -> ::std::option::Option<i32> {
         self.block_size_bytes
     }
@@ -46,7 +46,7 @@ impl OrcSerDe {
     }
     /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p>
     /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p>
-    /// <p>Kinesis Data Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
+    /// <p>Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
     pub fn padding_tolerance(&self) -> ::std::option::Option<f64> {
         self.padding_tolerance
     }
@@ -54,7 +54,7 @@ impl OrcSerDe {
     pub fn compression(&self) -> ::std::option::Option<&crate::types::OrcCompression> {
         self.compression.as_ref()
     }
-    /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
+    /// <p>The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bloom_filter_columns.is_none()`.
     pub fn bloom_filter_columns(&self) -> &[::std::string::String] {
@@ -110,17 +110,17 @@ impl OrcSerDeBuilder {
     pub fn get_stripe_size_bytes(&self) -> &::std::option::Option<i32> {
         &self.stripe_size_bytes
     }
-    /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
+    /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding calculations.</p>
     pub fn block_size_bytes(mut self, input: i32) -> Self {
         self.block_size_bytes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
+    /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding calculations.</p>
     pub fn set_block_size_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.block_size_bytes = input;
         self
     }
-    /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
+    /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding calculations.</p>
     pub fn get_block_size_bytes(&self) -> &::std::option::Option<i32> {
         &self.block_size_bytes
     }
@@ -154,21 +154,21 @@ impl OrcSerDeBuilder {
     }
     /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p>
     /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p>
-    /// <p>Kinesis Data Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
+    /// <p>Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
     pub fn padding_tolerance(mut self, input: f64) -> Self {
         self.padding_tolerance = ::std::option::Option::Some(input);
         self
     }
     /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p>
     /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p>
-    /// <p>Kinesis Data Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
+    /// <p>Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
     pub fn set_padding_tolerance(mut self, input: ::std::option::Option<f64>) -> Self {
         self.padding_tolerance = input;
         self
     }
     /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p>
     /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p>
-    /// <p>Kinesis Data Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
+    /// <p>Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
     pub fn get_padding_tolerance(&self) -> &::std::option::Option<f64> {
         &self.padding_tolerance
     }
@@ -190,19 +190,19 @@ impl OrcSerDeBuilder {
     ///
     /// To override the contents of this collection use [`set_bloom_filter_columns`](Self::set_bloom_filter_columns).
     ///
-    /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
+    /// <p>The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.</p>
     pub fn bloom_filter_columns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bloom_filter_columns.unwrap_or_default();
         v.push(input.into());
         self.bloom_filter_columns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
+    /// <p>The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.</p>
     pub fn set_bloom_filter_columns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.bloom_filter_columns = input;
         self
     }
-    /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
+    /// <p>The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.</p>
     pub fn get_bloom_filter_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.bloom_filter_columns
     }

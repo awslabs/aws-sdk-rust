@@ -108,17 +108,17 @@ impl GetEndpointAttributesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>EndpointArn for GetEndpointAttributes input.</p>
+    /// <p><code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.</p>
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_arn(input.into());
         self
     }
-    /// <p>EndpointArn for GetEndpointAttributes input.</p>
+    /// <p><code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_arn(input);
         self
     }
-    /// <p>EndpointArn for GetEndpointAttributes input.</p>
+    /// <p><code>EndpointArn</code> for <code>GetEndpointAttributes</code> input.</p>
     pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_arn()
     }

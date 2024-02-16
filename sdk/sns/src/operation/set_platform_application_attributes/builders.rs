@@ -108,17 +108,17 @@ impl SetPlatformApplicationAttributesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+    /// <p><code>PlatformApplicationArn</code> for <code>SetPlatformApplicationAttributes</code> action.</p>
     pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_application_arn(input.into());
         self
     }
-    /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+    /// <p><code>PlatformApplicationArn</code> for <code>SetPlatformApplicationAttributes</code> action.</p>
     pub fn set_platform_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_application_arn(input);
         self
     }
-    /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+    /// <p><code>PlatformApplicationArn</code> for <code>SetPlatformApplicationAttributes</code> action.</p>
     pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_platform_application_arn()
     }
@@ -138,7 +138,9 @@ impl SetPlatformApplicationAttributesFluentBuilder {
     /// <li>
     /// <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p></li>
     /// <li>
-    /// <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key.</p></li>
+    /// <p>For GCM (Firebase Cloud Messaging) using key credentials, there is no <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API key</code>.</p></li>
+    /// <li>
+    /// <p>For GCM (Firebase Cloud Messaging) using token credentials, there is no <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is a JSON formatted private key file. When using the Amazon Web Services CLI, the file must be in string format and special characters must be ignored. To format the file correctly, Amazon SNS recommends using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat service.json`</code>.</p></li>
     /// </ul></li>
     /// </ul>
     /// <ul>
@@ -194,7 +196,9 @@ impl SetPlatformApplicationAttributesFluentBuilder {
     /// <li>
     /// <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p></li>
     /// <li>
-    /// <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key.</p></li>
+    /// <p>For GCM (Firebase Cloud Messaging) using key credentials, there is no <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API key</code>.</p></li>
+    /// <li>
+    /// <p>For GCM (Firebase Cloud Messaging) using token credentials, there is no <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is a JSON formatted private key file. When using the Amazon Web Services CLI, the file must be in string format and special characters must be ignored. To format the file correctly, Amazon SNS recommends using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat service.json`</code>.</p></li>
     /// </ul></li>
     /// </ul>
     /// <ul>
@@ -250,7 +254,9 @@ impl SetPlatformApplicationAttributesFluentBuilder {
     /// <li>
     /// <p>For Apple Services using token credentials, <code>PlatformCredential</code> is signing key.</p></li>
     /// <li>
-    /// <p>For GCM (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key.</p></li>
+    /// <p>For GCM (Firebase Cloud Messaging) using key credentials, there is no <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API key</code>.</p></li>
+    /// <li>
+    /// <p>For GCM (Firebase Cloud Messaging) using token credentials, there is no <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is a JSON formatted private key file. When using the Amazon Web Services CLI, the file must be in string format and special characters must be ignored. To format the file correctly, Amazon SNS recommends using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat service.json`</code>.</p></li>
     /// </ul></li>
     /// </ul>
     /// <ul>

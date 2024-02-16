@@ -148,6 +148,9 @@ pub mod set_keep_job_flow_alive_when_no_steps;
 /// Types for the `SetTerminationProtection` operation.
 pub mod set_termination_protection;
 
+/// Types for the `SetUnhealthyNodeReplacement` operation.
+pub mod set_unhealthy_node_replacement;
+
 /// Types for the `SetVisibleToAllUsers` operation.
 pub mod set_visible_to_all_users;
 

@@ -332,17 +332,17 @@ impl UpdateEventSourceMappingFluentBuilder {
     pub fn get_maximum_batching_window_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_maximum_batching_window_in_seconds()
     }
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the destination of an event after Lambda processes it.</p>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.inner = self.inner.destination_config(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the destination of an event after Lambda processes it.</p>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.inner = self.inner.set_destination_config(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the destination of an event after Lambda processes it.</p>
     pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         self.inner.get_destination_config()
     }

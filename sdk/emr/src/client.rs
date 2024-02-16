@@ -261,6 +261,8 @@ mod set_keep_job_flow_alive_when_no_steps;
 
 mod set_termination_protection;
 
+mod set_unhealthy_node_replacement;
+
 mod set_visible_to_all_users;
 
 mod start_notebook_execution;

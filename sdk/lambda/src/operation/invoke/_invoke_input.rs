@@ -27,7 +27,7 @@ pub struct InvokeInput {
     pub invocation_type: ::std::option::Option<crate::types::InvocationType>,
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
     pub log_type: ::std::option::Option<crate::types::LogType>,
-    /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.</p>
     pub client_context: ::std::option::Option<::std::string::String>,
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
@@ -66,7 +66,7 @@ impl InvokeInput {
     pub fn log_type(&self) -> ::std::option::Option<&crate::types::LogType> {
         self.log_type.as_ref()
     }
-    /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.</p>
     pub fn client_context(&self) -> ::std::option::Option<&str> {
         self.client_context.as_deref()
     }
@@ -208,17 +208,17 @@ impl InvokeInputBuilder {
     pub fn get_log_type(&self) -> &::std::option::Option<crate::types::LogType> {
         &self.log_type
     }
-    /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.</p>
     pub fn client_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_context = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.</p>
     pub fn set_client_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_context = input;
         self
     }
-    /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.</p>
     pub fn get_client_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_context
     }

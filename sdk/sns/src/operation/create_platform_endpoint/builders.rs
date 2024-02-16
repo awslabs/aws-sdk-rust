@@ -109,17 +109,17 @@ impl CreatePlatformEndpointFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
+    /// <p><code>PlatformApplicationArn</code> returned from CreatePlatformApplication is used to create a an endpoint.</p>
     pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_application_arn(input.into());
         self
     }
-    /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
+    /// <p><code>PlatformApplicationArn</code> returned from CreatePlatformApplication is used to create a an endpoint.</p>
     pub fn set_platform_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_application_arn(input);
         self
     }
-    /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.</p>
+    /// <p><code>PlatformApplicationArn</code> returned from CreatePlatformApplication is used to create a an endpoint.</p>
     pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_platform_application_arn()
     }
@@ -155,17 +155,17 @@ impl CreatePlatformEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"> <code>SetEndpointAttributes</code> </a>.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
-    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"> <code>SetEndpointAttributes</code> </a>.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
-    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+    /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html"> <code>SetEndpointAttributes</code> </a>.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }

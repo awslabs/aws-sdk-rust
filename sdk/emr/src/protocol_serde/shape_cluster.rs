@@ -84,6 +84,10 @@ where
                         "TerminationProtected" => {
                             builder = builder.set_termination_protected(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "UnhealthyNodeReplacement" => {
+                            builder =
+                                builder.set_unhealthy_node_replacement(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "VisibleToAllUsers" => {
                             builder = builder.set_visible_to_all_users(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

@@ -2,7 +2,7 @@
 
 /// <p>Input for Publish action.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PublishInput {
     /// <p>The topic you want to publish to.</p>
     /// <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
@@ -155,6 +155,21 @@ impl PublishInput {
         self.message_group_id.as_deref()
     }
 }
+impl ::std::fmt::Debug for PublishInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PublishInput");
+        formatter.field("topic_arn", &self.topic_arn);
+        formatter.field("target_arn", &self.target_arn);
+        formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("message", &self.message);
+        formatter.field("subject", &self.subject);
+        formatter.field("message_structure", &self.message_structure);
+        formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("message_deduplication_id", &self.message_deduplication_id);
+        formatter.field("message_group_id", &self.message_group_id);
+        formatter.finish()
+    }
+}
 impl PublishInput {
     /// Creates a new builder-style object to manufacture [`PublishInput`](crate::operation::publish::PublishInput).
     pub fn builder() -> crate::operation::publish::builders::PublishInputBuilder {
@@ -164,7 +179,7 @@ impl PublishInput {
 
 /// A builder for [`PublishInput`](crate::operation::publish::PublishInput).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PublishInputBuilder {
     pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_arn: ::std::option::Option<::std::string::String>,
@@ -466,5 +481,20 @@ impl PublishInputBuilder {
             message_deduplication_id: self.message_deduplication_id,
             message_group_id: self.message_group_id,
         })
+    }
+}
+impl ::std::fmt::Debug for PublishInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PublishInputBuilder");
+        formatter.field("topic_arn", &self.topic_arn);
+        formatter.field("target_arn", &self.target_arn);
+        formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("message", &self.message);
+        formatter.field("subject", &self.subject);
+        formatter.field("message_structure", &self.message_structure);
+        formatter.field("message_attributes", &self.message_attributes);
+        formatter.field("message_deduplication_id", &self.message_deduplication_id);
+        formatter.field("message_group_id", &self.message_group_id);
+        formatter.finish()
     }
 }

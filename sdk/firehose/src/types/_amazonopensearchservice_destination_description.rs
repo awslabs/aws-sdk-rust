@@ -8,7 +8,7 @@ pub struct AmazonopensearchserviceDestinationDescription {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon OpenSearch Service domain.</p>
     pub domain_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
     pub cluster_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon OpenSearch Service index name.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ pub struct AmazonopensearchserviceDestinationDescription {
     pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
     pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
-    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    /// <p>Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and OpenSearch Service generated document ID.</p>
     pub document_id_options: ::std::option::Option<crate::types::DocumentIdOptions>,
 }
 impl AmazonopensearchserviceDestinationDescription {
@@ -42,7 +42,7 @@ impl AmazonopensearchserviceDestinationDescription {
     pub fn domain_arn(&self) -> ::std::option::Option<&str> {
         self.domain_arn.as_deref()
     }
-    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
     pub fn cluster_endpoint(&self) -> ::std::option::Option<&str> {
         self.cluster_endpoint.as_deref()
     }
@@ -86,7 +86,7 @@ impl AmazonopensearchserviceDestinationDescription {
     pub fn vpc_configuration_description(&self) -> ::std::option::Option<&crate::types::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
     }
-    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    /// <p>Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and OpenSearch Service generated document ID.</p>
     pub fn document_id_options(&self) -> ::std::option::Option<&crate::types::DocumentIdOptions> {
         self.document_id_options.as_ref()
     }
@@ -146,17 +146,17 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
     pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_arn
     }
-    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
     pub fn cluster_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
     pub fn set_cluster_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_endpoint = input;
         self
     }
-    /// <p>The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
+    /// <p>The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.</p>
     pub fn get_cluster_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_endpoint
     }
@@ -300,17 +300,17 @@ impl AmazonopensearchserviceDestinationDescriptionBuilder {
     pub fn get_vpc_configuration_description(&self) -> &::std::option::Option<crate::types::VpcConfigurationDescription> {
         &self.vpc_configuration_description
     }
-    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    /// <p>Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and OpenSearch Service generated document ID.</p>
     pub fn document_id_options(mut self, input: crate::types::DocumentIdOptions) -> Self {
         self.document_id_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    /// <p>Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and OpenSearch Service generated document ID.</p>
     pub fn set_document_id_options(mut self, input: ::std::option::Option<crate::types::DocumentIdOptions>) -> Self {
         self.document_id_options = input;
         self
     }
-    /// <p>Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated document ID and OpenSearch Service generated document ID.</p>
+    /// <p>Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and OpenSearch Service generated document ID.</p>
     pub fn get_document_id_options(&self) -> &::std::option::Option<crate::types::DocumentIdOptions> {
         &self.document_id_options
     }

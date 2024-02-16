@@ -12,7 +12,7 @@ pub struct RedshiftDestinationDescription {
     pub copy_command: ::std::option::Option<crate::types::CopyCommand>,
     /// <p>The name of the user.</p>
     pub username: ::std::string::String,
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+    /// <p>The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub retry_options: ::std::option::Option<crate::types::RedshiftRetryOptions>,
     /// <p>The Amazon S3 destination.</p>
     pub s3_destination_description: ::std::option::Option<crate::types::S3DestinationDescription>,
@@ -45,7 +45,7 @@ impl RedshiftDestinationDescription {
         use std::ops::Deref;
         self.username.deref()
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+    /// <p>The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub fn retry_options(&self) -> ::std::option::Option<&crate::types::RedshiftRetryOptions> {
         self.retry_options.as_ref()
     }
@@ -169,17 +169,17 @@ impl RedshiftDestinationDescriptionBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+    /// <p>The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub fn retry_options(mut self, input: crate::types::RedshiftRetryOptions) -> Self {
         self.retry_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+    /// <p>The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::RedshiftRetryOptions>) -> Self {
         self.retry_options = input;
         self
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+    /// <p>The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::RedshiftRetryOptions> {
         &self.retry_options
     }

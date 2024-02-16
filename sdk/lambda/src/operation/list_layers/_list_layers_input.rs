@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLayersInput {
-    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    /// <p>A runtime identifier. For example, <code>java21</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub compatible_runtime: ::std::option::Option<crate::types::Runtime>,
     /// <p>A pagination token returned by a previous call.</p>
@@ -14,7 +14,7 @@ pub struct ListLayersInput {
     pub compatible_architecture: ::std::option::Option<crate::types::Architecture>,
 }
 impl ListLayersInput {
-    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    /// <p>A runtime identifier. For example, <code>java21</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn compatible_runtime(&self) -> ::std::option::Option<&crate::types::Runtime> {
         self.compatible_runtime.as_ref()
@@ -49,19 +49,19 @@ pub struct ListLayersInputBuilder {
     pub(crate) compatible_architecture: ::std::option::Option<crate::types::Architecture>,
 }
 impl ListLayersInputBuilder {
-    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    /// <p>A runtime identifier. For example, <code>java21</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn compatible_runtime(mut self, input: crate::types::Runtime) -> Self {
         self.compatible_runtime = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    /// <p>A runtime identifier. For example, <code>java21</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn set_compatible_runtime(mut self, input: ::std::option::Option<crate::types::Runtime>) -> Self {
         self.compatible_runtime = input;
         self
     }
-    /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    /// <p>A runtime identifier. For example, <code>java21</code>.</p>
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn get_compatible_runtime(&self) -> &::std::option::Option<crate::types::Runtime> {
         &self.compatible_runtime

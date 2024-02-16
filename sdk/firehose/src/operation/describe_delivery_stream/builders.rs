@@ -137,17 +137,17 @@ impl DescribeDeliveryStreamFluentBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
-    /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
+    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per delivery stream.</p>
     pub fn exclusive_start_destination_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exclusive_start_destination_id(input.into());
         self
     }
-    /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
+    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per delivery stream.</p>
     pub fn set_exclusive_start_destination_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_exclusive_start_destination_id(input);
         self
     }
-    /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
+    /// <p>The ID of the destination to start returning the destination information. Firehose supports one destination per delivery stream.</p>
     pub fn get_exclusive_start_destination_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_exclusive_start_destination_id()
     }

@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlatformApplicationOutput {
-    /// <p>PlatformApplicationArn is returned.</p>
+    /// <p><code>PlatformApplicationArn</code> is returned.</p>
     pub platform_application_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePlatformApplicationOutput {
-    /// <p>PlatformApplicationArn is returned.</p>
+    /// <p><code>PlatformApplicationArn</code> is returned.</p>
     pub fn platform_application_arn(&self) -> ::std::option::Option<&str> {
         self.platform_application_arn.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct CreatePlatformApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreatePlatformApplicationOutputBuilder {
-    /// <p>PlatformApplicationArn is returned.</p>
+    /// <p><code>PlatformApplicationArn</code> is returned.</p>
     pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>PlatformApplicationArn is returned.</p>
+    /// <p><code>PlatformApplicationArn</code> is returned.</p>
     pub fn set_platform_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_application_arn = input;
         self
     }
-    /// <p>PlatformApplicationArn is returned.</p>
+    /// <p><code>PlatformApplicationArn</code> is returned.</p>
     pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_application_arn
     }

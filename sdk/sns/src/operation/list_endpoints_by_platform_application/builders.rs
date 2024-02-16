@@ -115,31 +115,31 @@ impl ListEndpointsByPlatformApplicationFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_endpoints_by_platform_application::paginator::ListEndpointsByPlatformApplicationPaginator {
         crate::operation::list_endpoints_by_platform_application::paginator::ListEndpointsByPlatformApplicationPaginator::new(self.handle, self.inner)
     }
-    /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
+    /// <p><code>PlatformApplicationArn</code> for <code>ListEndpointsByPlatformApplicationInput</code> action.</p>
     pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_application_arn(input.into());
         self
     }
-    /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
+    /// <p><code>PlatformApplicationArn</code> for <code>ListEndpointsByPlatformApplicationInput</code> action.</p>
     pub fn set_platform_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_application_arn(input);
         self
     }
-    /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
+    /// <p><code>PlatformApplicationArn</code> for <code>ListEndpointsByPlatformApplicationInput</code> action.</p>
     pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_platform_application_arn()
     }
-    /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
+    /// <p><code>NextToken</code> string is used when calling <code>ListEndpointsByPlatformApplication</code> action to retrieve additional records that are available after the first page results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
+    /// <p><code>NextToken</code> string is used when calling <code>ListEndpointsByPlatformApplication</code> action to retrieve additional records that are available after the first page results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
+    /// <p><code>NextToken</code> string is used when calling <code>ListEndpointsByPlatformApplication</code> action to retrieve additional records that are available after the first page results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

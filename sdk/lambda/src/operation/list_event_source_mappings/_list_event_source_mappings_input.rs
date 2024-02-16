@@ -12,7 +12,7 @@ pub struct ListEventSourceMappingsInput {
     /// <li>
     /// <p><b>Amazon Simple Queue Service</b> – The ARN of the queue.</p></li>
     /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p></li>
+    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source mappings</a>).</p></li>
     /// <li>
     /// <p><b>Amazon MQ</b> – The ARN of the broker.</p></li>
     /// <li>
@@ -48,7 +48,7 @@ impl ListEventSourceMappingsInput {
     /// <li>
     /// <p><b>Amazon Simple Queue Service</b> – The ARN of the queue.</p></li>
     /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p></li>
+    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source mappings</a>).</p></li>
     /// <li>
     /// <p><b>Amazon MQ</b> – The ARN of the broker.</p></li>
     /// <li>
@@ -108,7 +108,7 @@ impl ListEventSourceMappingsInputBuilder {
     /// <li>
     /// <p><b>Amazon Simple Queue Service</b> – The ARN of the queue.</p></li>
     /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p></li>
+    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source mappings</a>).</p></li>
     /// <li>
     /// <p><b>Amazon MQ</b> – The ARN of the broker.</p></li>
     /// <li>
@@ -127,7 +127,7 @@ impl ListEventSourceMappingsInputBuilder {
     /// <li>
     /// <p><b>Amazon Simple Queue Service</b> – The ARN of the queue.</p></li>
     /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p></li>
+    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source mappings</a>).</p></li>
     /// <li>
     /// <p><b>Amazon MQ</b> – The ARN of the broker.</p></li>
     /// <li>
@@ -146,7 +146,7 @@ impl ListEventSourceMappingsInputBuilder {
     /// <li>
     /// <p><b>Amazon Simple Queue Service</b> – The ARN of the queue.</p></li>
     /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p></li>
+    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source mappings</a>).</p></li>
     /// <li>
     /// <p><b>Amazon MQ</b> – The ARN of the broker.</p></li>
     /// <li>

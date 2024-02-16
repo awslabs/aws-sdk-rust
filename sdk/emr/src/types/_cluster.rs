@@ -31,6 +31,8 @@ pub struct Cluster {
     pub auto_terminate: ::std::option::Option<bool>,
     /// <p>Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
     pub termination_protected: ::std::option::Option<bool>,
+    /// <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the cluster.</p>
+    pub unhealthy_node_replacement: ::std::option::Option<bool>,
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
     pub visible_to_all_users: ::std::option::Option<bool>,
@@ -126,6 +128,10 @@ impl Cluster {
     /// <p>Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
     pub fn termination_protected(&self) -> ::std::option::Option<bool> {
         self.termination_protected
+    }
+    /// <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the cluster.</p>
+    pub fn unhealthy_node_replacement(&self) -> ::std::option::Option<bool> {
+        self.unhealthy_node_replacement
     }
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
@@ -244,6 +250,7 @@ pub struct ClusterBuilder {
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) auto_terminate: ::std::option::Option<bool>,
     pub(crate) termination_protected: ::std::option::Option<bool>,
+    pub(crate) unhealthy_node_replacement: ::std::option::Option<bool>,
     pub(crate) visible_to_all_users: ::std::option::Option<bool>,
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -443,6 +450,20 @@ impl ClusterBuilder {
     /// <p>Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>
     pub fn get_termination_protected(&self) -> &::std::option::Option<bool> {
         &self.termination_protected
+    }
+    /// <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the cluster.</p>
+    pub fn unhealthy_node_replacement(mut self, input: bool) -> Self {
+        self.unhealthy_node_replacement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the cluster.</p>
+    pub fn set_unhealthy_node_replacement(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.unhealthy_node_replacement = input;
+        self
+    }
+    /// <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the cluster.</p>
+    pub fn get_unhealthy_node_replacement(&self) -> &::std::option::Option<bool> {
+        &self.unhealthy_node_replacement
     }
     /// <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
     /// <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR API <code>RunJobFlow</code> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Amazon Web Services Management Console.</p>
@@ -780,6 +801,7 @@ impl ClusterBuilder {
             release_label: self.release_label,
             auto_terminate: self.auto_terminate,
             termination_protected: self.termination_protected,
+            unhealthy_node_replacement: self.unhealthy_node_replacement,
             visible_to_all_users: self.visible_to_all_users,
             applications: self.applications,
             tags: self.tags,

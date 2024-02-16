@@ -15,7 +15,7 @@
 #![allow(rustdoc::redundant_explicit_links)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! Amazon Kinesis Data Firehose is a fully managed service that delivers real-time streaming data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other supportd destinations.
+//! Amazon Data Firehose is a fully managed service that delivers real-time streaming data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other supportd destinations.
 //!
 //! ## Getting Started
 //!
@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.5", features = ["behavior-version-latest"] }
-//! aws-sdk-firehose = "1.14.0"
+//! aws-sdk-firehose = "1.15.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

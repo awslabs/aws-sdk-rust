@@ -13,6 +13,7 @@
 /// # let processortype = unimplemented!();
 /// match processortype {
 ///     ProcessorType::AppendDelimiterToRecord => { /* ... */ },
+///     ProcessorType::CloudWatchLogProcessing => { /* ... */ },
 ///     ProcessorType::Decompression => { /* ... */ },
 ///     ProcessorType::Lambda => { /* ... */ },
 ///     ProcessorType::MetadataExtraction => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum ProcessorType {
     #[allow(missing_docs)] // documentation missing in model
     AppendDelimiterToRecord,
     #[allow(missing_docs)] // documentation missing in model
+    CloudWatchLogProcessing,
+    #[allow(missing_docs)] // documentation missing in model
     Decompression,
     #[allow(missing_docs)] // documentation missing in model
     Lambda,
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for ProcessorType {
     fn from(s: &str) -> Self {
         match s {
             "AppendDelimiterToRecord" => ProcessorType::AppendDelimiterToRecord,
+            "CloudWatchLogProcessing" => ProcessorType::CloudWatchLogProcessing,
             "Decompression" => ProcessorType::Decompression,
             "Lambda" => ProcessorType::Lambda,
             "MetadataExtraction" => ProcessorType::MetadataExtraction,
@@ -82,6 +86,7 @@ impl ProcessorType {
     pub fn as_str(&self) -> &str {
         match self {
             ProcessorType::AppendDelimiterToRecord => "AppendDelimiterToRecord",
+            ProcessorType::CloudWatchLogProcessing => "CloudWatchLogProcessing",
             ProcessorType::Decompression => "Decompression",
             ProcessorType::Lambda => "Lambda",
             ProcessorType::MetadataExtraction => "MetadataExtraction",
@@ -93,6 +98,7 @@ impl ProcessorType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AppendDelimiterToRecord",
+            "CloudWatchLogProcessing",
             "Decompression",
             "Lambda",
             "MetadataExtraction",

@@ -54,47 +54,50 @@ pub fn ser_job_flow_instances_config(
     if let Some(var_16) = &input.termination_protected {
         object.key("TerminationProtected").boolean(*var_16);
     }
-    if let Some(var_17) = &input.hadoop_version {
-        object.key("HadoopVersion").string(var_17.as_str());
+    if let Some(var_17) = &input.unhealthy_node_replacement {
+        object.key("UnhealthyNodeReplacement").boolean(*var_17);
     }
-    if let Some(var_18) = &input.ec2_subnet_id {
-        object.key("Ec2SubnetId").string(var_18.as_str());
+    if let Some(var_18) = &input.hadoop_version {
+        object.key("HadoopVersion").string(var_18.as_str());
     }
-    if let Some(var_19) = &input.ec2_subnet_ids {
-        let mut array_20 = object.key("Ec2SubnetIds").start_array();
-        for item_21 in var_19 {
+    if let Some(var_19) = &input.ec2_subnet_id {
+        object.key("Ec2SubnetId").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.ec2_subnet_ids {
+        let mut array_21 = object.key("Ec2SubnetIds").start_array();
+        for item_22 in var_20 {
             {
-                array_20.value().string(item_21.as_str());
+                array_21.value().string(item_22.as_str());
             }
         }
-        array_20.finish();
+        array_21.finish();
     }
-    if let Some(var_22) = &input.emr_managed_master_security_group {
-        object.key("EmrManagedMasterSecurityGroup").string(var_22.as_str());
+    if let Some(var_23) = &input.emr_managed_master_security_group {
+        object.key("EmrManagedMasterSecurityGroup").string(var_23.as_str());
     }
-    if let Some(var_23) = &input.emr_managed_slave_security_group {
-        object.key("EmrManagedSlaveSecurityGroup").string(var_23.as_str());
+    if let Some(var_24) = &input.emr_managed_slave_security_group {
+        object.key("EmrManagedSlaveSecurityGroup").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.service_access_security_group {
-        object.key("ServiceAccessSecurityGroup").string(var_24.as_str());
+    if let Some(var_25) = &input.service_access_security_group {
+        object.key("ServiceAccessSecurityGroup").string(var_25.as_str());
     }
-    if let Some(var_25) = &input.additional_master_security_groups {
-        let mut array_26 = object.key("AdditionalMasterSecurityGroups").start_array();
-        for item_27 in var_25 {
+    if let Some(var_26) = &input.additional_master_security_groups {
+        let mut array_27 = object.key("AdditionalMasterSecurityGroups").start_array();
+        for item_28 in var_26 {
             {
-                array_26.value().string(item_27.as_str());
+                array_27.value().string(item_28.as_str());
             }
         }
-        array_26.finish();
+        array_27.finish();
     }
-    if let Some(var_28) = &input.additional_slave_security_groups {
-        let mut array_29 = object.key("AdditionalSlaveSecurityGroups").start_array();
-        for item_30 in var_28 {
+    if let Some(var_29) = &input.additional_slave_security_groups {
+        let mut array_30 = object.key("AdditionalSlaveSecurityGroups").start_array();
+        for item_31 in var_29 {
             {
-                array_29.value().string(item_30.as_str());
+                array_30.value().string(item_31.as_str());
             }
         }
-        array_29.finish();
+        array_30.finish();
     }
     Ok(())
 }

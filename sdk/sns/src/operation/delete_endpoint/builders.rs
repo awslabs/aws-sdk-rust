@@ -109,17 +109,17 @@ impl DeleteEndpointFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>EndpointArn of endpoint to delete.</p>
+    /// <p><code>EndpointArn</code> of endpoint to delete.</p>
     pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_arn(input.into());
         self
     }
-    /// <p>EndpointArn of endpoint to delete.</p>
+    /// <p><code>EndpointArn</code> of endpoint to delete.</p>
     pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_arn(input);
         self
     }
-    /// <p>EndpointArn of endpoint to delete.</p>
+    /// <p><code>EndpointArn</code> of endpoint to delete.</p>
     pub fn get_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_endpoint_arn()
     }

@@ -164,7 +164,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <li>
     /// <p><b>Amazon Simple Queue Service</b> – The ARN of the queue.</p></li>
     /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p></li>
+    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source mappings</a>).</p></li>
     /// <li>
     /// <p><b>Amazon MQ</b> – The ARN of the broker.</p></li>
     /// <li>
@@ -183,7 +183,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <li>
     /// <p><b>Amazon Simple Queue Service</b> – The ARN of the queue.</p></li>
     /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p></li>
+    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source mappings</a>).</p></li>
     /// <li>
     /// <p><b>Amazon MQ</b> – The ARN of the broker.</p></li>
     /// <li>
@@ -202,7 +202,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <li>
     /// <p><b>Amazon Simple Queue Service</b> – The ARN of the queue.</p></li>
     /// <li>
-    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p></li>
+    /// <p><b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source mappings</a>).</p></li>
     /// <li>
     /// <p><b>Amazon MQ</b> – The ARN of the broker.</p></li>
     /// <li>
@@ -416,17 +416,17 @@ impl CreateEventSourceMappingFluentBuilder {
     pub fn get_starting_position_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_starting_position_timestamp()
     }
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the destination of an event after Lambda processes it.</p>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.inner = self.inner.destination_config(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the destination of an event after Lambda processes it.</p>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.inner = self.inner.set_destination_config(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the destination of an event after Lambda processes it.</p>
     pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         self.inner.get_destination_config()
     }

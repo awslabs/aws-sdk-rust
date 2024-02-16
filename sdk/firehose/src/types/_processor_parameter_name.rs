@@ -15,6 +15,7 @@
 ///     ProcessorParameterName::BufferIntervalInSeconds => { /* ... */ },
 ///     ProcessorParameterName::BufferSizeInMb => { /* ... */ },
 ///     ProcessorParameterName::CompressionFormat => { /* ... */ },
+///     ProcessorParameterName::DataMessageExtraction => { /* ... */ },
 ///     ProcessorParameterName::Delimiter => { /* ... */ },
 ///     ProcessorParameterName::JsonParsingEngine => { /* ... */ },
 ///     ProcessorParameterName::LambdaArn => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum ProcessorParameterName {
     #[allow(missing_docs)] // documentation missing in model
     CompressionFormat,
     #[allow(missing_docs)] // documentation missing in model
+    DataMessageExtraction,
+    #[allow(missing_docs)] // documentation missing in model
     Delimiter,
     #[allow(missing_docs)] // documentation missing in model
     JsonParsingEngine,
@@ -79,6 +82,7 @@ impl ::std::convert::From<&str> for ProcessorParameterName {
             "BufferIntervalInSeconds" => ProcessorParameterName::BufferIntervalInSeconds,
             "BufferSizeInMBs" => ProcessorParameterName::BufferSizeInMb,
             "CompressionFormat" => ProcessorParameterName::CompressionFormat,
+            "DataMessageExtraction" => ProcessorParameterName::DataMessageExtraction,
             "Delimiter" => ProcessorParameterName::Delimiter,
             "JsonParsingEngine" => ProcessorParameterName::JsonParsingEngine,
             "LambdaArn" => ProcessorParameterName::LambdaArn,
@@ -104,6 +108,7 @@ impl ProcessorParameterName {
             ProcessorParameterName::BufferIntervalInSeconds => "BufferIntervalInSeconds",
             ProcessorParameterName::BufferSizeInMb => "BufferSizeInMBs",
             ProcessorParameterName::CompressionFormat => "CompressionFormat",
+            ProcessorParameterName::DataMessageExtraction => "DataMessageExtraction",
             ProcessorParameterName::Delimiter => "Delimiter",
             ProcessorParameterName::JsonParsingEngine => "JsonParsingEngine",
             ProcessorParameterName::LambdaArn => "LambdaArn",
@@ -120,6 +125,7 @@ impl ProcessorParameterName {
             "BufferIntervalInSeconds",
             "BufferSizeInMBs",
             "CompressionFormat",
+            "DataMessageExtraction",
             "Delimiter",
             "JsonParsingEngine",
             "LambdaArn",

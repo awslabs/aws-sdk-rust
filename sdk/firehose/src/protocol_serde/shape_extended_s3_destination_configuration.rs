@@ -63,5 +63,11 @@ pub fn ser_extended_s3_destination_configuration(
         crate::protocol_serde::shape_dynamic_partitioning_configuration::ser_dynamic_partitioning_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.file_extension {
+        object.key("FileExtension").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.custom_time_zone {
+        object.key("CustomTimeZone").string(var_20.as_str());
+    }
     Ok(())
 }

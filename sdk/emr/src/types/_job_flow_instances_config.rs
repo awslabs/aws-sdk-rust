@@ -25,6 +25,8 @@ pub struct JobFlowInstancesConfig {
     pub keep_job_flow_alive_when_no_steps: ::std::option::Option<bool>,
     /// <p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job-flow error.</p>
     pub termination_protected: ::std::option::Option<bool>,
+    /// <p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>
+    pub unhealthy_node_replacement: ::std::option::Option<bool>,
     /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
     pub hadoop_version: ::std::option::Option<::std::string::String>,
     /// <p>Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</p>
@@ -88,6 +90,10 @@ impl JobFlowInstancesConfig {
     pub fn termination_protected(&self) -> ::std::option::Option<bool> {
         self.termination_protected
     }
+    /// <p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>
+    pub fn unhealthy_node_replacement(&self) -> ::std::option::Option<bool> {
+        self.unhealthy_node_replacement
+    }
     /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
     pub fn hadoop_version(&self) -> ::std::option::Option<&str> {
         self.hadoop_version.as_deref()
@@ -149,6 +155,7 @@ pub struct JobFlowInstancesConfigBuilder {
     pub(crate) placement: ::std::option::Option<crate::types::PlacementType>,
     pub(crate) keep_job_flow_alive_when_no_steps: ::std::option::Option<bool>,
     pub(crate) termination_protected: ::std::option::Option<bool>,
+    pub(crate) unhealthy_node_replacement: ::std::option::Option<bool>,
     pub(crate) hadoop_version: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) ec2_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -306,6 +313,20 @@ impl JobFlowInstancesConfigBuilder {
     pub fn get_termination_protected(&self) -> &::std::option::Option<bool> {
         &self.termination_protected
     }
+    /// <p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>
+    pub fn unhealthy_node_replacement(mut self, input: bool) -> Self {
+        self.unhealthy_node_replacement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>
+    pub fn set_unhealthy_node_replacement(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.unhealthy_node_replacement = input;
+        self
+    }
+    /// <p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>
+    pub fn get_unhealthy_node_replacement(&self) -> &::std::option::Option<bool> {
+        &self.unhealthy_node_replacement
+    }
     /// <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>
     pub fn hadoop_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hadoop_version = ::std::option::Option::Some(input.into());
@@ -454,6 +475,7 @@ impl JobFlowInstancesConfigBuilder {
             placement: self.placement,
             keep_job_flow_alive_when_no_steps: self.keep_job_flow_alive_when_no_steps,
             termination_protected: self.termination_protected,
+            unhealthy_node_replacement: self.unhealthy_node_replacement,
             hadoop_version: self.hadoop_version,
             ec2_subnet_id: self.ec2_subnet_id,
             ec2_subnet_ids: self.ec2_subnet_ids,

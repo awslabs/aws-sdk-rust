@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SplunkDestinationUpdate {
-    /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
+    /// <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your data.</p>
     pub hec_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>This type can be either "Raw" or "Event."</p>
     pub hec_endpoint_type: ::std::option::Option<crate::types::HecEndpointType>,
     /// <p>A GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.</p>
     pub hec_token: ::std::option::Option<::std::string::String>,
-    /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
+    /// <p>The amount of time that Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
     pub hec_acknowledgment_timeout_in_seconds: ::std::option::Option<i32>,
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+    /// <p>The retry behavior in case Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
     pub retry_options: ::std::option::Option<crate::types::SplunkRetryOptions>,
-    /// <p>Specifies how you want Kinesis Data Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
+    /// <p>Specifies how you want Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
     /// <p>You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
     pub s3_backup_mode: ::std::option::Option<crate::types::SplunkS3BackupMode>,
     /// <p>Your update to the configuration of the backup Amazon S3 location.</p>
@@ -27,7 +27,7 @@ pub struct SplunkDestinationUpdate {
     pub buffering_hints: ::std::option::Option<crate::types::SplunkBufferingHints>,
 }
 impl SplunkDestinationUpdate {
-    /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
+    /// <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your data.</p>
     pub fn hec_endpoint(&self) -> ::std::option::Option<&str> {
         self.hec_endpoint.as_deref()
     }
@@ -39,15 +39,15 @@ impl SplunkDestinationUpdate {
     pub fn hec_token(&self) -> ::std::option::Option<&str> {
         self.hec_token.as_deref()
     }
-    /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
+    /// <p>The amount of time that Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
     pub fn hec_acknowledgment_timeout_in_seconds(&self) -> ::std::option::Option<i32> {
         self.hec_acknowledgment_timeout_in_seconds
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+    /// <p>The retry behavior in case Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
     pub fn retry_options(&self) -> ::std::option::Option<&crate::types::SplunkRetryOptions> {
         self.retry_options.as_ref()
     }
-    /// <p>Specifies how you want Kinesis Data Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
+    /// <p>Specifies how you want Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
     /// <p>You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
     pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::SplunkS3BackupMode> {
         self.s3_backup_mode.as_ref()
@@ -92,17 +92,17 @@ pub struct SplunkDestinationUpdateBuilder {
     pub(crate) buffering_hints: ::std::option::Option<crate::types::SplunkBufferingHints>,
 }
 impl SplunkDestinationUpdateBuilder {
-    /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
+    /// <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your data.</p>
     pub fn hec_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hec_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
+    /// <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your data.</p>
     pub fn set_hec_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hec_endpoint = input;
         self
     }
-    /// <p>The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.</p>
+    /// <p>The HTTP Event Collector (HEC) endpoint to which Firehose sends your data.</p>
     pub fn get_hec_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.hec_endpoint
     }
@@ -134,47 +134,47 @@ impl SplunkDestinationUpdateBuilder {
     pub fn get_hec_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.hec_token
     }
-    /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
+    /// <p>The amount of time that Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
     pub fn hec_acknowledgment_timeout_in_seconds(mut self, input: i32) -> Self {
         self.hec_acknowledgment_timeout_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
+    /// <p>The amount of time that Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
     pub fn set_hec_acknowledgment_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hec_acknowledgment_timeout_in_seconds = input;
         self
     }
-    /// <p>The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
+    /// <p>The amount of time that Firehose waits to receive an acknowledgment from Splunk after it sends data. At the end of the timeout period, Firehose either tries to send the data again or considers it an error, based on your retry settings.</p>
     pub fn get_hec_acknowledgment_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.hec_acknowledgment_timeout_in_seconds
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+    /// <p>The retry behavior in case Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
     pub fn retry_options(mut self, input: crate::types::SplunkRetryOptions) -> Self {
         self.retry_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+    /// <p>The retry behavior in case Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
     pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::SplunkRetryOptions>) -> Self {
         self.retry_options = input;
         self
     }
-    /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
+    /// <p>The retry behavior in case Firehose is unable to deliver data to Splunk or if it doesn't receive an acknowledgment of receipt from Splunk.</p>
     pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::SplunkRetryOptions> {
         &self.retry_options
     }
-    /// <p>Specifies how you want Kinesis Data Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
+    /// <p>Specifies how you want Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
     /// <p>You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
     pub fn s3_backup_mode(mut self, input: crate::types::SplunkS3BackupMode) -> Self {
         self.s3_backup_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies how you want Kinesis Data Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
+    /// <p>Specifies how you want Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
     /// <p>You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
     pub fn set_s3_backup_mode(mut self, input: ::std::option::Option<crate::types::SplunkS3BackupMode>) -> Self {
         self.s3_backup_mode = input;
         self
     }
-    /// <p>Specifies how you want Kinesis Data Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
+    /// <p>Specifies how you want Firehose to back up documents to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to <code>AllEvents</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
     /// <p>You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.</p>
     pub fn get_s3_backup_mode(&self) -> &::std::option::Option<crate::types::SplunkS3BackupMode> {
         &self.s3_backup_mode

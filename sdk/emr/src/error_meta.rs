@@ -1336,6 +1336,37 @@ impl From<crate::operation::set_termination_protection::SetTerminationProtection
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementError> for Error {
+    fn from(err: crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementError) -> Self {
+        match err {
+            crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::set_unhealthy_node_replacement::SetUnhealthyNodeReplacementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_visible_to_all_users::SetVisibleToAllUsersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

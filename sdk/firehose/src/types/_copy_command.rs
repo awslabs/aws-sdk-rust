@@ -8,7 +8,7 @@ pub struct CopyCommand {
     pub data_table_name: ::std::string::String,
     /// <p>A comma-separated list of column names.</p>
     pub data_table_columns: ::std::option::Option<::std::string::String>,
-    /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Kinesis Data Firehose are as follows:</p>
+    /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows:</p>
     /// <p><code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using lzop.</p>
     /// <p><code>delimiter '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
     /// <p><code>delimiter '|' escape</code> - the delimiter should be escaped.</p>
@@ -27,7 +27,7 @@ impl CopyCommand {
     pub fn data_table_columns(&self) -> ::std::option::Option<&str> {
         self.data_table_columns.as_deref()
     }
-    /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Kinesis Data Firehose are as follows:</p>
+    /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows:</p>
     /// <p><code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using lzop.</p>
     /// <p><code>delimiter '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
     /// <p><code>delimiter '|' escape</code> - the delimiter should be escaped.</p>
@@ -83,7 +83,7 @@ impl CopyCommandBuilder {
     pub fn get_data_table_columns(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_table_columns
     }
-    /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Kinesis Data Firehose are as follows:</p>
+    /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows:</p>
     /// <p><code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using lzop.</p>
     /// <p><code>delimiter '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
     /// <p><code>delimiter '|' escape</code> - the delimiter should be escaped.</p>
@@ -94,7 +94,7 @@ impl CopyCommandBuilder {
         self.copy_options = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Kinesis Data Firehose are as follows:</p>
+    /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows:</p>
     /// <p><code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using lzop.</p>
     /// <p><code>delimiter '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
     /// <p><code>delimiter '|' escape</code> - the delimiter should be escaped.</p>
@@ -105,7 +105,7 @@ impl CopyCommandBuilder {
         self.copy_options = input;
         self
     }
-    /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Kinesis Data Firehose are as follows:</p>
+    /// <p>Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows:</p>
     /// <p><code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using lzop.</p>
     /// <p><code>delimiter '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
     /// <p><code>delimiter '|' escape</code> - the delimiter should be escaped.</p>

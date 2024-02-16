@@ -10,7 +10,7 @@ pub struct ExtendedS3DestinationDescription {
     pub bucket_arn: ::std::string::String,
     /// <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered Amazon S3 files. You can also specify a custom prefix, as described in <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
-    /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    /// <p>A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub error_output_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The buffering option.</p>
     pub buffering_hints: ::std::option::Option<crate::types::BufferingHints>,
@@ -30,6 +30,10 @@ pub struct ExtendedS3DestinationDescription {
     pub data_format_conversion_configuration: ::std::option::Option<crate::types::DataFormatConversionConfiguration>,
     /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations.</p>
     pub dynamic_partitioning_configuration: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>,
+    /// <p>Specify a file extension. It will override the default file extension</p>
+    pub file_extension: ::std::option::Option<::std::string::String>,
+    /// <p>The time zone you prefer. UTC is the default.</p>
+    pub custom_time_zone: ::std::option::Option<::std::string::String>,
 }
 impl ExtendedS3DestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -46,7 +50,7 @@ impl ExtendedS3DestinationDescription {
     pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    /// <p>A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub fn error_output_prefix(&self) -> ::std::option::Option<&str> {
         self.error_output_prefix.as_deref()
     }
@@ -86,6 +90,14 @@ impl ExtendedS3DestinationDescription {
     pub fn dynamic_partitioning_configuration(&self) -> ::std::option::Option<&crate::types::DynamicPartitioningConfiguration> {
         self.dynamic_partitioning_configuration.as_ref()
     }
+    /// <p>Specify a file extension. It will override the default file extension</p>
+    pub fn file_extension(&self) -> ::std::option::Option<&str> {
+        self.file_extension.as_deref()
+    }
+    /// <p>The time zone you prefer. UTC is the default.</p>
+    pub fn custom_time_zone(&self) -> ::std::option::Option<&str> {
+        self.custom_time_zone.as_deref()
+    }
 }
 impl ExtendedS3DestinationDescription {
     /// Creates a new builder-style object to manufacture [`ExtendedS3DestinationDescription`](crate::types::ExtendedS3DestinationDescription).
@@ -111,6 +123,8 @@ pub struct ExtendedS3DestinationDescriptionBuilder {
     pub(crate) s3_backup_description: ::std::option::Option<crate::types::S3DestinationDescription>,
     pub(crate) data_format_conversion_configuration: ::std::option::Option<crate::types::DataFormatConversionConfiguration>,
     pub(crate) dynamic_partitioning_configuration: ::std::option::Option<crate::types::DynamicPartitioningConfiguration>,
+    pub(crate) file_extension: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_time_zone: ::std::option::Option<::std::string::String>,
 }
 impl ExtendedS3DestinationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -157,17 +171,17 @@ impl ExtendedS3DestinationDescriptionBuilder {
     pub fn get_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix
     }
-    /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    /// <p>A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub fn error_output_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_output_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    /// <p>A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub fn set_error_output_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_output_prefix = input;
         self
     }
-    /// <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
+    /// <p>A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3 Objects</a>.</p>
     pub fn get_error_output_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_output_prefix
     }
@@ -300,6 +314,34 @@ impl ExtendedS3DestinationDescriptionBuilder {
     pub fn get_dynamic_partitioning_configuration(&self) -> &::std::option::Option<crate::types::DynamicPartitioningConfiguration> {
         &self.dynamic_partitioning_configuration
     }
+    /// <p>Specify a file extension. It will override the default file extension</p>
+    pub fn file_extension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_extension = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specify a file extension. It will override the default file extension</p>
+    pub fn set_file_extension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.file_extension = input;
+        self
+    }
+    /// <p>Specify a file extension. It will override the default file extension</p>
+    pub fn get_file_extension(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_extension
+    }
+    /// <p>The time zone you prefer. UTC is the default.</p>
+    pub fn custom_time_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_time_zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The time zone you prefer. UTC is the default.</p>
+    pub fn set_custom_time_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_time_zone = input;
+        self
+    }
+    /// <p>The time zone you prefer. UTC is the default.</p>
+    pub fn get_custom_time_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_time_zone
+    }
     /// Consumes the builder and constructs a [`ExtendedS3DestinationDescription`](crate::types::ExtendedS3DestinationDescription).
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::ExtendedS3DestinationDescriptionBuilder::role_arn)
@@ -335,6 +377,8 @@ impl ExtendedS3DestinationDescriptionBuilder {
             s3_backup_description: self.s3_backup_description,
             data_format_conversion_configuration: self.data_format_conversion_configuration,
             dynamic_partitioning_configuration: self.dynamic_partitioning_configuration,
+            file_extension: self.file_extension,
+            custom_time_zone: self.custom_time_zone,
         })
     }
 }

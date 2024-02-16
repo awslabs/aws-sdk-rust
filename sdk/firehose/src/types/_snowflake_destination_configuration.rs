@@ -34,7 +34,7 @@ pub struct SnowflakeDestinationConfiguration {
     pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the Snowflake role</p>
     pub role_arn: ::std::string::String,
-    /// <p>The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.</p>
+    /// <p>The time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub retry_options: ::std::option::Option<crate::types::SnowflakeRetryOptions>,
     /// <p>Choose an S3 backup mode</p>
     pub s3_backup_mode: ::std::option::Option<crate::types::SnowflakeS3BackupMode>,
@@ -109,7 +109,7 @@ impl SnowflakeDestinationConfiguration {
         use std::ops::Deref;
         self.role_arn.deref()
     }
-    /// <p>The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.</p>
+    /// <p>The time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub fn retry_options(&self) -> ::std::option::Option<&crate::types::SnowflakeRetryOptions> {
         self.retry_options.as_ref()
     }
@@ -394,17 +394,17 @@ impl SnowflakeDestinationConfigurationBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.</p>
+    /// <p>The time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub fn retry_options(mut self, input: crate::types::SnowflakeRetryOptions) -> Self {
         self.retry_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.</p>
+    /// <p>The time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub fn set_retry_options(mut self, input: ::std::option::Option<crate::types::SnowflakeRetryOptions>) -> Self {
         self.retry_options = input;
         self
     }
-    /// <p>The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.</p>
+    /// <p>The time period where Firehose will retry sending data to the chosen HTTP endpoint.</p>
     pub fn get_retry_options(&self) -> &::std::option::Option<crate::types::SnowflakeRetryOptions> {
         &self.retry_options
     }

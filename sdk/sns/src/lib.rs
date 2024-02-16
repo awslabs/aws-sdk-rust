@@ -33,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.5", features = ["behavior-version-latest"] }
-//! aws-sdk-sns = "1.13.0"
+//! aws-sdk-sns = "1.14.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

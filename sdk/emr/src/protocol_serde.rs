@@ -121,6 +121,8 @@ pub(crate) mod shape_set_keep_job_flow_alive_when_no_steps;
 
 pub(crate) mod shape_set_termination_protection;
 
+pub(crate) mod shape_set_unhealthy_node_replacement;
+
 pub(crate) mod shape_set_visible_to_all_users;
 
 pub(crate) mod shape_start_notebook_execution;
@@ -242,6 +244,8 @@ pub(crate) mod shape_run_job_flow_input;
 pub(crate) mod shape_set_keep_job_flow_alive_when_no_steps_input;
 
 pub(crate) mod shape_set_termination_protection_input;
+
+pub(crate) mod shape_set_unhealthy_node_replacement_input;
 
 pub(crate) mod shape_set_visible_to_all_users_input;
 

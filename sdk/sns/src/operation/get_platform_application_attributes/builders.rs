@@ -108,17 +108,17 @@ impl GetPlatformApplicationAttributesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+    /// <p><code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.</p>
     pub fn platform_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_application_arn(input.into());
         self
     }
-    /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+    /// <p><code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.</p>
     pub fn set_platform_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_application_arn(input);
         self
     }
-    /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+    /// <p><code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.</p>
     pub fn get_platform_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_platform_application_arn()
     }

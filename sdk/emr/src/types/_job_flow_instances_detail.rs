@@ -28,6 +28,8 @@ pub struct JobFlowInstancesDetail {
     pub keep_job_flow_alive_when_no_steps: ::std::option::Option<bool>,
     /// <p>Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user intervention, or in the event of a job-flow error.</p>
     pub termination_protected: ::std::option::Option<bool>,
+    /// <p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>
+    pub unhealthy_node_replacement: ::std::option::Option<bool>,
     /// <p>The Hadoop version for the cluster.</p>
     pub hadoop_version: ::std::option::Option<::std::string::String>,
 }
@@ -82,6 +84,10 @@ impl JobFlowInstancesDetail {
     pub fn termination_protected(&self) -> ::std::option::Option<bool> {
         self.termination_protected
     }
+    /// <p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>
+    pub fn unhealthy_node_replacement(&self) -> ::std::option::Option<bool> {
+        self.unhealthy_node_replacement
+    }
     /// <p>The Hadoop version for the cluster.</p>
     pub fn hadoop_version(&self) -> ::std::option::Option<&str> {
         self.hadoop_version.as_deref()
@@ -110,6 +116,7 @@ pub struct JobFlowInstancesDetailBuilder {
     pub(crate) placement: ::std::option::Option<crate::types::PlacementType>,
     pub(crate) keep_job_flow_alive_when_no_steps: ::std::option::Option<bool>,
     pub(crate) termination_protected: ::std::option::Option<bool>,
+    pub(crate) unhealthy_node_replacement: ::std::option::Option<bool>,
     pub(crate) hadoop_version: ::std::option::Option<::std::string::String>,
 }
 impl JobFlowInstancesDetailBuilder {
@@ -290,6 +297,20 @@ impl JobFlowInstancesDetailBuilder {
     pub fn get_termination_protected(&self) -> &::std::option::Option<bool> {
         &self.termination_protected
     }
+    /// <p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>
+    pub fn unhealthy_node_replacement(mut self, input: bool) -> Self {
+        self.unhealthy_node_replacement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>
+    pub fn set_unhealthy_node_replacement(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.unhealthy_node_replacement = input;
+        self
+    }
+    /// <p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>
+    pub fn get_unhealthy_node_replacement(&self) -> &::std::option::Option<bool> {
+        &self.unhealthy_node_replacement
+    }
     /// <p>The Hadoop version for the cluster.</p>
     pub fn hadoop_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hadoop_version = ::std::option::Option::Some(input.into());
@@ -319,6 +340,7 @@ impl JobFlowInstancesDetailBuilder {
             placement: self.placement,
             keep_job_flow_alive_when_no_steps: self.keep_job_flow_alive_when_no_steps,
             termination_protected: self.termination_protected,
+            unhealthy_node_replacement: self.unhealthy_node_replacement,
             hadoop_version: self.hadoop_version,
         }
     }

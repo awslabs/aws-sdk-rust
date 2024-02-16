@@ -209,7 +209,7 @@ impl CreateDBClusterFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <p>Must contain from 1 to 63 (for Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or hyphens.</p></li>
     /// <li>
     /// <p>First character must be a letter.</p></li>
     /// <li>
@@ -225,7 +225,7 @@ impl CreateDBClusterFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <p>Must contain from 1 to 63 (for Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or hyphens.</p></li>
     /// <li>
     /// <p>First character must be a letter.</p></li>
     /// <li>
@@ -241,7 +241,7 @@ impl CreateDBClusterFluentBuilder {
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <p>Must contain from 1 to 63 (for Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or hyphens.</p></li>
     /// <li>
     /// <p>First character must be a letter.</p></li>
     /// <li>

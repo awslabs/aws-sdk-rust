@@ -254,7 +254,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SendEventEndp
 pub enum SendEventError {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>An attachment with that identifier is already being uploaded.</p>
+    /// <p>The requested operation conflicts with the current state of a service resource associated with the request.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>This exception occurs when there is an internal failure in the Amazon Connect service.</p>
     InternalServerException(crate::types::error::InternalServerException),

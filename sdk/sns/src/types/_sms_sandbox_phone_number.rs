@@ -3,7 +3,7 @@
 /// <p>A verified or pending destination phone number in the SMS sandbox.</p>
 /// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SmsSandboxPhoneNumber {
     /// <p>The destination phone number.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
@@ -20,6 +20,14 @@ impl SmsSandboxPhoneNumber {
         self.status.as_ref()
     }
 }
+impl ::std::fmt::Debug for SmsSandboxPhoneNumber {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SmsSandboxPhoneNumber");
+        formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.finish()
+    }
+}
 impl SmsSandboxPhoneNumber {
     /// Creates a new builder-style object to manufacture [`SmsSandboxPhoneNumber`](crate::types::SmsSandboxPhoneNumber).
     pub fn builder() -> crate::types::builders::SmsSandboxPhoneNumberBuilder {
@@ -29,7 +37,7 @@ impl SmsSandboxPhoneNumber {
 
 /// A builder for [`SmsSandboxPhoneNumber`](crate::types::SmsSandboxPhoneNumber).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SmsSandboxPhoneNumberBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::SmsSandboxPhoneNumberVerificationStatus>,
@@ -69,5 +77,13 @@ impl SmsSandboxPhoneNumberBuilder {
             phone_number: self.phone_number,
             status: self.status,
         }
+    }
+}
+impl ::std::fmt::Debug for SmsSandboxPhoneNumberBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SmsSandboxPhoneNumberBuilder");
+        formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.finish()
     }
 }

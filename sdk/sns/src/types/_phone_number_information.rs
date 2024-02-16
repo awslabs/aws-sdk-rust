@@ -2,7 +2,7 @@
 
 /// <p>A list of phone numbers and their metadata.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PhoneNumberInformation {
     /// <p>The date and time when the phone number was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -45,6 +45,18 @@ impl PhoneNumberInformation {
         self.number_capabilities.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for PhoneNumberInformation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PhoneNumberInformation");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("iso2_country_code", &self.iso2_country_code);
+        formatter.field("route_type", &self.route_type);
+        formatter.field("number_capabilities", &self.number_capabilities);
+        formatter.finish()
+    }
+}
 impl PhoneNumberInformation {
     /// Creates a new builder-style object to manufacture [`PhoneNumberInformation`](crate::types::PhoneNumberInformation).
     pub fn builder() -> crate::types::builders::PhoneNumberInformationBuilder {
@@ -54,7 +66,7 @@ impl PhoneNumberInformation {
 
 /// A builder for [`PhoneNumberInformation`](crate::types::PhoneNumberInformation).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PhoneNumberInformationBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
@@ -164,5 +176,17 @@ impl PhoneNumberInformationBuilder {
             route_type: self.route_type,
             number_capabilities: self.number_capabilities,
         }
+    }
+}
+impl ::std::fmt::Debug for PhoneNumberInformationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PhoneNumberInformationBuilder");
+        formatter.field("created_at", &self.created_at);
+        formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("iso2_country_code", &self.iso2_country_code);
+        formatter.field("route_type", &self.route_type);
+        formatter.field("number_capabilities", &self.number_capabilities);
+        formatter.finish()
     }
 }

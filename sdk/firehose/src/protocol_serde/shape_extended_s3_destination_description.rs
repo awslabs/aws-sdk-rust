@@ -89,6 +89,20 @@ where
                                 crate::protocol_serde::shape_dynamic_partitioning_configuration::de_dynamic_partitioning_configuration(tokens)?,
                             );
                         }
+                        "FileExtension" => {
+                            builder = builder.set_file_extension(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "CustomTimeZone" => {
+                            builder = builder.set_custom_time_zone(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
