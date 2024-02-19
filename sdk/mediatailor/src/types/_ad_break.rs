@@ -83,6 +83,7 @@ impl AdBreakBuilder {
         &self.message_type
     }
     /// <p>How long (in milliseconds) after the beginning of the program that an ad starts. This value must fall within 100ms of a segment boundary, otherwise the ad break will be skipped.</p>
+    /// This field is required.
     pub fn offset_millis(mut self, input: i64) -> Self {
         self.offset_millis = ::std::option::Option::Some(input);
         self

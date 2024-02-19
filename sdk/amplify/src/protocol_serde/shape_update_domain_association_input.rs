@@ -15,20 +15,26 @@ pub fn ser_update_domain_association_input_input(
     if let Some(var_4) = &input.auto_sub_domain_iam_role {
         object.key("autoSubDomainIAMRole").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.enable_auto_sub_domain {
-        object.key("enableAutoSubDomain").boolean(*var_5);
+    if let Some(var_5) = &input.certificate_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("certificateSettings").start_object();
+        crate::protocol_serde::shape_certificate_settings::ser_certificate_settings(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.sub_domain_settings {
-        let mut array_7 = object.key("subDomainSettings").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.enable_auto_sub_domain {
+        object.key("enableAutoSubDomain").boolean(*var_7);
+    }
+    if let Some(var_8) = &input.sub_domain_settings {
+        let mut array_9 = object.key("subDomainSettings").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_sub_domain_setting::ser_sub_domain_setting(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_sub_domain_setting::ser_sub_domain_setting(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
     Ok(())
 }

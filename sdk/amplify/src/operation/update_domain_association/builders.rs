@@ -200,4 +200,18 @@ impl UpdateDomainAssociationFluentBuilder {
     pub fn get_auto_sub_domain_iam_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_auto_sub_domain_iam_role()
     }
+    /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+    pub fn certificate_settings(mut self, input: crate::types::CertificateSettings) -> Self {
+        self.inner = self.inner.certificate_settings(input);
+        self
+    }
+    /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+    pub fn set_certificate_settings(mut self, input: ::std::option::Option<crate::types::CertificateSettings>) -> Self {
+        self.inner = self.inner.set_certificate_settings(input);
+        self
+    }
+    /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+    pub fn get_certificate_settings(&self) -> &::std::option::Option<crate::types::CertificateSettings> {
+        self.inner.get_certificate_settings()
+    }
 }

@@ -14,6 +14,8 @@
 /// <li>
 /// <p>Asia Pacific (Melbourne)</p></li>
 /// <li>
+/// <p>Canada West (Calgary)</p></li>
+/// <li>
 /// <p>Europe (Spain)</p></li>
 /// <li>
 /// <p>Europe (Zurich)</p></li>

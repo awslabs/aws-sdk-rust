@@ -6,7 +6,7 @@ pub fn ser_ad_break(
     if let Some(var_1) = &input.message_type {
         object.key("MessageType").string(var_1.as_str());
     }
-    if input.offset_millis != 0 {
+    {
         object.key("OffsetMillis").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.offset_millis).into()),
@@ -99,7 +99,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::ad_break_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

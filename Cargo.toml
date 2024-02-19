@@ -1,10 +1,10 @@
 [workspace]
 exclude = [
-    "examples/lambda",
-    "examples/test-utils",
     "examples/cross_service",
-    "examples/webassembly",
     "examples/examples",
+    "examples/lambda",
+    "examples/webassembly",
+    "examples/test-utils",
     "tests/no-default-features",
     "tests/webassembly"
 ]
@@ -79,6 +79,7 @@ members = [
     "sdk/billingconductor",
     "sdk/braket",
     "sdk/budgets",
+    "sdk/chatbot",
     "sdk/chime",
     "sdk/chimesdkidentity",
     "sdk/chimesdkmediapipelines",

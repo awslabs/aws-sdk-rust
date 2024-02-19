@@ -16,6 +16,8 @@ pub struct UpdateDomainAssociationInput {
     pub auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
     pub auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
+    /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+    pub certificate_settings: ::std::option::Option<crate::types::CertificateSettings>,
 }
 impl UpdateDomainAssociationInput {
     /// <p>The unique ID for an Amplify app.</p>
@@ -46,6 +48,10 @@ impl UpdateDomainAssociationInput {
     pub fn auto_sub_domain_iam_role(&self) -> ::std::option::Option<&str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
+    /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+    pub fn certificate_settings(&self) -> ::std::option::Option<&crate::types::CertificateSettings> {
+        self.certificate_settings.as_ref()
+    }
 }
 impl UpdateDomainAssociationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainAssociationInput`](crate::operation::update_domain_association::UpdateDomainAssociationInput).
@@ -64,6 +70,7 @@ pub struct UpdateDomainAssociationInputBuilder {
     pub(crate) sub_domain_settings: ::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>>,
     pub(crate) auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_settings: ::std::option::Option<crate::types::CertificateSettings>,
 }
 impl UpdateDomainAssociationInputBuilder {
     /// <p>The unique ID for an Amplify app.</p>
@@ -164,6 +171,20 @@ impl UpdateDomainAssociationInputBuilder {
     pub fn get_auto_sub_domain_iam_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_sub_domain_iam_role
     }
+    /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+    pub fn certificate_settings(mut self, input: crate::types::CertificateSettings) -> Self {
+        self.certificate_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+    pub fn set_certificate_settings(mut self, input: ::std::option::Option<crate::types::CertificateSettings>) -> Self {
+        self.certificate_settings = input;
+        self
+    }
+    /// <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+    pub fn get_certificate_settings(&self) -> &::std::option::Option<crate::types::CertificateSettings> {
+        &self.certificate_settings
+    }
     /// Consumes the builder and constructs a [`UpdateDomainAssociationInput`](crate::operation::update_domain_association::UpdateDomainAssociationInput).
     pub fn build(
         self,
@@ -178,6 +199,7 @@ impl UpdateDomainAssociationInputBuilder {
             sub_domain_settings: self.sub_domain_settings,
             auto_sub_domain_creation_patterns: self.auto_sub_domain_creation_patterns,
             auto_sub_domain_iam_role: self.auto_sub_domain_iam_role,
+            certificate_settings: self.certificate_settings,
         })
     }
 }

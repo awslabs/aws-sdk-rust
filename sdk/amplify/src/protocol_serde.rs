@@ -165,6 +165,8 @@ pub(crate) mod shape_branch;
 
 pub(crate) mod shape_branches;
 
+pub(crate) mod shape_certificate_settings;
+
 pub(crate) mod shape_custom_rule;
 
 pub(crate) mod shape_domain_association;
@@ -194,6 +196,8 @@ pub(crate) mod shape_associated_resources;
 pub(crate) mod shape_auto_branch_creation_patterns;
 
 pub(crate) mod shape_auto_sub_domain_creation_patterns;
+
+pub(crate) mod shape_certificate;
 
 pub(crate) mod shape_custom_domains;
 

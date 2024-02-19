@@ -31,6 +31,8 @@ pub struct RecordingGroup {
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
     /// <li>
+    /// <p>Canada West (Calgary)</p></li>
+    /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
     /// <p>Europe (Zurich)</p></li>
@@ -40,7 +42,7 @@ pub struct RecordingGroup {
     /// <p>Middle East (UAE)</p></li>
     /// </ul><important>
     /// <p><b>Aurora global clusters are recorded in all enabled Regions</b></p>
-    /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to <code>true</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
+    /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is set<code>false</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
     /// <p>If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the following recording strategies:</p>
     /// <ol>
     /// <li>
@@ -49,7 +51,13 @@ pub struct RecordingGroup {
     /// <p><b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).</p></li>
     /// </ol>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.</p>
+    /// </important> <important>
+    /// <p><b>includeGlobalResourceTypes and the exclusion recording strategy</b></p>
+    /// <p>The <code>includeGlobalResourceTypes</code> field has no impact on the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy. This means that the global IAM resource types (IAM users, groups, roles, and customer managed policies) will not be automatically added as exclusions for <code>exclusionByResourceTypes</code> when <code>includeGlobalResourceTypes</code> is set to <code>false</code>.</p>
+    /// <p>The <code>includeGlobalResourceTypes</code> field should only be used to modify the <code>AllSupported</code> field, as the default for the <code>AllSupported</code> field is to record configuration changes for all supported resource types excluding the global IAM resource types. To include the global IAM resource types when <code>AllSupported</code> is set to <code>true</code>, make sure to set <code>includeGlobalResourceTypes</code> to <code>true</code>.</p>
+    /// <p>To exclude the global IAM resource types for the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, you need to manually add them to the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.</p>
     /// </important> <note>
+    /// <p><b>Required and optional fields</b></p>
     /// <p>Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.</p>
     /// </note> <note>
     /// <p><b>Overriding fields</b></p>
@@ -100,6 +108,8 @@ pub struct RecordingGroup {
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
     /// <li>
+    /// <p>Canada West (Calgary)</p></li>
+    /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
     /// <p>Europe (Zurich)</p></li>
@@ -128,6 +138,8 @@ impl RecordingGroup {
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
     /// <li>
+    /// <p>Canada West (Calgary)</p></li>
+    /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
     /// <p>Europe (Zurich)</p></li>
@@ -137,7 +149,7 @@ impl RecordingGroup {
     /// <p>Middle East (UAE)</p></li>
     /// </ul><important>
     /// <p><b>Aurora global clusters are recorded in all enabled Regions</b></p>
-    /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to <code>true</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
+    /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is set<code>false</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
     /// <p>If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the following recording strategies:</p>
     /// <ol>
     /// <li>
@@ -146,7 +158,13 @@ impl RecordingGroup {
     /// <p><b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).</p></li>
     /// </ol>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.</p>
+    /// </important> <important>
+    /// <p><b>includeGlobalResourceTypes and the exclusion recording strategy</b></p>
+    /// <p>The <code>includeGlobalResourceTypes</code> field has no impact on the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy. This means that the global IAM resource types (IAM users, groups, roles, and customer managed policies) will not be automatically added as exclusions for <code>exclusionByResourceTypes</code> when <code>includeGlobalResourceTypes</code> is set to <code>false</code>.</p>
+    /// <p>The <code>includeGlobalResourceTypes</code> field should only be used to modify the <code>AllSupported</code> field, as the default for the <code>AllSupported</code> field is to record configuration changes for all supported resource types excluding the global IAM resource types. To include the global IAM resource types when <code>AllSupported</code> is set to <code>true</code>, make sure to set <code>includeGlobalResourceTypes</code> to <code>true</code>.</p>
+    /// <p>To exclude the global IAM resource types for the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, you need to manually add them to the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.</p>
     /// </important> <note>
+    /// <p><b>Required and optional fields</b></p>
     /// <p>Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.</p>
     /// </note> <note>
     /// <p><b>Overriding fields</b></p>
@@ -204,6 +222,8 @@ impl RecordingGroup {
     /// <p>Asia Pacific (Hyderabad)</p></li>
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
+    /// <li>
+    /// <p>Canada West (Calgary)</p></li>
     /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
@@ -272,6 +292,8 @@ impl RecordingGroupBuilder {
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
     /// <li>
+    /// <p>Canada West (Calgary)</p></li>
+    /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
     /// <p>Europe (Zurich)</p></li>
@@ -281,7 +303,7 @@ impl RecordingGroupBuilder {
     /// <p>Middle East (UAE)</p></li>
     /// </ul><important>
     /// <p><b>Aurora global clusters are recorded in all enabled Regions</b></p>
-    /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to <code>true</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
+    /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is set<code>false</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
     /// <p>If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the following recording strategies:</p>
     /// <ol>
     /// <li>
@@ -290,7 +312,13 @@ impl RecordingGroupBuilder {
     /// <p><b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).</p></li>
     /// </ol>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.</p>
+    /// </important> <important>
+    /// <p><b>includeGlobalResourceTypes and the exclusion recording strategy</b></p>
+    /// <p>The <code>includeGlobalResourceTypes</code> field has no impact on the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy. This means that the global IAM resource types (IAM users, groups, roles, and customer managed policies) will not be automatically added as exclusions for <code>exclusionByResourceTypes</code> when <code>includeGlobalResourceTypes</code> is set to <code>false</code>.</p>
+    /// <p>The <code>includeGlobalResourceTypes</code> field should only be used to modify the <code>AllSupported</code> field, as the default for the <code>AllSupported</code> field is to record configuration changes for all supported resource types excluding the global IAM resource types. To include the global IAM resource types when <code>AllSupported</code> is set to <code>true</code>, make sure to set <code>includeGlobalResourceTypes</code> to <code>true</code>.</p>
+    /// <p>To exclude the global IAM resource types for the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, you need to manually add them to the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.</p>
     /// </important> <note>
+    /// <p><b>Required and optional fields</b></p>
     /// <p>Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.</p>
     /// </note> <note>
     /// <p><b>Overriding fields</b></p>
@@ -308,6 +336,8 @@ impl RecordingGroupBuilder {
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
     /// <li>
+    /// <p>Canada West (Calgary)</p></li>
+    /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
     /// <p>Europe (Zurich)</p></li>
@@ -317,7 +347,7 @@ impl RecordingGroupBuilder {
     /// <p>Middle East (UAE)</p></li>
     /// </ul><important>
     /// <p><b>Aurora global clusters are recorded in all enabled Regions</b></p>
-    /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to <code>true</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
+    /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is set<code>false</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
     /// <p>If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the following recording strategies:</p>
     /// <ol>
     /// <li>
@@ -326,7 +356,13 @@ impl RecordingGroupBuilder {
     /// <p><b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).</p></li>
     /// </ol>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.</p>
+    /// </important> <important>
+    /// <p><b>includeGlobalResourceTypes and the exclusion recording strategy</b></p>
+    /// <p>The <code>includeGlobalResourceTypes</code> field has no impact on the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy. This means that the global IAM resource types (IAM users, groups, roles, and customer managed policies) will not be automatically added as exclusions for <code>exclusionByResourceTypes</code> when <code>includeGlobalResourceTypes</code> is set to <code>false</code>.</p>
+    /// <p>The <code>includeGlobalResourceTypes</code> field should only be used to modify the <code>AllSupported</code> field, as the default for the <code>AllSupported</code> field is to record configuration changes for all supported resource types excluding the global IAM resource types. To include the global IAM resource types when <code>AllSupported</code> is set to <code>true</code>, make sure to set <code>includeGlobalResourceTypes</code> to <code>true</code>.</p>
+    /// <p>To exclude the global IAM resource types for the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, you need to manually add them to the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.</p>
     /// </important> <note>
+    /// <p><b>Required and optional fields</b></p>
     /// <p>Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.</p>
     /// </note> <note>
     /// <p><b>Overriding fields</b></p>
@@ -344,6 +380,8 @@ impl RecordingGroupBuilder {
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
     /// <li>
+    /// <p>Canada West (Calgary)</p></li>
+    /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
     /// <p>Europe (Zurich)</p></li>
@@ -353,7 +391,7 @@ impl RecordingGroupBuilder {
     /// <p>Middle East (UAE)</p></li>
     /// </ul><important>
     /// <p><b>Aurora global clusters are recorded in all enabled Regions</b></p>
-    /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is not set to <code>true</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
+    /// <p>The <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all supported Config Regions where the configuration recorder is enabled, even if <code>includeGlobalResourceTypes</code> is set<code>false</code>. The <code>includeGlobalResourceTypes</code> option is a bundle which only applies to IAM users, groups, roles, and customer managed policies.</p>
     /// <p>If you do not want to record <code>AWS::RDS::GlobalCluster</code> in all enabled Regions, use one of the following recording strategies:</p>
     /// <ol>
     /// <li>
@@ -362,7 +400,13 @@ impl RecordingGroupBuilder {
     /// <p><b>Record specific resource types</b> (<code>INCLUSION_BY_RESOURCE_TYPES</code>).</p></li>
     /// </ol>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Selecting Which Resources are Recorded</a> in the <i>Config developer guide</i>.</p>
+    /// </important> <important>
+    /// <p><b>includeGlobalResourceTypes and the exclusion recording strategy</b></p>
+    /// <p>The <code>includeGlobalResourceTypes</code> field has no impact on the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy. This means that the global IAM resource types (IAM users, groups, roles, and customer managed policies) will not be automatically added as exclusions for <code>exclusionByResourceTypes</code> when <code>includeGlobalResourceTypes</code> is set to <code>false</code>.</p>
+    /// <p>The <code>includeGlobalResourceTypes</code> field should only be used to modify the <code>AllSupported</code> field, as the default for the <code>AllSupported</code> field is to record configuration changes for all supported resource types excluding the global IAM resource types. To include the global IAM resource types when <code>AllSupported</code> is set to <code>true</code>, make sure to set <code>includeGlobalResourceTypes</code> to <code>true</code>.</p>
+    /// <p>To exclude the global IAM resource types for the <code>EXCLUSION_BY_RESOURCE_TYPES</code> recording strategy, you need to manually add them to the <code>resourceTypes</code> field of <code>exclusionByResourceTypes</code>.</p>
     /// </important> <note>
+    /// <p><b>Required and optional fields</b></p>
     /// <p>Before you set this field to <code>true</code>, set the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>. Optionally, you can set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>ALL_SUPPORTED_RESOURCE_TYPES</code>.</p>
     /// </note> <note>
     /// <p><b>Overriding fields</b></p>
@@ -467,6 +511,8 @@ impl RecordingGroupBuilder {
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
     /// <li>
+    /// <p>Canada West (Calgary)</p></li>
+    /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
     /// <p>Europe (Zurich)</p></li>
@@ -508,6 +554,8 @@ impl RecordingGroupBuilder {
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
     /// <li>
+    /// <p>Canada West (Calgary)</p></li>
+    /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
     /// <p>Europe (Zurich)</p></li>
@@ -548,6 +596,8 @@ impl RecordingGroupBuilder {
     /// <p>Asia Pacific (Hyderabad)</p></li>
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
+    /// <li>
+    /// <p>Canada West (Calgary)</p></li>
     /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>

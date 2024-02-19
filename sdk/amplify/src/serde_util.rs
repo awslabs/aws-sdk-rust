@@ -599,6 +599,13 @@ pub(crate) fn artifact_correct_errors(mut builder: crate::types::builders::Artif
     builder
 }
 
+pub(crate) fn certificate_correct_errors(mut builder: crate::types::builders::CertificateBuilder) -> crate::types::builders::CertificateBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::CertificateType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn custom_rule_correct_errors(mut builder: crate::types::builders::CustomRuleBuilder) -> crate::types::builders::CustomRuleBuilder {
     if builder.source.is_none() {
         builder.source = Some(Default::default())

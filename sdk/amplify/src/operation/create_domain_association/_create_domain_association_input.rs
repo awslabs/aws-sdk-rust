@@ -16,6 +16,8 @@ pub struct CreateDomainAssociationInput {
     pub auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains.</p>
     pub auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
+    /// <p>The type of SSL/TLS certificate to use for your custom domain. If you don't specify a certificate type, Amplify uses the default certificate that it provisions and manages for you.</p>
+    pub certificate_settings: ::std::option::Option<crate::types::CertificateSettings>,
 }
 impl CreateDomainAssociationInput {
     /// <p>The unique ID for an Amplify app.</p>
@@ -46,6 +48,10 @@ impl CreateDomainAssociationInput {
     pub fn auto_sub_domain_iam_role(&self) -> ::std::option::Option<&str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
+    /// <p>The type of SSL/TLS certificate to use for your custom domain. If you don't specify a certificate type, Amplify uses the default certificate that it provisions and manages for you.</p>
+    pub fn certificate_settings(&self) -> ::std::option::Option<&crate::types::CertificateSettings> {
+        self.certificate_settings.as_ref()
+    }
 }
 impl CreateDomainAssociationInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainAssociationInput`](crate::operation::create_domain_association::CreateDomainAssociationInput).
@@ -64,6 +70,7 @@ pub struct CreateDomainAssociationInputBuilder {
     pub(crate) sub_domain_settings: ::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>>,
     pub(crate) auto_sub_domain_creation_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_settings: ::std::option::Option<crate::types::CertificateSettings>,
 }
 impl CreateDomainAssociationInputBuilder {
     /// <p>The unique ID for an Amplify app.</p>
@@ -164,6 +171,20 @@ impl CreateDomainAssociationInputBuilder {
     pub fn get_auto_sub_domain_iam_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_sub_domain_iam_role
     }
+    /// <p>The type of SSL/TLS certificate to use for your custom domain. If you don't specify a certificate type, Amplify uses the default certificate that it provisions and manages for you.</p>
+    pub fn certificate_settings(mut self, input: crate::types::CertificateSettings) -> Self {
+        self.certificate_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of SSL/TLS certificate to use for your custom domain. If you don't specify a certificate type, Amplify uses the default certificate that it provisions and manages for you.</p>
+    pub fn set_certificate_settings(mut self, input: ::std::option::Option<crate::types::CertificateSettings>) -> Self {
+        self.certificate_settings = input;
+        self
+    }
+    /// <p>The type of SSL/TLS certificate to use for your custom domain. If you don't specify a certificate type, Amplify uses the default certificate that it provisions and manages for you.</p>
+    pub fn get_certificate_settings(&self) -> &::std::option::Option<crate::types::CertificateSettings> {
+        &self.certificate_settings
+    }
     /// Consumes the builder and constructs a [`CreateDomainAssociationInput`](crate::operation::create_domain_association::CreateDomainAssociationInput).
     pub fn build(
         self,
@@ -178,6 +199,7 @@ impl CreateDomainAssociationInputBuilder {
             sub_domain_settings: self.sub_domain_settings,
             auto_sub_domain_creation_patterns: self.auto_sub_domain_creation_patterns,
             auto_sub_domain_iam_role: self.auto_sub_domain_iam_role,
+            certificate_settings: self.certificate_settings,
         })
     }
 }

@@ -25,7 +25,7 @@ impl DescribeOrganizationConfigRulesInputBuilder {
 /// <p>Returns a list of organization Config rules.</p><note>
 /// <p>When you specify the limit and the next token, you receive a paginated response.</p>
 /// <p>Limit and next token are not applicable if you specify organization Config rule names. It is only applicable, when you request all the organization Config rules.</p>
-/// <p><i>For accounts within an organzation</i></p>
+/// <p><i>For accounts within an organization</i></p>
 /// <p>If you deploy an organizational rule or conformance pack in an organization administrator account, and then establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated administrator account, you won't be able to see the organizational rule or conformance pack in the organization administrator account from the delegated administrator account or see the organizational rule or conformance pack in the delegated administrator account from organization administrator account. The <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code> APIs can only see and interact with the organization-related resource that were deployed from within the account calling those APIs.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

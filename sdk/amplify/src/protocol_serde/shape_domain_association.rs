@@ -50,6 +50,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "updateStatus" => {
+                            builder = builder.set_update_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::UpdateStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "statusReason" => {
                             builder = builder.set_status_reason(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -66,6 +73,9 @@ where
                         }
                         "subDomains" => {
                             builder = builder.set_sub_domains(crate::protocol_serde::shape_sub_domains::de_sub_domains(tokens)?);
+                        }
+                        "certificate" => {
+                            builder = builder.set_certificate(crate::protocol_serde::shape_certificate::de_certificate(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

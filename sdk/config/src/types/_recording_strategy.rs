@@ -32,6 +32,8 @@ pub struct RecordingStrategy {
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
     /// <li>
+    /// <p>Canada West (Calgary)</p></li>
+    /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
     /// <p>Europe (Zurich)</p></li>
@@ -71,6 +73,8 @@ impl RecordingStrategy {
     /// <p>Asia Pacific (Hyderabad)</p></li>
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
+    /// <li>
+    /// <p>Canada West (Calgary)</p></li>
     /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
@@ -127,6 +131,8 @@ impl RecordingStrategyBuilder {
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
     /// <li>
+    /// <p>Canada West (Calgary)</p></li>
+    /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
     /// <p>Europe (Zurich)</p></li>
@@ -168,6 +174,8 @@ impl RecordingStrategyBuilder {
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
     /// <li>
+    /// <p>Canada West (Calgary)</p></li>
+    /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>
     /// <p>Europe (Zurich)</p></li>
@@ -208,6 +216,8 @@ impl RecordingStrategyBuilder {
     /// <p>Asia Pacific (Hyderabad)</p></li>
     /// <li>
     /// <p>Asia Pacific (Melbourne)</p></li>
+    /// <li>
+    /// <p>Canada West (Calgary)</p></li>
     /// <li>
     /// <p>Europe (Spain)</p></li>
     /// <li>

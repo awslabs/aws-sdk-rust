@@ -20,7 +20,7 @@ pub struct CustomRule {
     /// 301
     /// </dt>
     /// <dd>
-    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL.</p>
+    /// <p>Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to the target URL.</p>
     /// </dd>
     /// <dt>
     /// 302
@@ -68,7 +68,7 @@ impl CustomRule {
     /// 301
     /// </dt>
     /// <dd>
-    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL.</p>
+    /// <p>Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to the target URL.</p>
     /// </dd>
     /// <dt>
     /// 302
@@ -156,7 +156,7 @@ impl CustomRuleBuilder {
     /// 301
     /// </dt>
     /// <dd>
-    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL.</p>
+    /// <p>Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to the target URL.</p>
     /// </dd>
     /// <dt>
     /// 302
@@ -193,7 +193,7 @@ impl CustomRuleBuilder {
     /// 301
     /// </dt>
     /// <dd>
-    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL.</p>
+    /// <p>Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to the target URL.</p>
     /// </dd>
     /// <dt>
     /// 302
@@ -230,7 +230,7 @@ impl CustomRuleBuilder {
     /// 301
     /// </dt>
     /// <dd>
-    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL.</p>
+    /// <p>Represents a 301 (moved permanently) redirect rule. This and all future requests should be directed to the target URL.</p>
     /// </dd>
     /// <dt>
     /// 302

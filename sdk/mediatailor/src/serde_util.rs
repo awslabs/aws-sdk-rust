@@ -72,6 +72,13 @@ pub(crate) fn time_shift_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn ad_break_correct_errors(mut builder: crate::types::builders::AdBreakBuilder) -> crate::types::builders::AdBreakBuilder {
+    if builder.offset_millis.is_none() {
+        builder.offset_millis = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ad_break_opportunity_correct_errors(
     mut builder: crate::types::builders::AdBreakOpportunityBuilder,
 ) -> crate::types::builders::AdBreakOpportunityBuilder {

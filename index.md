@@ -381,3 +381,4 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Service Quotas | [aws-sdk-servicequotas](https://crates.io/crates/aws-sdk-servicequotas) ([docs](https://docs.rs/aws-sdk-servicequotas)) |
 | Synthetics | [aws-sdk-synthetics](https://crates.io/crates/aws-sdk-synthetics) ([docs](https://docs.rs/aws-sdk-synthetics)) |
 | TrustedAdvisor Public API | [aws-sdk-trustedadvisor](https://crates.io/crates/aws-sdk-trustedadvisor) ([docs](https://docs.rs/aws-sdk-trustedadvisor)) |
+| chatbot | [aws-sdk-chatbot](https://crates.io/crates/aws-sdk-chatbot) ([docs](https://docs.rs/aws-sdk-chatbot)) |

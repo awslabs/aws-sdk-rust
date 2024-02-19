@@ -3,9 +3,13 @@ pub use crate::types::_webhook::WebhookBuilder;
 
 pub use crate::types::_domain_association::DomainAssociationBuilder;
 
+pub use crate::types::_certificate::CertificateBuilder;
+
 pub use crate::types::_sub_domain::SubDomainBuilder;
 
 pub use crate::types::_sub_domain_setting::SubDomainSettingBuilder;
+
+pub use crate::types::_certificate_settings::CertificateSettingsBuilder;
 
 pub use crate::types::_branch::BranchBuilder;
 

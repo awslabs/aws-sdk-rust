@@ -3,11 +3,19 @@ pub use crate::types::_webhook::Webhook;
 
 pub use crate::types::_domain_association::DomainAssociation;
 
+pub use crate::types::_certificate::Certificate;
+
+pub use crate::types::_certificate_type::CertificateType;
+
 pub use crate::types::_sub_domain::SubDomain;
 
 pub use crate::types::_sub_domain_setting::SubDomainSetting;
 
+pub use crate::types::_update_status::UpdateStatus;
+
 pub use crate::types::_domain_status::DomainStatus;
+
+pub use crate::types::_certificate_settings::CertificateSettings;
 
 pub use crate::types::_branch::Branch;
 
@@ -53,6 +61,12 @@ mod _backend_environment;
 
 mod _branch;
 
+mod _certificate;
+
+mod _certificate_settings;
+
+mod _certificate_type;
+
 mod _custom_rule;
 
 mod _domain_association;
@@ -80,6 +94,8 @@ mod _step;
 mod _sub_domain;
 
 mod _sub_domain_setting;
+
+mod _update_status;
 
 mod _webhook;
 

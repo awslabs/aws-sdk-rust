@@ -13,8 +13,10 @@
 /// # let domainstatus = unimplemented!();
 /// match domainstatus {
 ///     DomainStatus::Available => { /* ... */ },
+///     DomainStatus::AwaitingAppCname => { /* ... */ },
 ///     DomainStatus::Creating => { /* ... */ },
 ///     DomainStatus::Failed => { /* ... */ },
+///     DomainStatus::ImportingCustomCertificate => { /* ... */ },
 ///     DomainStatus::InProgress => { /* ... */ },
 ///     DomainStatus::PendingDeployment => { /* ... */ },
 ///     DomainStatus::PendingVerification => { /* ... */ },
@@ -50,9 +52,13 @@ pub enum DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
+    AwaitingAppCname,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    ImportingCustomCertificate,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
@@ -71,8 +77,10 @@ impl ::std::convert::From<&str> for DomainStatus {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => DomainStatus::Available,
+            "AWAITING_APP_CNAME" => DomainStatus::AwaitingAppCname,
             "CREATING" => DomainStatus::Creating,
             "FAILED" => DomainStatus::Failed,
+            "IMPORTING_CUSTOM_CERTIFICATE" => DomainStatus::ImportingCustomCertificate,
             "IN_PROGRESS" => DomainStatus::InProgress,
             "PENDING_DEPLOYMENT" => DomainStatus::PendingDeployment,
             "PENDING_VERIFICATION" => DomainStatus::PendingVerification,
@@ -94,8 +102,10 @@ impl DomainStatus {
     pub fn as_str(&self) -> &str {
         match self {
             DomainStatus::Available => "AVAILABLE",
+            DomainStatus::AwaitingAppCname => "AWAITING_APP_CNAME",
             DomainStatus::Creating => "CREATING",
             DomainStatus::Failed => "FAILED",
+            DomainStatus::ImportingCustomCertificate => "IMPORTING_CUSTOM_CERTIFICATE",
             DomainStatus::InProgress => "IN_PROGRESS",
             DomainStatus::PendingDeployment => "PENDING_DEPLOYMENT",
             DomainStatus::PendingVerification => "PENDING_VERIFICATION",
@@ -108,8 +118,10 @@ impl DomainStatus {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
+            "AWAITING_APP_CNAME",
             "CREATING",
             "FAILED",
+            "IMPORTING_CUSTOM_CERTIFICATE",
             "IN_PROGRESS",
             "PENDING_DEPLOYMENT",
             "PENDING_VERIFICATION",
