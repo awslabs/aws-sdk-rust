@@ -1713,7 +1713,7 @@ February 13th, 2024
 ===================
 **Service Features:**
 - `aws-sdk-appsync` (1.16.0): Adds support for new options on GraphqlAPIs, Resolvers and  Data Sources for emitting Amazon CloudWatch metrics for enhanced monitoring of AppSync APIs.
-- `aws-sdk-cloudwatch` (1.15.0): This release enables PutMetricData API request payload compression by default.
+- `aws-sdk-cloudwatch` (1.15.0): This release add PutMetricData compression in the model, however, the Rust SDK does not yet support this behavior. This is tracked in https://github.com/awslabs/aws-sdk-rust/issues/1068
 - `aws-sdk-neptunegraph` (1.8.0): Adding a new option "parameters" for data plane api ExecuteQuery to support running parameterized query via SDK.
 - `aws-sdk-route53domains` (1.14.0): This release adds bill contact support for RegisterDomain, TransferDomain, UpdateDomainContact and GetDomainDetail API.
 
