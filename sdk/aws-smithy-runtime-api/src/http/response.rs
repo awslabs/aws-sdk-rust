@@ -5,8 +5,10 @@
 
 //! Http Response Types
 
+use crate::http::extensions::Extensions;
 use crate::http::{Headers, HttpError};
 use aws_smithy_types::body::SdkBody;
+#[allow(unused)]
 use http as http0;
 use std::fmt;
 
@@ -55,6 +57,13 @@ impl From<http0::StatusCode> for StatusCode {
     }
 }
 
+#[cfg(feature = "http-1x")]
+impl From<http1::StatusCode> for StatusCode {
+    fn from(value: http1::StatusCode) -> Self {
+        Self(value.as_u16())
+    }
+}
+
 impl From<StatusCode> for u16 {
     fn from(value: StatusCode) -> Self {
         value.0
@@ -73,7 +82,7 @@ pub struct Response<B = SdkBody> {
     status: StatusCode,
     headers: Headers,
     body: B,
-    extensions: http0::Extensions,
+    extensions: Extensions,
 }
 
 impl<B> Response<B> {
@@ -90,15 +99,26 @@ impl<B> Response<B> {
             )
             .body(self.body)
             .expect("known valid");
-        let mut headers = http0::HeaderMap::new();
-        headers.extend(
-            self.headers
-                .headers
-                .into_iter()
-                .map(|(k, v)| (k, v.into_http02x())),
-        );
-        *res.headers_mut() = headers;
-        *res.extensions_mut() = self.extensions;
+        *res.headers_mut() = self.headers.http0_headermap();
+        *res.extensions_mut() = self.extensions.try_into()?;
+        Ok(res)
+    }
+
+    /// Converts this response into an http 1.x response.
+    ///
+    /// Depending on the internal storage type, this operation may be free or it may have an internal
+    /// cost.
+    #[cfg(feature = "http-1x")]
+    pub fn try_into_http1x(self) -> Result<http1::Response<B>, HttpError> {
+        let mut res = http1::Response::builder()
+            .status(
+                http1::StatusCode::from_u16(self.status.into())
+                    .expect("validated upon construction"),
+            )
+            .body(self.body)
+            .expect("known valid");
+        *res.headers_mut() = self.headers.http1_headermap();
+        *res.extensions_mut() = self.extensions.try_into()?;
         Ok(res)
     }
 
@@ -175,37 +195,34 @@ impl<B> TryFrom<http0::Response<B>> for Response<B> {
     type Error = HttpError;
 
     fn try_from(value: http0::Response<B>) -> Result<Self, Self::Error> {
-        use crate::http::headers::HeaderValue;
-        use http0::HeaderMap;
-        if let Some(e) = value
-            .headers()
-            .values()
-            .filter_map(|value| std::str::from_utf8(value.as_bytes()).err())
-            .next()
-        {
-            Err(HttpError::header_was_not_a_string(e))
-        } else {
-            let (parts, body) = value.into_parts();
-            let mut string_safe_headers: HeaderMap<HeaderValue> = Default::default();
-            string_safe_headers.extend(
-                parts
-                    .headers
-                    .into_iter()
-                    .map(|(k, v)| (k, HeaderValue::from_http02x(v).expect("validated above"))),
-            );
-            Ok(Self {
-                status: StatusCode::try_from(parts.status.as_u16()).expect("validated by http 0.x"),
-                body,
-                extensions: parts.extensions,
-                headers: Headers {
-                    headers: string_safe_headers,
-                },
-            })
-        }
+        let (parts, body) = value.into_parts();
+        let headers = Headers::try_from(parts.headers)?;
+        Ok(Self {
+            status: StatusCode::try_from(parts.status.as_u16()).expect("validated by http 0.x"),
+            body,
+            extensions: parts.extensions.into(),
+            headers,
+        })
     }
 }
 
-#[cfg(all(test, feature = "http-02x"))]
+#[cfg(feature = "http-1x")]
+impl<B> TryFrom<http1::Response<B>> for Response<B> {
+    type Error = HttpError;
+
+    fn try_from(value: http1::Response<B>) -> Result<Self, Self::Error> {
+        let (parts, body) = value.into_parts();
+        let headers = Headers::try_from(parts.headers)?;
+        Ok(Self {
+            status: StatusCode::try_from(parts.status.as_u16()).expect("validated by http 1.x"),
+            body,
+            extensions: parts.extensions.into(),
+            headers,
+        })
+    }
+}
+
+#[cfg(all(test, feature = "http-02x", feature = "http-1x"))]
 mod test {
     use super::*;
     use aws_smithy_types::body::SdkBody;
@@ -229,13 +246,60 @@ mod test {
             .status(200)
             .body(SdkBody::from("hello"))
             .unwrap();
-        let mut req = super::Response::try_from(req).unwrap();
-        req.headers_mut().insert("a", "b");
-        assert_eq!("b", req.headers().get("a").unwrap());
-        req.headers_mut().append("a", "c");
-        assert_eq!("b", req.headers().get("a").unwrap());
-        let http0 = req.try_into_http02x().unwrap();
+        let mut rsp = super::Response::try_from(req).unwrap();
+        rsp.headers_mut().insert("a", "b");
+        assert_eq!("b", rsp.headers().get("a").unwrap());
+        rsp.headers_mut().append("a", "c");
+        assert_eq!("b", rsp.headers().get("a").unwrap());
+        let http0 = rsp.try_into_http02x().unwrap();
         assert_eq!(200, http0.status().as_u16());
+    }
+
+    macro_rules! resp_eq {
+        ($a: expr, $b: expr) => {{
+            assert_eq!($a.status(), $b.status(), "status code mismatch");
+            assert_eq!($a.headers(), $b.headers(), "header mismatch");
+            assert_eq!($a.body().bytes(), $b.body().bytes(), "data mismatch");
+            assert_eq!(
+                $a.extensions().len(),
+                $b.extensions().len(),
+                "extensions size mismatch"
+            );
+        }};
+    }
+
+    #[track_caller]
+    fn check_roundtrip(req: impl Fn() -> http0::Response<SdkBody>) {
+        let mut container = super::Response::try_from(req()).unwrap();
+        container.add_extension(5_u32);
+        let mut h1 = container
+            .try_into_http1x()
+            .expect("failed converting to http1x");
+        assert_eq!(h1.extensions().get::<u32>(), Some(&5));
+        h1.extensions_mut().remove::<u32>();
+
+        let mut container = super::Response::try_from(h1).expect("failed converting from http1x");
+        container.add_extension(5_u32);
+        let mut h0 = container
+            .try_into_http02x()
+            .expect("failed converting back to http0x");
+        assert_eq!(h0.extensions().get::<u32>(), Some(&5));
+        h0.extensions_mut().remove::<u32>();
+        resp_eq!(h0, req());
+    }
+
+    #[test]
+    fn valid_round_trips() {
+        let response = || {
+            http::Response::builder()
+                .status(200)
+                .header("k", "v")
+                .header("multi", "v1")
+                .header("multi", "v2")
+                .body(SdkBody::from("12345"))
+                .unwrap()
+        };
+        check_roundtrip(response);
     }
 
     #[test]
@@ -251,5 +315,47 @@ mod test {
             .try_insert("a\nb", "a\nb")
             .expect_err("invalid header");
         let _ = res.headers_mut().insert("a\nb", "a\nb");
+    }
+
+    #[test]
+    fn cant_cross_convert_with_extensions_h0_h1() {
+        let resp_h0 = || {
+            http::Response::builder()
+                .status(200)
+                .extension(5_u32)
+                .body(SdkBody::from("hello"))
+                .unwrap()
+        };
+
+        let _ = Response::try_from(resp_h0())
+            .unwrap()
+            .try_into_http1x()
+            .expect_err("cant copy extension");
+
+        let _ = Response::try_from(resp_h0())
+            .unwrap()
+            .try_into_http02x()
+            .expect("allowed to cross-copy");
+    }
+
+    #[test]
+    fn cant_cross_convert_with_extensions_h1_h0() {
+        let resp_h1 = || {
+            http1::Response::builder()
+                .status(200)
+                .extension(5_u32)
+                .body(SdkBody::from("hello"))
+                .unwrap()
+        };
+
+        let _ = Response::try_from(resp_h1())
+            .unwrap()
+            .try_into_http02x()
+            .expect_err("cant copy extension");
+
+        let _ = Response::try_from(resp_h1())
+            .unwrap()
+            .try_into_http1x()
+            .expect("allowed to cross-copy");
     }
 }

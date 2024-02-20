@@ -282,7 +282,7 @@ impl TestEnvironment {
             .await
         {
             Ok(()) => {}
-            Err(e) => panic!("{}", e),
+            Err(e) => panic!("{}", DisplayErrorContext(e.as_ref())),
         }
         let contents = rx.contents();
         let leaking_lines = self.lines_with_secrets(&contents);

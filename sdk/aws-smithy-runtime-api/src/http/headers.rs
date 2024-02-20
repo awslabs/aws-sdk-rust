@@ -49,6 +49,29 @@ impl Headers {
         Self::default()
     }
 
+    #[cfg(feature = "http-1x")]
+    pub(crate) fn http1_headermap(self) -> http1::HeaderMap {
+        let mut headers = http1::HeaderMap::new();
+        headers.reserve(self.headers.len());
+        headers.extend(self.headers.into_iter().map(|(k, v)| {
+            (
+                k.map(|n| {
+                    http1::HeaderName::from_bytes(n.as_str().as_bytes()).expect("proven valid")
+                }),
+                v.into_http1x(),
+            )
+        }));
+        headers
+    }
+
+    #[cfg(feature = "http-02x")]
+    pub(crate) fn http0_headermap(self) -> http0::HeaderMap {
+        let mut headers = http0::HeaderMap::new();
+        headers.reserve(self.headers.len());
+        headers.extend(self.headers.into_iter().map(|(k, v)| (k, v.into_http02x())));
+        headers
+    }
+
     /// Returns the value for a given key
     ///
     /// If multiple values are associated, the first value is returned
@@ -181,6 +204,34 @@ impl TryFrom<HeaderMap> for Headers {
     }
 }
 
+#[cfg(feature = "http-1x")]
+impl TryFrom<http1::HeaderMap> for Headers {
+    type Error = HttpError;
+
+    fn try_from(value: http1::HeaderMap) -> Result<Self, Self::Error> {
+        if let Some(e) = value
+            .values()
+            .filter_map(|value| std::str::from_utf8(value.as_bytes()).err())
+            .next()
+        {
+            Err(HttpError::header_was_not_a_string(e))
+        } else {
+            let mut string_safe_headers: http0::HeaderMap<HeaderValue> = Default::default();
+            string_safe_headers.extend(value.into_iter().map(|(k, v)| {
+                (
+                    k.map(|v| {
+                        http0::HeaderName::from_bytes(v.as_str().as_bytes()).expect("known valid")
+                    }),
+                    HeaderValue::from_http1x(v).expect("validated above"),
+                )
+            }));
+            Ok(Headers {
+                headers: string_safe_headers,
+            })
+        }
+    }
+}
+
 use sealed::AsHeaderComponent;
 
 mod sealed {
@@ -273,25 +324,57 @@ mod header_value {
     /// **Note**: Unlike `HeaderValue` in `http`, this only supports UTF-8 header values
     #[derive(Debug, Clone)]
     pub struct HeaderValue {
-        _private: http0::HeaderValue,
+        _private: Inner,
+    }
+
+    #[derive(Debug, Clone)]
+    enum Inner {
+        H0(http0::HeaderValue),
+        #[allow(dead_code)]
+        H1(http1::HeaderValue),
     }
 
     impl HeaderValue {
+        #[allow(dead_code)]
         pub(crate) fn from_http02x(value: http0::HeaderValue) -> Result<Self, Utf8Error> {
             let _ = std::str::from_utf8(value.as_bytes())?;
-            Ok(Self { _private: value })
+            Ok(Self {
+                _private: Inner::H0(value),
+            })
+        }
+
+        #[allow(dead_code)]
+        pub(crate) fn from_http1x(value: http1::HeaderValue) -> Result<Self, Utf8Error> {
+            let _ = std::str::from_utf8(value.as_bytes())?;
+            Ok(Self {
+                _private: Inner::H1(value),
+            })
         }
 
         #[allow(dead_code)]
         pub(crate) fn into_http02x(self) -> http0::HeaderValue {
-            self._private
+            match self._private {
+                Inner::H0(v) => v,
+                Inner::H1(v) => http0::HeaderValue::from_maybe_shared(v).expect("unreachable"),
+            }
+        }
+
+        #[allow(dead_code)]
+        pub(crate) fn into_http1x(self) -> http1::HeaderValue {
+            match self._private {
+                Inner::H1(v) => v,
+                Inner::H0(v) => http1::HeaderValue::from_maybe_shared(v).expect("unreachable"),
+            }
         }
     }
 
     impl AsRef<str> for HeaderValue {
         fn as_ref(&self) -> &str {
-            std::str::from_utf8(self._private.as_bytes())
-                .expect("unreachable—only strings may be stored")
+            let bytes = match &self._private {
+                Inner::H0(v) => v.as_bytes(),
+                Inner::H1(v) => v.as_bytes(),
+            };
+            std::str::from_utf8(bytes).expect("unreachable—only strings may be stored")
         }
     }
 

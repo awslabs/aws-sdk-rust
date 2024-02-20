@@ -135,3 +135,7 @@ features = ["env-filter"]
 package = "hyper"
 version = "0.14.27"
 features = ["client", "server", "tcp", "http1", "http2"]
+
+[dev-dependencies.http1]
+package = "http"
+version = "1"

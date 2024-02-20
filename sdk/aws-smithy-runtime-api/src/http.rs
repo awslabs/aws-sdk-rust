@@ -6,6 +6,7 @@
 //! HTTP request and response types
 
 mod error;
+mod extensions;
 mod headers;
 mod request;
 mod response;

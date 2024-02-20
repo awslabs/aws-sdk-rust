@@ -24,6 +24,11 @@ impl HttpError {
         HttpError(err.into())
     }
 
+    #[allow(dead_code)]
+    pub(super) fn invalid_extensions() -> Self {
+        Self("Extensions were provided during initialization. This prevents the request format from being converted.".into())
+    }
+
     pub(super) fn invalid_header_value(err: InvalidHeaderValue) -> Self {
         Self(err.into())
     }
