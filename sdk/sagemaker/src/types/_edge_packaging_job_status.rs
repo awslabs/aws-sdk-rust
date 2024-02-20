@@ -116,3 +116,16 @@ impl EdgePackagingJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for EdgePackagingJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EdgePackagingJobStatus::Completed => write!(f, "COMPLETED"),
+            EdgePackagingJobStatus::Failed => write!(f, "FAILED"),
+            EdgePackagingJobStatus::InProgress => write!(f, "INPROGRESS"),
+            EdgePackagingJobStatus::Starting => write!(f, "STARTING"),
+            EdgePackagingJobStatus::Stopped => write!(f, "STOPPED"),
+            EdgePackagingJobStatus::Stopping => write!(f, "STOPPING"),
+            EdgePackagingJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

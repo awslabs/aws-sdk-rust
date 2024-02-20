@@ -111,3 +111,15 @@ impl ScalarMeasureValueType {
         }
     }
 }
+impl ::std::fmt::Display for ScalarMeasureValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalarMeasureValueType::Bigint => write!(f, "BIGINT"),
+            ScalarMeasureValueType::Boolean => write!(f, "BOOLEAN"),
+            ScalarMeasureValueType::Double => write!(f, "DOUBLE"),
+            ScalarMeasureValueType::Timestamp => write!(f, "TIMESTAMP"),
+            ScalarMeasureValueType::Varchar => write!(f, "VARCHAR"),
+            ScalarMeasureValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

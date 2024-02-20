@@ -141,3 +141,19 @@ impl TieringOperationStatus {
         }
     }
 }
+impl ::std::fmt::Display for TieringOperationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TieringOperationStatus::ArchivalCompleted => write!(f, "archival-completed"),
+            TieringOperationStatus::ArchivalFailed => write!(f, "archival-failed"),
+            TieringOperationStatus::ArchivalInProgress => write!(f, "archival-in-progress"),
+            TieringOperationStatus::PermanentRestoreCompleted => write!(f, "permanent-restore-completed"),
+            TieringOperationStatus::PermanentRestoreFailed => write!(f, "permanent-restore-failed"),
+            TieringOperationStatus::PermanentRestoreInProgress => write!(f, "permanent-restore-in-progress"),
+            TieringOperationStatus::TemporaryRestoreCompleted => write!(f, "temporary-restore-completed"),
+            TieringOperationStatus::TemporaryRestoreFailed => write!(f, "temporary-restore-failed"),
+            TieringOperationStatus::TemporaryRestoreInProgress => write!(f, "temporary-restore-in-progress"),
+            TieringOperationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl DeliveryStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeliveryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeliveryStatus::AccessDenied => write!(f, "ACCESS_DENIED"),
+            DeliveryStatus::AccessDeniedSigningFile => write!(f, "ACCESS_DENIED_SIGNING_FILE"),
+            DeliveryStatus::Cancelled => write!(f, "CANCELLED"),
+            DeliveryStatus::Failed => write!(f, "FAILED"),
+            DeliveryStatus::FailedSigningFile => write!(f, "FAILED_SIGNING_FILE"),
+            DeliveryStatus::Pending => write!(f, "PENDING"),
+            DeliveryStatus::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
+            DeliveryStatus::Success => write!(f, "SUCCESS"),
+            DeliveryStatus::UnknownValue => write!(f, "UNKNOWN"),
+            DeliveryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

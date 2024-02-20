@@ -101,3 +101,13 @@ impl ApplicationRevisionSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationRevisionSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationRevisionSortBy::FirstUsedTime => write!(f, "firstUsedTime"),
+            ApplicationRevisionSortBy::LastUsedTime => write!(f, "lastUsedTime"),
+            ApplicationRevisionSortBy::RegisterTime => write!(f, "registerTime"),
+            ApplicationRevisionSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

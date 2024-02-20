@@ -117,3 +117,15 @@ impl ProductType {
         }
     }
 }
+impl ::std::fmt::Display for ProductType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProductType::CloudFormationTemplate => write!(f, "CLOUD_FORMATION_TEMPLATE"),
+            ProductType::External => write!(f, "EXTERNAL"),
+            ProductType::Marketplace => write!(f, "MARKETPLACE"),
+            ProductType::TerraformCloud => write!(f, "TERRAFORM_CLOUD"),
+            ProductType::TerraformOpenSource => write!(f, "TERRAFORM_OPEN_SOURCE"),
+            ProductType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

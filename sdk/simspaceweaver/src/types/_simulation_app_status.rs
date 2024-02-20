@@ -116,3 +116,16 @@ impl SimulationAppStatus {
         }
     }
 }
+impl ::std::fmt::Display for SimulationAppStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SimulationAppStatus::Error => write!(f, "ERROR"),
+            SimulationAppStatus::Started => write!(f, "STARTED"),
+            SimulationAppStatus::Starting => write!(f, "STARTING"),
+            SimulationAppStatus::Stopped => write!(f, "STOPPED"),
+            SimulationAppStatus::Stopping => write!(f, "STOPPING"),
+            SimulationAppStatus::UnknownValue => write!(f, "UNKNOWN"),
+            SimulationAppStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

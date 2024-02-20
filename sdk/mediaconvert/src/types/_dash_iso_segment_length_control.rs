@@ -96,3 +96,12 @@ impl DashIsoSegmentLengthControl {
         }
     }
 }
+impl ::std::fmt::Display for DashIsoSegmentLengthControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashIsoSegmentLengthControl::Exact => write!(f, "EXACT"),
+            DashIsoSegmentLengthControl::GopMultiple => write!(f, "GOP_MULTIPLE"),
+            DashIsoSegmentLengthControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

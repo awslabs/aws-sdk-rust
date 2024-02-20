@@ -123,3 +123,16 @@ impl ClientCompatibilityV2 {
         }
     }
 }
+impl ::std::fmt::Display for ClientCompatibilityV2 {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientCompatibilityV2::WindowsServer2003 => write!(f, "WINDOWS_SERVER_2003"),
+            ClientCompatibilityV2::WindowsServer2008 => write!(f, "WINDOWS_SERVER_2008"),
+            ClientCompatibilityV2::WindowsServer2008R2 => write!(f, "WINDOWS_SERVER_2008_R2"),
+            ClientCompatibilityV2::WindowsServer2012 => write!(f, "WINDOWS_SERVER_2012"),
+            ClientCompatibilityV2::WindowsServer2012R2 => write!(f, "WINDOWS_SERVER_2012_R2"),
+            ClientCompatibilityV2::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
+            ClientCompatibilityV2::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

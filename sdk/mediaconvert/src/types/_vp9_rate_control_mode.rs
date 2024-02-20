@@ -91,3 +91,11 @@ impl Vp9RateControlMode {
         }
     }
 }
+impl ::std::fmt::Display for Vp9RateControlMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Vp9RateControlMode::Vbr => write!(f, "VBR"),
+            Vp9RateControlMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

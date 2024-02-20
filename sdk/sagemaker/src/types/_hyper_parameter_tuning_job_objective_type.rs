@@ -96,3 +96,12 @@ impl HyperParameterTuningJobObjectiveType {
         }
     }
 }
+impl ::std::fmt::Display for HyperParameterTuningJobObjectiveType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HyperParameterTuningJobObjectiveType::Maximize => write!(f, "Maximize"),
+            HyperParameterTuningJobObjectiveType::Minimize => write!(f, "Minimize"),
+            HyperParameterTuningJobObjectiveType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

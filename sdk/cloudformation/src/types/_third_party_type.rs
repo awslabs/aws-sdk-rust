@@ -101,3 +101,13 @@ impl ThirdPartyType {
         }
     }
 }
+impl ::std::fmt::Display for ThirdPartyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThirdPartyType::Hook => write!(f, "HOOK"),
+            ThirdPartyType::Module => write!(f, "MODULE"),
+            ThirdPartyType::Resource => write!(f, "RESOURCE"),
+            ThirdPartyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

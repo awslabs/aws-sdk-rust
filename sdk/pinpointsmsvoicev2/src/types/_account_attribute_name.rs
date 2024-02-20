@@ -91,3 +91,11 @@ impl AccountAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for AccountAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountAttributeName::AccountTier => write!(f, "ACCOUNT_TIER"),
+            AccountAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

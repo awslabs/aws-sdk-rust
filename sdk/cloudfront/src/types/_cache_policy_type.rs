@@ -96,3 +96,12 @@ impl CachePolicyType {
         }
     }
 }
+impl ::std::fmt::Display for CachePolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CachePolicyType::Custom => write!(f, "custom"),
+            CachePolicyType::Managed => write!(f, "managed"),
+            CachePolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

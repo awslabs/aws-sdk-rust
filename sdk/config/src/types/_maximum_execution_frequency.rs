@@ -111,3 +111,15 @@ impl MaximumExecutionFrequency {
         }
     }
 }
+impl ::std::fmt::Display for MaximumExecutionFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaximumExecutionFrequency::OneHour => write!(f, "One_Hour"),
+            MaximumExecutionFrequency::SixHours => write!(f, "Six_Hours"),
+            MaximumExecutionFrequency::ThreeHours => write!(f, "Three_Hours"),
+            MaximumExecutionFrequency::TwelveHours => write!(f, "Twelve_Hours"),
+            MaximumExecutionFrequency::TwentyFourHours => write!(f, "TwentyFour_Hours"),
+            MaximumExecutionFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl VirtualInterfaceState {
         }
     }
 }
+impl ::std::fmt::Display for VirtualInterfaceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VirtualInterfaceState::Available => write!(f, "available"),
+            VirtualInterfaceState::Confirming => write!(f, "confirming"),
+            VirtualInterfaceState::Deleted => write!(f, "deleted"),
+            VirtualInterfaceState::Deleting => write!(f, "deleting"),
+            VirtualInterfaceState::Down => write!(f, "down"),
+            VirtualInterfaceState::Pending => write!(f, "pending"),
+            VirtualInterfaceState::Rejected => write!(f, "rejected"),
+            VirtualInterfaceState::UnknownValue => write!(f, "unknown"),
+            VirtualInterfaceState::Verifying => write!(f, "verifying"),
+            VirtualInterfaceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

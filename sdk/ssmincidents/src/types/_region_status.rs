@@ -106,3 +106,14 @@ impl RegionStatus {
         }
     }
 }
+impl ::std::fmt::Display for RegionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegionStatus::Active => write!(f, "ACTIVE"),
+            RegionStatus::Creating => write!(f, "CREATING"),
+            RegionStatus::Deleting => write!(f, "DELETING"),
+            RegionStatus::Failed => write!(f, "FAILED"),
+            RegionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

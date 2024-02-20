@@ -195,3 +195,28 @@ impl BatchWriteExceptionType {
         }
     }
 }
+impl ::std::fmt::Display for BatchWriteExceptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchWriteExceptionType::AccessDeniedException => write!(f, "AccessDeniedException"),
+            BatchWriteExceptionType::DirectoryNotEnabledException => write!(f, "DirectoryNotEnabledException"),
+            BatchWriteExceptionType::FacetValidationException => write!(f, "FacetValidationException"),
+            BatchWriteExceptionType::IndexedAttributeMissingException => write!(f, "IndexedAttributeMissingException"),
+            BatchWriteExceptionType::InternalServiceException => write!(f, "InternalServiceException"),
+            BatchWriteExceptionType::InvalidArnException => write!(f, "InvalidArnException"),
+            BatchWriteExceptionType::InvalidAttachmentException => write!(f, "InvalidAttachmentException"),
+            BatchWriteExceptionType::LimitExceededException => write!(f, "LimitExceededException"),
+            BatchWriteExceptionType::LinkNameAlreadyInUseException => write!(f, "LinkNameAlreadyInUseException"),
+            BatchWriteExceptionType::NotIndexException => write!(f, "NotIndexException"),
+            BatchWriteExceptionType::NotNodeException => write!(f, "NotNodeException"),
+            BatchWriteExceptionType::NotPolicyException => write!(f, "NotPolicyException"),
+            BatchWriteExceptionType::ObjectAlreadyDetachedException => write!(f, "ObjectAlreadyDetachedException"),
+            BatchWriteExceptionType::ObjectNotDetachedException => write!(f, "ObjectNotDetachedException"),
+            BatchWriteExceptionType::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
+            BatchWriteExceptionType::StillContainsLinksException => write!(f, "StillContainsLinksException"),
+            BatchWriteExceptionType::UnsupportedIndexTypeException => write!(f, "UnsupportedIndexTypeException"),
+            BatchWriteExceptionType::ValidationException => write!(f, "ValidationException"),
+            BatchWriteExceptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

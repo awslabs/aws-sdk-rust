@@ -159,3 +159,22 @@ impl EventType {
         }
     }
 }
+impl ::std::fmt::Display for EventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventType::AssignmentAbandoned => write!(f, "AssignmentAbandoned"),
+            EventType::AssignmentAccepted => write!(f, "AssignmentAccepted"),
+            EventType::AssignmentApproved => write!(f, "AssignmentApproved"),
+            EventType::AssignmentRejected => write!(f, "AssignmentRejected"),
+            EventType::AssignmentReturned => write!(f, "AssignmentReturned"),
+            EventType::AssignmentSubmitted => write!(f, "AssignmentSubmitted"),
+            EventType::HitCreated => write!(f, "HITCreated"),
+            EventType::HitDisposed => write!(f, "HITDisposed"),
+            EventType::HitExpired => write!(f, "HITExpired"),
+            EventType::HitExtended => write!(f, "HITExtended"),
+            EventType::HitReviewable => write!(f, "HITReviewable"),
+            EventType::Ping => write!(f, "Ping"),
+            EventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

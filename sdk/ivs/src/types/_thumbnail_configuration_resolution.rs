@@ -106,3 +106,14 @@ impl ThumbnailConfigurationResolution {
         }
     }
 }
+impl ::std::fmt::Display for ThumbnailConfigurationResolution {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThumbnailConfigurationResolution::FullHd => write!(f, "FULL_HD"),
+            ThumbnailConfigurationResolution::Hd => write!(f, "HD"),
+            ThumbnailConfigurationResolution::LowestResolution => write!(f, "LOWEST_RESOLUTION"),
+            ThumbnailConfigurationResolution::Sd => write!(f, "SD"),
+            ThumbnailConfigurationResolution::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

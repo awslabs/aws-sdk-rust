@@ -135,3 +135,18 @@ impl LaunchProfileState {
         }
     }
 }
+impl ::std::fmt::Display for LaunchProfileState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchProfileState::CreateFailed => write!(f, "CREATE_FAILED"),
+            LaunchProfileState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            LaunchProfileState::Deleted => write!(f, "DELETED"),
+            LaunchProfileState::DeleteFailed => write!(f, "DELETE_FAILED"),
+            LaunchProfileState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            LaunchProfileState::Ready => write!(f, "READY"),
+            LaunchProfileState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            LaunchProfileState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            LaunchProfileState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ReconfigurationType {
         }
     }
 }
+impl ::std::fmt::Display for ReconfigurationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReconfigurationType::Merge => write!(f, "MERGE"),
+            ReconfigurationType::Overwrite => write!(f, "OVERWRITE"),
+            ReconfigurationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

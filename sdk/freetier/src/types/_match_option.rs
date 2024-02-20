@@ -111,3 +111,15 @@ impl MatchOption {
         }
     }
 }
+impl ::std::fmt::Display for MatchOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MatchOption::Contains => write!(f, "CONTAINS"),
+            MatchOption::EndsWith => write!(f, "ENDS_WITH"),
+            MatchOption::Equals => write!(f, "EQUALS"),
+            MatchOption::GreaterThanOrEqual => write!(f, "GREATER_THAN_OR_EQUAL"),
+            MatchOption::StartsWith => write!(f, "STARTS_WITH"),
+            MatchOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

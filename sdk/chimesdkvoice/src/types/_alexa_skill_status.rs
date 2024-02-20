@@ -96,3 +96,12 @@ impl AlexaSkillStatus {
         }
     }
 }
+impl ::std::fmt::Display for AlexaSkillStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlexaSkillStatus::Active => write!(f, "ACTIVE"),
+            AlexaSkillStatus::Inactive => write!(f, "INACTIVE"),
+            AlexaSkillStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

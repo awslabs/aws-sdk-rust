@@ -101,3 +101,13 @@ impl CsvHeaderOption {
         }
     }
 }
+impl ::std::fmt::Display for CsvHeaderOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CsvHeaderOption::Absent => write!(f, "ABSENT"),
+            CsvHeaderOption::Present => write!(f, "PRESENT"),
+            CsvHeaderOption::UnknownValue => write!(f, "UNKNOWN"),
+            CsvHeaderOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

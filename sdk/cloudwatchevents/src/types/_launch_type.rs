@@ -101,3 +101,13 @@ impl LaunchType {
         }
     }
 }
+impl ::std::fmt::Display for LaunchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchType::Ec2 => write!(f, "EC2"),
+            LaunchType::External => write!(f, "EXTERNAL"),
+            LaunchType::Fargate => write!(f, "FARGATE"),
+            LaunchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

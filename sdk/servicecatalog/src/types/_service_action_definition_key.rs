@@ -106,3 +106,14 @@ impl ServiceActionDefinitionKey {
         }
     }
 }
+impl ::std::fmt::Display for ServiceActionDefinitionKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceActionDefinitionKey::AssumeRole => write!(f, "AssumeRole"),
+            ServiceActionDefinitionKey::Name => write!(f, "Name"),
+            ServiceActionDefinitionKey::Parameters => write!(f, "Parameters"),
+            ServiceActionDefinitionKey::Version => write!(f, "Version"),
+            ServiceActionDefinitionKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

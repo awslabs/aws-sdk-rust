@@ -153,3 +153,21 @@ impl ValidationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ValidationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationExceptionReason::InvalidAgreementId => write!(f, "INVALID_AGREEMENT_ID"),
+            ValidationExceptionReason::InvalidCatalog => write!(f, "INVALID_CATALOG"),
+            ValidationExceptionReason::InvalidFilterName => write!(f, "INVALID_FILTER_NAME"),
+            ValidationExceptionReason::InvalidFilterValues => write!(f, "INVALID_FILTER_VALUES"),
+            ValidationExceptionReason::InvalidMaxResults => write!(f, "INVALID_MAX_RESULTS"),
+            ValidationExceptionReason::InvalidNextToken => write!(f, "INVALID_NEXT_TOKEN"),
+            ValidationExceptionReason::InvalidSortBy => write!(f, "INVALID_SORT_BY"),
+            ValidationExceptionReason::InvalidSortOrder => write!(f, "INVALID_SORT_ORDER"),
+            ValidationExceptionReason::MissingAgreementId => write!(f, "MISSING_AGREEMENT_ID"),
+            ValidationExceptionReason::Other => write!(f, "OTHER"),
+            ValidationExceptionReason::UnsupportedFilters => write!(f, "UNSUPPORTED_FILTERS"),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

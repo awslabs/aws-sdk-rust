@@ -96,3 +96,12 @@ impl M3u8NielsenId3Behavior {
         }
     }
 }
+impl ::std::fmt::Display for M3u8NielsenId3Behavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M3u8NielsenId3Behavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
+            M3u8NielsenId3Behavior::Passthrough => write!(f, "PASSTHROUGH"),
+            M3u8NielsenId3Behavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

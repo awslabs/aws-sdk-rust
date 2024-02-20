@@ -96,3 +96,12 @@ impl ReleaseStatusValues {
         }
     }
 }
+impl ::std::fmt::Display for ReleaseStatusValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReleaseStatusValues::Beta => write!(f, "beta"),
+            ReleaseStatusValues::Prod => write!(f, "prod"),
+            ReleaseStatusValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

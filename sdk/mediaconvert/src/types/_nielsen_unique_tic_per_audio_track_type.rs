@@ -96,3 +96,12 @@ impl NielsenUniqueTicPerAudioTrackType {
         }
     }
 }
+impl ::std::fmt::Display for NielsenUniqueTicPerAudioTrackType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NielsenUniqueTicPerAudioTrackType::ReserveUniqueTicsPerTrack => write!(f, "RESERVE_UNIQUE_TICS_PER_TRACK"),
+            NielsenUniqueTicPerAudioTrackType::SameTicsPerTrack => write!(f, "SAME_TICS_PER_TRACK"),
+            NielsenUniqueTicPerAudioTrackType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CloudWatchEncryptionMode {
         }
     }
 }
+impl ::std::fmt::Display for CloudWatchEncryptionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CloudWatchEncryptionMode::Disabled => write!(f, "DISABLED"),
+            CloudWatchEncryptionMode::Ssekms => write!(f, "SSE-KMS"),
+            CloudWatchEncryptionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

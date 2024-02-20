@@ -129,3 +129,17 @@ impl DiscoveryJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for DiscoveryJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiscoveryJobStatus::Completed => write!(f, "COMPLETED"),
+            DiscoveryJobStatus::CompletedWithIssues => write!(f, "COMPLETED_WITH_ISSUES"),
+            DiscoveryJobStatus::Failed => write!(f, "FAILED"),
+            DiscoveryJobStatus::Running => write!(f, "RUNNING"),
+            DiscoveryJobStatus::Stopped => write!(f, "STOPPED"),
+            DiscoveryJobStatus::Terminated => write!(f, "TERMINATED"),
+            DiscoveryJobStatus::Warning => write!(f, "WARNING"),
+            DiscoveryJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

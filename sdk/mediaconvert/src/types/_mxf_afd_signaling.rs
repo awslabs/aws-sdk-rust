@@ -96,3 +96,12 @@ impl MxfAfdSignaling {
         }
     }
 }
+impl ::std::fmt::Display for MxfAfdSignaling {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MxfAfdSignaling::CopyFromVideo => write!(f, "COPY_FROM_VIDEO"),
+            MxfAfdSignaling::NoCopy => write!(f, "NO_COPY"),
+            MxfAfdSignaling::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

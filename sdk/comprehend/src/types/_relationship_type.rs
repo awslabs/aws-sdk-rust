@@ -91,3 +91,11 @@ impl RelationshipType {
         }
     }
 }
+impl ::std::fmt::Display for RelationshipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelationshipType::Child => write!(f, "CHILD"),
+            RelationshipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

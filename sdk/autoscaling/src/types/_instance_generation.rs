@@ -96,3 +96,12 @@ impl InstanceGeneration {
         }
     }
 }
+impl ::std::fmt::Display for InstanceGeneration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceGeneration::Current => write!(f, "current"),
+            InstanceGeneration::Previous => write!(f, "previous"),
+            InstanceGeneration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

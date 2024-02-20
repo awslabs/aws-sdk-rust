@@ -96,3 +96,12 @@ impl VisualCustomActionTrigger {
         }
     }
 }
+impl ::std::fmt::Display for VisualCustomActionTrigger {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VisualCustomActionTrigger::DataPointClick => write!(f, "DATA_POINT_CLICK"),
+            VisualCustomActionTrigger::DataPointMenu => write!(f, "DATA_POINT_MENU"),
+            VisualCustomActionTrigger::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

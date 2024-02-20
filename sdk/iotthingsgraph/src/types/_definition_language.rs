@@ -91,3 +91,11 @@ impl DefinitionLanguage {
         }
     }
 }
+impl ::std::fmt::Display for DefinitionLanguage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DefinitionLanguage::Graphql => write!(f, "GRAPHQL"),
+            DefinitionLanguage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

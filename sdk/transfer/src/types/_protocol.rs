@@ -106,3 +106,14 @@ impl Protocol {
         }
     }
 }
+impl ::std::fmt::Display for Protocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Protocol::As2 => write!(f, "AS2"),
+            Protocol::Ftp => write!(f, "FTP"),
+            Protocol::Ftps => write!(f, "FTPS"),
+            Protocol::Sftp => write!(f, "SFTP"),
+            Protocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

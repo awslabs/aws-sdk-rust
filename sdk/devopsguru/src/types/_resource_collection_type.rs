@@ -101,3 +101,13 @@ impl ResourceCollectionType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceCollectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceCollectionType::AwsCloudFormation => write!(f, "AWS_CLOUD_FORMATION"),
+            ResourceCollectionType::AwsService => write!(f, "AWS_SERVICE"),
+            ResourceCollectionType::AwsTags => write!(f, "AWS_TAGS"),
+            ResourceCollectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

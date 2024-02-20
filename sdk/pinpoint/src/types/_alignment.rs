@@ -101,3 +101,13 @@ impl Alignment {
         }
     }
 }
+impl ::std::fmt::Display for Alignment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Alignment::Center => write!(f, "CENTER"),
+            Alignment::Left => write!(f, "LEFT"),
+            Alignment::Right => write!(f, "RIGHT"),
+            Alignment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

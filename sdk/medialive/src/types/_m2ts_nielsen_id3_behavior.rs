@@ -96,3 +96,12 @@ impl M2tsNielsenId3Behavior {
         }
     }
 }
+impl ::std::fmt::Display for M2tsNielsenId3Behavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsNielsenId3Behavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
+            M2tsNielsenId3Behavior::Passthrough => write!(f, "PASSTHROUGH"),
+            M2tsNielsenId3Behavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

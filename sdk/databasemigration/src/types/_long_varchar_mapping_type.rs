@@ -101,3 +101,13 @@ impl LongVarcharMappingType {
         }
     }
 }
+impl ::std::fmt::Display for LongVarcharMappingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LongVarcharMappingType::Clob => write!(f, "clob"),
+            LongVarcharMappingType::Nclob => write!(f, "nclob"),
+            LongVarcharMappingType::Wstring => write!(f, "wstring"),
+            LongVarcharMappingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl RelevanceType {
         }
     }
 }
+impl ::std::fmt::Display for RelevanceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelevanceType::NotRelevant => write!(f, "NOT_RELEVANT"),
+            RelevanceType::Relevant => write!(f, "RELEVANT"),
+            RelevanceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

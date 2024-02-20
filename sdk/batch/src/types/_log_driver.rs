@@ -121,3 +121,17 @@ impl LogDriver {
         }
     }
 }
+impl ::std::fmt::Display for LogDriver {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogDriver::Awslogs => write!(f, "awslogs"),
+            LogDriver::Fluentd => write!(f, "fluentd"),
+            LogDriver::Gelf => write!(f, "gelf"),
+            LogDriver::Journald => write!(f, "journald"),
+            LogDriver::JsonFile => write!(f, "json-file"),
+            LogDriver::Splunk => write!(f, "splunk"),
+            LogDriver::Syslog => write!(f, "syslog"),
+            LogDriver::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

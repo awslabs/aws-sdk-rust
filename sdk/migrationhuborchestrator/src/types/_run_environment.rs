@@ -96,3 +96,12 @@ impl RunEnvironment {
         }
     }
 }
+impl ::std::fmt::Display for RunEnvironment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RunEnvironment::Aws => write!(f, "AWS"),
+            RunEnvironment::Onpremise => write!(f, "ONPREMISE"),
+            RunEnvironment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

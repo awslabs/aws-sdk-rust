@@ -96,3 +96,12 @@ impl LfPermission {
         }
     }
 }
+impl ::std::fmt::Display for LfPermission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LfPermission::Describe => write!(f, "DESCRIBE"),
+            LfPermission::Select => write!(f, "SELECT"),
+            LfPermission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

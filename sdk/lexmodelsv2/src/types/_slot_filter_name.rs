@@ -91,3 +91,11 @@ impl SlotFilterName {
         }
     }
 }
+impl ::std::fmt::Display for SlotFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlotFilterName::SlotName => write!(f, "SlotName"),
+            SlotFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

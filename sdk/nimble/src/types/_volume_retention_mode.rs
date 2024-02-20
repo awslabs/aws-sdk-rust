@@ -96,3 +96,12 @@ impl VolumeRetentionMode {
         }
     }
 }
+impl ::std::fmt::Display for VolumeRetentionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeRetentionMode::Delete => write!(f, "DELETE"),
+            VolumeRetentionMode::Retain => write!(f, "RETAIN"),
+            VolumeRetentionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

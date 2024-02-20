@@ -96,3 +96,12 @@ impl GlobalConfigurationOutputLockingMode {
         }
     }
 }
+impl ::std::fmt::Display for GlobalConfigurationOutputLockingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GlobalConfigurationOutputLockingMode::EpochLocking => write!(f, "EPOCH_LOCKING"),
+            GlobalConfigurationOutputLockingMode::PipelineLocking => write!(f, "PIPELINE_LOCKING"),
+            GlobalConfigurationOutputLockingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

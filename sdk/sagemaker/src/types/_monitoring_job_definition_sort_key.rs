@@ -96,3 +96,12 @@ impl MonitoringJobDefinitionSortKey {
         }
     }
 }
+impl ::std::fmt::Display for MonitoringJobDefinitionSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitoringJobDefinitionSortKey::CreationTime => write!(f, "CreationTime"),
+            MonitoringJobDefinitionSortKey::Name => write!(f, "Name"),
+            MonitoringJobDefinitionSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

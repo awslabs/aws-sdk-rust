@@ -116,3 +116,16 @@ impl CeStatus {
         }
     }
 }
+impl ::std::fmt::Display for CeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CeStatus::Creating => write!(f, "CREATING"),
+            CeStatus::Deleted => write!(f, "DELETED"),
+            CeStatus::Deleting => write!(f, "DELETING"),
+            CeStatus::Invalid => write!(f, "INVALID"),
+            CeStatus::Updating => write!(f, "UPDATING"),
+            CeStatus::Valid => write!(f, "VALID"),
+            CeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl Ec2Platform {
         }
     }
 }
+impl ::std::fmt::Display for Ec2Platform {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ec2Platform::Linux => write!(f, "LINUX"),
+            Ec2Platform::Macos => write!(f, "MACOS"),
+            Ec2Platform::UnknownValue => write!(f, "UNKNOWN"),
+            Ec2Platform::Windows => write!(f, "WINDOWS"),
+            Ec2Platform::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

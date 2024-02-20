@@ -111,3 +111,14 @@ impl HlsAudioTrackType {
         }
     }
 }
+impl ::std::fmt::Display for HlsAudioTrackType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsAudioTrackType::AlternateAudioAutoSelect => write!(f, "ALTERNATE_AUDIO_AUTO_SELECT"),
+            HlsAudioTrackType::AlternateAudioAutoSelectDefault => write!(f, "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT"),
+            HlsAudioTrackType::AlternateAudioNotAutoSelect => write!(f, "ALTERNATE_AUDIO_NOT_AUTO_SELECT"),
+            HlsAudioTrackType::AudioOnlyVariantStream => write!(f, "AUDIO_ONLY_VARIANT_STREAM"),
+            HlsAudioTrackType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

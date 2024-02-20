@@ -96,3 +96,12 @@ impl KeyLocation {
         }
     }
 }
+impl ::std::fmt::Display for KeyLocation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyLocation::SecretManager => write!(f, "SECRET_MANAGER"),
+            KeyLocation::Url => write!(f, "URL"),
+            KeyLocation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

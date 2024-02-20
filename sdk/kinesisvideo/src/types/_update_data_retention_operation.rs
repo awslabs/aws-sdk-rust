@@ -96,3 +96,12 @@ impl UpdateDataRetentionOperation {
         }
     }
 }
+impl ::std::fmt::Display for UpdateDataRetentionOperation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateDataRetentionOperation::DecreaseDataRetention => write!(f, "DECREASE_DATA_RETENTION"),
+            UpdateDataRetentionOperation::IncreaseDataRetention => write!(f, "INCREASE_DATA_RETENTION"),
+            UpdateDataRetentionOperation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

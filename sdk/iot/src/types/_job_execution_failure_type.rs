@@ -106,3 +106,14 @@ impl JobExecutionFailureType {
         }
     }
 }
+impl ::std::fmt::Display for JobExecutionFailureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobExecutionFailureType::All => write!(f, "ALL"),
+            JobExecutionFailureType::Failed => write!(f, "FAILED"),
+            JobExecutionFailureType::Rejected => write!(f, "REJECTED"),
+            JobExecutionFailureType::TimedOut => write!(f, "TIMED_OUT"),
+            JobExecutionFailureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

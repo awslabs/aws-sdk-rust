@@ -103,3 +103,13 @@ impl ProjectState {
         }
     }
 }
+impl ::std::fmt::Display for ProjectState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProjectState::Importing => write!(f, "IMPORTING"),
+            ProjectState::Normal => write!(f, "NORMAL"),
+            ProjectState::Syncing => write!(f, "SYNCING"),
+            ProjectState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

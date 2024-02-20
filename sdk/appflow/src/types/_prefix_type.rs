@@ -101,3 +101,13 @@ impl PrefixType {
         }
     }
 }
+impl ::std::fmt::Display for PrefixType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrefixType::Filename => write!(f, "FILENAME"),
+            PrefixType::Path => write!(f, "PATH"),
+            PrefixType::PathAndFilename => write!(f, "PATH_AND_FILENAME"),
+            PrefixType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

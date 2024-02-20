@@ -96,3 +96,12 @@ impl NielsenWatermarksCbetStepaside {
         }
     }
 }
+impl ::std::fmt::Display for NielsenWatermarksCbetStepaside {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NielsenWatermarksCbetStepaside::Disabled => write!(f, "DISABLED"),
+            NielsenWatermarksCbetStepaside::Enabled => write!(f, "ENABLED"),
+            NielsenWatermarksCbetStepaside::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

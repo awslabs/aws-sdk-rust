@@ -111,3 +111,14 @@ impl InvalidRequestDetailReason {
         }
     }
 }
+impl ::std::fmt::Display for InvalidRequestDetailReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InvalidRequestDetailReason::DocumentSizeExceeded => write!(f, "DOCUMENT_SIZE_EXCEEDED"),
+            InvalidRequestDetailReason::PageLimitExceeded => write!(f, "PAGE_LIMIT_EXCEEDED"),
+            InvalidRequestDetailReason::TextractAccessDenied => write!(f, "TEXTRACT_ACCESS_DENIED"),
+            InvalidRequestDetailReason::UnsupportedDocType => write!(f, "UNSUPPORTED_DOC_TYPE"),
+            InvalidRequestDetailReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

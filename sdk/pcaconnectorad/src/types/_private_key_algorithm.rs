@@ -106,3 +106,14 @@ impl PrivateKeyAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for PrivateKeyAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrivateKeyAlgorithm::EcdhP256 => write!(f, "ECDH_P256"),
+            PrivateKeyAlgorithm::EcdhP384 => write!(f, "ECDH_P384"),
+            PrivateKeyAlgorithm::EcdhP521 => write!(f, "ECDH_P521"),
+            PrivateKeyAlgorithm::Rsa => write!(f, "RSA"),
+            PrivateKeyAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

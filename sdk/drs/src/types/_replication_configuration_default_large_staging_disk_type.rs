@@ -108,3 +108,14 @@ impl ReplicationConfigurationDefaultLargeStagingDiskType {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationConfigurationDefaultLargeStagingDiskType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationConfigurationDefaultLargeStagingDiskType::Auto => write!(f, "AUTO"),
+            ReplicationConfigurationDefaultLargeStagingDiskType::Gp2 => write!(f, "GP2"),
+            ReplicationConfigurationDefaultLargeStagingDiskType::Gp3 => write!(f, "GP3"),
+            ReplicationConfigurationDefaultLargeStagingDiskType::St1 => write!(f, "ST1"),
+            ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

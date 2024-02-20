@@ -101,3 +101,13 @@ impl StorageClass {
         }
     }
 }
+impl ::std::fmt::Display for StorageClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageClass::ReducedRedundancy => write!(f, "REDUCED_REDUNDANCY"),
+            StorageClass::Standard => write!(f, "STANDARD"),
+            StorageClass::StandardInfrequentAccess => write!(f, "STANDARD_IA"),
+            StorageClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

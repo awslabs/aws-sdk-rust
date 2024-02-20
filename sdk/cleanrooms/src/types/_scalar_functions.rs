@@ -153,3 +153,23 @@ impl ScalarFunctions {
         }
     }
 }
+impl ::std::fmt::Display for ScalarFunctions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalarFunctions::Abs => write!(f, "ABS"),
+            ScalarFunctions::Cast => write!(f, "CAST"),
+            ScalarFunctions::Ceiling => write!(f, "CEILING"),
+            ScalarFunctions::Coalesce => write!(f, "COALESCE"),
+            ScalarFunctions::Floor => write!(f, "FLOOR"),
+            ScalarFunctions::Ln => write!(f, "LN"),
+            ScalarFunctions::Log => write!(f, "LOG"),
+            ScalarFunctions::Lower => write!(f, "LOWER"),
+            ScalarFunctions::Round => write!(f, "ROUND"),
+            ScalarFunctions::Rtrim => write!(f, "RTRIM"),
+            ScalarFunctions::Sqrt => write!(f, "SQRT"),
+            ScalarFunctions::Trunc => write!(f, "TRUNC"),
+            ScalarFunctions::Upper => write!(f, "UPPER"),
+            ScalarFunctions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

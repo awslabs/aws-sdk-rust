@@ -129,3 +129,17 @@ impl SnomedctRelationshipType {
         }
     }
 }
+impl ::std::fmt::Display for SnomedctRelationshipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnomedctRelationshipType::Acuity => write!(f, "ACUITY"),
+            SnomedctRelationshipType::Direction => write!(f, "DIRECTION"),
+            SnomedctRelationshipType::Quality => write!(f, "QUALITY"),
+            SnomedctRelationshipType::SystemOrganSite => write!(f, "SYSTEM_ORGAN_SITE"),
+            SnomedctRelationshipType::TestUnit => write!(f, "TEST_UNIT"),
+            SnomedctRelationshipType::TestUnits => write!(f, "TEST_UNITS"),
+            SnomedctRelationshipType::TestValue => write!(f, "TEST_VALUE"),
+            SnomedctRelationshipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

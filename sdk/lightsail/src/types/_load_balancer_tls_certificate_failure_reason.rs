@@ -117,3 +117,15 @@ impl LoadBalancerTlsCertificateFailureReason {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerTlsCertificateFailureReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerTlsCertificateFailureReason::AdditionalVerificationRequired => write!(f, "ADDITIONAL_VERIFICATION_REQUIRED"),
+            LoadBalancerTlsCertificateFailureReason::DomainNotAllowed => write!(f, "DOMAIN_NOT_ALLOWED"),
+            LoadBalancerTlsCertificateFailureReason::InvalidPublicDomain => write!(f, "INVALID_PUBLIC_DOMAIN"),
+            LoadBalancerTlsCertificateFailureReason::NoAvailableContacts => write!(f, "NO_AVAILABLE_CONTACTS"),
+            LoadBalancerTlsCertificateFailureReason::Other => write!(f, "OTHER"),
+            LoadBalancerTlsCertificateFailureReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

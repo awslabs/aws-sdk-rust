@@ -101,3 +101,13 @@ impl DataQualityRuleResultStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataQualityRuleResultStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataQualityRuleResultStatus::Error => write!(f, "ERROR"),
+            DataQualityRuleResultStatus::Fail => write!(f, "FAIL"),
+            DataQualityRuleResultStatus::Pass => write!(f, "PASS"),
+            DataQualityRuleResultStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

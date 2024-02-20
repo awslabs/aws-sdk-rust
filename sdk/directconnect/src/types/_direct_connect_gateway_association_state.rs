@@ -111,3 +111,15 @@ impl DirectConnectGatewayAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for DirectConnectGatewayAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectConnectGatewayAssociationState::Associated => write!(f, "associated"),
+            DirectConnectGatewayAssociationState::Associating => write!(f, "associating"),
+            DirectConnectGatewayAssociationState::Disassociated => write!(f, "disassociated"),
+            DirectConnectGatewayAssociationState::Disassociating => write!(f, "disassociating"),
+            DirectConnectGatewayAssociationState::Updating => write!(f, "updating"),
+            DirectConnectGatewayAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

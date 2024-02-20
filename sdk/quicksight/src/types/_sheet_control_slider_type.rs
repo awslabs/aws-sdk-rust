@@ -96,3 +96,12 @@ impl SheetControlSliderType {
         }
     }
 }
+impl ::std::fmt::Display for SheetControlSliderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SheetControlSliderType::Range => write!(f, "RANGE"),
+            SheetControlSliderType::SinglePoint => write!(f, "SINGLE_POINT"),
+            SheetControlSliderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

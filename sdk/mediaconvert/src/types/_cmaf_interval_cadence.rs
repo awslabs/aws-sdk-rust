@@ -96,3 +96,12 @@ impl CmafIntervalCadence {
         }
     }
 }
+impl ::std::fmt::Display for CmafIntervalCadence {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafIntervalCadence::FollowCustom => write!(f, "FOLLOW_CUSTOM"),
+            CmafIntervalCadence::FollowIframe => write!(f, "FOLLOW_IFRAME"),
+            CmafIntervalCadence::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

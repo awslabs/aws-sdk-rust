@@ -96,3 +96,12 @@ impl OfferingClassType {
         }
     }
 }
+impl ::std::fmt::Display for OfferingClassType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OfferingClassType::Convertible => write!(f, "convertible"),
+            OfferingClassType::Standard => write!(f, "standard"),
+            OfferingClassType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl TooltipTitleType {
         }
     }
 }
+impl ::std::fmt::Display for TooltipTitleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TooltipTitleType::None => write!(f, "NONE"),
+            TooltipTitleType::PrimaryValue => write!(f, "PRIMARY_VALUE"),
+            TooltipTitleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

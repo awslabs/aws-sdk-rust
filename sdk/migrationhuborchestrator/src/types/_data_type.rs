@@ -106,3 +106,14 @@ impl DataType {
         }
     }
 }
+impl ::std::fmt::Display for DataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataType::Integer => write!(f, "INTEGER"),
+            DataType::String => write!(f, "STRING"),
+            DataType::Stringlist => write!(f, "STRINGLIST"),
+            DataType::Stringmap => write!(f, "STRINGMAP"),
+            DataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

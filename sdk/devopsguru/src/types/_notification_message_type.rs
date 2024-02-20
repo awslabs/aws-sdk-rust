@@ -117,3 +117,15 @@ impl NotificationMessageType {
         }
     }
 }
+impl ::std::fmt::Display for NotificationMessageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationMessageType::ClosedInsight => write!(f, "CLOSED_INSIGHT"),
+            NotificationMessageType::NewAssociation => write!(f, "NEW_ASSOCIATION"),
+            NotificationMessageType::NewInsight => write!(f, "NEW_INSIGHT"),
+            NotificationMessageType::NewRecommendation => write!(f, "NEW_RECOMMENDATION"),
+            NotificationMessageType::SeverityUpgraded => write!(f, "SEVERITY_UPGRADED"),
+            NotificationMessageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

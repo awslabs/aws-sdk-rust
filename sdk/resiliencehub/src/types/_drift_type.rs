@@ -91,3 +91,11 @@ impl DriftType {
         }
     }
 }
+impl ::std::fmt::Display for DriftType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DriftType::ApplicationCompliance => write!(f, "ApplicationCompliance"),
+            DriftType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

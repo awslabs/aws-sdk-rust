@@ -96,3 +96,12 @@ impl CreationMode {
         }
     }
 }
+impl ::std::fmt::Display for CreationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CreationMode::Default => write!(f, "DEFAULT"),
+            CreationMode::Overridden => write!(f, "OVERRIDDEN"),
+            CreationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

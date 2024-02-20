@@ -101,3 +101,13 @@ impl StudioLifecycleConfigSortKey {
         }
     }
 }
+impl ::std::fmt::Display for StudioLifecycleConfigSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StudioLifecycleConfigSortKey::CreationTime => write!(f, "CreationTime"),
+            StudioLifecycleConfigSortKey::LastModifiedTime => write!(f, "LastModifiedTime"),
+            StudioLifecycleConfigSortKey::Name => write!(f, "Name"),
+            StudioLifecycleConfigSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

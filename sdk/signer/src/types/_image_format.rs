@@ -101,3 +101,13 @@ impl ImageFormat {
         }
     }
 }
+impl ::std::fmt::Display for ImageFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageFormat::Json => write!(f, "JSON"),
+            ImageFormat::JsonDetached => write!(f, "JSONDetached"),
+            ImageFormat::JsonEmbedded => write!(f, "JSONEmbedded"),
+            ImageFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

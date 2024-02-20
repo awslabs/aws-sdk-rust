@@ -129,3 +129,17 @@ impl TriggerType {
         }
     }
 }
+impl ::std::fmt::Display for TriggerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TriggerType::CloudWatchEvent => write!(f, "CloudWatchEvent"),
+            TriggerType::CreatePipeline => write!(f, "CreatePipeline"),
+            TriggerType::PollForSourceChanges => write!(f, "PollForSourceChanges"),
+            TriggerType::PutActionRevision => write!(f, "PutActionRevision"),
+            TriggerType::StartPipelineExecution => write!(f, "StartPipelineExecution"),
+            TriggerType::Webhook => write!(f, "Webhook"),
+            TriggerType::WebhookV2 => write!(f, "WebhookV2"),
+            TriggerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

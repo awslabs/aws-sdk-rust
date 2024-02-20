@@ -101,3 +101,13 @@ impl ColumnOrderingType {
         }
     }
 }
+impl ::std::fmt::Display for ColumnOrderingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnOrderingType::GreaterIsBetter => write!(f, "GREATER_IS_BETTER"),
+            ColumnOrderingType::LesserIsBetter => write!(f, "LESSER_IS_BETTER"),
+            ColumnOrderingType::Specified => write!(f, "SPECIFIED"),
+            ColumnOrderingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl GetEntitlementFilterName {
         }
     }
 }
+impl ::std::fmt::Display for GetEntitlementFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GetEntitlementFilterName::CustomerIdentifier => write!(f, "CUSTOMER_IDENTIFIER"),
+            GetEntitlementFilterName::Dimension => write!(f, "DIMENSION"),
+            GetEntitlementFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

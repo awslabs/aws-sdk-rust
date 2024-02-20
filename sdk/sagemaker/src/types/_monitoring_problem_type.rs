@@ -101,3 +101,13 @@ impl MonitoringProblemType {
         }
     }
 }
+impl ::std::fmt::Display for MonitoringProblemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitoringProblemType::BinaryClassification => write!(f, "BinaryClassification"),
+            MonitoringProblemType::MulticlassClassification => write!(f, "MulticlassClassification"),
+            MonitoringProblemType::Regression => write!(f, "Regression"),
+            MonitoringProblemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

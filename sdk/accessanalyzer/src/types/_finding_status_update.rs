@@ -96,3 +96,12 @@ impl FindingStatusUpdate {
         }
     }
 }
+impl ::std::fmt::Display for FindingStatusUpdate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingStatusUpdate::Active => write!(f, "ACTIVE"),
+            FindingStatusUpdate::Archived => write!(f, "ARCHIVED"),
+            FindingStatusUpdate::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

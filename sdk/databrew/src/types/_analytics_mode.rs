@@ -96,3 +96,12 @@ impl AnalyticsMode {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsMode::Disable => write!(f, "DISABLE"),
+            AnalyticsMode::Enable => write!(f, "ENABLE"),
+            AnalyticsMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

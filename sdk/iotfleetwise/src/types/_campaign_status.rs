@@ -106,3 +106,14 @@ impl CampaignStatus {
         }
     }
 }
+impl ::std::fmt::Display for CampaignStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CampaignStatus::Creating => write!(f, "CREATING"),
+            CampaignStatus::Running => write!(f, "RUNNING"),
+            CampaignStatus::Suspended => write!(f, "SUSPENDED"),
+            CampaignStatus::WaitingForApproval => write!(f, "WAITING_FOR_APPROVAL"),
+            CampaignStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

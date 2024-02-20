@@ -101,3 +101,13 @@ impl IdentityType {
         }
     }
 }
+impl ::std::fmt::Display for IdentityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IdentityType::Iam => write!(f, "IAM"),
+            IdentityType::IamIdentityCenter => write!(f, "IAM_IDENTITY_CENTER"),
+            IdentityType::Quicksight => write!(f, "QUICKSIGHT"),
+            IdentityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

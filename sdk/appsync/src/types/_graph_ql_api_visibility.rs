@@ -96,3 +96,12 @@ impl GraphQlApiVisibility {
         }
     }
 }
+impl ::std::fmt::Display for GraphQlApiVisibility {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GraphQlApiVisibility::Global => write!(f, "GLOBAL"),
+            GraphQlApiVisibility::Private => write!(f, "PRIVATE"),
+            GraphQlApiVisibility::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl StandbyWorkspaceRelationshipType {
         }
     }
 }
+impl ::std::fmt::Display for StandbyWorkspaceRelationshipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StandbyWorkspaceRelationshipType::Primary => write!(f, "PRIMARY"),
+            StandbyWorkspaceRelationshipType::Standby => write!(f, "STANDBY"),
+            StandbyWorkspaceRelationshipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

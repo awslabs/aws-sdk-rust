@@ -96,3 +96,12 @@ impl HlsKeyProviderType {
         }
     }
 }
+impl ::std::fmt::Display for HlsKeyProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsKeyProviderType::Speke => write!(f, "SPEKE"),
+            HlsKeyProviderType::StaticKey => write!(f, "STATIC_KEY"),
+            HlsKeyProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

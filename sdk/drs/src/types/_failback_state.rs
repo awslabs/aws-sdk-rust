@@ -129,3 +129,17 @@ impl FailbackState {
         }
     }
 }
+impl ::std::fmt::Display for FailbackState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailbackState::FailbackCompleted => write!(f, "FAILBACK_COMPLETED"),
+            FailbackState::FailbackError => write!(f, "FAILBACK_ERROR"),
+            FailbackState::FailbackInProgress => write!(f, "FAILBACK_IN_PROGRESS"),
+            FailbackState::FailbackLaunchStateNotAvailable => write!(f, "FAILBACK_LAUNCH_STATE_NOT_AVAILABLE"),
+            FailbackState::FailbackNotReadyForLaunch => write!(f, "FAILBACK_NOT_READY_FOR_LAUNCH"),
+            FailbackState::FailbackNotStarted => write!(f, "FAILBACK_NOT_STARTED"),
+            FailbackState::FailbackReadyForLaunch => write!(f, "FAILBACK_READY_FOR_LAUNCH"),
+            FailbackState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

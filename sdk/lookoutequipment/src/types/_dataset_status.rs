@@ -106,3 +106,14 @@ impl DatasetStatus {
         }
     }
 }
+impl ::std::fmt::Display for DatasetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetStatus::Active => write!(f, "ACTIVE"),
+            DatasetStatus::Created => write!(f, "CREATED"),
+            DatasetStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
+            DatasetStatus::IngestionInProgress => write!(f, "INGESTION_IN_PROGRESS"),
+            DatasetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

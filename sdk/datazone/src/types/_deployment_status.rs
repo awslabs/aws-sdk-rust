@@ -106,3 +106,14 @@ impl DeploymentStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentStatus::Failed => write!(f, "FAILED"),
+            DeploymentStatus::InProgress => write!(f, "IN_PROGRESS"),
+            DeploymentStatus::PendingDeployment => write!(f, "PENDING_DEPLOYMENT"),
+            DeploymentStatus::Successful => write!(f, "SUCCESSFUL"),
+            DeploymentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl SeverityDescription {
         }
     }
 }
+impl ::std::fmt::Display for SeverityDescription {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SeverityDescription::High => write!(f, "High"),
+            SeverityDescription::Low => write!(f, "Low"),
+            SeverityDescription::Medium => write!(f, "Medium"),
+            SeverityDescription::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

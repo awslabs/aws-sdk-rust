@@ -101,3 +101,13 @@ impl IdentityProvider {
         }
     }
 }
+impl ::std::fmt::Display for IdentityProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IdentityProvider::AwsMarketplace => write!(f, "AWS_Marketplace"),
+            IdentityProvider::Bitbucket => write!(f, "Bitbucket"),
+            IdentityProvider::GitHub => write!(f, "GitHub"),
+            IdentityProvider::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

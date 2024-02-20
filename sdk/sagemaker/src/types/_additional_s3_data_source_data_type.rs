@@ -96,3 +96,12 @@ impl AdditionalS3DataSourceDataType {
         }
     }
 }
+impl ::std::fmt::Display for AdditionalS3DataSourceDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdditionalS3DataSourceDataType::S3Object => write!(f, "S3Object"),
+            AdditionalS3DataSourceDataType::S3Prefix => write!(f, "S3Prefix"),
+            AdditionalS3DataSourceDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

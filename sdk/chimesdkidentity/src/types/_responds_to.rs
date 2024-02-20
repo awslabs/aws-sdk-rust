@@ -91,3 +91,11 @@ impl RespondsTo {
         }
     }
 }
+impl ::std::fmt::Display for RespondsTo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RespondsTo::StandardMessages => write!(f, "STANDARD_MESSAGES"),
+            RespondsTo::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl CollectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for CollectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CollectionStatus::Active => write!(f, "ACTIVE"),
+            CollectionStatus::Creating => write!(f, "CREATING"),
+            CollectionStatus::Deleting => write!(f, "DELETING"),
+            CollectionStatus::Failed => write!(f, "FAILED"),
+            CollectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

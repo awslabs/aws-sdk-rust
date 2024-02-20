@@ -111,3 +111,15 @@ impl ManagedDataIdentifierSelector {
         }
     }
 }
+impl ::std::fmt::Display for ManagedDataIdentifierSelector {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ManagedDataIdentifierSelector::All => write!(f, "ALL"),
+            ManagedDataIdentifierSelector::Exclude => write!(f, "EXCLUDE"),
+            ManagedDataIdentifierSelector::Include => write!(f, "INCLUDE"),
+            ManagedDataIdentifierSelector::None => write!(f, "NONE"),
+            ManagedDataIdentifierSelector::Recommended => write!(f, "RECOMMENDED"),
+            ManagedDataIdentifierSelector::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

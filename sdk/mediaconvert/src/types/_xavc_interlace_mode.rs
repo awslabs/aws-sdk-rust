@@ -111,3 +111,15 @@ impl XavcInterlaceMode {
         }
     }
 }
+impl ::std::fmt::Display for XavcInterlaceMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcInterlaceMode::BottomField => write!(f, "BOTTOM_FIELD"),
+            XavcInterlaceMode::FollowBottomField => write!(f, "FOLLOW_BOTTOM_FIELD"),
+            XavcInterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
+            XavcInterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
+            XavcInterlaceMode::TopField => write!(f, "TOP_FIELD"),
+            XavcInterlaceMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

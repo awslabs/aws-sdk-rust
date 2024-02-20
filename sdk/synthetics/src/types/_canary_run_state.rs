@@ -101,3 +101,13 @@ impl CanaryRunState {
         }
     }
 }
+impl ::std::fmt::Display for CanaryRunState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CanaryRunState::Failed => write!(f, "FAILED"),
+            CanaryRunState::Passed => write!(f, "PASSED"),
+            CanaryRunState::Running => write!(f, "RUNNING"),
+            CanaryRunState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

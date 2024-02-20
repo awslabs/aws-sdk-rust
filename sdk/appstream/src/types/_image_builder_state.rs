@@ -153,3 +153,21 @@ impl ImageBuilderState {
         }
     }
 }
+impl ::std::fmt::Display for ImageBuilderState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageBuilderState::Deleting => write!(f, "DELETING"),
+            ImageBuilderState::Failed => write!(f, "FAILED"),
+            ImageBuilderState::Pending => write!(f, "PENDING"),
+            ImageBuilderState::PendingQualification => write!(f, "PENDING_QUALIFICATION"),
+            ImageBuilderState::Rebooting => write!(f, "REBOOTING"),
+            ImageBuilderState::Running => write!(f, "RUNNING"),
+            ImageBuilderState::Snapshotting => write!(f, "SNAPSHOTTING"),
+            ImageBuilderState::Stopped => write!(f, "STOPPED"),
+            ImageBuilderState::Stopping => write!(f, "STOPPING"),
+            ImageBuilderState::Updating => write!(f, "UPDATING"),
+            ImageBuilderState::UpdatingAgent => write!(f, "UPDATING_AGENT"),
+            ImageBuilderState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

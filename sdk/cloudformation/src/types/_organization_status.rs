@@ -101,3 +101,13 @@ impl OrganizationStatus {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationStatus::Disabled => write!(f, "DISABLED"),
+            OrganizationStatus::DisabledPermanently => write!(f, "DISABLED_PERMANENTLY"),
+            OrganizationStatus::Enabled => write!(f, "ENABLED"),
+            OrganizationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ShareStatus {
         }
     }
 }
+impl ::std::fmt::Display for ShareStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareStatus::NotShared => write!(f, "NOT_SHARED"),
+            ShareStatus::SharedByMe => write!(f, "SHARED_BY_ME"),
+            ShareStatus::SharedWithMe => write!(f, "SHARED_WITH_ME"),
+            ShareStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

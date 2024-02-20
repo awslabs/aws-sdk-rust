@@ -106,3 +106,14 @@ impl TestExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for TestExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestExecutionStatus::CaughtError => write!(f, "CAUGHT_ERROR"),
+            TestExecutionStatus::Failed => write!(f, "FAILED"),
+            TestExecutionStatus::Retriable => write!(f, "RETRIABLE"),
+            TestExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
+            TestExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

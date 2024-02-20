@@ -106,3 +106,14 @@ impl KafkaSecurityProtocol {
         }
     }
 }
+impl ::std::fmt::Display for KafkaSecurityProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KafkaSecurityProtocol::Plaintext => write!(f, "plaintext"),
+            KafkaSecurityProtocol::SaslSsl => write!(f, "sasl-ssl"),
+            KafkaSecurityProtocol::SslAuthentication => write!(f, "ssl-authentication"),
+            KafkaSecurityProtocol::SslEncryption => write!(f, "ssl-encryption"),
+            KafkaSecurityProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

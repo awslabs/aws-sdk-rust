@@ -153,3 +153,21 @@ impl FindingType {
         }
     }
 }
+impl ::std::fmt::Display for FindingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingType::PolicyIamUserS3BlockPublicAccessDisabled => write!(f, "Policy:IAMUser/S3BlockPublicAccessDisabled"),
+            FindingType::PolicyIamUserS3BucketEncryptionDisabled => write!(f, "Policy:IAMUser/S3BucketEncryptionDisabled"),
+            FindingType::PolicyIamUserS3BucketPublic => write!(f, "Policy:IAMUser/S3BucketPublic"),
+            FindingType::PolicyIamUserS3BucketReplicatedExternally => write!(f, "Policy:IAMUser/S3BucketReplicatedExternally"),
+            FindingType::PolicyIamUserS3BucketSharedExternally => write!(f, "Policy:IAMUser/S3BucketSharedExternally"),
+            FindingType::PolicyIamUserS3BucketSharedWithCloudFront => write!(f, "Policy:IAMUser/S3BucketSharedWithCloudFront"),
+            FindingType::SensitiveDataS3ObjectCredentials => write!(f, "SensitiveData:S3Object/Credentials"),
+            FindingType::SensitiveDataS3ObjectCustomIdentifier => write!(f, "SensitiveData:S3Object/CustomIdentifier"),
+            FindingType::SensitiveDataS3ObjectFinancial => write!(f, "SensitiveData:S3Object/Financial"),
+            FindingType::SensitiveDataS3ObjectMultiple => write!(f, "SensitiveData:S3Object/Multiple"),
+            FindingType::SensitiveDataS3ObjectPersonal => write!(f, "SensitiveData:S3Object/Personal"),
+            FindingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -147,3 +147,20 @@ impl DomainStatus {
         }
     }
 }
+impl ::std::fmt::Display for DomainStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainStatus::Available => write!(f, "AVAILABLE"),
+            DomainStatus::AwaitingAppCname => write!(f, "AWAITING_APP_CNAME"),
+            DomainStatus::Creating => write!(f, "CREATING"),
+            DomainStatus::Failed => write!(f, "FAILED"),
+            DomainStatus::ImportingCustomCertificate => write!(f, "IMPORTING_CUSTOM_CERTIFICATE"),
+            DomainStatus::InProgress => write!(f, "IN_PROGRESS"),
+            DomainStatus::PendingDeployment => write!(f, "PENDING_DEPLOYMENT"),
+            DomainStatus::PendingVerification => write!(f, "PENDING_VERIFICATION"),
+            DomainStatus::RequestingCertificate => write!(f, "REQUESTING_CERTIFICATE"),
+            DomainStatus::Updating => write!(f, "UPDATING"),
+            DomainStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

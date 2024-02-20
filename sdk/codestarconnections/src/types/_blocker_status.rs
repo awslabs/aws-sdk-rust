@@ -96,3 +96,12 @@ impl BlockerStatus {
         }
     }
 }
+impl ::std::fmt::Display for BlockerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BlockerStatus::Active => write!(f, "ACTIVE"),
+            BlockerStatus::Resolved => write!(f, "RESOLVED"),
+            BlockerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

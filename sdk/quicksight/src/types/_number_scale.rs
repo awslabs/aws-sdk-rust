@@ -116,3 +116,16 @@ impl NumberScale {
         }
     }
 }
+impl ::std::fmt::Display for NumberScale {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NumberScale::Auto => write!(f, "AUTO"),
+            NumberScale::Billions => write!(f, "BILLIONS"),
+            NumberScale::Millions => write!(f, "MILLIONS"),
+            NumberScale::None => write!(f, "NONE"),
+            NumberScale::Thousands => write!(f, "THOUSANDS"),
+            NumberScale::Trillions => write!(f, "TRILLIONS"),
+            NumberScale::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AutoMlMode {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlMode::Auto => write!(f, "AUTO"),
+            AutoMlMode::Ensembling => write!(f, "ENSEMBLING"),
+            AutoMlMode::HyperparameterTuning => write!(f, "HYPERPARAMETER_TUNING"),
+            AutoMlMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

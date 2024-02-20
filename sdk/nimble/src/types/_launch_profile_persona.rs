@@ -91,3 +91,11 @@ impl LaunchProfilePersona {
         }
     }
 }
+impl ::std::fmt::Display for LaunchProfilePersona {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchProfilePersona::User => write!(f, "USER"),
+            LaunchProfilePersona::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

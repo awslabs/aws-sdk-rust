@@ -106,3 +106,14 @@ impl S3ObjectCannedAcl {
         }
     }
 }
+impl ::std::fmt::Display for S3ObjectCannedAcl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3ObjectCannedAcl::AuthenticatedRead => write!(f, "AUTHENTICATED_READ"),
+            S3ObjectCannedAcl::BucketOwnerFullControl => write!(f, "BUCKET_OWNER_FULL_CONTROL"),
+            S3ObjectCannedAcl::BucketOwnerRead => write!(f, "BUCKET_OWNER_READ"),
+            S3ObjectCannedAcl::PublicRead => write!(f, "PUBLIC_READ"),
+            S3ObjectCannedAcl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

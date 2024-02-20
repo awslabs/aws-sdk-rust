@@ -101,3 +101,13 @@ impl WebhookAuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for WebhookAuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WebhookAuthenticationType::GithubHmac => write!(f, "GITHUB_HMAC"),
+            WebhookAuthenticationType::Ip => write!(f, "IP"),
+            WebhookAuthenticationType::Unauthenticated => write!(f, "UNAUTHENTICATED"),
+            WebhookAuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

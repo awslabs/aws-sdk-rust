@@ -116,3 +116,16 @@ impl ExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionStatus::Aborted => write!(f, "ABORTED"),
+            ExecutionStatus::Failed => write!(f, "FAILED"),
+            ExecutionStatus::PendingRedrive => write!(f, "PENDING_REDRIVE"),
+            ExecutionStatus::Running => write!(f, "RUNNING"),
+            ExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
+            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

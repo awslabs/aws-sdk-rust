@@ -96,3 +96,12 @@ impl ImageError {
         }
     }
 }
+impl ::std::fmt::Display for ImageError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageError::MediaError => write!(f, "MEDIA_ERROR"),
+            ImageError::NoMedia => write!(f, "NO_MEDIA"),
+            ImageError::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

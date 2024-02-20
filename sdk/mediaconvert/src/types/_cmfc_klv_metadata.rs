@@ -96,3 +96,12 @@ impl CmfcKlvMetadata {
         }
     }
 }
+impl ::std::fmt::Display for CmfcKlvMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmfcKlvMetadata::None => write!(f, "NONE"),
+            CmfcKlvMetadata::Passthrough => write!(f, "PASSTHROUGH"),
+            CmfcKlvMetadata::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

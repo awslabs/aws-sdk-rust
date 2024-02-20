@@ -177,3 +177,25 @@ impl RegionName {
         }
     }
 }
+impl ::std::fmt::Display for RegionName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegionName::ApNortheast1 => write!(f, "ap-northeast-1"),
+            RegionName::ApNortheast2 => write!(f, "ap-northeast-2"),
+            RegionName::ApSouth1 => write!(f, "ap-south-1"),
+            RegionName::ApSoutheast1 => write!(f, "ap-southeast-1"),
+            RegionName::ApSoutheast2 => write!(f, "ap-southeast-2"),
+            RegionName::CaCentral1 => write!(f, "ca-central-1"),
+            RegionName::EuCentral1 => write!(f, "eu-central-1"),
+            RegionName::EuNorth1 => write!(f, "eu-north-1"),
+            RegionName::EuWest1 => write!(f, "eu-west-1"),
+            RegionName::EuWest2 => write!(f, "eu-west-2"),
+            RegionName::EuWest3 => write!(f, "eu-west-3"),
+            RegionName::UsEast1 => write!(f, "us-east-1"),
+            RegionName::UsEast2 => write!(f, "us-east-2"),
+            RegionName::UsWest1 => write!(f, "us-west-1"),
+            RegionName::UsWest2 => write!(f, "us-west-2"),
+            RegionName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

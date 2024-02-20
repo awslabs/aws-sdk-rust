@@ -101,3 +101,13 @@ impl DeviceStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceStatus::Offline => write!(f, "OFFLINE"),
+            DeviceStatus::Online => write!(f, "ONLINE"),
+            DeviceStatus::Retired => write!(f, "RETIRED"),
+            DeviceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

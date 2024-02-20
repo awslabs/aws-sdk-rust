@@ -91,3 +91,11 @@ impl DataChecksumAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for DataChecksumAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataChecksumAlgorithm::Sha256 => write!(f, "SHA256"),
+            DataChecksumAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

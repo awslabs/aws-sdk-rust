@@ -96,3 +96,12 @@ impl SortValue {
         }
     }
 }
+impl ::std::fmt::Display for SortValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortValue::Asc => write!(f, "ASC"),
+            SortValue::Desc => write!(f, "DESC"),
+            SortValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

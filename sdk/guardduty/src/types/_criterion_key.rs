@@ -129,3 +129,17 @@ impl CriterionKey {
         }
     }
 }
+impl ::std::fmt::Display for CriterionKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CriterionKey::AccountId => write!(f, "ACCOUNT_ID"),
+            CriterionKey::Ec2InstanceArn => write!(f, "EC2_INSTANCE_ARN"),
+            CriterionKey::GuarddutyFindingId => write!(f, "GUARDDUTY_FINDING_ID"),
+            CriterionKey::ScanId => write!(f, "SCAN_ID"),
+            CriterionKey::ScanStartTime => write!(f, "SCAN_START_TIME"),
+            CriterionKey::ScanStatus => write!(f, "SCAN_STATUS"),
+            CriterionKey::ScanType => write!(f, "SCAN_TYPE"),
+            CriterionKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

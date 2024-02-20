@@ -96,3 +96,12 @@ impl MaximumMinimumComputationType {
         }
     }
 }
+impl ::std::fmt::Display for MaximumMinimumComputationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaximumMinimumComputationType::Maximum => write!(f, "MAXIMUM"),
+            MaximumMinimumComputationType::Minimum => write!(f, "MINIMUM"),
+            MaximumMinimumComputationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl WorkspaceImageIngestionProcess {
         }
     }
 }
+impl ::std::fmt::Display for WorkspaceImageIngestionProcess {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkspaceImageIngestionProcess::ByolGraphics => write!(f, "BYOL_GRAPHICS"),
+            WorkspaceImageIngestionProcess::ByolGraphicspro => write!(f, "BYOL_GRAPHICSPRO"),
+            WorkspaceImageIngestionProcess::ByolGraphicsG4Dn => write!(f, "BYOL_GRAPHICS_G4DN"),
+            WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop => write!(f, "BYOL_GRAPHICS_G4DN_BYOP"),
+            WorkspaceImageIngestionProcess::ByolRegular => write!(f, "BYOL_REGULAR"),
+            WorkspaceImageIngestionProcess::ByolRegularByop => write!(f, "BYOL_REGULAR_BYOP"),
+            WorkspaceImageIngestionProcess::ByolRegularWsp => write!(f, "BYOL_REGULAR_WSP"),
+            WorkspaceImageIngestionProcess::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

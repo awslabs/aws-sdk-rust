@@ -101,3 +101,13 @@ impl VariantPropertyType {
         }
     }
 }
+impl ::std::fmt::Display for VariantPropertyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VariantPropertyType::DataCaptureConfig => write!(f, "DataCaptureConfig"),
+            VariantPropertyType::DesiredInstanceCount => write!(f, "DesiredInstanceCount"),
+            VariantPropertyType::DesiredWeight => write!(f, "DesiredWeight"),
+            VariantPropertyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

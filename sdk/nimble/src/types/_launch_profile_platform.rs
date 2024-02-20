@@ -96,3 +96,12 @@ impl LaunchProfilePlatform {
         }
     }
 }
+impl ::std::fmt::Display for LaunchProfilePlatform {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchProfilePlatform::Linux => write!(f, "LINUX"),
+            LaunchProfilePlatform::Windows => write!(f, "WINDOWS"),
+            LaunchProfilePlatform::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

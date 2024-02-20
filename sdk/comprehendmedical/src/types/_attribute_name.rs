@@ -141,3 +141,19 @@ impl AttributeName {
         }
     }
 }
+impl ::std::fmt::Display for AttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttributeName::Diagnosis => write!(f, "DIAGNOSIS"),
+            AttributeName::Future => write!(f, "FUTURE"),
+            AttributeName::Hypothetical => write!(f, "HYPOTHETICAL"),
+            AttributeName::LowConfidence => write!(f, "LOW_CONFIDENCE"),
+            AttributeName::Negation => write!(f, "NEGATION"),
+            AttributeName::PastHistory => write!(f, "PAST_HISTORY"),
+            AttributeName::PertainsToFamily => write!(f, "PERTAINS_TO_FAMILY"),
+            AttributeName::Sign => write!(f, "SIGN"),
+            AttributeName::Symptom => write!(f, "SYMPTOM"),
+            AttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

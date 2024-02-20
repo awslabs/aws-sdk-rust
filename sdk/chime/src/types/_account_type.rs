@@ -106,3 +106,14 @@ impl AccountType {
         }
     }
 }
+impl ::std::fmt::Display for AccountType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountType::EnterpriseDirectory => write!(f, "EnterpriseDirectory"),
+            AccountType::EnterpriseLwa => write!(f, "EnterpriseLWA"),
+            AccountType::EnterpriseOidc => write!(f, "EnterpriseOIDC"),
+            AccountType::Team => write!(f, "Team"),
+            AccountType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

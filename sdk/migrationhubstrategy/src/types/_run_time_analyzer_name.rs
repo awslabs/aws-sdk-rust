@@ -111,3 +111,15 @@ impl RunTimeAnalyzerName {
         }
     }
 }
+impl ::std::fmt::Display for RunTimeAnalyzerName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RunTimeAnalyzerName::A2CAnalyzer => write!(f, "A2C_ANALYZER"),
+            RunTimeAnalyzerName::DatabaseAnalyzer => write!(f, "DATABASE_ANALYZER"),
+            RunTimeAnalyzerName::EmpPaAnalyzer => write!(f, "EMP_PA_ANALYZER"),
+            RunTimeAnalyzerName::RehostAnalyzer => write!(f, "REHOST_ANALYZER"),
+            RunTimeAnalyzerName::SctAnalyzer => write!(f, "SCT_ANALYZER"),
+            RunTimeAnalyzerName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

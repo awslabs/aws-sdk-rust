@@ -215,3 +215,35 @@ impl X12TransactionSet {
         }
     }
 }
+impl ::std::fmt::Display for X12TransactionSet {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            X12TransactionSet::X12110 => write!(f, "X12_110"),
+            X12TransactionSet::X12180 => write!(f, "X12_180"),
+            X12TransactionSet::X12204 => write!(f, "X12_204"),
+            X12TransactionSet::X12210 => write!(f, "X12_210"),
+            X12TransactionSet::X12214 => write!(f, "X12_214"),
+            X12TransactionSet::X12215 => write!(f, "X12_215"),
+            X12TransactionSet::X12310 => write!(f, "X12_310"),
+            X12TransactionSet::X12315 => write!(f, "X12_315"),
+            X12TransactionSet::X12322 => write!(f, "X12_322"),
+            X12TransactionSet::X12404 => write!(f, "X12_404"),
+            X12TransactionSet::X12410 => write!(f, "X12_410"),
+            X12TransactionSet::X12820 => write!(f, "X12_820"),
+            X12TransactionSet::X12824 => write!(f, "X12_824"),
+            X12TransactionSet::X12830 => write!(f, "X12_830"),
+            X12TransactionSet::X12846 => write!(f, "X12_846"),
+            X12TransactionSet::X12850 => write!(f, "X12_850"),
+            X12TransactionSet::X12852 => write!(f, "X12_852"),
+            X12TransactionSet::X12855 => write!(f, "X12_855"),
+            X12TransactionSet::X12856 => write!(f, "X12_856"),
+            X12TransactionSet::X12860 => write!(f, "X12_860"),
+            X12TransactionSet::X12861 => write!(f, "X12_861"),
+            X12TransactionSet::X12864 => write!(f, "X12_864"),
+            X12TransactionSet::X12940 => write!(f, "X12_940"),
+            X12TransactionSet::X12990 => write!(f, "X12_990"),
+            X12TransactionSet::X12997 => write!(f, "X12_997"),
+            X12TransactionSet::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl ObjectAttributes {
         }
     }
 }
+impl ::std::fmt::Display for ObjectAttributes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectAttributes::Checksum => write!(f, "Checksum"),
+            ObjectAttributes::Etag => write!(f, "ETag"),
+            ObjectAttributes::ObjectParts => write!(f, "ObjectParts"),
+            ObjectAttributes::ObjectSize => write!(f, "ObjectSize"),
+            ObjectAttributes::StorageClass => write!(f, "StorageClass"),
+            ObjectAttributes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

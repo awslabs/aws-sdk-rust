@@ -91,3 +91,11 @@ impl TargetPlatformOs {
         }
     }
 }
+impl ::std::fmt::Display for TargetPlatformOs {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetPlatformOs::Linux => write!(f, "LINUX"),
+            TargetPlatformOs::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

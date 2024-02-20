@@ -123,3 +123,16 @@ impl LaunchTemplateErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for LaunchTemplateErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchTemplateErrorCode::LaunchTemplateIdDoesNotExist => write!(f, "launchTemplateIdDoesNotExist"),
+            LaunchTemplateErrorCode::LaunchTemplateIdMalformed => write!(f, "launchTemplateIdMalformed"),
+            LaunchTemplateErrorCode::LaunchTemplateNameDoesNotExist => write!(f, "launchTemplateNameDoesNotExist"),
+            LaunchTemplateErrorCode::LaunchTemplateNameMalformed => write!(f, "launchTemplateNameMalformed"),
+            LaunchTemplateErrorCode::LaunchTemplateVersionDoesNotExist => write!(f, "launchTemplateVersionDoesNotExist"),
+            LaunchTemplateErrorCode::UnexpectedError => write!(f, "unexpectedError"),
+            LaunchTemplateErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

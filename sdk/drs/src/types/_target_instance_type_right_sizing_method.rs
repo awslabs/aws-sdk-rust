@@ -101,3 +101,13 @@ impl TargetInstanceTypeRightSizingMethod {
         }
     }
 }
+impl ::std::fmt::Display for TargetInstanceTypeRightSizingMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetInstanceTypeRightSizingMethod::Basic => write!(f, "BASIC"),
+            TargetInstanceTypeRightSizingMethod::InAws => write!(f, "IN_AWS"),
+            TargetInstanceTypeRightSizingMethod::None => write!(f, "NONE"),
+            TargetInstanceTypeRightSizingMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl OrganizationNodeType {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationNodeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationNodeType::Account => write!(f, "ACCOUNT"),
+            OrganizationNodeType::Organization => write!(f, "ORGANIZATION"),
+            OrganizationNodeType::OrganizationalUnit => write!(f, "ORGANIZATIONAL_UNIT"),
+            OrganizationNodeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

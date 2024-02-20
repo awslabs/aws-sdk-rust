@@ -106,3 +106,14 @@ impl LicenseEdition {
         }
     }
 }
+impl ::std::fmt::Display for LicenseEdition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LicenseEdition::Enterprise => write!(f, "Enterprise"),
+            LicenseEdition::Free => write!(f, "Free"),
+            LicenseEdition::NoLicenseEditionFound => write!(f, "NoLicenseEditionFound"),
+            LicenseEdition::Standard => write!(f, "Standard"),
+            LicenseEdition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

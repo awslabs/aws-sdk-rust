@@ -106,3 +106,14 @@ impl InstanceFleetStateChangeReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for InstanceFleetStateChangeReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceFleetStateChangeReasonCode::ClusterTerminated => write!(f, "CLUSTER_TERMINATED"),
+            InstanceFleetStateChangeReasonCode::InstanceFailure => write!(f, "INSTANCE_FAILURE"),
+            InstanceFleetStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            InstanceFleetStateChangeReasonCode::ValidationError => write!(f, "VALIDATION_ERROR"),
+            InstanceFleetStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

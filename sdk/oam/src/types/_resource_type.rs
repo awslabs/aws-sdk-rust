@@ -111,3 +111,14 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::AwsApplicationinsightsApplication => write!(f, "AWS::ApplicationInsights::Application"),
+            ResourceType::AwsCloudwatchMetric => write!(f, "AWS::CloudWatch::Metric"),
+            ResourceType::AwsLogsLoggroup => write!(f, "AWS::Logs::LogGroup"),
+            ResourceType::AwsXrayTrace => write!(f, "AWS::XRay::Trace"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

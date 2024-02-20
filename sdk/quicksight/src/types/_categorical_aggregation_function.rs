@@ -96,3 +96,12 @@ impl CategoricalAggregationFunction {
         }
     }
 }
+impl ::std::fmt::Display for CategoricalAggregationFunction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CategoricalAggregationFunction::Count => write!(f, "COUNT"),
+            CategoricalAggregationFunction::DistinctCount => write!(f, "DISTINCT_COUNT"),
+            CategoricalAggregationFunction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

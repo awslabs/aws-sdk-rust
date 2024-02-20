@@ -189,3 +189,27 @@ impl SortField {
         }
     }
 }
+impl ::std::fmt::Display for SortField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortField::AwsAccountId => write!(f, "AWS_ACCOUNT_ID"),
+            SortField::ComponentType => write!(f, "COMPONENT_TYPE"),
+            SortField::EcrImagePushedAt => write!(f, "ECR_IMAGE_PUSHED_AT"),
+            SortField::EcrImageRegistry => write!(f, "ECR_IMAGE_REGISTRY"),
+            SortField::EcrImageRepositoryName => write!(f, "ECR_IMAGE_REPOSITORY_NAME"),
+            SortField::EpssScore => write!(f, "EPSS_SCORE"),
+            SortField::FindingStatus => write!(f, "FINDING_STATUS"),
+            SortField::FindingType => write!(f, "FINDING_TYPE"),
+            SortField::FirstObservedAt => write!(f, "FIRST_OBSERVED_AT"),
+            SortField::InspectorScore => write!(f, "INSPECTOR_SCORE"),
+            SortField::LastObservedAt => write!(f, "LAST_OBSERVED_AT"),
+            SortField::NetworkProtocol => write!(f, "NETWORK_PROTOCOL"),
+            SortField::ResourceType => write!(f, "RESOURCE_TYPE"),
+            SortField::Severity => write!(f, "SEVERITY"),
+            SortField::VendorSeverity => write!(f, "VENDOR_SEVERITY"),
+            SortField::VulnerabilityId => write!(f, "VULNERABILITY_ID"),
+            SortField::VulnerabilitySource => write!(f, "VULNERABILITY_SOURCE"),
+            SortField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl BuiltInIntentSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for BuiltInIntentSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BuiltInIntentSortAttribute::IntentSignature => write!(f, "IntentSignature"),
+            BuiltInIntentSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

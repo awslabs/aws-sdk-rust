@@ -96,3 +96,12 @@ impl ExecutionClass {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionClass::Flex => write!(f, "FLEX"),
+            ExecutionClass::Standard => write!(f, "STANDARD"),
+            ExecutionClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

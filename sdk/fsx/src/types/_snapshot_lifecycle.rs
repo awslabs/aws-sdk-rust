@@ -106,3 +106,14 @@ impl SnapshotLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for SnapshotLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapshotLifecycle::Available => write!(f, "AVAILABLE"),
+            SnapshotLifecycle::Creating => write!(f, "CREATING"),
+            SnapshotLifecycle::Deleting => write!(f, "DELETING"),
+            SnapshotLifecycle::Pending => write!(f, "PENDING"),
+            SnapshotLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl BuildType {
         }
     }
 }
+impl ::std::fmt::Display for BuildType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BuildType::Import => write!(f, "IMPORT"),
+            BuildType::Scheduled => write!(f, "SCHEDULED"),
+            BuildType::UserInitiated => write!(f, "USER_INITIATED"),
+            BuildType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

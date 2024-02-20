@@ -106,3 +106,14 @@ impl AudioType {
         }
     }
 }
+impl ::std::fmt::Display for AudioType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioType::CleanEffects => write!(f, "CLEAN_EFFECTS"),
+            AudioType::HearingImpaired => write!(f, "HEARING_IMPAIRED"),
+            AudioType::Undefined => write!(f, "UNDEFINED"),
+            AudioType::VisualImpairedCommentary => write!(f, "VISUAL_IMPAIRED_COMMENTARY"),
+            AudioType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

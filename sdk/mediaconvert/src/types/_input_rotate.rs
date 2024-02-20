@@ -111,3 +111,15 @@ impl InputRotate {
         }
     }
 }
+impl ::std::fmt::Display for InputRotate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputRotate::Auto => write!(f, "AUTO"),
+            InputRotate::Degrees180 => write!(f, "DEGREES_180"),
+            InputRotate::Degrees270 => write!(f, "DEGREES_270"),
+            InputRotate::Degrees90 => write!(f, "DEGREES_90"),
+            InputRotate::Degree0 => write!(f, "DEGREE_0"),
+            InputRotate::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

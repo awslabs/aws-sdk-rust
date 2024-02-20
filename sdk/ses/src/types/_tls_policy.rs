@@ -96,3 +96,12 @@ impl TlsPolicy {
         }
     }
 }
+impl ::std::fmt::Display for TlsPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TlsPolicy::Optional => write!(f, "Optional"),
+            TlsPolicy::Require => write!(f, "Require"),
+            TlsPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

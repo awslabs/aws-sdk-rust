@@ -96,3 +96,12 @@ impl FeatureGroupSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for FeatureGroupSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeatureGroupSortOrder::Ascending => write!(f, "Ascending"),
+            FeatureGroupSortOrder::Descending => write!(f, "Descending"),
+            FeatureGroupSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl WebExperienceSamplePromptsControlMode {
         }
     }
 }
+impl ::std::fmt::Display for WebExperienceSamplePromptsControlMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WebExperienceSamplePromptsControlMode::Disabled => write!(f, "DISABLED"),
+            WebExperienceSamplePromptsControlMode::Enabled => write!(f, "ENABLED"),
+            WebExperienceSamplePromptsControlMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

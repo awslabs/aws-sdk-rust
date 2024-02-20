@@ -135,3 +135,18 @@ impl SourceAccessType {
         }
     }
 }
+impl ::std::fmt::Display for SourceAccessType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceAccessType::BasicAuth => write!(f, "BASIC_AUTH"),
+            SourceAccessType::ClientCertificateTlsAuth => write!(f, "CLIENT_CERTIFICATE_TLS_AUTH"),
+            SourceAccessType::SaslScram256Auth => write!(f, "SASL_SCRAM_256_AUTH"),
+            SourceAccessType::SaslScram512Auth => write!(f, "SASL_SCRAM_512_AUTH"),
+            SourceAccessType::ServerRootCaCertificate => write!(f, "SERVER_ROOT_CA_CERTIFICATE"),
+            SourceAccessType::VirtualHost => write!(f, "VIRTUAL_HOST"),
+            SourceAccessType::VpcSecurityGroup => write!(f, "VPC_SECURITY_GROUP"),
+            SourceAccessType::VpcSubnet => write!(f, "VPC_SUBNET"),
+            SourceAccessType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -147,3 +147,20 @@ impl UpdateType {
         }
     }
 }
+impl ::std::fmt::Display for UpdateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateType::AccessConfigUpdate => write!(f, "AccessConfigUpdate"),
+            UpdateType::AddonUpdate => write!(f, "AddonUpdate"),
+            UpdateType::AssociateEncryptionConfig => write!(f, "AssociateEncryptionConfig"),
+            UpdateType::AssociateIdentityProviderConfig => write!(f, "AssociateIdentityProviderConfig"),
+            UpdateType::ConfigUpdate => write!(f, "ConfigUpdate"),
+            UpdateType::DisassociateIdentityProviderConfig => write!(f, "DisassociateIdentityProviderConfig"),
+            UpdateType::EndpointAccessUpdate => write!(f, "EndpointAccessUpdate"),
+            UpdateType::LoggingUpdate => write!(f, "LoggingUpdate"),
+            UpdateType::VersionUpdate => write!(f, "VersionUpdate"),
+            UpdateType::VpcConfigUpdate => write!(f, "VpcConfigUpdate"),
+            UpdateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

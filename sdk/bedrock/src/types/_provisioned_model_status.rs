@@ -106,3 +106,14 @@ impl ProvisionedModelStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProvisionedModelStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProvisionedModelStatus::Creating => write!(f, "Creating"),
+            ProvisionedModelStatus::Failed => write!(f, "Failed"),
+            ProvisionedModelStatus::InService => write!(f, "InService"),
+            ProvisionedModelStatus::Updating => write!(f, "Updating"),
+            ProvisionedModelStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

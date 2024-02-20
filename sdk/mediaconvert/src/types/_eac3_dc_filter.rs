@@ -96,3 +96,12 @@ impl Eac3DcFilter {
         }
     }
 }
+impl ::std::fmt::Display for Eac3DcFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3DcFilter::Disabled => write!(f, "DISABLED"),
+            Eac3DcFilter::Enabled => write!(f, "ENABLED"),
+            Eac3DcFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

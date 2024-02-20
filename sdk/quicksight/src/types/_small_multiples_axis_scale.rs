@@ -96,3 +96,12 @@ impl SmallMultiplesAxisScale {
         }
     }
 }
+impl ::std::fmt::Display for SmallMultiplesAxisScale {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SmallMultiplesAxisScale::Independent => write!(f, "INDEPENDENT"),
+            SmallMultiplesAxisScale::Shared => write!(f, "SHARED"),
+            SmallMultiplesAxisScale::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

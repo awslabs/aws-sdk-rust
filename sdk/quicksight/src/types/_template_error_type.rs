@@ -106,3 +106,14 @@ impl TemplateErrorType {
         }
     }
 }
+impl ::std::fmt::Display for TemplateErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemplateErrorType::AccessDenied => write!(f, "ACCESS_DENIED"),
+            TemplateErrorType::DataSetNotFound => write!(f, "DATA_SET_NOT_FOUND"),
+            TemplateErrorType::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            TemplateErrorType::SourceNotFound => write!(f, "SOURCE_NOT_FOUND"),
+            TemplateErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

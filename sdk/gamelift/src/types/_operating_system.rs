@@ -111,3 +111,15 @@ impl OperatingSystem {
         }
     }
 }
+impl ::std::fmt::Display for OperatingSystem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperatingSystem::AmazonLinux => write!(f, "AMAZON_LINUX"),
+            OperatingSystem::AmazonLinux2 => write!(f, "AMAZON_LINUX_2"),
+            OperatingSystem::AmazonLinux2023 => write!(f, "AMAZON_LINUX_2023"),
+            OperatingSystem::Windows2012 => write!(f, "WINDOWS_2012"),
+            OperatingSystem::Windows2016 => write!(f, "WINDOWS_2016"),
+            OperatingSystem::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

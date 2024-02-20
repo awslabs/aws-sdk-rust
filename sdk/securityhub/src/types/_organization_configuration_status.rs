@@ -101,3 +101,13 @@ impl OrganizationConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationConfigurationStatus::Enabled => write!(f, "ENABLED"),
+            OrganizationConfigurationStatus::Failed => write!(f, "FAILED"),
+            OrganizationConfigurationStatus::Pending => write!(f, "PENDING"),
+            OrganizationConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl VolumeStatusInfoStatus {
         }
     }
 }
+impl ::std::fmt::Display for VolumeStatusInfoStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeStatusInfoStatus::Impaired => write!(f, "impaired"),
+            VolumeStatusInfoStatus::InsufficientData => write!(f, "insufficient-data"),
+            VolumeStatusInfoStatus::Ok => write!(f, "ok"),
+            VolumeStatusInfoStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

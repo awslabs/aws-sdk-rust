@@ -96,3 +96,12 @@ impl KnowledgeBaseState {
         }
     }
 }
+impl ::std::fmt::Display for KnowledgeBaseState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KnowledgeBaseState::Disabled => write!(f, "DISABLED"),
+            KnowledgeBaseState::Enabled => write!(f, "ENABLED"),
+            KnowledgeBaseState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

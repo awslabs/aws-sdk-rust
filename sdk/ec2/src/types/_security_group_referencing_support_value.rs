@@ -96,3 +96,12 @@ impl SecurityGroupReferencingSupportValue {
         }
     }
 }
+impl ::std::fmt::Display for SecurityGroupReferencingSupportValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SecurityGroupReferencingSupportValue::Disable => write!(f, "disable"),
+            SecurityGroupReferencingSupportValue::Enable => write!(f, "enable"),
+            SecurityGroupReferencingSupportValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

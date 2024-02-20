@@ -159,3 +159,22 @@ impl MessageUsefulnessReason {
         }
     }
 }
+impl ::std::fmt::Display for MessageUsefulnessReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessageUsefulnessReason::Complete => write!(f, "COMPLETE"),
+            MessageUsefulnessReason::FactuallyCorrect => write!(f, "FACTUALLY_CORRECT"),
+            MessageUsefulnessReason::HarmfulOrUnsafe => write!(f, "HARMFUL_OR_UNSAFE"),
+            MessageUsefulnessReason::Helpful => write!(f, "HELPFUL"),
+            MessageUsefulnessReason::IncorrectOrMissingSources => write!(f, "INCORRECT_OR_MISSING_SOURCES"),
+            MessageUsefulnessReason::NotBasedOnDocuments => write!(f, "NOT_BASED_ON_DOCUMENTS"),
+            MessageUsefulnessReason::NotComplete => write!(f, "NOT_COMPLETE"),
+            MessageUsefulnessReason::NotConcise => write!(f, "NOT_CONCISE"),
+            MessageUsefulnessReason::NotFactuallyCorrect => write!(f, "NOT_FACTUALLY_CORRECT"),
+            MessageUsefulnessReason::NotHelpful => write!(f, "NOT_HELPFUL"),
+            MessageUsefulnessReason::Other => write!(f, "OTHER"),
+            MessageUsefulnessReason::RelevantSources => write!(f, "RELEVANT_SOURCES"),
+            MessageUsefulnessReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

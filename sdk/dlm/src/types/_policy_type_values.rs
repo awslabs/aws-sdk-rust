@@ -101,3 +101,13 @@ impl PolicyTypeValues {
         }
     }
 }
+impl ::std::fmt::Display for PolicyTypeValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyTypeValues::EbsSnapshotManagement => write!(f, "EBS_SNAPSHOT_MANAGEMENT"),
+            PolicyTypeValues::EventBasedPolicy => write!(f, "EVENT_BASED_POLICY"),
+            PolicyTypeValues::ImageManagement => write!(f, "IMAGE_MANAGEMENT"),
+            PolicyTypeValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl H265ScanType {
         }
     }
 }
+impl ::std::fmt::Display for H265ScanType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265ScanType::Interlaced => write!(f, "INTERLACED"),
+            H265ScanType::Progressive => write!(f, "PROGRESSIVE"),
+            H265ScanType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

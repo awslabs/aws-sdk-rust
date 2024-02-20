@@ -96,3 +96,12 @@ impl BehaviorType {
         }
     }
 }
+impl ::std::fmt::Display for BehaviorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BehaviorType::RouteAnyChannel => write!(f, "ROUTE_ANY_CHANNEL"),
+            BehaviorType::RouteCurrentChannelOnly => write!(f, "ROUTE_CURRENT_CHANNEL_ONLY"),
+            BehaviorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl NodeConfigurationOptionsFilterName {
         }
     }
 }
+impl ::std::fmt::Display for NodeConfigurationOptionsFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeConfigurationOptionsFilterName::EstimatedDiskUtilizationPercent => write!(f, "EstimatedDiskUtilizationPercent"),
+            NodeConfigurationOptionsFilterName::Mode => write!(f, "Mode"),
+            NodeConfigurationOptionsFilterName::NodeType => write!(f, "NodeType"),
+            NodeConfigurationOptionsFilterName::NumNodes => write!(f, "NumberOfNodes"),
+            NodeConfigurationOptionsFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

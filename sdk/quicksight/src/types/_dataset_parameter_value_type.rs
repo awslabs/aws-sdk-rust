@@ -96,3 +96,12 @@ impl DatasetParameterValueType {
         }
     }
 }
+impl ::std::fmt::Display for DatasetParameterValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetParameterValueType::MultiValued => write!(f, "MULTI_VALUED"),
+            DatasetParameterValueType::SingleValued => write!(f, "SINGLE_VALUED"),
+            DatasetParameterValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

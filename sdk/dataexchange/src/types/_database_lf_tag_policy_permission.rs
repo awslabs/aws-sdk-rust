@@ -91,3 +91,11 @@ impl DatabaseLfTagPolicyPermission {
         }
     }
 }
+impl ::std::fmt::Display for DatabaseLfTagPolicyPermission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatabaseLfTagPolicyPermission::Describe => write!(f, "DESCRIBE"),
+            DatabaseLfTagPolicyPermission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ResourceSyncStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceSyncStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceSyncStatus::Failed => write!(f, "FAILED"),
+            ResourceSyncStatus::Initiated => write!(f, "INITIATED"),
+            ResourceSyncStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ResourceSyncStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ResourceSyncStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

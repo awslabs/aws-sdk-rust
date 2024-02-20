@@ -96,3 +96,12 @@ impl JobDefinitionType {
         }
     }
 }
+impl ::std::fmt::Display for JobDefinitionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobDefinitionType::Container => write!(f, "container"),
+            JobDefinitionType::Multinode => write!(f, "multinode"),
+            JobDefinitionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl ModelVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelVersionStatus::Canceled => write!(f, "CANCELED"),
+            ModelVersionStatus::Failed => write!(f, "FAILED"),
+            ModelVersionStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
+            ModelVersionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ModelVersionStatus::Success => write!(f, "SUCCESS"),
+            ModelVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

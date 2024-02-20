@@ -111,3 +111,15 @@ impl SavingsPlanRateServiceCode {
         }
     }
 }
+impl ::std::fmt::Display for SavingsPlanRateServiceCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SavingsPlanRateServiceCode::Lambda => write!(f, "AWSLambda"),
+            SavingsPlanRateServiceCode::Ec2 => write!(f, "AmazonEC2"),
+            SavingsPlanRateServiceCode::Fargate => write!(f, "AmazonECS"),
+            SavingsPlanRateServiceCode::FargateEks => write!(f, "AmazonEKS"),
+            SavingsPlanRateServiceCode::Sagemaker => write!(f, "AmazonSageMaker"),
+            SavingsPlanRateServiceCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

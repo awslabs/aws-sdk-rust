@@ -106,3 +106,14 @@ impl ConnectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionStatus::Available => write!(f, "AVAILABLE"),
+            ConnectionStatus::Deleted => write!(f, "DELETED"),
+            ConnectionStatus::Error => write!(f, "ERROR"),
+            ConnectionStatus::PendingHandshake => write!(f, "PENDING_HANDSHAKE"),
+            ConnectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl HorizontalTilePosition {
         }
     }
 }
+impl ::std::fmt::Display for HorizontalTilePosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HorizontalTilePosition::Bottom => write!(f, "Bottom"),
+            HorizontalTilePosition::Top => write!(f, "Top"),
+            HorizontalTilePosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

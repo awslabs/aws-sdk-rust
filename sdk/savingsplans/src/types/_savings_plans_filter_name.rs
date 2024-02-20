@@ -141,3 +141,19 @@ impl SavingsPlansFilterName {
         }
     }
 }
+impl ::std::fmt::Display for SavingsPlansFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SavingsPlansFilterName::Commitment => write!(f, "commitment"),
+            SavingsPlansFilterName::Ec2InstanceFamily => write!(f, "ec2-instance-family"),
+            SavingsPlansFilterName::End => write!(f, "end"),
+            SavingsPlansFilterName::PaymentOption => write!(f, "payment-option"),
+            SavingsPlansFilterName::Region => write!(f, "region"),
+            SavingsPlansFilterName::SavingsPlanType => write!(f, "savings-plan-type"),
+            SavingsPlansFilterName::Start => write!(f, "start"),
+            SavingsPlansFilterName::Term => write!(f, "term"),
+            SavingsPlansFilterName::Upfront => write!(f, "upfront"),
+            SavingsPlansFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl IpamDiscoveryFailureCode {
         }
     }
 }
+impl ::std::fmt::Display for IpamDiscoveryFailureCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamDiscoveryFailureCode::AssumeRoleFailure => write!(f, "assume-role-failure"),
+            IpamDiscoveryFailureCode::ThrottlingFailure => write!(f, "throttling-failure"),
+            IpamDiscoveryFailureCode::UnauthorizedFailure => write!(f, "unauthorized-failure"),
+            IpamDiscoveryFailureCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

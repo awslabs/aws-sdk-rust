@@ -96,3 +96,12 @@ impl TimeRange {
         }
     }
 }
+impl ::std::fmt::Display for TimeRange {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimeRange::MonthToDate => write!(f, "MONTH_TO_DATE"),
+            TimeRange::Past30Days => write!(f, "PAST_30_DAYS"),
+            TimeRange::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

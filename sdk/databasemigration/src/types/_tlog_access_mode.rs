@@ -106,3 +106,14 @@ impl TlogAccessMode {
         }
     }
 }
+impl ::std::fmt::Display for TlogAccessMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TlogAccessMode::BackupOnly => write!(f, "BackupOnly"),
+            TlogAccessMode::PreferBackup => write!(f, "PreferBackup"),
+            TlogAccessMode::PreferTlog => write!(f, "PreferTlog"),
+            TlogAccessMode::TlogOnly => write!(f, "TlogOnly"),
+            TlogAccessMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

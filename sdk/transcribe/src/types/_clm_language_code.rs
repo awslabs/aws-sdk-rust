@@ -121,3 +121,17 @@ impl ClmLanguageCode {
         }
     }
 }
+impl ::std::fmt::Display for ClmLanguageCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClmLanguageCode::DeDe => write!(f, "de-DE"),
+            ClmLanguageCode::EnAu => write!(f, "en-AU"),
+            ClmLanguageCode::EnGb => write!(f, "en-GB"),
+            ClmLanguageCode::EnUs => write!(f, "en-US"),
+            ClmLanguageCode::EsUs => write!(f, "es-US"),
+            ClmLanguageCode::HiIn => write!(f, "hi-IN"),
+            ClmLanguageCode::JaJp => write!(f, "ja-JP"),
+            ClmLanguageCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl StreamingStatus {
         }
     }
 }
+impl ::std::fmt::Display for StreamingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamingStatus::Ended => write!(f, "ENDED"),
+            StreamingStatus::Ongoing => write!(f, "ONGOING"),
+            StreamingStatus::PendingConfiguration => write!(f, "PENDING_CONFIGURATION"),
+            StreamingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

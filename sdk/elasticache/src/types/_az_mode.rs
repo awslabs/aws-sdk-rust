@@ -96,3 +96,12 @@ impl AzMode {
         }
     }
 }
+impl ::std::fmt::Display for AzMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AzMode::CrossAz => write!(f, "cross-az"),
+            AzMode::SingleAz => write!(f, "single-az"),
+            AzMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

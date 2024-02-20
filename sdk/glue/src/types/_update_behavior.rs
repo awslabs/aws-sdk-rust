@@ -96,3 +96,12 @@ impl UpdateBehavior {
         }
     }
 }
+impl ::std::fmt::Display for UpdateBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateBehavior::Log => write!(f, "LOG"),
+            UpdateBehavior::UpdateInDatabase => write!(f, "UPDATE_IN_DATABASE"),
+            UpdateBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Visibility {
         }
     }
 }
+impl ::std::fmt::Display for Visibility {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Visibility::Private => write!(f, "PRIVATE"),
+            Visibility::Public => write!(f, "PUBLIC"),
+            Visibility::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

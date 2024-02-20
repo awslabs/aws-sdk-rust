@@ -101,3 +101,13 @@ impl VpcEndpointType {
         }
     }
 }
+impl ::std::fmt::Display for VpcEndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcEndpointType::Gateway => write!(f, "Gateway"),
+            VpcEndpointType::GatewayLoadBalancer => write!(f, "GatewayLoadBalancer"),
+            VpcEndpointType::Interface => write!(f, "Interface"),
+            VpcEndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

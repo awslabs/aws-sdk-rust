@@ -106,3 +106,14 @@ impl ReferenceImportJobItemStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceImportJobItemStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceImportJobItemStatus::Failed => write!(f, "FAILED"),
+            ReferenceImportJobItemStatus::Finished => write!(f, "FINISHED"),
+            ReferenceImportJobItemStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ReferenceImportJobItemStatus::NotStarted => write!(f, "NOT_STARTED"),
+            ReferenceImportJobItemStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

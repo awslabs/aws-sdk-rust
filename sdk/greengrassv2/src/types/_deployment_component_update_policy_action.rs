@@ -96,3 +96,12 @@ impl DeploymentComponentUpdatePolicyAction {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentComponentUpdatePolicyAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentComponentUpdatePolicyAction::NotifyComponents => write!(f, "NOTIFY_COMPONENTS"),
+            DeploymentComponentUpdatePolicyAction::SkipNotifyComponents => write!(f, "SKIP_NOTIFY_COMPONENTS"),
+            DeploymentComponentUpdatePolicyAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

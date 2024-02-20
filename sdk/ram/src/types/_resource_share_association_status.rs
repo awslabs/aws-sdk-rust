@@ -111,3 +111,15 @@ impl ResourceShareAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceShareAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceShareAssociationStatus::Associated => write!(f, "ASSOCIATED"),
+            ResourceShareAssociationStatus::Associating => write!(f, "ASSOCIATING"),
+            ResourceShareAssociationStatus::Disassociated => write!(f, "DISASSOCIATED"),
+            ResourceShareAssociationStatus::Disassociating => write!(f, "DISASSOCIATING"),
+            ResourceShareAssociationStatus::Failed => write!(f, "FAILED"),
+            ResourceShareAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

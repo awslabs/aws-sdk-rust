@@ -121,3 +121,17 @@ impl InputColumnDataType {
         }
     }
 }
+impl ::std::fmt::Display for InputColumnDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputColumnDataType::Bit => write!(f, "BIT"),
+            InputColumnDataType::Boolean => write!(f, "BOOLEAN"),
+            InputColumnDataType::Datetime => write!(f, "DATETIME"),
+            InputColumnDataType::Decimal => write!(f, "DECIMAL"),
+            InputColumnDataType::Integer => write!(f, "INTEGER"),
+            InputColumnDataType::Json => write!(f, "JSON"),
+            InputColumnDataType::String => write!(f, "STRING"),
+            InputColumnDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

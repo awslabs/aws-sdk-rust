@@ -101,3 +101,13 @@ impl ImportFailureStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImportFailureStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportFailureStatus::Failed => write!(f, "FAILED"),
+            ImportFailureStatus::Retry => write!(f, "RETRY"),
+            ImportFailureStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ImportFailureStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl ProtectedQueryType {
         }
     }
 }
+impl ::std::fmt::Display for ProtectedQueryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProtectedQueryType::Sql => write!(f, "SQL"),
+            ProtectedQueryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

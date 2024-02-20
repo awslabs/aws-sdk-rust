@@ -96,3 +96,12 @@ impl TopBottomComputationType {
         }
     }
 }
+impl ::std::fmt::Display for TopBottomComputationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TopBottomComputationType::Bottom => write!(f, "BOTTOM"),
+            TopBottomComputationType::Top => write!(f, "TOP"),
+            TopBottomComputationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

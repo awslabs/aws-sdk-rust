@@ -91,3 +91,11 @@ impl OpsItemEventFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for OpsItemEventFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpsItemEventFilterKey::OpsitemId => write!(f, "OpsItemId"),
+            OpsItemEventFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl PullRequestStatusEnum {
         }
     }
 }
+impl ::std::fmt::Display for PullRequestStatusEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PullRequestStatusEnum::Closed => write!(f, "CLOSED"),
+            PullRequestStatusEnum::Open => write!(f, "OPEN"),
+            PullRequestStatusEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

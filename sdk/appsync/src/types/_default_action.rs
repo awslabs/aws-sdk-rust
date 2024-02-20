@@ -96,3 +96,12 @@ impl DefaultAction {
         }
     }
 }
+impl ::std::fmt::Display for DefaultAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DefaultAction::Allow => write!(f, "ALLOW"),
+            DefaultAction::Deny => write!(f, "DENY"),
+            DefaultAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

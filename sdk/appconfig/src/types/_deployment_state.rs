@@ -116,3 +116,16 @@ impl DeploymentState {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentState::Baking => write!(f, "BAKING"),
+            DeploymentState::Complete => write!(f, "COMPLETE"),
+            DeploymentState::Deploying => write!(f, "DEPLOYING"),
+            DeploymentState::RolledBack => write!(f, "ROLLED_BACK"),
+            DeploymentState::RollingBack => write!(f, "ROLLING_BACK"),
+            DeploymentState::Validating => write!(f, "VALIDATING"),
+            DeploymentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

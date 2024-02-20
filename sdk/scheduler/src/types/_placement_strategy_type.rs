@@ -101,3 +101,13 @@ impl PlacementStrategyType {
         }
     }
 }
+impl ::std::fmt::Display for PlacementStrategyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlacementStrategyType::Binpack => write!(f, "binpack"),
+            PlacementStrategyType::Random => write!(f, "random"),
+            PlacementStrategyType::Spread => write!(f, "spread"),
+            PlacementStrategyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

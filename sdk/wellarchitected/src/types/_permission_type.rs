@@ -96,3 +96,12 @@ impl PermissionType {
         }
     }
 }
+impl ::std::fmt::Display for PermissionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionType::Contributor => write!(f, "CONTRIBUTOR"),
+            PermissionType::Readonly => write!(f, "READONLY"),
+            PermissionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

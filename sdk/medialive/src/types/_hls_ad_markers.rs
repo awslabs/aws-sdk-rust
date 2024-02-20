@@ -101,3 +101,13 @@ impl HlsAdMarkers {
         }
     }
 }
+impl ::std::fmt::Display for HlsAdMarkers {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsAdMarkers::Adobe => write!(f, "ADOBE"),
+            HlsAdMarkers::Elemental => write!(f, "ELEMENTAL"),
+            HlsAdMarkers::ElementalScte35 => write!(f, "ELEMENTAL_SCTE35"),
+            HlsAdMarkers::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

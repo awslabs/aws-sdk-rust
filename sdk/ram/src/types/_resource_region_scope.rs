@@ -96,3 +96,12 @@ impl ResourceRegionScope {
         }
     }
 }
+impl ::std::fmt::Display for ResourceRegionScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceRegionScope::Global => write!(f, "GLOBAL"),
+            ResourceRegionScope::Regional => write!(f, "REGIONAL"),
+            ResourceRegionScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

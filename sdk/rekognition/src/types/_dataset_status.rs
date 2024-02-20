@@ -129,3 +129,17 @@ impl DatasetStatus {
         }
     }
 }
+impl ::std::fmt::Display for DatasetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetStatus::CreateComplete => write!(f, "CREATE_COMPLETE"),
+            DatasetStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            DatasetStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            DatasetStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            DatasetStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
+            DatasetStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            DatasetStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            DatasetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

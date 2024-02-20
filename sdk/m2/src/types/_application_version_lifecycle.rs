@@ -101,3 +101,13 @@ impl ApplicationVersionLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationVersionLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationVersionLifecycle::Available => write!(f, "Available"),
+            ApplicationVersionLifecycle::Creating => write!(f, "Creating"),
+            ApplicationVersionLifecycle::Failed => write!(f, "Failed"),
+            ApplicationVersionLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl MessageUsefulness {
         }
     }
 }
+impl ::std::fmt::Display for MessageUsefulness {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessageUsefulness::NotUseful => write!(f, "NOT_USEFUL"),
+            MessageUsefulness::Useful => write!(f, "USEFUL"),
+            MessageUsefulness::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

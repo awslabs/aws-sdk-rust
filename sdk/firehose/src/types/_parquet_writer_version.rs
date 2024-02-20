@@ -96,3 +96,12 @@ impl ParquetWriterVersion {
         }
     }
 }
+impl ::std::fmt::Display for ParquetWriterVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParquetWriterVersion::V1 => write!(f, "V1"),
+            ParquetWriterVersion::V2 => write!(f, "V2"),
+            ParquetWriterVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

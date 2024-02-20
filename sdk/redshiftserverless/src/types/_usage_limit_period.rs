@@ -101,3 +101,13 @@ impl UsageLimitPeriod {
         }
     }
 }
+impl ::std::fmt::Display for UsageLimitPeriod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageLimitPeriod::Daily => write!(f, "daily"),
+            UsageLimitPeriod::Monthly => write!(f, "monthly"),
+            UsageLimitPeriod::Weekly => write!(f, "weekly"),
+            UsageLimitPeriod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

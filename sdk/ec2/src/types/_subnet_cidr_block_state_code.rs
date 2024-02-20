@@ -116,3 +116,16 @@ impl SubnetCidrBlockStateCode {
         }
     }
 }
+impl ::std::fmt::Display for SubnetCidrBlockStateCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubnetCidrBlockStateCode::Associated => write!(f, "associated"),
+            SubnetCidrBlockStateCode::Associating => write!(f, "associating"),
+            SubnetCidrBlockStateCode::Disassociated => write!(f, "disassociated"),
+            SubnetCidrBlockStateCode::Disassociating => write!(f, "disassociating"),
+            SubnetCidrBlockStateCode::Failed => write!(f, "failed"),
+            SubnetCidrBlockStateCode::Failing => write!(f, "failing"),
+            SubnetCidrBlockStateCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

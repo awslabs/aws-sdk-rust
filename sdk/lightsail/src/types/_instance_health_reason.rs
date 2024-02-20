@@ -153,3 +153,21 @@ impl InstanceHealthReason {
         }
     }
 }
+impl ::std::fmt::Display for InstanceHealthReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceHealthReason::InstanceDeregistrationInProgress => write!(f, "Instance.DeregistrationInProgress"),
+            InstanceHealthReason::InstanceFailedHealthChecks => write!(f, "Instance.FailedHealthChecks"),
+            InstanceHealthReason::InstanceInvalidState => write!(f, "Instance.InvalidState"),
+            InstanceHealthReason::InstanceIpUnusable => write!(f, "Instance.IpUnusable"),
+            InstanceHealthReason::InstanceNotInUse => write!(f, "Instance.NotInUse"),
+            InstanceHealthReason::InstanceNotRegistered => write!(f, "Instance.NotRegistered"),
+            InstanceHealthReason::InstanceResponseCodeMismatch => write!(f, "Instance.ResponseCodeMismatch"),
+            InstanceHealthReason::InstanceTimeout => write!(f, "Instance.Timeout"),
+            InstanceHealthReason::LbInitialHealthChecking => write!(f, "Lb.InitialHealthChecking"),
+            InstanceHealthReason::LbInternalError => write!(f, "Lb.InternalError"),
+            InstanceHealthReason::LbRegistrationInProgress => write!(f, "Lb.RegistrationInProgress"),
+            InstanceHealthReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

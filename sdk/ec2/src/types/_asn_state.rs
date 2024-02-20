@@ -123,3 +123,16 @@ impl AsnState {
         }
     }
 }
+impl ::std::fmt::Display for AsnState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AsnState::Deprovisioned => write!(f, "deprovisioned"),
+            AsnState::FailedDeprovision => write!(f, "failed-deprovision"),
+            AsnState::FailedProvision => write!(f, "failed-provision"),
+            AsnState::PendingDeprovision => write!(f, "pending-deprovision"),
+            AsnState::PendingProvision => write!(f, "pending-provision"),
+            AsnState::Provisioned => write!(f, "provisioned"),
+            AsnState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

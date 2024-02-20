@@ -96,3 +96,12 @@ impl InstanceType {
         }
     }
 }
+impl ::std::fmt::Display for InstanceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceType::Blue => write!(f, "Blue"),
+            InstanceType::Green => write!(f, "Green"),
+            InstanceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

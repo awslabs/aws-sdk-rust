@@ -96,3 +96,12 @@ impl ConfirmationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConfirmationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfirmationStatus::Final => write!(f, "FINAL"),
+            ConfirmationStatus::Nonfinal => write!(f, "NONFINAL"),
+            ConfirmationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

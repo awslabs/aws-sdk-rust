@@ -101,3 +101,13 @@ impl SseType {
         }
     }
 }
+impl ::std::fmt::Display for SseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SseType::None => write!(f, "none"),
+            SseType::SseEbs => write!(f, "sse-ebs"),
+            SseType::SseKms => write!(f, "sse-kms"),
+            SseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

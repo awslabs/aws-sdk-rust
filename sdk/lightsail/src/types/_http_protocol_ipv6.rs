@@ -96,3 +96,12 @@ impl HttpProtocolIpv6 {
         }
     }
 }
+impl ::std::fmt::Display for HttpProtocolIpv6 {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HttpProtocolIpv6::Disabled => write!(f, "disabled"),
+            HttpProtocolIpv6::Enabled => write!(f, "enabled"),
+            HttpProtocolIpv6::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

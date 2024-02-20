@@ -165,3 +165,23 @@ impl ServerStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServerStatus::BackingUp => write!(f, "BACKING_UP"),
+            ServerStatus::ConnectionLost => write!(f, "CONNECTION_LOST"),
+            ServerStatus::Creating => write!(f, "CREATING"),
+            ServerStatus::Deleting => write!(f, "DELETING"),
+            ServerStatus::Failed => write!(f, "FAILED"),
+            ServerStatus::Healthy => write!(f, "HEALTHY"),
+            ServerStatus::Modifying => write!(f, "MODIFYING"),
+            ServerStatus::Restoring => write!(f, "RESTORING"),
+            ServerStatus::Running => write!(f, "RUNNING"),
+            ServerStatus::Setup => write!(f, "SETUP"),
+            ServerStatus::Terminated => write!(f, "TERMINATED"),
+            ServerStatus::UnderMaintenance => write!(f, "UNDER_MAINTENANCE"),
+            ServerStatus::Unhealthy => write!(f, "UNHEALTHY"),
+            ServerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

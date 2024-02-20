@@ -129,3 +129,17 @@ impl RequestStatus {
         }
     }
 }
+impl ::std::fmt::Display for RequestStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RequestStatus::Approved => write!(f, "APPROVED"),
+            RequestStatus::CaseClosed => write!(f, "CASE_CLOSED"),
+            RequestStatus::CaseOpened => write!(f, "CASE_OPENED"),
+            RequestStatus::Denied => write!(f, "DENIED"),
+            RequestStatus::InvalidRequest => write!(f, "INVALID_REQUEST"),
+            RequestStatus::NotApproved => write!(f, "NOT_APPROVED"),
+            RequestStatus::Pending => write!(f, "PENDING"),
+            RequestStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

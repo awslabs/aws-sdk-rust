@@ -96,3 +96,12 @@ impl PropertyNotificationState {
         }
     }
 }
+impl ::std::fmt::Display for PropertyNotificationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PropertyNotificationState::Disabled => write!(f, "DISABLED"),
+            PropertyNotificationState::Enabled => write!(f, "ENABLED"),
+            PropertyNotificationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

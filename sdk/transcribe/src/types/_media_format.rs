@@ -126,3 +126,18 @@ impl MediaFormat {
         }
     }
 }
+impl ::std::fmt::Display for MediaFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaFormat::Amr => write!(f, "amr"),
+            MediaFormat::Flac => write!(f, "flac"),
+            MediaFormat::M4A => write!(f, "m4a"),
+            MediaFormat::Mp3 => write!(f, "mp3"),
+            MediaFormat::Mp4 => write!(f, "mp4"),
+            MediaFormat::Ogg => write!(f, "ogg"),
+            MediaFormat::Wav => write!(f, "wav"),
+            MediaFormat::Webm => write!(f, "webm"),
+            MediaFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

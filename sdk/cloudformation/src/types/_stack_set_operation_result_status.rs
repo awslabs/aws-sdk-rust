@@ -111,3 +111,15 @@ impl StackSetOperationResultStatus {
         }
     }
 }
+impl ::std::fmt::Display for StackSetOperationResultStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackSetOperationResultStatus::Cancelled => write!(f, "CANCELLED"),
+            StackSetOperationResultStatus::Failed => write!(f, "FAILED"),
+            StackSetOperationResultStatus::Pending => write!(f, "PENDING"),
+            StackSetOperationResultStatus::Running => write!(f, "RUNNING"),
+            StackSetOperationResultStatus::Succeeded => write!(f, "SUCCEEDED"),
+            StackSetOperationResultStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -171,3 +171,24 @@ impl ServiceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServiceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceStatus::Active => write!(f, "ACTIVE"),
+            ServiceStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            ServiceStatus::CreateFailedCleanupComplete => write!(f, "CREATE_FAILED_CLEANUP_COMPLETE"),
+            ServiceStatus::CreateFailedCleanupFailed => write!(f, "CREATE_FAILED_CLEANUP_FAILED"),
+            ServiceStatus::CreateFailedCleanupInProgress => write!(f, "CREATE_FAILED_CLEANUP_IN_PROGRESS"),
+            ServiceStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            ServiceStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ServiceStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ServiceStatus::UpdateCompleteCleanupFailed => write!(f, "UPDATE_COMPLETE_CLEANUP_FAILED"),
+            ServiceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ServiceStatus::UpdateFailedCleanupComplete => write!(f, "UPDATE_FAILED_CLEANUP_COMPLETE"),
+            ServiceStatus::UpdateFailedCleanupFailed => write!(f, "UPDATE_FAILED_CLEANUP_FAILED"),
+            ServiceStatus::UpdateFailedCleanupInProgress => write!(f, "UPDATE_FAILED_CLEANUP_IN_PROGRESS"),
+            ServiceStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            ServiceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

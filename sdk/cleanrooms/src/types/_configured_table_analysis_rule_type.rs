@@ -101,3 +101,13 @@ impl ConfiguredTableAnalysisRuleType {
         }
     }
 }
+impl ::std::fmt::Display for ConfiguredTableAnalysisRuleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfiguredTableAnalysisRuleType::Aggregation => write!(f, "AGGREGATION"),
+            ConfiguredTableAnalysisRuleType::Custom => write!(f, "CUSTOM"),
+            ConfiguredTableAnalysisRuleType::List => write!(f, "LIST"),
+            ConfiguredTableAnalysisRuleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

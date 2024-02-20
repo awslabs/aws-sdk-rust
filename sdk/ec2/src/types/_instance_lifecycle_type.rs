@@ -101,3 +101,13 @@ impl InstanceLifecycleType {
         }
     }
 }
+impl ::std::fmt::Display for InstanceLifecycleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceLifecycleType::CapacityBlock => write!(f, "capacity-block"),
+            InstanceLifecycleType::Scheduled => write!(f, "scheduled"),
+            InstanceLifecycleType::Spot => write!(f, "spot"),
+            InstanceLifecycleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

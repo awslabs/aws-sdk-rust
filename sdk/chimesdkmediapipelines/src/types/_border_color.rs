@@ -116,3 +116,16 @@ impl BorderColor {
         }
     }
 }
+impl ::std::fmt::Display for BorderColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BorderColor::Black => write!(f, "Black"),
+            BorderColor::Blue => write!(f, "Blue"),
+            BorderColor::Green => write!(f, "Green"),
+            BorderColor::Red => write!(f, "Red"),
+            BorderColor::White => write!(f, "White"),
+            BorderColor::Yellow => write!(f, "Yellow"),
+            BorderColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

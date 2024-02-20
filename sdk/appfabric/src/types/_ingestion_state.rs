@@ -96,3 +96,12 @@ impl IngestionState {
         }
     }
 }
+impl ::std::fmt::Display for IngestionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IngestionState::Disabled => write!(f, "disabled"),
+            IngestionState::Enabled => write!(f, "enabled"),
+            IngestionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

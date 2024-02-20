@@ -111,3 +111,15 @@ impl PrefixFormat {
         }
     }
 }
+impl ::std::fmt::Display for PrefixFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrefixFormat::Day => write!(f, "DAY"),
+            PrefixFormat::Hour => write!(f, "HOUR"),
+            PrefixFormat::Minute => write!(f, "MINUTE"),
+            PrefixFormat::Month => write!(f, "MONTH"),
+            PrefixFormat::Year => write!(f, "YEAR"),
+            PrefixFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

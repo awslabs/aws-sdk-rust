@@ -101,3 +101,13 @@ impl UsageLimitFeatureType {
         }
     }
 }
+impl ::std::fmt::Display for UsageLimitFeatureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageLimitFeatureType::ConcurrencyScaling => write!(f, "concurrency-scaling"),
+            UsageLimitFeatureType::CrossRegionDatasharing => write!(f, "cross-region-datasharing"),
+            UsageLimitFeatureType::Spectrum => write!(f, "spectrum"),
+            UsageLimitFeatureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

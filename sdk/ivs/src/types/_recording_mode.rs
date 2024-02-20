@@ -96,3 +96,12 @@ impl RecordingMode {
         }
     }
 }
+impl ::std::fmt::Display for RecordingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordingMode::Disabled => write!(f, "DISABLED"),
+            RecordingMode::Interval => write!(f, "INTERVAL"),
+            RecordingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

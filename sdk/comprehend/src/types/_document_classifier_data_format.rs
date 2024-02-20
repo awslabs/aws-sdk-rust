@@ -96,3 +96,12 @@ impl DocumentClassifierDataFormat {
         }
     }
 }
+impl ::std::fmt::Display for DocumentClassifierDataFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentClassifierDataFormat::AugmentedManifest => write!(f, "AUGMENTED_MANIFEST"),
+            DocumentClassifierDataFormat::ComprehendCsv => write!(f, "COMPREHEND_CSV"),
+            DocumentClassifierDataFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

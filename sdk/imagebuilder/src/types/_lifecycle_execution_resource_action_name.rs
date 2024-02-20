@@ -106,3 +106,14 @@ impl LifecycleExecutionResourceActionName {
         }
     }
 }
+impl ::std::fmt::Display for LifecycleExecutionResourceActionName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecycleExecutionResourceActionName::Available => write!(f, "AVAILABLE"),
+            LifecycleExecutionResourceActionName::Delete => write!(f, "DELETE"),
+            LifecycleExecutionResourceActionName::Deprecate => write!(f, "DEPRECATE"),
+            LifecycleExecutionResourceActionName::Disable => write!(f, "DISABLE"),
+            LifecycleExecutionResourceActionName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

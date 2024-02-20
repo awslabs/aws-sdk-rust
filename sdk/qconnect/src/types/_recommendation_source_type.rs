@@ -101,3 +101,13 @@ impl RecommendationSourceType {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationSourceType::IssueDetection => write!(f, "ISSUE_DETECTION"),
+            RecommendationSourceType::Other => write!(f, "OTHER"),
+            RecommendationSourceType::RuleEvaluation => write!(f, "RULE_EVALUATION"),
+            RecommendationSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

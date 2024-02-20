@@ -96,3 +96,12 @@ impl AmbiguousRoleResolutionType {
         }
     }
 }
+impl ::std::fmt::Display for AmbiguousRoleResolutionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AmbiguousRoleResolutionType::AuthenticatedRole => write!(f, "AuthenticatedRole"),
+            AmbiguousRoleResolutionType::Deny => write!(f, "Deny"),
+            AmbiguousRoleResolutionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

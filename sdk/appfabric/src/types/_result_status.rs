@@ -106,3 +106,14 @@ impl ResultStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResultStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResultStatus::Completed => write!(f, "COMPLETED"),
+            ResultStatus::Expired => write!(f, "EXPIRED"),
+            ResultStatus::Failed => write!(f, "FAILED"),
+            ResultStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ResultStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

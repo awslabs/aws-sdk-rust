@@ -111,3 +111,15 @@ impl NsLcmOperationState {
         }
     }
 }
+impl ::std::fmt::Display for NsLcmOperationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NsLcmOperationState::Cancelled => write!(f, "CANCELLED"),
+            NsLcmOperationState::Cancelling => write!(f, "CANCELLING"),
+            NsLcmOperationState::Completed => write!(f, "COMPLETED"),
+            NsLcmOperationState::Failed => write!(f, "FAILED"),
+            NsLcmOperationState::Processing => write!(f, "PROCESSING"),
+            NsLcmOperationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

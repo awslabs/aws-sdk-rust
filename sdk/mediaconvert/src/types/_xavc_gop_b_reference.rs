@@ -96,3 +96,12 @@ impl XavcGopBReference {
         }
     }
 }
+impl ::std::fmt::Display for XavcGopBReference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcGopBReference::Disabled => write!(f, "DISABLED"),
+            XavcGopBReference::Enabled => write!(f, "ENABLED"),
+            XavcGopBReference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

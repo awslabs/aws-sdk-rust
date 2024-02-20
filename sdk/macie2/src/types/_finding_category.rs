@@ -96,3 +96,12 @@ impl FindingCategory {
         }
     }
 }
+impl ::std::fmt::Display for FindingCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingCategory::Classification => write!(f, "CLASSIFICATION"),
+            FindingCategory::Policy => write!(f, "POLICY"),
+            FindingCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

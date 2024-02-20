@@ -101,3 +101,13 @@ impl XavcEntropyEncoding {
         }
     }
 }
+impl ::std::fmt::Display for XavcEntropyEncoding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcEntropyEncoding::Auto => write!(f, "AUTO"),
+            XavcEntropyEncoding::Cabac => write!(f, "CABAC"),
+            XavcEntropyEncoding::Cavlc => write!(f, "CAVLC"),
+            XavcEntropyEncoding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

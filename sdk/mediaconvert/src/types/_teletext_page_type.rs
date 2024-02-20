@@ -117,3 +117,15 @@ impl TeletextPageType {
         }
     }
 }
+impl ::std::fmt::Display for TeletextPageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TeletextPageType::PageTypeAddlInfo => write!(f, "PAGE_TYPE_ADDL_INFO"),
+            TeletextPageType::PageTypeHearingImpairedSubtitle => write!(f, "PAGE_TYPE_HEARING_IMPAIRED_SUBTITLE"),
+            TeletextPageType::PageTypeInitial => write!(f, "PAGE_TYPE_INITIAL"),
+            TeletextPageType::PageTypeProgramSchedule => write!(f, "PAGE_TYPE_PROGRAM_SCHEDULE"),
+            TeletextPageType::PageTypeSubtitle => write!(f, "PAGE_TYPE_SUBTITLE"),
+            TeletextPageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

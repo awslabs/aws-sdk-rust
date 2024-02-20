@@ -96,3 +96,12 @@ impl OriginTypeValue {
         }
     }
 }
+impl ::std::fmt::Display for OriginTypeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginTypeValue::Source => write!(f, "SOURCE"),
+            OriginTypeValue::Target => write!(f, "TARGET"),
+            OriginTypeValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

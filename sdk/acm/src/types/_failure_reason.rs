@@ -189,3 +189,27 @@ impl FailureReason {
         }
     }
 }
+impl ::std::fmt::Display for FailureReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailureReason::AdditionalVerificationRequired => write!(f, "ADDITIONAL_VERIFICATION_REQUIRED"),
+            FailureReason::CaaError => write!(f, "CAA_ERROR"),
+            FailureReason::DomainNotAllowed => write!(f, "DOMAIN_NOT_ALLOWED"),
+            FailureReason::DomainValidationDenied => write!(f, "DOMAIN_VALIDATION_DENIED"),
+            FailureReason::InvalidPublicDomain => write!(f, "INVALID_PUBLIC_DOMAIN"),
+            FailureReason::NoAvailableContacts => write!(f, "NO_AVAILABLE_CONTACTS"),
+            FailureReason::Other => write!(f, "OTHER"),
+            FailureReason::PcaAccessDenied => write!(f, "PCA_ACCESS_DENIED"),
+            FailureReason::PcaInvalidArgs => write!(f, "PCA_INVALID_ARGS"),
+            FailureReason::PcaInvalidArn => write!(f, "PCA_INVALID_ARN"),
+            FailureReason::PcaInvalidDuration => write!(f, "PCA_INVALID_DURATION"),
+            FailureReason::PcaInvalidState => write!(f, "PCA_INVALID_STATE"),
+            FailureReason::PcaLimitExceeded => write!(f, "PCA_LIMIT_EXCEEDED"),
+            FailureReason::PcaNameConstraintsValidation => write!(f, "PCA_NAME_CONSTRAINTS_VALIDATION"),
+            FailureReason::PcaRequestFailed => write!(f, "PCA_REQUEST_FAILED"),
+            FailureReason::PcaResourceNotFound => write!(f, "PCA_RESOURCE_NOT_FOUND"),
+            FailureReason::SlrNotFound => write!(f, "SLR_NOT_FOUND"),
+            FailureReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

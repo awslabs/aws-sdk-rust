@@ -171,3 +171,24 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            ErrorCode::AccountIsIsolated => write!(f, "ACCOUNT_IS_ISOLATED"),
+            ErrorCode::AlreadyEnabled => write!(f, "ALREADY_ENABLED"),
+            ErrorCode::DisableInProgress => write!(f, "DISABLE_IN_PROGRESS"),
+            ErrorCode::DisassociateAllMembers => write!(f, "DISASSOCIATE_ALL_MEMBERS"),
+            ErrorCode::EnableInProgress => write!(f, "ENABLE_IN_PROGRESS"),
+            ErrorCode::EventbridgeThrottled => write!(f, "EVENTBRIDGE_THROTTLED"),
+            ErrorCode::EventbridgeUnavailable => write!(f, "EVENTBRIDGE_UNAVAILABLE"),
+            ErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            ErrorCode::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
+            ErrorCode::ResourceScanNotDisabled => write!(f, "RESOURCE_SCAN_NOT_DISABLED"),
+            ErrorCode::SsmThrottled => write!(f, "SSM_THROTTLED"),
+            ErrorCode::SsmUnavailable => write!(f, "SSM_UNAVAILABLE"),
+            ErrorCode::SuspendInProgress => write!(f, "SUSPEND_IN_PROGRESS"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

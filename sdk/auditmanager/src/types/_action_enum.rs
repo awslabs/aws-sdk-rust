@@ -135,3 +135,18 @@ impl ActionEnum {
         }
     }
 }
+impl ::std::fmt::Display for ActionEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionEnum::Active => write!(f, "ACTIVE"),
+            ActionEnum::Create => write!(f, "CREATE"),
+            ActionEnum::Delete => write!(f, "DELETE"),
+            ActionEnum::ImportEvidence => write!(f, "IMPORT_EVIDENCE"),
+            ActionEnum::Inactive => write!(f, "INACTIVE"),
+            ActionEnum::Reviewed => write!(f, "REVIEWED"),
+            ActionEnum::UnderReview => write!(f, "UNDER_REVIEW"),
+            ActionEnum::UpdateMetadata => write!(f, "UPDATE_METADATA"),
+            ActionEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

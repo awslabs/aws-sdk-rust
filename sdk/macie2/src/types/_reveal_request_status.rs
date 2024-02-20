@@ -101,3 +101,13 @@ impl RevealRequestStatus {
         }
     }
 }
+impl ::std::fmt::Display for RevealRequestStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RevealRequestStatus::Error => write!(f, "ERROR"),
+            RevealRequestStatus::Processing => write!(f, "PROCESSING"),
+            RevealRequestStatus::Success => write!(f, "SUCCESS"),
+            RevealRequestStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

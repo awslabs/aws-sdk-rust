@@ -101,3 +101,13 @@ impl KeyType {
         }
     }
 }
+impl ::std::fmt::Display for KeyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyType::Speke => write!(f, "speke"),
+            KeyType::SrtPassword => write!(f, "srt-password"),
+            KeyType::StaticKey => write!(f, "static-key"),
+            KeyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl RegistrationAssociationBehavior {
         }
     }
 }
+impl ::std::fmt::Display for RegistrationAssociationBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistrationAssociationBehavior::AssociateAfterComplete => write!(f, "ASSOCIATE_AFTER_COMPLETE"),
+            RegistrationAssociationBehavior::AssociateBeforeSubmit => write!(f, "ASSOCIATE_BEFORE_SUBMIT"),
+            RegistrationAssociationBehavior::AssociateOnApproval => write!(f, "ASSOCIATE_ON_APPROVAL"),
+            RegistrationAssociationBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

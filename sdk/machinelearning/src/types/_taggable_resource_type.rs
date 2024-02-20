@@ -106,3 +106,14 @@ impl TaggableResourceType {
         }
     }
 }
+impl ::std::fmt::Display for TaggableResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaggableResourceType::BatchPrediction => write!(f, "BatchPrediction"),
+            TaggableResourceType::Datasource => write!(f, "DataSource"),
+            TaggableResourceType::Evaluation => write!(f, "Evaluation"),
+            TaggableResourceType::MlModel => write!(f, "MLModel"),
+            TaggableResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

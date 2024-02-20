@@ -96,3 +96,12 @@ impl IpAddressAssignment {
         }
     }
 }
+impl ::std::fmt::Display for IpAddressAssignment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpAddressAssignment::Dhcp => write!(f, "DHCP"),
+            IpAddressAssignment::Static => write!(f, "STATIC"),
+            IpAddressAssignment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

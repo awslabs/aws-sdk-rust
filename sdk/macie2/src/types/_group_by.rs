@@ -111,3 +111,14 @@ impl GroupBy {
         }
     }
 }
+impl ::std::fmt::Display for GroupBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupBy::ClassificationDetailsJobId => write!(f, "classificationDetails.jobId"),
+            GroupBy::ResourcesAffectedS3BucketName => write!(f, "resourcesAffected.s3Bucket.name"),
+            GroupBy::SeverityDescription => write!(f, "severity.description"),
+            GroupBy::Type => write!(f, "type"),
+            GroupBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

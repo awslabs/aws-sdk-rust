@@ -96,3 +96,12 @@ impl ExportSourceType {
         }
     }
 }
+impl ::std::fmt::Display for ExportSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportSourceType::Cluster => write!(f, "CLUSTER"),
+            ExportSourceType::Snapshot => write!(f, "SNAPSHOT"),
+            ExportSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

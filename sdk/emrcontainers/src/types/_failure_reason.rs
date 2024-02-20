@@ -106,3 +106,14 @@ impl FailureReason {
         }
     }
 }
+impl ::std::fmt::Display for FailureReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailureReason::ClusterUnavailable => write!(f, "CLUSTER_UNAVAILABLE"),
+            FailureReason::InternalError => write!(f, "INTERNAL_ERROR"),
+            FailureReason::UserError => write!(f, "USER_ERROR"),
+            FailureReason::ValidationError => write!(f, "VALIDATION_ERROR"),
+            FailureReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Mpeg2ScanType {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2ScanType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2ScanType::Interlaced => write!(f, "INTERLACED"),
+            Mpeg2ScanType::Progressive => write!(f, "PROGRESSIVE"),
+            Mpeg2ScanType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

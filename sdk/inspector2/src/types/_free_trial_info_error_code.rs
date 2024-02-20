@@ -96,3 +96,12 @@ impl FreeTrialInfoErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for FreeTrialInfoErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FreeTrialInfoErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            FreeTrialInfoErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            FreeTrialInfoErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

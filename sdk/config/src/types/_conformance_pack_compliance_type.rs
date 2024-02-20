@@ -101,3 +101,13 @@ impl ConformancePackComplianceType {
         }
     }
 }
+impl ::std::fmt::Display for ConformancePackComplianceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConformancePackComplianceType::Compliant => write!(f, "COMPLIANT"),
+            ConformancePackComplianceType::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
+            ConformancePackComplianceType::NonCompliant => write!(f, "NON_COMPLIANT"),
+            ConformancePackComplianceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

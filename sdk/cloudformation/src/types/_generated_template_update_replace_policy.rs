@@ -96,3 +96,12 @@ impl GeneratedTemplateUpdateReplacePolicy {
         }
     }
 }
+impl ::std::fmt::Display for GeneratedTemplateUpdateReplacePolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GeneratedTemplateUpdateReplacePolicy::Delete => write!(f, "DELETE"),
+            GeneratedTemplateUpdateReplacePolicy::Retain => write!(f, "RETAIN"),
+            GeneratedTemplateUpdateReplacePolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl BillingTagsSource {
         }
     }
 }
+impl ::std::fmt::Display for BillingTagsSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BillingTagsSource::Job => write!(f, "JOB"),
+            BillingTagsSource::JobTemplate => write!(f, "JOB_TEMPLATE"),
+            BillingTagsSource::Preset => write!(f, "PRESET"),
+            BillingTagsSource::Queue => write!(f, "QUEUE"),
+            BillingTagsSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

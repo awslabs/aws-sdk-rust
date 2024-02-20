@@ -126,3 +126,18 @@ impl DvbSubtitleFontColor {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubtitleFontColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubtitleFontColor::Auto => write!(f, "AUTO"),
+            DvbSubtitleFontColor::Black => write!(f, "BLACK"),
+            DvbSubtitleFontColor::Blue => write!(f, "BLUE"),
+            DvbSubtitleFontColor::Green => write!(f, "GREEN"),
+            DvbSubtitleFontColor::Hex => write!(f, "HEX"),
+            DvbSubtitleFontColor::Red => write!(f, "RED"),
+            DvbSubtitleFontColor::White => write!(f, "WHITE"),
+            DvbSubtitleFontColor::Yellow => write!(f, "YELLOW"),
+            DvbSubtitleFontColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl JobTemplateListBy {
         }
     }
 }
+impl ::std::fmt::Display for JobTemplateListBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobTemplateListBy::CreationDate => write!(f, "CREATION_DATE"),
+            JobTemplateListBy::Name => write!(f, "NAME"),
+            JobTemplateListBy::System => write!(f, "SYSTEM"),
+            JobTemplateListBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

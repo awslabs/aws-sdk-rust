@@ -249,3 +249,37 @@ impl MetricUnit {
         }
     }
 }
+impl ::std::fmt::Display for MetricUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricUnit::Bits => write!(f, "Bits"),
+            MetricUnit::BitsSecond => write!(f, "Bits/Second"),
+            MetricUnit::Bytes => write!(f, "Bytes"),
+            MetricUnit::BytesSecond => write!(f, "Bytes/Second"),
+            MetricUnit::Count => write!(f, "Count"),
+            MetricUnit::CountSecond => write!(f, "Count/Second"),
+            MetricUnit::Gigabits => write!(f, "Gigabits"),
+            MetricUnit::GigabitsSecond => write!(f, "Gigabits/Second"),
+            MetricUnit::Gigabytes => write!(f, "Gigabytes"),
+            MetricUnit::GigabytesSecond => write!(f, "Gigabytes/Second"),
+            MetricUnit::Kilobits => write!(f, "Kilobits"),
+            MetricUnit::KilobitsSecond => write!(f, "Kilobits/Second"),
+            MetricUnit::Kilobytes => write!(f, "Kilobytes"),
+            MetricUnit::KilobytesSecond => write!(f, "Kilobytes/Second"),
+            MetricUnit::Megabits => write!(f, "Megabits"),
+            MetricUnit::MegabitsSecond => write!(f, "Megabits/Second"),
+            MetricUnit::Megabytes => write!(f, "Megabytes"),
+            MetricUnit::MegabytesSecond => write!(f, "Megabytes/Second"),
+            MetricUnit::Microseconds => write!(f, "Microseconds"),
+            MetricUnit::Milliseconds => write!(f, "Milliseconds"),
+            MetricUnit::None => write!(f, "None"),
+            MetricUnit::Percent => write!(f, "Percent"),
+            MetricUnit::Seconds => write!(f, "Seconds"),
+            MetricUnit::Terabits => write!(f, "Terabits"),
+            MetricUnit::TerabitsSecond => write!(f, "Terabits/Second"),
+            MetricUnit::Terabytes => write!(f, "Terabytes"),
+            MetricUnit::TerabytesSecond => write!(f, "Terabytes/Second"),
+            MetricUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl CloseStatus {
         }
     }
 }
+impl ::std::fmt::Display for CloseStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CloseStatus::Canceled => write!(f, "CANCELED"),
+            CloseStatus::Completed => write!(f, "COMPLETED"),
+            CloseStatus::ContinuedAsNew => write!(f, "CONTINUED_AS_NEW"),
+            CloseStatus::Failed => write!(f, "FAILED"),
+            CloseStatus::Terminated => write!(f, "TERMINATED"),
+            CloseStatus::TimedOut => write!(f, "TIMED_OUT"),
+            CloseStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

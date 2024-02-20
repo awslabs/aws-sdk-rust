@@ -91,3 +91,11 @@ impl FunctionVersion {
         }
     }
 }
+impl ::std::fmt::Display for FunctionVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FunctionVersion::All => write!(f, "ALL"),
+            FunctionVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

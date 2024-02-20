@@ -96,3 +96,12 @@ impl WebserverAccessMode {
         }
     }
 }
+impl ::std::fmt::Display for WebserverAccessMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WebserverAccessMode::PrivateOnly => write!(f, "PRIVATE_ONLY"),
+            WebserverAccessMode::PublicOnly => write!(f, "PUBLIC_ONLY"),
+            WebserverAccessMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

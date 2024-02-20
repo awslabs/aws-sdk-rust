@@ -96,3 +96,12 @@ impl RecordingFrequency {
         }
     }
 }
+impl ::std::fmt::Display for RecordingFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordingFrequency::Continuous => write!(f, "CONTINUOUS"),
+            RecordingFrequency::Daily => write!(f, "DAILY"),
+            RecordingFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl ReplaceRootVolumeTaskState {
         }
     }
 }
+impl ::std::fmt::Display for ReplaceRootVolumeTaskState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplaceRootVolumeTaskState::Failed => write!(f, "failed"),
+            ReplaceRootVolumeTaskState::FailedDetached => write!(f, "failed-detached"),
+            ReplaceRootVolumeTaskState::Failing => write!(f, "failing"),
+            ReplaceRootVolumeTaskState::InProgress => write!(f, "in-progress"),
+            ReplaceRootVolumeTaskState::Pending => write!(f, "pending"),
+            ReplaceRootVolumeTaskState::Succeeded => write!(f, "succeeded"),
+            ReplaceRootVolumeTaskState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

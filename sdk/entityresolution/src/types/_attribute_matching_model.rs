@@ -96,3 +96,12 @@ impl AttributeMatchingModel {
         }
     }
 }
+impl ::std::fmt::Display for AttributeMatchingModel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttributeMatchingModel::ManyToMany => write!(f, "MANY_TO_MANY"),
+            AttributeMatchingModel::OneToOne => write!(f, "ONE_TO_ONE"),
+            AttributeMatchingModel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

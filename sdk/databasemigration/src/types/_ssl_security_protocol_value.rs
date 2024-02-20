@@ -96,3 +96,12 @@ impl SslSecurityProtocolValue {
         }
     }
 }
+impl ::std::fmt::Display for SslSecurityProtocolValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SslSecurityProtocolValue::Plaintext => write!(f, "plaintext"),
+            SslSecurityProtocolValue::SslEncryption => write!(f, "ssl-encryption"),
+            SslSecurityProtocolValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

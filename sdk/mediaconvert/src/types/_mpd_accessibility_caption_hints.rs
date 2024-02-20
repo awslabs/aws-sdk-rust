@@ -96,3 +96,12 @@ impl MpdAccessibilityCaptionHints {
         }
     }
 }
+impl ::std::fmt::Display for MpdAccessibilityCaptionHints {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MpdAccessibilityCaptionHints::Exclude => write!(f, "EXCLUDE"),
+            MpdAccessibilityCaptionHints::Include => write!(f, "INCLUDE"),
+            MpdAccessibilityCaptionHints::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

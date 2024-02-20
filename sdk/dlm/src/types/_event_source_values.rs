@@ -91,3 +91,11 @@ impl EventSourceValues {
         }
     }
 }
+impl ::std::fmt::Display for EventSourceValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventSourceValues::ManagedCwe => write!(f, "MANAGED_CWE"),
+            EventSourceValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

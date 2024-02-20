@@ -96,3 +96,12 @@ impl ContentType {
         }
     }
 }
+impl ::std::fmt::Display for ContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentType::ApplicationJson => write!(f, "application/json"),
+            ContentType::ApplicationXml => write!(f, "application/xml"),
+            ContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

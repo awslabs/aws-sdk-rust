@@ -101,3 +101,13 @@ impl DeviceIdentifierFilterKeys {
         }
     }
 }
+impl ::std::fmt::Display for DeviceIdentifierFilterKeys {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceIdentifierFilterKeys::Order => write!(f, "ORDER"),
+            DeviceIdentifierFilterKeys::Status => write!(f, "STATUS"),
+            DeviceIdentifierFilterKeys::TrafficGroup => write!(f, "TRAFFIC_GROUP"),
+            DeviceIdentifierFilterKeys::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

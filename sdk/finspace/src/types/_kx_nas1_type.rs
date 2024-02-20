@@ -101,3 +101,13 @@ impl KxNas1Type {
         }
     }
 }
+impl ::std::fmt::Display for KxNas1Type {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KxNas1Type::Hdd12 => write!(f, "HDD_12"),
+            KxNas1Type::Ssd1000 => write!(f, "SSD_1000"),
+            KxNas1Type::Ssd250 => write!(f, "SSD_250"),
+            KxNas1Type::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

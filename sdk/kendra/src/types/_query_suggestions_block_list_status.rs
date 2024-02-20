@@ -116,3 +116,16 @@ impl QuerySuggestionsBlockListStatus {
         }
     }
 }
+impl ::std::fmt::Display for QuerySuggestionsBlockListStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuerySuggestionsBlockListStatus::Active => write!(f, "ACTIVE"),
+            QuerySuggestionsBlockListStatus::ActiveButUpdateFailed => write!(f, "ACTIVE_BUT_UPDATE_FAILED"),
+            QuerySuggestionsBlockListStatus::Creating => write!(f, "CREATING"),
+            QuerySuggestionsBlockListStatus::Deleting => write!(f, "DELETING"),
+            QuerySuggestionsBlockListStatus::Failed => write!(f, "FAILED"),
+            QuerySuggestionsBlockListStatus::Updating => write!(f, "UPDATING"),
+            QuerySuggestionsBlockListStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

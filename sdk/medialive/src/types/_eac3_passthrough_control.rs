@@ -96,3 +96,12 @@ impl Eac3PassthroughControl {
         }
     }
 }
+impl ::std::fmt::Display for Eac3PassthroughControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3PassthroughControl::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
+            Eac3PassthroughControl::WhenPossible => write!(f, "WHEN_POSSIBLE"),
+            Eac3PassthroughControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

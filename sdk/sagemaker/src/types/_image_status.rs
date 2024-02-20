@@ -129,3 +129,17 @@ impl ImageStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImageStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageStatus::Created => write!(f, "CREATED"),
+            ImageStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            ImageStatus::Creating => write!(f, "CREATING"),
+            ImageStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ImageStatus::Deleting => write!(f, "DELETING"),
+            ImageStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ImageStatus::Updating => write!(f, "UPDATING"),
+            ImageStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

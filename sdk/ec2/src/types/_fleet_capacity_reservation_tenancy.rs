@@ -91,3 +91,11 @@ impl FleetCapacityReservationTenancy {
         }
     }
 }
+impl ::std::fmt::Display for FleetCapacityReservationTenancy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetCapacityReservationTenancy::Default => write!(f, "default"),
+            FleetCapacityReservationTenancy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

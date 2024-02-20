@@ -96,3 +96,12 @@ impl ClusterType {
         }
     }
 }
+impl ::std::fmt::Display for ClusterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterType::Provisioned => write!(f, "PROVISIONED"),
+            ClusterType::Serverless => write!(f, "SERVERLESS"),
+            ClusterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

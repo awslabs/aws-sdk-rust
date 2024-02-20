@@ -101,3 +101,13 @@ impl InsightSeverity {
         }
     }
 }
+impl ::std::fmt::Display for InsightSeverity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InsightSeverity::High => write!(f, "HIGH"),
+            InsightSeverity::Low => write!(f, "LOW"),
+            InsightSeverity::Medium => write!(f, "MEDIUM"),
+            InsightSeverity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

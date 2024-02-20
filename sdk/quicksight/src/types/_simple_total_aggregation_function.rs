@@ -116,3 +116,16 @@ impl SimpleTotalAggregationFunction {
         }
     }
 }
+impl ::std::fmt::Display for SimpleTotalAggregationFunction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SimpleTotalAggregationFunction::Average => write!(f, "AVERAGE"),
+            SimpleTotalAggregationFunction::Default => write!(f, "DEFAULT"),
+            SimpleTotalAggregationFunction::Max => write!(f, "MAX"),
+            SimpleTotalAggregationFunction::Min => write!(f, "MIN"),
+            SimpleTotalAggregationFunction::None => write!(f, "NONE"),
+            SimpleTotalAggregationFunction::Sum => write!(f, "SUM"),
+            SimpleTotalAggregationFunction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

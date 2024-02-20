@@ -96,3 +96,12 @@ impl InputLossImageType {
         }
     }
 }
+impl ::std::fmt::Display for InputLossImageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputLossImageType::Color => write!(f, "COLOR"),
+            InputLossImageType::Slate => write!(f, "SLATE"),
+            InputLossImageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

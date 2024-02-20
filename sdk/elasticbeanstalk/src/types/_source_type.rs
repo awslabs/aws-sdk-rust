@@ -96,3 +96,12 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::Git => write!(f, "Git"),
+            SourceType::Zip => write!(f, "Zip"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

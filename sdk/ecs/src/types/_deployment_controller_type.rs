@@ -101,3 +101,13 @@ impl DeploymentControllerType {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentControllerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentControllerType::CodeDeploy => write!(f, "CODE_DEPLOY"),
+            DeploymentControllerType::Ecs => write!(f, "ECS"),
+            DeploymentControllerType::External => write!(f, "EXTERNAL"),
+            DeploymentControllerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

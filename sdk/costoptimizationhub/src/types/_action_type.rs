@@ -123,3 +123,16 @@ impl ActionType {
         }
     }
 }
+impl ::std::fmt::Display for ActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionType::MigrateToGraviton => write!(f, "MigrateToGraviton"),
+            ActionType::PurchaseReservedInstances => write!(f, "PurchaseReservedInstances"),
+            ActionType::PurchaseSavingsPlans => write!(f, "PurchaseSavingsPlans"),
+            ActionType::Rightsize => write!(f, "Rightsize"),
+            ActionType::Stop => write!(f, "Stop"),
+            ActionType::Upgrade => write!(f, "Upgrade"),
+            ActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

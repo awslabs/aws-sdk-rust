@@ -96,3 +96,12 @@ impl M2tsAudioStreamType {
         }
     }
 }
+impl ::std::fmt::Display for M2tsAudioStreamType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsAudioStreamType::Atsc => write!(f, "ATSC"),
+            M2tsAudioStreamType::Dvb => write!(f, "DVB"),
+            M2tsAudioStreamType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

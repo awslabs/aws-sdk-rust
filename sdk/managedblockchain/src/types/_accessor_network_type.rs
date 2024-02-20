@@ -117,3 +117,15 @@ impl AccessorNetworkType {
         }
     }
 }
+impl ::std::fmt::Display for AccessorNetworkType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessorNetworkType::EthereumGoerli => write!(f, "ETHEREUM_GOERLI"),
+            AccessorNetworkType::EthereumMainnet => write!(f, "ETHEREUM_MAINNET"),
+            AccessorNetworkType::EthereumMainnetAndGoerli => write!(f, "ETHEREUM_MAINNET_AND_GOERLI"),
+            AccessorNetworkType::PolygonMainnet => write!(f, "POLYGON_MAINNET"),
+            AccessorNetworkType::PolygonMumbai => write!(f, "POLYGON_MUMBAI"),
+            AccessorNetworkType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

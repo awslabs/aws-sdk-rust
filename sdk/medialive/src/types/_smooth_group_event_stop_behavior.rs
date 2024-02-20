@@ -96,3 +96,12 @@ impl SmoothGroupEventStopBehavior {
         }
     }
 }
+impl ::std::fmt::Display for SmoothGroupEventStopBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SmoothGroupEventStopBehavior::None => write!(f, "NONE"),
+            SmoothGroupEventStopBehavior::SendEos => write!(f, "SEND_EOS"),
+            SmoothGroupEventStopBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

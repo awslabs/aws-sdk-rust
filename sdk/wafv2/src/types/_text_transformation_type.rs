@@ -213,3 +213,31 @@ impl TextTransformationType {
         }
     }
 }
+impl ::std::fmt::Display for TextTransformationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TextTransformationType::Base64Decode => write!(f, "BASE64_DECODE"),
+            TextTransformationType::Base64DecodeExt => write!(f, "BASE64_DECODE_EXT"),
+            TextTransformationType::CmdLine => write!(f, "CMD_LINE"),
+            TextTransformationType::CompressWhiteSpace => write!(f, "COMPRESS_WHITE_SPACE"),
+            TextTransformationType::CssDecode => write!(f, "CSS_DECODE"),
+            TextTransformationType::EscapeSeqDecode => write!(f, "ESCAPE_SEQ_DECODE"),
+            TextTransformationType::HexDecode => write!(f, "HEX_DECODE"),
+            TextTransformationType::HtmlEntityDecode => write!(f, "HTML_ENTITY_DECODE"),
+            TextTransformationType::JsDecode => write!(f, "JS_DECODE"),
+            TextTransformationType::Lowercase => write!(f, "LOWERCASE"),
+            TextTransformationType::Md5 => write!(f, "MD5"),
+            TextTransformationType::None => write!(f, "NONE"),
+            TextTransformationType::NormalizePath => write!(f, "NORMALIZE_PATH"),
+            TextTransformationType::NormalizePathWin => write!(f, "NORMALIZE_PATH_WIN"),
+            TextTransformationType::RemoveNulls => write!(f, "REMOVE_NULLS"),
+            TextTransformationType::ReplaceComments => write!(f, "REPLACE_COMMENTS"),
+            TextTransformationType::ReplaceNulls => write!(f, "REPLACE_NULLS"),
+            TextTransformationType::SqlHexDecode => write!(f, "SQL_HEX_DECODE"),
+            TextTransformationType::UrlDecode => write!(f, "URL_DECODE"),
+            TextTransformationType::UrlDecodeUni => write!(f, "URL_DECODE_UNI"),
+            TextTransformationType::Utf8ToUnicode => write!(f, "UTF8_TO_UNICODE"),
+            TextTransformationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

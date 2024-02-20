@@ -96,3 +96,12 @@ impl SortKey {
         }
     }
 }
+impl ::std::fmt::Display for SortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortKey::CreatedAt => write!(f, "CREATED_AT"),
+            SortKey::UpdatedAt => write!(f, "UPDATED_AT"),
+            SortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

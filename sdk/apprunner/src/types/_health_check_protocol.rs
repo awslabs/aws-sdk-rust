@@ -96,3 +96,12 @@ impl HealthCheckProtocol {
         }
     }
 }
+impl ::std::fmt::Display for HealthCheckProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HealthCheckProtocol::Http => write!(f, "HTTP"),
+            HealthCheckProtocol::Tcp => write!(f, "TCP"),
+            HealthCheckProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

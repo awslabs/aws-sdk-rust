@@ -96,3 +96,12 @@ impl ViewStatus {
         }
     }
 }
+impl ::std::fmt::Display for ViewStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ViewStatus::Published => write!(f, "PUBLISHED"),
+            ViewStatus::Saved => write!(f, "SAVED"),
+            ViewStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

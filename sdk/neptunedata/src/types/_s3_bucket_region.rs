@@ -225,3 +225,33 @@ impl S3BucketRegion {
         }
     }
 }
+impl ::std::fmt::Display for S3BucketRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3BucketRegion::AfSouth1 => write!(f, "af-south-1"),
+            S3BucketRegion::ApEast1 => write!(f, "ap-east-1"),
+            S3BucketRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
+            S3BucketRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
+            S3BucketRegion::ApSouth1 => write!(f, "ap-south-1"),
+            S3BucketRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
+            S3BucketRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
+            S3BucketRegion::CaCentral1 => write!(f, "ca-central-1"),
+            S3BucketRegion::CnNorth1 => write!(f, "cn-north-1"),
+            S3BucketRegion::CnNorthwest1 => write!(f, "cn-northwest-1"),
+            S3BucketRegion::EuCentral1 => write!(f, "eu-central-1"),
+            S3BucketRegion::EuNorth1 => write!(f, "eu-north-1"),
+            S3BucketRegion::EuWest1 => write!(f, "eu-west-1"),
+            S3BucketRegion::EuWest2 => write!(f, "eu-west-2"),
+            S3BucketRegion::EuWest3 => write!(f, "eu-west-3"),
+            S3BucketRegion::MeSouth1 => write!(f, "me-south-1"),
+            S3BucketRegion::SaEast1 => write!(f, "sa-east-1"),
+            S3BucketRegion::UsEast1 => write!(f, "us-east-1"),
+            S3BucketRegion::UsEast2 => write!(f, "us-east-2"),
+            S3BucketRegion::UsGovEast1 => write!(f, "us-gov-east-1"),
+            S3BucketRegion::UsGovWest1 => write!(f, "us-gov-west-1"),
+            S3BucketRegion::UsWest1 => write!(f, "us-west-1"),
+            S3BucketRegion::UsWest2 => write!(f, "us-west-2"),
+            S3BucketRegion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

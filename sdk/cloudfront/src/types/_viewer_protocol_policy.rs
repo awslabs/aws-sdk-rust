@@ -101,3 +101,13 @@ impl ViewerProtocolPolicy {
         }
     }
 }
+impl ::std::fmt::Display for ViewerProtocolPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ViewerProtocolPolicy::AllowAll => write!(f, "allow-all"),
+            ViewerProtocolPolicy::HttpsOnly => write!(f, "https-only"),
+            ViewerProtocolPolicy::RedirectToHttps => write!(f, "redirect-to-https"),
+            ViewerProtocolPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

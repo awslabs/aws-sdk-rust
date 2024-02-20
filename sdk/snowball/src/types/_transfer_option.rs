@@ -101,3 +101,13 @@ impl TransferOption {
         }
     }
 }
+impl ::std::fmt::Display for TransferOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransferOption::Export => write!(f, "EXPORT"),
+            TransferOption::Import => write!(f, "IMPORT"),
+            TransferOption::LocalUse => write!(f, "LOCAL_USE"),
+            TransferOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

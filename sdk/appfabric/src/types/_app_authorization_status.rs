@@ -106,3 +106,14 @@ impl AppAuthorizationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AppAuthorizationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppAuthorizationStatus::Connected => write!(f, "Connected"),
+            AppAuthorizationStatus::ConnectionValidationFailed => write!(f, "ConnectionValidationFailed"),
+            AppAuthorizationStatus::PendingConnect => write!(f, "PendingConnect"),
+            AppAuthorizationStatus::TokenAutoRotationFailed => write!(f, "TokenAutoRotationFailed"),
+            AppAuthorizationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

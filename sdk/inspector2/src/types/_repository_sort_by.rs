@@ -106,3 +106,14 @@ impl RepositorySortBy {
         }
     }
 }
+impl ::std::fmt::Display for RepositorySortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RepositorySortBy::AffectedImages => write!(f, "AFFECTED_IMAGES"),
+            RepositorySortBy::All => write!(f, "ALL"),
+            RepositorySortBy::Critical => write!(f, "CRITICAL"),
+            RepositorySortBy::High => write!(f, "HIGH"),
+            RepositorySortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

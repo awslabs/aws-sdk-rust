@@ -123,3 +123,16 @@ impl KnowledgeBaseStatus {
         }
     }
 }
+impl ::std::fmt::Display for KnowledgeBaseStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KnowledgeBaseStatus::Active => write!(f, "ACTIVE"),
+            KnowledgeBaseStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            KnowledgeBaseStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            KnowledgeBaseStatus::Deleted => write!(f, "DELETED"),
+            KnowledgeBaseStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            KnowledgeBaseStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            KnowledgeBaseStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

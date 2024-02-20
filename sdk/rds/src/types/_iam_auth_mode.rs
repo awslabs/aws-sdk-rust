@@ -101,3 +101,13 @@ impl IamAuthMode {
         }
     }
 }
+impl ::std::fmt::Display for IamAuthMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IamAuthMode::Disabled => write!(f, "DISABLED"),
+            IamAuthMode::Enabled => write!(f, "ENABLED"),
+            IamAuthMode::Required => write!(f, "REQUIRED"),
+            IamAuthMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

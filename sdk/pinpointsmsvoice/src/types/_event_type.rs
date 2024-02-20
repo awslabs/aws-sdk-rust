@@ -121,3 +121,17 @@ impl EventType {
         }
     }
 }
+impl ::std::fmt::Display for EventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventType::Answered => write!(f, "ANSWERED"),
+            EventType::Busy => write!(f, "BUSY"),
+            EventType::CompletedCall => write!(f, "COMPLETED_CALL"),
+            EventType::Failed => write!(f, "FAILED"),
+            EventType::InitiatedCall => write!(f, "INITIATED_CALL"),
+            EventType::NoAnswer => write!(f, "NO_ANSWER"),
+            EventType::Ringing => write!(f, "RINGING"),
+            EventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

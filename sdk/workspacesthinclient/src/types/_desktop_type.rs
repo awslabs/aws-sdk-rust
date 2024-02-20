@@ -101,3 +101,13 @@ impl DesktopType {
         }
     }
 }
+impl ::std::fmt::Display for DesktopType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DesktopType::Appstream => write!(f, "appstream"),
+            DesktopType::Workspaces => write!(f, "workspaces"),
+            DesktopType::WorkspacesWeb => write!(f, "workspaces-web"),
+            DesktopType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

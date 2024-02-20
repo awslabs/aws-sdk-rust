@@ -101,3 +101,13 @@ impl GitPullRequestEventType {
         }
     }
 }
+impl ::std::fmt::Display for GitPullRequestEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GitPullRequestEventType::Closed => write!(f, "CLOSED"),
+            GitPullRequestEventType::Open => write!(f, "OPEN"),
+            GitPullRequestEventType::Updated => write!(f, "UPDATED"),
+            GitPullRequestEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl DomainProcessingStatusType {
         }
     }
 }
+impl ::std::fmt::Display for DomainProcessingStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainProcessingStatusType::Active => write!(f, "Active"),
+            DomainProcessingStatusType::Creating => write!(f, "Creating"),
+            DomainProcessingStatusType::Deleting => write!(f, "Deleting"),
+            DomainProcessingStatusType::Isolated => write!(f, "Isolated"),
+            DomainProcessingStatusType::Modifying => write!(f, "Modifying"),
+            DomainProcessingStatusType::Updating => write!(f, "UpdatingServiceSoftware"),
+            DomainProcessingStatusType::Upgrading => write!(f, "UpgradingEngineVersion"),
+            DomainProcessingStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

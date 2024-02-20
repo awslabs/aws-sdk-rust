@@ -91,3 +91,11 @@ impl TransitionToPrimaryStorageClassRules {
         }
     }
 }
+impl ::std::fmt::Display for TransitionToPrimaryStorageClassRules {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitionToPrimaryStorageClassRules::After1Access => write!(f, "AFTER_1_ACCESS"),
+            TransitionToPrimaryStorageClassRules::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

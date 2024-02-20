@@ -96,3 +96,12 @@ impl NamedShadowIndexingMode {
         }
     }
 }
+impl ::std::fmt::Display for NamedShadowIndexingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NamedShadowIndexingMode::Off => write!(f, "OFF"),
+            NamedShadowIndexingMode::On => write!(f, "ON"),
+            NamedShadowIndexingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

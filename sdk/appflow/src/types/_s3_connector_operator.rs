@@ -207,3 +207,30 @@ impl S3ConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for S3ConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3ConnectorOperator::Addition => write!(f, "ADDITION"),
+            S3ConnectorOperator::Between => write!(f, "BETWEEN"),
+            S3ConnectorOperator::Division => write!(f, "DIVISION"),
+            S3ConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            S3ConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
+            S3ConnectorOperator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
+            S3ConnectorOperator::LessThan => write!(f, "LESS_THAN"),
+            S3ConnectorOperator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
+            S3ConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            S3ConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            S3ConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            S3ConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            S3ConnectorOperator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
+            S3ConnectorOperator::NoOp => write!(f, "NO_OP"),
+            S3ConnectorOperator::Projection => write!(f, "PROJECTION"),
+            S3ConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            S3ConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            S3ConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            S3ConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            S3ConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            S3ConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

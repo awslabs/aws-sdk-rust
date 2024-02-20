@@ -104,3 +104,13 @@ impl RouteType {
         }
     }
 }
+impl ::std::fmt::Display for RouteType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteType::Premium => write!(f, "Premium"),
+            RouteType::Promotional => write!(f, "Promotional"),
+            RouteType::Transactional => write!(f, "Transactional"),
+            RouteType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

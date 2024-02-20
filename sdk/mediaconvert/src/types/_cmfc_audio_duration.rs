@@ -96,3 +96,12 @@ impl CmfcAudioDuration {
         }
     }
 }
+impl ::std::fmt::Display for CmfcAudioDuration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmfcAudioDuration::DefaultCodecDuration => write!(f, "DEFAULT_CODEC_DURATION"),
+            CmfcAudioDuration::MatchVideoDuration => write!(f, "MATCH_VIDEO_DURATION"),
+            CmfcAudioDuration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

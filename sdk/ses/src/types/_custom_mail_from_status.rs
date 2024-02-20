@@ -106,3 +106,14 @@ impl CustomMailFromStatus {
         }
     }
 }
+impl ::std::fmt::Display for CustomMailFromStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomMailFromStatus::Failed => write!(f, "Failed"),
+            CustomMailFromStatus::Pending => write!(f, "Pending"),
+            CustomMailFromStatus::Success => write!(f, "Success"),
+            CustomMailFromStatus::TemporaryFailure => write!(f, "TemporaryFailure"),
+            CustomMailFromStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

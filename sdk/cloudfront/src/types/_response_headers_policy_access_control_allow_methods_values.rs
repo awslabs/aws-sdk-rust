@@ -128,3 +128,18 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsValues {
         }
     }
 }
+impl ::std::fmt::Display for ResponseHeadersPolicyAccessControlAllowMethodsValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::All => write!(f, "ALL"),
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Delete => write!(f, "DELETE"),
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Get => write!(f, "GET"),
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Head => write!(f, "HEAD"),
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Options => write!(f, "OPTIONS"),
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Patch => write!(f, "PATCH"),
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Post => write!(f, "POST"),
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Put => write!(f, "PUT"),
+            ResponseHeadersPolicyAccessControlAllowMethodsValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

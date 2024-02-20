@@ -153,3 +153,21 @@ impl OperatingSystemName {
         }
     }
 }
+impl ::std::fmt::Display for OperatingSystemName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperatingSystemName::AmazonLinux2 => write!(f, "AMAZON_LINUX_2"),
+            OperatingSystemName::Ubuntu1804 => write!(f, "UBUNTU_18_04"),
+            OperatingSystemName::Ubuntu2004 => write!(f, "UBUNTU_20_04"),
+            OperatingSystemName::Ubuntu2204 => write!(f, "UBUNTU_22_04"),
+            OperatingSystemName::UnknownValue => write!(f, "UNKNOWN"),
+            OperatingSystemName::Windows10 => write!(f, "WINDOWS_10"),
+            OperatingSystemName::Windows11 => write!(f, "WINDOWS_11"),
+            OperatingSystemName::Windows7 => write!(f, "WINDOWS_7"),
+            OperatingSystemName::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
+            OperatingSystemName::WindowsServer2019 => write!(f, "WINDOWS_SERVER_2019"),
+            OperatingSystemName::WindowsServer2022 => write!(f, "WINDOWS_SERVER_2022"),
+            OperatingSystemName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ImageSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ImageSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageSortBy::CreationTime => write!(f, "CREATION_TIME"),
+            ImageSortBy::ImageName => write!(f, "IMAGE_NAME"),
+            ImageSortBy::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
+            ImageSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

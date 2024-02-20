@@ -96,3 +96,12 @@ impl VoiceConnectorAwsRegion {
         }
     }
 }
+impl ::std::fmt::Display for VoiceConnectorAwsRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VoiceConnectorAwsRegion::UsEast1 => write!(f, "us-east-1"),
+            VoiceConnectorAwsRegion::UsWest2 => write!(f, "us-west-2"),
+            VoiceConnectorAwsRegion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

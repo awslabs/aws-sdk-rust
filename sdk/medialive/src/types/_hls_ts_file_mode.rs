@@ -96,3 +96,12 @@ impl HlsTsFileMode {
         }
     }
 }
+impl ::std::fmt::Display for HlsTsFileMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsTsFileMode::SegmentedFiles => write!(f, "SEGMENTED_FILES"),
+            HlsTsFileMode::SingleFile => write!(f, "SINGLE_FILE"),
+            HlsTsFileMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

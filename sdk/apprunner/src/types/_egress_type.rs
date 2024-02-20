@@ -96,3 +96,12 @@ impl EgressType {
         }
     }
 }
+impl ::std::fmt::Display for EgressType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EgressType::Default => write!(f, "DEFAULT"),
+            EgressType::Vpc => write!(f, "VPC"),
+            EgressType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

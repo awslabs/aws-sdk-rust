@@ -96,3 +96,12 @@ impl HecEndpointType {
         }
     }
 }
+impl ::std::fmt::Display for HecEndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HecEndpointType::Event => write!(f, "Event"),
+            HecEndpointType::Raw => write!(f, "Raw"),
+            HecEndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

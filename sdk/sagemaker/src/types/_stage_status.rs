@@ -135,3 +135,18 @@ impl StageStatus {
         }
     }
 }
+impl ::std::fmt::Display for StageStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StageStatus::Creating => write!(f, "CREATING"),
+            StageStatus::Deployed => write!(f, "DEPLOYED"),
+            StageStatus::Failed => write!(f, "FAILED"),
+            StageStatus::InProgress => write!(f, "INPROGRESS"),
+            StageStatus::ReadyToDeploy => write!(f, "READYTODEPLOY"),
+            StageStatus::Starting => write!(f, "STARTING"),
+            StageStatus::Stopped => write!(f, "STOPPED"),
+            StageStatus::Stopping => write!(f, "STOPPING"),
+            StageStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

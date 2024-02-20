@@ -101,3 +101,13 @@ impl AuditEventType {
         }
     }
 }
+impl ::std::fmt::Display for AuditEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditEventType::CaseCreated => write!(f, "Case.Created"),
+            AuditEventType::CaseUpdated => write!(f, "Case.Updated"),
+            AuditEventType::RelatedItemCreated => write!(f, "RelatedItem.Created"),
+            AuditEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

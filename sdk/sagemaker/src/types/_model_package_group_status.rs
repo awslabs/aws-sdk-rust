@@ -116,3 +116,16 @@ impl ModelPackageGroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelPackageGroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelPackageGroupStatus::Completed => write!(f, "Completed"),
+            ModelPackageGroupStatus::DeleteFailed => write!(f, "DeleteFailed"),
+            ModelPackageGroupStatus::Deleting => write!(f, "Deleting"),
+            ModelPackageGroupStatus::Failed => write!(f, "Failed"),
+            ModelPackageGroupStatus::InProgress => write!(f, "InProgress"),
+            ModelPackageGroupStatus::Pending => write!(f, "Pending"),
+            ModelPackageGroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

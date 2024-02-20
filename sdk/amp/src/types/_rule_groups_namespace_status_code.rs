@@ -116,3 +116,16 @@ impl RuleGroupsNamespaceStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for RuleGroupsNamespaceStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleGroupsNamespaceStatusCode::Active => write!(f, "ACTIVE"),
+            RuleGroupsNamespaceStatusCode::Creating => write!(f, "CREATING"),
+            RuleGroupsNamespaceStatusCode::CreationFailed => write!(f, "CREATION_FAILED"),
+            RuleGroupsNamespaceStatusCode::Deleting => write!(f, "DELETING"),
+            RuleGroupsNamespaceStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            RuleGroupsNamespaceStatusCode::Updating => write!(f, "UPDATING"),
+            RuleGroupsNamespaceStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

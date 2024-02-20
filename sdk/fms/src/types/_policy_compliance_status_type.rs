@@ -96,3 +96,12 @@ impl PolicyComplianceStatusType {
         }
     }
 }
+impl ::std::fmt::Display for PolicyComplianceStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyComplianceStatusType::Compliant => write!(f, "COMPLIANT"),
+            PolicyComplianceStatusType::NonCompliant => write!(f, "NON_COMPLIANT"),
+            PolicyComplianceStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

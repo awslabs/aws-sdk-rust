@@ -103,3 +103,13 @@ impl AuthenticateCognitoActionConditionalBehaviorEnum {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticateCognitoActionConditionalBehaviorEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticateCognitoActionConditionalBehaviorEnum::Allow => write!(f, "allow"),
+            AuthenticateCognitoActionConditionalBehaviorEnum::Authenticate => write!(f, "authenticate"),
+            AuthenticateCognitoActionConditionalBehaviorEnum::Deny => write!(f, "deny"),
+            AuthenticateCognitoActionConditionalBehaviorEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

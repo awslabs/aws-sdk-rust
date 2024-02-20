@@ -96,3 +96,12 @@ impl OrderEnum {
         }
     }
 }
+impl ::std::fmt::Display for OrderEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrderEnum::Ascending => write!(f, "ascending"),
+            OrderEnum::Descending => write!(f, "descending"),
+            OrderEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

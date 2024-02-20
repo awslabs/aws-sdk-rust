@@ -106,3 +106,14 @@ impl FleetState {
         }
     }
 }
+impl ::std::fmt::Display for FleetState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetState::Running => write!(f, "RUNNING"),
+            FleetState::Starting => write!(f, "STARTING"),
+            FleetState::Stopped => write!(f, "STOPPED"),
+            FleetState::Stopping => write!(f, "STOPPING"),
+            FleetState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

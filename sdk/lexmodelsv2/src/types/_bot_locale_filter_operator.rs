@@ -96,3 +96,12 @@ impl BotLocaleFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for BotLocaleFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotLocaleFilterOperator::Contains => write!(f, "CO"),
+            BotLocaleFilterOperator::Equals => write!(f, "EQ"),
+            BotLocaleFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

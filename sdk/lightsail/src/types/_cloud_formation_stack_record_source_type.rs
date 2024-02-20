@@ -91,3 +91,11 @@ impl CloudFormationStackRecordSourceType {
         }
     }
 }
+impl ::std::fmt::Display for CloudFormationStackRecordSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CloudFormationStackRecordSourceType::ExportSnapshotRecord => write!(f, "ExportSnapshotRecord"),
+            CloudFormationStackRecordSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

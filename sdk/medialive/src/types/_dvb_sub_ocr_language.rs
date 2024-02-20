@@ -116,3 +116,16 @@ impl DvbSubOcrLanguage {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubOcrLanguage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubOcrLanguage::Deu => write!(f, "DEU"),
+            DvbSubOcrLanguage::Eng => write!(f, "ENG"),
+            DvbSubOcrLanguage::Fra => write!(f, "FRA"),
+            DvbSubOcrLanguage::Nld => write!(f, "NLD"),
+            DvbSubOcrLanguage::Por => write!(f, "POR"),
+            DvbSubOcrLanguage::Spa => write!(f, "SPA"),
+            DvbSubOcrLanguage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

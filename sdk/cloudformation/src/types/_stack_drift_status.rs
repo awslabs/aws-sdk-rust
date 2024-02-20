@@ -106,3 +106,14 @@ impl StackDriftStatus {
         }
     }
 }
+impl ::std::fmt::Display for StackDriftStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackDriftStatus::Drifted => write!(f, "DRIFTED"),
+            StackDriftStatus::InSync => write!(f, "IN_SYNC"),
+            StackDriftStatus::NotChecked => write!(f, "NOT_CHECKED"),
+            StackDriftStatus::UnknownValue => write!(f, "UNKNOWN"),
+            StackDriftStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

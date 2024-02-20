@@ -96,3 +96,12 @@ impl CloudWatchLogsTimeZone {
         }
     }
 }
+impl ::std::fmt::Display for CloudWatchLogsTimeZone {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CloudWatchLogsTimeZone::Local => write!(f, "LOCAL"),
+            CloudWatchLogsTimeZone::Utc => write!(f, "UTC"),
+            CloudWatchLogsTimeZone::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

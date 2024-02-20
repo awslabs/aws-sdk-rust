@@ -101,3 +101,13 @@ impl StreamExceptionPolicy {
         }
     }
 }
+impl ::std::fmt::Display for StreamExceptionPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamExceptionPolicy::Continue => write!(f, "CONTINUE"),
+            StreamExceptionPolicy::Drop => write!(f, "DROP"),
+            StreamExceptionPolicy::Reject => write!(f, "REJECT"),
+            StreamExceptionPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

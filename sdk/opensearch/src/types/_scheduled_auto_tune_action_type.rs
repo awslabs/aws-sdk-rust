@@ -96,3 +96,12 @@ impl ScheduledAutoTuneActionType {
         }
     }
 }
+impl ::std::fmt::Display for ScheduledAutoTuneActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduledAutoTuneActionType::JvmHeapSizeTuning => write!(f, "JVM_HEAP_SIZE_TUNING"),
+            ScheduledAutoTuneActionType::JvmYoungGenTuning => write!(f, "JVM_YOUNG_GEN_TUNING"),
+            ScheduledAutoTuneActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

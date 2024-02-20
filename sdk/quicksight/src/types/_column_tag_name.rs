@@ -96,3 +96,12 @@ impl ColumnTagName {
         }
     }
 }
+impl ::std::fmt::Display for ColumnTagName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnTagName::ColumnDescription => write!(f, "COLUMN_DESCRIPTION"),
+            ColumnTagName::ColumnGeographicRole => write!(f, "COLUMN_GEOGRAPHIC_ROLE"),
+            ColumnTagName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

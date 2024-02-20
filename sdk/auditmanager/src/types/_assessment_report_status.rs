@@ -101,3 +101,13 @@ impl AssessmentReportStatus {
         }
     }
 }
+impl ::std::fmt::Display for AssessmentReportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssessmentReportStatus::Complete => write!(f, "COMPLETE"),
+            AssessmentReportStatus::Failed => write!(f, "FAILED"),
+            AssessmentReportStatus::InProgress => write!(f, "IN_PROGRESS"),
+            AssessmentReportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl SetupStatus {
         }
     }
 }
+impl ::std::fmt::Display for SetupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SetupStatus::Failed => write!(f, "failed"),
+            SetupStatus::InProgress => write!(f, "inProgress"),
+            SetupStatus::Succeeded => write!(f, "succeeded"),
+            SetupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

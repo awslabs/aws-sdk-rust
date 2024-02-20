@@ -96,3 +96,12 @@ impl ActivationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ActivationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActivationStatus::Activated => write!(f, "ACTIVATED"),
+            ActivationStatus::NotActivated => write!(f, "NOT_ACTIVATED"),
+            ActivationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

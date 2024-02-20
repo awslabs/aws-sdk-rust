@@ -309,3 +309,47 @@ impl PiiEntityType {
         }
     }
 }
+impl ::std::fmt::Display for PiiEntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PiiEntityType::Address => write!(f, "ADDRESS"),
+            PiiEntityType::Age => write!(f, "AGE"),
+            PiiEntityType::All => write!(f, "ALL"),
+            PiiEntityType::AwsAccessKey => write!(f, "AWS_ACCESS_KEY"),
+            PiiEntityType::AwsSecretKey => write!(f, "AWS_SECRET_KEY"),
+            PiiEntityType::BankAccountNumber => write!(f, "BANK_ACCOUNT_NUMBER"),
+            PiiEntityType::BankRouting => write!(f, "BANK_ROUTING"),
+            PiiEntityType::CaHealthNumber => write!(f, "CA_HEALTH_NUMBER"),
+            PiiEntityType::CaSocialInsuranceNumber => write!(f, "CA_SOCIAL_INSURANCE_NUMBER"),
+            PiiEntityType::CreditDebitCvv => write!(f, "CREDIT_DEBIT_CVV"),
+            PiiEntityType::CreditDebitExpiry => write!(f, "CREDIT_DEBIT_EXPIRY"),
+            PiiEntityType::CreditDebitNumber => write!(f, "CREDIT_DEBIT_NUMBER"),
+            PiiEntityType::DateTime => write!(f, "DATE_TIME"),
+            PiiEntityType::DriverId => write!(f, "DRIVER_ID"),
+            PiiEntityType::Email => write!(f, "EMAIL"),
+            PiiEntityType::InternationalBankAccountNumber => write!(f, "INTERNATIONAL_BANK_ACCOUNT_NUMBER"),
+            PiiEntityType::InAadhaar => write!(f, "IN_AADHAAR"),
+            PiiEntityType::InNrega => write!(f, "IN_NREGA"),
+            PiiEntityType::InPermanentAccountNumber => write!(f, "IN_PERMANENT_ACCOUNT_NUMBER"),
+            PiiEntityType::InVoterNumber => write!(f, "IN_VOTER_NUMBER"),
+            PiiEntityType::IpAddress => write!(f, "IP_ADDRESS"),
+            PiiEntityType::LicensePlate => write!(f, "LICENSE_PLATE"),
+            PiiEntityType::MacAddress => write!(f, "MAC_ADDRESS"),
+            PiiEntityType::Name => write!(f, "NAME"),
+            PiiEntityType::PassportNumber => write!(f, "PASSPORT_NUMBER"),
+            PiiEntityType::Password => write!(f, "PASSWORD"),
+            PiiEntityType::Phone => write!(f, "PHONE"),
+            PiiEntityType::Pin => write!(f, "PIN"),
+            PiiEntityType::Ssn => write!(f, "SSN"),
+            PiiEntityType::SwiftCode => write!(f, "SWIFT_CODE"),
+            PiiEntityType::UkNationalHealthServiceNumber => write!(f, "UK_NATIONAL_HEALTH_SERVICE_NUMBER"),
+            PiiEntityType::UkNationalInsuranceNumber => write!(f, "UK_NATIONAL_INSURANCE_NUMBER"),
+            PiiEntityType::UkUniqueTaxpayerReferenceNumber => write!(f, "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER"),
+            PiiEntityType::Url => write!(f, "URL"),
+            PiiEntityType::Username => write!(f, "USERNAME"),
+            PiiEntityType::UsIndividualTaxIdentificationNumber => write!(f, "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER"),
+            PiiEntityType::VehicleIdentificationNumber => write!(f, "VEHICLE_IDENTIFICATION_NUMBER"),
+            PiiEntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ClientAuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for ClientAuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientAuthenticationType::SmartCard => write!(f, "SmartCard"),
+            ClientAuthenticationType::SmartCardOrPassword => write!(f, "SmartCardOrPassword"),
+            ClientAuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

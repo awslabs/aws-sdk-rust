@@ -101,3 +101,13 @@ impl AdvancedSecurityModeType {
         }
     }
 }
+impl ::std::fmt::Display for AdvancedSecurityModeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdvancedSecurityModeType::Audit => write!(f, "AUDIT"),
+            AdvancedSecurityModeType::Enforced => write!(f, "ENFORCED"),
+            AdvancedSecurityModeType::Off => write!(f, "OFF"),
+            AdvancedSecurityModeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

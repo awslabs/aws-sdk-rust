@@ -123,3 +123,16 @@ impl MitigationActionType {
         }
     }
 }
+impl ::std::fmt::Display for MitigationActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MitigationActionType::AddThingsToThingGroup => write!(f, "ADD_THINGS_TO_THING_GROUP"),
+            MitigationActionType::EnableIotLogging => write!(f, "ENABLE_IOT_LOGGING"),
+            MitigationActionType::PublishFindingToSns => write!(f, "PUBLISH_FINDING_TO_SNS"),
+            MitigationActionType::ReplaceDefaultPolicyVersion => write!(f, "REPLACE_DEFAULT_POLICY_VERSION"),
+            MitigationActionType::UpdateCaCertificate => write!(f, "UPDATE_CA_CERTIFICATE"),
+            MitigationActionType::UpdateDeviceCertificate => write!(f, "UPDATE_DEVICE_CERTIFICATE"),
+            MitigationActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

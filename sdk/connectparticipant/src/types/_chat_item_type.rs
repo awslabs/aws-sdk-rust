@@ -159,3 +159,22 @@ impl ChatItemType {
         }
     }
 }
+impl ::std::fmt::Display for ChatItemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChatItemType::Attachment => write!(f, "ATTACHMENT"),
+            ChatItemType::ChatEnded => write!(f, "CHAT_ENDED"),
+            ChatItemType::ConnectionAck => write!(f, "CONNECTION_ACK"),
+            ChatItemType::Event => write!(f, "EVENT"),
+            ChatItemType::Message => write!(f, "MESSAGE"),
+            ChatItemType::MessageDelivered => write!(f, "MESSAGE_DELIVERED"),
+            ChatItemType::MessageRead => write!(f, "MESSAGE_READ"),
+            ChatItemType::ParticipantJoined => write!(f, "PARTICIPANT_JOINED"),
+            ChatItemType::ParticipantLeft => write!(f, "PARTICIPANT_LEFT"),
+            ChatItemType::TransferFailed => write!(f, "TRANSFER_FAILED"),
+            ChatItemType::TransferSucceeded => write!(f, "TRANSFER_SUCCEEDED"),
+            ChatItemType::Typing => write!(f, "TYPING"),
+            ChatItemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

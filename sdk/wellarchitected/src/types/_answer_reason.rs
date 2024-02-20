@@ -111,3 +111,15 @@ impl AnswerReason {
         }
     }
 }
+impl ::std::fmt::Display for AnswerReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnswerReason::ArchitectureConstraints => write!(f, "ARCHITECTURE_CONSTRAINTS"),
+            AnswerReason::BusinessPriorities => write!(f, "BUSINESS_PRIORITIES"),
+            AnswerReason::None => write!(f, "NONE"),
+            AnswerReason::Other => write!(f, "OTHER"),
+            AnswerReason::OutOfScope => write!(f, "OUT_OF_SCOPE"),
+            AnswerReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

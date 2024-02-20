@@ -91,3 +91,11 @@ impl HyperParameterTuningAllocationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for HyperParameterTuningAllocationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HyperParameterTuningAllocationStrategy::Prioritized => write!(f, "Prioritized"),
+            HyperParameterTuningAllocationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

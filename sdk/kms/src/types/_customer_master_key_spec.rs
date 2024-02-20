@@ -166,3 +166,23 @@ impl CustomerMasterKeySpec {
         }
     }
 }
+impl ::std::fmt::Display for CustomerMasterKeySpec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomerMasterKeySpec::EccNistP256 => write!(f, "ECC_NIST_P256"),
+            CustomerMasterKeySpec::EccNistP384 => write!(f, "ECC_NIST_P384"),
+            CustomerMasterKeySpec::EccNistP521 => write!(f, "ECC_NIST_P521"),
+            CustomerMasterKeySpec::EccSecgP256K1 => write!(f, "ECC_SECG_P256K1"),
+            CustomerMasterKeySpec::Hmac224 => write!(f, "HMAC_224"),
+            CustomerMasterKeySpec::Hmac256 => write!(f, "HMAC_256"),
+            CustomerMasterKeySpec::Hmac384 => write!(f, "HMAC_384"),
+            CustomerMasterKeySpec::Hmac512 => write!(f, "HMAC_512"),
+            CustomerMasterKeySpec::Rsa2048 => write!(f, "RSA_2048"),
+            CustomerMasterKeySpec::Rsa3072 => write!(f, "RSA_3072"),
+            CustomerMasterKeySpec::Rsa4096 => write!(f, "RSA_4096"),
+            CustomerMasterKeySpec::Sm2 => write!(f, "SM2"),
+            CustomerMasterKeySpec::SymmetricDefault => write!(f, "SYMMETRIC_DEFAULT"),
+            CustomerMasterKeySpec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

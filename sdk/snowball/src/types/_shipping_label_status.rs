@@ -106,3 +106,14 @@ impl ShippingLabelStatus {
         }
     }
 }
+impl ::std::fmt::Display for ShippingLabelStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShippingLabelStatus::Failed => write!(f, "Failed"),
+            ShippingLabelStatus::InProgress => write!(f, "InProgress"),
+            ShippingLabelStatus::Succeeded => write!(f, "Succeeded"),
+            ShippingLabelStatus::TimedOut => write!(f, "TimedOut"),
+            ShippingLabelStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

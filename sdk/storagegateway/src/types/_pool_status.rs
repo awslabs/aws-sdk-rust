@@ -96,3 +96,12 @@ impl PoolStatus {
         }
     }
 }
+impl ::std::fmt::Display for PoolStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PoolStatus::Active => write!(f, "ACTIVE"),
+            PoolStatus::Deleted => write!(f, "DELETED"),
+            PoolStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

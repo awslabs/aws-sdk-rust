@@ -141,3 +141,19 @@ impl Type {
         }
     }
 }
+impl ::std::fmt::Display for Type {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Type::CreateS3DataAccessFromS3Bucket => write!(f, "CREATE_S3_DATA_ACCESS_FROM_S3_BUCKET"),
+            Type::ExportAssetsToS3 => write!(f, "EXPORT_ASSETS_TO_S3"),
+            Type::ExportAssetToSignedUrl => write!(f, "EXPORT_ASSET_TO_SIGNED_URL"),
+            Type::ExportRevisionsToS3 => write!(f, "EXPORT_REVISIONS_TO_S3"),
+            Type::ImportAssetsFromLakeFormationTagPolicy => write!(f, "IMPORT_ASSETS_FROM_LAKE_FORMATION_TAG_POLICY"),
+            Type::ImportAssetsFromRedshiftDataShares => write!(f, "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES"),
+            Type::ImportAssetsFromS3 => write!(f, "IMPORT_ASSETS_FROM_S3"),
+            Type::ImportAssetFromApiGatewayApi => write!(f, "IMPORT_ASSET_FROM_API_GATEWAY_API"),
+            Type::ImportAssetFromSignedUrl => write!(f, "IMPORT_ASSET_FROM_SIGNED_URL"),
+            Type::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

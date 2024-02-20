@@ -153,3 +153,21 @@ impl IndexFieldType {
         }
     }
 }
+impl ::std::fmt::Display for IndexFieldType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IndexFieldType::Date => write!(f, "date"),
+            IndexFieldType::DateArray => write!(f, "date-array"),
+            IndexFieldType::Double => write!(f, "double"),
+            IndexFieldType::DoubleArray => write!(f, "double-array"),
+            IndexFieldType::Int => write!(f, "int"),
+            IndexFieldType::IntArray => write!(f, "int-array"),
+            IndexFieldType::Latlon => write!(f, "latlon"),
+            IndexFieldType::Literal => write!(f, "literal"),
+            IndexFieldType::LiteralArray => write!(f, "literal-array"),
+            IndexFieldType::Text => write!(f, "text"),
+            IndexFieldType::TextArray => write!(f, "text-array"),
+            IndexFieldType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -122,3 +122,13 @@ impl NodeAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for NodeAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeAssociationStatus::Failed => write!(f, "FAILED"),
+            NodeAssociationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            NodeAssociationStatus::Success => write!(f, "SUCCESS"),
+            NodeAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

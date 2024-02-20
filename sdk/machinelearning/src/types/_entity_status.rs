@@ -138,3 +138,15 @@ impl EntityStatus {
         }
     }
 }
+impl ::std::fmt::Display for EntityStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EntityStatus::Completed => write!(f, "COMPLETED"),
+            EntityStatus::Deleted => write!(f, "DELETED"),
+            EntityStatus::Failed => write!(f, "FAILED"),
+            EntityStatus::Inprogress => write!(f, "INPROGRESS"),
+            EntityStatus::Pending => write!(f, "PENDING"),
+            EntityStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

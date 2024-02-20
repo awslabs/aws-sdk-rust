@@ -96,3 +96,12 @@ impl MessageType {
         }
     }
 }
+impl ::std::fmt::Display for MessageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessageType::Digest => write!(f, "DIGEST"),
+            MessageType::Raw => write!(f, "RAW"),
+            MessageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

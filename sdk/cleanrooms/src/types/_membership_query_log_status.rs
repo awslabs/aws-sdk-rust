@@ -96,3 +96,12 @@ impl MembershipQueryLogStatus {
         }
     }
 }
+impl ::std::fmt::Display for MembershipQueryLogStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MembershipQueryLogStatus::Disabled => write!(f, "DISABLED"),
+            MembershipQueryLogStatus::Enabled => write!(f, "ENABLED"),
+            MembershipQueryLogStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

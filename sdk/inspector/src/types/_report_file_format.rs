@@ -96,3 +96,12 @@ impl ReportFileFormat {
         }
     }
 }
+impl ::std::fmt::Display for ReportFileFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportFileFormat::Html => write!(f, "HTML"),
+            ReportFileFormat::Pdf => write!(f, "PDF"),
+            ReportFileFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

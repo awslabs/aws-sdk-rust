@@ -101,3 +101,13 @@ impl ScheduleAt {
         }
     }
 }
+impl ::std::fmt::Display for ScheduleAt {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduleAt::Now => write!(f, "NOW"),
+            ScheduleAt::OffPeakWindow => write!(f, "OFF_PEAK_WINDOW"),
+            ScheduleAt::Timestamp => write!(f, "TIMESTAMP"),
+            ScheduleAt::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

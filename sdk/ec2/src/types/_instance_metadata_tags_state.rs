@@ -96,3 +96,12 @@ impl InstanceMetadataTagsState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceMetadataTagsState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceMetadataTagsState::Disabled => write!(f, "disabled"),
+            InstanceMetadataTagsState::Enabled => write!(f, "enabled"),
+            InstanceMetadataTagsState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

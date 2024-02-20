@@ -106,3 +106,14 @@ impl Gid {
         }
     }
 }
+impl ::std::fmt::Display for Gid {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Gid::Both => write!(f, "BOTH"),
+            Gid::IntValue => write!(f, "INT_VALUE"),
+            Gid::Name => write!(f, "NAME"),
+            Gid::None => write!(f, "NONE"),
+            Gid::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

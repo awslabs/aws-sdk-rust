@@ -96,3 +96,12 @@ impl CancelStepsRequestStatus {
         }
     }
 }
+impl ::std::fmt::Display for CancelStepsRequestStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CancelStepsRequestStatus::Failed => write!(f, "FAILED"),
+            CancelStepsRequestStatus::Submitted => write!(f, "SUBMITTED"),
+            CancelStepsRequestStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

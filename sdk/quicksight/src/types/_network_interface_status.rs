@@ -147,3 +147,20 @@ impl NetworkInterfaceStatus {
         }
     }
 }
+impl ::std::fmt::Display for NetworkInterfaceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkInterfaceStatus::AttachmentFailedRollbackFailed => write!(f, "ATTACHMENT_FAILED_ROLLBACK_FAILED"),
+            NetworkInterfaceStatus::Available => write!(f, "AVAILABLE"),
+            NetworkInterfaceStatus::Creating => write!(f, "CREATING"),
+            NetworkInterfaceStatus::CreationFailed => write!(f, "CREATION_FAILED"),
+            NetworkInterfaceStatus::Deleted => write!(f, "DELETED"),
+            NetworkInterfaceStatus::Deleting => write!(f, "DELETING"),
+            NetworkInterfaceStatus::DeletionFailed => write!(f, "DELETION_FAILED"),
+            NetworkInterfaceStatus::DeletionScheduled => write!(f, "DELETION_SCHEDULED"),
+            NetworkInterfaceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            NetworkInterfaceStatus::Updating => write!(f, "UPDATING"),
+            NetworkInterfaceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -135,3 +135,18 @@ impl LogAnomalyType {
         }
     }
 }
+impl ::std::fmt::Display for LogAnomalyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogAnomalyType::BlockFormat => write!(f, "BLOCK_FORMAT"),
+            LogAnomalyType::Format => write!(f, "FORMAT"),
+            LogAnomalyType::HttpCode => write!(f, "HTTP_CODE"),
+            LogAnomalyType::Keyword => write!(f, "KEYWORD"),
+            LogAnomalyType::KeywordToken => write!(f, "KEYWORD_TOKEN"),
+            LogAnomalyType::NewFieldName => write!(f, "NEW_FIELD_NAME"),
+            LogAnomalyType::NumericalNan => write!(f, "NUMERICAL_NAN"),
+            LogAnomalyType::NumericalPoint => write!(f, "NUMERICAL_POINT"),
+            LogAnomalyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

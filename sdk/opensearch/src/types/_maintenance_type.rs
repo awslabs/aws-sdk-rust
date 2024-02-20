@@ -101,3 +101,13 @@ impl MaintenanceType {
         }
     }
 }
+impl ::std::fmt::Display for MaintenanceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaintenanceType::RebootNode => write!(f, "REBOOT_NODE"),
+            MaintenanceType::RestartDashboard => write!(f, "RESTART_DASHBOARD"),
+            MaintenanceType::RestartSearchProcess => write!(f, "RESTART_SEARCH_PROCESS"),
+            MaintenanceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

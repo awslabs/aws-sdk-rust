@@ -96,3 +96,12 @@ impl DataPullMode {
         }
     }
 }
+impl ::std::fmt::Display for DataPullMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataPullMode::Complete => write!(f, "Complete"),
+            DataPullMode::Incremental => write!(f, "Incremental"),
+            DataPullMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

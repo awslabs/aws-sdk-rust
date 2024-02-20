@@ -96,3 +96,12 @@ impl AutoTuneDesiredState {
         }
     }
 }
+impl ::std::fmt::Display for AutoTuneDesiredState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoTuneDesiredState::Disabled => write!(f, "DISABLED"),
+            AutoTuneDesiredState::Enabled => write!(f, "ENABLED"),
+            AutoTuneDesiredState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

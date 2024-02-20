@@ -315,3 +315,48 @@ impl ClusterInstanceType {
         }
     }
 }
+impl ::std::fmt::Display for ClusterInstanceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterInstanceType::MlC512Xlarge => write!(f, "ml.c5.12xlarge"),
+            ClusterInstanceType::MlC518Xlarge => write!(f, "ml.c5.18xlarge"),
+            ClusterInstanceType::MlC524Xlarge => write!(f, "ml.c5.24xlarge"),
+            ClusterInstanceType::MlC52Xlarge => write!(f, "ml.c5.2xlarge"),
+            ClusterInstanceType::MlC54Xlarge => write!(f, "ml.c5.4xlarge"),
+            ClusterInstanceType::MlC59Xlarge => write!(f, "ml.c5.9xlarge"),
+            ClusterInstanceType::MlC5Large => write!(f, "ml.c5.large"),
+            ClusterInstanceType::MlC5Xlarge => write!(f, "ml.c5.xlarge"),
+            ClusterInstanceType::MlC5N18Xlarge => write!(f, "ml.c5n.18xlarge"),
+            ClusterInstanceType::MlC5N2Xlarge => write!(f, "ml.c5n.2xlarge"),
+            ClusterInstanceType::MlC5N4Xlarge => write!(f, "ml.c5n.4xlarge"),
+            ClusterInstanceType::MlC5N9Xlarge => write!(f, "ml.c5n.9xlarge"),
+            ClusterInstanceType::MlC5NLarge => write!(f, "ml.c5n.large"),
+            ClusterInstanceType::MlG512Xlarge => write!(f, "ml.g5.12xlarge"),
+            ClusterInstanceType::MlG516Xlarge => write!(f, "ml.g5.16xlarge"),
+            ClusterInstanceType::MlG524Xlarge => write!(f, "ml.g5.24xlarge"),
+            ClusterInstanceType::MlG52Xlarge => write!(f, "ml.g5.2xlarge"),
+            ClusterInstanceType::MlG548Xlarge => write!(f, "ml.g5.48xlarge"),
+            ClusterInstanceType::MlG54Xlarge => write!(f, "ml.g5.4xlarge"),
+            ClusterInstanceType::MlG58Xlarge => write!(f, "ml.g5.8xlarge"),
+            ClusterInstanceType::MlG5Xlarge => write!(f, "ml.g5.xlarge"),
+            ClusterInstanceType::MlM512Xlarge => write!(f, "ml.m5.12xlarge"),
+            ClusterInstanceType::MlM516Xlarge => write!(f, "ml.m5.16xlarge"),
+            ClusterInstanceType::MlM524Xlarge => write!(f, "ml.m5.24xlarge"),
+            ClusterInstanceType::MlM52Xlarge => write!(f, "ml.m5.2xlarge"),
+            ClusterInstanceType::MlM54Xlarge => write!(f, "ml.m5.4xlarge"),
+            ClusterInstanceType::MlM58Xlarge => write!(f, "ml.m5.8xlarge"),
+            ClusterInstanceType::MlM5Large => write!(f, "ml.m5.large"),
+            ClusterInstanceType::MlM5Xlarge => write!(f, "ml.m5.xlarge"),
+            ClusterInstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
+            ClusterInstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
+            ClusterInstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
+            ClusterInstanceType::MlT32Xlarge => write!(f, "ml.t3.2xlarge"),
+            ClusterInstanceType::MlT3Large => write!(f, "ml.t3.large"),
+            ClusterInstanceType::MlT3Medium => write!(f, "ml.t3.medium"),
+            ClusterInstanceType::MlT3Xlarge => write!(f, "ml.t3.xlarge"),
+            ClusterInstanceType::MlTrn132Xlarge => write!(f, "ml.trn1.32xlarge"),
+            ClusterInstanceType::MlTrn1N32Xlarge => write!(f, "ml.trn1n.32xlarge"),
+            ClusterInstanceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

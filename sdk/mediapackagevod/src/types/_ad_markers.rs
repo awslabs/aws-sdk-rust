@@ -101,3 +101,13 @@ impl AdMarkers {
         }
     }
 }
+impl ::std::fmt::Display for AdMarkers {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdMarkers::None => write!(f, "NONE"),
+            AdMarkers::Passthrough => write!(f, "PASSTHROUGH"),
+            AdMarkers::Scte35Enhanced => write!(f, "SCTE35_ENHANCED"),
+            AdMarkers::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

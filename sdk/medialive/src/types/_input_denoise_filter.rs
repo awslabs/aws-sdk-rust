@@ -96,3 +96,12 @@ impl InputDenoiseFilter {
         }
     }
 }
+impl ::std::fmt::Display for InputDenoiseFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDenoiseFilter::Disabled => write!(f, "DISABLED"),
+            InputDenoiseFilter::Enabled => write!(f, "ENABLED"),
+            InputDenoiseFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

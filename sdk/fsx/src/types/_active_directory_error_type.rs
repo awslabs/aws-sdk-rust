@@ -110,3 +110,14 @@ impl ActiveDirectoryErrorType {
         }
     }
 }
+impl ::std::fmt::Display for ActiveDirectoryErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActiveDirectoryErrorType::DomainNotFound => write!(f, "DOMAIN_NOT_FOUND"),
+            ActiveDirectoryErrorType::IncompatibleDomainMode => write!(f, "INCOMPATIBLE_DOMAIN_MODE"),
+            ActiveDirectoryErrorType::InvalidDomainStage => write!(f, "INVALID_DOMAIN_STAGE"),
+            ActiveDirectoryErrorType::WrongVpc => write!(f, "WRONG_VPC"),
+            ActiveDirectoryErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

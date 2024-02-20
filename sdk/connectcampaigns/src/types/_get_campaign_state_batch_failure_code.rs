@@ -96,3 +96,12 @@ impl GetCampaignStateBatchFailureCode {
         }
     }
 }
+impl ::std::fmt::Display for GetCampaignStateBatchFailureCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GetCampaignStateBatchFailureCode::ResourceNotFound => write!(f, "ResourceNotFound"),
+            GetCampaignStateBatchFailureCode::UnknownError => write!(f, "UnknownError"),
+            GetCampaignStateBatchFailureCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

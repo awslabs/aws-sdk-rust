@@ -165,3 +165,23 @@ impl BatchReadExceptionType {
         }
     }
 }
+impl ::std::fmt::Display for BatchReadExceptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchReadExceptionType::AccessDeniedException => write!(f, "AccessDeniedException"),
+            BatchReadExceptionType::CannotListParentOfRootException => write!(f, "CannotListParentOfRootException"),
+            BatchReadExceptionType::DirectoryNotEnabledException => write!(f, "DirectoryNotEnabledException"),
+            BatchReadExceptionType::FacetValidationException => write!(f, "FacetValidationException"),
+            BatchReadExceptionType::InternalServiceException => write!(f, "InternalServiceException"),
+            BatchReadExceptionType::InvalidArnException => write!(f, "InvalidArnException"),
+            BatchReadExceptionType::InvalidNextTokenException => write!(f, "InvalidNextTokenException"),
+            BatchReadExceptionType::LimitExceededException => write!(f, "LimitExceededException"),
+            BatchReadExceptionType::NotIndexException => write!(f, "NotIndexException"),
+            BatchReadExceptionType::NotNodeException => write!(f, "NotNodeException"),
+            BatchReadExceptionType::NotPolicyException => write!(f, "NotPolicyException"),
+            BatchReadExceptionType::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
+            BatchReadExceptionType::ValidationException => write!(f, "ValidationException"),
+            BatchReadExceptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

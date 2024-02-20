@@ -96,3 +96,12 @@ impl ReservedNodeExchangeActionType {
         }
     }
 }
+impl ::std::fmt::Display for ReservedNodeExchangeActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservedNodeExchangeActionType::ResizeCluster => write!(f, "resize-cluster"),
+            ReservedNodeExchangeActionType::RestoreCluster => write!(f, "restore-cluster"),
+            ReservedNodeExchangeActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

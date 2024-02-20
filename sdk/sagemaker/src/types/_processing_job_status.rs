@@ -111,3 +111,15 @@ impl ProcessingJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProcessingJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProcessingJobStatus::Completed => write!(f, "Completed"),
+            ProcessingJobStatus::Failed => write!(f, "Failed"),
+            ProcessingJobStatus::InProgress => write!(f, "InProgress"),
+            ProcessingJobStatus::Stopped => write!(f, "Stopped"),
+            ProcessingJobStatus::Stopping => write!(f, "Stopping"),
+            ProcessingJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

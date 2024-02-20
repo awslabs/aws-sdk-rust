@@ -153,3 +153,21 @@ impl ConditionOperator {
         }
     }
 }
+impl ::std::fmt::Display for ConditionOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConditionOperator::BeginsWith => write!(f, "BeginsWith"),
+            ConditionOperator::Contains => write!(f, "Contains"),
+            ConditionOperator::Equals => write!(f, "Equals"),
+            ConditionOperator::Exists => write!(f, "Exists"),
+            ConditionOperator::GreaterThan => write!(f, "GreaterThan"),
+            ConditionOperator::GreaterThanOrEquals => write!(f, "GreaterThanOrEquals"),
+            ConditionOperator::LessThan => write!(f, "LessThan"),
+            ConditionOperator::LessThanOrEquals => write!(f, "LessThanOrEquals"),
+            ConditionOperator::NotContains => write!(f, "NotContains"),
+            ConditionOperator::NotEquals => write!(f, "NotEquals"),
+            ConditionOperator::NotExists => write!(f, "NotExists"),
+            ConditionOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

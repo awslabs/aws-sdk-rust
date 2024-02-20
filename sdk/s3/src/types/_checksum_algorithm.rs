@@ -106,3 +106,14 @@ impl ChecksumAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for ChecksumAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChecksumAlgorithm::Crc32 => write!(f, "CRC32"),
+            ChecksumAlgorithm::Crc32C => write!(f, "CRC32C"),
+            ChecksumAlgorithm::Sha1 => write!(f, "SHA1"),
+            ChecksumAlgorithm::Sha256 => write!(f, "SHA256"),
+            ChecksumAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

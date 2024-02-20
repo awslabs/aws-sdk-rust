@@ -106,3 +106,14 @@ impl HdfsDataTransferProtection {
         }
     }
 }
+impl ::std::fmt::Display for HdfsDataTransferProtection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HdfsDataTransferProtection::Authentication => write!(f, "AUTHENTICATION"),
+            HdfsDataTransferProtection::Disabled => write!(f, "DISABLED"),
+            HdfsDataTransferProtection::Integrity => write!(f, "INTEGRITY"),
+            HdfsDataTransferProtection::Privacy => write!(f, "PRIVACY"),
+            HdfsDataTransferProtection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

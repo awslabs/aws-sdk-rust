@@ -101,3 +101,13 @@ impl TagStatus {
         }
     }
 }
+impl ::std::fmt::Display for TagStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TagStatus::Any => write!(f, "ANY"),
+            TagStatus::Tagged => write!(f, "TAGGED"),
+            TagStatus::Untagged => write!(f, "UNTAGGED"),
+            TagStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

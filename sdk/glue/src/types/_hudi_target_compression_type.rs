@@ -106,3 +106,14 @@ impl HudiTargetCompressionType {
         }
     }
 }
+impl ::std::fmt::Display for HudiTargetCompressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HudiTargetCompressionType::Gzip => write!(f, "gzip"),
+            HudiTargetCompressionType::Lzo => write!(f, "lzo"),
+            HudiTargetCompressionType::Snappy => write!(f, "snappy"),
+            HudiTargetCompressionType::Uncompressed => write!(f, "uncompressed"),
+            HudiTargetCompressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

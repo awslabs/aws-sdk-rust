@@ -273,3 +273,41 @@ impl ExtraParamName {
         }
     }
 }
+impl ::std::fmt::Display for ExtraParamName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExtraParamName::AuIdNumber => write!(f, "AU_ID_NUMBER"),
+            ExtraParamName::AuIdType => write!(f, "AU_ID_TYPE"),
+            ExtraParamName::AuPriorityToken => write!(f, "AU_PRIORITY_TOKEN"),
+            ExtraParamName::BirthCity => write!(f, "BIRTH_CITY"),
+            ExtraParamName::BirthCountry => write!(f, "BIRTH_COUNTRY"),
+            ExtraParamName::BirthDateInYyyyMmDd => write!(f, "BIRTH_DATE_IN_YYYY_MM_DD"),
+            ExtraParamName::BirthDepartment => write!(f, "BIRTH_DEPARTMENT"),
+            ExtraParamName::BrandNumber => write!(f, "BRAND_NUMBER"),
+            ExtraParamName::CaBusinessEntityType => write!(f, "CA_BUSINESS_ENTITY_TYPE"),
+            ExtraParamName::CaLegalRepresentative => write!(f, "CA_LEGAL_REPRESENTATIVE"),
+            ExtraParamName::CaLegalRepresentativeCapacity => write!(f, "CA_LEGAL_REPRESENTATIVE_CAPACITY"),
+            ExtraParamName::CaLegalType => write!(f, "CA_LEGAL_TYPE"),
+            ExtraParamName::DocumentNumber => write!(f, "DOCUMENT_NUMBER"),
+            ExtraParamName::DunsNumber => write!(f, "DUNS_NUMBER"),
+            ExtraParamName::EsIdentification => write!(f, "ES_IDENTIFICATION"),
+            ExtraParamName::EsIdentificationType => write!(f, "ES_IDENTIFICATION_TYPE"),
+            ExtraParamName::EsLegalForm => write!(f, "ES_LEGAL_FORM"),
+            ExtraParamName::EuCountryOfCitizenship => write!(f, "EU_COUNTRY_OF_CITIZENSHIP"),
+            ExtraParamName::FiBusinessNumber => write!(f, "FI_BUSINESS_NUMBER"),
+            ExtraParamName::OnwerFiIdNumber => write!(f, "FI_ID_NUMBER"),
+            ExtraParamName::FiNationality => write!(f, "FI_NATIONALITY"),
+            ExtraParamName::FiOrganizationType => write!(f, "FI_ORGANIZATION_TYPE"),
+            ExtraParamName::ItNationality => write!(f, "IT_NATIONALITY"),
+            ExtraParamName::ItPin => write!(f, "IT_PIN"),
+            ExtraParamName::ItRegistrantEntityType => write!(f, "IT_REGISTRANT_ENTITY_TYPE"),
+            ExtraParamName::RuPassportData => write!(f, "RU_PASSPORT_DATA"),
+            ExtraParamName::SeIdNumber => write!(f, "SE_ID_NUMBER"),
+            ExtraParamName::SgIdNumber => write!(f, "SG_ID_NUMBER"),
+            ExtraParamName::UkCompanyNumber => write!(f, "UK_COMPANY_NUMBER"),
+            ExtraParamName::UkContactType => write!(f, "UK_CONTACT_TYPE"),
+            ExtraParamName::VatNumber => write!(f, "VAT_NUMBER"),
+            ExtraParamName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

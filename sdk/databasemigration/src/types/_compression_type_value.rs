@@ -96,3 +96,12 @@ impl CompressionTypeValue {
         }
     }
 }
+impl ::std::fmt::Display for CompressionTypeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CompressionTypeValue::Gzip => write!(f, "gzip"),
+            CompressionTypeValue::None => write!(f, "none"),
+            CompressionTypeValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

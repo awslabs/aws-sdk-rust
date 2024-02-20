@@ -116,3 +116,16 @@ impl SessionStatus {
         }
     }
 }
+impl ::std::fmt::Display for SessionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SessionStatus::Connected => write!(f, "Connected"),
+            SessionStatus::Connecting => write!(f, "Connecting"),
+            SessionStatus::Disconnected => write!(f, "Disconnected"),
+            SessionStatus::Failed => write!(f, "Failed"),
+            SessionStatus::Terminated => write!(f, "Terminated"),
+            SessionStatus::Terminating => write!(f, "Terminating"),
+            SessionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl DatabaseEngineType {
         }
     }
 }
+impl ::std::fmt::Display for DatabaseEngineType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatabaseEngineType::RdsAuroraMysql => write!(f, "RDS_AURORA_MYSQL"),
+            DatabaseEngineType::RdsAuroraPostgresql => write!(f, "RDS_AURORA_POSTGRESQL"),
+            DatabaseEngineType::RdsMysql => write!(f, "RDS_MYSQL"),
+            DatabaseEngineType::RdsPostgresql => write!(f, "RDS_POSTGRESQL"),
+            DatabaseEngineType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

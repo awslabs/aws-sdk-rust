@@ -96,3 +96,12 @@ impl LockMode {
         }
     }
 }
+impl ::std::fmt::Display for LockMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LockMode::Compliance => write!(f, "compliance"),
+            LockMode::Governance => write!(f, "governance"),
+            LockMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

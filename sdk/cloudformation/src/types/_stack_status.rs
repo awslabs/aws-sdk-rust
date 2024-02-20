@@ -225,3 +225,33 @@ impl StackStatus {
         }
     }
 }
+impl ::std::fmt::Display for StackStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackStatus::CreateComplete => write!(f, "CREATE_COMPLETE"),
+            StackStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            StackStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            StackStatus::DeleteComplete => write!(f, "DELETE_COMPLETE"),
+            StackStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            StackStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            StackStatus::ImportComplete => write!(f, "IMPORT_COMPLETE"),
+            StackStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
+            StackStatus::ImportRollbackComplete => write!(f, "IMPORT_ROLLBACK_COMPLETE"),
+            StackStatus::ImportRollbackFailed => write!(f, "IMPORT_ROLLBACK_FAILED"),
+            StackStatus::ImportRollbackInProgress => write!(f, "IMPORT_ROLLBACK_IN_PROGRESS"),
+            StackStatus::ReviewInProgress => write!(f, "REVIEW_IN_PROGRESS"),
+            StackStatus::RollbackComplete => write!(f, "ROLLBACK_COMPLETE"),
+            StackStatus::RollbackFailed => write!(f, "ROLLBACK_FAILED"),
+            StackStatus::RollbackInProgress => write!(f, "ROLLBACK_IN_PROGRESS"),
+            StackStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
+            StackStatus::UpdateCompleteCleanupInProgress => write!(f, "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS"),
+            StackStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            StackStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            StackStatus::UpdateRollbackComplete => write!(f, "UPDATE_ROLLBACK_COMPLETE"),
+            StackStatus::UpdateRollbackCompleteCleanupInProgress => write!(f, "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"),
+            StackStatus::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
+            StackStatus::UpdateRollbackInProgress => write!(f, "UPDATE_ROLLBACK_IN_PROGRESS"),
+            StackStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

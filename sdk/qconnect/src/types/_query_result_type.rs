@@ -96,3 +96,12 @@ impl QueryResultType {
         }
     }
 }
+impl ::std::fmt::Display for QueryResultType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryResultType::GenerativeAnswer => write!(f, "GENERATIVE_ANSWER"),
+            QueryResultType::KnowledgeContent => write!(f, "KNOWLEDGE_CONTENT"),
+            QueryResultType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

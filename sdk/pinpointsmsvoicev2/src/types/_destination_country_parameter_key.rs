@@ -96,3 +96,12 @@ impl DestinationCountryParameterKey {
         }
     }
 }
+impl ::std::fmt::Display for DestinationCountryParameterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DestinationCountryParameterKey::InEntityId => write!(f, "IN_ENTITY_ID"),
+            DestinationCountryParameterKey::InTemplateId => write!(f, "IN_TEMPLATE_ID"),
+            DestinationCountryParameterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

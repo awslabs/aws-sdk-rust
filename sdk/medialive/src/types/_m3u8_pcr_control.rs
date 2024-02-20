@@ -96,3 +96,12 @@ impl M3u8PcrControl {
         }
     }
 }
+impl ::std::fmt::Display for M3u8PcrControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M3u8PcrControl::ConfiguredPcrPeriod => write!(f, "CONFIGURED_PCR_PERIOD"),
+            M3u8PcrControl::PcrEveryPesPacket => write!(f, "PCR_EVERY_PES_PACKET"),
+            M3u8PcrControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

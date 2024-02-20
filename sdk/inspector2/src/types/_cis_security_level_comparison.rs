@@ -91,3 +91,11 @@ impl CisSecurityLevelComparison {
         }
     }
 }
+impl ::std::fmt::Display for CisSecurityLevelComparison {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisSecurityLevelComparison::Equals => write!(f, "EQUALS"),
+            CisSecurityLevelComparison::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl AttachmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for AttachmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttachmentStatus::Creating => write!(f, "CREATING"),
+            AttachmentStatus::Deleting => write!(f, "DELETING"),
+            AttachmentStatus::Error => write!(f, "ERROR"),
+            AttachmentStatus::Failed => write!(f, "FAILED"),
+            AttachmentStatus::Ready => write!(f, "READY"),
+            AttachmentStatus::Scaling => write!(f, "SCALING"),
+            AttachmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -149,3 +149,23 @@ impl LaunchProfileValidationStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for LaunchProfileValidationStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchProfileValidationStatusCode::ValidationFailedInternalServerError => write!(f, "VALIDATION_FAILED_INTERNAL_SERVER_ERROR"),
+            LaunchProfileValidationStatusCode::ValidationFailedInvalidActiveDirectory => write!(f, "VALIDATION_FAILED_INVALID_ACTIVE_DIRECTORY"),
+            LaunchProfileValidationStatusCode::ValidationFailedInvalidSecurityGroupAssociation => {
+                write!(f, "VALIDATION_FAILED_INVALID_SECURITY_GROUP_ASSOCIATION")
+            }
+            LaunchProfileValidationStatusCode::ValidationFailedInvalidSubnetRouteTableAssociation => {
+                write!(f, "VALIDATION_FAILED_INVALID_SUBNET_ROUTE_TABLE_ASSOCIATION")
+            }
+            LaunchProfileValidationStatusCode::ValidationFailedSubnetNotFound => write!(f, "VALIDATION_FAILED_SUBNET_NOT_FOUND"),
+            LaunchProfileValidationStatusCode::ValidationFailedUnauthorized => write!(f, "VALIDATION_FAILED_UNAUTHORIZED"),
+            LaunchProfileValidationStatusCode::ValidationInProgress => write!(f, "VALIDATION_IN_PROGRESS"),
+            LaunchProfileValidationStatusCode::ValidationNotStarted => write!(f, "VALIDATION_NOT_STARTED"),
+            LaunchProfileValidationStatusCode::ValidationSuccess => write!(f, "VALIDATION_SUCCESS"),
+            LaunchProfileValidationStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

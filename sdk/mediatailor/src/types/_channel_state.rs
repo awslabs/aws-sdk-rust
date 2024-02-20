@@ -96,3 +96,12 @@ impl ChannelState {
         }
     }
 }
+impl ::std::fmt::Display for ChannelState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelState::Running => write!(f, "RUNNING"),
+            ChannelState::Stopped => write!(f, "STOPPED"),
+            ChannelState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

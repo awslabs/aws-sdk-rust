@@ -101,3 +101,13 @@ impl GeoRestrictionType {
         }
     }
 }
+impl ::std::fmt::Display for GeoRestrictionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GeoRestrictionType::Blacklist => write!(f, "blacklist"),
+            GeoRestrictionType::None => write!(f, "none"),
+            GeoRestrictionType::Whitelist => write!(f, "whitelist"),
+            GeoRestrictionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

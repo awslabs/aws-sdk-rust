@@ -96,3 +96,12 @@ impl NielsenPcmToId3TaggingState {
         }
     }
 }
+impl ::std::fmt::Display for NielsenPcmToId3TaggingState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NielsenPcmToId3TaggingState::Disabled => write!(f, "DISABLED"),
+            NielsenPcmToId3TaggingState::Enabled => write!(f, "ENABLED"),
+            NielsenPcmToId3TaggingState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

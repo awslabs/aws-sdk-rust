@@ -101,3 +101,13 @@ impl IsModifiable {
         }
     }
 }
+impl ::std::fmt::Display for IsModifiable {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IsModifiable::Conditional => write!(f, "CONDITIONAL"),
+            IsModifiable::False => write!(f, "FALSE"),
+            IsModifiable::True => write!(f, "TRUE"),
+            IsModifiable::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

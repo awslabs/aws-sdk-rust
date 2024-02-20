@@ -96,3 +96,12 @@ impl EphemerisSource {
         }
     }
 }
+impl ::std::fmt::Display for EphemerisSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EphemerisSource::CustomerProvided => write!(f, "CUSTOMER_PROVIDED"),
+            EphemerisSource::SpaceTrack => write!(f, "SPACE_TRACK"),
+            EphemerisSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl WorkSpaceAssociatedResourceType {
         }
     }
 }
+impl ::std::fmt::Display for WorkSpaceAssociatedResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkSpaceAssociatedResourceType::Application => write!(f, "APPLICATION"),
+            WorkSpaceAssociatedResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

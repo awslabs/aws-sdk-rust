@@ -101,3 +101,13 @@ impl PropertyUpdateType {
         }
     }
 }
+impl ::std::fmt::Display for PropertyUpdateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PropertyUpdateType::Create => write!(f, "CREATE"),
+            PropertyUpdateType::Delete => write!(f, "DELETE"),
+            PropertyUpdateType::Update => write!(f, "UPDATE"),
+            PropertyUpdateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

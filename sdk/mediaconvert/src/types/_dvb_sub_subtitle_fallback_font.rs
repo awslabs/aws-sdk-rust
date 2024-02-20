@@ -117,3 +117,15 @@ impl DvbSubSubtitleFallbackFont {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubSubtitleFallbackFont {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubSubtitleFallbackFont::BestMatch => write!(f, "BEST_MATCH"),
+            DvbSubSubtitleFallbackFont::MonospacedSansserif => write!(f, "MONOSPACED_SANSSERIF"),
+            DvbSubSubtitleFallbackFont::MonospacedSerif => write!(f, "MONOSPACED_SERIF"),
+            DvbSubSubtitleFallbackFont::ProportionalSansserif => write!(f, "PROPORTIONAL_SANSSERIF"),
+            DvbSubSubtitleFallbackFont::ProportionalSerif => write!(f, "PROPORTIONAL_SERIF"),
+            DvbSubSubtitleFallbackFont::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

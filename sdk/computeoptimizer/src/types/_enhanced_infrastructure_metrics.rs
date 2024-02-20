@@ -96,3 +96,12 @@ impl EnhancedInfrastructureMetrics {
         }
     }
 }
+impl ::std::fmt::Display for EnhancedInfrastructureMetrics {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnhancedInfrastructureMetrics::Active => write!(f, "Active"),
+            EnhancedInfrastructureMetrics::Inactive => write!(f, "Inactive"),
+            EnhancedInfrastructureMetrics::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

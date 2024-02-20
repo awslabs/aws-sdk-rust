@@ -96,3 +96,12 @@ impl MovPaddingControl {
         }
     }
 }
+impl ::std::fmt::Display for MovPaddingControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MovPaddingControl::None => write!(f, "NONE"),
+            MovPaddingControl::Omneon => write!(f, "OMNEON"),
+            MovPaddingControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

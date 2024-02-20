@@ -101,3 +101,13 @@ impl RecordState {
         }
     }
 }
+impl ::std::fmt::Display for RecordState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordState::Failed => write!(f, "Failed"),
+            RecordState::Started => write!(f, "Started"),
+            RecordState::Succeeded => write!(f, "Succeeded"),
+            RecordState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

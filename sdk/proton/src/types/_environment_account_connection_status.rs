@@ -101,3 +101,13 @@ impl EnvironmentAccountConnectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentAccountConnectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentAccountConnectionStatus::Connected => write!(f, "CONNECTED"),
+            EnvironmentAccountConnectionStatus::Pending => write!(f, "PENDING"),
+            EnvironmentAccountConnectionStatus::Rejected => write!(f, "REJECTED"),
+            EnvironmentAccountConnectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

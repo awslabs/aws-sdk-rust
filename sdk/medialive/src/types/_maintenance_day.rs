@@ -121,3 +121,17 @@ impl MaintenanceDay {
         }
     }
 }
+impl ::std::fmt::Display for MaintenanceDay {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaintenanceDay::Friday => write!(f, "FRIDAY"),
+            MaintenanceDay::Monday => write!(f, "MONDAY"),
+            MaintenanceDay::Saturday => write!(f, "SATURDAY"),
+            MaintenanceDay::Sunday => write!(f, "SUNDAY"),
+            MaintenanceDay::Thursday => write!(f, "THURSDAY"),
+            MaintenanceDay::Tuesday => write!(f, "TUESDAY"),
+            MaintenanceDay::Wednesday => write!(f, "WEDNESDAY"),
+            MaintenanceDay::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

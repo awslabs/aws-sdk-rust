@@ -121,3 +121,17 @@ impl HsmStatus {
         }
     }
 }
+impl ::std::fmt::Display for HsmStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HsmStatus::Degraded => write!(f, "DEGRADED"),
+            HsmStatus::Pending => write!(f, "PENDING"),
+            HsmStatus::Running => write!(f, "RUNNING"),
+            HsmStatus::Suspended => write!(f, "SUSPENDED"),
+            HsmStatus::Terminated => write!(f, "TERMINATED"),
+            HsmStatus::Terminating => write!(f, "TERMINATING"),
+            HsmStatus::Updating => write!(f, "UPDATING"),
+            HsmStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

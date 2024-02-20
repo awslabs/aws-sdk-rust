@@ -249,3 +249,37 @@ impl ResourceTypeFilter {
         }
     }
 }
+impl ::std::fmt::Display for ResourceTypeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceTypeFilter::CloudfrontDistribution => write!(f, "CLOUDFRONT_DISTRIBUTION"),
+            ResourceTypeFilter::DynamodbTable => write!(f, "DYNAMODB_TABLE"),
+            ResourceTypeFilter::Ec2NatGateway => write!(f, "EC2_NAT_GATEWAY"),
+            ResourceTypeFilter::EcsCluster => write!(f, "ECS_CLUSTER"),
+            ResourceTypeFilter::EcsService => write!(f, "ECS_SERVICE"),
+            ResourceTypeFilter::EksCluster => write!(f, "EKS_CLUSTER"),
+            ResourceTypeFilter::ElasticacheCacheCluster => write!(f, "ELASTICACHE_CACHE_CLUSTER"),
+            ResourceTypeFilter::ElasticsearchDomain => write!(f, "ELASTICSEARCH_DOMAIN"),
+            ResourceTypeFilter::ElasticBeanstalkEnvironment => write!(f, "ELASTIC_BEANSTALK_ENVIRONMENT"),
+            ResourceTypeFilter::ElasticLoadBalancerLoadBalancer => write!(f, "ELASTIC_LOAD_BALANCER_LOAD_BALANCER"),
+            ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer => write!(f, "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER"),
+            ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup => write!(f, "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP"),
+            ResourceTypeFilter::KinesisStream => write!(f, "KINESIS_STREAM"),
+            ResourceTypeFilter::LambdaFunction => write!(f, "LAMBDA_FUNCTION"),
+            ResourceTypeFilter::LogGroups => write!(f, "LOG_GROUPS"),
+            ResourceTypeFilter::OpenSearchServiceDomain => write!(f, "OPEN_SEARCH_SERVICE_DOMAIN"),
+            ResourceTypeFilter::RdsDbCluster => write!(f, "RDS_DB_CLUSTER"),
+            ResourceTypeFilter::RdsDbInstance => write!(f, "RDS_DB_INSTANCE"),
+            ResourceTypeFilter::RedshiftCluster => write!(f, "REDSHIFT_CLUSTER"),
+            ResourceTypeFilter::Route53HealthCheck => write!(f, "ROUTE53_HEALTH_CHECK"),
+            ResourceTypeFilter::Route53HostedZone => write!(f, "ROUTE53_HOSTED_ZONE"),
+            ResourceTypeFilter::S3Bucket => write!(f, "S3_BUCKET"),
+            ResourceTypeFilter::SagemakerEndpoint => write!(f, "SAGEMAKER_ENDPOINT"),
+            ResourceTypeFilter::SnsTopic => write!(f, "SNS_TOPIC"),
+            ResourceTypeFilter::SqsQueue => write!(f, "SQS_QUEUE"),
+            ResourceTypeFilter::StepFunctionsActivity => write!(f, "STEP_FUNCTIONS_ACTIVITY"),
+            ResourceTypeFilter::StepFunctionsStateMachine => write!(f, "STEP_FUNCTIONS_STATE_MACHINE"),
+            ResourceTypeFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

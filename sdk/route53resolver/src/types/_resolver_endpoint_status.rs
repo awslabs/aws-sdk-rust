@@ -116,3 +116,16 @@ impl ResolverEndpointStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResolverEndpointStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverEndpointStatus::ActionNeeded => write!(f, "ACTION_NEEDED"),
+            ResolverEndpointStatus::AutoRecovering => write!(f, "AUTO_RECOVERING"),
+            ResolverEndpointStatus::Creating => write!(f, "CREATING"),
+            ResolverEndpointStatus::Deleting => write!(f, "DELETING"),
+            ResolverEndpointStatus::Operational => write!(f, "OPERATIONAL"),
+            ResolverEndpointStatus::Updating => write!(f, "UPDATING"),
+            ResolverEndpointStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

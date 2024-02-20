@@ -96,3 +96,12 @@ impl FrameOptionsList {
         }
     }
 }
+impl ::std::fmt::Display for FrameOptionsList {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FrameOptionsList::Deny => write!(f, "DENY"),
+            FrameOptionsList::Sameorigin => write!(f, "SAMEORIGIN"),
+            FrameOptionsList::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

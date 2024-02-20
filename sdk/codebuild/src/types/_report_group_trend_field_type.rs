@@ -141,3 +141,19 @@ impl ReportGroupTrendFieldType {
         }
     }
 }
+impl ::std::fmt::Display for ReportGroupTrendFieldType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportGroupTrendFieldType::BranchesCovered => write!(f, "BRANCHES_COVERED"),
+            ReportGroupTrendFieldType::BranchesMissed => write!(f, "BRANCHES_MISSED"),
+            ReportGroupTrendFieldType::BranchCoverage => write!(f, "BRANCH_COVERAGE"),
+            ReportGroupTrendFieldType::Duration => write!(f, "DURATION"),
+            ReportGroupTrendFieldType::LinesCovered => write!(f, "LINES_COVERED"),
+            ReportGroupTrendFieldType::LinesMissed => write!(f, "LINES_MISSED"),
+            ReportGroupTrendFieldType::LineCoverage => write!(f, "LINE_COVERAGE"),
+            ReportGroupTrendFieldType::PassRate => write!(f, "PASS_RATE"),
+            ReportGroupTrendFieldType::Total => write!(f, "TOTAL"),
+            ReportGroupTrendFieldType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

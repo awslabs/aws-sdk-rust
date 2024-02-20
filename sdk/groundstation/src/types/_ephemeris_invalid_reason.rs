@@ -117,3 +117,15 @@ impl EphemerisInvalidReason {
         }
     }
 }
+impl ::std::fmt::Display for EphemerisInvalidReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EphemerisInvalidReason::KmsKeyInvalid => write!(f, "KMS_KEY_INVALID"),
+            EphemerisInvalidReason::MetadataInvalid => write!(f, "METADATA_INVALID"),
+            EphemerisInvalidReason::TimeRangeInvalid => write!(f, "TIME_RANGE_INVALID"),
+            EphemerisInvalidReason::TrajectoryInvalid => write!(f, "TRAJECTORY_INVALID"),
+            EphemerisInvalidReason::ValidationError => write!(f, "VALIDATION_ERROR"),
+            EphemerisInvalidReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

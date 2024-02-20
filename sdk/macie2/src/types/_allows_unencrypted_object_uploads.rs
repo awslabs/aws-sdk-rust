@@ -101,3 +101,13 @@ impl AllowsUnencryptedObjectUploads {
         }
     }
 }
+impl ::std::fmt::Display for AllowsUnencryptedObjectUploads {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllowsUnencryptedObjectUploads::False => write!(f, "FALSE"),
+            AllowsUnencryptedObjectUploads::True => write!(f, "TRUE"),
+            AllowsUnencryptedObjectUploads::UnknownValue => write!(f, "UNKNOWN"),
+            AllowsUnencryptedObjectUploads::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

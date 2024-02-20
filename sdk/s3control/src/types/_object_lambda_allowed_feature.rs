@@ -106,3 +106,14 @@ impl ObjectLambdaAllowedFeature {
         }
     }
 }
+impl ::std::fmt::Display for ObjectLambdaAllowedFeature {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectLambdaAllowedFeature::GetObjectPartNumber => write!(f, "GetObject-PartNumber"),
+            ObjectLambdaAllowedFeature::GetObjectRange => write!(f, "GetObject-Range"),
+            ObjectLambdaAllowedFeature::HeadObjectPartNumber => write!(f, "HeadObject-PartNumber"),
+            ObjectLambdaAllowedFeature::HeadObjectRange => write!(f, "HeadObject-Range"),
+            ObjectLambdaAllowedFeature::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

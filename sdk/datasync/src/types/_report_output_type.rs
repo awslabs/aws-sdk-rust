@@ -96,3 +96,12 @@ impl ReportOutputType {
         }
     }
 }
+impl ::std::fmt::Display for ReportOutputType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportOutputType::Standard => write!(f, "STANDARD"),
+            ReportOutputType::SummaryOnly => write!(f, "SUMMARY_ONLY"),
+            ReportOutputType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

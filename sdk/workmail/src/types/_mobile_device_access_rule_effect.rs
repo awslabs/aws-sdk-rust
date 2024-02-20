@@ -96,3 +96,12 @@ impl MobileDeviceAccessRuleEffect {
         }
     }
 }
+impl ::std::fmt::Display for MobileDeviceAccessRuleEffect {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MobileDeviceAccessRuleEffect::Allow => write!(f, "ALLOW"),
+            MobileDeviceAccessRuleEffect::Deny => write!(f, "DENY"),
+            MobileDeviceAccessRuleEffect::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

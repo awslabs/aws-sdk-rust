@@ -116,3 +116,16 @@ impl Specialty {
         }
     }
 }
+impl ::std::fmt::Display for Specialty {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Specialty::Cardiology => write!(f, "CARDIOLOGY"),
+            Specialty::Neurology => write!(f, "NEUROLOGY"),
+            Specialty::Oncology => write!(f, "ONCOLOGY"),
+            Specialty::Primarycare => write!(f, "PRIMARYCARE"),
+            Specialty::Radiology => write!(f, "RADIOLOGY"),
+            Specialty::Urology => write!(f, "UROLOGY"),
+            Specialty::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

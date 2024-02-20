@@ -101,3 +101,13 @@ impl ContentResolution {
         }
     }
 }
+impl ::std::fmt::Display for ContentResolution {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentResolution::Fhd => write!(f, "FHD"),
+            ContentResolution::None => write!(f, "None"),
+            ContentResolution::Uhd => write!(f, "UHD"),
+            ContentResolution::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

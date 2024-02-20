@@ -96,3 +96,12 @@ impl LambdaInputPayloadEncodingType {
         }
     }
 }
+impl ::std::fmt::Display for LambdaInputPayloadEncodingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaInputPayloadEncodingType::Binary => write!(f, "binary"),
+            LambdaInputPayloadEncodingType::Json => write!(f, "json"),
+            LambdaInputPayloadEncodingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

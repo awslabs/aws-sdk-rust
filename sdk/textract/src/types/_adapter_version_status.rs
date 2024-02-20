@@ -111,3 +111,15 @@ impl AdapterVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for AdapterVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdapterVersionStatus::Active => write!(f, "ACTIVE"),
+            AdapterVersionStatus::AtRisk => write!(f, "AT_RISK"),
+            AdapterVersionStatus::CreationError => write!(f, "CREATION_ERROR"),
+            AdapterVersionStatus::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
+            AdapterVersionStatus::Deprecated => write!(f, "DEPRECATED"),
+            AdapterVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -135,3 +135,18 @@ impl NsState {
         }
     }
 }
+impl ::std::fmt::Display for NsState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NsState::Deleted => write!(f, "DELETED"),
+            NsState::Impaired => write!(f, "IMPAIRED"),
+            NsState::Instantiated => write!(f, "INSTANTIATED"),
+            NsState::InstantiateInProgress => write!(f, "INSTANTIATE_IN_PROGRESS"),
+            NsState::NotInstantiated => write!(f, "NOT_INSTANTIATED"),
+            NsState::Stopped => write!(f, "STOPPED"),
+            NsState::TerminateInProgress => write!(f, "TERMINATE_IN_PROGRESS"),
+            NsState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            NsState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

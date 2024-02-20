@@ -101,3 +101,13 @@ impl CisTargetStatus {
         }
     }
 }
+impl ::std::fmt::Display for CisTargetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisTargetStatus::Cancelled => write!(f, "CANCELLED"),
+            CisTargetStatus::Completed => write!(f, "COMPLETED"),
+            CisTargetStatus::TimedOut => write!(f, "TIMED_OUT"),
+            CisTargetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

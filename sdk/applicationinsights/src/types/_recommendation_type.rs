@@ -101,3 +101,13 @@ impl RecommendationType {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationType::All => write!(f, "ALL"),
+            RecommendationType::InfraOnly => write!(f, "INFRA_ONLY"),
+            RecommendationType::WorkloadOnly => write!(f, "WORKLOAD_ONLY"),
+            RecommendationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

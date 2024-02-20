@@ -96,3 +96,12 @@ impl ServiceNowBuildVersionType {
         }
     }
 }
+impl ::std::fmt::Display for ServiceNowBuildVersionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceNowBuildVersionType::London => write!(f, "LONDON"),
+            ServiceNowBuildVersionType::Others => write!(f, "OTHERS"),
+            ServiceNowBuildVersionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

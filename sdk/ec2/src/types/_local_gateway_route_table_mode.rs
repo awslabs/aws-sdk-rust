@@ -96,3 +96,12 @@ impl LocalGatewayRouteTableMode {
         }
     }
 }
+impl ::std::fmt::Display for LocalGatewayRouteTableMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocalGatewayRouteTableMode::Coip => write!(f, "coip"),
+            LocalGatewayRouteTableMode::DirectVpcRouting => write!(f, "direct-vpc-routing"),
+            LocalGatewayRouteTableMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

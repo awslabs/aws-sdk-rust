@@ -189,3 +189,27 @@ impl H264CodecLevel {
         }
     }
 }
+impl ::std::fmt::Display for H264CodecLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264CodecLevel::Auto => write!(f, "AUTO"),
+            H264CodecLevel::Level1 => write!(f, "LEVEL_1"),
+            H264CodecLevel::Level11 => write!(f, "LEVEL_1_1"),
+            H264CodecLevel::Level12 => write!(f, "LEVEL_1_2"),
+            H264CodecLevel::Level13 => write!(f, "LEVEL_1_3"),
+            H264CodecLevel::Level2 => write!(f, "LEVEL_2"),
+            H264CodecLevel::Level21 => write!(f, "LEVEL_2_1"),
+            H264CodecLevel::Level22 => write!(f, "LEVEL_2_2"),
+            H264CodecLevel::Level3 => write!(f, "LEVEL_3"),
+            H264CodecLevel::Level31 => write!(f, "LEVEL_3_1"),
+            H264CodecLevel::Level32 => write!(f, "LEVEL_3_2"),
+            H264CodecLevel::Level4 => write!(f, "LEVEL_4"),
+            H264CodecLevel::Level41 => write!(f, "LEVEL_4_1"),
+            H264CodecLevel::Level42 => write!(f, "LEVEL_4_2"),
+            H264CodecLevel::Level5 => write!(f, "LEVEL_5"),
+            H264CodecLevel::Level51 => write!(f, "LEVEL_5_1"),
+            H264CodecLevel::Level52 => write!(f, "LEVEL_5_2"),
+            H264CodecLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl TargetPlatformAccelerator {
         }
     }
 }
+impl ::std::fmt::Display for TargetPlatformAccelerator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetPlatformAccelerator::IntelGraphics => write!(f, "INTEL_GRAPHICS"),
+            TargetPlatformAccelerator::Mali => write!(f, "MALI"),
+            TargetPlatformAccelerator::Nna => write!(f, "NNA"),
+            TargetPlatformAccelerator::Nvidia => write!(f, "NVIDIA"),
+            TargetPlatformAccelerator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

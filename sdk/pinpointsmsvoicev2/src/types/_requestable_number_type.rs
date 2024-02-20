@@ -106,3 +106,14 @@ impl RequestableNumberType {
         }
     }
 }
+impl ::std::fmt::Display for RequestableNumberType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RequestableNumberType::LongCode => write!(f, "LONG_CODE"),
+            RequestableNumberType::Simulator => write!(f, "SIMULATOR"),
+            RequestableNumberType::TenDlc => write!(f, "TEN_DLC"),
+            RequestableNumberType::TollFree => write!(f, "TOLL_FREE"),
+            RequestableNumberType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl VideoResolution {
         }
     }
 }
+impl ::std::fmt::Display for VideoResolution {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VideoResolution::Fhd => write!(f, "FHD"),
+            VideoResolution::Hd => write!(f, "HD"),
+            VideoResolution::None => write!(f, "None"),
+            VideoResolution::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

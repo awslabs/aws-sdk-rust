@@ -101,3 +101,13 @@ impl RuleType {
         }
     }
 }
+impl ::std::fmt::Display for RuleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleType::And => write!(f, "AND"),
+            RuleType::Atleast => write!(f, "ATLEAST"),
+            RuleType::Or => write!(f, "OR"),
+            RuleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl IdentityProviderType {
         }
     }
 }
+impl ::std::fmt::Display for IdentityProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IdentityProviderType::Saml => write!(f, "SAML"),
+            IdentityProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

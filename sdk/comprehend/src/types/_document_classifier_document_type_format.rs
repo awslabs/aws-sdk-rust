@@ -96,3 +96,12 @@ impl DocumentClassifierDocumentTypeFormat {
         }
     }
 }
+impl ::std::fmt::Display for DocumentClassifierDocumentTypeFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentClassifierDocumentTypeFormat::PlainTextDocument => write!(f, "PLAIN_TEXT_DOCUMENT"),
+            DocumentClassifierDocumentTypeFormat::SemiStructuredDocument => write!(f, "SEMI_STRUCTURED_DOCUMENT"),
+            DocumentClassifierDocumentTypeFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

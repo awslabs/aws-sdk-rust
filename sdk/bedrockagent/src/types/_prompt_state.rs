@@ -96,3 +96,12 @@ impl PromptState {
         }
     }
 }
+impl ::std::fmt::Display for PromptState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PromptState::Disabled => write!(f, "DISABLED"),
+            PromptState::Enabled => write!(f, "ENABLED"),
+            PromptState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ResolverLevelMetricsBehavior {
         }
     }
 }
+impl ::std::fmt::Display for ResolverLevelMetricsBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverLevelMetricsBehavior::FullRequestResolverMetrics => write!(f, "FULL_REQUEST_RESOLVER_METRICS"),
+            ResolverLevelMetricsBehavior::PerResolverMetrics => write!(f, "PER_RESOLVER_METRICS"),
+            ResolverLevelMetricsBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ConnectionType {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionType::ConnectionCredentials => write!(f, "CONNECTION_CREDENTIALS"),
+            ConnectionType::Websocket => write!(f, "WEBSOCKET"),
+            ConnectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

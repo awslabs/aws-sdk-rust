@@ -96,3 +96,12 @@ impl AuthenticationMethod {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationMethod::SignatureVersion4 => write!(f, "SignatureVersion4"),
+            AuthenticationMethod::X509ClientCertificate => write!(f, "X509ClientCertificate"),
+            AuthenticationMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

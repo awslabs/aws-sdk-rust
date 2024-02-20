@@ -96,3 +96,12 @@ impl FormTypeStatus {
         }
     }
 }
+impl ::std::fmt::Display for FormTypeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FormTypeStatus::Disabled => write!(f, "DISABLED"),
+            FormTypeStatus::Enabled => write!(f, "ENABLED"),
+            FormTypeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl RecommendationType {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationType::Bimi => write!(f, "BIMI"),
+            RecommendationType::Dkim => write!(f, "DKIM"),
+            RecommendationType::Dmarc => write!(f, "DMARC"),
+            RecommendationType::Spf => write!(f, "SPF"),
+            RecommendationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

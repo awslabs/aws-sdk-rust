@@ -96,3 +96,12 @@ impl AllowMessages {
         }
     }
 }
+impl ::std::fmt::Display for AllowMessages {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllowMessages::All => write!(f, "ALL"),
+            AllowMessages::None => write!(f, "NONE"),
+            AllowMessages::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

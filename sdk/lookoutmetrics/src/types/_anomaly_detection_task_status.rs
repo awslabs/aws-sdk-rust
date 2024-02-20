@@ -111,3 +111,15 @@ impl AnomalyDetectionTaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for AnomalyDetectionTaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnomalyDetectionTaskStatus::Completed => write!(f, "COMPLETED"),
+            AnomalyDetectionTaskStatus::Failed => write!(f, "FAILED"),
+            AnomalyDetectionTaskStatus::FailedToSchedule => write!(f, "FAILED_TO_SCHEDULE"),
+            AnomalyDetectionTaskStatus::InProgress => write!(f, "IN_PROGRESS"),
+            AnomalyDetectionTaskStatus::Pending => write!(f, "PENDING"),
+            AnomalyDetectionTaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

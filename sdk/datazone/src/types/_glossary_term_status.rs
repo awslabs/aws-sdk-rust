@@ -96,3 +96,12 @@ impl GlossaryTermStatus {
         }
     }
 }
+impl ::std::fmt::Display for GlossaryTermStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GlossaryTermStatus::Disabled => write!(f, "DISABLED"),
+            GlossaryTermStatus::Enabled => write!(f, "ENABLED"),
+            GlossaryTermStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

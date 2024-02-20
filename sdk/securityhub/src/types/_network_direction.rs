@@ -96,3 +96,12 @@ impl NetworkDirection {
         }
     }
 }
+impl ::std::fmt::Display for NetworkDirection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkDirection::In => write!(f, "IN"),
+            NetworkDirection::Out => write!(f, "OUT"),
+            NetworkDirection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

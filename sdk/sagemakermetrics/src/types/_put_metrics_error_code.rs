@@ -106,3 +106,14 @@ impl PutMetricsErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for PutMetricsErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PutMetricsErrorCode::ConflictError => write!(f, "CONFLICT_ERROR"),
+            PutMetricsErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            PutMetricsErrorCode::MetricLimitExceeded => write!(f, "METRIC_LIMIT_EXCEEDED"),
+            PutMetricsErrorCode::ValidationError => write!(f, "VALIDATION_ERROR"),
+            PutMetricsErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

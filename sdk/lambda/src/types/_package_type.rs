@@ -96,3 +96,12 @@ impl PackageType {
         }
     }
 }
+impl ::std::fmt::Display for PackageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageType::Image => write!(f, "Image"),
+            PackageType::Zip => write!(f, "Zip"),
+            PackageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

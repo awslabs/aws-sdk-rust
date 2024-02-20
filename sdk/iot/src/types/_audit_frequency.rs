@@ -106,3 +106,14 @@ impl AuditFrequency {
         }
     }
 }
+impl ::std::fmt::Display for AuditFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditFrequency::Biweekly => write!(f, "BIWEEKLY"),
+            AuditFrequency::Daily => write!(f, "DAILY"),
+            AuditFrequency::Monthly => write!(f, "MONTHLY"),
+            AuditFrequency::Weekly => write!(f, "WEEKLY"),
+            AuditFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

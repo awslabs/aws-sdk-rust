@@ -91,3 +91,11 @@ impl FirewallDomainImportOperation {
         }
     }
 }
+impl ::std::fmt::Display for FirewallDomainImportOperation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FirewallDomainImportOperation::Replace => write!(f, "REPLACE"),
+            FirewallDomainImportOperation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

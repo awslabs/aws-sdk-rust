@@ -96,3 +96,12 @@ impl MetricsStatus {
         }
     }
 }
+impl ::std::fmt::Display for MetricsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricsStatus::Disabled => write!(f, "Disabled"),
+            MetricsStatus::Enabled => write!(f, "Enabled"),
+            MetricsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

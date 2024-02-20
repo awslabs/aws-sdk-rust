@@ -129,3 +129,17 @@ impl MinimumProtocolVersion {
         }
     }
 }
+impl ::std::fmt::Display for MinimumProtocolVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MinimumProtocolVersion::SsLv3 => write!(f, "SSLv3"),
+            MinimumProtocolVersion::TlSv1 => write!(f, "TLSv1"),
+            MinimumProtocolVersion::TlSv112016 => write!(f, "TLSv1.1_2016"),
+            MinimumProtocolVersion::TlSv122018 => write!(f, "TLSv1.2_2018"),
+            MinimumProtocolVersion::TlSv122019 => write!(f, "TLSv1.2_2019"),
+            MinimumProtocolVersion::TlSv122021 => write!(f, "TLSv1.2_2021"),
+            MinimumProtocolVersion::TlSv12016 => write!(f, "TLSv1_2016"),
+            MinimumProtocolVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

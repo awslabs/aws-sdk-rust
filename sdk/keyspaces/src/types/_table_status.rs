@@ -129,3 +129,17 @@ impl TableStatus {
         }
     }
 }
+impl ::std::fmt::Display for TableStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableStatus::Active => write!(f, "ACTIVE"),
+            TableStatus::Creating => write!(f, "CREATING"),
+            TableStatus::Deleted => write!(f, "DELETED"),
+            TableStatus::Deleting => write!(f, "DELETING"),
+            TableStatus::InaccessibleEncryptionCredentials => write!(f, "INACCESSIBLE_ENCRYPTION_CREDENTIALS"),
+            TableStatus::Restoring => write!(f, "RESTORING"),
+            TableStatus::Updating => write!(f, "UPDATING"),
+            TableStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

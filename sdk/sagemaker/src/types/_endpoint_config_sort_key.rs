@@ -96,3 +96,12 @@ impl EndpointConfigSortKey {
         }
     }
 }
+impl ::std::fmt::Display for EndpointConfigSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointConfigSortKey::CreationTime => write!(f, "CreationTime"),
+            EndpointConfigSortKey::Name => write!(f, "Name"),
+            EndpointConfigSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

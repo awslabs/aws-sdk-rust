@@ -111,3 +111,15 @@ impl AvailabilityZoneState {
         }
     }
 }
+impl ::std::fmt::Display for AvailabilityZoneState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AvailabilityZoneState::Available => write!(f, "available"),
+            AvailabilityZoneState::Constrained => write!(f, "constrained"),
+            AvailabilityZoneState::Impaired => write!(f, "impaired"),
+            AvailabilityZoneState::Information => write!(f, "information"),
+            AvailabilityZoneState::Unavailable => write!(f, "unavailable"),
+            AvailabilityZoneState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AnalysisResultLevel {
         }
     }
 }
+impl ::std::fmt::Display for AnalysisResultLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalysisResultLevel::Error => write!(f, "ERROR"),
+            AnalysisResultLevel::Info => write!(f, "INFO"),
+            AnalysisResultLevel::Warning => write!(f, "WARNING"),
+            AnalysisResultLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl EventType {
         }
     }
 }
+impl ::std::fmt::Display for EventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventType::OriginRequest => write!(f, "origin-request"),
+            EventType::OriginResponse => write!(f, "origin-response"),
+            EventType::ViewerRequest => write!(f, "viewer-request"),
+            EventType::ViewerResponse => write!(f, "viewer-response"),
+            EventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

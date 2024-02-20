@@ -159,3 +159,22 @@ impl PrefixListState {
         }
     }
 }
+impl ::std::fmt::Display for PrefixListState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrefixListState::CreateComplete => write!(f, "create-complete"),
+            PrefixListState::CreateFailed => write!(f, "create-failed"),
+            PrefixListState::CreateInProgress => write!(f, "create-in-progress"),
+            PrefixListState::DeleteComplete => write!(f, "delete-complete"),
+            PrefixListState::DeleteFailed => write!(f, "delete-failed"),
+            PrefixListState::DeleteInProgress => write!(f, "delete-in-progress"),
+            PrefixListState::ModifyComplete => write!(f, "modify-complete"),
+            PrefixListState::ModifyFailed => write!(f, "modify-failed"),
+            PrefixListState::ModifyInProgress => write!(f, "modify-in-progress"),
+            PrefixListState::RestoreComplete => write!(f, "restore-complete"),
+            PrefixListState::RestoreFailed => write!(f, "restore-failed"),
+            PrefixListState::RestoreInProgress => write!(f, "restore-in-progress"),
+            PrefixListState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

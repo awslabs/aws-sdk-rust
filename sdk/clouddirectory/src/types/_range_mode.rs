@@ -111,3 +111,15 @@ impl RangeMode {
         }
     }
 }
+impl ::std::fmt::Display for RangeMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RangeMode::Exclusive => write!(f, "EXCLUSIVE"),
+            RangeMode::First => write!(f, "FIRST"),
+            RangeMode::Inclusive => write!(f, "INCLUSIVE"),
+            RangeMode::Last => write!(f, "LAST"),
+            RangeMode::LastBeforeMissingValues => write!(f, "LAST_BEFORE_MISSING_VALUES"),
+            RangeMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

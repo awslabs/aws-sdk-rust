@@ -96,3 +96,12 @@ impl EncryptionMode {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionMode::SseKms => write!(f, "SSE_KMS"),
+            EncryptionMode::SseS3 => write!(f, "SSE_S3"),
+            EncryptionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

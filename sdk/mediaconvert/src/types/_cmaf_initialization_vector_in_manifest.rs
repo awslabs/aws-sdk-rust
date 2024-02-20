@@ -96,3 +96,12 @@ impl CmafInitializationVectorInManifest {
         }
     }
 }
+impl ::std::fmt::Display for CmafInitializationVectorInManifest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafInitializationVectorInManifest::Exclude => write!(f, "EXCLUDE"),
+            CmafInitializationVectorInManifest::Include => write!(f, "INCLUDE"),
+            CmafInitializationVectorInManifest::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

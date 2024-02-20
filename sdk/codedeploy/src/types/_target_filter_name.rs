@@ -96,3 +96,12 @@ impl TargetFilterName {
         }
     }
 }
+impl ::std::fmt::Display for TargetFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetFilterName::ServerInstanceLabel => write!(f, "ServerInstanceLabel"),
+            TargetFilterName::TargetStatus => write!(f, "TargetStatus"),
+            TargetFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

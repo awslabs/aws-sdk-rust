@@ -106,3 +106,14 @@ impl InstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for InstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceStatus::Available => write!(f, "AVAILABLE"),
+            InstanceStatus::InUse => write!(f, "IN_USE"),
+            InstanceStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
+            InstanceStatus::Preparing => write!(f, "PREPARING"),
+            InstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

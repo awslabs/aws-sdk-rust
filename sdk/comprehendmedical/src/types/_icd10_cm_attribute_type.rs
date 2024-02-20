@@ -129,3 +129,17 @@ impl Icd10CmAttributeType {
         }
     }
 }
+impl ::std::fmt::Display for Icd10CmAttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Icd10CmAttributeType::Acuity => write!(f, "ACUITY"),
+            Icd10CmAttributeType::Direction => write!(f, "DIRECTION"),
+            Icd10CmAttributeType::Quality => write!(f, "QUALITY"),
+            Icd10CmAttributeType::Quantity => write!(f, "QUANTITY"),
+            Icd10CmAttributeType::SystemOrganSite => write!(f, "SYSTEM_ORGAN_SITE"),
+            Icd10CmAttributeType::TimeExpression => write!(f, "TIME_EXPRESSION"),
+            Icd10CmAttributeType::TimeToDxName => write!(f, "TIME_TO_DX_NAME"),
+            Icd10CmAttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

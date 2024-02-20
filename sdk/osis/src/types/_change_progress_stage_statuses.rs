@@ -106,3 +106,14 @@ impl ChangeProgressStageStatuses {
         }
     }
 }
+impl ::std::fmt::Display for ChangeProgressStageStatuses {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeProgressStageStatuses::Completed => write!(f, "COMPLETED"),
+            ChangeProgressStageStatuses::Failed => write!(f, "FAILED"),
+            ChangeProgressStageStatuses::InProgress => write!(f, "IN_PROGRESS"),
+            ChangeProgressStageStatuses::Pending => write!(f, "PENDING"),
+            ChangeProgressStageStatuses::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

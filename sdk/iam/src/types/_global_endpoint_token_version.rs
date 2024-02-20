@@ -96,3 +96,12 @@ impl GlobalEndpointTokenVersion {
         }
     }
 }
+impl ::std::fmt::Display for GlobalEndpointTokenVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GlobalEndpointTokenVersion::V1Token => write!(f, "v1Token"),
+            GlobalEndpointTokenVersion::V2Token => write!(f, "v2Token"),
+            GlobalEndpointTokenVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

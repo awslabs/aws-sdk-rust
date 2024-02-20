@@ -103,3 +103,13 @@ impl AuthenticateOidcActionConditionalBehaviorEnum {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticateOidcActionConditionalBehaviorEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticateOidcActionConditionalBehaviorEnum::Allow => write!(f, "allow"),
+            AuthenticateOidcActionConditionalBehaviorEnum::Authenticate => write!(f, "authenticate"),
+            AuthenticateOidcActionConditionalBehaviorEnum::Deny => write!(f, "deny"),
+            AuthenticateOidcActionConditionalBehaviorEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

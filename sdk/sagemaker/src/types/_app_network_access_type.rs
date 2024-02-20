@@ -96,3 +96,12 @@ impl AppNetworkAccessType {
         }
     }
 }
+impl ::std::fmt::Display for AppNetworkAccessType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppNetworkAccessType::PublicInternetOnly => write!(f, "PublicInternetOnly"),
+            AppNetworkAccessType::VpcOnly => write!(f, "VpcOnly"),
+            AppNetworkAccessType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AnalyticsNodeType {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsNodeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsNodeType::Exit => write!(f, "Exit"),
+            AnalyticsNodeType::Inner => write!(f, "Inner"),
+            AnalyticsNodeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

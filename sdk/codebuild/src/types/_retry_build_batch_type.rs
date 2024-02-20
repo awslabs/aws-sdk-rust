@@ -96,3 +96,12 @@ impl RetryBuildBatchType {
         }
     }
 }
+impl ::std::fmt::Display for RetryBuildBatchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetryBuildBatchType::RetryAllBuilds => write!(f, "RETRY_ALL_BUILDS"),
+            RetryBuildBatchType::RetryFailedBuilds => write!(f, "RETRY_FAILED_BUILDS"),
+            RetryBuildBatchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

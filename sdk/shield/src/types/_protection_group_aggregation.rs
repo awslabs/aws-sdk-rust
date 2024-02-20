@@ -101,3 +101,13 @@ impl ProtectionGroupAggregation {
         }
     }
 }
+impl ::std::fmt::Display for ProtectionGroupAggregation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProtectionGroupAggregation::Max => write!(f, "MAX"),
+            ProtectionGroupAggregation::Mean => write!(f, "MEAN"),
+            ProtectionGroupAggregation::Sum => write!(f, "SUM"),
+            ProtectionGroupAggregation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

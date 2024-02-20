@@ -101,3 +101,13 @@ impl ScanType {
         }
     }
 }
+impl ::std::fmt::Display for ScanType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScanType::Code => write!(f, "CODE"),
+            ScanType::Network => write!(f, "NETWORK"),
+            ScanType::Package => write!(f, "PACKAGE"),
+            ScanType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

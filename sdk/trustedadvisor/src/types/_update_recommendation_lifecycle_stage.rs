@@ -106,3 +106,14 @@ impl UpdateRecommendationLifecycleStage {
         }
     }
 }
+impl ::std::fmt::Display for UpdateRecommendationLifecycleStage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateRecommendationLifecycleStage::Dismissed => write!(f, "dismissed"),
+            UpdateRecommendationLifecycleStage::InProgress => write!(f, "in_progress"),
+            UpdateRecommendationLifecycleStage::PendingResponse => write!(f, "pending_response"),
+            UpdateRecommendationLifecycleStage::Resolved => write!(f, "resolved"),
+            UpdateRecommendationLifecycleStage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

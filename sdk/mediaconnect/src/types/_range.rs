@@ -101,3 +101,13 @@ impl Range {
         }
     }
 }
+impl ::std::fmt::Display for Range {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Range::Full => write!(f, "FULL"),
+            Range::Fullprotect => write!(f, "FULLPROTECT"),
+            Range::Narrow => write!(f, "NARROW"),
+            Range::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

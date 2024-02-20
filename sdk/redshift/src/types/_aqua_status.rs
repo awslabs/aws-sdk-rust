@@ -101,3 +101,13 @@ impl AquaStatus {
         }
     }
 }
+impl ::std::fmt::Display for AquaStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AquaStatus::Applying => write!(f, "applying"),
+            AquaStatus::Disabled => write!(f, "disabled"),
+            AquaStatus::Enabled => write!(f, "enabled"),
+            AquaStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

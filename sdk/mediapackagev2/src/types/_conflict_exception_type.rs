@@ -111,3 +111,14 @@ impl ConflictExceptionType {
         }
     }
 }
+impl ::std::fmt::Display for ConflictExceptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConflictExceptionType::ConflictingOperation => write!(f, "CONFLICTING_OPERATION"),
+            ConflictExceptionType::IdempotentParameterMismatch => write!(f, "IDEMPOTENT_PARAMETER_MISMATCH"),
+            ConflictExceptionType::ResourceAlreadyExists => write!(f, "RESOURCE_ALREADY_EXISTS"),
+            ConflictExceptionType::ResourceInUse => write!(f, "RESOURCE_IN_USE"),
+            ConflictExceptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

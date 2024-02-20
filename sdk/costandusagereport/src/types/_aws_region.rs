@@ -255,3 +255,38 @@ impl AwsRegion {
         }
     }
 }
+impl ::std::fmt::Display for AwsRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AwsRegion::CapeTown => write!(f, "af-south-1"),
+            AwsRegion::HongKong => write!(f, "ap-east-1"),
+            AwsRegion::Tokyo => write!(f, "ap-northeast-1"),
+            AwsRegion::Seoul => write!(f, "ap-northeast-2"),
+            AwsRegion::Osaka => write!(f, "ap-northeast-3"),
+            AwsRegion::Mumbai => write!(f, "ap-south-1"),
+            AwsRegion::Hyderabad => write!(f, "ap-south-2"),
+            AwsRegion::Singapore => write!(f, "ap-southeast-1"),
+            AwsRegion::Sydney => write!(f, "ap-southeast-2"),
+            AwsRegion::Jakarta => write!(f, "ap-southeast-3"),
+            AwsRegion::CanadaCentral => write!(f, "ca-central-1"),
+            AwsRegion::Beijing => write!(f, "cn-north-1"),
+            AwsRegion::Ningxia => write!(f, "cn-northwest-1"),
+            AwsRegion::Frankfurt => write!(f, "eu-central-1"),
+            AwsRegion::Zurich => write!(f, "eu-central-2"),
+            AwsRegion::Stockholm => write!(f, "eu-north-1"),
+            AwsRegion::Milano => write!(f, "eu-south-1"),
+            AwsRegion::Spain => write!(f, "eu-south-2"),
+            AwsRegion::Ireland => write!(f, "eu-west-1"),
+            AwsRegion::London => write!(f, "eu-west-2"),
+            AwsRegion::Paris => write!(f, "eu-west-3"),
+            AwsRegion::Uae => write!(f, "me-central-1"),
+            AwsRegion::Bahrain => write!(f, "me-south-1"),
+            AwsRegion::SaoPaulo => write!(f, "sa-east-1"),
+            AwsRegion::UsStandard => write!(f, "us-east-1"),
+            AwsRegion::Ohio => write!(f, "us-east-2"),
+            AwsRegion::NorthernCalifornia => write!(f, "us-west-1"),
+            AwsRegion::Oregon => write!(f, "us-west-2"),
+            AwsRegion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Ipv6SupportValue {
         }
     }
 }
+impl ::std::fmt::Display for Ipv6SupportValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ipv6SupportValue::Disable => write!(f, "disable"),
+            Ipv6SupportValue::Enable => write!(f, "enable"),
+            Ipv6SupportValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,21 @@ impl SnowballCapacity {
         }
     }
 }
+impl ::std::fmt::Display for SnowballCapacity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnowballCapacity::NoPreference => write!(f, "NoPreference"),
+            SnowballCapacity::T100 => write!(f, "T100"),
+            SnowballCapacity::T13 => write!(f, "T13"),
+            SnowballCapacity::T14 => write!(f, "T14"),
+            SnowballCapacity::T240 => write!(f, "T240"),
+            SnowballCapacity::T32 => write!(f, "T32"),
+            SnowballCapacity::T42 => write!(f, "T42"),
+            SnowballCapacity::T50 => write!(f, "T50"),
+            SnowballCapacity::T8 => write!(f, "T8"),
+            SnowballCapacity::T80 => write!(f, "T80"),
+            SnowballCapacity::T98 => write!(f, "T98"),
+            SnowballCapacity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

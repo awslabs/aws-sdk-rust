@@ -96,3 +96,12 @@ impl XavcTemporalAdaptiveQuantization {
         }
     }
 }
+impl ::std::fmt::Display for XavcTemporalAdaptiveQuantization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcTemporalAdaptiveQuantization::Disabled => write!(f, "DISABLED"),
+            XavcTemporalAdaptiveQuantization::Enabled => write!(f, "ENABLED"),
+            XavcTemporalAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

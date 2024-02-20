@@ -96,3 +96,12 @@ impl DetectorStatus {
         }
     }
 }
+impl ::std::fmt::Display for DetectorStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetectorStatus::Disabled => write!(f, "DISABLED"),
+            DetectorStatus::Enabled => write!(f, "ENABLED"),
+            DetectorStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

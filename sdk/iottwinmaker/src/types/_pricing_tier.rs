@@ -106,3 +106,14 @@ impl PricingTier {
         }
     }
 }
+impl ::std::fmt::Display for PricingTier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PricingTier::Tier1 => write!(f, "TIER_1"),
+            PricingTier::Tier2 => write!(f, "TIER_2"),
+            PricingTier::Tier3 => write!(f, "TIER_3"),
+            PricingTier::Tier4 => write!(f, "TIER_4"),
+            PricingTier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

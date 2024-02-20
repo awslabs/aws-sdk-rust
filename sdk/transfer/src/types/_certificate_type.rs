@@ -96,3 +96,12 @@ impl CertificateType {
         }
     }
 }
+impl ::std::fmt::Display for CertificateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateType::Certificate => write!(f, "CERTIFICATE"),
+            CertificateType::CertificateWithPrivateKey => write!(f, "CERTIFICATE_WITH_PRIVATE_KEY"),
+            CertificateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

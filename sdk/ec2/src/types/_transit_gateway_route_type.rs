@@ -96,3 +96,12 @@ impl TransitGatewayRouteType {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayRouteType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayRouteType::Propagated => write!(f, "propagated"),
+            TransitGatewayRouteType::Static => write!(f, "static"),
+            TransitGatewayRouteType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

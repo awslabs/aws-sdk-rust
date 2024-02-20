@@ -96,3 +96,12 @@ impl ContentModerationSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ContentModerationSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentModerationSortBy::Name => write!(f, "NAME"),
+            ContentModerationSortBy::Timestamp => write!(f, "TIMESTAMP"),
+            ContentModerationSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

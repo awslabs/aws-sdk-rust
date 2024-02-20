@@ -116,3 +116,16 @@ impl SearchQuantumTasksFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for SearchQuantumTasksFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchQuantumTasksFilterOperator::Between => write!(f, "BETWEEN"),
+            SearchQuantumTasksFilterOperator::Equal => write!(f, "EQUAL"),
+            SearchQuantumTasksFilterOperator::Gt => write!(f, "GT"),
+            SearchQuantumTasksFilterOperator::Gte => write!(f, "GTE"),
+            SearchQuantumTasksFilterOperator::Lt => write!(f, "LT"),
+            SearchQuantumTasksFilterOperator::Lte => write!(f, "LTE"),
+            SearchQuantumTasksFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

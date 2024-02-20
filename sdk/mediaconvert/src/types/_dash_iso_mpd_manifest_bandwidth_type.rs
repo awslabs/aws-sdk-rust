@@ -96,3 +96,12 @@ impl DashIsoMpdManifestBandwidthType {
         }
     }
 }
+impl ::std::fmt::Display for DashIsoMpdManifestBandwidthType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashIsoMpdManifestBandwidthType::Average => write!(f, "AVERAGE"),
+            DashIsoMpdManifestBandwidthType::Max => write!(f, "MAX"),
+            DashIsoMpdManifestBandwidthType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

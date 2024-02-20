@@ -96,3 +96,12 @@ impl TemplateFormat {
         }
     }
 }
+impl ::std::fmt::Display for TemplateFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemplateFormat::Json => write!(f, "JSON"),
+            TemplateFormat::Yaml => write!(f, "YAML"),
+            TemplateFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

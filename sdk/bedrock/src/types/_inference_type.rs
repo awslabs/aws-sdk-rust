@@ -96,3 +96,12 @@ impl InferenceType {
         }
     }
 }
+impl ::std::fmt::Display for InferenceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferenceType::OnDemand => write!(f, "ON_DEMAND"),
+            InferenceType::Provisioned => write!(f, "PROVISIONED"),
+            InferenceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

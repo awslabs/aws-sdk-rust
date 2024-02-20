@@ -96,3 +96,12 @@ impl PackagingType {
         }
     }
 }
+impl ::std::fmt::Display for PackagingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackagingType::Appstream2 => write!(f, "APPSTREAM2"),
+            PackagingType::Custom => write!(f, "CUSTOM"),
+            PackagingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

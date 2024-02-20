@@ -101,3 +101,13 @@ impl AutoEnableMembers {
         }
     }
 }
+impl ::std::fmt::Display for AutoEnableMembers {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoEnableMembers::All => write!(f, "ALL"),
+            AutoEnableMembers::New => write!(f, "NEW"),
+            AutoEnableMembers::None => write!(f, "NONE"),
+            AutoEnableMembers::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

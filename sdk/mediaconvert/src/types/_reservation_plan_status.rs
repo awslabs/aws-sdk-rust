@@ -96,3 +96,12 @@ impl ReservationPlanStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReservationPlanStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservationPlanStatus::Active => write!(f, "ACTIVE"),
+            ReservationPlanStatus::Expired => write!(f, "EXPIRED"),
+            ReservationPlanStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

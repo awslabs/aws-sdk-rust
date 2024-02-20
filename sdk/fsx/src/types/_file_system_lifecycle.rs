@@ -129,3 +129,17 @@ impl FileSystemLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for FileSystemLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileSystemLifecycle::Available => write!(f, "AVAILABLE"),
+            FileSystemLifecycle::Creating => write!(f, "CREATING"),
+            FileSystemLifecycle::Deleting => write!(f, "DELETING"),
+            FileSystemLifecycle::Failed => write!(f, "FAILED"),
+            FileSystemLifecycle::Misconfigured => write!(f, "MISCONFIGURED"),
+            FileSystemLifecycle::MisconfiguredUnavailable => write!(f, "MISCONFIGURED_UNAVAILABLE"),
+            FileSystemLifecycle::Updating => write!(f, "UPDATING"),
+            FileSystemLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

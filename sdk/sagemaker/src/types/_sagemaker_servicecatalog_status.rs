@@ -96,3 +96,12 @@ impl SagemakerServicecatalogStatus {
         }
     }
 }
+impl ::std::fmt::Display for SagemakerServicecatalogStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SagemakerServicecatalogStatus::Disabled => write!(f, "Disabled"),
+            SagemakerServicecatalogStatus::Enabled => write!(f, "Enabled"),
+            SagemakerServicecatalogStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

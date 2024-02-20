@@ -101,3 +101,13 @@ impl BehaviorCriteriaType {
         }
     }
 }
+impl ::std::fmt::Display for BehaviorCriteriaType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BehaviorCriteriaType::MachineLearning => write!(f, "MACHINE_LEARNING"),
+            BehaviorCriteriaType::Static => write!(f, "STATIC"),
+            BehaviorCriteriaType::Statistical => write!(f, "STATISTICAL"),
+            BehaviorCriteriaType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl Commitment {
         }
     }
 }
+impl ::std::fmt::Display for Commitment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Commitment::OneYear => write!(f, "ONE_YEAR"),
+            Commitment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

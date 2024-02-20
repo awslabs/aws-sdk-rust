@@ -101,3 +101,13 @@ impl AnalysisStatus {
         }
     }
 }
+impl ::std::fmt::Display for AnalysisStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalysisStatus::Complete => write!(f, "COMPLETE"),
+            AnalysisStatus::Failed => write!(f, "FAILED"),
+            AnalysisStatus::Running => write!(f, "RUNNING"),
+            AnalysisStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

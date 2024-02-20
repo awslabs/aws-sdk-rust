@@ -106,3 +106,14 @@ impl SavingsPlansDataType {
         }
     }
 }
+impl ::std::fmt::Display for SavingsPlansDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SavingsPlansDataType::AmortizedCommitment => write!(f, "AMORTIZED_COMMITMENT"),
+            SavingsPlansDataType::Attributes => write!(f, "ATTRIBUTES"),
+            SavingsPlansDataType::Savings => write!(f, "SAVINGS"),
+            SavingsPlansDataType::Utilization => write!(f, "UTILIZATION"),
+            SavingsPlansDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

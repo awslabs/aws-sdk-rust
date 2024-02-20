@@ -106,3 +106,14 @@ impl ReservationResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ReservationResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservationResourceType::Channel => write!(f, "CHANNEL"),
+            ReservationResourceType::Input => write!(f, "INPUT"),
+            ReservationResourceType::Multiplex => write!(f, "MULTIPLEX"),
+            ReservationResourceType::Output => write!(f, "OUTPUT"),
+            ReservationResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

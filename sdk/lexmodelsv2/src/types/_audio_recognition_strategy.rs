@@ -91,3 +91,11 @@ impl AudioRecognitionStrategy {
         }
     }
 }
+impl ::std::fmt::Display for AudioRecognitionStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary => write!(f, "UseSlotValuesAsCustomVocabulary"),
+            AudioRecognitionStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

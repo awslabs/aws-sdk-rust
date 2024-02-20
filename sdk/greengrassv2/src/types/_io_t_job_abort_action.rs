@@ -91,3 +91,11 @@ impl IoTJobAbortAction {
         }
     }
 }
+impl ::std::fmt::Display for IoTJobAbortAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IoTJobAbortAction::Cancel => write!(f, "CANCEL"),
+            IoTJobAbortAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

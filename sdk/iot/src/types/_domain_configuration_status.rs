@@ -96,3 +96,12 @@ impl DomainConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for DomainConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainConfigurationStatus::Disabled => write!(f, "DISABLED"),
+            DomainConfigurationStatus::Enabled => write!(f, "ENABLED"),
+            DomainConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

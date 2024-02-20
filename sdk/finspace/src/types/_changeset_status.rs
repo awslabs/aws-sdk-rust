@@ -106,3 +106,14 @@ impl ChangesetStatus {
         }
     }
 }
+impl ::std::fmt::Display for ChangesetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangesetStatus::Completed => write!(f, "COMPLETED"),
+            ChangesetStatus::Failed => write!(f, "FAILED"),
+            ChangesetStatus::Pending => write!(f, "PENDING"),
+            ChangesetStatus::Processing => write!(f, "PROCESSING"),
+            ChangesetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

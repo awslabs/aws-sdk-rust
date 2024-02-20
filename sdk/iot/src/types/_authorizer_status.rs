@@ -96,3 +96,12 @@ impl AuthorizerStatus {
         }
     }
 }
+impl ::std::fmt::Display for AuthorizerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthorizerStatus::Active => write!(f, "ACTIVE"),
+            AuthorizerStatus::Inactive => write!(f, "INACTIVE"),
+            AuthorizerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

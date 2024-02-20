@@ -101,3 +101,13 @@ impl InputFormat {
         }
     }
 }
+impl ::std::fmt::Display for InputFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputFormat::Csv => write!(f, "CSV"),
+            InputFormat::DynamodbJson => write!(f, "DYNAMODB_JSON"),
+            InputFormat::Ion => write!(f, "ION"),
+            InputFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

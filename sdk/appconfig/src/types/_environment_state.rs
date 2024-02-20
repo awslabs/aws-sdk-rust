@@ -106,3 +106,14 @@ impl EnvironmentState {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentState::Deploying => write!(f, "DEPLOYING"),
+            EnvironmentState::ReadyForDeployment => write!(f, "READY_FOR_DEPLOYMENT"),
+            EnvironmentState::RolledBack => write!(f, "ROLLED_BACK"),
+            EnvironmentState::RollingBack => write!(f, "ROLLING_BACK"),
+            EnvironmentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl LabelRating {
         }
     }
 }
+impl ::std::fmt::Display for LabelRating {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LabelRating::Anomaly => write!(f, "ANOMALY"),
+            LabelRating::Neutral => write!(f, "NEUTRAL"),
+            LabelRating::NoAnomaly => write!(f, "NO_ANOMALY"),
+            LabelRating::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

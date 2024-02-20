@@ -96,3 +96,12 @@ impl SigningAlg {
         }
     }
 }
+impl ::std::fmt::Display for SigningAlg {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SigningAlg::Ed25519 => write!(f, "Ed25519"),
+            SigningAlg::P256r1 => write!(f, "P256r1"),
+            SigningAlg::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

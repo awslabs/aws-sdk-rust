@@ -106,3 +106,14 @@ impl OrganizationStatus {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationStatus::Offboarding => write!(f, "OFFBOARDING"),
+            OrganizationStatus::OffboardingComplete => write!(f, "OFFBOARDING_COMPLETE"),
+            OrganizationStatus::Onboarding => write!(f, "ONBOARDING"),
+            OrganizationStatus::OnboardingComplete => write!(f, "ONBOARDING_COMPLETE"),
+            OrganizationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

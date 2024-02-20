@@ -101,3 +101,13 @@ impl CommentStatusType {
         }
     }
 }
+impl ::std::fmt::Display for CommentStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CommentStatusType::Deleted => write!(f, "DELETED"),
+            CommentStatusType::Draft => write!(f, "DRAFT"),
+            CommentStatusType::Published => write!(f, "PUBLISHED"),
+            CommentStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

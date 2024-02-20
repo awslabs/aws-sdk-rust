@@ -101,3 +101,13 @@ impl RecommendationType {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationType::GenerativeAnswer => write!(f, "GENERATIVE_ANSWER"),
+            RecommendationType::GenerativeResponse => write!(f, "GENERATIVE_RESPONSE"),
+            RecommendationType::KnowledgeContent => write!(f, "KNOWLEDGE_CONTENT"),
+            RecommendationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl CertificateProviderOperation {
         }
     }
 }
+impl ::std::fmt::Display for CertificateProviderOperation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateProviderOperation::CreateCertificateFromCsr => write!(f, "CreateCertificateFromCsr"),
+            CertificateProviderOperation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -158,3 +158,24 @@ impl TranscribeLanguageCode {
         }
     }
 }
+impl ::std::fmt::Display for TranscribeLanguageCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TranscribeLanguageCode::DeDe => write!(f, "de-DE"),
+            TranscribeLanguageCode::EnAu => write!(f, "en-AU"),
+            TranscribeLanguageCode::EnGb => write!(f, "en-GB"),
+            TranscribeLanguageCode::EnUs => write!(f, "en-US"),
+            TranscribeLanguageCode::EsUs => write!(f, "es-US"),
+            TranscribeLanguageCode::FrCa => write!(f, "fr-CA"),
+            TranscribeLanguageCode::FrFr => write!(f, "fr-FR"),
+            TranscribeLanguageCode::HiIn => write!(f, "hi-IN"),
+            TranscribeLanguageCode::ItIt => write!(f, "it-IT"),
+            TranscribeLanguageCode::JaJp => write!(f, "ja-JP"),
+            TranscribeLanguageCode::KoKr => write!(f, "ko-KR"),
+            TranscribeLanguageCode::PtBr => write!(f, "pt-BR"),
+            TranscribeLanguageCode::ThTh => write!(f, "th-TH"),
+            TranscribeLanguageCode::ZhCn => write!(f, "zh-CN"),
+            TranscribeLanguageCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

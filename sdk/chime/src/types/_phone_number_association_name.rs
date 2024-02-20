@@ -111,3 +111,15 @@ impl PhoneNumberAssociationName {
         }
     }
 }
+impl ::std::fmt::Display for PhoneNumberAssociationName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhoneNumberAssociationName::AccountId => write!(f, "AccountId"),
+            PhoneNumberAssociationName::SipRuleId => write!(f, "SipRuleId"),
+            PhoneNumberAssociationName::UserId => write!(f, "UserId"),
+            PhoneNumberAssociationName::VoiceConnectorGroupId => write!(f, "VoiceConnectorGroupId"),
+            PhoneNumberAssociationName::VoiceConnectorId => write!(f, "VoiceConnectorId"),
+            PhoneNumberAssociationName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

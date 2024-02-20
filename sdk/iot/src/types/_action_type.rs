@@ -106,3 +106,14 @@ impl ActionType {
         }
     }
 }
+impl ::std::fmt::Display for ActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionType::Connect => write!(f, "CONNECT"),
+            ActionType::Publish => write!(f, "PUBLISH"),
+            ActionType::Receive => write!(f, "RECEIVE"),
+            ActionType::Subscribe => write!(f, "SUBSCRIBE"),
+            ActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

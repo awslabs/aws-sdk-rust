@@ -96,3 +96,12 @@ impl AllowsMultipleInstanceTypes {
         }
     }
 }
+impl ::std::fmt::Display for AllowsMultipleInstanceTypes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllowsMultipleInstanceTypes::Off => write!(f, "off"),
+            AllowsMultipleInstanceTypes::On => write!(f, "on"),
+            AllowsMultipleInstanceTypes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

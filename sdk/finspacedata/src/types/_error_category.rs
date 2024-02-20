@@ -135,3 +135,18 @@ impl ErrorCategory {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCategory::AccessDenied => write!(f, "ACCESS_DENIED"),
+            ErrorCategory::Cancelled => write!(f, "CANCELLED"),
+            ErrorCategory::InternalServiceException => write!(f, "INTERNAL_SERVICE_EXCEPTION"),
+            ErrorCategory::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
+            ErrorCategory::ServiceQuotaExceeded => write!(f, "SERVICE_QUOTA_EXCEEDED"),
+            ErrorCategory::Throttling => write!(f, "THROTTLING"),
+            ErrorCategory::UserRecoverable => write!(f, "USER_RECOVERABLE"),
+            ErrorCategory::Validation => write!(f, "VALIDATION"),
+            ErrorCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

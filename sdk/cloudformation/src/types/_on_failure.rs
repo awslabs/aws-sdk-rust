@@ -101,3 +101,13 @@ impl OnFailure {
         }
     }
 }
+impl ::std::fmt::Display for OnFailure {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OnFailure::Delete => write!(f, "DELETE"),
+            OnFailure::DoNothing => write!(f, "DO_NOTHING"),
+            OnFailure::Rollback => write!(f, "ROLLBACK"),
+            OnFailure::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

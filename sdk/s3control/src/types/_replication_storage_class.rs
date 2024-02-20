@@ -141,3 +141,19 @@ impl ReplicationStorageClass {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationStorageClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationStorageClass::DeepArchive => write!(f, "DEEP_ARCHIVE"),
+            ReplicationStorageClass::Glacier => write!(f, "GLACIER"),
+            ReplicationStorageClass::GlacierIr => write!(f, "GLACIER_IR"),
+            ReplicationStorageClass::IntelligentTiering => write!(f, "INTELLIGENT_TIERING"),
+            ReplicationStorageClass::OnezoneIa => write!(f, "ONEZONE_IA"),
+            ReplicationStorageClass::Outposts => write!(f, "OUTPOSTS"),
+            ReplicationStorageClass::ReducedRedundancy => write!(f, "REDUCED_REDUNDANCY"),
+            ReplicationStorageClass::Standard => write!(f, "STANDARD"),
+            ReplicationStorageClass::StandardIa => write!(f, "STANDARD_IA"),
+            ReplicationStorageClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl UploadAvailability {
         }
     }
 }
+impl ::std::fmt::Display for UploadAvailability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UploadAvailability::Standard => write!(f, "STANDARD"),
+            UploadAvailability::Streaming => write!(f, "STREAMING"),
+            UploadAvailability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

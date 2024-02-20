@@ -96,3 +96,12 @@ impl MonitorType {
         }
     }
 }
+impl ::std::fmt::Display for MonitorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitorType::Custom => write!(f, "CUSTOM"),
+            MonitorType::Dimensional => write!(f, "DIMENSIONAL"),
+            MonitorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

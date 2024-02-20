@@ -96,3 +96,12 @@ impl TemplateType {
         }
     }
 }
+impl ::std::fmt::Display for TemplateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemplateType::FleetProvisioning => write!(f, "FLEET_PROVISIONING"),
+            TemplateType::Jitp => write!(f, "JITP"),
+            TemplateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

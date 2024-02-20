@@ -106,3 +106,14 @@ impl PackageVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for PackageVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageVersionStatus::Deleting => write!(f, "DELETING"),
+            PackageVersionStatus::Failed => write!(f, "FAILED"),
+            PackageVersionStatus::RegisterCompleted => write!(f, "REGISTER_COMPLETED"),
+            PackageVersionStatus::RegisterPending => write!(f, "REGISTER_PENDING"),
+            PackageVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

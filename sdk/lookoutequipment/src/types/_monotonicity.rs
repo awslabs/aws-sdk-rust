@@ -101,3 +101,13 @@ impl Monotonicity {
         }
     }
 }
+impl ::std::fmt::Display for Monotonicity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Monotonicity::Decreasing => write!(f, "DECREASING"),
+            Monotonicity::Increasing => write!(f, "INCREASING"),
+            Monotonicity::Static => write!(f, "STATIC"),
+            Monotonicity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

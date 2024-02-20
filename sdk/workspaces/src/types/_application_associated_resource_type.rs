@@ -101,3 +101,13 @@ impl ApplicationAssociatedResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationAssociatedResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationAssociatedResourceType::Bundle => write!(f, "BUNDLE"),
+            ApplicationAssociatedResourceType::Image => write!(f, "IMAGE"),
+            ApplicationAssociatedResourceType::Workspace => write!(f, "WORKSPACE"),
+            ApplicationAssociatedResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

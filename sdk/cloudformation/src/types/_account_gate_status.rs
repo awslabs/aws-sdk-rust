@@ -101,3 +101,13 @@ impl AccountGateStatus {
         }
     }
 }
+impl ::std::fmt::Display for AccountGateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountGateStatus::Failed => write!(f, "FAILED"),
+            AccountGateStatus::Skipped => write!(f, "SKIPPED"),
+            AccountGateStatus::Succeeded => write!(f, "SUCCEEDED"),
+            AccountGateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

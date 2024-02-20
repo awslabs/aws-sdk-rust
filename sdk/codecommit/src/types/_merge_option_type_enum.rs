@@ -101,3 +101,13 @@ impl MergeOptionTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for MergeOptionTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MergeOptionTypeEnum::FastForwardMerge => write!(f, "FAST_FORWARD_MERGE"),
+            MergeOptionTypeEnum::SquashMerge => write!(f, "SQUASH_MERGE"),
+            MergeOptionTypeEnum::ThreeWayMerge => write!(f, "THREE_WAY_MERGE"),
+            MergeOptionTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl ConfigurationJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationJobStatus::Failed => write!(f, "FAILED"),
+            ConfigurationJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ConfigurationJobStatus::New => write!(f, "NEW"),
+            ConfigurationJobStatus::Queued => write!(f, "QUEUED"),
+            ConfigurationJobStatus::Success => write!(f, "SUCCESS"),
+            ConfigurationJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

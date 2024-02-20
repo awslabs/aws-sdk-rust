@@ -111,3 +111,15 @@ impl SmbVersion {
         }
     }
 }
+impl ::std::fmt::Display for SmbVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SmbVersion::Automatic => write!(f, "AUTOMATIC"),
+            SmbVersion::Smb1 => write!(f, "SMB1"),
+            SmbVersion::Smb2 => write!(f, "SMB2"),
+            SmbVersion::Smb20 => write!(f, "SMB2_0"),
+            SmbVersion::Smb3 => write!(f, "SMB3"),
+            SmbVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

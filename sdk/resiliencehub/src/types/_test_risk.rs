@@ -101,3 +101,13 @@ impl TestRisk {
         }
     }
 }
+impl ::std::fmt::Display for TestRisk {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestRisk::High => write!(f, "High"),
+            TestRisk::Medium => write!(f, "Medium"),
+            TestRisk::Small => write!(f, "Small"),
+            TestRisk::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

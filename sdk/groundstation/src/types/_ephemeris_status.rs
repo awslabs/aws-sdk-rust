@@ -116,3 +116,16 @@ impl EphemerisStatus {
         }
     }
 }
+impl ::std::fmt::Display for EphemerisStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EphemerisStatus::Disabled => write!(f, "DISABLED"),
+            EphemerisStatus::Enabled => write!(f, "ENABLED"),
+            EphemerisStatus::Error => write!(f, "ERROR"),
+            EphemerisStatus::Expired => write!(f, "EXPIRED"),
+            EphemerisStatus::Invalid => write!(f, "INVALID"),
+            EphemerisStatus::Validating => write!(f, "VALIDATING"),
+            EphemerisStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

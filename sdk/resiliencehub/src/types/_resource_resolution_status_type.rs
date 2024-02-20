@@ -106,3 +106,14 @@ impl ResourceResolutionStatusType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceResolutionStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceResolutionStatusType::Failed => write!(f, "Failed"),
+            ResourceResolutionStatusType::InProgress => write!(f, "InProgress"),
+            ResourceResolutionStatusType::Pending => write!(f, "Pending"),
+            ResourceResolutionStatusType::Success => write!(f, "Success"),
+            ResourceResolutionStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

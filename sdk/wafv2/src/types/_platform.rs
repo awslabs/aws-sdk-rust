@@ -96,3 +96,12 @@ impl Platform {
         }
     }
 }
+impl ::std::fmt::Display for Platform {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Platform::Android => write!(f, "ANDROID"),
+            Platform::Ios => write!(f, "IOS"),
+            Platform::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

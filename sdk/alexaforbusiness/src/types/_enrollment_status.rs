@@ -111,3 +111,15 @@ impl EnrollmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for EnrollmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnrollmentStatus::Deregistering => write!(f, "DEREGISTERING"),
+            EnrollmentStatus::Disassociating => write!(f, "DISASSOCIATING"),
+            EnrollmentStatus::Initialized => write!(f, "INITIALIZED"),
+            EnrollmentStatus::Pending => write!(f, "PENDING"),
+            EnrollmentStatus::Registered => write!(f, "REGISTERED"),
+            EnrollmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AuthType {
         }
     }
 }
+impl ::std::fmt::Display for AuthType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthType::Cert => write!(f, "CERT"),
+            AuthType::Ntlm => write!(f, "NTLM"),
+            AuthType::Ssh => write!(f, "SSH"),
+            AuthType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -255,3 +255,38 @@ impl BucketLocationConstraint {
         }
     }
 }
+impl ::std::fmt::Display for BucketLocationConstraint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BucketLocationConstraint::Eu => write!(f, "EU"),
+            BucketLocationConstraint::AfSouth1 => write!(f, "af-south-1"),
+            BucketLocationConstraint::ApEast1 => write!(f, "ap-east-1"),
+            BucketLocationConstraint::ApNortheast1 => write!(f, "ap-northeast-1"),
+            BucketLocationConstraint::ApNortheast2 => write!(f, "ap-northeast-2"),
+            BucketLocationConstraint::ApNortheast3 => write!(f, "ap-northeast-3"),
+            BucketLocationConstraint::ApSouth1 => write!(f, "ap-south-1"),
+            BucketLocationConstraint::ApSouth2 => write!(f, "ap-south-2"),
+            BucketLocationConstraint::ApSoutheast1 => write!(f, "ap-southeast-1"),
+            BucketLocationConstraint::ApSoutheast2 => write!(f, "ap-southeast-2"),
+            BucketLocationConstraint::ApSoutheast3 => write!(f, "ap-southeast-3"),
+            BucketLocationConstraint::CaCentral1 => write!(f, "ca-central-1"),
+            BucketLocationConstraint::CnNorth1 => write!(f, "cn-north-1"),
+            BucketLocationConstraint::CnNorthwest1 => write!(f, "cn-northwest-1"),
+            BucketLocationConstraint::EuCentral1 => write!(f, "eu-central-1"),
+            BucketLocationConstraint::EuNorth1 => write!(f, "eu-north-1"),
+            BucketLocationConstraint::EuSouth1 => write!(f, "eu-south-1"),
+            BucketLocationConstraint::EuSouth2 => write!(f, "eu-south-2"),
+            BucketLocationConstraint::EuWest1 => write!(f, "eu-west-1"),
+            BucketLocationConstraint::EuWest2 => write!(f, "eu-west-2"),
+            BucketLocationConstraint::EuWest3 => write!(f, "eu-west-3"),
+            BucketLocationConstraint::MeSouth1 => write!(f, "me-south-1"),
+            BucketLocationConstraint::SaEast1 => write!(f, "sa-east-1"),
+            BucketLocationConstraint::UsEast2 => write!(f, "us-east-2"),
+            BucketLocationConstraint::UsGovEast1 => write!(f, "us-gov-east-1"),
+            BucketLocationConstraint::UsGovWest1 => write!(f, "us-gov-west-1"),
+            BucketLocationConstraint::UsWest1 => write!(f, "us-west-1"),
+            BucketLocationConstraint::UsWest2 => write!(f, "us-west-2"),
+            BucketLocationConstraint::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

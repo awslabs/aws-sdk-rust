@@ -96,3 +96,12 @@ impl CoverageStringComparison {
         }
     }
 }
+impl ::std::fmt::Display for CoverageStringComparison {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CoverageStringComparison::Equals => write!(f, "EQUALS"),
+            CoverageStringComparison::NotEquals => write!(f, "NOT_EQUALS"),
+            CoverageStringComparison::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

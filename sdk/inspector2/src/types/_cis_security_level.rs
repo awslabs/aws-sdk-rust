@@ -96,3 +96,12 @@ impl CisSecurityLevel {
         }
     }
 }
+impl ::std::fmt::Display for CisSecurityLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisSecurityLevel::Level1 => write!(f, "LEVEL_1"),
+            CisSecurityLevel::Level2 => write!(f, "LEVEL_2"),
+            CisSecurityLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

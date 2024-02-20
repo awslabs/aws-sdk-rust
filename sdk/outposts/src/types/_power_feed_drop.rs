@@ -96,3 +96,12 @@ impl PowerFeedDrop {
         }
     }
 }
+impl ::std::fmt::Display for PowerFeedDrop {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PowerFeedDrop::AboveRack => write!(f, "ABOVE_RACK"),
+            PowerFeedDrop::BelowRack => write!(f, "BELOW_RACK"),
+            PowerFeedDrop::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

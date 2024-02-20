@@ -135,3 +135,18 @@ impl SystemInstanceDeploymentStatus {
         }
     }
 }
+impl ::std::fmt::Display for SystemInstanceDeploymentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SystemInstanceDeploymentStatus::Bootstrap => write!(f, "BOOTSTRAP"),
+            SystemInstanceDeploymentStatus::DeletedInTarget => write!(f, "DELETED_IN_TARGET"),
+            SystemInstanceDeploymentStatus::DeployedInTarget => write!(f, "DEPLOYED_IN_TARGET"),
+            SystemInstanceDeploymentStatus::DeployInProgress => write!(f, "DEPLOY_IN_PROGRESS"),
+            SystemInstanceDeploymentStatus::Failed => write!(f, "FAILED"),
+            SystemInstanceDeploymentStatus::NotDeployed => write!(f, "NOT_DEPLOYED"),
+            SystemInstanceDeploymentStatus::PendingDelete => write!(f, "PENDING_DELETE"),
+            SystemInstanceDeploymentStatus::UndeployInProgress => write!(f, "UNDEPLOY_IN_PROGRESS"),
+            SystemInstanceDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

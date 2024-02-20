@@ -123,3 +123,16 @@ impl ServiceActionAssociationErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ServiceActionAssociationErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceActionAssociationErrorCode::DuplicateResourceException => write!(f, "DUPLICATE_RESOURCE"),
+            ServiceActionAssociationErrorCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            ServiceActionAssociationErrorCode::InvalidParameterException => write!(f, "INVALID_PARAMETER"),
+            ServiceActionAssociationErrorCode::LimitExceededException => write!(f, "LIMIT_EXCEEDED"),
+            ServiceActionAssociationErrorCode::ResourceNotFoundException => write!(f, "RESOURCE_NOT_FOUND"),
+            ServiceActionAssociationErrorCode::ThrottlingException => write!(f, "THROTTLING"),
+            ServiceActionAssociationErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

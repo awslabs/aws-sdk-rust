@@ -106,3 +106,14 @@ impl DirectConnectGatewayState {
         }
     }
 }
+impl ::std::fmt::Display for DirectConnectGatewayState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectConnectGatewayState::Available => write!(f, "available"),
+            DirectConnectGatewayState::Deleted => write!(f, "deleted"),
+            DirectConnectGatewayState::Deleting => write!(f, "deleting"),
+            DirectConnectGatewayState::Pending => write!(f, "pending"),
+            DirectConnectGatewayState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

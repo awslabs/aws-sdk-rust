@@ -106,3 +106,14 @@ impl QuoteChar {
         }
     }
 }
+impl ::std::fmt::Display for QuoteChar {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuoteChar::Disabled => write!(f, "disabled"),
+            QuoteChar::Quillemet => write!(f, "quillemet"),
+            QuoteChar::Quote => write!(f, "quote"),
+            QuoteChar::SingleQuote => write!(f, "single_quote"),
+            QuoteChar::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

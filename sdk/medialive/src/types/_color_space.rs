@@ -106,3 +106,14 @@ impl ColorSpace {
         }
     }
 }
+impl ::std::fmt::Display for ColorSpace {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColorSpace::Hdr10 => write!(f, "HDR10"),
+            ColorSpace::Hlg2020 => write!(f, "HLG_2020"),
+            ColorSpace::Rec601 => write!(f, "REC_601"),
+            ColorSpace::Rec709 => write!(f, "REC_709"),
+            ColorSpace::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

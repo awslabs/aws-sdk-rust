@@ -91,3 +91,11 @@ impl FleetScalingMetricType {
         }
     }
 }
+impl ::std::fmt::Display for FleetScalingMetricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetScalingMetricType::FleetUtilizationRate => write!(f, "FLEET_UTILIZATION_RATE"),
+            FleetScalingMetricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

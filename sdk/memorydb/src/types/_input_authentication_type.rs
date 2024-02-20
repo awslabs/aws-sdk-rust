@@ -96,3 +96,12 @@ impl InputAuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for InputAuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputAuthenticationType::Iam => write!(f, "iam"),
+            InputAuthenticationType::Password => write!(f, "password"),
+            InputAuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

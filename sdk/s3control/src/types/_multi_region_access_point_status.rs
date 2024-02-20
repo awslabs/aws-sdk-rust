@@ -123,3 +123,16 @@ impl MultiRegionAccessPointStatus {
         }
     }
 }
+impl ::std::fmt::Display for MultiRegionAccessPointStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MultiRegionAccessPointStatus::Creating => write!(f, "CREATING"),
+            MultiRegionAccessPointStatus::Deleting => write!(f, "DELETING"),
+            MultiRegionAccessPointStatus::InconsistentAcrossRegions => write!(f, "INCONSISTENT_ACROSS_REGIONS"),
+            MultiRegionAccessPointStatus::PartiallyCreated => write!(f, "PARTIALLY_CREATED"),
+            MultiRegionAccessPointStatus::PartiallyDeleted => write!(f, "PARTIALLY_DELETED"),
+            MultiRegionAccessPointStatus::Ready => write!(f, "READY"),
+            MultiRegionAccessPointStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

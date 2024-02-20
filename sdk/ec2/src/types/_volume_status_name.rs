@@ -96,3 +96,12 @@ impl VolumeStatusName {
         }
     }
 }
+impl ::std::fmt::Display for VolumeStatusName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeStatusName::IoEnabled => write!(f, "io-enabled"),
+            VolumeStatusName::IoPerformance => write!(f, "io-performance"),
+            VolumeStatusName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

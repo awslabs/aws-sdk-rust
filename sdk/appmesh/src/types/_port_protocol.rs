@@ -106,3 +106,14 @@ impl PortProtocol {
         }
     }
 }
+impl ::std::fmt::Display for PortProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PortProtocol::Grpc => write!(f, "grpc"),
+            PortProtocol::Http => write!(f, "http"),
+            PortProtocol::Http2 => write!(f, "http2"),
+            PortProtocol::Tcp => write!(f, "tcp"),
+            PortProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

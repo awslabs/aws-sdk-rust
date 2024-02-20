@@ -111,3 +111,15 @@ impl LineChartMarkerShape {
         }
     }
 }
+impl ::std::fmt::Display for LineChartMarkerShape {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LineChartMarkerShape::Circle => write!(f, "CIRCLE"),
+            LineChartMarkerShape::Diamond => write!(f, "DIAMOND"),
+            LineChartMarkerShape::RoundedSquare => write!(f, "ROUNDED_SQUARE"),
+            LineChartMarkerShape::Square => write!(f, "SQUARE"),
+            LineChartMarkerShape::Triangle => write!(f, "TRIANGLE"),
+            LineChartMarkerShape::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

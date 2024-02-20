@@ -111,3 +111,15 @@ impl TargetCompressionType {
         }
     }
 }
+impl ::std::fmt::Display for TargetCompressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetCompressionType::Gzip => write!(f, "GZIP"),
+            TargetCompressionType::Lz4 => write!(f, "LZ4"),
+            TargetCompressionType::None => write!(f, "NONE"),
+            TargetCompressionType::Snappy => write!(f, "SNAPPY"),
+            TargetCompressionType::Zstd => write!(f, "ZSTD"),
+            TargetCompressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

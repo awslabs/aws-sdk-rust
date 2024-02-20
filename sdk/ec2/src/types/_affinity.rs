@@ -96,3 +96,12 @@ impl Affinity {
         }
     }
 }
+impl ::std::fmt::Display for Affinity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Affinity::Default => write!(f, "default"),
+            Affinity::Host => write!(f, "host"),
+            Affinity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DeliveryMediumType {
         }
     }
 }
+impl ::std::fmt::Display for DeliveryMediumType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeliveryMediumType::Email => write!(f, "EMAIL"),
+            DeliveryMediumType::Sms => write!(f, "SMS"),
+            DeliveryMediumType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

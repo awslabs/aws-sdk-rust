@@ -111,3 +111,15 @@ impl AssociationEdgeType {
         }
     }
 }
+impl ::std::fmt::Display for AssociationEdgeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationEdgeType::AssociatedWith => write!(f, "AssociatedWith"),
+            AssociationEdgeType::ContributedTo => write!(f, "ContributedTo"),
+            AssociationEdgeType::DerivedFrom => write!(f, "DerivedFrom"),
+            AssociationEdgeType::Produced => write!(f, "Produced"),
+            AssociationEdgeType::SameAs => write!(f, "SameAs"),
+            AssociationEdgeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

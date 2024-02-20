@@ -96,3 +96,12 @@ impl ModelCardSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for ModelCardSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelCardSortOrder::Ascending => write!(f, "Ascending"),
+            ModelCardSortOrder::Descending => write!(f, "Descending"),
+            ModelCardSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

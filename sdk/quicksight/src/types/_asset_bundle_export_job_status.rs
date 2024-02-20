@@ -106,3 +106,14 @@ impl AssetBundleExportJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for AssetBundleExportJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetBundleExportJobStatus::Failed => write!(f, "FAILED"),
+            AssetBundleExportJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            AssetBundleExportJobStatus::QueuedForImmediateExecution => write!(f, "QUEUED_FOR_IMMEDIATE_EXECUTION"),
+            AssetBundleExportJobStatus::Successful => write!(f, "SUCCESSFUL"),
+            AssetBundleExportJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

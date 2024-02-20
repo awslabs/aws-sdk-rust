@@ -101,3 +101,13 @@ impl VpcAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for VpcAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcAttributeName::EnableDnsHostnames => write!(f, "enableDnsHostnames"),
+            VpcAttributeName::EnableDnsSupport => write!(f, "enableDnsSupport"),
+            VpcAttributeName::EnableNetworkAddressUsageMetrics => write!(f, "enableNetworkAddressUsageMetrics"),
+            VpcAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

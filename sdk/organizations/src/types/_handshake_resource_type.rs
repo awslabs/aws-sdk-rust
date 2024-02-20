@@ -135,3 +135,18 @@ impl HandshakeResourceType {
         }
     }
 }
+impl ::std::fmt::Display for HandshakeResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HandshakeResourceType::Account => write!(f, "ACCOUNT"),
+            HandshakeResourceType::Email => write!(f, "EMAIL"),
+            HandshakeResourceType::MasterEmail => write!(f, "MASTER_EMAIL"),
+            HandshakeResourceType::MasterName => write!(f, "MASTER_NAME"),
+            HandshakeResourceType::Notes => write!(f, "NOTES"),
+            HandshakeResourceType::Organization => write!(f, "ORGANIZATION"),
+            HandshakeResourceType::OrganizationFeatureSet => write!(f, "ORGANIZATION_FEATURE_SET"),
+            HandshakeResourceType::ParentHandshake => write!(f, "PARENT_HANDSHAKE"),
+            HandshakeResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

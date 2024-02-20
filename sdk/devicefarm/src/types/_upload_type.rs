@@ -279,3 +279,42 @@ impl UploadType {
         }
     }
 }
+impl ::std::fmt::Display for UploadType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UploadType::AndroidApp => write!(f, "ANDROID_APP"),
+            UploadType::AppiumJavaJunitTestPackage => write!(f, "APPIUM_JAVA_JUNIT_TEST_PACKAGE"),
+            UploadType::AppiumJavaJunitTestSpec => write!(f, "APPIUM_JAVA_JUNIT_TEST_SPEC"),
+            UploadType::AppiumJavaTestngTestPackage => write!(f, "APPIUM_JAVA_TESTNG_TEST_PACKAGE"),
+            UploadType::AppiumJavaTestngTestSpec => write!(f, "APPIUM_JAVA_TESTNG_TEST_SPEC"),
+            UploadType::AppiumNodeTestPackage => write!(f, "APPIUM_NODE_TEST_PACKAGE"),
+            UploadType::AppiumNodeTestSpec => write!(f, "APPIUM_NODE_TEST_SPEC"),
+            UploadType::AppiumPythonTestPackage => write!(f, "APPIUM_PYTHON_TEST_PACKAGE"),
+            UploadType::AppiumPythonTestSpec => write!(f, "APPIUM_PYTHON_TEST_SPEC"),
+            UploadType::AppiumRubyTestPackage => write!(f, "APPIUM_RUBY_TEST_PACKAGE"),
+            UploadType::AppiumRubyTestSpec => write!(f, "APPIUM_RUBY_TEST_SPEC"),
+            UploadType::AppiumWebJavaJunitTestPackage => write!(f, "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE"),
+            UploadType::AppiumWebJavaJunitTestSpec => write!(f, "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC"),
+            UploadType::AppiumWebJavaTestngTestPackage => write!(f, "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE"),
+            UploadType::AppiumWebJavaTestngTestSpec => write!(f, "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC"),
+            UploadType::AppiumWebNodeTestPackage => write!(f, "APPIUM_WEB_NODE_TEST_PACKAGE"),
+            UploadType::AppiumWebNodeTestSpec => write!(f, "APPIUM_WEB_NODE_TEST_SPEC"),
+            UploadType::AppiumWebPythonTestPackage => write!(f, "APPIUM_WEB_PYTHON_TEST_PACKAGE"),
+            UploadType::AppiumWebPythonTestSpec => write!(f, "APPIUM_WEB_PYTHON_TEST_SPEC"),
+            UploadType::AppiumWebRubyTestPackage => write!(f, "APPIUM_WEB_RUBY_TEST_PACKAGE"),
+            UploadType::AppiumWebRubyTestSpec => write!(f, "APPIUM_WEB_RUBY_TEST_SPEC"),
+            UploadType::CalabashTestPackage => write!(f, "CALABASH_TEST_PACKAGE"),
+            UploadType::ExternalData => write!(f, "EXTERNAL_DATA"),
+            UploadType::InstrumentationTestPackage => write!(f, "INSTRUMENTATION_TEST_PACKAGE"),
+            UploadType::InstrumentationTestSpec => write!(f, "INSTRUMENTATION_TEST_SPEC"),
+            UploadType::IosApp => write!(f, "IOS_APP"),
+            UploadType::UiautomationTestPackage => write!(f, "UIAUTOMATION_TEST_PACKAGE"),
+            UploadType::UiautomatorTestPackage => write!(f, "UIAUTOMATOR_TEST_PACKAGE"),
+            UploadType::WebApp => write!(f, "WEB_APP"),
+            UploadType::XctestTestPackage => write!(f, "XCTEST_TEST_PACKAGE"),
+            UploadType::XctestUiTestPackage => write!(f, "XCTEST_UI_TEST_PACKAGE"),
+            UploadType::XctestUiTestSpec => write!(f, "XCTEST_UI_TEST_SPEC"),
+            UploadType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ReviewPolicyLevel {
         }
     }
 }
+impl ::std::fmt::Display for ReviewPolicyLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReviewPolicyLevel::Assignment => write!(f, "Assignment"),
+            ReviewPolicyLevel::Hit => write!(f, "HIT"),
+            ReviewPolicyLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

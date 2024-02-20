@@ -96,3 +96,12 @@ impl TemplateParameterDataType {
         }
     }
 }
+impl ::std::fmt::Display for TemplateParameterDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemplateParameterDataType::Number => write!(f, "NUMBER"),
+            TemplateParameterDataType::String => write!(f, "STRING"),
+            TemplateParameterDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

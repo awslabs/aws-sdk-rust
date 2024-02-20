@@ -96,3 +96,12 @@ impl Eac3AtmosDialogueIntelligence {
         }
     }
 }
+impl ::std::fmt::Display for Eac3AtmosDialogueIntelligence {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3AtmosDialogueIntelligence::Disabled => write!(f, "DISABLED"),
+            Eac3AtmosDialogueIntelligence::Enabled => write!(f, "ENABLED"),
+            Eac3AtmosDialogueIntelligence::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

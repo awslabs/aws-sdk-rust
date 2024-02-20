@@ -101,3 +101,13 @@ impl StreamHealth {
         }
     }
 }
+impl ::std::fmt::Display for StreamHealth {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamHealth::StreamHealthy => write!(f, "HEALTHY"),
+            StreamHealth::Starving => write!(f, "STARVING"),
+            StreamHealth::UnknownValue => write!(f, "UNKNOWN"),
+            StreamHealth::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

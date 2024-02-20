@@ -96,3 +96,12 @@ impl CisScanResultDetailsSortBy {
         }
     }
 }
+impl ::std::fmt::Display for CisScanResultDetailsSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisScanResultDetailsSortBy::CheckId => write!(f, "CHECK_ID"),
+            CisScanResultDetailsSortBy::Status => write!(f, "STATUS"),
+            CisScanResultDetailsSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

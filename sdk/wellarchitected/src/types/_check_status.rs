@@ -111,3 +111,15 @@ impl CheckStatus {
         }
     }
 }
+impl ::std::fmt::Display for CheckStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CheckStatus::Error => write!(f, "ERROR"),
+            CheckStatus::FetchFailed => write!(f, "FETCH_FAILED"),
+            CheckStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
+            CheckStatus::Okay => write!(f, "OKAY"),
+            CheckStatus::Warning => write!(f, "WARNING"),
+            CheckStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

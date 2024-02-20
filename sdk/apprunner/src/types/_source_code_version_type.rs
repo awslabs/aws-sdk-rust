@@ -91,3 +91,11 @@ impl SourceCodeVersionType {
         }
     }
 }
+impl ::std::fmt::Display for SourceCodeVersionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceCodeVersionType::Branch => write!(f, "BRANCH"),
+            SourceCodeVersionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

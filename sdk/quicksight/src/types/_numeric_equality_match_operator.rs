@@ -96,3 +96,12 @@ impl NumericEqualityMatchOperator {
         }
     }
 }
+impl ::std::fmt::Display for NumericEqualityMatchOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NumericEqualityMatchOperator::DoesNotEqual => write!(f, "DOES_NOT_EQUAL"),
+            NumericEqualityMatchOperator::Equals => write!(f, "EQUALS"),
+            NumericEqualityMatchOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

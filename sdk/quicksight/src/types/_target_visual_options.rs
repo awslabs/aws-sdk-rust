@@ -91,3 +91,11 @@ impl TargetVisualOptions {
         }
     }
 }
+impl ::std::fmt::Display for TargetVisualOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetVisualOptions::AllVisuals => write!(f, "ALL_VISUALS"),
+            TargetVisualOptions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

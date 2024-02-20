@@ -111,3 +111,15 @@ impl CancelSpotInstanceRequestState {
         }
     }
 }
+impl ::std::fmt::Display for CancelSpotInstanceRequestState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CancelSpotInstanceRequestState::Active => write!(f, "active"),
+            CancelSpotInstanceRequestState::Cancelled => write!(f, "cancelled"),
+            CancelSpotInstanceRequestState::Closed => write!(f, "closed"),
+            CancelSpotInstanceRequestState::Completed => write!(f, "completed"),
+            CancelSpotInstanceRequestState::Open => write!(f, "open"),
+            CancelSpotInstanceRequestState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

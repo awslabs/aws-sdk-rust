@@ -96,3 +96,12 @@ impl EventStreamState {
         }
     }
 }
+impl ::std::fmt::Display for EventStreamState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventStreamState::Running => write!(f, "RUNNING"),
+            EventStreamState::Stopped => write!(f, "STOPPED"),
+            EventStreamState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

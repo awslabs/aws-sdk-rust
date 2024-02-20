@@ -141,3 +141,19 @@ impl VpcConnectionResourceStatus {
         }
     }
 }
+impl ::std::fmt::Display for VpcConnectionResourceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcConnectionResourceStatus::CreationFailed => write!(f, "CREATION_FAILED"),
+            VpcConnectionResourceStatus::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
+            VpcConnectionResourceStatus::CreationSuccessful => write!(f, "CREATION_SUCCESSFUL"),
+            VpcConnectionResourceStatus::Deleted => write!(f, "DELETED"),
+            VpcConnectionResourceStatus::DeletionFailed => write!(f, "DELETION_FAILED"),
+            VpcConnectionResourceStatus::DeletionInProgress => write!(f, "DELETION_IN_PROGRESS"),
+            VpcConnectionResourceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            VpcConnectionResourceStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            VpcConnectionResourceStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
+            VpcConnectionResourceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

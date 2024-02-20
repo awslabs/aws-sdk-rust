@@ -111,3 +111,15 @@ impl StudioComponentType {
         }
     }
 }
+impl ::std::fmt::Display for StudioComponentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StudioComponentType::ActiveDirectory => write!(f, "ACTIVE_DIRECTORY"),
+            StudioComponentType::ComputeFarm => write!(f, "COMPUTE_FARM"),
+            StudioComponentType::Custom => write!(f, "CUSTOM"),
+            StudioComponentType::LicenseService => write!(f, "LICENSE_SERVICE"),
+            StudioComponentType::SharedFileSystem => write!(f, "SHARED_FILE_SYSTEM"),
+            StudioComponentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ContributorInsightsAction {
         }
     }
 }
+impl ::std::fmt::Display for ContributorInsightsAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContributorInsightsAction::Disable => write!(f, "DISABLE"),
+            ContributorInsightsAction::Enable => write!(f, "ENABLE"),
+            ContributorInsightsAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

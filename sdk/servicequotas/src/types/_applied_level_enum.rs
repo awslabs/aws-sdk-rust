@@ -101,3 +101,13 @@ impl AppliedLevelEnum {
         }
     }
 }
+impl ::std::fmt::Display for AppliedLevelEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppliedLevelEnum::Account => write!(f, "ACCOUNT"),
+            AppliedLevelEnum::All => write!(f, "ALL"),
+            AppliedLevelEnum::Resource => write!(f, "RESOURCE"),
+            AppliedLevelEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

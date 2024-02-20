@@ -96,3 +96,12 @@ impl ContainerInstanceField {
         }
     }
 }
+impl ::std::fmt::Display for ContainerInstanceField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerInstanceField::ContainerInstanceHealth => write!(f, "CONTAINER_INSTANCE_HEALTH"),
+            ContainerInstanceField::Tags => write!(f, "TAGS"),
+            ContainerInstanceField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

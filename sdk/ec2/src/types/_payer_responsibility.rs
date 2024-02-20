@@ -91,3 +91,11 @@ impl PayerResponsibility {
         }
     }
 }
+impl ::std::fmt::Display for PayerResponsibility {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PayerResponsibility::ServiceOwner => write!(f, "ServiceOwner"),
+            PayerResponsibility::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

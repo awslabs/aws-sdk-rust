@@ -96,3 +96,12 @@ impl PropertyRole {
         }
     }
 }
+impl ::std::fmt::Display for PropertyRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PropertyRole::Id => write!(f, "ID"),
+            PropertyRole::Primary => write!(f, "PRIMARY"),
+            PropertyRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

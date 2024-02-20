@@ -96,3 +96,12 @@ impl DeviceServiceName {
         }
     }
 }
+impl ::std::fmt::Display for DeviceServiceName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceServiceName::NfsOnDeviceService => write!(f, "NFS_ON_DEVICE_SERVICE"),
+            DeviceServiceName::S3OnDeviceService => write!(f, "S3_ON_DEVICE_SERVICE"),
+            DeviceServiceName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

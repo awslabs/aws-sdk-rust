@@ -96,3 +96,12 @@ impl ExceptionCause {
         }
     }
 }
+impl ::std::fmt::Display for ExceptionCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExceptionCause::InsufficientS3BucketPolicy => write!(f, "InsufficientS3BucketPolicy"),
+            ExceptionCause::S3AccessDenied => write!(f, "S3AccessDenied"),
+            ExceptionCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

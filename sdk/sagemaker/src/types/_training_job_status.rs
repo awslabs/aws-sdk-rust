@@ -111,3 +111,15 @@ impl TrainingJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for TrainingJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrainingJobStatus::Completed => write!(f, "Completed"),
+            TrainingJobStatus::Failed => write!(f, "Failed"),
+            TrainingJobStatus::InProgress => write!(f, "InProgress"),
+            TrainingJobStatus::Stopped => write!(f, "Stopped"),
+            TrainingJobStatus::Stopping => write!(f, "Stopping"),
+            TrainingJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

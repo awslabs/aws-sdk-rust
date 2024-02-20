@@ -101,3 +101,13 @@ impl ReplicationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationStatus::Complete => write!(f, "COMPLETE"),
+            ReplicationStatus::Failed => write!(f, "FAILED"),
+            ReplicationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ReplicationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

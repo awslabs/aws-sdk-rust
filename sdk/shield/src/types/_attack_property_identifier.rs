@@ -135,3 +135,18 @@ impl AttackPropertyIdentifier {
         }
     }
 }
+impl ::std::fmt::Display for AttackPropertyIdentifier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttackPropertyIdentifier::DestinationUrl => write!(f, "DESTINATION_URL"),
+            AttackPropertyIdentifier::Referrer => write!(f, "REFERRER"),
+            AttackPropertyIdentifier::SourceAsn => write!(f, "SOURCE_ASN"),
+            AttackPropertyIdentifier::SourceCountry => write!(f, "SOURCE_COUNTRY"),
+            AttackPropertyIdentifier::SourceIpAddress => write!(f, "SOURCE_IP_ADDRESS"),
+            AttackPropertyIdentifier::SourceUserAgent => write!(f, "SOURCE_USER_AGENT"),
+            AttackPropertyIdentifier::WordpressPingbackReflector => write!(f, "WORDPRESS_PINGBACK_REFLECTOR"),
+            AttackPropertyIdentifier::WordpressPingbackSource => write!(f, "WORDPRESS_PINGBACK_SOURCE"),
+            AttackPropertyIdentifier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

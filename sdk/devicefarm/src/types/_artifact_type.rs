@@ -255,3 +255,38 @@ impl ArtifactType {
         }
     }
 }
+impl ::std::fmt::Display for ArtifactType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArtifactType::AppiumJavaOutput => write!(f, "APPIUM_JAVA_OUTPUT"),
+            ArtifactType::AppiumJavaXmlOutput => write!(f, "APPIUM_JAVA_XML_OUTPUT"),
+            ArtifactType::AppiumPythonOutput => write!(f, "APPIUM_PYTHON_OUTPUT"),
+            ArtifactType::AppiumPythonXmlOutput => write!(f, "APPIUM_PYTHON_XML_OUTPUT"),
+            ArtifactType::AppiumServerOutput => write!(f, "APPIUM_SERVER_OUTPUT"),
+            ArtifactType::ApplicationCrashReport => write!(f, "APPLICATION_CRASH_REPORT"),
+            ArtifactType::AutomationOutput => write!(f, "AUTOMATION_OUTPUT"),
+            ArtifactType::CalabashJavaXmlOutput => write!(f, "CALABASH_JAVA_XML_OUTPUT"),
+            ArtifactType::CalabashJsonOutput => write!(f, "CALABASH_JSON_OUTPUT"),
+            ArtifactType::CalabashPrettyOutput => write!(f, "CALABASH_PRETTY_OUTPUT"),
+            ArtifactType::CalabashStandardOutput => write!(f, "CALABASH_STANDARD_OUTPUT"),
+            ArtifactType::CustomerArtifact => write!(f, "CUSTOMER_ARTIFACT"),
+            ArtifactType::CustomerArtifactLog => write!(f, "CUSTOMER_ARTIFACT_LOG"),
+            ArtifactType::DeviceLog => write!(f, "DEVICE_LOG"),
+            ArtifactType::ExerciserMonkeyOutput => write!(f, "EXERCISER_MONKEY_OUTPUT"),
+            ArtifactType::ExplorerEventLog => write!(f, "EXPLORER_EVENT_LOG"),
+            ArtifactType::ExplorerSummaryLog => write!(f, "EXPLORER_SUMMARY_LOG"),
+            ArtifactType::InstrumentationOutput => write!(f, "INSTRUMENTATION_OUTPUT"),
+            ArtifactType::MessageLog => write!(f, "MESSAGE_LOG"),
+            ArtifactType::ResultLog => write!(f, "RESULT_LOG"),
+            ArtifactType::Screenshot => write!(f, "SCREENSHOT"),
+            ArtifactType::ServiceLog => write!(f, "SERVICE_LOG"),
+            ArtifactType::TestspecOutput => write!(f, "TESTSPEC_OUTPUT"),
+            ArtifactType::UnknownValue => write!(f, "UNKNOWN"),
+            ArtifactType::Video => write!(f, "VIDEO"),
+            ArtifactType::VideoLog => write!(f, "VIDEO_LOG"),
+            ArtifactType::WebkitLog => write!(f, "WEBKIT_LOG"),
+            ArtifactType::XctestLog => write!(f, "XCTEST_LOG"),
+            ArtifactType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

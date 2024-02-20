@@ -96,3 +96,12 @@ impl DvbSubtitlingType {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubtitlingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubtitlingType::HearingImpaired => write!(f, "HEARING_IMPAIRED"),
+            DvbSubtitlingType::Standard => write!(f, "STANDARD"),
+            DvbSubtitlingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LastSyncStatus {
         }
     }
 }
+impl ::std::fmt::Display for LastSyncStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LastSyncStatus::Failed => write!(f, "FAILED"),
+            LastSyncStatus::Succeeded => write!(f, "SUCCEEDED"),
+            LastSyncStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

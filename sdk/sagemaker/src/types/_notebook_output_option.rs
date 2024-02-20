@@ -96,3 +96,12 @@ impl NotebookOutputOption {
         }
     }
 }
+impl ::std::fmt::Display for NotebookOutputOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotebookOutputOption::Allowed => write!(f, "Allowed"),
+            NotebookOutputOption::Disabled => write!(f, "Disabled"),
+            NotebookOutputOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl VoiceEngine {
         }
     }
 }
+impl ::std::fmt::Display for VoiceEngine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VoiceEngine::Neural => write!(f, "neural"),
+            VoiceEngine::Standard => write!(f, "standard"),
+            VoiceEngine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

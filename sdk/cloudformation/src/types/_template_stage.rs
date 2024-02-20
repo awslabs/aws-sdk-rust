@@ -96,3 +96,12 @@ impl TemplateStage {
         }
     }
 }
+impl ::std::fmt::Display for TemplateStage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemplateStage::Original => write!(f, "Original"),
+            TemplateStage::Processed => write!(f, "Processed"),
+            TemplateStage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

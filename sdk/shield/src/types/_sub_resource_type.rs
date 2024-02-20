@@ -96,3 +96,12 @@ impl SubResourceType {
         }
     }
 }
+impl ::std::fmt::Display for SubResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubResourceType::Ip => write!(f, "IP"),
+            SubResourceType::Url => write!(f, "URL"),
+            SubResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

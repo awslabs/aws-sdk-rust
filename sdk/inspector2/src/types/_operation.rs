@@ -106,3 +106,14 @@ impl Operation {
         }
     }
 }
+impl ::std::fmt::Display for Operation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Operation::DisableRepository => write!(f, "DISABLE_REPOSITORY"),
+            Operation::DisableScanning => write!(f, "DISABLE_SCANNING"),
+            Operation::EnableRepository => write!(f, "ENABLE_REPOSITORY"),
+            Operation::EnableScanning => write!(f, "ENABLE_SCANNING"),
+            Operation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

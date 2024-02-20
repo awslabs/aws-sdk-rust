@@ -106,3 +106,14 @@ impl FindingDetailsErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for FindingDetailsErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingDetailsErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            FindingDetailsErrorCode::FindingDetailsNotFound => write!(f, "FINDING_DETAILS_NOT_FOUND"),
+            FindingDetailsErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            FindingDetailsErrorCode::InvalidInput => write!(f, "INVALID_INPUT"),
+            FindingDetailsErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

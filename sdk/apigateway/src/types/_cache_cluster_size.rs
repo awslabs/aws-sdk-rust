@@ -126,3 +126,18 @@ impl CacheClusterSize {
         }
     }
 }
+impl ::std::fmt::Display for CacheClusterSize {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CacheClusterSize::Size0Point5Gb => write!(f, "0.5"),
+            CacheClusterSize::Size1Point6Gb => write!(f, "1.6"),
+            CacheClusterSize::Size118Gb => write!(f, "118"),
+            CacheClusterSize::Size13Point5Gb => write!(f, "13.5"),
+            CacheClusterSize::Size237Gb => write!(f, "237"),
+            CacheClusterSize::Size28Point4Gb => write!(f, "28.4"),
+            CacheClusterSize::Size58Point2Gb => write!(f, "58.2"),
+            CacheClusterSize::Size6Point1Gb => write!(f, "6.1"),
+            CacheClusterSize::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

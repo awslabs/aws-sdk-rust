@@ -91,3 +91,11 @@ impl PeeringType {
         }
     }
 }
+impl ::std::fmt::Display for PeeringType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PeeringType::TransitGateway => write!(f, "TRANSIT_GATEWAY"),
+            PeeringType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

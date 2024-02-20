@@ -153,3 +153,21 @@ impl JobEventType {
         }
     }
 }
+impl ::std::fmt::Display for JobEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobEventType::Cancelled => write!(f, "CANCELLED"),
+            JobEventType::Completed => write!(f, "COMPLETED"),
+            JobEventType::DeprioritizedDueToInactivity => write!(f, "DEPRIORITIZED_DUE_TO_INACTIVITY"),
+            JobEventType::DownloadingData => write!(f, "DOWNLOADING_DATA"),
+            JobEventType::Failed => write!(f, "FAILED"),
+            JobEventType::MaxRuntimeExceeded => write!(f, "MAX_RUNTIME_EXCEEDED"),
+            JobEventType::QueuedForExecution => write!(f, "QUEUED_FOR_EXECUTION"),
+            JobEventType::Running => write!(f, "RUNNING"),
+            JobEventType::StartingInstance => write!(f, "STARTING_INSTANCE"),
+            JobEventType::UploadingResults => write!(f, "UPLOADING_RESULTS"),
+            JobEventType::WaitingForPriority => write!(f, "WAITING_FOR_PRIORITY"),
+            JobEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

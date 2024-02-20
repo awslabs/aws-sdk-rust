@@ -111,3 +111,15 @@ impl RelativeDateType {
         }
     }
 }
+impl ::std::fmt::Display for RelativeDateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelativeDateType::Last => write!(f, "LAST"),
+            RelativeDateType::Next => write!(f, "NEXT"),
+            RelativeDateType::Now => write!(f, "NOW"),
+            RelativeDateType::Previous => write!(f, "PREVIOUS"),
+            RelativeDateType::This => write!(f, "THIS"),
+            RelativeDateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

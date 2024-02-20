@@ -101,3 +101,13 @@ impl GameServerInstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for GameServerInstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GameServerInstanceStatus::Active => write!(f, "ACTIVE"),
+            GameServerInstanceStatus::Draining => write!(f, "DRAINING"),
+            GameServerInstanceStatus::SpotTerminating => write!(f, "SPOT_TERMINATING"),
+            GameServerInstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

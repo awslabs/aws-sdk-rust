@@ -101,3 +101,13 @@ impl RouteOrigin {
         }
     }
 }
+impl ::std::fmt::Display for RouteOrigin {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteOrigin::CreateRoute => write!(f, "CreateRoute"),
+            RouteOrigin::CreateRouteTable => write!(f, "CreateRouteTable"),
+            RouteOrigin::EnableVgwRoutePropagation => write!(f, "EnableVgwRoutePropagation"),
+            RouteOrigin::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

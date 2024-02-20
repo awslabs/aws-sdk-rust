@@ -106,3 +106,14 @@ impl ScopeFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for ScopeFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScopeFilterKey::ObjectExtension => write!(f, "OBJECT_EXTENSION"),
+            ScopeFilterKey::ObjectKey => write!(f, "OBJECT_KEY"),
+            ScopeFilterKey::ObjectLastModifiedDate => write!(f, "OBJECT_LAST_MODIFIED_DATE"),
+            ScopeFilterKey::ObjectSize => write!(f, "OBJECT_SIZE"),
+            ScopeFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

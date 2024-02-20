@@ -96,3 +96,12 @@ impl MoveStatus {
         }
     }
 }
+impl ::std::fmt::Display for MoveStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MoveStatus::MovingToVpc => write!(f, "movingToVpc"),
+            MoveStatus::RestoringToClassic => write!(f, "restoringToClassic"),
+            MoveStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

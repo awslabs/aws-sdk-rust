@@ -101,3 +101,13 @@ impl ReachabilityStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReachabilityStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReachabilityStatus::Done => write!(f, "DONE"),
+            ReachabilityStatus::Expired => write!(f, "EXPIRED"),
+            ReachabilityStatus::Pending => write!(f, "PENDING"),
+            ReachabilityStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl EngineType {
         }
     }
 }
+impl ::std::fmt::Display for EngineType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EngineType::Activemq => write!(f, "ACTIVEMQ"),
+            EngineType::Rabbitmq => write!(f, "RABBITMQ"),
+            EngineType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

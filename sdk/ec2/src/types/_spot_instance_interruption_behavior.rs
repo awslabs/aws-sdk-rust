@@ -101,3 +101,13 @@ impl SpotInstanceInterruptionBehavior {
         }
     }
 }
+impl ::std::fmt::Display for SpotInstanceInterruptionBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpotInstanceInterruptionBehavior::Hibernate => write!(f, "hibernate"),
+            SpotInstanceInterruptionBehavior::Stop => write!(f, "stop"),
+            SpotInstanceInterruptionBehavior::Terminate => write!(f, "terminate"),
+            SpotInstanceInterruptionBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

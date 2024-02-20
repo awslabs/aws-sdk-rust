@@ -91,3 +91,11 @@ impl FleetCapacityReservationUsageStrategy {
         }
     }
 }
+impl ::std::fmt::Display for FleetCapacityReservationUsageStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetCapacityReservationUsageStrategy::UseCapacityReservationsFirst => write!(f, "use-capacity-reservations-first"),
+            FleetCapacityReservationUsageStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

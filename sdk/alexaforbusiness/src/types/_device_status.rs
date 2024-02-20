@@ -111,3 +111,15 @@ impl DeviceStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceStatus::Deregistered => write!(f, "DEREGISTERED"),
+            DeviceStatus::Failed => write!(f, "FAILED"),
+            DeviceStatus::Pending => write!(f, "PENDING"),
+            DeviceStatus::Ready => write!(f, "READY"),
+            DeviceStatus::WasOffline => write!(f, "WAS_OFFLINE"),
+            DeviceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

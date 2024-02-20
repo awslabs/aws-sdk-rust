@@ -219,3 +219,32 @@ impl AppType {
         }
     }
 }
+impl ::std::fmt::Display for AppType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppType::Cassandra => write!(f, "Cassandra"),
+            AppType::Db2 => write!(f, "DB2"),
+            AppType::DotNetFramework => write!(f, "DotNetFramework"),
+            AppType::Dotnet => write!(f, "Dotnet"),
+            AppType::Dotnetcore => write!(f, "DotnetCore"),
+            AppType::Websphere => write!(f, "IBM WebSphere"),
+            AppType::Iis => write!(f, "IIS"),
+            AppType::Jboss => write!(f, "JBoss"),
+            AppType::Java => write!(f, "Java"),
+            AppType::Mariadb => write!(f, "Maria DB"),
+            AppType::Mongodb => write!(f, "Mongo DB"),
+            AppType::Mysql => write!(f, "MySQL"),
+            AppType::Oracle => write!(f, "Oracle"),
+            AppType::Weblogic => write!(f, "Oracle WebLogic"),
+            AppType::Other => write!(f, "Other"),
+            AppType::Postgresqlserver => write!(f, "PostgreSQLServer"),
+            AppType::SqlServer => write!(f, "SQLServer"),
+            AppType::Spring => write!(f, "Spring"),
+            AppType::Sybase => write!(f, "Sybase"),
+            AppType::Tomcat => write!(f, "Tomcat"),
+            AppType::UnknownValue => write!(f, "Unknown"),
+            AppType::Visualbasic => write!(f, "Visual Basic"),
+            AppType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

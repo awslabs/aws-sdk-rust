@@ -213,3 +213,31 @@ impl LastUpdateStatusReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for LastUpdateStatusReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LastUpdateStatusReasonCode::DisabledKmsKey => write!(f, "DisabledKMSKey"),
+            LastUpdateStatusReasonCode::EfsioError => write!(f, "EFSIOError"),
+            LastUpdateStatusReasonCode::EfsMountConnectivityError => write!(f, "EFSMountConnectivityError"),
+            LastUpdateStatusReasonCode::EfsMountFailure => write!(f, "EFSMountFailure"),
+            LastUpdateStatusReasonCode::EfsMountTimeout => write!(f, "EFSMountTimeout"),
+            LastUpdateStatusReasonCode::EniLimitExceeded => write!(f, "EniLimitExceeded"),
+            LastUpdateStatusReasonCode::FunctionError => write!(f, "FunctionError"),
+            LastUpdateStatusReasonCode::ImageAccessDenied => write!(f, "ImageAccessDenied"),
+            LastUpdateStatusReasonCode::ImageDeleted => write!(f, "ImageDeleted"),
+            LastUpdateStatusReasonCode::InsufficientRolePermissions => write!(f, "InsufficientRolePermissions"),
+            LastUpdateStatusReasonCode::InternalError => write!(f, "InternalError"),
+            LastUpdateStatusReasonCode::InvalidConfiguration => write!(f, "InvalidConfiguration"),
+            LastUpdateStatusReasonCode::InvalidImage => write!(f, "InvalidImage"),
+            LastUpdateStatusReasonCode::InvalidRuntime => write!(f, "InvalidRuntime"),
+            LastUpdateStatusReasonCode::InvalidSecurityGroup => write!(f, "InvalidSecurityGroup"),
+            LastUpdateStatusReasonCode::InvalidStateKmsKey => write!(f, "InvalidStateKMSKey"),
+            LastUpdateStatusReasonCode::InvalidSubnet => write!(f, "InvalidSubnet"),
+            LastUpdateStatusReasonCode::InvalidZipFileException => write!(f, "InvalidZipFileException"),
+            LastUpdateStatusReasonCode::KmsKeyAccessDenied => write!(f, "KMSKeyAccessDenied"),
+            LastUpdateStatusReasonCode::KmsKeyNotFound => write!(f, "KMSKeyNotFound"),
+            LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => write!(f, "SubnetOutOfIPAddresses"),
+            LastUpdateStatusReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

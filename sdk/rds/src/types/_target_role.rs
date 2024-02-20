@@ -101,3 +101,13 @@ impl TargetRole {
         }
     }
 }
+impl ::std::fmt::Display for TargetRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetRole::ReadOnly => write!(f, "READ_ONLY"),
+            TargetRole::ReadWrite => write!(f, "READ_WRITE"),
+            TargetRole::UnknownValue => write!(f, "UNKNOWN"),
+            TargetRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

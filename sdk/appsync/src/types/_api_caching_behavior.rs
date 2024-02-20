@@ -96,3 +96,12 @@ impl ApiCachingBehavior {
         }
     }
 }
+impl ::std::fmt::Display for ApiCachingBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApiCachingBehavior::FullRequestCaching => write!(f, "FULL_REQUEST_CACHING"),
+            ApiCachingBehavior::PerResolverCaching => write!(f, "PER_RESOLVER_CACHING"),
+            ApiCachingBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

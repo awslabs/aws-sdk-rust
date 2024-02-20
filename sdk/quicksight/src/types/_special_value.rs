@@ -101,3 +101,13 @@ impl SpecialValue {
         }
     }
 }
+impl ::std::fmt::Display for SpecialValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpecialValue::Empty => write!(f, "EMPTY"),
+            SpecialValue::Null => write!(f, "NULL"),
+            SpecialValue::Other => write!(f, "OTHER"),
+            SpecialValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

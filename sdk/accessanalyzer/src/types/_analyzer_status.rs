@@ -106,3 +106,14 @@ impl AnalyzerStatus {
         }
     }
 }
+impl ::std::fmt::Display for AnalyzerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyzerStatus::Active => write!(f, "ACTIVE"),
+            AnalyzerStatus::Creating => write!(f, "CREATING"),
+            AnalyzerStatus::Disabled => write!(f, "DISABLED"),
+            AnalyzerStatus::Failed => write!(f, "FAILED"),
+            AnalyzerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

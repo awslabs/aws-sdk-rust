@@ -101,3 +101,13 @@ impl VmManagerType {
         }
     }
 }
+impl ::std::fmt::Display for VmManagerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VmManagerType::HyperVManager => write!(f, "HYPERV-MANAGER"),
+            VmManagerType::Scvmm => write!(f, "SCVMM"),
+            VmManagerType::VSphere => write!(f, "VSPHERE"),
+            VmManagerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

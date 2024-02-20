@@ -96,3 +96,12 @@ impl FieldNamespace {
         }
     }
 }
+impl ::std::fmt::Display for FieldNamespace {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FieldNamespace::Custom => write!(f, "Custom"),
+            FieldNamespace::System => write!(f, "System"),
+            FieldNamespace::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

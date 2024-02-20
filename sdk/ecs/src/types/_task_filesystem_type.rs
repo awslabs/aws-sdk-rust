@@ -101,3 +101,13 @@ impl TaskFilesystemType {
         }
     }
 }
+impl ::std::fmt::Display for TaskFilesystemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskFilesystemType::Ext3 => write!(f, "ext3"),
+            TaskFilesystemType::Ext4 => write!(f, "ext4"),
+            TaskFilesystemType::Xfs => write!(f, "xfs"),
+            TaskFilesystemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

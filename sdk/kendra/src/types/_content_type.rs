@@ -159,3 +159,22 @@ impl ContentType {
         }
     }
 }
+impl ::std::fmt::Display for ContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentType::Csv => write!(f, "CSV"),
+            ContentType::Html => write!(f, "HTML"),
+            ContentType::Json => write!(f, "JSON"),
+            ContentType::Md => write!(f, "MD"),
+            ContentType::MsExcel => write!(f, "MS_EXCEL"),
+            ContentType::MsWord => write!(f, "MS_WORD"),
+            ContentType::Pdf => write!(f, "PDF"),
+            ContentType::PlainText => write!(f, "PLAIN_TEXT"),
+            ContentType::Ppt => write!(f, "PPT"),
+            ContentType::Rtf => write!(f, "RTF"),
+            ContentType::Xml => write!(f, "XML"),
+            ContentType::Xslt => write!(f, "XSLT"),
+            ContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl IdentityProviderType {
         }
     }
 }
+impl ::std::fmt::Display for IdentityProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IdentityProviderType::Facebook => write!(f, "Facebook"),
+            IdentityProviderType::Google => write!(f, "Google"),
+            IdentityProviderType::LoginWithAmazon => write!(f, "LoginWithAmazon"),
+            IdentityProviderType::Oidc => write!(f, "OIDC"),
+            IdentityProviderType::Saml => write!(f, "SAML"),
+            IdentityProviderType::SignInWithApple => write!(f, "SignInWithApple"),
+            IdentityProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

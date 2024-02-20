@@ -106,3 +106,14 @@ impl SharedAccess {
         }
     }
 }
+impl ::std::fmt::Display for SharedAccess {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SharedAccess::External => write!(f, "EXTERNAL"),
+            SharedAccess::Internal => write!(f, "INTERNAL"),
+            SharedAccess::NotShared => write!(f, "NOT_SHARED"),
+            SharedAccess::UnknownValue => write!(f, "UNKNOWN"),
+            SharedAccess::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

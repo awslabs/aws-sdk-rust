@@ -106,3 +106,14 @@ impl LayoutElementType {
         }
     }
 }
+impl ::std::fmt::Display for LayoutElementType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LayoutElementType::FilterControl => write!(f, "FILTER_CONTROL"),
+            LayoutElementType::ParameterControl => write!(f, "PARAMETER_CONTROL"),
+            LayoutElementType::TextBox => write!(f, "TEXT_BOX"),
+            LayoutElementType::Visual => write!(f, "VISUAL"),
+            LayoutElementType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

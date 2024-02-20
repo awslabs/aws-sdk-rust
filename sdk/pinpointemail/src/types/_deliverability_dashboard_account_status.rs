@@ -103,3 +103,13 @@ impl DeliverabilityDashboardAccountStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeliverabilityDashboardAccountStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeliverabilityDashboardAccountStatus::Active => write!(f, "ACTIVE"),
+            DeliverabilityDashboardAccountStatus::Disabled => write!(f, "DISABLED"),
+            DeliverabilityDashboardAccountStatus::PendingExpiration => write!(f, "PENDING_EXPIRATION"),
+            DeliverabilityDashboardAccountStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

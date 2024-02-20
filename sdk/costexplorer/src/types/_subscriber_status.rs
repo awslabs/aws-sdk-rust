@@ -96,3 +96,12 @@ impl SubscriberStatus {
         }
     }
 }
+impl ::std::fmt::Display for SubscriberStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubscriberStatus::Confirmed => write!(f, "CONFIRMED"),
+            SubscriberStatus::Declined => write!(f, "DECLINED"),
+            SubscriberStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

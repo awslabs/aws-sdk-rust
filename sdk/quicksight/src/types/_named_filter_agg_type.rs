@@ -159,3 +159,22 @@ impl NamedFilterAggType {
         }
     }
 }
+impl ::std::fmt::Display for NamedFilterAggType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NamedFilterAggType::Average => write!(f, "AVERAGE"),
+            NamedFilterAggType::Count => write!(f, "COUNT"),
+            NamedFilterAggType::DistinctCount => write!(f, "DISTINCT_COUNT"),
+            NamedFilterAggType::Max => write!(f, "MAX"),
+            NamedFilterAggType::Median => write!(f, "MEDIAN"),
+            NamedFilterAggType::Min => write!(f, "MIN"),
+            NamedFilterAggType::NoAggregation => write!(f, "NO_AGGREGATION"),
+            NamedFilterAggType::Stdev => write!(f, "STDEV"),
+            NamedFilterAggType::Stdevp => write!(f, "STDEVP"),
+            NamedFilterAggType::Sum => write!(f, "SUM"),
+            NamedFilterAggType::Var => write!(f, "VAR"),
+            NamedFilterAggType::Varp => write!(f, "VARP"),
+            NamedFilterAggType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

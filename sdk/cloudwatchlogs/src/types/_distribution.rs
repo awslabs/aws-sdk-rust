@@ -97,3 +97,12 @@ impl Distribution {
         }
     }
 }
+impl ::std::fmt::Display for Distribution {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Distribution::ByLogStream => write!(f, "ByLogStream"),
+            Distribution::Random => write!(f, "Random"),
+            Distribution::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

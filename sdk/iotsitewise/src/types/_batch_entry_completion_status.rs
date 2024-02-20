@@ -96,3 +96,12 @@ impl BatchEntryCompletionStatus {
         }
     }
 }
+impl ::std::fmt::Display for BatchEntryCompletionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchEntryCompletionStatus::Error => write!(f, "ERROR"),
+            BatchEntryCompletionStatus::Success => write!(f, "SUCCESS"),
+            BatchEntryCompletionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

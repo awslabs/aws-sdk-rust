@@ -96,3 +96,12 @@ impl HubContentType {
         }
     }
 }
+impl ::std::fmt::Display for HubContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HubContentType::Model => write!(f, "Model"),
+            HubContentType::Notebook => write!(f, "Notebook"),
+            HubContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

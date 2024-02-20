@@ -96,3 +96,12 @@ impl ContactFlowState {
         }
     }
 }
+impl ::std::fmt::Display for ContactFlowState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContactFlowState::Active => write!(f, "ACTIVE"),
+            ContactFlowState::Archived => write!(f, "ARCHIVED"),
+            ContactFlowState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

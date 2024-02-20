@@ -96,3 +96,12 @@ impl ExecutorType {
         }
     }
 }
+impl ::std::fmt::Display for ExecutorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutorType::JobWorker => write!(f, "JobWorker"),
+            ExecutorType::Lambda => write!(f, "Lambda"),
+            ExecutorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl HubSortBy {
         }
     }
 }
+impl ::std::fmt::Display for HubSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HubSortBy::AccountIdOwner => write!(f, "AccountIdOwner"),
+            HubSortBy::CreationTime => write!(f, "CreationTime"),
+            HubSortBy::HubName => write!(f, "HubName"),
+            HubSortBy::HubStatus => write!(f, "HubStatus"),
+            HubSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

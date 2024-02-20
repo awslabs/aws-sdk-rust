@@ -111,3 +111,14 @@ impl CancelBatchErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for CancelBatchErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CancelBatchErrorCode::FleetRequestIdDoesNotExist => write!(f, "fleetRequestIdDoesNotExist"),
+            CancelBatchErrorCode::FleetRequestIdMalformed => write!(f, "fleetRequestIdMalformed"),
+            CancelBatchErrorCode::FleetRequestNotInCancellableState => write!(f, "fleetRequestNotInCancellableState"),
+            CancelBatchErrorCode::UnexpectedError => write!(f, "unexpectedError"),
+            CancelBatchErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

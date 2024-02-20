@@ -96,3 +96,12 @@ impl InputType {
         }
     }
 }
+impl ::std::fmt::Display for InputType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputType::PostCall => write!(f, "POST_CALL"),
+            InputType::RealTime => write!(f, "REAL_TIME"),
+            InputType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -249,3 +249,37 @@ impl Event {
         }
     }
 }
+impl ::std::fmt::Display for Event {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Event::S3IntelligentTiering => write!(f, "s3:IntelligentTiering"),
+            Event::S3LifecycleExpiration => write!(f, "s3:LifecycleExpiration:*"),
+            Event::S3LifecycleExpirationDelete => write!(f, "s3:LifecycleExpiration:Delete"),
+            Event::S3LifecycleExpirationDeleteMarkerCreated => write!(f, "s3:LifecycleExpiration:DeleteMarkerCreated"),
+            Event::S3LifecycleTransition => write!(f, "s3:LifecycleTransition"),
+            Event::S3ObjectAclPut => write!(f, "s3:ObjectAcl:Put"),
+            Event::S3ObjectCreated => write!(f, "s3:ObjectCreated:*"),
+            Event::S3ObjectCreatedCompleteMultipartUpload => write!(f, "s3:ObjectCreated:CompleteMultipartUpload"),
+            Event::S3ObjectCreatedCopy => write!(f, "s3:ObjectCreated:Copy"),
+            Event::S3ObjectCreatedPost => write!(f, "s3:ObjectCreated:Post"),
+            Event::S3ObjectCreatedPut => write!(f, "s3:ObjectCreated:Put"),
+            Event::S3ObjectRemoved => write!(f, "s3:ObjectRemoved:*"),
+            Event::S3ObjectRemovedDelete => write!(f, "s3:ObjectRemoved:Delete"),
+            Event::S3ObjectRemovedDeleteMarkerCreated => write!(f, "s3:ObjectRemoved:DeleteMarkerCreated"),
+            Event::S3ObjectRestore => write!(f, "s3:ObjectRestore:*"),
+            Event::S3ObjectRestoreCompleted => write!(f, "s3:ObjectRestore:Completed"),
+            Event::S3ObjectRestoreDelete => write!(f, "s3:ObjectRestore:Delete"),
+            Event::S3ObjectRestorePost => write!(f, "s3:ObjectRestore:Post"),
+            Event::S3ObjectTagging => write!(f, "s3:ObjectTagging:*"),
+            Event::S3ObjectTaggingDelete => write!(f, "s3:ObjectTagging:Delete"),
+            Event::S3ObjectTaggingPut => write!(f, "s3:ObjectTagging:Put"),
+            Event::S3ReducedRedundancyLostObject => write!(f, "s3:ReducedRedundancyLostObject"),
+            Event::S3Replication => write!(f, "s3:Replication:*"),
+            Event::S3ReplicationOperationFailedReplication => write!(f, "s3:Replication:OperationFailedReplication"),
+            Event::S3ReplicationOperationMissedThreshold => write!(f, "s3:Replication:OperationMissedThreshold"),
+            Event::S3ReplicationOperationNotTracked => write!(f, "s3:Replication:OperationNotTracked"),
+            Event::S3ReplicationOperationReplicatedAfterThreshold => write!(f, "s3:Replication:OperationReplicatedAfterThreshold"),
+            Event::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

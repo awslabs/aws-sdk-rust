@@ -96,3 +96,12 @@ impl VirtualizationType {
         }
     }
 }
+impl ::std::fmt::Display for VirtualizationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VirtualizationType::Hvm => write!(f, "hvm"),
+            VirtualizationType::Paravirtual => write!(f, "paravirtual"),
+            VirtualizationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

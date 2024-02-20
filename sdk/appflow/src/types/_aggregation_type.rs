@@ -96,3 +96,12 @@ impl AggregationType {
         }
     }
 }
+impl ::std::fmt::Display for AggregationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregationType::None => write!(f, "None"),
+            AggregationType::SingleFile => write!(f, "SingleFile"),
+            AggregationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

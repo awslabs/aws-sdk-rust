@@ -96,3 +96,12 @@ impl OsType {
         }
     }
 }
+impl ::std::fmt::Display for OsType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OsType::Linux => write!(f, "LINUX"),
+            OsType::Windows => write!(f, "WINDOWS"),
+            OsType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

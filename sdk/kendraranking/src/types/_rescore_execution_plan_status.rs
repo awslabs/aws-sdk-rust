@@ -111,3 +111,15 @@ impl RescoreExecutionPlanStatus {
         }
     }
 }
+impl ::std::fmt::Display for RescoreExecutionPlanStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RescoreExecutionPlanStatus::Active => write!(f, "ACTIVE"),
+            RescoreExecutionPlanStatus::Creating => write!(f, "CREATING"),
+            RescoreExecutionPlanStatus::Deleting => write!(f, "DELETING"),
+            RescoreExecutionPlanStatus::Failed => write!(f, "FAILED"),
+            RescoreExecutionPlanStatus::Updating => write!(f, "UPDATING"),
+            RescoreExecutionPlanStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

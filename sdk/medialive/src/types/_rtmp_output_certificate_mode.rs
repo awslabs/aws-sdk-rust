@@ -96,3 +96,12 @@ impl RtmpOutputCertificateMode {
         }
     }
 }
+impl ::std::fmt::Display for RtmpOutputCertificateMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RtmpOutputCertificateMode::SelfSigned => write!(f, "SELF_SIGNED"),
+            RtmpOutputCertificateMode::VerifyAuthenticity => write!(f, "VERIFY_AUTHENTICITY"),
+            RtmpOutputCertificateMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

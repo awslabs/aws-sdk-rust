@@ -106,3 +106,14 @@ impl ParameterType {
         }
     }
 }
+impl ::std::fmt::Display for ParameterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParameterType::Categorical => write!(f, "Categorical"),
+            ParameterType::Continuous => write!(f, "Continuous"),
+            ParameterType::FreeText => write!(f, "FreeText"),
+            ParameterType::Integer => write!(f, "Integer"),
+            ParameterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

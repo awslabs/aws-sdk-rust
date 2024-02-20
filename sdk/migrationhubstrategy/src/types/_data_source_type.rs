@@ -111,3 +111,14 @@ impl DataSourceType {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceType::Ads => write!(f, "ApplicationDiscoveryService"),
+            DataSourceType::Import => write!(f, "Import"),
+            DataSourceType::Mpa => write!(f, "MPA"),
+            DataSourceType::MhsrCollector => write!(f, "StrategyRecommendationsApplicationDataCollector"),
+            DataSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

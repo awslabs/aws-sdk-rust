@@ -141,3 +141,19 @@ impl RuntimeEnvironment {
         }
     }
 }
+impl ::std::fmt::Display for RuntimeEnvironment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuntimeEnvironment::Flink111 => write!(f, "FLINK-1_11"),
+            RuntimeEnvironment::Flink113 => write!(f, "FLINK-1_13"),
+            RuntimeEnvironment::Flink115 => write!(f, "FLINK-1_15"),
+            RuntimeEnvironment::Flink16 => write!(f, "FLINK-1_6"),
+            RuntimeEnvironment::Flink18 => write!(f, "FLINK-1_8"),
+            RuntimeEnvironment::Sql10 => write!(f, "SQL-1_0"),
+            RuntimeEnvironment::ZeppelinFlink10 => write!(f, "ZEPPELIN-FLINK-1_0"),
+            RuntimeEnvironment::ZeppelinFlink20 => write!(f, "ZEPPELIN-FLINK-2_0"),
+            RuntimeEnvironment::ZeppelinFlink30 => write!(f, "ZEPPELIN-FLINK-3_0"),
+            RuntimeEnvironment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

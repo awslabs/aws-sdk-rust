@@ -96,3 +96,12 @@ impl PhysicalIdentifierType {
         }
     }
 }
+impl ::std::fmt::Display for PhysicalIdentifierType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhysicalIdentifierType::Arn => write!(f, "Arn"),
+            PhysicalIdentifierType::Native => write!(f, "Native"),
+            PhysicalIdentifierType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

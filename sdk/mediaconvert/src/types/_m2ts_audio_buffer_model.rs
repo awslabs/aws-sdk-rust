@@ -96,3 +96,12 @@ impl M2tsAudioBufferModel {
         }
     }
 }
+impl ::std::fmt::Display for M2tsAudioBufferModel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsAudioBufferModel::Atsc => write!(f, "ATSC"),
+            M2tsAudioBufferModel::Dvb => write!(f, "DVB"),
+            M2tsAudioBufferModel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

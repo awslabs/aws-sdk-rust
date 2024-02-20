@@ -96,3 +96,12 @@ impl SupportedStorageEnum {
         }
     }
 }
+impl ::std::fmt::Display for SupportedStorageEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SupportedStorageEnum::Ebs => write!(f, "EBS"),
+            SupportedStorageEnum::S3 => write!(f, "S3"),
+            SupportedStorageEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

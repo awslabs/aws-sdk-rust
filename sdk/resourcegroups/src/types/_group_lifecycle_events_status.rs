@@ -106,3 +106,14 @@ impl GroupLifecycleEventsStatus {
         }
     }
 }
+impl ::std::fmt::Display for GroupLifecycleEventsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupLifecycleEventsStatus::Active => write!(f, "ACTIVE"),
+            GroupLifecycleEventsStatus::Error => write!(f, "ERROR"),
+            GroupLifecycleEventsStatus::Inactive => write!(f, "INACTIVE"),
+            GroupLifecycleEventsStatus::InProgress => write!(f, "IN_PROGRESS"),
+            GroupLifecycleEventsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

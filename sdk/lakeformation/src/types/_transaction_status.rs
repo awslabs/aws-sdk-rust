@@ -106,3 +106,14 @@ impl TransactionStatus {
         }
     }
 }
+impl ::std::fmt::Display for TransactionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransactionStatus::Aborted => write!(f, "ABORTED"),
+            TransactionStatus::Active => write!(f, "ACTIVE"),
+            TransactionStatus::Committed => write!(f, "COMMITTED"),
+            TransactionStatus::CommitInProgress => write!(f, "COMMIT_IN_PROGRESS"),
+            TransactionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl FormActionType {
         }
     }
 }
+impl ::std::fmt::Display for FormActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FormActionType::Create => write!(f, "create"),
+            FormActionType::Update => write!(f, "update"),
+            FormActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

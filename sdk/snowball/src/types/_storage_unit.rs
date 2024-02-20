@@ -91,3 +91,11 @@ impl StorageUnit {
         }
     }
 }
+impl ::std::fmt::Display for StorageUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageUnit::Tb => write!(f, "TB"),
+            StorageUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

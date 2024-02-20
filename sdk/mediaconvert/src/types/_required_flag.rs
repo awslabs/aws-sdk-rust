@@ -96,3 +96,12 @@ impl RequiredFlag {
         }
     }
 }
+impl ::std::fmt::Display for RequiredFlag {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RequiredFlag::Disabled => write!(f, "DISABLED"),
+            RequiredFlag::Enabled => write!(f, "ENABLED"),
+            RequiredFlag::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

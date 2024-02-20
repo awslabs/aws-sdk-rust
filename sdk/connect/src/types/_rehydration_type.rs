@@ -96,3 +96,12 @@ impl RehydrationType {
         }
     }
 }
+impl ::std::fmt::Display for RehydrationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RehydrationType::EntirePastSession => write!(f, "ENTIRE_PAST_SESSION"),
+            RehydrationType::FromSegment => write!(f, "FROM_SEGMENT"),
+            RehydrationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

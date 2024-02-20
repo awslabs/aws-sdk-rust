@@ -101,3 +101,13 @@ impl SourceCollectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for SourceCollectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceCollectionStatus::Collecting => write!(f, "COLLECTING"),
+            SourceCollectionStatus::Misconfigured => write!(f, "MISCONFIGURED"),
+            SourceCollectionStatus::NotCollecting => write!(f, "NOT_COLLECTING"),
+            SourceCollectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

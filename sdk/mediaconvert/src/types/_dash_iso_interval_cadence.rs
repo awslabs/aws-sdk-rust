@@ -96,3 +96,12 @@ impl DashIsoIntervalCadence {
         }
     }
 }
+impl ::std::fmt::Display for DashIsoIntervalCadence {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashIsoIntervalCadence::FollowCustom => write!(f, "FOLLOW_CUSTOM"),
+            DashIsoIntervalCadence::FollowIframe => write!(f, "FOLLOW_IFRAME"),
+            DashIsoIntervalCadence::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

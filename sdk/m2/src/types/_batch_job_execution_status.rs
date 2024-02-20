@@ -141,3 +141,19 @@ impl BatchJobExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for BatchJobExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchJobExecutionStatus::Cancelled => write!(f, "Cancelled"),
+            BatchJobExecutionStatus::Cancelling => write!(f, "Cancelling"),
+            BatchJobExecutionStatus::Dispatch => write!(f, "Dispatching"),
+            BatchJobExecutionStatus::Failed => write!(f, "Failed"),
+            BatchJobExecutionStatus::Holding => write!(f, "Holding"),
+            BatchJobExecutionStatus::Running => write!(f, "Running"),
+            BatchJobExecutionStatus::Submitting => write!(f, "Submitting"),
+            BatchJobExecutionStatus::Succeeded => write!(f, "Succeeded"),
+            BatchJobExecutionStatus::SucceededWithWarning => write!(f, "Succeeded With Warning"),
+            BatchJobExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

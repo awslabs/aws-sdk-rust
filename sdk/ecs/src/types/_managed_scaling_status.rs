@@ -96,3 +96,12 @@ impl ManagedScalingStatus {
         }
     }
 }
+impl ::std::fmt::Display for ManagedScalingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ManagedScalingStatus::Disabled => write!(f, "DISABLED"),
+            ManagedScalingStatus::Enabled => write!(f, "ENABLED"),
+            ManagedScalingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

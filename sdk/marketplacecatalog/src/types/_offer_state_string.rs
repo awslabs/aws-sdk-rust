@@ -96,3 +96,12 @@ impl OfferStateString {
         }
     }
 }
+impl ::std::fmt::Display for OfferStateString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OfferStateString::Draft => write!(f, "Draft"),
+            OfferStateString::Released => write!(f, "Released"),
+            OfferStateString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

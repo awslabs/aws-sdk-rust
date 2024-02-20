@@ -121,3 +121,17 @@ impl UsageStatisticsFilterComparator {
         }
     }
 }
+impl ::std::fmt::Display for UsageStatisticsFilterComparator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageStatisticsFilterComparator::Contains => write!(f, "CONTAINS"),
+            UsageStatisticsFilterComparator::Eq => write!(f, "EQ"),
+            UsageStatisticsFilterComparator::Gt => write!(f, "GT"),
+            UsageStatisticsFilterComparator::Gte => write!(f, "GTE"),
+            UsageStatisticsFilterComparator::Lt => write!(f, "LT"),
+            UsageStatisticsFilterComparator::Lte => write!(f, "LTE"),
+            UsageStatisticsFilterComparator::Ne => write!(f, "NE"),
+            UsageStatisticsFilterComparator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -143,3 +143,21 @@ impl FixedAfd {
         }
     }
 }
+impl ::std::fmt::Display for FixedAfd {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FixedAfd::Afd0000 => write!(f, "AFD_0000"),
+            FixedAfd::Afd0010 => write!(f, "AFD_0010"),
+            FixedAfd::Afd0011 => write!(f, "AFD_0011"),
+            FixedAfd::Afd0100 => write!(f, "AFD_0100"),
+            FixedAfd::Afd1000 => write!(f, "AFD_1000"),
+            FixedAfd::Afd1001 => write!(f, "AFD_1001"),
+            FixedAfd::Afd1010 => write!(f, "AFD_1010"),
+            FixedAfd::Afd1011 => write!(f, "AFD_1011"),
+            FixedAfd::Afd1101 => write!(f, "AFD_1101"),
+            FixedAfd::Afd1110 => write!(f, "AFD_1110"),
+            FixedAfd::Afd1111 => write!(f, "AFD_1111"),
+            FixedAfd::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

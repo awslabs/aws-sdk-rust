@@ -96,3 +96,12 @@ impl ProfileType {
         }
     }
 }
+impl ::std::fmt::Display for ProfileType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProfileType::Local => write!(f, "LOCAL"),
+            ProfileType::Partner => write!(f, "PARTNER"),
+            ProfileType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

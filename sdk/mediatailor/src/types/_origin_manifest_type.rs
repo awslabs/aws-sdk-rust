@@ -96,3 +96,12 @@ impl OriginManifestType {
         }
     }
 }
+impl ::std::fmt::Display for OriginManifestType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginManifestType::MultiPeriod => write!(f, "MULTI_PERIOD"),
+            OriginManifestType::SinglePeriod => write!(f, "SINGLE_PERIOD"),
+            OriginManifestType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

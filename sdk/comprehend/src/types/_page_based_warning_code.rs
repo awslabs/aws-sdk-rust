@@ -99,3 +99,14 @@ impl PageBasedWarningCode {
         }
     }
 }
+impl ::std::fmt::Display for PageBasedWarningCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PageBasedWarningCode::InferencingNativeDocumentWithPlaintextTrainedModel => {
+                write!(f, "INFERENCING_NATIVE_DOCUMENT_WITH_PLAINTEXT_TRAINED_MODEL")
+            }
+            PageBasedWarningCode::InferencingPlaintextWithNativeTrainedModel => write!(f, "INFERENCING_PLAINTEXT_WITH_NATIVE_TRAINED_MODEL"),
+            PageBasedWarningCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

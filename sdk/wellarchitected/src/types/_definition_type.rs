@@ -96,3 +96,12 @@ impl DefinitionType {
         }
     }
 }
+impl ::std::fmt::Display for DefinitionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DefinitionType::AppRegistry => write!(f, "APP_REGISTRY"),
+            DefinitionType::WorkloadMetadata => write!(f, "WORKLOAD_METADATA"),
+            DefinitionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

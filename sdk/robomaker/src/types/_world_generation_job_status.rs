@@ -121,3 +121,17 @@ impl WorldGenerationJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorldGenerationJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorldGenerationJobStatus::Canceled => write!(f, "Canceled"),
+            WorldGenerationJobStatus::Canceling => write!(f, "Canceling"),
+            WorldGenerationJobStatus::Completed => write!(f, "Completed"),
+            WorldGenerationJobStatus::Failed => write!(f, "Failed"),
+            WorldGenerationJobStatus::PartialFailed => write!(f, "PartialFailed"),
+            WorldGenerationJobStatus::Pending => write!(f, "Pending"),
+            WorldGenerationJobStatus::Running => write!(f, "Running"),
+            WorldGenerationJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

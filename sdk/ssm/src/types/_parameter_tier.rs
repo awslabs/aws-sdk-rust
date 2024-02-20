@@ -101,3 +101,13 @@ impl ParameterTier {
         }
     }
 }
+impl ::std::fmt::Display for ParameterTier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParameterTier::Advanced => write!(f, "Advanced"),
+            ParameterTier::IntelligentTiering => write!(f, "Intelligent-Tiering"),
+            ParameterTier::Standard => write!(f, "Standard"),
+            ParameterTier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

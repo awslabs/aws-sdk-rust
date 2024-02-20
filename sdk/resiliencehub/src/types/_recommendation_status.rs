@@ -106,3 +106,14 @@ impl RecommendationStatus {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationStatus::Excluded => write!(f, "Excluded"),
+            RecommendationStatus::Implemented => write!(f, "Implemented"),
+            RecommendationStatus::Inactive => write!(f, "Inactive"),
+            RecommendationStatus::NotImplemented => write!(f, "NotImplemented"),
+            RecommendationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -131,3 +131,19 @@ impl ConnectorConfigProvider {
         }
     }
 }
+impl ::std::fmt::Display for ConnectorConfigProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectorConfigProvider::Aks => write!(f, "AKS"),
+            ConnectorConfigProvider::Anthos => write!(f, "ANTHOS"),
+            ConnectorConfigProvider::Ec2 => write!(f, "EC2"),
+            ConnectorConfigProvider::EksAnywhere => write!(f, "EKS_ANYWHERE"),
+            ConnectorConfigProvider::Gke => write!(f, "GKE"),
+            ConnectorConfigProvider::Openshift => write!(f, "OPENSHIFT"),
+            ConnectorConfigProvider::Other => write!(f, "OTHER"),
+            ConnectorConfigProvider::Rancher => write!(f, "RANCHER"),
+            ConnectorConfigProvider::Tanzu => write!(f, "TANZU"),
+            ConnectorConfigProvider::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

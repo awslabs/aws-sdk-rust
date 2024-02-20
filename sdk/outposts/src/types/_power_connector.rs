@@ -106,3 +106,14 @@ impl PowerConnector {
         }
     }
 }
+impl ::std::fmt::Display for PowerConnector {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PowerConnector::Ah530P7W => write!(f, "AH530P7W"),
+            PowerConnector::Ah532P6W => write!(f, "AH532P6W"),
+            PowerConnector::Iec309 => write!(f, "IEC309"),
+            PowerConnector::L630P => write!(f, "L6_30P"),
+            PowerConnector::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

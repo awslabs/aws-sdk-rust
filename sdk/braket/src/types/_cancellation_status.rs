@@ -96,3 +96,12 @@ impl CancellationStatus {
         }
     }
 }
+impl ::std::fmt::Display for CancellationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CancellationStatus::Cancelled => write!(f, "CANCELLED"),
+            CancellationStatus::Cancelling => write!(f, "CANCELLING"),
+            CancellationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

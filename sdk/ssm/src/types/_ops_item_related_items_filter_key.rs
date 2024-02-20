@@ -101,3 +101,13 @@ impl OpsItemRelatedItemsFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for OpsItemRelatedItemsFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpsItemRelatedItemsFilterKey::AssociationId => write!(f, "AssociationId"),
+            OpsItemRelatedItemsFilterKey::ResourceType => write!(f, "ResourceType"),
+            OpsItemRelatedItemsFilterKey::ResourceUri => write!(f, "ResourceUri"),
+            OpsItemRelatedItemsFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

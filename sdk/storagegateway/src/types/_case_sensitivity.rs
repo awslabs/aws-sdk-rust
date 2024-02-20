@@ -96,3 +96,12 @@ impl CaseSensitivity {
         }
     }
 }
+impl ::std::fmt::Display for CaseSensitivity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CaseSensitivity::CaseSensitive => write!(f, "CaseSensitive"),
+            CaseSensitivity::ClientSpecified => write!(f, "ClientSpecified"),
+            CaseSensitivity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

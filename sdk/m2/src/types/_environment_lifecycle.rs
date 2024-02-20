@@ -111,3 +111,15 @@ impl EnvironmentLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentLifecycle::Available => write!(f, "Available"),
+            EnvironmentLifecycle::Creating => write!(f, "Creating"),
+            EnvironmentLifecycle::Deleting => write!(f, "Deleting"),
+            EnvironmentLifecycle::Failed => write!(f, "Failed"),
+            EnvironmentLifecycle::Updating => write!(f, "Updating"),
+            EnvironmentLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

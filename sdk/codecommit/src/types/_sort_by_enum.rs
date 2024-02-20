@@ -96,3 +96,12 @@ impl SortByEnum {
         }
     }
 }
+impl ::std::fmt::Display for SortByEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortByEnum::ModifiedDate => write!(f, "lastModifiedDate"),
+            SortByEnum::RepositoryName => write!(f, "repositoryName"),
+            SortByEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

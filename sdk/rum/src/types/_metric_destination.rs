@@ -96,3 +96,12 @@ impl MetricDestination {
         }
     }
 }
+impl ::std::fmt::Display for MetricDestination {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricDestination::CloudWatch => write!(f, "CloudWatch"),
+            MetricDestination::Evidently => write!(f, "Evidently"),
+            MetricDestination::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

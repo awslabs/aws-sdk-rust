@@ -96,3 +96,12 @@ impl ContentModerationAggregateBy {
         }
     }
 }
+impl ::std::fmt::Display for ContentModerationAggregateBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentModerationAggregateBy::Segments => write!(f, "SEGMENTS"),
+            ContentModerationAggregateBy::Timestamps => write!(f, "TIMESTAMPS"),
+            ContentModerationAggregateBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

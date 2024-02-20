@@ -96,3 +96,12 @@ impl ImportMode {
         }
     }
 }
+impl ::std::fmt::Display for ImportMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportMode::Full => write!(f, "FULL"),
+            ImportMode::Incremental => write!(f, "INCREMENTAL"),
+            ImportMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

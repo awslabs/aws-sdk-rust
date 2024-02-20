@@ -96,3 +96,12 @@ impl AddOnType {
         }
     }
 }
+impl ::std::fmt::Display for AddOnType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AddOnType::AutoSnapshot => write!(f, "AutoSnapshot"),
+            AddOnType::StopInstanceOnIdle => write!(f, "StopInstanceOnIdle"),
+            AddOnType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

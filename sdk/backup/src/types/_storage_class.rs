@@ -101,3 +101,13 @@ impl StorageClass {
         }
     }
 }
+impl ::std::fmt::Display for StorageClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageClass::Cold => write!(f, "COLD"),
+            StorageClass::Deleted => write!(f, "DELETED"),
+            StorageClass::Warm => write!(f, "WARM"),
+            StorageClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

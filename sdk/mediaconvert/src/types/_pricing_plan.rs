@@ -96,3 +96,12 @@ impl PricingPlan {
         }
     }
 }
+impl ::std::fmt::Display for PricingPlan {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PricingPlan::OnDemand => write!(f, "ON_DEMAND"),
+            PricingPlan::Reserved => write!(f, "RESERVED"),
+            PricingPlan::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

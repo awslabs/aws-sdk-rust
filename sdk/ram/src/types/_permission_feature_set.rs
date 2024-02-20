@@ -101,3 +101,13 @@ impl PermissionFeatureSet {
         }
     }
 }
+impl ::std::fmt::Display for PermissionFeatureSet {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionFeatureSet::CreatedFromPolicy => write!(f, "CREATED_FROM_POLICY"),
+            PermissionFeatureSet::PromotingToStandard => write!(f, "PROMOTING_TO_STANDARD"),
+            PermissionFeatureSet::Standard => write!(f, "STANDARD"),
+            PermissionFeatureSet::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

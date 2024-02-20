@@ -101,3 +101,13 @@ impl UncompressedFramerateConversionAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for UncompressedFramerateConversionAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UncompressedFramerateConversionAlgorithm::DuplicateDrop => write!(f, "DUPLICATE_DROP"),
+            UncompressedFramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
+            UncompressedFramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
+            UncompressedFramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

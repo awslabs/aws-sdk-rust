@@ -101,3 +101,13 @@ impl BurninSubtitleTeletextSpacing {
         }
     }
 }
+impl ::std::fmt::Display for BurninSubtitleTeletextSpacing {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurninSubtitleTeletextSpacing::Auto => write!(f, "AUTO"),
+            BurninSubtitleTeletextSpacing::FixedGrid => write!(f, "FIXED_GRID"),
+            BurninSubtitleTeletextSpacing::Proportional => write!(f, "PROPORTIONAL"),
+            BurninSubtitleTeletextSpacing::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

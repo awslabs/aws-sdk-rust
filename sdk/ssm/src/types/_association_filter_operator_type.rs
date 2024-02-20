@@ -101,3 +101,13 @@ impl AssociationFilterOperatorType {
         }
     }
 }
+impl ::std::fmt::Display for AssociationFilterOperatorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationFilterOperatorType::Equal => write!(f, "EQUAL"),
+            AssociationFilterOperatorType::GreaterThan => write!(f, "GREATER_THAN"),
+            AssociationFilterOperatorType::LessThan => write!(f, "LESS_THAN"),
+            AssociationFilterOperatorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

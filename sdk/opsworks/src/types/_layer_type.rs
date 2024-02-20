@@ -159,3 +159,22 @@ impl LayerType {
         }
     }
 }
+impl ::std::fmt::Display for LayerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LayerType::AwsFlowRuby => write!(f, "aws-flow-ruby"),
+            LayerType::Custom => write!(f, "custom"),
+            LayerType::DbMaster => write!(f, "db-master"),
+            LayerType::EcsCluster => write!(f, "ecs-cluster"),
+            LayerType::JavaApp => write!(f, "java-app"),
+            LayerType::Lb => write!(f, "lb"),
+            LayerType::Memcached => write!(f, "memcached"),
+            LayerType::MonitoringMaster => write!(f, "monitoring-master"),
+            LayerType::NodejsApp => write!(f, "nodejs-app"),
+            LayerType::PhpApp => write!(f, "php-app"),
+            LayerType::RailsApp => write!(f, "rails-app"),
+            LayerType::Web => write!(f, "web"),
+            LayerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

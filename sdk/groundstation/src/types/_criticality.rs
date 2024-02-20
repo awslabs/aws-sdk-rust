@@ -101,3 +101,13 @@ impl Criticality {
         }
     }
 }
+impl ::std::fmt::Display for Criticality {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Criticality::Preferred => write!(f, "PREFERRED"),
+            Criticality::Removed => write!(f, "REMOVED"),
+            Criticality::Required => write!(f, "REQUIRED"),
+            Criticality::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

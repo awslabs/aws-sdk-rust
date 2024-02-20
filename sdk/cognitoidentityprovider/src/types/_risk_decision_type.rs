@@ -101,3 +101,13 @@ impl RiskDecisionType {
         }
     }
 }
+impl ::std::fmt::Display for RiskDecisionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RiskDecisionType::AccountTakeover => write!(f, "AccountTakeover"),
+            RiskDecisionType::Block => write!(f, "Block"),
+            RiskDecisionType::NoRisk => write!(f, "NoRisk"),
+            RiskDecisionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

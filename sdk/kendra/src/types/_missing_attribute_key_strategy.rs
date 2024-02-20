@@ -101,3 +101,13 @@ impl MissingAttributeKeyStrategy {
         }
     }
 }
+impl ::std::fmt::Display for MissingAttributeKeyStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MissingAttributeKeyStrategy::Collapse => write!(f, "COLLAPSE"),
+            MissingAttributeKeyStrategy::Expand => write!(f, "EXPAND"),
+            MissingAttributeKeyStrategy::Ignore => write!(f, "IGNORE"),
+            MissingAttributeKeyStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

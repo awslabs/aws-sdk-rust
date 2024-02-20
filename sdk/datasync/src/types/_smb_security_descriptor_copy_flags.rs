@@ -101,3 +101,13 @@ impl SmbSecurityDescriptorCopyFlags {
         }
     }
 }
+impl ::std::fmt::Display for SmbSecurityDescriptorCopyFlags {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SmbSecurityDescriptorCopyFlags::None => write!(f, "NONE"),
+            SmbSecurityDescriptorCopyFlags::OwnerDacl => write!(f, "OWNER_DACL"),
+            SmbSecurityDescriptorCopyFlags::OwnerDaclSacl => write!(f, "OWNER_DACL_SACL"),
+            SmbSecurityDescriptorCopyFlags::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

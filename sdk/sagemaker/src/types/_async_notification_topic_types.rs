@@ -96,3 +96,12 @@ impl AsyncNotificationTopicTypes {
         }
     }
 }
+impl ::std::fmt::Display for AsyncNotificationTopicTypes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AsyncNotificationTopicTypes::ErrorNotificationTopic => write!(f, "ERROR_NOTIFICATION_TOPIC"),
+            AsyncNotificationTopicTypes::SuccessNotificationTopic => write!(f, "SUCCESS_NOTIFICATION_TOPIC"),
+            AsyncNotificationTopicTypes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

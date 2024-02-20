@@ -96,3 +96,12 @@ impl MutationProtectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for MutationProtectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MutationProtectionStatus::Disabled => write!(f, "DISABLED"),
+            MutationProtectionStatus::Enabled => write!(f, "ENABLED"),
+            MutationProtectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

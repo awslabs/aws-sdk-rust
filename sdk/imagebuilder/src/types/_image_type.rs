@@ -96,3 +96,12 @@ impl ImageType {
         }
     }
 }
+impl ::std::fmt::Display for ImageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageType::Ami => write!(f, "AMI"),
+            ImageType::Docker => write!(f, "DOCKER"),
+            ImageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

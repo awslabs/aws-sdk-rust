@@ -96,3 +96,12 @@ impl Mpeg2Syntax {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2Syntax {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2Syntax::Default => write!(f, "DEFAULT"),
+            Mpeg2Syntax::D10 => write!(f, "D_10"),
+            Mpeg2Syntax::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

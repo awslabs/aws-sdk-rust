@@ -101,3 +101,13 @@ impl EndpointType {
         }
     }
 }
+impl ::std::fmt::Display for EndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointType::ContactFlow => write!(f, "CONTACT_FLOW"),
+            EndpointType::TelephoneNumber => write!(f, "TELEPHONE_NUMBER"),
+            EndpointType::Voip => write!(f, "VOIP"),
+            EndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

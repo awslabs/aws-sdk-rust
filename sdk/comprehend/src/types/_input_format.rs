@@ -96,3 +96,12 @@ impl InputFormat {
         }
     }
 }
+impl ::std::fmt::Display for InputFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputFormat::OneDocPerFile => write!(f, "ONE_DOC_PER_FILE"),
+            InputFormat::OneDocPerLine => write!(f, "ONE_DOC_PER_LINE"),
+            InputFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

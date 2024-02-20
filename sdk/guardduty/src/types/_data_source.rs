@@ -123,3 +123,16 @@ impl DataSource {
         }
     }
 }
+impl ::std::fmt::Display for DataSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSource::CloudTrail => write!(f, "CLOUD_TRAIL"),
+            DataSource::DnsLogs => write!(f, "DNS_LOGS"),
+            DataSource::Ec2MalwareScan => write!(f, "EC2_MALWARE_SCAN"),
+            DataSource::FlowLogs => write!(f, "FLOW_LOGS"),
+            DataSource::KubernetesAuditLogs => write!(f, "KUBERNETES_AUDIT_LOGS"),
+            DataSource::S3Logs => write!(f, "S3_LOGS"),
+            DataSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

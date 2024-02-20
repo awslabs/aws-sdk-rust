@@ -96,3 +96,12 @@ impl ExplainMode {
         }
     }
 }
+impl ::std::fmt::Display for ExplainMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExplainMode::Details => write!(f, "DETAILS"),
+            ExplainMode::Static => write!(f, "STATIC"),
+            ExplainMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl RestoreDeletionStatus {
         }
     }
 }
+impl ::std::fmt::Display for RestoreDeletionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RestoreDeletionStatus::Deleting => write!(f, "DELETING"),
+            RestoreDeletionStatus::Failed => write!(f, "FAILED"),
+            RestoreDeletionStatus::Successful => write!(f, "SUCCESSFUL"),
+            RestoreDeletionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

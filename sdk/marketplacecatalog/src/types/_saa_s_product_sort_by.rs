@@ -106,3 +106,14 @@ impl SaaSProductSortBy {
         }
     }
 }
+impl ::std::fmt::Display for SaaSProductSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SaaSProductSortBy::EntityId => write!(f, "EntityId"),
+            SaaSProductSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
+            SaaSProductSortBy::ProductTitle => write!(f, "ProductTitle"),
+            SaaSProductSortBy::Visibility => write!(f, "Visibility"),
+            SaaSProductSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

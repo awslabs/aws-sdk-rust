@@ -101,3 +101,13 @@ impl RenewType {
         }
     }
 }
+impl ::std::fmt::Display for RenewType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RenewType::Monthly => write!(f, "Monthly"),
+            RenewType::None => write!(f, "None"),
+            RenewType::Weekly => write!(f, "Weekly"),
+            RenewType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Atime {
         }
     }
 }
+impl ::std::fmt::Display for Atime {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Atime::BestEffort => write!(f, "BEST_EFFORT"),
+            Atime::None => write!(f, "NONE"),
+            Atime::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CelebrityRecognitionSortBy {
         }
     }
 }
+impl ::std::fmt::Display for CelebrityRecognitionSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CelebrityRecognitionSortBy::Id => write!(f, "ID"),
+            CelebrityRecognitionSortBy::Timestamp => write!(f, "TIMESTAMP"),
+            CelebrityRecognitionSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl EventFilterType {
         }
     }
 }
+impl ::std::fmt::Display for EventFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventFilterType::PasswordChange => write!(f, "PASSWORD_CHANGE"),
+            EventFilterType::SignIn => write!(f, "SIGN_IN"),
+            EventFilterType::SignUp => write!(f, "SIGN_UP"),
+            EventFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl ReadSetStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReadSetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReadSetStatus::Activating => write!(f, "ACTIVATING"),
+            ReadSetStatus::Active => write!(f, "ACTIVE"),
+            ReadSetStatus::Archived => write!(f, "ARCHIVED"),
+            ReadSetStatus::Deleted => write!(f, "DELETED"),
+            ReadSetStatus::Deleting => write!(f, "DELETING"),
+            ReadSetStatus::ProcessingUpload => write!(f, "PROCESSING_UPLOAD"),
+            ReadSetStatus::UploadFailed => write!(f, "UPLOAD_FAILED"),
+            ReadSetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

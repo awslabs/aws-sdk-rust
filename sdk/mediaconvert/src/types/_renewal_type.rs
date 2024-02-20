@@ -96,3 +96,12 @@ impl RenewalType {
         }
     }
 }
+impl ::std::fmt::Display for RenewalType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RenewalType::AutoRenew => write!(f, "AUTO_RENEW"),
+            RenewalType::Expire => write!(f, "EXPIRE"),
+            RenewalType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

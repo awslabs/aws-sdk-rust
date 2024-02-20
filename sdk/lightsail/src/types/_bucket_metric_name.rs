@@ -96,3 +96,12 @@ impl BucketMetricName {
         }
     }
 }
+impl ::std::fmt::Display for BucketMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BucketMetricName::BucketSizeBytes => write!(f, "BucketSizeBytes"),
+            BucketMetricName::NumberOfObjects => write!(f, "NumberOfObjects"),
+            BucketMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl M3u8AudioDuration {
         }
     }
 }
+impl ::std::fmt::Display for M3u8AudioDuration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M3u8AudioDuration::DefaultCodecDuration => write!(f, "DEFAULT_CODEC_DURATION"),
+            M3u8AudioDuration::MatchVideoDuration => write!(f, "MATCH_VIDEO_DURATION"),
+            M3u8AudioDuration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

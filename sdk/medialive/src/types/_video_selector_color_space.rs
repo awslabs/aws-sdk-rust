@@ -111,3 +111,15 @@ impl VideoSelectorColorSpace {
         }
     }
 }
+impl ::std::fmt::Display for VideoSelectorColorSpace {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VideoSelectorColorSpace::Follow => write!(f, "FOLLOW"),
+            VideoSelectorColorSpace::Hdr10 => write!(f, "HDR10"),
+            VideoSelectorColorSpace::Hlg2020 => write!(f, "HLG_2020"),
+            VideoSelectorColorSpace::Rec601 => write!(f, "REC_601"),
+            VideoSelectorColorSpace::Rec709 => write!(f, "REC_709"),
+            VideoSelectorColorSpace::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

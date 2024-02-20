@@ -101,3 +101,13 @@ impl StandbyInstances {
         }
     }
 }
+impl ::std::fmt::Display for StandbyInstances {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StandbyInstances::Ignore => write!(f, "Ignore"),
+            StandbyInstances::Terminate => write!(f, "Terminate"),
+            StandbyInstances::Wait => write!(f, "Wait"),
+            StandbyInstances::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

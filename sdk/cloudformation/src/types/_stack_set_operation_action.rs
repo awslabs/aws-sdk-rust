@@ -106,3 +106,14 @@ impl StackSetOperationAction {
         }
     }
 }
+impl ::std::fmt::Display for StackSetOperationAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackSetOperationAction::Create => write!(f, "CREATE"),
+            StackSetOperationAction::Delete => write!(f, "DELETE"),
+            StackSetOperationAction::DetectDrift => write!(f, "DETECT_DRIFT"),
+            StackSetOperationAction::Update => write!(f, "UPDATE"),
+            StackSetOperationAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

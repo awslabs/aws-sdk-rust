@@ -96,3 +96,12 @@ impl ComputeLocation {
         }
     }
 }
+impl ::std::fmt::Display for ComputeLocation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComputeLocation::Cloud => write!(f, "CLOUD"),
+            ComputeLocation::Edge => write!(f, "EDGE"),
+            ComputeLocation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

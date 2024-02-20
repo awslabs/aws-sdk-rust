@@ -91,3 +91,11 @@ impl BatchLoadDataFormat {
         }
     }
 }
+impl ::std::fmt::Display for BatchLoadDataFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchLoadDataFormat::Csv => write!(f, "CSV"),
+            BatchLoadDataFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

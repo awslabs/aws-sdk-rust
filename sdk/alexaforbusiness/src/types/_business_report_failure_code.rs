@@ -101,3 +101,13 @@ impl BusinessReportFailureCode {
         }
     }
 }
+impl ::std::fmt::Display for BusinessReportFailureCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BusinessReportFailureCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            BusinessReportFailureCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            BusinessReportFailureCode::NoSuchBucket => write!(f, "NO_SUCH_BUCKET"),
+            BusinessReportFailureCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -112,3 +112,14 @@ impl OptionState {
         }
     }
 }
+impl ::std::fmt::Display for OptionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OptionState::Active => write!(f, "Active"),
+            OptionState::FailedToValidate => write!(f, "FailedToValidate"),
+            OptionState::Processing => write!(f, "Processing"),
+            OptionState::RequiresIndexDocuments => write!(f, "RequiresIndexDocuments"),
+            OptionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

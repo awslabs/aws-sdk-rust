@@ -96,3 +96,12 @@ impl DirectorySize {
         }
     }
 }
+impl ::std::fmt::Display for DirectorySize {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectorySize::Large => write!(f, "Large"),
+            DirectorySize::Small => write!(f, "Small"),
+            DirectorySize::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

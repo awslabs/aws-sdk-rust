@@ -101,3 +101,13 @@ impl AntipatternReportStatus {
         }
     }
 }
+impl ::std::fmt::Display for AntipatternReportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AntipatternReportStatus::Failed => write!(f, "FAILED"),
+            AntipatternReportStatus::InProgress => write!(f, "IN_PROGRESS"),
+            AntipatternReportStatus::Success => write!(f, "SUCCESS"),
+            AntipatternReportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl MetadataField {
         }
     }
 }
+impl ::std::fmt::Display for MetadataField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetadataField::AgentId => write!(f, "AgentId"),
+            MetadataField::AwsRequestId => write!(f, "AwsRequestId"),
+            MetadataField::ComputePlatform => write!(f, "ComputePlatform"),
+            MetadataField::ExecutionEnvironment => write!(f, "ExecutionEnvironment"),
+            MetadataField::LambdaFunctionArn => write!(f, "LambdaFunctionArn"),
+            MetadataField::LambdaMemoryLimitInMb => write!(f, "LambdaMemoryLimitInMB"),
+            MetadataField::LambdaPreviousExecutionTimeInMilliseconds => write!(f, "LambdaPreviousExecutionTimeInMilliseconds"),
+            MetadataField::LambdaRemainingTimeInMilliseconds => write!(f, "LambdaRemainingTimeInMilliseconds"),
+            MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds => write!(f, "LambdaTimeGapBetweenInvokesInMilliseconds"),
+            MetadataField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

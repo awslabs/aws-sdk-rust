@@ -111,3 +111,15 @@ impl LogTargetType {
         }
     }
 }
+impl ::std::fmt::Display for LogTargetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogTargetType::ClientId => write!(f, "CLIENT_ID"),
+            LogTargetType::Default => write!(f, "DEFAULT"),
+            LogTargetType::PrincipalId => write!(f, "PRINCIPAL_ID"),
+            LogTargetType::SourceIp => write!(f, "SOURCE_IP"),
+            LogTargetType::ThingGroup => write!(f, "THING_GROUP"),
+            LogTargetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

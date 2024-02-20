@@ -101,3 +101,13 @@ impl Include {
         }
     }
 }
+impl ::std::fmt::Display for Include {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Include::All => write!(f, "ALL"),
+            Include::Any => write!(f, "ANY"),
+            Include::None => write!(f, "NONE"),
+            Include::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

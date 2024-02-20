@@ -101,3 +101,13 @@ impl KinesisStreamStartPosition {
         }
     }
 }
+impl ::std::fmt::Display for KinesisStreamStartPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KinesisStreamStartPosition::AtTimestamp => write!(f, "AT_TIMESTAMP"),
+            KinesisStreamStartPosition::Latest => write!(f, "LATEST"),
+            KinesisStreamStartPosition::TrimHorizon => write!(f, "TRIM_HORIZON"),
+            KinesisStreamStartPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl DocumentFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for DocumentFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentFilterKey::DocumentType => write!(f, "DocumentType"),
+            DocumentFilterKey::Name => write!(f, "Name"),
+            DocumentFilterKey::Owner => write!(f, "Owner"),
+            DocumentFilterKey::PlatformTypes => write!(f, "PlatformTypes"),
+            DocumentFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

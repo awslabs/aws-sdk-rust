@@ -116,3 +116,16 @@ impl WorkflowStepExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowStepExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowStepExecutionStatus::Cancelled => write!(f, "CANCELLED"),
+            WorkflowStepExecutionStatus::Completed => write!(f, "COMPLETED"),
+            WorkflowStepExecutionStatus::Failed => write!(f, "FAILED"),
+            WorkflowStepExecutionStatus::Pending => write!(f, "PENDING"),
+            WorkflowStepExecutionStatus::Running => write!(f, "RUNNING"),
+            WorkflowStepExecutionStatus::Skipped => write!(f, "SKIPPED"),
+            WorkflowStepExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

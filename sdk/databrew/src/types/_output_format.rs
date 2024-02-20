@@ -126,3 +126,18 @@ impl OutputFormat {
         }
     }
 }
+impl ::std::fmt::Display for OutputFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputFormat::Avro => write!(f, "AVRO"),
+            OutputFormat::Csv => write!(f, "CSV"),
+            OutputFormat::Glueparquet => write!(f, "GLUEPARQUET"),
+            OutputFormat::Json => write!(f, "JSON"),
+            OutputFormat::Orc => write!(f, "ORC"),
+            OutputFormat::Parquet => write!(f, "PARQUET"),
+            OutputFormat::Tableauhyper => write!(f, "TABLEAUHYPER"),
+            OutputFormat::Xml => write!(f, "XML"),
+            OutputFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

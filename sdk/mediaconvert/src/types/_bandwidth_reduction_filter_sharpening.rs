@@ -106,3 +106,14 @@ impl BandwidthReductionFilterSharpening {
         }
     }
 }
+impl ::std::fmt::Display for BandwidthReductionFilterSharpening {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BandwidthReductionFilterSharpening::High => write!(f, "HIGH"),
+            BandwidthReductionFilterSharpening::Low => write!(f, "LOW"),
+            BandwidthReductionFilterSharpening::Medium => write!(f, "MEDIUM"),
+            BandwidthReductionFilterSharpening::Off => write!(f, "OFF"),
+            BandwidthReductionFilterSharpening::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

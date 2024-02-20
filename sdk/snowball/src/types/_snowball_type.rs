@@ -147,3 +147,20 @@ impl SnowballType {
         }
     }
 }
+impl ::std::fmt::Display for SnowballType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnowballType::Edge => write!(f, "EDGE"),
+            SnowballType::EdgeC => write!(f, "EDGE_C"),
+            SnowballType::EdgeCg => write!(f, "EDGE_CG"),
+            SnowballType::EdgeS => write!(f, "EDGE_S"),
+            SnowballType::Rack5Uc => write!(f, "RACK_5U_C"),
+            SnowballType::Snc1Hdd => write!(f, "SNC1_HDD"),
+            SnowballType::Snc1Ssd => write!(f, "SNC1_SSD"),
+            SnowballType::Standard => write!(f, "STANDARD"),
+            SnowballType::V35C => write!(f, "V3_5C"),
+            SnowballType::V35S => write!(f, "V3_5S"),
+            SnowballType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

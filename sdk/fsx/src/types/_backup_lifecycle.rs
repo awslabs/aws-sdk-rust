@@ -153,3 +153,17 @@ impl BackupLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for BackupLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackupLifecycle::Available => write!(f, "AVAILABLE"),
+            BackupLifecycle::Copying => write!(f, "COPYING"),
+            BackupLifecycle::Creating => write!(f, "CREATING"),
+            BackupLifecycle::Deleted => write!(f, "DELETED"),
+            BackupLifecycle::Failed => write!(f, "FAILED"),
+            BackupLifecycle::Pending => write!(f, "PENDING"),
+            BackupLifecycle::Transferring => write!(f, "TRANSFERRING"),
+            BackupLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

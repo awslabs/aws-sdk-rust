@@ -106,3 +106,14 @@ impl TrainingJobSortByOptions {
         }
     }
 }
+impl ::std::fmt::Display for TrainingJobSortByOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrainingJobSortByOptions::CreationTime => write!(f, "CreationTime"),
+            TrainingJobSortByOptions::FinalObjectiveMetricValue => write!(f, "FinalObjectiveMetricValue"),
+            TrainingJobSortByOptions::Name => write!(f, "Name"),
+            TrainingJobSortByOptions::Status => write!(f, "Status"),
+            TrainingJobSortByOptions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

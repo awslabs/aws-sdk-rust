@@ -106,3 +106,14 @@ impl SpotProvisioningAllocationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for SpotProvisioningAllocationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpotProvisioningAllocationStrategy::CapacityOptimized => write!(f, "capacity-optimized"),
+            SpotProvisioningAllocationStrategy::Diversified => write!(f, "diversified"),
+            SpotProvisioningAllocationStrategy::LowestPrice => write!(f, "lowest-price"),
+            SpotProvisioningAllocationStrategy::PriceCapacityOptimized => write!(f, "price-capacity-optimized"),
+            SpotProvisioningAllocationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

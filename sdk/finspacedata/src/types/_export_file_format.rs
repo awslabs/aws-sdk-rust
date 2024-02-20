@@ -96,3 +96,12 @@ impl ExportFileFormat {
         }
     }
 }
+impl ::std::fmt::Display for ExportFileFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportFileFormat::DelimitedText => write!(f, "DELIMITED_TEXT"),
+            ExportFileFormat::Parquet => write!(f, "PARQUET"),
+            ExportFileFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

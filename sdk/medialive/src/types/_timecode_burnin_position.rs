@@ -141,3 +141,19 @@ impl TimecodeBurninPosition {
         }
     }
 }
+impl ::std::fmt::Display for TimecodeBurninPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimecodeBurninPosition::BottomCenter => write!(f, "BOTTOM_CENTER"),
+            TimecodeBurninPosition::BottomLeft => write!(f, "BOTTOM_LEFT"),
+            TimecodeBurninPosition::BottomRight => write!(f, "BOTTOM_RIGHT"),
+            TimecodeBurninPosition::MiddleCenter => write!(f, "MIDDLE_CENTER"),
+            TimecodeBurninPosition::MiddleLeft => write!(f, "MIDDLE_LEFT"),
+            TimecodeBurninPosition::MiddleRight => write!(f, "MIDDLE_RIGHT"),
+            TimecodeBurninPosition::TopCenter => write!(f, "TOP_CENTER"),
+            TimecodeBurninPosition::TopLeft => write!(f, "TOP_LEFT"),
+            TimecodeBurninPosition::TopRight => write!(f, "TOP_RIGHT"),
+            TimecodeBurninPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

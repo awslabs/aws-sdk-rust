@@ -96,3 +96,12 @@ impl M2tsAribCaptionsPidControl {
         }
     }
 }
+impl ::std::fmt::Display for M2tsAribCaptionsPidControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsAribCaptionsPidControl::Auto => write!(f, "AUTO"),
+            M2tsAribCaptionsPidControl::UseConfigured => write!(f, "USE_CONFIGURED"),
+            M2tsAribCaptionsPidControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl CapabilityHealthReason {
         }
     }
 }
+impl ::std::fmt::Display for CapabilityHealthReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapabilityHealthReason::DataplaneFailure => write!(f, "DATAPLANE_FAILURE"),
+            CapabilityHealthReason::Healthy => write!(f, "HEALTHY"),
+            CapabilityHealthReason::InitializingDataplane => write!(f, "INITIALIZING_DATAPLANE"),
+            CapabilityHealthReason::InvalidIpOwnership => write!(f, "INVALID_IP_OWNERSHIP"),
+            CapabilityHealthReason::NotAuthorizedToCreateSlr => write!(f, "NOT_AUTHORIZED_TO_CREATE_SLR"),
+            CapabilityHealthReason::NoRegisteredAgent => write!(f, "NO_REGISTERED_AGENT"),
+            CapabilityHealthReason::UnverifiedIpOwnership => write!(f, "UNVERIFIED_IP_OWNERSHIP"),
+            CapabilityHealthReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

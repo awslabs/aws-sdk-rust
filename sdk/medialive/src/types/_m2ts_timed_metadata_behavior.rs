@@ -96,3 +96,12 @@ impl M2tsTimedMetadataBehavior {
         }
     }
 }
+impl ::std::fmt::Display for M2tsTimedMetadataBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsTimedMetadataBehavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
+            M2tsTimedMetadataBehavior::Passthrough => write!(f, "PASSTHROUGH"),
+            M2tsTimedMetadataBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl SubscriptionRequestStatus {
         }
     }
 }
+impl ::std::fmt::Display for SubscriptionRequestStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubscriptionRequestStatus::Accepted => write!(f, "ACCEPTED"),
+            SubscriptionRequestStatus::Pending => write!(f, "PENDING"),
+            SubscriptionRequestStatus::Rejected => write!(f, "REJECTED"),
+            SubscriptionRequestStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

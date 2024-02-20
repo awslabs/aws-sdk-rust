@@ -96,3 +96,12 @@ impl OriginRequestPolicyType {
         }
     }
 }
+impl ::std::fmt::Display for OriginRequestPolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginRequestPolicyType::Custom => write!(f, "custom"),
+            OriginRequestPolicyType::Managed => write!(f, "managed"),
+            OriginRequestPolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

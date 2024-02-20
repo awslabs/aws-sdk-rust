@@ -96,3 +96,12 @@ impl DatabaseMode {
         }
     }
 }
+impl ::std::fmt::Display for DatabaseMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatabaseMode::Babelfish => write!(f, "babelfish"),
+            DatabaseMode::Default => write!(f, "default"),
+            DatabaseMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ThroughputMode {
         }
     }
 }
+impl ::std::fmt::Display for ThroughputMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThroughputMode::OnDemand => write!(f, "OnDemand"),
+            ThroughputMode::Provisioned => write!(f, "Provisioned"),
+            ThroughputMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl MessageActionType {
         }
     }
 }
+impl ::std::fmt::Display for MessageActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessageActionType::Resend => write!(f, "RESEND"),
+            MessageActionType::Suppress => write!(f, "SUPPRESS"),
+            MessageActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

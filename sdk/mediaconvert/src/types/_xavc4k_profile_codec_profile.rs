@@ -96,3 +96,12 @@ impl Xavc4kProfileCodecProfile {
         }
     }
 }
+impl ::std::fmt::Display for Xavc4kProfileCodecProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Xavc4kProfileCodecProfile::High => write!(f, "HIGH"),
+            Xavc4kProfileCodecProfile::High422 => write!(f, "HIGH_422"),
+            Xavc4kProfileCodecProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

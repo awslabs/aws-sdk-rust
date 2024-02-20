@@ -96,3 +96,12 @@ impl ViewType {
         }
     }
 }
+impl ::std::fmt::Display for ViewType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ViewType::AwsManaged => write!(f, "AWS_MANAGED"),
+            ViewType::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
+            ViewType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

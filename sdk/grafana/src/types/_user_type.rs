@@ -96,3 +96,12 @@ impl UserType {
         }
     }
 }
+impl ::std::fmt::Display for UserType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserType::SsoGroup => write!(f, "SSO_GROUP"),
+            UserType::SsoUser => write!(f, "SSO_USER"),
+            UserType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

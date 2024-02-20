@@ -96,3 +96,12 @@ impl PayloadType {
         }
     }
 }
+impl ::std::fmt::Display for PayloadType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PayloadType::Json => write!(f, "JSON"),
+            PayloadType::String => write!(f, "STRING"),
+            PayloadType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

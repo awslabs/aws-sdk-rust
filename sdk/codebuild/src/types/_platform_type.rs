@@ -106,3 +106,14 @@ impl PlatformType {
         }
     }
 }
+impl ::std::fmt::Display for PlatformType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlatformType::AmazonLinux => write!(f, "AMAZON_LINUX"),
+            PlatformType::Debian => write!(f, "DEBIAN"),
+            PlatformType::Ubuntu => write!(f, "UBUNTU"),
+            PlatformType::WindowsServer => write!(f, "WINDOWS_SERVER"),
+            PlatformType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -95,3 +95,13 @@ impl DeletableCertificateBasedAuthProperty {
         }
     }
 }
+impl ::std::fmt::Display for DeletableCertificateBasedAuthProperty {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeletableCertificateBasedAuthProperty::CertificateBasedAuthPropertiesCertificateAuthorityArn => {
+                write!(f, "CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN")
+            }
+            DeletableCertificateBasedAuthProperty::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ApprovalModel {
         }
     }
 }
+impl ::std::fmt::Display for ApprovalModel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApprovalModel::Auto => write!(f, "AUTOMATIC"),
+            ApprovalModel::Manual => write!(f, "MANUAL"),
+            ApprovalModel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

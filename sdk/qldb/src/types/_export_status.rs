@@ -101,3 +101,13 @@ impl ExportStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportStatus::Cancelled => write!(f, "CANCELLED"),
+            ExportStatus::Completed => write!(f, "COMPLETED"),
+            ExportStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ExportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

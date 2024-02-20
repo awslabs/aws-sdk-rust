@@ -107,3 +107,14 @@ impl HyperParameterTuningJobStrategyType {
         }
     }
 }
+impl ::std::fmt::Display for HyperParameterTuningJobStrategyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HyperParameterTuningJobStrategyType::Bayesian => write!(f, "Bayesian"),
+            HyperParameterTuningJobStrategyType::Grid => write!(f, "Grid"),
+            HyperParameterTuningJobStrategyType::Hyperband => write!(f, "Hyperband"),
+            HyperParameterTuningJobStrategyType::Random => write!(f, "Random"),
+            HyperParameterTuningJobStrategyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

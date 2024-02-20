@@ -111,3 +111,15 @@ impl ContributorInsightsStatus {
         }
     }
 }
+impl ::std::fmt::Display for ContributorInsightsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContributorInsightsStatus::Disabled => write!(f, "DISABLED"),
+            ContributorInsightsStatus::Disabling => write!(f, "DISABLING"),
+            ContributorInsightsStatus::Enabled => write!(f, "ENABLED"),
+            ContributorInsightsStatus::Enabling => write!(f, "ENABLING"),
+            ContributorInsightsStatus::Failed => write!(f, "FAILED"),
+            ContributorInsightsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

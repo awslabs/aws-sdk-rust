@@ -96,3 +96,12 @@ impl ValidationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ValidationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationExceptionReason::FieldValidationFailed => write!(f, "fieldValidationFailed"),
+            ValidationExceptionReason::InvalidRegionOptTarget => write!(f, "invalidRegionOptTarget"),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

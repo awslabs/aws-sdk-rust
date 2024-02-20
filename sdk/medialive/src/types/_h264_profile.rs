@@ -116,3 +116,16 @@ impl H264Profile {
         }
     }
 }
+impl ::std::fmt::Display for H264Profile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264Profile::Baseline => write!(f, "BASELINE"),
+            H264Profile::High => write!(f, "HIGH"),
+            H264Profile::High10Bit => write!(f, "HIGH_10BIT"),
+            H264Profile::High422 => write!(f, "HIGH_422"),
+            H264Profile::High42210Bit => write!(f, "HIGH_422_10BIT"),
+            H264Profile::Main => write!(f, "MAIN"),
+            H264Profile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl ContactFlowType {
         }
     }
 }
+impl ::std::fmt::Display for ContactFlowType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContactFlowType::AgentHold => write!(f, "AGENT_HOLD"),
+            ContactFlowType::AgentTransfer => write!(f, "AGENT_TRANSFER"),
+            ContactFlowType::AgentWhisper => write!(f, "AGENT_WHISPER"),
+            ContactFlowType::ContactFlow => write!(f, "CONTACT_FLOW"),
+            ContactFlowType::CustomerHold => write!(f, "CUSTOMER_HOLD"),
+            ContactFlowType::CustomerQueue => write!(f, "CUSTOMER_QUEUE"),
+            ContactFlowType::CustomerWhisper => write!(f, "CUSTOMER_WHISPER"),
+            ContactFlowType::OutboundWhisper => write!(f, "OUTBOUND_WHISPER"),
+            ContactFlowType::QueueTransfer => write!(f, "QUEUE_TRANSFER"),
+            ContactFlowType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

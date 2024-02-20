@@ -91,3 +91,11 @@ impl AccessDeniedExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for AccessDeniedExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessDeniedExceptionReason::InsufficientPermissions => write!(f, "INSUFFICIENT_PERMISSIONS"),
+            AccessDeniedExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

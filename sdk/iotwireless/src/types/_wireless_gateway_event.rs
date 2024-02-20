@@ -96,3 +96,12 @@ impl WirelessGatewayEvent {
         }
     }
 }
+impl ::std::fmt::Display for WirelessGatewayEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WirelessGatewayEvent::CupsRequest => write!(f, "CUPS_Request"),
+            WirelessGatewayEvent::Certificate => write!(f, "Certificate"),
+            WirelessGatewayEvent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

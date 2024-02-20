@@ -106,3 +106,14 @@ impl RoleType {
         }
     }
 }
+impl ::std::fmt::Display for RoleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RoleType::Contributor => write!(f, "CONTRIBUTOR"),
+            RoleType::Coowner => write!(f, "COOWNER"),
+            RoleType::Owner => write!(f, "OWNER"),
+            RoleType::Viewer => write!(f, "VIEWER"),
+            RoleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

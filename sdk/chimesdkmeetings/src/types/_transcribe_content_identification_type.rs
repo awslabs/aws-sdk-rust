@@ -91,3 +91,11 @@ impl TranscribeContentIdentificationType {
         }
     }
 }
+impl ::std::fmt::Display for TranscribeContentIdentificationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TranscribeContentIdentificationType::Pii => write!(f, "PII"),
+            TranscribeContentIdentificationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

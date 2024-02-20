@@ -101,3 +101,13 @@ impl LambdaSavingsEstimationModeSource {
         }
     }
 }
+impl ::std::fmt::Display for LambdaSavingsEstimationModeSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaSavingsEstimationModeSource::CostExplorerRightsizing => write!(f, "CostExplorerRightsizing"),
+            LambdaSavingsEstimationModeSource::CostOptimizationHub => write!(f, "CostOptimizationHub"),
+            LambdaSavingsEstimationModeSource::PublicPricing => write!(f, "PublicPricing"),
+            LambdaSavingsEstimationModeSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

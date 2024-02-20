@@ -111,3 +111,15 @@ impl TgwStatus {
         }
     }
 }
+impl ::std::fmt::Display for TgwStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TgwStatus::FailedUpdate => write!(f, "FAILED_UPDATE"),
+            TgwStatus::None => write!(f, "NONE"),
+            TgwStatus::SuccessfullyUpdated => write!(f, "SUCCESSFULLY_UPDATED"),
+            TgwStatus::UpdateRequested => write!(f, "UPDATE_REQUESTED"),
+            TgwStatus::Updating => write!(f, "UPDATING"),
+            TgwStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

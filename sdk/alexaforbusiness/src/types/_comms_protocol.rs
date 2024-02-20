@@ -101,3 +101,13 @@ impl CommsProtocol {
         }
     }
 }
+impl ::std::fmt::Display for CommsProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CommsProtocol::H323 => write!(f, "H323"),
+            CommsProtocol::Sip => write!(f, "SIP"),
+            CommsProtocol::Sips => write!(f, "SIPS"),
+            CommsProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

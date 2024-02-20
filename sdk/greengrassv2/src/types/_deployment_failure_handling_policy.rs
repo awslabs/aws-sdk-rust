@@ -96,3 +96,12 @@ impl DeploymentFailureHandlingPolicy {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentFailureHandlingPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentFailureHandlingPolicy::DoNothing => write!(f, "DO_NOTHING"),
+            DeploymentFailureHandlingPolicy::Rollback => write!(f, "ROLLBACK"),
+            DeploymentFailureHandlingPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

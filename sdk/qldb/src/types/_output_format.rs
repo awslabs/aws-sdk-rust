@@ -101,3 +101,13 @@ impl OutputFormat {
         }
     }
 }
+impl ::std::fmt::Display for OutputFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputFormat::IonBinary => write!(f, "ION_BINARY"),
+            OutputFormat::IonText => write!(f, "ION_TEXT"),
+            OutputFormat::Json => write!(f, "JSON"),
+            OutputFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

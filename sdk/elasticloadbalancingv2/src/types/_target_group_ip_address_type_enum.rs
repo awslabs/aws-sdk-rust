@@ -96,3 +96,12 @@ impl TargetGroupIpAddressTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for TargetGroupIpAddressTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetGroupIpAddressTypeEnum::Ipv4 => write!(f, "ipv4"),
+            TargetGroupIpAddressTypeEnum::Ipv6 => write!(f, "ipv6"),
+            TargetGroupIpAddressTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

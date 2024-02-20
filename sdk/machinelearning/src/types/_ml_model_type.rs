@@ -101,3 +101,13 @@ impl MlModelType {
         }
     }
 }
+impl ::std::fmt::Display for MlModelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MlModelType::Binary => write!(f, "BINARY"),
+            MlModelType::Multiclass => write!(f, "MULTICLASS"),
+            MlModelType::Regression => write!(f, "REGRESSION"),
+            MlModelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

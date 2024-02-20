@@ -111,3 +111,15 @@ impl TransformSortColumnType {
         }
     }
 }
+impl ::std::fmt::Display for TransformSortColumnType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransformSortColumnType::Created => write!(f, "CREATED"),
+            TransformSortColumnType::LastModified => write!(f, "LAST_MODIFIED"),
+            TransformSortColumnType::Name => write!(f, "NAME"),
+            TransformSortColumnType::Status => write!(f, "STATUS"),
+            TransformSortColumnType::TransformType => write!(f, "TRANSFORM_TYPE"),
+            TransformSortColumnType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

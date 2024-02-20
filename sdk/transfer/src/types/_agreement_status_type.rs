@@ -96,3 +96,12 @@ impl AgreementStatusType {
         }
     }
 }
+impl ::std::fmt::Display for AgreementStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgreementStatusType::Active => write!(f, "ACTIVE"),
+            AgreementStatusType::Inactive => write!(f, "INACTIVE"),
+            AgreementStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

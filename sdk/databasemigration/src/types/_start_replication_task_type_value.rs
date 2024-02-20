@@ -101,3 +101,13 @@ impl StartReplicationTaskTypeValue {
         }
     }
 }
+impl ::std::fmt::Display for StartReplicationTaskTypeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StartReplicationTaskTypeValue::ReloadTarget => write!(f, "reload-target"),
+            StartReplicationTaskTypeValue::ResumeProcessing => write!(f, "resume-processing"),
+            StartReplicationTaskTypeValue::StartReplication => write!(f, "start-replication"),
+            StartReplicationTaskTypeValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

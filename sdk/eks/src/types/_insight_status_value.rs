@@ -106,3 +106,14 @@ impl InsightStatusValue {
         }
     }
 }
+impl ::std::fmt::Display for InsightStatusValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InsightStatusValue::Error => write!(f, "ERROR"),
+            InsightStatusValue::Passing => write!(f, "PASSING"),
+            InsightStatusValue::UnknownValue => write!(f, "UNKNOWN"),
+            InsightStatusValue::Warning => write!(f, "WARNING"),
+            InsightStatusValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

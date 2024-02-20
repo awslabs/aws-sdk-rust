@@ -96,3 +96,12 @@ impl ArrayJobDependency {
         }
     }
 }
+impl ::std::fmt::Display for ArrayJobDependency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArrayJobDependency::NToN => write!(f, "N_TO_N"),
+            ArrayJobDependency::Sequential => write!(f, "SEQUENTIAL"),
+            ArrayJobDependency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

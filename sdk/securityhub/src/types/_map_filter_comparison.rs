@@ -106,3 +106,14 @@ impl MapFilterComparison {
         }
     }
 }
+impl ::std::fmt::Display for MapFilterComparison {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MapFilterComparison::Contains => write!(f, "CONTAINS"),
+            MapFilterComparison::Equals => write!(f, "EQUALS"),
+            MapFilterComparison::NotContains => write!(f, "NOT_CONTAINS"),
+            MapFilterComparison::NotEquals => write!(f, "NOT_EQUALS"),
+            MapFilterComparison::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

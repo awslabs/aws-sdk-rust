@@ -231,3 +231,34 @@ impl BlockType {
         }
     }
 }
+impl ::std::fmt::Display for BlockType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BlockType::Cell => write!(f, "CELL"),
+            BlockType::KeyValueSet => write!(f, "KEY_VALUE_SET"),
+            BlockType::LayoutFigure => write!(f, "LAYOUT_FIGURE"),
+            BlockType::LayoutFooter => write!(f, "LAYOUT_FOOTER"),
+            BlockType::LayoutHeader => write!(f, "LAYOUT_HEADER"),
+            BlockType::LayoutKeyValue => write!(f, "LAYOUT_KEY_VALUE"),
+            BlockType::LayoutList => write!(f, "LAYOUT_LIST"),
+            BlockType::LayoutPageNumber => write!(f, "LAYOUT_PAGE_NUMBER"),
+            BlockType::LayoutSectionHeader => write!(f, "LAYOUT_SECTION_HEADER"),
+            BlockType::LayoutTable => write!(f, "LAYOUT_TABLE"),
+            BlockType::LayoutText => write!(f, "LAYOUT_TEXT"),
+            BlockType::LayoutTitle => write!(f, "LAYOUT_TITLE"),
+            BlockType::Line => write!(f, "LINE"),
+            BlockType::MergedCell => write!(f, "MERGED_CELL"),
+            BlockType::Page => write!(f, "PAGE"),
+            BlockType::Query => write!(f, "QUERY"),
+            BlockType::QueryResult => write!(f, "QUERY_RESULT"),
+            BlockType::SelectionElement => write!(f, "SELECTION_ELEMENT"),
+            BlockType::Signature => write!(f, "SIGNATURE"),
+            BlockType::Table => write!(f, "TABLE"),
+            BlockType::TableFooter => write!(f, "TABLE_FOOTER"),
+            BlockType::TableTitle => write!(f, "TABLE_TITLE"),
+            BlockType::Title => write!(f, "TITLE"),
+            BlockType::Word => write!(f, "WORD"),
+            BlockType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

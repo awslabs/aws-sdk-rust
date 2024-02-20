@@ -96,3 +96,12 @@ impl ContainerLevelMetrics {
         }
     }
 }
+impl ::std::fmt::Display for ContainerLevelMetrics {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerLevelMetrics::Disabled => write!(f, "DISABLED"),
+            ContainerLevelMetrics::Enabled => write!(f, "ENABLED"),
+            ContainerLevelMetrics::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

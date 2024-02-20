@@ -96,3 +96,12 @@ impl RouteState {
         }
     }
 }
+impl ::std::fmt::Display for RouteState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteState::Active => write!(f, "ACTIVE"),
+            RouteState::Blackhole => write!(f, "BLACKHOLE"),
+            RouteState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

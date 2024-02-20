@@ -111,3 +111,15 @@ impl ResourceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceStatus::Available => write!(f, "AVAILABLE"),
+            ResourceStatus::LimitExceeded => write!(f, "LIMIT_EXCEEDED"),
+            ResourceStatus::Pending => write!(f, "PENDING"),
+            ResourceStatus::Unavailable => write!(f, "UNAVAILABLE"),
+            ResourceStatus::ZonalResourceInaccessible => write!(f, "ZONAL_RESOURCE_INACCESSIBLE"),
+            ResourceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl IdcUserAssignment {
         }
     }
 }
+impl ::std::fmt::Display for IdcUserAssignment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IdcUserAssignment::Optional => write!(f, "OPTIONAL"),
+            IdcUserAssignment::Required => write!(f, "REQUIRED"),
+            IdcUserAssignment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

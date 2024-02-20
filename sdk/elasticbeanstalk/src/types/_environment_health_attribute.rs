@@ -135,3 +135,18 @@ impl EnvironmentHealthAttribute {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentHealthAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentHealthAttribute::All => write!(f, "All"),
+            EnvironmentHealthAttribute::ApplicationMetrics => write!(f, "ApplicationMetrics"),
+            EnvironmentHealthAttribute::Causes => write!(f, "Causes"),
+            EnvironmentHealthAttribute::Color => write!(f, "Color"),
+            EnvironmentHealthAttribute::HealthStatus => write!(f, "HealthStatus"),
+            EnvironmentHealthAttribute::InstancesHealth => write!(f, "InstancesHealth"),
+            EnvironmentHealthAttribute::RefreshedAt => write!(f, "RefreshedAt"),
+            EnvironmentHealthAttribute::Status => write!(f, "Status"),
+            EnvironmentHealthAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

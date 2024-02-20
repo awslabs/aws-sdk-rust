@@ -106,3 +106,14 @@ impl SavingsPlanProductType {
         }
     }
 }
+impl ::std::fmt::Display for SavingsPlanProductType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SavingsPlanProductType::Ec2 => write!(f, "EC2"),
+            SavingsPlanProductType::Fargate => write!(f, "Fargate"),
+            SavingsPlanProductType::Lambda => write!(f, "Lambda"),
+            SavingsPlanProductType::Sagemaker => write!(f, "SageMaker"),
+            SavingsPlanProductType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

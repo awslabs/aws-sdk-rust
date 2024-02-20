@@ -101,3 +101,13 @@ impl ChannelType {
         }
     }
 }
+impl ::std::fmt::Display for ChannelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelType::Email => write!(f, "EMAIL"),
+            ChannelType::Sms => write!(f, "SMS"),
+            ChannelType::Voice => write!(f, "VOICE"),
+            ChannelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

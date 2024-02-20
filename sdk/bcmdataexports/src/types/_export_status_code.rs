@@ -96,3 +96,12 @@ impl ExportStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ExportStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportStatusCode::Healthy => write!(f, "HEALTHY"),
+            ExportStatusCode::Unhealthy => write!(f, "UNHEALTHY"),
+            ExportStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

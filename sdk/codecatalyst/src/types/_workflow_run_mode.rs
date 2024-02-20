@@ -101,3 +101,13 @@ impl WorkflowRunMode {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowRunMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowRunMode::Parallel => write!(f, "PARALLEL"),
+            WorkflowRunMode::Queued => write!(f, "QUEUED"),
+            WorkflowRunMode::Superseded => write!(f, "SUPERSEDED"),
+            WorkflowRunMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

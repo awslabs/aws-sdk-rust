@@ -117,3 +117,15 @@ impl NotificationRole {
         }
     }
 }
+impl ::std::fmt::Display for NotificationRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationRole::DomainOwner => write!(f, "DOMAIN_OWNER"),
+            NotificationRole::ProjectContributor => write!(f, "PROJECT_CONTRIBUTOR"),
+            NotificationRole::ProjectOwner => write!(f, "PROJECT_OWNER"),
+            NotificationRole::ProjectSubscriber => write!(f, "PROJECT_SUBSCRIBER"),
+            NotificationRole::ProjectViewer => write!(f, "PROJECT_VIEWER"),
+            NotificationRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

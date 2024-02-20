@@ -96,3 +96,12 @@ impl DeviceType {
         }
     }
 }
+impl ::std::fmt::Display for DeviceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceType::PanoramaAppliance => write!(f, "PANORAMA_APPLIANCE"),
+            DeviceType::PanoramaApplianceDeveloperKit => write!(f, "PANORAMA_APPLIANCE_DEVELOPER_KIT"),
+            DeviceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

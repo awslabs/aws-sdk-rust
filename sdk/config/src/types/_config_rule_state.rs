@@ -106,3 +106,14 @@ impl ConfigRuleState {
         }
     }
 }
+impl ::std::fmt::Display for ConfigRuleState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigRuleState::Active => write!(f, "ACTIVE"),
+            ConfigRuleState::Deleting => write!(f, "DELETING"),
+            ConfigRuleState::DeletingResults => write!(f, "DELETING_RESULTS"),
+            ConfigRuleState::Evaluating => write!(f, "EVALUATING"),
+            ConfigRuleState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

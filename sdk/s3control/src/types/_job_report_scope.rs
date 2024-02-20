@@ -96,3 +96,12 @@ impl JobReportScope {
         }
     }
 }
+impl ::std::fmt::Display for JobReportScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobReportScope::AllTasks => write!(f, "AllTasks"),
+            JobReportScope::FailedTasksOnly => write!(f, "FailedTasksOnly"),
+            JobReportScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

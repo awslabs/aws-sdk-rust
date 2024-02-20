@@ -96,3 +96,12 @@ impl DimensionValueOperator {
         }
     }
 }
+impl ::std::fmt::Display for DimensionValueOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DimensionValueOperator::In => write!(f, "IN"),
+            DimensionValueOperator::NotIn => write!(f, "NOT_IN"),
+            DimensionValueOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

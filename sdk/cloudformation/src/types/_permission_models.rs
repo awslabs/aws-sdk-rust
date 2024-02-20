@@ -96,3 +96,12 @@ impl PermissionModels {
         }
     }
 }
+impl ::std::fmt::Display for PermissionModels {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionModels::SelfManaged => write!(f, "SELF_MANAGED"),
+            PermissionModels::ServiceManaged => write!(f, "SERVICE_MANAGED"),
+            PermissionModels::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

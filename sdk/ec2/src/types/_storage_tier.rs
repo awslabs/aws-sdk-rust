@@ -96,3 +96,12 @@ impl StorageTier {
         }
     }
 }
+impl ::std::fmt::Display for StorageTier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageTier::Archive => write!(f, "archive"),
+            StorageTier::Standard => write!(f, "standard"),
+            StorageTier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

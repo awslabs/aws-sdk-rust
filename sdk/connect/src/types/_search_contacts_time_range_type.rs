@@ -111,3 +111,14 @@ impl SearchContactsTimeRangeType {
         }
     }
 }
+impl ::std::fmt::Display for SearchContactsTimeRangeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchContactsTimeRangeType::ConnectedToAgentTimestamp => write!(f, "CONNECTED_TO_AGENT_TIMESTAMP"),
+            SearchContactsTimeRangeType::DisconnectTimestamp => write!(f, "DISCONNECT_TIMESTAMP"),
+            SearchContactsTimeRangeType::InitiationTimestamp => write!(f, "INITIATION_TIMESTAMP"),
+            SearchContactsTimeRangeType::ScheduledTimestamp => write!(f, "SCHEDULED_TIMESTAMP"),
+            SearchContactsTimeRangeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SourceSetUpOption {
         }
     }
 }
+impl ::std::fmt::Display for SourceSetUpOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceSetUpOption::ProceduralControlsMapping => write!(f, "Procedural_Controls_Mapping"),
+            SourceSetUpOption::SystemControlsMapping => write!(f, "System_Controls_Mapping"),
+            SourceSetUpOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

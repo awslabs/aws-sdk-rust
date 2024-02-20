@@ -101,3 +101,13 @@ impl EcsServiceRecommendationFinding {
         }
     }
 }
+impl ::std::fmt::Display for EcsServiceRecommendationFinding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcsServiceRecommendationFinding::Optimized => write!(f, "Optimized"),
+            EcsServiceRecommendationFinding::OverProvisioned => write!(f, "Overprovisioned"),
+            EcsServiceRecommendationFinding::UnderProvisioned => write!(f, "Underprovisioned"),
+            EcsServiceRecommendationFinding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

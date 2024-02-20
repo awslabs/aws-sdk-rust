@@ -96,3 +96,12 @@ impl TsEncryptionMethod {
         }
     }
 }
+impl ::std::fmt::Display for TsEncryptionMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TsEncryptionMethod::Aes128 => write!(f, "AES_128"),
+            TsEncryptionMethod::SampleAes => write!(f, "SAMPLE_AES"),
+            TsEncryptionMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

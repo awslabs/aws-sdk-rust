@@ -96,3 +96,12 @@ impl MultiRegionKeyType {
         }
     }
 }
+impl ::std::fmt::Display for MultiRegionKeyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MultiRegionKeyType::Primary => write!(f, "PRIMARY"),
+            MultiRegionKeyType::Replica => write!(f, "REPLICA"),
+            MultiRegionKeyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

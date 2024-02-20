@@ -111,3 +111,15 @@ impl AgentAliasStatus {
         }
     }
 }
+impl ::std::fmt::Display for AgentAliasStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgentAliasStatus::Creating => write!(f, "CREATING"),
+            AgentAliasStatus::Deleting => write!(f, "DELETING"),
+            AgentAliasStatus::Failed => write!(f, "FAILED"),
+            AgentAliasStatus::Prepared => write!(f, "PREPARED"),
+            AgentAliasStatus::Updating => write!(f, "UPDATING"),
+            AgentAliasStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl DnsRecordIpType {
         }
     }
 }
+impl ::std::fmt::Display for DnsRecordIpType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DnsRecordIpType::Dualstack => write!(f, "dualstack"),
+            DnsRecordIpType::Ipv4 => write!(f, "ipv4"),
+            DnsRecordIpType::Ipv6 => write!(f, "ipv6"),
+            DnsRecordIpType::ServiceDefined => write!(f, "service-defined"),
+            DnsRecordIpType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AgentAvailabilityTimer {
         }
     }
 }
+impl ::std::fmt::Display for AgentAvailabilityTimer {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgentAvailabilityTimer::TimeSinceLastActivity => write!(f, "TIME_SINCE_LAST_ACTIVITY"),
+            AgentAvailabilityTimer::TimeSinceLastInbound => write!(f, "TIME_SINCE_LAST_INBOUND"),
+            AgentAvailabilityTimer::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

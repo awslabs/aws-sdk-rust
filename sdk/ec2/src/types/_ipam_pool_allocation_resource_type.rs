@@ -111,3 +111,15 @@ impl IpamPoolAllocationResourceType {
         }
     }
 }
+impl ::std::fmt::Display for IpamPoolAllocationResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamPoolAllocationResourceType::Custom => write!(f, "custom"),
+            IpamPoolAllocationResourceType::Ec2PublicIpv4Pool => write!(f, "ec2-public-ipv4-pool"),
+            IpamPoolAllocationResourceType::IpamPool => write!(f, "ipam-pool"),
+            IpamPoolAllocationResourceType::Subnet => write!(f, "subnet"),
+            IpamPoolAllocationResourceType::Vpc => write!(f, "vpc"),
+            IpamPoolAllocationResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

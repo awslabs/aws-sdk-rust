@@ -96,3 +96,12 @@ impl MedicalScribeParticipantRole {
         }
     }
 }
+impl ::std::fmt::Display for MedicalScribeParticipantRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MedicalScribeParticipantRole::Clinician => write!(f, "CLINICIAN"),
+            MedicalScribeParticipantRole::Patient => write!(f, "PATIENT"),
+            MedicalScribeParticipantRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

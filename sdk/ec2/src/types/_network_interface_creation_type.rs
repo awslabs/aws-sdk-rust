@@ -101,3 +101,13 @@ impl NetworkInterfaceCreationType {
         }
     }
 }
+impl ::std::fmt::Display for NetworkInterfaceCreationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkInterfaceCreationType::Branch => write!(f, "branch"),
+            NetworkInterfaceCreationType::Efa => write!(f, "efa"),
+            NetworkInterfaceCreationType::Trunk => write!(f, "trunk"),
+            NetworkInterfaceCreationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

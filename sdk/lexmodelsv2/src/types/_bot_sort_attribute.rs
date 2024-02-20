@@ -91,3 +91,11 @@ impl BotSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for BotSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotSortAttribute::BotName => write!(f, "BotName"),
+            BotSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl DeleteFleetErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for DeleteFleetErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeleteFleetErrorCode::FleetIdDoesNotExist => write!(f, "fleetIdDoesNotExist"),
+            DeleteFleetErrorCode::FleetIdMalformed => write!(f, "fleetIdMalformed"),
+            DeleteFleetErrorCode::FleetNotInDeletableState => write!(f, "fleetNotInDeletableState"),
+            DeleteFleetErrorCode::UnexpectedError => write!(f, "unexpectedError"),
+            DeleteFleetErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

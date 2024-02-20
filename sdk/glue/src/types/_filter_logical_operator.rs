@@ -96,3 +96,12 @@ impl FilterLogicalOperator {
         }
     }
 }
+impl ::std::fmt::Display for FilterLogicalOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterLogicalOperator::And => write!(f, "AND"),
+            FilterLogicalOperator::Or => write!(f, "OR"),
+            FilterLogicalOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

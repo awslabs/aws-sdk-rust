@@ -96,3 +96,12 @@ impl ResourceImportStrategyType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceImportStrategyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceImportStrategyType::AddOnly => write!(f, "AddOnly"),
+            ResourceImportStrategyType::ReplaceAll => write!(f, "ReplaceAll"),
+            ResourceImportStrategyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

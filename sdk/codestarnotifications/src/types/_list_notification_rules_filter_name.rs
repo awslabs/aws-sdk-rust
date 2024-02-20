@@ -106,3 +106,14 @@ impl ListNotificationRulesFilterName {
         }
     }
 }
+impl ::std::fmt::Display for ListNotificationRulesFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListNotificationRulesFilterName::CreatedBy => write!(f, "CREATED_BY"),
+            ListNotificationRulesFilterName::EventTypeId => write!(f, "EVENT_TYPE_ID"),
+            ListNotificationRulesFilterName::Resource => write!(f, "RESOURCE"),
+            ListNotificationRulesFilterName::TargetAddress => write!(f, "TARGET_ADDRESS"),
+            ListNotificationRulesFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Type {
         }
     }
 }
+impl ::std::fmt::Display for Type {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Type::Dash => write!(f, "DASH"),
+            Type::Hls => write!(f, "HLS"),
+            Type::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

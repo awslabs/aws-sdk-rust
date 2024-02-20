@@ -96,3 +96,12 @@ impl TermInYears {
         }
     }
 }
+impl ::std::fmt::Display for TermInYears {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TermInYears::OneYear => write!(f, "ONE_YEAR"),
+            TermInYears::ThreeYears => write!(f, "THREE_YEARS"),
+            TermInYears::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

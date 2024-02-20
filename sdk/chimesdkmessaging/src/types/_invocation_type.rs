@@ -91,3 +91,11 @@ impl InvocationType {
         }
     }
 }
+impl ::std::fmt::Display for InvocationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InvocationType::Async => write!(f, "ASYNC"),
+            InvocationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

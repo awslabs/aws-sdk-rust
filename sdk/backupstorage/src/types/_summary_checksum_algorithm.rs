@@ -91,3 +91,11 @@ impl SummaryChecksumAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for SummaryChecksumAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SummaryChecksumAlgorithm::Summary => write!(f, "SUMMARY"),
+            SummaryChecksumAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

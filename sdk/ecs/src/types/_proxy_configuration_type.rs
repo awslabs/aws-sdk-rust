@@ -91,3 +91,11 @@ impl ProxyConfigurationType {
         }
     }
 }
+impl ::std::fmt::Display for ProxyConfigurationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProxyConfigurationType::Appmesh => write!(f, "APPMESH"),
+            ProxyConfigurationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

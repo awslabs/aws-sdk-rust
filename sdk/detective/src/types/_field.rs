@@ -101,3 +101,13 @@ impl Field {
         }
     }
 }
+impl ::std::fmt::Display for Field {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Field::CreatedTime => write!(f, "CREATED_TIME"),
+            Field::Severity => write!(f, "SEVERITY"),
+            Field::Status => write!(f, "STATUS"),
+            Field::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

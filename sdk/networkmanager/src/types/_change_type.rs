@@ -141,3 +141,19 @@ impl ChangeType {
         }
     }
 }
+impl ::std::fmt::Display for ChangeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeType::AttachmentMapping => write!(f, "ATTACHMENT_MAPPING"),
+            ChangeType::AttachmentPoliciesConfiguration => write!(f, "ATTACHMENT_POLICIES_CONFIGURATION"),
+            ChangeType::AttachmentRoutePropagation => write!(f, "ATTACHMENT_ROUTE_PROPAGATION"),
+            ChangeType::AttachmentRouteStatic => write!(f, "ATTACHMENT_ROUTE_STATIC"),
+            ChangeType::CoreNetworkConfiguration => write!(f, "CORE_NETWORK_CONFIGURATION"),
+            ChangeType::CoreNetworkEdge => write!(f, "CORE_NETWORK_EDGE"),
+            ChangeType::CoreNetworkSegment => write!(f, "CORE_NETWORK_SEGMENT"),
+            ChangeType::SegmentsConfiguration => write!(f, "SEGMENTS_CONFIGURATION"),
+            ChangeType::SegmentActionsConfiguration => write!(f, "SEGMENT_ACTIONS_CONFIGURATION"),
+            ChangeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

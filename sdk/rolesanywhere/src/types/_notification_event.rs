@@ -96,3 +96,12 @@ impl NotificationEvent {
         }
     }
 }
+impl ::std::fmt::Display for NotificationEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationEvent::CaCertificateExpiry => write!(f, "CA_CERTIFICATE_EXPIRY"),
+            NotificationEvent::EndEntityCertificateExpiry => write!(f, "END_ENTITY_CERTIFICATE_EXPIRY"),
+            NotificationEvent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

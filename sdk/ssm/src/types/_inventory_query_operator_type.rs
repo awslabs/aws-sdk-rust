@@ -116,3 +116,16 @@ impl InventoryQueryOperatorType {
         }
     }
 }
+impl ::std::fmt::Display for InventoryQueryOperatorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InventoryQueryOperatorType::BeginWith => write!(f, "BeginWith"),
+            InventoryQueryOperatorType::Equal => write!(f, "Equal"),
+            InventoryQueryOperatorType::Exists => write!(f, "Exists"),
+            InventoryQueryOperatorType::GreaterThan => write!(f, "GreaterThan"),
+            InventoryQueryOperatorType::LessThan => write!(f, "LessThan"),
+            InventoryQueryOperatorType::NotEqual => write!(f, "NotEqual"),
+            InventoryQueryOperatorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

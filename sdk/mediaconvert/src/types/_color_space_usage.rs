@@ -96,3 +96,12 @@ impl ColorSpaceUsage {
         }
     }
 }
+impl ::std::fmt::Display for ColorSpaceUsage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColorSpaceUsage::Fallback => write!(f, "FALLBACK"),
+            ColorSpaceUsage::Force => write!(f, "FORCE"),
+            ColorSpaceUsage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

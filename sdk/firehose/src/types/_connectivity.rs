@@ -96,3 +96,12 @@ impl Connectivity {
         }
     }
 }
+impl ::std::fmt::Display for Connectivity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Connectivity::Private => write!(f, "PRIVATE"),
+            Connectivity::Public => write!(f, "PUBLIC"),
+            Connectivity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -117,3 +117,15 @@ impl LimitExceededErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for LimitExceededErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LimitExceededErrorCode::AssessmentRunLimitExceeded => write!(f, "ASSESSMENT_RUN_LIMIT_EXCEEDED"),
+            LimitExceededErrorCode::AssessmentTargetLimitExceeded => write!(f, "ASSESSMENT_TARGET_LIMIT_EXCEEDED"),
+            LimitExceededErrorCode::AssessmentTemplateLimitExceeded => write!(f, "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED"),
+            LimitExceededErrorCode::EventSubscriptionLimitExceeded => write!(f, "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED"),
+            LimitExceededErrorCode::ResourceGroupLimitExceeded => write!(f, "RESOURCE_GROUP_LIMIT_EXCEEDED"),
+            LimitExceededErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

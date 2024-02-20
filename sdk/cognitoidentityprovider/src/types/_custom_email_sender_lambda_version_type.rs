@@ -91,3 +91,11 @@ impl CustomEmailSenderLambdaVersionType {
         }
     }
 }
+impl ::std::fmt::Display for CustomEmailSenderLambdaVersionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomEmailSenderLambdaVersionType::V10 => write!(f, "V1_0"),
+            CustomEmailSenderLambdaVersionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl InputLossActionForRtmpOut {
         }
     }
 }
+impl ::std::fmt::Display for InputLossActionForRtmpOut {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputLossActionForRtmpOut::EmitOutput => write!(f, "EMIT_OUTPUT"),
+            InputLossActionForRtmpOut::PauseOutput => write!(f, "PAUSE_OUTPUT"),
+            InputLossActionForRtmpOut::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

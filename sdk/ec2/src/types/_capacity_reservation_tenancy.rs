@@ -96,3 +96,12 @@ impl CapacityReservationTenancy {
         }
     }
 }
+impl ::std::fmt::Display for CapacityReservationTenancy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapacityReservationTenancy::Dedicated => write!(f, "dedicated"),
+            CapacityReservationTenancy::Default => write!(f, "default"),
+            CapacityReservationTenancy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

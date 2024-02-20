@@ -101,3 +101,13 @@ impl OriginProtocolPolicy {
         }
     }
 }
+impl ::std::fmt::Display for OriginProtocolPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginProtocolPolicy::HttpOnly => write!(f, "http-only"),
+            OriginProtocolPolicy::HttpsOnly => write!(f, "https-only"),
+            OriginProtocolPolicy::MatchViewer => write!(f, "match-viewer"),
+            OriginProtocolPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CreationType {
         }
     }
 }
+impl ::std::fmt::Display for CreationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CreationType::Import => write!(f, "IMPORT"),
+            CreationType::Upload => write!(f, "UPLOAD"),
+            CreationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

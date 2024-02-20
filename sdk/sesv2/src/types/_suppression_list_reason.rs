@@ -111,3 +111,12 @@ impl SuppressionListReason {
         }
     }
 }
+impl ::std::fmt::Display for SuppressionListReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SuppressionListReason::Bounce => write!(f, "BOUNCE"),
+            SuppressionListReason::Complaint => write!(f, "COMPLAINT"),
+            SuppressionListReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

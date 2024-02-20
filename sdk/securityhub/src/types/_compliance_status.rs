@@ -106,3 +106,14 @@ impl ComplianceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ComplianceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComplianceStatus::Failed => write!(f, "FAILED"),
+            ComplianceStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
+            ComplianceStatus::Passed => write!(f, "PASSED"),
+            ComplianceStatus::Warning => write!(f, "WARNING"),
+            ComplianceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ActionOnFailure {
         }
     }
 }
+impl ::std::fmt::Display for ActionOnFailure {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionOnFailure::CancelAndWait => write!(f, "CANCEL_AND_WAIT"),
+            ActionOnFailure::Continue => write!(f, "CONTINUE"),
+            ActionOnFailure::TerminateCluster => write!(f, "TERMINATE_CLUSTER"),
+            ActionOnFailure::TerminateJobFlow => write!(f, "TERMINATE_JOB_FLOW"),
+            ActionOnFailure::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

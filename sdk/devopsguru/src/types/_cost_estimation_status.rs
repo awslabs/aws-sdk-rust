@@ -96,3 +96,12 @@ impl CostEstimationStatus {
         }
     }
 }
+impl ::std::fmt::Display for CostEstimationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CostEstimationStatus::Completed => write!(f, "COMPLETED"),
+            CostEstimationStatus::Ongoing => write!(f, "ONGOING"),
+            CostEstimationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

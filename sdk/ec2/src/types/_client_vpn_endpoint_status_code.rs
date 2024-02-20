@@ -106,3 +106,14 @@ impl ClientVpnEndpointStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ClientVpnEndpointStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientVpnEndpointStatusCode::Available => write!(f, "available"),
+            ClientVpnEndpointStatusCode::Deleted => write!(f, "deleted"),
+            ClientVpnEndpointStatusCode::Deleting => write!(f, "deleting"),
+            ClientVpnEndpointStatusCode::PendingAssociate => write!(f, "pending-associate"),
+            ClientVpnEndpointStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

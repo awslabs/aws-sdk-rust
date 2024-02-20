@@ -96,3 +96,12 @@ impl H265DynamicSubGop {
         }
     }
 }
+impl ::std::fmt::Display for H265DynamicSubGop {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265DynamicSubGop::Adaptive => write!(f, "ADAPTIVE"),
+            H265DynamicSubGop::Static => write!(f, "STATIC"),
+            H265DynamicSubGop::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

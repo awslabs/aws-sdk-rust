@@ -96,3 +96,12 @@ impl FilterBehavior {
         }
     }
 }
+impl ::std::fmt::Display for FilterBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterBehavior::Drop => write!(f, "DROP"),
+            FilterBehavior::Keep => write!(f, "KEEP"),
+            FilterBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

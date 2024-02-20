@@ -171,3 +171,24 @@ impl MigrationWorkflowStatusEnum {
         }
     }
 }
+impl ::std::fmt::Display for MigrationWorkflowStatusEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MigrationWorkflowStatusEnum::Completed => write!(f, "COMPLETED"),
+            MigrationWorkflowStatusEnum::Creating => write!(f, "CREATING"),
+            MigrationWorkflowStatusEnum::CreationFailed => write!(f, "CREATION_FAILED"),
+            MigrationWorkflowStatusEnum::Deleted => write!(f, "DELETED"),
+            MigrationWorkflowStatusEnum::Deleting => write!(f, "DELETING"),
+            MigrationWorkflowStatusEnum::DeletionFailed => write!(f, "DELETION_FAILED"),
+            MigrationWorkflowStatusEnum::InProgress => write!(f, "IN_PROGRESS"),
+            MigrationWorkflowStatusEnum::NotStarted => write!(f, "NOT_STARTED"),
+            MigrationWorkflowStatusEnum::Paused => write!(f, "PAUSED"),
+            MigrationWorkflowStatusEnum::Pausing => write!(f, "PAUSING"),
+            MigrationWorkflowStatusEnum::PausingFailed => write!(f, "PAUSING_FAILED"),
+            MigrationWorkflowStatusEnum::Starting => write!(f, "STARTING"),
+            MigrationWorkflowStatusEnum::UserAttentionRequired => write!(f, "USER_ATTENTION_REQUIRED"),
+            MigrationWorkflowStatusEnum::WorkflowFailed => write!(f, "WORKFLOW_FAILED"),
+            MigrationWorkflowStatusEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

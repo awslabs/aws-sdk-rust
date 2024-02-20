@@ -116,3 +116,16 @@ impl PrincipalType {
         }
     }
 }
+impl ::std::fmt::Display for PrincipalType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrincipalType::Account => write!(f, "Account"),
+            PrincipalType::All => write!(f, "All"),
+            PrincipalType::OrganizationUnit => write!(f, "OrganizationUnit"),
+            PrincipalType::Role => write!(f, "Role"),
+            PrincipalType::Service => write!(f, "Service"),
+            PrincipalType::User => write!(f, "User"),
+            PrincipalType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

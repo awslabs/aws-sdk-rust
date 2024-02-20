@@ -96,3 +96,12 @@ impl ComponentType {
         }
     }
 }
+impl ::std::fmt::Display for ComponentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComponentType::Build => write!(f, "BUILD"),
+            ComponentType::Test => write!(f, "TEST"),
+            ComponentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

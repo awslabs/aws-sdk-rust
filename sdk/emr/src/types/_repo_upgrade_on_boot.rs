@@ -96,3 +96,12 @@ impl RepoUpgradeOnBoot {
         }
     }
 }
+impl ::std::fmt::Display for RepoUpgradeOnBoot {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RepoUpgradeOnBoot::None => write!(f, "NONE"),
+            RepoUpgradeOnBoot::Security => write!(f, "SECURITY"),
+            RepoUpgradeOnBoot::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

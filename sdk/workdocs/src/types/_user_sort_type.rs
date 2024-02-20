@@ -111,3 +111,15 @@ impl UserSortType {
         }
     }
 }
+impl ::std::fmt::Display for UserSortType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserSortType::FullName => write!(f, "FULL_NAME"),
+            UserSortType::StorageLimit => write!(f, "STORAGE_LIMIT"),
+            UserSortType::StorageUsed => write!(f, "STORAGE_USED"),
+            UserSortType::UserName => write!(f, "USER_NAME"),
+            UserSortType::UserStatus => write!(f, "USER_STATUS"),
+            UserSortType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

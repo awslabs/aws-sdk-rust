@@ -141,3 +141,19 @@ impl EntityType {
         }
     }
 }
+impl ::std::fmt::Display for EntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EntityType::ColumnHeader => write!(f, "COLUMN_HEADER"),
+            EntityType::Key => write!(f, "KEY"),
+            EntityType::SemiStructuredTable => write!(f, "SEMI_STRUCTURED_TABLE"),
+            EntityType::StructuredTable => write!(f, "STRUCTURED_TABLE"),
+            EntityType::TableFooter => write!(f, "TABLE_FOOTER"),
+            EntityType::TableSectionTitle => write!(f, "TABLE_SECTION_TITLE"),
+            EntityType::TableSummary => write!(f, "TABLE_SUMMARY"),
+            EntityType::TableTitle => write!(f, "TABLE_TITLE"),
+            EntityType::Value => write!(f, "VALUE"),
+            EntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

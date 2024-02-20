@@ -96,3 +96,12 @@ impl ExportType {
         }
     }
 }
+impl ::std::fmt::Display for ExportType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportType::FullExport => write!(f, "FULL_EXPORT"),
+            ExportType::IncrementalExport => write!(f, "INCREMENTAL_EXPORT"),
+            ExportType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

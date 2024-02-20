@@ -111,3 +111,15 @@ impl CommandFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for CommandFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CommandFilterKey::DocumentName => write!(f, "DocumentName"),
+            CommandFilterKey::ExecutionStage => write!(f, "ExecutionStage"),
+            CommandFilterKey::InvokedAfter => write!(f, "InvokedAfter"),
+            CommandFilterKey::InvokedBefore => write!(f, "InvokedBefore"),
+            CommandFilterKey::Status => write!(f, "Status"),
+            CommandFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

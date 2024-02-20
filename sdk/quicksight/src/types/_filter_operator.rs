@@ -96,3 +96,12 @@ impl FilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for FilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterOperator::StringEquals => write!(f, "StringEquals"),
+            FilterOperator::StringLike => write!(f, "StringLike"),
+            FilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

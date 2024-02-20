@@ -96,3 +96,12 @@ impl VerifiedAccessLogDeliveryStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for VerifiedAccessLogDeliveryStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerifiedAccessLogDeliveryStatusCode::Failed => write!(f, "failed"),
+            VerifiedAccessLogDeliveryStatusCode::Success => write!(f, "success"),
+            VerifiedAccessLogDeliveryStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

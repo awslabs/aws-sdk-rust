@@ -299,3 +299,58 @@ impl ConstraintViolationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ConstraintViolationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConstraintViolationExceptionReason::AccountCannotLeaveOrganization => write!(f, "ACCOUNT_CANNOT_LEAVE_ORGANIZATION"),
+            ConstraintViolationExceptionReason::AccountCannotLeaveWithoutEula => write!(f, "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA"),
+            ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => {
+                write!(f, "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION")
+            }
+            ConstraintViolationExceptionReason::AccountCreationNotComplete => write!(f, "ACCOUNT_CREATION_NOT_COMPLETE"),
+            ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => write!(f, "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::AccountNumberLimitExceeded => write!(f, "ACCOUNT_NUMBER_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::CannotCloseManagementAccount => write!(f, "CANNOT_CLOSE_MANAGEMENT_ACCOUNT"),
+            ConstraintViolationExceptionReason::CannotRegisterMasterAsDelegatedAdministrator => {
+                write!(f, "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR")
+            }
+            ConstraintViolationExceptionReason::CannotRemoveDelegatedAdministratorFromOrg => {
+                write!(f, "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG")
+            }
+            ConstraintViolationExceptionReason::CloseAccountQuotaExceeded => write!(f, "CLOSE_ACCOUNT_QUOTA_EXCEEDED"),
+            ConstraintViolationExceptionReason::CloseAccountRequestsLimitExceeded => write!(f, "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::CreateOrganizationInBillingModeUnsupportedRegion => {
+                write!(f, "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION")
+            }
+            ConstraintViolationExceptionReason::DelegatedAdministratorExistsForThisService => {
+                write!(f, "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE")
+            }
+            ConstraintViolationExceptionReason::EmailVerificationCodeExpired => write!(f, "EMAIL_VERIFICATION_CODE_EXPIRED"),
+            ConstraintViolationExceptionReason::HandshakeRateLimitExceeded => write!(f, "HANDSHAKE_RATE_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::InvalidPaymentInstrument => write!(f, "INVALID_PAYMENT_INSTRUMENT"),
+            ConstraintViolationExceptionReason::MasterAccountAddressDoesNotMatchMarketplace => {
+                write!(f, "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE")
+            }
+            ConstraintViolationExceptionReason::MasterAccountMissingBusinessLicense => write!(f, "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE"),
+            ConstraintViolationExceptionReason::MasterAccountMissingContactInfo => write!(f, "MASTER_ACCOUNT_MISSING_CONTACT_INFO"),
+            ConstraintViolationExceptionReason::MasterAccountNotGovcloudEnabled => write!(f, "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED"),
+            ConstraintViolationExceptionReason::MasterAccountPaymentInstrumentRequired => write!(f, "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED"),
+            ConstraintViolationExceptionReason::MaxDelegatedAdministratorsForServiceLimitExceeded => {
+                write!(f, "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED")
+            }
+            ConstraintViolationExceptionReason::MaxPolicyTypeAttachmentLimitExceeded => write!(f, "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::MaxTagLimitExceeded => write!(f, "MAX_TAG_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::MemberAccountPaymentInstrumentRequired => write!(f, "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED"),
+            ConstraintViolationExceptionReason::MinPolicyTypeAttachmentLimitExceeded => write!(f, "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::OrganizationNotInAllFeaturesMode => write!(f, "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE"),
+            ConstraintViolationExceptionReason::OuDepthLimitExceeded => write!(f, "OU_DEPTH_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::OuNumberLimitExceeded => write!(f, "OU_NUMBER_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::PolicyContentLimitExceeded => write!(f, "POLICY_CONTENT_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::PolicyNumberLimitExceeded => write!(f, "POLICY_NUMBER_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::ServiceAccessNotEnabled => write!(f, "SERVICE_ACCESS_NOT_ENABLED"),
+            ConstraintViolationExceptionReason::TagPolicyViolation => write!(f, "TAG_POLICY_VIOLATION"),
+            ConstraintViolationExceptionReason::WaitPeriodActive => write!(f, "WAIT_PERIOD_ACTIVE"),
+            ConstraintViolationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

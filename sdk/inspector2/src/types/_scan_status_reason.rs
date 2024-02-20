@@ -231,3 +231,34 @@ impl ScanStatusReason {
         }
     }
 }
+impl ::std::fmt::Display for ScanStatusReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScanStatusReason::AccessDenied => write!(f, "ACCESS_DENIED"),
+            ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => write!(f, "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED"),
+            ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => write!(f, "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED"),
+            ScanStatusReason::DeepInspectionNoInventory => write!(f, "DEEP_INSPECTION_NO_INVENTORY"),
+            ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => write!(f, "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED"),
+            ScanStatusReason::Ec2InstanceStopped => write!(f, "EC2_INSTANCE_STOPPED"),
+            ScanStatusReason::ExcludedByTag => write!(f, "EXCLUDED_BY_TAG"),
+            ScanStatusReason::ImageSizeExceeded => write!(f, "IMAGE_SIZE_EXCEEDED"),
+            ScanStatusReason::InternalError => write!(f, "INTERNAL_ERROR"),
+            ScanStatusReason::NoInventory => write!(f, "NO_INVENTORY"),
+            ScanStatusReason::NoResourcesFound => write!(f, "NO_RESOURCES_FOUND"),
+            ScanStatusReason::PendingDisable => write!(f, "PENDING_DISABLE"),
+            ScanStatusReason::PendingInitialScan => write!(f, "PENDING_INITIAL_SCAN"),
+            ScanStatusReason::ResourceTerminated => write!(f, "RESOURCE_TERMINATED"),
+            ScanStatusReason::ScanEligibilityExpired => write!(f, "SCAN_ELIGIBILITY_EXPIRED"),
+            ScanStatusReason::ScanFrequencyManual => write!(f, "SCAN_FREQUENCY_MANUAL"),
+            ScanStatusReason::ScanFrequencyScanOnPush => write!(f, "SCAN_FREQUENCY_SCAN_ON_PUSH"),
+            ScanStatusReason::StaleInventory => write!(f, "STALE_INVENTORY"),
+            ScanStatusReason::Successful => write!(f, "SUCCESSFUL"),
+            ScanStatusReason::UnmanagedEc2Instance => write!(f, "UNMANAGED_EC2_INSTANCE"),
+            ScanStatusReason::UnsupportedConfigFile => write!(f, "UNSUPPORTED_CONFIG_FILE"),
+            ScanStatusReason::UnsupportedMediaType => write!(f, "UNSUPPORTED_MEDIA_TYPE"),
+            ScanStatusReason::UnsupportedOs => write!(f, "UNSUPPORTED_OS"),
+            ScanStatusReason::UnsupportedRuntime => write!(f, "UNSUPPORTED_RUNTIME"),
+            ScanStatusReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

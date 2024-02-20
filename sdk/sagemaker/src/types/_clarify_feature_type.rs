@@ -101,3 +101,13 @@ impl ClarifyFeatureType {
         }
     }
 }
+impl ::std::fmt::Display for ClarifyFeatureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClarifyFeatureType::Categorical => write!(f, "categorical"),
+            ClarifyFeatureType::Numerical => write!(f, "numerical"),
+            ClarifyFeatureType::Text => write!(f, "text"),
+            ClarifyFeatureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

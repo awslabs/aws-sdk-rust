@@ -117,3 +117,15 @@ impl Mpeg2IntraDcPrecision {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2IntraDcPrecision {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2IntraDcPrecision::Auto => write!(f, "AUTO"),
+            Mpeg2IntraDcPrecision::IntraDcPrecision10 => write!(f, "INTRA_DC_PRECISION_10"),
+            Mpeg2IntraDcPrecision::IntraDcPrecision11 => write!(f, "INTRA_DC_PRECISION_11"),
+            Mpeg2IntraDcPrecision::IntraDcPrecision8 => write!(f, "INTRA_DC_PRECISION_8"),
+            Mpeg2IntraDcPrecision::IntraDcPrecision9 => write!(f, "INTRA_DC_PRECISION_9"),
+            Mpeg2IntraDcPrecision::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

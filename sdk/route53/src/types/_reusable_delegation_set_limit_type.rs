@@ -91,3 +91,11 @@ impl ReusableDelegationSetLimitType {
         }
     }
 }
+impl ::std::fmt::Display for ReusableDelegationSetLimitType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet => write!(f, "MAX_ZONES_BY_REUSABLE_DELEGATION_SET"),
+            ReusableDelegationSetLimitType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

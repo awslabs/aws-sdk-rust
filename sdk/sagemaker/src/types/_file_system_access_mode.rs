@@ -96,3 +96,12 @@ impl FileSystemAccessMode {
         }
     }
 }
+impl ::std::fmt::Display for FileSystemAccessMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileSystemAccessMode::Ro => write!(f, "ro"),
+            FileSystemAccessMode::Rw => write!(f, "rw"),
+            FileSystemAccessMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

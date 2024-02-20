@@ -101,3 +101,13 @@ impl LineChartType {
         }
     }
 }
+impl ::std::fmt::Display for LineChartType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LineChartType::Area => write!(f, "AREA"),
+            LineChartType::Line => write!(f, "LINE"),
+            LineChartType::StackedArea => write!(f, "STACKED_AREA"),
+            LineChartType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

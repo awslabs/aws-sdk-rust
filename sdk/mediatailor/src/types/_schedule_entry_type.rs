@@ -96,3 +96,12 @@ impl ScheduleEntryType {
         }
     }
 }
+impl ::std::fmt::Display for ScheduleEntryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduleEntryType::FillerSlate => write!(f, "FILLER_SLATE"),
+            ScheduleEntryType::Program => write!(f, "PROGRAM"),
+            ScheduleEntryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

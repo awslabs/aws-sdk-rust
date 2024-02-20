@@ -153,3 +153,21 @@ impl ConditionalFormattingIconSetType {
         }
     }
 }
+impl ::std::fmt::Display for ConditionalFormattingIconSetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConditionalFormattingIconSetType::Bars => write!(f, "BARS"),
+            ConditionalFormattingIconSetType::CaretUpMinusDown => write!(f, "CARET_UP_MINUS_DOWN"),
+            ConditionalFormattingIconSetType::CheckX => write!(f, "CHECK_X"),
+            ConditionalFormattingIconSetType::Flags => write!(f, "FLAGS"),
+            ConditionalFormattingIconSetType::FourColorArrow => write!(f, "FOUR_COLOR_ARROW"),
+            ConditionalFormattingIconSetType::FourGrayArrow => write!(f, "FOUR_GRAY_ARROW"),
+            ConditionalFormattingIconSetType::PlusMinus => write!(f, "PLUS_MINUS"),
+            ConditionalFormattingIconSetType::ThreeCircle => write!(f, "THREE_CIRCLE"),
+            ConditionalFormattingIconSetType::ThreeColorArrow => write!(f, "THREE_COLOR_ARROW"),
+            ConditionalFormattingIconSetType::ThreeGrayArrow => write!(f, "THREE_GRAY_ARROW"),
+            ConditionalFormattingIconSetType::ThreeShape => write!(f, "THREE_SHAPE"),
+            ConditionalFormattingIconSetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

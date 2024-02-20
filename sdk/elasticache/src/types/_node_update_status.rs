@@ -116,3 +116,16 @@ impl NodeUpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for NodeUpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeUpdateStatus::Complete => write!(f, "complete"),
+            NodeUpdateStatus::InProgress => write!(f, "in-progress"),
+            NodeUpdateStatus::NotApplied => write!(f, "not-applied"),
+            NodeUpdateStatus::Stopped => write!(f, "stopped"),
+            NodeUpdateStatus::Stopping => write!(f, "stopping"),
+            NodeUpdateStatus::WaitingToStart => write!(f, "waiting-to-start"),
+            NodeUpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

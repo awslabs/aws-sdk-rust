@@ -191,3 +191,27 @@ impl AssetBundleExportJobDataSourcePropertyToOverride {
         }
     }
 }
+impl ::std::fmt::Display for AssetBundleExportJobDataSourcePropertyToOverride {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetBundleExportJobDataSourcePropertyToOverride::Catalog => write!(f, "Catalog"),
+            AssetBundleExportJobDataSourcePropertyToOverride::ClusterId => write!(f, "ClusterId"),
+            AssetBundleExportJobDataSourcePropertyToOverride::DataSetName => write!(f, "DataSetName"),
+            AssetBundleExportJobDataSourcePropertyToOverride::Database => write!(f, "Database"),
+            AssetBundleExportJobDataSourcePropertyToOverride::DisableSsl => write!(f, "DisableSsl"),
+            AssetBundleExportJobDataSourcePropertyToOverride::Domain => write!(f, "Domain"),
+            AssetBundleExportJobDataSourcePropertyToOverride::Host => write!(f, "Host"),
+            AssetBundleExportJobDataSourcePropertyToOverride::InstanceId => write!(f, "InstanceId"),
+            AssetBundleExportJobDataSourcePropertyToOverride::ManifestFileLocation => write!(f, "ManifestFileLocation"),
+            AssetBundleExportJobDataSourcePropertyToOverride::Name => write!(f, "Name"),
+            AssetBundleExportJobDataSourcePropertyToOverride::Password => write!(f, "Password"),
+            AssetBundleExportJobDataSourcePropertyToOverride::Port => write!(f, "Port"),
+            AssetBundleExportJobDataSourcePropertyToOverride::RoleArn => write!(f, "RoleArn"),
+            AssetBundleExportJobDataSourcePropertyToOverride::SecretArn => write!(f, "SecretArn"),
+            AssetBundleExportJobDataSourcePropertyToOverride::Username => write!(f, "Username"),
+            AssetBundleExportJobDataSourcePropertyToOverride::Warehouse => write!(f, "Warehouse"),
+            AssetBundleExportJobDataSourcePropertyToOverride::WorkGroup => write!(f, "WorkGroup"),
+            AssetBundleExportJobDataSourcePropertyToOverride::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

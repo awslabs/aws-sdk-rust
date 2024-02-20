@@ -126,3 +126,18 @@ impl UpdateAgentLogLevel {
         }
     }
 }
+impl ::std::fmt::Display for UpdateAgentLogLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateAgentLogLevel::Debug => write!(f, "DEBUG"),
+            UpdateAgentLogLevel::Error => write!(f, "ERROR"),
+            UpdateAgentLogLevel::Fatal => write!(f, "FATAL"),
+            UpdateAgentLogLevel::Info => write!(f, "INFO"),
+            UpdateAgentLogLevel::None => write!(f, "NONE"),
+            UpdateAgentLogLevel::Trace => write!(f, "TRACE"),
+            UpdateAgentLogLevel::Verbose => write!(f, "VERBOSE"),
+            UpdateAgentLogLevel::Warn => write!(f, "WARN"),
+            UpdateAgentLogLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

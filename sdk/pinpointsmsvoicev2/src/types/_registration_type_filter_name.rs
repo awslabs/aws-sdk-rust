@@ -96,3 +96,12 @@ impl RegistrationTypeFilterName {
         }
     }
 }
+impl ::std::fmt::Display for RegistrationTypeFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistrationTypeFilterName::SupportedAssociationIsoCountryCode => write!(f, "supported-association-iso-country-code"),
+            RegistrationTypeFilterName::SupportedAssociationResourceType => write!(f, "supported-association-resource-type"),
+            RegistrationTypeFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

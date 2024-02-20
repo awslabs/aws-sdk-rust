@@ -96,3 +96,12 @@ impl UsernameAttributeType {
         }
     }
 }
+impl ::std::fmt::Display for UsernameAttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsernameAttributeType::Email => write!(f, "email"),
+            UsernameAttributeType::PhoneNumber => write!(f, "phone_number"),
+            UsernameAttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

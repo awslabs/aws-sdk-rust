@@ -101,3 +101,13 @@ impl StoreFormat {
         }
     }
 }
+impl ::std::fmt::Display for StoreFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StoreFormat::Gff => write!(f, "GFF"),
+            StoreFormat::Tsv => write!(f, "TSV"),
+            StoreFormat::Vcf => write!(f, "VCF"),
+            StoreFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

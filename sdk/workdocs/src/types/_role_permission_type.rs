@@ -96,3 +96,12 @@ impl RolePermissionType {
         }
     }
 }
+impl ::std::fmt::Display for RolePermissionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RolePermissionType::Direct => write!(f, "DIRECT"),
+            RolePermissionType::Inherited => write!(f, "INHERITED"),
+            RolePermissionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

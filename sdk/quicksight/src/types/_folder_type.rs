@@ -96,3 +96,12 @@ impl FolderType {
         }
     }
 }
+impl ::std::fmt::Display for FolderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FolderType::Restricted => write!(f, "RESTRICTED"),
+            FolderType::Shared => write!(f, "SHARED"),
+            FolderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

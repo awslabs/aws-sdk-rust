@@ -116,3 +116,16 @@ impl ShareStatus {
         }
     }
 }
+impl ::std::fmt::Display for ShareStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareStatus::Activating => write!(f, "ACTIVATING"),
+            ShareStatus::Active => write!(f, "ACTIVE"),
+            ShareStatus::Deleted => write!(f, "DELETED"),
+            ShareStatus::Deleting => write!(f, "DELETING"),
+            ShareStatus::Failed => write!(f, "FAILED"),
+            ShareStatus::Pending => write!(f, "PENDING"),
+            ShareStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

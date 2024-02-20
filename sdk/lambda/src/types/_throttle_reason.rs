@@ -123,3 +123,16 @@ impl ThrottleReason {
         }
     }
 }
+impl ::std::fmt::Display for ThrottleReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThrottleReason::CallerRateLimitExceeded => write!(f, "CallerRateLimitExceeded"),
+            ThrottleReason::ConcurrentInvocationLimitExceeded => write!(f, "ConcurrentInvocationLimitExceeded"),
+            ThrottleReason::ConcurrentSnapshotCreateLimitExceeded => write!(f, "ConcurrentSnapshotCreateLimitExceeded"),
+            ThrottleReason::FunctionInvocationRateLimitExceeded => write!(f, "FunctionInvocationRateLimitExceeded"),
+            ThrottleReason::ReservedFunctionConcurrentInvocationLimitExceeded => write!(f, "ReservedFunctionConcurrentInvocationLimitExceeded"),
+            ThrottleReason::ReservedFunctionInvocationRateLimitExceeded => write!(f, "ReservedFunctionInvocationRateLimitExceeded"),
+            ThrottleReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DeltaTargetCompressionType {
         }
     }
 }
+impl ::std::fmt::Display for DeltaTargetCompressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeltaTargetCompressionType::Snappy => write!(f, "snappy"),
+            DeltaTargetCompressionType::Uncompressed => write!(f, "uncompressed"),
+            DeltaTargetCompressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

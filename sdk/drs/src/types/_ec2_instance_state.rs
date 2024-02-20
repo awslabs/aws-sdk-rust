@@ -121,3 +121,17 @@ impl Ec2InstanceState {
         }
     }
 }
+impl ::std::fmt::Display for Ec2InstanceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ec2InstanceState::NotFound => write!(f, "NOT_FOUND"),
+            Ec2InstanceState::Pending => write!(f, "PENDING"),
+            Ec2InstanceState::Running => write!(f, "RUNNING"),
+            Ec2InstanceState::ShuttingDown => write!(f, "SHUTTING-DOWN"),
+            Ec2InstanceState::Stopped => write!(f, "STOPPED"),
+            Ec2InstanceState::Stopping => write!(f, "STOPPING"),
+            Ec2InstanceState::Terminated => write!(f, "TERMINATED"),
+            Ec2InstanceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

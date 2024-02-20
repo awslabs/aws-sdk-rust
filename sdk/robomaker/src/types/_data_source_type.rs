@@ -101,3 +101,13 @@ impl DataSourceType {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceType::Archive => write!(f, "Archive"),
+            DataSourceType::File => write!(f, "File"),
+            DataSourceType::Prefix => write!(f, "Prefix"),
+            DataSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

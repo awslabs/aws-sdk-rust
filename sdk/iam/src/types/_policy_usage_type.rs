@@ -99,3 +99,12 @@ impl PolicyUsageType {
         }
     }
 }
+impl ::std::fmt::Display for PolicyUsageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyUsageType::PermissionsBoundary => write!(f, "PermissionsBoundary"),
+            PolicyUsageType::PermissionsPolicy => write!(f, "PermissionsPolicy"),
+            PolicyUsageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

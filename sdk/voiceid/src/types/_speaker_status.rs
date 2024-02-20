@@ -106,3 +106,14 @@ impl SpeakerStatus {
         }
     }
 }
+impl ::std::fmt::Display for SpeakerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpeakerStatus::Enrolled => write!(f, "ENROLLED"),
+            SpeakerStatus::Expired => write!(f, "EXPIRED"),
+            SpeakerStatus::OptedOut => write!(f, "OPTED_OUT"),
+            SpeakerStatus::Pending => write!(f, "PENDING"),
+            SpeakerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

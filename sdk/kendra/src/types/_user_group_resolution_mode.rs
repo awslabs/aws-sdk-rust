@@ -96,3 +96,12 @@ impl UserGroupResolutionMode {
         }
     }
 }
+impl ::std::fmt::Display for UserGroupResolutionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserGroupResolutionMode::AwsSso => write!(f, "AWS_SSO"),
+            UserGroupResolutionMode::None => write!(f, "NONE"),
+            UserGroupResolutionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

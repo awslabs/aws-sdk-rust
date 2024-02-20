@@ -96,3 +96,12 @@ impl SalesforceChatterFeedIncludeFilterType {
         }
     }
 }
+impl ::std::fmt::Display for SalesforceChatterFeedIncludeFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SalesforceChatterFeedIncludeFilterType::ActiveUser => write!(f, "ACTIVE_USER"),
+            SalesforceChatterFeedIncludeFilterType::StandardUser => write!(f, "STANDARD_USER"),
+            SalesforceChatterFeedIncludeFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

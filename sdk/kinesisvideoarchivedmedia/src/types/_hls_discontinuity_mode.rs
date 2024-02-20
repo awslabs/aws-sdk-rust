@@ -101,3 +101,13 @@ impl HlsDiscontinuityMode {
         }
     }
 }
+impl ::std::fmt::Display for HlsDiscontinuityMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsDiscontinuityMode::Always => write!(f, "ALWAYS"),
+            HlsDiscontinuityMode::Never => write!(f, "NEVER"),
+            HlsDiscontinuityMode::OnDiscontinuity => write!(f, "ON_DISCONTINUITY"),
+            HlsDiscontinuityMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

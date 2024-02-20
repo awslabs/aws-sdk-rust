@@ -106,3 +106,14 @@ impl WirelessDeviceIdType {
         }
     }
 }
+impl ::std::fmt::Display for WirelessDeviceIdType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WirelessDeviceIdType::DevEui => write!(f, "DevEui"),
+            WirelessDeviceIdType::SidewalkManufacturingSn => write!(f, "SidewalkManufacturingSn"),
+            WirelessDeviceIdType::ThingName => write!(f, "ThingName"),
+            WirelessDeviceIdType::WirelessDeviceId => write!(f, "WirelessDeviceId"),
+            WirelessDeviceIdType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DataSourceStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceStatus::Available => write!(f, "AVAILABLE"),
+            DataSourceStatus::Deleting => write!(f, "DELETING"),
+            DataSourceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

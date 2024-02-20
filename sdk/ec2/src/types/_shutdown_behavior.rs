@@ -96,3 +96,12 @@ impl ShutdownBehavior {
         }
     }
 }
+impl ::std::fmt::Display for ShutdownBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShutdownBehavior::Stop => write!(f, "stop"),
+            ShutdownBehavior::Terminate => write!(f, "terminate"),
+            ShutdownBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

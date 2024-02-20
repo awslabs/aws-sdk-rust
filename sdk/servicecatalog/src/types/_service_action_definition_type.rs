@@ -91,3 +91,11 @@ impl ServiceActionDefinitionType {
         }
     }
 }
+impl ::std::fmt::Display for ServiceActionDefinitionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceActionDefinitionType::SsmAutomation => write!(f, "SSM_AUTOMATION"),
+            ServiceActionDefinitionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

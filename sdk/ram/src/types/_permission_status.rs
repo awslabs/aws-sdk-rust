@@ -106,3 +106,14 @@ impl PermissionStatus {
         }
     }
 }
+impl ::std::fmt::Display for PermissionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionStatus::Attachable => write!(f, "ATTACHABLE"),
+            PermissionStatus::Deleted => write!(f, "DELETED"),
+            PermissionStatus::Deleting => write!(f, "DELETING"),
+            PermissionStatus::Unattachable => write!(f, "UNATTACHABLE"),
+            PermissionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

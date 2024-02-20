@@ -141,3 +141,19 @@ impl ContactInitiationMethod {
         }
     }
 }
+impl ::std::fmt::Display for ContactInitiationMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContactInitiationMethod::Api => write!(f, "API"),
+            ContactInitiationMethod::Callback => write!(f, "CALLBACK"),
+            ContactInitiationMethod::Disconnect => write!(f, "DISCONNECT"),
+            ContactInitiationMethod::ExternalOutbound => write!(f, "EXTERNAL_OUTBOUND"),
+            ContactInitiationMethod::Inbound => write!(f, "INBOUND"),
+            ContactInitiationMethod::Monitor => write!(f, "MONITOR"),
+            ContactInitiationMethod::Outbound => write!(f, "OUTBOUND"),
+            ContactInitiationMethod::QueueTransfer => write!(f, "QUEUE_TRANSFER"),
+            ContactInitiationMethod::Transfer => write!(f, "TRANSFER"),
+            ContactInitiationMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

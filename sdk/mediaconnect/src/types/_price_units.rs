@@ -91,3 +91,11 @@ impl PriceUnits {
         }
     }
 }
+impl ::std::fmt::Display for PriceUnits {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PriceUnits::Hourly => write!(f, "HOURLY"),
+            PriceUnits::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

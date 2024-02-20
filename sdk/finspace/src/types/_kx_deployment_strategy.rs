@@ -96,3 +96,12 @@ impl KxDeploymentStrategy {
         }
     }
 }
+impl ::std::fmt::Display for KxDeploymentStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KxDeploymentStrategy::NoRestart => write!(f, "NO_RESTART"),
+            KxDeploymentStrategy::Rolling => write!(f, "ROLLING"),
+            KxDeploymentStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

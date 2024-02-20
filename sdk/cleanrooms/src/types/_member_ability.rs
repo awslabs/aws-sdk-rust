@@ -96,3 +96,12 @@ impl MemberAbility {
         }
     }
 }
+impl ::std::fmt::Display for MemberAbility {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberAbility::CanQuery => write!(f, "CAN_QUERY"),
+            MemberAbility::CanReceiveResults => write!(f, "CAN_RECEIVE_RESULTS"),
+            MemberAbility::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

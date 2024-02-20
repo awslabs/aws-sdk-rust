@@ -96,3 +96,12 @@ impl AvcIntraUhdQualityTuningLevel {
         }
     }
 }
+impl ::std::fmt::Display for AvcIntraUhdQualityTuningLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AvcIntraUhdQualityTuningLevel::MultiPass => write!(f, "MULTI_PASS"),
+            AvcIntraUhdQualityTuningLevel::SinglePass => write!(f, "SINGLE_PASS"),
+            AvcIntraUhdQualityTuningLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

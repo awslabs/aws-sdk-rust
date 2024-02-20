@@ -96,3 +96,12 @@ impl H265SpatialAdaptiveQuantization {
         }
     }
 }
+impl ::std::fmt::Display for H265SpatialAdaptiveQuantization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265SpatialAdaptiveQuantization::Disabled => write!(f, "DISABLED"),
+            H265SpatialAdaptiveQuantization::Enabled => write!(f, "ENABLED"),
+            H265SpatialAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl SchemaVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for SchemaVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SchemaVersionStatus::Available => write!(f, "AVAILABLE"),
+            SchemaVersionStatus::Deleting => write!(f, "DELETING"),
+            SchemaVersionStatus::Failure => write!(f, "FAILURE"),
+            SchemaVersionStatus::Pending => write!(f, "PENDING"),
+            SchemaVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

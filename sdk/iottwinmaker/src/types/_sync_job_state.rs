@@ -111,3 +111,15 @@ impl SyncJobState {
         }
     }
 }
+impl ::std::fmt::Display for SyncJobState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SyncJobState::Active => write!(f, "ACTIVE"),
+            SyncJobState::Creating => write!(f, "CREATING"),
+            SyncJobState::Deleting => write!(f, "DELETING"),
+            SyncJobState::Error => write!(f, "ERROR"),
+            SyncJobState::Initializing => write!(f, "INITIALIZING"),
+            SyncJobState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

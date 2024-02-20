@@ -106,3 +106,14 @@ impl CisScanStatus {
         }
     }
 }
+impl ::std::fmt::Display for CisScanStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisScanStatus::Cancelled => write!(f, "CANCELLED"),
+            CisScanStatus::Completed => write!(f, "COMPLETED"),
+            CisScanStatus::Failed => write!(f, "FAILED"),
+            CisScanStatus::InProgress => write!(f, "IN_PROGRESS"),
+            CisScanStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

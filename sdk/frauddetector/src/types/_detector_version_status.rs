@@ -101,3 +101,13 @@ impl DetectorVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for DetectorVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetectorVersionStatus::Active => write!(f, "ACTIVE"),
+            DetectorVersionStatus::Draft => write!(f, "DRAFT"),
+            DetectorVersionStatus::Inactive => write!(f, "INACTIVE"),
+            DetectorVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

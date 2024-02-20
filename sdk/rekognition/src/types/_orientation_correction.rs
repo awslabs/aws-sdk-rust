@@ -106,3 +106,14 @@ impl OrientationCorrection {
         }
     }
 }
+impl ::std::fmt::Display for OrientationCorrection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrientationCorrection::Rotate0 => write!(f, "ROTATE_0"),
+            OrientationCorrection::Rotate180 => write!(f, "ROTATE_180"),
+            OrientationCorrection::Rotate270 => write!(f, "ROTATE_270"),
+            OrientationCorrection::Rotate90 => write!(f, "ROTATE_90"),
+            OrientationCorrection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

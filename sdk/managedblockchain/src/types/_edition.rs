@@ -96,3 +96,12 @@ impl Edition {
         }
     }
 }
+impl ::std::fmt::Display for Edition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Edition::Standard => write!(f, "STANDARD"),
+            Edition::Starter => write!(f, "STARTER"),
+            Edition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

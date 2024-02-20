@@ -96,3 +96,12 @@ impl CmafWriteSegmentTimelineInRepresentation {
         }
     }
 }
+impl ::std::fmt::Display for CmafWriteSegmentTimelineInRepresentation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafWriteSegmentTimelineInRepresentation::Disabled => write!(f, "DISABLED"),
+            CmafWriteSegmentTimelineInRepresentation::Enabled => write!(f, "ENABLED"),
+            CmafWriteSegmentTimelineInRepresentation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

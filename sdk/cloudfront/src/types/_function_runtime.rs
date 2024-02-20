@@ -96,3 +96,12 @@ impl FunctionRuntime {
         }
     }
 }
+impl ::std::fmt::Display for FunctionRuntime {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FunctionRuntime::CloudfrontJs10 => write!(f, "cloudfront-js-1.0"),
+            FunctionRuntime::CloudfrontJs20 => write!(f, "cloudfront-js-2.0"),
+            FunctionRuntime::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

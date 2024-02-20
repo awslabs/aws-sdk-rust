@@ -123,3 +123,16 @@ impl DbProxyEndpointStatus {
         }
     }
 }
+impl ::std::fmt::Display for DbProxyEndpointStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DbProxyEndpointStatus::Available => write!(f, "available"),
+            DbProxyEndpointStatus::Creating => write!(f, "creating"),
+            DbProxyEndpointStatus::Deleting => write!(f, "deleting"),
+            DbProxyEndpointStatus::IncompatibleNetwork => write!(f, "incompatible-network"),
+            DbProxyEndpointStatus::InsufficientResourceLimits => write!(f, "insufficient-resource-limits"),
+            DbProxyEndpointStatus::Modifying => write!(f, "modifying"),
+            DbProxyEndpointStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

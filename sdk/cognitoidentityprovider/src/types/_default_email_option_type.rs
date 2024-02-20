@@ -96,3 +96,12 @@ impl DefaultEmailOptionType {
         }
     }
 }
+impl ::std::fmt::Display for DefaultEmailOptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DefaultEmailOptionType::ConfirmWithCode => write!(f, "CONFIRM_WITH_CODE"),
+            DefaultEmailOptionType::ConfirmWithLink => write!(f, "CONFIRM_WITH_LINK"),
+            DefaultEmailOptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

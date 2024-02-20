@@ -96,3 +96,12 @@ impl AutoMlOverrideStrategy {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlOverrideStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlOverrideStrategy::AccuracyOptimized => write!(f, "AccuracyOptimized"),
+            AutoMlOverrideStrategy::LatencyOptimized => write!(f, "LatencyOptimized"),
+            AutoMlOverrideStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

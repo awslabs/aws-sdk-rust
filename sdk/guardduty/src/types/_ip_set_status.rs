@@ -121,3 +121,17 @@ impl IpSetStatus {
         }
     }
 }
+impl ::std::fmt::Display for IpSetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpSetStatus::Activating => write!(f, "ACTIVATING"),
+            IpSetStatus::Active => write!(f, "ACTIVE"),
+            IpSetStatus::Deactivating => write!(f, "DEACTIVATING"),
+            IpSetStatus::Deleted => write!(f, "DELETED"),
+            IpSetStatus::DeletePending => write!(f, "DELETE_PENDING"),
+            IpSetStatus::Error => write!(f, "ERROR"),
+            IpSetStatus::Inactive => write!(f, "INACTIVE"),
+            IpSetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

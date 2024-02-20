@@ -135,3 +135,18 @@ impl ScalingPlanStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ScalingPlanStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalingPlanStatusCode::Active => write!(f, "Active"),
+            ScalingPlanStatusCode::ActiveWithProblems => write!(f, "ActiveWithProblems"),
+            ScalingPlanStatusCode::CreationFailed => write!(f, "CreationFailed"),
+            ScalingPlanStatusCode::CreationInProgress => write!(f, "CreationInProgress"),
+            ScalingPlanStatusCode::DeletionFailed => write!(f, "DeletionFailed"),
+            ScalingPlanStatusCode::DeletionInProgress => write!(f, "DeletionInProgress"),
+            ScalingPlanStatusCode::UpdateFailed => write!(f, "UpdateFailed"),
+            ScalingPlanStatusCode::UpdateInProgress => write!(f, "UpdateInProgress"),
+            ScalingPlanStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

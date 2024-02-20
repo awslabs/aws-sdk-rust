@@ -96,3 +96,12 @@ impl ResultFormat {
         }
     }
 }
+impl ::std::fmt::Display for ResultFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResultFormat::Csv => write!(f, "CSV"),
+            ResultFormat::Parquet => write!(f, "PARQUET"),
+            ResultFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

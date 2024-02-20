@@ -101,3 +101,13 @@ impl TimecodeSource {
         }
     }
 }
+impl ::std::fmt::Display for TimecodeSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimecodeSource::Embedded => write!(f, "EMBEDDED"),
+            TimecodeSource::Specifiedstart => write!(f, "SPECIFIEDSTART"),
+            TimecodeSource::Zerobased => write!(f, "ZEROBASED"),
+            TimecodeSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

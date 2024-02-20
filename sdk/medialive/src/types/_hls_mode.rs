@@ -96,3 +96,12 @@ impl HlsMode {
         }
     }
 }
+impl ::std::fmt::Display for HlsMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsMode::Live => write!(f, "LIVE"),
+            HlsMode::Vod => write!(f, "VOD"),
+            HlsMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

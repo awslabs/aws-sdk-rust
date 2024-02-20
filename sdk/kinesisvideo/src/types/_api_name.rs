@@ -135,3 +135,18 @@ impl ApiName {
         }
     }
 }
+impl ::std::fmt::Display for ApiName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApiName::GetClip => write!(f, "GET_CLIP"),
+            ApiName::GetDashStreamingSessionUrl => write!(f, "GET_DASH_STREAMING_SESSION_URL"),
+            ApiName::GetHlsStreamingSessionUrl => write!(f, "GET_HLS_STREAMING_SESSION_URL"),
+            ApiName::GetImages => write!(f, "GET_IMAGES"),
+            ApiName::GetMedia => write!(f, "GET_MEDIA"),
+            ApiName::GetMediaForFragmentList => write!(f, "GET_MEDIA_FOR_FRAGMENT_LIST"),
+            ApiName::ListFragments => write!(f, "LIST_FRAGMENTS"),
+            ApiName::PutMedia => write!(f, "PUT_MEDIA"),
+            ApiName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

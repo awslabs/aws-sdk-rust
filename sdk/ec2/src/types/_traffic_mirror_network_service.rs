@@ -91,3 +91,11 @@ impl TrafficMirrorNetworkService {
         }
     }
 }
+impl ::std::fmt::Display for TrafficMirrorNetworkService {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrafficMirrorNetworkService::AmazonDns => write!(f, "amazon-dns"),
+            TrafficMirrorNetworkService::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl ExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionStatus::Completed => write!(f, "Completed"),
+            ExecutionStatus::CompletedWithViolations => write!(f, "CompletedWithViolations"),
+            ExecutionStatus::Failed => write!(f, "Failed"),
+            ExecutionStatus::InProgress => write!(f, "InProgress"),
+            ExecutionStatus::Pending => write!(f, "Pending"),
+            ExecutionStatus::Stopped => write!(f, "Stopped"),
+            ExecutionStatus::Stopping => write!(f, "Stopping"),
+            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

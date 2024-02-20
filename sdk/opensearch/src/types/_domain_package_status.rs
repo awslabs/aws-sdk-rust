@@ -111,3 +111,15 @@ impl DomainPackageStatus {
         }
     }
 }
+impl ::std::fmt::Display for DomainPackageStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainPackageStatus::Active => write!(f, "ACTIVE"),
+            DomainPackageStatus::Associating => write!(f, "ASSOCIATING"),
+            DomainPackageStatus::AssociationFailed => write!(f, "ASSOCIATION_FAILED"),
+            DomainPackageStatus::Dissociating => write!(f, "DISSOCIATING"),
+            DomainPackageStatus::DissociationFailed => write!(f, "DISSOCIATION_FAILED"),
+            DomainPackageStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AvcIntraFramerateConversionAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for AvcIntraFramerateConversionAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AvcIntraFramerateConversionAlgorithm::DuplicateDrop => write!(f, "DUPLICATE_DROP"),
+            AvcIntraFramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
+            AvcIntraFramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
+            AvcIntraFramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

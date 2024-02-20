@@ -101,3 +101,13 @@ impl SortBy {
         }
     }
 }
+impl ::std::fmt::Display for SortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortBy::CreationTime => write!(f, "CreationTime"),
+            SortBy::Name => write!(f, "Name"),
+            SortBy::Status => write!(f, "Status"),
+            SortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

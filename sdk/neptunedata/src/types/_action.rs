@@ -96,3 +96,12 @@ impl Action {
         }
     }
 }
+impl ::std::fmt::Display for Action {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Action::InitializeReset => write!(f, "initiateDatabaseReset"),
+            Action::PerformReset => write!(f, "performDatabaseReset"),
+            Action::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

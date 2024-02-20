@@ -96,3 +96,12 @@ impl AvailBlankingState {
         }
     }
 }
+impl ::std::fmt::Display for AvailBlankingState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AvailBlankingState::Disabled => write!(f, "DISABLED"),
+            AvailBlankingState::Enabled => write!(f, "ENABLED"),
+            AvailBlankingState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -137,3 +137,18 @@ impl InputDeviceConfigurableAudioChannelPairProfile {
         }
     }
 }
+impl ::std::fmt::Display for InputDeviceConfigurableAudioChannelPairProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDeviceConfigurableAudioChannelPairProfile::CbrAacHq192000 => write!(f, "CBR-AAC_HQ-192000"),
+            InputDeviceConfigurableAudioChannelPairProfile::CbrAacHq256000 => write!(f, "CBR-AAC_HQ-256000"),
+            InputDeviceConfigurableAudioChannelPairProfile::CbrAacHq384000 => write!(f, "CBR-AAC_HQ-384000"),
+            InputDeviceConfigurableAudioChannelPairProfile::CbrAacHq512000 => write!(f, "CBR-AAC_HQ-512000"),
+            InputDeviceConfigurableAudioChannelPairProfile::Disabled => write!(f, "DISABLED"),
+            InputDeviceConfigurableAudioChannelPairProfile::VbrAacHe64000 => write!(f, "VBR-AAC_HE-64000"),
+            InputDeviceConfigurableAudioChannelPairProfile::VbrAacHhe16000 => write!(f, "VBR-AAC_HHE-16000"),
+            InputDeviceConfigurableAudioChannelPairProfile::VbrAacLc128000 => write!(f, "VBR-AAC_LC-128000"),
+            InputDeviceConfigurableAudioChannelPairProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ResaleAuthorizationStatusString {
         }
     }
 }
+impl ::std::fmt::Display for ResaleAuthorizationStatusString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResaleAuthorizationStatusString::Active => write!(f, "Active"),
+            ResaleAuthorizationStatusString::Draft => write!(f, "Draft"),
+            ResaleAuthorizationStatusString::Restricted => write!(f, "Restricted"),
+            ResaleAuthorizationStatusString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

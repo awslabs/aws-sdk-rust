@@ -91,3 +91,11 @@ impl LambdaFunctionTimeoutType {
         }
     }
 }
+impl ::std::fmt::Display for LambdaFunctionTimeoutType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaFunctionTimeoutType::StartToClose => write!(f, "START_TO_CLOSE"),
+            LambdaFunctionTimeoutType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

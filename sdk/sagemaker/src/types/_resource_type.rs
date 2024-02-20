@@ -189,3 +189,27 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Endpoint => write!(f, "Endpoint"),
+            ResourceType::Experiment => write!(f, "Experiment"),
+            ResourceType::ExperimentTrial => write!(f, "ExperimentTrial"),
+            ResourceType::ExperimentTrialComponent => write!(f, "ExperimentTrialComponent"),
+            ResourceType::FeatureGroup => write!(f, "FeatureGroup"),
+            ResourceType::FeatureMetadata => write!(f, "FeatureMetadata"),
+            ResourceType::HyperParameterTuningJob => write!(f, "HyperParameterTuningJob"),
+            ResourceType::Image => write!(f, "Image"),
+            ResourceType::ImageVersion => write!(f, "ImageVersion"),
+            ResourceType::Model => write!(f, "Model"),
+            ResourceType::ModelCard => write!(f, "ModelCard"),
+            ResourceType::ModelPackage => write!(f, "ModelPackage"),
+            ResourceType::ModelPackageGroup => write!(f, "ModelPackageGroup"),
+            ResourceType::Pipeline => write!(f, "Pipeline"),
+            ResourceType::PipelineExecution => write!(f, "PipelineExecution"),
+            ResourceType::Project => write!(f, "Project"),
+            ResourceType::TrainingJob => write!(f, "TrainingJob"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CustomRoutingDestinationTrafficState {
         }
     }
 }
+impl ::std::fmt::Display for CustomRoutingDestinationTrafficState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomRoutingDestinationTrafficState::Allow => write!(f, "ALLOW"),
+            CustomRoutingDestinationTrafficState::Deny => write!(f, "DENY"),
+            CustomRoutingDestinationTrafficState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

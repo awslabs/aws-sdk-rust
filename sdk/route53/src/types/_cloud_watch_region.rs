@@ -303,3 +303,46 @@ impl CloudWatchRegion {
         }
     }
 }
+impl ::std::fmt::Display for CloudWatchRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CloudWatchRegion::AfSouth1 => write!(f, "af-south-1"),
+            CloudWatchRegion::ApEast1 => write!(f, "ap-east-1"),
+            CloudWatchRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
+            CloudWatchRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
+            CloudWatchRegion::ApNortheast3 => write!(f, "ap-northeast-3"),
+            CloudWatchRegion::ApSouth1 => write!(f, "ap-south-1"),
+            CloudWatchRegion::ApSouth2 => write!(f, "ap-south-2"),
+            CloudWatchRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
+            CloudWatchRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
+            CloudWatchRegion::ApSoutheast3 => write!(f, "ap-southeast-3"),
+            CloudWatchRegion::ApSoutheast4 => write!(f, "ap-southeast-4"),
+            CloudWatchRegion::CaCentral1 => write!(f, "ca-central-1"),
+            CloudWatchRegion::CaWest1 => write!(f, "ca-west-1"),
+            CloudWatchRegion::CnNorth1 => write!(f, "cn-north-1"),
+            CloudWatchRegion::CnNorthwest1 => write!(f, "cn-northwest-1"),
+            CloudWatchRegion::EuCentral1 => write!(f, "eu-central-1"),
+            CloudWatchRegion::EuCentral2 => write!(f, "eu-central-2"),
+            CloudWatchRegion::EuNorth1 => write!(f, "eu-north-1"),
+            CloudWatchRegion::EuSouth1 => write!(f, "eu-south-1"),
+            CloudWatchRegion::EuSouth2 => write!(f, "eu-south-2"),
+            CloudWatchRegion::EuWest1 => write!(f, "eu-west-1"),
+            CloudWatchRegion::EuWest2 => write!(f, "eu-west-2"),
+            CloudWatchRegion::EuWest3 => write!(f, "eu-west-3"),
+            CloudWatchRegion::IlCentral1 => write!(f, "il-central-1"),
+            CloudWatchRegion::MeCentral1 => write!(f, "me-central-1"),
+            CloudWatchRegion::MeSouth1 => write!(f, "me-south-1"),
+            CloudWatchRegion::SaEast1 => write!(f, "sa-east-1"),
+            CloudWatchRegion::UsEast1 => write!(f, "us-east-1"),
+            CloudWatchRegion::UsEast2 => write!(f, "us-east-2"),
+            CloudWatchRegion::UsGovEast1 => write!(f, "us-gov-east-1"),
+            CloudWatchRegion::UsGovWest1 => write!(f, "us-gov-west-1"),
+            CloudWatchRegion::UsIsoEast1 => write!(f, "us-iso-east-1"),
+            CloudWatchRegion::UsIsoWest1 => write!(f, "us-iso-west-1"),
+            CloudWatchRegion::UsIsobEast1 => write!(f, "us-isob-east-1"),
+            CloudWatchRegion::UsWest1 => write!(f, "us-west-1"),
+            CloudWatchRegion::UsWest2 => write!(f, "us-west-2"),
+            CloudWatchRegion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AntiAlias {
         }
     }
 }
+impl ::std::fmt::Display for AntiAlias {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AntiAlias::Disabled => write!(f, "DISABLED"),
+            AntiAlias::Enabled => write!(f, "ENABLED"),
+            AntiAlias::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

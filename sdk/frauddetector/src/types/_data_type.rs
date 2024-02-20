@@ -111,3 +111,15 @@ impl DataType {
         }
     }
 }
+impl ::std::fmt::Display for DataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataType::Boolean => write!(f, "BOOLEAN"),
+            DataType::Datetime => write!(f, "DATETIME"),
+            DataType::Float => write!(f, "FLOAT"),
+            DataType::Integer => write!(f, "INTEGER"),
+            DataType::String => write!(f, "STRING"),
+            DataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

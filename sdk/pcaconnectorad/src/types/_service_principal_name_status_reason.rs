@@ -117,3 +117,15 @@ impl ServicePrincipalNameStatusReason {
         }
     }
 }
+impl ::std::fmt::Display for ServicePrincipalNameStatusReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServicePrincipalNameStatusReason::DirectoryAccessDenied => write!(f, "DIRECTORY_ACCESS_DENIED"),
+            ServicePrincipalNameStatusReason::DirectoryNotReachable => write!(f, "DIRECTORY_NOT_REACHABLE"),
+            ServicePrincipalNameStatusReason::DirectoryResourceNotFound => write!(f, "DIRECTORY_RESOURCE_NOT_FOUND"),
+            ServicePrincipalNameStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            ServicePrincipalNameStatusReason::SpnExistsOnDifferentAdObject => write!(f, "SPN_EXISTS_ON_DIFFERENT_AD_OBJECT"),
+            ServicePrincipalNameStatusReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

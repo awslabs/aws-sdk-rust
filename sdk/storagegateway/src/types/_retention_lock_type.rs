@@ -101,3 +101,13 @@ impl RetentionLockType {
         }
     }
 }
+impl ::std::fmt::Display for RetentionLockType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetentionLockType::Compliance => write!(f, "COMPLIANCE"),
+            RetentionLockType::Governance => write!(f, "GOVERNANCE"),
+            RetentionLockType::None => write!(f, "NONE"),
+            RetentionLockType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

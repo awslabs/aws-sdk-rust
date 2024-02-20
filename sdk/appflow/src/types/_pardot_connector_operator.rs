@@ -171,3 +171,24 @@ impl PardotConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for PardotConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PardotConnectorOperator::Addition => write!(f, "ADDITION"),
+            PardotConnectorOperator::Division => write!(f, "DIVISION"),
+            PardotConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            PardotConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            PardotConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            PardotConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            PardotConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            PardotConnectorOperator::NoOp => write!(f, "NO_OP"),
+            PardotConnectorOperator::Projection => write!(f, "PROJECTION"),
+            PardotConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            PardotConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            PardotConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            PardotConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            PardotConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            PardotConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl IpSetDescriptorType {
         }
     }
 }
+impl ::std::fmt::Display for IpSetDescriptorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpSetDescriptorType::Ipv4 => write!(f, "IPV4"),
+            IpSetDescriptorType::Ipv6 => write!(f, "IPV6"),
+            IpSetDescriptorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

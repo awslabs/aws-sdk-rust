@@ -96,3 +96,12 @@ impl RealTimeContactAnalysisOutputType {
         }
     }
 }
+impl ::std::fmt::Display for RealTimeContactAnalysisOutputType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RealTimeContactAnalysisOutputType::Raw => write!(f, "Raw"),
+            RealTimeContactAnalysisOutputType::Redacted => write!(f, "Redacted"),
+            RealTimeContactAnalysisOutputType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

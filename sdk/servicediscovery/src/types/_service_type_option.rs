@@ -91,3 +91,11 @@ impl ServiceTypeOption {
         }
     }
 }
+impl ::std::fmt::Display for ServiceTypeOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceTypeOption::Http => write!(f, "HTTP"),
+            ServiceTypeOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

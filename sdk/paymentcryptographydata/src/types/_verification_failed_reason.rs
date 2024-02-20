@@ -106,3 +106,14 @@ impl VerificationFailedReason {
         }
     }
 }
+impl ::std::fmt::Display for VerificationFailedReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerificationFailedReason::InvalidAuthRequestCryptogram => write!(f, "INVALID_AUTH_REQUEST_CRYPTOGRAM"),
+            VerificationFailedReason::InvalidMac => write!(f, "INVALID_MAC"),
+            VerificationFailedReason::InvalidPin => write!(f, "INVALID_PIN"),
+            VerificationFailedReason::InvalidValidationData => write!(f, "INVALID_VALIDATION_DATA"),
+            VerificationFailedReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

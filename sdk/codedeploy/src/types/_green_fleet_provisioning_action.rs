@@ -96,3 +96,12 @@ impl GreenFleetProvisioningAction {
         }
     }
 }
+impl ::std::fmt::Display for GreenFleetProvisioningAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GreenFleetProvisioningAction::CopyAutoScalingGroup => write!(f, "COPY_AUTO_SCALING_GROUP"),
+            GreenFleetProvisioningAction::DiscoverExisting => write!(f, "DISCOVER_EXISTING"),
+            GreenFleetProvisioningAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

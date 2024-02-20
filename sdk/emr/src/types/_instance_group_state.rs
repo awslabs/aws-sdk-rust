@@ -153,3 +153,21 @@ impl InstanceGroupState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceGroupState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceGroupState::Arrested => write!(f, "ARRESTED"),
+            InstanceGroupState::Bootstrapping => write!(f, "BOOTSTRAPPING"),
+            InstanceGroupState::Ended => write!(f, "ENDED"),
+            InstanceGroupState::Provisioning => write!(f, "PROVISIONING"),
+            InstanceGroupState::Reconfiguring => write!(f, "RECONFIGURING"),
+            InstanceGroupState::Resizing => write!(f, "RESIZING"),
+            InstanceGroupState::Running => write!(f, "RUNNING"),
+            InstanceGroupState::ShuttingDown => write!(f, "SHUTTING_DOWN"),
+            InstanceGroupState::Suspended => write!(f, "SUSPENDED"),
+            InstanceGroupState::Terminated => write!(f, "TERMINATED"),
+            InstanceGroupState::Terminating => write!(f, "TERMINATING"),
+            InstanceGroupState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl VnfInstantiationState {
         }
     }
 }
+impl ::std::fmt::Display for VnfInstantiationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VnfInstantiationState::Instantiated => write!(f, "INSTANTIATED"),
+            VnfInstantiationState::NotInstantiated => write!(f, "NOT_INSTANTIATED"),
+            VnfInstantiationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

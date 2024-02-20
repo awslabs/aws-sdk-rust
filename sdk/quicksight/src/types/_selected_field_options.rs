@@ -91,3 +91,11 @@ impl SelectedFieldOptions {
         }
     }
 }
+impl ::std::fmt::Display for SelectedFieldOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SelectedFieldOptions::AllFields => write!(f, "ALL_FIELDS"),
+            SelectedFieldOptions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

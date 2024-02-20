@@ -96,3 +96,12 @@ impl PivotTableFieldCollapseState {
         }
     }
 }
+impl ::std::fmt::Display for PivotTableFieldCollapseState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PivotTableFieldCollapseState::Collapsed => write!(f, "COLLAPSED"),
+            PivotTableFieldCollapseState::Expanded => write!(f, "EXPANDED"),
+            PivotTableFieldCollapseState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

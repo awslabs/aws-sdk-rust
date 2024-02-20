@@ -96,3 +96,12 @@ impl AggregatedSourceType {
         }
     }
 }
+impl ::std::fmt::Display for AggregatedSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregatedSourceType::Account => write!(f, "ACCOUNT"),
+            AggregatedSourceType::Organization => write!(f, "ORGANIZATION"),
+            AggregatedSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

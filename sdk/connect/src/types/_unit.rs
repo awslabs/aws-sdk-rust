@@ -101,3 +101,13 @@ impl Unit {
         }
     }
 }
+impl ::std::fmt::Display for Unit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Unit::Count => write!(f, "COUNT"),
+            Unit::Percent => write!(f, "PERCENT"),
+            Unit::Seconds => write!(f, "SECONDS"),
+            Unit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

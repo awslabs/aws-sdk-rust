@@ -159,3 +159,22 @@ impl IpamResourceDiscoveryState {
         }
     }
 }
+impl ::std::fmt::Display for IpamResourceDiscoveryState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamResourceDiscoveryState::CreateComplete => write!(f, "create-complete"),
+            IpamResourceDiscoveryState::CreateFailed => write!(f, "create-failed"),
+            IpamResourceDiscoveryState::CreateInProgress => write!(f, "create-in-progress"),
+            IpamResourceDiscoveryState::DeleteComplete => write!(f, "delete-complete"),
+            IpamResourceDiscoveryState::DeleteFailed => write!(f, "delete-failed"),
+            IpamResourceDiscoveryState::DeleteInProgress => write!(f, "delete-in-progress"),
+            IpamResourceDiscoveryState::IsolateComplete => write!(f, "isolate-complete"),
+            IpamResourceDiscoveryState::IsolateInProgress => write!(f, "isolate-in-progress"),
+            IpamResourceDiscoveryState::ModifyComplete => write!(f, "modify-complete"),
+            IpamResourceDiscoveryState::ModifyFailed => write!(f, "modify-failed"),
+            IpamResourceDiscoveryState::ModifyInProgress => write!(f, "modify-in-progress"),
+            IpamResourceDiscoveryState::RestoreInProgress => write!(f, "restore-in-progress"),
+            IpamResourceDiscoveryState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

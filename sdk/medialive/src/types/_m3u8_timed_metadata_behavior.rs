@@ -96,3 +96,12 @@ impl M3u8TimedMetadataBehavior {
         }
     }
 }
+impl ::std::fmt::Display for M3u8TimedMetadataBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M3u8TimedMetadataBehavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
+            M3u8TimedMetadataBehavior::Passthrough => write!(f, "PASSTHROUGH"),
+            M3u8TimedMetadataBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AssociatedTranscriptFilterName {
         }
     }
 }
+impl ::std::fmt::Display for AssociatedTranscriptFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociatedTranscriptFilterName::IntentId => write!(f, "IntentId"),
+            AssociatedTranscriptFilterName::SlotTypeId => write!(f, "SlotTypeId"),
+            AssociatedTranscriptFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

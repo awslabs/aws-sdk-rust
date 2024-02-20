@@ -101,3 +101,13 @@ impl ReservedInstancePaymentOption {
         }
     }
 }
+impl ::std::fmt::Display for ReservedInstancePaymentOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservedInstancePaymentOption::AllUpfront => write!(f, "ALL_UPFRONT"),
+            ReservedInstancePaymentOption::NoUpfront => write!(f, "NO_UPFRONT"),
+            ReservedInstancePaymentOption::PartialUpfront => write!(f, "PARTIAL_UPFRONT"),
+            ReservedInstancePaymentOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl TestGridSessionStatus {
         }
     }
 }
+impl ::std::fmt::Display for TestGridSessionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestGridSessionStatus::Active => write!(f, "ACTIVE"),
+            TestGridSessionStatus::Closed => write!(f, "CLOSED"),
+            TestGridSessionStatus::Errored => write!(f, "ERRORED"),
+            TestGridSessionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

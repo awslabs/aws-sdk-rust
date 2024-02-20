@@ -101,3 +101,13 @@ impl NotebookInstanceLifecycleConfigSortKey {
         }
     }
 }
+impl ::std::fmt::Display for NotebookInstanceLifecycleConfigSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotebookInstanceLifecycleConfigSortKey::CreationTime => write!(f, "CreationTime"),
+            NotebookInstanceLifecycleConfigSortKey::LastModifiedTime => write!(f, "LastModifiedTime"),
+            NotebookInstanceLifecycleConfigSortKey::Name => write!(f, "Name"),
+            NotebookInstanceLifecycleConfigSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

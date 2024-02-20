@@ -101,3 +101,13 @@ impl BackupStatus {
         }
     }
 }
+impl ::std::fmt::Display for BackupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackupStatus::Available => write!(f, "AVAILABLE"),
+            BackupStatus::Creating => write!(f, "CREATING"),
+            BackupStatus::Deleted => write!(f, "DELETED"),
+            BackupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

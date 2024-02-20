@@ -101,3 +101,13 @@ impl SystemLogLevel {
         }
     }
 }
+impl ::std::fmt::Display for SystemLogLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SystemLogLevel::Debug => write!(f, "DEBUG"),
+            SystemLogLevel::Info => write!(f, "INFO"),
+            SystemLogLevel::Warn => write!(f, "WARN"),
+            SystemLogLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

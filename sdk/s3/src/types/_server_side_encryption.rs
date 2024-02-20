@@ -101,3 +101,13 @@ impl ServerSideEncryption {
         }
     }
 }
+impl ::std::fmt::Display for ServerSideEncryption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServerSideEncryption::Aes256 => write!(f, "AES256"),
+            ServerSideEncryption::AwsKms => write!(f, "aws:kms"),
+            ServerSideEncryption::AwsKmsDsse => write!(f, "aws:kms:dsse"),
+            ServerSideEncryption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

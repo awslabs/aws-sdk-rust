@@ -91,3 +91,11 @@ impl ConnectorProvisioningType {
         }
     }
 }
+impl ::std::fmt::Display for ConnectorProvisioningType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectorProvisioningType::Lambda => write!(f, "LAMBDA"),
+            ConnectorProvisioningType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

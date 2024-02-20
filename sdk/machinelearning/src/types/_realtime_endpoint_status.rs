@@ -106,3 +106,14 @@ impl RealtimeEndpointStatus {
         }
     }
 }
+impl ::std::fmt::Display for RealtimeEndpointStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RealtimeEndpointStatus::Failed => write!(f, "FAILED"),
+            RealtimeEndpointStatus::None => write!(f, "NONE"),
+            RealtimeEndpointStatus::Ready => write!(f, "READY"),
+            RealtimeEndpointStatus::Updating => write!(f, "UPDATING"),
+            RealtimeEndpointStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

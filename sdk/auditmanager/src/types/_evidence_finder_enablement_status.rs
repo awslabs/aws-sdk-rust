@@ -106,3 +106,14 @@ impl EvidenceFinderEnablementStatus {
         }
     }
 }
+impl ::std::fmt::Display for EvidenceFinderEnablementStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvidenceFinderEnablementStatus::Disabled => write!(f, "DISABLED"),
+            EvidenceFinderEnablementStatus::DisableInProgress => write!(f, "DISABLE_IN_PROGRESS"),
+            EvidenceFinderEnablementStatus::Enabled => write!(f, "ENABLED"),
+            EvidenceFinderEnablementStatus::EnableInProgress => write!(f, "ENABLE_IN_PROGRESS"),
+            EvidenceFinderEnablementStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl PresenterPosition {
         }
     }
 }
+impl ::std::fmt::Display for PresenterPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PresenterPosition::BottomLeft => write!(f, "BottomLeft"),
+            PresenterPosition::BottomRight => write!(f, "BottomRight"),
+            PresenterPosition::TopLeft => write!(f, "TopLeft"),
+            PresenterPosition::TopRight => write!(f, "TopRight"),
+            PresenterPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

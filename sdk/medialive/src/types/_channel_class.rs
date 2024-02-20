@@ -96,3 +96,12 @@ impl ChannelClass {
         }
     }
 }
+impl ::std::fmt::Display for ChannelClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelClass::SinglePipeline => write!(f, "SINGLE_PIPELINE"),
+            ChannelClass::Standard => write!(f, "STANDARD"),
+            ChannelClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

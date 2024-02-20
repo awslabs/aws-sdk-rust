@@ -121,3 +121,17 @@ impl NodegroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for NodegroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodegroupStatus::Active => write!(f, "ACTIVE"),
+            NodegroupStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            NodegroupStatus::Creating => write!(f, "CREATING"),
+            NodegroupStatus::Degraded => write!(f, "DEGRADED"),
+            NodegroupStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            NodegroupStatus::Deleting => write!(f, "DELETING"),
+            NodegroupStatus::Updating => write!(f, "UPDATING"),
+            NodegroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

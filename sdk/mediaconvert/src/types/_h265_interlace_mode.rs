@@ -111,3 +111,15 @@ impl H265InterlaceMode {
         }
     }
 }
+impl ::std::fmt::Display for H265InterlaceMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265InterlaceMode::BottomField => write!(f, "BOTTOM_FIELD"),
+            H265InterlaceMode::FollowBottomField => write!(f, "FOLLOW_BOTTOM_FIELD"),
+            H265InterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
+            H265InterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
+            H265InterlaceMode::TopField => write!(f, "TOP_FIELD"),
+            H265InterlaceMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

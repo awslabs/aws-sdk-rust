@@ -101,3 +101,13 @@ impl PivotTableSubtotalLevel {
         }
     }
 }
+impl ::std::fmt::Display for PivotTableSubtotalLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PivotTableSubtotalLevel::All => write!(f, "ALL"),
+            PivotTableSubtotalLevel::Custom => write!(f, "CUSTOM"),
+            PivotTableSubtotalLevel::Last => write!(f, "LAST"),
+            PivotTableSubtotalLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

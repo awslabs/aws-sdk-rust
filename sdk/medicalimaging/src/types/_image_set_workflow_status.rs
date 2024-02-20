@@ -147,3 +147,20 @@ impl ImageSetWorkflowStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImageSetWorkflowStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageSetWorkflowStatus::Copied => write!(f, "COPIED"),
+            ImageSetWorkflowStatus::Copying => write!(f, "COPYING"),
+            ImageSetWorkflowStatus::CopyingWithReadOnlyAccess => write!(f, "COPYING_WITH_READ_ONLY_ACCESS"),
+            ImageSetWorkflowStatus::CopyFailed => write!(f, "COPY_FAILED"),
+            ImageSetWorkflowStatus::Created => write!(f, "CREATED"),
+            ImageSetWorkflowStatus::Deleted => write!(f, "DELETED"),
+            ImageSetWorkflowStatus::Deleting => write!(f, "DELETING"),
+            ImageSetWorkflowStatus::Updated => write!(f, "UPDATED"),
+            ImageSetWorkflowStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ImageSetWorkflowStatus::Updating => write!(f, "UPDATING"),
+            ImageSetWorkflowStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

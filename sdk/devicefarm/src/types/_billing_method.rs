@@ -96,3 +96,12 @@ impl BillingMethod {
         }
     }
 }
+impl ::std::fmt::Display for BillingMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BillingMethod::Metered => write!(f, "METERED"),
+            BillingMethod::Unmetered => write!(f, "UNMETERED"),
+            BillingMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

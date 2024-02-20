@@ -116,3 +116,16 @@ impl ArchiveState {
         }
     }
 }
+impl ::std::fmt::Display for ArchiveState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArchiveState::CreateFailed => write!(f, "CREATE_FAILED"),
+            ArchiveState::Creating => write!(f, "CREATING"),
+            ArchiveState::Disabled => write!(f, "DISABLED"),
+            ArchiveState::Enabled => write!(f, "ENABLED"),
+            ArchiveState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ArchiveState::Updating => write!(f, "UPDATING"),
+            ArchiveState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

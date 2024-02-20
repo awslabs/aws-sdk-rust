@@ -96,3 +96,12 @@ impl HierarchyGroupMatchType {
         }
     }
 }
+impl ::std::fmt::Display for HierarchyGroupMatchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HierarchyGroupMatchType::Exact => write!(f, "EXACT"),
+            HierarchyGroupMatchType::WithChildGroups => write!(f, "WITH_CHILD_GROUPS"),
+            HierarchyGroupMatchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl DashManifestStyle {
         }
     }
 }
+impl ::std::fmt::Display for DashManifestStyle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashManifestStyle::Basic => write!(f, "BASIC"),
+            DashManifestStyle::Compact => write!(f, "COMPACT"),
+            DashManifestStyle::Distinct => write!(f, "DISTINCT"),
+            DashManifestStyle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

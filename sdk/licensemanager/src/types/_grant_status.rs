@@ -141,3 +141,19 @@ impl GrantStatus {
         }
     }
 }
+impl ::std::fmt::Display for GrantStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GrantStatus::Active => write!(f, "ACTIVE"),
+            GrantStatus::Deleted => write!(f, "DELETED"),
+            GrantStatus::Disabled => write!(f, "DISABLED"),
+            GrantStatus::FailedWorkflow => write!(f, "FAILED_WORKFLOW"),
+            GrantStatus::PendingAccept => write!(f, "PENDING_ACCEPT"),
+            GrantStatus::PendingDelete => write!(f, "PENDING_DELETE"),
+            GrantStatus::PendingWorkflow => write!(f, "PENDING_WORKFLOW"),
+            GrantStatus::Rejected => write!(f, "REJECTED"),
+            GrantStatus::WorkflowCompleted => write!(f, "WORKFLOW_COMPLETED"),
+            GrantStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

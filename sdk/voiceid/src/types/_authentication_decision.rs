@@ -129,3 +129,17 @@ impl AuthenticationDecision {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationDecision {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationDecision::Accept => write!(f, "ACCEPT"),
+            AuthenticationDecision::NotEnoughSpeech => write!(f, "NOT_ENOUGH_SPEECH"),
+            AuthenticationDecision::Reject => write!(f, "REJECT"),
+            AuthenticationDecision::SpeakerExpired => write!(f, "SPEAKER_EXPIRED"),
+            AuthenticationDecision::SpeakerIdNotProvided => write!(f, "SPEAKER_ID_NOT_PROVIDED"),
+            AuthenticationDecision::SpeakerNotEnrolled => write!(f, "SPEAKER_NOT_ENROLLED"),
+            AuthenticationDecision::SpeakerOptedOut => write!(f, "SPEAKER_OPTED_OUT"),
+            AuthenticationDecision::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

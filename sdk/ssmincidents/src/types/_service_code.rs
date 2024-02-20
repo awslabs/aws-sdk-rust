@@ -91,3 +91,11 @@ impl ServiceCode {
         }
     }
 }
+impl ::std::fmt::Display for ServiceCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceCode::SsmIncidents => write!(f, "ssm-incidents"),
+            ServiceCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

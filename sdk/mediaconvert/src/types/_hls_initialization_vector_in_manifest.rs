@@ -96,3 +96,12 @@ impl HlsInitializationVectorInManifest {
         }
     }
 }
+impl ::std::fmt::Display for HlsInitializationVectorInManifest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsInitializationVectorInManifest::Exclude => write!(f, "EXCLUDE"),
+            HlsInitializationVectorInManifest::Include => write!(f, "INCLUDE"),
+            HlsInitializationVectorInManifest::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

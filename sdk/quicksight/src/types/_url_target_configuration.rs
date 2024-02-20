@@ -101,3 +101,13 @@ impl UrlTargetConfiguration {
         }
     }
 }
+impl ::std::fmt::Display for UrlTargetConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UrlTargetConfiguration::NewTab => write!(f, "NEW_TAB"),
+            UrlTargetConfiguration::NewWindow => write!(f, "NEW_WINDOW"),
+            UrlTargetConfiguration::SameTab => write!(f, "SAME_TAB"),
+            UrlTargetConfiguration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl FineTuningJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for FineTuningJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FineTuningJobStatus::Completed => write!(f, "Completed"),
+            FineTuningJobStatus::Failed => write!(f, "Failed"),
+            FineTuningJobStatus::InProgress => write!(f, "InProgress"),
+            FineTuningJobStatus::Stopped => write!(f, "Stopped"),
+            FineTuningJobStatus::Stopping => write!(f, "Stopping"),
+            FineTuningJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

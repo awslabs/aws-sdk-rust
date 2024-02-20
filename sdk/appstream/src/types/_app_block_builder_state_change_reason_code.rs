@@ -91,3 +91,11 @@ impl AppBlockBuilderStateChangeReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for AppBlockBuilderStateChangeReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppBlockBuilderStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            AppBlockBuilderStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl SignalNodeType {
         }
     }
 }
+impl ::std::fmt::Display for SignalNodeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SignalNodeType::Actuator => write!(f, "ACTUATOR"),
+            SignalNodeType::Attribute => write!(f, "ATTRIBUTE"),
+            SignalNodeType::Branch => write!(f, "BRANCH"),
+            SignalNodeType::CustomProperty => write!(f, "CUSTOM_PROPERTY"),
+            SignalNodeType::CustomStruct => write!(f, "CUSTOM_STRUCT"),
+            SignalNodeType::Sensor => write!(f, "SENSOR"),
+            SignalNodeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ModelInputDataFormat {
         }
     }
 }
+impl ::std::fmt::Display for ModelInputDataFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelInputDataFormat::Json => write!(f, "APPLICATION_JSON"),
+            ModelInputDataFormat::Csv => write!(f, "TEXT_CSV"),
+            ModelInputDataFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ProjectionType {
         }
     }
 }
+impl ::std::fmt::Display for ProjectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProjectionType::All => write!(f, "ALL"),
+            ProjectionType::Include => write!(f, "INCLUDE"),
+            ProjectionType::KeysOnly => write!(f, "KEYS_ONLY"),
+            ProjectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

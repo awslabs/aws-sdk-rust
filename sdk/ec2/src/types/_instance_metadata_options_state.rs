@@ -96,3 +96,12 @@ impl InstanceMetadataOptionsState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceMetadataOptionsState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceMetadataOptionsState::Applied => write!(f, "applied"),
+            InstanceMetadataOptionsState::Pending => write!(f, "pending"),
+            InstanceMetadataOptionsState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl ItemType {
         }
     }
 }
+impl ::std::fmt::Display for ItemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ItemType::Analysis => write!(f, "ANALYSIS"),
+            ItemType::Attachment => write!(f, "ATTACHMENT"),
+            ItemType::Automation => write!(f, "AUTOMATION"),
+            ItemType::Incident => write!(f, "INCIDENT"),
+            ItemType::InvolvedResource => write!(f, "INVOLVED_RESOURCE"),
+            ItemType::Metric => write!(f, "METRIC"),
+            ItemType::Other => write!(f, "OTHER"),
+            ItemType::Parent => write!(f, "PARENT"),
+            ItemType::Task => write!(f, "TASK"),
+            ItemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

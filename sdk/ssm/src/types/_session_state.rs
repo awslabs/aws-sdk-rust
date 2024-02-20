@@ -96,3 +96,12 @@ impl SessionState {
         }
     }
 }
+impl ::std::fmt::Display for SessionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SessionState::Active => write!(f, "Active"),
+            SessionState::History => write!(f, "History"),
+            SessionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

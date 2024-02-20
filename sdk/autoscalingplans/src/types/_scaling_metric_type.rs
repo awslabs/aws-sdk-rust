@@ -165,3 +165,23 @@ impl ScalingMetricType {
         }
     }
 }
+impl ::std::fmt::Display for ScalingMetricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalingMetricType::AlbRequestCountPerTarget => write!(f, "ALBRequestCountPerTarget"),
+            ScalingMetricType::AsgAverageCpuUtilization => write!(f, "ASGAverageCPUUtilization"),
+            ScalingMetricType::AsgAverageNetworkIn => write!(f, "ASGAverageNetworkIn"),
+            ScalingMetricType::AsgAverageNetworkOut => write!(f, "ASGAverageNetworkOut"),
+            ScalingMetricType::DynamoDbReadCapacityUtilization => write!(f, "DynamoDBReadCapacityUtilization"),
+            ScalingMetricType::DynamoDbWriteCapacityUtilization => write!(f, "DynamoDBWriteCapacityUtilization"),
+            ScalingMetricType::Ec2SpotFleetRequestAverageCpuUtilization => write!(f, "EC2SpotFleetRequestAverageCPUUtilization"),
+            ScalingMetricType::Ec2SpotFleetRequestAverageNetworkIn => write!(f, "EC2SpotFleetRequestAverageNetworkIn"),
+            ScalingMetricType::Ec2SpotFleetRequestAverageNetworkOut => write!(f, "EC2SpotFleetRequestAverageNetworkOut"),
+            ScalingMetricType::EcsServiceAverageCpuUtilization => write!(f, "ECSServiceAverageCPUUtilization"),
+            ScalingMetricType::EcsServiceAverageMemoryUtilization => write!(f, "ECSServiceAverageMemoryUtilization"),
+            ScalingMetricType::RdsReaderAverageCpuUtilization => write!(f, "RDSReaderAverageCPUUtilization"),
+            ScalingMetricType::RdsReaderAverageDatabaseConnections => write!(f, "RDSReaderAverageDatabaseConnections"),
+            ScalingMetricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

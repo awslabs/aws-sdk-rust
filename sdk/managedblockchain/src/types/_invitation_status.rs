@@ -111,3 +111,15 @@ impl InvitationStatus {
         }
     }
 }
+impl ::std::fmt::Display for InvitationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InvitationStatus::Accepted => write!(f, "ACCEPTED"),
+            InvitationStatus::Accepting => write!(f, "ACCEPTING"),
+            InvitationStatus::Expired => write!(f, "EXPIRED"),
+            InvitationStatus::Pending => write!(f, "PENDING"),
+            InvitationStatus::Rejected => write!(f, "REJECTED"),
+            InvitationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

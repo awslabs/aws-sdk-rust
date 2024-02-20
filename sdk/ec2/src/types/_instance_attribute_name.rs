@@ -183,3 +183,26 @@ impl InstanceAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for InstanceAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceAttributeName::BlockDeviceMapping => write!(f, "blockDeviceMapping"),
+            InstanceAttributeName::DisableApiStop => write!(f, "disableApiStop"),
+            InstanceAttributeName::DisableApiTermination => write!(f, "disableApiTermination"),
+            InstanceAttributeName::EbsOptimized => write!(f, "ebsOptimized"),
+            InstanceAttributeName::EnaSupport => write!(f, "enaSupport"),
+            InstanceAttributeName::EnclaveOptions => write!(f, "enclaveOptions"),
+            InstanceAttributeName::GroupSet => write!(f, "groupSet"),
+            InstanceAttributeName::InstanceInitiatedShutdownBehavior => write!(f, "instanceInitiatedShutdownBehavior"),
+            InstanceAttributeName::InstanceType => write!(f, "instanceType"),
+            InstanceAttributeName::Kernel => write!(f, "kernel"),
+            InstanceAttributeName::ProductCodes => write!(f, "productCodes"),
+            InstanceAttributeName::Ramdisk => write!(f, "ramdisk"),
+            InstanceAttributeName::RootDeviceName => write!(f, "rootDeviceName"),
+            InstanceAttributeName::SourceDestCheck => write!(f, "sourceDestCheck"),
+            InstanceAttributeName::SriovNetSupport => write!(f, "sriovNetSupport"),
+            InstanceAttributeName::UserData => write!(f, "userData"),
+            InstanceAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

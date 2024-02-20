@@ -105,3 +105,13 @@ impl IntegrationType {
         }
     }
 }
+impl ::std::fmt::Display for IntegrationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntegrationType::ReceiveFindingsFromSecurityHub => write!(f, "RECEIVE_FINDINGS_FROM_SECURITY_HUB"),
+            IntegrationType::SendFindingsToSecurityHub => write!(f, "SEND_FINDINGS_TO_SECURITY_HUB"),
+            IntegrationType::UpdateFindingsInSecurityHub => write!(f, "UPDATE_FINDINGS_IN_SECURITY_HUB"),
+            IntegrationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

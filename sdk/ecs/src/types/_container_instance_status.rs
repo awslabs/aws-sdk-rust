@@ -111,3 +111,15 @@ impl ContainerInstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ContainerInstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerInstanceStatus::Active => write!(f, "ACTIVE"),
+            ContainerInstanceStatus::Deregistering => write!(f, "DEREGISTERING"),
+            ContainerInstanceStatus::Draining => write!(f, "DRAINING"),
+            ContainerInstanceStatus::Registering => write!(f, "REGISTERING"),
+            ContainerInstanceStatus::RegistrationFailed => write!(f, "REGISTRATION_FAILED"),
+            ContainerInstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

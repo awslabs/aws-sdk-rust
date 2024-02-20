@@ -111,3 +111,15 @@ impl ChangeStatus {
         }
     }
 }
+impl ::std::fmt::Display for ChangeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeStatus::Applying => write!(f, "APPLYING"),
+            ChangeStatus::Cancelled => write!(f, "CANCELLED"),
+            ChangeStatus::Failed => write!(f, "FAILED"),
+            ChangeStatus::Preparing => write!(f, "PREPARING"),
+            ChangeStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ChangeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

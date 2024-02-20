@@ -106,3 +106,14 @@ impl ResolverRuleStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResolverRuleStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverRuleStatus::Complete => write!(f, "COMPLETE"),
+            ResolverRuleStatus::Deleting => write!(f, "DELETING"),
+            ResolverRuleStatus::Failed => write!(f, "FAILED"),
+            ResolverRuleStatus::Updating => write!(f, "UPDATING"),
+            ResolverRuleStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

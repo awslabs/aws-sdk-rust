@@ -101,3 +101,13 @@ impl PresetListBy {
         }
     }
 }
+impl ::std::fmt::Display for PresetListBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PresetListBy::CreationDate => write!(f, "CREATION_DATE"),
+            PresetListBy::Name => write!(f, "NAME"),
+            PresetListBy::System => write!(f, "SYSTEM"),
+            PresetListBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

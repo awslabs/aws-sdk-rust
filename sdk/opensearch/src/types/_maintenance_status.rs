@@ -111,3 +111,15 @@ impl MaintenanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for MaintenanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaintenanceStatus::Completed => write!(f, "COMPLETED"),
+            MaintenanceStatus::Failed => write!(f, "FAILED"),
+            MaintenanceStatus::InProgress => write!(f, "IN_PROGRESS"),
+            MaintenanceStatus::Pending => write!(f, "PENDING"),
+            MaintenanceStatus::TimedOut => write!(f, "TIMED_OUT"),
+            MaintenanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

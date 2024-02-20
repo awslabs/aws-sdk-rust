@@ -96,3 +96,12 @@ impl UsageLimitUsageType {
         }
     }
 }
+impl ::std::fmt::Display for UsageLimitUsageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageLimitUsageType::CrossRegionDatasharing => write!(f, "cross-region-datasharing"),
+            UsageLimitUsageType::ServerlessCompute => write!(f, "serverless-compute"),
+            UsageLimitUsageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

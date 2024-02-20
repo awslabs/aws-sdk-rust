@@ -96,3 +96,12 @@ impl CostCategoryInheritedValueDimensionName {
         }
     }
 }
+impl ::std::fmt::Display for CostCategoryInheritedValueDimensionName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CostCategoryInheritedValueDimensionName::LinkedAccountName => write!(f, "LINKED_ACCOUNT_NAME"),
+            CostCategoryInheritedValueDimensionName::Tag => write!(f, "TAG"),
+            CostCategoryInheritedValueDimensionName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl ServerValidationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for ServerValidationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServerValidationStrategy::Userdata => write!(f, "USERDATA"),
+            ServerValidationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

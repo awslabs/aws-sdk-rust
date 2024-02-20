@@ -101,3 +101,13 @@ impl VirtualGatewayPortProtocol {
         }
     }
 }
+impl ::std::fmt::Display for VirtualGatewayPortProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VirtualGatewayPortProtocol::Grpc => write!(f, "grpc"),
+            VirtualGatewayPortProtocol::Http => write!(f, "http"),
+            VirtualGatewayPortProtocol::Http2 => write!(f, "http2"),
+            VirtualGatewayPortProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

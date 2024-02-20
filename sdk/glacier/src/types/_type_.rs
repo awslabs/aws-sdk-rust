@@ -101,3 +101,13 @@ impl Type {
         }
     }
 }
+impl ::std::fmt::Display for Type {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Type::AmazonCustomerByEmail => write!(f, "AmazonCustomerByEmail"),
+            Type::CanonicalUser => write!(f, "CanonicalUser"),
+            Type::Group => write!(f, "Group"),
+            Type::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

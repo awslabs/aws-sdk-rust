@@ -96,3 +96,12 @@ impl ProresParControl {
         }
     }
 }
+impl ::std::fmt::Display for ProresParControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProresParControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            ProresParControl::Specified => write!(f, "SPECIFIED"),
+            ProresParControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

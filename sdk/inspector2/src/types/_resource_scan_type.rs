@@ -106,3 +106,14 @@ impl ResourceScanType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceScanType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceScanType::Ec2 => write!(f, "EC2"),
+            ResourceScanType::Ecr => write!(f, "ECR"),
+            ResourceScanType::Lambda => write!(f, "LAMBDA"),
+            ResourceScanType::LambdaCode => write!(f, "LAMBDA_CODE"),
+            ResourceScanType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

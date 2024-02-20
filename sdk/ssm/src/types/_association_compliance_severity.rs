@@ -111,3 +111,15 @@ impl AssociationComplianceSeverity {
         }
     }
 }
+impl ::std::fmt::Display for AssociationComplianceSeverity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationComplianceSeverity::Critical => write!(f, "CRITICAL"),
+            AssociationComplianceSeverity::High => write!(f, "HIGH"),
+            AssociationComplianceSeverity::Low => write!(f, "LOW"),
+            AssociationComplianceSeverity::Medium => write!(f, "MEDIUM"),
+            AssociationComplianceSeverity::Unspecified => write!(f, "UNSPECIFIED"),
+            AssociationComplianceSeverity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

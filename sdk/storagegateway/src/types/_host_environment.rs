@@ -116,3 +116,16 @@ impl HostEnvironment {
         }
     }
 }
+impl ::std::fmt::Display for HostEnvironment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HostEnvironment::Ec2 => write!(f, "EC2"),
+            HostEnvironment::HyperV => write!(f, "HYPER-V"),
+            HostEnvironment::Kvm => write!(f, "KVM"),
+            HostEnvironment::Other => write!(f, "OTHER"),
+            HostEnvironment::Snowball => write!(f, "SNOWBALL"),
+            HostEnvironment::Vmware => write!(f, "VMWARE"),
+            HostEnvironment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

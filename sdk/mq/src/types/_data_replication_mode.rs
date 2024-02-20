@@ -96,3 +96,12 @@ impl DataReplicationMode {
         }
     }
 }
+impl ::std::fmt::Display for DataReplicationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataReplicationMode::Crdr => write!(f, "CRDR"),
+            DataReplicationMode::None => write!(f, "NONE"),
+            DataReplicationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

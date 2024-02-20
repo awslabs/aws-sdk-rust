@@ -96,3 +96,12 @@ impl DvbSubtitleApplyFontColor {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubtitleApplyFontColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubtitleApplyFontColor::AllText => write!(f, "ALL_TEXT"),
+            DvbSubtitleApplyFontColor::WhiteTextOnly => write!(f, "WHITE_TEXT_ONLY"),
+            DvbSubtitleApplyFontColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

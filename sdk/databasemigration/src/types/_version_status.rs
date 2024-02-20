@@ -101,3 +101,13 @@ impl VersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for VersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VersionStatus::Outdated => write!(f, "OUTDATED"),
+            VersionStatus::Unsupported => write!(f, "UNSUPPORTED"),
+            VersionStatus::UpToDate => write!(f, "UP_TO_DATE"),
+            VersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

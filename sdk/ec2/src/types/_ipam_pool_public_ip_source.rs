@@ -96,3 +96,12 @@ impl IpamPoolPublicIpSource {
         }
     }
 }
+impl ::std::fmt::Display for IpamPoolPublicIpSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamPoolPublicIpSource::Amazon => write!(f, "amazon"),
+            IpamPoolPublicIpSource::Byoip => write!(f, "byoip"),
+            IpamPoolPublicIpSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl HealthStatusFilter {
         }
     }
 }
+impl ::std::fmt::Display for HealthStatusFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HealthStatusFilter::All => write!(f, "ALL"),
+            HealthStatusFilter::Healthy => write!(f, "HEALTHY"),
+            HealthStatusFilter::HealthyOrElseAll => write!(f, "HEALTHY_OR_ELSE_ALL"),
+            HealthStatusFilter::Unhealthy => write!(f, "UNHEALTHY"),
+            HealthStatusFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

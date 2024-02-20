@@ -96,3 +96,12 @@ impl HumanTaskUiStatus {
         }
     }
 }
+impl ::std::fmt::Display for HumanTaskUiStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HumanTaskUiStatus::Active => write!(f, "Active"),
+            HumanTaskUiStatus::Deleting => write!(f, "Deleting"),
+            HumanTaskUiStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

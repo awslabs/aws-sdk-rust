@@ -91,3 +91,11 @@ impl PermissionActionType {
         }
     }
 }
+impl ::std::fmt::Display for PermissionActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionActionType::Restore => write!(f, "RESTORE"),
+            PermissionActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

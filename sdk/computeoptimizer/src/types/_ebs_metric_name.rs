@@ -111,3 +111,14 @@ impl EbsMetricName {
         }
     }
 }
+impl ::std::fmt::Display for EbsMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EbsMetricName::VolumeReadBytesPerSecond => write!(f, "VolumeReadBytesPerSecond"),
+            EbsMetricName::VolumeReadOpsPerSecond => write!(f, "VolumeReadOpsPerSecond"),
+            EbsMetricName::VolumeWriteBytesPerSecond => write!(f, "VolumeWriteBytesPerSecond"),
+            EbsMetricName::VolumeWriteOpsPerSecond => write!(f, "VolumeWriteOpsPerSecond"),
+            EbsMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

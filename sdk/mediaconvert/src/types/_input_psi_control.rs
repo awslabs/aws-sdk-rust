@@ -98,3 +98,12 @@ impl InputPsiControl {
         }
     }
 }
+impl ::std::fmt::Display for InputPsiControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputPsiControl::IgnorePsi => write!(f, "IGNORE_PSI"),
+            InputPsiControl::UsePsi => write!(f, "USE_PSI"),
+            InputPsiControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

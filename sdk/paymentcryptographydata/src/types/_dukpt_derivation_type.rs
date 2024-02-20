@@ -111,3 +111,15 @@ impl DukptDerivationType {
         }
     }
 }
+impl ::std::fmt::Display for DukptDerivationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DukptDerivationType::Aes128 => write!(f, "AES_128"),
+            DukptDerivationType::Aes192 => write!(f, "AES_192"),
+            DukptDerivationType::Aes256 => write!(f, "AES_256"),
+            DukptDerivationType::Tdes2Key => write!(f, "TDES_2KEY"),
+            DukptDerivationType::Tdes3Key => write!(f, "TDES_3KEY"),
+            DukptDerivationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

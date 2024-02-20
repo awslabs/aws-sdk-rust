@@ -121,3 +121,17 @@ impl RxNormAttributeType {
         }
     }
 }
+impl ::std::fmt::Display for RxNormAttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RxNormAttributeType::Dosage => write!(f, "DOSAGE"),
+            RxNormAttributeType::Duration => write!(f, "DURATION"),
+            RxNormAttributeType::Form => write!(f, "FORM"),
+            RxNormAttributeType::Frequency => write!(f, "FREQUENCY"),
+            RxNormAttributeType::Rate => write!(f, "RATE"),
+            RxNormAttributeType::RouteOrMode => write!(f, "ROUTE_OR_MODE"),
+            RxNormAttributeType::Strength => write!(f, "STRENGTH"),
+            RxNormAttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

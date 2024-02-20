@@ -106,3 +106,14 @@ impl InstancePatchStateOperatorType {
         }
     }
 }
+impl ::std::fmt::Display for InstancePatchStateOperatorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstancePatchStateOperatorType::Equal => write!(f, "Equal"),
+            InstancePatchStateOperatorType::GreaterThan => write!(f, "GreaterThan"),
+            InstancePatchStateOperatorType::LessThan => write!(f, "LessThan"),
+            InstancePatchStateOperatorType::NotEqual => write!(f, "NotEqual"),
+            InstancePatchStateOperatorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

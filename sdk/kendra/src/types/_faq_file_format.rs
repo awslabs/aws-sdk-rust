@@ -101,3 +101,13 @@ impl FaqFileFormat {
         }
     }
 }
+impl ::std::fmt::Display for FaqFileFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FaqFileFormat::Csv => write!(f, "CSV"),
+            FaqFileFormat::CsvWithHeader => write!(f, "CSV_WITH_HEADER"),
+            FaqFileFormat::Json => write!(f, "JSON"),
+            FaqFileFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

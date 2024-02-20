@@ -111,3 +111,15 @@ impl LivenessSessionStatus {
         }
     }
 }
+impl ::std::fmt::Display for LivenessSessionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LivenessSessionStatus::Created => write!(f, "CREATED"),
+            LivenessSessionStatus::Expired => write!(f, "EXPIRED"),
+            LivenessSessionStatus::Failed => write!(f, "FAILED"),
+            LivenessSessionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            LivenessSessionStatus::Succeeded => write!(f, "SUCCEEDED"),
+            LivenessSessionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

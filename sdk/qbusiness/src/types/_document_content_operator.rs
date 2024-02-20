@@ -91,3 +91,11 @@ impl DocumentContentOperator {
         }
     }
 }
+impl ::std::fmt::Display for DocumentContentOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentContentOperator::Delete => write!(f, "DELETE"),
+            DocumentContentOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

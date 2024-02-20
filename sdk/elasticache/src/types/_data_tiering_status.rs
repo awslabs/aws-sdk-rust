@@ -96,3 +96,12 @@ impl DataTieringStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataTieringStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataTieringStatus::Disabled => write!(f, "disabled"),
+            DataTieringStatus::Enabled => write!(f, "enabled"),
+            DataTieringStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

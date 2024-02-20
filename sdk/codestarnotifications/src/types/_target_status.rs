@@ -111,3 +111,15 @@ impl TargetStatus {
         }
     }
 }
+impl ::std::fmt::Display for TargetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetStatus::Active => write!(f, "ACTIVE"),
+            TargetStatus::Deactivated => write!(f, "DEACTIVATED"),
+            TargetStatus::Inactive => write!(f, "INACTIVE"),
+            TargetStatus::Pending => write!(f, "PENDING"),
+            TargetStatus::Unreachable => write!(f, "UNREACHABLE"),
+            TargetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

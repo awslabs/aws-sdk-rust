@@ -143,3 +143,16 @@ impl DataSourceFilterVariable {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceFilterVariable {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceFilterVariable::CreatedAt => write!(f, "CreatedAt"),
+            DataSourceFilterVariable::DataUri => write!(f, "DataLocationS3"),
+            DataSourceFilterVariable::IamUser => write!(f, "IAMUser"),
+            DataSourceFilterVariable::LastUpdatedAt => write!(f, "LastUpdatedAt"),
+            DataSourceFilterVariable::Name => write!(f, "Name"),
+            DataSourceFilterVariable::Status => write!(f, "Status"),
+            DataSourceFilterVariable::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

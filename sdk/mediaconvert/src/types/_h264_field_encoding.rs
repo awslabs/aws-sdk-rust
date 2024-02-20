@@ -101,3 +101,13 @@ impl H264FieldEncoding {
         }
     }
 }
+impl ::std::fmt::Display for H264FieldEncoding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264FieldEncoding::ForceField => write!(f, "FORCE_FIELD"),
+            H264FieldEncoding::Mbaff => write!(f, "MBAFF"),
+            H264FieldEncoding::Paff => write!(f, "PAFF"),
+            H264FieldEncoding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

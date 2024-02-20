@@ -106,3 +106,14 @@ impl TopicScheduleType {
         }
     }
 }
+impl ::std::fmt::Display for TopicScheduleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TopicScheduleType::Daily => write!(f, "DAILY"),
+            TopicScheduleType::Hourly => write!(f, "HOURLY"),
+            TopicScheduleType::Monthly => write!(f, "MONTHLY"),
+            TopicScheduleType::Weekly => write!(f, "WEEKLY"),
+            TopicScheduleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

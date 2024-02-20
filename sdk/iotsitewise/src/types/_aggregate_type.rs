@@ -116,3 +116,16 @@ impl AggregateType {
         }
     }
 }
+impl ::std::fmt::Display for AggregateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregateType::Average => write!(f, "AVERAGE"),
+            AggregateType::Count => write!(f, "COUNT"),
+            AggregateType::Maximum => write!(f, "MAXIMUM"),
+            AggregateType::Minimum => write!(f, "MINIMUM"),
+            AggregateType::StandardDeviation => write!(f, "STANDARD_DEVIATION"),
+            AggregateType::Sum => write!(f, "SUM"),
+            AggregateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

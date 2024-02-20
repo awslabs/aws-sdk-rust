@@ -106,3 +106,14 @@ impl DeploymentUpdateType {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentUpdateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentUpdateType::CurrentVersion => write!(f, "CURRENT_VERSION"),
+            DeploymentUpdateType::MajorVersion => write!(f, "MAJOR_VERSION"),
+            DeploymentUpdateType::MinorVersion => write!(f, "MINOR_VERSION"),
+            DeploymentUpdateType::None => write!(f, "NONE"),
+            DeploymentUpdateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

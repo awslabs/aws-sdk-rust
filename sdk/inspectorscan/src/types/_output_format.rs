@@ -96,3 +96,12 @@ impl OutputFormat {
         }
     }
 }
+impl ::std::fmt::Display for OutputFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputFormat::CycloneDx15 => write!(f, "CYCLONE_DX_1_5"),
+            OutputFormat::Inspector => write!(f, "INSPECTOR"),
+            OutputFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

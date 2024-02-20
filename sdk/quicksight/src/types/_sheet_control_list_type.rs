@@ -96,3 +96,12 @@ impl SheetControlListType {
         }
     }
 }
+impl ::std::fmt::Display for SheetControlListType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SheetControlListType::MultiSelect => write!(f, "MULTI_SELECT"),
+            SheetControlListType::SingleSelect => write!(f, "SINGLE_SELECT"),
+            SheetControlListType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

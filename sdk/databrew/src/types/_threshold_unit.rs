@@ -96,3 +96,12 @@ impl ThresholdUnit {
         }
     }
 }
+impl ::std::fmt::Display for ThresholdUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThresholdUnit::Count => write!(f, "COUNT"),
+            ThresholdUnit::Percentage => write!(f, "PERCENTAGE"),
+            ThresholdUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

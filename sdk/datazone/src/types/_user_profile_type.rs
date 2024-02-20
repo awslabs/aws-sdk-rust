@@ -96,3 +96,12 @@ impl UserProfileType {
         }
     }
 }
+impl ::std::fmt::Display for UserProfileType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserProfileType::Iam => write!(f, "IAM"),
+            UserProfileType::Sso => write!(f, "SSO"),
+            UserProfileType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

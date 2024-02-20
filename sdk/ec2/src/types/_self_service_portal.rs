@@ -96,3 +96,12 @@ impl SelfServicePortal {
         }
     }
 }
+impl ::std::fmt::Display for SelfServicePortal {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SelfServicePortal::Disabled => write!(f, "disabled"),
+            SelfServicePortal::Enabled => write!(f, "enabled"),
+            SelfServicePortal::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

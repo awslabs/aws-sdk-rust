@@ -91,3 +91,11 @@ impl ExperimentReportName {
         }
     }
 }
+impl ::std::fmt::Display for ExperimentReportName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExperimentReportName::BayesianInference => write!(f, "BayesianInference"),
+            ExperimentReportName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

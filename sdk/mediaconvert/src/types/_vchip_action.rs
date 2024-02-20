@@ -96,3 +96,12 @@ impl VchipAction {
         }
     }
 }
+impl ::std::fmt::Display for VchipAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VchipAction::Passthrough => write!(f, "PASSTHROUGH"),
+            VchipAction::Strip => write!(f, "STRIP"),
+            VchipAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

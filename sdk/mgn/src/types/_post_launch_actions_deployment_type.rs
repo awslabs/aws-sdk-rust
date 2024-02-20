@@ -101,3 +101,13 @@ impl PostLaunchActionsDeploymentType {
         }
     }
 }
+impl ::std::fmt::Display for PostLaunchActionsDeploymentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PostLaunchActionsDeploymentType::CutoverOnly => write!(f, "CUTOVER_ONLY"),
+            PostLaunchActionsDeploymentType::TestAndCutover => write!(f, "TEST_AND_CUTOVER"),
+            PostLaunchActionsDeploymentType::TestOnly => write!(f, "TEST_ONLY"),
+            PostLaunchActionsDeploymentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl EventType {
         }
     }
 }
+impl ::std::fmt::Display for EventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventType::ForgotPassword => write!(f, "ForgotPassword"),
+            EventType::PasswordChange => write!(f, "PasswordChange"),
+            EventType::ResendCode => write!(f, "ResendCode"),
+            EventType::SignIn => write!(f, "SignIn"),
+            EventType::SignUp => write!(f, "SignUp"),
+            EventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

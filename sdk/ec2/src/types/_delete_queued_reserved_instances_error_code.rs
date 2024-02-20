@@ -105,3 +105,13 @@ impl DeleteQueuedReservedInstancesErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for DeleteQueuedReservedInstancesErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeleteQueuedReservedInstancesErrorCode::ReservedInstancesIdInvalid => write!(f, "reserved-instances-id-invalid"),
+            DeleteQueuedReservedInstancesErrorCode::ReservedInstancesNotInQueuedState => write!(f, "reserved-instances-not-in-queued-state"),
+            DeleteQueuedReservedInstancesErrorCode::UnexpectedError => write!(f, "unexpected-error"),
+            DeleteQueuedReservedInstancesErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

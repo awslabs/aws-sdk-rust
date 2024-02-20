@@ -111,3 +111,15 @@ impl WebExperienceStatus {
         }
     }
 }
+impl ::std::fmt::Display for WebExperienceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WebExperienceStatus::Active => write!(f, "ACTIVE"),
+            WebExperienceStatus::Creating => write!(f, "CREATING"),
+            WebExperienceStatus::Deleting => write!(f, "DELETING"),
+            WebExperienceStatus::Failed => write!(f, "FAILED"),
+            WebExperienceStatus::PendingAuthConfig => write!(f, "PENDING_AUTH_CONFIG"),
+            WebExperienceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

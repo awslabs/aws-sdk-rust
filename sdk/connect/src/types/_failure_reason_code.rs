@@ -147,3 +147,20 @@ impl FailureReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for FailureReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailureReasonCode::IdempotencyException => write!(f, "IDEMPOTENCY_EXCEPTION"),
+            FailureReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            FailureReasonCode::InvalidAttributeKey => write!(f, "INVALID_ATTRIBUTE_KEY"),
+            FailureReasonCode::InvalidCustomerEndpoint => write!(f, "INVALID_CUSTOMER_ENDPOINT"),
+            FailureReasonCode::InvalidQueue => write!(f, "INVALID_QUEUE"),
+            FailureReasonCode::InvalidSystemEndpoint => write!(f, "INVALID_SYSTEM_ENDPOINT"),
+            FailureReasonCode::MissingCampaign => write!(f, "MISSING_CAMPAIGN"),
+            FailureReasonCode::MissingCustomerEndpoint => write!(f, "MISSING_CUSTOMER_ENDPOINT"),
+            FailureReasonCode::MissingQueueIdAndSystemEndpoint => write!(f, "MISSING_QUEUE_ID_AND_SYSTEM_ENDPOINT"),
+            FailureReasonCode::RequestThrottled => write!(f, "REQUEST_THROTTLED"),
+            FailureReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl RxNormTraitName {
         }
     }
 }
+impl ::std::fmt::Display for RxNormTraitName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RxNormTraitName::Negation => write!(f, "NEGATION"),
+            RxNormTraitName::PastHistory => write!(f, "PAST_HISTORY"),
+            RxNormTraitName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

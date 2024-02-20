@@ -123,3 +123,16 @@ impl InstanceState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceState::Active => write!(f, "ACTIVE"),
+            InstanceState::Deregistered => write!(f, "DEREGISTERED"),
+            InstanceState::Deregistering => write!(f, "DEREGISTERING"),
+            InstanceState::DeregistrationError => write!(f, "DEREGISTRATION_ERROR"),
+            InstanceState::Registering => write!(f, "REGISTERING"),
+            InstanceState::RegistrationError => write!(f, "REGISTRATION_ERROR"),
+            InstanceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

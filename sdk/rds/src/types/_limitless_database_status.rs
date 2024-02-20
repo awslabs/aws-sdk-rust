@@ -135,3 +135,18 @@ impl LimitlessDatabaseStatus {
         }
     }
 }
+impl ::std::fmt::Display for LimitlessDatabaseStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LimitlessDatabaseStatus::Active => write!(f, "active"),
+            LimitlessDatabaseStatus::Disabled => write!(f, "disabled"),
+            LimitlessDatabaseStatus::Disabling => write!(f, "disabling"),
+            LimitlessDatabaseStatus::Enabled => write!(f, "enabled"),
+            LimitlessDatabaseStatus::Enabling => write!(f, "enabling"),
+            LimitlessDatabaseStatus::Error => write!(f, "error"),
+            LimitlessDatabaseStatus::ModifyingMaxCapacity => write!(f, "modifying-max-capacity"),
+            LimitlessDatabaseStatus::NotInUse => write!(f, "not-in-use"),
+            LimitlessDatabaseStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

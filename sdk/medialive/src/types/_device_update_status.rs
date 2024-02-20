@@ -101,3 +101,13 @@ impl DeviceUpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceUpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceUpdateStatus::NotUpToDate => write!(f, "NOT_UP_TO_DATE"),
+            DeviceUpdateStatus::Updating => write!(f, "UPDATING"),
+            DeviceUpdateStatus::UpToDate => write!(f, "UP_TO_DATE"),
+            DeviceUpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

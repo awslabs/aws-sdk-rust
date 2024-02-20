@@ -96,3 +96,12 @@ impl BackupType {
         }
     }
 }
+impl ::std::fmt::Display for BackupType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackupType::Automated => write!(f, "AUTOMATED"),
+            BackupType::Manual => write!(f, "MANUAL"),
+            BackupType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

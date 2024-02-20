@@ -101,3 +101,13 @@ impl RequiresRecreation {
         }
     }
 }
+impl ::std::fmt::Display for RequiresRecreation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RequiresRecreation::Always => write!(f, "ALWAYS"),
+            RequiresRecreation::Conditionally => write!(f, "CONDITIONALLY"),
+            RequiresRecreation::Never => write!(f, "NEVER"),
+            RequiresRecreation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

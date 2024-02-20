@@ -96,3 +96,12 @@ impl ReconnectEnum {
         }
     }
 }
+impl ::std::fmt::Display for ReconnectEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReconnectEnum::Disabled => write!(f, "DISABLED"),
+            ReconnectEnum::Enabled => write!(f, "ENABLED"),
+            ReconnectEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CollaborationQueryLogStatus {
         }
     }
 }
+impl ::std::fmt::Display for CollaborationQueryLogStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CollaborationQueryLogStatus::Disabled => write!(f, "DISABLED"),
+            CollaborationQueryLogStatus::Enabled => write!(f, "ENABLED"),
+            CollaborationQueryLogStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

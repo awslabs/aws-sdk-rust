@@ -96,3 +96,12 @@ impl TimerEligibleParticipantRoles {
         }
     }
 }
+impl ::std::fmt::Display for TimerEligibleParticipantRoles {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimerEligibleParticipantRoles::Agent => write!(f, "AGENT"),
+            TimerEligibleParticipantRoles::Customer => write!(f, "CUSTOMER"),
+            TimerEligibleParticipantRoles::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

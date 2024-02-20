@@ -117,3 +117,15 @@ impl GroupKey {
         }
     }
 }
+impl ::std::fmt::Display for GroupKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupKey::AccountId => write!(f, "ACCOUNT_ID"),
+            GroupKey::EcrRepositoryName => write!(f, "ECR_REPOSITORY_NAME"),
+            GroupKey::ResourceType => write!(f, "RESOURCE_TYPE"),
+            GroupKey::ScanStatusCode => write!(f, "SCAN_STATUS_CODE"),
+            GroupKey::ScanStatusReason => write!(f, "SCAN_STATUS_REASON"),
+            GroupKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

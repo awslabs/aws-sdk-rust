@@ -101,3 +101,13 @@ impl TestGridSessionArtifactType {
         }
     }
 }
+impl ::std::fmt::Display for TestGridSessionArtifactType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestGridSessionArtifactType::SeleniumLog => write!(f, "SELENIUM_LOG"),
+            TestGridSessionArtifactType::UnknownValue => write!(f, "UNKNOWN"),
+            TestGridSessionArtifactType::Video => write!(f, "VIDEO"),
+            TestGridSessionArtifactType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

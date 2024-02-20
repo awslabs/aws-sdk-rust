@@ -96,3 +96,12 @@ impl OriginationRouteProtocol {
         }
     }
 }
+impl ::std::fmt::Display for OriginationRouteProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginationRouteProtocol::Tcp => write!(f, "TCP"),
+            OriginationRouteProtocol::Udp => write!(f, "UDP"),
+            OriginationRouteProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

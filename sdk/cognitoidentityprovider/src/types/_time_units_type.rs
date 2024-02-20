@@ -106,3 +106,14 @@ impl TimeUnitsType {
         }
     }
 }
+impl ::std::fmt::Display for TimeUnitsType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimeUnitsType::Days => write!(f, "days"),
+            TimeUnitsType::Hours => write!(f, "hours"),
+            TimeUnitsType::Minutes => write!(f, "minutes"),
+            TimeUnitsType::Seconds => write!(f, "seconds"),
+            TimeUnitsType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

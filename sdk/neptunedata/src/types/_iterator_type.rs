@@ -106,3 +106,14 @@ impl IteratorType {
         }
     }
 }
+impl ::std::fmt::Display for IteratorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IteratorType::AfterSequenceNumber => write!(f, "AFTER_SEQUENCE_NUMBER"),
+            IteratorType::AtSequenceNumber => write!(f, "AT_SEQUENCE_NUMBER"),
+            IteratorType::Latest => write!(f, "LATEST"),
+            IteratorType::TrimHorizon => write!(f, "TRIM_HORIZON"),
+            IteratorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

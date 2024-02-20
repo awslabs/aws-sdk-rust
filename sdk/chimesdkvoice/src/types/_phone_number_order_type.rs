@@ -96,3 +96,12 @@ impl PhoneNumberOrderType {
         }
     }
 }
+impl ::std::fmt::Display for PhoneNumberOrderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhoneNumberOrderType::New => write!(f, "New"),
+            PhoneNumberOrderType::Porting => write!(f, "Porting"),
+            PhoneNumberOrderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

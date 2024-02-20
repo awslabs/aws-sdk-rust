@@ -96,3 +96,12 @@ impl ApiAccess {
         }
     }
 }
+impl ::std::fmt::Display for ApiAccess {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApiAccess::Disabled => write!(f, "DISABLED"),
+            ApiAccess::Enabled => write!(f, "ENABLED"),
+            ApiAccess::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

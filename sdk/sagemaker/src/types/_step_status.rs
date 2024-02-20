@@ -116,3 +116,16 @@ impl StepStatus {
         }
     }
 }
+impl ::std::fmt::Display for StepStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StepStatus::Executing => write!(f, "Executing"),
+            StepStatus::Failed => write!(f, "Failed"),
+            StepStatus::Starting => write!(f, "Starting"),
+            StepStatus::Stopped => write!(f, "Stopped"),
+            StepStatus::Stopping => write!(f, "Stopping"),
+            StepStatus::Succeeded => write!(f, "Succeeded"),
+            StepStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

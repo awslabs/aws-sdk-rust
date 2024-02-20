@@ -96,3 +96,12 @@ impl BaseModelName {
         }
     }
 }
+impl ::std::fmt::Display for BaseModelName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BaseModelName::NarrowBand => write!(f, "NarrowBand"),
+            BaseModelName::WideBand => write!(f, "WideBand"),
+            BaseModelName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

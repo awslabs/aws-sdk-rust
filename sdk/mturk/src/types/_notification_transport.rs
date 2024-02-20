@@ -101,3 +101,13 @@ impl NotificationTransport {
         }
     }
 }
+impl ::std::fmt::Display for NotificationTransport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationTransport::Email => write!(f, "Email"),
+            NotificationTransport::Sns => write!(f, "SNS"),
+            NotificationTransport::Sqs => write!(f, "SQS"),
+            NotificationTransport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

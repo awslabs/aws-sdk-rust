@@ -101,3 +101,13 @@ impl ApplicationTagStatus {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationTagStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationTagStatus::Failure => write!(f, "FAILURE"),
+            ApplicationTagStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ApplicationTagStatus::Success => write!(f, "SUCCESS"),
+            ApplicationTagStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

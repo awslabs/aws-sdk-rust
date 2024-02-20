@@ -129,3 +129,17 @@ impl MigrationErrorType {
         }
     }
 }
+impl ::std::fmt::Display for MigrationErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MigrationErrorType::EntityNotFound => write!(f, "ENTITY_NOT_FOUND"),
+            MigrationErrorType::EntityNotSupported => write!(f, "ENTITY_NOT_SUPPORTED"),
+            MigrationErrorType::S3BucketInvalidRegion => write!(f, "S3_BUCKET_INVALID_REGION"),
+            MigrationErrorType::S3BucketNotAccessible => write!(f, "S3_BUCKET_NOT_ACCESSIBLE"),
+            MigrationErrorType::S3BucketNotFound => write!(f, "S3_BUCKET_NOT_FOUND"),
+            MigrationErrorType::S3BucketNoPermission => write!(f, "S3_BUCKET_NO_PERMISSION"),
+            MigrationErrorType::S3InternalError => write!(f, "S3_INTERNAL_ERROR"),
+            MigrationErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

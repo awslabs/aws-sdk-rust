@@ -91,3 +91,11 @@ impl OutputSchemaVersion {
         }
     }
 }
+impl ::std::fmt::Display for OutputSchemaVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputSchemaVersion::V1 => write!(f, "V_1"),
+            OutputSchemaVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -135,3 +135,18 @@ impl CapacityReservationState {
         }
     }
 }
+impl ::std::fmt::Display for CapacityReservationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapacityReservationState::Active => write!(f, "active"),
+            CapacityReservationState::Cancelled => write!(f, "cancelled"),
+            CapacityReservationState::Expired => write!(f, "expired"),
+            CapacityReservationState::Failed => write!(f, "failed"),
+            CapacityReservationState::PaymentFailed => write!(f, "payment-failed"),
+            CapacityReservationState::PaymentPending => write!(f, "payment-pending"),
+            CapacityReservationState::Pending => write!(f, "pending"),
+            CapacityReservationState::Scheduled => write!(f, "scheduled"),
+            CapacityReservationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl H264QualityLevel {
         }
     }
 }
+impl ::std::fmt::Display for H264QualityLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264QualityLevel::EnhancedQuality => write!(f, "ENHANCED_QUALITY"),
+            H264QualityLevel::StandardQuality => write!(f, "STANDARD_QUALITY"),
+            H264QualityLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

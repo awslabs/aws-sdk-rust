@@ -91,3 +91,11 @@ impl StorageClass {
         }
     }
 }
+impl ::std::fmt::Display for StorageClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageClass::Temporal => write!(f, "TEMPORAL"),
+            StorageClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl CustomizableMetricThreshold {
         }
     }
 }
+impl ::std::fmt::Display for CustomizableMetricThreshold {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomizableMetricThreshold::P90 => write!(f, "P90"),
+            CustomizableMetricThreshold::P95 => write!(f, "P95"),
+            CustomizableMetricThreshold::P995 => write!(f, "P99_5"),
+            CustomizableMetricThreshold::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

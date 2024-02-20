@@ -101,3 +101,13 @@ impl RegistrationStatus {
         }
     }
 }
+impl ::std::fmt::Display for RegistrationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistrationStatus::Complete => write!(f, "COMPLETE"),
+            RegistrationStatus::Failed => write!(f, "FAILED"),
+            RegistrationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            RegistrationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

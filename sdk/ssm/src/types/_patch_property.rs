@@ -116,3 +116,16 @@ impl PatchProperty {
         }
     }
 }
+impl ::std::fmt::Display for PatchProperty {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PatchProperty::PatchClassification => write!(f, "CLASSIFICATION"),
+            PatchProperty::PatchMsrcSeverity => write!(f, "MSRC_SEVERITY"),
+            PatchProperty::PatchPriority => write!(f, "PRIORITY"),
+            PatchProperty::Product => write!(f, "PRODUCT"),
+            PatchProperty::PatchProductFamily => write!(f, "PRODUCT_FAMILY"),
+            PatchProperty::PatchSeverity => write!(f, "SEVERITY"),
+            PatchProperty::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

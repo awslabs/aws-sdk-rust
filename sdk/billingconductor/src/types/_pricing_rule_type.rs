@@ -101,3 +101,13 @@ impl PricingRuleType {
         }
     }
 }
+impl ::std::fmt::Display for PricingRuleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PricingRuleType::Discount => write!(f, "DISCOUNT"),
+            PricingRuleType::Markup => write!(f, "MARKUP"),
+            PricingRuleType::Tiering => write!(f, "TIERING"),
+            PricingRuleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

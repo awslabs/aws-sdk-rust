@@ -96,3 +96,12 @@ impl ProjectStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProjectStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProjectStatus::Available => write!(f, "AVAILABLE"),
+            ProjectStatus::Updating => write!(f, "UPDATING"),
+            ProjectStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

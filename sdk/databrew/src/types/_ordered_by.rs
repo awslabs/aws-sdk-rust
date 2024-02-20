@@ -91,3 +91,11 @@ impl OrderedBy {
         }
     }
 }
+impl ::std::fmt::Display for OrderedBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrderedBy::LastModifiedDate => write!(f, "LAST_MODIFIED_DATE"),
+            OrderedBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl TargetIdType {
         }
     }
 }
+impl ::std::fmt::Display for TargetIdType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetIdType::Account => write!(f, "ACCOUNT"),
+            TargetIdType::Ou => write!(f, "OU"),
+            TargetIdType::Root => write!(f, "ROOT"),
+            TargetIdType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

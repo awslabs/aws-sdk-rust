@@ -96,3 +96,12 @@ impl InstanceBootModeValues {
         }
     }
 }
+impl ::std::fmt::Display for InstanceBootModeValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceBootModeValues::LegacyBios => write!(f, "legacy-bios"),
+            InstanceBootModeValues::Uefi => write!(f, "uefi"),
+            InstanceBootModeValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

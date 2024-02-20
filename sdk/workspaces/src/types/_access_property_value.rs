@@ -96,3 +96,12 @@ impl AccessPropertyValue {
         }
     }
 }
+impl ::std::fmt::Display for AccessPropertyValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessPropertyValue::Allow => write!(f, "ALLOW"),
+            AccessPropertyValue::Deny => write!(f, "DENY"),
+            AccessPropertyValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

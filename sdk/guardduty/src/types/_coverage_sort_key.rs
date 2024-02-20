@@ -141,3 +141,19 @@ impl CoverageSortKey {
         }
     }
 }
+impl ::std::fmt::Display for CoverageSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CoverageSortKey::AccountId => write!(f, "ACCOUNT_ID"),
+            CoverageSortKey::AddonVersion => write!(f, "ADDON_VERSION"),
+            CoverageSortKey::ClusterName => write!(f, "CLUSTER_NAME"),
+            CoverageSortKey::CoverageStatus => write!(f, "COVERAGE_STATUS"),
+            CoverageSortKey::EcsClusterName => write!(f, "ECS_CLUSTER_NAME"),
+            CoverageSortKey::EksClusterName => write!(f, "EKS_CLUSTER_NAME"),
+            CoverageSortKey::InstanceId => write!(f, "INSTANCE_ID"),
+            CoverageSortKey::Issue => write!(f, "ISSUE"),
+            CoverageSortKey::UpdatedAt => write!(f, "UPDATED_AT"),
+            CoverageSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

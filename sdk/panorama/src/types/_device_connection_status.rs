@@ -111,3 +111,15 @@ impl DeviceConnectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceConnectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceConnectionStatus::AwaitingCredentials => write!(f, "AWAITING_CREDENTIALS"),
+            DeviceConnectionStatus::Error => write!(f, "ERROR"),
+            DeviceConnectionStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
+            DeviceConnectionStatus::Offline => write!(f, "OFFLINE"),
+            DeviceConnectionStatus::Online => write!(f, "ONLINE"),
+            DeviceConnectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

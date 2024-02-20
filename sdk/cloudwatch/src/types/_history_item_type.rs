@@ -101,3 +101,13 @@ impl HistoryItemType {
         }
     }
 }
+impl ::std::fmt::Display for HistoryItemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HistoryItemType::Action => write!(f, "Action"),
+            HistoryItemType::ConfigurationUpdate => write!(f, "ConfigurationUpdate"),
+            HistoryItemType::StateUpdate => write!(f, "StateUpdate"),
+            HistoryItemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

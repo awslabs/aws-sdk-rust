@@ -96,3 +96,12 @@ impl FeatureStatus {
         }
     }
 }
+impl ::std::fmt::Display for FeatureStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeatureStatus::Available => write!(f, "AVAILABLE"),
+            FeatureStatus::Updating => write!(f, "UPDATING"),
+            FeatureStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

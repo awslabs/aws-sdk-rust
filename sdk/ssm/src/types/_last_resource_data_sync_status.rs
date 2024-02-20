@@ -101,3 +101,13 @@ impl LastResourceDataSyncStatus {
         }
     }
 }
+impl ::std::fmt::Display for LastResourceDataSyncStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LastResourceDataSyncStatus::Failed => write!(f, "Failed"),
+            LastResourceDataSyncStatus::Inprogress => write!(f, "InProgress"),
+            LastResourceDataSyncStatus::Successful => write!(f, "Successful"),
+            LastResourceDataSyncStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

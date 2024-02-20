@@ -96,3 +96,12 @@ impl DestinationType {
         }
     }
 }
+impl ::std::fmt::Display for DestinationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DestinationType::CloudWatchLogs => write!(f, "cloudwatch-logs"),
+            DestinationType::KinesisFirehose => write!(f, "kinesis-firehose"),
+            DestinationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

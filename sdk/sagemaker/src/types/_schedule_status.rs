@@ -106,3 +106,14 @@ impl ScheduleStatus {
         }
     }
 }
+impl ::std::fmt::Display for ScheduleStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduleStatus::Failed => write!(f, "Failed"),
+            ScheduleStatus::Pending => write!(f, "Pending"),
+            ScheduleStatus::Scheduled => write!(f, "Scheduled"),
+            ScheduleStatus::Stopped => write!(f, "Stopped"),
+            ScheduleStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

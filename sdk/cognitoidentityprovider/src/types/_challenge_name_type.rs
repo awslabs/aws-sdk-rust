@@ -147,3 +147,20 @@ impl ChallengeNameType {
         }
     }
 }
+impl ::std::fmt::Display for ChallengeNameType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChallengeNameType::AdminNoSrpAuth => write!(f, "ADMIN_NO_SRP_AUTH"),
+            ChallengeNameType::CustomChallenge => write!(f, "CUSTOM_CHALLENGE"),
+            ChallengeNameType::DevicePasswordVerifier => write!(f, "DEVICE_PASSWORD_VERIFIER"),
+            ChallengeNameType::DeviceSrpAuth => write!(f, "DEVICE_SRP_AUTH"),
+            ChallengeNameType::MfaSetup => write!(f, "MFA_SETUP"),
+            ChallengeNameType::NewPasswordRequired => write!(f, "NEW_PASSWORD_REQUIRED"),
+            ChallengeNameType::PasswordVerifier => write!(f, "PASSWORD_VERIFIER"),
+            ChallengeNameType::SelectMfaType => write!(f, "SELECT_MFA_TYPE"),
+            ChallengeNameType::SmsMfa => write!(f, "SMS_MFA"),
+            ChallengeNameType::SoftwareTokenMfa => write!(f, "SOFTWARE_TOKEN_MFA"),
+            ChallengeNameType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

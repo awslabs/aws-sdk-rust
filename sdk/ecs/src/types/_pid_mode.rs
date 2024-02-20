@@ -96,3 +96,12 @@ impl PidMode {
         }
     }
 }
+impl ::std::fmt::Display for PidMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PidMode::Host => write!(f, "host"),
+            PidMode::Task => write!(f, "task"),
+            PidMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

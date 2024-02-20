@@ -141,3 +141,19 @@ impl PullRequestEventType {
         }
     }
 }
+impl ::std::fmt::Display for PullRequestEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PullRequestEventType::PullRequestApprovalRuleCreated => write!(f, "PULL_REQUEST_APPROVAL_RULE_CREATED"),
+            PullRequestEventType::PullRequestApprovalRuleDeleted => write!(f, "PULL_REQUEST_APPROVAL_RULE_DELETED"),
+            PullRequestEventType::PullRequestApprovalRuleOverridden => write!(f, "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN"),
+            PullRequestEventType::PullRequestApprovalRuleUpdated => write!(f, "PULL_REQUEST_APPROVAL_RULE_UPDATED"),
+            PullRequestEventType::PullRequestApprovalStateChanged => write!(f, "PULL_REQUEST_APPROVAL_STATE_CHANGED"),
+            PullRequestEventType::PullRequestCreated => write!(f, "PULL_REQUEST_CREATED"),
+            PullRequestEventType::PullRequestMergeStateChanged => write!(f, "PULL_REQUEST_MERGE_STATE_CHANGED"),
+            PullRequestEventType::PullRequestSourceReferenceUpdated => write!(f, "PULL_REQUEST_SOURCE_REFERENCE_UPDATED"),
+            PullRequestEventType::PullRequestStatusChanged => write!(f, "PULL_REQUEST_STATUS_CHANGED"),
+            PullRequestEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

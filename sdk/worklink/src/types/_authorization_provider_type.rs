@@ -91,3 +91,11 @@ impl AuthorizationProviderType {
         }
     }
 }
+impl ::std::fmt::Display for AuthorizationProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthorizationProviderType::Saml => write!(f, "SAML"),
+            AuthorizationProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl TransitEncryptionMode {
         }
     }
 }
+impl ::std::fmt::Display for TransitEncryptionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitEncryptionMode::Preferred => write!(f, "preferred"),
+            TransitEncryptionMode::Required => write!(f, "required"),
+            TransitEncryptionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

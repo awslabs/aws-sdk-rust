@@ -96,3 +96,12 @@ impl ConfigRuleComplianceSummaryGroupKey {
         }
     }
 }
+impl ::std::fmt::Display for ConfigRuleComplianceSummaryGroupKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigRuleComplianceSummaryGroupKey::AccountId => write!(f, "ACCOUNT_ID"),
+            ConfigRuleComplianceSummaryGroupKey::AwsRegion => write!(f, "AWS_REGION"),
+            ConfigRuleComplianceSummaryGroupKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

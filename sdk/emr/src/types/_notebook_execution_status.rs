@@ -147,3 +147,20 @@ impl NotebookExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for NotebookExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotebookExecutionStatus::Failed => write!(f, "FAILED"),
+            NotebookExecutionStatus::Failing => write!(f, "FAILING"),
+            NotebookExecutionStatus::Finished => write!(f, "FINISHED"),
+            NotebookExecutionStatus::Finishing => write!(f, "FINISHING"),
+            NotebookExecutionStatus::Running => write!(f, "RUNNING"),
+            NotebookExecutionStatus::Starting => write!(f, "STARTING"),
+            NotebookExecutionStatus::StartPending => write!(f, "START_PENDING"),
+            NotebookExecutionStatus::Stopped => write!(f, "STOPPED"),
+            NotebookExecutionStatus::Stopping => write!(f, "STOPPING"),
+            NotebookExecutionStatus::StopPending => write!(f, "STOP_PENDING"),
+            NotebookExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

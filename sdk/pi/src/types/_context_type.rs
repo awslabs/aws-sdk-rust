@@ -96,3 +96,12 @@ impl ContextType {
         }
     }
 }
+impl ::std::fmt::Display for ContextType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContextType::Causal => write!(f, "CAUSAL"),
+            ContextType::Contextual => write!(f, "CONTEXTUAL"),
+            ContextType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

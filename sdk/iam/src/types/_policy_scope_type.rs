@@ -101,3 +101,13 @@ impl PolicyScopeType {
         }
     }
 }
+impl ::std::fmt::Display for PolicyScopeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyScopeType::Aws => write!(f, "AWS"),
+            PolicyScopeType::All => write!(f, "All"),
+            PolicyScopeType::Local => write!(f, "Local"),
+            PolicyScopeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

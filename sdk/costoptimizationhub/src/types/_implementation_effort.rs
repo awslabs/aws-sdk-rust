@@ -111,3 +111,15 @@ impl ImplementationEffort {
         }
     }
 }
+impl ::std::fmt::Display for ImplementationEffort {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImplementationEffort::High => write!(f, "High"),
+            ImplementationEffort::Low => write!(f, "Low"),
+            ImplementationEffort::Medium => write!(f, "Medium"),
+            ImplementationEffort::VeryHigh => write!(f, "VeryHigh"),
+            ImplementationEffort::VeryLow => write!(f, "VeryLow"),
+            ImplementationEffort::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

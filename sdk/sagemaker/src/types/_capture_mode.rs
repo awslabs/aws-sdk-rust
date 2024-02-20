@@ -101,3 +101,13 @@ impl CaptureMode {
         }
     }
 }
+impl ::std::fmt::Display for CaptureMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CaptureMode::Input => write!(f, "Input"),
+            CaptureMode::InputAndOutput => write!(f, "InputAndOutput"),
+            CaptureMode::Output => write!(f, "Output"),
+            CaptureMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

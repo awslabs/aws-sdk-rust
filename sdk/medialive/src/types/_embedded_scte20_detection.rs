@@ -96,3 +96,12 @@ impl EmbeddedScte20Detection {
         }
     }
 }
+impl ::std::fmt::Display for EmbeddedScte20Detection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EmbeddedScte20Detection::Auto => write!(f, "AUTO"),
+            EmbeddedScte20Detection::Off => write!(f, "OFF"),
+            EmbeddedScte20Detection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

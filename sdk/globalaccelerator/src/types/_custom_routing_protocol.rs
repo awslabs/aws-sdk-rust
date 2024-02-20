@@ -96,3 +96,12 @@ impl CustomRoutingProtocol {
         }
     }
 }
+impl ::std::fmt::Display for CustomRoutingProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomRoutingProtocol::Tcp => write!(f, "TCP"),
+            CustomRoutingProtocol::Udp => write!(f, "UDP"),
+            CustomRoutingProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

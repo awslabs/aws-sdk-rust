@@ -101,3 +101,13 @@ impl H265Telecine {
         }
     }
 }
+impl ::std::fmt::Display for H265Telecine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265Telecine::Hard => write!(f, "HARD"),
+            H265Telecine::None => write!(f, "NONE"),
+            H265Telecine::Soft => write!(f, "SOFT"),
+            H265Telecine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

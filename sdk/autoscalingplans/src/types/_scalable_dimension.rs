@@ -135,3 +135,18 @@ impl ScalableDimension {
         }
     }
 }
+impl ::std::fmt::Display for ScalableDimension {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalableDimension::AutoScalingGroupDesiredCapacity => write!(f, "autoscaling:autoScalingGroup:DesiredCapacity"),
+            ScalableDimension::DynamoDbIndexReadCapacityUnits => write!(f, "dynamodb:index:ReadCapacityUnits"),
+            ScalableDimension::DynamoDbIndexWriteCapacityUnits => write!(f, "dynamodb:index:WriteCapacityUnits"),
+            ScalableDimension::DynamoDbTableReadCapacityUnits => write!(f, "dynamodb:table:ReadCapacityUnits"),
+            ScalableDimension::DynamoDbTableWriteCapacityUnits => write!(f, "dynamodb:table:WriteCapacityUnits"),
+            ScalableDimension::Ec2SpotFleetRequestTargetCapacity => write!(f, "ec2:spot-fleet-request:TargetCapacity"),
+            ScalableDimension::EcsServiceDesiredCount => write!(f, "ecs:service:DesiredCount"),
+            ScalableDimension::RdsClusterReadReplicaCount => write!(f, "rds:cluster:ReadReplicaCount"),
+            ScalableDimension::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

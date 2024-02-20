@@ -123,3 +123,16 @@ impl ThreatIntelIndicatorCategory {
         }
     }
 }
+impl ::std::fmt::Display for ThreatIntelIndicatorCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThreatIntelIndicatorCategory::Backdoor => write!(f, "BACKDOOR"),
+            ThreatIntelIndicatorCategory::CardStealer => write!(f, "CARD_STEALER"),
+            ThreatIntelIndicatorCategory::CommandAndControl => write!(f, "COMMAND_AND_CONTROL"),
+            ThreatIntelIndicatorCategory::DropSite => write!(f, "DROP_SITE"),
+            ThreatIntelIndicatorCategory::ExploitSite => write!(f, "EXPLOIT_SITE"),
+            ThreatIntelIndicatorCategory::Keylogger => write!(f, "KEYLOGGER"),
+            ThreatIntelIndicatorCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl UpdateActionType {
         }
     }
 }
+impl ::std::fmt::Display for UpdateActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateActionType::CreateOrUpdate => write!(f, "CREATE_OR_UPDATE"),
+            UpdateActionType::Delete => write!(f, "DELETE"),
+            UpdateActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

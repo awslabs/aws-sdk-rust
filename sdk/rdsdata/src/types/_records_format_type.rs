@@ -96,3 +96,12 @@ impl RecordsFormatType {
         }
     }
 }
+impl ::std::fmt::Display for RecordsFormatType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordsFormatType::Json => write!(f, "JSON"),
+            RecordsFormatType::None => write!(f, "NONE"),
+            RecordsFormatType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

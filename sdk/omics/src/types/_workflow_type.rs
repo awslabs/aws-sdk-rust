@@ -96,3 +96,12 @@ impl WorkflowType {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowType::Private => write!(f, "PRIVATE"),
+            WorkflowType::Ready2Run => write!(f, "READY2RUN"),
+            WorkflowType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

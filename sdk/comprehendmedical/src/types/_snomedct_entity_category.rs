@@ -101,3 +101,13 @@ impl SnomedctEntityCategory {
         }
     }
 }
+impl ::std::fmt::Display for SnomedctEntityCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnomedctEntityCategory::Anatomy => write!(f, "ANATOMY"),
+            SnomedctEntityCategory::MedicalCondition => write!(f, "MEDICAL_CONDITION"),
+            SnomedctEntityCategory::TestTreatmentProcedure => write!(f, "TEST_TREATMENT_PROCEDURE"),
+            SnomedctEntityCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

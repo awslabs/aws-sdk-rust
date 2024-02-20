@@ -123,3 +123,16 @@ impl AuditCheckRunStatus {
         }
     }
 }
+impl ::std::fmt::Display for AuditCheckRunStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditCheckRunStatus::Canceled => write!(f, "CANCELED"),
+            AuditCheckRunStatus::CompletedCompliant => write!(f, "COMPLETED_COMPLIANT"),
+            AuditCheckRunStatus::CompletedNonCompliant => write!(f, "COMPLETED_NON_COMPLIANT"),
+            AuditCheckRunStatus::Failed => write!(f, "FAILED"),
+            AuditCheckRunStatus::InProgress => write!(f, "IN_PROGRESS"),
+            AuditCheckRunStatus::WaitingForDataCollection => write!(f, "WAITING_FOR_DATA_COLLECTION"),
+            AuditCheckRunStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

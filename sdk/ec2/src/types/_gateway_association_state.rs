@@ -106,3 +106,14 @@ impl GatewayAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for GatewayAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GatewayAssociationState::Associated => write!(f, "associated"),
+            GatewayAssociationState::Associating => write!(f, "associating"),
+            GatewayAssociationState::Disassociating => write!(f, "disassociating"),
+            GatewayAssociationState::NotAssociated => write!(f, "not-associated"),
+            GatewayAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

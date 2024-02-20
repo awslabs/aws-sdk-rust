@@ -101,3 +101,13 @@ impl TableFormat {
         }
     }
 }
+impl ::std::fmt::Display for TableFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableFormat::Default => write!(f, "Default"),
+            TableFormat::Glue => write!(f, "Glue"),
+            TableFormat::Iceberg => write!(f, "Iceberg"),
+            TableFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

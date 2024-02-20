@@ -106,3 +106,14 @@ impl StorageVirtualMachineSubtype {
         }
     }
 }
+impl ::std::fmt::Display for StorageVirtualMachineSubtype {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageVirtualMachineSubtype::Default => write!(f, "DEFAULT"),
+            StorageVirtualMachineSubtype::DpDestination => write!(f, "DP_DESTINATION"),
+            StorageVirtualMachineSubtype::SyncDestination => write!(f, "SYNC_DESTINATION"),
+            StorageVirtualMachineSubtype::SyncSource => write!(f, "SYNC_SOURCE"),
+            StorageVirtualMachineSubtype::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

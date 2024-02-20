@@ -101,3 +101,13 @@ impl StackInstanceFilterName {
         }
     }
 }
+impl ::std::fmt::Display for StackInstanceFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackInstanceFilterName::DetailedStatus => write!(f, "DETAILED_STATUS"),
+            StackInstanceFilterName::DriftStatus => write!(f, "DRIFT_STATUS"),
+            StackInstanceFilterName::LastOperationId => write!(f, "LAST_OPERATION_ID"),
+            StackInstanceFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

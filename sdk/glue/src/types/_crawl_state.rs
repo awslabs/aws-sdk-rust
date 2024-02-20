@@ -116,3 +116,16 @@ impl CrawlState {
         }
     }
 }
+impl ::std::fmt::Display for CrawlState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CrawlState::Cancelled => write!(f, "CANCELLED"),
+            CrawlState::Cancelling => write!(f, "CANCELLING"),
+            CrawlState::Error => write!(f, "ERROR"),
+            CrawlState::Failed => write!(f, "FAILED"),
+            CrawlState::Running => write!(f, "RUNNING"),
+            CrawlState::Succeeded => write!(f, "SUCCEEDED"),
+            CrawlState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

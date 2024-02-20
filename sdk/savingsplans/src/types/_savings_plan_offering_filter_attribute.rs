@@ -96,3 +96,12 @@ impl SavingsPlanOfferingFilterAttribute {
         }
     }
 }
+impl ::std::fmt::Display for SavingsPlanOfferingFilterAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SavingsPlanOfferingFilterAttribute::InstanceFamily => write!(f, "instanceFamily"),
+            SavingsPlanOfferingFilterAttribute::Region => write!(f, "region"),
+            SavingsPlanOfferingFilterAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

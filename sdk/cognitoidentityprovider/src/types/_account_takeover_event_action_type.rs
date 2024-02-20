@@ -106,3 +106,14 @@ impl AccountTakeoverEventActionType {
         }
     }
 }
+impl ::std::fmt::Display for AccountTakeoverEventActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountTakeoverEventActionType::Block => write!(f, "BLOCK"),
+            AccountTakeoverEventActionType::MfaIfConfigured => write!(f, "MFA_IF_CONFIGURED"),
+            AccountTakeoverEventActionType::MfaRequired => write!(f, "MFA_REQUIRED"),
+            AccountTakeoverEventActionType::NoAction => write!(f, "NO_ACTION"),
+            AccountTakeoverEventActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

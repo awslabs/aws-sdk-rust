@@ -106,3 +106,14 @@ impl DirectoryRegistrationStatus {
         }
     }
 }
+impl ::std::fmt::Display for DirectoryRegistrationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectoryRegistrationStatus::Active => write!(f, "ACTIVE"),
+            DirectoryRegistrationStatus::Creating => write!(f, "CREATING"),
+            DirectoryRegistrationStatus::Deleting => write!(f, "DELETING"),
+            DirectoryRegistrationStatus::Failed => write!(f, "FAILED"),
+            DirectoryRegistrationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

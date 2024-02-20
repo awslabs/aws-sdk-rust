@@ -171,3 +171,24 @@ impl TrendmicroConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for TrendmicroConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrendmicroConnectorOperator::Addition => write!(f, "ADDITION"),
+            TrendmicroConnectorOperator::Division => write!(f, "DIVISION"),
+            TrendmicroConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            TrendmicroConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            TrendmicroConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            TrendmicroConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            TrendmicroConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            TrendmicroConnectorOperator::NoOp => write!(f, "NO_OP"),
+            TrendmicroConnectorOperator::Projection => write!(f, "PROJECTION"),
+            TrendmicroConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            TrendmicroConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            TrendmicroConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            TrendmicroConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            TrendmicroConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            TrendmicroConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

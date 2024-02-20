@@ -96,3 +96,12 @@ impl FleetOnDemandAllocationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for FleetOnDemandAllocationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetOnDemandAllocationStrategy::LowestPrice => write!(f, "lowest-price"),
+            FleetOnDemandAllocationStrategy::Prioritized => write!(f, "prioritized"),
+            FleetOnDemandAllocationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

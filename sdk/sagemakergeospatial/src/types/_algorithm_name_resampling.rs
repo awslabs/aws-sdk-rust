@@ -171,3 +171,24 @@ impl AlgorithmNameResampling {
         }
     }
 }
+impl ::std::fmt::Display for AlgorithmNameResampling {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlgorithmNameResampling::Average => write!(f, "AVERAGE"),
+            AlgorithmNameResampling::Bilinear => write!(f, "BILINEAR"),
+            AlgorithmNameResampling::Cubic => write!(f, "CUBIC"),
+            AlgorithmNameResampling::Cubicspline => write!(f, "CUBICSPLINE"),
+            AlgorithmNameResampling::Lanczos => write!(f, "LANCZOS"),
+            AlgorithmNameResampling::Max => write!(f, "MAX"),
+            AlgorithmNameResampling::Med => write!(f, "MED"),
+            AlgorithmNameResampling::Min => write!(f, "MIN"),
+            AlgorithmNameResampling::Mode => write!(f, "MODE"),
+            AlgorithmNameResampling::Near => write!(f, "NEAR"),
+            AlgorithmNameResampling::Q1 => write!(f, "Q1"),
+            AlgorithmNameResampling::Q3 => write!(f, "Q3"),
+            AlgorithmNameResampling::Rms => write!(f, "RMS"),
+            AlgorithmNameResampling::Sum => write!(f, "SUM"),
+            AlgorithmNameResampling::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CostCategoryRuleType {
         }
     }
 }
+impl ::std::fmt::Display for CostCategoryRuleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CostCategoryRuleType::InheritedValue => write!(f, "INHERITED_VALUE"),
+            CostCategoryRuleType::Regular => write!(f, "REGULAR"),
+            CostCategoryRuleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

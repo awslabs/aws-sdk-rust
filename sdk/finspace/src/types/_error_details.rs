@@ -135,3 +135,18 @@ impl ErrorDetails {
         }
     }
 }
+impl ::std::fmt::Display for ErrorDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorDetails::UserRecoverable => write!(f, "A user recoverable error has occurred"),
+            ErrorDetails::InternalServiceException => write!(f, "An internal error has occurred."),
+            ErrorDetails::Cancelled => write!(f, "Cancelled"),
+            ErrorDetails::AccessDenied => write!(f, "Missing required permission to perform this request."),
+            ErrorDetails::ResourceNotFound => write!(f, "One or more inputs to this request were not found."),
+            ErrorDetails::ServiceQuotaExceeded => write!(f, "Service limits have been exceeded."),
+            ErrorDetails::Validation => write!(f, "The inputs to this request are invalid."),
+            ErrorDetails::Throttling => write!(f, "The system temporarily lacks sufficient resources to process the request."),
+            ErrorDetails::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

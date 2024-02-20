@@ -96,3 +96,12 @@ impl WebvttAccessibilitySubs {
         }
     }
 }
+impl ::std::fmt::Display for WebvttAccessibilitySubs {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WebvttAccessibilitySubs::Disabled => write!(f, "DISABLED"),
+            WebvttAccessibilitySubs::Enabled => write!(f, "ENABLED"),
+            WebvttAccessibilitySubs::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

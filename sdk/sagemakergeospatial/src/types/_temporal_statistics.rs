@@ -101,3 +101,13 @@ impl TemporalStatistics {
         }
     }
 }
+impl ::std::fmt::Display for TemporalStatistics {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemporalStatistics::Mean => write!(f, "MEAN"),
+            TemporalStatistics::Median => write!(f, "MEDIAN"),
+            TemporalStatistics::StandardDeviation => write!(f, "STANDARD_DEVIATION"),
+            TemporalStatistics::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

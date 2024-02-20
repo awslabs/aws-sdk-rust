@@ -101,3 +101,13 @@ impl CategoryFilterType {
         }
     }
 }
+impl ::std::fmt::Display for CategoryFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CategoryFilterType::CustomFilter => write!(f, "CUSTOM_FILTER"),
+            CategoryFilterType::CustomFilterList => write!(f, "CUSTOM_FILTER_LIST"),
+            CategoryFilterType::FilterList => write!(f, "FILTER_LIST"),
+            CategoryFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

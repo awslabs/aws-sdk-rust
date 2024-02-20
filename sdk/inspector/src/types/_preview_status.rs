@@ -96,3 +96,12 @@ impl PreviewStatus {
         }
     }
 }
+impl ::std::fmt::Display for PreviewStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PreviewStatus::Completed => write!(f, "COMPLETED"),
+            PreviewStatus::WorkInProgress => write!(f, "WORK_IN_PROGRESS"),
+            PreviewStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -147,3 +147,20 @@ impl VoiceConnectorAwsRegion {
         }
     }
 }
+impl ::std::fmt::Display for VoiceConnectorAwsRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VoiceConnectorAwsRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
+            VoiceConnectorAwsRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
+            VoiceConnectorAwsRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
+            VoiceConnectorAwsRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
+            VoiceConnectorAwsRegion::CaCentral1 => write!(f, "ca-central-1"),
+            VoiceConnectorAwsRegion::EuCentral1 => write!(f, "eu-central-1"),
+            VoiceConnectorAwsRegion::EuWest1 => write!(f, "eu-west-1"),
+            VoiceConnectorAwsRegion::EuWest2 => write!(f, "eu-west-2"),
+            VoiceConnectorAwsRegion::UsEast1 => write!(f, "us-east-1"),
+            VoiceConnectorAwsRegion::UsWest2 => write!(f, "us-west-2"),
+            VoiceConnectorAwsRegion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

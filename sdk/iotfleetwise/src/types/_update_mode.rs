@@ -96,3 +96,12 @@ impl UpdateMode {
         }
     }
 }
+impl ::std::fmt::Display for UpdateMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateMode::Merge => write!(f, "Merge"),
+            UpdateMode::Overwrite => write!(f, "Overwrite"),
+            UpdateMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl NodeStatus {
         }
     }
 }
+impl ::std::fmt::Display for NodeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeStatus::Available => write!(f, "AVAILABLE"),
+            NodeStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            NodeStatus::Creating => write!(f, "CREATING"),
+            NodeStatus::Deleted => write!(f, "DELETED"),
+            NodeStatus::Deleting => write!(f, "DELETING"),
+            NodeStatus::Failed => write!(f, "FAILED"),
+            NodeStatus::InaccessibleEncryptionKey => write!(f, "INACCESSIBLE_ENCRYPTION_KEY"),
+            NodeStatus::Unhealthy => write!(f, "UNHEALTHY"),
+            NodeStatus::Updating => write!(f, "UPDATING"),
+            NodeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl EndpointStatus {
         }
     }
 }
+impl ::std::fmt::Display for EndpointStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointStatus::Active => write!(f, "ACTIVE"),
+            EndpointStatus::Inactive => write!(f, "INACTIVE"),
+            EndpointStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

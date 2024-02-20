@@ -106,3 +106,14 @@ impl FpgaImageAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for FpgaImageAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FpgaImageAttributeName::Description => write!(f, "description"),
+            FpgaImageAttributeName::LoadPermission => write!(f, "loadPermission"),
+            FpgaImageAttributeName::Name => write!(f, "name"),
+            FpgaImageAttributeName::ProductCodes => write!(f, "productCodes"),
+            FpgaImageAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

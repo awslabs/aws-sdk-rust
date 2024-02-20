@@ -101,3 +101,13 @@ impl SamlStatusEnum {
         }
     }
 }
+impl ::std::fmt::Display for SamlStatusEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SamlStatusEnum::Disabled => write!(f, "DISABLED"),
+            SamlStatusEnum::Enabled => write!(f, "ENABLED"),
+            SamlStatusEnum::EnabledWithDirectoryLoginFallback => write!(f, "ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK"),
+            SamlStatusEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

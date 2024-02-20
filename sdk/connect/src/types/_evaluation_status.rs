@@ -96,3 +96,12 @@ impl EvaluationStatus {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationStatus::Draft => write!(f, "DRAFT"),
+            EvaluationStatus::Submitted => write!(f, "SUBMITTED"),
+            EvaluationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

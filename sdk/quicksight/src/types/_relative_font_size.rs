@@ -111,3 +111,15 @@ impl RelativeFontSize {
         }
     }
 }
+impl ::std::fmt::Display for RelativeFontSize {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelativeFontSize::ExtraLarge => write!(f, "EXTRA_LARGE"),
+            RelativeFontSize::ExtraSmall => write!(f, "EXTRA_SMALL"),
+            RelativeFontSize::Large => write!(f, "LARGE"),
+            RelativeFontSize::Medium => write!(f, "MEDIUM"),
+            RelativeFontSize::Small => write!(f, "SMALL"),
+            RelativeFontSize::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

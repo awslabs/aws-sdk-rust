@@ -106,3 +106,14 @@ impl Type {
         }
     }
 }
+impl ::std::fmt::Display for Type {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Type::Aes256 => write!(f, "AES256"),
+            Type::None => write!(f, "NONE"),
+            Type::AwsKms => write!(f, "aws:kms"),
+            Type::AwsKmsDsse => write!(f, "aws:kms:dsse"),
+            Type::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

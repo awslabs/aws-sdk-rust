@@ -111,3 +111,15 @@ impl DocumentAttributeBoostingLevel {
         }
     }
 }
+impl ::std::fmt::Display for DocumentAttributeBoostingLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentAttributeBoostingLevel::High => write!(f, "HIGH"),
+            DocumentAttributeBoostingLevel::Low => write!(f, "LOW"),
+            DocumentAttributeBoostingLevel::Medium => write!(f, "MEDIUM"),
+            DocumentAttributeBoostingLevel::None => write!(f, "NONE"),
+            DocumentAttributeBoostingLevel::VeryHigh => write!(f, "VERY_HIGH"),
+            DocumentAttributeBoostingLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

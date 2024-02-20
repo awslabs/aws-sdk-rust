@@ -96,3 +96,12 @@ impl AuthTypeValue {
         }
     }
 }
+impl ::std::fmt::Display for AuthTypeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthTypeValue::No => write!(f, "no"),
+            AuthTypeValue::Password => write!(f, "password"),
+            AuthTypeValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

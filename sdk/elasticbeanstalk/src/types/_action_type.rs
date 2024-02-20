@@ -101,3 +101,13 @@ impl ActionType {
         }
     }
 }
+impl ::std::fmt::Display for ActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionType::InstanceRefresh => write!(f, "InstanceRefresh"),
+            ActionType::PlatformUpdate => write!(f, "PlatformUpdate"),
+            ActionType::UnknownValue => write!(f, "Unknown"),
+            ActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

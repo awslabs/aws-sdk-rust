@@ -106,3 +106,14 @@ impl ResourceShareInvitationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceShareInvitationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceShareInvitationStatus::Accepted => write!(f, "ACCEPTED"),
+            ResourceShareInvitationStatus::Expired => write!(f, "EXPIRED"),
+            ResourceShareInvitationStatus::Pending => write!(f, "PENDING"),
+            ResourceShareInvitationStatus::Rejected => write!(f, "REJECTED"),
+            ResourceShareInvitationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

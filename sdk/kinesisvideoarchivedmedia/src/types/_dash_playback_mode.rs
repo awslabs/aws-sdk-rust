@@ -101,3 +101,13 @@ impl DashPlaybackMode {
         }
     }
 }
+impl ::std::fmt::Display for DashPlaybackMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashPlaybackMode::Live => write!(f, "LIVE"),
+            DashPlaybackMode::LiveReplay => write!(f, "LIVE_REPLAY"),
+            DashPlaybackMode::OnDemand => write!(f, "ON_DEMAND"),
+            DashPlaybackMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

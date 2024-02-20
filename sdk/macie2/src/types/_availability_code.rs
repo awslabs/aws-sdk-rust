@@ -96,3 +96,12 @@ impl AvailabilityCode {
         }
     }
 }
+impl ::std::fmt::Display for AvailabilityCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AvailabilityCode::Available => write!(f, "AVAILABLE"),
+            AvailabilityCode::Unavailable => write!(f, "UNAVAILABLE"),
+            AvailabilityCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

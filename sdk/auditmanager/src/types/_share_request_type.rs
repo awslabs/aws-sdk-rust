@@ -96,3 +96,12 @@ impl ShareRequestType {
         }
     }
 }
+impl ::std::fmt::Display for ShareRequestType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareRequestType::Received => write!(f, "RECEIVED"),
+            ShareRequestType::Sent => write!(f, "SENT"),
+            ShareRequestType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl VerticalTextAlignment {
         }
     }
 }
+impl ::std::fmt::Display for VerticalTextAlignment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerticalTextAlignment::Auto => write!(f, "AUTO"),
+            VerticalTextAlignment::Bottom => write!(f, "BOTTOM"),
+            VerticalTextAlignment::Middle => write!(f, "MIDDLE"),
+            VerticalTextAlignment::Top => write!(f, "TOP"),
+            VerticalTextAlignment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

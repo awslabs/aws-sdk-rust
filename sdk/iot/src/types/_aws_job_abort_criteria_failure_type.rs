@@ -106,3 +106,14 @@ impl AwsJobAbortCriteriaFailureType {
         }
     }
 }
+impl ::std::fmt::Display for AwsJobAbortCriteriaFailureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AwsJobAbortCriteriaFailureType::All => write!(f, "ALL"),
+            AwsJobAbortCriteriaFailureType::Failed => write!(f, "FAILED"),
+            AwsJobAbortCriteriaFailureType::Rejected => write!(f, "REJECTED"),
+            AwsJobAbortCriteriaFailureType::TimedOut => write!(f, "TIMED_OUT"),
+            AwsJobAbortCriteriaFailureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SubtitleFormat {
         }
     }
 }
+impl ::std::fmt::Display for SubtitleFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubtitleFormat::Srt => write!(f, "srt"),
+            SubtitleFormat::Vtt => write!(f, "vtt"),
+            SubtitleFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

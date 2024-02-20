@@ -91,3 +91,11 @@ impl SimpleAttributeAggregationFunction {
         }
     }
 }
+impl ::std::fmt::Display for SimpleAttributeAggregationFunction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SimpleAttributeAggregationFunction::UniqueValue => write!(f, "UNIQUE_VALUE"),
+            SimpleAttributeAggregationFunction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ActivityStreamPolicyStatus {
         }
     }
 }
+impl ::std::fmt::Display for ActivityStreamPolicyStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActivityStreamPolicyStatus::Locked => write!(f, "locked"),
+            ActivityStreamPolicyStatus::LockingPolicy => write!(f, "locking-policy"),
+            ActivityStreamPolicyStatus::Unlocked => write!(f, "unlocked"),
+            ActivityStreamPolicyStatus::UnlockingPolicy => write!(f, "unlocking-policy"),
+            ActivityStreamPolicyStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

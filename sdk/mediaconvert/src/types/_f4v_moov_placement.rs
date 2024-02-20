@@ -96,3 +96,12 @@ impl F4vMoovPlacement {
         }
     }
 }
+impl ::std::fmt::Display for F4vMoovPlacement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            F4vMoovPlacement::Normal => write!(f, "NORMAL"),
+            F4vMoovPlacement::ProgressiveDownload => write!(f, "PROGRESSIVE_DOWNLOAD"),
+            F4vMoovPlacement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

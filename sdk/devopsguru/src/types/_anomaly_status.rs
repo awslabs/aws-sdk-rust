@@ -96,3 +96,12 @@ impl AnomalyStatus {
         }
     }
 }
+impl ::std::fmt::Display for AnomalyStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnomalyStatus::Closed => write!(f, "CLOSED"),
+            AnomalyStatus::Ongoing => write!(f, "ONGOING"),
+            AnomalyStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

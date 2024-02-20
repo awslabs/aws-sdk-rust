@@ -96,3 +96,12 @@ impl ScanType {
         }
     }
 }
+impl ::std::fmt::Display for ScanType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScanType::GuarddutyInitiated => write!(f, "GUARDDUTY_INITIATED"),
+            ScanType::OnDemand => write!(f, "ON_DEMAND"),
+            ScanType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

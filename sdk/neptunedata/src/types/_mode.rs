@@ -101,3 +101,13 @@ impl Mode {
         }
     }
 }
+impl ::std::fmt::Display for Mode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mode::Auto => write!(f, "AUTO"),
+            Mode::New => write!(f, "NEW"),
+            Mode::Resume => write!(f, "RESUME"),
+            Mode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

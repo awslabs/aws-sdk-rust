@@ -96,3 +96,12 @@ impl GroupName {
         }
     }
 }
+impl ::std::fmt::Display for GroupName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupName::ExternalId => write!(f, "ExternalId"),
+            GroupName::ExternalSourceType => write!(f, "ExternalSourceType"),
+            GroupName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

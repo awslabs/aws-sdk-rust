@@ -96,3 +96,12 @@ impl PublisherStatus {
         }
     }
 }
+impl ::std::fmt::Display for PublisherStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PublisherStatus::Unverified => write!(f, "UNVERIFIED"),
+            PublisherStatus::Verified => write!(f, "VERIFIED"),
+            PublisherStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

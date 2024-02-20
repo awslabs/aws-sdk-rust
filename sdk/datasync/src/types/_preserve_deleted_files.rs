@@ -96,3 +96,12 @@ impl PreserveDeletedFiles {
         }
     }
 }
+impl ::std::fmt::Display for PreserveDeletedFiles {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PreserveDeletedFiles::Preserve => write!(f, "PRESERVE"),
+            PreserveDeletedFiles::Remove => write!(f, "REMOVE"),
+            PreserveDeletedFiles::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

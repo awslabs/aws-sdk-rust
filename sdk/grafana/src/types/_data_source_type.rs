@@ -141,3 +141,19 @@ impl DataSourceType {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceType::AmazonOpensearchService => write!(f, "AMAZON_OPENSEARCH_SERVICE"),
+            DataSourceType::Athena => write!(f, "ATHENA"),
+            DataSourceType::Cloudwatch => write!(f, "CLOUDWATCH"),
+            DataSourceType::Prometheus => write!(f, "PROMETHEUS"),
+            DataSourceType::Redshift => write!(f, "REDSHIFT"),
+            DataSourceType::Sitewise => write!(f, "SITEWISE"),
+            DataSourceType::Timestream => write!(f, "TIMESTREAM"),
+            DataSourceType::Twinmaker => write!(f, "TWINMAKER"),
+            DataSourceType::Xray => write!(f, "XRAY"),
+            DataSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

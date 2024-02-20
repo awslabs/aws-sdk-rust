@@ -101,3 +101,13 @@ impl Mode {
         }
     }
 }
+impl ::std::fmt::Display for Mode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mode::AfterLiveEdge => write!(f, "AFTER_LIVE_EDGE"),
+            Mode::BehindLiveEdge => write!(f, "BEHIND_LIVE_EDGE"),
+            Mode::Off => write!(f, "OFF"),
+            Mode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

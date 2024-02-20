@@ -171,3 +171,24 @@ impl H265CodecLevel {
         }
     }
 }
+impl ::std::fmt::Display for H265CodecLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265CodecLevel::Auto => write!(f, "AUTO"),
+            H265CodecLevel::Level1 => write!(f, "LEVEL_1"),
+            H265CodecLevel::Level2 => write!(f, "LEVEL_2"),
+            H265CodecLevel::Level21 => write!(f, "LEVEL_2_1"),
+            H265CodecLevel::Level3 => write!(f, "LEVEL_3"),
+            H265CodecLevel::Level31 => write!(f, "LEVEL_3_1"),
+            H265CodecLevel::Level4 => write!(f, "LEVEL_4"),
+            H265CodecLevel::Level41 => write!(f, "LEVEL_4_1"),
+            H265CodecLevel::Level5 => write!(f, "LEVEL_5"),
+            H265CodecLevel::Level51 => write!(f, "LEVEL_5_1"),
+            H265CodecLevel::Level52 => write!(f, "LEVEL_5_2"),
+            H265CodecLevel::Level6 => write!(f, "LEVEL_6"),
+            H265CodecLevel::Level61 => write!(f, "LEVEL_6_1"),
+            H265CodecLevel::Level62 => write!(f, "LEVEL_6_2"),
+            H265CodecLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

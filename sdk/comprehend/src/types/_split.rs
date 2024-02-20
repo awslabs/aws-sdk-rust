@@ -96,3 +96,12 @@ impl Split {
         }
     }
 }
+impl ::std::fmt::Display for Split {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Split::Test => write!(f, "TEST"),
+            Split::Train => write!(f, "TRAIN"),
+            Split::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

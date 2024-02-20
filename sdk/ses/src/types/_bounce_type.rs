@@ -123,3 +123,16 @@ impl BounceType {
         }
     }
 }
+impl ::std::fmt::Display for BounceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BounceType::ContentRejected => write!(f, "ContentRejected"),
+            BounceType::DoesNotExist => write!(f, "DoesNotExist"),
+            BounceType::ExceededQuota => write!(f, "ExceededQuota"),
+            BounceType::MessageTooLarge => write!(f, "MessageTooLarge"),
+            BounceType::TemporaryFailure => write!(f, "TemporaryFailure"),
+            BounceType::Undefined => write!(f, "Undefined"),
+            BounceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

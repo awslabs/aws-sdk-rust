@@ -101,3 +101,13 @@ impl NotebookInstanceSortKey {
         }
     }
 }
+impl ::std::fmt::Display for NotebookInstanceSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotebookInstanceSortKey::CreationTime => write!(f, "CreationTime"),
+            NotebookInstanceSortKey::Name => write!(f, "Name"),
+            NotebookInstanceSortKey::Status => write!(f, "Status"),
+            NotebookInstanceSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

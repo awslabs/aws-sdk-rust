@@ -101,3 +101,13 @@ impl NielsenActiveWatermarkProcessType {
         }
     }
 }
+impl ::std::fmt::Display for NielsenActiveWatermarkProcessType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NielsenActiveWatermarkProcessType::Cbet => write!(f, "CBET"),
+            NielsenActiveWatermarkProcessType::Naes2AndNw => write!(f, "NAES2_AND_NW"),
+            NielsenActiveWatermarkProcessType::Naes2AndNwAndCbet => write!(f, "NAES2_AND_NW_AND_CBET"),
+            NielsenActiveWatermarkProcessType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

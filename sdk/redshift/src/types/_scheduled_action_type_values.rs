@@ -101,3 +101,13 @@ impl ScheduledActionTypeValues {
         }
     }
 }
+impl ::std::fmt::Display for ScheduledActionTypeValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduledActionTypeValues::PauseCluster => write!(f, "PauseCluster"),
+            ScheduledActionTypeValues::ResizeCluster => write!(f, "ResizeCluster"),
+            ScheduledActionTypeValues::ResumeCluster => write!(f, "ResumeCluster"),
+            ScheduledActionTypeValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

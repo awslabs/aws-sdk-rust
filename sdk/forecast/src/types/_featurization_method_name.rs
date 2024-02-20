@@ -91,3 +91,11 @@ impl FeaturizationMethodName {
         }
     }
 }
+impl ::std::fmt::Display for FeaturizationMethodName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeaturizationMethodName::Filling => write!(f, "filling"),
+            FeaturizationMethodName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

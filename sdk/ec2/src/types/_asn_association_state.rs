@@ -123,3 +123,16 @@ impl AsnAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for AsnAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AsnAssociationState::Associated => write!(f, "associated"),
+            AsnAssociationState::Disassociated => write!(f, "disassociated"),
+            AsnAssociationState::FailedAssociation => write!(f, "failed-association"),
+            AsnAssociationState::FailedDisassociation => write!(f, "failed-disassociation"),
+            AsnAssociationState::PendingAssociation => write!(f, "pending-association"),
+            AsnAssociationState::PendingDisassociation => write!(f, "pending-disassociation"),
+            AsnAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

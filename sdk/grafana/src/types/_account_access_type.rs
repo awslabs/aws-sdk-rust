@@ -96,3 +96,12 @@ impl AccountAccessType {
         }
     }
 }
+impl ::std::fmt::Display for AccountAccessType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountAccessType::CurrentAccount => write!(f, "CURRENT_ACCOUNT"),
+            AccountAccessType::Organization => write!(f, "ORGANIZATION"),
+            AccountAccessType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

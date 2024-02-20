@@ -96,3 +96,12 @@ impl ArtifactNamespace {
         }
     }
 }
+impl ::std::fmt::Display for ArtifactNamespace {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArtifactNamespace::BuildId => write!(f, "BUILD_ID"),
+            ArtifactNamespace::None => write!(f, "NONE"),
+            ArtifactNamespace::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

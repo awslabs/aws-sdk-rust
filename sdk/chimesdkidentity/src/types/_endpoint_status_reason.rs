@@ -96,3 +96,12 @@ impl EndpointStatusReason {
         }
     }
 }
+impl ::std::fmt::Display for EndpointStatusReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointStatusReason::InvalidDeviceToken => write!(f, "INVALID_DEVICE_TOKEN"),
+            EndpointStatusReason::InvalidPinpointArn => write!(f, "INVALID_PINPOINT_ARN"),
+            EndpointStatusReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

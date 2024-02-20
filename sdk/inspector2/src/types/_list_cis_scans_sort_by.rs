@@ -106,3 +106,14 @@ impl ListCisScansSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ListCisScansSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListCisScansSortBy::FailedChecks => write!(f, "FAILED_CHECKS"),
+            ListCisScansSortBy::ScanStartDate => write!(f, "SCAN_START_DATE"),
+            ListCisScansSortBy::ScheduledBy => write!(f, "SCHEDULED_BY"),
+            ListCisScansSortBy::Status => write!(f, "STATUS"),
+            ListCisScansSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

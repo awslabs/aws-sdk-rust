@@ -96,3 +96,12 @@ impl AmdSevSnpSpecification {
         }
     }
 }
+impl ::std::fmt::Display for AmdSevSnpSpecification {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AmdSevSnpSpecification::Disabled => write!(f, "disabled"),
+            AmdSevSnpSpecification::Enabled => write!(f, "enabled"),
+            AmdSevSnpSpecification::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

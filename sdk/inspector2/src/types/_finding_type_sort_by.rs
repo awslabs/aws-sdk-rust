@@ -101,3 +101,13 @@ impl FindingTypeSortBy {
         }
     }
 }
+impl ::std::fmt::Display for FindingTypeSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingTypeSortBy::All => write!(f, "ALL"),
+            FindingTypeSortBy::Critical => write!(f, "CRITICAL"),
+            FindingTypeSortBy::High => write!(f, "HIGH"),
+            FindingTypeSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

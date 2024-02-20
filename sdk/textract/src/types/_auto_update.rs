@@ -96,3 +96,12 @@ impl AutoUpdate {
         }
     }
 }
+impl ::std::fmt::Display for AutoUpdate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoUpdate::Disabled => write!(f, "DISABLED"),
+            AutoUpdate::Enabled => write!(f, "ENABLED"),
+            AutoUpdate::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

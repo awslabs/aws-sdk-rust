@@ -96,3 +96,12 @@ impl CategoryFilterFunction {
         }
     }
 }
+impl ::std::fmt::Display for CategoryFilterFunction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CategoryFilterFunction::Contains => write!(f, "CONTAINS"),
+            CategoryFilterFunction::Exact => write!(f, "EXACT"),
+            CategoryFilterFunction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl EcsServiceMetricStatistic {
         }
     }
 }
+impl ::std::fmt::Display for EcsServiceMetricStatistic {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcsServiceMetricStatistic::Average => write!(f, "Average"),
+            EcsServiceMetricStatistic::Maximum => write!(f, "Maximum"),
+            EcsServiceMetricStatistic::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

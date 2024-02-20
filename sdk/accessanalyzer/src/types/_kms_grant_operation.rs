@@ -171,3 +171,24 @@ impl KmsGrantOperation {
         }
     }
 }
+impl ::std::fmt::Display for KmsGrantOperation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KmsGrantOperation::CreateGrant => write!(f, "CreateGrant"),
+            KmsGrantOperation::Decrypt => write!(f, "Decrypt"),
+            KmsGrantOperation::DescribeKey => write!(f, "DescribeKey"),
+            KmsGrantOperation::Encrypt => write!(f, "Encrypt"),
+            KmsGrantOperation::GenerateDataKey => write!(f, "GenerateDataKey"),
+            KmsGrantOperation::GenerateDataKeyPair => write!(f, "GenerateDataKeyPair"),
+            KmsGrantOperation::GenerateDataKeyPairWithoutPlaintext => write!(f, "GenerateDataKeyPairWithoutPlaintext"),
+            KmsGrantOperation::GenerateDataKeyWithoutPlaintext => write!(f, "GenerateDataKeyWithoutPlaintext"),
+            KmsGrantOperation::GetPublicKey => write!(f, "GetPublicKey"),
+            KmsGrantOperation::ReencryptFrom => write!(f, "ReEncryptFrom"),
+            KmsGrantOperation::ReencryptTo => write!(f, "ReEncryptTo"),
+            KmsGrantOperation::RetireGrant => write!(f, "RetireGrant"),
+            KmsGrantOperation::Sign => write!(f, "Sign"),
+            KmsGrantOperation::Verify => write!(f, "Verify"),
+            KmsGrantOperation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

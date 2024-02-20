@@ -106,3 +106,14 @@ impl AssessmentRunNotificationSnsStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for AssessmentRunNotificationSnsStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssessmentRunNotificationSnsStatusCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            AssessmentRunNotificationSnsStatusCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            AssessmentRunNotificationSnsStatusCode::Success => write!(f, "SUCCESS"),
+            AssessmentRunNotificationSnsStatusCode::TopicDoesNotExist => write!(f, "TOPIC_DOES_NOT_EXIST"),
+            AssessmentRunNotificationSnsStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

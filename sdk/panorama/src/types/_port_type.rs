@@ -111,3 +111,15 @@ impl PortType {
         }
     }
 }
+impl ::std::fmt::Display for PortType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PortType::Boolean => write!(f, "BOOLEAN"),
+            PortType::Float32 => write!(f, "FLOAT32"),
+            PortType::Int32 => write!(f, "INT32"),
+            PortType::Media => write!(f, "MEDIA"),
+            PortType::String => write!(f, "STRING"),
+            PortType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

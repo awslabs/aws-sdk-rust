@@ -101,3 +101,13 @@ impl StructuredMessageListType {
         }
     }
 }
+impl ::std::fmt::Display for StructuredMessageListType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StructuredMessageListType::DynamicBoundedCapacity => write!(f, "DYNAMIC_BOUNDED_CAPACITY"),
+            StructuredMessageListType::DynamicUnboundedCapacity => write!(f, "DYNAMIC_UNBOUNDED_CAPACITY"),
+            StructuredMessageListType::FixedCapacity => write!(f, "FIXED_CAPACITY"),
+            StructuredMessageListType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -279,3 +279,58 @@ impl ExportableEcsServiceField {
         }
     }
 }
+impl ::std::fmt::Display for ExportableEcsServiceField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportableEcsServiceField::AccountId => write!(f, "AccountId"),
+            ExportableEcsServiceField::CurrentPerformanceRisk => write!(f, "CurrentPerformanceRisk"),
+            ExportableEcsServiceField::CurrentServiceConfigurationAutoScalingConfiguration => {
+                write!(f, "CurrentServiceConfigurationAutoScalingConfiguration")
+            }
+            ExportableEcsServiceField::CurrentServiceConfigurationCpu => write!(f, "CurrentServiceConfigurationCpu"),
+            ExportableEcsServiceField::CurrentServiceConfigurationMemory => write!(f, "CurrentServiceConfigurationMemory"),
+            ExportableEcsServiceField::CurrentServiceConfigurationTaskDefinitionArn => write!(f, "CurrentServiceConfigurationTaskDefinitionArn"),
+            ExportableEcsServiceField::CurrentServiceContainerConfigurations => write!(f, "CurrentServiceContainerConfigurations"),
+            ExportableEcsServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
+                write!(f, "EffectiveRecommendationPreferencesSavingsEstimationMode")
+            }
+            ExportableEcsServiceField::Finding => write!(f, "Finding"),
+            ExportableEcsServiceField::FindingReasonCodes => write!(f, "FindingReasonCodes"),
+            ExportableEcsServiceField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
+            ExportableEcsServiceField::LaunchType => write!(f, "LaunchType"),
+            ExportableEcsServiceField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
+            ExportableEcsServiceField::RecommendationOptionsContainerRecommendations => write!(f, "RecommendationOptionsContainerRecommendations"),
+            ExportableEcsServiceField::RecommendationOptionsCpu => write!(f, "RecommendationOptionsCpu"),
+            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency")
+            }
+            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts")
+            }
+            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValue => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue")
+            }
+            ExportableEcsServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts")
+            }
+            ExportableEcsServiceField::RecommendationOptionsMemory => write!(f, "RecommendationOptionsMemory"),
+            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum")
+            }
+            ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum")
+            }
+            ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
+                write!(f, "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage")
+            }
+            ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => {
+                write!(f, "RecommendationOptionsSavingsOpportunityPercentage")
+            }
+            ExportableEcsServiceField::ServiceArn => write!(f, "ServiceArn"),
+            ExportableEcsServiceField::Tags => write!(f, "Tags"),
+            ExportableEcsServiceField::UtilizationMetricsCpuMaximum => write!(f, "UtilizationMetricsCpuMaximum"),
+            ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => write!(f, "UtilizationMetricsMemoryMaximum"),
+            ExportableEcsServiceField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

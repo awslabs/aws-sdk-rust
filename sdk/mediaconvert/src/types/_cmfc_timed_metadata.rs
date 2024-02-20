@@ -96,3 +96,12 @@ impl CmfcTimedMetadata {
         }
     }
 }
+impl ::std::fmt::Display for CmfcTimedMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmfcTimedMetadata::None => write!(f, "NONE"),
+            CmfcTimedMetadata::Passthrough => write!(f, "PASSTHROUGH"),
+            CmfcTimedMetadata::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

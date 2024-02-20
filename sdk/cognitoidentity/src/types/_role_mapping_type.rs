@@ -96,3 +96,12 @@ impl RoleMappingType {
         }
     }
 }
+impl ::std::fmt::Display for RoleMappingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RoleMappingType::Rules => write!(f, "Rules"),
+            RoleMappingType::Token => write!(f, "Token"),
+            RoleMappingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

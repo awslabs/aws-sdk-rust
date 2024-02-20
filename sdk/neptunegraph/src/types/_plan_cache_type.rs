@@ -101,3 +101,13 @@ impl PlanCacheType {
         }
     }
 }
+impl ::std::fmt::Display for PlanCacheType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlanCacheType::Auto => write!(f, "AUTO"),
+            PlanCacheType::Disabled => write!(f, "DISABLED"),
+            PlanCacheType::Enabled => write!(f, "ENABLED"),
+            PlanCacheType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

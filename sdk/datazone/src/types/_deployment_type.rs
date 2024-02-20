@@ -101,3 +101,13 @@ impl DeploymentType {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentType::Create => write!(f, "CREATE"),
+            DeploymentType::Delete => write!(f, "DELETE"),
+            DeploymentType::Update => write!(f, "UPDATE"),
+            DeploymentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

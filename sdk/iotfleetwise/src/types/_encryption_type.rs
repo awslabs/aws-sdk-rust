@@ -96,3 +96,12 @@ impl EncryptionType {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionType::FleetwiseDefaultEncryption => write!(f, "FLEETWISE_DEFAULT_ENCRYPTION"),
+            EncryptionType::KmsBasedEncryption => write!(f, "KMS_BASED_ENCRYPTION"),
+            EncryptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

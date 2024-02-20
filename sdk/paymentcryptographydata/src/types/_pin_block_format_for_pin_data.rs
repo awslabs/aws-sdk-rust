@@ -96,3 +96,12 @@ impl PinBlockFormatForPinData {
         }
     }
 }
+impl ::std::fmt::Display for PinBlockFormatForPinData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PinBlockFormatForPinData::IsoFormat0 => write!(f, "ISO_FORMAT_0"),
+            PinBlockFormatForPinData::IsoFormat3 => write!(f, "ISO_FORMAT_3"),
+            PinBlockFormatForPinData::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

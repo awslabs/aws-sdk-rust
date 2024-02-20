@@ -111,3 +111,15 @@ impl AutoMlJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlJobStatus::Completed => write!(f, "Completed"),
+            AutoMlJobStatus::Failed => write!(f, "Failed"),
+            AutoMlJobStatus::InProgress => write!(f, "InProgress"),
+            AutoMlJobStatus::Stopped => write!(f, "Stopped"),
+            AutoMlJobStatus::Stopping => write!(f, "Stopping"),
+            AutoMlJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

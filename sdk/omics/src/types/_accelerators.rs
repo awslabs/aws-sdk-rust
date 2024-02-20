@@ -91,3 +91,11 @@ impl Accelerators {
         }
     }
 }
+impl ::std::fmt::Display for Accelerators {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Accelerators::Gpu => write!(f, "GPU"),
+            Accelerators::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

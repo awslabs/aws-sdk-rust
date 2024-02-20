@@ -152,3 +152,20 @@ impl StudioComponentStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for StudioComponentStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StudioComponentStatusCode::ActiveDirectoryAlreadyExists => write!(f, "ACTIVE_DIRECTORY_ALREADY_EXISTS"),
+            StudioComponentStatusCode::EncryptionKeyAccessDenied => write!(f, "ENCRYPTION_KEY_ACCESS_DENIED"),
+            StudioComponentStatusCode::EncryptionKeyNotFound => write!(f, "ENCRYPTION_KEY_NOT_FOUND"),
+            StudioComponentStatusCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            StudioComponentStatusCode::StudioComponentCreated => write!(f, "STUDIO_COMPONENT_CREATED"),
+            StudioComponentStatusCode::StudioComponentCreateInProgress => write!(f, "STUDIO_COMPONENT_CREATE_IN_PROGRESS"),
+            StudioComponentStatusCode::StudioComponentDeleted => write!(f, "STUDIO_COMPONENT_DELETED"),
+            StudioComponentStatusCode::StudioComponentDeleteInProgress => write!(f, "STUDIO_COMPONENT_DELETE_IN_PROGRESS"),
+            StudioComponentStatusCode::StudioComponentUpdated => write!(f, "STUDIO_COMPONENT_UPDATED"),
+            StudioComponentStatusCode::StudioComponentUpdateInProgress => write!(f, "STUDIO_COMPONENT_UPDATE_IN_PROGRESS"),
+            StudioComponentStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

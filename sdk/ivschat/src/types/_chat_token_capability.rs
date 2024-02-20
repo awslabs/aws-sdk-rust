@@ -101,3 +101,13 @@ impl ChatTokenCapability {
         }
     }
 }
+impl ::std::fmt::Display for ChatTokenCapability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChatTokenCapability::DeleteMessage => write!(f, "DELETE_MESSAGE"),
+            ChatTokenCapability::DisconnectUser => write!(f, "DISCONNECT_USER"),
+            ChatTokenCapability::SendMessage => write!(f, "SEND_MESSAGE"),
+            ChatTokenCapability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

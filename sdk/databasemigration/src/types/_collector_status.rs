@@ -96,3 +96,12 @@ impl CollectorStatus {
         }
     }
 }
+impl ::std::fmt::Display for CollectorStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CollectorStatus::Active => write!(f, "ACTIVE"),
+            CollectorStatus::Unregistered => write!(f, "UNREGISTERED"),
+            CollectorStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl RadiusAuthenticationProtocol {
         }
     }
 }
+impl ::std::fmt::Display for RadiusAuthenticationProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RadiusAuthenticationProtocol::Chap => write!(f, "CHAP"),
+            RadiusAuthenticationProtocol::Mschapv1 => write!(f, "MS-CHAPv1"),
+            RadiusAuthenticationProtocol::Mschapv2 => write!(f, "MS-CHAPv2"),
+            RadiusAuthenticationProtocol::Pap => write!(f, "PAP"),
+            RadiusAuthenticationProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -121,3 +121,17 @@ impl JobStatus {
         }
     }
 }
+impl ::std::fmt::Display for JobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobStatus::Failed => write!(f, "FAILED"),
+            JobStatus::Pending => write!(f, "PENDING"),
+            JobStatus::Runnable => write!(f, "RUNNABLE"),
+            JobStatus::Running => write!(f, "RUNNING"),
+            JobStatus::Starting => write!(f, "STARTING"),
+            JobStatus::Submitted => write!(f, "SUBMITTED"),
+            JobStatus::Succeeded => write!(f, "SUCCEEDED"),
+            JobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

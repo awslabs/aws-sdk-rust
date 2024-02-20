@@ -96,3 +96,12 @@ impl SlotSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for SlotSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlotSortAttribute::LastUpdatedDateTime => write!(f, "LastUpdatedDateTime"),
+            SlotSortAttribute::SlotName => write!(f, "SlotName"),
+            SlotSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

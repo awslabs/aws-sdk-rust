@@ -96,3 +96,12 @@ impl StateMachineStatus {
         }
     }
 }
+impl ::std::fmt::Display for StateMachineStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StateMachineStatus::Active => write!(f, "ACTIVE"),
+            StateMachineStatus::Deleting => write!(f, "DELETING"),
+            StateMachineStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

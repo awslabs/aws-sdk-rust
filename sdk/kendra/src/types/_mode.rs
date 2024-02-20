@@ -96,3 +96,12 @@ impl Mode {
         }
     }
 }
+impl ::std::fmt::Display for Mode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mode::Enabled => write!(f, "ENABLED"),
+            Mode::LearnOnly => write!(f, "LEARN_ONLY"),
+            Mode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

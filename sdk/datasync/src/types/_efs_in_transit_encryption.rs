@@ -96,3 +96,12 @@ impl EfsInTransitEncryption {
         }
     }
 }
+impl ::std::fmt::Display for EfsInTransitEncryption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EfsInTransitEncryption::None => write!(f, "NONE"),
+            EfsInTransitEncryption::Tls12 => write!(f, "TLS1_2"),
+            EfsInTransitEncryption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

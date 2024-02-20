@@ -135,3 +135,18 @@ impl HealthCheckType {
         }
     }
 }
+impl ::std::fmt::Display for HealthCheckType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HealthCheckType::Calculated => write!(f, "CALCULATED"),
+            HealthCheckType::CloudwatchMetric => write!(f, "CLOUDWATCH_METRIC"),
+            HealthCheckType::Http => write!(f, "HTTP"),
+            HealthCheckType::Https => write!(f, "HTTPS"),
+            HealthCheckType::HttpsStrMatch => write!(f, "HTTPS_STR_MATCH"),
+            HealthCheckType::HttpStrMatch => write!(f, "HTTP_STR_MATCH"),
+            HealthCheckType::RecoveryControl => write!(f, "RECOVERY_CONTROL"),
+            HealthCheckType::Tcp => write!(f, "TCP"),
+            HealthCheckType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

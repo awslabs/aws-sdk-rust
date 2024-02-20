@@ -209,3 +209,36 @@ impl RecoveryInstanceDataReplicationInitiationStepName {
         }
     }
 }
+impl ::std::fmt::Display for RecoveryInstanceDataReplicationInitiationStepName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecoveryInstanceDataReplicationInitiationStepName::AttachStagingDisks => write!(f, "ATTACH_STAGING_DISKS"),
+            RecoveryInstanceDataReplicationInitiationStepName::AuthenticateWithService => write!(f, "AUTHENTICATE_WITH_SERVICE"),
+            RecoveryInstanceDataReplicationInitiationStepName::BootReplicationServer => write!(f, "BOOT_REPLICATION_SERVER"),
+            RecoveryInstanceDataReplicationInitiationStepName::CompleteVolumeMapping => write!(f, "COMPLETE_VOLUME_MAPPING"),
+            RecoveryInstanceDataReplicationInitiationStepName::ConfigureReplicationSoftware => write!(f, "CONFIGURE_REPLICATION_SOFTWARE"),
+            RecoveryInstanceDataReplicationInitiationStepName::ConnectAgentToReplicationServer => write!(f, "CONNECT_AGENT_TO_REPLICATION_SERVER"),
+            RecoveryInstanceDataReplicationInitiationStepName::CreateSecurityGroup => write!(f, "CREATE_SECURITY_GROUP"),
+            RecoveryInstanceDataReplicationInitiationStepName::CreateStagingDisks => write!(f, "CREATE_STAGING_DISKS"),
+            RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftware => write!(f, "DOWNLOAD_REPLICATION_SOFTWARE"),
+            RecoveryInstanceDataReplicationInitiationStepName::DownloadReplicationSoftwareToFailbackClient => {
+                write!(f, "DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT")
+            }
+            RecoveryInstanceDataReplicationInitiationStepName::EstablishAgentReplicatorSoftwareCommunication => {
+                write!(f, "ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION")
+            }
+            RecoveryInstanceDataReplicationInitiationStepName::EstablishRecoveryInstanceCommunication => {
+                write!(f, "ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION")
+            }
+            RecoveryInstanceDataReplicationInitiationStepName::LaunchReplicationServer => write!(f, "LAUNCH_REPLICATION_SERVER"),
+            RecoveryInstanceDataReplicationInitiationStepName::LinkFailbackClientWithRecoveryInstance => {
+                write!(f, "LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE")
+            }
+            RecoveryInstanceDataReplicationInitiationStepName::PairAgentWithReplicationSoftware => write!(f, "PAIR_AGENT_WITH_REPLICATION_SOFTWARE"),
+            RecoveryInstanceDataReplicationInitiationStepName::PairReplicationServerWithAgent => write!(f, "PAIR_REPLICATION_SERVER_WITH_AGENT"),
+            RecoveryInstanceDataReplicationInitiationStepName::StartDataTransfer => write!(f, "START_DATA_TRANSFER"),
+            RecoveryInstanceDataReplicationInitiationStepName::Wait => write!(f, "WAIT"),
+            RecoveryInstanceDataReplicationInitiationStepName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

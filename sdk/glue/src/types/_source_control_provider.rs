@@ -106,3 +106,14 @@ impl SourceControlProvider {
         }
     }
 }
+impl ::std::fmt::Display for SourceControlProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceControlProvider::AwsCodeCommit => write!(f, "AWS_CODE_COMMIT"),
+            SourceControlProvider::Bitbucket => write!(f, "BITBUCKET"),
+            SourceControlProvider::Github => write!(f, "GITHUB"),
+            SourceControlProvider::Gitlab => write!(f, "GITLAB"),
+            SourceControlProvider::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

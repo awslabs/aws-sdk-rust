@@ -96,3 +96,12 @@ impl BoxPlotFillStyle {
         }
     }
 }
+impl ::std::fmt::Display for BoxPlotFillStyle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BoxPlotFillStyle::Solid => write!(f, "SOLID"),
+            BoxPlotFillStyle::Transparent => write!(f, "TRANSPARENT"),
+            BoxPlotFillStyle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

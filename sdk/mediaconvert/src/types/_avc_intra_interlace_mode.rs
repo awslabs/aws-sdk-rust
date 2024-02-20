@@ -111,3 +111,15 @@ impl AvcIntraInterlaceMode {
         }
     }
 }
+impl ::std::fmt::Display for AvcIntraInterlaceMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AvcIntraInterlaceMode::BottomField => write!(f, "BOTTOM_FIELD"),
+            AvcIntraInterlaceMode::FollowBottomField => write!(f, "FOLLOW_BOTTOM_FIELD"),
+            AvcIntraInterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
+            AvcIntraInterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
+            AvcIntraInterlaceMode::TopField => write!(f, "TOP_FIELD"),
+            AvcIntraInterlaceMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

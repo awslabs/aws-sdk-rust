@@ -165,3 +165,23 @@ impl RecommendationSource {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationSource::AwsConfig => write!(f, "aws_config"),
+            RecommendationSource::ComputeOptimizer => write!(f, "compute_optimizer"),
+            RecommendationSource::CostExplorer => write!(f, "cost_explorer"),
+            RecommendationSource::Lse => write!(f, "lse"),
+            RecommendationSource::Manual => write!(f, "manual"),
+            RecommendationSource::Pse => write!(f, "pse"),
+            RecommendationSource::Rds => write!(f, "rds"),
+            RecommendationSource::Resilience => write!(f, "resilience"),
+            RecommendationSource::ResilienceHub => write!(f, "resilience_hub"),
+            RecommendationSource::SecurityHub => write!(f, "security_hub"),
+            RecommendationSource::Stir => write!(f, "stir"),
+            RecommendationSource::TaCheck => write!(f, "ta_check"),
+            RecommendationSource::WellArchitected => write!(f, "well_architected"),
+            RecommendationSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

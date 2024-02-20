@@ -96,3 +96,12 @@ impl SnapshotAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for SnapshotAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapshotAttributeName::CreateVolumePermission => write!(f, "createVolumePermission"),
+            SnapshotAttributeName::ProductCodes => write!(f, "productCodes"),
+            SnapshotAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

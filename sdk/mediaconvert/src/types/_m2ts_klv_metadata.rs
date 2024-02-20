@@ -96,3 +96,12 @@ impl M2tsKlvMetadata {
         }
     }
 }
+impl ::std::fmt::Display for M2tsKlvMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsKlvMetadata::None => write!(f, "NONE"),
+            M2tsKlvMetadata::Passthrough => write!(f, "PASSTHROUGH"),
+            M2tsKlvMetadata::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

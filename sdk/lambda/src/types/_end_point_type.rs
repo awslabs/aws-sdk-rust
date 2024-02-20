@@ -91,3 +91,11 @@ impl EndPointType {
         }
     }
 }
+impl ::std::fmt::Display for EndPointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndPointType::KafkaBootstrapServers => write!(f, "KAFKA_BOOTSTRAP_SERVERS"),
+            EndPointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

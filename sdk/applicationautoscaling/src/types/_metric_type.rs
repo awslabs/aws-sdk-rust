@@ -231,3 +231,38 @@ impl MetricType {
         }
     }
 }
+impl ::std::fmt::Display for MetricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricType::AlbRequestCountPerTarget => write!(f, "ALBRequestCountPerTarget"),
+            MetricType::AppStreamAverageCapacityUtilization => write!(f, "AppStreamAverageCapacityUtilization"),
+            MetricType::CassandraReadCapacityUtilization => write!(f, "CassandraReadCapacityUtilization"),
+            MetricType::CassandraWriteCapacityUtilization => write!(f, "CassandraWriteCapacityUtilization"),
+            MetricType::ComprehendInferenceUtilization => write!(f, "ComprehendInferenceUtilization"),
+            MetricType::DynamoDbReadCapacityUtilization => write!(f, "DynamoDBReadCapacityUtilization"),
+            MetricType::DynamoDbWriteCapacityUtilization => write!(f, "DynamoDBWriteCapacityUtilization"),
+            MetricType::Ec2SpotFleetRequestAverageCpuUtilization => write!(f, "EC2SpotFleetRequestAverageCPUUtilization"),
+            MetricType::Ec2SpotFleetRequestAverageNetworkIn => write!(f, "EC2SpotFleetRequestAverageNetworkIn"),
+            MetricType::Ec2SpotFleetRequestAverageNetworkOut => write!(f, "EC2SpotFleetRequestAverageNetworkOut"),
+            MetricType::EcsServiceAverageCpuUtilization => write!(f, "ECSServiceAverageCPUUtilization"),
+            MetricType::EcsServiceAverageMemoryUtilization => write!(f, "ECSServiceAverageMemoryUtilization"),
+            MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage => {
+                write!(f, "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage")
+            }
+            MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => {
+                write!(f, "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage")
+            }
+            MetricType::ElastiCachePrimaryEngineCpuUtilization => write!(f, "ElastiCachePrimaryEngineCPUUtilization"),
+            MetricType::ElastiCacheReplicaEngineCpuUtilization => write!(f, "ElastiCacheReplicaEngineCPUUtilization"),
+            MetricType::KafkaBrokerStorageUtilization => write!(f, "KafkaBrokerStorageUtilization"),
+            MetricType::LambdaProvisionedConcurrencyUtilization => write!(f, "LambdaProvisionedConcurrencyUtilization"),
+            MetricType::NeptuneReaderAverageCpuUtilization => write!(f, "NeptuneReaderAverageCPUUtilization"),
+            MetricType::RdsReaderAverageCpuUtilization => write!(f, "RDSReaderAverageCPUUtilization"),
+            MetricType::RdsReaderAverageDatabaseConnections => write!(f, "RDSReaderAverageDatabaseConnections"),
+            MetricType::SageMakerInferenceComponentInvocationsPerCopy => write!(f, "SageMakerInferenceComponentInvocationsPerCopy"),
+            MetricType::SageMakerVariantInvocationsPerInstance => write!(f, "SageMakerVariantInvocationsPerInstance"),
+            MetricType::SageMakerVariantProvisionedConcurrencyUtilization => write!(f, "SageMakerVariantProvisionedConcurrencyUtilization"),
+            MetricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

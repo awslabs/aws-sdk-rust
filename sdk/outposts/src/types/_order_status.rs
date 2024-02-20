@@ -147,3 +147,20 @@ impl OrderStatus {
         }
     }
 }
+impl ::std::fmt::Display for OrderStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrderStatus::Cancelled => write!(f, "CANCELLED"),
+            OrderStatus::Completed => write!(f, "COMPLETED"),
+            OrderStatus::Error => write!(f, "ERROR"),
+            OrderStatus::Fulfilled => write!(f, "FULFILLED"),
+            OrderStatus::Installing => write!(f, "INSTALLING"),
+            OrderStatus::InProgress => write!(f, "IN_PROGRESS"),
+            OrderStatus::Pending => write!(f, "PENDING"),
+            OrderStatus::Preparing => write!(f, "PREPARING"),
+            OrderStatus::Processing => write!(f, "PROCESSING"),
+            OrderStatus::Received => write!(f, "RECEIVED"),
+            OrderStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

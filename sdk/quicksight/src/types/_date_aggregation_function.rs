@@ -106,3 +106,14 @@ impl DateAggregationFunction {
         }
     }
 }
+impl ::std::fmt::Display for DateAggregationFunction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DateAggregationFunction::Count => write!(f, "COUNT"),
+            DateAggregationFunction::DistinctCount => write!(f, "DISTINCT_COUNT"),
+            DateAggregationFunction::Max => write!(f, "MAX"),
+            DateAggregationFunction::Min => write!(f, "MIN"),
+            DateAggregationFunction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

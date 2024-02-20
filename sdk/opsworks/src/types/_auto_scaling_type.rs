@@ -96,3 +96,12 @@ impl AutoScalingType {
         }
     }
 }
+impl ::std::fmt::Display for AutoScalingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoScalingType::Load => write!(f, "load"),
+            AutoScalingType::Timer => write!(f, "timer"),
+            AutoScalingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

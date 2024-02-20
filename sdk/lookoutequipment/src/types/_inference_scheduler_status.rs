@@ -106,3 +106,14 @@ impl InferenceSchedulerStatus {
         }
     }
 }
+impl ::std::fmt::Display for InferenceSchedulerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferenceSchedulerStatus::Pending => write!(f, "PENDING"),
+            InferenceSchedulerStatus::Running => write!(f, "RUNNING"),
+            InferenceSchedulerStatus::Stopped => write!(f, "STOPPED"),
+            InferenceSchedulerStatus::Stopping => write!(f, "STOPPING"),
+            InferenceSchedulerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AuthTokenUpdateStrategyType {
         }
     }
 }
+impl ::std::fmt::Display for AuthTokenUpdateStrategyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthTokenUpdateStrategyType::Delete => write!(f, "DELETE"),
+            AuthTokenUpdateStrategyType::Rotate => write!(f, "ROTATE"),
+            AuthTokenUpdateStrategyType::Set => write!(f, "SET"),
+            AuthTokenUpdateStrategyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

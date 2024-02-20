@@ -96,3 +96,12 @@ impl SortExperimentsBy {
         }
     }
 }
+impl ::std::fmt::Display for SortExperimentsBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortExperimentsBy::CreationTime => write!(f, "CreationTime"),
+            SortExperimentsBy::Name => write!(f, "Name"),
+            SortExperimentsBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

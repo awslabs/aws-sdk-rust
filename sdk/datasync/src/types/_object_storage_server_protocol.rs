@@ -96,3 +96,12 @@ impl ObjectStorageServerProtocol {
         }
     }
 }
+impl ::std::fmt::Display for ObjectStorageServerProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectStorageServerProtocol::Http => write!(f, "HTTP"),
+            ObjectStorageServerProtocol::Https => write!(f, "HTTPS"),
+            ObjectStorageServerProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

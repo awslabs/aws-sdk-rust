@@ -96,3 +96,12 @@ impl Domain {
         }
     }
 }
+impl ::std::fmt::Display for Domain {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Domain::Efs => write!(f, "EFS"),
+            Domain::S3 => write!(f, "S3"),
+            Domain::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

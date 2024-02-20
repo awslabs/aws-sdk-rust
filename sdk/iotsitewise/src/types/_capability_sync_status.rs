@@ -106,3 +106,14 @@ impl CapabilitySyncStatus {
         }
     }
 }
+impl ::std::fmt::Display for CapabilitySyncStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapabilitySyncStatus::InSync => write!(f, "IN_SYNC"),
+            CapabilitySyncStatus::OutOfSync => write!(f, "OUT_OF_SYNC"),
+            CapabilitySyncStatus::SyncFailed => write!(f, "SYNC_FAILED"),
+            CapabilitySyncStatus::UnknownValue => write!(f, "UNKNOWN"),
+            CapabilitySyncStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

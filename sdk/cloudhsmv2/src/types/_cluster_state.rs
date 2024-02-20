@@ -141,3 +141,19 @@ impl ClusterState {
         }
     }
 }
+impl ::std::fmt::Display for ClusterState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterState::Active => write!(f, "ACTIVE"),
+            ClusterState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            ClusterState::Degraded => write!(f, "DEGRADED"),
+            ClusterState::Deleted => write!(f, "DELETED"),
+            ClusterState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ClusterState::Initialized => write!(f, "INITIALIZED"),
+            ClusterState::InitializeInProgress => write!(f, "INITIALIZE_IN_PROGRESS"),
+            ClusterState::Uninitialized => write!(f, "UNINITIALIZED"),
+            ClusterState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            ClusterState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

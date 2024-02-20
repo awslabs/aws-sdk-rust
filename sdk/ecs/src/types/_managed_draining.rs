@@ -96,3 +96,12 @@ impl ManagedDraining {
         }
     }
 }
+impl ::std::fmt::Display for ManagedDraining {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ManagedDraining::Disabled => write!(f, "DISABLED"),
+            ManagedDraining::Enabled => write!(f, "ENABLED"),
+            ManagedDraining::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl ValidationMode {
         }
     }
 }
+impl ::std::fmt::Display for ValidationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationMode::CheckAll => write!(f, "CHECK_ALL"),
+            ValidationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

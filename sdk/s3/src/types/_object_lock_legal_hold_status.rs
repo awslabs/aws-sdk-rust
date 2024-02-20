@@ -96,3 +96,12 @@ impl ObjectLockLegalHoldStatus {
         }
     }
 }
+impl ::std::fmt::Display for ObjectLockLegalHoldStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectLockLegalHoldStatus::Off => write!(f, "OFF"),
+            ObjectLockLegalHoldStatus::On => write!(f, "ON"),
+            ObjectLockLegalHoldStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

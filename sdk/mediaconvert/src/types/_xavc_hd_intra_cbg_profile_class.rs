@@ -101,3 +101,13 @@ impl XavcHdIntraCbgProfileClass {
         }
     }
 }
+impl ::std::fmt::Display for XavcHdIntraCbgProfileClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcHdIntraCbgProfileClass::Class100 => write!(f, "CLASS_100"),
+            XavcHdIntraCbgProfileClass::Class200 => write!(f, "CLASS_200"),
+            XavcHdIntraCbgProfileClass::Class50 => write!(f, "CLASS_50"),
+            XavcHdIntraCbgProfileClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl TopicNumericSeparatorSymbol {
         }
     }
 }
+impl ::std::fmt::Display for TopicNumericSeparatorSymbol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TopicNumericSeparatorSymbol::Comma => write!(f, "COMMA"),
+            TopicNumericSeparatorSymbol::Dot => write!(f, "DOT"),
+            TopicNumericSeparatorSymbol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ResourceCatalogSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for ResourceCatalogSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceCatalogSortOrder::Ascending => write!(f, "Ascending"),
+            ResourceCatalogSortOrder::Descending => write!(f, "Descending"),
+            ResourceCatalogSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

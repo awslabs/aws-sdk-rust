@@ -106,3 +106,14 @@ impl BlueprintStatus {
         }
     }
 }
+impl ::std::fmt::Display for BlueprintStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BlueprintStatus::Active => write!(f, "ACTIVE"),
+            BlueprintStatus::Creating => write!(f, "CREATING"),
+            BlueprintStatus::Failed => write!(f, "FAILED"),
+            BlueprintStatus::Updating => write!(f, "UPDATING"),
+            BlueprintStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

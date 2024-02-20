@@ -96,3 +96,12 @@ impl DefaultRouteTablePropagationValue {
         }
     }
 }
+impl ::std::fmt::Display for DefaultRouteTablePropagationValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DefaultRouteTablePropagationValue::Disable => write!(f, "disable"),
+            DefaultRouteTablePropagationValue::Enable => write!(f, "enable"),
+            DefaultRouteTablePropagationValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

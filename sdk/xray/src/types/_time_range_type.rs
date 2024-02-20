@@ -101,3 +101,13 @@ impl TimeRangeType {
         }
     }
 }
+impl ::std::fmt::Display for TimeRangeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimeRangeType::Event => write!(f, "Event"),
+            TimeRangeType::Service => write!(f, "Service"),
+            TimeRangeType::TraceId => write!(f, "TraceId"),
+            TimeRangeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

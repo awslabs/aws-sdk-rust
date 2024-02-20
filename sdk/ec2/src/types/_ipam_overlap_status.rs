@@ -101,3 +101,13 @@ impl IpamOverlapStatus {
         }
     }
 }
+impl ::std::fmt::Display for IpamOverlapStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamOverlapStatus::Ignored => write!(f, "ignored"),
+            IpamOverlapStatus::Nonoverlapping => write!(f, "nonoverlapping"),
+            IpamOverlapStatus::Overlapping => write!(f, "overlapping"),
+            IpamOverlapStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

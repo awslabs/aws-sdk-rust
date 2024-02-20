@@ -129,3 +129,17 @@ impl S3CannedAccessControlList {
         }
     }
 }
+impl ::std::fmt::Display for S3CannedAccessControlList {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3CannedAccessControlList::AuthenticatedRead => write!(f, "authenticated-read"),
+            S3CannedAccessControlList::AwsExecRead => write!(f, "aws-exec-read"),
+            S3CannedAccessControlList::BucketOwnerFullControl => write!(f, "bucket-owner-full-control"),
+            S3CannedAccessControlList::BucketOwnerRead => write!(f, "bucket-owner-read"),
+            S3CannedAccessControlList::Private => write!(f, "private"),
+            S3CannedAccessControlList::PublicRead => write!(f, "public-read"),
+            S3CannedAccessControlList::PublicReadWrite => write!(f, "public-read-write"),
+            S3CannedAccessControlList::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

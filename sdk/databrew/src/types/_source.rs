@@ -101,3 +101,13 @@ impl Source {
         }
     }
 }
+impl ::std::fmt::Display for Source {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Source::Datacatalog => write!(f, "DATA-CATALOG"),
+            Source::Database => write!(f, "DATABASE"),
+            Source::S3 => write!(f, "S3"),
+            Source::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

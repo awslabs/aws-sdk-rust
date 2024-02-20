@@ -96,3 +96,12 @@ impl OverwriteOption {
         }
     }
 }
+impl ::std::fmt::Display for OverwriteOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OverwriteOption::CreateNewReport => write!(f, "CREATE_NEW_REPORT"),
+            OverwriteOption::OverwriteReport => write!(f, "OVERWRITE_REPORT"),
+            OverwriteOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

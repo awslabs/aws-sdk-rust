@@ -96,3 +96,12 @@ impl IdentifiedType {
         }
     }
 }
+impl ::std::fmt::Display for IdentifiedType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IdentifiedType::StatelessRuleContainsTcpFlags => write!(f, "STATELESS_RULE_CONTAINS_TCP_FLAGS"),
+            IdentifiedType::StatelessRuleForwardingAsymmetrically => write!(f, "STATELESS_RULE_FORWARDING_ASYMMETRICALLY"),
+            IdentifiedType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

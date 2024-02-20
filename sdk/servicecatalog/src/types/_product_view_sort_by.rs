@@ -101,3 +101,13 @@ impl ProductViewSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ProductViewSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProductViewSortBy::CreationDate => write!(f, "CreationDate"),
+            ProductViewSortBy::Title => write!(f, "Title"),
+            ProductViewSortBy::VersionCount => write!(f, "VersionCount"),
+            ProductViewSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

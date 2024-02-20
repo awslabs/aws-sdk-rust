@@ -111,3 +111,14 @@ impl DataSourceFilterAttribute {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceFilterAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceFilterAttribute::DatasourceName => write!(f, "DATASOURCE_NAME"),
+            DataSourceFilterAttribute::DirectQuicksightOwner => write!(f, "DIRECT_QUICKSIGHT_OWNER"),
+            DataSourceFilterAttribute::DirectQuicksightSoleOwner => write!(f, "DIRECT_QUICKSIGHT_SOLE_OWNER"),
+            DataSourceFilterAttribute::DirectQuicksightViewerOrOwner => write!(f, "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"),
+            DataSourceFilterAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

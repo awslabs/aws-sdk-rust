@@ -106,3 +106,14 @@ impl ResourceStateType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceStateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceStateType::Active => write!(f, "ACTIVE"),
+            ResourceStateType::Recycled => write!(f, "RECYCLED"),
+            ResourceStateType::Recycling => write!(f, "RECYCLING"),
+            ResourceStateType::Restoring => write!(f, "RESTORING"),
+            ResourceStateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

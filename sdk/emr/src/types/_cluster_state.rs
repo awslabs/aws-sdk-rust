@@ -129,3 +129,17 @@ impl ClusterState {
         }
     }
 }
+impl ::std::fmt::Display for ClusterState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterState::Bootstrapping => write!(f, "BOOTSTRAPPING"),
+            ClusterState::Running => write!(f, "RUNNING"),
+            ClusterState::Starting => write!(f, "STARTING"),
+            ClusterState::Terminated => write!(f, "TERMINATED"),
+            ClusterState::TerminatedWithErrors => write!(f, "TERMINATED_WITH_ERRORS"),
+            ClusterState::Terminating => write!(f, "TERMINATING"),
+            ClusterState::Waiting => write!(f, "WAITING"),
+            ClusterState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

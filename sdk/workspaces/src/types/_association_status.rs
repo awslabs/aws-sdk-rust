@@ -117,3 +117,15 @@ impl AssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationStatus::AssociatedWithOwnerAccount => write!(f, "ASSOCIATED_WITH_OWNER_ACCOUNT"),
+            AssociationStatus::AssociatedWithSharedAccount => write!(f, "ASSOCIATED_WITH_SHARED_ACCOUNT"),
+            AssociationStatus::NotAssociated => write!(f, "NOT_ASSOCIATED"),
+            AssociationStatus::PendingAssociation => write!(f, "PENDING_ASSOCIATION"),
+            AssociationStatus::PendingDisassociation => write!(f, "PENDING_DISASSOCIATION"),
+            AssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

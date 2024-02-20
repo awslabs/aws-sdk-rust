@@ -153,3 +153,21 @@ impl EventType {
         }
     }
 }
+impl ::std::fmt::Display for EventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventType::CaCertificate => write!(f, "CA_CERTIFICATE"),
+            EventType::Certificate => write!(f, "CERTIFICATE"),
+            EventType::Job => write!(f, "JOB"),
+            EventType::JobExecution => write!(f, "JOB_EXECUTION"),
+            EventType::Policy => write!(f, "POLICY"),
+            EventType::Thing => write!(f, "THING"),
+            EventType::ThingGroup => write!(f, "THING_GROUP"),
+            EventType::ThingGroupHierarchy => write!(f, "THING_GROUP_HIERARCHY"),
+            EventType::ThingGroupMembership => write!(f, "THING_GROUP_MEMBERSHIP"),
+            EventType::ThingType => write!(f, "THING_TYPE"),
+            EventType::ThingTypeAssociation => write!(f, "THING_TYPE_ASSOCIATION"),
+            EventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

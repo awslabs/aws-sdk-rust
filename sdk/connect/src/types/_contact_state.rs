@@ -141,3 +141,19 @@ impl ContactState {
         }
     }
 }
+impl ::std::fmt::Display for ContactState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContactState::Connected => write!(f, "CONNECTED"),
+            ContactState::ConnectedOnhold => write!(f, "CONNECTED_ONHOLD"),
+            ContactState::Connecting => write!(f, "CONNECTING"),
+            ContactState::Ended => write!(f, "ENDED"),
+            ContactState::Error => write!(f, "ERROR"),
+            ContactState::Incoming => write!(f, "INCOMING"),
+            ContactState::Missed => write!(f, "MISSED"),
+            ContactState::Pending => write!(f, "PENDING"),
+            ContactState::Rejected => write!(f, "REJECTED"),
+            ContactState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

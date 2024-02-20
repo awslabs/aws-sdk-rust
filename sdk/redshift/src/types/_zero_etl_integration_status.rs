@@ -121,3 +121,17 @@ impl ZeroEtlIntegrationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ZeroEtlIntegrationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ZeroEtlIntegrationStatus::Active => write!(f, "active"),
+            ZeroEtlIntegrationStatus::Creating => write!(f, "creating"),
+            ZeroEtlIntegrationStatus::Deleting => write!(f, "deleting"),
+            ZeroEtlIntegrationStatus::Failed => write!(f, "failed"),
+            ZeroEtlIntegrationStatus::Modifying => write!(f, "modifying"),
+            ZeroEtlIntegrationStatus::NeedsAttention => write!(f, "needs_attention"),
+            ZeroEtlIntegrationStatus::Syncing => write!(f, "syncing"),
+            ZeroEtlIntegrationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl EventStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for EventStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventStatusCode::Closed => write!(f, "closed"),
+            EventStatusCode::Open => write!(f, "open"),
+            EventStatusCode::Upcoming => write!(f, "upcoming"),
+            EventStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl HdrToSdrToneMapper {
         }
     }
 }
+impl ::std::fmt::Display for HdrToSdrToneMapper {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HdrToSdrToneMapper::PreserveDetails => write!(f, "PRESERVE_DETAILS"),
+            HdrToSdrToneMapper::Vibrant => write!(f, "VIBRANT"),
+            HdrToSdrToneMapper::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

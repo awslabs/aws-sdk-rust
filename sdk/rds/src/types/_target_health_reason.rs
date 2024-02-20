@@ -117,3 +117,15 @@ impl TargetHealthReason {
         }
     }
 }
+impl ::std::fmt::Display for TargetHealthReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetHealthReason::AuthFailure => write!(f, "AUTH_FAILURE"),
+            TargetHealthReason::ConnectionFailed => write!(f, "CONNECTION_FAILED"),
+            TargetHealthReason::InvalidReplicationState => write!(f, "INVALID_REPLICATION_STATE"),
+            TargetHealthReason::PendingProxyCapacity => write!(f, "PENDING_PROXY_CAPACITY"),
+            TargetHealthReason::Unreachable => write!(f, "UNREACHABLE"),
+            TargetHealthReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

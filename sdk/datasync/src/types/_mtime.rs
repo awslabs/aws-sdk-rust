@@ -96,3 +96,12 @@ impl Mtime {
         }
     }
 }
+impl ::std::fmt::Display for Mtime {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mtime::None => write!(f, "NONE"),
+            Mtime::Preserve => write!(f, "PRESERVE"),
+            Mtime::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

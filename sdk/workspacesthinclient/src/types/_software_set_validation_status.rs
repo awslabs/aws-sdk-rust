@@ -96,3 +96,12 @@ impl SoftwareSetValidationStatus {
         }
     }
 }
+impl ::std::fmt::Display for SoftwareSetValidationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SoftwareSetValidationStatus::NotValidated => write!(f, "NOT_VALIDATED"),
+            SoftwareSetValidationStatus::Validated => write!(f, "VALIDATED"),
+            SoftwareSetValidationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

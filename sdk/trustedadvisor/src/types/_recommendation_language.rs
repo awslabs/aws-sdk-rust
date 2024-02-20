@@ -141,3 +141,21 @@ impl RecommendationLanguage {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationLanguage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationLanguage::German => write!(f, "de"),
+            RecommendationLanguage::English => write!(f, "en"),
+            RecommendationLanguage::Spanish => write!(f, "es"),
+            RecommendationLanguage::French => write!(f, "fr"),
+            RecommendationLanguage::BahasaIndonesia => write!(f, "id"),
+            RecommendationLanguage::Italian => write!(f, "it"),
+            RecommendationLanguage::Japanese => write!(f, "ja"),
+            RecommendationLanguage::Korean => write!(f, "ko"),
+            RecommendationLanguage::BrazilianPortuguese => write!(f, "pt_BR"),
+            RecommendationLanguage::Chinese => write!(f, "zh"),
+            RecommendationLanguage::TraditionalChinese => write!(f, "zh_TW"),
+            RecommendationLanguage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

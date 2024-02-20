@@ -135,3 +135,18 @@ impl TriggerState {
         }
     }
 }
+impl ::std::fmt::Display for TriggerState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TriggerState::Activated => write!(f, "ACTIVATED"),
+            TriggerState::Activating => write!(f, "ACTIVATING"),
+            TriggerState::Created => write!(f, "CREATED"),
+            TriggerState::Creating => write!(f, "CREATING"),
+            TriggerState::Deactivated => write!(f, "DEACTIVATED"),
+            TriggerState::Deactivating => write!(f, "DEACTIVATING"),
+            TriggerState::Deleting => write!(f, "DELETING"),
+            TriggerState::Updating => write!(f, "UPDATING"),
+            TriggerState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

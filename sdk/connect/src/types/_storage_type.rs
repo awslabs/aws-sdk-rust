@@ -106,3 +106,14 @@ impl StorageType {
         }
     }
 }
+impl ::std::fmt::Display for StorageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageType::KinesisFirehose => write!(f, "KINESIS_FIREHOSE"),
+            StorageType::KinesisStream => write!(f, "KINESIS_STREAM"),
+            StorageType::KinesisVideoStream => write!(f, "KINESIS_VIDEO_STREAM"),
+            StorageType::S3 => write!(f, "S3"),
+            StorageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

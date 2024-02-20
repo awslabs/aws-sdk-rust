@@ -96,3 +96,12 @@ impl MigrationAlertType {
         }
     }
 }
+impl ::std::fmt::Display for MigrationAlertType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MigrationAlertType::Error => write!(f, "ERROR"),
+            MigrationAlertType::Warn => write!(f, "WARN"),
+            MigrationAlertType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

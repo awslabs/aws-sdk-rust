@@ -141,3 +141,19 @@ impl RelationshipType {
         }
     }
 }
+impl ::std::fmt::Display for RelationshipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelationshipType::Answer => write!(f, "ANSWER"),
+            RelationshipType::Child => write!(f, "CHILD"),
+            RelationshipType::ComplexFeatures => write!(f, "COMPLEX_FEATURES"),
+            RelationshipType::MergedCell => write!(f, "MERGED_CELL"),
+            RelationshipType::Table => write!(f, "TABLE"),
+            RelationshipType::TableFooter => write!(f, "TABLE_FOOTER"),
+            RelationshipType::TableTitle => write!(f, "TABLE_TITLE"),
+            RelationshipType::Title => write!(f, "TITLE"),
+            RelationshipType::Value => write!(f, "VALUE"),
+            RelationshipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

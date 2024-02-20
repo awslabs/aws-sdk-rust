@@ -96,3 +96,12 @@ impl DeleteResources {
         }
     }
 }
+impl ::std::fmt::Display for DeleteResources {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeleteResources::All => write!(f, "ALL"),
+            DeleteResources::Default => write!(f, "DEFAULT"),
+            DeleteResources::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -153,3 +153,21 @@ impl DataReplicationInitiationStepName {
         }
     }
 }
+impl ::std::fmt::Display for DataReplicationInitiationStepName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataReplicationInitiationStepName::AttachStagingDisks => write!(f, "ATTACH_STAGING_DISKS"),
+            DataReplicationInitiationStepName::AuthenticateWithService => write!(f, "AUTHENTICATE_WITH_SERVICE"),
+            DataReplicationInitiationStepName::BootReplicationServer => write!(f, "BOOT_REPLICATION_SERVER"),
+            DataReplicationInitiationStepName::ConnectAgentToReplicationServer => write!(f, "CONNECT_AGENT_TO_REPLICATION_SERVER"),
+            DataReplicationInitiationStepName::CreateSecurityGroup => write!(f, "CREATE_SECURITY_GROUP"),
+            DataReplicationInitiationStepName::CreateStagingDisks => write!(f, "CREATE_STAGING_DISKS"),
+            DataReplicationInitiationStepName::DownloadReplicationSoftware => write!(f, "DOWNLOAD_REPLICATION_SOFTWARE"),
+            DataReplicationInitiationStepName::LaunchReplicationServer => write!(f, "LAUNCH_REPLICATION_SERVER"),
+            DataReplicationInitiationStepName::PairReplicationServerWithAgent => write!(f, "PAIR_REPLICATION_SERVER_WITH_AGENT"),
+            DataReplicationInitiationStepName::StartDataTransfer => write!(f, "START_DATA_TRANSFER"),
+            DataReplicationInitiationStepName::Wait => write!(f, "WAIT"),
+            DataReplicationInitiationStepName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

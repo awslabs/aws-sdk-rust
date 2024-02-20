@@ -129,3 +129,17 @@ impl RobotStatus {
         }
     }
 }
+impl ::std::fmt::Display for RobotStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RobotStatus::Available => write!(f, "Available"),
+            RobotStatus::Deploying => write!(f, "Deploying"),
+            RobotStatus::Failed => write!(f, "Failed"),
+            RobotStatus::InSync => write!(f, "InSync"),
+            RobotStatus::NoResponse => write!(f, "NoResponse"),
+            RobotStatus::PendingNewDeployment => write!(f, "PendingNewDeployment"),
+            RobotStatus::Registered => write!(f, "Registered"),
+            RobotStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AuthenticationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationStrategy::Ldap => write!(f, "LDAP"),
+            AuthenticationStrategy::Simple => write!(f, "SIMPLE"),
+            AuthenticationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

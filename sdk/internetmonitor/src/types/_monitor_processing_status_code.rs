@@ -123,3 +123,16 @@ impl MonitorProcessingStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for MonitorProcessingStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitorProcessingStatusCode::CollectingData => write!(f, "COLLECTING_DATA"),
+            MonitorProcessingStatusCode::FaultAccessCloudwatch => write!(f, "FAULT_ACCESS_CLOUDWATCH"),
+            MonitorProcessingStatusCode::FaultService => write!(f, "FAULT_SERVICE"),
+            MonitorProcessingStatusCode::Inactive => write!(f, "INACTIVE"),
+            MonitorProcessingStatusCode::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
+            MonitorProcessingStatusCode::Ok => write!(f, "OK"),
+            MonitorProcessingStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

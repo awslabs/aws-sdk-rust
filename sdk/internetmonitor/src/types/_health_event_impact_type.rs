@@ -106,3 +106,14 @@ impl HealthEventImpactType {
         }
     }
 }
+impl ::std::fmt::Display for HealthEventImpactType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HealthEventImpactType::Availability => write!(f, "AVAILABILITY"),
+            HealthEventImpactType::LocalAvailability => write!(f, "LOCAL_AVAILABILITY"),
+            HealthEventImpactType::LocalPerformance => write!(f, "LOCAL_PERFORMANCE"),
+            HealthEventImpactType::Performance => write!(f, "PERFORMANCE"),
+            HealthEventImpactType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

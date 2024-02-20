@@ -116,3 +116,16 @@ impl PromptAttempt {
         }
     }
 }
+impl ::std::fmt::Display for PromptAttempt {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PromptAttempt::Initial => write!(f, "Initial"),
+            PromptAttempt::Retry1 => write!(f, "Retry1"),
+            PromptAttempt::Retry2 => write!(f, "Retry2"),
+            PromptAttempt::Retry3 => write!(f, "Retry3"),
+            PromptAttempt::Retry4 => write!(f, "Retry4"),
+            PromptAttempt::Retry5 => write!(f, "Retry5"),
+            PromptAttempt::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

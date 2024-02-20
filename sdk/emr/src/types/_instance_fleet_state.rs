@@ -129,3 +129,17 @@ impl InstanceFleetState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceFleetState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceFleetState::Bootstrapping => write!(f, "BOOTSTRAPPING"),
+            InstanceFleetState::Provisioning => write!(f, "PROVISIONING"),
+            InstanceFleetState::Resizing => write!(f, "RESIZING"),
+            InstanceFleetState::Running => write!(f, "RUNNING"),
+            InstanceFleetState::Suspended => write!(f, "SUSPENDED"),
+            InstanceFleetState::Terminated => write!(f, "TERMINATED"),
+            InstanceFleetState::Terminating => write!(f, "TERMINATING"),
+            InstanceFleetState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

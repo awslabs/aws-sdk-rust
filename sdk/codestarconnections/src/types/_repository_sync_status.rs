@@ -111,3 +111,15 @@ impl RepositorySyncStatus {
         }
     }
 }
+impl ::std::fmt::Display for RepositorySyncStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RepositorySyncStatus::Failed => write!(f, "FAILED"),
+            RepositorySyncStatus::Initiated => write!(f, "INITIATED"),
+            RepositorySyncStatus::InProgress => write!(f, "IN_PROGRESS"),
+            RepositorySyncStatus::Queued => write!(f, "QUEUED"),
+            RepositorySyncStatus::Succeeded => write!(f, "SUCCEEDED"),
+            RepositorySyncStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

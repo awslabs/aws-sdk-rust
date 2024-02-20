@@ -96,3 +96,12 @@ impl ConditionOutcome {
         }
     }
 }
+impl ::std::fmt::Display for ConditionOutcome {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConditionOutcome::False => write!(f, "False"),
+            ConditionOutcome::True => write!(f, "True"),
+            ConditionOutcome::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

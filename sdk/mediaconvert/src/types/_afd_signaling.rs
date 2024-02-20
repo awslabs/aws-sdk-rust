@@ -101,3 +101,13 @@ impl AfdSignaling {
         }
     }
 }
+impl ::std::fmt::Display for AfdSignaling {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AfdSignaling::Auto => write!(f, "AUTO"),
+            AfdSignaling::Fixed => write!(f, "FIXED"),
+            AfdSignaling::None => write!(f, "NONE"),
+            AfdSignaling::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

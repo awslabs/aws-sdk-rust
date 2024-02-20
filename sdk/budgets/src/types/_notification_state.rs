@@ -96,3 +96,12 @@ impl NotificationState {
         }
     }
 }
+impl ::std::fmt::Display for NotificationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationState::Alarm => write!(f, "ALARM"),
+            NotificationState::Ok => write!(f, "OK"),
+            NotificationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

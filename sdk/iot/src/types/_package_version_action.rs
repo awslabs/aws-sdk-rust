@@ -96,3 +96,12 @@ impl PackageVersionAction {
         }
     }
 }
+impl ::std::fmt::Display for PackageVersionAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageVersionAction::Deprecate => write!(f, "DEPRECATE"),
+            PackageVersionAction::Publish => write!(f, "PUBLISH"),
+            PackageVersionAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

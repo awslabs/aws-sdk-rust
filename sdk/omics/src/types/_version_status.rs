@@ -111,3 +111,15 @@ impl VersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for VersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VersionStatus::Active => write!(f, "ACTIVE"),
+            VersionStatus::Creating => write!(f, "CREATING"),
+            VersionStatus::Deleting => write!(f, "DELETING"),
+            VersionStatus::Failed => write!(f, "FAILED"),
+            VersionStatus::Updating => write!(f, "UPDATING"),
+            VersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

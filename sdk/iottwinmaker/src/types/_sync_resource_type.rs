@@ -96,3 +96,12 @@ impl SyncResourceType {
         }
     }
 }
+impl ::std::fmt::Display for SyncResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SyncResourceType::ComponentType => write!(f, "COMPONENT_TYPE"),
+            SyncResourceType::Entity => write!(f, "ENTITY"),
+            SyncResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

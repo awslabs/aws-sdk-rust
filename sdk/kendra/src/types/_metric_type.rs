@@ -123,3 +123,16 @@ impl MetricType {
         }
     }
 }
+impl ::std::fmt::Display for MetricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricType::AggQueryDocMetrics => write!(f, "AGG_QUERY_DOC_METRICS"),
+            MetricType::DocsByClickCount => write!(f, "DOCS_BY_CLICK_COUNT"),
+            MetricType::QueriesByCount => write!(f, "QUERIES_BY_COUNT"),
+            MetricType::QueriesByZeroClickRate => write!(f, "QUERIES_BY_ZERO_CLICK_RATE"),
+            MetricType::QueriesByZeroResultRate => write!(f, "QUERIES_BY_ZERO_RESULT_RATE"),
+            MetricType::TrendQueryDocMetrics => write!(f, "TREND_QUERY_DOC_METRICS"),
+            MetricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

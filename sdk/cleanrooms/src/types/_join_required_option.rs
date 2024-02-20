@@ -91,3 +91,11 @@ impl JoinRequiredOption {
         }
     }
 }
+impl ::std::fmt::Display for JoinRequiredOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JoinRequiredOption::QueryRunner => write!(f, "QUERY_RUNNER"),
+            JoinRequiredOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

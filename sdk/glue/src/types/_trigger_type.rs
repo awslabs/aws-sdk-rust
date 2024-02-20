@@ -106,3 +106,14 @@ impl TriggerType {
         }
     }
 }
+impl ::std::fmt::Display for TriggerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TriggerType::Conditional => write!(f, "CONDITIONAL"),
+            TriggerType::Event => write!(f, "EVENT"),
+            TriggerType::OnDemand => write!(f, "ON_DEMAND"),
+            TriggerType::Scheduled => write!(f, "SCHEDULED"),
+            TriggerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

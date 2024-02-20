@@ -106,3 +106,14 @@ impl Uid {
         }
     }
 }
+impl ::std::fmt::Display for Uid {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Uid::Both => write!(f, "BOTH"),
+            Uid::IntValue => write!(f, "INT_VALUE"),
+            Uid::Name => write!(f, "NAME"),
+            Uid::None => write!(f, "NONE"),
+            Uid::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl RiProductDescription {
         }
     }
 }
+impl ::std::fmt::Display for RiProductDescription {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RiProductDescription::LinuxUnix => write!(f, "Linux/UNIX"),
+            RiProductDescription::LinuxUnixAmazonVpc => write!(f, "Linux/UNIX (Amazon VPC)"),
+            RiProductDescription::Windows => write!(f, "Windows"),
+            RiProductDescription::WindowsAmazonVpc => write!(f, "Windows (Amazon VPC)"),
+            RiProductDescription::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -237,3 +237,35 @@ impl HistoricalMetricName {
         }
     }
 }
+impl ::std::fmt::Display for HistoricalMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HistoricalMetricName::AbandonTime => write!(f, "ABANDON_TIME"),
+            HistoricalMetricName::AfterContactWorkTime => write!(f, "AFTER_CONTACT_WORK_TIME"),
+            HistoricalMetricName::ApiContactsHandled => write!(f, "API_CONTACTS_HANDLED"),
+            HistoricalMetricName::CallbackContactsHandled => write!(f, "CALLBACK_CONTACTS_HANDLED"),
+            HistoricalMetricName::ContactsAbandoned => write!(f, "CONTACTS_ABANDONED"),
+            HistoricalMetricName::ContactsAgentHungUpFirst => write!(f, "CONTACTS_AGENT_HUNG_UP_FIRST"),
+            HistoricalMetricName::ContactsConsulted => write!(f, "CONTACTS_CONSULTED"),
+            HistoricalMetricName::ContactsHandled => write!(f, "CONTACTS_HANDLED"),
+            HistoricalMetricName::ContactsHandledIncoming => write!(f, "CONTACTS_HANDLED_INCOMING"),
+            HistoricalMetricName::ContactsHandledOutbound => write!(f, "CONTACTS_HANDLED_OUTBOUND"),
+            HistoricalMetricName::ContactsHoldAbandons => write!(f, "CONTACTS_HOLD_ABANDONS"),
+            HistoricalMetricName::ContactsMissed => write!(f, "CONTACTS_MISSED"),
+            HistoricalMetricName::ContactsQueued => write!(f, "CONTACTS_QUEUED"),
+            HistoricalMetricName::ContactsTransferredIn => write!(f, "CONTACTS_TRANSFERRED_IN"),
+            HistoricalMetricName::ContactsTransferredInFromQueue => write!(f, "CONTACTS_TRANSFERRED_IN_FROM_QUEUE"),
+            HistoricalMetricName::ContactsTransferredOut => write!(f, "CONTACTS_TRANSFERRED_OUT"),
+            HistoricalMetricName::ContactsTransferredOutFromQueue => write!(f, "CONTACTS_TRANSFERRED_OUT_FROM_QUEUE"),
+            HistoricalMetricName::HandleTime => write!(f, "HANDLE_TIME"),
+            HistoricalMetricName::HoldTime => write!(f, "HOLD_TIME"),
+            HistoricalMetricName::InteractionAndHoldTime => write!(f, "INTERACTION_AND_HOLD_TIME"),
+            HistoricalMetricName::InteractionTime => write!(f, "INTERACTION_TIME"),
+            HistoricalMetricName::Occupancy => write!(f, "OCCUPANCY"),
+            HistoricalMetricName::QueuedTime => write!(f, "QUEUED_TIME"),
+            HistoricalMetricName::QueueAnswerTime => write!(f, "QUEUE_ANSWER_TIME"),
+            HistoricalMetricName::ServiceLevel => write!(f, "SERVICE_LEVEL"),
+            HistoricalMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

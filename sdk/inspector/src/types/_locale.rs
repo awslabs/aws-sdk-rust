@@ -91,3 +91,11 @@ impl Locale {
         }
     }
 }
+impl ::std::fmt::Display for Locale {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Locale::EnUs => write!(f, "EN_US"),
+            Locale::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

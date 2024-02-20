@@ -96,3 +96,12 @@ impl RuleExecutionMode {
         }
     }
 }
+impl ::std::fmt::Display for RuleExecutionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleExecutionMode::AllMatched => write!(f, "ALL_MATCHED"),
+            RuleExecutionMode::FirstMatched => write!(f, "FIRST_MATCHED"),
+            RuleExecutionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

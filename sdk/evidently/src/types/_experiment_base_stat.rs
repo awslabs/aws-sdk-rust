@@ -91,3 +91,11 @@ impl ExperimentBaseStat {
         }
     }
 }
+impl ::std::fmt::Display for ExperimentBaseStat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExperimentBaseStat::Mean => write!(f, "Mean"),
+            ExperimentBaseStat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

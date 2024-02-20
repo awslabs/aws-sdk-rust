@@ -255,3 +255,38 @@ impl ViolationReason {
         }
     }
 }
+impl ::std::fmt::Display for ViolationReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ViolationReason::BlackHoleRouteDetected => write!(f, "BLACK_HOLE_ROUTE_DETECTED"),
+            ViolationReason::BlackHoleRouteDetectedInFirewallSubnet => write!(f, "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET"),
+            ViolationReason::FirewallSubnetIsOutOfScope => write!(f, "FIREWALL_SUBNET_IS_OUT_OF_SCOPE"),
+            ViolationReason::FirewallSubnetMissingExpectedRoute => write!(f, "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE"),
+            ViolationReason::FirewallSubnetMissingVpcEndpoint => write!(f, "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT"),
+            ViolationReason::FmsCreatedSecurityGroupEdited => write!(f, "FMS_CREATED_SECURITY_GROUP_EDITED"),
+            ViolationReason::InternetGatewayMissingExpectedRoute => write!(f, "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE"),
+            ViolationReason::InternetTrafficNotInspected => write!(f, "INTERNET_TRAFFIC_NOT_INSPECTED"),
+            ViolationReason::InvalidRouteConfiguration => write!(f, "INVALID_ROUTE_CONFIGURATION"),
+            ViolationReason::MissingExpectedRouteTable => write!(f, "MISSING_EXPECTED_ROUTE_TABLE"),
+            ViolationReason::MissingFirewall => write!(f, "MISSING_FIREWALL"),
+            ViolationReason::MissingFirewallSubnetInAz => write!(f, "MISSING_FIREWALL_SUBNET_IN_AZ"),
+            ViolationReason::MissingTargetGateway => write!(f, "MISSING_TARGET_GATEWAY"),
+            ViolationReason::NetworkFirewallPolicyModified => write!(f, "NETWORK_FIREWALL_POLICY_MODIFIED"),
+            ViolationReason::ResourceIncorrectWebAcl => write!(f, "RESOURCE_INCORRECT_WEB_ACL"),
+            ViolationReason::ResourceMissingDnsFirewall => write!(f, "RESOURCE_MISSING_DNS_FIREWALL"),
+            ViolationReason::ResourceMissingSecurityGroup => write!(f, "RESOURCE_MISSING_SECURITY_GROUP"),
+            ViolationReason::ResourceMissingShieldProtection => write!(f, "RESOURCE_MISSING_SHIELD_PROTECTION"),
+            ViolationReason::ResourceMissingWebAcl => write!(f, "RESOURCE_MISSING_WEB_ACL"),
+            ViolationReason::ResourceMissingWebaclOrShieldProtection => write!(f, "RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION"),
+            ViolationReason::ResourceViolatesAuditSecurityGroup => write!(f, "RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP"),
+            ViolationReason::RouteHasOutOfScopeEndpoint => write!(f, "ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT"),
+            ViolationReason::SecurityGroupRedundant => write!(f, "SECURITY_GROUP_REDUNDANT"),
+            ViolationReason::SecurityGroupUnused => write!(f, "SECURITY_GROUP_UNUSED"),
+            ViolationReason::TrafficInspectionCrossesAzBoundary => write!(f, "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY"),
+            ViolationReason::UnexpectedFirewallRoutes => write!(f, "UNEXPECTED_FIREWALL_ROUTES"),
+            ViolationReason::UnexpectedTargetGatewayRoutes => write!(f, "UNEXPECTED_TARGET_GATEWAY_ROUTES"),
+            ViolationReason::WebAclMissingRuleGroup => write!(f, "WEB_ACL_MISSING_RULE_GROUP"),
+            ViolationReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

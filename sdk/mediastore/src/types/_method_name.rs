@@ -106,3 +106,14 @@ impl MethodName {
         }
     }
 }
+impl ::std::fmt::Display for MethodName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MethodName::Delete => write!(f, "DELETE"),
+            MethodName::Get => write!(f, "GET"),
+            MethodName::Head => write!(f, "HEAD"),
+            MethodName::Put => write!(f, "PUT"),
+            MethodName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

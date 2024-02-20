@@ -101,3 +101,13 @@ impl Statistic {
         }
     }
 }
+impl ::std::fmt::Display for Statistic {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Statistic::Avg => write!(f, "AVG"),
+            Statistic::Max => write!(f, "MAX"),
+            Statistic::Sum => write!(f, "SUM"),
+            Statistic::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

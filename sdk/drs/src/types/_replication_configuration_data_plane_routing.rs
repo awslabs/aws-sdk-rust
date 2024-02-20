@@ -96,3 +96,12 @@ impl ReplicationConfigurationDataPlaneRouting {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationConfigurationDataPlaneRouting {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationConfigurationDataPlaneRouting::PrivateIp => write!(f, "PRIVATE_IP"),
+            ReplicationConfigurationDataPlaneRouting::PublicIp => write!(f, "PUBLIC_IP"),
+            ReplicationConfigurationDataPlaneRouting::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

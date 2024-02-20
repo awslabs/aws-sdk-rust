@@ -96,3 +96,12 @@ impl StopAction {
         }
     }
 }
+impl ::std::fmt::Display for StopAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StopAction::SkipEvaluation => write!(f, "SKIP_EVALUATION"),
+            StopAction::StartEvaluation => write!(f, "START_EVALUATION"),
+            StopAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

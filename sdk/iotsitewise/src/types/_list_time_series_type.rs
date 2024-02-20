@@ -96,3 +96,12 @@ impl ListTimeSeriesType {
         }
     }
 }
+impl ::std::fmt::Display for ListTimeSeriesType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListTimeSeriesType::Associated => write!(f, "ASSOCIATED"),
+            ListTimeSeriesType::Disassociated => write!(f, "DISASSOCIATED"),
+            ListTimeSeriesType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

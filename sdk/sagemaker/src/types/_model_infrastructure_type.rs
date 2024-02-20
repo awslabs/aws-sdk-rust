@@ -91,3 +91,11 @@ impl ModelInfrastructureType {
         }
     }
 }
+impl ::std::fmt::Display for ModelInfrastructureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelInfrastructureType::RealTimeInference => write!(f, "RealTimeInference"),
+            ModelInfrastructureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -121,3 +121,17 @@ impl TaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for TaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskStatus::Cancelled => write!(f, "CANCELLED"),
+            TaskStatus::Completed => write!(f, "COMPLETED"),
+            TaskStatus::Failed => write!(f, "FAILED"),
+            TaskStatus::Pending => write!(f, "PENDING"),
+            TaskStatus::Running => write!(f, "RUNNING"),
+            TaskStatus::Starting => write!(f, "STARTING"),
+            TaskStatus::Stopping => write!(f, "STOPPING"),
+            TaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl ComponentStatus {
         }
     }
 }
+impl ::std::fmt::Display for ComponentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComponentStatus::Deprecated => write!(f, "DEPRECATED"),
+            ComponentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

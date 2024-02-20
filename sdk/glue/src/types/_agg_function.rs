@@ -177,3 +177,25 @@ impl AggFunction {
         }
     }
 }
+impl ::std::fmt::Display for AggFunction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggFunction::Avg => write!(f, "avg"),
+            AggFunction::Count => write!(f, "count"),
+            AggFunction::CountDistinct => write!(f, "countDistinct"),
+            AggFunction::First => write!(f, "first"),
+            AggFunction::Kurtosis => write!(f, "kurtosis"),
+            AggFunction::Last => write!(f, "last"),
+            AggFunction::Max => write!(f, "max"),
+            AggFunction::Min => write!(f, "min"),
+            AggFunction::Skewness => write!(f, "skewness"),
+            AggFunction::StddevPop => write!(f, "stddev_pop"),
+            AggFunction::StddevSamp => write!(f, "stddev_samp"),
+            AggFunction::Sum => write!(f, "sum"),
+            AggFunction::SumDistinct => write!(f, "sumDistinct"),
+            AggFunction::VarPop => write!(f, "var_pop"),
+            AggFunction::VarSamp => write!(f, "var_samp"),
+            AggFunction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

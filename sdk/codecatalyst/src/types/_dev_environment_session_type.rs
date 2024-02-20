@@ -96,3 +96,12 @@ impl DevEnvironmentSessionType {
         }
     }
 }
+impl ::std::fmt::Display for DevEnvironmentSessionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DevEnvironmentSessionType::Ssh => write!(f, "SSH"),
+            DevEnvironmentSessionType::Ssm => write!(f, "SSM"),
+            DevEnvironmentSessionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

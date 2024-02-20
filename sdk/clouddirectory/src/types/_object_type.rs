@@ -106,3 +106,14 @@ impl ObjectType {
         }
     }
 }
+impl ::std::fmt::Display for ObjectType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectType::Index => write!(f, "INDEX"),
+            ObjectType::LeafNode => write!(f, "LEAF_NODE"),
+            ObjectType::Node => write!(f, "NODE"),
+            ObjectType::Policy => write!(f, "POLICY"),
+            ObjectType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

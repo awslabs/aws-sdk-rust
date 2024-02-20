@@ -96,3 +96,12 @@ impl SelectiveAuth {
         }
     }
 }
+impl ::std::fmt::Display for SelectiveAuth {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SelectiveAuth::Disabled => write!(f, "Disabled"),
+            SelectiveAuth::Enabled => write!(f, "Enabled"),
+            SelectiveAuth::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

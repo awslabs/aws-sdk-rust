@@ -225,3 +225,33 @@ impl LifecycleState {
         }
     }
 }
+impl ::std::fmt::Display for LifecycleState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecycleState::Detached => write!(f, "Detached"),
+            LifecycleState::Detaching => write!(f, "Detaching"),
+            LifecycleState::EnteringStandby => write!(f, "EnteringStandby"),
+            LifecycleState::InService => write!(f, "InService"),
+            LifecycleState::Pending => write!(f, "Pending"),
+            LifecycleState::PendingProceed => write!(f, "Pending:Proceed"),
+            LifecycleState::PendingWait => write!(f, "Pending:Wait"),
+            LifecycleState::Quarantined => write!(f, "Quarantined"),
+            LifecycleState::Standby => write!(f, "Standby"),
+            LifecycleState::Terminated => write!(f, "Terminated"),
+            LifecycleState::Terminating => write!(f, "Terminating"),
+            LifecycleState::TerminatingProceed => write!(f, "Terminating:Proceed"),
+            LifecycleState::TerminatingWait => write!(f, "Terminating:Wait"),
+            LifecycleState::WarmedHibernated => write!(f, "Warmed:Hibernated"),
+            LifecycleState::WarmedPending => write!(f, "Warmed:Pending"),
+            LifecycleState::WarmedPendingProceed => write!(f, "Warmed:Pending:Proceed"),
+            LifecycleState::WarmedPendingWait => write!(f, "Warmed:Pending:Wait"),
+            LifecycleState::WarmedRunning => write!(f, "Warmed:Running"),
+            LifecycleState::WarmedStopped => write!(f, "Warmed:Stopped"),
+            LifecycleState::WarmedTerminated => write!(f, "Warmed:Terminated"),
+            LifecycleState::WarmedTerminating => write!(f, "Warmed:Terminating"),
+            LifecycleState::WarmedTerminatingProceed => write!(f, "Warmed:Terminating:Proceed"),
+            LifecycleState::WarmedTerminatingWait => write!(f, "Warmed:Terminating:Wait"),
+            LifecycleState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

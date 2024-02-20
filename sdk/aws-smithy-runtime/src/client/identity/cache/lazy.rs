@@ -24,7 +24,7 @@ use tracing::Instrument;
 const DEFAULT_LOAD_TIMEOUT: Duration = Duration::from_secs(5);
 const DEFAULT_EXPIRATION: Duration = Duration::from_secs(15 * 60);
 const DEFAULT_BUFFER_TIME: Duration = Duration::from_secs(10);
-const DEFAULT_BUFFER_TIME_JITTER_FRACTION: fn() -> f64 = fastrand::f64;
+const DEFAULT_BUFFER_TIME_JITTER_FRACTION: fn() -> f64 = || fastrand::f64() * 0.5;
 
 /// Builder for lazy identity caching.
 #[derive(Default, Debug)]
@@ -86,7 +86,7 @@ impl LazyCacheBuilder {
     /// For example, if the identity are expiring in 15 minutes, and the buffer time is 10 seconds,
     /// then any requests made after 14 minutes and 50 seconds will load a new identity.
     ///
-    /// Note: random jitter value between [0.0, 1.0] is multiplied to this buffer time.
+    /// Note: random jitter value between [0.0, 0.5] is multiplied to this buffer time.
     ///
     /// Defaults to 10 seconds.
     pub fn buffer_time(mut self, buffer_time: Duration) -> Self {
@@ -99,7 +99,7 @@ impl LazyCacheBuilder {
     /// For example, if the identity are expiring in 15 minutes, and the buffer time is 10 seconds,
     /// then any requests made after 14 minutes and 50 seconds will load a new identity.
     ///
-    /// Note: random jitter value between [0.0, 1.0] is multiplied to this buffer time.
+    /// Note: random jitter value between [0.0, 0.5] is multiplied to this buffer time.
     ///
     /// Defaults to 10 seconds.
     pub fn set_buffer_time(&mut self, buffer_time: Option<Duration>) -> &mut Self {
@@ -113,7 +113,7 @@ impl LazyCacheBuilder {
     /// and buffer time jitter fraction is 0.2, then buffer time is adjusted to 8 seconds.
     /// Therefore, any requests made after 14 minutes and 52 seconds will load a new identity.
     ///
-    /// Defaults to a randomly generated value between 0.0 and 1.0. This setter is for testing only.
+    /// Defaults to a randomly generated value between 0.0 and 0.5. This setter is for testing only.
     #[allow(unused)]
     #[cfg(test)]
     fn buffer_time_jitter_fraction(mut self, buffer_time_jitter_fraction: fn() -> f64) -> Self {
@@ -127,7 +127,7 @@ impl LazyCacheBuilder {
     /// and buffer time jitter fraction is 0.2, then buffer time is adjusted to 8 seconds.
     /// Therefore, any requests made after 14 minutes and 52 seconds will load a new identity.
     ///
-    /// Defaults to a randomly generated value between 0.0 and 1.0. This setter is for testing only.
+    /// Defaults to a randomly generated value between 0.0 and 0.5. This setter is for testing only.
     #[allow(unused)]
     #[cfg(test)]
     fn set_buffer_time_jitter_fraction(

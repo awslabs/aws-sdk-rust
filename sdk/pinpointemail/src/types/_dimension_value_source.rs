@@ -105,3 +105,13 @@ impl DimensionValueSource {
         }
     }
 }
+impl ::std::fmt::Display for DimensionValueSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DimensionValueSource::EmailHeader => write!(f, "EMAIL_HEADER"),
+            DimensionValueSource::LinkTag => write!(f, "LINK_TAG"),
+            DimensionValueSource::MessageTag => write!(f, "MESSAGE_TAG"),
+            DimensionValueSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

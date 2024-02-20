@@ -153,3 +153,21 @@ impl ChannelState {
         }
     }
 }
+impl ::std::fmt::Display for ChannelState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelState::CreateFailed => write!(f, "CREATE_FAILED"),
+            ChannelState::Creating => write!(f, "CREATING"),
+            ChannelState::Deleted => write!(f, "DELETED"),
+            ChannelState::Deleting => write!(f, "DELETING"),
+            ChannelState::Idle => write!(f, "IDLE"),
+            ChannelState::Recovering => write!(f, "RECOVERING"),
+            ChannelState::Running => write!(f, "RUNNING"),
+            ChannelState::Starting => write!(f, "STARTING"),
+            ChannelState::Stopping => write!(f, "STOPPING"),
+            ChannelState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ChannelState::Updating => write!(f, "UPDATING"),
+            ChannelState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl InitiatedBy {
         }
     }
 }
+impl ::std::fmt::Display for InitiatedBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InitiatedBy::Diagnostic => write!(f, "DIAGNOSTIC"),
+            InitiatedBy::StartCutover => write!(f, "START_CUTOVER"),
+            InitiatedBy::StartTest => write!(f, "START_TEST"),
+            InitiatedBy::Terminate => write!(f, "TERMINATE"),
+            InitiatedBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

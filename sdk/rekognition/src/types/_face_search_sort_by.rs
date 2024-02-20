@@ -96,3 +96,12 @@ impl FaceSearchSortBy {
         }
     }
 }
+impl ::std::fmt::Display for FaceSearchSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FaceSearchSortBy::Index => write!(f, "INDEX"),
+            FaceSearchSortBy::Timestamp => write!(f, "TIMESTAMP"),
+            FaceSearchSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

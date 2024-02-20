@@ -101,3 +101,13 @@ impl EncryptionStatus {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionStatus::Failure => write!(f, "FAILURE"),
+            EncryptionStatus::Pending => write!(f, "PENDING"),
+            EncryptionStatus::Success => write!(f, "SUCCESS"),
+            EncryptionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

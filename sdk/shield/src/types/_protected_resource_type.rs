@@ -123,3 +123,16 @@ impl ProtectedResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ProtectedResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProtectedResourceType::ApplicationLoadBalancer => write!(f, "APPLICATION_LOAD_BALANCER"),
+            ProtectedResourceType::ClassicLoadBalancer => write!(f, "CLASSIC_LOAD_BALANCER"),
+            ProtectedResourceType::CloudfrontDistribution => write!(f, "CLOUDFRONT_DISTRIBUTION"),
+            ProtectedResourceType::ElasticIpAllocation => write!(f, "ELASTIC_IP_ALLOCATION"),
+            ProtectedResourceType::GlobalAccelerator => write!(f, "GLOBAL_ACCELERATOR"),
+            ProtectedResourceType::Route53HostedZone => write!(f, "ROUTE_53_HOSTED_ZONE"),
+            ProtectedResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

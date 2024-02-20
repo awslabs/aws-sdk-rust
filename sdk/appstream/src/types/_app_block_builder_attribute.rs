@@ -101,3 +101,13 @@ impl AppBlockBuilderAttribute {
         }
     }
 }
+impl ::std::fmt::Display for AppBlockBuilderAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppBlockBuilderAttribute::AccessEndpoints => write!(f, "ACCESS_ENDPOINTS"),
+            AppBlockBuilderAttribute::IamRoleArn => write!(f, "IAM_ROLE_ARN"),
+            AppBlockBuilderAttribute::VpcConfigurationSecurityGroupIds => write!(f, "VPC_CONFIGURATION_SECURITY_GROUP_IDS"),
+            AppBlockBuilderAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

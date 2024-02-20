@@ -96,3 +96,12 @@ impl PosixPermissions {
         }
     }
 }
+impl ::std::fmt::Display for PosixPermissions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PosixPermissions::None => write!(f, "NONE"),
+            PosixPermissions::Preserve => write!(f, "PRESERVE"),
+            PosixPermissions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

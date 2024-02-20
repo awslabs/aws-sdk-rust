@@ -96,3 +96,12 @@ impl SpoolingMode {
         }
     }
 }
+impl ::std::fmt::Display for SpoolingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpoolingMode::Off => write!(f, "OFF"),
+            SpoolingMode::ToDisk => write!(f, "TO_DISK"),
+            SpoolingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

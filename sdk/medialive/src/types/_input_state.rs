@@ -111,3 +111,15 @@ impl InputState {
         }
     }
 }
+impl ::std::fmt::Display for InputState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputState::Attached => write!(f, "ATTACHED"),
+            InputState::Creating => write!(f, "CREATING"),
+            InputState::Deleted => write!(f, "DELETED"),
+            InputState::Deleting => write!(f, "DELETING"),
+            InputState::Detached => write!(f, "DETACHED"),
+            InputState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

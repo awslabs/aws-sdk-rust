@@ -91,3 +91,11 @@ impl NetworkResourceType {
         }
     }
 }
+impl ::std::fmt::Display for NetworkResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkResourceType::RadioUnit => write!(f, "RADIO_UNIT"),
+            NetworkResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

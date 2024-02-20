@@ -106,3 +106,14 @@ impl StopCisSessionStatus {
         }
     }
 }
+impl ::std::fmt::Display for StopCisSessionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StopCisSessionStatus::Failed => write!(f, "FAILED"),
+            StopCisSessionStatus::Interrupted => write!(f, "INTERRUPTED"),
+            StopCisSessionStatus::Success => write!(f, "SUCCESS"),
+            StopCisSessionStatus::UnsupportedOs => write!(f, "UNSUPPORTED_OS"),
+            StopCisSessionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

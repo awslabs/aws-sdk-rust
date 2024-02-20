@@ -117,3 +117,13 @@ impl MetricDimensionName {
         }
     }
 }
+impl ::std::fmt::Display for MetricDimensionName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricDimensionName::ConfigurationSet => write!(f, "CONFIGURATION_SET"),
+            MetricDimensionName::EmailIdentity => write!(f, "EMAIL_IDENTITY"),
+            MetricDimensionName::Isp => write!(f, "ISP"),
+            MetricDimensionName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

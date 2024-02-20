@@ -101,3 +101,13 @@ impl AdvancedInputFilterSharpen {
         }
     }
 }
+impl ::std::fmt::Display for AdvancedInputFilterSharpen {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdvancedInputFilterSharpen::High => write!(f, "HIGH"),
+            AdvancedInputFilterSharpen::Low => write!(f, "LOW"),
+            AdvancedInputFilterSharpen::Off => write!(f, "OFF"),
+            AdvancedInputFilterSharpen::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

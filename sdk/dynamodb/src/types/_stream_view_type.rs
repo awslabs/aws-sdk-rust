@@ -106,3 +106,14 @@ impl StreamViewType {
         }
     }
 }
+impl ::std::fmt::Display for StreamViewType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamViewType::KeysOnly => write!(f, "KEYS_ONLY"),
+            StreamViewType::NewAndOldImages => write!(f, "NEW_AND_OLD_IMAGES"),
+            StreamViewType::NewImage => write!(f, "NEW_IMAGE"),
+            StreamViewType::OldImage => write!(f, "OLD_IMAGE"),
+            StreamViewType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

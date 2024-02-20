@@ -106,3 +106,14 @@ impl NfsVersion {
         }
     }
 }
+impl ::std::fmt::Display for NfsVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NfsVersion::Automatic => write!(f, "AUTOMATIC"),
+            NfsVersion::Nfs3 => write!(f, "NFS3"),
+            NfsVersion::Nfs40 => write!(f, "NFS4_0"),
+            NfsVersion::Nfs41 => write!(f, "NFS4_1"),
+            NfsVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -159,3 +159,22 @@ impl EnvironmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentStatus::Available => write!(f, "AVAILABLE"),
+            EnvironmentStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            EnvironmentStatus::Creating => write!(f, "CREATING"),
+            EnvironmentStatus::CreatingSnapshot => write!(f, "CREATING_SNAPSHOT"),
+            EnvironmentStatus::Deleted => write!(f, "DELETED"),
+            EnvironmentStatus::Deleting => write!(f, "DELETING"),
+            EnvironmentStatus::Maintenance => write!(f, "MAINTENANCE"),
+            EnvironmentStatus::Pending => write!(f, "PENDING"),
+            EnvironmentStatus::RollingBack => write!(f, "ROLLING_BACK"),
+            EnvironmentStatus::Unavailable => write!(f, "UNAVAILABLE"),
+            EnvironmentStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            EnvironmentStatus::Updating => write!(f, "UPDATING"),
+            EnvironmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

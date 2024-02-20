@@ -96,3 +96,12 @@ impl ModelCustomization {
         }
     }
 }
+impl ::std::fmt::Display for ModelCustomization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelCustomization::ContinuedPreTraining => write!(f, "CONTINUED_PRE_TRAINING"),
+            ModelCustomization::FineTuning => write!(f, "FINE_TUNING"),
+            ModelCustomization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

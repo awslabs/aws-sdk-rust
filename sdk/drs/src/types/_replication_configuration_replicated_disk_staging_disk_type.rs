@@ -123,3 +123,17 @@ impl ReplicationConfigurationReplicatedDiskStagingDiskType {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationConfigurationReplicatedDiskStagingDiskType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Auto => write!(f, "AUTO"),
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Gp2 => write!(f, "GP2"),
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Gp3 => write!(f, "GP3"),
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Io1 => write!(f, "IO1"),
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1 => write!(f, "SC1"),
+            ReplicationConfigurationReplicatedDiskStagingDiskType::St1 => write!(f, "ST1"),
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Standard => write!(f, "STANDARD"),
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

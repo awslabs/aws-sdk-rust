@@ -116,3 +116,16 @@ impl Scte27OcrLanguage {
         }
     }
 }
+impl ::std::fmt::Display for Scte27OcrLanguage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Scte27OcrLanguage::Deu => write!(f, "DEU"),
+            Scte27OcrLanguage::Eng => write!(f, "ENG"),
+            Scte27OcrLanguage::Fra => write!(f, "FRA"),
+            Scte27OcrLanguage::Nld => write!(f, "NLD"),
+            Scte27OcrLanguage::Por => write!(f, "POR"),
+            Scte27OcrLanguage::Spa => write!(f, "SPA"),
+            Scte27OcrLanguage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ImportTaskFilterName {
         }
     }
 }
+impl ::std::fmt::Display for ImportTaskFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportTaskFilterName::ImportTaskId => write!(f, "IMPORT_TASK_ID"),
+            ImportTaskFilterName::Name => write!(f, "NAME"),
+            ImportTaskFilterName::Status => write!(f, "STATUS"),
+            ImportTaskFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

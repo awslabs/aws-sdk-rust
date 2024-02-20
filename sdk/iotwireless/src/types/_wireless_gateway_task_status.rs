@@ -116,3 +116,16 @@ impl WirelessGatewayTaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for WirelessGatewayTaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WirelessGatewayTaskStatus::Completed => write!(f, "COMPLETED"),
+            WirelessGatewayTaskStatus::Failed => write!(f, "FAILED"),
+            WirelessGatewayTaskStatus::FirstRetry => write!(f, "FIRST_RETRY"),
+            WirelessGatewayTaskStatus::InProgress => write!(f, "IN_PROGRESS"),
+            WirelessGatewayTaskStatus::Pending => write!(f, "PENDING"),
+            WirelessGatewayTaskStatus::SecondRetry => write!(f, "SECOND_RETRY"),
+            WirelessGatewayTaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

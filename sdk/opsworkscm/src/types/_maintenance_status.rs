@@ -96,3 +96,12 @@ impl MaintenanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for MaintenanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaintenanceStatus::Failed => write!(f, "FAILED"),
+            MaintenanceStatus::Success => write!(f, "SUCCESS"),
+            MaintenanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

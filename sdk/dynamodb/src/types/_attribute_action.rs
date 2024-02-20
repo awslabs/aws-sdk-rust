@@ -101,3 +101,13 @@ impl AttributeAction {
         }
     }
 }
+impl ::std::fmt::Display for AttributeAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttributeAction::Add => write!(f, "ADD"),
+            AttributeAction::Delete => write!(f, "DELETE"),
+            AttributeAction::Put => write!(f, "PUT"),
+            AttributeAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

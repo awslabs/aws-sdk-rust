@@ -101,3 +101,13 @@ impl DatasetContentState {
         }
     }
 }
+impl ::std::fmt::Display for DatasetContentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetContentState::Creating => write!(f, "CREATING"),
+            DatasetContentState::Failed => write!(f, "FAILED"),
+            DatasetContentState::Succeeded => write!(f, "SUCCEEDED"),
+            DatasetContentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

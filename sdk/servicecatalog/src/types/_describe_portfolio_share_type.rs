@@ -106,3 +106,14 @@ impl DescribePortfolioShareType {
         }
     }
 }
+impl ::std::fmt::Display for DescribePortfolioShareType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DescribePortfolioShareType::Account => write!(f, "ACCOUNT"),
+            DescribePortfolioShareType::Organization => write!(f, "ORGANIZATION"),
+            DescribePortfolioShareType::OrganizationalUnit => write!(f, "ORGANIZATIONAL_UNIT"),
+            DescribePortfolioShareType::OrganizationMemberAccount => write!(f, "ORGANIZATION_MEMBER_ACCOUNT"),
+            DescribePortfolioShareType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

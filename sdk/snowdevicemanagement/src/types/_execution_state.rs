@@ -121,3 +121,17 @@ impl ExecutionState {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionState::Canceled => write!(f, "CANCELED"),
+            ExecutionState::Failed => write!(f, "FAILED"),
+            ExecutionState::InProgress => write!(f, "IN_PROGRESS"),
+            ExecutionState::Queued => write!(f, "QUEUED"),
+            ExecutionState::Rejected => write!(f, "REJECTED"),
+            ExecutionState::Succeeded => write!(f, "SUCCEEDED"),
+            ExecutionState::TimedOut => write!(f, "TIMED_OUT"),
+            ExecutionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

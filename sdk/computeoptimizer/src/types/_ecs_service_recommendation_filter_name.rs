@@ -96,3 +96,12 @@ impl EcsServiceRecommendationFilterName {
         }
     }
 }
+impl ::std::fmt::Display for EcsServiceRecommendationFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcsServiceRecommendationFilterName::Finding => write!(f, "Finding"),
+            EcsServiceRecommendationFilterName::FindingReasonCode => write!(f, "FindingReasonCode"),
+            EcsServiceRecommendationFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

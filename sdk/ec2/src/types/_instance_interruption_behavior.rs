@@ -101,3 +101,13 @@ impl InstanceInterruptionBehavior {
         }
     }
 }
+impl ::std::fmt::Display for InstanceInterruptionBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceInterruptionBehavior::Hibernate => write!(f, "hibernate"),
+            InstanceInterruptionBehavior::Stop => write!(f, "stop"),
+            InstanceInterruptionBehavior::Terminate => write!(f, "terminate"),
+            InstanceInterruptionBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

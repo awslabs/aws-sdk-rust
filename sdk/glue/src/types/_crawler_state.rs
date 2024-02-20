@@ -101,3 +101,13 @@ impl CrawlerState {
         }
     }
 }
+impl ::std::fmt::Display for CrawlerState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CrawlerState::Ready => write!(f, "READY"),
+            CrawlerState::Running => write!(f, "RUNNING"),
+            CrawlerState::Stopping => write!(f, "STOPPING"),
+            CrawlerState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

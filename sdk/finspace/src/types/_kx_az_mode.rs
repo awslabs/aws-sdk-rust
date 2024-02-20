@@ -96,3 +96,12 @@ impl KxAzMode {
         }
     }
 }
+impl ::std::fmt::Display for KxAzMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KxAzMode::Multi => write!(f, "MULTI"),
+            KxAzMode::Single => write!(f, "SINGLE"),
+            KxAzMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl RecordFormatType {
         }
     }
 }
+impl ::std::fmt::Display for RecordFormatType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordFormatType::Csv => write!(f, "CSV"),
+            RecordFormatType::Json => write!(f, "JSON"),
+            RecordFormatType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

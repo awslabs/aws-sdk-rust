@@ -121,3 +121,17 @@ impl PolicySourceType {
         }
     }
 }
+impl ::std::fmt::Display for PolicySourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicySourceType::AwsManaged => write!(f, "aws-managed"),
+            PolicySourceType::Group => write!(f, "group"),
+            PolicySourceType::None => write!(f, "none"),
+            PolicySourceType::Resource => write!(f, "resource"),
+            PolicySourceType::Role => write!(f, "role"),
+            PolicySourceType::User => write!(f, "user"),
+            PolicySourceType::UserManaged => write!(f, "user-managed"),
+            PolicySourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

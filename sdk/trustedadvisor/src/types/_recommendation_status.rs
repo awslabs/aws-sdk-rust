@@ -101,3 +101,13 @@ impl RecommendationStatus {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationStatus::Error => write!(f, "error"),
+            RecommendationStatus::Ok => write!(f, "ok"),
+            RecommendationStatus::Warning => write!(f, "warning"),
+            RecommendationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

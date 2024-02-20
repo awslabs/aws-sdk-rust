@@ -96,3 +96,12 @@ impl ReplicationRunType {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationRunType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationRunType::Automatic => write!(f, "AUTOMATIC"),
+            ReplicationRunType::OnDemand => write!(f, "ON_DEMAND"),
+            ReplicationRunType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl HlsAkamaiHttpTransferMode {
         }
     }
 }
+impl ::std::fmt::Display for HlsAkamaiHttpTransferMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsAkamaiHttpTransferMode::Chunked => write!(f, "CHUNKED"),
+            HlsAkamaiHttpTransferMode::NonChunked => write!(f, "NON_CHUNKED"),
+            HlsAkamaiHttpTransferMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

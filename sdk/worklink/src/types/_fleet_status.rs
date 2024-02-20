@@ -116,3 +116,16 @@ impl FleetStatus {
         }
     }
 }
+impl ::std::fmt::Display for FleetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetStatus::Active => write!(f, "ACTIVE"),
+            FleetStatus::Creating => write!(f, "CREATING"),
+            FleetStatus::Deleted => write!(f, "DELETED"),
+            FleetStatus::Deleting => write!(f, "DELETING"),
+            FleetStatus::FailedToCreate => write!(f, "FAILED_TO_CREATE"),
+            FleetStatus::FailedToDelete => write!(f, "FAILED_TO_DELETE"),
+            FleetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

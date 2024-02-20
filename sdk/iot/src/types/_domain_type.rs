@@ -101,3 +101,13 @@ impl DomainType {
         }
     }
 }
+impl ::std::fmt::Display for DomainType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainType::AwsManaged => write!(f, "AWS_MANAGED"),
+            DomainType::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
+            DomainType::Endpoint => write!(f, "ENDPOINT"),
+            DomainType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

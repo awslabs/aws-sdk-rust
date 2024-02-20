@@ -96,3 +96,12 @@ impl HlsCaptionSegmentLengthControl {
         }
     }
 }
+impl ::std::fmt::Display for HlsCaptionSegmentLengthControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsCaptionSegmentLengthControl::LargeSegments => write!(f, "LARGE_SEGMENTS"),
+            HlsCaptionSegmentLengthControl::MatchVideo => write!(f, "MATCH_VIDEO"),
+            HlsCaptionSegmentLengthControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

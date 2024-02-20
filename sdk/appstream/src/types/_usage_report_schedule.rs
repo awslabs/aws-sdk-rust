@@ -91,3 +91,11 @@ impl UsageReportSchedule {
         }
     }
 }
+impl ::std::fmt::Display for UsageReportSchedule {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageReportSchedule::Daily => write!(f, "DAILY"),
+            UsageReportSchedule::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

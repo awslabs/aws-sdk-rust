@@ -141,3 +141,19 @@ impl ShareStatus {
         }
     }
 }
+impl ::std::fmt::Display for ShareStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareStatus::Deleted => write!(f, "Deleted"),
+            ShareStatus::Deleting => write!(f, "Deleting"),
+            ShareStatus::PendingAcceptance => write!(f, "PendingAcceptance"),
+            ShareStatus::RejectFailed => write!(f, "RejectFailed"),
+            ShareStatus::Rejected => write!(f, "Rejected"),
+            ShareStatus::Rejecting => write!(f, "Rejecting"),
+            ShareStatus::ShareFailed => write!(f, "ShareFailed"),
+            ShareStatus::Shared => write!(f, "Shared"),
+            ShareStatus::Sharing => write!(f, "Sharing"),
+            ShareStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

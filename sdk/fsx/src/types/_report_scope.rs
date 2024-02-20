@@ -91,3 +91,11 @@ impl ReportScope {
         }
     }
 }
+impl ::std::fmt::Display for ReportScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportScope::FailedFilesOnly => write!(f, "FAILED_FILES_ONLY"),
+            ReportScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

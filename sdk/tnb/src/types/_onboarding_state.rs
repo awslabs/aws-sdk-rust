@@ -101,3 +101,13 @@ impl OnboardingState {
         }
     }
 }
+impl ::std::fmt::Display for OnboardingState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OnboardingState::Created => write!(f, "CREATED"),
+            OnboardingState::Error => write!(f, "ERROR"),
+            OnboardingState::Onboarded => write!(f, "ONBOARDED"),
+            OnboardingState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

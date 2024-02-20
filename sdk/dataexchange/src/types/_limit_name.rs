@@ -271,3 +271,54 @@ impl LimitName {
         }
     }
 }
+impl ::std::fmt::Display for LimitName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => write!(f, "AWS Lake Formation data permission assets per revision"),
+            LimitName::AmazonApiGatewayApiAssetsPerRevision => write!(f, "Amazon API Gateway API assets per revision"),
+            LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => {
+                write!(f, "Amazon Redshift datashare assets per import job from Redshift")
+            }
+            LimitName::AmazonRedshiftDatashareAssetsPerRevision => write!(f, "Amazon Redshift datashare assets per revision"),
+            LimitName::AmazonS3DataAccessAssetsPerRevision => write!(f, "Amazon S3 data access assets per revision"),
+            LimitName::AssetPerExportJobFromAmazonS3 => write!(f, "Asset per export job from Amazon S3"),
+            LimitName::AssetSizeInGb => write!(f, "Asset size in GB"),
+            LimitName::AssetsPerImportJobFromAmazonS3 => write!(f, "Assets per import job from Amazon S3"),
+            LimitName::AssetsPerRevision => write!(f, "Assets per revision"),
+            LimitName::AutoExportEventActionsPerDataSet => write!(f, "Auto export event actions per data set"),
+            LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets => {
+                write!(f, "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets")
+            }
+            LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3 => write!(f, "Concurrent in progress jobs to export assets to Amazon S3"),
+            LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl => {
+                write!(f, "Concurrent in progress jobs to export assets to a signed URL")
+            }
+            LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3 => {
+                write!(f, "Concurrent in progress jobs to export revisions to Amazon S3")
+            }
+            LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares => {
+                write!(f, "Concurrent in progress jobs to import assets from Amazon Redshift datashares")
+            }
+            LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3 => write!(f, "Concurrent in progress jobs to import assets from Amazon S3"),
+            LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl => {
+                write!(f, "Concurrent in progress jobs to import assets from a signed URL")
+            }
+            LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi => {
+                write!(f, "Concurrent in progress jobs to import assets from an API Gateway API")
+            }
+            LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy => {
+                write!(f, "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy")
+            }
+            LimitName::DataSetsPerAccount => write!(f, "Data sets per account"),
+            LimitName::DataSetsPerProduct => write!(f, "Data sets per product"),
+            LimitName::EventActionsPerAccount => write!(f, "Event actions per account"),
+            LimitName::ProductsPerAccount => write!(f, "Products per account"),
+            LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => write!(f, "Revisions per AWS Lake Formation data permission data set"),
+            LimitName::RevisionsPerAmazonApiGatewayApiDataSet => write!(f, "Revisions per Amazon API Gateway API data set"),
+            LimitName::RevisionsPerAmazonRedshiftDatashareDataSet => write!(f, "Revisions per Amazon Redshift datashare data set"),
+            LimitName::RevisionsPerAmazonS3DataAccessDataSet => write!(f, "Revisions per Amazon S3 data access data set"),
+            LimitName::RevisionsPerDataSet => write!(f, "Revisions per data set"),
+            LimitName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl DefaultTargetCapacityType {
         }
     }
 }
+impl ::std::fmt::Display for DefaultTargetCapacityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DefaultTargetCapacityType::CapacityBlock => write!(f, "capacity-block"),
+            DefaultTargetCapacityType::OnDemand => write!(f, "on-demand"),
+            DefaultTargetCapacityType::Spot => write!(f, "spot"),
+            DefaultTargetCapacityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

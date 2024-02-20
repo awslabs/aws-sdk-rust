@@ -96,3 +96,12 @@ impl FallbackBehavior {
         }
     }
 }
+impl ::std::fmt::Display for FallbackBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FallbackBehavior::Match => write!(f, "MATCH"),
+            FallbackBehavior::NoMatch => write!(f, "NO_MATCH"),
+            FallbackBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

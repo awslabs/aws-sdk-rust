@@ -91,3 +91,11 @@ impl CostCategoryStatusComponent {
         }
     }
 }
+impl ::std::fmt::Display for CostCategoryStatusComponent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CostCategoryStatusComponent::CostExplorer => write!(f, "COST_EXPLORER"),
+            CostCategoryStatusComponent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

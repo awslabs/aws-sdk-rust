@@ -96,3 +96,12 @@ impl MultiAzStatus {
         }
     }
 }
+impl ::std::fmt::Display for MultiAzStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MultiAzStatus::Disabled => write!(f, "disabled"),
+            MultiAzStatus::Enabled => write!(f, "enabled"),
+            MultiAzStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

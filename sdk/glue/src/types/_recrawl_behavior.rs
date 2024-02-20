@@ -101,3 +101,13 @@ impl RecrawlBehavior {
         }
     }
 }
+impl ::std::fmt::Display for RecrawlBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecrawlBehavior::CrawlEventMode => write!(f, "CRAWL_EVENT_MODE"),
+            RecrawlBehavior::CrawlEverything => write!(f, "CRAWL_EVERYTHING"),
+            RecrawlBehavior::CrawlNewFoldersOnly => write!(f, "CRAWL_NEW_FOLDERS_ONLY"),
+            RecrawlBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

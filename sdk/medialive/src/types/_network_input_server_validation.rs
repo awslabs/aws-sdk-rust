@@ -96,3 +96,12 @@ impl NetworkInputServerValidation {
         }
     }
 }
+impl ::std::fmt::Display for NetworkInputServerValidation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkInputServerValidation::CheckCryptographyAndValidateName => write!(f, "CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME"),
+            NetworkInputServerValidation::CheckCryptographyOnly => write!(f, "CHECK_CRYPTOGRAPHY_ONLY"),
+            NetworkInputServerValidation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

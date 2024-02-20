@@ -96,3 +96,12 @@ impl InventoryAttributeDataType {
         }
     }
 }
+impl ::std::fmt::Display for InventoryAttributeDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InventoryAttributeDataType::Number => write!(f, "number"),
+            InventoryAttributeDataType::String => write!(f, "string"),
+            InventoryAttributeDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

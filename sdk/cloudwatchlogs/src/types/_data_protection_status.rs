@@ -106,3 +106,14 @@ impl DataProtectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataProtectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataProtectionStatus::Activated => write!(f, "ACTIVATED"),
+            DataProtectionStatus::Archived => write!(f, "ARCHIVED"),
+            DataProtectionStatus::Deleted => write!(f, "DELETED"),
+            DataProtectionStatus::Disabled => write!(f, "DISABLED"),
+            DataProtectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

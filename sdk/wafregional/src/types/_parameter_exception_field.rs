@@ -195,3 +195,28 @@ impl ParameterExceptionField {
         }
     }
 }
+impl ::std::fmt::Display for ParameterExceptionField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParameterExceptionField::ByteMatchFieldType => write!(f, "BYTE_MATCH_FIELD_TYPE"),
+            ParameterExceptionField::ByteMatchPositionalConstraint => write!(f, "BYTE_MATCH_POSITIONAL_CONSTRAINT"),
+            ParameterExceptionField::ByteMatchTextTransformation => write!(f, "BYTE_MATCH_TEXT_TRANSFORMATION"),
+            ParameterExceptionField::ChangeAction => write!(f, "CHANGE_ACTION"),
+            ParameterExceptionField::GeoMatchLocationType => write!(f, "GEO_MATCH_LOCATION_TYPE"),
+            ParameterExceptionField::GeoMatchLocationValue => write!(f, "GEO_MATCH_LOCATION_VALUE"),
+            ParameterExceptionField::IpsetType => write!(f, "IPSET_TYPE"),
+            ParameterExceptionField::NextMarker => write!(f, "NEXT_MARKER"),
+            ParameterExceptionField::PredicateType => write!(f, "PREDICATE_TYPE"),
+            ParameterExceptionField::RateKey => write!(f, "RATE_KEY"),
+            ParameterExceptionField::ResourceArn => write!(f, "RESOURCE_ARN"),
+            ParameterExceptionField::RuleType => write!(f, "RULE_TYPE"),
+            ParameterExceptionField::SizeConstraintComparisonOperator => write!(f, "SIZE_CONSTRAINT_COMPARISON_OPERATOR"),
+            ParameterExceptionField::SqlInjectionMatchFieldType => write!(f, "SQL_INJECTION_MATCH_FIELD_TYPE"),
+            ParameterExceptionField::Tags => write!(f, "TAGS"),
+            ParameterExceptionField::TagKeys => write!(f, "TAG_KEYS"),
+            ParameterExceptionField::WafAction => write!(f, "WAF_ACTION"),
+            ParameterExceptionField::WafOverrideAction => write!(f, "WAF_OVERRIDE_ACTION"),
+            ParameterExceptionField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

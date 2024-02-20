@@ -101,3 +101,13 @@ impl RealTimeContactAnalysisStatus {
         }
     }
 }
+impl ::std::fmt::Display for RealTimeContactAnalysisStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RealTimeContactAnalysisStatus::Completed => write!(f, "COMPLETED"),
+            RealTimeContactAnalysisStatus::Failed => write!(f, "FAILED"),
+            RealTimeContactAnalysisStatus::InProgress => write!(f, "IN_PROGRESS"),
+            RealTimeContactAnalysisStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

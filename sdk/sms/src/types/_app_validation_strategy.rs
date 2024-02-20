@@ -91,3 +91,11 @@ impl AppValidationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for AppValidationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppValidationStrategy::Ssm => write!(f, "SSM"),
+            AppValidationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

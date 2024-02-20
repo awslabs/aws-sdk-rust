@@ -96,3 +96,12 @@ impl InternalServerExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for InternalServerExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InternalServerExceptionReason::FailedToGenerateSbom => write!(f, "FAILED_TO_GENERATE_SBOM"),
+            InternalServerExceptionReason::Other => write!(f, "OTHER"),
+            InternalServerExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

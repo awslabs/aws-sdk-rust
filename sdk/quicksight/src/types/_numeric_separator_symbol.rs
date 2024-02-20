@@ -101,3 +101,13 @@ impl NumericSeparatorSymbol {
         }
     }
 }
+impl ::std::fmt::Display for NumericSeparatorSymbol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NumericSeparatorSymbol::Comma => write!(f, "COMMA"),
+            NumericSeparatorSymbol::Dot => write!(f, "DOT"),
+            NumericSeparatorSymbol::Space => write!(f, "SPACE"),
+            NumericSeparatorSymbol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

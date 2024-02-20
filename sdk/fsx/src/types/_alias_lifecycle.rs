@@ -111,3 +111,15 @@ impl AliasLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for AliasLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AliasLifecycle::Available => write!(f, "AVAILABLE"),
+            AliasLifecycle::CreateFailed => write!(f, "CREATE_FAILED"),
+            AliasLifecycle::Creating => write!(f, "CREATING"),
+            AliasLifecycle::DeleteFailed => write!(f, "DELETE_FAILED"),
+            AliasLifecycle::Deleting => write!(f, "DELETING"),
+            AliasLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

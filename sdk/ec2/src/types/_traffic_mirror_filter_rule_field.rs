@@ -106,3 +106,14 @@ impl TrafficMirrorFilterRuleField {
         }
     }
 }
+impl ::std::fmt::Display for TrafficMirrorFilterRuleField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrafficMirrorFilterRuleField::Description => write!(f, "description"),
+            TrafficMirrorFilterRuleField::DestinationPortRange => write!(f, "destination-port-range"),
+            TrafficMirrorFilterRuleField::Protocol => write!(f, "protocol"),
+            TrafficMirrorFilterRuleField::SourcePortRange => write!(f, "source-port-range"),
+            TrafficMirrorFilterRuleField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

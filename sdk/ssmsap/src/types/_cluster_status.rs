@@ -111,3 +111,15 @@ impl ClusterStatus {
         }
     }
 }
+impl ::std::fmt::Display for ClusterStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterStatus::Maintenance => write!(f, "MAINTENANCE"),
+            ClusterStatus::None => write!(f, "NONE"),
+            ClusterStatus::Offline => write!(f, "OFFLINE"),
+            ClusterStatus::Online => write!(f, "ONLINE"),
+            ClusterStatus::Standby => write!(f, "STANDBY"),
+            ClusterStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl FleetType {
         }
     }
 }
+impl ::std::fmt::Display for FleetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetType::AlwaysOn => write!(f, "ALWAYS_ON"),
+            FleetType::Elastic => write!(f, "ELASTIC"),
+            FleetType::OnDemand => write!(f, "ON_DEMAND"),
+            FleetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

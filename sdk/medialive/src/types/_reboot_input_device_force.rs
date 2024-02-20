@@ -96,3 +96,12 @@ impl RebootInputDeviceForce {
         }
     }
 }
+impl ::std::fmt::Display for RebootInputDeviceForce {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RebootInputDeviceForce::No => write!(f, "NO"),
+            RebootInputDeviceForce::Yes => write!(f, "YES"),
+            RebootInputDeviceForce::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

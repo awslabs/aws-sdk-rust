@@ -96,3 +96,12 @@ impl RoutingStrategy {
         }
     }
 }
+impl ::std::fmt::Display for RoutingStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RoutingStrategy::LeastOutstandingRequests => write!(f, "LEAST_OUTSTANDING_REQUESTS"),
+            RoutingStrategy::Random => write!(f, "RANDOM"),
+            RoutingStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl OutputLocationType {
         }
     }
 }
+impl ::std::fmt::Display for OutputLocationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputLocationType::CustomerBucket => write!(f, "CUSTOMER_BUCKET"),
+            OutputLocationType::ServiceBucket => write!(f, "SERVICE_BUCKET"),
+            OutputLocationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

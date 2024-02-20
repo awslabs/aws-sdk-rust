@@ -91,3 +91,11 @@ impl EvaluationState {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationState::PartialData => write!(f, "PARTIAL_DATA"),
+            EvaluationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -165,3 +165,23 @@ impl JobState {
         }
     }
 }
+impl ::std::fmt::Display for JobState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobState::Cancelled => write!(f, "Cancelled"),
+            JobState::Complete => write!(f, "Complete"),
+            JobState::InProgress => write!(f, "InProgress"),
+            JobState::InTransitToAws => write!(f, "InTransitToAWS"),
+            JobState::InTransitToCustomer => write!(f, "InTransitToCustomer"),
+            JobState::Listing => write!(f, "Listing"),
+            JobState::New => write!(f, "New"),
+            JobState::Pending => write!(f, "Pending"),
+            JobState::PreparingAppliance => write!(f, "PreparingAppliance"),
+            JobState::PreparingShipment => write!(f, "PreparingShipment"),
+            JobState::WithAws => write!(f, "WithAWS"),
+            JobState::WithAwsSortingFacility => write!(f, "WithAWSSortingFacility"),
+            JobState::WithCustomer => write!(f, "WithCustomer"),
+            JobState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl RouteActivationState {
         }
     }
 }
+impl ::std::fmt::Display for RouteActivationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteActivationState::Active => write!(f, "ACTIVE"),
+            RouteActivationState::Inactive => write!(f, "INACTIVE"),
+            RouteActivationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

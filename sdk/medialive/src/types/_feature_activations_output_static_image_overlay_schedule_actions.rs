@@ -98,3 +98,12 @@ impl FeatureActivationsOutputStaticImageOverlayScheduleActions {
         }
     }
 }
+impl ::std::fmt::Display for FeatureActivationsOutputStaticImageOverlayScheduleActions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeatureActivationsOutputStaticImageOverlayScheduleActions::Disabled => write!(f, "DISABLED"),
+            FeatureActivationsOutputStaticImageOverlayScheduleActions::Enabled => write!(f, "ENABLED"),
+            FeatureActivationsOutputStaticImageOverlayScheduleActions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

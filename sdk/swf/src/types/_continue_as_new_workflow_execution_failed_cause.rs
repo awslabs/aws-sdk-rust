@@ -151,3 +151,25 @@ impl ContinueAsNewWorkflowExecutionFailedCause {
         }
     }
 }
+impl ::std::fmt::Display for ContinueAsNewWorkflowExecutionFailedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded => {
+                write!(f, "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED")
+            }
+            ContinueAsNewWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => write!(f, "DEFAULT_CHILD_POLICY_UNDEFINED"),
+            ContinueAsNewWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => {
+                write!(f, "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED")
+            }
+            ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskListUndefined => write!(f, "DEFAULT_TASK_LIST_UNDEFINED"),
+            ContinueAsNewWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => {
+                write!(f, "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED")
+            }
+            ContinueAsNewWorkflowExecutionFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
+            ContinueAsNewWorkflowExecutionFailedCause::UnhandledDecision => write!(f, "UNHANDLED_DECISION"),
+            ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDeprecated => write!(f, "WORKFLOW_TYPE_DEPRECATED"),
+            ContinueAsNewWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => write!(f, "WORKFLOW_TYPE_DOES_NOT_EXIST"),
+            ContinueAsNewWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

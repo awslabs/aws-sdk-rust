@@ -106,3 +106,14 @@ impl LoadBalancerStateEnum {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerStateEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerStateEnum::Active => write!(f, "active"),
+            LoadBalancerStateEnum::ActiveImpaired => write!(f, "active_impaired"),
+            LoadBalancerStateEnum::Failed => write!(f, "failed"),
+            LoadBalancerStateEnum::Provisioning => write!(f, "provisioning"),
+            LoadBalancerStateEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

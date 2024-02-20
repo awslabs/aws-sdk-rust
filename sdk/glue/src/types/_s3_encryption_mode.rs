@@ -101,3 +101,13 @@ impl S3EncryptionMode {
         }
     }
 }
+impl ::std::fmt::Display for S3EncryptionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3EncryptionMode::Disabled => write!(f, "DISABLED"),
+            S3EncryptionMode::Ssekms => write!(f, "SSE-KMS"),
+            S3EncryptionMode::Sses3 => write!(f, "SSE-S3"),
+            S3EncryptionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

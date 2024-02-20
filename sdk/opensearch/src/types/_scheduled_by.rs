@@ -96,3 +96,12 @@ impl ScheduledBy {
         }
     }
 }
+impl ::std::fmt::Display for ScheduledBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduledBy::Customer => write!(f, "CUSTOMER"),
+            ScheduledBy::System => write!(f, "SYSTEM"),
+            ScheduledBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

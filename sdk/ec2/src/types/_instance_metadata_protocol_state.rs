@@ -96,3 +96,12 @@ impl InstanceMetadataProtocolState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceMetadataProtocolState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceMetadataProtocolState::Disabled => write!(f, "disabled"),
+            InstanceMetadataProtocolState::Enabled => write!(f, "enabled"),
+            InstanceMetadataProtocolState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

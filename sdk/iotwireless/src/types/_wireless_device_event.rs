@@ -111,3 +111,15 @@ impl WirelessDeviceEvent {
         }
     }
 }
+impl ::std::fmt::Display for WirelessDeviceEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WirelessDeviceEvent::DownlinkData => write!(f, "Downlink_Data"),
+            WirelessDeviceEvent::Join => write!(f, "Join"),
+            WirelessDeviceEvent::Registration => write!(f, "Registration"),
+            WirelessDeviceEvent::Rejoin => write!(f, "Rejoin"),
+            WirelessDeviceEvent::UplinkData => write!(f, "Uplink_Data"),
+            WirelessDeviceEvent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

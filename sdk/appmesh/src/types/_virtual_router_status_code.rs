@@ -101,3 +101,13 @@ impl VirtualRouterStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for VirtualRouterStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VirtualRouterStatusCode::Active => write!(f, "ACTIVE"),
+            VirtualRouterStatusCode::Deleted => write!(f, "DELETED"),
+            VirtualRouterStatusCode::Inactive => write!(f, "INACTIVE"),
+            VirtualRouterStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl WorkSpaceApplicationState {
         }
     }
 }
+impl ::std::fmt::Display for WorkSpaceApplicationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkSpaceApplicationState::Available => write!(f, "AVAILABLE"),
+            WorkSpaceApplicationState::Error => write!(f, "ERROR"),
+            WorkSpaceApplicationState::Pending => write!(f, "PENDING"),
+            WorkSpaceApplicationState::UninstallOnly => write!(f, "UNINSTALL_ONLY"),
+            WorkSpaceApplicationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

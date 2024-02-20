@@ -96,3 +96,12 @@ impl NetworkResourceDefinitionType {
         }
     }
 }
+impl ::std::fmt::Display for NetworkResourceDefinitionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkResourceDefinitionType::DeviceIdentifier => write!(f, "DEVICE_IDENTIFIER"),
+            NetworkResourceDefinitionType::RadioUnit => write!(f, "RADIO_UNIT"),
+            NetworkResourceDefinitionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

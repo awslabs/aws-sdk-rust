@@ -106,3 +106,14 @@ impl WorkloadDeploymentPatternStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorkloadDeploymentPatternStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkloadDeploymentPatternStatus::Active => write!(f, "ACTIVE"),
+            WorkloadDeploymentPatternStatus::Deleted => write!(f, "DELETED"),
+            WorkloadDeploymentPatternStatus::Disabled => write!(f, "DISABLED"),
+            WorkloadDeploymentPatternStatus::Inactive => write!(f, "INACTIVE"),
+            WorkloadDeploymentPatternStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

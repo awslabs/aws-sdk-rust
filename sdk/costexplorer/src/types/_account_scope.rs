@@ -96,3 +96,12 @@ impl AccountScope {
         }
     }
 }
+impl ::std::fmt::Display for AccountScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountScope::Linked => write!(f, "LINKED"),
+            AccountScope::Payer => write!(f, "PAYER"),
+            AccountScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl IpamPublicAddressAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for IpamPublicAddressAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamPublicAddressAssociationStatus::Associated => write!(f, "associated"),
+            IpamPublicAddressAssociationStatus::Disassociated => write!(f, "disassociated"),
+            IpamPublicAddressAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

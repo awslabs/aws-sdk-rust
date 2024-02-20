@@ -96,3 +96,12 @@ impl EncodingType {
         }
     }
 }
+impl ::std::fmt::Display for EncodingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncodingType::Binary => write!(f, "binary"),
+            EncodingType::Json => write!(f, "json"),
+            EncodingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

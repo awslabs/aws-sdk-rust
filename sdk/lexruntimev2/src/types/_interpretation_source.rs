@@ -96,3 +96,12 @@ impl InterpretationSource {
         }
     }
 }
+impl ::std::fmt::Display for InterpretationSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InterpretationSource::Bedrock => write!(f, "Bedrock"),
+            InterpretationSource::Lex => write!(f, "Lex"),
+            InterpretationSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

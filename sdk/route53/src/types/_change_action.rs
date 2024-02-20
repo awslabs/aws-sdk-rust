@@ -101,3 +101,13 @@ impl ChangeAction {
         }
     }
 }
+impl ::std::fmt::Display for ChangeAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeAction::Create => write!(f, "CREATE"),
+            ChangeAction::Delete => write!(f, "DELETE"),
+            ChangeAction::Upsert => write!(f, "UPSERT"),
+            ChangeAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

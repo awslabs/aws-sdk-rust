@@ -105,3 +105,13 @@ impl SafeguardPolicy {
         }
     }
 }
+impl ::std::fmt::Display for SafeguardPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SafeguardPolicy::ExclusiveAutomaticTruncation => write!(f, "exclusive-automatic-truncation"),
+            SafeguardPolicy::RelyOnSqlServerReplicationAgent => write!(f, "rely-on-sql-server-replication-agent"),
+            SafeguardPolicy::SharedAutomaticTruncation => write!(f, "shared-automatic-truncation"),
+            SafeguardPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

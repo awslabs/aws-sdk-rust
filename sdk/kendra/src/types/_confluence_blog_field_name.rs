@@ -141,3 +141,19 @@ impl ConfluenceBlogFieldName {
         }
     }
 }
+impl ::std::fmt::Display for ConfluenceBlogFieldName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfluenceBlogFieldName::Author => write!(f, "AUTHOR"),
+            ConfluenceBlogFieldName::DisplayUrl => write!(f, "DISPLAY_URL"),
+            ConfluenceBlogFieldName::ItemType => write!(f, "ITEM_TYPE"),
+            ConfluenceBlogFieldName::Labels => write!(f, "LABELS"),
+            ConfluenceBlogFieldName::PublishDate => write!(f, "PUBLISH_DATE"),
+            ConfluenceBlogFieldName::SpaceKey => write!(f, "SPACE_KEY"),
+            ConfluenceBlogFieldName::SpaceName => write!(f, "SPACE_NAME"),
+            ConfluenceBlogFieldName::Url => write!(f, "URL"),
+            ConfluenceBlogFieldName::Version => write!(f, "VERSION"),
+            ConfluenceBlogFieldName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

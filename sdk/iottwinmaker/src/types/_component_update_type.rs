@@ -101,3 +101,13 @@ impl ComponentUpdateType {
         }
     }
 }
+impl ::std::fmt::Display for ComponentUpdateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComponentUpdateType::Create => write!(f, "CREATE"),
+            ComponentUpdateType::Delete => write!(f, "DELETE"),
+            ComponentUpdateType::Update => write!(f, "UPDATE"),
+            ComponentUpdateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

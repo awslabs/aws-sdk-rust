@@ -96,3 +96,12 @@ impl ObjectTags {
         }
     }
 }
+impl ::std::fmt::Display for ObjectTags {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectTags::None => write!(f, "NONE"),
+            ObjectTags::Preserve => write!(f, "PRESERVE"),
+            ObjectTags::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

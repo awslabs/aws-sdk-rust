@@ -91,3 +91,11 @@ impl ListOperationsSortAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for ListOperationsSortAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListOperationsSortAttributeName::SubmittedDate => write!(f, "SubmittedDate"),
+            ListOperationsSortAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

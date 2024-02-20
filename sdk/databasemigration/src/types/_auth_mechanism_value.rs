@@ -101,3 +101,13 @@ impl AuthMechanismValue {
         }
     }
 }
+impl ::std::fmt::Display for AuthMechanismValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthMechanismValue::Default => write!(f, "default"),
+            AuthMechanismValue::MongodbCr => write!(f, "mongodb_cr"),
+            AuthMechanismValue::ScramSha1 => write!(f, "scram_sha_1"),
+            AuthMechanismValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

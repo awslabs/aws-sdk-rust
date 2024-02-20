@@ -101,3 +101,13 @@ impl BurninSubtitleAlignment {
         }
     }
 }
+impl ::std::fmt::Display for BurninSubtitleAlignment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurninSubtitleAlignment::Auto => write!(f, "AUTO"),
+            BurninSubtitleAlignment::Centered => write!(f, "CENTERED"),
+            BurninSubtitleAlignment::Left => write!(f, "LEFT"),
+            BurninSubtitleAlignment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

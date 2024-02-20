@@ -96,3 +96,12 @@ impl InputDeviceActiveInput {
         }
     }
 }
+impl ::std::fmt::Display for InputDeviceActiveInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDeviceActiveInput::Hdmi => write!(f, "HDMI"),
+            InputDeviceActiveInput::Sdi => write!(f, "SDI"),
+            InputDeviceActiveInput::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

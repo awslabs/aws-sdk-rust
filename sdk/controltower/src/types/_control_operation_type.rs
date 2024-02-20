@@ -101,3 +101,13 @@ impl ControlOperationType {
         }
     }
 }
+impl ::std::fmt::Display for ControlOperationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ControlOperationType::DisableControl => write!(f, "DISABLE_CONTROL"),
+            ControlOperationType::EnableControl => write!(f, "ENABLE_CONTROL"),
+            ControlOperationType::UpdateEnabledControl => write!(f, "UPDATE_ENABLED_CONTROL"),
+            ControlOperationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

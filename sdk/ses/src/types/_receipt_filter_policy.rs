@@ -96,3 +96,12 @@ impl ReceiptFilterPolicy {
         }
     }
 }
+impl ::std::fmt::Display for ReceiptFilterPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReceiptFilterPolicy::Allow => write!(f, "Allow"),
+            ReceiptFilterPolicy::Block => write!(f, "Block"),
+            ReceiptFilterPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

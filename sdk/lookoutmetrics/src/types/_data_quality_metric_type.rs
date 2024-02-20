@@ -147,3 +147,20 @@ impl DataQualityMetricType {
         }
     }
 }
+impl ::std::fmt::Display for DataQualityMetricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataQualityMetricType::BacktestInferenceDataEndTimeStamp => write!(f, "BACKTEST_INFERENCE_DATA_END_TIME_STAMP"),
+            DataQualityMetricType::BacktestInferenceDataStartTimeStamp => write!(f, "BACKTEST_INFERENCE_DATA_START_TIME_STAMP"),
+            DataQualityMetricType::BacktestTrainingDataEndTimeStamp => write!(f, "BACKTEST_TRAINING_DATA_END_TIME_STAMP"),
+            DataQualityMetricType::BacktestTrainingDataStartTimeStamp => write!(f, "BACKTEST_TRAINING_DATA_START_TIME_STAMP"),
+            DataQualityMetricType::ColumnCompleteness => write!(f, "COLUMN_COMPLETENESS"),
+            DataQualityMetricType::DimensionUniqueness => write!(f, "DIMENSION_UNIQUENESS"),
+            DataQualityMetricType::InvalidRowsCompliance => write!(f, "INVALID_ROWS_COMPLIANCE"),
+            DataQualityMetricType::RowsPartialCompliance => write!(f, "ROWS_PARTIAL_COMPLIANCE"),
+            DataQualityMetricType::RowsProcessed => write!(f, "ROWS_PROCESSED"),
+            DataQualityMetricType::TimeSeriesCount => write!(f, "TIME_SERIES_COUNT"),
+            DataQualityMetricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -123,3 +123,16 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::DbCluster => write!(f, "db-cluster"),
+            SourceType::DbClusterSnapshot => write!(f, "db-cluster-snapshot"),
+            SourceType::DbInstance => write!(f, "db-instance"),
+            SourceType::DbParameterGroup => write!(f, "db-parameter-group"),
+            SourceType::DbSecurityGroup => write!(f, "db-security-group"),
+            SourceType::DbSnapshot => write!(f, "db-snapshot"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

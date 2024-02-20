@@ -96,3 +96,12 @@ impl SuppressionState {
         }
     }
 }
+impl ::std::fmt::Display for SuppressionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SuppressionState::Suppressed => write!(f, "SUPPRESSED"),
+            SuppressionState::Unsuppressed => write!(f, "UNSUPPRESSED"),
+            SuppressionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

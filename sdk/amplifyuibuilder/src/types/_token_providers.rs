@@ -91,3 +91,11 @@ impl TokenProviders {
         }
     }
 }
+impl ::std::fmt::Display for TokenProviders {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TokenProviders::Figma => write!(f, "figma"),
+            TokenProviders::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

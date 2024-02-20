@@ -106,3 +106,14 @@ impl BotAliasStatus {
         }
     }
 }
+impl ::std::fmt::Display for BotAliasStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotAliasStatus::Available => write!(f, "Available"),
+            BotAliasStatus::Creating => write!(f, "Creating"),
+            BotAliasStatus::Deleting => write!(f, "Deleting"),
+            BotAliasStatus::Failed => write!(f, "Failed"),
+            BotAliasStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

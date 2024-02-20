@@ -106,3 +106,14 @@ impl ReservationState {
         }
     }
 }
+impl ::std::fmt::Display for ReservationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservationState::Active => write!(f, "ACTIVE"),
+            ReservationState::Canceled => write!(f, "CANCELED"),
+            ReservationState::Deleted => write!(f, "DELETED"),
+            ReservationState::Expired => write!(f, "EXPIRED"),
+            ReservationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

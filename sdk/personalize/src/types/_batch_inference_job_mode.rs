@@ -96,3 +96,12 @@ impl BatchInferenceJobMode {
         }
     }
 }
+impl ::std::fmt::Display for BatchInferenceJobMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchInferenceJobMode::BatchInference => write!(f, "BATCH_INFERENCE"),
+            BatchInferenceJobMode::ThemeGeneration => write!(f, "THEME_GENERATION"),
+            BatchInferenceJobMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

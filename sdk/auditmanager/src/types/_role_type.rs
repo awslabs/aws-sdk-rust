@@ -96,3 +96,12 @@ impl RoleType {
         }
     }
 }
+impl ::std::fmt::Display for RoleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RoleType::ProcessOwner => write!(f, "PROCESS_OWNER"),
+            RoleType::ResourceOwner => write!(f, "RESOURCE_OWNER"),
+            RoleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ApplianceModeSupportValue {
         }
     }
 }
+impl ::std::fmt::Display for ApplianceModeSupportValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplianceModeSupportValue::Disable => write!(f, "disable"),
+            ApplianceModeSupportValue::Enable => write!(f, "enable"),
+            ApplianceModeSupportValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

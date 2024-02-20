@@ -116,3 +116,16 @@ impl CapacityReservationStatus {
         }
     }
 }
+impl ::std::fmt::Display for CapacityReservationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapacityReservationStatus::Active => write!(f, "ACTIVE"),
+            CapacityReservationStatus::Cancelled => write!(f, "CANCELLED"),
+            CapacityReservationStatus::Cancelling => write!(f, "CANCELLING"),
+            CapacityReservationStatus::Failed => write!(f, "FAILED"),
+            CapacityReservationStatus::Pending => write!(f, "PENDING"),
+            CapacityReservationStatus::UpdatePending => write!(f, "UPDATE_PENDING"),
+            CapacityReservationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

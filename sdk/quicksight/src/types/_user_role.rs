@@ -111,3 +111,15 @@ impl UserRole {
         }
     }
 }
+impl ::std::fmt::Display for UserRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserRole::Admin => write!(f, "ADMIN"),
+            UserRole::Author => write!(f, "AUTHOR"),
+            UserRole::Reader => write!(f, "READER"),
+            UserRole::RestrictedAuthor => write!(f, "RESTRICTED_AUTHOR"),
+            UserRole::RestrictedReader => write!(f, "RESTRICTED_READER"),
+            UserRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

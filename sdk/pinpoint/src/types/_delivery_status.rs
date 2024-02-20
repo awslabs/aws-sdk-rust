@@ -129,3 +129,17 @@ impl DeliveryStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeliveryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeliveryStatus::Duplicate => write!(f, "DUPLICATE"),
+            DeliveryStatus::OptOut => write!(f, "OPT_OUT"),
+            DeliveryStatus::PermanentFailure => write!(f, "PERMANENT_FAILURE"),
+            DeliveryStatus::Successful => write!(f, "SUCCESSFUL"),
+            DeliveryStatus::TemporaryFailure => write!(f, "TEMPORARY_FAILURE"),
+            DeliveryStatus::Throttled => write!(f, "THROTTLED"),
+            DeliveryStatus::UnknownFailure => write!(f, "UNKNOWN_FAILURE"),
+            DeliveryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

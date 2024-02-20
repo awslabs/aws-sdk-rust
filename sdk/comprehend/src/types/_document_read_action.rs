@@ -96,3 +96,12 @@ impl DocumentReadAction {
         }
     }
 }
+impl ::std::fmt::Display for DocumentReadAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentReadAction::TextractAnalyzeDocument => write!(f, "TEXTRACT_ANALYZE_DOCUMENT"),
+            DocumentReadAction::TextractDetectDocumentText => write!(f, "TEXTRACT_DETECT_DOCUMENT_TEXT"),
+            DocumentReadAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

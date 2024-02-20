@@ -96,3 +96,12 @@ impl ForwardingConfigState {
         }
     }
 }
+impl ::std::fmt::Display for ForwardingConfigState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ForwardingConfigState::Disabled => write!(f, "DISABLED"),
+            ForwardingConfigState::Enabled => write!(f, "ENABLED"),
+            ForwardingConfigState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ResourceBucketAccess {
         }
     }
 }
+impl ::std::fmt::Display for ResourceBucketAccess {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceBucketAccess::Allow => write!(f, "allow"),
+            ResourceBucketAccess::Deny => write!(f, "deny"),
+            ResourceBucketAccess::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

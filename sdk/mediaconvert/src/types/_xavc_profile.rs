@@ -111,3 +111,15 @@ impl XavcProfile {
         }
     }
 }
+impl ::std::fmt::Display for XavcProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcProfile::Xavc4K => write!(f, "XAVC_4K"),
+            XavcProfile::Xavc4KIntraCbg => write!(f, "XAVC_4K_INTRA_CBG"),
+            XavcProfile::Xavc4KIntraVbr => write!(f, "XAVC_4K_INTRA_VBR"),
+            XavcProfile::XavcHd => write!(f, "XAVC_HD"),
+            XavcProfile::XavcHdIntraCbg => write!(f, "XAVC_HD_INTRA_CBG"),
+            XavcProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

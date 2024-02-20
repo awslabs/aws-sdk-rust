@@ -96,3 +96,12 @@ impl WorkSpaceApplicationLicenseType {
         }
     }
 }
+impl ::std::fmt::Display for WorkSpaceApplicationLicenseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkSpaceApplicationLicenseType::Licensed => write!(f, "LICENSED"),
+            WorkSpaceApplicationLicenseType::Unlicensed => write!(f, "UNLICENSED"),
+            WorkSpaceApplicationLicenseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

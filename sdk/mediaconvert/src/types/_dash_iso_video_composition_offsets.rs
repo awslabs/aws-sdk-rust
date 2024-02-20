@@ -96,3 +96,12 @@ impl DashIsoVideoCompositionOffsets {
         }
     }
 }
+impl ::std::fmt::Display for DashIsoVideoCompositionOffsets {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashIsoVideoCompositionOffsets::Signed => write!(f, "SIGNED"),
+            DashIsoVideoCompositionOffsets::Unsigned => write!(f, "UNSIGNED"),
+            DashIsoVideoCompositionOffsets::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

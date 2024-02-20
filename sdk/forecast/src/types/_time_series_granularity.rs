@@ -96,3 +96,12 @@ impl TimeSeriesGranularity {
         }
     }
 }
+impl ::std::fmt::Display for TimeSeriesGranularity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimeSeriesGranularity::All => write!(f, "ALL"),
+            TimeSeriesGranularity::Specific => write!(f, "SPECIFIC"),
+            TimeSeriesGranularity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LogicalOperator {
         }
     }
 }
+impl ::std::fmt::Display for LogicalOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogicalOperator::And => write!(f, "AND"),
+            LogicalOperator::Or => write!(f, "OR"),
+            LogicalOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

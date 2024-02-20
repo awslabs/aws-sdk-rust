@@ -96,3 +96,12 @@ impl WordCloudWordScaling {
         }
     }
 }
+impl ::std::fmt::Display for WordCloudWordScaling {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WordCloudWordScaling::Emphasize => write!(f, "EMPHASIZE"),
+            WordCloudWordScaling::Normal => write!(f, "NORMAL"),
+            WordCloudWordScaling::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

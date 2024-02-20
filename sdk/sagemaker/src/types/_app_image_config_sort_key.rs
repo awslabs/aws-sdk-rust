@@ -101,3 +101,13 @@ impl AppImageConfigSortKey {
         }
     }
 }
+impl ::std::fmt::Display for AppImageConfigSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppImageConfigSortKey::CreationTime => write!(f, "CreationTime"),
+            AppImageConfigSortKey::LastModifiedTime => write!(f, "LastModifiedTime"),
+            AppImageConfigSortKey::Name => write!(f, "Name"),
+            AppImageConfigSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

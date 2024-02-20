@@ -116,3 +116,16 @@ impl ImportDataCharacterEncoding {
         }
     }
 }
+impl ::std::fmt::Display for ImportDataCharacterEncoding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportDataCharacterEncoding::Iso88591 => write!(f, "ISO-8859-1"),
+            ImportDataCharacterEncoding::UsAscii => write!(f, "US-ASCII"),
+            ImportDataCharacterEncoding::Utf16 => write!(f, "UTF-16"),
+            ImportDataCharacterEncoding::Utf16Be => write!(f, "UTF-16BE"),
+            ImportDataCharacterEncoding::Utf16Le => write!(f, "UTF-16LE"),
+            ImportDataCharacterEncoding::Utf8 => write!(f, "UTF-8"),
+            ImportDataCharacterEncoding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

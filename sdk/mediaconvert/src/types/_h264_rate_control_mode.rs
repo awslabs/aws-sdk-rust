@@ -101,3 +101,13 @@ impl H264RateControlMode {
         }
     }
 }
+impl ::std::fmt::Display for H264RateControlMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264RateControlMode::Cbr => write!(f, "CBR"),
+            H264RateControlMode::Qvbr => write!(f, "QVBR"),
+            H264RateControlMode::Vbr => write!(f, "VBR"),
+            H264RateControlMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

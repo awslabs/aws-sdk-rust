@@ -96,3 +96,12 @@ impl DatabaseConnectionMethod {
         }
     }
 }
+impl ::std::fmt::Display for DatabaseConnectionMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatabaseConnectionMethod::Direct => write!(f, "DIRECT"),
+            DatabaseConnectionMethod::Overlay => write!(f, "OVERLAY"),
+            DatabaseConnectionMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

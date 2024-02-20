@@ -101,3 +101,13 @@ impl Xavc4kProfileQualityTuningLevel {
         }
     }
 }
+impl ::std::fmt::Display for Xavc4kProfileQualityTuningLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Xavc4kProfileQualityTuningLevel::MultiPassHq => write!(f, "MULTI_PASS_HQ"),
+            Xavc4kProfileQualityTuningLevel::SinglePass => write!(f, "SINGLE_PASS"),
+            Xavc4kProfileQualityTuningLevel::SinglePassHq => write!(f, "SINGLE_PASS_HQ"),
+            Xavc4kProfileQualityTuningLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

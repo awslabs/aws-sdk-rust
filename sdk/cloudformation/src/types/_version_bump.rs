@@ -96,3 +96,12 @@ impl VersionBump {
         }
     }
 }
+impl ::std::fmt::Display for VersionBump {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VersionBump::Major => write!(f, "MAJOR"),
+            VersionBump::Minor => write!(f, "MINOR"),
+            VersionBump::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

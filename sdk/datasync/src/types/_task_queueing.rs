@@ -96,3 +96,12 @@ impl TaskQueueing {
         }
     }
 }
+impl ::std::fmt::Display for TaskQueueing {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskQueueing::Disabled => write!(f, "DISABLED"),
+            TaskQueueing::Enabled => write!(f, "ENABLED"),
+            TaskQueueing::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

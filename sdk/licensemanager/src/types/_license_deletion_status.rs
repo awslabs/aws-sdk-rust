@@ -96,3 +96,12 @@ impl LicenseDeletionStatus {
         }
     }
 }
+impl ::std::fmt::Display for LicenseDeletionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LicenseDeletionStatus::Deleted => write!(f, "DELETED"),
+            LicenseDeletionStatus::PendingDelete => write!(f, "PENDING_DELETE"),
+            LicenseDeletionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

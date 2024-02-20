@@ -96,3 +96,12 @@ impl BarChartOrientation {
         }
     }
 }
+impl ::std::fmt::Display for BarChartOrientation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BarChartOrientation::Horizontal => write!(f, "HORIZONTAL"),
+            BarChartOrientation::Vertical => write!(f, "VERTICAL"),
+            BarChartOrientation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

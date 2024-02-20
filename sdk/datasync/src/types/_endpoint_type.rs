@@ -101,3 +101,13 @@ impl EndpointType {
         }
     }
 }
+impl ::std::fmt::Display for EndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointType::Fips => write!(f, "FIPS"),
+            EndpointType::PrivateLink => write!(f, "PRIVATE_LINK"),
+            EndpointType::Public => write!(f, "PUBLIC"),
+            EndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

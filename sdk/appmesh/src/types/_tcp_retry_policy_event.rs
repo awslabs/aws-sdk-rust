@@ -91,3 +91,11 @@ impl TcpRetryPolicyEvent {
         }
     }
 }
+impl ::std::fmt::Display for TcpRetryPolicyEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TcpRetryPolicyEvent::ConnectionError => write!(f, "connection-error"),
+            TcpRetryPolicyEvent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

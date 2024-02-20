@@ -96,3 +96,12 @@ impl BrokerStorageType {
         }
     }
 }
+impl ::std::fmt::Display for BrokerStorageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BrokerStorageType::Ebs => write!(f, "EBS"),
+            BrokerStorageType::Efs => write!(f, "EFS"),
+            BrokerStorageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

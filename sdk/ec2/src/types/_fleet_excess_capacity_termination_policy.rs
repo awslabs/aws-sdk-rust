@@ -96,3 +96,12 @@ impl FleetExcessCapacityTerminationPolicy {
         }
     }
 }
+impl ::std::fmt::Display for FleetExcessCapacityTerminationPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetExcessCapacityTerminationPolicy::NoTermination => write!(f, "no-termination"),
+            FleetExcessCapacityTerminationPolicy::Termination => write!(f, "termination"),
+            FleetExcessCapacityTerminationPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

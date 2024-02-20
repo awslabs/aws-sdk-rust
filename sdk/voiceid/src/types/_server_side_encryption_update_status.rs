@@ -101,3 +101,13 @@ impl ServerSideEncryptionUpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServerSideEncryptionUpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServerSideEncryptionUpdateStatus::Completed => write!(f, "COMPLETED"),
+            ServerSideEncryptionUpdateStatus::Failed => write!(f, "FAILED"),
+            ServerSideEncryptionUpdateStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ServerSideEncryptionUpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

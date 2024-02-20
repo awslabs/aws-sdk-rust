@@ -96,3 +96,12 @@ impl EbsFinding {
         }
     }
 }
+impl ::std::fmt::Display for EbsFinding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EbsFinding::NotOptimized => write!(f, "NotOptimized"),
+            EbsFinding::Optimized => write!(f, "Optimized"),
+            EbsFinding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

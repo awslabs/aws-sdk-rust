@@ -111,3 +111,15 @@ impl VariantStatus {
         }
     }
 }
+impl ::std::fmt::Display for VariantStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VariantStatus::ActivatingTraffic => write!(f, "ActivatingTraffic"),
+            VariantStatus::Baking => write!(f, "Baking"),
+            VariantStatus::Creating => write!(f, "Creating"),
+            VariantStatus::Deleting => write!(f, "Deleting"),
+            VariantStatus::Updating => write!(f, "Updating"),
+            VariantStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

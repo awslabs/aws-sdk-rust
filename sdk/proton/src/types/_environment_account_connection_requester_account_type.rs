@@ -98,3 +98,12 @@ impl EnvironmentAccountConnectionRequesterAccountType {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentAccountConnectionRequesterAccountType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentAccountConnectionRequesterAccountType::EnvironmentAccount => write!(f, "ENVIRONMENT_ACCOUNT"),
+            EnvironmentAccountConnectionRequesterAccountType::ManagementAccount => write!(f, "MANAGEMENT_ACCOUNT"),
+            EnvironmentAccountConnectionRequesterAccountType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

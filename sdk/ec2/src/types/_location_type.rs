@@ -106,3 +106,14 @@ impl LocationType {
         }
     }
 }
+impl ::std::fmt::Display for LocationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocationType::AvailabilityZone => write!(f, "availability-zone"),
+            LocationType::AvailabilityZoneId => write!(f, "availability-zone-id"),
+            LocationType::Outpost => write!(f, "outpost"),
+            LocationType::Region => write!(f, "region"),
+            LocationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

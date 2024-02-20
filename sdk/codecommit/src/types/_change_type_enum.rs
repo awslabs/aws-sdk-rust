@@ -101,3 +101,13 @@ impl ChangeTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for ChangeTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeTypeEnum::Added => write!(f, "A"),
+            ChangeTypeEnum::Deleted => write!(f, "D"),
+            ChangeTypeEnum::Modified => write!(f, "M"),
+            ChangeTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

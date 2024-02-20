@@ -101,3 +101,13 @@ impl FailureCode {
         }
     }
 }
+impl ::std::fmt::Display for FailureCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailureCode::InvalidInput => write!(f, "InvalidInput"),
+            FailureCode::RequestThrottled => write!(f, "RequestThrottled"),
+            FailureCode::UnknownError => write!(f, "UnknownError"),
+            FailureCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

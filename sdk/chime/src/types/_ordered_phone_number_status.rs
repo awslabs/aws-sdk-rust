@@ -101,3 +101,13 @@ impl OrderedPhoneNumberStatus {
         }
     }
 }
+impl ::std::fmt::Display for OrderedPhoneNumberStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrderedPhoneNumberStatus::Acquired => write!(f, "Acquired"),
+            OrderedPhoneNumberStatus::Failed => write!(f, "Failed"),
+            OrderedPhoneNumberStatus::Processing => write!(f, "Processing"),
+            OrderedPhoneNumberStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

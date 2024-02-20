@@ -121,3 +121,17 @@ impl SpaceStatus {
         }
     }
 }
+impl ::std::fmt::Display for SpaceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpaceStatus::DeleteFailed => write!(f, "Delete_Failed"),
+            SpaceStatus::Deleting => write!(f, "Deleting"),
+            SpaceStatus::Failed => write!(f, "Failed"),
+            SpaceStatus::InService => write!(f, "InService"),
+            SpaceStatus::Pending => write!(f, "Pending"),
+            SpaceStatus::UpdateFailed => write!(f, "Update_Failed"),
+            SpaceStatus::Updating => write!(f, "Updating"),
+            SpaceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

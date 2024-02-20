@@ -135,3 +135,18 @@ impl KeyAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for KeyAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyAlgorithm::Aes128 => write!(f, "AES_128"),
+            KeyAlgorithm::Aes192 => write!(f, "AES_192"),
+            KeyAlgorithm::Aes256 => write!(f, "AES_256"),
+            KeyAlgorithm::Rsa2048 => write!(f, "RSA_2048"),
+            KeyAlgorithm::Rsa3072 => write!(f, "RSA_3072"),
+            KeyAlgorithm::Rsa4096 => write!(f, "RSA_4096"),
+            KeyAlgorithm::Tdes2Key => write!(f, "TDES_2KEY"),
+            KeyAlgorithm::Tdes3Key => write!(f, "TDES_3KEY"),
+            KeyAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl DestinationState {
         }
     }
 }
+impl ::std::fmt::Display for DestinationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DestinationState::Decommissioned => write!(f, "DECOMMISSIONED"),
+            DestinationState::Disabled => write!(f, "DISABLED"),
+            DestinationState::Enabled => write!(f, "ENABLED"),
+            DestinationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

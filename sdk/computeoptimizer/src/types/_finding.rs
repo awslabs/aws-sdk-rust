@@ -106,3 +106,14 @@ impl Finding {
         }
     }
 }
+impl ::std::fmt::Display for Finding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Finding::NotOptimized => write!(f, "NotOptimized"),
+            Finding::Optimized => write!(f, "Optimized"),
+            Finding::OverProvisioned => write!(f, "Overprovisioned"),
+            Finding::UnderProvisioned => write!(f, "Underprovisioned"),
+            Finding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

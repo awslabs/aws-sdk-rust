@@ -96,3 +96,12 @@ impl DashDisplayFragmentTimestamp {
         }
     }
 }
+impl ::std::fmt::Display for DashDisplayFragmentTimestamp {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashDisplayFragmentTimestamp::Always => write!(f, "ALWAYS"),
+            DashDisplayFragmentTimestamp::Never => write!(f, "NEVER"),
+            DashDisplayFragmentTimestamp::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

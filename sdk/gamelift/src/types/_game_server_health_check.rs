@@ -91,3 +91,11 @@ impl GameServerHealthCheck {
         }
     }
 }
+impl ::std::fmt::Display for GameServerHealthCheck {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GameServerHealthCheck::Healthy => write!(f, "HEALTHY"),
+            GameServerHealthCheck::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

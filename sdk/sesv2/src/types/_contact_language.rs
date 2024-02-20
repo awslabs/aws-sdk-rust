@@ -96,3 +96,12 @@ impl ContactLanguage {
         }
     }
 }
+impl ::std::fmt::Display for ContactLanguage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContactLanguage::En => write!(f, "EN"),
+            ContactLanguage::Ja => write!(f, "JA"),
+            ContactLanguage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

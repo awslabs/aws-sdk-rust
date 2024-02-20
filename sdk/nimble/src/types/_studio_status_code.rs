@@ -201,3 +201,29 @@ impl StudioStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for StudioStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StudioStatusCode::AwsSsoAccessDenied => write!(f, "AWS_SSO_ACCESS_DENIED"),
+            StudioStatusCode::AwsSsoConfigurationRepaired => write!(f, "AWS_SSO_CONFIGURATION_REPAIRED"),
+            StudioStatusCode::AwsSsoConfigurationRepairInProgress => write!(f, "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS"),
+            StudioStatusCode::AwsSsoNotEnabled => write!(f, "AWS_SSO_NOT_ENABLED"),
+            StudioStatusCode::AwsStsRegionDisabled => write!(f, "AWS_STS_REGION_DISABLED"),
+            StudioStatusCode::EncryptionKeyAccessDenied => write!(f, "ENCRYPTION_KEY_ACCESS_DENIED"),
+            StudioStatusCode::EncryptionKeyNotFound => write!(f, "ENCRYPTION_KEY_NOT_FOUND"),
+            StudioStatusCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            StudioStatusCode::RoleCouldNotBeAssumed => write!(f, "ROLE_COULD_NOT_BE_ASSUMED"),
+            StudioStatusCode::RoleNotOwnedByStudioOwner => write!(f, "ROLE_NOT_OWNED_BY_STUDIO_OWNER"),
+            StudioStatusCode::StudioCreated => write!(f, "STUDIO_CREATED"),
+            StudioStatusCode::StudioCreateInProgress => write!(f, "STUDIO_CREATE_IN_PROGRESS"),
+            StudioStatusCode::StudioDeleted => write!(f, "STUDIO_DELETED"),
+            StudioStatusCode::StudioDeleteInProgress => write!(f, "STUDIO_DELETE_IN_PROGRESS"),
+            StudioStatusCode::StudioUpdated => write!(f, "STUDIO_UPDATED"),
+            StudioStatusCode::StudioUpdateInProgress => write!(f, "STUDIO_UPDATE_IN_PROGRESS"),
+            StudioStatusCode::StudioWithLaunchProfilesNotDeleted => write!(f, "STUDIO_WITH_LAUNCH_PROFILES_NOT_DELETED"),
+            StudioStatusCode::StudioWithStreamingImagesNotDeleted => write!(f, "STUDIO_WITH_STREAMING_IMAGES_NOT_DELETED"),
+            StudioStatusCode::StudioWithStudioComponentsNotDeleted => write!(f, "STUDIO_WITH_STUDIO_COMPONENTS_NOT_DELETED"),
+            StudioStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ThumbnailConfigurationStorage {
         }
     }
 }
+impl ::std::fmt::Display for ThumbnailConfigurationStorage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThumbnailConfigurationStorage::Latest => write!(f, "LATEST"),
+            ThumbnailConfigurationStorage::Sequential => write!(f, "SEQUENTIAL"),
+            ThumbnailConfigurationStorage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

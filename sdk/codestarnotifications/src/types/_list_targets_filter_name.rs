@@ -101,3 +101,13 @@ impl ListTargetsFilterName {
         }
     }
 }
+impl ::std::fmt::Display for ListTargetsFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListTargetsFilterName::TargetAddress => write!(f, "TARGET_ADDRESS"),
+            ListTargetsFilterName::TargetStatus => write!(f, "TARGET_STATUS"),
+            ListTargetsFilterName::TargetType => write!(f, "TARGET_TYPE"),
+            ListTargetsFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

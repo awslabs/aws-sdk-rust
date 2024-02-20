@@ -96,3 +96,12 @@ impl DetailedErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for DetailedErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetailedErrorCode::IncompatibleComputeLocation => write!(f, "INCOMPATIBLE_COMPUTE_LOCATION"),
+            DetailedErrorCode::IncompatibleForwardingConfiguration => write!(f, "INCOMPATIBLE_FORWARDING_CONFIGURATION"),
+            DetailedErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SlotConstraint {
         }
     }
 }
+impl ::std::fmt::Display for SlotConstraint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlotConstraint::Optional => write!(f, "Optional"),
+            SlotConstraint::Required => write!(f, "Required"),
+            SlotConstraint::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -123,3 +123,16 @@ impl StreamingSessionStreamStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for StreamingSessionStreamStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamingSessionStreamStatusCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            StreamingSessionStreamStatusCode::NetworkConnectionError => write!(f, "NETWORK_CONNECTION_ERROR"),
+            StreamingSessionStreamStatusCode::StreamCreateInProgress => write!(f, "STREAM_CREATE_IN_PROGRESS"),
+            StreamingSessionStreamStatusCode::StreamDeleted => write!(f, "STREAM_DELETED"),
+            StreamingSessionStreamStatusCode::StreamDeleteInProgress => write!(f, "STREAM_DELETE_IN_PROGRESS"),
+            StreamingSessionStreamStatusCode::StreamReady => write!(f, "STREAM_READY"),
+            StreamingSessionStreamStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

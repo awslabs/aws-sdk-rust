@@ -96,3 +96,12 @@ impl UpdateAction {
         }
     }
 }
+impl ::std::fmt::Display for UpdateAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateAction::Add => write!(f, "ADD"),
+            UpdateAction::Revoke => write!(f, "REVOKE"),
+            UpdateAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

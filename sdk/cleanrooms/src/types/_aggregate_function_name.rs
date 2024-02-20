@@ -111,3 +111,15 @@ impl AggregateFunctionName {
         }
     }
 }
+impl ::std::fmt::Display for AggregateFunctionName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregateFunctionName::Avg => write!(f, "AVG"),
+            AggregateFunctionName::Count => write!(f, "COUNT"),
+            AggregateFunctionName::CountDistinct => write!(f, "COUNT_DISTINCT"),
+            AggregateFunctionName::Sum => write!(f, "SUM"),
+            AggregateFunctionName::SumDistinct => write!(f, "SUM_DISTINCT"),
+            AggregateFunctionName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

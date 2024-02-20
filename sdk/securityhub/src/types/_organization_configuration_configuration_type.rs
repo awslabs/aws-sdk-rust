@@ -98,3 +98,12 @@ impl OrganizationConfigurationConfigurationType {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationConfigurationConfigurationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationConfigurationConfigurationType::Central => write!(f, "CENTRAL"),
+            OrganizationConfigurationConfigurationType::Local => write!(f, "LOCAL"),
+            OrganizationConfigurationConfigurationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LocalHealthEventsConfigStatus {
         }
     }
 }
+impl ::std::fmt::Display for LocalHealthEventsConfigStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocalHealthEventsConfigStatus::Disabled => write!(f, "DISABLED"),
+            LocalHealthEventsConfigStatus::Enabled => write!(f, "ENABLED"),
+            LocalHealthEventsConfigStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

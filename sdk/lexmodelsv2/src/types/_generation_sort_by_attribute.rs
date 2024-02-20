@@ -96,3 +96,12 @@ impl GenerationSortByAttribute {
         }
     }
 }
+impl ::std::fmt::Display for GenerationSortByAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GenerationSortByAttribute::CreationStartTime => write!(f, "creationStartTime"),
+            GenerationSortByAttribute::LastUpdatedTime => write!(f, "lastUpdatedTime"),
+            GenerationSortByAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

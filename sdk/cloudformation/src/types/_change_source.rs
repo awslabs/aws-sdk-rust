@@ -117,3 +117,15 @@ impl ChangeSource {
         }
     }
 }
+impl ::std::fmt::Display for ChangeSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeSource::Automatic => write!(f, "Automatic"),
+            ChangeSource::DirectModification => write!(f, "DirectModification"),
+            ChangeSource::ParameterReference => write!(f, "ParameterReference"),
+            ChangeSource::ResourceAttribute => write!(f, "ResourceAttribute"),
+            ChangeSource::ResourceReference => write!(f, "ResourceReference"),
+            ChangeSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl ExperimentActionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExperimentActionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExperimentActionStatus::Cancelled => write!(f, "cancelled"),
+            ExperimentActionStatus::Completed => write!(f, "completed"),
+            ExperimentActionStatus::Failed => write!(f, "failed"),
+            ExperimentActionStatus::Initiating => write!(f, "initiating"),
+            ExperimentActionStatus::Pending => write!(f, "pending"),
+            ExperimentActionStatus::Running => write!(f, "running"),
+            ExperimentActionStatus::Skipped => write!(f, "skipped"),
+            ExperimentActionStatus::Stopped => write!(f, "stopped"),
+            ExperimentActionStatus::Stopping => write!(f, "stopping"),
+            ExperimentActionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

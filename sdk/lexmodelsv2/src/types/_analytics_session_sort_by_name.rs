@@ -101,3 +101,13 @@ impl AnalyticsSessionSortByName {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsSessionSortByName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsSessionSortByName::ConversationStartTime => write!(f, "ConversationStartTime"),
+            AnalyticsSessionSortByName::Duration => write!(f, "Duration"),
+            AnalyticsSessionSortByName::NumberOfTurns => write!(f, "NumberOfTurns"),
+            AnalyticsSessionSortByName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

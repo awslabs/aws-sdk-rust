@@ -111,3 +111,14 @@ impl PivotTableDataPathType {
         }
     }
 }
+impl ::std::fmt::Display for PivotTableDataPathType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PivotTableDataPathType::CountMetricColumn => write!(f, "COUNT_METRIC_COLUMN"),
+            PivotTableDataPathType::EmptyColumnHeader => write!(f, "EMPTY_COLUMN_HEADER"),
+            PivotTableDataPathType::HierarchyRowsLayoutColumn => write!(f, "HIERARCHY_ROWS_LAYOUT_COLUMN"),
+            PivotTableDataPathType::MultipleRowMetricsColumn => write!(f, "MULTIPLE_ROW_METRICS_COLUMN"),
+            PivotTableDataPathType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

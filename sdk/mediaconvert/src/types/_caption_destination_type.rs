@@ -159,3 +159,22 @@ impl CaptionDestinationType {
         }
     }
 }
+impl ::std::fmt::Display for CaptionDestinationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CaptionDestinationType::BurnIn => write!(f, "BURN_IN"),
+            CaptionDestinationType::DvbSub => write!(f, "DVB_SUB"),
+            CaptionDestinationType::Embedded => write!(f, "EMBEDDED"),
+            CaptionDestinationType::EmbeddedPlusScte20 => write!(f, "EMBEDDED_PLUS_SCTE20"),
+            CaptionDestinationType::Imsc => write!(f, "IMSC"),
+            CaptionDestinationType::Scc => write!(f, "SCC"),
+            CaptionDestinationType::Scte20PlusEmbedded => write!(f, "SCTE20_PLUS_EMBEDDED"),
+            CaptionDestinationType::Smi => write!(f, "SMI"),
+            CaptionDestinationType::Srt => write!(f, "SRT"),
+            CaptionDestinationType::Teletext => write!(f, "TELETEXT"),
+            CaptionDestinationType::Ttml => write!(f, "TTML"),
+            CaptionDestinationType::Webvtt => write!(f, "WEBVTT"),
+            CaptionDestinationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DocumentSourceType {
         }
     }
 }
+impl ::std::fmt::Display for DocumentSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentSourceType::Original => write!(f, "ORIGINAL"),
+            DocumentSourceType::WithComments => write!(f, "WITH_COMMENTS"),
+            DocumentSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

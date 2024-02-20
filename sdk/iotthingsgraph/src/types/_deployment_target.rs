@@ -96,3 +96,12 @@ impl DeploymentTarget {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentTarget {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentTarget::Cloud => write!(f, "CLOUD"),
+            DeploymentTarget::Greengrass => write!(f, "GREENGRASS"),
+            DeploymentTarget::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

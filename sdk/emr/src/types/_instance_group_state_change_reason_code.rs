@@ -106,3 +106,14 @@ impl InstanceGroupStateChangeReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for InstanceGroupStateChangeReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceGroupStateChangeReasonCode::ClusterTerminated => write!(f, "CLUSTER_TERMINATED"),
+            InstanceGroupStateChangeReasonCode::InstanceFailure => write!(f, "INSTANCE_FAILURE"),
+            InstanceGroupStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            InstanceGroupStateChangeReasonCode::ValidationError => write!(f, "VALIDATION_ERROR"),
+            InstanceGroupStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

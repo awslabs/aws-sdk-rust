@@ -96,3 +96,12 @@ impl Scte35AposNoRegionalBlackoutBehavior {
         }
     }
 }
+impl ::std::fmt::Display for Scte35AposNoRegionalBlackoutBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Scte35AposNoRegionalBlackoutBehavior::Follow => write!(f, "FOLLOW"),
+            Scte35AposNoRegionalBlackoutBehavior::Ignore => write!(f, "IGNORE"),
+            Scte35AposNoRegionalBlackoutBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

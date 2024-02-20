@@ -96,3 +96,12 @@ impl ZonalAutoshiftStatus {
         }
     }
 }
+impl ::std::fmt::Display for ZonalAutoshiftStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ZonalAutoshiftStatus::Disabled => write!(f, "DISABLED"),
+            ZonalAutoshiftStatus::Enabled => write!(f, "ENABLED"),
+            ZonalAutoshiftStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

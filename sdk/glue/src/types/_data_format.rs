@@ -101,3 +101,13 @@ impl DataFormat {
         }
     }
 }
+impl ::std::fmt::Display for DataFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataFormat::Avro => write!(f, "AVRO"),
+            DataFormat::Json => write!(f, "JSON"),
+            DataFormat::Protobuf => write!(f, "PROTOBUF"),
+            DataFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -103,3 +103,12 @@ impl BehaviorOnMxFailure {
         }
     }
 }
+impl ::std::fmt::Display for BehaviorOnMxFailure {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BehaviorOnMxFailure::RejectMessage => write!(f, "REJECT_MESSAGE"),
+            BehaviorOnMxFailure::UseDefaultValue => write!(f, "USE_DEFAULT_VALUE"),
+            BehaviorOnMxFailure::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

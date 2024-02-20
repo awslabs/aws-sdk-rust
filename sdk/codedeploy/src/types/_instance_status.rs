@@ -122,3 +122,17 @@ impl InstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for InstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceStatus::Failed => write!(f, "Failed"),
+            InstanceStatus::InProgress => write!(f, "InProgress"),
+            InstanceStatus::Pending => write!(f, "Pending"),
+            InstanceStatus::Ready => write!(f, "Ready"),
+            InstanceStatus::Skipped => write!(f, "Skipped"),
+            InstanceStatus::Succeeded => write!(f, "Succeeded"),
+            InstanceStatus::UnknownValue => write!(f, "Unknown"),
+            InstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

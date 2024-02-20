@@ -96,3 +96,12 @@ impl UserContextPolicy {
         }
     }
 }
+impl ::std::fmt::Display for UserContextPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserContextPolicy::AttributeFilter => write!(f, "ATTRIBUTE_FILTER"),
+            UserContextPolicy::UserToken => write!(f, "USER_TOKEN"),
+            UserContextPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

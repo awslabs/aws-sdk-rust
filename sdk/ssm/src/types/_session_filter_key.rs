@@ -116,3 +116,16 @@ impl SessionFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for SessionFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SessionFilterKey::InvokedAfter => write!(f, "InvokedAfter"),
+            SessionFilterKey::InvokedBefore => write!(f, "InvokedBefore"),
+            SessionFilterKey::Owner => write!(f, "Owner"),
+            SessionFilterKey::SessionId => write!(f, "SessionId"),
+            SessionFilterKey::Status => write!(f, "Status"),
+            SessionFilterKey::TargetId => write!(f, "Target"),
+            SessionFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

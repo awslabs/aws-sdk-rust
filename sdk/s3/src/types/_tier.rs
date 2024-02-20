@@ -101,3 +101,13 @@ impl Tier {
         }
     }
 }
+impl ::std::fmt::Display for Tier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Tier::Bulk => write!(f, "Bulk"),
+            Tier::Expedited => write!(f, "Expedited"),
+            Tier::Standard => write!(f, "Standard"),
+            Tier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

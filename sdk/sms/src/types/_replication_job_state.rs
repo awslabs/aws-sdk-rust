@@ -135,3 +135,18 @@ impl ReplicationJobState {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationJobState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationJobState::Active => write!(f, "ACTIVE"),
+            ReplicationJobState::Completed => write!(f, "COMPLETED"),
+            ReplicationJobState::Deleted => write!(f, "DELETED"),
+            ReplicationJobState::Deleting => write!(f, "DELETING"),
+            ReplicationJobState::Failed => write!(f, "FAILED"),
+            ReplicationJobState::Failing => write!(f, "FAILING"),
+            ReplicationJobState::PausedOnFailure => write!(f, "PAUSED_ON_FAILURE"),
+            ReplicationJobState::Pending => write!(f, "PENDING"),
+            ReplicationJobState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

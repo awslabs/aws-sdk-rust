@@ -96,3 +96,12 @@ impl AggregatedUtterancesFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for AggregatedUtterancesFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregatedUtterancesFilterOperator::Contains => write!(f, "CO"),
+            AggregatedUtterancesFilterOperator::Equals => write!(f, "EQ"),
+            AggregatedUtterancesFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

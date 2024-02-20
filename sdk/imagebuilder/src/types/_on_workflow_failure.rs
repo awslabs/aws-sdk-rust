@@ -96,3 +96,12 @@ impl OnWorkflowFailure {
         }
     }
 }
+impl ::std::fmt::Display for OnWorkflowFailure {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OnWorkflowFailure::Abort => write!(f, "ABORT"),
+            OnWorkflowFailure::Continue => write!(f, "CONTINUE"),
+            OnWorkflowFailure::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

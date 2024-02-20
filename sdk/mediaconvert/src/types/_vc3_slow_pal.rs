@@ -96,3 +96,12 @@ impl Vc3SlowPal {
         }
     }
 }
+impl ::std::fmt::Display for Vc3SlowPal {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Vc3SlowPal::Disabled => write!(f, "DISABLED"),
+            Vc3SlowPal::Enabled => write!(f, "ENABLED"),
+            Vc3SlowPal::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

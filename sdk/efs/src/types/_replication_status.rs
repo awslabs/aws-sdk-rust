@@ -116,3 +116,16 @@ impl ReplicationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationStatus::Deleting => write!(f, "DELETING"),
+            ReplicationStatus::Enabled => write!(f, "ENABLED"),
+            ReplicationStatus::Enabling => write!(f, "ENABLING"),
+            ReplicationStatus::Error => write!(f, "ERROR"),
+            ReplicationStatus::Paused => write!(f, "PAUSED"),
+            ReplicationStatus::Pausing => write!(f, "PAUSING"),
+            ReplicationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

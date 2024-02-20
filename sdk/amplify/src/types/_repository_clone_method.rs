@@ -101,3 +101,13 @@ impl RepositoryCloneMethod {
         }
     }
 }
+impl ::std::fmt::Display for RepositoryCloneMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RepositoryCloneMethod::Sigv4 => write!(f, "SIGV4"),
+            RepositoryCloneMethod::Ssh => write!(f, "SSH"),
+            RepositoryCloneMethod::Token => write!(f, "TOKEN"),
+            RepositoryCloneMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

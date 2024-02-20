@@ -147,3 +147,20 @@ impl DashboardErrorType {
         }
     }
 }
+impl ::std::fmt::Display for DashboardErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashboardErrorType::AccessDenied => write!(f, "ACCESS_DENIED"),
+            DashboardErrorType::ColumnGeographicRoleMismatch => write!(f, "COLUMN_GEOGRAPHIC_ROLE_MISMATCH"),
+            DashboardErrorType::ColumnReplacementMissing => write!(f, "COLUMN_REPLACEMENT_MISSING"),
+            DashboardErrorType::ColumnTypeMismatch => write!(f, "COLUMN_TYPE_MISMATCH"),
+            DashboardErrorType::DataSetNotFound => write!(f, "DATA_SET_NOT_FOUND"),
+            DashboardErrorType::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            DashboardErrorType::ParameterNotFound => write!(f, "PARAMETER_NOT_FOUND"),
+            DashboardErrorType::ParameterTypeInvalid => write!(f, "PARAMETER_TYPE_INVALID"),
+            DashboardErrorType::ParameterValueIncompatible => write!(f, "PARAMETER_VALUE_INCOMPATIBLE"),
+            DashboardErrorType::SourceNotFound => write!(f, "SOURCE_NOT_FOUND"),
+            DashboardErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

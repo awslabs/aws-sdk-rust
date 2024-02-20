@@ -96,3 +96,12 @@ impl ActivationOverrideBehavior {
         }
     }
 }
+impl ::std::fmt::Display for ActivationOverrideBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActivationOverrideBehavior::AllGrantsPermittedByIssuer => write!(f, "ALL_GRANTS_PERMITTED_BY_ISSUER"),
+            ActivationOverrideBehavior::DistributedGrantsOnly => write!(f, "DISTRIBUTED_GRANTS_ONLY"),
+            ActivationOverrideBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

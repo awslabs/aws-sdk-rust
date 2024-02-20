@@ -96,3 +96,12 @@ impl TypeDefinitionFormat {
         }
     }
 }
+impl ::std::fmt::Display for TypeDefinitionFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TypeDefinitionFormat::Json => write!(f, "JSON"),
+            TypeDefinitionFormat::Sdl => write!(f, "SDL"),
+            TypeDefinitionFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl LifecyclePolicyPreviewStatus {
         }
     }
 }
+impl ::std::fmt::Display for LifecyclePolicyPreviewStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecyclePolicyPreviewStatus::Complete => write!(f, "COMPLETE"),
+            LifecyclePolicyPreviewStatus::Expired => write!(f, "EXPIRED"),
+            LifecyclePolicyPreviewStatus::Failed => write!(f, "FAILED"),
+            LifecyclePolicyPreviewStatus::InProgress => write!(f, "IN_PROGRESS"),
+            LifecyclePolicyPreviewStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

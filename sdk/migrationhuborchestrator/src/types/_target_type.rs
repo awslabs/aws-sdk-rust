@@ -101,3 +101,13 @@ impl TargetType {
         }
     }
 }
+impl ::std::fmt::Display for TargetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetType::All => write!(f, "ALL"),
+            TargetType::None => write!(f, "NONE"),
+            TargetType::Single => write!(f, "SINGLE"),
+            TargetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

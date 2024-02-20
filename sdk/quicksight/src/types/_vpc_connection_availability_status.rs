@@ -101,3 +101,13 @@ impl VpcConnectionAvailabilityStatus {
         }
     }
 }
+impl ::std::fmt::Display for VpcConnectionAvailabilityStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcConnectionAvailabilityStatus::Available => write!(f, "AVAILABLE"),
+            VpcConnectionAvailabilityStatus::PartiallyAvailable => write!(f, "PARTIALLY_AVAILABLE"),
+            VpcConnectionAvailabilityStatus::Unavailable => write!(f, "UNAVAILABLE"),
+            VpcConnectionAvailabilityStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

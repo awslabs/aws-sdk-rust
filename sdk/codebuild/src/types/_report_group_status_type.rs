@@ -96,3 +96,12 @@ impl ReportGroupStatusType {
         }
     }
 }
+impl ::std::fmt::Display for ReportGroupStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportGroupStatusType::Active => write!(f, "ACTIVE"),
+            ReportGroupStatusType::Deleting => write!(f, "DELETING"),
+            ReportGroupStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

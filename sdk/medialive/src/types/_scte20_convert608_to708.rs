@@ -96,3 +96,12 @@ impl Scte20Convert608To708 {
         }
     }
 }
+impl ::std::fmt::Display for Scte20Convert608To708 {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Scte20Convert608To708::Disabled => write!(f, "DISABLED"),
+            Scte20Convert608To708::Upconvert => write!(f, "UPCONVERT"),
+            Scte20Convert608To708::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl H264SubGopLength {
         }
     }
 }
+impl ::std::fmt::Display for H264SubGopLength {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264SubGopLength::Dynamic => write!(f, "DYNAMIC"),
+            H264SubGopLength::Fixed => write!(f, "FIXED"),
+            H264SubGopLength::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

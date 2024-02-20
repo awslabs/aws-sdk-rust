@@ -167,3 +167,18 @@ impl BatchPredictionFilterVariable {
         }
     }
 }
+impl ::std::fmt::Display for BatchPredictionFilterVariable {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchPredictionFilterVariable::CreatedAt => write!(f, "CreatedAt"),
+            BatchPredictionFilterVariable::DatasourceId => write!(f, "DataSourceId"),
+            BatchPredictionFilterVariable::DataUri => write!(f, "DataURI"),
+            BatchPredictionFilterVariable::IamUser => write!(f, "IAMUser"),
+            BatchPredictionFilterVariable::LastUpdatedAt => write!(f, "LastUpdatedAt"),
+            BatchPredictionFilterVariable::MlModelId => write!(f, "MLModelId"),
+            BatchPredictionFilterVariable::Name => write!(f, "Name"),
+            BatchPredictionFilterVariable::Status => write!(f, "Status"),
+            BatchPredictionFilterVariable::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

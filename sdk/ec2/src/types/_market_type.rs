@@ -96,3 +96,12 @@ impl MarketType {
         }
     }
 }
+impl ::std::fmt::Display for MarketType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MarketType::CapacityBlock => write!(f, "capacity-block"),
+            MarketType::Spot => write!(f, "spot"),
+            MarketType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl HlsCodecSpecification {
         }
     }
 }
+impl ::std::fmt::Display for HlsCodecSpecification {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsCodecSpecification::Rfc4281 => write!(f, "RFC_4281"),
+            HlsCodecSpecification::Rfc6381 => write!(f, "RFC_6381"),
+            HlsCodecSpecification::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

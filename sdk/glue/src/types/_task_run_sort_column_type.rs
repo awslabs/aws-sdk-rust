@@ -101,3 +101,13 @@ impl TaskRunSortColumnType {
         }
     }
 }
+impl ::std::fmt::Display for TaskRunSortColumnType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskRunSortColumnType::Started => write!(f, "STARTED"),
+            TaskRunSortColumnType::Status => write!(f, "STATUS"),
+            TaskRunSortColumnType::TaskRunType => write!(f, "TASK_RUN_TYPE"),
+            TaskRunSortColumnType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

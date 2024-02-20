@@ -111,3 +111,15 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Application => write!(f, "Application"),
+            ResourceType::Configuration => write!(f, "Configuration"),
+            ResourceType::ConfigurationProfile => write!(f, "ConfigurationProfile"),
+            ResourceType::Deployment => write!(f, "Deployment"),
+            ResourceType::Environment => write!(f, "Environment"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

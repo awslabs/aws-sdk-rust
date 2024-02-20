@@ -135,3 +135,18 @@ impl BotStatus {
         }
     }
 }
+impl ::std::fmt::Display for BotStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotStatus::Available => write!(f, "Available"),
+            BotStatus::Creating => write!(f, "Creating"),
+            BotStatus::Deleting => write!(f, "Deleting"),
+            BotStatus::Failed => write!(f, "Failed"),
+            BotStatus::Importing => write!(f, "Importing"),
+            BotStatus::Inactive => write!(f, "Inactive"),
+            BotStatus::Updating => write!(f, "Updating"),
+            BotStatus::Versioning => write!(f, "Versioning"),
+            BotStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

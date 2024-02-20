@@ -135,3 +135,18 @@ impl UnsearchedFaceReason {
         }
     }
 }
+impl ::std::fmt::Display for UnsearchedFaceReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnsearchedFaceReason::ExceedsMaxFaces => write!(f, "EXCEEDS_MAX_FACES"),
+            UnsearchedFaceReason::ExtremePose => write!(f, "EXTREME_POSE"),
+            UnsearchedFaceReason::FaceNotLargest => write!(f, "FACE_NOT_LARGEST"),
+            UnsearchedFaceReason::LowBrightness => write!(f, "LOW_BRIGHTNESS"),
+            UnsearchedFaceReason::LowConfidence => write!(f, "LOW_CONFIDENCE"),
+            UnsearchedFaceReason::LowFaceQuality => write!(f, "LOW_FACE_QUALITY"),
+            UnsearchedFaceReason::LowSharpness => write!(f, "LOW_SHARPNESS"),
+            UnsearchedFaceReason::SmallBoundingBox => write!(f, "SMALL_BOUNDING_BOX"),
+            UnsearchedFaceReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

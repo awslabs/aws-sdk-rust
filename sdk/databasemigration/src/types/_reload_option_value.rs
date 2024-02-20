@@ -96,3 +96,12 @@ impl ReloadOptionValue {
         }
     }
 }
+impl ::std::fmt::Display for ReloadOptionValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReloadOptionValue::DataReload => write!(f, "data-reload"),
+            ReloadOptionValue::ValidateOnly => write!(f, "validate-only"),
+            ReloadOptionValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

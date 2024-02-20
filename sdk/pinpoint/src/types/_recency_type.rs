@@ -96,3 +96,12 @@ impl RecencyType {
         }
     }
 }
+impl ::std::fmt::Display for RecencyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecencyType::Active => write!(f, "ACTIVE"),
+            RecencyType::Inactive => write!(f, "INACTIVE"),
+            RecencyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,14 @@ impl CrAllocationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for CrAllocationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CrAllocationStrategy::BestFit => write!(f, "BEST_FIT"),
+            CrAllocationStrategy::BestFitProgressive => write!(f, "BEST_FIT_PROGRESSIVE"),
+            CrAllocationStrategy::SpotCapacityOptimized => write!(f, "SPOT_CAPACITY_OPTIMIZED"),
+            CrAllocationStrategy::SpotPriceCapacityOptimized => write!(f, "SPOT_PRICE_CAPACITY_OPTIMIZED"),
+            CrAllocationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

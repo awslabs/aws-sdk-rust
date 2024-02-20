@@ -101,3 +101,13 @@ impl UserStatus {
         }
     }
 }
+impl ::std::fmt::Display for UserStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserStatus::Creating => write!(f, "CREATING"),
+            UserStatus::Disabled => write!(f, "DISABLED"),
+            UserStatus::Enabled => write!(f, "ENABLED"),
+            UserStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DirectoryListingOptimization {
         }
     }
 }
+impl ::std::fmt::Display for DirectoryListingOptimization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectoryListingOptimization::Disabled => write!(f, "DISABLED"),
+            DirectoryListingOptimization::Enabled => write!(f, "ENABLED"),
+            DirectoryListingOptimization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

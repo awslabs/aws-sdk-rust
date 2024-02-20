@@ -96,3 +96,12 @@ impl KeyOrigin {
         }
     }
 }
+impl ::std::fmt::Display for KeyOrigin {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyOrigin::AwsPaymentCryptography => write!(f, "AWS_PAYMENT_CRYPTOGRAPHY"),
+            KeyOrigin::External => write!(f, "EXTERNAL"),
+            KeyOrigin::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

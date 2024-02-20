@@ -91,3 +91,11 @@ impl WorkflowType {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowType::AppflowIntegration => write!(f, "APPFLOW_INTEGRATION"),
+            WorkflowType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ImageRepositoryType {
         }
     }
 }
+impl ::std::fmt::Display for ImageRepositoryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageRepositoryType::Ecr => write!(f, "ECR"),
+            ImageRepositoryType::EcrPublic => write!(f, "ECR_PUBLIC"),
+            ImageRepositoryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

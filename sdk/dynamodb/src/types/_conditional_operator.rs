@@ -96,3 +96,12 @@ impl ConditionalOperator {
         }
     }
 }
+impl ::std::fmt::Display for ConditionalOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConditionalOperator::And => write!(f, "AND"),
+            ConditionalOperator::Or => write!(f, "OR"),
+            ConditionalOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

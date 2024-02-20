@@ -96,3 +96,12 @@ impl QueueStatus {
         }
     }
 }
+impl ::std::fmt::Display for QueueStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueueStatus::Disabled => write!(f, "DISABLED"),
+            QueueStatus::Enabled => write!(f, "ENABLED"),
+            QueueStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

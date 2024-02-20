@@ -101,3 +101,13 @@ impl CostCategorySplitChargeMethod {
         }
     }
 }
+impl ::std::fmt::Display for CostCategorySplitChargeMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CostCategorySplitChargeMethod::Even => write!(f, "EVEN"),
+            CostCategorySplitChargeMethod::Fixed => write!(f, "FIXED"),
+            CostCategorySplitChargeMethod::Proportional => write!(f, "PROPORTIONAL"),
+            CostCategorySplitChargeMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

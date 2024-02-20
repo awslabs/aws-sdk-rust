@@ -101,3 +101,13 @@ impl InstanceSavingsEstimationModeSource {
         }
     }
 }
+impl ::std::fmt::Display for InstanceSavingsEstimationModeSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceSavingsEstimationModeSource::CostExplorerRightsizing => write!(f, "CostExplorerRightsizing"),
+            InstanceSavingsEstimationModeSource::CostOptimizationHub => write!(f, "CostOptimizationHub"),
+            InstanceSavingsEstimationModeSource::PublicPricing => write!(f, "PublicPricing"),
+            InstanceSavingsEstimationModeSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

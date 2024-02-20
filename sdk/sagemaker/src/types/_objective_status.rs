@@ -101,3 +101,13 @@ impl ObjectiveStatus {
         }
     }
 }
+impl ::std::fmt::Display for ObjectiveStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectiveStatus::Failed => write!(f, "Failed"),
+            ObjectiveStatus::Pending => write!(f, "Pending"),
+            ObjectiveStatus::Succeeded => write!(f, "Succeeded"),
+            ObjectiveStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

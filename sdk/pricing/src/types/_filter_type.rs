@@ -91,3 +91,11 @@ impl FilterType {
         }
     }
 }
+impl ::std::fmt::Display for FilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterType::TermMatch => write!(f, "TERM_MATCH"),
+            FilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

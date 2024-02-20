@@ -106,3 +106,14 @@ impl ContentShareLayoutOption {
         }
     }
 }
+impl ::std::fmt::Display for ContentShareLayoutOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentShareLayoutOption::ActiveSpeakerOnly => write!(f, "ActiveSpeakerOnly"),
+            ContentShareLayoutOption::Horizontal => write!(f, "Horizontal"),
+            ContentShareLayoutOption::PresenterOnly => write!(f, "PresenterOnly"),
+            ContentShareLayoutOption::Vertical => write!(f, "Vertical"),
+            ContentShareLayoutOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

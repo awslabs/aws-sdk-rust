@@ -101,3 +101,13 @@ impl ApplicationInstanceHealthStatus {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationInstanceHealthStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationInstanceHealthStatus::Error => write!(f, "ERROR"),
+            ApplicationInstanceHealthStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
+            ApplicationInstanceHealthStatus::Running => write!(f, "RUNNING"),
+            ApplicationInstanceHealthStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ConfigurationState {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationState::Active => write!(f, "ACTIVE"),
+            ConfigurationState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ConfigurationState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            ConfigurationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

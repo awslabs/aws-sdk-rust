@@ -96,3 +96,12 @@ impl SrtStylePassthrough {
         }
     }
 }
+impl ::std::fmt::Display for SrtStylePassthrough {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SrtStylePassthrough::Disabled => write!(f, "DISABLED"),
+            SrtStylePassthrough::Enabled => write!(f, "ENABLED"),
+            SrtStylePassthrough::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

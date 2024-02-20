@@ -111,3 +111,14 @@ impl UsageType {
         }
     }
 }
+impl ::std::fmt::Display for UsageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageType::AutomatedObjectMonitoring => write!(f, "AUTOMATED_OBJECT_MONITORING"),
+            UsageType::AutomatedSensitiveDataDiscovery => write!(f, "AUTOMATED_SENSITIVE_DATA_DISCOVERY"),
+            UsageType::DataInventoryEvaluation => write!(f, "DATA_INVENTORY_EVALUATION"),
+            UsageType::SensitiveDataDiscovery => write!(f, "SENSITIVE_DATA_DISCOVERY"),
+            UsageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl FeatureType {
         }
     }
 }
+impl ::std::fmt::Display for FeatureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeatureType::Fractional => write!(f, "Fractional"),
+            FeatureType::Integral => write!(f, "Integral"),
+            FeatureType::String => write!(f, "String"),
+            FeatureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

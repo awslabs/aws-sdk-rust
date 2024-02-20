@@ -101,3 +101,13 @@ impl AnalyticsFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsFilterOperator::Equals => write!(f, "EQ"),
+            AnalyticsFilterOperator::GreaterThan => write!(f, "GT"),
+            AnalyticsFilterOperator::LessThan => write!(f, "LT"),
+            AnalyticsFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl FontWeightName {
         }
     }
 }
+impl ::std::fmt::Display for FontWeightName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FontWeightName::Bold => write!(f, "BOLD"),
+            FontWeightName::Normal => write!(f, "NORMAL"),
+            FontWeightName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

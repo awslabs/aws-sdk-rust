@@ -96,3 +96,12 @@ impl M2tsKlv {
         }
     }
 }
+impl ::std::fmt::Display for M2tsKlv {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsKlv::None => write!(f, "NONE"),
+            M2tsKlv::Passthrough => write!(f, "PASSTHROUGH"),
+            M2tsKlv::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

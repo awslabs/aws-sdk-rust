@@ -129,3 +129,17 @@ impl CannedAcl {
         }
     }
 }
+impl ::std::fmt::Display for CannedAcl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CannedAcl::AuthenticatedRead => write!(f, "authenticated-read"),
+            CannedAcl::AwsExecRead => write!(f, "aws-exec-read"),
+            CannedAcl::BucketOwnerFullControl => write!(f, "bucket-owner-full-control"),
+            CannedAcl::BucketOwnerRead => write!(f, "bucket-owner-read"),
+            CannedAcl::Private => write!(f, "private"),
+            CannedAcl::PublicRead => write!(f, "public-read"),
+            CannedAcl::PublicReadWrite => write!(f, "public-read-write"),
+            CannedAcl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

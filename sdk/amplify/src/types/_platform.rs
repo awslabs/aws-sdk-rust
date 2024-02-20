@@ -101,3 +101,13 @@ impl Platform {
         }
     }
 }
+impl ::std::fmt::Display for Platform {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Platform::Web => write!(f, "WEB"),
+            Platform::WebCompute => write!(f, "WEB_COMPUTE"),
+            Platform::WebDynamic => write!(f, "WEB_DYNAMIC"),
+            Platform::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

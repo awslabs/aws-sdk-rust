@@ -96,3 +96,12 @@ impl ObfuscationSetting {
         }
     }
 }
+impl ::std::fmt::Display for ObfuscationSetting {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObfuscationSetting::DefaultObfuscation => write!(f, "DEFAULT_OBFUSCATION"),
+            ObfuscationSetting::None => write!(f, "NONE"),
+            ObfuscationSetting::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

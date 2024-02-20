@@ -96,3 +96,12 @@ impl AdminStatus {
         }
     }
 }
+impl ::std::fmt::Display for AdminStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdminStatus::DisableInProgress => write!(f, "DISABLE_IN_PROGRESS"),
+            AdminStatus::Enabled => write!(f, "ENABLED"),
+            AdminStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl ActionTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for ActionTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionTypeEnum::AuthenticateCognito => write!(f, "authenticate-cognito"),
+            ActionTypeEnum::AuthenticateOidc => write!(f, "authenticate-oidc"),
+            ActionTypeEnum::FixedResponse => write!(f, "fixed-response"),
+            ActionTypeEnum::Forward => write!(f, "forward"),
+            ActionTypeEnum::Redirect => write!(f, "redirect"),
+            ActionTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

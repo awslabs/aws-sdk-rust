@@ -96,3 +96,12 @@ impl OrderBy {
         }
     }
 }
+impl ::std::fmt::Display for OrderBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrderBy::TimestampAscending => write!(f, "TimestampAscending"),
+            OrderBy::TimestampDescending => write!(f, "TimestampDescending"),
+            OrderBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

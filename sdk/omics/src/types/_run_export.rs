@@ -91,3 +91,11 @@ impl RunExport {
         }
     }
 }
+impl ::std::fmt::Display for RunExport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RunExport::Definition => write!(f, "DEFINITION"),
+            RunExport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl BlackoutSlateState {
         }
     }
 }
+impl ::std::fmt::Display for BlackoutSlateState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BlackoutSlateState::Disabled => write!(f, "DISABLED"),
+            BlackoutSlateState::Enabled => write!(f, "ENABLED"),
+            BlackoutSlateState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -121,3 +121,17 @@ impl CertificateAuthorityStatus {
         }
     }
 }
+impl ::std::fmt::Display for CertificateAuthorityStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateAuthorityStatus::Active => write!(f, "ACTIVE"),
+            CertificateAuthorityStatus::Creating => write!(f, "CREATING"),
+            CertificateAuthorityStatus::Deleted => write!(f, "DELETED"),
+            CertificateAuthorityStatus::Disabled => write!(f, "DISABLED"),
+            CertificateAuthorityStatus::Expired => write!(f, "EXPIRED"),
+            CertificateAuthorityStatus::Failed => write!(f, "FAILED"),
+            CertificateAuthorityStatus::PendingCertificate => write!(f, "PENDING_CERTIFICATE"),
+            CertificateAuthorityStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

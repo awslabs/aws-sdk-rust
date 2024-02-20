@@ -101,3 +101,13 @@ impl ActionsSuppressedBy {
         }
     }
 }
+impl ::std::fmt::Display for ActionsSuppressedBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionsSuppressedBy::Alarm => write!(f, "Alarm"),
+            ActionsSuppressedBy::ExtensionPeriod => write!(f, "ExtensionPeriod"),
+            ActionsSuppressedBy::WaitPeriod => write!(f, "WaitPeriod"),
+            ActionsSuppressedBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

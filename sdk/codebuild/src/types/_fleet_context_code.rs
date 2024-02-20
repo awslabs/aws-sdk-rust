@@ -96,3 +96,12 @@ impl FleetContextCode {
         }
     }
 }
+impl ::std::fmt::Display for FleetContextCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetContextCode::CreateFailed => write!(f, "CREATE_FAILED"),
+            FleetContextCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            FleetContextCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

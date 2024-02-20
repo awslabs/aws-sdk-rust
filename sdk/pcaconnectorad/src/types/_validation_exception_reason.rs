@@ -135,3 +135,18 @@ impl ValidationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ValidationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationExceptionReason::FieldValidationFailed => write!(f, "FIELD_VALIDATION_FAILED"),
+            ValidationExceptionReason::InvalidPermission => write!(f, "INVALID_PERMISSION"),
+            ValidationExceptionReason::InvalidState => write!(f, "INVALID_STATE"),
+            ValidationExceptionReason::MismatchedConnector => write!(f, "MISMATCHED_CONNECTOR"),
+            ValidationExceptionReason::MismatchedVpc => write!(f, "MISMATCHED_VPC"),
+            ValidationExceptionReason::NoClientToken => write!(f, "NO_CLIENT_TOKEN"),
+            ValidationExceptionReason::Other => write!(f, "OTHER"),
+            ValidationExceptionReason::UnknownOperation => write!(f, "UNKNOWN_OPERATION"),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

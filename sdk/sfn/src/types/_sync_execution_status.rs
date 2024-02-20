@@ -101,3 +101,13 @@ impl SyncExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for SyncExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SyncExecutionStatus::Failed => write!(f, "FAILED"),
+            SyncExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
+            SyncExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
+            SyncExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

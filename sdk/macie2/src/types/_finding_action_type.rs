@@ -91,3 +91,11 @@ impl FindingActionType {
         }
     }
 }
+impl ::std::fmt::Display for FindingActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingActionType::AwsApiCall => write!(f, "AWS_API_CALL"),
+            FindingActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

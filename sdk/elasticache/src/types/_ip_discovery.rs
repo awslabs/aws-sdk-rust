@@ -96,3 +96,12 @@ impl IpDiscovery {
         }
     }
 }
+impl ::std::fmt::Display for IpDiscovery {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpDiscovery::Ipv4 => write!(f, "ipv4"),
+            IpDiscovery::Ipv6 => write!(f, "ipv6"),
+            IpDiscovery::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

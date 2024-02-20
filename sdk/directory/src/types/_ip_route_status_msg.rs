@@ -116,3 +116,16 @@ impl IpRouteStatusMsg {
         }
     }
 }
+impl ::std::fmt::Display for IpRouteStatusMsg {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpRouteStatusMsg::AddFailed => write!(f, "AddFailed"),
+            IpRouteStatusMsg::Added => write!(f, "Added"),
+            IpRouteStatusMsg::Adding => write!(f, "Adding"),
+            IpRouteStatusMsg::RemoveFailed => write!(f, "RemoveFailed"),
+            IpRouteStatusMsg::Removed => write!(f, "Removed"),
+            IpRouteStatusMsg::Removing => write!(f, "Removing"),
+            IpRouteStatusMsg::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

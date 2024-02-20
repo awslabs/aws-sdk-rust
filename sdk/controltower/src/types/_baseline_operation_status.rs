@@ -101,3 +101,13 @@ impl BaselineOperationStatus {
         }
     }
 }
+impl ::std::fmt::Display for BaselineOperationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BaselineOperationStatus::Failed => write!(f, "FAILED"),
+            BaselineOperationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            BaselineOperationStatus::Succeeded => write!(f, "SUCCEEDED"),
+            BaselineOperationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

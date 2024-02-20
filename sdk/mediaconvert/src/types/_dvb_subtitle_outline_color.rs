@@ -121,3 +121,17 @@ impl DvbSubtitleOutlineColor {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubtitleOutlineColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubtitleOutlineColor::Auto => write!(f, "AUTO"),
+            DvbSubtitleOutlineColor::Black => write!(f, "BLACK"),
+            DvbSubtitleOutlineColor::Blue => write!(f, "BLUE"),
+            DvbSubtitleOutlineColor::Green => write!(f, "GREEN"),
+            DvbSubtitleOutlineColor::Red => write!(f, "RED"),
+            DvbSubtitleOutlineColor::White => write!(f, "WHITE"),
+            DvbSubtitleOutlineColor::Yellow => write!(f, "YELLOW"),
+            DvbSubtitleOutlineColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

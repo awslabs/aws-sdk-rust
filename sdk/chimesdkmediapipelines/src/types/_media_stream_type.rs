@@ -96,3 +96,12 @@ impl MediaStreamType {
         }
     }
 }
+impl ::std::fmt::Display for MediaStreamType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaStreamType::IndividualAudio => write!(f, "IndividualAudio"),
+            MediaStreamType::MixedAudio => write!(f, "MixedAudio"),
+            MediaStreamType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

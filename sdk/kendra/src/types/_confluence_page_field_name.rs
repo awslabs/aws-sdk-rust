@@ -159,3 +159,22 @@ impl ConfluencePageFieldName {
         }
     }
 }
+impl ::std::fmt::Display for ConfluencePageFieldName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfluencePageFieldName::Author => write!(f, "AUTHOR"),
+            ConfluencePageFieldName::ContentStatus => write!(f, "CONTENT_STATUS"),
+            ConfluencePageFieldName::CreatedDate => write!(f, "CREATED_DATE"),
+            ConfluencePageFieldName::DisplayUrl => write!(f, "DISPLAY_URL"),
+            ConfluencePageFieldName::ItemType => write!(f, "ITEM_TYPE"),
+            ConfluencePageFieldName::Labels => write!(f, "LABELS"),
+            ConfluencePageFieldName::ModifiedDate => write!(f, "MODIFIED_DATE"),
+            ConfluencePageFieldName::ParentId => write!(f, "PARENT_ID"),
+            ConfluencePageFieldName::SpaceKey => write!(f, "SPACE_KEY"),
+            ConfluencePageFieldName::SpaceName => write!(f, "SPACE_NAME"),
+            ConfluencePageFieldName::Url => write!(f, "URL"),
+            ConfluencePageFieldName::Version => write!(f, "VERSION"),
+            ConfluencePageFieldName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

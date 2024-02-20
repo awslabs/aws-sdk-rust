@@ -96,3 +96,12 @@ impl DiagnosticsMode {
         }
     }
 }
+impl ::std::fmt::Display for DiagnosticsMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiagnosticsMode::Off => write!(f, "OFF"),
+            DiagnosticsMode::SendActiveDtcs => write!(f, "SEND_ACTIVE_DTCS"),
+            DiagnosticsMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

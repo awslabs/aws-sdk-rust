@@ -96,3 +96,12 @@ impl SettablePolicyStateValues {
         }
     }
 }
+impl ::std::fmt::Display for SettablePolicyStateValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SettablePolicyStateValues::Disabled => write!(f, "DISABLED"),
+            SettablePolicyStateValues::Enabled => write!(f, "ENABLED"),
+            SettablePolicyStateValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

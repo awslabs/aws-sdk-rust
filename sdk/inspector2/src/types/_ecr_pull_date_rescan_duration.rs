@@ -111,3 +111,15 @@ impl EcrPullDateRescanDuration {
         }
     }
 }
+impl ::std::fmt::Display for EcrPullDateRescanDuration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcrPullDateRescanDuration::Days14 => write!(f, "DAYS_14"),
+            EcrPullDateRescanDuration::Days180 => write!(f, "DAYS_180"),
+            EcrPullDateRescanDuration::Days30 => write!(f, "DAYS_30"),
+            EcrPullDateRescanDuration::Days60 => write!(f, "DAYS_60"),
+            EcrPullDateRescanDuration::Days90 => write!(f, "DAYS_90"),
+            EcrPullDateRescanDuration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

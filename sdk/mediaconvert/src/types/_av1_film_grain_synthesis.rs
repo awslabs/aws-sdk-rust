@@ -96,3 +96,12 @@ impl Av1FilmGrainSynthesis {
         }
     }
 }
+impl ::std::fmt::Display for Av1FilmGrainSynthesis {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Av1FilmGrainSynthesis::Disabled => write!(f, "DISABLED"),
+            Av1FilmGrainSynthesis::Enabled => write!(f, "ENABLED"),
+            Av1FilmGrainSynthesis::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

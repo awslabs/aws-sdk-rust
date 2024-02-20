@@ -116,3 +116,16 @@ impl InstanceHealthState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceHealthState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceHealthState::Draining => write!(f, "draining"),
+            InstanceHealthState::Healthy => write!(f, "healthy"),
+            InstanceHealthState::Initial => write!(f, "initial"),
+            InstanceHealthState::Unavailable => write!(f, "unavailable"),
+            InstanceHealthState::Unhealthy => write!(f, "unhealthy"),
+            InstanceHealthState::Unused => write!(f, "unused"),
+            InstanceHealthState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

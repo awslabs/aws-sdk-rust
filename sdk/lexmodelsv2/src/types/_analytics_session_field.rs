@@ -96,3 +96,12 @@ impl AnalyticsSessionField {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsSessionField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsSessionField::ConversationEndState => write!(f, "ConversationEndState"),
+            AnalyticsSessionField::LocaleId => write!(f, "LocaleId"),
+            AnalyticsSessionField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

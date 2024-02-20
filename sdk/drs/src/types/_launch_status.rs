@@ -111,3 +111,15 @@ impl LaunchStatus {
         }
     }
 }
+impl ::std::fmt::Display for LaunchStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchStatus::Failed => write!(f, "FAILED"),
+            LaunchStatus::InProgress => write!(f, "IN_PROGRESS"),
+            LaunchStatus::Launched => write!(f, "LAUNCHED"),
+            LaunchStatus::Pending => write!(f, "PENDING"),
+            LaunchStatus::Terminated => write!(f, "TERMINATED"),
+            LaunchStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

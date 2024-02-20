@@ -96,3 +96,12 @@ impl ResourceStringComparison {
         }
     }
 }
+impl ::std::fmt::Display for ResourceStringComparison {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceStringComparison::Equals => write!(f, "EQUALS"),
+            ResourceStringComparison::NotEquals => write!(f, "NOT_EQUALS"),
+            ResourceStringComparison::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

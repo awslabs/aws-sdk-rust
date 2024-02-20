@@ -96,3 +96,12 @@ impl MessageFormatValue {
         }
     }
 }
+impl ::std::fmt::Display for MessageFormatValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessageFormatValue::Json => write!(f, "json"),
+            MessageFormatValue::JsonUnformatted => write!(f, "json-unformatted"),
+            MessageFormatValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

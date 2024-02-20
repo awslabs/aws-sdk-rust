@@ -101,3 +101,13 @@ impl FieldLogLevel {
         }
     }
 }
+impl ::std::fmt::Display for FieldLogLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FieldLogLevel::All => write!(f, "ALL"),
+            FieldLogLevel::Error => write!(f, "ERROR"),
+            FieldLogLevel::None => write!(f, "NONE"),
+            FieldLogLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

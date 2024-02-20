@@ -96,3 +96,12 @@ impl AnomalyDetectorType {
         }
     }
 }
+impl ::std::fmt::Display for AnomalyDetectorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnomalyDetectorType::MetricMath => write!(f, "METRIC_MATH"),
+            AnomalyDetectorType::SingleMetric => write!(f, "SINGLE_METRIC"),
+            AnomalyDetectorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

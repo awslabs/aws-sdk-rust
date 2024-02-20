@@ -121,3 +121,17 @@ impl EnvironmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentStatus::Connecting => write!(f, "connecting"),
+            EnvironmentStatus::Creating => write!(f, "creating"),
+            EnvironmentStatus::Deleting => write!(f, "deleting"),
+            EnvironmentStatus::Error => write!(f, "error"),
+            EnvironmentStatus::Ready => write!(f, "ready"),
+            EnvironmentStatus::Stopped => write!(f, "stopped"),
+            EnvironmentStatus::Stopping => write!(f, "stopping"),
+            EnvironmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

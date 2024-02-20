@@ -106,3 +106,14 @@ impl RestoreValidationStatus {
         }
     }
 }
+impl ::std::fmt::Display for RestoreValidationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RestoreValidationStatus::Failed => write!(f, "FAILED"),
+            RestoreValidationStatus::Successful => write!(f, "SUCCESSFUL"),
+            RestoreValidationStatus::TimedOut => write!(f, "TIMED_OUT"),
+            RestoreValidationStatus::Validating => write!(f, "VALIDATING"),
+            RestoreValidationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

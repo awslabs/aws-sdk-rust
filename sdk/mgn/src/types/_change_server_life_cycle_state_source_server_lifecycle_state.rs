@@ -103,3 +103,13 @@ impl ChangeServerLifeCycleStateSourceServerLifecycleState {
         }
     }
 }
+impl ::std::fmt::Display for ChangeServerLifeCycleStateSourceServerLifecycleState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeServerLifeCycleStateSourceServerLifecycleState::Cutover => write!(f, "CUTOVER"),
+            ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForCutover => write!(f, "READY_FOR_CUTOVER"),
+            ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForTest => write!(f, "READY_FOR_TEST"),
+            ChangeServerLifeCycleStateSourceServerLifecycleState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl AuthorizationType {
         }
     }
 }
+impl ::std::fmt::Display for AuthorizationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthorizationType::AwsIam => write!(f, "AWS_IAM"),
+            AuthorizationType::Custom => write!(f, "CUSTOM"),
+            AuthorizationType::Jwt => write!(f, "JWT"),
+            AuthorizationType::None => write!(f, "NONE"),
+            AuthorizationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

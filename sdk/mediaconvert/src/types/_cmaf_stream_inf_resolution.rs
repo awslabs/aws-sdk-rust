@@ -96,3 +96,12 @@ impl CmafStreamInfResolution {
         }
     }
 }
+impl ::std::fmt::Display for CmafStreamInfResolution {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafStreamInfResolution::Exclude => write!(f, "EXCLUDE"),
+            CmafStreamInfResolution::Include => write!(f, "INCLUDE"),
+            CmafStreamInfResolution::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

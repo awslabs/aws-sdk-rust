@@ -96,3 +96,12 @@ impl CheckAccessNotGrantedResult {
         }
     }
 }
+impl ::std::fmt::Display for CheckAccessNotGrantedResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CheckAccessNotGrantedResult::Fail => write!(f, "FAIL"),
+            CheckAccessNotGrantedResult::Pass => write!(f, "PASS"),
+            CheckAccessNotGrantedResult::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

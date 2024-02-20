@@ -96,3 +96,12 @@ impl CmafPtsOffsetHandlingForBFrames {
         }
     }
 }
+impl ::std::fmt::Display for CmafPtsOffsetHandlingForBFrames {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafPtsOffsetHandlingForBFrames::MatchInitialPts => write!(f, "MATCH_INITIAL_PTS"),
+            CmafPtsOffsetHandlingForBFrames::ZeroBased => write!(f, "ZERO_BASED"),
+            CmafPtsOffsetHandlingForBFrames::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

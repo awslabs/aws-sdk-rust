@@ -96,3 +96,12 @@ impl EncryptionOption {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionOption::AoCmk => write!(f, "AWS_OWNED_CMK"),
+            EncryptionOption::CmCmk => write!(f, "CUSTOMER_MANAGED_CMK"),
+            EncryptionOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

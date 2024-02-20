@@ -96,3 +96,12 @@ impl Mpeg2SlowPal {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2SlowPal {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2SlowPal::Disabled => write!(f, "DISABLED"),
+            Mpeg2SlowPal::Enabled => write!(f, "ENABLED"),
+            Mpeg2SlowPal::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

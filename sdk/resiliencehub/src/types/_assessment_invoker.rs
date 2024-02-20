@@ -96,3 +96,12 @@ impl AssessmentInvoker {
         }
     }
 }
+impl ::std::fmt::Display for AssessmentInvoker {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssessmentInvoker::System => write!(f, "System"),
+            AssessmentInvoker::User => write!(f, "User"),
+            AssessmentInvoker::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

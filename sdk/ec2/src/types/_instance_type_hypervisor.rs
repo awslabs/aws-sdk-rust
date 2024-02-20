@@ -96,3 +96,12 @@ impl InstanceTypeHypervisor {
         }
     }
 }
+impl ::std::fmt::Display for InstanceTypeHypervisor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceTypeHypervisor::Nitro => write!(f, "nitro"),
+            InstanceTypeHypervisor::Xen => write!(f, "xen"),
+            InstanceTypeHypervisor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

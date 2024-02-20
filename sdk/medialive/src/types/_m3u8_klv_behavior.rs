@@ -96,3 +96,12 @@ impl M3u8KlvBehavior {
         }
     }
 }
+impl ::std::fmt::Display for M3u8KlvBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M3u8KlvBehavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
+            M3u8KlvBehavior::Passthrough => write!(f, "PASSTHROUGH"),
+            M3u8KlvBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

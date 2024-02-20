@@ -96,3 +96,12 @@ impl UserType {
         }
     }
 }
+impl ::std::fmt::Display for UserType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserType::AppUser => write!(f, "APP_USER"),
+            UserType::SuperUser => write!(f, "SUPER_USER"),
+            UserType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

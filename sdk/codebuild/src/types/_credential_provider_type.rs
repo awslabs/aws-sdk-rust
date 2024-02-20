@@ -91,3 +91,11 @@ impl CredentialProviderType {
         }
     }
 }
+impl ::std::fmt::Display for CredentialProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CredentialProviderType::SecretsManager => write!(f, "SECRETS_MANAGER"),
+            CredentialProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

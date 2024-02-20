@@ -101,3 +101,13 @@ impl ProjectSortByType {
         }
     }
 }
+impl ::std::fmt::Display for ProjectSortByType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProjectSortByType::CreatedTime => write!(f, "CREATED_TIME"),
+            ProjectSortByType::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
+            ProjectSortByType::Name => write!(f, "NAME"),
+            ProjectSortByType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

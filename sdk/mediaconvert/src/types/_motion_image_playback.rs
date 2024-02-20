@@ -96,3 +96,12 @@ impl MotionImagePlayback {
         }
     }
 }
+impl ::std::fmt::Display for MotionImagePlayback {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MotionImagePlayback::Once => write!(f, "ONCE"),
+            MotionImagePlayback::Repeat => write!(f, "REPEAT"),
+            MotionImagePlayback::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

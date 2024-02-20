@@ -111,3 +111,15 @@ impl NetworkSiteStatus {
         }
     }
 }
+impl ::std::fmt::Display for NetworkSiteStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkSiteStatus::Available => write!(f, "AVAILABLE"),
+            NetworkSiteStatus::Created => write!(f, "CREATED"),
+            NetworkSiteStatus::Deleted => write!(f, "DELETED"),
+            NetworkSiteStatus::Deprovisioning => write!(f, "DEPROVISIONING"),
+            NetworkSiteStatus::Provisioning => write!(f, "PROVISIONING"),
+            NetworkSiteStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

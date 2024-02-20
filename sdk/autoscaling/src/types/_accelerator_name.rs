@@ -121,3 +121,17 @@ impl AcceleratorName {
         }
     }
 }
+impl ::std::fmt::Display for AcceleratorName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AcceleratorName::A100 => write!(f, "a100"),
+            AcceleratorName::K80 => write!(f, "k80"),
+            AcceleratorName::M60 => write!(f, "m60"),
+            AcceleratorName::RadeonProV520 => write!(f, "radeon-pro-v520"),
+            AcceleratorName::T4 => write!(f, "t4"),
+            AcceleratorName::V100 => write!(f, "v100"),
+            AcceleratorName::Vu9P => write!(f, "vu9p"),
+            AcceleratorName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

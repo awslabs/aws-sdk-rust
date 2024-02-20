@@ -101,3 +101,13 @@ impl AccessMethodType {
         }
     }
 }
+impl ::std::fmt::Display for AccessMethodType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessMethodType::CaRepository => write!(f, "CA_REPOSITORY"),
+            AccessMethodType::ResourcePkiManifest => write!(f, "RESOURCE_PKI_MANIFEST"),
+            AccessMethodType::ResourcePkiNotify => write!(f, "RESOURCE_PKI_NOTIFY"),
+            AccessMethodType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

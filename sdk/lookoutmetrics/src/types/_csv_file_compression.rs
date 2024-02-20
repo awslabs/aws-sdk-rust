@@ -96,3 +96,12 @@ impl CsvFileCompression {
         }
     }
 }
+impl ::std::fmt::Display for CsvFileCompression {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CsvFileCompression::Gzip => write!(f, "GZIP"),
+            CsvFileCompression::None => write!(f, "NONE"),
+            CsvFileCompression::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

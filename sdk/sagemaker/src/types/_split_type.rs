@@ -106,3 +106,14 @@ impl SplitType {
         }
     }
 }
+impl ::std::fmt::Display for SplitType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SplitType::Line => write!(f, "Line"),
+            SplitType::None => write!(f, "None"),
+            SplitType::Recordio => write!(f, "RecordIO"),
+            SplitType::Tfrecord => write!(f, "TFRecord"),
+            SplitType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

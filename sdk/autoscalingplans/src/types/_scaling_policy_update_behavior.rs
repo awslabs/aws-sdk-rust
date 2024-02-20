@@ -96,3 +96,12 @@ impl ScalingPolicyUpdateBehavior {
         }
     }
 }
+impl ::std::fmt::Display for ScalingPolicyUpdateBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalingPolicyUpdateBehavior::KeepExternalPolicies => write!(f, "KeepExternalPolicies"),
+            ScalingPolicyUpdateBehavior::ReplaceExternalPolicies => write!(f, "ReplaceExternalPolicies"),
+            ScalingPolicyUpdateBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

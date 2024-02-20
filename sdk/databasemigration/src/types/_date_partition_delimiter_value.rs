@@ -106,3 +106,14 @@ impl DatePartitionDelimiterValue {
         }
     }
 }
+impl ::std::fmt::Display for DatePartitionDelimiterValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatePartitionDelimiterValue::Dash => write!(f, "DASH"),
+            DatePartitionDelimiterValue::None => write!(f, "NONE"),
+            DatePartitionDelimiterValue::Slash => write!(f, "SLASH"),
+            DatePartitionDelimiterValue::Underscore => write!(f, "UNDERSCORE"),
+            DatePartitionDelimiterValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

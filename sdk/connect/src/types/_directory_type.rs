@@ -101,3 +101,13 @@ impl DirectoryType {
         }
     }
 }
+impl ::std::fmt::Display for DirectoryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectoryType::ConnectManaged => write!(f, "CONNECT_MANAGED"),
+            DirectoryType::ExistingDirectory => write!(f, "EXISTING_DIRECTORY"),
+            DirectoryType::Saml => write!(f, "SAML"),
+            DirectoryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

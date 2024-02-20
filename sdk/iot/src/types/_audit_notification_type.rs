@@ -91,3 +91,11 @@ impl AuditNotificationType {
         }
     }
 }
+impl ::std::fmt::Display for AuditNotificationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditNotificationType::Sns => write!(f, "SNS"),
+            AuditNotificationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl HyperParameterScalingType {
         }
     }
 }
+impl ::std::fmt::Display for HyperParameterScalingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HyperParameterScalingType::Auto => write!(f, "Auto"),
+            HyperParameterScalingType::Linear => write!(f, "Linear"),
+            HyperParameterScalingType::Logarithmic => write!(f, "Logarithmic"),
+            HyperParameterScalingType::ReverseLogarithmic => write!(f, "ReverseLogarithmic"),
+            HyperParameterScalingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ShareMethod {
         }
     }
 }
+impl ::std::fmt::Display for ShareMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareMethod::Handshake => write!(f, "HANDSHAKE"),
+            ShareMethod::Organizations => write!(f, "ORGANIZATIONS"),
+            ShareMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

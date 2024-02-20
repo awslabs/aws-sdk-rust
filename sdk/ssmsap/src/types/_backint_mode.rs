@@ -91,3 +91,11 @@ impl BackintMode {
         }
     }
 }
+impl ::std::fmt::Display for BackintMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackintMode::AwsBackup => write!(f, "AWSBackup"),
+            BackintMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

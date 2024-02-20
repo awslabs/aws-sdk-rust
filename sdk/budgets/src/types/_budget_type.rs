@@ -125,3 +125,16 @@ impl BudgetType {
         }
     }
 }
+impl ::std::fmt::Display for BudgetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BudgetType::Cost => write!(f, "COST"),
+            BudgetType::RiCoverage => write!(f, "RI_COVERAGE"),
+            BudgetType::RiUtilization => write!(f, "RI_UTILIZATION"),
+            BudgetType::SpCoverage => write!(f, "SAVINGS_PLANS_COVERAGE"),
+            BudgetType::SpUtilization => write!(f, "SAVINGS_PLANS_UTILIZATION"),
+            BudgetType::Usage => write!(f, "USAGE"),
+            BudgetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

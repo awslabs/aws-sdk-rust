@@ -101,3 +101,13 @@ impl AttachmentsSourceKey {
         }
     }
 }
+impl ::std::fmt::Display for AttachmentsSourceKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttachmentsSourceKey::AttachmentReference => write!(f, "AttachmentReference"),
+            AttachmentsSourceKey::S3FileUrl => write!(f, "S3FileUrl"),
+            AttachmentsSourceKey::SourceUrl => write!(f, "SourceUrl"),
+            AttachmentsSourceKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

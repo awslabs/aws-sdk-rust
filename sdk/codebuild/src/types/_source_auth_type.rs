@@ -91,3 +91,11 @@ impl SourceAuthType {
         }
     }
 }
+impl ::std::fmt::Display for SourceAuthType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceAuthType::Oauth => write!(f, "OAUTH"),
+            SourceAuthType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

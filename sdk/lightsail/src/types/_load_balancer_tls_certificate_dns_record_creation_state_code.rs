@@ -103,3 +103,13 @@ impl LoadBalancerTlsCertificateDnsRecordCreationStateCode {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerTlsCertificateDnsRecordCreationStateCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerTlsCertificateDnsRecordCreationStateCode::Failed => write!(f, "FAILED"),
+            LoadBalancerTlsCertificateDnsRecordCreationStateCode::Started => write!(f, "STARTED"),
+            LoadBalancerTlsCertificateDnsRecordCreationStateCode::Succeeded => write!(f, "SUCCEEDED"),
+            LoadBalancerTlsCertificateDnsRecordCreationStateCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

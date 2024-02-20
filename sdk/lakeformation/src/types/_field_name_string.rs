@@ -101,3 +101,13 @@ impl FieldNameString {
         }
     }
 }
+impl ::std::fmt::Display for FieldNameString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FieldNameString::LastModified => write!(f, "LAST_MODIFIED"),
+            FieldNameString::ResourceArn => write!(f, "RESOURCE_ARN"),
+            FieldNameString::RoleArn => write!(f, "ROLE_ARN"),
+            FieldNameString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

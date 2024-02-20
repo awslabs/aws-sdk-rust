@@ -116,3 +116,16 @@ impl SnomedctAttributeType {
         }
     }
 }
+impl ::std::fmt::Display for SnomedctAttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnomedctAttributeType::Acuity => write!(f, "ACUITY"),
+            SnomedctAttributeType::Direction => write!(f, "DIRECTION"),
+            SnomedctAttributeType::Quality => write!(f, "QUALITY"),
+            SnomedctAttributeType::SystemOrganSite => write!(f, "SYSTEM_ORGAN_SITE"),
+            SnomedctAttributeType::TestUnit => write!(f, "TEST_UNIT"),
+            SnomedctAttributeType::TestValue => write!(f, "TEST_VALUE"),
+            SnomedctAttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

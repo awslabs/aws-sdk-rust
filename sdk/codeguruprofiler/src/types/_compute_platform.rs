@@ -96,3 +96,12 @@ impl ComputePlatform {
         }
     }
 }
+impl ::std::fmt::Display for ComputePlatform {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComputePlatform::Awslambda => write!(f, "AWSLambda"),
+            ComputePlatform::Default => write!(f, "Default"),
+            ComputePlatform::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ModelCardExportJobSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for ModelCardExportJobSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelCardExportJobSortOrder::Ascending => write!(f, "Ascending"),
+            ModelCardExportJobSortOrder::Descending => write!(f, "Descending"),
+            ModelCardExportJobSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

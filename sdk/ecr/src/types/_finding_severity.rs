@@ -116,3 +116,16 @@ impl FindingSeverity {
         }
     }
 }
+impl ::std::fmt::Display for FindingSeverity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingSeverity::Critical => write!(f, "CRITICAL"),
+            FindingSeverity::High => write!(f, "HIGH"),
+            FindingSeverity::Informational => write!(f, "INFORMATIONAL"),
+            FindingSeverity::Low => write!(f, "LOW"),
+            FindingSeverity::Medium => write!(f, "MEDIUM"),
+            FindingSeverity::Undefined => write!(f, "UNDEFINED"),
+            FindingSeverity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

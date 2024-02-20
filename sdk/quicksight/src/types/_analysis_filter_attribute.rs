@@ -129,3 +129,17 @@ impl AnalysisFilterAttribute {
         }
     }
 }
+impl ::std::fmt::Display for AnalysisFilterAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalysisFilterAttribute::AnalysisName => write!(f, "ANALYSIS_NAME"),
+            AnalysisFilterAttribute::DirectQuicksightOwner => write!(f, "DIRECT_QUICKSIGHT_OWNER"),
+            AnalysisFilterAttribute::DirectQuicksightSoleOwner => write!(f, "DIRECT_QUICKSIGHT_SOLE_OWNER"),
+            AnalysisFilterAttribute::DirectQuicksightViewerOrOwner => write!(f, "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"),
+            AnalysisFilterAttribute::QuicksightOwner => write!(f, "QUICKSIGHT_OWNER"),
+            AnalysisFilterAttribute::QuicksightUser => write!(f, "QUICKSIGHT_USER"),
+            AnalysisFilterAttribute::QuicksightViewerOrOwner => write!(f, "QUICKSIGHT_VIEWER_OR_OWNER"),
+            AnalysisFilterAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

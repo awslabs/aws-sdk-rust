@@ -111,3 +111,15 @@ impl ApplicationVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationVersionStatus::Building => write!(f, "Building"),
+            ApplicationVersionStatus::Failed => write!(f, "Failed"),
+            ApplicationVersionStatus::Processed => write!(f, "Processed"),
+            ApplicationVersionStatus::Processing => write!(f, "Processing"),
+            ApplicationVersionStatus::Unprocessed => write!(f, "Unprocessed"),
+            ApplicationVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

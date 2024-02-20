@@ -96,3 +96,12 @@ impl PrincipalType {
         }
     }
 }
+impl ::std::fmt::Display for PrincipalType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrincipalType::Iam => write!(f, "IAM"),
+            PrincipalType::IamPattern => write!(f, "IAM_PATTERN"),
+            PrincipalType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

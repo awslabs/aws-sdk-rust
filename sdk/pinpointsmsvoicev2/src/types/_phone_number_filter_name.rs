@@ -147,3 +147,20 @@ impl PhoneNumberFilterName {
         }
     }
 }
+impl ::std::fmt::Display for PhoneNumberFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhoneNumberFilterName::DeletionProtectionEnabled => write!(f, "deletion-protection-enabled"),
+            PhoneNumberFilterName::IsoCountryCode => write!(f, "iso-country-code"),
+            PhoneNumberFilterName::MessageType => write!(f, "message-type"),
+            PhoneNumberFilterName::NumberCapability => write!(f, "number-capability"),
+            PhoneNumberFilterName::NumberType => write!(f, "number-type"),
+            PhoneNumberFilterName::OptOutListName => write!(f, "opt-out-list-name"),
+            PhoneNumberFilterName::SelfManagedOptOutsEnabled => write!(f, "self-managed-opt-outs-enabled"),
+            PhoneNumberFilterName::Status => write!(f, "status"),
+            PhoneNumberFilterName::TwoWayChannelArn => write!(f, "two-way-channel-arn"),
+            PhoneNumberFilterName::TwoWayEnabled => write!(f, "two-way-enabled"),
+            PhoneNumberFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ListDevicesSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ListDevicesSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListDevicesSortBy::CreatedTime => write!(f, "CREATED_TIME"),
+            ListDevicesSortBy::DeviceAggregatedStatus => write!(f, "DEVICE_AGGREGATED_STATUS"),
+            ListDevicesSortBy::DeviceId => write!(f, "DEVICE_ID"),
+            ListDevicesSortBy::Name => write!(f, "NAME"),
+            ListDevicesSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

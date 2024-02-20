@@ -101,3 +101,13 @@ impl ConstantType {
         }
     }
 }
+impl ::std::fmt::Display for ConstantType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConstantType::Collective => write!(f, "COLLECTIVE"),
+            ConstantType::Range => write!(f, "RANGE"),
+            ConstantType::Singular => write!(f, "SINGULAR"),
+            ConstantType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

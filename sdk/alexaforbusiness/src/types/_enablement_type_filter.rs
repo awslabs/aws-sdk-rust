@@ -96,3 +96,12 @@ impl EnablementTypeFilter {
         }
     }
 }
+impl ::std::fmt::Display for EnablementTypeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnablementTypeFilter::Enabled => write!(f, "ENABLED"),
+            EnablementTypeFilter::Pending => write!(f, "PENDING"),
+            EnablementTypeFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

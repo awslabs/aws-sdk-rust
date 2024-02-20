@@ -111,3 +111,15 @@ impl AnalyticsIntentMetricName {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsIntentMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsIntentMetricName::Count => write!(f, "Count"),
+            AnalyticsIntentMetricName::Dropped => write!(f, "Dropped"),
+            AnalyticsIntentMetricName::Failure => write!(f, "Failure"),
+            AnalyticsIntentMetricName::Success => write!(f, "Success"),
+            AnalyticsIntentMetricName::Switched => write!(f, "Switched"),
+            AnalyticsIntentMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

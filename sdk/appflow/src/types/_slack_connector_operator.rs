@@ -201,3 +201,29 @@ impl SlackConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for SlackConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlackConnectorOperator::Addition => write!(f, "ADDITION"),
+            SlackConnectorOperator::Between => write!(f, "BETWEEN"),
+            SlackConnectorOperator::Division => write!(f, "DIVISION"),
+            SlackConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            SlackConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
+            SlackConnectorOperator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
+            SlackConnectorOperator::LessThan => write!(f, "LESS_THAN"),
+            SlackConnectorOperator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
+            SlackConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            SlackConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            SlackConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            SlackConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            SlackConnectorOperator::NoOp => write!(f, "NO_OP"),
+            SlackConnectorOperator::Projection => write!(f, "PROJECTION"),
+            SlackConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            SlackConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            SlackConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            SlackConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            SlackConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            SlackConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

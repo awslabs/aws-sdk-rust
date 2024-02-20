@@ -96,3 +96,12 @@ impl AvcIntraTelecine {
         }
     }
 }
+impl ::std::fmt::Display for AvcIntraTelecine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AvcIntraTelecine::Hard => write!(f, "HARD"),
+            AvcIntraTelecine::None => write!(f, "NONE"),
+            AvcIntraTelecine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

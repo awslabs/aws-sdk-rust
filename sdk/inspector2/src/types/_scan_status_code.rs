@@ -96,3 +96,12 @@ impl ScanStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ScanStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScanStatusCode::Active => write!(f, "ACTIVE"),
+            ScanStatusCode::Inactive => write!(f, "INACTIVE"),
+            ScanStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

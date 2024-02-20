@@ -123,3 +123,16 @@ impl ResourceGroupState {
         }
     }
 }
+impl ::std::fmt::Display for ResourceGroupState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceGroupState::CreateComplete => write!(f, "CREATE_COMPLETE"),
+            ResourceGroupState::CreateFailed => write!(f, "CREATE_FAILED"),
+            ResourceGroupState::Creating => write!(f, "CREATING"),
+            ResourceGroupState::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
+            ResourceGroupState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ResourceGroupState::Updating => write!(f, "UPDATING"),
+            ResourceGroupState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl AcceleratorManufacturer {
         }
     }
 }
+impl ::std::fmt::Display for AcceleratorManufacturer {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AcceleratorManufacturer::AmazonWebServices => write!(f, "amazon-web-services"),
+            AcceleratorManufacturer::Amd => write!(f, "amd"),
+            AcceleratorManufacturer::Nvidia => write!(f, "nvidia"),
+            AcceleratorManufacturer::Xilinx => write!(f, "xilinx"),
+            AcceleratorManufacturer::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

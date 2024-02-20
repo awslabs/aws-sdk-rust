@@ -111,3 +111,15 @@ impl ValidationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ValidationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationStatus::Failed => write!(f, "FAILED"),
+            ValidationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ValidationStatus::Pending => write!(f, "PENDING"),
+            ValidationStatus::ReadyForValidation => write!(f, "READY_FOR_VALIDATION"),
+            ValidationStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ValidationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

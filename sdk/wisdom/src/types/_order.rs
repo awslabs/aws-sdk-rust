@@ -96,3 +96,12 @@ impl Order {
         }
     }
 }
+impl ::std::fmt::Display for Order {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Order::Asc => write!(f, "ASC"),
+            Order::Desc => write!(f, "DESC"),
+            Order::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AccountJoinedMethod {
         }
     }
 }
+impl ::std::fmt::Display for AccountJoinedMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountJoinedMethod::Created => write!(f, "CREATED"),
+            AccountJoinedMethod::Invited => write!(f, "INVITED"),
+            AccountJoinedMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

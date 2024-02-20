@@ -106,3 +106,14 @@ impl BaselineOperationType {
         }
     }
 }
+impl ::std::fmt::Display for BaselineOperationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BaselineOperationType::DisableBaseline => write!(f, "DISABLE_BASELINE"),
+            BaselineOperationType::EnableBaseline => write!(f, "ENABLE_BASELINE"),
+            BaselineOperationType::ResetEnabledBaseline => write!(f, "RESET_ENABLED_BASELINE"),
+            BaselineOperationType::UpdateEnabledBaseline => write!(f, "UPDATE_ENABLED_BASELINE"),
+            BaselineOperationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl LifecycleManagementStrategy {
         }
     }
 }
+impl ::std::fmt::Display for LifecycleManagementStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecycleManagementStrategy::ByRequest => write!(f, "ByRequest"),
+            LifecycleManagementStrategy::BySpatialSubdivision => write!(f, "BySpatialSubdivision"),
+            LifecycleManagementStrategy::PerWorker => write!(f, "PerWorker"),
+            LifecycleManagementStrategy::UnknownValue => write!(f, "Unknown"),
+            LifecycleManagementStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

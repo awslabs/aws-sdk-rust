@@ -96,3 +96,12 @@ impl TrainingDataSourceEnum {
         }
     }
 }
+impl ::std::fmt::Display for TrainingDataSourceEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrainingDataSourceEnum::ExternalEvents => write!(f, "EXTERNAL_EVENTS"),
+            TrainingDataSourceEnum::IngestedEvents => write!(f, "INGESTED_EVENTS"),
+            TrainingDataSourceEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

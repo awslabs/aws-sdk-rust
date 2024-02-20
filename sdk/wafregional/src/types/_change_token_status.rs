@@ -101,3 +101,13 @@ impl ChangeTokenStatus {
         }
     }
 }
+impl ::std::fmt::Display for ChangeTokenStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeTokenStatus::Insync => write!(f, "INSYNC"),
+            ChangeTokenStatus::Pending => write!(f, "PENDING"),
+            ChangeTokenStatus::Provisioned => write!(f, "PROVISIONED"),
+            ChangeTokenStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

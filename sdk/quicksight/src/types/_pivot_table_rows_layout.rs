@@ -96,3 +96,12 @@ impl PivotTableRowsLayout {
         }
     }
 }
+impl ::std::fmt::Display for PivotTableRowsLayout {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PivotTableRowsLayout::Hierarchy => write!(f, "HIERARCHY"),
+            PivotTableRowsLayout::Tabular => write!(f, "TABULAR"),
+            PivotTableRowsLayout::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

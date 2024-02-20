@@ -101,3 +101,13 @@ impl ListUpdateMode {
         }
     }
 }
+impl ::std::fmt::Display for ListUpdateMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListUpdateMode::Append => write!(f, "APPEND"),
+            ListUpdateMode::Remove => write!(f, "REMOVE"),
+            ListUpdateMode::Replace => write!(f, "REPLACE"),
+            ListUpdateMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl ImageActionType {
         }
     }
 }
+impl ::std::fmt::Display for ImageActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageActionType::Expire => write!(f, "EXPIRE"),
+            ImageActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

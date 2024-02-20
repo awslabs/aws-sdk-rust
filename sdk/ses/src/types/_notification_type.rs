@@ -101,3 +101,13 @@ impl NotificationType {
         }
     }
 }
+impl ::std::fmt::Display for NotificationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationType::Bounce => write!(f, "Bounce"),
+            NotificationType::Complaint => write!(f, "Complaint"),
+            NotificationType::Delivery => write!(f, "Delivery"),
+            NotificationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

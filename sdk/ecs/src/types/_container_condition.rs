@@ -106,3 +106,14 @@ impl ContainerCondition {
         }
     }
 }
+impl ::std::fmt::Display for ContainerCondition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerCondition::Complete => write!(f, "COMPLETE"),
+            ContainerCondition::Healthy => write!(f, "HEALTHY"),
+            ContainerCondition::Start => write!(f, "START"),
+            ContainerCondition::Success => write!(f, "SUCCESS"),
+            ContainerCondition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

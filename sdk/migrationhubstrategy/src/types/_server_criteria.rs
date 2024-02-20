@@ -129,3 +129,17 @@ impl ServerCriteria {
         }
     }
 }
+impl ::std::fmt::Display for ServerCriteria {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServerCriteria::AnalysisStatus => write!(f, "ANALYSIS_STATUS"),
+            ServerCriteria::Destination => write!(f, "DESTINATION"),
+            ServerCriteria::ErrorCategory => write!(f, "ERROR_CATEGORY"),
+            ServerCriteria::NotDefined => write!(f, "NOT_DEFINED"),
+            ServerCriteria::OsName => write!(f, "OS_NAME"),
+            ServerCriteria::ServerId => write!(f, "SERVER_ID"),
+            ServerCriteria::Strategy => write!(f, "STRATEGY"),
+            ServerCriteria::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

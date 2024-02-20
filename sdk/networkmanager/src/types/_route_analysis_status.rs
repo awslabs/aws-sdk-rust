@@ -101,3 +101,13 @@ impl RouteAnalysisStatus {
         }
     }
 }
+impl ::std::fmt::Display for RouteAnalysisStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteAnalysisStatus::Completed => write!(f, "COMPLETED"),
+            RouteAnalysisStatus::Failed => write!(f, "FAILED"),
+            RouteAnalysisStatus::Running => write!(f, "RUNNING"),
+            RouteAnalysisStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

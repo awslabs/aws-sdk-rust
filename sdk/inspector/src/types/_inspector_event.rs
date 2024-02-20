@@ -117,3 +117,15 @@ impl InspectorEvent {
         }
     }
 }
+impl ::std::fmt::Display for InspectorEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InspectorEvent::AssessmentRunCompleted => write!(f, "ASSESSMENT_RUN_COMPLETED"),
+            InspectorEvent::AssessmentRunStarted => write!(f, "ASSESSMENT_RUN_STARTED"),
+            InspectorEvent::AssessmentRunStateChanged => write!(f, "ASSESSMENT_RUN_STATE_CHANGED"),
+            InspectorEvent::FindingReported => write!(f, "FINDING_REPORTED"),
+            InspectorEvent::Other => write!(f, "OTHER"),
+            InspectorEvent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

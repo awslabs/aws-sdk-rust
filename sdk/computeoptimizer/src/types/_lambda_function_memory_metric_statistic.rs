@@ -101,3 +101,13 @@ impl LambdaFunctionMemoryMetricStatistic {
         }
     }
 }
+impl ::std::fmt::Display for LambdaFunctionMemoryMetricStatistic {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaFunctionMemoryMetricStatistic::Expected => write!(f, "Expected"),
+            LambdaFunctionMemoryMetricStatistic::LowerBound => write!(f, "LowerBound"),
+            LambdaFunctionMemoryMetricStatistic::UpperBound => write!(f, "UpperBound"),
+            LambdaFunctionMemoryMetricStatistic::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

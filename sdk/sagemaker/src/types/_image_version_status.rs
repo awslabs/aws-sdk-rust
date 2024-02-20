@@ -111,3 +111,15 @@ impl ImageVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImageVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageVersionStatus::Created => write!(f, "CREATED"),
+            ImageVersionStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            ImageVersionStatus::Creating => write!(f, "CREATING"),
+            ImageVersionStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ImageVersionStatus::Deleting => write!(f, "DELETING"),
+            ImageVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

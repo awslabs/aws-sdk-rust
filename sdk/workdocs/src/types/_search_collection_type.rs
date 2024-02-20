@@ -96,3 +96,12 @@ impl SearchCollectionType {
         }
     }
 }
+impl ::std::fmt::Display for SearchCollectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchCollectionType::Owned => write!(f, "OWNED"),
+            SearchCollectionType::SharedWithMe => write!(f, "SHARED_WITH_ME"),
+            SearchCollectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

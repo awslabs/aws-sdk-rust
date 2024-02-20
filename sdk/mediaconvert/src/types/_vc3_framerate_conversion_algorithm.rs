@@ -101,3 +101,13 @@ impl Vc3FramerateConversionAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for Vc3FramerateConversionAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Vc3FramerateConversionAlgorithm::DuplicateDrop => write!(f, "DUPLICATE_DROP"),
+            Vc3FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
+            Vc3FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
+            Vc3FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

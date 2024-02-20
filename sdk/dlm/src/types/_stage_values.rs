@@ -96,3 +96,12 @@ impl StageValues {
         }
     }
 }
+impl ::std::fmt::Display for StageValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StageValues::Post => write!(f, "POST"),
+            StageValues::Pre => write!(f, "PRE"),
+            StageValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

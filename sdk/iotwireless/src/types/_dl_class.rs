@@ -96,3 +96,12 @@ impl DlClass {
         }
     }
 }
+impl ::std::fmt::Display for DlClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DlClass::ClassB => write!(f, "ClassB"),
+            DlClass::ClassC => write!(f, "ClassC"),
+            DlClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

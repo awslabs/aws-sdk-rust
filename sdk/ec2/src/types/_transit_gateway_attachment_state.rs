@@ -165,3 +165,23 @@ impl TransitGatewayAttachmentState {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayAttachmentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayAttachmentState::Available => write!(f, "available"),
+            TransitGatewayAttachmentState::Deleted => write!(f, "deleted"),
+            TransitGatewayAttachmentState::Deleting => write!(f, "deleting"),
+            TransitGatewayAttachmentState::Failed => write!(f, "failed"),
+            TransitGatewayAttachmentState::Failing => write!(f, "failing"),
+            TransitGatewayAttachmentState::Initiating => write!(f, "initiating"),
+            TransitGatewayAttachmentState::InitiatingRequest => write!(f, "initiatingRequest"),
+            TransitGatewayAttachmentState::Modifying => write!(f, "modifying"),
+            TransitGatewayAttachmentState::Pending => write!(f, "pending"),
+            TransitGatewayAttachmentState::PendingAcceptance => write!(f, "pendingAcceptance"),
+            TransitGatewayAttachmentState::Rejected => write!(f, "rejected"),
+            TransitGatewayAttachmentState::Rejecting => write!(f, "rejecting"),
+            TransitGatewayAttachmentState::RollingBack => write!(f, "rollingBack"),
+            TransitGatewayAttachmentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

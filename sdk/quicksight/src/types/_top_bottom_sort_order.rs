@@ -96,3 +96,12 @@ impl TopBottomSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for TopBottomSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TopBottomSortOrder::AbsoluteDifference => write!(f, "ABSOLUTE_DIFFERENCE"),
+            TopBottomSortOrder::PercentDifference => write!(f, "PERCENT_DIFFERENCE"),
+            TopBottomSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

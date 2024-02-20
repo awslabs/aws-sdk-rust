@@ -96,3 +96,12 @@ impl ParentType {
         }
     }
 }
+impl ::std::fmt::Display for ParentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParentType::OrganizationalUnit => write!(f, "ORGANIZATIONAL_UNIT"),
+            ParentType::Root => write!(f, "ROOT"),
+            ParentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

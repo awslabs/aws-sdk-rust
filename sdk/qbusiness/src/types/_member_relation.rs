@@ -96,3 +96,12 @@ impl MemberRelation {
         }
     }
 }
+impl ::std::fmt::Display for MemberRelation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberRelation::And => write!(f, "AND"),
+            MemberRelation::Or => write!(f, "OR"),
+            MemberRelation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

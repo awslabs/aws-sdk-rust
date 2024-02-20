@@ -96,3 +96,12 @@ impl InstanceMetadataState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceMetadataState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceMetadataState::Applied => write!(f, "applied"),
+            InstanceMetadataState::Pending => write!(f, "pending"),
+            InstanceMetadataState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

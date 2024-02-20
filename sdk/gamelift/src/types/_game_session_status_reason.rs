@@ -91,3 +91,11 @@ impl GameSessionStatusReason {
         }
     }
 }
+impl ::std::fmt::Display for GameSessionStatusReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GameSessionStatusReason::Interrupted => write!(f, "INTERRUPTED"),
+            GameSessionStatusReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

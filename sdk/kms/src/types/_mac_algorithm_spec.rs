@@ -106,3 +106,14 @@ impl MacAlgorithmSpec {
         }
     }
 }
+impl ::std::fmt::Display for MacAlgorithmSpec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MacAlgorithmSpec::HmacSha224 => write!(f, "HMAC_SHA_224"),
+            MacAlgorithmSpec::HmacSha256 => write!(f, "HMAC_SHA_256"),
+            MacAlgorithmSpec::HmacSha384 => write!(f, "HMAC_SHA_384"),
+            MacAlgorithmSpec::HmacSha512 => write!(f, "HMAC_SHA_512"),
+            MacAlgorithmSpec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

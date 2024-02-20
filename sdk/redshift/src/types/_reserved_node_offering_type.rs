@@ -96,3 +96,12 @@ impl ReservedNodeOfferingType {
         }
     }
 }
+impl ::std::fmt::Display for ReservedNodeOfferingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservedNodeOfferingType::Regular => write!(f, "Regular"),
+            ReservedNodeOfferingType::Upgradable => write!(f, "Upgradable"),
+            ReservedNodeOfferingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

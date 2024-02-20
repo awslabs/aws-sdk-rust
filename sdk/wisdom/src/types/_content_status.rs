@@ -129,3 +129,17 @@ impl ContentStatus {
         }
     }
 }
+impl ::std::fmt::Display for ContentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentStatus::Active => write!(f, "ACTIVE"),
+            ContentStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            ContentStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            ContentStatus::Deleted => write!(f, "DELETED"),
+            ContentStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ContentStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ContentStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ContentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

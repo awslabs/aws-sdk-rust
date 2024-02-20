@@ -101,3 +101,13 @@ impl ClassificationScopeUpdateOperation {
         }
     }
 }
+impl ::std::fmt::Display for ClassificationScopeUpdateOperation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClassificationScopeUpdateOperation::Add => write!(f, "ADD"),
+            ClassificationScopeUpdateOperation::Remove => write!(f, "REMOVE"),
+            ClassificationScopeUpdateOperation::Replace => write!(f, "REPLACE"),
+            ClassificationScopeUpdateOperation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

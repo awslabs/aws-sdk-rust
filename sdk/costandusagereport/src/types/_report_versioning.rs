@@ -96,3 +96,12 @@ impl ReportVersioning {
         }
     }
 }
+impl ::std::fmt::Display for ReportVersioning {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportVersioning::CreateNewReport => write!(f, "CREATE_NEW_REPORT"),
+            ReportVersioning::OverwriteReport => write!(f, "OVERWRITE_REPORT"),
+            ReportVersioning::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

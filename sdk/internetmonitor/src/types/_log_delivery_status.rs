@@ -96,3 +96,12 @@ impl LogDeliveryStatus {
         }
     }
 }
+impl ::std::fmt::Display for LogDeliveryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogDeliveryStatus::Disabled => write!(f, "DISABLED"),
+            LogDeliveryStatus::Enabled => write!(f, "ENABLED"),
+            LogDeliveryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

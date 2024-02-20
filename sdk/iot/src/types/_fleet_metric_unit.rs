@@ -249,3 +249,37 @@ impl FleetMetricUnit {
         }
     }
 }
+impl ::std::fmt::Display for FleetMetricUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetMetricUnit::Bits => write!(f, "Bits"),
+            FleetMetricUnit::BitsSecond => write!(f, "Bits/Second"),
+            FleetMetricUnit::Bytes => write!(f, "Bytes"),
+            FleetMetricUnit::BytesSecond => write!(f, "Bytes/Second"),
+            FleetMetricUnit::Count => write!(f, "Count"),
+            FleetMetricUnit::CountSecond => write!(f, "Count/Second"),
+            FleetMetricUnit::Gigabits => write!(f, "Gigabits"),
+            FleetMetricUnit::GigabitsSecond => write!(f, "Gigabits/Second"),
+            FleetMetricUnit::Gigabytes => write!(f, "Gigabytes"),
+            FleetMetricUnit::GigabytesSecond => write!(f, "Gigabytes/Second"),
+            FleetMetricUnit::Kilobits => write!(f, "Kilobits"),
+            FleetMetricUnit::KilobitsSecond => write!(f, "Kilobits/Second"),
+            FleetMetricUnit::Kilobytes => write!(f, "Kilobytes"),
+            FleetMetricUnit::KilobytesSecond => write!(f, "Kilobytes/Second"),
+            FleetMetricUnit::Megabits => write!(f, "Megabits"),
+            FleetMetricUnit::MegabitsSecond => write!(f, "Megabits/Second"),
+            FleetMetricUnit::Megabytes => write!(f, "Megabytes"),
+            FleetMetricUnit::MegabytesSecond => write!(f, "Megabytes/Second"),
+            FleetMetricUnit::Microseconds => write!(f, "Microseconds"),
+            FleetMetricUnit::Milliseconds => write!(f, "Milliseconds"),
+            FleetMetricUnit::None => write!(f, "None"),
+            FleetMetricUnit::Percent => write!(f, "Percent"),
+            FleetMetricUnit::Seconds => write!(f, "Seconds"),
+            FleetMetricUnit::Terabits => write!(f, "Terabits"),
+            FleetMetricUnit::TerabitsSecond => write!(f, "Terabits/Second"),
+            FleetMetricUnit::Terabytes => write!(f, "Terabytes"),
+            FleetMetricUnit::TerabytesSecond => write!(f, "Terabytes/Second"),
+            FleetMetricUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

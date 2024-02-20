@@ -96,3 +96,12 @@ impl SlotResolutionStrategy {
         }
     }
 }
+impl ::std::fmt::Display for SlotResolutionStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlotResolutionStrategy::Default => write!(f, "Default"),
+            SlotResolutionStrategy::EnhancedFallback => write!(f, "EnhancedFallback"),
+            SlotResolutionStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ReviewStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReviewStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReviewStatus::Approved => write!(f, "APPROVED"),
+            ReviewStatus::NotReviewed => write!(f, "NOT_REVIEWED"),
+            ReviewStatus::Pending => write!(f, "PENDING"),
+            ReviewStatus::Rejected => write!(f, "REJECTED"),
+            ReviewStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

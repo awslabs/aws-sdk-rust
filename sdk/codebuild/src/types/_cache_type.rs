@@ -101,3 +101,13 @@ impl CacheType {
         }
     }
 }
+impl ::std::fmt::Display for CacheType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CacheType::Local => write!(f, "LOCAL"),
+            CacheType::NoCache => write!(f, "NO_CACHE"),
+            CacheType::S3 => write!(f, "S3"),
+            CacheType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

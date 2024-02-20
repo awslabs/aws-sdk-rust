@@ -121,3 +121,17 @@ impl CampaignStatus {
         }
     }
 }
+impl ::std::fmt::Display for CampaignStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CampaignStatus::Completed => write!(f, "COMPLETED"),
+            CampaignStatus::Deleted => write!(f, "DELETED"),
+            CampaignStatus::Executing => write!(f, "EXECUTING"),
+            CampaignStatus::Invalid => write!(f, "INVALID"),
+            CampaignStatus::Paused => write!(f, "PAUSED"),
+            CampaignStatus::PendingNextRun => write!(f, "PENDING_NEXT_RUN"),
+            CampaignStatus::Scheduled => write!(f, "SCHEDULED"),
+            CampaignStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

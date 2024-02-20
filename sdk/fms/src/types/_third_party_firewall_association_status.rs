@@ -111,3 +111,15 @@ impl ThirdPartyFirewallAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ThirdPartyFirewallAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThirdPartyFirewallAssociationStatus::NotExist => write!(f, "NOT_EXIST"),
+            ThirdPartyFirewallAssociationStatus::Offboarding => write!(f, "OFFBOARDING"),
+            ThirdPartyFirewallAssociationStatus::OffboardComplete => write!(f, "OFFBOARD_COMPLETE"),
+            ThirdPartyFirewallAssociationStatus::Onboarding => write!(f, "ONBOARDING"),
+            ThirdPartyFirewallAssociationStatus::OnboardComplete => write!(f, "ONBOARD_COMPLETE"),
+            ThirdPartyFirewallAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

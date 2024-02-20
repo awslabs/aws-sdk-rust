@@ -96,3 +96,12 @@ impl ParticipantTimerType {
         }
     }
 }
+impl ::std::fmt::Display for ParticipantTimerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParticipantTimerType::DisconnectNoncustomer => write!(f, "DISCONNECT_NONCUSTOMER"),
+            ParticipantTimerType::Idle => write!(f, "IDLE"),
+            ParticipantTimerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

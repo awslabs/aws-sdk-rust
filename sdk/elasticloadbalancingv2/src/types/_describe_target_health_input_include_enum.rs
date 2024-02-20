@@ -96,3 +96,12 @@ impl DescribeTargetHealthInputIncludeEnum {
         }
     }
 }
+impl ::std::fmt::Display for DescribeTargetHealthInputIncludeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DescribeTargetHealthInputIncludeEnum::All => write!(f, "All"),
+            DescribeTargetHealthInputIncludeEnum::Anomaly => write!(f, "AnomalyDetection"),
+            DescribeTargetHealthInputIncludeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

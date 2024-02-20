@@ -96,3 +96,12 @@ impl MembershipType {
         }
     }
 }
+impl ::std::fmt::Display for MembershipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MembershipType::Igmp => write!(f, "igmp"),
+            MembershipType::Static => write!(f, "static"),
+            MembershipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

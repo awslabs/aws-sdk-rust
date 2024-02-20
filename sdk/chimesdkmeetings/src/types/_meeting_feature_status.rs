@@ -96,3 +96,12 @@ impl MeetingFeatureStatus {
         }
     }
 }
+impl ::std::fmt::Display for MeetingFeatureStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MeetingFeatureStatus::Available => write!(f, "AVAILABLE"),
+            MeetingFeatureStatus::Unavailable => write!(f, "UNAVAILABLE"),
+            MeetingFeatureStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl FormatOption {
         }
     }
 }
+impl ::std::fmt::Display for FormatOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FormatOption::Parquet => write!(f, "PARQUET"),
+            FormatOption::TextOrCsv => write!(f, "TEXT_OR_CSV"),
+            FormatOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

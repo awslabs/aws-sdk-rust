@@ -106,3 +106,14 @@ impl PracticeRunOutcome {
         }
     }
 }
+impl ::std::fmt::Display for PracticeRunOutcome {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PracticeRunOutcome::Failed => write!(f, "FAILED"),
+            PracticeRunOutcome::Interrupted => write!(f, "INTERRUPTED"),
+            PracticeRunOutcome::Pending => write!(f, "PENDING"),
+            PracticeRunOutcome::Succeeded => write!(f, "SUCCEEDED"),
+            PracticeRunOutcome::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

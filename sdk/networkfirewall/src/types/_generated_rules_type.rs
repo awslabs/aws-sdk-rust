@@ -96,3 +96,12 @@ impl GeneratedRulesType {
         }
     }
 }
+impl ::std::fmt::Display for GeneratedRulesType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GeneratedRulesType::Allowlist => write!(f, "ALLOWLIST"),
+            GeneratedRulesType::Denylist => write!(f, "DENYLIST"),
+            GeneratedRulesType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

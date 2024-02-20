@@ -101,3 +101,13 @@ impl ActionType {
         }
     }
 }
+impl ::std::fmt::Display for ActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionType::Iam => write!(f, "APPLY_IAM_POLICY"),
+            ActionType::Scp => write!(f, "APPLY_SCP_POLICY"),
+            ActionType::Ssm => write!(f, "RUN_SSM_DOCUMENTS"),
+            ActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

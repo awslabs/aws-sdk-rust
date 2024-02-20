@@ -116,3 +116,16 @@ impl IpSetFormat {
         }
     }
 }
+impl ::std::fmt::Display for IpSetFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpSetFormat::AlienVault => write!(f, "ALIEN_VAULT"),
+            IpSetFormat::FireEye => write!(f, "FIRE_EYE"),
+            IpSetFormat::OtxCsv => write!(f, "OTX_CSV"),
+            IpSetFormat::ProofPoint => write!(f, "PROOF_POINT"),
+            IpSetFormat::Stix => write!(f, "STIX"),
+            IpSetFormat::Txt => write!(f, "TXT"),
+            IpSetFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl RelationalDatabasePasswordVersion {
         }
     }
 }
+impl ::std::fmt::Display for RelationalDatabasePasswordVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelationalDatabasePasswordVersion::Current => write!(f, "CURRENT"),
+            RelationalDatabasePasswordVersion::Pending => write!(f, "PENDING"),
+            RelationalDatabasePasswordVersion::Previous => write!(f, "PREVIOUS"),
+            RelationalDatabasePasswordVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CaptureStatus {
         }
     }
 }
+impl ::std::fmt::Display for CaptureStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CaptureStatus::Started => write!(f, "Started"),
+            CaptureStatus::Stopped => write!(f, "Stopped"),
+            CaptureStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

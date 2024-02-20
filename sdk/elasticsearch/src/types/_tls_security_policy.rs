@@ -105,3 +105,13 @@ impl TlsSecurityPolicy {
         }
     }
 }
+impl ::std::fmt::Display for TlsSecurityPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TlsSecurityPolicy::PolicyMinTls10201907 => write!(f, "Policy-Min-TLS-1-0-2019-07"),
+            TlsSecurityPolicy::PolicyMinTls12201907 => write!(f, "Policy-Min-TLS-1-2-2019-07"),
+            TlsSecurityPolicy::PolicyMinTls12Pfs202310 => write!(f, "Policy-Min-TLS-1-2-PFS-2023-10"),
+            TlsSecurityPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

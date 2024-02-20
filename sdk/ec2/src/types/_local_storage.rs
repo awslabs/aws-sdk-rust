@@ -101,3 +101,13 @@ impl LocalStorage {
         }
     }
 }
+impl ::std::fmt::Display for LocalStorage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocalStorage::Excluded => write!(f, "excluded"),
+            LocalStorage::Included => write!(f, "included"),
+            LocalStorage::Required => write!(f, "required"),
+            LocalStorage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

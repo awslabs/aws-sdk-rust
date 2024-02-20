@@ -96,3 +96,12 @@ impl DnsResponseType {
         }
     }
 }
+impl ::std::fmt::Display for DnsResponseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DnsResponseType::Endpoints => write!(f, "ENDPOINTS"),
+            DnsResponseType::Loadbalancer => write!(f, "LOADBALANCER"),
+            DnsResponseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

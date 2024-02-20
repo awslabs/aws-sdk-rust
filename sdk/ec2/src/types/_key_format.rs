@@ -96,3 +96,12 @@ impl KeyFormat {
         }
     }
 }
+impl ::std::fmt::Display for KeyFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyFormat::Pem => write!(f, "pem"),
+            KeyFormat::Ppk => write!(f, "ppk"),
+            KeyFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

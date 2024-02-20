@@ -111,3 +111,15 @@ impl InferenceComponentStatus {
         }
     }
 }
+impl ::std::fmt::Display for InferenceComponentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferenceComponentStatus::Creating => write!(f, "Creating"),
+            InferenceComponentStatus::Deleting => write!(f, "Deleting"),
+            InferenceComponentStatus::Failed => write!(f, "Failed"),
+            InferenceComponentStatus::InService => write!(f, "InService"),
+            InferenceComponentStatus::Updating => write!(f, "Updating"),
+            InferenceComponentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -273,3 +273,41 @@ impl ResourceRecordSetRegion {
         }
     }
 }
+impl ::std::fmt::Display for ResourceRecordSetRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceRecordSetRegion::AfSouth1 => write!(f, "af-south-1"),
+            ResourceRecordSetRegion::ApEast1 => write!(f, "ap-east-1"),
+            ResourceRecordSetRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
+            ResourceRecordSetRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
+            ResourceRecordSetRegion::ApNortheast3 => write!(f, "ap-northeast-3"),
+            ResourceRecordSetRegion::ApSouth1 => write!(f, "ap-south-1"),
+            ResourceRecordSetRegion::ApSouth2 => write!(f, "ap-south-2"),
+            ResourceRecordSetRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
+            ResourceRecordSetRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
+            ResourceRecordSetRegion::ApSoutheast3 => write!(f, "ap-southeast-3"),
+            ResourceRecordSetRegion::ApSoutheast4 => write!(f, "ap-southeast-4"),
+            ResourceRecordSetRegion::CaCentral1 => write!(f, "ca-central-1"),
+            ResourceRecordSetRegion::CaWest1 => write!(f, "ca-west-1"),
+            ResourceRecordSetRegion::CnNorth1 => write!(f, "cn-north-1"),
+            ResourceRecordSetRegion::CnNorthwest1 => write!(f, "cn-northwest-1"),
+            ResourceRecordSetRegion::EuCentral1 => write!(f, "eu-central-1"),
+            ResourceRecordSetRegion::EuCentral2 => write!(f, "eu-central-2"),
+            ResourceRecordSetRegion::EuNorth1 => write!(f, "eu-north-1"),
+            ResourceRecordSetRegion::EuSouth1 => write!(f, "eu-south-1"),
+            ResourceRecordSetRegion::EuSouth2 => write!(f, "eu-south-2"),
+            ResourceRecordSetRegion::EuWest1 => write!(f, "eu-west-1"),
+            ResourceRecordSetRegion::EuWest2 => write!(f, "eu-west-2"),
+            ResourceRecordSetRegion::EuWest3 => write!(f, "eu-west-3"),
+            ResourceRecordSetRegion::IlCentral1 => write!(f, "il-central-1"),
+            ResourceRecordSetRegion::MeCentral1 => write!(f, "me-central-1"),
+            ResourceRecordSetRegion::MeSouth1 => write!(f, "me-south-1"),
+            ResourceRecordSetRegion::SaEast1 => write!(f, "sa-east-1"),
+            ResourceRecordSetRegion::UsEast1 => write!(f, "us-east-1"),
+            ResourceRecordSetRegion::UsEast2 => write!(f, "us-east-2"),
+            ResourceRecordSetRegion::UsWest1 => write!(f, "us-west-1"),
+            ResourceRecordSetRegion::UsWest2 => write!(f, "us-west-2"),
+            ResourceRecordSetRegion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

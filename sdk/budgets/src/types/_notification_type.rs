@@ -96,3 +96,12 @@ impl NotificationType {
         }
     }
 }
+impl ::std::fmt::Display for NotificationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationType::Actual => write!(f, "ACTUAL"),
+            NotificationType::Forecasted => write!(f, "FORECASTED"),
+            NotificationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

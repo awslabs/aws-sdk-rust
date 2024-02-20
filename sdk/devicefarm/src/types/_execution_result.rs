@@ -121,3 +121,17 @@ impl ExecutionResult {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionResult::Errored => write!(f, "ERRORED"),
+            ExecutionResult::Failed => write!(f, "FAILED"),
+            ExecutionResult::Passed => write!(f, "PASSED"),
+            ExecutionResult::Pending => write!(f, "PENDING"),
+            ExecutionResult::Skipped => write!(f, "SKIPPED"),
+            ExecutionResult::Stopped => write!(f, "STOPPED"),
+            ExecutionResult::Warned => write!(f, "WARNED"),
+            ExecutionResult::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

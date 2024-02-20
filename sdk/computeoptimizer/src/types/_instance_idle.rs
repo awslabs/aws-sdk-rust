@@ -96,3 +96,12 @@ impl InstanceIdle {
         }
     }
 }
+impl ::std::fmt::Display for InstanceIdle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceIdle::False => write!(f, "False"),
+            InstanceIdle::True => write!(f, "True"),
+            InstanceIdle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

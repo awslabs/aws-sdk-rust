@@ -91,3 +91,11 @@ impl ManifestFormat {
         }
     }
 }
+impl ::std::fmt::Display for ManifestFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ManifestFormat::Csv => write!(f, "CSV"),
+            ManifestFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

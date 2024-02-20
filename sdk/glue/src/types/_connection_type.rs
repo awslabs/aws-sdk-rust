@@ -121,3 +121,17 @@ impl ConnectionType {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionType::Custom => write!(f, "CUSTOM"),
+            ConnectionType::Jdbc => write!(f, "JDBC"),
+            ConnectionType::Kafka => write!(f, "KAFKA"),
+            ConnectionType::Marketplace => write!(f, "MARKETPLACE"),
+            ConnectionType::Mongodb => write!(f, "MONGODB"),
+            ConnectionType::Network => write!(f, "NETWORK"),
+            ConnectionType::Sftp => write!(f, "SFTP"),
+            ConnectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

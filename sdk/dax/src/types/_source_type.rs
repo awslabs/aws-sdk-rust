@@ -101,3 +101,13 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::Cluster => write!(f, "CLUSTER"),
+            SourceType::ParameterGroup => write!(f, "PARAMETER_GROUP"),
+            SourceType::SubnetGroup => write!(f, "SUBNET_GROUP"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

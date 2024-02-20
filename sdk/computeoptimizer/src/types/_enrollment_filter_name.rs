@@ -91,3 +91,11 @@ impl EnrollmentFilterName {
         }
     }
 }
+impl ::std::fmt::Display for EnrollmentFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnrollmentFilterName::Status => write!(f, "Status"),
+            EnrollmentFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

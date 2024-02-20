@@ -101,3 +101,13 @@ impl ResourceEvaluationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceEvaluationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceEvaluationStatus::Failed => write!(f, "FAILED"),
+            ResourceEvaluationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ResourceEvaluationStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ResourceEvaluationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

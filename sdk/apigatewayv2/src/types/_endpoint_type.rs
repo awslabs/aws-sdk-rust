@@ -96,3 +96,12 @@ impl EndpointType {
         }
     }
 }
+impl ::std::fmt::Display for EndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointType::Edge => write!(f, "EDGE"),
+            EndpointType::Regional => write!(f, "REGIONAL"),
+            EndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

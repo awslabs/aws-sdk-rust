@@ -183,3 +183,26 @@ impl GrantOperation {
         }
     }
 }
+impl ::std::fmt::Display for GrantOperation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GrantOperation::CreateGrant => write!(f, "CreateGrant"),
+            GrantOperation::Decrypt => write!(f, "Decrypt"),
+            GrantOperation::DescribeKey => write!(f, "DescribeKey"),
+            GrantOperation::Encrypt => write!(f, "Encrypt"),
+            GrantOperation::GenerateDataKey => write!(f, "GenerateDataKey"),
+            GrantOperation::GenerateDataKeyPair => write!(f, "GenerateDataKeyPair"),
+            GrantOperation::GenerateDataKeyPairWithoutPlaintext => write!(f, "GenerateDataKeyPairWithoutPlaintext"),
+            GrantOperation::GenerateDataKeyWithoutPlaintext => write!(f, "GenerateDataKeyWithoutPlaintext"),
+            GrantOperation::GenerateMac => write!(f, "GenerateMac"),
+            GrantOperation::GetPublicKey => write!(f, "GetPublicKey"),
+            GrantOperation::ReEncryptFrom => write!(f, "ReEncryptFrom"),
+            GrantOperation::ReEncryptTo => write!(f, "ReEncryptTo"),
+            GrantOperation::RetireGrant => write!(f, "RetireGrant"),
+            GrantOperation::Sign => write!(f, "Sign"),
+            GrantOperation::Verify => write!(f, "Verify"),
+            GrantOperation::VerifyMac => write!(f, "VerifyMac"),
+            GrantOperation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

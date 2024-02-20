@@ -121,3 +121,17 @@ impl DomainControllerStatus {
         }
     }
 }
+impl ::std::fmt::Display for DomainControllerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainControllerStatus::Active => write!(f, "Active"),
+            DomainControllerStatus::Creating => write!(f, "Creating"),
+            DomainControllerStatus::Deleted => write!(f, "Deleted"),
+            DomainControllerStatus::Deleting => write!(f, "Deleting"),
+            DomainControllerStatus::Failed => write!(f, "Failed"),
+            DomainControllerStatus::Impaired => write!(f, "Impaired"),
+            DomainControllerStatus::Restoring => write!(f, "Restoring"),
+            DomainControllerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

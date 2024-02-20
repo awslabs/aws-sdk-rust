@@ -96,3 +96,12 @@ impl TargetOptions {
         }
     }
 }
+impl ::std::fmt::Display for TargetOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetOptions::Input => write!(f, "INPUT"),
+            TargetOptions::Output => write!(f, "OUTPUT"),
+            TargetOptions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

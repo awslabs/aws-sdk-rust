@@ -106,3 +106,14 @@ impl RetrainingSchedulerStatus {
         }
     }
 }
+impl ::std::fmt::Display for RetrainingSchedulerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetrainingSchedulerStatus::Pending => write!(f, "PENDING"),
+            RetrainingSchedulerStatus::Running => write!(f, "RUNNING"),
+            RetrainingSchedulerStatus::Stopped => write!(f, "STOPPED"),
+            RetrainingSchedulerStatus::Stopping => write!(f, "STOPPING"),
+            RetrainingSchedulerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

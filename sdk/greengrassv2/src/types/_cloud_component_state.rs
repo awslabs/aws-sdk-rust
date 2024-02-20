@@ -111,3 +111,15 @@ impl CloudComponentState {
         }
     }
 }
+impl ::std::fmt::Display for CloudComponentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CloudComponentState::Deployable => write!(f, "DEPLOYABLE"),
+            CloudComponentState::Deprecated => write!(f, "DEPRECATED"),
+            CloudComponentState::Failed => write!(f, "FAILED"),
+            CloudComponentState::Initiated => write!(f, "INITIATED"),
+            CloudComponentState::Requested => write!(f, "REQUESTED"),
+            CloudComponentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

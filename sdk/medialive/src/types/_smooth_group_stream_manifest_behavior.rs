@@ -96,3 +96,12 @@ impl SmoothGroupStreamManifestBehavior {
         }
     }
 }
+impl ::std::fmt::Display for SmoothGroupStreamManifestBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SmoothGroupStreamManifestBehavior::DoNotSend => write!(f, "DO_NOT_SEND"),
+            SmoothGroupStreamManifestBehavior::Send => write!(f, "SEND"),
+            SmoothGroupStreamManifestBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

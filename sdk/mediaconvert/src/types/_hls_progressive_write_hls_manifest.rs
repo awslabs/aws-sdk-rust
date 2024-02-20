@@ -96,3 +96,12 @@ impl HlsProgressiveWriteHlsManifest {
         }
     }
 }
+impl ::std::fmt::Display for HlsProgressiveWriteHlsManifest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsProgressiveWriteHlsManifest::Disabled => write!(f, "DISABLED"),
+            HlsProgressiveWriteHlsManifest::Enabled => write!(f, "ENABLED"),
+            HlsProgressiveWriteHlsManifest::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

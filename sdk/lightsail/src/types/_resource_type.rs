@@ -207,3 +207,30 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Alarm => write!(f, "Alarm"),
+            ResourceType::Bucket => write!(f, "Bucket"),
+            ResourceType::Certificate => write!(f, "Certificate"),
+            ResourceType::CloudFormationStackRecord => write!(f, "CloudFormationStackRecord"),
+            ResourceType::ContactMethod => write!(f, "ContactMethod"),
+            ResourceType::ContainerService => write!(f, "ContainerService"),
+            ResourceType::Disk => write!(f, "Disk"),
+            ResourceType::DiskSnapshot => write!(f, "DiskSnapshot"),
+            ResourceType::Distribution => write!(f, "Distribution"),
+            ResourceType::Domain => write!(f, "Domain"),
+            ResourceType::ExportSnapshotRecord => write!(f, "ExportSnapshotRecord"),
+            ResourceType::Instance => write!(f, "Instance"),
+            ResourceType::InstanceSnapshot => write!(f, "InstanceSnapshot"),
+            ResourceType::KeyPair => write!(f, "KeyPair"),
+            ResourceType::LoadBalancer => write!(f, "LoadBalancer"),
+            ResourceType::LoadBalancerTlsCertificate => write!(f, "LoadBalancerTlsCertificate"),
+            ResourceType::PeeredVpc => write!(f, "PeeredVpc"),
+            ResourceType::RelationalDatabase => write!(f, "RelationalDatabase"),
+            ResourceType::RelationalDatabaseSnapshot => write!(f, "RelationalDatabaseSnapshot"),
+            ResourceType::StaticIp => write!(f, "StaticIp"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

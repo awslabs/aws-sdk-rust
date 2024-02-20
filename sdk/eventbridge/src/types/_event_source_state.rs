@@ -101,3 +101,13 @@ impl EventSourceState {
         }
     }
 }
+impl ::std::fmt::Display for EventSourceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventSourceState::Active => write!(f, "ACTIVE"),
+            EventSourceState::Deleted => write!(f, "DELETED"),
+            EventSourceState::Pending => write!(f, "PENDING"),
+            EventSourceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

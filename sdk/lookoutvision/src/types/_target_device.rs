@@ -91,3 +91,11 @@ impl TargetDevice {
         }
     }
 }
+impl ::std::fmt::Display for TargetDevice {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetDevice::JetsonXavier => write!(f, "jetson_xavier"),
+            TargetDevice::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

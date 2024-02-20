@@ -116,3 +116,16 @@ impl WorkflowStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowStatus::Active => write!(f, "ACTIVE"),
+            WorkflowStatus::Creating => write!(f, "CREATING"),
+            WorkflowStatus::Deleted => write!(f, "DELETED"),
+            WorkflowStatus::Failed => write!(f, "FAILED"),
+            WorkflowStatus::Inactive => write!(f, "INACTIVE"),
+            WorkflowStatus::Updating => write!(f, "UPDATING"),
+            WorkflowStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

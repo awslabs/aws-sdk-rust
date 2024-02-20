@@ -101,3 +101,13 @@ impl Icd10CmRelationshipType {
         }
     }
 }
+impl ::std::fmt::Display for Icd10CmRelationshipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Icd10CmRelationshipType::Overlap => write!(f, "OVERLAP"),
+            Icd10CmRelationshipType::Quality => write!(f, "QUALITY"),
+            Icd10CmRelationshipType::SystemOrganSite => write!(f, "SYSTEM_ORGAN_SITE"),
+            Icd10CmRelationshipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

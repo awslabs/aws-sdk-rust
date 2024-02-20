@@ -106,3 +106,14 @@ impl Duration {
         }
     }
 }
+impl ::std::fmt::Display for Duration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Duration::Day14 => write!(f, "DAY_14"),
+            Duration::Day30 => write!(f, "DAY_30"),
+            Duration::Day7 => write!(f, "DAY_7"),
+            Duration::Hr24 => write!(f, "HR_24"),
+            Duration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

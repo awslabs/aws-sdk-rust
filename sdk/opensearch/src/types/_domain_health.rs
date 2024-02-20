@@ -106,3 +106,14 @@ impl DomainHealth {
         }
     }
 }
+impl ::std::fmt::Display for DomainHealth {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainHealth::Green => write!(f, "Green"),
+            DomainHealth::NotAvailable => write!(f, "NotAvailable"),
+            DomainHealth::Red => write!(f, "Red"),
+            DomainHealth::Yellow => write!(f, "Yellow"),
+            DomainHealth::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

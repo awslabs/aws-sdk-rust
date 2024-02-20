@@ -101,3 +101,13 @@ impl MigrationTypeValue {
         }
     }
 }
+impl ::std::fmt::Display for MigrationTypeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MigrationTypeValue::Cdc => write!(f, "cdc"),
+            MigrationTypeValue::FullLoad => write!(f, "full-load"),
+            MigrationTypeValue::FullLoadAndCdc => write!(f, "full-load-and-cdc"),
+            MigrationTypeValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

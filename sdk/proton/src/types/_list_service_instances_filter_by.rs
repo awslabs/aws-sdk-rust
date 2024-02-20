@@ -147,3 +147,20 @@ impl ListServiceInstancesFilterBy {
         }
     }
 }
+impl ::std::fmt::Display for ListServiceInstancesFilterBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListServiceInstancesFilterBy::CreatedAtAfter => write!(f, "createdAtAfter"),
+            ListServiceInstancesFilterBy::CreatedAtBefore => write!(f, "createdAtBefore"),
+            ListServiceInstancesFilterBy::DeployedTemplateVersionStatus => write!(f, "deployedTemplateVersionStatus"),
+            ListServiceInstancesFilterBy::DeploymentStatus => write!(f, "deploymentStatus"),
+            ListServiceInstancesFilterBy::EnvironmentName => write!(f, "environmentName"),
+            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter => write!(f, "lastDeploymentAttemptedAtAfter"),
+            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore => write!(f, "lastDeploymentAttemptedAtBefore"),
+            ListServiceInstancesFilterBy::Name => write!(f, "name"),
+            ListServiceInstancesFilterBy::ServiceName => write!(f, "serviceName"),
+            ListServiceInstancesFilterBy::TemplateName => write!(f, "templateName"),
+            ListServiceInstancesFilterBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

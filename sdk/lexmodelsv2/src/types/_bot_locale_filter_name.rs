@@ -91,3 +91,11 @@ impl BotLocaleFilterName {
         }
     }
 }
+impl ::std::fmt::Display for BotLocaleFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotLocaleFilterName::BotLocaleName => write!(f, "BotLocaleName"),
+            BotLocaleFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

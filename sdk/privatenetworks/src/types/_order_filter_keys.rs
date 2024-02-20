@@ -96,3 +96,12 @@ impl OrderFilterKeys {
         }
     }
 }
+impl ::std::fmt::Display for OrderFilterKeys {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrderFilterKeys::NetworkSite => write!(f, "NETWORK_SITE"),
+            OrderFilterKeys::Status => write!(f, "STATUS"),
+            OrderFilterKeys::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

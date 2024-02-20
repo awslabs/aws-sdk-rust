@@ -116,3 +116,16 @@ impl ThesaurusStatus {
         }
     }
 }
+impl ::std::fmt::Display for ThesaurusStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThesaurusStatus::Active => write!(f, "ACTIVE"),
+            ThesaurusStatus::ActiveButUpdateFailed => write!(f, "ACTIVE_BUT_UPDATE_FAILED"),
+            ThesaurusStatus::Creating => write!(f, "CREATING"),
+            ThesaurusStatus::Deleting => write!(f, "DELETING"),
+            ThesaurusStatus::Failed => write!(f, "FAILED"),
+            ThesaurusStatus::Updating => write!(f, "UPDATING"),
+            ThesaurusStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl TemplateType {
         }
     }
 }
+impl ::std::fmt::Display for TemplateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemplateType::Email => write!(f, "EMAIL"),
+            TemplateType::Inapp => write!(f, "INAPP"),
+            TemplateType::Push => write!(f, "PUSH"),
+            TemplateType::Sms => write!(f, "SMS"),
+            TemplateType::Voice => write!(f, "VOICE"),
+            TemplateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

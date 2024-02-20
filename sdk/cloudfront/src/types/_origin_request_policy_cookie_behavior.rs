@@ -106,3 +106,14 @@ impl OriginRequestPolicyCookieBehavior {
         }
     }
 }
+impl ::std::fmt::Display for OriginRequestPolicyCookieBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginRequestPolicyCookieBehavior::All => write!(f, "all"),
+            OriginRequestPolicyCookieBehavior::AllExcept => write!(f, "allExcept"),
+            OriginRequestPolicyCookieBehavior::None => write!(f, "none"),
+            OriginRequestPolicyCookieBehavior::Whitelist => write!(f, "whitelist"),
+            OriginRequestPolicyCookieBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

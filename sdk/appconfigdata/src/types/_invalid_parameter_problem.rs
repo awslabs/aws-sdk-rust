@@ -101,3 +101,13 @@ impl InvalidParameterProblem {
         }
     }
 }
+impl ::std::fmt::Display for InvalidParameterProblem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InvalidParameterProblem::Corrupted => write!(f, "Corrupted"),
+            InvalidParameterProblem::Expired => write!(f, "Expired"),
+            InvalidParameterProblem::PollIntervalNotSatisfied => write!(f, "PollIntervalNotSatisfied"),
+            InvalidParameterProblem::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

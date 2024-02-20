@@ -101,3 +101,13 @@ impl DataLocationConstraint {
         }
     }
 }
+impl ::std::fmt::Display for DataLocationConstraint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataLocationConstraint::AnyLocation => write!(f, "AnyLocation"),
+            DataLocationConstraint::SameContinent => write!(f, "SameContinent"),
+            DataLocationConstraint::SameCountry => write!(f, "SameCountry"),
+            DataLocationConstraint::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -107,3 +107,14 @@ impl WriteOperationType {
         }
     }
 }
+impl ::std::fmt::Display for WriteOperationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WriteOperationType::Delete => write!(f, "DELETE"),
+            WriteOperationType::Insert => write!(f, "INSERT"),
+            WriteOperationType::Update => write!(f, "UPDATE"),
+            WriteOperationType::Upsert => write!(f, "UPSERT"),
+            WriteOperationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

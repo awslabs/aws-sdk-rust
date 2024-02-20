@@ -96,3 +96,12 @@ impl QuickResponseQueryOperator {
         }
     }
 }
+impl ::std::fmt::Display for QuickResponseQueryOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuickResponseQueryOperator::Contains => write!(f, "CONTAINS"),
+            QuickResponseQueryOperator::ContainsAndPrefix => write!(f, "CONTAINS_AND_PREFIX"),
+            QuickResponseQueryOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

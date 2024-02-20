@@ -96,3 +96,12 @@ impl PermissionType {
         }
     }
 }
+impl ::std::fmt::Display for PermissionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionType::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
+            PermissionType::ServiceManaged => write!(f, "SERVICE_MANAGED"),
+            PermissionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -243,3 +243,36 @@ impl SummaryKeyType {
         }
     }
 }
+impl ::std::fmt::Display for SummaryKeyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SummaryKeyType::AccessKeysPerUserQuota => write!(f, "AccessKeysPerUserQuota"),
+            SummaryKeyType::AccountAccessKeysPresent => write!(f, "AccountAccessKeysPresent"),
+            SummaryKeyType::AccountMfaEnabled => write!(f, "AccountMFAEnabled"),
+            SummaryKeyType::AccountSigningCertificatesPresent => write!(f, "AccountSigningCertificatesPresent"),
+            SummaryKeyType::AttachedPoliciesPerGroupQuota => write!(f, "AttachedPoliciesPerGroupQuota"),
+            SummaryKeyType::AttachedPoliciesPerRoleQuota => write!(f, "AttachedPoliciesPerRoleQuota"),
+            SummaryKeyType::AttachedPoliciesPerUserQuota => write!(f, "AttachedPoliciesPerUserQuota"),
+            SummaryKeyType::GlobalEndpointTokenVersion => write!(f, "GlobalEndpointTokenVersion"),
+            SummaryKeyType::GroupPolicySizeQuota => write!(f, "GroupPolicySizeQuota"),
+            SummaryKeyType::Groups => write!(f, "Groups"),
+            SummaryKeyType::GroupsPerUserQuota => write!(f, "GroupsPerUserQuota"),
+            SummaryKeyType::GroupsQuota => write!(f, "GroupsQuota"),
+            SummaryKeyType::MfaDevices => write!(f, "MFADevices"),
+            SummaryKeyType::MfaDevicesInUse => write!(f, "MFADevicesInUse"),
+            SummaryKeyType::Policies => write!(f, "Policies"),
+            SummaryKeyType::PoliciesQuota => write!(f, "PoliciesQuota"),
+            SummaryKeyType::PolicySizeQuota => write!(f, "PolicySizeQuota"),
+            SummaryKeyType::PolicyVersionsInUse => write!(f, "PolicyVersionsInUse"),
+            SummaryKeyType::PolicyVersionsInUseQuota => write!(f, "PolicyVersionsInUseQuota"),
+            SummaryKeyType::ServerCertificates => write!(f, "ServerCertificates"),
+            SummaryKeyType::ServerCertificatesQuota => write!(f, "ServerCertificatesQuota"),
+            SummaryKeyType::SigningCertificatesPerUserQuota => write!(f, "SigningCertificatesPerUserQuota"),
+            SummaryKeyType::UserPolicySizeQuota => write!(f, "UserPolicySizeQuota"),
+            SummaryKeyType::Users => write!(f, "Users"),
+            SummaryKeyType::UsersQuota => write!(f, "UsersQuota"),
+            SummaryKeyType::VersionsPerPolicyQuota => write!(f, "VersionsPerPolicyQuota"),
+            SummaryKeyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

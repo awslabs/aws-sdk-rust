@@ -106,3 +106,14 @@ impl JobType {
         }
     }
 }
+impl ::std::fmt::Display for JobType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobType::Manual => write!(f, "MANUAL"),
+            JobType::Release => write!(f, "RELEASE"),
+            JobType::Retry => write!(f, "RETRY"),
+            JobType::WebHook => write!(f, "WEB_HOOK"),
+            JobType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

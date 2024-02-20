@@ -159,3 +159,22 @@ impl LoadBalancerMetricName {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerMetricName::ClientTlsNegotiationErrorCount => write!(f, "ClientTLSNegotiationErrorCount"),
+            LoadBalancerMetricName::HttpCodeInstance2XxCount => write!(f, "HTTPCode_Instance_2XX_Count"),
+            LoadBalancerMetricName::HttpCodeInstance3XxCount => write!(f, "HTTPCode_Instance_3XX_Count"),
+            LoadBalancerMetricName::HttpCodeInstance4XxCount => write!(f, "HTTPCode_Instance_4XX_Count"),
+            LoadBalancerMetricName::HttpCodeInstance5XxCount => write!(f, "HTTPCode_Instance_5XX_Count"),
+            LoadBalancerMetricName::HttpCodeLb4XxCount => write!(f, "HTTPCode_LB_4XX_Count"),
+            LoadBalancerMetricName::HttpCodeLb5XxCount => write!(f, "HTTPCode_LB_5XX_Count"),
+            LoadBalancerMetricName::HealthyHostCount => write!(f, "HealthyHostCount"),
+            LoadBalancerMetricName::InstanceResponseTime => write!(f, "InstanceResponseTime"),
+            LoadBalancerMetricName::RejectedConnectionCount => write!(f, "RejectedConnectionCount"),
+            LoadBalancerMetricName::RequestCount => write!(f, "RequestCount"),
+            LoadBalancerMetricName::UnhealthyHostCount => write!(f, "UnhealthyHostCount"),
+            LoadBalancerMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

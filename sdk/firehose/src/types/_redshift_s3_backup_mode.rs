@@ -96,3 +96,12 @@ impl RedshiftS3BackupMode {
         }
     }
 }
+impl ::std::fmt::Display for RedshiftS3BackupMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RedshiftS3BackupMode::Disabled => write!(f, "Disabled"),
+            RedshiftS3BackupMode::Enabled => write!(f, "Enabled"),
+            RedshiftS3BackupMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

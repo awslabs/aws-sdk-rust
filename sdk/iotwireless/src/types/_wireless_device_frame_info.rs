@@ -99,3 +99,12 @@ impl WirelessDeviceFrameInfo {
         }
     }
 }
+impl ::std::fmt::Display for WirelessDeviceFrameInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WirelessDeviceFrameInfo::Disabled => write!(f, "DISABLED"),
+            WirelessDeviceFrameInfo::Enabled => write!(f, "ENABLED"),
+            WirelessDeviceFrameInfo::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

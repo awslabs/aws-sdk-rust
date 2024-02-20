@@ -96,3 +96,12 @@ impl Mpeg2QualityTuningLevel {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2QualityTuningLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2QualityTuningLevel::MultiPass => write!(f, "MULTI_PASS"),
+            Mpeg2QualityTuningLevel::SinglePass => write!(f, "SINGLE_PASS"),
+            Mpeg2QualityTuningLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

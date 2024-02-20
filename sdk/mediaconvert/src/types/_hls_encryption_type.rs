@@ -96,3 +96,12 @@ impl HlsEncryptionType {
         }
     }
 }
+impl ::std::fmt::Display for HlsEncryptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsEncryptionType::Aes128 => write!(f, "AES128"),
+            HlsEncryptionType::SampleAes => write!(f, "SAMPLE_AES"),
+            HlsEncryptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

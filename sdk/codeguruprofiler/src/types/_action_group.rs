@@ -91,3 +91,11 @@ impl ActionGroup {
         }
     }
 }
+impl ::std::fmt::Display for ActionGroup {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionGroup::AgentPermissions => write!(f, "agentPermissions"),
+            ActionGroup::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

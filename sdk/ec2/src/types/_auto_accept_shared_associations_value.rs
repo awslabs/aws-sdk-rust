@@ -96,3 +96,12 @@ impl AutoAcceptSharedAssociationsValue {
         }
     }
 }
+impl ::std::fmt::Display for AutoAcceptSharedAssociationsValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoAcceptSharedAssociationsValue::Disable => write!(f, "disable"),
+            AutoAcceptSharedAssociationsValue::Enable => write!(f, "enable"),
+            AutoAcceptSharedAssociationsValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl SystemInstanceFilterName {
         }
     }
 }
+impl ::std::fmt::Display for SystemInstanceFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SystemInstanceFilterName::GreengrassGroupName => write!(f, "GREENGRASS_GROUP_NAME"),
+            SystemInstanceFilterName::Status => write!(f, "STATUS"),
+            SystemInstanceFilterName::SystemTemplateId => write!(f, "SYSTEM_TEMPLATE_ID"),
+            SystemInstanceFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

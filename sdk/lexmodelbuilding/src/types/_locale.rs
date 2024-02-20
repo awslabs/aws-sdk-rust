@@ -153,3 +153,23 @@ impl Locale {
         }
     }
 }
+impl ::std::fmt::Display for Locale {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Locale::DeDe => write!(f, "de-DE"),
+            Locale::EnAu => write!(f, "en-AU"),
+            Locale::EnGb => write!(f, "en-GB"),
+            Locale::EnIn => write!(f, "en-IN"),
+            Locale::EnUs => write!(f, "en-US"),
+            Locale::Es419 => write!(f, "es-419"),
+            Locale::EsEs => write!(f, "es-ES"),
+            Locale::EsUs => write!(f, "es-US"),
+            Locale::FrCa => write!(f, "fr-CA"),
+            Locale::FrFr => write!(f, "fr-FR"),
+            Locale::ItIt => write!(f, "it-IT"),
+            Locale::JaJp => write!(f, "ja-JP"),
+            Locale::KoKr => write!(f, "ko-KR"),
+            Locale::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

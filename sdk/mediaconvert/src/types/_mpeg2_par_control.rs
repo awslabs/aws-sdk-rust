@@ -96,3 +96,12 @@ impl Mpeg2ParControl {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2ParControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2ParControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            Mpeg2ParControl::Specified => write!(f, "SPECIFIED"),
+            Mpeg2ParControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

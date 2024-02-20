@@ -91,3 +91,11 @@ impl GeneratedManifestFormat {
         }
     }
 }
+impl ::std::fmt::Display for GeneratedManifestFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GeneratedManifestFormat::S3InventoryReportCsv20211130 => write!(f, "S3InventoryReport_CSV_20211130"),
+            GeneratedManifestFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

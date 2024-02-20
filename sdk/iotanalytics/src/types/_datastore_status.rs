@@ -101,3 +101,13 @@ impl DatastoreStatus {
         }
     }
 }
+impl ::std::fmt::Display for DatastoreStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatastoreStatus::Active => write!(f, "ACTIVE"),
+            DatastoreStatus::Creating => write!(f, "CREATING"),
+            DatastoreStatus::Deleting => write!(f, "DELETING"),
+            DatastoreStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -123,3 +123,16 @@ impl NoPreferenceTargetDestination {
         }
     }
 }
+impl ::std::fmt::Display for NoPreferenceTargetDestination {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NoPreferenceTargetDestination::AwsElasticBeanstalk => write!(f, "AWS Elastic BeanStalk"),
+            NoPreferenceTargetDestination::AwsFargate => write!(f, "AWS Fargate"),
+            NoPreferenceTargetDestination::AmazonElasticCloudCompute => write!(f, "Amazon Elastic Cloud Compute (EC2)"),
+            NoPreferenceTargetDestination::AmazonElasticContainerService => write!(f, "Amazon Elastic Container Service (ECS)"),
+            NoPreferenceTargetDestination::AmazonElasticKubernetesService => write!(f, "Amazon Elastic Kubernetes Service (EKS)"),
+            NoPreferenceTargetDestination::NoneSpecified => write!(f, "None specified"),
+            NoPreferenceTargetDestination::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

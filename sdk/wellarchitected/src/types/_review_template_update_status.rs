@@ -96,3 +96,12 @@ impl ReviewTemplateUpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReviewTemplateUpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReviewTemplateUpdateStatus::Current => write!(f, "CURRENT"),
+            ReviewTemplateUpdateStatus::LensNotCurrent => write!(f, "LENS_NOT_CURRENT"),
+            ReviewTemplateUpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

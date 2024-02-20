@@ -106,3 +106,14 @@ impl WorkflowStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowStatus::New => write!(f, "NEW"),
+            WorkflowStatus::Notified => write!(f, "NOTIFIED"),
+            WorkflowStatus::Resolved => write!(f, "RESOLVED"),
+            WorkflowStatus::Suppressed => write!(f, "SUPPRESSED"),
+            WorkflowStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

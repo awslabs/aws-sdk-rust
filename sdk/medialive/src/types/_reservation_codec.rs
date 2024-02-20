@@ -111,3 +111,15 @@ impl ReservationCodec {
         }
     }
 }
+impl ::std::fmt::Display for ReservationCodec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservationCodec::Audio => write!(f, "AUDIO"),
+            ReservationCodec::Avc => write!(f, "AVC"),
+            ReservationCodec::Hevc => write!(f, "HEVC"),
+            ReservationCodec::Link => write!(f, "LINK"),
+            ReservationCodec::Mpeg2 => write!(f, "MPEG2"),
+            ReservationCodec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl TopicRefreshStatus {
         }
     }
 }
+impl ::std::fmt::Display for TopicRefreshStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TopicRefreshStatus::Cancelled => write!(f, "CANCELLED"),
+            TopicRefreshStatus::Completed => write!(f, "COMPLETED"),
+            TopicRefreshStatus::Failed => write!(f, "FAILED"),
+            TopicRefreshStatus::Initialized => write!(f, "INITIALIZED"),
+            TopicRefreshStatus::Running => write!(f, "RUNNING"),
+            TopicRefreshStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

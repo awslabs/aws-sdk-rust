@@ -91,3 +91,11 @@ impl FhirVersion {
         }
     }
 }
+impl ::std::fmt::Display for FhirVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FhirVersion::R4 => write!(f, "R4"),
+            FhirVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

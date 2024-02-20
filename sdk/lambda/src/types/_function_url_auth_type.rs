@@ -96,3 +96,12 @@ impl FunctionUrlAuthType {
         }
     }
 }
+impl ::std::fmt::Display for FunctionUrlAuthType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FunctionUrlAuthType::AwsIam => write!(f, "AWS_IAM"),
+            FunctionUrlAuthType::None => write!(f, "NONE"),
+            FunctionUrlAuthType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

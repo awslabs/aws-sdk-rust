@@ -96,3 +96,12 @@ impl DiskIopsConfigurationMode {
         }
     }
 }
+impl ::std::fmt::Display for DiskIopsConfigurationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiskIopsConfigurationMode::Automatic => write!(f, "AUTOMATIC"),
+            DiskIopsConfigurationMode::UserProvisioned => write!(f, "USER_PROVISIONED"),
+            DiskIopsConfigurationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

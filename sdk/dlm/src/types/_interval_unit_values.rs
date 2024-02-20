@@ -91,3 +91,11 @@ impl IntervalUnitValues {
         }
     }
 }
+impl ::std::fmt::Display for IntervalUnitValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntervalUnitValues::Hours => write!(f, "HOURS"),
+            IntervalUnitValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl IngestionRequestSource {
         }
     }
 }
+impl ::std::fmt::Display for IngestionRequestSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IngestionRequestSource::Manual => write!(f, "MANUAL"),
+            IngestionRequestSource::Scheduled => write!(f, "SCHEDULED"),
+            IngestionRequestSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

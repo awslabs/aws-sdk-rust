@@ -111,3 +111,15 @@ impl GameSessionPlacementState {
         }
     }
 }
+impl ::std::fmt::Display for GameSessionPlacementState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GameSessionPlacementState::Cancelled => write!(f, "CANCELLED"),
+            GameSessionPlacementState::Failed => write!(f, "FAILED"),
+            GameSessionPlacementState::Fulfilled => write!(f, "FULFILLED"),
+            GameSessionPlacementState::Pending => write!(f, "PENDING"),
+            GameSessionPlacementState::TimedOut => write!(f, "TIMED_OUT"),
+            GameSessionPlacementState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl TargetGroupType {
         }
     }
 }
+impl ::std::fmt::Display for TargetGroupType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetGroupType::Alb => write!(f, "ALB"),
+            TargetGroupType::Instance => write!(f, "INSTANCE"),
+            TargetGroupType::Ip => write!(f, "IP"),
+            TargetGroupType::Lambda => write!(f, "LAMBDA"),
+            TargetGroupType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

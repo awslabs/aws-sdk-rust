@@ -96,3 +96,12 @@ impl Operation {
         }
     }
 }
+impl ::std::fmt::Display for Operation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Operation::Remove => write!(f, "remove"),
+            Operation::Replace => write!(f, "replace"),
+            Operation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

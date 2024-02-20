@@ -96,3 +96,12 @@ impl M2tsForceTsVideoEbpOrder {
         }
     }
 }
+impl ::std::fmt::Display for M2tsForceTsVideoEbpOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsForceTsVideoEbpOrder::Default => write!(f, "DEFAULT"),
+            M2tsForceTsVideoEbpOrder::Force => write!(f, "FORCE"),
+            M2tsForceTsVideoEbpOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

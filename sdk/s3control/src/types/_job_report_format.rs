@@ -91,3 +91,11 @@ impl JobReportFormat {
         }
     }
 }
+impl ::std::fmt::Display for JobReportFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobReportFormat::ReportCsv20180820 => write!(f, "Report_CSV_20180820"),
+            JobReportFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -285,3 +285,43 @@ impl ActivityType {
         }
     }
 }
+impl ::std::fmt::Display for ActivityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActivityType::DocumentAnnotationAdded => write!(f, "DOCUMENT_ANNOTATION_ADDED"),
+            ActivityType::DocumentAnnotationDeleted => write!(f, "DOCUMENT_ANNOTATION_DELETED"),
+            ActivityType::DocumentCheckedIn => write!(f, "DOCUMENT_CHECKED_IN"),
+            ActivityType::DocumentCheckedOut => write!(f, "DOCUMENT_CHECKED_OUT"),
+            ActivityType::DocumentCommentAdded => write!(f, "DOCUMENT_COMMENT_ADDED"),
+            ActivityType::DocumentCommentDeleted => write!(f, "DOCUMENT_COMMENT_DELETED"),
+            ActivityType::DocumentMoved => write!(f, "DOCUMENT_MOVED"),
+            ActivityType::DocumentRecycled => write!(f, "DOCUMENT_RECYCLED"),
+            ActivityType::DocumentRenamed => write!(f, "DOCUMENT_RENAMED"),
+            ActivityType::DocumentRestored => write!(f, "DOCUMENT_RESTORED"),
+            ActivityType::DocumentReverted => write!(f, "DOCUMENT_REVERTED"),
+            ActivityType::DocumentShareableLinkCreated => write!(f, "DOCUMENT_SHAREABLE_LINK_CREATED"),
+            ActivityType::DocumentShareableLinkPermissionChanged => write!(f, "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED"),
+            ActivityType::DocumentShareableLinkRemoved => write!(f, "DOCUMENT_SHAREABLE_LINK_REMOVED"),
+            ActivityType::DocumentShared => write!(f, "DOCUMENT_SHARED"),
+            ActivityType::DocumentSharePermissionChanged => write!(f, "DOCUMENT_SHARE_PERMISSION_CHANGED"),
+            ActivityType::DocumentUnshared => write!(f, "DOCUMENT_UNSHARED"),
+            ActivityType::DocumentVersionDeleted => write!(f, "DOCUMENT_VERSION_DELETED"),
+            ActivityType::DocumentVersionDownloaded => write!(f, "DOCUMENT_VERSION_DOWNLOADED"),
+            ActivityType::DocumentVersionUploaded => write!(f, "DOCUMENT_VERSION_UPLOADED"),
+            ActivityType::DocumentVersionViewed => write!(f, "DOCUMENT_VERSION_VIEWED"),
+            ActivityType::FolderCreated => write!(f, "FOLDER_CREATED"),
+            ActivityType::FolderDeleted => write!(f, "FOLDER_DELETED"),
+            ActivityType::FolderMoved => write!(f, "FOLDER_MOVED"),
+            ActivityType::FolderRecycled => write!(f, "FOLDER_RECYCLED"),
+            ActivityType::FolderRenamed => write!(f, "FOLDER_RENAMED"),
+            ActivityType::FolderRestored => write!(f, "FOLDER_RESTORED"),
+            ActivityType::FolderShareableLinkCreated => write!(f, "FOLDER_SHAREABLE_LINK_CREATED"),
+            ActivityType::FolderShareableLinkPermissionChanged => write!(f, "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED"),
+            ActivityType::FolderShareableLinkRemoved => write!(f, "FOLDER_SHAREABLE_LINK_REMOVED"),
+            ActivityType::FolderShared => write!(f, "FOLDER_SHARED"),
+            ActivityType::FolderSharePermissionChanged => write!(f, "FOLDER_SHARE_PERMISSION_CHANGED"),
+            ActivityType::FolderUnshared => write!(f, "FOLDER_UNSHARED"),
+            ActivityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

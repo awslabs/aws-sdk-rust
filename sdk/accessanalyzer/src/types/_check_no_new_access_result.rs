@@ -96,3 +96,12 @@ impl CheckNoNewAccessResult {
         }
     }
 }
+impl ::std::fmt::Display for CheckNoNewAccessResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CheckNoNewAccessResult::Fail => write!(f, "FAIL"),
+            CheckNoNewAccessResult::Pass => write!(f, "PASS"),
+            CheckNoNewAccessResult::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

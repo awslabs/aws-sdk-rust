@@ -106,3 +106,14 @@ impl Status {
         }
     }
 }
+impl ::std::fmt::Display for Status {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Status::Disabled => write!(f, "DISABLED"),
+            Status::Disabling => write!(f, "DISABLING"),
+            Status::Enabled => write!(f, "ENABLED"),
+            Status::Enabling => write!(f, "ENABLING"),
+            Status::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

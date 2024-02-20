@@ -111,3 +111,15 @@ impl DataReplicationInitiationStepStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataReplicationInitiationStepStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataReplicationInitiationStepStatus::Failed => write!(f, "FAILED"),
+            DataReplicationInitiationStepStatus::InProgress => write!(f, "IN_PROGRESS"),
+            DataReplicationInitiationStepStatus::NotStarted => write!(f, "NOT_STARTED"),
+            DataReplicationInitiationStepStatus::Skipped => write!(f, "SKIPPED"),
+            DataReplicationInitiationStepStatus::Succeeded => write!(f, "SUCCEEDED"),
+            DataReplicationInitiationStepStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

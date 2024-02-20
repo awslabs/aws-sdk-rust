@@ -96,3 +96,12 @@ impl DevicePoolType {
         }
     }
 }
+impl ::std::fmt::Display for DevicePoolType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DevicePoolType::Curated => write!(f, "CURATED"),
+            DevicePoolType::Private => write!(f, "PRIVATE"),
+            DevicePoolType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

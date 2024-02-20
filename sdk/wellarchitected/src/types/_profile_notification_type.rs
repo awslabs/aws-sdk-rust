@@ -96,3 +96,12 @@ impl ProfileNotificationType {
         }
     }
 }
+impl ::std::fmt::Display for ProfileNotificationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProfileNotificationType::ProfileAnswersUpdated => write!(f, "PROFILE_ANSWERS_UPDATED"),
+            ProfileNotificationType::ProfileDeleted => write!(f, "PROFILE_DELETED"),
+            ProfileNotificationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

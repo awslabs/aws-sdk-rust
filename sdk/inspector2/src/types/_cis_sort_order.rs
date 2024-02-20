@@ -96,3 +96,12 @@ impl CisSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for CisSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisSortOrder::Asc => write!(f, "ASC"),
+            CisSortOrder::Desc => write!(f, "DESC"),
+            CisSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

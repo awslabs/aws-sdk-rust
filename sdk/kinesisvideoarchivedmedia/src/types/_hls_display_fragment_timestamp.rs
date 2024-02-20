@@ -96,3 +96,12 @@ impl HlsDisplayFragmentTimestamp {
         }
     }
 }
+impl ::std::fmt::Display for HlsDisplayFragmentTimestamp {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsDisplayFragmentTimestamp::Always => write!(f, "ALWAYS"),
+            HlsDisplayFragmentTimestamp::Never => write!(f, "NEVER"),
+            HlsDisplayFragmentTimestamp::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

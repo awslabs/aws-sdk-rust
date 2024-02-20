@@ -96,3 +96,12 @@ impl StorageCompressionFormat {
         }
     }
 }
+impl ::std::fmt::Display for StorageCompressionFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageCompressionFormat::Gzip => write!(f, "GZIP"),
+            StorageCompressionFormat::None => write!(f, "NONE"),
+            StorageCompressionFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

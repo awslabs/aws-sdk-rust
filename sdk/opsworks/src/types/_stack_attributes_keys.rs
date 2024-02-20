@@ -91,3 +91,11 @@ impl StackAttributesKeys {
         }
     }
 }
+impl ::std::fmt::Display for StackAttributesKeys {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackAttributesKeys::Color => write!(f, "Color"),
+            StackAttributesKeys::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

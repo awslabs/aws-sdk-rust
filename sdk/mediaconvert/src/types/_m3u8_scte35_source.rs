@@ -96,3 +96,12 @@ impl M3u8Scte35Source {
         }
     }
 }
+impl ::std::fmt::Display for M3u8Scte35Source {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M3u8Scte35Source::None => write!(f, "NONE"),
+            M3u8Scte35Source::Passthrough => write!(f, "PASSTHROUGH"),
+            M3u8Scte35Source::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl DeviceDeploymentStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceDeploymentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceDeploymentStatus::Deployed => write!(f, "DEPLOYED"),
+            DeviceDeploymentStatus::Failed => write!(f, "FAILED"),
+            DeviceDeploymentStatus::InProgress => write!(f, "INPROGRESS"),
+            DeviceDeploymentStatus::ReadyToDeploy => write!(f, "READYTODEPLOY"),
+            DeviceDeploymentStatus::Stopped => write!(f, "STOPPED"),
+            DeviceDeploymentStatus::Stopping => write!(f, "STOPPING"),
+            DeviceDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

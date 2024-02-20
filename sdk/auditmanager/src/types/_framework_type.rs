@@ -96,3 +96,12 @@ impl FrameworkType {
         }
     }
 }
+impl ::std::fmt::Display for FrameworkType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FrameworkType::Custom => write!(f, "Custom"),
+            FrameworkType::Standard => write!(f, "Standard"),
+            FrameworkType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

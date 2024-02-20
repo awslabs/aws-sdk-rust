@@ -96,3 +96,12 @@ impl FileSystemMaintenanceOperation {
         }
     }
 }
+impl ::std::fmt::Display for FileSystemMaintenanceOperation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileSystemMaintenanceOperation::BackingUp => write!(f, "BACKING_UP"),
+            FileSystemMaintenanceOperation::Patching => write!(f, "PATCHING"),
+            FileSystemMaintenanceOperation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

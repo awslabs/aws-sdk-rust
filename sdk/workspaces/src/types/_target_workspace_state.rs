@@ -96,3 +96,12 @@ impl TargetWorkspaceState {
         }
     }
 }
+impl ::std::fmt::Display for TargetWorkspaceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetWorkspaceState::AdminMaintenance => write!(f, "ADMIN_MAINTENANCE"),
+            TargetWorkspaceState::Available => write!(f, "AVAILABLE"),
+            TargetWorkspaceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

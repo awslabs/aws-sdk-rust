@@ -111,3 +111,15 @@ impl AuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationType::AmazonCognitoUserPools => write!(f, "AMAZON_COGNITO_USER_POOLS"),
+            AuthenticationType::ApiKey => write!(f, "API_KEY"),
+            AuthenticationType::AwsIam => write!(f, "AWS_IAM"),
+            AuthenticationType::AwsLambda => write!(f, "AWS_LAMBDA"),
+            AuthenticationType::OpenidConnect => write!(f, "OPENID_CONNECT"),
+            AuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

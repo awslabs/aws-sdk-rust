@@ -101,3 +101,13 @@ impl Replacement {
         }
     }
 }
+impl ::std::fmt::Display for Replacement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Replacement::Conditional => write!(f, "Conditional"),
+            Replacement::False => write!(f, "False"),
+            Replacement::True => write!(f, "True"),
+            Replacement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

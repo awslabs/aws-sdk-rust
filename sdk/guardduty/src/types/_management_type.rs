@@ -101,3 +101,13 @@ impl ManagementType {
         }
     }
 }
+impl ::std::fmt::Display for ManagementType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ManagementType::AutoManaged => write!(f, "AUTO_MANAGED"),
+            ManagementType::Disabled => write!(f, "DISABLED"),
+            ManagementType::Manual => write!(f, "MANUAL"),
+            ManagementType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl WorkspaceBundleState {
         }
     }
 }
+impl ::std::fmt::Display for WorkspaceBundleState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkspaceBundleState::Available => write!(f, "AVAILABLE"),
+            WorkspaceBundleState::Error => write!(f, "ERROR"),
+            WorkspaceBundleState::Pending => write!(f, "PENDING"),
+            WorkspaceBundleState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

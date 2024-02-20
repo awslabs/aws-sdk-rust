@@ -96,3 +96,12 @@ impl TransferMode {
         }
     }
 }
+impl ::std::fmt::Display for TransferMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransferMode::All => write!(f, "ALL"),
+            TransferMode::Changed => write!(f, "CHANGED"),
+            TransferMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

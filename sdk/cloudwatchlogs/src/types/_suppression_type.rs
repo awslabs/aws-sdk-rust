@@ -96,3 +96,12 @@ impl SuppressionType {
         }
     }
 }
+impl ::std::fmt::Display for SuppressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SuppressionType::Infinite => write!(f, "INFINITE"),
+            SuppressionType::Limited => write!(f, "LIMITED"),
+            SuppressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

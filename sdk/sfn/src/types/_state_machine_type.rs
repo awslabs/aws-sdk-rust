@@ -96,3 +96,12 @@ impl StateMachineType {
         }
     }
 }
+impl ::std::fmt::Display for StateMachineType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StateMachineType::Express => write!(f, "EXPRESS"),
+            StateMachineType::Standard => write!(f, "STANDARD"),
+            StateMachineType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

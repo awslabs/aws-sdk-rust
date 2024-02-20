@@ -96,3 +96,12 @@ impl ScanResult {
         }
     }
 }
+impl ::std::fmt::Display for ScanResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScanResult::Clean => write!(f, "CLEAN"),
+            ScanResult::Infected => write!(f, "INFECTED"),
+            ScanResult::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

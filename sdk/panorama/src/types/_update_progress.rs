@@ -121,3 +121,17 @@ impl UpdateProgress {
         }
     }
 }
+impl ::std::fmt::Display for UpdateProgress {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateProgress::Completed => write!(f, "COMPLETED"),
+            UpdateProgress::Downloading => write!(f, "DOWNLOADING"),
+            UpdateProgress::Failed => write!(f, "FAILED"),
+            UpdateProgress::InProgress => write!(f, "IN_PROGRESS"),
+            UpdateProgress::Pending => write!(f, "PENDING"),
+            UpdateProgress::Rebooting => write!(f, "REBOOTING"),
+            UpdateProgress::Verifying => write!(f, "VERIFYING"),
+            UpdateProgress::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

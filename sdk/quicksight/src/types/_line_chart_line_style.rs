@@ -101,3 +101,13 @@ impl LineChartLineStyle {
         }
     }
 }
+impl ::std::fmt::Display for LineChartLineStyle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LineChartLineStyle::Dashed => write!(f, "DASHED"),
+            LineChartLineStyle::Dotted => write!(f, "DOTTED"),
+            LineChartLineStyle::Solid => write!(f, "SOLID"),
+            LineChartLineStyle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

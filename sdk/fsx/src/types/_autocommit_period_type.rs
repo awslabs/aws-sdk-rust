@@ -116,3 +116,16 @@ impl AutocommitPeriodType {
         }
     }
 }
+impl ::std::fmt::Display for AutocommitPeriodType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutocommitPeriodType::Days => write!(f, "DAYS"),
+            AutocommitPeriodType::Hours => write!(f, "HOURS"),
+            AutocommitPeriodType::Minutes => write!(f, "MINUTES"),
+            AutocommitPeriodType::Months => write!(f, "MONTHS"),
+            AutocommitPeriodType::None => write!(f, "NONE"),
+            AutocommitPeriodType::Years => write!(f, "YEARS"),
+            AutocommitPeriodType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

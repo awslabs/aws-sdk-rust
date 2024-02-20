@@ -101,3 +101,13 @@ impl EffectivePermission {
         }
     }
 }
+impl ::std::fmt::Display for EffectivePermission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EffectivePermission::NotPublic => write!(f, "NOT_PUBLIC"),
+            EffectivePermission::Public => write!(f, "PUBLIC"),
+            EffectivePermission::UnknownValue => write!(f, "UNKNOWN"),
+            EffectivePermission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

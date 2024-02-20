@@ -171,3 +171,24 @@ impl CaptionSourceType {
         }
     }
 }
+impl ::std::fmt::Display for CaptionSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CaptionSourceType::Ancillary => write!(f, "ANCILLARY"),
+            CaptionSourceType::DvbSub => write!(f, "DVB_SUB"),
+            CaptionSourceType::Embedded => write!(f, "EMBEDDED"),
+            CaptionSourceType::Imsc => write!(f, "IMSC"),
+            CaptionSourceType::NullSource => write!(f, "NULL_SOURCE"),
+            CaptionSourceType::Scc => write!(f, "SCC"),
+            CaptionSourceType::Scte20 => write!(f, "SCTE20"),
+            CaptionSourceType::Smi => write!(f, "SMI"),
+            CaptionSourceType::SmpteTt => write!(f, "SMPTE_TT"),
+            CaptionSourceType::Srt => write!(f, "SRT"),
+            CaptionSourceType::Stl => write!(f, "STL"),
+            CaptionSourceType::Teletext => write!(f, "TELETEXT"),
+            CaptionSourceType::Ttml => write!(f, "TTML"),
+            CaptionSourceType::Webvtt => write!(f, "WEBVTT"),
+            CaptionSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

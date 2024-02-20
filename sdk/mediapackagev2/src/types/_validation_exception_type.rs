@@ -313,3 +313,49 @@ impl ValidationExceptionType {
         }
     }
 }
+impl ::std::fmt::Display for ValidationExceptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationExceptionType::CencIvIncompatible => write!(f, "CENC_IV_INCOMPATIBLE"),
+            ValidationExceptionType::ContainerTypeImmutable => write!(f, "CONTAINER_TYPE_IMMUTABLE"),
+            ValidationExceptionType::DrmSystemsEncryptionMethodIncompatible => write!(f, "DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE"),
+            ValidationExceptionType::EncryptionContractShared => write!(f, "ENCRYPTION_CONTRACT_SHARED"),
+            ValidationExceptionType::EncryptionContractUnencrypted => write!(f, "ENCRYPTION_CONTRACT_UNENCRYPTED"),
+            ValidationExceptionType::EncryptionContractWithoutAudioRenditionIncompatible => {
+                write!(f, "ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE")
+            }
+            ValidationExceptionType::EncryptionMethodContainerTypeMismatch => write!(f, "ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH"),
+            ValidationExceptionType::EndTimeEarlierThanStartTime => write!(f, "END_TIME_EARLIER_THAN_START_TIME"),
+            ValidationExceptionType::InvalidManifestFilter => write!(f, "INVALID_MANIFEST_FILTER"),
+            ValidationExceptionType::InvalidPaginationMaxResults => write!(f, "INVALID_PAGINATION_MAX_RESULTS"),
+            ValidationExceptionType::InvalidPaginationToken => write!(f, "INVALID_PAGINATION_TOKEN"),
+            ValidationExceptionType::InvalidPolicy => write!(f, "INVALID_POLICY"),
+            ValidationExceptionType::InvalidRoleArn => write!(f, "INVALID_ROLE_ARN"),
+            ValidationExceptionType::InvalidTimeDelaySeconds => write!(f, "INVALID_TIME_DELAY_SECONDS"),
+            ValidationExceptionType::ManifestNameCollision => write!(f, "MANIFEST_NAME_COLLISION"),
+            ValidationExceptionType::MemberDoesNotMatchPattern => write!(f, "MEMBER_DOES_NOT_MATCH_PATTERN"),
+            ValidationExceptionType::MemberInvalid => write!(f, "MEMBER_INVALID"),
+            ValidationExceptionType::MemberInvalidEnumValue => write!(f, "MEMBER_INVALID_ENUM_VALUE"),
+            ValidationExceptionType::MemberMaxLength => write!(f, "MEMBER_MAX_LENGTH"),
+            ValidationExceptionType::MemberMaxValue => write!(f, "MEMBER_MAX_VALUE"),
+            ValidationExceptionType::MemberMinLength => write!(f, "MEMBER_MIN_LENGTH"),
+            ValidationExceptionType::MemberMinValue => write!(f, "MEMBER_MIN_VALUE"),
+            ValidationExceptionType::MemberMissing => write!(f, "MEMBER_MISSING"),
+            ValidationExceptionType::NumManifestsHigh => write!(f, "NUM_MANIFESTS_HIGH"),
+            ValidationExceptionType::NumManifestsLow => write!(f, "NUM_MANIFESTS_LOW"),
+            ValidationExceptionType::RoleArnInvalidFormat => write!(f, "ROLE_ARN_INVALID_FORMAT"),
+            ValidationExceptionType::RoleArnLengthOutOfRange => write!(f, "ROLE_ARN_LENGTH_OUT_OF_RANGE"),
+            ValidationExceptionType::RoleArnNotAssumable => write!(f, "ROLE_ARN_NOT_ASSUMABLE"),
+            ValidationExceptionType::UrlInvalid => write!(f, "URL_INVALID"),
+            ValidationExceptionType::UrlLinkLocalAddress => write!(f, "URL_LINK_LOCAL_ADDRESS"),
+            ValidationExceptionType::UrlLocalAddress => write!(f, "URL_LOCAL_ADDRESS"),
+            ValidationExceptionType::UrlLoopbackAddress => write!(f, "URL_LOOPBACK_ADDRESS"),
+            ValidationExceptionType::UrlMulticastAddress => write!(f, "URL_MULTICAST_ADDRESS"),
+            ValidationExceptionType::UrlPort => write!(f, "URL_PORT"),
+            ValidationExceptionType::UrlScheme => write!(f, "URL_SCHEME"),
+            ValidationExceptionType::UrlUnknownHost => write!(f, "URL_UNKNOWN_HOST"),
+            ValidationExceptionType::UrlUserInfo => write!(f, "URL_USER_INFO"),
+            ValidationExceptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl PipelineStatus {
         }
     }
 }
+impl ::std::fmt::Display for PipelineStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PipelineStatus::Active => write!(f, "Active"),
+            PipelineStatus::Deleting => write!(f, "Deleting"),
+            PipelineStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

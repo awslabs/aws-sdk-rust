@@ -96,3 +96,12 @@ impl ConnectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionStatus::Offline => write!(f, "OFFLINE"),
+            ConnectionStatus::Online => write!(f, "ONLINE"),
+            ConnectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

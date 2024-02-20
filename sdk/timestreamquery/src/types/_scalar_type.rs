@@ -153,3 +153,21 @@ impl ScalarType {
         }
     }
 }
+impl ::std::fmt::Display for ScalarType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalarType::Bigint => write!(f, "BIGINT"),
+            ScalarType::Boolean => write!(f, "BOOLEAN"),
+            ScalarType::Date => write!(f, "DATE"),
+            ScalarType::Double => write!(f, "DOUBLE"),
+            ScalarType::Integer => write!(f, "INTEGER"),
+            ScalarType::IntervalDayToSecond => write!(f, "INTERVAL_DAY_TO_SECOND"),
+            ScalarType::IntervalYearToMonth => write!(f, "INTERVAL_YEAR_TO_MONTH"),
+            ScalarType::Time => write!(f, "TIME"),
+            ScalarType::Timestamp => write!(f, "TIMESTAMP"),
+            ScalarType::UnknownValue => write!(f, "UNKNOWN"),
+            ScalarType::Varchar => write!(f, "VARCHAR"),
+            ScalarType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

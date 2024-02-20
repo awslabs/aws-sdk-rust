@@ -96,3 +96,12 @@ impl ActionSubType {
         }
     }
 }
+impl ::std::fmt::Display for ActionSubType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionSubType::StopEc2 => write!(f, "STOP_EC2_INSTANCES"),
+            ActionSubType::StopRds => write!(f, "STOP_RDS_INSTANCES"),
+            ActionSubType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl KxVolumeStatus {
         }
     }
 }
+impl ::std::fmt::Display for KxVolumeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KxVolumeStatus::Active => write!(f, "ACTIVE"),
+            KxVolumeStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            KxVolumeStatus::Creating => write!(f, "CREATING"),
+            KxVolumeStatus::Deleted => write!(f, "DELETED"),
+            KxVolumeStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            KxVolumeStatus::Deleting => write!(f, "DELETING"),
+            KxVolumeStatus::Updated => write!(f, "UPDATED"),
+            KxVolumeStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            KxVolumeStatus::Updating => write!(f, "UPDATING"),
+            KxVolumeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

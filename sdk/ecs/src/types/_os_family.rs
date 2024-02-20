@@ -135,3 +135,18 @@ impl OsFamily {
         }
     }
 }
+impl ::std::fmt::Display for OsFamily {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OsFamily::Linux => write!(f, "LINUX"),
+            OsFamily::WindowsServer2004Core => write!(f, "WINDOWS_SERVER_2004_CORE"),
+            OsFamily::WindowsServer2016Full => write!(f, "WINDOWS_SERVER_2016_FULL"),
+            OsFamily::WindowsServer2019Core => write!(f, "WINDOWS_SERVER_2019_CORE"),
+            OsFamily::WindowsServer2019Full => write!(f, "WINDOWS_SERVER_2019_FULL"),
+            OsFamily::WindowsServer2022Core => write!(f, "WINDOWS_SERVER_2022_CORE"),
+            OsFamily::WindowsServer2022Full => write!(f, "WINDOWS_SERVER_2022_FULL"),
+            OsFamily::WindowsServer20H2Core => write!(f, "WINDOWS_SERVER_20H2_CORE"),
+            OsFamily::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

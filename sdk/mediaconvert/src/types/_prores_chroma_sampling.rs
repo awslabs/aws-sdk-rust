@@ -96,3 +96,12 @@ impl ProresChromaSampling {
         }
     }
 }
+impl ::std::fmt::Display for ProresChromaSampling {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProresChromaSampling::Preserve444Sampling => write!(f, "PRESERVE_444_SAMPLING"),
+            ProresChromaSampling::SubsampleTo422 => write!(f, "SUBSAMPLE_TO_422"),
+            ProresChromaSampling::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

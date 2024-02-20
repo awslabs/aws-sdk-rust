@@ -101,3 +101,13 @@ impl ContactMethodStatus {
         }
     }
 }
+impl ::std::fmt::Display for ContactMethodStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContactMethodStatus::Invalid => write!(f, "Invalid"),
+            ContactMethodStatus::PendingVerification => write!(f, "PendingVerification"),
+            ContactMethodStatus::Valid => write!(f, "Valid"),
+            ContactMethodStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ProvisionTargetType {
         }
     }
 }
+impl ::std::fmt::Display for ProvisionTargetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProvisionTargetType::AllProvisionedAccounts => write!(f, "ALL_PROVISIONED_ACCOUNTS"),
+            ProvisionTargetType::AwsAccount => write!(f, "AWS_ACCOUNT"),
+            ProvisionTargetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

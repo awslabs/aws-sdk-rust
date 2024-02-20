@@ -101,3 +101,13 @@ impl UncompressedFourcc {
         }
     }
 }
+impl ::std::fmt::Display for UncompressedFourcc {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UncompressedFourcc::I420 => write!(f, "I420"),
+            UncompressedFourcc::I422 => write!(f, "I422"),
+            UncompressedFourcc::I444 => write!(f, "I444"),
+            UncompressedFourcc::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

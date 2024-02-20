@@ -96,3 +96,12 @@ impl TtmlDestinationStyleControl {
         }
     }
 }
+impl ::std::fmt::Display for TtmlDestinationStyleControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TtmlDestinationStyleControl::Passthrough => write!(f, "PASSTHROUGH"),
+            TtmlDestinationStyleControl::UseConfigured => write!(f, "USE_CONFIGURED"),
+            TtmlDestinationStyleControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

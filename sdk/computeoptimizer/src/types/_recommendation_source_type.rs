@@ -116,3 +116,16 @@ impl RecommendationSourceType {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationSourceType::AutoScalingGroup => write!(f, "AutoScalingGroup"),
+            RecommendationSourceType::EbsVolume => write!(f, "EbsVolume"),
+            RecommendationSourceType::Ec2Instance => write!(f, "Ec2Instance"),
+            RecommendationSourceType::EcsService => write!(f, "EcsService"),
+            RecommendationSourceType::LambdaFunction => write!(f, "LambdaFunction"),
+            RecommendationSourceType::License => write!(f, "License"),
+            RecommendationSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

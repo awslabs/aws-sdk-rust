@@ -96,3 +96,12 @@ impl ExecutionMode {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionMode::Auto => write!(f, "Auto"),
+            ExecutionMode::Interactive => write!(f, "Interactive"),
+            ExecutionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

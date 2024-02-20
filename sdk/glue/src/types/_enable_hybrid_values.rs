@@ -96,3 +96,12 @@ impl EnableHybridValues {
         }
     }
 }
+impl ::std::fmt::Display for EnableHybridValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnableHybridValues::False => write!(f, "FALSE"),
+            EnableHybridValues::True => write!(f, "TRUE"),
+            EnableHybridValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

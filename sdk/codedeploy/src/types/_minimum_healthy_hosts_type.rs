@@ -96,3 +96,12 @@ impl MinimumHealthyHostsType {
         }
     }
 }
+impl ::std::fmt::Display for MinimumHealthyHostsType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MinimumHealthyHostsType::FleetPercent => write!(f, "FLEET_PERCENT"),
+            MinimumHealthyHostsType::HostCount => write!(f, "HOST_COUNT"),
+            MinimumHealthyHostsType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

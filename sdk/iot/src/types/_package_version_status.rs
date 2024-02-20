@@ -101,3 +101,13 @@ impl PackageVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for PackageVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageVersionStatus::Deprecated => write!(f, "DEPRECATED"),
+            PackageVersionStatus::Draft => write!(f, "DRAFT"),
+            PackageVersionStatus::Published => write!(f, "PUBLISHED"),
+            PackageVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

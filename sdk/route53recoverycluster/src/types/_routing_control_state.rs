@@ -96,3 +96,12 @@ impl RoutingControlState {
         }
     }
 }
+impl ::std::fmt::Display for RoutingControlState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RoutingControlState::Off => write!(f, "Off"),
+            RoutingControlState::On => write!(f, "On"),
+            RoutingControlState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

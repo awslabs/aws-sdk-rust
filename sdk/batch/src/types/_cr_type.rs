@@ -106,3 +106,14 @@ impl CrType {
         }
     }
 }
+impl ::std::fmt::Display for CrType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CrType::Ec2 => write!(f, "EC2"),
+            CrType::Fargate => write!(f, "FARGATE"),
+            CrType::FargateSpot => write!(f, "FARGATE_SPOT"),
+            CrType::Spot => write!(f, "SPOT"),
+            CrType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

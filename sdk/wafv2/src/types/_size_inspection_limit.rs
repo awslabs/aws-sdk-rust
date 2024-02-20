@@ -106,3 +106,14 @@ impl SizeInspectionLimit {
         }
     }
 }
+impl ::std::fmt::Display for SizeInspectionLimit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SizeInspectionLimit::Kb16 => write!(f, "KB_16"),
+            SizeInspectionLimit::Kb32 => write!(f, "KB_32"),
+            SizeInspectionLimit::Kb48 => write!(f, "KB_48"),
+            SizeInspectionLimit::Kb64 => write!(f, "KB_64"),
+            SizeInspectionLimit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

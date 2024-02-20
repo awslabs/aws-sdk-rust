@@ -101,3 +101,13 @@ impl KxClusterCodeDeploymentStrategy {
         }
     }
 }
+impl ::std::fmt::Display for KxClusterCodeDeploymentStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KxClusterCodeDeploymentStrategy::Force => write!(f, "FORCE"),
+            KxClusterCodeDeploymentStrategy::NoRestart => write!(f, "NO_RESTART"),
+            KxClusterCodeDeploymentStrategy::Rolling => write!(f, "ROLLING"),
+            KxClusterCodeDeploymentStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

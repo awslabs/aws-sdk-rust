@@ -106,3 +106,14 @@ impl AacVbrQuality {
         }
     }
 }
+impl ::std::fmt::Display for AacVbrQuality {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AacVbrQuality::High => write!(f, "HIGH"),
+            AacVbrQuality::Low => write!(f, "LOW"),
+            AacVbrQuality::MediumHigh => write!(f, "MEDIUM_HIGH"),
+            AacVbrQuality::MediumLow => write!(f, "MEDIUM_LOW"),
+            AacVbrQuality::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

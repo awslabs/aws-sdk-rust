@@ -96,3 +96,12 @@ impl ImscAccessibilitySubs {
         }
     }
 }
+impl ::std::fmt::Display for ImscAccessibilitySubs {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImscAccessibilitySubs::Disabled => write!(f, "DISABLED"),
+            ImscAccessibilitySubs::Enabled => write!(f, "ENABLED"),
+            ImscAccessibilitySubs::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

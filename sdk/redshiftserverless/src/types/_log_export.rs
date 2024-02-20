@@ -101,3 +101,13 @@ impl LogExport {
         }
     }
 }
+impl ::std::fmt::Display for LogExport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogExport::ConnectionLog => write!(f, "connectionlog"),
+            LogExport::UserActivityLog => write!(f, "useractivitylog"),
+            LogExport::UserLog => write!(f, "userlog"),
+            LogExport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

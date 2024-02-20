@@ -111,3 +111,15 @@ impl ResourceShareStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceShareStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceShareStatus::Active => write!(f, "ACTIVE"),
+            ResourceShareStatus::Deleted => write!(f, "DELETED"),
+            ResourceShareStatus::Deleting => write!(f, "DELETING"),
+            ResourceShareStatus::Failed => write!(f, "FAILED"),
+            ResourceShareStatus::Pending => write!(f, "PENDING"),
+            ResourceShareStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

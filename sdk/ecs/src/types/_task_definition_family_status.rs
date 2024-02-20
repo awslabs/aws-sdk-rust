@@ -101,3 +101,13 @@ impl TaskDefinitionFamilyStatus {
         }
     }
 }
+impl ::std::fmt::Display for TaskDefinitionFamilyStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskDefinitionFamilyStatus::Active => write!(f, "ACTIVE"),
+            TaskDefinitionFamilyStatus::All => write!(f, "ALL"),
+            TaskDefinitionFamilyStatus::Inactive => write!(f, "INACTIVE"),
+            TaskDefinitionFamilyStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ProvisioningArtifactGuidance {
         }
     }
 }
+impl ::std::fmt::Display for ProvisioningArtifactGuidance {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProvisioningArtifactGuidance::Default => write!(f, "DEFAULT"),
+            ProvisioningArtifactGuidance::Deprecated => write!(f, "DEPRECATED"),
+            ProvisioningArtifactGuidance::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

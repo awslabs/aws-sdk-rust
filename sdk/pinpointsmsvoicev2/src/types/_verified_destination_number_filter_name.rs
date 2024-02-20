@@ -91,3 +91,11 @@ impl VerifiedDestinationNumberFilterName {
         }
     }
 }
+impl ::std::fmt::Display for VerifiedDestinationNumberFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerifiedDestinationNumberFilterName::Status => write!(f, "status"),
+            VerifiedDestinationNumberFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

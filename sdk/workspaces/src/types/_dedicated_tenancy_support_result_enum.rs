@@ -96,3 +96,12 @@ impl DedicatedTenancySupportResultEnum {
         }
     }
 }
+impl ::std::fmt::Display for DedicatedTenancySupportResultEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DedicatedTenancySupportResultEnum::Disabled => write!(f, "DISABLED"),
+            DedicatedTenancySupportResultEnum::Enabled => write!(f, "ENABLED"),
+            DedicatedTenancySupportResultEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

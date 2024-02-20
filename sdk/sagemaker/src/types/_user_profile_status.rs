@@ -121,3 +121,17 @@ impl UserProfileStatus {
         }
     }
 }
+impl ::std::fmt::Display for UserProfileStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserProfileStatus::DeleteFailed => write!(f, "Delete_Failed"),
+            UserProfileStatus::Deleting => write!(f, "Deleting"),
+            UserProfileStatus::Failed => write!(f, "Failed"),
+            UserProfileStatus::InService => write!(f, "InService"),
+            UserProfileStatus::Pending => write!(f, "Pending"),
+            UserProfileStatus::UpdateFailed => write!(f, "Update_Failed"),
+            UserProfileStatus::Updating => write!(f, "Updating"),
+            UserProfileStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

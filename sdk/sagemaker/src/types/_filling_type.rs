@@ -135,3 +135,18 @@ impl FillingType {
         }
     }
 }
+impl ::std::fmt::Display for FillingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FillingType::Backfill => write!(f, "backfill"),
+            FillingType::BackfillValue => write!(f, "backfill_value"),
+            FillingType::Frontfill => write!(f, "frontfill"),
+            FillingType::FrontfillValue => write!(f, "frontfill_value"),
+            FillingType::Futurefill => write!(f, "futurefill"),
+            FillingType::FuturefillValue => write!(f, "futurefill_value"),
+            FillingType::Middlefill => write!(f, "middlefill"),
+            FillingType::MiddlefillValue => write!(f, "middlefill_value"),
+            FillingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

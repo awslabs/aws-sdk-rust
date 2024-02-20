@@ -106,3 +106,14 @@ impl Operation {
         }
     }
 }
+impl ::std::fmt::Display for Operation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Operation::Add => write!(f, "ADD"),
+            Operation::Divide => write!(f, "DIVIDE"),
+            Operation::Multiply => write!(f, "MULTIPLY"),
+            Operation::Subtract => write!(f, "SUBTRACT"),
+            Operation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

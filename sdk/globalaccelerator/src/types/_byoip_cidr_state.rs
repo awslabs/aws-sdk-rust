@@ -153,3 +153,21 @@ impl ByoipCidrState {
         }
     }
 }
+impl ::std::fmt::Display for ByoipCidrState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ByoipCidrState::Advertising => write!(f, "ADVERTISING"),
+            ByoipCidrState::Deprovisioned => write!(f, "DEPROVISIONED"),
+            ByoipCidrState::FailedAdvertising => write!(f, "FAILED_ADVERTISING"),
+            ByoipCidrState::FailedDeprovision => write!(f, "FAILED_DEPROVISION"),
+            ByoipCidrState::FailedProvision => write!(f, "FAILED_PROVISION"),
+            ByoipCidrState::FailedWithdraw => write!(f, "FAILED_WITHDRAW"),
+            ByoipCidrState::PendingAdvertising => write!(f, "PENDING_ADVERTISING"),
+            ByoipCidrState::PendingDeprovisioning => write!(f, "PENDING_DEPROVISIONING"),
+            ByoipCidrState::PendingProvisioning => write!(f, "PENDING_PROVISIONING"),
+            ByoipCidrState::PendingWithdrawing => write!(f, "PENDING_WITHDRAWING"),
+            ByoipCidrState::Ready => write!(f, "READY"),
+            ByoipCidrState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Resource {
         }
     }
 }
+impl ::std::fmt::Display for Resource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Resource::FileSystem => write!(f, "FILE_SYSTEM"),
+            Resource::MountTarget => write!(f, "MOUNT_TARGET"),
+            Resource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

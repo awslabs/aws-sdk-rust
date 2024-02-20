@@ -96,3 +96,12 @@ impl RelatedItemType {
         }
     }
 }
+impl ::std::fmt::Display for RelatedItemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelatedItemType::Comment => write!(f, "Comment"),
+            RelatedItemType::Contact => write!(f, "Contact"),
+            RelatedItemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

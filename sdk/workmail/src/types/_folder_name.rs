@@ -111,3 +111,15 @@ impl FolderName {
         }
     }
 }
+impl ::std::fmt::Display for FolderName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FolderName::DeletedItems => write!(f, "DELETED_ITEMS"),
+            FolderName::Drafts => write!(f, "DRAFTS"),
+            FolderName::Inbox => write!(f, "INBOX"),
+            FolderName::JunkEmail => write!(f, "JUNK_EMAIL"),
+            FolderName::SentItems => write!(f, "SENT_ITEMS"),
+            FolderName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl Status {
         }
     }
 }
+impl ::std::fmt::Display for Status {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Status::Canceled => write!(f, "CANCELED"),
+            Status::Error => write!(f, "ERROR"),
+            Status::Fail => write!(f, "FAIL"),
+            Status::Pass => write!(f, "PASS"),
+            Status::PassWithWarnings => write!(f, "PASS_WITH_WARNINGS"),
+            Status::Pending => write!(f, "PENDING"),
+            Status::Running => write!(f, "RUNNING"),
+            Status::Stopped => write!(f, "STOPPED"),
+            Status::Stopping => write!(f, "STOPPING"),
+            Status::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

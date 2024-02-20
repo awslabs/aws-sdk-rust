@@ -111,3 +111,15 @@ impl ProvisionedProductStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProvisionedProductStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProvisionedProductStatus::Available => write!(f, "AVAILABLE"),
+            ProvisionedProductStatus::Error => write!(f, "ERROR"),
+            ProvisionedProductStatus::PlanInProgress => write!(f, "PLAN_IN_PROGRESS"),
+            ProvisionedProductStatus::Tainted => write!(f, "TAINTED"),
+            ProvisionedProductStatus::UnderChange => write!(f, "UNDER_CHANGE"),
+            ProvisionedProductStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

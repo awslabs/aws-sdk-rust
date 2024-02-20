@@ -101,3 +101,13 @@ impl EndpointType {
         }
     }
 }
+impl ::std::fmt::Display for EndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointType::Public => write!(f, "PUBLIC"),
+            EndpointType::Vpc => write!(f, "VPC"),
+            EndpointType::VpcEndpoint => write!(f, "VPC_ENDPOINT"),
+            EndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

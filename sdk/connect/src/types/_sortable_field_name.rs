@@ -123,3 +123,16 @@ impl SortableFieldName {
         }
     }
 }
+impl ::std::fmt::Display for SortableFieldName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortableFieldName::Channel => write!(f, "CHANNEL"),
+            SortableFieldName::ConnectedToAgentTimestamp => write!(f, "CONNECTED_TO_AGENT_TIMESTAMP"),
+            SortableFieldName::DisconnectTimestamp => write!(f, "DISCONNECT_TIMESTAMP"),
+            SortableFieldName::InitiationMethod => write!(f, "INITIATION_METHOD"),
+            SortableFieldName::InitiationTimestamp => write!(f, "INITIATION_TIMESTAMP"),
+            SortableFieldName::ScheduledTimestamp => write!(f, "SCHEDULED_TIMESTAMP"),
+            SortableFieldName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

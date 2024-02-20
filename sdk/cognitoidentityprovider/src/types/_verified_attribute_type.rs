@@ -96,3 +96,12 @@ impl VerifiedAttributeType {
         }
     }
 }
+impl ::std::fmt::Display for VerifiedAttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerifiedAttributeType::Email => write!(f, "email"),
+            VerifiedAttributeType::PhoneNumber => write!(f, "phone_number"),
+            VerifiedAttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

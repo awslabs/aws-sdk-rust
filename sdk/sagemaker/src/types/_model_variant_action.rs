@@ -101,3 +101,13 @@ impl ModelVariantAction {
         }
     }
 }
+impl ::std::fmt::Display for ModelVariantAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelVariantAction::Promote => write!(f, "Promote"),
+            ModelVariantAction::Remove => write!(f, "Remove"),
+            ModelVariantAction::Retain => write!(f, "Retain"),
+            ModelVariantAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

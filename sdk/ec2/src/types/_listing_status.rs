@@ -106,3 +106,14 @@ impl ListingStatus {
         }
     }
 }
+impl ::std::fmt::Display for ListingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListingStatus::Active => write!(f, "active"),
+            ListingStatus::Cancelled => write!(f, "cancelled"),
+            ListingStatus::Closed => write!(f, "closed"),
+            ListingStatus::Pending => write!(f, "pending"),
+            ListingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

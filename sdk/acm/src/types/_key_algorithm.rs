@@ -129,3 +129,17 @@ impl KeyAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for KeyAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyAlgorithm::EcPrime256v1 => write!(f, "EC_prime256v1"),
+            KeyAlgorithm::EcSecp384r1 => write!(f, "EC_secp384r1"),
+            KeyAlgorithm::EcSecp521r1 => write!(f, "EC_secp521r1"),
+            KeyAlgorithm::Rsa1024 => write!(f, "RSA_1024"),
+            KeyAlgorithm::Rsa2048 => write!(f, "RSA_2048"),
+            KeyAlgorithm::Rsa3072 => write!(f, "RSA_3072"),
+            KeyAlgorithm::Rsa4096 => write!(f, "RSA_4096"),
+            KeyAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

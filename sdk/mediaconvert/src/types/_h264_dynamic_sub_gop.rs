@@ -96,3 +96,12 @@ impl H264DynamicSubGop {
         }
     }
 }
+impl ::std::fmt::Display for H264DynamicSubGop {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264DynamicSubGop::Adaptive => write!(f, "ADAPTIVE"),
+            H264DynamicSubGop::Static => write!(f, "STATIC"),
+            H264DynamicSubGop::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

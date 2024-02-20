@@ -96,3 +96,12 @@ impl AssociationSyncCompliance {
         }
     }
 }
+impl ::std::fmt::Display for AssociationSyncCompliance {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationSyncCompliance::Auto => write!(f, "AUTO"),
+            AssociationSyncCompliance::Manual => write!(f, "MANUAL"),
+            AssociationSyncCompliance::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

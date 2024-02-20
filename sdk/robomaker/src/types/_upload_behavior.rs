@@ -96,3 +96,12 @@ impl UploadBehavior {
         }
     }
 }
+impl ::std::fmt::Display for UploadBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UploadBehavior::UploadOnTerminate => write!(f, "UPLOAD_ON_TERMINATE"),
+            UploadBehavior::UploadRollingAutoRemove => write!(f, "UPLOAD_ROLLING_AUTO_REMOVE"),
+            UploadBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

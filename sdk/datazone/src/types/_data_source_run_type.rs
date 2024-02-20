@@ -96,3 +96,12 @@ impl DataSourceRunType {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceRunType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceRunType::Prioritized => write!(f, "PRIORITIZED"),
+            DataSourceRunType::Scheduled => write!(f, "SCHEDULED"),
+            DataSourceRunType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl LdapsStatus {
         }
     }
 }
+impl ::std::fmt::Display for LdapsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LdapsStatus::Disabled => write!(f, "Disabled"),
+            LdapsStatus::EnableFailed => write!(f, "EnableFailed"),
+            LdapsStatus::Enabled => write!(f, "Enabled"),
+            LdapsStatus::Enabling => write!(f, "Enabling"),
+            LdapsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

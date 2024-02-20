@@ -116,3 +116,16 @@ impl IntervalPeriod {
         }
     }
 }
+impl ::std::fmt::Display for IntervalPeriod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntervalPeriod::Day => write!(f, "DAY"),
+            IntervalPeriod::FifteenMin => write!(f, "FIFTEEN_MIN"),
+            IntervalPeriod::Hour => write!(f, "HOUR"),
+            IntervalPeriod::ThirtyMin => write!(f, "THIRTY_MIN"),
+            IntervalPeriod::Total => write!(f, "TOTAL"),
+            IntervalPeriod::Week => write!(f, "WEEK"),
+            IntervalPeriod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl AdditionalResultAttributeValueType {
         }
     }
 }
+impl ::std::fmt::Display for AdditionalResultAttributeValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdditionalResultAttributeValueType::TextWithHighlightsValue => write!(f, "TEXT_WITH_HIGHLIGHTS_VALUE"),
+            AdditionalResultAttributeValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -135,3 +135,18 @@ impl NoSuchEntityErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for NoSuchEntityErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NoSuchEntityErrorCode::AssessmentRunDoesNotExist => write!(f, "ASSESSMENT_RUN_DOES_NOT_EXIST"),
+            NoSuchEntityErrorCode::AssessmentTargetDoesNotExist => write!(f, "ASSESSMENT_TARGET_DOES_NOT_EXIST"),
+            NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist => write!(f, "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST"),
+            NoSuchEntityErrorCode::FindingDoesNotExist => write!(f, "FINDING_DOES_NOT_EXIST"),
+            NoSuchEntityErrorCode::IamRoleDoesNotExist => write!(f, "IAM_ROLE_DOES_NOT_EXIST"),
+            NoSuchEntityErrorCode::ResourceGroupDoesNotExist => write!(f, "RESOURCE_GROUP_DOES_NOT_EXIST"),
+            NoSuchEntityErrorCode::RulesPackageDoesNotExist => write!(f, "RULES_PACKAGE_DOES_NOT_EXIST"),
+            NoSuchEntityErrorCode::SnsTopicDoesNotExist => write!(f, "SNS_TOPIC_DOES_NOT_EXIST"),
+            NoSuchEntityErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

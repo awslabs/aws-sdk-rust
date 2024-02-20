@@ -96,3 +96,12 @@ impl BatchJobDependencyType {
         }
     }
 }
+impl ::std::fmt::Display for BatchJobDependencyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchJobDependencyType::NToN => write!(f, "N_TO_N"),
+            BatchJobDependencyType::Sequential => write!(f, "SEQUENTIAL"),
+            BatchJobDependencyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl StatusReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for StatusReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatusReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            StatusReasonCode::NoAvailableConfigurationRecorder => write!(f, "NO_AVAILABLE_CONFIGURATION_RECORDER"),
+            StatusReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

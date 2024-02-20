@@ -129,3 +129,17 @@ impl StreamingImageStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for StreamingImageStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamingImageStatusCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            StreamingImageStatusCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            StreamingImageStatusCode::StreamingImageCreateInProgress => write!(f, "STREAMING_IMAGE_CREATE_IN_PROGRESS"),
+            StreamingImageStatusCode::StreamingImageDeleted => write!(f, "STREAMING_IMAGE_DELETED"),
+            StreamingImageStatusCode::StreamingImageDeleteInProgress => write!(f, "STREAMING_IMAGE_DELETE_IN_PROGRESS"),
+            StreamingImageStatusCode::StreamingImageReady => write!(f, "STREAMING_IMAGE_READY"),
+            StreamingImageStatusCode::StreamingImageUpdateInProgress => write!(f, "STREAMING_IMAGE_UPDATE_IN_PROGRESS"),
+            StreamingImageStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

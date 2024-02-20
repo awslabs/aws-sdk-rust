@@ -96,3 +96,12 @@ impl DataSourceLevelMetricsBehavior {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceLevelMetricsBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceLevelMetricsBehavior::FullRequestDataSourceMetrics => write!(f, "FULL_REQUEST_DATA_SOURCE_METRICS"),
+            DataSourceLevelMetricsBehavior::PerDataSourceMetrics => write!(f, "PER_DATA_SOURCE_METRICS"),
+            DataSourceLevelMetricsBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

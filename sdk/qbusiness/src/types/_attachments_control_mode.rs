@@ -96,3 +96,12 @@ impl AttachmentsControlMode {
         }
     }
 }
+impl ::std::fmt::Display for AttachmentsControlMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttachmentsControlMode::Disabled => write!(f, "DISABLED"),
+            AttachmentsControlMode::Enabled => write!(f, "ENABLED"),
+            AttachmentsControlMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

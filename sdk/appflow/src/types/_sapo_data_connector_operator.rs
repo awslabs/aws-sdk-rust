@@ -213,3 +213,31 @@ impl SapoDataConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for SapoDataConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SapoDataConnectorOperator::Addition => write!(f, "ADDITION"),
+            SapoDataConnectorOperator::Between => write!(f, "BETWEEN"),
+            SapoDataConnectorOperator::Contains => write!(f, "CONTAINS"),
+            SapoDataConnectorOperator::Division => write!(f, "DIVISION"),
+            SapoDataConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            SapoDataConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
+            SapoDataConnectorOperator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
+            SapoDataConnectorOperator::LessThan => write!(f, "LESS_THAN"),
+            SapoDataConnectorOperator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
+            SapoDataConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            SapoDataConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            SapoDataConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            SapoDataConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            SapoDataConnectorOperator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
+            SapoDataConnectorOperator::NoOp => write!(f, "NO_OP"),
+            SapoDataConnectorOperator::Projection => write!(f, "PROJECTION"),
+            SapoDataConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            SapoDataConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            SapoDataConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            SapoDataConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            SapoDataConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            SapoDataConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

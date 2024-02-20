@@ -121,3 +121,17 @@ impl WeekDay {
         }
     }
 }
+impl ::std::fmt::Display for WeekDay {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WeekDay::Friday => write!(f, "friday"),
+            WeekDay::Monday => write!(f, "monday"),
+            WeekDay::Saturday => write!(f, "saturday"),
+            WeekDay::Sunday => write!(f, "sunday"),
+            WeekDay::Thursday => write!(f, "thursday"),
+            WeekDay::Tuesday => write!(f, "tuesday"),
+            WeekDay::Wednesday => write!(f, "wednesday"),
+            WeekDay::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

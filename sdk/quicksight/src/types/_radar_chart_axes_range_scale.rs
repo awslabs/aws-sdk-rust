@@ -101,3 +101,13 @@ impl RadarChartAxesRangeScale {
         }
     }
 }
+impl ::std::fmt::Display for RadarChartAxesRangeScale {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RadarChartAxesRangeScale::Auto => write!(f, "AUTO"),
+            RadarChartAxesRangeScale::Independent => write!(f, "INDEPENDENT"),
+            RadarChartAxesRangeScale::Shared => write!(f, "SHARED"),
+            RadarChartAxesRangeScale::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

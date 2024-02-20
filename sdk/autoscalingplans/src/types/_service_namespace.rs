@@ -111,3 +111,15 @@ impl ServiceNamespace {
         }
     }
 }
+impl ::std::fmt::Display for ServiceNamespace {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceNamespace::Autoscaling => write!(f, "autoscaling"),
+            ServiceNamespace::Dynamodb => write!(f, "dynamodb"),
+            ServiceNamespace::Ec2 => write!(f, "ec2"),
+            ServiceNamespace::Ecs => write!(f, "ecs"),
+            ServiceNamespace::Rds => write!(f, "rds"),
+            ServiceNamespace::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

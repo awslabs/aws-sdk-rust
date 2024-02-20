@@ -101,3 +101,13 @@ impl RenditionConfigurationRenditionSelection {
         }
     }
 }
+impl ::std::fmt::Display for RenditionConfigurationRenditionSelection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RenditionConfigurationRenditionSelection::All => write!(f, "ALL"),
+            RenditionConfigurationRenditionSelection::Custom => write!(f, "CUSTOM"),
+            RenditionConfigurationRenditionSelection::None => write!(f, "NONE"),
+            RenditionConfigurationRenditionSelection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

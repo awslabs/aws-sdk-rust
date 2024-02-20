@@ -101,3 +101,13 @@ impl FolderContentType {
         }
     }
 }
+impl ::std::fmt::Display for FolderContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FolderContentType::All => write!(f, "ALL"),
+            FolderContentType::Document => write!(f, "DOCUMENT"),
+            FolderContentType::Folder => write!(f, "FOLDER"),
+            FolderContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl InventoryFilterCondition {
         }
     }
 }
+impl ::std::fmt::Display for InventoryFilterCondition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InventoryFilterCondition::BeginsWith => write!(f, "BEGINS_WITH"),
+            InventoryFilterCondition::Contains => write!(f, "CONTAINS"),
+            InventoryFilterCondition::Equals => write!(f, "EQUALS"),
+            InventoryFilterCondition::NotEquals => write!(f, "NOT_EQUALS"),
+            InventoryFilterCondition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

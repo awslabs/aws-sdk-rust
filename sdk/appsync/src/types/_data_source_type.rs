@@ -135,3 +135,18 @@ impl DataSourceType {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceType::AmazonDynamodb => write!(f, "AMAZON_DYNAMODB"),
+            DataSourceType::AmazonElasticsearch => write!(f, "AMAZON_ELASTICSEARCH"),
+            DataSourceType::AmazonEventbridge => write!(f, "AMAZON_EVENTBRIDGE"),
+            DataSourceType::AmazonOpensearchService => write!(f, "AMAZON_OPENSEARCH_SERVICE"),
+            DataSourceType::AwsLambda => write!(f, "AWS_LAMBDA"),
+            DataSourceType::Http => write!(f, "HTTP"),
+            DataSourceType::None => write!(f, "NONE"),
+            DataSourceType::RelationalDatabase => write!(f, "RELATIONAL_DATABASE"),
+            DataSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

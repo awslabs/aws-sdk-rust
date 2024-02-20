@@ -135,3 +135,18 @@ impl ExecutionErrorType {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionErrorType::AlreadyExists => write!(f, "ALREADY_EXISTS"),
+            ExecutionErrorType::BadRequest => write!(f, "BAD_REQUEST"),
+            ExecutionErrorType::CustomStepFailed => write!(f, "CUSTOM_STEP_FAILED"),
+            ExecutionErrorType::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
+            ExecutionErrorType::NotFound => write!(f, "NOT_FOUND"),
+            ExecutionErrorType::PermissionDenied => write!(f, "PERMISSION_DENIED"),
+            ExecutionErrorType::Throttled => write!(f, "THROTTLED"),
+            ExecutionErrorType::Timeout => write!(f, "TIMEOUT"),
+            ExecutionErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

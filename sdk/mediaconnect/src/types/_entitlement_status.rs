@@ -96,3 +96,12 @@ impl EntitlementStatus {
         }
     }
 }
+impl ::std::fmt::Display for EntitlementStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EntitlementStatus::Disabled => write!(f, "DISABLED"),
+            EntitlementStatus::Enabled => write!(f, "ENABLED"),
+            EntitlementStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

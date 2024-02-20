@@ -106,3 +106,14 @@ impl HdfsRpcProtection {
         }
     }
 }
+impl ::std::fmt::Display for HdfsRpcProtection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HdfsRpcProtection::Authentication => write!(f, "AUTHENTICATION"),
+            HdfsRpcProtection::Disabled => write!(f, "DISABLED"),
+            HdfsRpcProtection::Integrity => write!(f, "INTEGRITY"),
+            HdfsRpcProtection::Privacy => write!(f, "PRIVACY"),
+            HdfsRpcProtection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl SourceContentType {
         }
     }
 }
+impl ::std::fmt::Display for SourceContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceContentType::KnowledgeContent => write!(f, "KNOWLEDGE_CONTENT"),
+            SourceContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

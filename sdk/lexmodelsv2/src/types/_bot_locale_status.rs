@@ -141,3 +141,19 @@ impl BotLocaleStatus {
         }
     }
 }
+impl ::std::fmt::Display for BotLocaleStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotLocaleStatus::Building => write!(f, "Building"),
+            BotLocaleStatus::Built => write!(f, "Built"),
+            BotLocaleStatus::Creating => write!(f, "Creating"),
+            BotLocaleStatus::Deleting => write!(f, "Deleting"),
+            BotLocaleStatus::Failed => write!(f, "Failed"),
+            BotLocaleStatus::Importing => write!(f, "Importing"),
+            BotLocaleStatus::NotBuilt => write!(f, "NotBuilt"),
+            BotLocaleStatus::Processing => write!(f, "Processing"),
+            BotLocaleStatus::ReadyExpressTesting => write!(f, "ReadyExpressTesting"),
+            BotLocaleStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

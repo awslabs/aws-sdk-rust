@@ -106,3 +106,14 @@ impl ObjectiveSensitivity {
         }
     }
 }
+impl ::std::fmt::Display for ObjectiveSensitivity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectiveSensitivity::High => write!(f, "HIGH"),
+            ObjectiveSensitivity::Low => write!(f, "LOW"),
+            ObjectiveSensitivity::Medium => write!(f, "MEDIUM"),
+            ObjectiveSensitivity::Off => write!(f, "OFF"),
+            ObjectiveSensitivity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

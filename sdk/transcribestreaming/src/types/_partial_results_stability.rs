@@ -101,3 +101,13 @@ impl PartialResultsStability {
         }
     }
 }
+impl ::std::fmt::Display for PartialResultsStability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PartialResultsStability::High => write!(f, "high"),
+            PartialResultsStability::Low => write!(f, "low"),
+            PartialResultsStability::Medium => write!(f, "medium"),
+            PartialResultsStability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

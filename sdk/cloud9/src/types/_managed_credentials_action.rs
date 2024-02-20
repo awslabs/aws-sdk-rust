@@ -96,3 +96,12 @@ impl ManagedCredentialsAction {
         }
     }
 }
+impl ::std::fmt::Display for ManagedCredentialsAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ManagedCredentialsAction::Disable => write!(f, "DISABLE"),
+            ManagedCredentialsAction::Enable => write!(f, "ENABLE"),
+            ManagedCredentialsAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

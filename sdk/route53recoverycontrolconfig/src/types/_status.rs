@@ -101,3 +101,13 @@ impl Status {
         }
     }
 }
+impl ::std::fmt::Display for Status {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Status::Deployed => write!(f, "DEPLOYED"),
+            Status::Pending => write!(f, "PENDING"),
+            Status::PendingDeletion => write!(f, "PENDING_DELETION"),
+            Status::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

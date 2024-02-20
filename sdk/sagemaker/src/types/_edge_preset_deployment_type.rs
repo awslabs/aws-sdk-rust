@@ -91,3 +91,11 @@ impl EdgePresetDeploymentType {
         }
     }
 }
+impl ::std::fmt::Display for EdgePresetDeploymentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EdgePresetDeploymentType::GreengrassV2Component => write!(f, "GreengrassV2Component"),
+            EdgePresetDeploymentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

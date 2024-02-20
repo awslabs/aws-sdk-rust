@@ -91,3 +91,11 @@ impl ActionGroupSignature {
         }
     }
 }
+impl ::std::fmt::Display for ActionGroupSignature {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionGroupSignature::AmazonUserinput => write!(f, "AMAZON.UserInput"),
+            ActionGroupSignature::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

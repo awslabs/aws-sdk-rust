@@ -96,3 +96,12 @@ impl CustomContentType {
         }
     }
 }
+impl ::std::fmt::Display for CustomContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomContentType::Image => write!(f, "IMAGE"),
+            CustomContentType::OtherEmbeddedContent => write!(f, "OTHER_EMBEDDED_CONTENT"),
+            CustomContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

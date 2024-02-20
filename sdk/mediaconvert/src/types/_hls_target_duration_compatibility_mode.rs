@@ -96,3 +96,12 @@ impl HlsTargetDurationCompatibilityMode {
         }
     }
 }
+impl ::std::fmt::Display for HlsTargetDurationCompatibilityMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsTargetDurationCompatibilityMode::Legacy => write!(f, "LEGACY"),
+            HlsTargetDurationCompatibilityMode::SpecCompliant => write!(f, "SPEC_COMPLIANT"),
+            HlsTargetDurationCompatibilityMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

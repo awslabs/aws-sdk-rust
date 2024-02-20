@@ -111,3 +111,15 @@ impl MediaAnalysisJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for MediaAnalysisJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaAnalysisJobStatus::Created => write!(f, "CREATED"),
+            MediaAnalysisJobStatus::Failed => write!(f, "FAILED"),
+            MediaAnalysisJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            MediaAnalysisJobStatus::Queued => write!(f, "QUEUED"),
+            MediaAnalysisJobStatus::Succeeded => write!(f, "SUCCEEDED"),
+            MediaAnalysisJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

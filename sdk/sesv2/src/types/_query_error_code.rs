@@ -96,3 +96,12 @@ impl QueryErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for QueryErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            QueryErrorCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            QueryErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

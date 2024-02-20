@@ -129,3 +129,17 @@ impl RobotDeploymentStep {
         }
     }
 }
+impl ::std::fmt::Display for RobotDeploymentStep {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RobotDeploymentStep::DownloadingExtractingStep => write!(f, "DownloadingExtracting"),
+            RobotDeploymentStep::ExecutingDownloadCondition => write!(f, "ExecutingDownloadCondition"),
+            RobotDeploymentStep::PostLaunchStep => write!(f, "ExecutingPostLaunch"),
+            RobotDeploymentStep::PreLaunchStep => write!(f, "ExecutingPreLaunch"),
+            RobotDeploymentStep::FinishedStep => write!(f, "Finished"),
+            RobotDeploymentStep::LaunchingStep => write!(f, "Launching"),
+            RobotDeploymentStep::ValidatingStep => write!(f, "Validating"),
+            RobotDeploymentStep::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

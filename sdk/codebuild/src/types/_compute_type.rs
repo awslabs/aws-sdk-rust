@@ -147,3 +147,20 @@ impl ComputeType {
         }
     }
 }
+impl ::std::fmt::Display for ComputeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComputeType::BuildGeneral12Xlarge => write!(f, "BUILD_GENERAL1_2XLARGE"),
+            ComputeType::BuildGeneral1Large => write!(f, "BUILD_GENERAL1_LARGE"),
+            ComputeType::BuildGeneral1Medium => write!(f, "BUILD_GENERAL1_MEDIUM"),
+            ComputeType::BuildGeneral1Small => write!(f, "BUILD_GENERAL1_SMALL"),
+            ComputeType::BuildGeneral1Xlarge => write!(f, "BUILD_GENERAL1_XLARGE"),
+            ComputeType::BuildLambda10Gb => write!(f, "BUILD_LAMBDA_10GB"),
+            ComputeType::BuildLambda1Gb => write!(f, "BUILD_LAMBDA_1GB"),
+            ComputeType::BuildLambda2Gb => write!(f, "BUILD_LAMBDA_2GB"),
+            ComputeType::BuildLambda4Gb => write!(f, "BUILD_LAMBDA_4GB"),
+            ComputeType::BuildLambda8Gb => write!(f, "BUILD_LAMBDA_8GB"),
+            ComputeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

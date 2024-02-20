@@ -91,3 +91,11 @@ impl EbsFilterName {
         }
     }
 }
+impl ::std::fmt::Display for EbsFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EbsFilterName::Finding => write!(f, "Finding"),
+            EbsFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

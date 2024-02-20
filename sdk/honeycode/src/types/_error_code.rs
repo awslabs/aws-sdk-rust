@@ -171,3 +171,24 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            ErrorCode::FileEmptyError => write!(f, "FILE_EMPTY_ERROR"),
+            ErrorCode::FileNotFoundError => write!(f, "FILE_NOT_FOUND_ERROR"),
+            ErrorCode::FileParsingError => write!(f, "FILE_PARSING_ERROR"),
+            ErrorCode::FileSizeLimitError => write!(f, "FILE_SIZE_LIMIT_ERROR"),
+            ErrorCode::InvalidFileTypeError => write!(f, "INVALID_FILE_TYPE_ERROR"),
+            ErrorCode::InvalidImportOptionsError => write!(f, "INVALID_IMPORT_OPTIONS_ERROR"),
+            ErrorCode::InvalidTableColumnIdError => write!(f, "INVALID_TABLE_COLUMN_ID_ERROR"),
+            ErrorCode::InvalidTableIdError => write!(f, "INVALID_TABLE_ID_ERROR"),
+            ErrorCode::InvalidUrlError => write!(f, "INVALID_URL_ERROR"),
+            ErrorCode::ResourceNotFoundError => write!(f, "RESOURCE_NOT_FOUND_ERROR"),
+            ErrorCode::SystemLimitError => write!(f, "SYSTEM_LIMIT_ERROR"),
+            ErrorCode::TableNotFoundError => write!(f, "TABLE_NOT_FOUND_ERROR"),
+            ErrorCode::UnknownError => write!(f, "UNKNOWN_ERROR"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

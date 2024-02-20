@@ -101,3 +101,13 @@ impl DeliveryDestinationType {
         }
     }
 }
+impl ::std::fmt::Display for DeliveryDestinationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeliveryDestinationType::Cwl => write!(f, "CWL"),
+            DeliveryDestinationType::Fh => write!(f, "FH"),
+            DeliveryDestinationType::S3 => write!(f, "S3"),
+            DeliveryDestinationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

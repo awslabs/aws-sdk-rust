@@ -96,3 +96,12 @@ impl TrainingJobEarlyStoppingType {
         }
     }
 }
+impl ::std::fmt::Display for TrainingJobEarlyStoppingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrainingJobEarlyStoppingType::Auto => write!(f, "Auto"),
+            TrainingJobEarlyStoppingType::Off => write!(f, "Off"),
+            TrainingJobEarlyStoppingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

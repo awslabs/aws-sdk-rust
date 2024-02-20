@@ -96,3 +96,12 @@ impl JqState {
         }
     }
 }
+impl ::std::fmt::Display for JqState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JqState::Disabled => write!(f, "DISABLED"),
+            JqState::Enabled => write!(f, "ENABLED"),
+            JqState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

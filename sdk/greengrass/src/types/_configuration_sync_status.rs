@@ -96,3 +96,12 @@ impl ConfigurationSyncStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationSyncStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationSyncStatus::InSync => write!(f, "InSync"),
+            ConfigurationSyncStatus::OutOfSync => write!(f, "OutOfSync"),
+            ConfigurationSyncStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl MessageSelectionStrategy {
         }
     }
 }
+impl ::std::fmt::Display for MessageSelectionStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessageSelectionStrategy::Ordered => write!(f, "Ordered"),
+            MessageSelectionStrategy::Random => write!(f, "Random"),
+            MessageSelectionStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

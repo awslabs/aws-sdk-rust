@@ -96,3 +96,12 @@ impl ConfigurableActionTypeAuthorization {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurableActionTypeAuthorization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurableActionTypeAuthorization::Https => write!(f, "HTTPS"),
+            ConfigurableActionTypeAuthorization::Iam => write!(f, "IAM"),
+            ConfigurableActionTypeAuthorization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

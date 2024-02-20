@@ -96,3 +96,12 @@ impl H265AlternateTransferFunctionSei {
         }
     }
 }
+impl ::std::fmt::Display for H265AlternateTransferFunctionSei {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265AlternateTransferFunctionSei::Disabled => write!(f, "DISABLED"),
+            H265AlternateTransferFunctionSei::Enabled => write!(f, "ENABLED"),
+            H265AlternateTransferFunctionSei::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl OriginType {
         }
     }
 }
+impl ::std::fmt::Display for OriginType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginType::AwsCloudhsm => write!(f, "AWS_CLOUDHSM"),
+            OriginType::AwsKms => write!(f, "AWS_KMS"),
+            OriginType::External => write!(f, "EXTERNAL"),
+            OriginType::ExternalKeyStore => write!(f, "EXTERNAL_KEY_STORE"),
+            OriginType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

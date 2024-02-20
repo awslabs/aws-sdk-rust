@@ -111,3 +111,15 @@ impl TtlDurationUnit {
         }
     }
 }
+impl ::std::fmt::Display for TtlDurationUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TtlDurationUnit::Days => write!(f, "Days"),
+            TtlDurationUnit::Hours => write!(f, "Hours"),
+            TtlDurationUnit::Minutes => write!(f, "Minutes"),
+            TtlDurationUnit::Seconds => write!(f, "Seconds"),
+            TtlDurationUnit::Weeks => write!(f, "Weeks"),
+            TtlDurationUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl EffectivePolicyType {
         }
     }
 }
+impl ::std::fmt::Display for EffectivePolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EffectivePolicyType::AiservicesOptOutPolicy => write!(f, "AISERVICES_OPT_OUT_POLICY"),
+            EffectivePolicyType::BackupPolicy => write!(f, "BACKUP_POLICY"),
+            EffectivePolicyType::TagPolicy => write!(f, "TAG_POLICY"),
+            EffectivePolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

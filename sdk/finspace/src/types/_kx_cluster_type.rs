@@ -111,3 +111,15 @@ impl KxClusterType {
         }
     }
 }
+impl ::std::fmt::Display for KxClusterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KxClusterType::Gateway => write!(f, "GATEWAY"),
+            KxClusterType::Gp => write!(f, "GP"),
+            KxClusterType::Hdb => write!(f, "HDB"),
+            KxClusterType::Rdb => write!(f, "RDB"),
+            KxClusterType::Tickerplant => write!(f, "TICKERPLANT"),
+            KxClusterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

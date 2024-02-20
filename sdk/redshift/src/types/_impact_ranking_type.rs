@@ -101,3 +101,13 @@ impl ImpactRankingType {
         }
     }
 }
+impl ::std::fmt::Display for ImpactRankingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImpactRankingType::High => write!(f, "HIGH"),
+            ImpactRankingType::Low => write!(f, "LOW"),
+            ImpactRankingType::Medium => write!(f, "MEDIUM"),
+            ImpactRankingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

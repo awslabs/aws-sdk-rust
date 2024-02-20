@@ -106,3 +106,14 @@ impl JobManifestFieldName {
         }
     }
 }
+impl ::std::fmt::Display for JobManifestFieldName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobManifestFieldName::Bucket => write!(f, "Bucket"),
+            JobManifestFieldName::Ignore => write!(f, "Ignore"),
+            JobManifestFieldName::Key => write!(f, "Key"),
+            JobManifestFieldName::VersionId => write!(f, "VersionId"),
+            JobManifestFieldName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DolbyVisionProfile {
         }
     }
 }
+impl ::std::fmt::Display for DolbyVisionProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DolbyVisionProfile::Profile5 => write!(f, "PROFILE_5"),
+            DolbyVisionProfile::Profile81 => write!(f, "PROFILE_8_1"),
+            DolbyVisionProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

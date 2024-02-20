@@ -96,3 +96,12 @@ impl LfResourceType {
         }
     }
 }
+impl ::std::fmt::Display for LfResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LfResourceType::Database => write!(f, "DATABASE"),
+            LfResourceType::Table => write!(f, "TABLE"),
+            LfResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

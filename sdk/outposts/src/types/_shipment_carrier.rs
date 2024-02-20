@@ -106,3 +106,14 @@ impl ShipmentCarrier {
         }
     }
 }
+impl ::std::fmt::Display for ShipmentCarrier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShipmentCarrier::Dbs => write!(f, "DBS"),
+            ShipmentCarrier::Dhl => write!(f, "DHL"),
+            ShipmentCarrier::Fedex => write!(f, "FEDEX"),
+            ShipmentCarrier::Ups => write!(f, "UPS"),
+            ShipmentCarrier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

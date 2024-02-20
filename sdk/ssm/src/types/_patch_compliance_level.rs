@@ -116,3 +116,16 @@ impl PatchComplianceLevel {
         }
     }
 }
+impl ::std::fmt::Display for PatchComplianceLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PatchComplianceLevel::Critical => write!(f, "CRITICAL"),
+            PatchComplianceLevel::High => write!(f, "HIGH"),
+            PatchComplianceLevel::Informational => write!(f, "INFORMATIONAL"),
+            PatchComplianceLevel::Low => write!(f, "LOW"),
+            PatchComplianceLevel::Medium => write!(f, "MEDIUM"),
+            PatchComplianceLevel::Unspecified => write!(f, "UNSPECIFIED"),
+            PatchComplianceLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

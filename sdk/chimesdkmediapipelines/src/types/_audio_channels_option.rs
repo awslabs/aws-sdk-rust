@@ -96,3 +96,12 @@ impl AudioChannelsOption {
         }
     }
 }
+impl ::std::fmt::Display for AudioChannelsOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioChannelsOption::Mono => write!(f, "Mono"),
+            AudioChannelsOption::Stereo => write!(f, "Stereo"),
+            AudioChannelsOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

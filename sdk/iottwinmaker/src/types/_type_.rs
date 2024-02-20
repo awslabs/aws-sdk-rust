@@ -126,3 +126,18 @@ impl Type {
         }
     }
 }
+impl ::std::fmt::Display for Type {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Type::Boolean => write!(f, "BOOLEAN"),
+            Type::Double => write!(f, "DOUBLE"),
+            Type::Integer => write!(f, "INTEGER"),
+            Type::List => write!(f, "LIST"),
+            Type::Long => write!(f, "LONG"),
+            Type::Map => write!(f, "MAP"),
+            Type::Relationship => write!(f, "RELATIONSHIP"),
+            Type::String => write!(f, "STRING"),
+            Type::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

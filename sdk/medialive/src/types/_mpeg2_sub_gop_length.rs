@@ -96,3 +96,12 @@ impl Mpeg2SubGopLength {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2SubGopLength {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2SubGopLength::Dynamic => write!(f, "DYNAMIC"),
+            Mpeg2SubGopLength::Fixed => write!(f, "FIXED"),
+            Mpeg2SubGopLength::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

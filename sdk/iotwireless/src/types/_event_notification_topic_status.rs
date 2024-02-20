@@ -96,3 +96,12 @@ impl EventNotificationTopicStatus {
         }
     }
 }
+impl ::std::fmt::Display for EventNotificationTopicStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventNotificationTopicStatus::Disabled => write!(f, "Disabled"),
+            EventNotificationTopicStatus::Enabled => write!(f, "Enabled"),
+            EventNotificationTopicStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

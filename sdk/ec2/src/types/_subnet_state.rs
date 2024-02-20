@@ -101,3 +101,13 @@ impl SubnetState {
         }
     }
 }
+impl ::std::fmt::Display for SubnetState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubnetState::Available => write!(f, "available"),
+            SubnetState::Pending => write!(f, "pending"),
+            SubnetState::Unavailable => write!(f, "unavailable"),
+            SubnetState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

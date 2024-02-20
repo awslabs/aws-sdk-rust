@@ -106,3 +106,14 @@ impl ContainerServiceProtocol {
         }
     }
 }
+impl ::std::fmt::Display for ContainerServiceProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerServiceProtocol::Http => write!(f, "HTTP"),
+            ContainerServiceProtocol::Https => write!(f, "HTTPS"),
+            ContainerServiceProtocol::Tcp => write!(f, "TCP"),
+            ContainerServiceProtocol::Udp => write!(f, "UDP"),
+            ContainerServiceProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -123,3 +123,16 @@ impl FailedItemReason {
         }
     }
 }
+impl ::std::fmt::Display for FailedItemReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailedItemReason::NotValidAccountId => write!(f, "NOT_VALID_ACCOUNT_ID"),
+            FailedItemReason::NotValidArn => write!(f, "NOT_VALID_ARN"),
+            FailedItemReason::NotValidPartition => write!(f, "NOT_VALID_PARTITION"),
+            FailedItemReason::NotValidRegion => write!(f, "NOT_VALID_REGION"),
+            FailedItemReason::NotValidResourceType => write!(f, "NOT_VALID_RESOURCE_TYPE"),
+            FailedItemReason::NotValidService => write!(f, "NOT_VALID_SERVICE"),
+            FailedItemReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

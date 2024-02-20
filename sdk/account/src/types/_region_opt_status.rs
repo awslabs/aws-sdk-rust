@@ -111,3 +111,15 @@ impl RegionOptStatus {
         }
     }
 }
+impl ::std::fmt::Display for RegionOptStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegionOptStatus::Disabled => write!(f, "DISABLED"),
+            RegionOptStatus::Disabling => write!(f, "DISABLING"),
+            RegionOptStatus::Enabled => write!(f, "ENABLED"),
+            RegionOptStatus::EnabledByDefault => write!(f, "ENABLED_BY_DEFAULT"),
+            RegionOptStatus::Enabling => write!(f, "ENABLING"),
+            RegionOptStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

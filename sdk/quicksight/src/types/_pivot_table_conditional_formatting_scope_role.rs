@@ -101,3 +101,13 @@ impl PivotTableConditionalFormattingScopeRole {
         }
     }
 }
+impl ::std::fmt::Display for PivotTableConditionalFormattingScopeRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PivotTableConditionalFormattingScopeRole::Field => write!(f, "FIELD"),
+            PivotTableConditionalFormattingScopeRole::FieldTotal => write!(f, "FIELD_TOTAL"),
+            PivotTableConditionalFormattingScopeRole::GrandTotal => write!(f, "GRAND_TOTAL"),
+            PivotTableConditionalFormattingScopeRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

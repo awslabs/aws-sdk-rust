@@ -96,3 +96,12 @@ impl MonitoringAlertStatus {
         }
     }
 }
+impl ::std::fmt::Display for MonitoringAlertStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitoringAlertStatus::InAlert => write!(f, "InAlert"),
+            MonitoringAlertStatus::Ok => write!(f, "OK"),
+            MonitoringAlertStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

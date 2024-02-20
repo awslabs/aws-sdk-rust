@@ -153,3 +153,21 @@ impl InstancesHealthAttribute {
         }
     }
 }
+impl ::std::fmt::Display for InstancesHealthAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstancesHealthAttribute::All => write!(f, "All"),
+            InstancesHealthAttribute::ApplicationMetrics => write!(f, "ApplicationMetrics"),
+            InstancesHealthAttribute::AvailabilityZone => write!(f, "AvailabilityZone"),
+            InstancesHealthAttribute::Causes => write!(f, "Causes"),
+            InstancesHealthAttribute::Color => write!(f, "Color"),
+            InstancesHealthAttribute::Deployment => write!(f, "Deployment"),
+            InstancesHealthAttribute::HealthStatus => write!(f, "HealthStatus"),
+            InstancesHealthAttribute::InstanceType => write!(f, "InstanceType"),
+            InstancesHealthAttribute::LaunchedAt => write!(f, "LaunchedAt"),
+            InstancesHealthAttribute::RefreshedAt => write!(f, "RefreshedAt"),
+            InstancesHealthAttribute::System => write!(f, "System"),
+            InstancesHealthAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

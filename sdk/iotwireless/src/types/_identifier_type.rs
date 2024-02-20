@@ -111,3 +111,15 @@ impl IdentifierType {
         }
     }
 }
+impl ::std::fmt::Display for IdentifierType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IdentifierType::DevEui => write!(f, "DevEui"),
+            IdentifierType::GatewayEui => write!(f, "GatewayEui"),
+            IdentifierType::PartnerAccountId => write!(f, "PartnerAccountId"),
+            IdentifierType::WirelessDeviceId => write!(f, "WirelessDeviceId"),
+            IdentifierType::WirelessGatewayId => write!(f, "WirelessGatewayId"),
+            IdentifierType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

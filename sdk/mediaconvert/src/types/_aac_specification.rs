@@ -96,3 +96,12 @@ impl AacSpecification {
         }
     }
 }
+impl ::std::fmt::Display for AacSpecification {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AacSpecification::Mpeg2 => write!(f, "MPEG2"),
+            AacSpecification::Mpeg4 => write!(f, "MPEG4"),
+            AacSpecification::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

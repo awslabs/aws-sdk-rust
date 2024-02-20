@@ -103,3 +103,13 @@ impl InstanceAccessControlAttributeConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for InstanceAccessControlAttributeConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceAccessControlAttributeConfigurationStatus::CreationFailed => write!(f, "CREATION_FAILED"),
+            InstanceAccessControlAttributeConfigurationStatus::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
+            InstanceAccessControlAttributeConfigurationStatus::Enabled => write!(f, "ENABLED"),
+            InstanceAccessControlAttributeConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl LastUpdateStatusValue {
         }
     }
 }
+impl ::std::fmt::Display for LastUpdateStatusValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LastUpdateStatusValue::Failed => write!(f, "Failed"),
+            LastUpdateStatusValue::InProgress => write!(f, "InProgress"),
+            LastUpdateStatusValue::Successful => write!(f, "Successful"),
+            LastUpdateStatusValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

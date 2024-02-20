@@ -111,3 +111,15 @@ impl DatePartitionSequenceValue {
         }
     }
 }
+impl ::std::fmt::Display for DatePartitionSequenceValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatePartitionSequenceValue::Ddmmyyyy => write!(f, "DDMMYYYY"),
+            DatePartitionSequenceValue::Mmyyyydd => write!(f, "MMYYYYDD"),
+            DatePartitionSequenceValue::Yyyymm => write!(f, "YYYYMM"),
+            DatePartitionSequenceValue::Yyyymmdd => write!(f, "YYYYMMDD"),
+            DatePartitionSequenceValue::Yyyymmddhh => write!(f, "YYYYMMDDHH"),
+            DatePartitionSequenceValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

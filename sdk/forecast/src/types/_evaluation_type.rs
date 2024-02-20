@@ -96,3 +96,12 @@ impl EvaluationType {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationType::Computed => write!(f, "COMPUTED"),
+            EvaluationType::Summary => write!(f, "SUMMARY"),
+            EvaluationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

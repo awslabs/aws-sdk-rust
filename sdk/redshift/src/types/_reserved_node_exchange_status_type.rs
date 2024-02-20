@@ -116,3 +116,16 @@ impl ReservedNodeExchangeStatusType {
         }
     }
 }
+impl ::std::fmt::Display for ReservedNodeExchangeStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservedNodeExchangeStatusType::Failed => write!(f, "FAILED"),
+            ReservedNodeExchangeStatusType::InProgress => write!(f, "IN_PROGRESS"),
+            ReservedNodeExchangeStatusType::Pending => write!(f, "PENDING"),
+            ReservedNodeExchangeStatusType::Requested => write!(f, "REQUESTED"),
+            ReservedNodeExchangeStatusType::Retrying => write!(f, "RETRYING"),
+            ReservedNodeExchangeStatusType::Succeeded => write!(f, "SUCCEEDED"),
+            ReservedNodeExchangeStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

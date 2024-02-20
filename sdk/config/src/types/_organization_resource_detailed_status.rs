@@ -141,3 +141,19 @@ impl OrganizationResourceDetailedStatus {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationResourceDetailedStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationResourceDetailedStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            OrganizationResourceDetailedStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            OrganizationResourceDetailedStatus::CreateSuccessful => write!(f, "CREATE_SUCCESSFUL"),
+            OrganizationResourceDetailedStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            OrganizationResourceDetailedStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            OrganizationResourceDetailedStatus::DeleteSuccessful => write!(f, "DELETE_SUCCESSFUL"),
+            OrganizationResourceDetailedStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            OrganizationResourceDetailedStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            OrganizationResourceDetailedStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
+            OrganizationResourceDetailedStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

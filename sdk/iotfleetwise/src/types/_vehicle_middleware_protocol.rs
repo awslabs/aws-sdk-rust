@@ -91,3 +91,11 @@ impl VehicleMiddlewareProtocol {
         }
     }
 }
+impl ::std::fmt::Display for VehicleMiddlewareProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VehicleMiddlewareProtocol::Ros2 => write!(f, "ROS_2"),
+            VehicleMiddlewareProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

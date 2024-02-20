@@ -101,3 +101,13 @@ impl ClusterMode {
         }
     }
 }
+impl ::std::fmt::Display for ClusterMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterMode::Compatible => write!(f, "compatible"),
+            ClusterMode::Disabled => write!(f, "disabled"),
+            ClusterMode::Enabled => write!(f, "enabled"),
+            ClusterMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

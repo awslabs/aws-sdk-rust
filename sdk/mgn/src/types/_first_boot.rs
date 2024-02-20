@@ -106,3 +106,14 @@ impl FirstBoot {
         }
     }
 }
+impl ::std::fmt::Display for FirstBoot {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FirstBoot::Stopped => write!(f, "STOPPED"),
+            FirstBoot::Succeeded => write!(f, "SUCCEEDED"),
+            FirstBoot::UnknownValue => write!(f, "UNKNOWN"),
+            FirstBoot::Waiting => write!(f, "WAITING"),
+            FirstBoot::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

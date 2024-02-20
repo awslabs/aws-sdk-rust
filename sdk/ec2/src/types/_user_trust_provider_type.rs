@@ -96,3 +96,12 @@ impl UserTrustProviderType {
         }
     }
 }
+impl ::std::fmt::Display for UserTrustProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserTrustProviderType::IamIdentityCenter => write!(f, "iam-identity-center"),
+            UserTrustProviderType::Oidc => write!(f, "oidc"),
+            UserTrustProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

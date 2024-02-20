@@ -111,3 +111,15 @@ impl ModelCustomizationJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelCustomizationJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelCustomizationJobStatus::Completed => write!(f, "Completed"),
+            ModelCustomizationJobStatus::Failed => write!(f, "Failed"),
+            ModelCustomizationJobStatus::InProgress => write!(f, "InProgress"),
+            ModelCustomizationJobStatus::Stopped => write!(f, "Stopped"),
+            ModelCustomizationJobStatus::Stopping => write!(f, "Stopping"),
+            ModelCustomizationJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

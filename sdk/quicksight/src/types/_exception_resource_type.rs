@@ -141,3 +141,19 @@ impl ExceptionResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ExceptionResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExceptionResourceType::AccountSettings => write!(f, "ACCOUNT_SETTINGS"),
+            ExceptionResourceType::DataSet => write!(f, "DATA_SET"),
+            ExceptionResourceType::DataSource => write!(f, "DATA_SOURCE"),
+            ExceptionResourceType::Group => write!(f, "GROUP"),
+            ExceptionResourceType::IampolicyAssignment => write!(f, "IAMPOLICY_ASSIGNMENT"),
+            ExceptionResourceType::Ingestion => write!(f, "INGESTION"),
+            ExceptionResourceType::Namespace => write!(f, "NAMESPACE"),
+            ExceptionResourceType::User => write!(f, "USER"),
+            ExceptionResourceType::VpcConnection => write!(f, "VPC_CONNECTION"),
+            ExceptionResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

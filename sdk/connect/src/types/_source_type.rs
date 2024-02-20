@@ -101,3 +101,13 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::Cases => write!(f, "CASES"),
+            SourceType::Salesforce => write!(f, "SALESFORCE"),
+            SourceType::Zendesk => write!(f, "ZENDESK"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

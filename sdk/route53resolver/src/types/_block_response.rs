@@ -101,3 +101,13 @@ impl BlockResponse {
         }
     }
 }
+impl ::std::fmt::Display for BlockResponse {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BlockResponse::Nodata => write!(f, "NODATA"),
+            BlockResponse::Nxdomain => write!(f, "NXDOMAIN"),
+            BlockResponse::Override => write!(f, "OVERRIDE"),
+            BlockResponse::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

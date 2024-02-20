@@ -177,3 +177,27 @@ impl CreateAccountFailureReason {
         }
     }
 }
+impl ::std::fmt::Display for CreateAccountFailureReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CreateAccountFailureReason::AccountLimitExceeded => write!(f, "ACCOUNT_LIMIT_EXCEEDED"),
+            CreateAccountFailureReason::ConcurrentAccountModification => write!(f, "CONCURRENT_ACCOUNT_MODIFICATION"),
+            CreateAccountFailureReason::EmailAlreadyExists => write!(f, "EMAIL_ALREADY_EXISTS"),
+            CreateAccountFailureReason::FailedBusinessValidation => write!(f, "FAILED_BUSINESS_VALIDATION"),
+            CreateAccountFailureReason::GovcloudAccountAlreadyExists => write!(f, "GOVCLOUD_ACCOUNT_ALREADY_EXISTS"),
+            CreateAccountFailureReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            CreateAccountFailureReason::InvalidAddress => write!(f, "INVALID_ADDRESS"),
+            CreateAccountFailureReason::InvalidEmail => write!(f, "INVALID_EMAIL"),
+            CreateAccountFailureReason::InvalidIdentityForBusinessValidation => write!(f, "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION"),
+            CreateAccountFailureReason::InvalidPaymentInstrument => write!(f, "INVALID_PAYMENT_INSTRUMENT"),
+            CreateAccountFailureReason::MissingBusinessValidation => write!(f, "MISSING_BUSINESS_VALIDATION"),
+            CreateAccountFailureReason::MissingPaymentInstrument => write!(f, "MISSING_PAYMENT_INSTRUMENT"),
+            CreateAccountFailureReason::PendingBusinessValidatioNv => write!(f, "PENDING_BUSINESS_VALIDATION"),
+            CreateAccountFailureReason::UnknownBusinessValidation => write!(f, "UNKNOWN_BUSINESS_VALIDATION"),
+            CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => {
+                write!(f, "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED")
+            }
+            CreateAccountFailureReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

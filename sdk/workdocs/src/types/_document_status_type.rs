@@ -96,3 +96,12 @@ impl DocumentStatusType {
         }
     }
 }
+impl ::std::fmt::Display for DocumentStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentStatusType::Active => write!(f, "ACTIVE"),
+            DocumentStatusType::Initialized => write!(f, "INITIALIZED"),
+            DocumentStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

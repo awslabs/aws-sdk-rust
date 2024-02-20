@@ -91,3 +91,11 @@ impl AutoScalingMetric {
         }
     }
 }
+impl ::std::fmt::Display for AutoScalingMetric {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoScalingMetric::CpuUtilizationPercentage => write!(f, "CPU_UTILIZATION_PERCENTAGE"),
+            AutoScalingMetric::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

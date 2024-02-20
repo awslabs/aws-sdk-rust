@@ -96,3 +96,12 @@ impl NotebookInstanceSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for NotebookInstanceSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotebookInstanceSortOrder::Ascending => write!(f, "Ascending"),
+            NotebookInstanceSortOrder::Descending => write!(f, "Descending"),
+            NotebookInstanceSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ApiKeySourceType {
         }
     }
 }
+impl ::std::fmt::Display for ApiKeySourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApiKeySourceType::Authorizer => write!(f, "AUTHORIZER"),
+            ApiKeySourceType::Header => write!(f, "HEADER"),
+            ApiKeySourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

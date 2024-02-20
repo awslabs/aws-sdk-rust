@@ -91,3 +91,11 @@ impl SortFieldProject {
         }
     }
 }
+impl ::std::fmt::Display for SortFieldProject {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortFieldProject::Name => write!(f, "NAME"),
+            SortFieldProject::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

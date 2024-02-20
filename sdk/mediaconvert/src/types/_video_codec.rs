@@ -165,3 +165,23 @@ impl VideoCodec {
         }
     }
 }
+impl ::std::fmt::Display for VideoCodec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VideoCodec::Av1 => write!(f, "AV1"),
+            VideoCodec::AvcIntra => write!(f, "AVC_INTRA"),
+            VideoCodec::FrameCapture => write!(f, "FRAME_CAPTURE"),
+            VideoCodec::H264 => write!(f, "H_264"),
+            VideoCodec::H265 => write!(f, "H_265"),
+            VideoCodec::Mpeg2 => write!(f, "MPEG2"),
+            VideoCodec::Passthrough => write!(f, "PASSTHROUGH"),
+            VideoCodec::Prores => write!(f, "PRORES"),
+            VideoCodec::Uncompressed => write!(f, "UNCOMPRESSED"),
+            VideoCodec::Vc3 => write!(f, "VC3"),
+            VideoCodec::Vp8 => write!(f, "VP8"),
+            VideoCodec::Vp9 => write!(f, "VP9"),
+            VideoCodec::Xavc => write!(f, "XAVC"),
+            VideoCodec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

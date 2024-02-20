@@ -101,3 +101,13 @@ impl SkillTypeFilter {
         }
     }
 }
+impl ::std::fmt::Display for SkillTypeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SkillTypeFilter::All => write!(f, "ALL"),
+            SkillTypeFilter::Private => write!(f, "PRIVATE"),
+            SkillTypeFilter::Public => write!(f, "PUBLIC"),
+            SkillTypeFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

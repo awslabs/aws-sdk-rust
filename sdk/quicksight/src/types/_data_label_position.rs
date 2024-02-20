@@ -116,3 +116,16 @@ impl DataLabelPosition {
         }
     }
 }
+impl ::std::fmt::Display for DataLabelPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataLabelPosition::Bottom => write!(f, "BOTTOM"),
+            DataLabelPosition::Inside => write!(f, "INSIDE"),
+            DataLabelPosition::Left => write!(f, "LEFT"),
+            DataLabelPosition::Outside => write!(f, "OUTSIDE"),
+            DataLabelPosition::Right => write!(f, "RIGHT"),
+            DataLabelPosition::Top => write!(f, "TOP"),
+            DataLabelPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

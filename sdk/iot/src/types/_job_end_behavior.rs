@@ -101,3 +101,13 @@ impl JobEndBehavior {
         }
     }
 }
+impl ::std::fmt::Display for JobEndBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobEndBehavior::Cancel => write!(f, "CANCEL"),
+            JobEndBehavior::ForceCancel => write!(f, "FORCE_CANCEL"),
+            JobEndBehavior::StopRollout => write!(f, "STOP_ROLLOUT"),
+            JobEndBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

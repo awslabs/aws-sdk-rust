@@ -96,3 +96,12 @@ impl QueryResultFormat {
         }
     }
 }
+impl ::std::fmt::Display for QueryResultFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryResultFormat::Table => write!(f, "TABLE"),
+            QueryResultFormat::Text => write!(f, "TEXT"),
+            QueryResultFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

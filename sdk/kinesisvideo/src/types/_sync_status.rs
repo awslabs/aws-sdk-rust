@@ -129,3 +129,17 @@ impl SyncStatus {
         }
     }
 }
+impl ::std::fmt::Display for SyncStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SyncStatus::Acknowledged => write!(f, "ACKNOWLEDGED"),
+            SyncStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            SyncStatus::Deleting => write!(f, "DELETING"),
+            SyncStatus::DeletingAcknowledged => write!(f, "DELETING_ACKNOWLEDGED"),
+            SyncStatus::InSync => write!(f, "IN_SYNC"),
+            SyncStatus::Syncing => write!(f, "SYNCING"),
+            SyncStatus::SyncFailed => write!(f, "SYNC_FAILED"),
+            SyncStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ConnectionNotificationState {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionNotificationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionNotificationState::Disabled => write!(f, "Disabled"),
+            ConnectionNotificationState::Enabled => write!(f, "Enabled"),
+            ConnectionNotificationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

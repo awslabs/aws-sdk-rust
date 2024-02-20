@@ -117,3 +117,15 @@ impl LaunchProfileValidationState {
         }
     }
 }
+impl ::std::fmt::Display for LaunchProfileValidationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchProfileValidationState::ValidationFailed => write!(f, "VALIDATION_FAILED"),
+            LaunchProfileValidationState::ValidationFailedInternalServerError => write!(f, "VALIDATION_FAILED_INTERNAL_SERVER_ERROR"),
+            LaunchProfileValidationState::ValidationInProgress => write!(f, "VALIDATION_IN_PROGRESS"),
+            LaunchProfileValidationState::ValidationNotStarted => write!(f, "VALIDATION_NOT_STARTED"),
+            LaunchProfileValidationState::ValidationSuccess => write!(f, "VALIDATION_SUCCESS"),
+            LaunchProfileValidationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

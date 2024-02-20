@@ -249,3 +249,37 @@ impl EntitlementUnit {
         }
     }
 }
+impl ::std::fmt::Display for EntitlementUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EntitlementUnit::Bits => write!(f, "Bits"),
+            EntitlementUnit::BitsPerSecond => write!(f, "Bits/Second"),
+            EntitlementUnit::Bytes => write!(f, "Bytes"),
+            EntitlementUnit::BytesPerSecond => write!(f, "Bytes/Second"),
+            EntitlementUnit::Count => write!(f, "Count"),
+            EntitlementUnit::CountPerSecond => write!(f, "Count/Second"),
+            EntitlementUnit::Gigabits => write!(f, "Gigabits"),
+            EntitlementUnit::GigabitsPerSecond => write!(f, "Gigabits/Second"),
+            EntitlementUnit::Gigabytes => write!(f, "Gigabytes"),
+            EntitlementUnit::GigabytesPerSecond => write!(f, "Gigabytes/Second"),
+            EntitlementUnit::Kilobits => write!(f, "Kilobits"),
+            EntitlementUnit::KilobitsPerSecond => write!(f, "Kilobits/Second"),
+            EntitlementUnit::Kilobytes => write!(f, "Kilobytes"),
+            EntitlementUnit::KilobytesPerSecond => write!(f, "Kilobytes/Second"),
+            EntitlementUnit::Megabits => write!(f, "Megabits"),
+            EntitlementUnit::MegabitsPerSecond => write!(f, "Megabits/Second"),
+            EntitlementUnit::Megabytes => write!(f, "Megabytes"),
+            EntitlementUnit::MegabytesPerSecond => write!(f, "Megabytes/Second"),
+            EntitlementUnit::Microseconds => write!(f, "Microseconds"),
+            EntitlementUnit::Milliseconds => write!(f, "Milliseconds"),
+            EntitlementUnit::None => write!(f, "None"),
+            EntitlementUnit::Percent => write!(f, "Percent"),
+            EntitlementUnit::Seconds => write!(f, "Seconds"),
+            EntitlementUnit::Terabits => write!(f, "Terabits"),
+            EntitlementUnit::TerabitsPerSecond => write!(f, "Terabits/Second"),
+            EntitlementUnit::Terabytes => write!(f, "Terabytes"),
+            EntitlementUnit::TerabytesPerSecond => write!(f, "Terabytes/Second"),
+            EntitlementUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

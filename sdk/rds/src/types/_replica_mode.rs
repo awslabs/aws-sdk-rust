@@ -96,3 +96,12 @@ impl ReplicaMode {
         }
     }
 }
+impl ::std::fmt::Display for ReplicaMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicaMode::Mounted => write!(f, "mounted"),
+            ReplicaMode::OpenReadOnly => write!(f, "open-read-only"),
+            ReplicaMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

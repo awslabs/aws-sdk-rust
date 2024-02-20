@@ -135,3 +135,18 @@ impl RegistrationVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for RegistrationVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistrationVersionStatus::Approved => write!(f, "APPROVED"),
+            RegistrationVersionStatus::Archived => write!(f, "ARCHIVED"),
+            RegistrationVersionStatus::Denied => write!(f, "DENIED"),
+            RegistrationVersionStatus::Discarded => write!(f, "DISCARDED"),
+            RegistrationVersionStatus::Draft => write!(f, "DRAFT"),
+            RegistrationVersionStatus::Reviewing => write!(f, "REVIEWING"),
+            RegistrationVersionStatus::Revoked => write!(f, "REVOKED"),
+            RegistrationVersionStatus::Submitted => write!(f, "SUBMITTED"),
+            RegistrationVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

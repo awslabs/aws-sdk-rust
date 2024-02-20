@@ -96,3 +96,12 @@ impl PatchAction {
         }
     }
 }
+impl ::std::fmt::Display for PatchAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PatchAction::AllowAsDependency => write!(f, "ALLOW_AS_DEPENDENCY"),
+            PatchAction::Block => write!(f, "BLOCK"),
+            PatchAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CostEstimationServiceResourceState {
         }
     }
 }
+impl ::std::fmt::Display for CostEstimationServiceResourceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CostEstimationServiceResourceState::Active => write!(f, "ACTIVE"),
+            CostEstimationServiceResourceState::Inactive => write!(f, "INACTIVE"),
+            CostEstimationServiceResourceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

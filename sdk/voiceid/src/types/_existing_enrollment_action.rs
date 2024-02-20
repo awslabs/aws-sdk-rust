@@ -96,3 +96,12 @@ impl ExistingEnrollmentAction {
         }
     }
 }
+impl ::std::fmt::Display for ExistingEnrollmentAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExistingEnrollmentAction::Overwrite => write!(f, "OVERWRITE"),
+            ExistingEnrollmentAction::Skip => write!(f, "SKIP"),
+            ExistingEnrollmentAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

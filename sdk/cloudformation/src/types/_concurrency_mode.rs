@@ -96,3 +96,12 @@ impl ConcurrencyMode {
         }
     }
 }
+impl ::std::fmt::Display for ConcurrencyMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConcurrencyMode::SoftFailureTolerance => write!(f, "SOFT_FAILURE_TOLERANCE"),
+            ConcurrencyMode::StrictFailureTolerance => write!(f, "STRICT_FAILURE_TOLERANCE"),
+            ConcurrencyMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

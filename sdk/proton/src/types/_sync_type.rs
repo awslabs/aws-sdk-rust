@@ -98,3 +98,12 @@ impl SyncType {
         }
     }
 }
+impl ::std::fmt::Display for SyncType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SyncType::ServiceSync => write!(f, "SERVICE_SYNC"),
+            SyncType::TemplateSync => write!(f, "TEMPLATE_SYNC"),
+            SyncType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

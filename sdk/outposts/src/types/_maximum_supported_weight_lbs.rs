@@ -111,3 +111,15 @@ impl MaximumSupportedWeightLbs {
         }
     }
 }
+impl ::std::fmt::Display for MaximumSupportedWeightLbs {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaximumSupportedWeightLbs::Max1400Lbs => write!(f, "MAX_1400_LBS"),
+            MaximumSupportedWeightLbs::Max1600Lbs => write!(f, "MAX_1600_LBS"),
+            MaximumSupportedWeightLbs::Max1800Lbs => write!(f, "MAX_1800_LBS"),
+            MaximumSupportedWeightLbs::Max2000Lbs => write!(f, "MAX_2000_LBS"),
+            MaximumSupportedWeightLbs::NoLimit => write!(f, "NO_LIMIT"),
+            MaximumSupportedWeightLbs::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl M2tsNielsenId3 {
         }
     }
 }
+impl ::std::fmt::Display for M2tsNielsenId3 {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsNielsenId3::Insert => write!(f, "INSERT"),
+            M2tsNielsenId3::None => write!(f, "NONE"),
+            M2tsNielsenId3::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

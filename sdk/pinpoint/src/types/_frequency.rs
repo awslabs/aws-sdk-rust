@@ -121,3 +121,17 @@ impl Frequency {
         }
     }
 }
+impl ::std::fmt::Display for Frequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Frequency::Daily => write!(f, "DAILY"),
+            Frequency::Event => write!(f, "EVENT"),
+            Frequency::Hourly => write!(f, "HOURLY"),
+            Frequency::InAppEvent => write!(f, "IN_APP_EVENT"),
+            Frequency::Monthly => write!(f, "MONTHLY"),
+            Frequency::Once => write!(f, "ONCE"),
+            Frequency::Weekly => write!(f, "WEEKLY"),
+            Frequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

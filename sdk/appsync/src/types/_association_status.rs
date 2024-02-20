@@ -101,3 +101,13 @@ impl AssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationStatus::Failed => write!(f, "FAILED"),
+            AssociationStatus::Processing => write!(f, "PROCESSING"),
+            AssociationStatus::Success => write!(f, "SUCCESS"),
+            AssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CanaryRunStateReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for CanaryRunStateReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CanaryRunStateReasonCode::CanaryFailure => write!(f, "CANARY_FAILURE"),
+            CanaryRunStateReasonCode::ExecutionFailure => write!(f, "EXECUTION_FAILURE"),
+            CanaryRunStateReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -165,3 +165,23 @@ impl ResaleAuthorizationSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ResaleAuthorizationSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResaleAuthorizationSortBy::AvailabilityEndDate => write!(f, "AvailabilityEndDate"),
+            ResaleAuthorizationSortBy::CreatedDate => write!(f, "CreatedDate"),
+            ResaleAuthorizationSortBy::EntityId => write!(f, "EntityId"),
+            ResaleAuthorizationSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
+            ResaleAuthorizationSortBy::ManufacturerAccountId => write!(f, "ManufacturerAccountId"),
+            ResaleAuthorizationSortBy::ManufacturerLegalName => write!(f, "ManufacturerLegalName"),
+            ResaleAuthorizationSortBy::Name => write!(f, "Name"),
+            ResaleAuthorizationSortBy::OfferExtendedStatus => write!(f, "OfferExtendedStatus"),
+            ResaleAuthorizationSortBy::ProductId => write!(f, "ProductId"),
+            ResaleAuthorizationSortBy::ProductName => write!(f, "ProductName"),
+            ResaleAuthorizationSortBy::ResellerAccountId => write!(f, "ResellerAccountID"),
+            ResaleAuthorizationSortBy::ResellerLegalName => write!(f, "ResellerLegalName"),
+            ResaleAuthorizationSortBy::Status => write!(f, "Status"),
+            ResaleAuthorizationSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

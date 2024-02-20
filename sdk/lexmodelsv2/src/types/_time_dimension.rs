@@ -101,3 +101,13 @@ impl TimeDimension {
         }
     }
 }
+impl ::std::fmt::Display for TimeDimension {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimeDimension::Days => write!(f, "Days"),
+            TimeDimension::Hours => write!(f, "Hours"),
+            TimeDimension::Weeks => write!(f, "Weeks"),
+            TimeDimension::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

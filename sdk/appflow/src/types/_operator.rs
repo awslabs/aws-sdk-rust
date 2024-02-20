@@ -213,3 +213,31 @@ impl Operator {
         }
     }
 }
+impl ::std::fmt::Display for Operator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Operator::Addition => write!(f, "ADDITION"),
+            Operator::Between => write!(f, "BETWEEN"),
+            Operator::Contains => write!(f, "CONTAINS"),
+            Operator::Division => write!(f, "DIVISION"),
+            Operator::EqualTo => write!(f, "EQUAL_TO"),
+            Operator::GreaterThan => write!(f, "GREATER_THAN"),
+            Operator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
+            Operator::LessThan => write!(f, "LESS_THAN"),
+            Operator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
+            Operator::MaskAll => write!(f, "MASK_ALL"),
+            Operator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            Operator::MaskLastN => write!(f, "MASK_LAST_N"),
+            Operator::Multiplication => write!(f, "MULTIPLICATION"),
+            Operator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
+            Operator::NoOp => write!(f, "NO_OP"),
+            Operator::Projection => write!(f, "PROJECTION"),
+            Operator::Subtraction => write!(f, "SUBTRACTION"),
+            Operator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            Operator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            Operator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            Operator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            Operator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

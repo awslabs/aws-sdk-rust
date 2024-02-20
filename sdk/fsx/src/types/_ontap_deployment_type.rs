@@ -101,3 +101,13 @@ impl OntapDeploymentType {
         }
     }
 }
+impl ::std::fmt::Display for OntapDeploymentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OntapDeploymentType::MultiAz1 => write!(f, "MULTI_AZ_1"),
+            OntapDeploymentType::SingleAz1 => write!(f, "SINGLE_AZ_1"),
+            OntapDeploymentType::SingleAz2 => write!(f, "SINGLE_AZ_2"),
+            OntapDeploymentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

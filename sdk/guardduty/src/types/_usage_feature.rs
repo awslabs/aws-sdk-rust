@@ -153,3 +153,21 @@ impl UsageFeature {
         }
     }
 }
+impl ::std::fmt::Display for UsageFeature {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageFeature::CloudTrail => write!(f, "CLOUD_TRAIL"),
+            UsageFeature::DnsLogs => write!(f, "DNS_LOGS"),
+            UsageFeature::EbsMalwareProtection => write!(f, "EBS_MALWARE_PROTECTION"),
+            UsageFeature::Ec2RuntimeMonitoring => write!(f, "EC2_RUNTIME_MONITORING"),
+            UsageFeature::EksAuditLogs => write!(f, "EKS_AUDIT_LOGS"),
+            UsageFeature::EksRuntimeMonitoring => write!(f, "EKS_RUNTIME_MONITORING"),
+            UsageFeature::FargateRuntimeMonitoring => write!(f, "FARGATE_RUNTIME_MONITORING"),
+            UsageFeature::FlowLogs => write!(f, "FLOW_LOGS"),
+            UsageFeature::LambdaNetworkLogs => write!(f, "LAMBDA_NETWORK_LOGS"),
+            UsageFeature::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
+            UsageFeature::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
+            UsageFeature::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

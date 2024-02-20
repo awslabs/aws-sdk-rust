@@ -111,3 +111,15 @@ impl SessionKeyDerivationMode {
         }
     }
 }
+impl ::std::fmt::Display for SessionKeyDerivationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SessionKeyDerivationMode::Amex => write!(f, "AMEX"),
+            SessionKeyDerivationMode::Emv2000 => write!(f, "EMV2000"),
+            SessionKeyDerivationMode::EmvCommonSessionKey => write!(f, "EMV_COMMON_SESSION_KEY"),
+            SessionKeyDerivationMode::MastercardSessionKey => write!(f, "MASTERCARD_SESSION_KEY"),
+            SessionKeyDerivationMode::Visa => write!(f, "VISA"),
+            SessionKeyDerivationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

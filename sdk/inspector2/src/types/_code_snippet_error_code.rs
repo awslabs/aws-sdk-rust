@@ -106,3 +106,14 @@ impl CodeSnippetErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for CodeSnippetErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CodeSnippetErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            CodeSnippetErrorCode::CodeSnippetNotFound => write!(f, "CODE_SNIPPET_NOT_FOUND"),
+            CodeSnippetErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            CodeSnippetErrorCode::InvalidInput => write!(f, "INVALID_INPUT"),
+            CodeSnippetErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

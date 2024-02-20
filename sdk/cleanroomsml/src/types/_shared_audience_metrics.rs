@@ -96,3 +96,12 @@ impl SharedAudienceMetrics {
         }
     }
 }
+impl ::std::fmt::Display for SharedAudienceMetrics {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SharedAudienceMetrics::All => write!(f, "ALL"),
+            SharedAudienceMetrics::None => write!(f, "NONE"),
+            SharedAudienceMetrics::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

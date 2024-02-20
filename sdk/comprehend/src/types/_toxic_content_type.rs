@@ -129,3 +129,17 @@ impl ToxicContentType {
         }
     }
 }
+impl ::std::fmt::Display for ToxicContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ToxicContentType::Graphic => write!(f, "GRAPHIC"),
+            ToxicContentType::HarassmentOrAbuse => write!(f, "HARASSMENT_OR_ABUSE"),
+            ToxicContentType::HateSpeech => write!(f, "HATE_SPEECH"),
+            ToxicContentType::Insult => write!(f, "INSULT"),
+            ToxicContentType::Profanity => write!(f, "PROFANITY"),
+            ToxicContentType::Sexual => write!(f, "SEXUAL"),
+            ToxicContentType::ViolenceOrThreat => write!(f, "VIOLENCE_OR_THREAT"),
+            ToxicContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -195,3 +195,28 @@ impl CapacityReservationInstancePlatform {
         }
     }
 }
+impl ::std::fmt::Display for CapacityReservationInstancePlatform {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapacityReservationInstancePlatform::LinuxWithSqlServerEnterprise => write!(f, "Linux with SQL Server Enterprise"),
+            CapacityReservationInstancePlatform::LinuxWithSqlServerStandard => write!(f, "Linux with SQL Server Standard"),
+            CapacityReservationInstancePlatform::LinuxWithSqlServerWeb => write!(f, "Linux with SQL Server Web"),
+            CapacityReservationInstancePlatform::LinuxUnix => write!(f, "Linux/UNIX"),
+            CapacityReservationInstancePlatform::RhelWithHa => write!(f, "RHEL with HA"),
+            CapacityReservationInstancePlatform::RhelWithHaAndSqlServerEnterprise => write!(f, "RHEL with HA and SQL Server Enterprise"),
+            CapacityReservationInstancePlatform::RhelWithHaAndSqlServerStandard => write!(f, "RHEL with HA and SQL Server Standard"),
+            CapacityReservationInstancePlatform::RhelWithSqlServerEnterprise => write!(f, "RHEL with SQL Server Enterprise"),
+            CapacityReservationInstancePlatform::RhelWithSqlServerStandard => write!(f, "RHEL with SQL Server Standard"),
+            CapacityReservationInstancePlatform::RhelWithSqlServerWeb => write!(f, "RHEL with SQL Server Web"),
+            CapacityReservationInstancePlatform::RedHatEnterpriseLinux => write!(f, "Red Hat Enterprise Linux"),
+            CapacityReservationInstancePlatform::SuseLinux => write!(f, "SUSE Linux"),
+            CapacityReservationInstancePlatform::UbuntuProLinux => write!(f, "Ubuntu Pro"),
+            CapacityReservationInstancePlatform::Windows => write!(f, "Windows"),
+            CapacityReservationInstancePlatform::WindowsWithSqlServer => write!(f, "Windows with SQL Server"),
+            CapacityReservationInstancePlatform::WindowsWithSqlServerEnterprise => write!(f, "Windows with SQL Server Enterprise"),
+            CapacityReservationInstancePlatform::WindowsWithSqlServerStandard => write!(f, "Windows with SQL Server Standard"),
+            CapacityReservationInstancePlatform::WindowsWithSqlServerWeb => write!(f, "Windows with SQL Server Web"),
+            CapacityReservationInstancePlatform::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

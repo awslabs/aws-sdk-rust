@@ -111,3 +111,15 @@ impl ObjectTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for ObjectTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectTypeEnum::Assessment => write!(f, "ASSESSMENT"),
+            ObjectTypeEnum::AssessmentReport => write!(f, "ASSESSMENT_REPORT"),
+            ObjectTypeEnum::Control => write!(f, "CONTROL"),
+            ObjectTypeEnum::ControlSet => write!(f, "CONTROL_SET"),
+            ObjectTypeEnum::Delegation => write!(f, "DELEGATION"),
+            ObjectTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

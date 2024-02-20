@@ -96,3 +96,12 @@ impl UpdateCatalogBehavior {
         }
     }
 }
+impl ::std::fmt::Display for UpdateCatalogBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateCatalogBehavior::Log => write!(f, "LOG"),
+            UpdateCatalogBehavior::UpdateInDatabase => write!(f, "UPDATE_IN_DATABASE"),
+            UpdateCatalogBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

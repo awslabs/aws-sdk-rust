@@ -101,3 +101,13 @@ impl ReadSetFile {
         }
     }
 }
+impl ::std::fmt::Display for ReadSetFile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReadSetFile::Index => write!(f, "INDEX"),
+            ReadSetFile::Source1 => write!(f, "SOURCE1"),
+            ReadSetFile::Source2 => write!(f, "SOURCE2"),
+            ReadSetFile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

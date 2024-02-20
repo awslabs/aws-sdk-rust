@@ -96,3 +96,12 @@ impl PluginState {
         }
     }
 }
+impl ::std::fmt::Display for PluginState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PluginState::Disabled => write!(f, "DISABLED"),
+            PluginState::Enabled => write!(f, "ENABLED"),
+            PluginState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

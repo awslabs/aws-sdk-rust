@@ -96,3 +96,12 @@ impl MpdAudioDuration {
         }
     }
 }
+impl ::std::fmt::Display for MpdAudioDuration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MpdAudioDuration::DefaultCodecDuration => write!(f, "DEFAULT_CODEC_DURATION"),
+            MpdAudioDuration::MatchVideoDuration => write!(f, "MATCH_VIDEO_DURATION"),
+            MpdAudioDuration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

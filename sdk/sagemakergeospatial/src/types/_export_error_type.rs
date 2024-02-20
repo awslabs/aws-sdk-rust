@@ -96,3 +96,12 @@ impl ExportErrorType {
         }
     }
 }
+impl ::std::fmt::Display for ExportErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportErrorType::ClientError => write!(f, "CLIENT_ERROR"),
+            ExportErrorType::ServerError => write!(f, "SERVER_ERROR"),
+            ExportErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

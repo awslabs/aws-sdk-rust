@@ -96,3 +96,12 @@ impl ServerCertificateStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServerCertificateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServerCertificateStatus::Invalid => write!(f, "INVALID"),
+            ServerCertificateStatus::Valid => write!(f, "VALID"),
+            ServerCertificateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

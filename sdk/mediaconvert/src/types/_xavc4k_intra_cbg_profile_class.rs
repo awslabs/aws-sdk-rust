@@ -101,3 +101,13 @@ impl Xavc4kIntraCbgProfileClass {
         }
     }
 }
+impl ::std::fmt::Display for Xavc4kIntraCbgProfileClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Xavc4kIntraCbgProfileClass::Class100 => write!(f, "CLASS_100"),
+            Xavc4kIntraCbgProfileClass::Class300 => write!(f, "CLASS_300"),
+            Xavc4kIntraCbgProfileClass::Class480 => write!(f, "CLASS_480"),
+            Xavc4kIntraCbgProfileClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

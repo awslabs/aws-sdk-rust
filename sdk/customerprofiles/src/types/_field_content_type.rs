@@ -111,3 +111,15 @@ impl FieldContentType {
         }
     }
 }
+impl ::std::fmt::Display for FieldContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FieldContentType::EmailAddress => write!(f, "EMAIL_ADDRESS"),
+            FieldContentType::Name => write!(f, "NAME"),
+            FieldContentType::Number => write!(f, "NUMBER"),
+            FieldContentType::PhoneNumber => write!(f, "PHONE_NUMBER"),
+            FieldContentType::String => write!(f, "STRING"),
+            FieldContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

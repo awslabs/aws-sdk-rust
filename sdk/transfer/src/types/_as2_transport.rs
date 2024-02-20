@@ -91,3 +91,11 @@ impl As2Transport {
         }
     }
 }
+impl ::std::fmt::Display for As2Transport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            As2Transport::Http => write!(f, "HTTP"),
+            As2Transport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

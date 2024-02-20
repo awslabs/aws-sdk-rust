@@ -101,3 +101,13 @@ impl ApplicationProtocol {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationProtocol::Grpc => write!(f, "grpc"),
+            ApplicationProtocol::Http => write!(f, "http"),
+            ApplicationProtocol::Http2 => write!(f, "http2"),
+            ApplicationProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

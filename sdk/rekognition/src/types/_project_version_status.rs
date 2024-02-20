@@ -171,3 +171,24 @@ impl ProjectVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProjectVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProjectVersionStatus::CopyingCompleted => write!(f, "COPYING_COMPLETED"),
+            ProjectVersionStatus::CopyingFailed => write!(f, "COPYING_FAILED"),
+            ProjectVersionStatus::CopyingInProgress => write!(f, "COPYING_IN_PROGRESS"),
+            ProjectVersionStatus::Deleting => write!(f, "DELETING"),
+            ProjectVersionStatus::Deprecated => write!(f, "DEPRECATED"),
+            ProjectVersionStatus::Expired => write!(f, "EXPIRED"),
+            ProjectVersionStatus::Failed => write!(f, "FAILED"),
+            ProjectVersionStatus::Running => write!(f, "RUNNING"),
+            ProjectVersionStatus::Starting => write!(f, "STARTING"),
+            ProjectVersionStatus::Stopped => write!(f, "STOPPED"),
+            ProjectVersionStatus::Stopping => write!(f, "STOPPING"),
+            ProjectVersionStatus::TrainingCompleted => write!(f, "TRAINING_COMPLETED"),
+            ProjectVersionStatus::TrainingFailed => write!(f, "TRAINING_FAILED"),
+            ProjectVersionStatus::TrainingInProgress => write!(f, "TRAINING_IN_PROGRESS"),
+            ProjectVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

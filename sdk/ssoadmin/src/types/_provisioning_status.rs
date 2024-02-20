@@ -96,3 +96,12 @@ impl ProvisioningStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProvisioningStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProvisioningStatus::LatestPermissionSetNotProvisioned => write!(f, "LATEST_PERMISSION_SET_NOT_PROVISIONED"),
+            ProvisioningStatus::LatestPermissionSetProvisioned => write!(f, "LATEST_PERMISSION_SET_PROVISIONED"),
+            ProvisioningStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

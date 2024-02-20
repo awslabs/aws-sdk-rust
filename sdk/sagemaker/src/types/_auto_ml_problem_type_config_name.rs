@@ -117,3 +117,15 @@ impl AutoMlProblemTypeConfigName {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlProblemTypeConfigName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlProblemTypeConfigName::ImageClassification => write!(f, "ImageClassification"),
+            AutoMlProblemTypeConfigName::Tabular => write!(f, "Tabular"),
+            AutoMlProblemTypeConfigName::TextClassification => write!(f, "TextClassification"),
+            AutoMlProblemTypeConfigName::TextGeneration => write!(f, "TextGeneration"),
+            AutoMlProblemTypeConfigName::TimeseriesForecasting => write!(f, "TimeSeriesForecasting"),
+            AutoMlProblemTypeConfigName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AssetModelType {
         }
     }
 }
+impl ::std::fmt::Display for AssetModelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetModelType::AssetModel => write!(f, "ASSET_MODEL"),
+            AssetModelType::ComponentModel => write!(f, "COMPONENT_MODEL"),
+            AssetModelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

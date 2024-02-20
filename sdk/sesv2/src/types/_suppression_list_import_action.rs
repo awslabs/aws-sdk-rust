@@ -104,3 +104,12 @@ impl SuppressionListImportAction {
         }
     }
 }
+impl ::std::fmt::Display for SuppressionListImportAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SuppressionListImportAction::Delete => write!(f, "DELETE"),
+            SuppressionListImportAction::Put => write!(f, "PUT"),
+            SuppressionListImportAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AudioDefaultSelection {
         }
     }
 }
+impl ::std::fmt::Display for AudioDefaultSelection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioDefaultSelection::Default => write!(f, "DEFAULT"),
+            AudioDefaultSelection::NotDefault => write!(f, "NOT_DEFAULT"),
+            AudioDefaultSelection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

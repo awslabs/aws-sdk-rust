@@ -111,3 +111,15 @@ impl DescribePackagesFilterName {
         }
     }
 }
+impl ::std::fmt::Display for DescribePackagesFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DescribePackagesFilterName::EngineVersion => write!(f, "EngineVersion"),
+            DescribePackagesFilterName::PackageId => write!(f, "PackageID"),
+            DescribePackagesFilterName::PackageName => write!(f, "PackageName"),
+            DescribePackagesFilterName::PackageStatus => write!(f, "PackageStatus"),
+            DescribePackagesFilterName::PackageType => write!(f, "PackageType"),
+            DescribePackagesFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl SalesforceDataTransferApi {
         }
     }
 }
+impl ::std::fmt::Display for SalesforceDataTransferApi {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SalesforceDataTransferApi::Automatic => write!(f, "AUTOMATIC"),
+            SalesforceDataTransferApi::Bulkv2 => write!(f, "BULKV2"),
+            SalesforceDataTransferApi::RestSync => write!(f, "REST_SYNC"),
+            SalesforceDataTransferApi::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl FileFormat {
         }
     }
 }
+impl ::std::fmt::Display for FileFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileFormat::Json => write!(f, "JSON"),
+            FileFormat::Xml => write!(f, "XML"),
+            FileFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

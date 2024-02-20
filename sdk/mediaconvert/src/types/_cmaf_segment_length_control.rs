@@ -96,3 +96,12 @@ impl CmafSegmentLengthControl {
         }
     }
 }
+impl ::std::fmt::Display for CmafSegmentLengthControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafSegmentLengthControl::Exact => write!(f, "EXACT"),
+            CmafSegmentLengthControl::GopMultiple => write!(f, "GOP_MULTIPLE"),
+            CmafSegmentLengthControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl FailureType {
         }
     }
 }
+impl ::std::fmt::Display for FailureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailureType::CancellationFailed => write!(f, "CancellationFailed"),
+            FailureType::InternalFailure => write!(f, "InternalFailure"),
+            FailureType::InvalidEnvironmentState => write!(f, "InvalidEnvironmentState"),
+            FailureType::PermissionsError => write!(f, "PermissionsError"),
+            FailureType::RollbackFailed => write!(f, "RollbackFailed"),
+            FailureType::RollbackSuccessful => write!(f, "RollbackSuccessful"),
+            FailureType::UpdateCancelled => write!(f, "UpdateCancelled"),
+            FailureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

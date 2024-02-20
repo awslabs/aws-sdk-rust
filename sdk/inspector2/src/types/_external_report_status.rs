@@ -106,3 +106,14 @@ impl ExternalReportStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExternalReportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExternalReportStatus::Cancelled => write!(f, "CANCELLED"),
+            ExternalReportStatus::Failed => write!(f, "FAILED"),
+            ExternalReportStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ExternalReportStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ExternalReportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

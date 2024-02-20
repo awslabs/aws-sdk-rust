@@ -116,3 +116,16 @@ impl WebhookFilterType {
         }
     }
 }
+impl ::std::fmt::Display for WebhookFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WebhookFilterType::ActorAccountId => write!(f, "ACTOR_ACCOUNT_ID"),
+            WebhookFilterType::BaseRef => write!(f, "BASE_REF"),
+            WebhookFilterType::CommitMessage => write!(f, "COMMIT_MESSAGE"),
+            WebhookFilterType::Event => write!(f, "EVENT"),
+            WebhookFilterType::FilePath => write!(f, "FILE_PATH"),
+            WebhookFilterType::HeadRef => write!(f, "HEAD_REF"),
+            WebhookFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

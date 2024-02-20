@@ -96,3 +96,12 @@ impl ClusterEndpointEncryptionType {
         }
     }
 }
+impl ::std::fmt::Display for ClusterEndpointEncryptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterEndpointEncryptionType::None => write!(f, "NONE"),
+            ClusterEndpointEncryptionType::Tls => write!(f, "TLS"),
+            ClusterEndpointEncryptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

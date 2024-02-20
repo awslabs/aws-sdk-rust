@@ -101,3 +101,13 @@ impl HlsTimedMetadataId3Frame {
         }
     }
 }
+impl ::std::fmt::Display for HlsTimedMetadataId3Frame {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsTimedMetadataId3Frame::None => write!(f, "NONE"),
+            HlsTimedMetadataId3Frame::Priv => write!(f, "PRIV"),
+            HlsTimedMetadataId3Frame::Tdrl => write!(f, "TDRL"),
+            HlsTimedMetadataId3Frame::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

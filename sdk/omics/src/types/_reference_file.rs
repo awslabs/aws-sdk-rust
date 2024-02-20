@@ -96,3 +96,12 @@ impl ReferenceFile {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceFile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceFile::Index => write!(f, "INDEX"),
+            ReferenceFile::Source => write!(f, "SOURCE"),
+            ReferenceFile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

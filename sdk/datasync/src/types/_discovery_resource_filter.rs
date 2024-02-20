@@ -91,3 +91,11 @@ impl DiscoveryResourceFilter {
         }
     }
 }
+impl ::std::fmt::Display for DiscoveryResourceFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiscoveryResourceFilter::Svm => write!(f, "SVM"),
+            DiscoveryResourceFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

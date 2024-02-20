@@ -101,3 +101,13 @@ impl DnsNameState {
         }
     }
 }
+impl ::std::fmt::Display for DnsNameState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DnsNameState::Failed => write!(f, "failed"),
+            DnsNameState::PendingVerification => write!(f, "pendingVerification"),
+            DnsNameState::Verified => write!(f, "verified"),
+            DnsNameState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

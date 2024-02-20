@@ -111,3 +111,15 @@ impl StackSetDriftDetectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for StackSetDriftDetectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackSetDriftDetectionStatus::Completed => write!(f, "COMPLETED"),
+            StackSetDriftDetectionStatus::Failed => write!(f, "FAILED"),
+            StackSetDriftDetectionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            StackSetDriftDetectionStatus::PartialSuccess => write!(f, "PARTIAL_SUCCESS"),
+            StackSetDriftDetectionStatus::Stopped => write!(f, "STOPPED"),
+            StackSetDriftDetectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

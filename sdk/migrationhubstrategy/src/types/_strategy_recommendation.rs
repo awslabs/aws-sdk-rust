@@ -106,3 +106,14 @@ impl StrategyRecommendation {
         }
     }
 }
+impl ::std::fmt::Display for StrategyRecommendation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StrategyRecommendation::NotRecommended => write!(f, "notRecommended"),
+            StrategyRecommendation::Potential => write!(f, "potential"),
+            StrategyRecommendation::Recommended => write!(f, "recommended"),
+            StrategyRecommendation::ViableOption => write!(f, "viableOption"),
+            StrategyRecommendation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

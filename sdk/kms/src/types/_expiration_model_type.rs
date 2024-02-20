@@ -96,3 +96,12 @@ impl ExpirationModelType {
         }
     }
 }
+impl ::std::fmt::Display for ExpirationModelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExpirationModelType::KeyMaterialDoesNotExpire => write!(f, "KEY_MATERIAL_DOES_NOT_EXPIRE"),
+            ExpirationModelType::KeyMaterialExpires => write!(f, "KEY_MATERIAL_EXPIRES"),
+            ExpirationModelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

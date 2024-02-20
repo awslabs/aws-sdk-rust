@@ -108,3 +108,12 @@ impl EngagementEventType {
         }
     }
 }
+impl ::std::fmt::Display for EngagementEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EngagementEventType::Click => write!(f, "CLICK"),
+            EngagementEventType::Open => write!(f, "OPEN"),
+            EngagementEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

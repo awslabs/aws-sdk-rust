@@ -221,3 +221,37 @@ impl FailbackReplicationError {
         }
     }
 }
+impl ::std::fmt::Display for FailbackReplicationError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailbackReplicationError::AgentNotSeen => write!(f, "AGENT_NOT_SEEN"),
+            FailbackReplicationError::FailbackClientNotSeen => write!(f, "FAILBACK_CLIENT_NOT_SEEN"),
+            FailbackReplicationError::FailedGettingReplicationState => write!(f, "FAILED_GETTING_REPLICATION_STATE"),
+            FailbackReplicationError::FailedToAttachStagingDisks => write!(f, "FAILED_TO_ATTACH_STAGING_DISKS"),
+            FailbackReplicationError::FailedToAuthenticateWithService => write!(f, "FAILED_TO_AUTHENTICATE_WITH_SERVICE"),
+            FailbackReplicationError::FailedToBootReplicationServer => write!(f, "FAILED_TO_BOOT_REPLICATION_SERVER"),
+            FailbackReplicationError::FailedToConfigureReplicationSoftware => write!(f, "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE"),
+            FailbackReplicationError::FailedToConnectAgentToReplicationServer => write!(f, "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER"),
+            FailbackReplicationError::FailedToCreateSecurityGroup => write!(f, "FAILED_TO_CREATE_SECURITY_GROUP"),
+            FailbackReplicationError::FailedToCreateStagingDisks => write!(f, "FAILED_TO_CREATE_STAGING_DISKS"),
+            FailbackReplicationError::FailedToDownloadReplicationSoftware => write!(f, "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE"),
+            FailbackReplicationError::FailedToDownloadReplicationSoftwareToFailbackClient => {
+                write!(f, "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT")
+            }
+            FailbackReplicationError::FailedToEstablishAgentReplicatorSoftwareCommunication => {
+                write!(f, "FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION")
+            }
+            FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication => {
+                write!(f, "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION")
+            }
+            FailbackReplicationError::FailedToLaunchReplicationServer => write!(f, "FAILED_TO_LAUNCH_REPLICATION_SERVER"),
+            FailbackReplicationError::FailedToPairAgentWithReplicationSoftware => write!(f, "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE"),
+            FailbackReplicationError::FailedToPairReplicationServerWithAgent => write!(f, "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT"),
+            FailbackReplicationError::FailedToStartDataTransfer => write!(f, "FAILED_TO_START_DATA_TRANSFER"),
+            FailbackReplicationError::NotConverging => write!(f, "NOT_CONVERGING"),
+            FailbackReplicationError::SnapshotsFailure => write!(f, "SNAPSHOTS_FAILURE"),
+            FailbackReplicationError::UnstableNetwork => write!(f, "UNSTABLE_NETWORK"),
+            FailbackReplicationError::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

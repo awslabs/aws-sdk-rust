@@ -96,3 +96,12 @@ impl PropertyKey {
         }
     }
 }
+impl ::std::fmt::Display for PropertyKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PropertyKey::LaunchRole => write!(f, "LAUNCH_ROLE"),
+            PropertyKey::Owner => write!(f, "OWNER"),
+            PropertyKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

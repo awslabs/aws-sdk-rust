@@ -96,3 +96,12 @@ impl AcceptRuleBehavior {
         }
     }
 }
+impl ::std::fmt::Display for AcceptRuleBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AcceptRuleBehavior::All => write!(f, "ALL"),
+            AcceptRuleBehavior::None => write!(f, "NONE"),
+            AcceptRuleBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl Compute {
         }
     }
 }
+impl ::std::fmt::Display for Compute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Compute::Graphics => write!(f, "GRAPHICS"),
+            Compute::Graphicspro => write!(f, "GRAPHICSPRO"),
+            Compute::GraphicsproG4Dn => write!(f, "GRAPHICSPRO_G4DN"),
+            Compute::GraphicsG4Dn => write!(f, "GRAPHICS_G4DN"),
+            Compute::Performance => write!(f, "PERFORMANCE"),
+            Compute::Power => write!(f, "POWER"),
+            Compute::Powerpro => write!(f, "POWERPRO"),
+            Compute::Standard => write!(f, "STANDARD"),
+            Compute::Value => write!(f, "VALUE"),
+            Compute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

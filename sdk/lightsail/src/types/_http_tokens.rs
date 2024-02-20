@@ -96,3 +96,12 @@ impl HttpTokens {
         }
     }
 }
+impl ::std::fmt::Display for HttpTokens {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HttpTokens::Optional => write!(f, "optional"),
+            HttpTokens::Required => write!(f, "required"),
+            HttpTokens::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

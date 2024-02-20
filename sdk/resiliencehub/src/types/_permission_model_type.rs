@@ -96,3 +96,12 @@ impl PermissionModelType {
         }
     }
 }
+impl ::std::fmt::Display for PermissionModelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionModelType::LegacyIamUser => write!(f, "LegacyIAMUser"),
+            PermissionModelType::RoleBased => write!(f, "RoleBased"),
+            PermissionModelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

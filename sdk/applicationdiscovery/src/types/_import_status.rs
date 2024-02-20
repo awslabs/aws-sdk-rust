@@ -153,3 +153,21 @@ impl ImportStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportStatus::DeleteComplete => write!(f, "DELETE_COMPLETE"),
+            ImportStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ImportStatus::DeleteFailedLimitExceeded => write!(f, "DELETE_FAILED_LIMIT_EXCEEDED"),
+            ImportStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ImportStatus::ImportComplete => write!(f, "IMPORT_COMPLETE"),
+            ImportStatus::ImportCompleteWithErrors => write!(f, "IMPORT_COMPLETE_WITH_ERRORS"),
+            ImportStatus::ImportFailed => write!(f, "IMPORT_FAILED"),
+            ImportStatus::ImportFailedRecordLimitExceeded => write!(f, "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED"),
+            ImportStatus::ImportFailedServerLimitExceeded => write!(f, "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED"),
+            ImportStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
+            ImportStatus::InternalError => write!(f, "INTERNAL_ERROR"),
+            ImportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

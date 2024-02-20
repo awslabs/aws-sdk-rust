@@ -213,3 +213,31 @@ impl Tier {
         }
     }
 }
+impl ::std::fmt::Display for Tier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Tier::ActiveDirectory => write!(f, "ACTIVE_DIRECTORY"),
+            Tier::Custom => write!(f, "CUSTOM"),
+            Tier::Default => write!(f, "DEFAULT"),
+            Tier::DotNetCore => write!(f, "DOT_NET_CORE"),
+            Tier::DotNetWeb => write!(f, "DOT_NET_WEB"),
+            Tier::DotNetWebTier => write!(f, "DOT_NET_WEB_TIER"),
+            Tier::DotNetWorker => write!(f, "DOT_NET_WORKER"),
+            Tier::JavaJmx => write!(f, "JAVA_JMX"),
+            Tier::Mysql => write!(f, "MYSQL"),
+            Tier::Oracle => write!(f, "ORACLE"),
+            Tier::Postgresql => write!(f, "POSTGRESQL"),
+            Tier::SapHanaHighAvailability => write!(f, "SAP_HANA_HIGH_AVAILABILITY"),
+            Tier::SapHanaMultiNode => write!(f, "SAP_HANA_MULTI_NODE"),
+            Tier::SapHanaSingleNode => write!(f, "SAP_HANA_SINGLE_NODE"),
+            Tier::SapNetweaverDistributed => write!(f, "SAP_NETWEAVER_DISTRIBUTED"),
+            Tier::SapNetweaverHighAvailability => write!(f, "SAP_NETWEAVER_HIGH_AVAILABILITY"),
+            Tier::SapNetweaverStandard => write!(f, "SAP_NETWEAVER_STANDARD"),
+            Tier::Sharepoint => write!(f, "SHAREPOINT"),
+            Tier::SqlServer => write!(f, "SQL_SERVER"),
+            Tier::SqlServerAlwaysonAvailabilityGroup => write!(f, "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP"),
+            Tier::SqlServerFailoverClusterInstance => write!(f, "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"),
+            Tier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

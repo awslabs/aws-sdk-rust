@@ -106,3 +106,14 @@ impl ResolverQueryLogConfigStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResolverQueryLogConfigStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverQueryLogConfigStatus::Created => write!(f, "CREATED"),
+            ResolverQueryLogConfigStatus::Creating => write!(f, "CREATING"),
+            ResolverQueryLogConfigStatus::Deleting => write!(f, "DELETING"),
+            ResolverQueryLogConfigStatus::Failed => write!(f, "FAILED"),
+            ResolverQueryLogConfigStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

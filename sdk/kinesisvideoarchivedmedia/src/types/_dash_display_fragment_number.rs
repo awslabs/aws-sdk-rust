@@ -96,3 +96,12 @@ impl DashDisplayFragmentNumber {
         }
     }
 }
+impl ::std::fmt::Display for DashDisplayFragmentNumber {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashDisplayFragmentNumber::Always => write!(f, "ALWAYS"),
+            DashDisplayFragmentNumber::Never => write!(f, "NEVER"),
+            DashDisplayFragmentNumber::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl ChecksumAggregationMethod {
         }
     }
 }
+impl ::std::fmt::Display for ChecksumAggregationMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChecksumAggregationMethod::ChecksumAggregationLinear => write!(f, "LINEAR"),
+            ChecksumAggregationMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl TableOptimizerEventType {
         }
     }
 }
+impl ::std::fmt::Display for TableOptimizerEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableOptimizerEventType::Completed => write!(f, "completed"),
+            TableOptimizerEventType::Failed => write!(f, "failed"),
+            TableOptimizerEventType::InProgress => write!(f, "in_progress"),
+            TableOptimizerEventType::Starting => write!(f, "starting"),
+            TableOptimizerEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

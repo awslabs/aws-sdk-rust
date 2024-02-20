@@ -116,3 +116,16 @@ impl DataRepositoryLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for DataRepositoryLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataRepositoryLifecycle::Available => write!(f, "AVAILABLE"),
+            DataRepositoryLifecycle::Creating => write!(f, "CREATING"),
+            DataRepositoryLifecycle::Deleting => write!(f, "DELETING"),
+            DataRepositoryLifecycle::Failed => write!(f, "FAILED"),
+            DataRepositoryLifecycle::Misconfigured => write!(f, "MISCONFIGURED"),
+            DataRepositoryLifecycle::Updating => write!(f, "UPDATING"),
+            DataRepositoryLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

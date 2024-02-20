@@ -111,3 +111,15 @@ impl VerificationStatus {
         }
     }
 }
+impl ::std::fmt::Display for VerificationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerificationStatus::Failed => write!(f, "FAILED"),
+            VerificationStatus::NotStarted => write!(f, "NOT_STARTED"),
+            VerificationStatus::Pending => write!(f, "PENDING"),
+            VerificationStatus::Success => write!(f, "SUCCESS"),
+            VerificationStatus::TemporaryFailure => write!(f, "TEMPORARY_FAILURE"),
+            VerificationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

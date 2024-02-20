@@ -123,3 +123,16 @@ impl AssistantStatus {
         }
     }
 }
+impl ::std::fmt::Display for AssistantStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssistantStatus::Active => write!(f, "ACTIVE"),
+            AssistantStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            AssistantStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            AssistantStatus::Deleted => write!(f, "DELETED"),
+            AssistantStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            AssistantStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            AssistantStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

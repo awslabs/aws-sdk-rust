@@ -111,3 +111,15 @@ impl TargetGroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for TargetGroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetGroupStatus::Active => write!(f, "ACTIVE"),
+            TargetGroupStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            TargetGroupStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            TargetGroupStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            TargetGroupStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            TargetGroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

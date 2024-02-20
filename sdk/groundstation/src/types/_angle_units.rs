@@ -96,3 +96,12 @@ impl AngleUnits {
         }
     }
 }
+impl ::std::fmt::Display for AngleUnits {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AngleUnits::DegreeAngle => write!(f, "DEGREE_ANGLE"),
+            AngleUnits::Radian => write!(f, "RADIAN"),
+            AngleUnits::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

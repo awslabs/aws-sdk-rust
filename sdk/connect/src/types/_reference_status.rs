@@ -96,3 +96,12 @@ impl ReferenceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceStatus::Approved => write!(f, "APPROVED"),
+            ReferenceStatus::Rejected => write!(f, "REJECTED"),
+            ReferenceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

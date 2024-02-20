@@ -101,3 +101,13 @@ impl LastStatus {
         }
     }
 }
+impl ::std::fmt::Display for LastStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LastStatus::ErrorNoBucket => write!(f, "ERROR_NO_BUCKET"),
+            LastStatus::ErrorPermissions => write!(f, "ERROR_PERMISSIONS"),
+            LastStatus::Success => write!(f, "SUCCESS"),
+            LastStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

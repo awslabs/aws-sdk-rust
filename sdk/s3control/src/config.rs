@@ -409,7 +409,11 @@ impl Builder {
         self
     }
 
-    /// Set the timeout_config for the builder
+    /// Set the timeout_config for the builder.
+    ///
+    /// Setting this to `None` has no effect if another source of configuration has set timeouts. If you
+    /// are attempting to disable timeouts, use [`TimeoutConfig::disabled`](::aws_smithy_types::timeout::TimeoutConfig::disabled)
+    ///
     ///
     /// # Examples
     ///
@@ -430,7 +434,13 @@ impl Builder {
     /// let config = builder.build();
     /// ```
     pub fn set_timeout_config(&mut self, timeout_config: ::std::option::Option<::aws_smithy_types::timeout::TimeoutConfig>) -> &mut Self {
-        timeout_config.map(|t| self.config.store_put(t));
+        // passing None has no impact.
+        let Some(mut timeout_config) = timeout_config else { return self };
+
+        if let Some(base) = self.config.load::<::aws_smithy_types::timeout::TimeoutConfig>() {
+            timeout_config.take_defaults_from(base);
+        }
+        self.config.store_put(timeout_config);
         self
     }
     /// Set the partition for retry-related state. When clients share a retry partition, they will

@@ -96,3 +96,12 @@ impl ClusterSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ClusterSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterSortBy::CreationTime => write!(f, "CREATION_TIME"),
+            ClusterSortBy::Name => write!(f, "NAME"),
+            ClusterSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

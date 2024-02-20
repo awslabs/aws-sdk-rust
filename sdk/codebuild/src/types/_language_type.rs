@@ -138,3 +138,20 @@ impl LanguageType {
         }
     }
 }
+impl ::std::fmt::Display for LanguageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LanguageType::Android => write!(f, "ANDROID"),
+            LanguageType::Base => write!(f, "BASE"),
+            LanguageType::Docker => write!(f, "DOCKER"),
+            LanguageType::Dotnet => write!(f, "DOTNET"),
+            LanguageType::Golang => write!(f, "GOLANG"),
+            LanguageType::Java => write!(f, "JAVA"),
+            LanguageType::NodeJs => write!(f, "NODE_JS"),
+            LanguageType::Php => write!(f, "PHP"),
+            LanguageType::Python => write!(f, "PYTHON"),
+            LanguageType::Ruby => write!(f, "RUBY"),
+            LanguageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl Tcs {
         }
     }
 }
+impl ::std::fmt::Display for Tcs {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Tcs::Bt2100Linhlg => write!(f, "BT2100LINHLG"),
+            Tcs::Bt2100Linpq => write!(f, "BT2100LINPQ"),
+            Tcs::Density => write!(f, "DENSITY"),
+            Tcs::Hlg => write!(f, "HLG"),
+            Tcs::Linear => write!(f, "LINEAR"),
+            Tcs::Pq => write!(f, "PQ"),
+            Tcs::Sdr => write!(f, "SDR"),
+            Tcs::St20651 => write!(f, "ST2065-1"),
+            Tcs::St4281 => write!(f, "ST428-1"),
+            Tcs::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl SearchOutputAdditionalAttribute {
         }
     }
 }
+impl ::std::fmt::Display for SearchOutputAdditionalAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchOutputAdditionalAttribute::Forms => write!(f, "FORMS"),
+            SearchOutputAdditionalAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

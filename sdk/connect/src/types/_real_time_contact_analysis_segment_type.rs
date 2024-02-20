@@ -111,3 +111,15 @@ impl RealTimeContactAnalysisSegmentType {
         }
     }
 }
+impl ::std::fmt::Display for RealTimeContactAnalysisSegmentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RealTimeContactAnalysisSegmentType::Attachments => write!(f, "Attachments"),
+            RealTimeContactAnalysisSegmentType::Categories => write!(f, "Categories"),
+            RealTimeContactAnalysisSegmentType::Event => write!(f, "Event"),
+            RealTimeContactAnalysisSegmentType::Issues => write!(f, "Issues"),
+            RealTimeContactAnalysisSegmentType::Transcript => write!(f, "Transcript"),
+            RealTimeContactAnalysisSegmentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl Quality {
         }
     }
 }
+impl ::std::fmt::Display for Quality {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Quality::Bad => write!(f, "BAD"),
+            Quality::Good => write!(f, "GOOD"),
+            Quality::Uncertain => write!(f, "UNCERTAIN"),
+            Quality::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

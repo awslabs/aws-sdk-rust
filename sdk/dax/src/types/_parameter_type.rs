@@ -96,3 +96,12 @@ impl ParameterType {
         }
     }
 }
+impl ::std::fmt::Display for ParameterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParameterType::Default => write!(f, "DEFAULT"),
+            ParameterType::NodeTypeSpecific => write!(f, "NODE_TYPE_SPECIFIC"),
+            ParameterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

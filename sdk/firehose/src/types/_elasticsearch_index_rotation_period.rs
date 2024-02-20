@@ -111,3 +111,15 @@ impl ElasticsearchIndexRotationPeriod {
         }
     }
 }
+impl ::std::fmt::Display for ElasticsearchIndexRotationPeriod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ElasticsearchIndexRotationPeriod::NoRotation => write!(f, "NoRotation"),
+            ElasticsearchIndexRotationPeriod::OneDay => write!(f, "OneDay"),
+            ElasticsearchIndexRotationPeriod::OneHour => write!(f, "OneHour"),
+            ElasticsearchIndexRotationPeriod::OneMonth => write!(f, "OneMonth"),
+            ElasticsearchIndexRotationPeriod::OneWeek => write!(f, "OneWeek"),
+            ElasticsearchIndexRotationPeriod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

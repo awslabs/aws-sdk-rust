@@ -96,3 +96,12 @@ impl HlsProgramDateTimeClock {
         }
     }
 }
+impl ::std::fmt::Display for HlsProgramDateTimeClock {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsProgramDateTimeClock::InitializeFromOutputTimecode => write!(f, "INITIALIZE_FROM_OUTPUT_TIMECODE"),
+            HlsProgramDateTimeClock::SystemClock => write!(f, "SYSTEM_CLOCK"),
+            HlsProgramDateTimeClock::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

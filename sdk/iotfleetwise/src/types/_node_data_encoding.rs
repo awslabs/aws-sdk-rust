@@ -96,3 +96,12 @@ impl NodeDataEncoding {
         }
     }
 }
+impl ::std::fmt::Display for NodeDataEncoding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeDataEncoding::Binary => write!(f, "BINARY"),
+            NodeDataEncoding::Typed => write!(f, "TYPED"),
+            NodeDataEncoding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

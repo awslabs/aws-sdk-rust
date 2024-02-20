@@ -121,3 +121,17 @@ impl ProtocolEnum {
         }
     }
 }
+impl ::std::fmt::Display for ProtocolEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProtocolEnum::Geneve => write!(f, "GENEVE"),
+            ProtocolEnum::Http => write!(f, "HTTP"),
+            ProtocolEnum::Https => write!(f, "HTTPS"),
+            ProtocolEnum::Tcp => write!(f, "TCP"),
+            ProtocolEnum::TcpUdp => write!(f, "TCP_UDP"),
+            ProtocolEnum::Tls => write!(f, "TLS"),
+            ProtocolEnum::Udp => write!(f, "UDP"),
+            ProtocolEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

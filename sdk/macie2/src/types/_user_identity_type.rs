@@ -116,3 +116,16 @@ impl UserIdentityType {
         }
     }
 }
+impl ::std::fmt::Display for UserIdentityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserIdentityType::AwsAccount => write!(f, "AWSAccount"),
+            UserIdentityType::AwsService => write!(f, "AWSService"),
+            UserIdentityType::AssumedRole => write!(f, "AssumedRole"),
+            UserIdentityType::FederatedUser => write!(f, "FederatedUser"),
+            UserIdentityType::IamUser => write!(f, "IAMUser"),
+            UserIdentityType::Root => write!(f, "Root"),
+            UserIdentityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

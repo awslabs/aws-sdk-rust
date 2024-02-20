@@ -106,3 +106,14 @@ impl LedgerState {
         }
     }
 }
+impl ::std::fmt::Display for LedgerState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LedgerState::Active => write!(f, "ACTIVE"),
+            LedgerState::Creating => write!(f, "CREATING"),
+            LedgerState::Deleted => write!(f, "DELETED"),
+            LedgerState::Deleting => write!(f, "DELETING"),
+            LedgerState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

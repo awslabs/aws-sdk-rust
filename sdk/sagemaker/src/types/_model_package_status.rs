@@ -111,3 +111,15 @@ impl ModelPackageStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelPackageStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelPackageStatus::Completed => write!(f, "Completed"),
+            ModelPackageStatus::Deleting => write!(f, "Deleting"),
+            ModelPackageStatus::Failed => write!(f, "Failed"),
+            ModelPackageStatus::InProgress => write!(f, "InProgress"),
+            ModelPackageStatus::Pending => write!(f, "Pending"),
+            ModelPackageStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -105,3 +105,13 @@ impl CandidateStepType {
         }
     }
 }
+impl ::std::fmt::Display for CandidateStepType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CandidateStepType::Processing => write!(f, "AWS::SageMaker::ProcessingJob"),
+            CandidateStepType::Training => write!(f, "AWS::SageMaker::TrainingJob"),
+            CandidateStepType::Transform => write!(f, "AWS::SageMaker::TransformJob"),
+            CandidateStepType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

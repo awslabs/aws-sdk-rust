@@ -96,3 +96,12 @@ impl GatewayType {
         }
     }
 }
+impl ::std::fmt::Display for GatewayType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GatewayType::TransitGateway => write!(f, "transitGateway"),
+            GatewayType::VirtualPrivateGateway => write!(f, "virtualPrivateGateway"),
+            GatewayType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

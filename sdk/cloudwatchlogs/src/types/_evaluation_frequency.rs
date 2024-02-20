@@ -116,3 +116,16 @@ impl EvaluationFrequency {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationFrequency::FifteenMin => write!(f, "FIFTEEN_MIN"),
+            EvaluationFrequency::FiveMin => write!(f, "FIVE_MIN"),
+            EvaluationFrequency::OneHour => write!(f, "ONE_HOUR"),
+            EvaluationFrequency::OneMin => write!(f, "ONE_MIN"),
+            EvaluationFrequency::TenMin => write!(f, "TEN_MIN"),
+            EvaluationFrequency::ThirtyMin => write!(f, "THIRTY_MIN"),
+            EvaluationFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

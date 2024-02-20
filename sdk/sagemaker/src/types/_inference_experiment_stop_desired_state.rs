@@ -96,3 +96,12 @@ impl InferenceExperimentStopDesiredState {
         }
     }
 }
+impl ::std::fmt::Display for InferenceExperimentStopDesiredState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferenceExperimentStopDesiredState::Cancelled => write!(f, "Cancelled"),
+            InferenceExperimentStopDesiredState::Completed => write!(f, "Completed"),
+            InferenceExperimentStopDesiredState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

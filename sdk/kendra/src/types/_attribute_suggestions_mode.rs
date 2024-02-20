@@ -96,3 +96,12 @@ impl AttributeSuggestionsMode {
         }
     }
 }
+impl ::std::fmt::Display for AttributeSuggestionsMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttributeSuggestionsMode::Active => write!(f, "ACTIVE"),
+            AttributeSuggestionsMode::Inactive => write!(f, "INACTIVE"),
+            AttributeSuggestionsMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AssetBundleExportFormat {
         }
     }
 }
+impl ::std::fmt::Display for AssetBundleExportFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetBundleExportFormat::CloudformationJson => write!(f, "CLOUDFORMATION_JSON"),
+            AssetBundleExportFormat::QuicksightJson => write!(f, "QUICKSIGHT_JSON"),
+            AssetBundleExportFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

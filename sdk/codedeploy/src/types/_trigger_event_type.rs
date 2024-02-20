@@ -147,3 +147,20 @@ impl TriggerEventType {
         }
     }
 }
+impl ::std::fmt::Display for TriggerEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TriggerEventType::DeploymentFailure => write!(f, "DeploymentFailure"),
+            TriggerEventType::DeploymentReady => write!(f, "DeploymentReady"),
+            TriggerEventType::DeploymentRollback => write!(f, "DeploymentRollback"),
+            TriggerEventType::DeploymentStart => write!(f, "DeploymentStart"),
+            TriggerEventType::DeploymentStop => write!(f, "DeploymentStop"),
+            TriggerEventType::DeploymentSuccess => write!(f, "DeploymentSuccess"),
+            TriggerEventType::InstanceFailure => write!(f, "InstanceFailure"),
+            TriggerEventType::InstanceReady => write!(f, "InstanceReady"),
+            TriggerEventType::InstanceStart => write!(f, "InstanceStart"),
+            TriggerEventType::InstanceSuccess => write!(f, "InstanceSuccess"),
+            TriggerEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -153,3 +153,21 @@ impl DefaultAggregation {
         }
     }
 }
+impl ::std::fmt::Display for DefaultAggregation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DefaultAggregation::Average => write!(f, "AVERAGE"),
+            DefaultAggregation::Count => write!(f, "COUNT"),
+            DefaultAggregation::DistinctCount => write!(f, "DISTINCT_COUNT"),
+            DefaultAggregation::Max => write!(f, "MAX"),
+            DefaultAggregation::Median => write!(f, "MEDIAN"),
+            DefaultAggregation::Min => write!(f, "MIN"),
+            DefaultAggregation::Stdev => write!(f, "STDEV"),
+            DefaultAggregation::Stdevp => write!(f, "STDEVP"),
+            DefaultAggregation::Sum => write!(f, "SUM"),
+            DefaultAggregation::Var => write!(f, "VAR"),
+            DefaultAggregation::Varp => write!(f, "VARP"),
+            DefaultAggregation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

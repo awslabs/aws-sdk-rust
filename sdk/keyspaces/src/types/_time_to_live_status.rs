@@ -91,3 +91,11 @@ impl TimeToLiveStatus {
         }
     }
 }
+impl ::std::fmt::Display for TimeToLiveStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimeToLiveStatus::Enabled => write!(f, "ENABLED"),
+            TimeToLiveStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

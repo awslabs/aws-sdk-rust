@@ -96,3 +96,12 @@ impl DeviceProfileType {
         }
     }
 }
+impl ::std::fmt::Display for DeviceProfileType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceProfileType::LoRaWan => write!(f, "LoRaWAN"),
+            DeviceProfileType::Sidewalk => write!(f, "Sidewalk"),
+            DeviceProfileType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

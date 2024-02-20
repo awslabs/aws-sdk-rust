@@ -101,3 +101,13 @@ impl Av1FramerateConversionAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for Av1FramerateConversionAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Av1FramerateConversionAlgorithm::DuplicateDrop => write!(f, "DUPLICATE_DROP"),
+            Av1FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
+            Av1FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
+            Av1FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

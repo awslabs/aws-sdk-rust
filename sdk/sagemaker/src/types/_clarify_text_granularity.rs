@@ -101,3 +101,13 @@ impl ClarifyTextGranularity {
         }
     }
 }
+impl ::std::fmt::Display for ClarifyTextGranularity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClarifyTextGranularity::Paragraph => write!(f, "paragraph"),
+            ClarifyTextGranularity::Sentence => write!(f, "sentence"),
+            ClarifyTextGranularity::Token => write!(f, "token"),
+            ClarifyTextGranularity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

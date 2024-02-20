@@ -96,3 +96,12 @@ impl CertificateType {
         }
     }
 }
+impl ::std::fmt::Display for CertificateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateType::ClientCertAuth => write!(f, "ClientCertAuth"),
+            CertificateType::ClientLdaps => write!(f, "ClientLDAPS"),
+            CertificateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

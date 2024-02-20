@@ -96,3 +96,12 @@ impl PipeTargetInvocationType {
         }
     }
 }
+impl ::std::fmt::Display for PipeTargetInvocationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PipeTargetInvocationType::FireAndForget => write!(f, "FIRE_AND_FORGET"),
+            PipeTargetInvocationType::RequestResponse => write!(f, "REQUEST_RESPONSE"),
+            PipeTargetInvocationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl EdgePresetDeploymentStatus {
         }
     }
 }
+impl ::std::fmt::Display for EdgePresetDeploymentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EdgePresetDeploymentStatus::Completed => write!(f, "COMPLETED"),
+            EdgePresetDeploymentStatus::Failed => write!(f, "FAILED"),
+            EdgePresetDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

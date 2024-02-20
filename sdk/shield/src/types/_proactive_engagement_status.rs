@@ -101,3 +101,13 @@ impl ProactiveEngagementStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProactiveEngagementStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProactiveEngagementStatus::Disabled => write!(f, "DISABLED"),
+            ProactiveEngagementStatus::Enabled => write!(f, "ENABLED"),
+            ProactiveEngagementStatus::Pending => write!(f, "PENDING"),
+            ProactiveEngagementStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl OutputType {
         }
     }
 }
+impl ::std::fmt::Display for OutputType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputType::Float32 => write!(f, "FLOAT32"),
+            OutputType::Float64 => write!(f, "FLOAT64"),
+            OutputType::Int16 => write!(f, "INT16"),
+            OutputType::Int32 => write!(f, "INT32"),
+            OutputType::Uint16 => write!(f, "UINT16"),
+            OutputType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

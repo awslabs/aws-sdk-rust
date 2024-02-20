@@ -106,3 +106,14 @@ impl StartingPosition {
         }
     }
 }
+impl ::std::fmt::Display for StartingPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StartingPosition::Earliest => write!(f, "earliest"),
+            StartingPosition::Latest => write!(f, "latest"),
+            StartingPosition::Timestamp => write!(f, "timestamp"),
+            StartingPosition::TrimHorizon => write!(f, "trim_horizon"),
+            StartingPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

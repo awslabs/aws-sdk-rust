@@ -96,3 +96,12 @@ impl Persona {
         }
     }
 }
+impl ::std::fmt::Display for Persona {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Persona::Admin => write!(f, "admin"),
+            Persona::Enduser => write!(f, "endUser"),
+            Persona::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

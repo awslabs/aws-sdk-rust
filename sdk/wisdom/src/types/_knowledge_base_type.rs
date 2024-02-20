@@ -101,3 +101,13 @@ impl KnowledgeBaseType {
         }
     }
 }
+impl ::std::fmt::Display for KnowledgeBaseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KnowledgeBaseType::Custom => write!(f, "CUSTOM"),
+            KnowledgeBaseType::External => write!(f, "EXTERNAL"),
+            KnowledgeBaseType::QuickResponses => write!(f, "QUICK_RESPONSES"),
+            KnowledgeBaseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

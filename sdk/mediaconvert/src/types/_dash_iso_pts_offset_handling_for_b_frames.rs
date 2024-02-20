@@ -96,3 +96,12 @@ impl DashIsoPtsOffsetHandlingForBFrames {
         }
     }
 }
+impl ::std::fmt::Display for DashIsoPtsOffsetHandlingForBFrames {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashIsoPtsOffsetHandlingForBFrames::MatchInitialPts => write!(f, "MATCH_INITIAL_PTS"),
+            DashIsoPtsOffsetHandlingForBFrames::ZeroBased => write!(f, "ZERO_BASED"),
+            DashIsoPtsOffsetHandlingForBFrames::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

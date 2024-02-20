@@ -121,3 +121,17 @@ impl DetectorModelVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for DetectorModelVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetectorModelVersionStatus::Activating => write!(f, "ACTIVATING"),
+            DetectorModelVersionStatus::Active => write!(f, "ACTIVE"),
+            DetectorModelVersionStatus::Deprecated => write!(f, "DEPRECATED"),
+            DetectorModelVersionStatus::Draft => write!(f, "DRAFT"),
+            DetectorModelVersionStatus::Failed => write!(f, "FAILED"),
+            DetectorModelVersionStatus::Inactive => write!(f, "INACTIVE"),
+            DetectorModelVersionStatus::Paused => write!(f, "PAUSED"),
+            DetectorModelVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

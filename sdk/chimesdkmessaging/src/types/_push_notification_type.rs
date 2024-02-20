@@ -96,3 +96,12 @@ impl PushNotificationType {
         }
     }
 }
+impl ::std::fmt::Display for PushNotificationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PushNotificationType::Default => write!(f, "DEFAULT"),
+            PushNotificationType::Voip => write!(f, "VOIP"),
+            PushNotificationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl DeploymentTargetResourceType {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentTargetResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentTargetResourceType::Component => write!(f, "COMPONENT"),
+            DeploymentTargetResourceType::Environment => write!(f, "ENVIRONMENT"),
+            DeploymentTargetResourceType::ServiceInstance => write!(f, "SERVICE_INSTANCE"),
+            DeploymentTargetResourceType::ServicePipeline => write!(f, "SERVICE_PIPELINE"),
+            DeploymentTargetResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

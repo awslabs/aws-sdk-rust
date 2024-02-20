@@ -101,3 +101,13 @@ impl DetailStatus {
         }
     }
 }
+impl ::std::fmt::Display for DetailStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetailStatus::Available => write!(f, "AVAILABLE"),
+            DetailStatus::Processing => write!(f, "PROCESSING"),
+            DetailStatus::Unavailable => write!(f, "UNAVAILABLE"),
+            DetailStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -219,3 +219,32 @@ impl RelationshipType {
         }
     }
 }
+impl ::std::fmt::Display for RelationshipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelationshipType::Acuity => write!(f, "ACUITY"),
+            RelationshipType::AdministeredVia => write!(f, "ADMINISTERED_VIA"),
+            RelationshipType::Amount => write!(f, "AMOUNT"),
+            RelationshipType::Direction => write!(f, "DIRECTION"),
+            RelationshipType::Dosage => write!(f, "DOSAGE"),
+            RelationshipType::Duration => write!(f, "DURATION"),
+            RelationshipType::Every => write!(f, "EVERY"),
+            RelationshipType::For => write!(f, "FOR"),
+            RelationshipType::Form => write!(f, "FORM"),
+            RelationshipType::Frequency => write!(f, "FREQUENCY"),
+            RelationshipType::Negative => write!(f, "NEGATIVE"),
+            RelationshipType::Overlap => write!(f, "OVERLAP"),
+            RelationshipType::Quality => write!(f, "QUALITY"),
+            RelationshipType::Rate => write!(f, "RATE"),
+            RelationshipType::RouteOrMode => write!(f, "ROUTE_OR_MODE"),
+            RelationshipType::Strength => write!(f, "STRENGTH"),
+            RelationshipType::SystemOrganSite => write!(f, "SYSTEM_ORGAN_SITE"),
+            RelationshipType::TestUnit => write!(f, "TEST_UNIT"),
+            RelationshipType::TestUnits => write!(f, "TEST_UNITS"),
+            RelationshipType::TestValue => write!(f, "TEST_VALUE"),
+            RelationshipType::Usage => write!(f, "USAGE"),
+            RelationshipType::WithDosage => write!(f, "WITH_DOSAGE"),
+            RelationshipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

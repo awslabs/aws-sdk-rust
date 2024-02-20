@@ -96,3 +96,12 @@ impl LaunchTemplateInstanceMetadataTagsState {
         }
     }
 }
+impl ::std::fmt::Display for LaunchTemplateInstanceMetadataTagsState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchTemplateInstanceMetadataTagsState::Disabled => write!(f, "disabled"),
+            LaunchTemplateInstanceMetadataTagsState::Enabled => write!(f, "enabled"),
+            LaunchTemplateInstanceMetadataTagsState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

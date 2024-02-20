@@ -96,3 +96,12 @@ impl ExpirationTimeResponse {
         }
     }
 }
+impl ::std::fmt::Display for ExpirationTimeResponse {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExpirationTimeResponse::Disabled => write!(f, "Disabled"),
+            ExpirationTimeResponse::Enabled => write!(f, "Enabled"),
+            ExpirationTimeResponse::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AccelerationMode {
         }
     }
 }
+impl ::std::fmt::Display for AccelerationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccelerationMode::Disabled => write!(f, "DISABLED"),
+            AccelerationMode::Enabled => write!(f, "ENABLED"),
+            AccelerationMode::Preferred => write!(f, "PREFERRED"),
+            AccelerationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

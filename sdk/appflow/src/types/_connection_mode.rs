@@ -96,3 +96,12 @@ impl ConnectionMode {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionMode::Private => write!(f, "Private"),
+            ConnectionMode::Public => write!(f, "Public"),
+            ConnectionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

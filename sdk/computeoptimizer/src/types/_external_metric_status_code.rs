@@ -147,3 +147,20 @@ impl ExternalMetricStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ExternalMetricStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExternalMetricStatusCode::DatadogIntegrationError => write!(f, "DATADOG_INTEGRATION_ERROR"),
+            ExternalMetricStatusCode::DynatraceIntegrationError => write!(f, "DYNATRACE_INTEGRATION_ERROR"),
+            ExternalMetricStatusCode::InstanaIntegrationError => write!(f, "INSTANA_INTEGRATION_ERROR"),
+            ExternalMetricStatusCode::InsufficientDatadogMetrics => write!(f, "INSUFFICIENT_DATADOG_METRICS"),
+            ExternalMetricStatusCode::InsufficientDynatraceMetrics => write!(f, "INSUFFICIENT_DYNATRACE_METRICS"),
+            ExternalMetricStatusCode::InsufficientInstanaMetrics => write!(f, "INSUFFICIENT_INSTANA_METRICS"),
+            ExternalMetricStatusCode::InsufficientNewrelicMetrics => write!(f, "INSUFFICIENT_NEWRELIC_METRICS"),
+            ExternalMetricStatusCode::IntegrationSuccess => write!(f, "INTEGRATION_SUCCESS"),
+            ExternalMetricStatusCode::NewrelicIntegrationError => write!(f, "NEWRELIC_INTEGRATION_ERROR"),
+            ExternalMetricStatusCode::NoExternalMetricSet => write!(f, "NO_EXTERNAL_METRIC_SET"),
+            ExternalMetricStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

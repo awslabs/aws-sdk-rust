@@ -96,3 +96,12 @@ impl LiveConnectorMuxType {
         }
     }
 }
+impl ::std::fmt::Display for LiveConnectorMuxType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LiveConnectorMuxType::AudioWithActiveSpeakerVideo => write!(f, "AudioWithActiveSpeakerVideo"),
+            LiveConnectorMuxType::AudioWithCompositedVideo => write!(f, "AudioWithCompositedVideo"),
+            LiveConnectorMuxType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

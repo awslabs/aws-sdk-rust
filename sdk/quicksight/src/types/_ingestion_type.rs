@@ -96,3 +96,12 @@ impl IngestionType {
         }
     }
 }
+impl ::std::fmt::Display for IngestionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IngestionType::FullRefresh => write!(f, "FULL_REFRESH"),
+            IngestionType::IncrementalRefresh => write!(f, "INCREMENTAL_REFRESH"),
+            IngestionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

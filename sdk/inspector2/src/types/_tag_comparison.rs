@@ -91,3 +91,11 @@ impl TagComparison {
         }
     }
 }
+impl ::std::fmt::Display for TagComparison {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TagComparison::Equals => write!(f, "EQUALS"),
+            TagComparison::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

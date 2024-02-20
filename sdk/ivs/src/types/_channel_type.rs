@@ -106,3 +106,14 @@ impl ChannelType {
         }
     }
 }
+impl ::std::fmt::Display for ChannelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelType::AdvancedHdChannelType => write!(f, "ADVANCED_HD"),
+            ChannelType::AdvancedSdChannelType => write!(f, "ADVANCED_SD"),
+            ChannelType::BasicChannelType => write!(f, "BASIC"),
+            ChannelType::StandardChannelType => write!(f, "STANDARD"),
+            ChannelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

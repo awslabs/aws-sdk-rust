@@ -135,3 +135,18 @@ impl IndicatorType {
         }
     }
 }
+impl ::std::fmt::Display for IndicatorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IndicatorType::FlaggedIpAddress => write!(f, "FLAGGED_IP_ADDRESS"),
+            IndicatorType::ImpossibleTravel => write!(f, "IMPOSSIBLE_TRAVEL"),
+            IndicatorType::NewAso => write!(f, "NEW_ASO"),
+            IndicatorType::NewGeolocation => write!(f, "NEW_GEOLOCATION"),
+            IndicatorType::NewUserAgent => write!(f, "NEW_USER_AGENT"),
+            IndicatorType::RelatedFinding => write!(f, "RELATED_FINDING"),
+            IndicatorType::RelatedFindingGroup => write!(f, "RELATED_FINDING_GROUP"),
+            IndicatorType::TtpObserved => write!(f, "TTP_OBSERVED"),
+            IndicatorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

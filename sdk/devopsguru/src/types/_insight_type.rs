@@ -96,3 +96,12 @@ impl InsightType {
         }
     }
 }
+impl ::std::fmt::Display for InsightType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InsightType::Proactive => write!(f, "PROACTIVE"),
+            InsightType::Reactive => write!(f, "REACTIVE"),
+            InsightType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

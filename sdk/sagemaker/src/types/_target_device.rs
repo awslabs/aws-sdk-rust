@@ -309,3 +309,47 @@ impl TargetDevice {
         }
     }
 }
+impl ::std::fmt::Display for TargetDevice {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetDevice::Aisage => write!(f, "aisage"),
+            TargetDevice::AmbaCv2 => write!(f, "amba_cv2"),
+            TargetDevice::AmbaCv22 => write!(f, "amba_cv22"),
+            TargetDevice::AmbaCv25 => write!(f, "amba_cv25"),
+            TargetDevice::Coreml => write!(f, "coreml"),
+            TargetDevice::Deeplens => write!(f, "deeplens"),
+            TargetDevice::Imx8Mplus => write!(f, "imx8mplus"),
+            TargetDevice::Imx8Qm => write!(f, "imx8qm"),
+            TargetDevice::JacintoTda4Vm => write!(f, "jacinto_tda4vm"),
+            TargetDevice::JetsonNano => write!(f, "jetson_nano"),
+            TargetDevice::JetsonTx1 => write!(f, "jetson_tx1"),
+            TargetDevice::JetsonTx2 => write!(f, "jetson_tx2"),
+            TargetDevice::JetsonXavier => write!(f, "jetson_xavier"),
+            TargetDevice::Lambda => write!(f, "lambda"),
+            TargetDevice::MlC4 => write!(f, "ml_c4"),
+            TargetDevice::MlC5 => write!(f, "ml_c5"),
+            TargetDevice::MlC6G => write!(f, "ml_c6g"),
+            TargetDevice::MlEia2 => write!(f, "ml_eia2"),
+            TargetDevice::MlG4Dn => write!(f, "ml_g4dn"),
+            TargetDevice::MlInf1 => write!(f, "ml_inf1"),
+            TargetDevice::MlInf2 => write!(f, "ml_inf2"),
+            TargetDevice::MlM4 => write!(f, "ml_m4"),
+            TargetDevice::MlM5 => write!(f, "ml_m5"),
+            TargetDevice::MlM6G => write!(f, "ml_m6g"),
+            TargetDevice::MlP2 => write!(f, "ml_p2"),
+            TargetDevice::MlP3 => write!(f, "ml_p3"),
+            TargetDevice::MlTrn1 => write!(f, "ml_trn1"),
+            TargetDevice::Qcs603 => write!(f, "qcs603"),
+            TargetDevice::Qcs605 => write!(f, "qcs605"),
+            TargetDevice::Rasp3B => write!(f, "rasp3b"),
+            TargetDevice::Rasp4B => write!(f, "rasp4b"),
+            TargetDevice::Rk3288 => write!(f, "rk3288"),
+            TargetDevice::Rk3399 => write!(f, "rk3399"),
+            TargetDevice::SbeC => write!(f, "sbe_c"),
+            TargetDevice::SitaraAm57X => write!(f, "sitara_am57x"),
+            TargetDevice::X86Win32 => write!(f, "x86_win32"),
+            TargetDevice::X86Win64 => write!(f, "x86_win64"),
+            TargetDevice::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

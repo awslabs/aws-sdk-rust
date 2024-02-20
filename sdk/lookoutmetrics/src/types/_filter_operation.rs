@@ -91,3 +91,11 @@ impl FilterOperation {
         }
     }
 }
+impl ::std::fmt::Display for FilterOperation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterOperation::Equals => write!(f, "EQUALS"),
+            FilterOperation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl MessageContentType {
         }
     }
 }
+impl ::std::fmt::Display for MessageContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessageContentType::CustomPayload => write!(f, "CustomPayload"),
+            MessageContentType::ImageResponseCard => write!(f, "ImageResponseCard"),
+            MessageContentType::PlainText => write!(f, "PlainText"),
+            MessageContentType::Ssml => write!(f, "SSML"),
+            MessageContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

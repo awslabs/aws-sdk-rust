@@ -96,3 +96,12 @@ impl RetrieverType {
         }
     }
 }
+impl ::std::fmt::Display for RetrieverType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetrieverType::KendraIndex => write!(f, "KENDRA_INDEX"),
+            RetrieverType::NativeIndex => write!(f, "NATIVE_INDEX"),
+            RetrieverType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

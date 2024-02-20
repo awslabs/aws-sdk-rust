@@ -261,3 +261,39 @@ impl NodeDataType {
         }
     }
 }
+impl ::std::fmt::Display for NodeDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeDataType::Boolean => write!(f, "BOOLEAN"),
+            NodeDataType::BooleanArray => write!(f, "BOOLEAN_ARRAY"),
+            NodeDataType::Double => write!(f, "DOUBLE"),
+            NodeDataType::DoubleArray => write!(f, "DOUBLE_ARRAY"),
+            NodeDataType::Float => write!(f, "FLOAT"),
+            NodeDataType::FloatArray => write!(f, "FLOAT_ARRAY"),
+            NodeDataType::Int16 => write!(f, "INT16"),
+            NodeDataType::Int16Array => write!(f, "INT16_ARRAY"),
+            NodeDataType::Int32 => write!(f, "INT32"),
+            NodeDataType::Int32Array => write!(f, "INT32_ARRAY"),
+            NodeDataType::Int64 => write!(f, "INT64"),
+            NodeDataType::Int64Array => write!(f, "INT64_ARRAY"),
+            NodeDataType::Int8 => write!(f, "INT8"),
+            NodeDataType::Int8Array => write!(f, "INT8_ARRAY"),
+            NodeDataType::String => write!(f, "STRING"),
+            NodeDataType::StringArray => write!(f, "STRING_ARRAY"),
+            NodeDataType::Struct => write!(f, "STRUCT"),
+            NodeDataType::StructArray => write!(f, "STRUCT_ARRAY"),
+            NodeDataType::Uint16 => write!(f, "UINT16"),
+            NodeDataType::Uint16Array => write!(f, "UINT16_ARRAY"),
+            NodeDataType::Uint32 => write!(f, "UINT32"),
+            NodeDataType::Uint32Array => write!(f, "UINT32_ARRAY"),
+            NodeDataType::Uint64 => write!(f, "UINT64"),
+            NodeDataType::Uint64Array => write!(f, "UINT64_ARRAY"),
+            NodeDataType::Uint8 => write!(f, "UINT8"),
+            NodeDataType::Uint8Array => write!(f, "UINT8_ARRAY"),
+            NodeDataType::UnixTimestamp => write!(f, "UNIX_TIMESTAMP"),
+            NodeDataType::UnixTimestampArray => write!(f, "UNIX_TIMESTAMP_ARRAY"),
+            NodeDataType::UnknownValue => write!(f, "UNKNOWN"),
+            NodeDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

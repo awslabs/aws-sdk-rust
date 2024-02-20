@@ -96,3 +96,12 @@ impl SmoothGroupSegmentationMode {
         }
     }
 }
+impl ::std::fmt::Display for SmoothGroupSegmentationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SmoothGroupSegmentationMode::UseInputSegmentation => write!(f, "USE_INPUT_SEGMENTATION"),
+            SmoothGroupSegmentationMode::UseSegmentDuration => write!(f, "USE_SEGMENT_DURATION"),
+            SmoothGroupSegmentationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

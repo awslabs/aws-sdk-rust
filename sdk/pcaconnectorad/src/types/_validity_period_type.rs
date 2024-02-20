@@ -111,3 +111,15 @@ impl ValidityPeriodType {
         }
     }
 }
+impl ::std::fmt::Display for ValidityPeriodType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidityPeriodType::Days => write!(f, "DAYS"),
+            ValidityPeriodType::Hours => write!(f, "HOURS"),
+            ValidityPeriodType::Months => write!(f, "MONTHS"),
+            ValidityPeriodType::Weeks => write!(f, "WEEKS"),
+            ValidityPeriodType::Years => write!(f, "YEARS"),
+            ValidityPeriodType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl PhoneNumberType {
         }
     }
 }
+impl ::std::fmt::Display for PhoneNumberType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhoneNumberType::Local => write!(f, "Local"),
+            PhoneNumberType::TollFree => write!(f, "TollFree"),
+            PhoneNumberType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

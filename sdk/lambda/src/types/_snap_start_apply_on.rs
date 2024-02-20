@@ -96,3 +96,12 @@ impl SnapStartApplyOn {
         }
     }
 }
+impl ::std::fmt::Display for SnapStartApplyOn {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapStartApplyOn::None => write!(f, "None"),
+            SnapStartApplyOn::PublishedVersions => write!(f, "PublishedVersions"),
+            SnapStartApplyOn::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

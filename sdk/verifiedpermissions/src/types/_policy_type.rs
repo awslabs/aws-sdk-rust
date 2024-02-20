@@ -96,3 +96,12 @@ impl PolicyType {
         }
     }
 }
+impl ::std::fmt::Display for PolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyType::Static => write!(f, "STATIC"),
+            PolicyType::TemplateLinked => write!(f, "TEMPLATE_LINKED"),
+            PolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

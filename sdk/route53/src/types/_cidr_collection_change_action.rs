@@ -96,3 +96,12 @@ impl CidrCollectionChangeAction {
         }
     }
 }
+impl ::std::fmt::Display for CidrCollectionChangeAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CidrCollectionChangeAction::DeleteIfExists => write!(f, "DELETE_IF_EXISTS"),
+            CidrCollectionChangeAction::Put => write!(f, "PUT"),
+            CidrCollectionChangeAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

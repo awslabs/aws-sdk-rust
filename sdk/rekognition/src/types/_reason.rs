@@ -129,3 +129,17 @@ impl Reason {
         }
     }
 }
+impl ::std::fmt::Display for Reason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Reason::ExceedsMaxFaces => write!(f, "EXCEEDS_MAX_FACES"),
+            Reason::ExtremePose => write!(f, "EXTREME_POSE"),
+            Reason::LowBrightness => write!(f, "LOW_BRIGHTNESS"),
+            Reason::LowConfidence => write!(f, "LOW_CONFIDENCE"),
+            Reason::LowFaceQuality => write!(f, "LOW_FACE_QUALITY"),
+            Reason::LowSharpness => write!(f, "LOW_SHARPNESS"),
+            Reason::SmallBoundingBox => write!(f, "SMALL_BOUNDING_BOX"),
+            Reason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

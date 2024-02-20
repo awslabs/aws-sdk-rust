@@ -101,3 +101,13 @@ impl AlfrescoEntity {
         }
     }
 }
+impl ::std::fmt::Display for AlfrescoEntity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlfrescoEntity::Blog => write!(f, "blog"),
+            AlfrescoEntity::DocumentLibrary => write!(f, "documentLibrary"),
+            AlfrescoEntity::Wiki => write!(f, "wiki"),
+            AlfrescoEntity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

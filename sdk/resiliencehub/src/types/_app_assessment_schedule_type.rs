@@ -96,3 +96,12 @@ impl AppAssessmentScheduleType {
         }
     }
 }
+impl ::std::fmt::Display for AppAssessmentScheduleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppAssessmentScheduleType::Daily => write!(f, "Daily"),
+            AppAssessmentScheduleType::Disabled => write!(f, "Disabled"),
+            AppAssessmentScheduleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

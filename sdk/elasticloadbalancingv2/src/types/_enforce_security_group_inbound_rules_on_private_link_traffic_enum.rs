@@ -98,3 +98,12 @@ impl EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum {
         }
     }
 }
+impl ::std::fmt::Display for EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::Off => write!(f, "off"),
+            EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::On => write!(f, "on"),
+            EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

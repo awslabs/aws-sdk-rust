@@ -106,3 +106,14 @@ impl SensitiveDataItemCategory {
         }
     }
 }
+impl ::std::fmt::Display for SensitiveDataItemCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SensitiveDataItemCategory::Credentials => write!(f, "CREDENTIALS"),
+            SensitiveDataItemCategory::CustomIdentifier => write!(f, "CUSTOM_IDENTIFIER"),
+            SensitiveDataItemCategory::FinancialInformation => write!(f, "FINANCIAL_INFORMATION"),
+            SensitiveDataItemCategory::PersonalInformation => write!(f, "PERSONAL_INFORMATION"),
+            SensitiveDataItemCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

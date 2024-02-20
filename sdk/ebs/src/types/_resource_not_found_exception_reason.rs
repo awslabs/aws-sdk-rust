@@ -111,3 +111,14 @@ impl ResourceNotFoundExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ResourceNotFoundExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceNotFoundExceptionReason::DependencyResourceNotFound => write!(f, "DEPENDENCY_RESOURCE_NOT_FOUND"),
+            ResourceNotFoundExceptionReason::GrantNotFound => write!(f, "GRANT_NOT_FOUND"),
+            ResourceNotFoundExceptionReason::ImageNotFound => write!(f, "IMAGE_NOT_FOUND"),
+            ResourceNotFoundExceptionReason::SnapshotNotFound => write!(f, "SNAPSHOT_NOT_FOUND"),
+            ResourceNotFoundExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

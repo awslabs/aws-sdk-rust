@@ -96,3 +96,12 @@ impl StartTimeRange {
         }
     }
 }
+impl ::std::fmt::Display for StartTimeRange {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StartTimeRange::All => write!(f, "All"),
+            StartTimeRange::Latest => write!(f, "Latest"),
+            StartTimeRange::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ReferenceLineValueLabelRelativePosition {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceLineValueLabelRelativePosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceLineValueLabelRelativePosition::AfterCustomLabel => write!(f, "AFTER_CUSTOM_LABEL"),
+            ReferenceLineValueLabelRelativePosition::BeforeCustomLabel => write!(f, "BEFORE_CUSTOM_LABEL"),
+            ReferenceLineValueLabelRelativePosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

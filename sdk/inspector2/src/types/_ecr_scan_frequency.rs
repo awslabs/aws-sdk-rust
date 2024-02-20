@@ -101,3 +101,13 @@ impl EcrScanFrequency {
         }
     }
 }
+impl ::std::fmt::Display for EcrScanFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcrScanFrequency::ContinuousScan => write!(f, "CONTINUOUS_SCAN"),
+            EcrScanFrequency::Manual => write!(f, "MANUAL"),
+            EcrScanFrequency::ScanOnPush => write!(f, "SCAN_ON_PUSH"),
+            EcrScanFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

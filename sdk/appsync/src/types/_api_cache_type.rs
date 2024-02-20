@@ -177,3 +177,25 @@ impl ApiCacheType {
         }
     }
 }
+impl ::std::fmt::Display for ApiCacheType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApiCacheType::Large => write!(f, "LARGE"),
+            ApiCacheType::Large12X => write!(f, "LARGE_12X"),
+            ApiCacheType::Large2X => write!(f, "LARGE_2X"),
+            ApiCacheType::Large4X => write!(f, "LARGE_4X"),
+            ApiCacheType::Large8X => write!(f, "LARGE_8X"),
+            ApiCacheType::Medium => write!(f, "MEDIUM"),
+            ApiCacheType::R42Xlarge => write!(f, "R4_2XLARGE"),
+            ApiCacheType::R44Xlarge => write!(f, "R4_4XLARGE"),
+            ApiCacheType::R48Xlarge => write!(f, "R4_8XLARGE"),
+            ApiCacheType::R4Large => write!(f, "R4_LARGE"),
+            ApiCacheType::R4Xlarge => write!(f, "R4_XLARGE"),
+            ApiCacheType::Small => write!(f, "SMALL"),
+            ApiCacheType::T2Medium => write!(f, "T2_MEDIUM"),
+            ApiCacheType::T2Small => write!(f, "T2_SMALL"),
+            ApiCacheType::Xlarge => write!(f, "XLARGE"),
+            ApiCacheType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LaunchTemplateHttpTokensState {
         }
     }
 }
+impl ::std::fmt::Display for LaunchTemplateHttpTokensState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchTemplateHttpTokensState::Optional => write!(f, "optional"),
+            LaunchTemplateHttpTokensState::Required => write!(f, "required"),
+            LaunchTemplateHttpTokensState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

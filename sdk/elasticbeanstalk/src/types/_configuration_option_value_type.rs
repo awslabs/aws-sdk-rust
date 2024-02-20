@@ -96,3 +96,12 @@ impl ConfigurationOptionValueType {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationOptionValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationOptionValueType::List => write!(f, "List"),
+            ConfigurationOptionValueType::Scalar => write!(f, "Scalar"),
+            ConfigurationOptionValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -159,3 +159,22 @@ impl ContextKeyTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for ContextKeyTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContextKeyTypeEnum::Binary => write!(f, "binary"),
+            ContextKeyTypeEnum::BinaryList => write!(f, "binaryList"),
+            ContextKeyTypeEnum::Boolean => write!(f, "boolean"),
+            ContextKeyTypeEnum::BooleanList => write!(f, "booleanList"),
+            ContextKeyTypeEnum::Date => write!(f, "date"),
+            ContextKeyTypeEnum::DateList => write!(f, "dateList"),
+            ContextKeyTypeEnum::Ip => write!(f, "ip"),
+            ContextKeyTypeEnum::IpList => write!(f, "ipList"),
+            ContextKeyTypeEnum::Numeric => write!(f, "numeric"),
+            ContextKeyTypeEnum::NumericList => write!(f, "numericList"),
+            ContextKeyTypeEnum::String => write!(f, "string"),
+            ContextKeyTypeEnum::StringList => write!(f, "stringList"),
+            ContextKeyTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

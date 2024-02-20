@@ -96,3 +96,12 @@ impl ResourceRecordSetFailover {
         }
     }
 }
+impl ::std::fmt::Display for ResourceRecordSetFailover {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceRecordSetFailover::Primary => write!(f, "PRIMARY"),
+            ResourceRecordSetFailover::Secondary => write!(f, "SECONDARY"),
+            ResourceRecordSetFailover::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

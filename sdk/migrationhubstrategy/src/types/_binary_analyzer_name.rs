@@ -96,3 +96,12 @@ impl BinaryAnalyzerName {
         }
     }
 }
+impl ::std::fmt::Display for BinaryAnalyzerName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BinaryAnalyzerName::BytecodeAnalyzer => write!(f, "BYTECODE_ANALYZER"),
+            BinaryAnalyzerName::DllAnalyzer => write!(f, "DLL_ANALYZER"),
+            BinaryAnalyzerName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

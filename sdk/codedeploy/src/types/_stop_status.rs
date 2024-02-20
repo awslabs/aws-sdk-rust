@@ -96,3 +96,12 @@ impl StopStatus {
         }
     }
 }
+impl ::std::fmt::Display for StopStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StopStatus::Pending => write!(f, "Pending"),
+            StopStatus::Succeeded => write!(f, "Succeeded"),
+            StopStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

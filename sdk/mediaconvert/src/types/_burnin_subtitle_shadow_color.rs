@@ -106,3 +106,14 @@ impl BurninSubtitleShadowColor {
         }
     }
 }
+impl ::std::fmt::Display for BurninSubtitleShadowColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurninSubtitleShadowColor::Auto => write!(f, "AUTO"),
+            BurninSubtitleShadowColor::Black => write!(f, "BLACK"),
+            BurninSubtitleShadowColor::None => write!(f, "NONE"),
+            BurninSubtitleShadowColor::White => write!(f, "WHITE"),
+            BurninSubtitleShadowColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

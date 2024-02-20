@@ -106,3 +106,14 @@ impl FailureReason {
         }
     }
 }
+impl ::std::fmt::Display for FailureReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailureReason::TokenDomainMismatch => write!(f, "TOKEN_DOMAIN_MISMATCH"),
+            FailureReason::TokenExpired => write!(f, "TOKEN_EXPIRED"),
+            FailureReason::TokenInvalid => write!(f, "TOKEN_INVALID"),
+            FailureReason::TokenMissing => write!(f, "TOKEN_MISSING"),
+            FailureReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

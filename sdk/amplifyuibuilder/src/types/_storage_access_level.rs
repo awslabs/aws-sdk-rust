@@ -101,3 +101,13 @@ impl StorageAccessLevel {
         }
     }
 }
+impl ::std::fmt::Display for StorageAccessLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageAccessLevel::Private => write!(f, "private"),
+            StorageAccessLevel::Protected => write!(f, "protected"),
+            StorageAccessLevel::Public => write!(f, "public"),
+            StorageAccessLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

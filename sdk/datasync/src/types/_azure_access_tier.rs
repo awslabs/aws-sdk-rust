@@ -101,3 +101,13 @@ impl AzureAccessTier {
         }
     }
 }
+impl ::std::fmt::Display for AzureAccessTier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AzureAccessTier::Archive => write!(f, "ARCHIVE"),
+            AzureAccessTier::Cool => write!(f, "COOL"),
+            AzureAccessTier::Hot => write!(f, "HOT"),
+            AzureAccessTier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

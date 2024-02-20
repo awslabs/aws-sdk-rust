@@ -101,3 +101,13 @@ impl PredefinedResolution {
         }
     }
 }
+impl ::std::fmt::Display for PredefinedResolution {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PredefinedResolution::Average => write!(f, "AVERAGE"),
+            PredefinedResolution::Highest => write!(f, "HIGHEST"),
+            PredefinedResolution::Lowest => write!(f, "LOWEST"),
+            PredefinedResolution::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

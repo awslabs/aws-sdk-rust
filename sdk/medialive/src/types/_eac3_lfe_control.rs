@@ -96,3 +96,12 @@ impl Eac3LfeControl {
         }
     }
 }
+impl ::std::fmt::Display for Eac3LfeControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3LfeControl::Lfe => write!(f, "LFE"),
+            Eac3LfeControl::NoLfe => write!(f, "NO_LFE"),
+            Eac3LfeControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

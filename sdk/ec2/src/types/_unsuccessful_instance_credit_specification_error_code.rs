@@ -113,3 +113,16 @@ impl UnsuccessfulInstanceCreditSpecificationErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for UnsuccessfulInstanceCreditSpecificationErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnsuccessfulInstanceCreditSpecificationErrorCode::IncorrectInstanceState => write!(f, "IncorrectInstanceState"),
+            UnsuccessfulInstanceCreditSpecificationErrorCode::InstanceCreditSpecificationNotSupported => {
+                write!(f, "InstanceCreditSpecification.NotSupported")
+            }
+            UnsuccessfulInstanceCreditSpecificationErrorCode::InvalidInstanceId => write!(f, "InvalidInstanceID.Malformed"),
+            UnsuccessfulInstanceCreditSpecificationErrorCode::InstanceNotFound => write!(f, "InvalidInstanceID.NotFound"),
+            UnsuccessfulInstanceCreditSpecificationErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

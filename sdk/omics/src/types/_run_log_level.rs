@@ -106,3 +106,14 @@ impl RunLogLevel {
         }
     }
 }
+impl ::std::fmt::Display for RunLogLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RunLogLevel::All => write!(f, "ALL"),
+            RunLogLevel::Error => write!(f, "ERROR"),
+            RunLogLevel::Fatal => write!(f, "FATAL"),
+            RunLogLevel::Off => write!(f, "OFF"),
+            RunLogLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

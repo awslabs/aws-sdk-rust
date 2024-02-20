@@ -101,3 +101,13 @@ impl ProtectiveEquipmentType {
         }
     }
 }
+impl ::std::fmt::Display for ProtectiveEquipmentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProtectiveEquipmentType::FaceCover => write!(f, "FACE_COVER"),
+            ProtectiveEquipmentType::HandCover => write!(f, "HAND_COVER"),
+            ProtectiveEquipmentType::HeadCover => write!(f, "HEAD_COVER"),
+            ProtectiveEquipmentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

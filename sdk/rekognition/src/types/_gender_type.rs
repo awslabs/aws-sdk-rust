@@ -96,3 +96,12 @@ impl GenderType {
         }
     }
 }
+impl ::std::fmt::Display for GenderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GenderType::Female => write!(f, "Female"),
+            GenderType::Male => write!(f, "Male"),
+            GenderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

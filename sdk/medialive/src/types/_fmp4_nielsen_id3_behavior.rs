@@ -96,3 +96,12 @@ impl Fmp4NielsenId3Behavior {
         }
     }
 }
+impl ::std::fmt::Display for Fmp4NielsenId3Behavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Fmp4NielsenId3Behavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
+            Fmp4NielsenId3Behavior::Passthrough => write!(f, "PASSTHROUGH"),
+            Fmp4NielsenId3Behavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

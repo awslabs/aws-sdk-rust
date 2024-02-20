@@ -96,3 +96,12 @@ impl LastFrameClippingBehavior {
         }
     }
 }
+impl ::std::fmt::Display for LastFrameClippingBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LastFrameClippingBehavior::ExcludeLastFrame => write!(f, "EXCLUDE_LAST_FRAME"),
+            LastFrameClippingBehavior::IncludeLastFrame => write!(f, "INCLUDE_LAST_FRAME"),
+            LastFrameClippingBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

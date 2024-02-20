@@ -105,3 +105,13 @@ impl QueryErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for QueryErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryErrorCode::CloudformationStackInactive => write!(f, "CLOUDFORMATION_STACK_INACTIVE"),
+            QueryErrorCode::CloudformationStackNotExisting => write!(f, "CLOUDFORMATION_STACK_NOT_EXISTING"),
+            QueryErrorCode::CloudformationStackUnassumableRole => write!(f, "CLOUDFORMATION_STACK_UNASSUMABLE_ROLE"),
+            QueryErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

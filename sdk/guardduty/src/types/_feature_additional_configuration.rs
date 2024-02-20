@@ -96,3 +96,12 @@ impl FeatureAdditionalConfiguration {
         }
     }
 }
+impl ::std::fmt::Display for FeatureAdditionalConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeatureAdditionalConfiguration::EcsFargateAgentManagement => write!(f, "ECS_FARGATE_AGENT_MANAGEMENT"),
+            FeatureAdditionalConfiguration::EksAddonManagement => write!(f, "EKS_ADDON_MANAGEMENT"),
+            FeatureAdditionalConfiguration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

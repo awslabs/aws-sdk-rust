@@ -101,3 +101,13 @@ impl IcpRecordalStatus {
         }
     }
 }
+impl ::std::fmt::Display for IcpRecordalStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IcpRecordalStatus::Approved => write!(f, "APPROVED"),
+            IcpRecordalStatus::Pending => write!(f, "PENDING"),
+            IcpRecordalStatus::Suspended => write!(f, "SUSPENDED"),
+            IcpRecordalStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

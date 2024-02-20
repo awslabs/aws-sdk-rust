@@ -96,3 +96,12 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::ClientError => write!(f, "ClientError"),
+            ErrorCode::InternalError => write!(f, "InternalError"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl MigrationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for MigrationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MigrationStrategy::CreateNew => write!(f, "CREATE_NEW"),
+            MigrationStrategy::UpdateExisting => write!(f, "UPDATE_EXISTING"),
+            MigrationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

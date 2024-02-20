@@ -106,3 +106,14 @@ impl DatasetStatus {
         }
     }
 }
+impl ::std::fmt::Display for DatasetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetStatus::Failed => write!(f, "FAILED"),
+            DatasetStatus::Pending => write!(f, "PENDING"),
+            DatasetStatus::Running => write!(f, "RUNNING"),
+            DatasetStatus::Success => write!(f, "SUCCESS"),
+            DatasetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

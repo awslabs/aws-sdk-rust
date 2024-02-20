@@ -189,3 +189,27 @@ impl NetworkInterfaceType {
         }
     }
 }
+impl ::std::fmt::Display for NetworkInterfaceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkInterfaceType::ApiGatewayManaged => write!(f, "api_gateway_managed"),
+            NetworkInterfaceType::AwsCodestarConnectionsManaged => write!(f, "aws_codestar_connections_managed"),
+            NetworkInterfaceType::Branch => write!(f, "branch"),
+            NetworkInterfaceType::Efa => write!(f, "efa"),
+            NetworkInterfaceType::GatewayLoadBalancer => write!(f, "gateway_load_balancer"),
+            NetworkInterfaceType::GatewayLoadBalancerEndpoint => write!(f, "gateway_load_balancer_endpoint"),
+            NetworkInterfaceType::GlobalAcceleratorManaged => write!(f, "global_accelerator_managed"),
+            NetworkInterfaceType::Interface => write!(f, "interface"),
+            NetworkInterfaceType::IotRulesManaged => write!(f, "iot_rules_managed"),
+            NetworkInterfaceType::Lambda => write!(f, "lambda"),
+            NetworkInterfaceType::LoadBalancer => write!(f, "load_balancer"),
+            NetworkInterfaceType::NatGateway => write!(f, "natGateway"),
+            NetworkInterfaceType::NetworkLoadBalancer => write!(f, "network_load_balancer"),
+            NetworkInterfaceType::Quicksight => write!(f, "quicksight"),
+            NetworkInterfaceType::TransitGateway => write!(f, "transit_gateway"),
+            NetworkInterfaceType::Trunk => write!(f, "trunk"),
+            NetworkInterfaceType::VpcEndpoint => write!(f, "vpc_endpoint"),
+            NetworkInterfaceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

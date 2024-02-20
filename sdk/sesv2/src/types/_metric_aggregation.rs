@@ -107,3 +107,12 @@ impl MetricAggregation {
         }
     }
 }
+impl ::std::fmt::Display for MetricAggregation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricAggregation::Rate => write!(f, "RATE"),
+            MetricAggregation::Volume => write!(f, "VOLUME"),
+            MetricAggregation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl MonitoringExecutionSortKey {
         }
     }
 }
+impl ::std::fmt::Display for MonitoringExecutionSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitoringExecutionSortKey::CreationTime => write!(f, "CreationTime"),
+            MonitoringExecutionSortKey::ScheduledTime => write!(f, "ScheduledTime"),
+            MonitoringExecutionSortKey::Status => write!(f, "Status"),
+            MonitoringExecutionSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

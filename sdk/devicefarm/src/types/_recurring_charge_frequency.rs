@@ -91,3 +91,11 @@ impl RecurringChargeFrequency {
         }
     }
 }
+impl ::std::fmt::Display for RecurringChargeFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecurringChargeFrequency::Monthly => write!(f, "MONTHLY"),
+            RecurringChargeFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

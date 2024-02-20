@@ -106,3 +106,14 @@ impl AdditionalConstraintsElement {
         }
     }
 }
+impl ::std::fmt::Display for AdditionalConstraintsElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdditionalConstraintsElement::RequireDigit => write!(f, "REQUIRE_DIGIT"),
+            AdditionalConstraintsElement::RequireLowercase => write!(f, "REQUIRE_LOWERCASE"),
+            AdditionalConstraintsElement::RequireSymbol => write!(f, "REQUIRE_SYMBOL"),
+            AdditionalConstraintsElement::RequireUppercase => write!(f, "REQUIRE_UPPERCASE"),
+            AdditionalConstraintsElement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

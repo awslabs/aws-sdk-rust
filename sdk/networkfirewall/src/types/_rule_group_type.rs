@@ -96,3 +96,12 @@ impl RuleGroupType {
         }
     }
 }
+impl ::std::fmt::Display for RuleGroupType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleGroupType::Stateful => write!(f, "STATEFUL"),
+            RuleGroupType::Stateless => write!(f, "STATELESS"),
+            RuleGroupType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

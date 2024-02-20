@@ -96,3 +96,12 @@ impl FailWorkflowExecutionFailedCause {
         }
     }
 }
+impl ::std::fmt::Display for FailWorkflowExecutionFailedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailWorkflowExecutionFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
+            FailWorkflowExecutionFailedCause::UnhandledDecision => write!(f, "UNHANDLED_DECISION"),
+            FailWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

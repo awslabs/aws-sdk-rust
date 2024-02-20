@@ -91,3 +91,11 @@ impl NotificationContentType {
         }
     }
 }
+impl ::std::fmt::Display for NotificationContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationContentType::PlainText => write!(f, "PLAIN_TEXT"),
+            NotificationContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

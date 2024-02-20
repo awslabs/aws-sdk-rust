@@ -113,3 +113,14 @@ impl AdsOnDeliveryRestrictions {
         }
     }
 }
+impl ::std::fmt::Display for AdsOnDeliveryRestrictions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdsOnDeliveryRestrictions::Both => write!(f, "BOTH"),
+            AdsOnDeliveryRestrictions::None => write!(f, "NONE"),
+            AdsOnDeliveryRestrictions::Restricted => write!(f, "RESTRICTED"),
+            AdsOnDeliveryRestrictions::Unrestricted => write!(f, "UNRESTRICTED"),
+            AdsOnDeliveryRestrictions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

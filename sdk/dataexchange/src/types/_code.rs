@@ -129,3 +129,17 @@ impl Code {
         }
     }
 }
+impl ::std::fmt::Display for Code {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Code::AccessDeniedException => write!(f, "ACCESS_DENIED_EXCEPTION"),
+            Code::InternalServerException => write!(f, "INTERNAL_SERVER_EXCEPTION"),
+            Code::MalwareDetected => write!(f, "MALWARE_DETECTED"),
+            Code::MalwareScanEncryptedFile => write!(f, "MALWARE_SCAN_ENCRYPTED_FILE"),
+            Code::ResourceNotFoundException => write!(f, "RESOURCE_NOT_FOUND_EXCEPTION"),
+            Code::ServiceQuotaExceededException => write!(f, "SERVICE_QUOTA_EXCEEDED_EXCEPTION"),
+            Code::ValidationException => write!(f, "VALIDATION_EXCEPTION"),
+            Code::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

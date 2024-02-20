@@ -96,3 +96,12 @@ impl H265Tier {
         }
     }
 }
+impl ::std::fmt::Display for H265Tier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265Tier::High => write!(f, "HIGH"),
+            H265Tier::Main => write!(f, "MAIN"),
+            H265Tier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

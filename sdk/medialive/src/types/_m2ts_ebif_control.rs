@@ -96,3 +96,12 @@ impl M2tsEbifControl {
         }
     }
 }
+impl ::std::fmt::Display for M2tsEbifControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsEbifControl::None => write!(f, "NONE"),
+            M2tsEbifControl::Passthrough => write!(f, "PASSTHROUGH"),
+            M2tsEbifControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

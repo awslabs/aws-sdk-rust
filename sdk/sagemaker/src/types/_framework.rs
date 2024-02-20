@@ -141,3 +141,19 @@ impl Framework {
         }
     }
 }
+impl ::std::fmt::Display for Framework {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Framework::Darknet => write!(f, "DARKNET"),
+            Framework::Keras => write!(f, "KERAS"),
+            Framework::Mxnet => write!(f, "MXNET"),
+            Framework::Onnx => write!(f, "ONNX"),
+            Framework::Pytorch => write!(f, "PYTORCH"),
+            Framework::Sklearn => write!(f, "SKLEARN"),
+            Framework::Tensorflow => write!(f, "TENSORFLOW"),
+            Framework::Tflite => write!(f, "TFLITE"),
+            Framework::Xgboost => write!(f, "XGBOOST"),
+            Framework::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

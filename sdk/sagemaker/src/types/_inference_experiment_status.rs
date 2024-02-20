@@ -135,3 +135,18 @@ impl InferenceExperimentStatus {
         }
     }
 }
+impl ::std::fmt::Display for InferenceExperimentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferenceExperimentStatus::Cancelled => write!(f, "Cancelled"),
+            InferenceExperimentStatus::Completed => write!(f, "Completed"),
+            InferenceExperimentStatus::Created => write!(f, "Created"),
+            InferenceExperimentStatus::Creating => write!(f, "Creating"),
+            InferenceExperimentStatus::Running => write!(f, "Running"),
+            InferenceExperimentStatus::Starting => write!(f, "Starting"),
+            InferenceExperimentStatus::Stopping => write!(f, "Stopping"),
+            InferenceExperimentStatus::Updating => write!(f, "Updating"),
+            InferenceExperimentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

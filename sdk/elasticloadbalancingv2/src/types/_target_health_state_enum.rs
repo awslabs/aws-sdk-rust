@@ -129,3 +129,17 @@ impl TargetHealthStateEnum {
         }
     }
 }
+impl ::std::fmt::Display for TargetHealthStateEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetHealthStateEnum::Draining => write!(f, "draining"),
+            TargetHealthStateEnum::Healthy => write!(f, "healthy"),
+            TargetHealthStateEnum::Initial => write!(f, "initial"),
+            TargetHealthStateEnum::Unavailable => write!(f, "unavailable"),
+            TargetHealthStateEnum::Unhealthy => write!(f, "unhealthy"),
+            TargetHealthStateEnum::UnhealthyDraining => write!(f, "unhealthy.draining"),
+            TargetHealthStateEnum::Unused => write!(f, "unused"),
+            TargetHealthStateEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

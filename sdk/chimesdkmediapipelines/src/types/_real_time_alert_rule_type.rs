@@ -101,3 +101,13 @@ impl RealTimeAlertRuleType {
         }
     }
 }
+impl ::std::fmt::Display for RealTimeAlertRuleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RealTimeAlertRuleType::IssueDetection => write!(f, "IssueDetection"),
+            RealTimeAlertRuleType::KeywordMatch => write!(f, "KeywordMatch"),
+            RealTimeAlertRuleType::Sentiment => write!(f, "Sentiment"),
+            RealTimeAlertRuleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

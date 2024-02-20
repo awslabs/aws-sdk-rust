@@ -147,3 +147,20 @@ impl MlModelFilterVariable {
         }
     }
 }
+impl ::std::fmt::Display for MlModelFilterVariable {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MlModelFilterVariable::Algorithm => write!(f, "Algorithm"),
+            MlModelFilterVariable::CreatedAt => write!(f, "CreatedAt"),
+            MlModelFilterVariable::IamUser => write!(f, "IAMUser"),
+            MlModelFilterVariable::LastUpdatedAt => write!(f, "LastUpdatedAt"),
+            MlModelFilterVariable::MlModelType => write!(f, "MLModelType"),
+            MlModelFilterVariable::Name => write!(f, "Name"),
+            MlModelFilterVariable::RealTimeEndpointStatus => write!(f, "RealtimeEndpointStatus"),
+            MlModelFilterVariable::Status => write!(f, "Status"),
+            MlModelFilterVariable::TrainingDatasourceId => write!(f, "TrainingDataSourceId"),
+            MlModelFilterVariable::TrainingDataUri => write!(f, "TrainingDataURI"),
+            MlModelFilterVariable::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl MembershipStatus {
         }
     }
 }
+impl ::std::fmt::Display for MembershipStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MembershipStatus::Active => write!(f, "ACTIVE"),
+            MembershipStatus::CollaborationDeleted => write!(f, "COLLABORATION_DELETED"),
+            MembershipStatus::Removed => write!(f, "REMOVED"),
+            MembershipStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

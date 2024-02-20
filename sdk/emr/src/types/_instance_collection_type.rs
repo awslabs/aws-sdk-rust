@@ -96,3 +96,12 @@ impl InstanceCollectionType {
         }
     }
 }
+impl ::std::fmt::Display for InstanceCollectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceCollectionType::InstanceFleet => write!(f, "INSTANCE_FLEET"),
+            InstanceCollectionType::InstanceGroup => write!(f, "INSTANCE_GROUP"),
+            InstanceCollectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

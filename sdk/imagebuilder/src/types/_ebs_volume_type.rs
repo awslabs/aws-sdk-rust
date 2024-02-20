@@ -121,3 +121,17 @@ impl EbsVolumeType {
         }
     }
 }
+impl ::std::fmt::Display for EbsVolumeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EbsVolumeType::Gp2 => write!(f, "gp2"),
+            EbsVolumeType::Gp3 => write!(f, "gp3"),
+            EbsVolumeType::Io1 => write!(f, "io1"),
+            EbsVolumeType::Io2 => write!(f, "io2"),
+            EbsVolumeType::Sc1 => write!(f, "sc1"),
+            EbsVolumeType::St1 => write!(f, "st1"),
+            EbsVolumeType::Standard => write!(f, "standard"),
+            EbsVolumeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

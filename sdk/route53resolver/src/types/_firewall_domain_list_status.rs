@@ -111,3 +111,15 @@ impl FirewallDomainListStatus {
         }
     }
 }
+impl ::std::fmt::Display for FirewallDomainListStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FirewallDomainListStatus::Complete => write!(f, "COMPLETE"),
+            FirewallDomainListStatus::CompleteImportFailed => write!(f, "COMPLETE_IMPORT_FAILED"),
+            FirewallDomainListStatus::Deleting => write!(f, "DELETING"),
+            FirewallDomainListStatus::Importing => write!(f, "IMPORTING"),
+            FirewallDomainListStatus::Updating => write!(f, "UPDATING"),
+            FirewallDomainListStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

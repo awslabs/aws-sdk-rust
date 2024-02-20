@@ -96,3 +96,12 @@ impl ChangeType {
         }
     }
 }
+impl ::std::fmt::Display for ChangeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeType::Immediate => write!(f, "IMMEDIATE"),
+            ChangeType::RequiresReboot => write!(f, "REQUIRES_REBOOT"),
+            ChangeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

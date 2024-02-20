@@ -96,3 +96,12 @@ impl SnapshotFilterName {
         }
     }
 }
+impl ::std::fmt::Display for SnapshotFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapshotFilterName::FileSystemId => write!(f, "file-system-id"),
+            SnapshotFilterName::VolumeId => write!(f, "volume-id"),
+            SnapshotFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

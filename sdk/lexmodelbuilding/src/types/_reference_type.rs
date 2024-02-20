@@ -106,3 +106,14 @@ impl ReferenceType {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceType::Bot => write!(f, "Bot"),
+            ReferenceType::Botalias => write!(f, "BotAlias"),
+            ReferenceType::Botchannel => write!(f, "BotChannel"),
+            ReferenceType::Intent => write!(f, "Intent"),
+            ReferenceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl UsageLimitBreachAction {
         }
     }
 }
+impl ::std::fmt::Display for UsageLimitBreachAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageLimitBreachAction::Disable => write!(f, "disable"),
+            UsageLimitBreachAction::EmitMetric => write!(f, "emit-metric"),
+            UsageLimitBreachAction::Log => write!(f, "log"),
+            UsageLimitBreachAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

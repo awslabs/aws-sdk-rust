@@ -129,3 +129,17 @@ impl DetectorFeature {
         }
     }
 }
+impl ::std::fmt::Display for DetectorFeature {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetectorFeature::EbsMalwareProtection => write!(f, "EBS_MALWARE_PROTECTION"),
+            DetectorFeature::EksAuditLogs => write!(f, "EKS_AUDIT_LOGS"),
+            DetectorFeature::EksRuntimeMonitoring => write!(f, "EKS_RUNTIME_MONITORING"),
+            DetectorFeature::LambdaNetworkLogs => write!(f, "LAMBDA_NETWORK_LOGS"),
+            DetectorFeature::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
+            DetectorFeature::RuntimeMonitoring => write!(f, "RUNTIME_MONITORING"),
+            DetectorFeature::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
+            DetectorFeature::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

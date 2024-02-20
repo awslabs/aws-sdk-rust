@@ -103,3 +103,13 @@ impl StorageVirtualMachineRootVolumeSecurityStyle {
         }
     }
 }
+impl ::std::fmt::Display for StorageVirtualMachineRootVolumeSecurityStyle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageVirtualMachineRootVolumeSecurityStyle::Mixed => write!(f, "MIXED"),
+            StorageVirtualMachineRootVolumeSecurityStyle::Ntfs => write!(f, "NTFS"),
+            StorageVirtualMachineRootVolumeSecurityStyle::Unix => write!(f, "UNIX"),
+            StorageVirtualMachineRootVolumeSecurityStyle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

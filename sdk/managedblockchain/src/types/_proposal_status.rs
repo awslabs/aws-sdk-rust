@@ -111,3 +111,15 @@ impl ProposalStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProposalStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProposalStatus::ActionFailed => write!(f, "ACTION_FAILED"),
+            ProposalStatus::Approved => write!(f, "APPROVED"),
+            ProposalStatus::Expired => write!(f, "EXPIRED"),
+            ProposalStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ProposalStatus::Rejected => write!(f, "REJECTED"),
+            ProposalStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

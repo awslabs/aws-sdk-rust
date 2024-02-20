@@ -129,3 +129,17 @@ impl ValidationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ValidationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationExceptionReason::BadRequest => write!(f, "BAD_REQUEST"),
+            ValidationExceptionReason::ConstraintViolation => write!(f, "CONSTRAINT_VIOLATION"),
+            ValidationExceptionReason::IllegalArgument => write!(f, "ILLEGAL_ARGUMENT"),
+            ValidationExceptionReason::MalformedQuery => write!(f, "MALFORMED_QUERY"),
+            ValidationExceptionReason::QueryCancelled => write!(f, "QUERY_CANCELLED"),
+            ValidationExceptionReason::QueryTooLarge => write!(f, "QUERY_TOO_LARGE"),
+            ValidationExceptionReason::UnsupportedOperation => write!(f, "UNSUPPORTED_OPERATION"),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

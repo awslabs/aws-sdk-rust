@@ -96,3 +96,12 @@ impl FreeTrialStatus {
         }
     }
 }
+impl ::std::fmt::Display for FreeTrialStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FreeTrialStatus::Active => write!(f, "ACTIVE"),
+            FreeTrialStatus::Inactive => write!(f, "INACTIVE"),
+            FreeTrialStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

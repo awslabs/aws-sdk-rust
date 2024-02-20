@@ -91,3 +91,11 @@ impl GameServerGroupAction {
         }
     }
 }
+impl ::std::fmt::Display for GameServerGroupAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GameServerGroupAction::ReplaceInstanceTypes => write!(f, "REPLACE_INSTANCE_TYPES"),
+            GameServerGroupAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Smpte2038DataPreference {
         }
     }
 }
+impl ::std::fmt::Display for Smpte2038DataPreference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Smpte2038DataPreference::Ignore => write!(f, "IGNORE"),
+            Smpte2038DataPreference::Prefer => write!(f, "PREFER"),
+            Smpte2038DataPreference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

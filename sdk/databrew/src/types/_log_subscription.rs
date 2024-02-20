@@ -96,3 +96,12 @@ impl LogSubscription {
         }
     }
 }
+impl ::std::fmt::Display for LogSubscription {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogSubscription::Disable => write!(f, "DISABLE"),
+            LogSubscription::Enable => write!(f, "ENABLE"),
+            LogSubscription::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

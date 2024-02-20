@@ -91,3 +91,11 @@ impl DeviceUsageType {
         }
     }
 }
+impl ::std::fmt::Display for DeviceUsageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceUsageType::Voice => write!(f, "VOICE"),
+            DeviceUsageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

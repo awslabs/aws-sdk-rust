@@ -153,3 +153,21 @@ impl BackupJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for BackupJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackupJobStatus::Aborted => write!(f, "ABORTED"),
+            BackupJobStatus::Aborting => write!(f, "ABORTING"),
+            BackupJobStatus::AggregateAll => write!(f, "AGGREGATE_ALL"),
+            BackupJobStatus::Any => write!(f, "ANY"),
+            BackupJobStatus::Completed => write!(f, "COMPLETED"),
+            BackupJobStatus::Created => write!(f, "CREATED"),
+            BackupJobStatus::Expired => write!(f, "EXPIRED"),
+            BackupJobStatus::Failed => write!(f, "FAILED"),
+            BackupJobStatus::Partial => write!(f, "PARTIAL"),
+            BackupJobStatus::Pending => write!(f, "PENDING"),
+            BackupJobStatus::Running => write!(f, "RUNNING"),
+            BackupJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

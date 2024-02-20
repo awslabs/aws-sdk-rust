@@ -96,3 +96,12 @@ impl TargetGroupProtocol {
         }
     }
 }
+impl ::std::fmt::Display for TargetGroupProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetGroupProtocol::Http => write!(f, "HTTP"),
+            TargetGroupProtocol::Https => write!(f, "HTTPS"),
+            TargetGroupProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

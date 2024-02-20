@@ -150,3 +150,20 @@ impl ServiceLimit {
         }
     }
 }
+impl ::std::fmt::Display for ServiceLimit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceLimit::FileCacheCount => write!(f, "FILE_CACHE_COUNT"),
+            ServiceLimit::FileSystemCount => write!(f, "FILE_SYSTEM_COUNT"),
+            ServiceLimit::StorageVirtualMachinesPerFileSystem => write!(f, "STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM"),
+            ServiceLimit::TotalInProgressCopyBackups => write!(f, "TOTAL_IN_PROGRESS_COPY_BACKUPS"),
+            ServiceLimit::TotalSsdIops => write!(f, "TOTAL_SSD_IOPS"),
+            ServiceLimit::TotalStorage => write!(f, "TOTAL_STORAGE"),
+            ServiceLimit::TotalThroughputCapacity => write!(f, "TOTAL_THROUGHPUT_CAPACITY"),
+            ServiceLimit::TotalUserInitiatedBackups => write!(f, "TOTAL_USER_INITIATED_BACKUPS"),
+            ServiceLimit::TotalUserTags => write!(f, "TOTAL_USER_TAGS"),
+            ServiceLimit::VolumesPerFileSystem => write!(f, "VOLUMES_PER_FILE_SYSTEM"),
+            ServiceLimit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

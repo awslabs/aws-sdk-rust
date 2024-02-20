@@ -101,3 +101,13 @@ impl AccessorStatus {
         }
     }
 }
+impl ::std::fmt::Display for AccessorStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessorStatus::Available => write!(f, "AVAILABLE"),
+            AccessorStatus::Deleted => write!(f, "DELETED"),
+            AccessorStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
+            AccessorStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

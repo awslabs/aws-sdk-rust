@@ -101,3 +101,13 @@ impl LicenseConversionTaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for LicenseConversionTaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LicenseConversionTaskStatus::Failed => write!(f, "FAILED"),
+            LicenseConversionTaskStatus::InProgress => write!(f, "IN_PROGRESS"),
+            LicenseConversionTaskStatus::Succeeded => write!(f, "SUCCEEDED"),
+            LicenseConversionTaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

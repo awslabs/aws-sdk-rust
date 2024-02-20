@@ -101,3 +101,13 @@ impl DatasetType {
         }
     }
 }
+impl ::std::fmt::Display for DatasetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetType::ItemMetadata => write!(f, "ITEM_METADATA"),
+            DatasetType::RelatedTimeSeries => write!(f, "RELATED_TIME_SERIES"),
+            DatasetType::TargetTimeSeries => write!(f, "TARGET_TIME_SERIES"),
+            DatasetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

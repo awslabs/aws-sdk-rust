@@ -96,3 +96,12 @@ impl CertificateType {
         }
     }
 }
+impl ::std::fmt::Display for CertificateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateType::Disabled => write!(f, "DISABLED"),
+            CertificateType::Generated => write!(f, "GENERATED"),
+            CertificateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

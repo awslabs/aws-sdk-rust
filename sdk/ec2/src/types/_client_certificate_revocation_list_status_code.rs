@@ -98,3 +98,12 @@ impl ClientCertificateRevocationListStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ClientCertificateRevocationListStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientCertificateRevocationListStatusCode::Active => write!(f, "active"),
+            ClientCertificateRevocationListStatusCode::Pending => write!(f, "pending"),
+            ClientCertificateRevocationListStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

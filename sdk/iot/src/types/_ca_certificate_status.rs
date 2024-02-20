@@ -96,3 +96,12 @@ impl CaCertificateStatus {
         }
     }
 }
+impl ::std::fmt::Display for CaCertificateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CaCertificateStatus::Active => write!(f, "ACTIVE"),
+            CaCertificateStatus::Inactive => write!(f, "INACTIVE"),
+            CaCertificateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl PreTokenGenerationLambdaVersionType {
         }
     }
 }
+impl ::std::fmt::Display for PreTokenGenerationLambdaVersionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PreTokenGenerationLambdaVersionType::V10 => write!(f, "V1_0"),
+            PreTokenGenerationLambdaVersionType::V20 => write!(f, "V2_0"),
+            PreTokenGenerationLambdaVersionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

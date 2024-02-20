@@ -106,3 +106,14 @@ impl Ownership {
         }
     }
 }
+impl ::std::fmt::Display for Ownership {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ownership::Amazon => write!(f, "Amazon"),
+            Ownership::SelfValue => write!(f, "Self"),
+            Ownership::Shared => write!(f, "Shared"),
+            Ownership::Thirdparty => write!(f, "ThirdParty"),
+            Ownership::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

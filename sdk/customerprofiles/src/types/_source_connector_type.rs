@@ -111,3 +111,15 @@ impl SourceConnectorType {
         }
     }
 }
+impl ::std::fmt::Display for SourceConnectorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceConnectorType::Marketo => write!(f, "Marketo"),
+            SourceConnectorType::S3 => write!(f, "S3"),
+            SourceConnectorType::Salesforce => write!(f, "Salesforce"),
+            SourceConnectorType::Servicenow => write!(f, "Servicenow"),
+            SourceConnectorType::Zendesk => write!(f, "Zendesk"),
+            SourceConnectorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

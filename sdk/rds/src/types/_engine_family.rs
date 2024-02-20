@@ -101,3 +101,13 @@ impl EngineFamily {
         }
     }
 }
+impl ::std::fmt::Display for EngineFamily {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EngineFamily::Mysql => write!(f, "MYSQL"),
+            EngineFamily::Postgresql => write!(f, "POSTGRESQL"),
+            EngineFamily::Sqlserver => write!(f, "SQLSERVER"),
+            EngineFamily::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

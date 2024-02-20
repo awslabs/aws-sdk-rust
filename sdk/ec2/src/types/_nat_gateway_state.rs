@@ -111,3 +111,15 @@ impl NatGatewayState {
         }
     }
 }
+impl ::std::fmt::Display for NatGatewayState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NatGatewayState::Available => write!(f, "available"),
+            NatGatewayState::Deleted => write!(f, "deleted"),
+            NatGatewayState::Deleting => write!(f, "deleting"),
+            NatGatewayState::Failed => write!(f, "failed"),
+            NatGatewayState::Pending => write!(f, "pending"),
+            NatGatewayState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl SnapshotStatus {
         }
     }
 }
+impl ::std::fmt::Display for SnapshotStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapshotStatus::Available => write!(f, "AVAILABLE"),
+            SnapshotStatus::Cancelled => write!(f, "CANCELLED"),
+            SnapshotStatus::Copying => write!(f, "COPYING"),
+            SnapshotStatus::Creating => write!(f, "CREATING"),
+            SnapshotStatus::Deleted => write!(f, "DELETED"),
+            SnapshotStatus::Failed => write!(f, "FAILED"),
+            SnapshotStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

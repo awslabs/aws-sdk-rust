@@ -111,3 +111,15 @@ impl NumberType {
         }
     }
 }
+impl ::std::fmt::Display for NumberType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NumberType::LongCode => write!(f, "LONG_CODE"),
+            NumberType::ShortCode => write!(f, "SHORT_CODE"),
+            NumberType::Simulator => write!(f, "SIMULATOR"),
+            NumberType::TenDlc => write!(f, "TEN_DLC"),
+            NumberType::TollFree => write!(f, "TOLL_FREE"),
+            NumberType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

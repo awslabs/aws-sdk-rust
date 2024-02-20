@@ -96,3 +96,12 @@ impl TimePointGranularity {
         }
     }
 }
+impl ::std::fmt::Display for TimePointGranularity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimePointGranularity::All => write!(f, "ALL"),
+            TimePointGranularity::Specific => write!(f, "SPECIFIC"),
+            TimePointGranularity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

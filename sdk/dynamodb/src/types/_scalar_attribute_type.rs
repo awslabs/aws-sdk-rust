@@ -101,3 +101,13 @@ impl ScalarAttributeType {
         }
     }
 }
+impl ::std::fmt::Display for ScalarAttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalarAttributeType::B => write!(f, "B"),
+            ScalarAttributeType::N => write!(f, "N"),
+            ScalarAttributeType::S => write!(f, "S"),
+            ScalarAttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl FindingSourceType {
         }
     }
 }
+impl ::std::fmt::Display for FindingSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingSourceType::BucketAcl => write!(f, "BUCKET_ACL"),
+            FindingSourceType::Policy => write!(f, "POLICY"),
+            FindingSourceType::S3AccessPoint => write!(f, "S3_ACCESS_POINT"),
+            FindingSourceType::S3AccessPointAccount => write!(f, "S3_ACCESS_POINT_ACCOUNT"),
+            FindingSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

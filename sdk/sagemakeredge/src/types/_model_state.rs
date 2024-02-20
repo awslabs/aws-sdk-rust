@@ -96,3 +96,12 @@ impl ModelState {
         }
     }
 }
+impl ::std::fmt::Display for ModelState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelState::Deploy => write!(f, "DEPLOY"),
+            ModelState::Undeploy => write!(f, "UNDEPLOY"),
+            ModelState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

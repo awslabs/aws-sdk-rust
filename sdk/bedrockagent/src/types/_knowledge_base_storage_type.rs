@@ -106,3 +106,14 @@ impl KnowledgeBaseStorageType {
         }
     }
 }
+impl ::std::fmt::Display for KnowledgeBaseStorageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KnowledgeBaseStorageType::OpensearchServerless => write!(f, "OPENSEARCH_SERVERLESS"),
+            KnowledgeBaseStorageType::Pinecone => write!(f, "PINECONE"),
+            KnowledgeBaseStorageType::Rds => write!(f, "RDS"),
+            KnowledgeBaseStorageType::RedisEnterpriseCloud => write!(f, "REDIS_ENTERPRISE_CLOUD"),
+            KnowledgeBaseStorageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

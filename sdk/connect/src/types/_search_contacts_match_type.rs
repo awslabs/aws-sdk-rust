@@ -96,3 +96,12 @@ impl SearchContactsMatchType {
         }
     }
 }
+impl ::std::fmt::Display for SearchContactsMatchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchContactsMatchType::MatchAll => write!(f, "MATCH_ALL"),
+            SearchContactsMatchType::MatchAny => write!(f, "MATCH_ANY"),
+            SearchContactsMatchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

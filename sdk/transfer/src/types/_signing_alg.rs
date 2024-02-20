@@ -111,3 +111,15 @@ impl SigningAlg {
         }
     }
 }
+impl ::std::fmt::Display for SigningAlg {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SigningAlg::None => write!(f, "NONE"),
+            SigningAlg::Sha1 => write!(f, "SHA1"),
+            SigningAlg::Sha256 => write!(f, "SHA256"),
+            SigningAlg::Sha384 => write!(f, "SHA384"),
+            SigningAlg::Sha512 => write!(f, "SHA512"),
+            SigningAlg::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

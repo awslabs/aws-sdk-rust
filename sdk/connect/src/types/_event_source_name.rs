@@ -153,3 +153,21 @@ impl EventSourceName {
         }
     }
 }
+impl ::std::fmt::Display for EventSourceName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventSourceName::OnCaseCreate => write!(f, "OnCaseCreate"),
+            EventSourceName::OnCaseUpdate => write!(f, "OnCaseUpdate"),
+            EventSourceName::OnContactEvaluationSubmit => write!(f, "OnContactEvaluationSubmit"),
+            EventSourceName::OnMetricDataUpdate => write!(f, "OnMetricDataUpdate"),
+            EventSourceName::OnPostCallAnalysisAvailable => write!(f, "OnPostCallAnalysisAvailable"),
+            EventSourceName::OnPostChatAnalysisAvailable => write!(f, "OnPostChatAnalysisAvailable"),
+            EventSourceName::OnRealTimeCallAnalysisAvailable => write!(f, "OnRealTimeCallAnalysisAvailable"),
+            EventSourceName::OnRealTimeChatAnalysisAvailable => write!(f, "OnRealTimeChatAnalysisAvailable"),
+            EventSourceName::OnSalesforceCaseCreate => write!(f, "OnSalesforceCaseCreate"),
+            EventSourceName::OnZendeskTicketCreate => write!(f, "OnZendeskTicketCreate"),
+            EventSourceName::OnZendeskTicketStatusUpdate => write!(f, "OnZendeskTicketStatusUpdate"),
+            EventSourceName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

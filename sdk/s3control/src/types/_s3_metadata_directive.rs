@@ -96,3 +96,12 @@ impl S3MetadataDirective {
         }
     }
 }
+impl ::std::fmt::Display for S3MetadataDirective {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3MetadataDirective::Copy => write!(f, "COPY"),
+            S3MetadataDirective::Replace => write!(f, "REPLACE"),
+            S3MetadataDirective::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

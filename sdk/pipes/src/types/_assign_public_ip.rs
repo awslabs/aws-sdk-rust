@@ -96,3 +96,12 @@ impl AssignPublicIp {
         }
     }
 }
+impl ::std::fmt::Display for AssignPublicIp {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssignPublicIp::Disabled => write!(f, "DISABLED"),
+            AssignPublicIp::Enabled => write!(f, "ENABLED"),
+            AssignPublicIp::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

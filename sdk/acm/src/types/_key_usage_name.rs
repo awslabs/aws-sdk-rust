@@ -153,3 +153,21 @@ impl KeyUsageName {
         }
     }
 }
+impl ::std::fmt::Display for KeyUsageName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyUsageName::Any => write!(f, "ANY"),
+            KeyUsageName::CertificateSigning => write!(f, "CERTIFICATE_SIGNING"),
+            KeyUsageName::CrlSigning => write!(f, "CRL_SIGNING"),
+            KeyUsageName::Custom => write!(f, "CUSTOM"),
+            KeyUsageName::DataEncipherment => write!(f, "DATA_ENCIPHERMENT"),
+            KeyUsageName::DecipherOnly => write!(f, "DECIPHER_ONLY"),
+            KeyUsageName::DigitalSignature => write!(f, "DIGITAL_SIGNATURE"),
+            KeyUsageName::EnchiperOnly => write!(f, "ENCIPHER_ONLY"),
+            KeyUsageName::KeyAgreement => write!(f, "KEY_AGREEMENT"),
+            KeyUsageName::KeyEncipherment => write!(f, "KEY_ENCIPHERMENT"),
+            KeyUsageName::NonRepudation => write!(f, "NON_REPUDIATION"),
+            KeyUsageName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

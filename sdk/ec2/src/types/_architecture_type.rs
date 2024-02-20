@@ -111,3 +111,15 @@ impl ArchitectureType {
         }
     }
 }
+impl ::std::fmt::Display for ArchitectureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArchitectureType::Arm64 => write!(f, "arm64"),
+            ArchitectureType::Arm64Mac => write!(f, "arm64_mac"),
+            ArchitectureType::I386 => write!(f, "i386"),
+            ArchitectureType::X8664 => write!(f, "x86_64"),
+            ArchitectureType::X8664Mac => write!(f, "x86_64_mac"),
+            ArchitectureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl DmsSslModeValue {
         }
     }
 }
+impl ::std::fmt::Display for DmsSslModeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DmsSslModeValue::None => write!(f, "none"),
+            DmsSslModeValue::Require => write!(f, "require"),
+            DmsSslModeValue::VerifyCa => write!(f, "verify-ca"),
+            DmsSslModeValue::VerifyFull => write!(f, "verify-full"),
+            DmsSslModeValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

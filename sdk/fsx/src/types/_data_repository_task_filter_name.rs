@@ -106,3 +106,14 @@ impl DataRepositoryTaskFilterName {
         }
     }
 }
+impl ::std::fmt::Display for DataRepositoryTaskFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataRepositoryTaskFilterName::DataRepoAssociationId => write!(f, "data-repository-association-id"),
+            DataRepositoryTaskFilterName::FileCacheId => write!(f, "file-cache-id"),
+            DataRepositoryTaskFilterName::FileSystemId => write!(f, "file-system-id"),
+            DataRepositoryTaskFilterName::TaskLifecycle => write!(f, "task-lifecycle"),
+            DataRepositoryTaskFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

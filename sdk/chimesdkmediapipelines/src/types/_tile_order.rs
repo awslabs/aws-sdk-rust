@@ -96,3 +96,12 @@ impl TileOrder {
         }
     }
 }
+impl ::std::fmt::Display for TileOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TileOrder::JoinSequence => write!(f, "JoinSequence"),
+            TileOrder::SpeakerSequence => write!(f, "SpeakerSequence"),
+            TileOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

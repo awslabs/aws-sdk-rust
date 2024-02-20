@@ -96,3 +96,12 @@ impl HlsIFrameOnlyManifest {
         }
     }
 }
+impl ::std::fmt::Display for HlsIFrameOnlyManifest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsIFrameOnlyManifest::Exclude => write!(f, "EXCLUDE"),
+            HlsIFrameOnlyManifest::Include => write!(f, "INCLUDE"),
+            HlsIFrameOnlyManifest::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

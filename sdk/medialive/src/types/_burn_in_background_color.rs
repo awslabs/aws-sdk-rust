@@ -101,3 +101,13 @@ impl BurnInBackgroundColor {
         }
     }
 }
+impl ::std::fmt::Display for BurnInBackgroundColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurnInBackgroundColor::Black => write!(f, "BLACK"),
+            BurnInBackgroundColor::None => write!(f, "NONE"),
+            BurnInBackgroundColor::White => write!(f, "WHITE"),
+            BurnInBackgroundColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

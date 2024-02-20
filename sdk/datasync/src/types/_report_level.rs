@@ -96,3 +96,12 @@ impl ReportLevel {
         }
     }
 }
+impl ::std::fmt::Display for ReportLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportLevel::ErrorsOnly => write!(f, "ERRORS_ONLY"),
+            ReportLevel::SuccessesAndErrors => write!(f, "SUCCESSES_AND_ERRORS"),
+            ReportLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

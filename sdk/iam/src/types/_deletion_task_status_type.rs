@@ -106,3 +106,14 @@ impl DeletionTaskStatusType {
         }
     }
 }
+impl ::std::fmt::Display for DeletionTaskStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeletionTaskStatusType::Failed => write!(f, "FAILED"),
+            DeletionTaskStatusType::InProgress => write!(f, "IN_PROGRESS"),
+            DeletionTaskStatusType::NotStarted => write!(f, "NOT_STARTED"),
+            DeletionTaskStatusType::Succeeded => write!(f, "SUCCEEDED"),
+            DeletionTaskStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

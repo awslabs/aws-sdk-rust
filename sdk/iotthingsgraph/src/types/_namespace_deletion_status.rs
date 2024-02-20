@@ -101,3 +101,13 @@ impl NamespaceDeletionStatus {
         }
     }
 }
+impl ::std::fmt::Display for NamespaceDeletionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NamespaceDeletionStatus::Failed => write!(f, "FAILED"),
+            NamespaceDeletionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            NamespaceDeletionStatus::Succeeded => write!(f, "SUCCEEDED"),
+            NamespaceDeletionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl IntegrationType {
         }
     }
 }
+impl ::std::fmt::Display for IntegrationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntegrationType::Aws => write!(f, "AWS"),
+            IntegrationType::AwsProxy => write!(f, "AWS_PROXY"),
+            IntegrationType::Http => write!(f, "HTTP"),
+            IntegrationType::HttpProxy => write!(f, "HTTP_PROXY"),
+            IntegrationType::Mock => write!(f, "MOCK"),
+            IntegrationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

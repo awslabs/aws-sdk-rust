@@ -91,3 +91,11 @@ impl ToxicityCategory {
         }
     }
 }
+impl ::std::fmt::Display for ToxicityCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ToxicityCategory::All => write!(f, "ALL"),
+            ToxicityCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

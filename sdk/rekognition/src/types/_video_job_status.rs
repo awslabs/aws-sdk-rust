@@ -101,3 +101,13 @@ impl VideoJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for VideoJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VideoJobStatus::Failed => write!(f, "FAILED"),
+            VideoJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            VideoJobStatus::Succeeded => write!(f, "SUCCEEDED"),
+            VideoJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

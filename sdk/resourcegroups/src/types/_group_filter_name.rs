@@ -96,3 +96,12 @@ impl GroupFilterName {
         }
     }
 }
+impl ::std::fmt::Display for GroupFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupFilterName::ConfigurationType => write!(f, "configuration-type"),
+            GroupFilterName::ResourceType => write!(f, "resource-type"),
+            GroupFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl CompositionState {
         }
     }
 }
+impl ::std::fmt::Display for CompositionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CompositionState::Active => write!(f, "ACTIVE"),
+            CompositionState::Failed => write!(f, "FAILED"),
+            CompositionState::Starting => write!(f, "STARTING"),
+            CompositionState::Stopped => write!(f, "STOPPED"),
+            CompositionState::Stopping => write!(f, "STOPPING"),
+            CompositionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

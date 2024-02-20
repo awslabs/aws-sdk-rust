@@ -96,3 +96,12 @@ impl EncryptionType {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionType::AwsOwnedKmsKey => write!(f, "AWS_OWNED_KMS_KEY"),
+            EncryptionType::CustomerKms => write!(f, "CUSTOMER_KMS"),
+            EncryptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

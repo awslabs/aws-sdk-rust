@@ -121,3 +121,17 @@ impl GameServerGroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for GameServerGroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GameServerGroupStatus::Activating => write!(f, "ACTIVATING"),
+            GameServerGroupStatus::Active => write!(f, "ACTIVE"),
+            GameServerGroupStatus::Deleted => write!(f, "DELETED"),
+            GameServerGroupStatus::DeleteScheduled => write!(f, "DELETE_SCHEDULED"),
+            GameServerGroupStatus::Deleting => write!(f, "DELETING"),
+            GameServerGroupStatus::Error => write!(f, "ERROR"),
+            GameServerGroupStatus::New => write!(f, "NEW"),
+            GameServerGroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

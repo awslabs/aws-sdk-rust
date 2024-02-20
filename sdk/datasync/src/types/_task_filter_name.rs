@@ -96,3 +96,12 @@ impl TaskFilterName {
         }
     }
 }
+impl ::std::fmt::Display for TaskFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskFilterName::CreationTime => write!(f, "CreationTime"),
+            TaskFilterName::LocationId => write!(f, "LocationId"),
+            TaskFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

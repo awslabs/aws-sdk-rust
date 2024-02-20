@@ -101,3 +101,13 @@ impl LensStatusType {
         }
     }
 }
+impl ::std::fmt::Display for LensStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LensStatusType::All => write!(f, "ALL"),
+            LensStatusType::Draft => write!(f, "DRAFT"),
+            LensStatusType::Published => write!(f, "PUBLISHED"),
+            LensStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl TestGridSessionArtifactCategory {
         }
     }
 }
+impl ::std::fmt::Display for TestGridSessionArtifactCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestGridSessionArtifactCategory::Log => write!(f, "LOG"),
+            TestGridSessionArtifactCategory::Video => write!(f, "VIDEO"),
+            TestGridSessionArtifactCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

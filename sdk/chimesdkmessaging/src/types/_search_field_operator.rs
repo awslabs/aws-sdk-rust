@@ -96,3 +96,12 @@ impl SearchFieldOperator {
         }
     }
 }
+impl ::std::fmt::Display for SearchFieldOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchFieldOperator::Equals => write!(f, "EQUALS"),
+            SearchFieldOperator::Includes => write!(f, "INCLUDES"),
+            SearchFieldOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl DiskSnapshotState {
         }
     }
 }
+impl ::std::fmt::Display for DiskSnapshotState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiskSnapshotState::Completed => write!(f, "completed"),
+            DiskSnapshotState::Error => write!(f, "error"),
+            DiskSnapshotState::Pending => write!(f, "pending"),
+            DiskSnapshotState::UnknownValue => write!(f, "unknown"),
+            DiskSnapshotState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

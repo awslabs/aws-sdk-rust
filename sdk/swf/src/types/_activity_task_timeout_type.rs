@@ -106,3 +106,14 @@ impl ActivityTaskTimeoutType {
         }
     }
 }
+impl ::std::fmt::Display for ActivityTaskTimeoutType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActivityTaskTimeoutType::Heartbeat => write!(f, "HEARTBEAT"),
+            ActivityTaskTimeoutType::ScheduleToClose => write!(f, "SCHEDULE_TO_CLOSE"),
+            ActivityTaskTimeoutType::ScheduleToStart => write!(f, "SCHEDULE_TO_START"),
+            ActivityTaskTimeoutType::StartToClose => write!(f, "START_TO_CLOSE"),
+            ActivityTaskTimeoutType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl M2tsEsRateInPes {
         }
     }
 }
+impl ::std::fmt::Display for M2tsEsRateInPes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsEsRateInPes::Exclude => write!(f, "EXCLUDE"),
+            M2tsEsRateInPes::Include => write!(f, "INCLUDE"),
+            M2tsEsRateInPes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

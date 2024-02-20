@@ -111,3 +111,15 @@ impl ShardIteratorType {
         }
     }
 }
+impl ::std::fmt::Display for ShardIteratorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShardIteratorType::AfterSequenceNumber => write!(f, "AFTER_SEQUENCE_NUMBER"),
+            ShardIteratorType::AtSequenceNumber => write!(f, "AT_SEQUENCE_NUMBER"),
+            ShardIteratorType::AtTimestamp => write!(f, "AT_TIMESTAMP"),
+            ShardIteratorType::Latest => write!(f, "LATEST"),
+            ShardIteratorType::TrimHorizon => write!(f, "TRIM_HORIZON"),
+            ShardIteratorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

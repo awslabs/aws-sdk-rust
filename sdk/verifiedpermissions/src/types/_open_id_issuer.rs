@@ -91,3 +91,11 @@ impl OpenIdIssuer {
         }
     }
 }
+impl ::std::fmt::Display for OpenIdIssuer {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpenIdIssuer::Cognito => write!(f, "COGNITO"),
+            OpenIdIssuer::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

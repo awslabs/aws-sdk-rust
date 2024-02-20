@@ -111,3 +111,15 @@ impl ScalarType {
         }
     }
 }
+impl ::std::fmt::Display for ScalarType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalarType::Boolean => write!(f, "BOOLEAN"),
+            ScalarType::Double => write!(f, "DOUBLE"),
+            ScalarType::Int => write!(f, "INT"),
+            ScalarType::String => write!(f, "STRING"),
+            ScalarType::Timestamp => write!(f, "TIMESTAMP"),
+            ScalarType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

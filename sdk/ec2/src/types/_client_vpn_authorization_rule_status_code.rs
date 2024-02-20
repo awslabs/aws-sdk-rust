@@ -106,3 +106,14 @@ impl ClientVpnAuthorizationRuleStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ClientVpnAuthorizationRuleStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientVpnAuthorizationRuleStatusCode::Active => write!(f, "active"),
+            ClientVpnAuthorizationRuleStatusCode::Authorizing => write!(f, "authorizing"),
+            ClientVpnAuthorizationRuleStatusCode::Failed => write!(f, "failed"),
+            ClientVpnAuthorizationRuleStatusCode::Revoking => write!(f, "revoking"),
+            ClientVpnAuthorizationRuleStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

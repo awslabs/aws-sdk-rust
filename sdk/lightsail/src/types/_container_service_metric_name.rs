@@ -96,3 +96,12 @@ impl ContainerServiceMetricName {
         }
     }
 }
+impl ::std::fmt::Display for ContainerServiceMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerServiceMetricName::CpuUtilization => write!(f, "CPUUtilization"),
+            ContainerServiceMetricName::MemoryUtilization => write!(f, "MemoryUtilization"),
+            ContainerServiceMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

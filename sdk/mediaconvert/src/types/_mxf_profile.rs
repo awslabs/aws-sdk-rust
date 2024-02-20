@@ -111,3 +111,15 @@ impl MxfProfile {
         }
     }
 }
+impl ::std::fmt::Display for MxfProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MxfProfile::D10 => write!(f, "D_10"),
+            MxfProfile::Op1A => write!(f, "OP1A"),
+            MxfProfile::Xavc => write!(f, "XAVC"),
+            MxfProfile::Xdcam => write!(f, "XDCAM"),
+            MxfProfile::XdcamRdd9 => write!(f, "XDCAM_RDD9"),
+            MxfProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

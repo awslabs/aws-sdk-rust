@@ -96,3 +96,12 @@ impl InterfacePermissionType {
         }
     }
 }
+impl ::std::fmt::Display for InterfacePermissionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InterfacePermissionType::EipAssociate => write!(f, "EIP-ASSOCIATE"),
+            InterfacePermissionType::InstanceAttach => write!(f, "INSTANCE-ATTACH"),
+            InterfacePermissionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

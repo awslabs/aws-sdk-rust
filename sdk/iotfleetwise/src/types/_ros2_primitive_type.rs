@@ -164,3 +164,25 @@ impl Ros2PrimitiveType {
         }
     }
 }
+impl ::std::fmt::Display for Ros2PrimitiveType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ros2PrimitiveType::Bool => write!(f, "BOOL"),
+            Ros2PrimitiveType::Byte => write!(f, "BYTE"),
+            Ros2PrimitiveType::Char => write!(f, "CHAR"),
+            Ros2PrimitiveType::Float32 => write!(f, "FLOAT32"),
+            Ros2PrimitiveType::Float64 => write!(f, "FLOAT64"),
+            Ros2PrimitiveType::Int16 => write!(f, "INT16"),
+            Ros2PrimitiveType::Int32 => write!(f, "INT32"),
+            Ros2PrimitiveType::Int64 => write!(f, "INT64"),
+            Ros2PrimitiveType::Int8 => write!(f, "INT8"),
+            Ros2PrimitiveType::String => write!(f, "STRING"),
+            Ros2PrimitiveType::Uint16 => write!(f, "UINT16"),
+            Ros2PrimitiveType::Uint32 => write!(f, "UINT32"),
+            Ros2PrimitiveType::Uint64 => write!(f, "UINT64"),
+            Ros2PrimitiveType::Uint8 => write!(f, "UINT8"),
+            Ros2PrimitiveType::Wstring => write!(f, "WSTRING"),
+            Ros2PrimitiveType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

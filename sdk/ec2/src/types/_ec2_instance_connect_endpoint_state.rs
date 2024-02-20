@@ -123,3 +123,16 @@ impl Ec2InstanceConnectEndpointState {
         }
     }
 }
+impl ::std::fmt::Display for Ec2InstanceConnectEndpointState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ec2InstanceConnectEndpointState::CreateComplete => write!(f, "create-complete"),
+            Ec2InstanceConnectEndpointState::CreateFailed => write!(f, "create-failed"),
+            Ec2InstanceConnectEndpointState::CreateInProgress => write!(f, "create-in-progress"),
+            Ec2InstanceConnectEndpointState::DeleteComplete => write!(f, "delete-complete"),
+            Ec2InstanceConnectEndpointState::DeleteFailed => write!(f, "delete-failed"),
+            Ec2InstanceConnectEndpointState::DeleteInProgress => write!(f, "delete-in-progress"),
+            Ec2InstanceConnectEndpointState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

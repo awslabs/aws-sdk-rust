@@ -96,3 +96,12 @@ impl CmafVideoCompositionOffsets {
         }
     }
 }
+impl ::std::fmt::Display for CmafVideoCompositionOffsets {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafVideoCompositionOffsets::Signed => write!(f, "SIGNED"),
+            CmafVideoCompositionOffsets::Unsigned => write!(f, "UNSIGNED"),
+            CmafVideoCompositionOffsets::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl VehicleAssociationBehavior {
         }
     }
 }
+impl ::std::fmt::Display for VehicleAssociationBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VehicleAssociationBehavior::CreateIotThing => write!(f, "CreateIotThing"),
+            VehicleAssociationBehavior::ValidateIotThingExists => write!(f, "ValidateIotThingExists"),
+            VehicleAssociationBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

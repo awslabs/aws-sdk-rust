@@ -96,3 +96,12 @@ impl CrawlerLineageSettings {
         }
     }
 }
+impl ::std::fmt::Display for CrawlerLineageSettings {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CrawlerLineageSettings::Disable => write!(f, "DISABLE"),
+            CrawlerLineageSettings::Enable => write!(f, "ENABLE"),
+            CrawlerLineageSettings::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

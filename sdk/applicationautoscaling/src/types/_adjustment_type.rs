@@ -101,3 +101,13 @@ impl AdjustmentType {
         }
     }
 }
+impl ::std::fmt::Display for AdjustmentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdjustmentType::ChangeInCapacity => write!(f, "ChangeInCapacity"),
+            AdjustmentType::ExactCapacity => write!(f, "ExactCapacity"),
+            AdjustmentType::PercentChangeInCapacity => write!(f, "PercentChangeInCapacity"),
+            AdjustmentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

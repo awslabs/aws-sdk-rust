@@ -96,3 +96,12 @@ impl ContactListImportAction {
         }
     }
 }
+impl ::std::fmt::Display for ContactListImportAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContactListImportAction::Delete => write!(f, "DELETE"),
+            ContactListImportAction::Put => write!(f, "PUT"),
+            ContactListImportAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

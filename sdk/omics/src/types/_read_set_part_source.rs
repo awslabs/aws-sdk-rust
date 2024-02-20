@@ -96,3 +96,12 @@ impl ReadSetPartSource {
         }
     }
 }
+impl ::std::fmt::Display for ReadSetPartSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReadSetPartSource::Source1 => write!(f, "SOURCE1"),
+            ReadSetPartSource::Source2 => write!(f, "SOURCE2"),
+            ReadSetPartSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

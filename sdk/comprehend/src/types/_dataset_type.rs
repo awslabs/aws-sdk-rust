@@ -96,3 +96,12 @@ impl DatasetType {
         }
     }
 }
+impl ::std::fmt::Display for DatasetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetType::Test => write!(f, "TEST"),
+            DatasetType::Train => write!(f, "TRAIN"),
+            DatasetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

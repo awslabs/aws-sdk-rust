@@ -147,3 +147,20 @@ impl PresetSpeke20Video {
         }
     }
 }
+impl ::std::fmt::Display for PresetSpeke20Video {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PresetSpeke20Video::PresetVideo1 => write!(f, "PRESET_VIDEO_1"),
+            PresetSpeke20Video::PresetVideo2 => write!(f, "PRESET_VIDEO_2"),
+            PresetSpeke20Video::PresetVideo3 => write!(f, "PRESET_VIDEO_3"),
+            PresetSpeke20Video::PresetVideo4 => write!(f, "PRESET_VIDEO_4"),
+            PresetSpeke20Video::PresetVideo5 => write!(f, "PRESET_VIDEO_5"),
+            PresetSpeke20Video::PresetVideo6 => write!(f, "PRESET_VIDEO_6"),
+            PresetSpeke20Video::PresetVideo7 => write!(f, "PRESET_VIDEO_7"),
+            PresetSpeke20Video::PresetVideo8 => write!(f, "PRESET_VIDEO_8"),
+            PresetSpeke20Video::Shared => write!(f, "SHARED"),
+            PresetSpeke20Video::Unencrypted => write!(f, "UNENCRYPTED"),
+            PresetSpeke20Video::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -273,3 +273,41 @@ impl ConflictExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ConflictExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConflictExceptionReason::CreateRegistrationVersionNotAllowed => write!(f, "CREATE_REGISTRATION_VERSION_NOT_ALLOWED"),
+            ConflictExceptionReason::DeletionProtectionEnabled => write!(f, "DELETION_PROTECTION_ENABLED"),
+            ConflictExceptionReason::DestinationPhoneNumberNotVerified => write!(f, "DESTINATION_PHONE_NUMBER_NOT_VERIFIED"),
+            ConflictExceptionReason::DestinationPhoneNumberOptedOut => write!(f, "DESTINATION_PHONE_NUMBER_OPTED_OUT"),
+            ConflictExceptionReason::DisassociateRegistrationNotAllowed => write!(f, "DISASSOCIATE_REGISTRATION_NOT_ALLOWED"),
+            ConflictExceptionReason::DiscardRegistrationVersionNotAllowed => write!(f, "DISCARD_REGISTRATION_VERSION_NOT_ALLOWED"),
+            ConflictExceptionReason::EditRegistrationFieldValuesNotAllowed => write!(f, "EDIT_REGISTRATION_FIELD_VALUES_NOT_ALLOWED"),
+            ConflictExceptionReason::EventDestinationMismatch => write!(f, "EVENT_DESTINATION_MISMATCH"),
+            ConflictExceptionReason::KeywordMismatch => write!(f, "KEYWORD_MISMATCH"),
+            ConflictExceptionReason::LastPhoneNumber => write!(f, "LAST_PHONE_NUMBER"),
+            ConflictExceptionReason::MessageTypeMismatch => write!(f, "MESSAGE_TYPE_MISMATCH"),
+            ConflictExceptionReason::NoOriginationIdentitiesFound => write!(f, "NO_ORIGINATION_IDENTITIES_FOUND"),
+            ConflictExceptionReason::NumberCapabilitiesMismatch => write!(f, "NUMBER_CAPABILITIES_MISMATCH"),
+            ConflictExceptionReason::OptOutListMismatch => write!(f, "OPT_OUT_LIST_MISMATCH"),
+            ConflictExceptionReason::PhoneNumberAssociatedToPool => write!(f, "PHONE_NUMBER_ASSOCIATED_TO_POOL"),
+            ConflictExceptionReason::PhoneNumberAssociatedToRegistration => write!(f, "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION"),
+            ConflictExceptionReason::PhoneNumberNotAssociatedToPool => write!(f, "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL"),
+            ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => write!(f, "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION"),
+            ConflictExceptionReason::RegistrationAlreadySubmitted => write!(f, "REGISTRATION_ALREADY_SUBMITTED"),
+            ConflictExceptionReason::RegistrationNotComplete => write!(f, "REGISTRATION_NOT_COMPLETE"),
+            ConflictExceptionReason::ResourceAlreadyExists => write!(f, "RESOURCE_ALREADY_EXISTS"),
+            ConflictExceptionReason::ResourceDeletionNotAllowed => write!(f, "RESOURCE_DELETION_NOT_ALLOWED"),
+            ConflictExceptionReason::ResourceModificationNotAllowed => write!(f, "RESOURCE_MODIFICATION_NOT_ALLOWED"),
+            ConflictExceptionReason::ResourceNotActive => write!(f, "RESOURCE_NOT_ACTIVE"),
+            ConflictExceptionReason::ResourceNotEmpty => write!(f, "RESOURCE_NOT_EMPTY"),
+            ConflictExceptionReason::SelfManagedOptOutsMismatch => write!(f, "SELF_MANAGED_OPT_OUTS_MISMATCH"),
+            ConflictExceptionReason::SenderIdAssociatedToPool => write!(f, "SENDER_ID_ASSOCIATED_TO_POOL"),
+            ConflictExceptionReason::SubmitRegistrationVersionNotAllowed => write!(f, "SUBMIT_REGISTRATION_VERSION_NOT_ALLOWED"),
+            ConflictExceptionReason::TwoWayConfigMismatch => write!(f, "TWO_WAY_CONFIG_MISMATCH"),
+            ConflictExceptionReason::VerificationAlreadyComplete => write!(f, "VERIFICATION_ALREADY_COMPLETE"),
+            ConflictExceptionReason::VerificationCodeExpired => write!(f, "VERIFICATION_CODE_EXPIRED"),
+            ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

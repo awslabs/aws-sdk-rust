@@ -96,3 +96,12 @@ impl ArtifactType {
         }
     }
 }
+impl ::std::fmt::Display for ArtifactType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArtifactType::DependencyJar => write!(f, "DEPENDENCY_JAR"),
+            ArtifactType::Udf => write!(f, "UDF"),
+            ArtifactType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

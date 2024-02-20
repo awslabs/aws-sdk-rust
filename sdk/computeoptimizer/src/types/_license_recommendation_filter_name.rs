@@ -101,3 +101,13 @@ impl LicenseRecommendationFilterName {
         }
     }
 }
+impl ::std::fmt::Display for LicenseRecommendationFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LicenseRecommendationFilterName::LicenseFinding => write!(f, "Finding"),
+            LicenseRecommendationFilterName::LicenseFindingReasonCode => write!(f, "FindingReasonCode"),
+            LicenseRecommendationFilterName::LicenseName => write!(f, "LicenseName"),
+            LicenseRecommendationFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

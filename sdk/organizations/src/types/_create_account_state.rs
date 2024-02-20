@@ -101,3 +101,13 @@ impl CreateAccountState {
         }
     }
 }
+impl ::std::fmt::Display for CreateAccountState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CreateAccountState::Failed => write!(f, "FAILED"),
+            CreateAccountState::InProgress => write!(f, "IN_PROGRESS"),
+            CreateAccountState::Succeeded => write!(f, "SUCCEEDED"),
+            CreateAccountState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

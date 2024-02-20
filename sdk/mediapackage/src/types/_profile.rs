@@ -106,3 +106,14 @@ impl Profile {
         }
     }
 }
+impl ::std::fmt::Display for Profile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Profile::DvbDash2014 => write!(f, "DVB_DASH_2014"),
+            Profile::Hbbtv15 => write!(f, "HBBTV_1_5"),
+            Profile::Hybridcast => write!(f, "HYBRIDCAST"),
+            Profile::None => write!(f, "NONE"),
+            Profile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

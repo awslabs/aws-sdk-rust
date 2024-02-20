@@ -96,3 +96,12 @@ impl OrchestrationType {
         }
     }
 }
+impl ::std::fmt::Display for OrchestrationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrchestrationType::Ecs => write!(f, "ECS"),
+            OrchestrationType::Eks => write!(f, "EKS"),
+            OrchestrationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

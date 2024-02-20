@@ -96,3 +96,12 @@ impl EbuTtDFillLineGapControl {
         }
     }
 }
+impl ::std::fmt::Display for EbuTtDFillLineGapControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EbuTtDFillLineGapControl::Disabled => write!(f, "DISABLED"),
+            EbuTtDFillLineGapControl::Enabled => write!(f, "ENABLED"),
+            EbuTtDFillLineGapControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

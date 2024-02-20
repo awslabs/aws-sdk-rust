@@ -135,3 +135,18 @@ impl VectorEnrichmentJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for VectorEnrichmentJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VectorEnrichmentJobStatus::Completed => write!(f, "COMPLETED"),
+            VectorEnrichmentJobStatus::Deleted => write!(f, "DELETED"),
+            VectorEnrichmentJobStatus::Deleting => write!(f, "DELETING"),
+            VectorEnrichmentJobStatus::Failed => write!(f, "FAILED"),
+            VectorEnrichmentJobStatus::Initializing => write!(f, "INITIALIZING"),
+            VectorEnrichmentJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            VectorEnrichmentJobStatus::Stopped => write!(f, "STOPPED"),
+            VectorEnrichmentJobStatus::Stopping => write!(f, "STOPPING"),
+            VectorEnrichmentJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

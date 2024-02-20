@@ -141,3 +141,19 @@ impl AppType {
         }
     }
 }
+impl ::std::fmt::Display for AppType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppType::Canvas => write!(f, "Canvas"),
+            AppType::CodeEditor => write!(f, "CodeEditor"),
+            AppType::DetailedProfiler => write!(f, "DetailedProfiler"),
+            AppType::JupyterLab => write!(f, "JupyterLab"),
+            AppType::JupyterServer => write!(f, "JupyterServer"),
+            AppType::KernelGateway => write!(f, "KernelGateway"),
+            AppType::RSessionGateway => write!(f, "RSessionGateway"),
+            AppType::RStudioServerPro => write!(f, "RStudioServerPro"),
+            AppType::TensorBoard => write!(f, "TensorBoard"),
+            AppType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

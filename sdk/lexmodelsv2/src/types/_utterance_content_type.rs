@@ -106,3 +106,14 @@ impl UtteranceContentType {
         }
     }
 }
+impl ::std::fmt::Display for UtteranceContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UtteranceContentType::CustomPayload => write!(f, "CustomPayload"),
+            UtteranceContentType::ImageResponseCard => write!(f, "ImageResponseCard"),
+            UtteranceContentType::PlainText => write!(f, "PlainText"),
+            UtteranceContentType::Ssml => write!(f, "SSML"),
+            UtteranceContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

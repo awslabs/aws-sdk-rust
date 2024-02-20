@@ -96,3 +96,12 @@ impl IpamScopeType {
         }
     }
 }
+impl ::std::fmt::Display for IpamScopeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamScopeType::Private => write!(f, "private"),
+            IpamScopeType::Public => write!(f, "public"),
+            IpamScopeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

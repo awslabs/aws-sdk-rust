@@ -101,3 +101,13 @@ impl X12Version {
         }
     }
 }
+impl ::std::fmt::Display for X12Version {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            X12Version::Version4010 => write!(f, "VERSION_4010"),
+            X12Version::Version4030 => write!(f, "VERSION_4030"),
+            X12Version::Version5010 => write!(f, "VERSION_5010"),
+            X12Version::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

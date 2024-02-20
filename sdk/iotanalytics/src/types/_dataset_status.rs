@@ -101,3 +101,13 @@ impl DatasetStatus {
         }
     }
 }
+impl ::std::fmt::Display for DatasetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetStatus::Active => write!(f, "ACTIVE"),
+            DatasetStatus::Creating => write!(f, "CREATING"),
+            DatasetStatus::Deleting => write!(f, "DELETING"),
+            DatasetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

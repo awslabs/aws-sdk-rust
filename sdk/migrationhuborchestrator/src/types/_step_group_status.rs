@@ -135,3 +135,18 @@ impl StepGroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for StepGroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StepGroupStatus::AwaitingDependencies => write!(f, "AWAITING_DEPENDENCIES"),
+            StepGroupStatus::Completed => write!(f, "COMPLETED"),
+            StepGroupStatus::Failed => write!(f, "FAILED"),
+            StepGroupStatus::InProgress => write!(f, "IN_PROGRESS"),
+            StepGroupStatus::Paused => write!(f, "PAUSED"),
+            StepGroupStatus::Pausing => write!(f, "PAUSING"),
+            StepGroupStatus::Ready => write!(f, "READY"),
+            StepGroupStatus::UserAttentionRequired => write!(f, "USER_ATTENTION_REQUIRED"),
+            StepGroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

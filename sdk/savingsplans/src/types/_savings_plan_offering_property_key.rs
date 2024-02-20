@@ -96,3 +96,12 @@ impl SavingsPlanOfferingPropertyKey {
         }
     }
 }
+impl ::std::fmt::Display for SavingsPlanOfferingPropertyKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SavingsPlanOfferingPropertyKey::InstanceFamily => write!(f, "instanceFamily"),
+            SavingsPlanOfferingPropertyKey::Region => write!(f, "region"),
+            SavingsPlanOfferingPropertyKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

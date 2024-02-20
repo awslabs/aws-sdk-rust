@@ -96,3 +96,12 @@ impl OrderType {
         }
     }
 }
+impl ::std::fmt::Display for OrderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrderType::Ascending => write!(f, "ASCENDING"),
+            OrderType::Descending => write!(f, "DESCENDING"),
+            OrderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

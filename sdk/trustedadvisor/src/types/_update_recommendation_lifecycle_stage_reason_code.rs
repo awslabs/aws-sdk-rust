@@ -131,3 +131,17 @@ impl UpdateRecommendationLifecycleStageReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for UpdateRecommendationLifecycleStageReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateRecommendationLifecycleStageReasonCode::LowPriority => write!(f, "low_priority"),
+            UpdateRecommendationLifecycleStageReasonCode::NonCriticalAccount => write!(f, "non_critical_account"),
+            UpdateRecommendationLifecycleStageReasonCode::NotApplicable => write!(f, "not_applicable"),
+            UpdateRecommendationLifecycleStageReasonCode::Other => write!(f, "other"),
+            UpdateRecommendationLifecycleStageReasonCode::OtherMethodsAvailable => write!(f, "other_methods_available"),
+            UpdateRecommendationLifecycleStageReasonCode::TemporaryAccount => write!(f, "temporary_account"),
+            UpdateRecommendationLifecycleStageReasonCode::ValidBusinessCase => write!(f, "valid_business_case"),
+            UpdateRecommendationLifecycleStageReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

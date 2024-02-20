@@ -96,3 +96,12 @@ impl LambdaEventSourceType {
         }
     }
 }
+impl ::std::fmt::Display for LambdaEventSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaEventSourceType::IotCore => write!(f, "IOT_CORE"),
+            LambdaEventSourceType::PubSub => write!(f, "PUB_SUB"),
+            LambdaEventSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

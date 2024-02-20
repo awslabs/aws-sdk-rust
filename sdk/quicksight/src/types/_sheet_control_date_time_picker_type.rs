@@ -96,3 +96,12 @@ impl SheetControlDateTimePickerType {
         }
     }
 }
+impl ::std::fmt::Display for SheetControlDateTimePickerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SheetControlDateTimePickerType::DateRange => write!(f, "DATE_RANGE"),
+            SheetControlDateTimePickerType::SingleValued => write!(f, "SINGLE_VALUED"),
+            SheetControlDateTimePickerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LoggerComponent {
         }
     }
 }
+impl ::std::fmt::Display for LoggerComponent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoggerComponent::GreengrassSystem => write!(f, "GreengrassSystem"),
+            LoggerComponent::Lambda => write!(f, "Lambda"),
+            LoggerComponent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

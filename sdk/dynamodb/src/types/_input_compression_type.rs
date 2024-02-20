@@ -101,3 +101,13 @@ impl InputCompressionType {
         }
     }
 }
+impl ::std::fmt::Display for InputCompressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputCompressionType::Gzip => write!(f, "GZIP"),
+            InputCompressionType::None => write!(f, "NONE"),
+            InputCompressionType::Zstd => write!(f, "ZSTD"),
+            InputCompressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

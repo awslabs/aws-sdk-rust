@@ -135,3 +135,18 @@ impl InstanceInformationFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for InstanceInformationFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceInformationFilterKey::ActivationIds => write!(f, "ActivationIds"),
+            InstanceInformationFilterKey::AgentVersion => write!(f, "AgentVersion"),
+            InstanceInformationFilterKey::AssociationStatus => write!(f, "AssociationStatus"),
+            InstanceInformationFilterKey::IamRole => write!(f, "IamRole"),
+            InstanceInformationFilterKey::InstanceIds => write!(f, "InstanceIds"),
+            InstanceInformationFilterKey::PingStatus => write!(f, "PingStatus"),
+            InstanceInformationFilterKey::PlatformTypes => write!(f, "PlatformTypes"),
+            InstanceInformationFilterKey::ResourceType => write!(f, "ResourceType"),
+            InstanceInformationFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

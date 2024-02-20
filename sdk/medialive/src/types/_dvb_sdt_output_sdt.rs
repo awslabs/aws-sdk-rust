@@ -106,3 +106,14 @@ impl DvbSdtOutputSdt {
         }
     }
 }
+impl ::std::fmt::Display for DvbSdtOutputSdt {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSdtOutputSdt::SdtFollow => write!(f, "SDT_FOLLOW"),
+            DvbSdtOutputSdt::SdtFollowIfPresent => write!(f, "SDT_FOLLOW_IF_PRESENT"),
+            DvbSdtOutputSdt::SdtManual => write!(f, "SDT_MANUAL"),
+            DvbSdtOutputSdt::SdtNone => write!(f, "SDT_NONE"),
+            DvbSdtOutputSdt::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

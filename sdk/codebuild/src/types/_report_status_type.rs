@@ -111,3 +111,15 @@ impl ReportStatusType {
         }
     }
 }
+impl ::std::fmt::Display for ReportStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportStatusType::Deleting => write!(f, "DELETING"),
+            ReportStatusType::Failed => write!(f, "FAILED"),
+            ReportStatusType::Generating => write!(f, "GENERATING"),
+            ReportStatusType::Incomplete => write!(f, "INCOMPLETE"),
+            ReportStatusType::Succeeded => write!(f, "SUCCEEDED"),
+            ReportStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DecisionTaskTimeoutType {
         }
     }
 }
+impl ::std::fmt::Display for DecisionTaskTimeoutType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DecisionTaskTimeoutType::ScheduleToStart => write!(f, "SCHEDULE_TO_START"),
+            DecisionTaskTimeoutType::StartToClose => write!(f, "START_TO_CLOSE"),
+            DecisionTaskTimeoutType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl InstanceState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceState::AwaitingFulfillment => write!(f, "AWAITING_FULFILLMENT"),
+            InstanceState::Bootstrapping => write!(f, "BOOTSTRAPPING"),
+            InstanceState::Provisioning => write!(f, "PROVISIONING"),
+            InstanceState::Running => write!(f, "RUNNING"),
+            InstanceState::Terminated => write!(f, "TERMINATED"),
+            InstanceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

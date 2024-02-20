@@ -159,3 +159,22 @@ impl RelationshipStatus {
         }
     }
 }
+impl ::std::fmt::Display for RelationshipStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelationshipStatus::AccountSuspended => write!(f, "ACCOUNT_SUSPENDED"),
+            RelationshipStatus::CannotCreateDetectorInOrgMaster => write!(f, "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER"),
+            RelationshipStatus::Created => write!(f, "CREATED"),
+            RelationshipStatus::Deleted => write!(f, "DELETED"),
+            RelationshipStatus::Disabled => write!(f, "DISABLED"),
+            RelationshipStatus::EmailVerificationFailed => write!(f, "EMAIL_VERIFICATION_FAILED"),
+            RelationshipStatus::EmailVerificationInProgress => write!(f, "EMAIL_VERIFICATION_IN_PROGRESS"),
+            RelationshipStatus::Enabled => write!(f, "ENABLED"),
+            RelationshipStatus::Invited => write!(f, "INVITED"),
+            RelationshipStatus::RegionDisabled => write!(f, "REGION_DISABLED"),
+            RelationshipStatus::Removed => write!(f, "REMOVED"),
+            RelationshipStatus::Resigned => write!(f, "RESIGNED"),
+            RelationshipStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

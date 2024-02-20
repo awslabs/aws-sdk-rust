@@ -96,3 +96,12 @@ impl DeploymentWaitType {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentWaitType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentWaitType::ReadyWait => write!(f, "READY_WAIT"),
+            DeploymentWaitType::TerminationWait => write!(f, "TERMINATION_WAIT"),
+            DeploymentWaitType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

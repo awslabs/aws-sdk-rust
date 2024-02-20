@@ -141,3 +141,19 @@ impl StorageClass {
         }
     }
 }
+impl ::std::fmt::Display for StorageClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageClass::DeepArchive => write!(f, "DEEP_ARCHIVE"),
+            StorageClass::Glacier => write!(f, "GLACIER"),
+            StorageClass::GlacierIr => write!(f, "GLACIER_IR"),
+            StorageClass::IntelligentTiering => write!(f, "INTELLIGENT_TIERING"),
+            StorageClass::OnezoneIa => write!(f, "ONEZONE_IA"),
+            StorageClass::Outposts => write!(f, "OUTPOSTS"),
+            StorageClass::ReducedRedundancy => write!(f, "REDUCED_REDUNDANCY"),
+            StorageClass::Standard => write!(f, "STANDARD"),
+            StorageClass::StandardIa => write!(f, "STANDARD_IA"),
+            StorageClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

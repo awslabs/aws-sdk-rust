@@ -96,3 +96,12 @@ impl KeyStorageSecurityStandard {
         }
     }
 }
+impl ::std::fmt::Display for KeyStorageSecurityStandard {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyStorageSecurityStandard::Fips1402Level2OrHigher => write!(f, "FIPS_140_2_LEVEL_2_OR_HIGHER"),
+            KeyStorageSecurityStandard::Fips1402Level3OrHigher => write!(f, "FIPS_140_2_LEVEL_3_OR_HIGHER"),
+            KeyStorageSecurityStandard::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

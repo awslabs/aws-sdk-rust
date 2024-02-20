@@ -101,3 +101,13 @@ impl FilterClass {
         }
     }
 }
+impl ::std::fmt::Display for FilterClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterClass::ConditionalValueFilter => write!(f, "CONDITIONAL_VALUE_FILTER"),
+            FilterClass::EnforcedValueFilter => write!(f, "ENFORCED_VALUE_FILTER"),
+            FilterClass::NamedValueFilter => write!(f, "NAMED_VALUE_FILTER"),
+            FilterClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -135,3 +135,18 @@ impl JobFlowExecutionState {
         }
     }
 }
+impl ::std::fmt::Display for JobFlowExecutionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobFlowExecutionState::Bootstrapping => write!(f, "BOOTSTRAPPING"),
+            JobFlowExecutionState::Completed => write!(f, "COMPLETED"),
+            JobFlowExecutionState::Failed => write!(f, "FAILED"),
+            JobFlowExecutionState::Running => write!(f, "RUNNING"),
+            JobFlowExecutionState::ShuttingDown => write!(f, "SHUTTING_DOWN"),
+            JobFlowExecutionState::Starting => write!(f, "STARTING"),
+            JobFlowExecutionState::Terminated => write!(f, "TERMINATED"),
+            JobFlowExecutionState::Waiting => write!(f, "WAITING"),
+            JobFlowExecutionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

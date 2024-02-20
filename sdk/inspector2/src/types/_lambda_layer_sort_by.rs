@@ -101,3 +101,13 @@ impl LambdaLayerSortBy {
         }
     }
 }
+impl ::std::fmt::Display for LambdaLayerSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaLayerSortBy::All => write!(f, "ALL"),
+            LambdaLayerSortBy::Critical => write!(f, "CRITICAL"),
+            LambdaLayerSortBy::High => write!(f, "HIGH"),
+            LambdaLayerSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

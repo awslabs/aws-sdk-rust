@@ -101,3 +101,13 @@ impl TranscribeVocabularyFilterMethod {
         }
     }
 }
+impl ::std::fmt::Display for TranscribeVocabularyFilterMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TranscribeVocabularyFilterMethod::Mask => write!(f, "mask"),
+            TranscribeVocabularyFilterMethod::Remove => write!(f, "remove"),
+            TranscribeVocabularyFilterMethod::Tag => write!(f, "tag"),
+            TranscribeVocabularyFilterMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -147,3 +147,20 @@ impl Status {
         }
     }
 }
+impl ::std::fmt::Display for Status {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Status::FailedInstanceCreation => write!(f, "failedInstanceCreation"),
+            Status::FailedStartingGuiSession => write!(f, "failedStartingGUISession"),
+            Status::FailedStoppingGuiSession => write!(f, "failedStoppingGUISession"),
+            Status::NotStarted => write!(f, "notStarted"),
+            Status::SettingUpInstance => write!(f, "settingUpInstance"),
+            Status::StartExpired => write!(f, "startExpired"),
+            Status::Started => write!(f, "started"),
+            Status::Starting => write!(f, "starting"),
+            Status::Stopped => write!(f, "stopped"),
+            Status::Stopping => write!(f, "stopping"),
+            Status::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

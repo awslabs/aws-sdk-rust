@@ -96,3 +96,12 @@ impl FilterableMemberStatus {
         }
     }
 }
+impl ::std::fmt::Display for FilterableMemberStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterableMemberStatus::Active => write!(f, "ACTIVE"),
+            FilterableMemberStatus::Invited => write!(f, "INVITED"),
+            FilterableMemberStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

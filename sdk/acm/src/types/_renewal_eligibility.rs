@@ -96,3 +96,12 @@ impl RenewalEligibility {
         }
     }
 }
+impl ::std::fmt::Display for RenewalEligibility {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RenewalEligibility::Eligible => write!(f, "ELIGIBLE"),
+            RenewalEligibility::Ineligible => write!(f, "INELIGIBLE"),
+            RenewalEligibility::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

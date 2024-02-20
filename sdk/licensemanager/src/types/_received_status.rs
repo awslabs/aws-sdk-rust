@@ -135,3 +135,18 @@ impl ReceivedStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReceivedStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReceivedStatus::Active => write!(f, "ACTIVE"),
+            ReceivedStatus::Deleted => write!(f, "DELETED"),
+            ReceivedStatus::Disabled => write!(f, "DISABLED"),
+            ReceivedStatus::FailedWorkflow => write!(f, "FAILED_WORKFLOW"),
+            ReceivedStatus::PendingAccept => write!(f, "PENDING_ACCEPT"),
+            ReceivedStatus::PendingWorkflow => write!(f, "PENDING_WORKFLOW"),
+            ReceivedStatus::Rejected => write!(f, "REJECTED"),
+            ReceivedStatus::WorkflowCompleted => write!(f, "WORKFLOW_COMPLETED"),
+            ReceivedStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

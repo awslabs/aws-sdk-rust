@@ -101,3 +101,13 @@ impl Fault {
         }
     }
 }
+impl ::std::fmt::Display for Fault {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Fault::Client => write!(f, "Client"),
+            Fault::Server => write!(f, "Server"),
+            Fault::UnknownValue => write!(f, "Unknown"),
+            Fault::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

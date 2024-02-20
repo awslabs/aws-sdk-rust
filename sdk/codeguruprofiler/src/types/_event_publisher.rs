@@ -91,3 +91,11 @@ impl EventPublisher {
         }
     }
 }
+impl ::std::fmt::Display for EventPublisher {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventPublisher::AnomalyDetection => write!(f, "AnomalyDetection"),
+            EventPublisher::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

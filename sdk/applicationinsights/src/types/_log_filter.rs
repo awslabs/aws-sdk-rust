@@ -101,3 +101,13 @@ impl LogFilter {
         }
     }
 }
+impl ::std::fmt::Display for LogFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogFilter::Error => write!(f, "ERROR"),
+            LogFilter::Info => write!(f, "INFO"),
+            LogFilter::Warn => write!(f, "WARN"),
+            LogFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

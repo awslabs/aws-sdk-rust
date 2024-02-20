@@ -96,3 +96,12 @@ impl ChunkingStrategy {
         }
     }
 }
+impl ::std::fmt::Display for ChunkingStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChunkingStrategy::FixedSize => write!(f, "FIXED_SIZE"),
+            ChunkingStrategy::None => write!(f, "NONE"),
+            ChunkingStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

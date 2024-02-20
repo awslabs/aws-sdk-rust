@@ -96,3 +96,12 @@ impl OwnershipType {
         }
     }
 }
+impl ::std::fmt::Display for OwnershipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OwnershipType::SelfValue => write!(f, "SELF"),
+            OwnershipType::Shared => write!(f, "SHARED"),
+            OwnershipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl HaArchitecture {
         }
     }
 }
+impl ::std::fmt::Display for HaArchitecture {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HaArchitecture::BackupAndRestore => write!(f, "BackupAndRestore"),
+            HaArchitecture::MultiSite => write!(f, "MultiSite"),
+            HaArchitecture::NoRecoveryPlan => write!(f, "NoRecoveryPlan"),
+            HaArchitecture::PilotLight => write!(f, "PilotLight"),
+            HaArchitecture::WarmStandby => write!(f, "WarmStandby"),
+            HaArchitecture::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

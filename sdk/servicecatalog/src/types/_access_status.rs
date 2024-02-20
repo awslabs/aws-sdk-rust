@@ -101,3 +101,13 @@ impl AccessStatus {
         }
     }
 }
+impl ::std::fmt::Display for AccessStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessStatus::Disabled => write!(f, "DISABLED"),
+            AccessStatus::Enabled => write!(f, "ENABLED"),
+            AccessStatus::UnderChange => write!(f, "UNDER_CHANGE"),
+            AccessStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

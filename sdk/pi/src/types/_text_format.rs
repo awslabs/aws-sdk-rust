@@ -96,3 +96,12 @@ impl TextFormat {
         }
     }
 }
+impl ::std::fmt::Display for TextFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TextFormat::Markdown => write!(f, "MARKDOWN"),
+            TextFormat::PlainText => write!(f, "PLAIN_TEXT"),
+            TextFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

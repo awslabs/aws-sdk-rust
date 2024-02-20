@@ -101,3 +101,13 @@ impl EmailStatus {
         }
     }
 }
+impl ::std::fmt::Display for EmailStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EmailStatus::Failed => write!(f, "Failed"),
+            EmailStatus::NotSent => write!(f, "NotSent"),
+            EmailStatus::Sent => write!(f, "Sent"),
+            EmailStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

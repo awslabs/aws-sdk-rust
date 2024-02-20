@@ -101,3 +101,13 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Archive => write!(f, "ARCHIVE"),
+            ResourceType::File => write!(f, "FILE"),
+            ResourceType::Jar => write!(f, "JAR"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

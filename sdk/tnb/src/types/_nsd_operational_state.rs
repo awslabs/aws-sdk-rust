@@ -96,3 +96,12 @@ impl NsdOperationalState {
         }
     }
 }
+impl ::std::fmt::Display for NsdOperationalState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NsdOperationalState::Disabled => write!(f, "DISABLED"),
+            NsdOperationalState::Enabled => write!(f, "ENABLED"),
+            NsdOperationalState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl CarrierGatewayState {
         }
     }
 }
+impl ::std::fmt::Display for CarrierGatewayState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CarrierGatewayState::Available => write!(f, "available"),
+            CarrierGatewayState::Deleted => write!(f, "deleted"),
+            CarrierGatewayState::Deleting => write!(f, "deleting"),
+            CarrierGatewayState::Pending => write!(f, "pending"),
+            CarrierGatewayState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

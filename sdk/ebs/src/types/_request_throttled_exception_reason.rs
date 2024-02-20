@@ -101,3 +101,13 @@ impl RequestThrottledExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for RequestThrottledExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RequestThrottledExceptionReason::AccountThrottled => write!(f, "ACCOUNT_THROTTLED"),
+            RequestThrottledExceptionReason::DependencyRequestThrottled => write!(f, "DEPENDENCY_REQUEST_THROTTLED"),
+            RequestThrottledExceptionReason::ResourceLevelThrottle => write!(f, "RESOURCE_LEVEL_THROTTLE"),
+            RequestThrottledExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,14 @@ impl CmfcAudioTrackType {
         }
     }
 }
+impl ::std::fmt::Display for CmfcAudioTrackType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmfcAudioTrackType::AlternateAudioAutoSelect => write!(f, "ALTERNATE_AUDIO_AUTO_SELECT"),
+            CmfcAudioTrackType::AlternateAudioAutoSelectDefault => write!(f, "ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT"),
+            CmfcAudioTrackType::AlternateAudioNotAutoSelect => write!(f, "ALTERNATE_AUDIO_NOT_AUTO_SELECT"),
+            CmfcAudioTrackType::AudioOnlyVariantStream => write!(f, "AUDIO_ONLY_VARIANT_STREAM"),
+            CmfcAudioTrackType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ServicePrincipalNameStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServicePrincipalNameStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServicePrincipalNameStatus::Active => write!(f, "ACTIVE"),
+            ServicePrincipalNameStatus::Creating => write!(f, "CREATING"),
+            ServicePrincipalNameStatus::Deleting => write!(f, "DELETING"),
+            ServicePrincipalNameStatus::Failed => write!(f, "FAILED"),
+            ServicePrincipalNameStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

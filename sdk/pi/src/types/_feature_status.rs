@@ -123,3 +123,16 @@ impl FeatureStatus {
         }
     }
 }
+impl ::std::fmt::Display for FeatureStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeatureStatus::Disabled => write!(f, "DISABLED"),
+            FeatureStatus::DisabledPendingReboot => write!(f, "DISABLED_PENDING_REBOOT"),
+            FeatureStatus::Enabled => write!(f, "ENABLED"),
+            FeatureStatus::EnabledPendingReboot => write!(f, "ENABLED_PENDING_REBOOT"),
+            FeatureStatus::UnknownValue => write!(f, "UNKNOWN"),
+            FeatureStatus::Unsupported => write!(f, "UNSUPPORTED"),
+            FeatureStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl StorageVirtualMachineFilterName {
         }
     }
 }
+impl ::std::fmt::Display for StorageVirtualMachineFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageVirtualMachineFilterName::FileSystemId => write!(f, "file-system-id"),
+            StorageVirtualMachineFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

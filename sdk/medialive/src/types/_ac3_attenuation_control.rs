@@ -96,3 +96,12 @@ impl Ac3AttenuationControl {
         }
     }
 }
+impl ::std::fmt::Display for Ac3AttenuationControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ac3AttenuationControl::Attenuate3Db => write!(f, "ATTENUATE_3_DB"),
+            Ac3AttenuationControl::None => write!(f, "NONE"),
+            Ac3AttenuationControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

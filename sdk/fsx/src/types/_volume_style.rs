@@ -96,3 +96,12 @@ impl VolumeStyle {
         }
     }
 }
+impl ::std::fmt::Display for VolumeStyle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeStyle::Flexgroup => write!(f, "FLEXGROUP"),
+            VolumeStyle::Flexvol => write!(f, "FLEXVOL"),
+            VolumeStyle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

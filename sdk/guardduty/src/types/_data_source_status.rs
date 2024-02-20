@@ -96,3 +96,12 @@ impl DataSourceStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceStatus::Disabled => write!(f, "DISABLED"),
+            DataSourceStatus::Enabled => write!(f, "ENABLED"),
+            DataSourceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

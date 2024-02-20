@@ -96,3 +96,12 @@ impl Mpeg2TemporalAdaptiveQuantization {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2TemporalAdaptiveQuantization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2TemporalAdaptiveQuantization::Disabled => write!(f, "DISABLED"),
+            Mpeg2TemporalAdaptiveQuantization::Enabled => write!(f, "ENABLED"),
+            Mpeg2TemporalAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

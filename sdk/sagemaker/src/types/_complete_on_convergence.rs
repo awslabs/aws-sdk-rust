@@ -96,3 +96,12 @@ impl CompleteOnConvergence {
         }
     }
 }
+impl ::std::fmt::Display for CompleteOnConvergence {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CompleteOnConvergence::Disabled => write!(f, "Disabled"),
+            CompleteOnConvergence::Enabled => write!(f, "Enabled"),
+            CompleteOnConvergence::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -126,3 +126,18 @@ impl EventType {
         }
     }
 }
+impl ::std::fmt::Display for EventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventType::Bounce => write!(f, "bounce"),
+            EventType::Click => write!(f, "click"),
+            EventType::Complaint => write!(f, "complaint"),
+            EventType::Delivery => write!(f, "delivery"),
+            EventType::Open => write!(f, "open"),
+            EventType::Reject => write!(f, "reject"),
+            EventType::RenderingFailure => write!(f, "renderingFailure"),
+            EventType::Send => write!(f, "send"),
+            EventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

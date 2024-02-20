@@ -213,3 +213,31 @@ impl SalesforceConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for SalesforceConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SalesforceConnectorOperator::Addition => write!(f, "ADDITION"),
+            SalesforceConnectorOperator::Between => write!(f, "BETWEEN"),
+            SalesforceConnectorOperator::Contains => write!(f, "CONTAINS"),
+            SalesforceConnectorOperator::Division => write!(f, "DIVISION"),
+            SalesforceConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            SalesforceConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
+            SalesforceConnectorOperator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
+            SalesforceConnectorOperator::LessThan => write!(f, "LESS_THAN"),
+            SalesforceConnectorOperator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
+            SalesforceConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            SalesforceConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            SalesforceConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            SalesforceConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            SalesforceConnectorOperator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
+            SalesforceConnectorOperator::NoOp => write!(f, "NO_OP"),
+            SalesforceConnectorOperator::Projection => write!(f, "PROJECTION"),
+            SalesforceConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            SalesforceConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            SalesforceConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            SalesforceConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            SalesforceConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            SalesforceConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

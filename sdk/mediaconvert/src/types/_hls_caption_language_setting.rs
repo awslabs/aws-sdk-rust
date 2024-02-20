@@ -101,3 +101,13 @@ impl HlsCaptionLanguageSetting {
         }
     }
 }
+impl ::std::fmt::Display for HlsCaptionLanguageSetting {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsCaptionLanguageSetting::Insert => write!(f, "INSERT"),
+            HlsCaptionLanguageSetting::None => write!(f, "NONE"),
+            HlsCaptionLanguageSetting::Omit => write!(f, "OMIT"),
+            HlsCaptionLanguageSetting::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

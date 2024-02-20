@@ -91,3 +91,11 @@ impl ContentType {
         }
     }
 }
+impl ::std::fmt::Display for ContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentType::Generic => write!(f, "application/vnd.amazonaws.card.generic"),
+            ContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl UpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for UpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateStatus::AwaitingAppCname => write!(f, "AWAITING_APP_CNAME"),
+            UpdateStatus::ImportingCustomCertificate => write!(f, "IMPORTING_CUSTOM_CERTIFICATE"),
+            UpdateStatus::PendingDeployment => write!(f, "PENDING_DEPLOYMENT"),
+            UpdateStatus::PendingVerification => write!(f, "PENDING_VERIFICATION"),
+            UpdateStatus::RequestingCertificate => write!(f, "REQUESTING_CERTIFICATE"),
+            UpdateStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
+            UpdateStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            UpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

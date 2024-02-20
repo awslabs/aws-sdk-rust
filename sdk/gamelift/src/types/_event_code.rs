@@ -291,3 +291,44 @@ impl EventCode {
         }
     }
 }
+impl ::std::fmt::Display for EventCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventCode::FleetActivationFailed => write!(f, "FLEET_ACTIVATION_FAILED"),
+            EventCode::FleetActivationFailedNoInstances => write!(f, "FLEET_ACTIVATION_FAILED_NO_INSTANCES"),
+            EventCode::FleetBinaryDownloadFailed => write!(f, "FLEET_BINARY_DOWNLOAD_FAILED"),
+            EventCode::FleetCreated => write!(f, "FLEET_CREATED"),
+            EventCode::FleetCreationExtractingBuild => write!(f, "FLEET_CREATION_EXTRACTING_BUILD"),
+            EventCode::FleetCreationRunningInstaller => write!(f, "FLEET_CREATION_RUNNING_INSTALLER"),
+            EventCode::FleetCreationValidatingRuntimeConfig => write!(f, "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG"),
+            EventCode::FleetDeleted => write!(f, "FLEET_DELETED"),
+            EventCode::FleetInitializationFailed => write!(f, "FLEET_INITIALIZATION_FAILED"),
+            EventCode::FleetNewGameSessionProtectionPolicyUpdated => write!(f, "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED"),
+            EventCode::FleetScalingEvent => write!(f, "FLEET_SCALING_EVENT"),
+            EventCode::FleetStateActivating => write!(f, "FLEET_STATE_ACTIVATING"),
+            EventCode::FleetStateActive => write!(f, "FLEET_STATE_ACTIVE"),
+            EventCode::FleetStateBuilding => write!(f, "FLEET_STATE_BUILDING"),
+            EventCode::FleetStateDownloading => write!(f, "FLEET_STATE_DOWNLOADING"),
+            EventCode::FleetStateError => write!(f, "FLEET_STATE_ERROR"),
+            EventCode::FleetStateValidating => write!(f, "FLEET_STATE_VALIDATING"),
+            EventCode::FleetValidationExecutableRuntimeFailure => write!(f, "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE"),
+            EventCode::FleetValidationLaunchPathNotFound => write!(f, "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND"),
+            EventCode::FleetValidationTimedOut => write!(f, "FLEET_VALIDATION_TIMED_OUT"),
+            EventCode::FleetVpcPeeringDeleted => write!(f, "FLEET_VPC_PEERING_DELETED"),
+            EventCode::FleetVpcPeeringFailed => write!(f, "FLEET_VPC_PEERING_FAILED"),
+            EventCode::FleetVpcPeeringSucceeded => write!(f, "FLEET_VPC_PEERING_SUCCEEDED"),
+            EventCode::GameSessionActivationTimeout => write!(f, "GAME_SESSION_ACTIVATION_TIMEOUT"),
+            EventCode::GenericEvent => write!(f, "GENERIC_EVENT"),
+            EventCode::InstanceInterrupted => write!(f, "INSTANCE_INTERRUPTED"),
+            EventCode::InstanceRecycled => write!(f, "INSTANCE_RECYCLED"),
+            EventCode::ServerProcessCrashed => write!(f, "SERVER_PROCESS_CRASHED"),
+            EventCode::ServerProcessForceTerminated => write!(f, "SERVER_PROCESS_FORCE_TERMINATED"),
+            EventCode::ServerProcessInvalidPath => write!(f, "SERVER_PROCESS_INVALID_PATH"),
+            EventCode::ServerProcessProcessExitTimeout => write!(f, "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT"),
+            EventCode::ServerProcessProcessReadyTimeout => write!(f, "SERVER_PROCESS_PROCESS_READY_TIMEOUT"),
+            EventCode::ServerProcessSdkInitializationTimeout => write!(f, "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT"),
+            EventCode::ServerProcessTerminatedUnhealthy => write!(f, "SERVER_PROCESS_TERMINATED_UNHEALTHY"),
+            EventCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

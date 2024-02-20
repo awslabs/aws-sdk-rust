@@ -101,3 +101,13 @@ impl MetricSetSource {
         }
     }
 }
+impl ::std::fmt::Display for MetricSetSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricSetSource::Test => write!(f, "Test"),
+            MetricSetSource::Train => write!(f, "Train"),
+            MetricSetSource::Validation => write!(f, "Validation"),
+            MetricSetSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

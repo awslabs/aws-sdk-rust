@@ -101,3 +101,13 @@ impl AssignmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for AssignmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssignmentStatus::Disabled => write!(f, "DISABLED"),
+            AssignmentStatus::Draft => write!(f, "DRAFT"),
+            AssignmentStatus::Enabled => write!(f, "ENABLED"),
+            AssignmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

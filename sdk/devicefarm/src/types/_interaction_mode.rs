@@ -101,3 +101,13 @@ impl InteractionMode {
         }
     }
 }
+impl ::std::fmt::Display for InteractionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InteractionMode::Interactive => write!(f, "INTERACTIVE"),
+            InteractionMode::NoVideo => write!(f, "NO_VIDEO"),
+            InteractionMode::VideoOnly => write!(f, "VIDEO_ONLY"),
+            InteractionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

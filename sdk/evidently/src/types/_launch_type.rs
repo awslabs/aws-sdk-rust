@@ -91,3 +91,11 @@ impl LaunchType {
         }
     }
 }
+impl ::std::fmt::Display for LaunchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchType::ScheduledSplitsLaunch => write!(f, "aws.evidently.splits"),
+            LaunchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

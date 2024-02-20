@@ -111,3 +111,15 @@ impl PrincipalMappingStatus {
         }
     }
 }
+impl ::std::fmt::Display for PrincipalMappingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrincipalMappingStatus::Deleted => write!(f, "DELETED"),
+            PrincipalMappingStatus::Deleting => write!(f, "DELETING"),
+            PrincipalMappingStatus::Failed => write!(f, "FAILED"),
+            PrincipalMappingStatus::Processing => write!(f, "PROCESSING"),
+            PrincipalMappingStatus::Succeeded => write!(f, "SUCCEEDED"),
+            PrincipalMappingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

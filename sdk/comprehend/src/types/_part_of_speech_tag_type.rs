@@ -178,3 +178,28 @@ impl PartOfSpeechTagType {
         }
     }
 }
+impl ::std::fmt::Display for PartOfSpeechTagType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PartOfSpeechTagType::Adj => write!(f, "ADJ"),
+            PartOfSpeechTagType::Adp => write!(f, "ADP"),
+            PartOfSpeechTagType::Adv => write!(f, "ADV"),
+            PartOfSpeechTagType::Aux => write!(f, "AUX"),
+            PartOfSpeechTagType::Cconj => write!(f, "CCONJ"),
+            PartOfSpeechTagType::Conj => write!(f, "CONJ"),
+            PartOfSpeechTagType::Det => write!(f, "DET"),
+            PartOfSpeechTagType::Intj => write!(f, "INTJ"),
+            PartOfSpeechTagType::Noun => write!(f, "NOUN"),
+            PartOfSpeechTagType::Num => write!(f, "NUM"),
+            PartOfSpeechTagType::O => write!(f, "O"),
+            PartOfSpeechTagType::Part => write!(f, "PART"),
+            PartOfSpeechTagType::Pron => write!(f, "PRON"),
+            PartOfSpeechTagType::Propn => write!(f, "PROPN"),
+            PartOfSpeechTagType::Punct => write!(f, "PUNCT"),
+            PartOfSpeechTagType::Sconj => write!(f, "SCONJ"),
+            PartOfSpeechTagType::Sym => write!(f, "SYM"),
+            PartOfSpeechTagType::Verb => write!(f, "VERB"),
+            PartOfSpeechTagType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

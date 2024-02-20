@@ -111,3 +111,15 @@ impl TransactionStatusFilter {
         }
     }
 }
+impl ::std::fmt::Display for TransactionStatusFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransactionStatusFilter::Aborted => write!(f, "ABORTED"),
+            TransactionStatusFilter::Active => write!(f, "ACTIVE"),
+            TransactionStatusFilter::All => write!(f, "ALL"),
+            TransactionStatusFilter::Committed => write!(f, "COMMITTED"),
+            TransactionStatusFilter::Completed => write!(f, "COMPLETED"),
+            TransactionStatusFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

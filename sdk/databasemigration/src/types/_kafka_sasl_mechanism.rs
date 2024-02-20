@@ -96,3 +96,12 @@ impl KafkaSaslMechanism {
         }
     }
 }
+impl ::std::fmt::Display for KafkaSaslMechanism {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KafkaSaslMechanism::Plain => write!(f, "plain"),
+            KafkaSaslMechanism::ScramSha512 => write!(f, "scram-sha-512"),
+            KafkaSaslMechanism::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

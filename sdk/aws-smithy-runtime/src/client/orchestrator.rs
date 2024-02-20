@@ -30,7 +30,7 @@ use aws_smithy_runtime_api::client::ser_de::{
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::byte_stream::ByteStream;
 use aws_smithy_types::config_bag::ConfigBag;
-use aws_smithy_types::timeout::TimeoutConfig;
+use aws_smithy_types::timeout::{MergeTimeoutConfig, TimeoutConfig};
 use std::mem;
 use tracing::{debug, debug_span, instrument, trace, Instrument};
 
@@ -159,7 +159,11 @@ pub async fn invoke_with_stop_point(
                 try_op(&mut ctx, cfg, &runtime_components, stop_point).await;
             }
             finally_op(&mut ctx, cfg, &runtime_components).await;
-            Ok(ctx)
+            if ctx.is_failed() {
+                Err(ctx.finalize().expect_err("it is failed"))
+            } else {
+                Ok(ctx)
+            }
         }
         .maybe_timeout(operation_timeout_config)
         .await
@@ -188,6 +192,16 @@ fn apply_configuration(
         .merge_from(&client_rc_builder)
         .merge_from(&operation_rc_builder)
         .build()?;
+
+    // In an ideal world, we'd simply update `cfg.load` to behave this way. Unfortunately, we can't
+    // do that without a breaking change. By overwriting the value in the config bag with a merged
+    // version, we can achieve a very similar behavior. `MergeTimeoutConfig`
+    let resolved_timeout_config = cfg.load::<MergeTimeoutConfig>();
+    tracing::debug!(
+        "timeout settings for this operation: {:?}",
+        resolved_timeout_config
+    );
+    cfg.interceptor_state().store_put(resolved_timeout_config);
 
     components.validate_final_config(cfg)?;
     Ok(components)
@@ -446,6 +460,7 @@ async fn finally_op(
 mod tests {
     use super::*;
     use crate::client::auth::no_auth::{NoAuthRuntimePlugin, NO_AUTH_SCHEME_ID};
+    use crate::client::http::test_util::NeverClient;
     use crate::client::orchestrator::endpoints::StaticUriEndpointResolver;
     use crate::client::retries::strategy::NeverRetryStrategy;
     use crate::client::test_util::{
@@ -1268,6 +1283,7 @@ mod tests {
         struct TestInterceptorRuntimePlugin {
             builder: RuntimeComponentsBuilder,
         }
+
         impl RuntimePlugin for TestInterceptorRuntimePlugin {
             fn runtime_components(
                 &self,
@@ -1278,18 +1294,20 @@ mod tests {
         }
 
         let interceptor = TestInterceptor::default();
+        let client = NeverClient::new();
         let runtime_plugins = || {
             RuntimePlugins::new()
                 .with_operation_plugin(TestOperationRuntimePlugin::new())
                 .with_operation_plugin(NoAuthRuntimePlugin::new())
                 .with_operation_plugin(TestInterceptorRuntimePlugin {
                     builder: RuntimeComponentsBuilder::new("test")
-                        .with_interceptor(SharedInterceptor::new(interceptor.clone())),
+                        .with_interceptor(SharedInterceptor::new(interceptor.clone()))
+                        .with_http_client(Some(client.clone())),
                 })
         };
 
         // StopPoint::BeforeTransmit will exit right before sending the request, so there should be no response
-        let context = invoke_with_stop_point(
+        let _err = invoke_with_stop_point(
             "test",
             "test",
             Input::doesnt_matter(),
@@ -1297,8 +1315,8 @@ mod tests {
             StopPoint::BeforeTransmit,
         )
         .await
-        .expect("success");
-        assert!(context.response().is_none());
+        .expect_err("an error was returned");
+        assert_eq!(client.num_calls(), 0);
 
         assert!(interceptor
             .inner

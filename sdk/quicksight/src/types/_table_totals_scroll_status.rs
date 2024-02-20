@@ -96,3 +96,12 @@ impl TableTotalsScrollStatus {
         }
     }
 }
+impl ::std::fmt::Display for TableTotalsScrollStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableTotalsScrollStatus::Pinned => write!(f, "PINNED"),
+            TableTotalsScrollStatus::Scrolled => write!(f, "SCROLLED"),
+            TableTotalsScrollStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

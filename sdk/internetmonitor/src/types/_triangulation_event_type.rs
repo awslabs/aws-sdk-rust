@@ -96,3 +96,12 @@ impl TriangulationEventType {
         }
     }
 }
+impl ::std::fmt::Display for TriangulationEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TriangulationEventType::Aws => write!(f, "AWS"),
+            TriangulationEventType::Internet => write!(f, "Internet"),
+            TriangulationEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

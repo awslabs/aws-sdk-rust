@@ -96,3 +96,12 @@ impl CatalogItemStatus {
         }
     }
 }
+impl ::std::fmt::Display for CatalogItemStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CatalogItemStatus::Available => write!(f, "AVAILABLE"),
+            CatalogItemStatus::Discontinued => write!(f, "DISCONTINUED"),
+            CatalogItemStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -136,3 +136,20 @@ impl DisplayLanguageCode {
         }
     }
 }
+impl ::std::fmt::Display for DisplayLanguageCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DisplayLanguageCode::De => write!(f, "de"),
+            DisplayLanguageCode::En => write!(f, "en"),
+            DisplayLanguageCode::Es => write!(f, "es"),
+            DisplayLanguageCode::Fr => write!(f, "fr"),
+            DisplayLanguageCode::It => write!(f, "it"),
+            DisplayLanguageCode::Ja => write!(f, "ja"),
+            DisplayLanguageCode::Ko => write!(f, "ko"),
+            DisplayLanguageCode::Pt => write!(f, "pt"),
+            DisplayLanguageCode::Zh => write!(f, "zh"),
+            DisplayLanguageCode::ZhTw => write!(f, "zh-TW"),
+            DisplayLanguageCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

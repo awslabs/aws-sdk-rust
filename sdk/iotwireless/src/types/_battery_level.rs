@@ -101,3 +101,13 @@ impl BatteryLevel {
         }
     }
 }
+impl ::std::fmt::Display for BatteryLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatteryLevel::Critical => write!(f, "critical"),
+            BatteryLevel::Low => write!(f, "low"),
+            BatteryLevel::Normal => write!(f, "normal"),
+            BatteryLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

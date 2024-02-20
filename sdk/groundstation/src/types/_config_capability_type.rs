@@ -129,3 +129,17 @@ impl ConfigCapabilityType {
         }
     }
 }
+impl ::std::fmt::Display for ConfigCapabilityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigCapabilityType::AntennaDownlink => write!(f, "antenna-downlink"),
+            ConfigCapabilityType::AntennaDownlinkDemodDecode => write!(f, "antenna-downlink-demod-decode"),
+            ConfigCapabilityType::AntennaUplink => write!(f, "antenna-uplink"),
+            ConfigCapabilityType::DataflowEndpoint => write!(f, "dataflow-endpoint"),
+            ConfigCapabilityType::S3Recording => write!(f, "s3-recording"),
+            ConfigCapabilityType::Tracking => write!(f, "tracking"),
+            ConfigCapabilityType::UplinkEcho => write!(f, "uplink-echo"),
+            ConfigCapabilityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

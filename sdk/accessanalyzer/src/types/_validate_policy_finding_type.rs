@@ -106,3 +106,14 @@ impl ValidatePolicyFindingType {
         }
     }
 }
+impl ::std::fmt::Display for ValidatePolicyFindingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidatePolicyFindingType::Error => write!(f, "ERROR"),
+            ValidatePolicyFindingType::SecurityWarning => write!(f, "SECURITY_WARNING"),
+            ValidatePolicyFindingType::Suggestion => write!(f, "SUGGESTION"),
+            ValidatePolicyFindingType::Warning => write!(f, "WARNING"),
+            ValidatePolicyFindingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl RecentlyActive {
         }
     }
 }
+impl ::std::fmt::Display for RecentlyActive {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecentlyActive::Pt3H => write!(f, "PT3H"),
+            RecentlyActive::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl UnionType {
         }
     }
 }
+impl ::std::fmt::Display for UnionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnionType::All => write!(f, "ALL"),
+            UnionType::Distinct => write!(f, "DISTINCT"),
+            UnionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl AnalysisFormat {
         }
     }
 }
+impl ::std::fmt::Display for AnalysisFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalysisFormat::Sql => write!(f, "SQL"),
+            AnalysisFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

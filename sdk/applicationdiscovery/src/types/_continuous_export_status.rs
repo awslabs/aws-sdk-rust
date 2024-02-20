@@ -129,3 +129,17 @@ impl ContinuousExportStatus {
         }
     }
 }
+impl ::std::fmt::Display for ContinuousExportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContinuousExportStatus::Active => write!(f, "ACTIVE"),
+            ContinuousExportStatus::Error => write!(f, "ERROR"),
+            ContinuousExportStatus::Inactive => write!(f, "INACTIVE"),
+            ContinuousExportStatus::StartFailed => write!(f, "START_FAILED"),
+            ContinuousExportStatus::StartInProgress => write!(f, "START_IN_PROGRESS"),
+            ContinuousExportStatus::StopFailed => write!(f, "STOP_FAILED"),
+            ContinuousExportStatus::StopInProgress => write!(f, "STOP_IN_PROGRESS"),
+            ContinuousExportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

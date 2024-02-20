@@ -91,3 +91,11 @@ impl ResourceMapComparison {
         }
     }
 }
+impl ::std::fmt::Display for ResourceMapComparison {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceMapComparison::Equals => write!(f, "EQUALS"),
+            ResourceMapComparison::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ModelPackageGroupSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ModelPackageGroupSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelPackageGroupSortBy::CreationTime => write!(f, "CreationTime"),
+            ModelPackageGroupSortBy::Name => write!(f, "Name"),
+            ModelPackageGroupSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

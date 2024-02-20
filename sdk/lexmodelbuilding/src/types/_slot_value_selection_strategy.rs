@@ -96,3 +96,12 @@ impl SlotValueSelectionStrategy {
         }
     }
 }
+impl ::std::fmt::Display for SlotValueSelectionStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlotValueSelectionStrategy::OriginalValue => write!(f, "ORIGINAL_VALUE"),
+            SlotValueSelectionStrategy::TopResolution => write!(f, "TOP_RESOLUTION"),
+            SlotValueSelectionStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

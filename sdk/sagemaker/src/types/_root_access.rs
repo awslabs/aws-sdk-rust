@@ -96,3 +96,12 @@ impl RootAccess {
         }
     }
 }
+impl ::std::fmt::Display for RootAccess {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RootAccess::Disabled => write!(f, "Disabled"),
+            RootAccess::Enabled => write!(f, "Enabled"),
+            RootAccess::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

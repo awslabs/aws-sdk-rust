@@ -91,3 +91,11 @@ impl RuntimeName {
         }
     }
 }
+impl ::std::fmt::Display for RuntimeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuntimeName::AppsyncJs => write!(f, "APPSYNC_JS"),
+            RuntimeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

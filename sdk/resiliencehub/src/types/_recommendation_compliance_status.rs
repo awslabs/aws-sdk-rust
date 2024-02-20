@@ -101,3 +101,13 @@ impl RecommendationComplianceStatus {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationComplianceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationComplianceStatus::BreachedCanMeet => write!(f, "BreachedCanMeet"),
+            RecommendationComplianceStatus::BreachedUnattainable => write!(f, "BreachedUnattainable"),
+            RecommendationComplianceStatus::MetCanImprove => write!(f, "MetCanImprove"),
+            RecommendationComplianceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

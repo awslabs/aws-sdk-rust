@@ -165,3 +165,23 @@ impl AssessmentRunState {
         }
     }
 }
+impl ::std::fmt::Display for AssessmentRunState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssessmentRunState::Canceled => write!(f, "CANCELED"),
+            AssessmentRunState::CollectingData => write!(f, "COLLECTING_DATA"),
+            AssessmentRunState::Completed => write!(f, "COMPLETED"),
+            AssessmentRunState::CompletedWithErrors => write!(f, "COMPLETED_WITH_ERRORS"),
+            AssessmentRunState::Created => write!(f, "CREATED"),
+            AssessmentRunState::DataCollected => write!(f, "DATA_COLLECTED"),
+            AssessmentRunState::Error => write!(f, "ERROR"),
+            AssessmentRunState::EvaluatingRules => write!(f, "EVALUATING_RULES"),
+            AssessmentRunState::Failed => write!(f, "FAILED"),
+            AssessmentRunState::StartDataCollectionInProgress => write!(f, "START_DATA_COLLECTION_IN_PROGRESS"),
+            AssessmentRunState::StartDataCollectionPending => write!(f, "START_DATA_COLLECTION_PENDING"),
+            AssessmentRunState::StartEvaluatingRulesPending => write!(f, "START_EVALUATING_RULES_PENDING"),
+            AssessmentRunState::StopDataCollectionPending => write!(f, "STOP_DATA_COLLECTION_PENDING"),
+            AssessmentRunState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ContainerServiceDeploymentState {
         }
     }
 }
+impl ::std::fmt::Display for ContainerServiceDeploymentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerServiceDeploymentState::Activating => write!(f, "ACTIVATING"),
+            ContainerServiceDeploymentState::Active => write!(f, "ACTIVE"),
+            ContainerServiceDeploymentState::Failed => write!(f, "FAILED"),
+            ContainerServiceDeploymentState::Inactive => write!(f, "INACTIVE"),
+            ContainerServiceDeploymentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

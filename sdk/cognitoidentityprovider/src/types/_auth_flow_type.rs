@@ -129,3 +129,17 @@ impl AuthFlowType {
         }
     }
 }
+impl ::std::fmt::Display for AuthFlowType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthFlowType::AdminNoSrpAuth => write!(f, "ADMIN_NO_SRP_AUTH"),
+            AuthFlowType::AdminUserPasswordAuth => write!(f, "ADMIN_USER_PASSWORD_AUTH"),
+            AuthFlowType::CustomAuth => write!(f, "CUSTOM_AUTH"),
+            AuthFlowType::RefreshToken => write!(f, "REFRESH_TOKEN"),
+            AuthFlowType::RefreshTokenAuth => write!(f, "REFRESH_TOKEN_AUTH"),
+            AuthFlowType::UserPasswordAuth => write!(f, "USER_PASSWORD_AUTH"),
+            AuthFlowType::UserSrpAuth => write!(f, "USER_SRP_AUTH"),
+            AuthFlowType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

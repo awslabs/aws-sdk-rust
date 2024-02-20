@@ -111,3 +111,15 @@ impl WatermarkingStrength {
         }
     }
 }
+impl ::std::fmt::Display for WatermarkingStrength {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WatermarkingStrength::Default => write!(f, "DEFAULT"),
+            WatermarkingStrength::Lighter => write!(f, "LIGHTER"),
+            WatermarkingStrength::Lightest => write!(f, "LIGHTEST"),
+            WatermarkingStrength::Stronger => write!(f, "STRONGER"),
+            WatermarkingStrength::Strongest => write!(f, "STRONGEST"),
+            WatermarkingStrength::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

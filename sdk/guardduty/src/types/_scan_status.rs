@@ -106,3 +106,14 @@ impl ScanStatus {
         }
     }
 }
+impl ::std::fmt::Display for ScanStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScanStatus::Completed => write!(f, "COMPLETED"),
+            ScanStatus::Failed => write!(f, "FAILED"),
+            ScanStatus::Running => write!(f, "RUNNING"),
+            ScanStatus::Skipped => write!(f, "SKIPPED"),
+            ScanStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

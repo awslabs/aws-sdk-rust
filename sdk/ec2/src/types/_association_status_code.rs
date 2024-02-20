@@ -111,3 +111,15 @@ impl AssociationStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for AssociationStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationStatusCode::Associated => write!(f, "associated"),
+            AssociationStatusCode::Associating => write!(f, "associating"),
+            AssociationStatusCode::AssociationFailed => write!(f, "association-failed"),
+            AssociationStatusCode::Disassociated => write!(f, "disassociated"),
+            AssociationStatusCode::Disassociating => write!(f, "disassociating"),
+            AssociationStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

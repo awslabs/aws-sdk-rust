@@ -153,3 +153,21 @@ impl BuildPhaseType {
         }
     }
 }
+impl ::std::fmt::Display for BuildPhaseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BuildPhaseType::Build => write!(f, "BUILD"),
+            BuildPhaseType::Completed => write!(f, "COMPLETED"),
+            BuildPhaseType::DownloadSource => write!(f, "DOWNLOAD_SOURCE"),
+            BuildPhaseType::Finalizing => write!(f, "FINALIZING"),
+            BuildPhaseType::Install => write!(f, "INSTALL"),
+            BuildPhaseType::PostBuild => write!(f, "POST_BUILD"),
+            BuildPhaseType::PreBuild => write!(f, "PRE_BUILD"),
+            BuildPhaseType::Provisioning => write!(f, "PROVISIONING"),
+            BuildPhaseType::Queued => write!(f, "QUEUED"),
+            BuildPhaseType::Submitted => write!(f, "SUBMITTED"),
+            BuildPhaseType::UploadArtifacts => write!(f, "UPLOAD_ARTIFACTS"),
+            BuildPhaseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

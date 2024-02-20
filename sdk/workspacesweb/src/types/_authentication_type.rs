@@ -96,3 +96,12 @@ impl AuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationType::IamIdentityCenter => write!(f, "IAM_Identity_Center"),
+            AuthenticationType::Standard => write!(f, "Standard"),
+            AuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

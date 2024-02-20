@@ -96,3 +96,12 @@ impl PreventUserExistenceErrorTypes {
         }
     }
 }
+impl ::std::fmt::Display for PreventUserExistenceErrorTypes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PreventUserExistenceErrorTypes::Enabled => write!(f, "ENABLED"),
+            PreventUserExistenceErrorTypes::Legacy => write!(f, "LEGACY"),
+            PreventUserExistenceErrorTypes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

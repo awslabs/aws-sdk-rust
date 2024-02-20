@@ -106,3 +106,14 @@ impl PartitionLoadFrequency {
         }
     }
 }
+impl ::std::fmt::Display for PartitionLoadFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PartitionLoadFrequency::Daily => write!(f, "daily"),
+            PartitionLoadFrequency::Monthly => write!(f, "monthly"),
+            PartitionLoadFrequency::None => write!(f, "none"),
+            PartitionLoadFrequency::Weekly => write!(f, "weekly"),
+            PartitionLoadFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

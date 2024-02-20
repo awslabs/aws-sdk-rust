@@ -141,3 +141,19 @@ impl AutoTuneState {
         }
     }
 }
+impl ::std::fmt::Display for AutoTuneState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoTuneState::Disabled => write!(f, "DISABLED"),
+            AutoTuneState::DisabledAndRollbackComplete => write!(f, "DISABLED_AND_ROLLBACK_COMPLETE"),
+            AutoTuneState::DisabledAndRollbackError => write!(f, "DISABLED_AND_ROLLBACK_ERROR"),
+            AutoTuneState::DisabledAndRollbackInProgress => write!(f, "DISABLED_AND_ROLLBACK_IN_PROGRESS"),
+            AutoTuneState::DisabledAndRollbackScheduled => write!(f, "DISABLED_AND_ROLLBACK_SCHEDULED"),
+            AutoTuneState::DisableInProgress => write!(f, "DISABLE_IN_PROGRESS"),
+            AutoTuneState::Enabled => write!(f, "ENABLED"),
+            AutoTuneState::EnableInProgress => write!(f, "ENABLE_IN_PROGRESS"),
+            AutoTuneState::Error => write!(f, "ERROR"),
+            AutoTuneState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

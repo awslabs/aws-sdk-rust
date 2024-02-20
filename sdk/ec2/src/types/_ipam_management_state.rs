@@ -101,3 +101,13 @@ impl IpamManagementState {
         }
     }
 }
+impl ::std::fmt::Display for IpamManagementState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamManagementState::Ignored => write!(f, "ignored"),
+            IpamManagementState::Managed => write!(f, "managed"),
+            IpamManagementState::Unmanaged => write!(f, "unmanaged"),
+            IpamManagementState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

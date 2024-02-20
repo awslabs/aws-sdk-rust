@@ -91,3 +91,11 @@ impl LoggingLevel {
         }
     }
 }
+impl ::std::fmt::Display for LoggingLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoggingLevel::Error => write!(f, "ERROR"),
+            LoggingLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

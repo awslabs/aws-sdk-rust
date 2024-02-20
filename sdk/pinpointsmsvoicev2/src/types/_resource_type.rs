@@ -159,3 +159,22 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Account => write!(f, "account"),
+            ResourceType::ConfigurationSet => write!(f, "configuration-set"),
+            ResourceType::EventDestination => write!(f, "event-destination"),
+            ResourceType::Keyword => write!(f, "keyword"),
+            ResourceType::OptOutList => write!(f, "opt-out-list"),
+            ResourceType::OptedOutNumber => write!(f, "opted-out-number"),
+            ResourceType::PhoneNumber => write!(f, "phone-number"),
+            ResourceType::Pool => write!(f, "pool"),
+            ResourceType::Registration => write!(f, "registration"),
+            ResourceType::RegistrationAttachment => write!(f, "registration-attachment"),
+            ResourceType::SenderId => write!(f, "sender-id"),
+            ResourceType::VerifiedDestinationNumber => write!(f, "verified-destination-number"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

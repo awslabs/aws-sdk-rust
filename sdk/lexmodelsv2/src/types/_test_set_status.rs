@@ -111,3 +111,15 @@ impl TestSetStatus {
         }
     }
 }
+impl ::std::fmt::Display for TestSetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestSetStatus::Deleting => write!(f, "Deleting"),
+            TestSetStatus::Importing => write!(f, "Importing"),
+            TestSetStatus::PendingAnnotation => write!(f, "PendingAnnotation"),
+            TestSetStatus::Ready => write!(f, "Ready"),
+            TestSetStatus::ValidationError => write!(f, "ValidationError"),
+            TestSetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

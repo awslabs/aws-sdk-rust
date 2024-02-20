@@ -101,3 +101,13 @@ impl ControlStatus {
         }
     }
 }
+impl ::std::fmt::Display for ControlStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ControlStatus::Inactive => write!(f, "INACTIVE"),
+            ControlStatus::Reviewed => write!(f, "REVIEWED"),
+            ControlStatus::UnderReview => write!(f, "UNDER_REVIEW"),
+            ControlStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

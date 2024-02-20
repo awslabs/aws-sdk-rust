@@ -101,3 +101,13 @@ impl Service {
         }
     }
 }
+impl ::std::fmt::Display for Service {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Service::Ec2 => write!(f, "EC2"),
+            Service::Ecr => write!(f, "ECR"),
+            Service::Lambda => write!(f, "LAMBDA"),
+            Service::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl WorkforceStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorkforceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkforceStatus::Active => write!(f, "Active"),
+            WorkforceStatus::Deleting => write!(f, "Deleting"),
+            WorkforceStatus::Failed => write!(f, "Failed"),
+            WorkforceStatus::Initializing => write!(f, "Initializing"),
+            WorkforceStatus::Updating => write!(f, "Updating"),
+            WorkforceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,14 @@ impl ComparisonOperatorType {
         }
     }
 }
+impl ::std::fmt::Display for ComparisonOperatorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComparisonOperatorType::GreaterThanOrEqualToThreshold => write!(f, "GreaterThanOrEqualToThreshold"),
+            ComparisonOperatorType::GreaterThanThreshold => write!(f, "GreaterThanThreshold"),
+            ComparisonOperatorType::LessThanOrEqualToThreshold => write!(f, "LessThanOrEqualToThreshold"),
+            ComparisonOperatorType::LessThanThreshold => write!(f, "LessThanThreshold"),
+            ComparisonOperatorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

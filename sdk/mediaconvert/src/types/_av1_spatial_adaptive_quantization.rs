@@ -96,3 +96,12 @@ impl Av1SpatialAdaptiveQuantization {
         }
     }
 }
+impl ::std::fmt::Display for Av1SpatialAdaptiveQuantization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Av1SpatialAdaptiveQuantization::Disabled => write!(f, "DISABLED"),
+            Av1SpatialAdaptiveQuantization::Enabled => write!(f, "ENABLED"),
+            Av1SpatialAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

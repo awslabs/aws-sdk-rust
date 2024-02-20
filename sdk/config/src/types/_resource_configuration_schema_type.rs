@@ -91,3 +91,11 @@ impl ResourceConfigurationSchemaType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceConfigurationSchemaType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceConfigurationSchemaType::CfnResourceSchema => write!(f, "CFN_RESOURCE_SCHEMA"),
+            ResourceConfigurationSchemaType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

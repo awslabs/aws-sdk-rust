@@ -116,3 +116,16 @@ impl ScalingActivityStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ScalingActivityStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalingActivityStatusCode::Failed => write!(f, "Failed"),
+            ScalingActivityStatusCode::InProgress => write!(f, "InProgress"),
+            ScalingActivityStatusCode::Overridden => write!(f, "Overridden"),
+            ScalingActivityStatusCode::Pending => write!(f, "Pending"),
+            ScalingActivityStatusCode::Successful => write!(f, "Successful"),
+            ScalingActivityStatusCode::Unfulfilled => write!(f, "Unfulfilled"),
+            ScalingActivityStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

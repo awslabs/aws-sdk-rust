@@ -101,3 +101,13 @@ impl MeshStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for MeshStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MeshStatusCode::Active => write!(f, "ACTIVE"),
+            MeshStatusCode::Deleted => write!(f, "DELETED"),
+            MeshStatusCode::Inactive => write!(f, "INACTIVE"),
+            MeshStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

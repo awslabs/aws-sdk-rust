@@ -96,3 +96,12 @@ impl UpdateResourceCollectionAction {
         }
     }
 }
+impl ::std::fmt::Display for UpdateResourceCollectionAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateResourceCollectionAction::Add => write!(f, "ADD"),
+            UpdateResourceCollectionAction::Remove => write!(f, "REMOVE"),
+            UpdateResourceCollectionAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

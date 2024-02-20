@@ -106,3 +106,12 @@ impl DataFormat {
         }
     }
 }
+impl ::std::fmt::Display for DataFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataFormat::Csv => write!(f, "CSV"),
+            DataFormat::Json => write!(f, "JSON"),
+            DataFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

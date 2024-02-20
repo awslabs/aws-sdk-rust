@@ -165,3 +165,23 @@ impl DeviceAttribute {
         }
     }
 }
+impl ::std::fmt::Display for DeviceAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceAttribute::AppiumVersion => write!(f, "APPIUM_VERSION"),
+            DeviceAttribute::Arn => write!(f, "ARN"),
+            DeviceAttribute::Availability => write!(f, "AVAILABILITY"),
+            DeviceAttribute::FleetType => write!(f, "FLEET_TYPE"),
+            DeviceAttribute::FormFactor => write!(f, "FORM_FACTOR"),
+            DeviceAttribute::InstanceArn => write!(f, "INSTANCE_ARN"),
+            DeviceAttribute::InstanceLabels => write!(f, "INSTANCE_LABELS"),
+            DeviceAttribute::Manufacturer => write!(f, "MANUFACTURER"),
+            DeviceAttribute::Model => write!(f, "MODEL"),
+            DeviceAttribute::OsVersion => write!(f, "OS_VERSION"),
+            DeviceAttribute::Platform => write!(f, "PLATFORM"),
+            DeviceAttribute::RemoteAccessEnabled => write!(f, "REMOTE_ACCESS_ENABLED"),
+            DeviceAttribute::RemoteDebugEnabled => write!(f, "REMOTE_DEBUG_ENABLED"),
+            DeviceAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

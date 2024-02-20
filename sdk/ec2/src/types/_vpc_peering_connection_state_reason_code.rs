@@ -141,3 +141,19 @@ impl VpcPeeringConnectionStateReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for VpcPeeringConnectionStateReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcPeeringConnectionStateReasonCode::Active => write!(f, "active"),
+            VpcPeeringConnectionStateReasonCode::Deleted => write!(f, "deleted"),
+            VpcPeeringConnectionStateReasonCode::Deleting => write!(f, "deleting"),
+            VpcPeeringConnectionStateReasonCode::Expired => write!(f, "expired"),
+            VpcPeeringConnectionStateReasonCode::Failed => write!(f, "failed"),
+            VpcPeeringConnectionStateReasonCode::InitiatingRequest => write!(f, "initiating-request"),
+            VpcPeeringConnectionStateReasonCode::PendingAcceptance => write!(f, "pending-acceptance"),
+            VpcPeeringConnectionStateReasonCode::Provisioning => write!(f, "provisioning"),
+            VpcPeeringConnectionStateReasonCode::Rejected => write!(f, "rejected"),
+            VpcPeeringConnectionStateReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

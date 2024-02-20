@@ -96,3 +96,12 @@ impl NitroEnclavesSupport {
         }
     }
 }
+impl ::std::fmt::Display for NitroEnclavesSupport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NitroEnclavesSupport::Supported => write!(f, "supported"),
+            NitroEnclavesSupport::Unsupported => write!(f, "unsupported"),
+            NitroEnclavesSupport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

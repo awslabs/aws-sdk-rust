@@ -96,3 +96,12 @@ impl CommitmentDuration {
         }
     }
 }
+impl ::std::fmt::Display for CommitmentDuration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CommitmentDuration::OneMonth => write!(f, "OneMonth"),
+            CommitmentDuration::SixMonths => write!(f, "SixMonths"),
+            CommitmentDuration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

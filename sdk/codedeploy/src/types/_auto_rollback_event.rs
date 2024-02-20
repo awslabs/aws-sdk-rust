@@ -101,3 +101,13 @@ impl AutoRollbackEvent {
         }
     }
 }
+impl ::std::fmt::Display for AutoRollbackEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoRollbackEvent::DeploymentFailure => write!(f, "DEPLOYMENT_FAILURE"),
+            AutoRollbackEvent::DeploymentStopOnAlarm => write!(f, "DEPLOYMENT_STOP_ON_ALARM"),
+            AutoRollbackEvent::DeploymentStopOnRequest => write!(f, "DEPLOYMENT_STOP_ON_REQUEST"),
+            AutoRollbackEvent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

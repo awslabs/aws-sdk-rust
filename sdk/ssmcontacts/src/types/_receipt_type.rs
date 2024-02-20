@@ -111,3 +111,15 @@ impl ReceiptType {
         }
     }
 }
+impl ::std::fmt::Display for ReceiptType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReceiptType::Delivered => write!(f, "DELIVERED"),
+            ReceiptType::Error => write!(f, "ERROR"),
+            ReceiptType::Read => write!(f, "READ"),
+            ReceiptType::Sent => write!(f, "SENT"),
+            ReceiptType::Stop => write!(f, "STOP"),
+            ReceiptType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

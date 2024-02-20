@@ -129,3 +129,17 @@ impl DashboardFilterAttribute {
         }
     }
 }
+impl ::std::fmt::Display for DashboardFilterAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashboardFilterAttribute::DashboardName => write!(f, "DASHBOARD_NAME"),
+            DashboardFilterAttribute::DirectQuicksightOwner => write!(f, "DIRECT_QUICKSIGHT_OWNER"),
+            DashboardFilterAttribute::DirectQuicksightSoleOwner => write!(f, "DIRECT_QUICKSIGHT_SOLE_OWNER"),
+            DashboardFilterAttribute::DirectQuicksightViewerOrOwner => write!(f, "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"),
+            DashboardFilterAttribute::QuicksightOwner => write!(f, "QUICKSIGHT_OWNER"),
+            DashboardFilterAttribute::QuicksightUser => write!(f, "QUICKSIGHT_USER"),
+            DashboardFilterAttribute::QuicksightViewerOrOwner => write!(f, "QUICKSIGHT_VIEWER_OR_OWNER"),
+            DashboardFilterAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SkillType {
         }
     }
 }
+impl ::std::fmt::Display for SkillType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SkillType::Private => write!(f, "PRIVATE"),
+            SkillType::Public => write!(f, "PUBLIC"),
+            SkillType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

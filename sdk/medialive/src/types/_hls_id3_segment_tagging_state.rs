@@ -96,3 +96,12 @@ impl HlsId3SegmentTaggingState {
         }
     }
 }
+impl ::std::fmt::Display for HlsId3SegmentTaggingState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsId3SegmentTaggingState::Disabled => write!(f, "DISABLED"),
+            HlsId3SegmentTaggingState::Enabled => write!(f, "ENABLED"),
+            HlsId3SegmentTaggingState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

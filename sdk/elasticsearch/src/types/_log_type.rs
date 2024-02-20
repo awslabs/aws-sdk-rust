@@ -113,3 +113,14 @@ impl LogType {
         }
     }
 }
+impl ::std::fmt::Display for LogType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogType::AuditLogs => write!(f, "AUDIT_LOGS"),
+            LogType::EsApplicationLogs => write!(f, "ES_APPLICATION_LOGS"),
+            LogType::IndexSlowLogs => write!(f, "INDEX_SLOW_LOGS"),
+            LogType::SearchSlowLogs => write!(f, "SEARCH_SLOW_LOGS"),
+            LogType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

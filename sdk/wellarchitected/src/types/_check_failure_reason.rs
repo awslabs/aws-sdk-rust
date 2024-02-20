@@ -106,3 +106,14 @@ impl CheckFailureReason {
         }
     }
 }
+impl ::std::fmt::Display for CheckFailureReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CheckFailureReason::AccessDenied => write!(f, "ACCESS_DENIED"),
+            CheckFailureReason::AssumeRoleError => write!(f, "ASSUME_ROLE_ERROR"),
+            CheckFailureReason::PremiumSupportRequired => write!(f, "PREMIUM_SUPPORT_REQUIRED"),
+            CheckFailureReason::UnknownError => write!(f, "UNKNOWN_ERROR"),
+            CheckFailureReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

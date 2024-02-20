@@ -96,3 +96,12 @@ impl Scte35AposWebDeliveryAllowedBehavior {
         }
     }
 }
+impl ::std::fmt::Display for Scte35AposWebDeliveryAllowedBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Scte35AposWebDeliveryAllowedBehavior::Follow => write!(f, "FOLLOW"),
+            Scte35AposWebDeliveryAllowedBehavior::Ignore => write!(f, "IGNORE"),
+            Scte35AposWebDeliveryAllowedBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

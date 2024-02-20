@@ -96,3 +96,12 @@ impl DashboardUiState {
         }
     }
 }
+impl ::std::fmt::Display for DashboardUiState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashboardUiState::Collapsed => write!(f, "COLLAPSED"),
+            DashboardUiState::Expanded => write!(f, "EXPANDED"),
+            DashboardUiState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

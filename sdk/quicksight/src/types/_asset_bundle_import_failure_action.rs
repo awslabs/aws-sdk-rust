@@ -96,3 +96,12 @@ impl AssetBundleImportFailureAction {
         }
     }
 }
+impl ::std::fmt::Display for AssetBundleImportFailureAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetBundleImportFailureAction::DoNothing => write!(f, "DO_NOTHING"),
+            AssetBundleImportFailureAction::Rollback => write!(f, "ROLLBACK"),
+            AssetBundleImportFailureAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

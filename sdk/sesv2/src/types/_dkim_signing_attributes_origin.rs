@@ -96,3 +96,12 @@ impl DkimSigningAttributesOrigin {
         }
     }
 }
+impl ::std::fmt::Display for DkimSigningAttributesOrigin {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DkimSigningAttributesOrigin::AwsSes => write!(f, "AWS_SES"),
+            DkimSigningAttributesOrigin::External => write!(f, "EXTERNAL"),
+            DkimSigningAttributesOrigin::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

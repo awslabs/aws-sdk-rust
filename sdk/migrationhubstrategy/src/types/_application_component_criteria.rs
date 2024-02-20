@@ -135,3 +135,18 @@ impl ApplicationComponentCriteria {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationComponentCriteria {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationComponentCriteria::AnalysisStatus => write!(f, "ANALYSIS_STATUS"),
+            ApplicationComponentCriteria::AppName => write!(f, "APP_NAME"),
+            ApplicationComponentCriteria::AppType => write!(f, "APP_TYPE"),
+            ApplicationComponentCriteria::Destination => write!(f, "DESTINATION"),
+            ApplicationComponentCriteria::ErrorCategory => write!(f, "ERROR_CATEGORY"),
+            ApplicationComponentCriteria::NotDefined => write!(f, "NOT_DEFINED"),
+            ApplicationComponentCriteria::ServerId => write!(f, "SERVER_ID"),
+            ApplicationComponentCriteria::Strategy => write!(f, "STRATEGY"),
+            ApplicationComponentCriteria::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

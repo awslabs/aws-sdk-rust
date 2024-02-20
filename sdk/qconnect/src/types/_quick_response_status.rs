@@ -135,3 +135,18 @@ impl QuickResponseStatus {
         }
     }
 }
+impl ::std::fmt::Display for QuickResponseStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuickResponseStatus::Created => write!(f, "CREATED"),
+            QuickResponseStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            QuickResponseStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            QuickResponseStatus::Deleted => write!(f, "DELETED"),
+            QuickResponseStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            QuickResponseStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            QuickResponseStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            QuickResponseStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            QuickResponseStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

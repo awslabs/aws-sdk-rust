@@ -91,3 +91,11 @@ impl AmplitudeConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for AmplitudeConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AmplitudeConnectorOperator::Between => write!(f, "BETWEEN"),
+            AmplitudeConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -273,3 +273,41 @@ impl SimulationJobErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for SimulationJobErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SimulationJobErrorCode::BadPermissionsCloudwatchLogs => write!(f, "BadPermissionsCloudwatchLogs"),
+            SimulationJobErrorCode::BadPermissionsRobotApplication => write!(f, "BadPermissionsRobotApplication"),
+            SimulationJobErrorCode::BadPermissionsS3Object => write!(f, "BadPermissionsS3Object"),
+            SimulationJobErrorCode::BadPermissionsS3Output => write!(f, "BadPermissionsS3Output"),
+            SimulationJobErrorCode::BadPermissionsSimulationApplication => write!(f, "BadPermissionsSimulationApplication"),
+            SimulationJobErrorCode::BadPermissionsUserCredentials => write!(f, "BadPermissionsUserCredentials"),
+            SimulationJobErrorCode::BatchCanceled => write!(f, "BatchCanceled"),
+            SimulationJobErrorCode::BatchTimedOut => write!(f, "BatchTimedOut"),
+            SimulationJobErrorCode::EniLimitExceeded => write!(f, "ENILimitExceeded"),
+            SimulationJobErrorCode::InternalServiceError => write!(f, "InternalServiceError"),
+            SimulationJobErrorCode::InvalidBundleRobotApplication => write!(f, "InvalidBundleRobotApplication"),
+            SimulationJobErrorCode::InvalidBundleSimulationApplication => write!(f, "InvalidBundleSimulationApplication"),
+            SimulationJobErrorCode::InvalidInput => write!(f, "InvalidInput"),
+            SimulationJobErrorCode::InvalidS3Resource => write!(f, "InvalidS3Resource"),
+            SimulationJobErrorCode::LimitExceeded => write!(f, "LimitExceeded"),
+            SimulationJobErrorCode::MismatchedEtag => write!(f, "MismatchedEtag"),
+            SimulationJobErrorCode::RequestThrottled => write!(f, "RequestThrottled"),
+            SimulationJobErrorCode::ResourceNotFound => write!(f, "ResourceNotFound"),
+            SimulationJobErrorCode::RobotApplicationCrash => write!(f, "RobotApplicationCrash"),
+            SimulationJobErrorCode::RobotApplicationHealthCheckFailure => write!(f, "RobotApplicationHealthCheckFailure"),
+            SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag => write!(f, "RobotApplicationVersionMismatchedEtag"),
+            SimulationJobErrorCode::SimulationApplicationCrash => write!(f, "SimulationApplicationCrash"),
+            SimulationJobErrorCode::SimulationApplicationHealthCheckFailure => write!(f, "SimulationApplicationHealthCheckFailure"),
+            SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag => write!(f, "SimulationApplicationVersionMismatchedEtag"),
+            SimulationJobErrorCode::SubnetIpLimitExceeded => write!(f, "SubnetIpLimitExceeded"),
+            SimulationJobErrorCode::ThrottlingError => write!(f, "ThrottlingError"),
+            SimulationJobErrorCode::UploadContentMismatchError => write!(f, "UploadContentMismatchError"),
+            SimulationJobErrorCode::WrongRegionRobotApplication => write!(f, "WrongRegionRobotApplication"),
+            SimulationJobErrorCode::WrongRegionS3Bucket => write!(f, "WrongRegionS3Bucket"),
+            SimulationJobErrorCode::WrongRegionS3Output => write!(f, "WrongRegionS3Output"),
+            SimulationJobErrorCode::WrongRegionSimulationApplication => write!(f, "WrongRegionSimulationApplication"),
+            SimulationJobErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

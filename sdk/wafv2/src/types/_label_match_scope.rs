@@ -96,3 +96,12 @@ impl LabelMatchScope {
         }
     }
 }
+impl ::std::fmt::Display for LabelMatchScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LabelMatchScope::Label => write!(f, "LABEL"),
+            LabelMatchScope::Namespace => write!(f, "NAMESPACE"),
+            LabelMatchScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl KnowledgeBaseStatus {
         }
     }
 }
+impl ::std::fmt::Display for KnowledgeBaseStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KnowledgeBaseStatus::Active => write!(f, "ACTIVE"),
+            KnowledgeBaseStatus::Creating => write!(f, "CREATING"),
+            KnowledgeBaseStatus::Deleting => write!(f, "DELETING"),
+            KnowledgeBaseStatus::Failed => write!(f, "FAILED"),
+            KnowledgeBaseStatus::Updating => write!(f, "UPDATING"),
+            KnowledgeBaseStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

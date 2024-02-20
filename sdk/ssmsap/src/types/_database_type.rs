@@ -96,3 +96,12 @@ impl DatabaseType {
         }
     }
 }
+impl ::std::fmt::Display for DatabaseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatabaseType::System => write!(f, "SYSTEM"),
+            DatabaseType::Tenant => write!(f, "TENANT"),
+            DatabaseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

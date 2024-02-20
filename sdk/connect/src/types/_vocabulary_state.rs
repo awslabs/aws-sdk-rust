@@ -106,3 +106,14 @@ impl VocabularyState {
         }
     }
 }
+impl ::std::fmt::Display for VocabularyState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VocabularyState::Active => write!(f, "ACTIVE"),
+            VocabularyState::CreationFailed => write!(f, "CREATION_FAILED"),
+            VocabularyState::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
+            VocabularyState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            VocabularyState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

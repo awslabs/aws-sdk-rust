@@ -96,3 +96,12 @@ impl TracingMode {
         }
     }
 }
+impl ::std::fmt::Display for TracingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TracingMode::Active => write!(f, "Active"),
+            TracingMode::PassThrough => write!(f, "PassThrough"),
+            TracingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

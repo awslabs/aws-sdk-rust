@@ -101,3 +101,13 @@ impl OntapVolumeType {
         }
     }
 }
+impl ::std::fmt::Display for OntapVolumeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OntapVolumeType::Dp => write!(f, "DP"),
+            OntapVolumeType::Ls => write!(f, "LS"),
+            OntapVolumeType::Rw => write!(f, "RW"),
+            OntapVolumeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

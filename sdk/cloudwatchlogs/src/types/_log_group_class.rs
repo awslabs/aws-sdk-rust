@@ -96,3 +96,12 @@ impl LogGroupClass {
         }
     }
 }
+impl ::std::fmt::Display for LogGroupClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogGroupClass::InfrequentAccess => write!(f, "INFREQUENT_ACCESS"),
+            LogGroupClass::Standard => write!(f, "STANDARD"),
+            LogGroupClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

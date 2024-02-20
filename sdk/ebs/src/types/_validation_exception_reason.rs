@@ -177,3 +177,25 @@ impl ValidationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ValidationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationExceptionReason::ConflictingBlockUpdate => write!(f, "CONFLICTING_BLOCK_UPDATE"),
+            ValidationExceptionReason::InvalidBlock => write!(f, "INVALID_BLOCK"),
+            ValidationExceptionReason::InvalidBlockToken => write!(f, "INVALID_BLOCK_TOKEN"),
+            ValidationExceptionReason::InvalidContentEncoding => write!(f, "INVALID_CONTENT_ENCODING"),
+            ValidationExceptionReason::InvalidCustomerKey => write!(f, "INVALID_CUSTOMER_KEY"),
+            ValidationExceptionReason::InvalidDependencyRequest => write!(f, "INVALID_DEPENDENCY_REQUEST"),
+            ValidationExceptionReason::InvalidGrantToken => write!(f, "INVALID_GRANT_TOKEN"),
+            ValidationExceptionReason::InvalidImageId => write!(f, "INVALID_IMAGE_ID"),
+            ValidationExceptionReason::InvalidPageToken => write!(f, "INVALID_PAGE_TOKEN"),
+            ValidationExceptionReason::InvalidParameterValue => write!(f, "INVALID_PARAMETER_VALUE"),
+            ValidationExceptionReason::InvalidSnapshotId => write!(f, "INVALID_SNAPSHOT_ID"),
+            ValidationExceptionReason::InvalidTag => write!(f, "INVALID_TAG"),
+            ValidationExceptionReason::InvalidVolumeSize => write!(f, "INVALID_VOLUME_SIZE"),
+            ValidationExceptionReason::UnrelatedSnapshots => write!(f, "UNRELATED_SNAPSHOTS"),
+            ValidationExceptionReason::WriteRequestTimeout => write!(f, "WRITE_REQUEST_TIMEOUT"),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl InstanceRoleType {
         }
     }
 }
+impl ::std::fmt::Display for InstanceRoleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceRoleType::Core => write!(f, "CORE"),
+            InstanceRoleType::Master => write!(f, "MASTER"),
+            InstanceRoleType::Task => write!(f, "TASK"),
+            InstanceRoleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

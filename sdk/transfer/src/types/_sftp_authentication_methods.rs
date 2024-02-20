@@ -106,3 +106,14 @@ impl SftpAuthenticationMethods {
         }
     }
 }
+impl ::std::fmt::Display for SftpAuthenticationMethods {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SftpAuthenticationMethods::Password => write!(f, "PASSWORD"),
+            SftpAuthenticationMethods::PublicKey => write!(f, "PUBLIC_KEY"),
+            SftpAuthenticationMethods::PublicKeyAndPassword => write!(f, "PUBLIC_KEY_AND_PASSWORD"),
+            SftpAuthenticationMethods::PublicKeyOrPassword => write!(f, "PUBLIC_KEY_OR_PASSWORD"),
+            SftpAuthenticationMethods::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

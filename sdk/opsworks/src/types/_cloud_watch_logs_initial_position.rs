@@ -96,3 +96,12 @@ impl CloudWatchLogsInitialPosition {
         }
     }
 }
+impl ::std::fmt::Display for CloudWatchLogsInitialPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CloudWatchLogsInitialPosition::EndOfFile => write!(f, "end_of_file"),
+            CloudWatchLogsInitialPosition::StartOfFile => write!(f, "start_of_file"),
+            CloudWatchLogsInitialPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

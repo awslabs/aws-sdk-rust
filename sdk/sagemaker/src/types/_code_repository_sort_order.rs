@@ -96,3 +96,12 @@ impl CodeRepositorySortOrder {
         }
     }
 }
+impl ::std::fmt::Display for CodeRepositorySortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CodeRepositorySortOrder::Ascending => write!(f, "Ascending"),
+            CodeRepositorySortOrder::Descending => write!(f, "Descending"),
+            CodeRepositorySortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

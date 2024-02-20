@@ -123,3 +123,16 @@ impl ProvisionedProductPlanStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProvisionedProductPlanStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProvisionedProductPlanStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            ProvisionedProductPlanStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            ProvisionedProductPlanStatus::CreateSuccess => write!(f, "CREATE_SUCCESS"),
+            ProvisionedProductPlanStatus::ExecuteFailed => write!(f, "EXECUTE_FAILED"),
+            ProvisionedProductPlanStatus::ExecuteInProgress => write!(f, "EXECUTE_IN_PROGRESS"),
+            ProvisionedProductPlanStatus::ExecuteSuccess => write!(f, "EXECUTE_SUCCESS"),
+            ProvisionedProductPlanStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

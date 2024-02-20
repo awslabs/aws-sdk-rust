@@ -96,3 +96,12 @@ impl PipelineType {
         }
     }
 }
+impl ::std::fmt::Display for PipelineType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PipelineType::V1 => write!(f, "V1"),
+            PipelineType::V2 => write!(f, "V2"),
+            PipelineType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

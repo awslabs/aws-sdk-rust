@@ -96,3 +96,12 @@ impl ChallengeResponse {
         }
     }
 }
+impl ::std::fmt::Display for ChallengeResponse {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChallengeResponse::Failure => write!(f, "Failure"),
+            ChallengeResponse::Success => write!(f, "Success"),
+            ChallengeResponse::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

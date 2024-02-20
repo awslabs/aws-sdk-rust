@@ -101,3 +101,13 @@ impl Protocol {
         }
     }
 }
+impl ::std::fmt::Display for Protocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Protocol::Do53 => write!(f, "Do53"),
+            Protocol::Doh => write!(f, "DoH"),
+            Protocol::Dohfips => write!(f, "DoH-FIPS"),
+            Protocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

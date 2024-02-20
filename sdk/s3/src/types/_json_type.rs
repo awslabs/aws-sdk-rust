@@ -96,3 +96,12 @@ impl JsonType {
         }
     }
 }
+impl ::std::fmt::Display for JsonType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JsonType::Document => write!(f, "DOCUMENT"),
+            JsonType::Lines => write!(f, "LINES"),
+            JsonType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

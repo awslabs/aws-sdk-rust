@@ -96,3 +96,12 @@ impl AccountStatus {
         }
     }
 }
+impl ::std::fmt::Display for AccountStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountStatus::Active => write!(f, "Active"),
+            AccountStatus::Suspended => write!(f, "Suspended"),
+            AccountStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

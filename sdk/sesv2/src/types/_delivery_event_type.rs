@@ -162,3 +162,16 @@ impl DeliveryEventType {
         }
     }
 }
+impl ::std::fmt::Display for DeliveryEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeliveryEventType::Complaint => write!(f, "COMPLAINT"),
+            DeliveryEventType::Delivery => write!(f, "DELIVERY"),
+            DeliveryEventType::PermanentBounce => write!(f, "PERMANENT_BOUNCE"),
+            DeliveryEventType::Send => write!(f, "SEND"),
+            DeliveryEventType::TransientBounce => write!(f, "TRANSIENT_BOUNCE"),
+            DeliveryEventType::UndeterminedBounce => write!(f, "UNDETERMINED_BOUNCE"),
+            DeliveryEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

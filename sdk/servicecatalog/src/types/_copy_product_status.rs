@@ -101,3 +101,13 @@ impl CopyProductStatus {
         }
     }
 }
+impl ::std::fmt::Display for CopyProductStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CopyProductStatus::Failed => write!(f, "FAILED"),
+            CopyProductStatus::InProgress => write!(f, "IN_PROGRESS"),
+            CopyProductStatus::Succeeded => write!(f, "SUCCEEDED"),
+            CopyProductStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

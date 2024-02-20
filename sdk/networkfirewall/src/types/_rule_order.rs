@@ -96,3 +96,12 @@ impl RuleOrder {
         }
     }
 }
+impl ::std::fmt::Display for RuleOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleOrder::DefaultActionOrder => write!(f, "DEFAULT_ACTION_ORDER"),
+            RuleOrder::StrictOrder => write!(f, "STRICT_ORDER"),
+            RuleOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

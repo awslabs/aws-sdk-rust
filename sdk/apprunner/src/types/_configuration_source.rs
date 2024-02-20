@@ -96,3 +96,12 @@ impl ConfigurationSource {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationSource::Api => write!(f, "API"),
+            ConfigurationSource::Repository => write!(f, "REPOSITORY"),
+            ConfigurationSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

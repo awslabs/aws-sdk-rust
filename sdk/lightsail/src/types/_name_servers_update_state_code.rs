@@ -106,3 +106,14 @@ impl NameServersUpdateStateCode {
         }
     }
 }
+impl ::std::fmt::Display for NameServersUpdateStateCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NameServersUpdateStateCode::Failed => write!(f, "FAILED"),
+            NameServersUpdateStateCode::Pending => write!(f, "PENDING"),
+            NameServersUpdateStateCode::Started => write!(f, "STARTED"),
+            NameServersUpdateStateCode::Succeeded => write!(f, "SUCCEEDED"),
+            NameServersUpdateStateCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -117,3 +117,15 @@ impl AutoPromotionResult {
         }
     }
 }
+impl ::std::fmt::Display for AutoPromotionResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoPromotionResult::ModelNotPromoted => write!(f, "MODEL_NOT_PROMOTED"),
+            AutoPromotionResult::ModelPromoted => write!(f, "MODEL_PROMOTED"),
+            AutoPromotionResult::RetrainingCancelled => write!(f, "RETRAINING_CANCELLED"),
+            AutoPromotionResult::RetrainingCustomerError => write!(f, "RETRAINING_CUSTOMER_ERROR"),
+            AutoPromotionResult::RetrainingInternalError => write!(f, "RETRAINING_INTERNAL_ERROR"),
+            AutoPromotionResult::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

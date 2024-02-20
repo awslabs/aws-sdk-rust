@@ -96,3 +96,12 @@ impl FoundationModelLifecycleStatus {
         }
     }
 }
+impl ::std::fmt::Display for FoundationModelLifecycleStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FoundationModelLifecycleStatus::Active => write!(f, "ACTIVE"),
+            FoundationModelLifecycleStatus::Legacy => write!(f, "LEGACY"),
+            FoundationModelLifecycleStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

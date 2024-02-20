@@ -96,3 +96,12 @@ impl ProjectSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for ProjectSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProjectSortOrder::Ascending => write!(f, "Ascending"),
+            ProjectSortOrder::Descending => write!(f, "Descending"),
+            ProjectSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

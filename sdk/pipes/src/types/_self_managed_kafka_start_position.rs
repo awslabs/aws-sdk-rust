@@ -96,3 +96,12 @@ impl SelfManagedKafkaStartPosition {
         }
     }
 }
+impl ::std::fmt::Display for SelfManagedKafkaStartPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SelfManagedKafkaStartPosition::Latest => write!(f, "LATEST"),
+            SelfManagedKafkaStartPosition::TrimHorizon => write!(f, "TRIM_HORIZON"),
+            SelfManagedKafkaStartPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

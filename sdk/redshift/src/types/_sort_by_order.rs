@@ -96,3 +96,12 @@ impl SortByOrder {
         }
     }
 }
+impl ::std::fmt::Display for SortByOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortByOrder::Ascending => write!(f, "ASC"),
+            SortByOrder::Descending => write!(f, "DESC"),
+            SortByOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

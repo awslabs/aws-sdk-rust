@@ -106,3 +106,14 @@ impl Ec2DeepInspectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for Ec2DeepInspectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ec2DeepInspectionStatus::Activated => write!(f, "ACTIVATED"),
+            Ec2DeepInspectionStatus::Deactivated => write!(f, "DEACTIVATED"),
+            Ec2DeepInspectionStatus::Failed => write!(f, "FAILED"),
+            Ec2DeepInspectionStatus::Pending => write!(f, "PENDING"),
+            Ec2DeepInspectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

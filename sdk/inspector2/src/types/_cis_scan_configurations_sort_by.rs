@@ -96,3 +96,12 @@ impl CisScanConfigurationsSortBy {
         }
     }
 }
+impl ::std::fmt::Display for CisScanConfigurationsSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisScanConfigurationsSortBy::ScanConfigurationArn => write!(f, "SCAN_CONFIGURATION_ARN"),
+            CisScanConfigurationsSortBy::ScanName => write!(f, "SCAN_NAME"),
+            CisScanConfigurationsSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

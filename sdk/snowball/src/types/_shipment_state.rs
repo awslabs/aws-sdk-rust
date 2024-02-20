@@ -96,3 +96,12 @@ impl ShipmentState {
         }
     }
 }
+impl ::std::fmt::Display for ShipmentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShipmentState::Received => write!(f, "RECEIVED"),
+            ShipmentState::Returned => write!(f, "RETURNED"),
+            ShipmentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

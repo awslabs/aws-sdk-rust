@@ -96,3 +96,12 @@ impl ApplicationAttribute {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationAttribute::LaunchParameters => write!(f, "LAUNCH_PARAMETERS"),
+            ApplicationAttribute::WorkingDirectory => write!(f, "WORKING_DIRECTORY"),
+            ApplicationAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

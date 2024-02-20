@@ -106,3 +106,14 @@ impl PeeringState {
         }
     }
 }
+impl ::std::fmt::Display for PeeringState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PeeringState::Available => write!(f, "AVAILABLE"),
+            PeeringState::Creating => write!(f, "CREATING"),
+            PeeringState::Deleting => write!(f, "DELETING"),
+            PeeringState::Failed => write!(f, "FAILED"),
+            PeeringState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

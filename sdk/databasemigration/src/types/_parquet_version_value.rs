@@ -96,3 +96,12 @@ impl ParquetVersionValue {
         }
     }
 }
+impl ::std::fmt::Display for ParquetVersionValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParquetVersionValue::Parquet10 => write!(f, "parquet-1-0"),
+            ParquetVersionValue::Parquet20 => write!(f, "parquet-2-0"),
+            ParquetVersionValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

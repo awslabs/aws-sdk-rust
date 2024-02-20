@@ -106,3 +106,14 @@ impl NodeInstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for NodeInstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeInstanceStatus::Error => write!(f, "ERROR"),
+            NodeInstanceStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
+            NodeInstanceStatus::Paused => write!(f, "PAUSED"),
+            NodeInstanceStatus::Running => write!(f, "RUNNING"),
+            NodeInstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

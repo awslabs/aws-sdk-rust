@@ -96,3 +96,12 @@ impl LabelDetectionAggregateBy {
         }
     }
 }
+impl ::std::fmt::Display for LabelDetectionAggregateBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LabelDetectionAggregateBy::Segments => write!(f, "SEGMENTS"),
+            LabelDetectionAggregateBy::Timestamps => write!(f, "TIMESTAMPS"),
+            LabelDetectionAggregateBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

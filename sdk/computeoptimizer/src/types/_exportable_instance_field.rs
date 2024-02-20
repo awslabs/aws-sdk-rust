@@ -573,3 +573,131 @@ impl ExportableInstanceField {
         }
     }
 }
+impl ::std::fmt::Display for ExportableInstanceField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportableInstanceField::AccountId => write!(f, "AccountId"),
+            ExportableInstanceField::CurrentInstanceGpuInfo => write!(f, "CurrentInstanceGpuInfo"),
+            ExportableInstanceField::CurrentInstanceType => write!(f, "CurrentInstanceType"),
+            ExportableInstanceField::CurrentMemory => write!(f, "CurrentMemory"),
+            ExportableInstanceField::CurrentNetwork => write!(f, "CurrentNetwork"),
+            ExportableInstanceField::CurrentOnDemandPrice => write!(f, "CurrentOnDemandPrice"),
+            ExportableInstanceField::CurrentPerformanceRisk => write!(f, "CurrentPerformanceRisk"),
+            ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice => write!(f, "CurrentStandardOneYearNoUpfrontReservedPrice"),
+            ExportableInstanceField::CurrentStandardThreeYearNoUpfrontReservedPrice => write!(f, "CurrentStandardThreeYearNoUpfrontReservedPrice"),
+            ExportableInstanceField::CurrentStorage => write!(f, "CurrentStorage"),
+            ExportableInstanceField::CurrentVcpus => write!(f, "CurrentVCpus"),
+            ExportableInstanceField::EffectiveRecommendationPreferencesCpuVendorArchitectures => {
+                write!(f, "EffectiveRecommendationPreferencesCpuVendorArchitectures")
+            }
+            ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => {
+                write!(f, "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics")
+            }
+            ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => {
+                write!(f, "EffectiveRecommendationPreferencesExternalMetricsSource")
+            }
+            ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => {
+                write!(f, "EffectiveRecommendationPreferencesInferredWorkloadTypes")
+            }
+            ExportableInstanceField::EffectiveRecommendationPreferencesLookbackPeriod => {
+                write!(f, "EffectiveRecommendationPreferencesLookBackPeriod")
+            }
+            ExportableInstanceField::EffectiveRecommendationPreferencesPreferredResources => {
+                write!(f, "EffectiveRecommendationPreferencesPreferredResources")
+            }
+            ExportableInstanceField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
+                write!(f, "EffectiveRecommendationPreferencesSavingsEstimationMode")
+            }
+            ExportableInstanceField::EffectiveRecommendationPreferencesUtilizationPreferences => {
+                write!(f, "EffectiveRecommendationPreferencesUtilizationPreferences")
+            }
+            ExportableInstanceField::ExternalMetricStatusCode => write!(f, "ExternalMetricStatusCode"),
+            ExportableInstanceField::ExternalMetricStatusReason => write!(f, "ExternalMetricStatusReason"),
+            ExportableInstanceField::Finding => write!(f, "Finding"),
+            ExportableInstanceField::FindingReasonCodes => write!(f, "FindingReasonCodes"),
+            ExportableInstanceField::Idle => write!(f, "Idle"),
+            ExportableInstanceField::InferredWorkloadTypes => write!(f, "InferredWorkloadTypes"),
+            ExportableInstanceField::InstanceArn => write!(f, "InstanceArn"),
+            ExportableInstanceField::InstanceName => write!(f, "InstanceName"),
+            ExportableInstanceField::InstanceState => write!(f, "InstanceState"),
+            ExportableInstanceField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
+            ExportableInstanceField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
+            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency")
+            }
+            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts")
+            }
+            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValue => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue")
+            }
+            ExportableInstanceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts")
+            }
+            ExportableInstanceField::RecommendationOptionsInstanceGpuInfo => write!(f, "RecommendationOptionsInstanceGpuInfo"),
+            ExportableInstanceField::RecommendationOptionsInstanceType => write!(f, "RecommendationOptionsInstanceType"),
+            ExportableInstanceField::RecommendationOptionsMemory => write!(f, "RecommendationOptionsMemory"),
+            ExportableInstanceField::RecommendationOptionsMigrationEffort => write!(f, "RecommendationOptionsMigrationEffort"),
+            ExportableInstanceField::RecommendationOptionsNetwork => write!(f, "RecommendationOptionsNetwork"),
+            ExportableInstanceField::RecommendationOptionsOnDemandPrice => write!(f, "RecommendationOptionsOnDemandPrice"),
+            ExportableInstanceField::RecommendationOptionsPerformanceRisk => write!(f, "RecommendationOptionsPerformanceRisk"),
+            ExportableInstanceField::RecommendationOptionsPlatformDifferences => write!(f, "RecommendationOptionsPlatformDifferences"),
+            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum")
+            }
+            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum")
+            }
+            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum")
+            }
+            ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum")
+            }
+            ExportableInstanceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
+                write!(f, "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage")
+            }
+            ExportableInstanceField::RecommendationOptionsSavingsOpportunityPercentage => {
+                write!(f, "RecommendationOptionsSavingsOpportunityPercentage")
+            }
+            ExportableInstanceField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => {
+                write!(f, "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice")
+            }
+            ExportableInstanceField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => {
+                write!(f, "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice")
+            }
+            ExportableInstanceField::RecommendationOptionsStorage => write!(f, "RecommendationOptionsStorage"),
+            ExportableInstanceField::RecommendationOptionsVcpus => write!(f, "RecommendationOptionsVcpus"),
+            ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn => write!(f, "RecommendationsSourcesRecommendationSourceArn"),
+            ExportableInstanceField::RecommendationsSourcesRecommendationSourceType => write!(f, "RecommendationsSourcesRecommendationSourceType"),
+            ExportableInstanceField::Tags => write!(f, "Tags"),
+            ExportableInstanceField::UtilizationMetricsCpuMaximum => write!(f, "UtilizationMetricsCpuMaximum"),
+            ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum => write!(f, "UtilizationMetricsDiskReadBytesPerSecondMaximum"),
+            ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum => write!(f, "UtilizationMetricsDiskReadOpsPerSecondMaximum"),
+            ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum => {
+                write!(f, "UtilizationMetricsDiskWriteBytesPerSecondMaximum")
+            }
+            ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum => write!(f, "UtilizationMetricsDiskWriteOpsPerSecondMaximum"),
+            ExportableInstanceField::UtilizationMetricsEbsReadBytesPerSecondMaximum => write!(f, "UtilizationMetricsEbsReadBytesPerSecondMaximum"),
+            ExportableInstanceField::UtilizationMetricsEbsReadOpsPerSecondMaximum => write!(f, "UtilizationMetricsEbsReadOpsPerSecondMaximum"),
+            ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => write!(f, "UtilizationMetricsEbsWriteBytesPerSecondMaximum"),
+            ExportableInstanceField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => write!(f, "UtilizationMetricsEbsWriteOpsPerSecondMaximum"),
+            ExportableInstanceField::UtilizationMetricsGpuMemoryPercentageMaximum => write!(f, "UtilizationMetricsGpuMemoryPercentageMaximum"),
+            ExportableInstanceField::UtilizationMetricsGpuPercentageMaximum => write!(f, "UtilizationMetricsGpuPercentageMaximum"),
+            ExportableInstanceField::UtilizationMetricsMemoryMaximum => write!(f, "UtilizationMetricsMemoryMaximum"),
+            ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum => {
+                write!(f, "UtilizationMetricsNetworkInBytesPerSecondMaximum")
+            }
+            ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => {
+                write!(f, "UtilizationMetricsNetworkOutBytesPerSecondMaximum")
+            }
+            ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum => {
+                write!(f, "UtilizationMetricsNetworkPacketsInPerSecondMaximum")
+            }
+            ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => {
+                write!(f, "UtilizationMetricsNetworkPacketsOutPerSecondMaximum")
+            }
+            ExportableInstanceField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

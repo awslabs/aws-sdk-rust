@@ -101,3 +101,13 @@ impl TerminologyDataFormat {
         }
     }
 }
+impl ::std::fmt::Display for TerminologyDataFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TerminologyDataFormat::Csv => write!(f, "CSV"),
+            TerminologyDataFormat::Tmx => write!(f, "TMX"),
+            TerminologyDataFormat::Tsv => write!(f, "TSV"),
+            TerminologyDataFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

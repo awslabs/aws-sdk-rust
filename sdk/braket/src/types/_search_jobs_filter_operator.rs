@@ -121,3 +121,17 @@ impl SearchJobsFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for SearchJobsFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchJobsFilterOperator::Between => write!(f, "BETWEEN"),
+            SearchJobsFilterOperator::Contains => write!(f, "CONTAINS"),
+            SearchJobsFilterOperator::Equal => write!(f, "EQUAL"),
+            SearchJobsFilterOperator::Gt => write!(f, "GT"),
+            SearchJobsFilterOperator::Gte => write!(f, "GTE"),
+            SearchJobsFilterOperator::Lt => write!(f, "LT"),
+            SearchJobsFilterOperator::Lte => write!(f, "LTE"),
+            SearchJobsFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

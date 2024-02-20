@@ -96,3 +96,12 @@ impl AuthPolicyState {
         }
     }
 }
+impl ::std::fmt::Display for AuthPolicyState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthPolicyState::Active => write!(f, "Active"),
+            AuthPolicyState::Inactive => write!(f, "Inactive"),
+            AuthPolicyState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

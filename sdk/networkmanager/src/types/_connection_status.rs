@@ -96,3 +96,12 @@ impl ConnectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionStatus::Down => write!(f, "DOWN"),
+            ConnectionStatus::Up => write!(f, "UP"),
+            ConnectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

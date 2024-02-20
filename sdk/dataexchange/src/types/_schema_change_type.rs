@@ -101,3 +101,13 @@ impl SchemaChangeType {
         }
     }
 }
+impl ::std::fmt::Display for SchemaChangeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SchemaChangeType::Add => write!(f, "ADD"),
+            SchemaChangeType::Modify => write!(f, "MODIFY"),
+            SchemaChangeType::Remove => write!(f, "REMOVE"),
+            SchemaChangeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

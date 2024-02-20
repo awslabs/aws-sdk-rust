@@ -101,3 +101,13 @@ impl PanelBorderStyle {
         }
     }
 }
+impl ::std::fmt::Display for PanelBorderStyle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PanelBorderStyle::Dashed => write!(f, "DASHED"),
+            PanelBorderStyle::Dotted => write!(f, "DOTTED"),
+            PanelBorderStyle::Solid => write!(f, "SOLID"),
+            PanelBorderStyle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

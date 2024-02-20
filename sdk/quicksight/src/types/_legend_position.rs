@@ -106,3 +106,14 @@ impl LegendPosition {
         }
     }
 }
+impl ::std::fmt::Display for LegendPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LegendPosition::Auto => write!(f, "AUTO"),
+            LegendPosition::Bottom => write!(f, "BOTTOM"),
+            LegendPosition::Right => write!(f, "RIGHT"),
+            LegendPosition::Top => write!(f, "TOP"),
+            LegendPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl OrganizationSharingStatus {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationSharingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationSharingStatus::Disabled => write!(f, "DISABLED"),
+            OrganizationSharingStatus::Enabled => write!(f, "ENABLED"),
+            OrganizationSharingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

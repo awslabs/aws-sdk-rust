@@ -159,3 +159,22 @@ impl CanaryStateReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for CanaryStateReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CanaryStateReasonCode::CreateFailed => write!(f, "CREATE_FAILED"),
+            CanaryStateReasonCode::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            CanaryStateReasonCode::CreatePending => write!(f, "CREATE_PENDING"),
+            CanaryStateReasonCode::DeleteFailed => write!(f, "DELETE_FAILED"),
+            CanaryStateReasonCode::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            CanaryStateReasonCode::InvalidPermissions => write!(f, "INVALID_PERMISSIONS"),
+            CanaryStateReasonCode::RollbackComplete => write!(f, "ROLLBACK_COMPLETE"),
+            CanaryStateReasonCode::RollbackFailed => write!(f, "ROLLBACK_FAILED"),
+            CanaryStateReasonCode::SyncDeleteInProgress => write!(f, "SYNC_DELETE_IN_PROGRESS"),
+            CanaryStateReasonCode::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
+            CanaryStateReasonCode::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            CanaryStateReasonCode::UpdatePending => write!(f, "UPDATE_PENDING"),
+            CanaryStateReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

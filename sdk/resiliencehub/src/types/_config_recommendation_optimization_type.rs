@@ -123,3 +123,16 @@ impl ConfigRecommendationOptimizationType {
         }
     }
 }
+impl ::std::fmt::Display for ConfigRecommendationOptimizationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigRecommendationOptimizationType::BestAzRecovery => write!(f, "BestAZRecovery"),
+            ConfigRecommendationOptimizationType::BestAttainable => write!(f, "BestAttainable"),
+            ConfigRecommendationOptimizationType::BestRegionRecovery => write!(f, "BestRegionRecovery"),
+            ConfigRecommendationOptimizationType::LeastChange => write!(f, "LeastChange"),
+            ConfigRecommendationOptimizationType::LeastCost => write!(f, "LeastCost"),
+            ConfigRecommendationOptimizationType::LeastErrors => write!(f, "LeastErrors"),
+            ConfigRecommendationOptimizationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

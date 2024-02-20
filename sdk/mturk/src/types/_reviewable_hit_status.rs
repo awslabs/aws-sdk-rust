@@ -96,3 +96,12 @@ impl ReviewableHitStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReviewableHitStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReviewableHitStatus::Reviewable => write!(f, "Reviewable"),
+            ReviewableHitStatus::Reviewing => write!(f, "Reviewing"),
+            ReviewableHitStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

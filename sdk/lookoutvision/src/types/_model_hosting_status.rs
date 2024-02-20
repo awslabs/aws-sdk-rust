@@ -111,3 +111,15 @@ impl ModelHostingStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelHostingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelHostingStatus::Hosted => write!(f, "HOSTED"),
+            ModelHostingStatus::HostingFailed => write!(f, "HOSTING_FAILED"),
+            ModelHostingStatus::StartingHosting => write!(f, "STARTING_HOSTING"),
+            ModelHostingStatus::StoppingHosting => write!(f, "STOPPING_HOSTING"),
+            ModelHostingStatus::SystemUpdating => write!(f, "SYSTEM_UPDATING"),
+            ModelHostingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

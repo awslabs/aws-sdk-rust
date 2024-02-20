@@ -101,3 +101,13 @@ impl InferenceExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for InferenceExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferenceExecutionStatus::Failed => write!(f, "FAILED"),
+            InferenceExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            InferenceExecutionStatus::Success => write!(f, "SUCCESS"),
+            InferenceExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

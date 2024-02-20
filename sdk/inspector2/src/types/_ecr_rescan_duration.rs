@@ -116,3 +116,16 @@ impl EcrRescanDuration {
         }
     }
 }
+impl ::std::fmt::Display for EcrRescanDuration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcrRescanDuration::Days14 => write!(f, "DAYS_14"),
+            EcrRescanDuration::Days180 => write!(f, "DAYS_180"),
+            EcrRescanDuration::Days30 => write!(f, "DAYS_30"),
+            EcrRescanDuration::Days60 => write!(f, "DAYS_60"),
+            EcrRescanDuration::Days90 => write!(f, "DAYS_90"),
+            EcrRescanDuration::Lifetime => write!(f, "LIFETIME"),
+            EcrRescanDuration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

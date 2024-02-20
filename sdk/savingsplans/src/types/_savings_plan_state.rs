@@ -116,3 +116,16 @@ impl SavingsPlanState {
         }
     }
 }
+impl ::std::fmt::Display for SavingsPlanState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SavingsPlanState::Active => write!(f, "active"),
+            SavingsPlanState::PaymentFailed => write!(f, "payment-failed"),
+            SavingsPlanState::PaymentPending => write!(f, "payment-pending"),
+            SavingsPlanState::Queued => write!(f, "queued"),
+            SavingsPlanState::QueuedDeleted => write!(f, "queued-deleted"),
+            SavingsPlanState::Retired => write!(f, "retired"),
+            SavingsPlanState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

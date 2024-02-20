@@ -101,3 +101,13 @@ impl ResolverEndpointType {
         }
     }
 }
+impl ::std::fmt::Display for ResolverEndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverEndpointType::Dualstack => write!(f, "DUALSTACK"),
+            ResolverEndpointType::Ipv4 => write!(f, "IPV4"),
+            ResolverEndpointType::Ipv6 => write!(f, "IPV6"),
+            ResolverEndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

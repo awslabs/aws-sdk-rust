@@ -106,3 +106,14 @@ impl CrawlerHistoryState {
         }
     }
 }
+impl ::std::fmt::Display for CrawlerHistoryState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CrawlerHistoryState::Completed => write!(f, "COMPLETED"),
+            CrawlerHistoryState::Failed => write!(f, "FAILED"),
+            CrawlerHistoryState::Running => write!(f, "RUNNING"),
+            CrawlerHistoryState::Stopped => write!(f, "STOPPED"),
+            CrawlerHistoryState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

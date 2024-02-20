@@ -111,3 +111,15 @@ impl TopicRelativeDateFilterFunction {
         }
     }
 }
+impl ::std::fmt::Display for TopicRelativeDateFilterFunction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TopicRelativeDateFilterFunction::Last => write!(f, "LAST"),
+            TopicRelativeDateFilterFunction::Next => write!(f, "NEXT"),
+            TopicRelativeDateFilterFunction::Now => write!(f, "NOW"),
+            TopicRelativeDateFilterFunction::Previous => write!(f, "PREVIOUS"),
+            TopicRelativeDateFilterFunction::This => write!(f, "THIS"),
+            TopicRelativeDateFilterFunction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

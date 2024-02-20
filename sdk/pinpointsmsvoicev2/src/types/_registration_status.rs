@@ -135,3 +135,18 @@ impl RegistrationStatus {
         }
     }
 }
+impl ::std::fmt::Display for RegistrationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistrationStatus::Closed => write!(f, "CLOSED"),
+            RegistrationStatus::Complete => write!(f, "COMPLETE"),
+            RegistrationStatus::Created => write!(f, "CREATED"),
+            RegistrationStatus::Deleted => write!(f, "DELETED"),
+            RegistrationStatus::Provisioning => write!(f, "PROVISIONING"),
+            RegistrationStatus::RequiresUpdates => write!(f, "REQUIRES_UPDATES"),
+            RegistrationStatus::Reviewing => write!(f, "REVIEWING"),
+            RegistrationStatus::Submitted => write!(f, "SUBMITTED"),
+            RegistrationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

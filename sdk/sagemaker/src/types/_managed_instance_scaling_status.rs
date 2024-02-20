@@ -96,3 +96,12 @@ impl ManagedInstanceScalingStatus {
         }
     }
 }
+impl ::std::fmt::Display for ManagedInstanceScalingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ManagedInstanceScalingStatus::Disabled => write!(f, "DISABLED"),
+            ManagedInstanceScalingStatus::Enabled => write!(f, "ENABLED"),
+            ManagedInstanceScalingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

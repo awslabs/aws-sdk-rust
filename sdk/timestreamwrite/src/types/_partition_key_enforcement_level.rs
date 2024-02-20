@@ -96,3 +96,12 @@ impl PartitionKeyEnforcementLevel {
         }
     }
 }
+impl ::std::fmt::Display for PartitionKeyEnforcementLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PartitionKeyEnforcementLevel::Optional => write!(f, "OPTIONAL"),
+            PartitionKeyEnforcementLevel::Required => write!(f, "REQUIRED"),
+            PartitionKeyEnforcementLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

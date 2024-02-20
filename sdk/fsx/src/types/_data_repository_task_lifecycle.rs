@@ -116,3 +116,16 @@ impl DataRepositoryTaskLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for DataRepositoryTaskLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataRepositoryTaskLifecycle::Canceled => write!(f, "CANCELED"),
+            DataRepositoryTaskLifecycle::Canceling => write!(f, "CANCELING"),
+            DataRepositoryTaskLifecycle::Executing => write!(f, "EXECUTING"),
+            DataRepositoryTaskLifecycle::Failed => write!(f, "FAILED"),
+            DataRepositoryTaskLifecycle::Pending => write!(f, "PENDING"),
+            DataRepositoryTaskLifecycle::Succeeded => write!(f, "SUCCEEDED"),
+            DataRepositoryTaskLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

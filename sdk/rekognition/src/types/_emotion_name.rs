@@ -131,3 +131,19 @@ impl EmotionName {
         }
     }
 }
+impl ::std::fmt::Display for EmotionName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EmotionName::Angry => write!(f, "ANGRY"),
+            EmotionName::Calm => write!(f, "CALM"),
+            EmotionName::Confused => write!(f, "CONFUSED"),
+            EmotionName::Disgusted => write!(f, "DISGUSTED"),
+            EmotionName::Fear => write!(f, "FEAR"),
+            EmotionName::Happy => write!(f, "HAPPY"),
+            EmotionName::Sad => write!(f, "SAD"),
+            EmotionName::Surprised => write!(f, "SURPRISED"),
+            EmotionName::UnknownValue => write!(f, "UNKNOWN"),
+            EmotionName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

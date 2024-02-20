@@ -96,3 +96,12 @@ impl AccessDirection {
         }
     }
 }
+impl ::std::fmt::Display for AccessDirection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessDirection::Inbound => write!(f, "inbound"),
+            AccessDirection::Outbound => write!(f, "outbound"),
+            AccessDirection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

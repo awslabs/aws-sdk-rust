@@ -177,3 +177,25 @@ impl UlimitName {
         }
     }
 }
+impl ::std::fmt::Display for UlimitName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UlimitName::Core => write!(f, "core"),
+            UlimitName::Cpu => write!(f, "cpu"),
+            UlimitName::Data => write!(f, "data"),
+            UlimitName::Fsize => write!(f, "fsize"),
+            UlimitName::Locks => write!(f, "locks"),
+            UlimitName::Memlock => write!(f, "memlock"),
+            UlimitName::Msgqueue => write!(f, "msgqueue"),
+            UlimitName::Nice => write!(f, "nice"),
+            UlimitName::Nofile => write!(f, "nofile"),
+            UlimitName::Nproc => write!(f, "nproc"),
+            UlimitName::Rss => write!(f, "rss"),
+            UlimitName::Rtprio => write!(f, "rtprio"),
+            UlimitName::Rttime => write!(f, "rttime"),
+            UlimitName::Sigpending => write!(f, "sigpending"),
+            UlimitName::Stack => write!(f, "stack"),
+            UlimitName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

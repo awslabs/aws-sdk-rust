@@ -121,3 +121,17 @@ impl ColumnStatisticsType {
         }
     }
 }
+impl ::std::fmt::Display for ColumnStatisticsType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnStatisticsType::Binary => write!(f, "BINARY"),
+            ColumnStatisticsType::Boolean => write!(f, "BOOLEAN"),
+            ColumnStatisticsType::Date => write!(f, "DATE"),
+            ColumnStatisticsType::Decimal => write!(f, "DECIMAL"),
+            ColumnStatisticsType::Double => write!(f, "DOUBLE"),
+            ColumnStatisticsType::Long => write!(f, "LONG"),
+            ColumnStatisticsType::String => write!(f, "STRING"),
+            ColumnStatisticsType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

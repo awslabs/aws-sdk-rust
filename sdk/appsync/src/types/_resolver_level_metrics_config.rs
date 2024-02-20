@@ -96,3 +96,12 @@ impl ResolverLevelMetricsConfig {
         }
     }
 }
+impl ::std::fmt::Display for ResolverLevelMetricsConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverLevelMetricsConfig::Disabled => write!(f, "DISABLED"),
+            ResolverLevelMetricsConfig::Enabled => write!(f, "ENABLED"),
+            ResolverLevelMetricsConfig::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

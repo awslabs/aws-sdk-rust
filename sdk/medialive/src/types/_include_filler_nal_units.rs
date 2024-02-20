@@ -101,3 +101,13 @@ impl IncludeFillerNalUnits {
         }
     }
 }
+impl ::std::fmt::Display for IncludeFillerNalUnits {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IncludeFillerNalUnits::Auto => write!(f, "AUTO"),
+            IncludeFillerNalUnits::Drop => write!(f, "DROP"),
+            IncludeFillerNalUnits::Include => write!(f, "INCLUDE"),
+            IncludeFillerNalUnits::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

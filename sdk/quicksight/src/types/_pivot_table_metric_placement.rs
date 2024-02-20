@@ -96,3 +96,12 @@ impl PivotTableMetricPlacement {
         }
     }
 }
+impl ::std::fmt::Display for PivotTableMetricPlacement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PivotTableMetricPlacement::Column => write!(f, "COLUMN"),
+            PivotTableMetricPlacement::Row => write!(f, "ROW"),
+            PivotTableMetricPlacement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

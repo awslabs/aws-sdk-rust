@@ -121,3 +121,17 @@ impl LagState {
         }
     }
 }
+impl ::std::fmt::Display for LagState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LagState::Available => write!(f, "available"),
+            LagState::Deleted => write!(f, "deleted"),
+            LagState::Deleting => write!(f, "deleting"),
+            LagState::Down => write!(f, "down"),
+            LagState::Pending => write!(f, "pending"),
+            LagState::Requested => write!(f, "requested"),
+            LagState::UnknownValue => write!(f, "unknown"),
+            LagState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

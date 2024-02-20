@@ -96,3 +96,12 @@ impl AuditPolicyState {
         }
     }
 }
+impl ::std::fmt::Display for AuditPolicyState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditPolicyState::LockedPolicy => write!(f, "locked"),
+            AuditPolicyState::UnlockedPolicy => write!(f, "unlocked"),
+            AuditPolicyState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

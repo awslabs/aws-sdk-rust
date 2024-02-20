@@ -91,3 +91,11 @@ impl InstanceRoleCredentialsProvider {
         }
     }
 }
+impl ::std::fmt::Display for InstanceRoleCredentialsProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceRoleCredentialsProvider::SharedCredentialFile => write!(f, "SHARED_CREDENTIAL_FILE"),
+            InstanceRoleCredentialsProvider::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

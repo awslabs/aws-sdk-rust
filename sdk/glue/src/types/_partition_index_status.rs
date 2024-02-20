@@ -106,3 +106,14 @@ impl PartitionIndexStatus {
         }
     }
 }
+impl ::std::fmt::Display for PartitionIndexStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PartitionIndexStatus::Active => write!(f, "ACTIVE"),
+            PartitionIndexStatus::Creating => write!(f, "CREATING"),
+            PartitionIndexStatus::Deleting => write!(f, "DELETING"),
+            PartitionIndexStatus::Failed => write!(f, "FAILED"),
+            PartitionIndexStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

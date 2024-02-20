@@ -121,3 +121,17 @@ impl VolumeLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for VolumeLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeLifecycle::Available => write!(f, "AVAILABLE"),
+            VolumeLifecycle::Created => write!(f, "CREATED"),
+            VolumeLifecycle::Creating => write!(f, "CREATING"),
+            VolumeLifecycle::Deleting => write!(f, "DELETING"),
+            VolumeLifecycle::Failed => write!(f, "FAILED"),
+            VolumeLifecycle::Misconfigured => write!(f, "MISCONFIGURED"),
+            VolumeLifecycle::Pending => write!(f, "PENDING"),
+            VolumeLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

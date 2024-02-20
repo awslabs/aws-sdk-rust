@@ -101,3 +101,13 @@ impl ApplicationProgressStatus {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationProgressStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationProgressStatus::Completed => write!(f, "COMPLETED"),
+            ApplicationProgressStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ApplicationProgressStatus::NotStarted => write!(f, "NOT_STARTED"),
+            ApplicationProgressStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

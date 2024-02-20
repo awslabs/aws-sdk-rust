@@ -96,3 +96,12 @@ impl Schema {
         }
     }
 }
+impl ::std::fmt::Display for Schema {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Schema::Ocsf => write!(f, "ocsf"),
+            Schema::Raw => write!(f, "raw"),
+            Schema::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

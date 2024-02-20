@@ -96,3 +96,12 @@ impl DropFrameTimecode {
         }
     }
 }
+impl ::std::fmt::Display for DropFrameTimecode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DropFrameTimecode::Disabled => write!(f, "DISABLED"),
+            DropFrameTimecode::Enabled => write!(f, "ENABLED"),
+            DropFrameTimecode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

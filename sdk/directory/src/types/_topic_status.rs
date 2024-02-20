@@ -106,3 +106,14 @@ impl TopicStatus {
         }
     }
 }
+impl ::std::fmt::Display for TopicStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TopicStatus::Deleted => write!(f, "Deleted"),
+            TopicStatus::Failed => write!(f, "Failed"),
+            TopicStatus::Registered => write!(f, "Registered"),
+            TopicStatus::TopicNotFound => write!(f, "Topic not found"),
+            TopicStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

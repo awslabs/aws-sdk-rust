@@ -96,3 +96,12 @@ impl DiskType {
         }
     }
 }
+impl ::std::fmt::Display for DiskType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiskType::Hdd => write!(f, "hdd"),
+            DiskType::Ssd => write!(f, "ssd"),
+            DiskType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

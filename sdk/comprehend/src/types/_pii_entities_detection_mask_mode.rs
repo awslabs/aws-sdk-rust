@@ -96,3 +96,12 @@ impl PiiEntitiesDetectionMaskMode {
         }
     }
 }
+impl ::std::fmt::Display for PiiEntitiesDetectionMaskMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PiiEntitiesDetectionMaskMode::Mask => write!(f, "MASK"),
+            PiiEntitiesDetectionMaskMode::ReplaceWithPiiEntityType => write!(f, "REPLACE_WITH_PII_ENTITY_TYPE"),
+            PiiEntitiesDetectionMaskMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

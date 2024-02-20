@@ -96,3 +96,12 @@ impl ComputeType {
         }
     }
 }
+impl ::std::fmt::Display for ComputeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComputeType::Cpu => write!(f, "CPU"),
+            ComputeType::GpuAndCpu => write!(f, "GPU_AND_CPU"),
+            ComputeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,21 @@ impl LocaleType {
         }
     }
 }
+impl ::std::fmt::Display for LocaleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocaleType::De => write!(f, "de"),
+            LocaleType::Default => write!(f, "default"),
+            LocaleType::En => write!(f, "en"),
+            LocaleType::Es => write!(f, "es"),
+            LocaleType::Fr => write!(f, "fr"),
+            LocaleType::Ja => write!(f, "ja"),
+            LocaleType::Ko => write!(f, "ko"),
+            LocaleType::PtBr => write!(f, "pt_BR"),
+            LocaleType::Ru => write!(f, "ru"),
+            LocaleType::ZhCn => write!(f, "zh_CN"),
+            LocaleType::ZhTw => write!(f, "zh_TW"),
+            LocaleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

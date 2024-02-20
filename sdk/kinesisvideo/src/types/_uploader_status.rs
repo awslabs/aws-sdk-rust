@@ -101,3 +101,13 @@ impl UploaderStatus {
         }
     }
 }
+impl ::std::fmt::Display for UploaderStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UploaderStatus::Success => write!(f, "SUCCESS"),
+            UploaderStatus::SystemError => write!(f, "SYSTEM_ERROR"),
+            UploaderStatus::UserError => write!(f, "USER_ERROR"),
+            UploaderStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

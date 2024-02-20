@@ -91,3 +91,11 @@ impl DifferenceType {
         }
     }
 }
+impl ::std::fmt::Display for DifferenceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DifferenceType::NotEqual => write!(f, "NotEqual"),
+            DifferenceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

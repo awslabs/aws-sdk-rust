@@ -101,3 +101,13 @@ impl Operator {
         }
     }
 }
+impl ::std::fmt::Display for Operator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Operator::BeginsWith => write!(f, "BEGINS_WITH"),
+            Operator::Ge => write!(f, "GE"),
+            Operator::Le => write!(f, "LE"),
+            Operator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

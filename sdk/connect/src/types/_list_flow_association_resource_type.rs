@@ -91,3 +91,11 @@ impl ListFlowAssociationResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ListFlowAssociationResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListFlowAssociationResourceType::VoicePhoneNumber => write!(f, "VOICE_PHONE_NUMBER"),
+            ListFlowAssociationResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

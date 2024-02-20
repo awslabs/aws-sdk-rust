@@ -106,3 +106,14 @@ impl RemediationExecutionState {
         }
     }
 }
+impl ::std::fmt::Display for RemediationExecutionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RemediationExecutionState::Failed => write!(f, "FAILED"),
+            RemediationExecutionState::InProgress => write!(f, "IN_PROGRESS"),
+            RemediationExecutionState::Queued => write!(f, "QUEUED"),
+            RemediationExecutionState::Succeeded => write!(f, "SUCCEEDED"),
+            RemediationExecutionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

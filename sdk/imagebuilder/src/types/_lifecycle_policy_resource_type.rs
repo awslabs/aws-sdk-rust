@@ -96,3 +96,12 @@ impl LifecyclePolicyResourceType {
         }
     }
 }
+impl ::std::fmt::Display for LifecyclePolicyResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecyclePolicyResourceType::AmiImage => write!(f, "AMI_IMAGE"),
+            LifecyclePolicyResourceType::ContainerImage => write!(f, "CONTAINER_IMAGE"),
+            LifecyclePolicyResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

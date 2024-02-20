@@ -165,3 +165,23 @@ impl EndpointTypesElement {
         }
     }
 }
+impl ::std::fmt::Display for EndpointTypesElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointTypesElement::Adm => write!(f, "ADM"),
+            EndpointTypesElement::Apns => write!(f, "APNS"),
+            EndpointTypesElement::ApnsSandbox => write!(f, "APNS_SANDBOX"),
+            EndpointTypesElement::ApnsVoip => write!(f, "APNS_VOIP"),
+            EndpointTypesElement::ApnsVoipSandbox => write!(f, "APNS_VOIP_SANDBOX"),
+            EndpointTypesElement::Baidu => write!(f, "BAIDU"),
+            EndpointTypesElement::Custom => write!(f, "CUSTOM"),
+            EndpointTypesElement::Email => write!(f, "EMAIL"),
+            EndpointTypesElement::Gcm => write!(f, "GCM"),
+            EndpointTypesElement::InApp => write!(f, "IN_APP"),
+            EndpointTypesElement::Push => write!(f, "PUSH"),
+            EndpointTypesElement::Sms => write!(f, "SMS"),
+            EndpointTypesElement::Voice => write!(f, "VOICE"),
+            EndpointTypesElement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

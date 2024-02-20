@@ -101,3 +101,13 @@ impl EvaluationFormQuestionType {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationFormQuestionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationFormQuestionType::Numeric => write!(f, "NUMERIC"),
+            EvaluationFormQuestionType::Singleselect => write!(f, "SINGLESELECT"),
+            EvaluationFormQuestionType::Text => write!(f, "TEXT"),
+            EvaluationFormQuestionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

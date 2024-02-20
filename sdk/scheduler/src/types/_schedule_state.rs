@@ -96,3 +96,12 @@ impl ScheduleState {
         }
     }
 }
+impl ::std::fmt::Display for ScheduleState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduleState::Disabled => write!(f, "DISABLED"),
+            ScheduleState::Enabled => write!(f, "ENABLED"),
+            ScheduleState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl LicenseStatus {
         }
     }
 }
+impl ::std::fmt::Display for LicenseStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LicenseStatus::Available => write!(f, "AVAILABLE"),
+            LicenseStatus::Deactivated => write!(f, "DEACTIVATED"),
+            LicenseStatus::Deleted => write!(f, "DELETED"),
+            LicenseStatus::Expired => write!(f, "EXPIRED"),
+            LicenseStatus::PendingAvailable => write!(f, "PENDING_AVAILABLE"),
+            LicenseStatus::PendingDelete => write!(f, "PENDING_DELETE"),
+            LicenseStatus::Suspended => write!(f, "SUSPENDED"),
+            LicenseStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

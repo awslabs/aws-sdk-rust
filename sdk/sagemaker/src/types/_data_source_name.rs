@@ -96,3 +96,12 @@ impl DataSourceName {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceName::SalesforceGenie => write!(f, "SalesforceGenie"),
+            DataSourceName::Snowflake => write!(f, "Snowflake"),
+            DataSourceName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

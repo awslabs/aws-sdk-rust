@@ -96,3 +96,12 @@ impl ContinuousDeploymentPolicyType {
         }
     }
 }
+impl ::std::fmt::Display for ContinuousDeploymentPolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContinuousDeploymentPolicyType::SingleHeader => write!(f, "SingleHeader"),
+            ContinuousDeploymentPolicyType::SingleWeight => write!(f, "SingleWeight"),
+            ContinuousDeploymentPolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

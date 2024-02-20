@@ -101,3 +101,13 @@ impl AcceleratorType {
         }
     }
 }
+impl ::std::fmt::Display for AcceleratorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AcceleratorType::Fpga => write!(f, "fpga"),
+            AcceleratorType::Gpu => write!(f, "gpu"),
+            AcceleratorType::Inference => write!(f, "inference"),
+            AcceleratorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

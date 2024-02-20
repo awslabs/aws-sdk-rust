@@ -121,3 +121,17 @@ impl FieldType {
         }
     }
 }
+impl ::std::fmt::Display for FieldType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FieldType::Boolean => write!(f, "Boolean"),
+            FieldType::DateTime => write!(f, "DateTime"),
+            FieldType::Number => write!(f, "Number"),
+            FieldType::SingleSelect => write!(f, "SingleSelect"),
+            FieldType::Text => write!(f, "Text"),
+            FieldType::Url => write!(f, "Url"),
+            FieldType::User => write!(f, "User"),
+            FieldType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

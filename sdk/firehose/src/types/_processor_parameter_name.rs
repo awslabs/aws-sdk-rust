@@ -153,3 +153,21 @@ impl ProcessorParameterName {
         }
     }
 }
+impl ::std::fmt::Display for ProcessorParameterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProcessorParameterName::BufferIntervalInSeconds => write!(f, "BufferIntervalInSeconds"),
+            ProcessorParameterName::BufferSizeInMb => write!(f, "BufferSizeInMBs"),
+            ProcessorParameterName::CompressionFormat => write!(f, "CompressionFormat"),
+            ProcessorParameterName::DataMessageExtraction => write!(f, "DataMessageExtraction"),
+            ProcessorParameterName::Delimiter => write!(f, "Delimiter"),
+            ProcessorParameterName::JsonParsingEngine => write!(f, "JsonParsingEngine"),
+            ProcessorParameterName::LambdaArn => write!(f, "LambdaArn"),
+            ProcessorParameterName::MetadataExtractionQuery => write!(f, "MetadataExtractionQuery"),
+            ProcessorParameterName::LambdaNumberOfRetries => write!(f, "NumberOfRetries"),
+            ProcessorParameterName::RoleArn => write!(f, "RoleArn"),
+            ProcessorParameterName::SubRecordType => write!(f, "SubRecordType"),
+            ProcessorParameterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

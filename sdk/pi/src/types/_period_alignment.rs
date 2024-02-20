@@ -96,3 +96,12 @@ impl PeriodAlignment {
         }
     }
 }
+impl ::std::fmt::Display for PeriodAlignment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PeriodAlignment::EndTime => write!(f, "END_TIME"),
+            PeriodAlignment::StartTime => write!(f, "START_TIME"),
+            PeriodAlignment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

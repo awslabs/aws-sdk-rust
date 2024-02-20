@@ -101,3 +101,13 @@ impl MigrationStatus {
         }
     }
 }
+impl ::std::fmt::Display for MigrationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MigrationStatus::Completed => write!(f, "COMPLETED"),
+            MigrationStatus::Failed => write!(f, "FAILED"),
+            MigrationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            MigrationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl Layout {
         }
     }
 }
+impl ::std::fmt::Display for Layout {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Layout::BottomBanner => write!(f, "BOTTOM_BANNER"),
+            Layout::Carousel => write!(f, "CAROUSEL"),
+            Layout::MiddleBanner => write!(f, "MIDDLE_BANNER"),
+            Layout::MobileFeed => write!(f, "MOBILE_FEED"),
+            Layout::Overlays => write!(f, "OVERLAYS"),
+            Layout::TopBanner => write!(f, "TOP_BANNER"),
+            Layout::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

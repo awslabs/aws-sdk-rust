@@ -141,3 +141,19 @@ impl DialogActionType {
         }
     }
 }
+impl ::std::fmt::Display for DialogActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DialogActionType::CloseIntent => write!(f, "CloseIntent"),
+            DialogActionType::ConfirmIntent => write!(f, "ConfirmIntent"),
+            DialogActionType::ElicitIntent => write!(f, "ElicitIntent"),
+            DialogActionType::ElicitSlot => write!(f, "ElicitSlot"),
+            DialogActionType::EndConversation => write!(f, "EndConversation"),
+            DialogActionType::EvaluateConditional => write!(f, "EvaluateConditional"),
+            DialogActionType::FulfillIntent => write!(f, "FulfillIntent"),
+            DialogActionType::InvokeDialogCodeHook => write!(f, "InvokeDialogCodeHook"),
+            DialogActionType::StartIntent => write!(f, "StartIntent"),
+            DialogActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

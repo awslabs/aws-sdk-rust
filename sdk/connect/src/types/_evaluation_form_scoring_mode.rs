@@ -96,3 +96,12 @@ impl EvaluationFormScoringMode {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationFormScoringMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationFormScoringMode::QuestionOnly => write!(f, "QUESTION_ONLY"),
+            EvaluationFormScoringMode::SectionOnly => write!(f, "SECTION_ONLY"),
+            EvaluationFormScoringMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

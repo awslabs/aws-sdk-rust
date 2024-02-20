@@ -116,3 +116,16 @@ impl RuleEvaluationStatus {
         }
     }
 }
+impl ::std::fmt::Display for RuleEvaluationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleEvaluationStatus::Error => write!(f, "Error"),
+            RuleEvaluationStatus::InProgress => write!(f, "InProgress"),
+            RuleEvaluationStatus::IssuesFound => write!(f, "IssuesFound"),
+            RuleEvaluationStatus::NoIssuesFound => write!(f, "NoIssuesFound"),
+            RuleEvaluationStatus::Stopped => write!(f, "Stopped"),
+            RuleEvaluationStatus::Stopping => write!(f, "Stopping"),
+            RuleEvaluationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AddressTransferStatus {
         }
     }
 }
+impl ::std::fmt::Display for AddressTransferStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AddressTransferStatus::Accepted => write!(f, "accepted"),
+            AddressTransferStatus::Disabled => write!(f, "disabled"),
+            AddressTransferStatus::Pending => write!(f, "pending"),
+            AddressTransferStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

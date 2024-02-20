@@ -101,3 +101,13 @@ impl ConflictExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ConflictExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConflictExceptionReason::AlreadyExists => write!(f, "ALREADY_EXISTS"),
+            ConflictExceptionReason::InvalidState => write!(f, "INVALID_STATE"),
+            ConflictExceptionReason::SubresourcesExist => write!(f, "SUBRESOURCES_EXIST"),
+            ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

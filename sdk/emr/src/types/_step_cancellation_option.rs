@@ -96,3 +96,12 @@ impl StepCancellationOption {
         }
     }
 }
+impl ::std::fmt::Display for StepCancellationOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StepCancellationOption::SendInterrupt => write!(f, "SEND_INTERRUPT"),
+            StepCancellationOption::TerminateProcess => write!(f, "TERMINATE_PROCESS"),
+            StepCancellationOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

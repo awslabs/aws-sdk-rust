@@ -96,3 +96,12 @@ impl OrderKey {
         }
     }
 }
+impl ::std::fmt::Display for OrderKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrderKey::Ascending => write!(f, "Ascending"),
+            OrderKey::Descending => write!(f, "Descending"),
+            OrderKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

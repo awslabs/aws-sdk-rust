@@ -96,3 +96,12 @@ impl DomainStatus {
         }
     }
 }
+impl ::std::fmt::Display for DomainStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainStatus::Active => write!(f, "Active"),
+            DomainStatus::Deleted => write!(f, "Deleted"),
+            DomainStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

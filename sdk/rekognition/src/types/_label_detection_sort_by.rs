@@ -96,3 +96,12 @@ impl LabelDetectionSortBy {
         }
     }
 }
+impl ::std::fmt::Display for LabelDetectionSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LabelDetectionSortBy::Name => write!(f, "NAME"),
+            LabelDetectionSortBy::Timestamp => write!(f, "TIMESTAMP"),
+            LabelDetectionSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl InputSourceEndBehavior {
         }
     }
 }
+impl ::std::fmt::Display for InputSourceEndBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputSourceEndBehavior::Continue => write!(f, "CONTINUE"),
+            InputSourceEndBehavior::Loop => write!(f, "LOOP"),
+            InputSourceEndBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

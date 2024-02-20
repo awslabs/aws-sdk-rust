@@ -101,3 +101,13 @@ impl RealTimeContactAnalysisSentimentLabel {
         }
     }
 }
+impl ::std::fmt::Display for RealTimeContactAnalysisSentimentLabel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RealTimeContactAnalysisSentimentLabel::Negative => write!(f, "NEGATIVE"),
+            RealTimeContactAnalysisSentimentLabel::Neutral => write!(f, "NEUTRAL"),
+            RealTimeContactAnalysisSentimentLabel::Positive => write!(f, "POSITIVE"),
+            RealTimeContactAnalysisSentimentLabel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

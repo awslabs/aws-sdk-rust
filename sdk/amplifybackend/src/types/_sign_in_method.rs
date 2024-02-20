@@ -106,3 +106,14 @@ impl SignInMethod {
         }
     }
 }
+impl ::std::fmt::Display for SignInMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SignInMethod::Email => write!(f, "EMAIL"),
+            SignInMethod::EmailAndPhoneNumber => write!(f, "EMAIL_AND_PHONE_NUMBER"),
+            SignInMethod::PhoneNumber => write!(f, "PHONE_NUMBER"),
+            SignInMethod::Username => write!(f, "USERNAME"),
+            SignInMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

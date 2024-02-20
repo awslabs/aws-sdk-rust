@@ -106,3 +106,14 @@ impl KnownGenderType {
         }
     }
 }
+impl ::std::fmt::Display for KnownGenderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KnownGenderType::Female => write!(f, "Female"),
+            KnownGenderType::Male => write!(f, "Male"),
+            KnownGenderType::Nonbinary => write!(f, "Nonbinary"),
+            KnownGenderType::Unlisted => write!(f, "Unlisted"),
+            KnownGenderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

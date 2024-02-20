@@ -135,3 +135,18 @@ impl ShareStatus {
         }
     }
 }
+impl ::std::fmt::Display for ShareStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareStatus::Accepted => write!(f, "ACCEPTED"),
+            ShareStatus::Associated => write!(f, "ASSOCIATED"),
+            ShareStatus::Associating => write!(f, "ASSOCIATING"),
+            ShareStatus::Expired => write!(f, "EXPIRED"),
+            ShareStatus::Failed => write!(f, "FAILED"),
+            ShareStatus::Pending => write!(f, "PENDING"),
+            ShareStatus::Rejected => write!(f, "REJECTED"),
+            ShareStatus::Revoked => write!(f, "REVOKED"),
+            ShareStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

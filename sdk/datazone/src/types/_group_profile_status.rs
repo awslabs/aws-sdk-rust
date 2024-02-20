@@ -96,3 +96,12 @@ impl GroupProfileStatus {
         }
     }
 }
+impl ::std::fmt::Display for GroupProfileStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupProfileStatus::Assigned => write!(f, "ASSIGNED"),
+            GroupProfileStatus::NotAssigned => write!(f, "NOT_ASSIGNED"),
+            GroupProfileStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CmafSegmentControl {
         }
     }
 }
+impl ::std::fmt::Display for CmafSegmentControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafSegmentControl::SegmentedFiles => write!(f, "SEGMENTED_FILES"),
+            CmafSegmentControl::SingleFile => write!(f, "SINGLE_FILE"),
+            CmafSegmentControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl TitleSortBy {
         }
     }
 }
+impl ::std::fmt::Display for TitleSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TitleSortBy::All => write!(f, "ALL"),
+            TitleSortBy::Critical => write!(f, "CRITICAL"),
+            TitleSortBy::High => write!(f, "HIGH"),
+            TitleSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

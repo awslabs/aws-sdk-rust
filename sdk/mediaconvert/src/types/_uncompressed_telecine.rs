@@ -96,3 +96,12 @@ impl UncompressedTelecine {
         }
     }
 }
+impl ::std::fmt::Display for UncompressedTelecine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UncompressedTelecine::Hard => write!(f, "HARD"),
+            UncompressedTelecine::None => write!(f, "NONE"),
+            UncompressedTelecine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LastLaunchType {
         }
     }
 }
+impl ::std::fmt::Display for LastLaunchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LastLaunchType::Drill => write!(f, "DRILL"),
+            LastLaunchType::Recovery => write!(f, "RECOVERY"),
+            LastLaunchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl AnalyticsUtteranceSortByName {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsUtteranceSortByName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsUtteranceSortByName::UtteranceTimestamp => write!(f, "UtteranceTimestamp"),
+            AnalyticsUtteranceSortByName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

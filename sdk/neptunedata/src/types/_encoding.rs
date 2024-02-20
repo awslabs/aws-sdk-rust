@@ -91,3 +91,11 @@ impl Encoding {
         }
     }
 }
+impl ::std::fmt::Display for Encoding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Encoding::Gzip => write!(f, "gzip"),
+            Encoding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ParallelDataFormat {
         }
     }
 }
+impl ::std::fmt::Display for ParallelDataFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParallelDataFormat::Csv => write!(f, "CSV"),
+            ParallelDataFormat::Tmx => write!(f, "TMX"),
+            ParallelDataFormat::Tsv => write!(f, "TSV"),
+            ParallelDataFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

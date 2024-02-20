@@ -96,3 +96,12 @@ impl TargetPlatformOs {
         }
     }
 }
+impl ::std::fmt::Display for TargetPlatformOs {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetPlatformOs::Android => write!(f, "ANDROID"),
+            TargetPlatformOs::Linux => write!(f, "LINUX"),
+            TargetPlatformOs::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ScanFrequency {
         }
     }
 }
+impl ::std::fmt::Display for ScanFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScanFrequency::ContinuousScan => write!(f, "CONTINUOUS_SCAN"),
+            ScanFrequency::Manual => write!(f, "MANUAL"),
+            ScanFrequency::ScanOnPush => write!(f, "SCAN_ON_PUSH"),
+            ScanFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

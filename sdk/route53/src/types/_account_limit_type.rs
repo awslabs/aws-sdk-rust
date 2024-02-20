@@ -117,3 +117,15 @@ impl AccountLimitType {
         }
     }
 }
+impl ::std::fmt::Display for AccountLimitType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountLimitType::MaxHealthChecksByOwner => write!(f, "MAX_HEALTH_CHECKS_BY_OWNER"),
+            AccountLimitType::MaxHostedZonesByOwner => write!(f, "MAX_HOSTED_ZONES_BY_OWNER"),
+            AccountLimitType::MaxReusableDelegationSetsByOwner => write!(f, "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER"),
+            AccountLimitType::MaxTrafficPoliciesByOwner => write!(f, "MAX_TRAFFIC_POLICIES_BY_OWNER"),
+            AccountLimitType::MaxTrafficPolicyInstancesByOwner => write!(f, "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER"),
+            AccountLimitType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

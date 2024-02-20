@@ -101,3 +101,13 @@ impl HubContentSortBy {
         }
     }
 }
+impl ::std::fmt::Display for HubContentSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HubContentSortBy::CreationTime => write!(f, "CreationTime"),
+            HubContentSortBy::HubContentName => write!(f, "HubContentName"),
+            HubContentSortBy::HubContentStatus => write!(f, "HubContentStatus"),
+            HubContentSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

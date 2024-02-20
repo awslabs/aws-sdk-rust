@@ -135,3 +135,18 @@ impl JobExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for JobExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobExecutionStatus::Canceled => write!(f, "CANCELED"),
+            JobExecutionStatus::Failed => write!(f, "FAILED"),
+            JobExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            JobExecutionStatus::Queued => write!(f, "QUEUED"),
+            JobExecutionStatus::Rejected => write!(f, "REJECTED"),
+            JobExecutionStatus::Removed => write!(f, "REMOVED"),
+            JobExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
+            JobExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
+            JobExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

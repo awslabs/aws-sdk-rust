@@ -96,3 +96,12 @@ impl AccessAdvisorUsageGranularityType {
         }
     }
 }
+impl ::std::fmt::Display for AccessAdvisorUsageGranularityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessAdvisorUsageGranularityType::ActionLevel => write!(f, "ACTION_LEVEL"),
+            AccessAdvisorUsageGranularityType::ServiceLevel => write!(f, "SERVICE_LEVEL"),
+            AccessAdvisorUsageGranularityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

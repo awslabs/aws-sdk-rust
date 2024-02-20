@@ -96,3 +96,12 @@ impl Status {
         }
     }
 }
+impl ::std::fmt::Display for Status {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Status::Latest => write!(f, "LATEST"),
+            Status::Stale => write!(f, "STALE"),
+            Status::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

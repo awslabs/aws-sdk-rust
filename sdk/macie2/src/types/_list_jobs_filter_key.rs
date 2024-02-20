@@ -106,3 +106,14 @@ impl ListJobsFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for ListJobsFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListJobsFilterKey::CreatedAt => write!(f, "createdAt"),
+            ListJobsFilterKey::JobStatus => write!(f, "jobStatus"),
+            ListJobsFilterKey::JobType => write!(f, "jobType"),
+            ListJobsFilterKey::Name => write!(f, "name"),
+            ListJobsFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl StackResourceDriftStatus {
         }
     }
 }
+impl ::std::fmt::Display for StackResourceDriftStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackResourceDriftStatus::Deleted => write!(f, "DELETED"),
+            StackResourceDriftStatus::InSync => write!(f, "IN_SYNC"),
+            StackResourceDriftStatus::Modified => write!(f, "MODIFIED"),
+            StackResourceDriftStatus::NotChecked => write!(f, "NOT_CHECKED"),
+            StackResourceDriftStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl EventSeverity {
         }
     }
 }
+impl ::std::fmt::Display for EventSeverity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventSeverity::Debug => write!(f, "DEBUG"),
+            EventSeverity::Error => write!(f, "ERROR"),
+            EventSeverity::Fatal => write!(f, "FATAL"),
+            EventSeverity::Info => write!(f, "INFO"),
+            EventSeverity::Trace => write!(f, "TRACE"),
+            EventSeverity::Warn => write!(f, "WARN"),
+            EventSeverity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

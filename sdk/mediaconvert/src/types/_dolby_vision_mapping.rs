@@ -96,3 +96,12 @@ impl DolbyVisionMapping {
         }
     }
 }
+impl ::std::fmt::Display for DolbyVisionMapping {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DolbyVisionMapping::Hdr101000 => write!(f, "HDR10_1000"),
+            DolbyVisionMapping::Hdr10Nomap => write!(f, "HDR10_NOMAP"),
+            DolbyVisionMapping::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -135,3 +135,18 @@ impl RunStatus {
         }
     }
 }
+impl ::std::fmt::Display for RunStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RunStatus::Cancelled => write!(f, "CANCELLED"),
+            RunStatus::Completed => write!(f, "COMPLETED"),
+            RunStatus::Deleted => write!(f, "DELETED"),
+            RunStatus::Failed => write!(f, "FAILED"),
+            RunStatus::Pending => write!(f, "PENDING"),
+            RunStatus::Running => write!(f, "RUNNING"),
+            RunStatus::Starting => write!(f, "STARTING"),
+            RunStatus::Stopping => write!(f, "STOPPING"),
+            RunStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

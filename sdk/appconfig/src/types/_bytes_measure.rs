@@ -91,3 +91,11 @@ impl BytesMeasure {
         }
     }
 }
+impl ::std::fmt::Display for BytesMeasure {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BytesMeasure::Kilobytes => write!(f, "KILOBYTES"),
+            BytesMeasure::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

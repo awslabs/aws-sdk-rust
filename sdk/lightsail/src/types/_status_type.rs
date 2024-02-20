@@ -96,3 +96,12 @@ impl StatusType {
         }
     }
 }
+impl ::std::fmt::Display for StatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatusType::Active => write!(f, "Active"),
+            StatusType::Inactive => write!(f, "Inactive"),
+            StatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

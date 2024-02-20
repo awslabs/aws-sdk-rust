@@ -106,3 +106,14 @@ impl BulkPublishStatus {
         }
     }
 }
+impl ::std::fmt::Display for BulkPublishStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BulkPublishStatus::Failed => write!(f, "FAILED"),
+            BulkPublishStatus::InProgress => write!(f, "IN_PROGRESS"),
+            BulkPublishStatus::NotStarted => write!(f, "NOT_STARTED"),
+            BulkPublishStatus::Succeeded => write!(f, "SUCCEEDED"),
+            BulkPublishStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

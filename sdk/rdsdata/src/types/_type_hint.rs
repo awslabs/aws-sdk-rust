@@ -116,3 +116,16 @@ impl TypeHint {
         }
     }
 }
+impl ::std::fmt::Display for TypeHint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TypeHint::Date => write!(f, "DATE"),
+            TypeHint::Decimal => write!(f, "DECIMAL"),
+            TypeHint::Json => write!(f, "JSON"),
+            TypeHint::Time => write!(f, "TIME"),
+            TypeHint::Timestamp => write!(f, "TIMESTAMP"),
+            TypeHint::Uuid => write!(f, "UUID"),
+            TypeHint::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

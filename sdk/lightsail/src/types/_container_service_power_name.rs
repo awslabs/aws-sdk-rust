@@ -116,3 +116,16 @@ impl ContainerServicePowerName {
         }
     }
 }
+impl ::std::fmt::Display for ContainerServicePowerName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerServicePowerName::Large => write!(f, "large"),
+            ContainerServicePowerName::Medium => write!(f, "medium"),
+            ContainerServicePowerName::Micro => write!(f, "micro"),
+            ContainerServicePowerName::Nano => write!(f, "nano"),
+            ContainerServicePowerName::Small => write!(f, "small"),
+            ContainerServicePowerName::Xlarge => write!(f, "xlarge"),
+            ContainerServicePowerName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

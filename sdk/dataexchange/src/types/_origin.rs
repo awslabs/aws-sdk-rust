@@ -96,3 +96,12 @@ impl Origin {
         }
     }
 }
+impl ::std::fmt::Display for Origin {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Origin::Entitled => write!(f, "ENTITLED"),
+            Origin::Owned => write!(f, "OWNED"),
+            Origin::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

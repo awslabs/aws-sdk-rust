@@ -106,3 +106,14 @@ impl HlsImageBasedTrickPlay {
         }
     }
 }
+impl ::std::fmt::Display for HlsImageBasedTrickPlay {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsImageBasedTrickPlay::Advanced => write!(f, "ADVANCED"),
+            HlsImageBasedTrickPlay::None => write!(f, "NONE"),
+            HlsImageBasedTrickPlay::Thumbnail => write!(f, "THUMBNAIL"),
+            HlsImageBasedTrickPlay::ThumbnailAndFullframe => write!(f, "THUMBNAIL_AND_FULLFRAME"),
+            HlsImageBasedTrickPlay::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

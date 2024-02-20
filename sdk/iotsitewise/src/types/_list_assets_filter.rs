@@ -96,3 +96,12 @@ impl ListAssetsFilter {
         }
     }
 }
+impl ::std::fmt::Display for ListAssetsFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListAssetsFilter::All => write!(f, "ALL"),
+            ListAssetsFilter::TopLevel => write!(f, "TOP_LEVEL"),
+            ListAssetsFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

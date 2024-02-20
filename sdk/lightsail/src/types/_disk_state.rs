@@ -111,3 +111,15 @@ impl DiskState {
         }
     }
 }
+impl ::std::fmt::Display for DiskState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiskState::Available => write!(f, "available"),
+            DiskState::Error => write!(f, "error"),
+            DiskState::InUse => write!(f, "in-use"),
+            DiskState::Pending => write!(f, "pending"),
+            DiskState::UnknownValue => write!(f, "unknown"),
+            DiskState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

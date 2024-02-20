@@ -101,3 +101,13 @@ impl NamespaceFilterName {
         }
     }
 }
+impl ::std::fmt::Display for NamespaceFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NamespaceFilterName::HttpName => write!(f, "HTTP_NAME"),
+            NamespaceFilterName::Name => write!(f, "NAME"),
+            NamespaceFilterName::Type => write!(f, "TYPE"),
+            NamespaceFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

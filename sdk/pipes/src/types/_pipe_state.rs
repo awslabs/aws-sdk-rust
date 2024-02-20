@@ -177,3 +177,25 @@ impl PipeState {
         }
     }
 }
+impl ::std::fmt::Display for PipeState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PipeState::CreateFailed => write!(f, "CREATE_FAILED"),
+            PipeState::CreateRollbackFailed => write!(f, "CREATE_ROLLBACK_FAILED"),
+            PipeState::Creating => write!(f, "CREATING"),
+            PipeState::DeleteFailed => write!(f, "DELETE_FAILED"),
+            PipeState::DeleteRollbackFailed => write!(f, "DELETE_ROLLBACK_FAILED"),
+            PipeState::Deleting => write!(f, "DELETING"),
+            PipeState::Running => write!(f, "RUNNING"),
+            PipeState::Starting => write!(f, "STARTING"),
+            PipeState::StartFailed => write!(f, "START_FAILED"),
+            PipeState::Stopped => write!(f, "STOPPED"),
+            PipeState::Stopping => write!(f, "STOPPING"),
+            PipeState::StopFailed => write!(f, "STOP_FAILED"),
+            PipeState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            PipeState::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
+            PipeState::Updating => write!(f, "UPDATING"),
+            PipeState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

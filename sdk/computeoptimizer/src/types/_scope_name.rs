@@ -101,3 +101,13 @@ impl ScopeName {
         }
     }
 }
+impl ::std::fmt::Display for ScopeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScopeName::AccountId => write!(f, "AccountId"),
+            ScopeName::Organization => write!(f, "Organization"),
+            ScopeName::ResourceArn => write!(f, "ResourceArn"),
+            ScopeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl VanityDomainStatus {
         }
     }
 }
+impl ::std::fmt::Display for VanityDomainStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VanityDomainStatus::Approved => write!(f, "APPROVED"),
+            VanityDomainStatus::Pending => write!(f, "PENDING"),
+            VanityDomainStatus::Unapproved => write!(f, "UNAPPROVED"),
+            VanityDomainStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

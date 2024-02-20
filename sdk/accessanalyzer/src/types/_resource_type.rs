@@ -171,3 +171,24 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::AwsEc2Snapshot => write!(f, "AWS::EC2::Snapshot"),
+            ResourceType::AwsEcrRepository => write!(f, "AWS::ECR::Repository"),
+            ResourceType::AwsEfsFilesystem => write!(f, "AWS::EFS::FileSystem"),
+            ResourceType::AwsIamRole => write!(f, "AWS::IAM::Role"),
+            ResourceType::AwsKmsKey => write!(f, "AWS::KMS::Key"),
+            ResourceType::AwsLambdaFunction => write!(f, "AWS::Lambda::Function"),
+            ResourceType::AwsLambdaLayerversion => write!(f, "AWS::Lambda::LayerVersion"),
+            ResourceType::AwsRdsDbclustersnapshot => write!(f, "AWS::RDS::DBClusterSnapshot"),
+            ResourceType::AwsRdsDbsnapshot => write!(f, "AWS::RDS::DBSnapshot"),
+            ResourceType::AwsS3Bucket => write!(f, "AWS::S3::Bucket"),
+            ResourceType::AwsS3ExpressDirectorybucket => write!(f, "AWS::S3Express::DirectoryBucket"),
+            ResourceType::AwsSnsTopic => write!(f, "AWS::SNS::Topic"),
+            ResourceType::AwsSqsQueue => write!(f, "AWS::SQS::Queue"),
+            ResourceType::AwsSecretsmanagerSecret => write!(f, "AWS::SecretsManager::Secret"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

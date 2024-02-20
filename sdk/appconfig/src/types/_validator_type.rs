@@ -96,3 +96,12 @@ impl ValidatorType {
         }
     }
 }
+impl ::std::fmt::Display for ValidatorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidatorType::JsonSchema => write!(f, "JSON_SCHEMA"),
+            ValidatorType::Lambda => write!(f, "LAMBDA"),
+            ValidatorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

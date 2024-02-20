@@ -135,3 +135,18 @@ impl StudioState {
         }
     }
 }
+impl ::std::fmt::Display for StudioState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StudioState::CreateFailed => write!(f, "CREATE_FAILED"),
+            StudioState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            StudioState::Deleted => write!(f, "DELETED"),
+            StudioState::DeleteFailed => write!(f, "DELETE_FAILED"),
+            StudioState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            StudioState::Ready => write!(f, "READY"),
+            StudioState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            StudioState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            StudioState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

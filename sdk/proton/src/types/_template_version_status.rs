@@ -106,3 +106,14 @@ impl TemplateVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for TemplateVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemplateVersionStatus::Draft => write!(f, "DRAFT"),
+            TemplateVersionStatus::Published => write!(f, "PUBLISHED"),
+            TemplateVersionStatus::RegistrationFailed => write!(f, "REGISTRATION_FAILED"),
+            TemplateVersionStatus::RegistrationInProgress => write!(f, "REGISTRATION_IN_PROGRESS"),
+            TemplateVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

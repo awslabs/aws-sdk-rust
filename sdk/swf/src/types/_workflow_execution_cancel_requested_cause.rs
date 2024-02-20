@@ -91,3 +91,11 @@ impl WorkflowExecutionCancelRequestedCause {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowExecutionCancelRequestedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowExecutionCancelRequestedCause::ChildPolicyApplied => write!(f, "CHILD_POLICY_APPLIED"),
+            WorkflowExecutionCancelRequestedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -98,3 +98,12 @@ impl LaunchTemplateInstanceMetadataProtocolIpv6 {
         }
     }
 }
+impl ::std::fmt::Display for LaunchTemplateInstanceMetadataProtocolIpv6 {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchTemplateInstanceMetadataProtocolIpv6::Disabled => write!(f, "disabled"),
+            LaunchTemplateInstanceMetadataProtocolIpv6::Enabled => write!(f, "enabled"),
+            LaunchTemplateInstanceMetadataProtocolIpv6::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LambdaFunctionMetricStatistic {
         }
     }
 }
+impl ::std::fmt::Display for LambdaFunctionMetricStatistic {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaFunctionMetricStatistic::Average => write!(f, "Average"),
+            LambdaFunctionMetricStatistic::Maximum => write!(f, "Maximum"),
+            LambdaFunctionMetricStatistic::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

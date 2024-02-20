@@ -96,3 +96,12 @@ impl SessionBackupMode {
         }
     }
 }
+impl ::std::fmt::Display for SessionBackupMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SessionBackupMode::Automatic => write!(f, "AUTOMATIC"),
+            SessionBackupMode::Deactivated => write!(f, "DEACTIVATED"),
+            SessionBackupMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

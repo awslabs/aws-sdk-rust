@@ -101,3 +101,13 @@ impl InputStartingPosition {
         }
     }
 }
+impl ::std::fmt::Display for InputStartingPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputStartingPosition::LastStoppedPoint => write!(f, "LAST_STOPPED_POINT"),
+            InputStartingPosition::Now => write!(f, "NOW"),
+            InputStartingPosition::TrimHorizon => write!(f, "TRIM_HORIZON"),
+            InputStartingPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

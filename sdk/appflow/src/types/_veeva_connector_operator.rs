@@ -213,3 +213,31 @@ impl VeevaConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for VeevaConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VeevaConnectorOperator::Addition => write!(f, "ADDITION"),
+            VeevaConnectorOperator::Between => write!(f, "BETWEEN"),
+            VeevaConnectorOperator::Contains => write!(f, "CONTAINS"),
+            VeevaConnectorOperator::Division => write!(f, "DIVISION"),
+            VeevaConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            VeevaConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
+            VeevaConnectorOperator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
+            VeevaConnectorOperator::LessThan => write!(f, "LESS_THAN"),
+            VeevaConnectorOperator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
+            VeevaConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            VeevaConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            VeevaConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            VeevaConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            VeevaConnectorOperator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
+            VeevaConnectorOperator::NoOp => write!(f, "NO_OP"),
+            VeevaConnectorOperator::Projection => write!(f, "PROJECTION"),
+            VeevaConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            VeevaConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            VeevaConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            VeevaConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            VeevaConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            VeevaConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

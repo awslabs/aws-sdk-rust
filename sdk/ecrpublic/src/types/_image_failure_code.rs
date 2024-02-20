@@ -129,3 +129,17 @@ impl ImageFailureCode {
         }
     }
 }
+impl ::std::fmt::Display for ImageFailureCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageFailureCode::ImageNotFound => write!(f, "ImageNotFound"),
+            ImageFailureCode::ImageReferencedByManifestList => write!(f, "ImageReferencedByManifestList"),
+            ImageFailureCode::ImageTagDoesNotMatchDigest => write!(f, "ImageTagDoesNotMatchDigest"),
+            ImageFailureCode::InvalidImageDigest => write!(f, "InvalidImageDigest"),
+            ImageFailureCode::InvalidImageTag => write!(f, "InvalidImageTag"),
+            ImageFailureCode::KmsError => write!(f, "KmsError"),
+            ImageFailureCode::MissingDigestAndTag => write!(f, "MissingDigestAndTag"),
+            ImageFailureCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

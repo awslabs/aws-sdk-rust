@@ -96,3 +96,12 @@ impl AzStatus {
         }
     }
 }
+impl ::std::fmt::Display for AzStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AzStatus::MultiAz => write!(f, "multiaz"),
+            AzStatus::SingleAz => write!(f, "singleaz"),
+            AzStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

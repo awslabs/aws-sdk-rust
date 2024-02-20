@@ -96,3 +96,12 @@ impl DimensionType {
         }
     }
 }
+impl ::std::fmt::Display for DimensionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DimensionType::Exclusive => write!(f, "EXCLUSIVE"),
+            DimensionType::Inclusive => write!(f, "INCLUSIVE"),
+            DimensionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

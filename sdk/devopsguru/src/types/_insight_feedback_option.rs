@@ -117,3 +117,15 @@ impl InsightFeedbackOption {
         }
     }
 }
+impl ::std::fmt::Display for InsightFeedbackOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InsightFeedbackOption::AlertTooSensitive => write!(f, "ALERT_TOO_SENSITIVE"),
+            InsightFeedbackOption::DataIncorrect => write!(f, "DATA_INCORRECT"),
+            InsightFeedbackOption::DataNoisyAnomaly => write!(f, "DATA_NOISY_ANOMALY"),
+            InsightFeedbackOption::RecommendationUseful => write!(f, "RECOMMENDATION_USEFUL"),
+            InsightFeedbackOption::ValidCollection => write!(f, "VALID_COLLECTION"),
+            InsightFeedbackOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

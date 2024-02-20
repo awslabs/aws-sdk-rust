@@ -117,3 +117,15 @@ impl KeyMaterialType {
         }
     }
 }
+impl ::std::fmt::Display for KeyMaterialType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyMaterialType::KeyCryptogram => write!(f, "KEY_CRYPTOGRAM"),
+            KeyMaterialType::RootPublicKeyCertificate => write!(f, "ROOT_PUBLIC_KEY_CERTIFICATE"),
+            KeyMaterialType::Tr31KeyBlock => write!(f, "TR31_KEY_BLOCK"),
+            KeyMaterialType::Tr34KeyBlock => write!(f, "TR34_KEY_BLOCK"),
+            KeyMaterialType::TrustedPublicKeyCertificate => write!(f, "TRUSTED_PUBLIC_KEY_CERTIFICATE"),
+            KeyMaterialType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CoverageStatus {
         }
     }
 }
+impl ::std::fmt::Display for CoverageStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CoverageStatus::Healthy => write!(f, "HEALTHY"),
+            CoverageStatus::Unhealthy => write!(f, "UNHEALTHY"),
+            CoverageStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ContainerMode {
         }
     }
 }
+impl ::std::fmt::Display for ContainerMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerMode::MultiModel => write!(f, "MultiModel"),
+            ContainerMode::SingleModel => write!(f, "SingleModel"),
+            ContainerMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

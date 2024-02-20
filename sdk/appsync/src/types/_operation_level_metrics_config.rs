@@ -96,3 +96,12 @@ impl OperationLevelMetricsConfig {
         }
     }
 }
+impl ::std::fmt::Display for OperationLevelMetricsConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationLevelMetricsConfig::Disabled => write!(f, "DISABLED"),
+            OperationLevelMetricsConfig::Enabled => write!(f, "ENABLED"),
+            OperationLevelMetricsConfig::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

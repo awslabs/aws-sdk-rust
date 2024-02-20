@@ -96,3 +96,12 @@ impl DetailType {
         }
     }
 }
+impl ::std::fmt::Display for DetailType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetailType::Basic => write!(f, "BASIC"),
+            DetailType::Full => write!(f, "FULL"),
+            DetailType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SelectedTooltipType {
         }
     }
 }
+impl ::std::fmt::Display for SelectedTooltipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SelectedTooltipType::Basic => write!(f, "BASIC"),
+            SelectedTooltipType::Detailed => write!(f, "DETAILED"),
+            SelectedTooltipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

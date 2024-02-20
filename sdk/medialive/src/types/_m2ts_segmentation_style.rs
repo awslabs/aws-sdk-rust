@@ -96,3 +96,12 @@ impl M2tsSegmentationStyle {
         }
     }
 }
+impl ::std::fmt::Display for M2tsSegmentationStyle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsSegmentationStyle::MaintainCadence => write!(f, "MAINTAIN_CADENCE"),
+            M2tsSegmentationStyle::ResetCadence => write!(f, "RESET_CADENCE"),
+            M2tsSegmentationStyle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

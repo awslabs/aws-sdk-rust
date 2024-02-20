@@ -106,3 +106,14 @@ impl Operator {
         }
     }
 }
+impl ::std::fmt::Display for Operator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Operator::EqualTo => write!(f, "EQUAL_TO"),
+            Operator::GreaterThan => write!(f, "GREATER_THAN"),
+            Operator::LessThan => write!(f, "LESS_THAN"),
+            Operator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
+            Operator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

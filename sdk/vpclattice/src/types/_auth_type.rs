@@ -96,3 +96,12 @@ impl AuthType {
         }
     }
 }
+impl ::std::fmt::Display for AuthType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthType::AwsIam => write!(f, "AWS_IAM"),
+            AuthType::None => write!(f, "NONE"),
+            AuthType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

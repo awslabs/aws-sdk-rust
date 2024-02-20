@@ -141,3 +141,19 @@ impl SimulationJobBatchStatus {
         }
     }
 }
+impl ::std::fmt::Display for SimulationJobBatchStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SimulationJobBatchStatus::Canceled => write!(f, "Canceled"),
+            SimulationJobBatchStatus::Canceling => write!(f, "Canceling"),
+            SimulationJobBatchStatus::Completed => write!(f, "Completed"),
+            SimulationJobBatchStatus::Completing => write!(f, "Completing"),
+            SimulationJobBatchStatus::Failed => write!(f, "Failed"),
+            SimulationJobBatchStatus::InProgress => write!(f, "InProgress"),
+            SimulationJobBatchStatus::Pending => write!(f, "Pending"),
+            SimulationJobBatchStatus::TimedOut => write!(f, "TimedOut"),
+            SimulationJobBatchStatus::TimingOut => write!(f, "TimingOut"),
+            SimulationJobBatchStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

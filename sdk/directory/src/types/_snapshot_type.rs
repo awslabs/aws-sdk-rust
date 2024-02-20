@@ -96,3 +96,12 @@ impl SnapshotType {
         }
     }
 }
+impl ::std::fmt::Display for SnapshotType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapshotType::Auto => write!(f, "Auto"),
+            SnapshotType::Manual => write!(f, "Manual"),
+            SnapshotType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

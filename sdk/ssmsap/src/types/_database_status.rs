@@ -116,3 +116,16 @@ impl DatabaseStatus {
         }
     }
 }
+impl ::std::fmt::Display for DatabaseStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatabaseStatus::Error => write!(f, "ERROR"),
+            DatabaseStatus::Running => write!(f, "RUNNING"),
+            DatabaseStatus::Starting => write!(f, "STARTING"),
+            DatabaseStatus::Stopped => write!(f, "STOPPED"),
+            DatabaseStatus::UnknownValue => write!(f, "UNKNOWN"),
+            DatabaseStatus::Warning => write!(f, "WARNING"),
+            DatabaseStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

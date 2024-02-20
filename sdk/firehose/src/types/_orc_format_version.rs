@@ -96,3 +96,12 @@ impl OrcFormatVersion {
         }
     }
 }
+impl ::std::fmt::Display for OrcFormatVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrcFormatVersion::V011 => write!(f, "V0_11"),
+            OrcFormatVersion::V012 => write!(f, "V0_12"),
+            OrcFormatVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

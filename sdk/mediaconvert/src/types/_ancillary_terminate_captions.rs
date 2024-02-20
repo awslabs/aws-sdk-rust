@@ -96,3 +96,12 @@ impl AncillaryTerminateCaptions {
         }
     }
 }
+impl ::std::fmt::Display for AncillaryTerminateCaptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AncillaryTerminateCaptions::Disabled => write!(f, "DISABLED"),
+            AncillaryTerminateCaptions::EndOfInput => write!(f, "END_OF_INPUT"),
+            AncillaryTerminateCaptions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

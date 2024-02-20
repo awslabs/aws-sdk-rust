@@ -159,3 +159,22 @@ impl RecoveryInstanceDataReplicationState {
         }
     }
 }
+impl ::std::fmt::Display for RecoveryInstanceDataReplicationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecoveryInstanceDataReplicationState::Backlog => write!(f, "BACKLOG"),
+            RecoveryInstanceDataReplicationState::Continuous => write!(f, "CONTINUOUS"),
+            RecoveryInstanceDataReplicationState::CreatingSnapshot => write!(f, "CREATING_SNAPSHOT"),
+            RecoveryInstanceDataReplicationState::Disconnected => write!(f, "DISCONNECTED"),
+            RecoveryInstanceDataReplicationState::InitialSync => write!(f, "INITIAL_SYNC"),
+            RecoveryInstanceDataReplicationState::Initiating => write!(f, "INITIATING"),
+            RecoveryInstanceDataReplicationState::NotStarted => write!(f, "NOT_STARTED"),
+            RecoveryInstanceDataReplicationState::Paused => write!(f, "PAUSED"),
+            RecoveryInstanceDataReplicationState::ReplicationStateNotAvailable => write!(f, "REPLICATION_STATE_NOT_AVAILABLE"),
+            RecoveryInstanceDataReplicationState::Rescan => write!(f, "RESCAN"),
+            RecoveryInstanceDataReplicationState::Stalled => write!(f, "STALLED"),
+            RecoveryInstanceDataReplicationState::Stopped => write!(f, "STOPPED"),
+            RecoveryInstanceDataReplicationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

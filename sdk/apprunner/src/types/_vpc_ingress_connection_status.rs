@@ -135,3 +135,18 @@ impl VpcIngressConnectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for VpcIngressConnectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcIngressConnectionStatus::Available => write!(f, "AVAILABLE"),
+            VpcIngressConnectionStatus::Deleted => write!(f, "DELETED"),
+            VpcIngressConnectionStatus::FailedCreation => write!(f, "FAILED_CREATION"),
+            VpcIngressConnectionStatus::FailedDeletion => write!(f, "FAILED_DELETION"),
+            VpcIngressConnectionStatus::FailedUpdate => write!(f, "FAILED_UPDATE"),
+            VpcIngressConnectionStatus::PendingCreation => write!(f, "PENDING_CREATION"),
+            VpcIngressConnectionStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
+            VpcIngressConnectionStatus::PendingUpdate => write!(f, "PENDING_UPDATE"),
+            VpcIngressConnectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

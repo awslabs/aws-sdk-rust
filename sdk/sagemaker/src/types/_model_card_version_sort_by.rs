@@ -91,3 +91,11 @@ impl ModelCardVersionSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ModelCardVersionSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelCardVersionSortBy::Version => write!(f, "Version"),
+            ModelCardVersionSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

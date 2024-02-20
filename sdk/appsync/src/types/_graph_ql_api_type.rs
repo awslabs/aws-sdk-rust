@@ -96,3 +96,12 @@ impl GraphQlApiType {
         }
     }
 }
+impl ::std::fmt::Display for GraphQlApiType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GraphQlApiType::Graphql => write!(f, "GRAPHQL"),
+            GraphQlApiType::Merged => write!(f, "MERGED"),
+            GraphQlApiType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

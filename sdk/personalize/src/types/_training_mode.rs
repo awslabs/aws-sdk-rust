@@ -96,3 +96,12 @@ impl TrainingMode {
         }
     }
 }
+impl ::std::fmt::Display for TrainingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrainingMode::Full => write!(f, "FULL"),
+            TrainingMode::Update => write!(f, "UPDATE"),
+            TrainingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

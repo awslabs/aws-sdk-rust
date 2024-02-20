@@ -96,3 +96,12 @@ impl IngestionJobSortByAttribute {
         }
     }
 }
+impl ::std::fmt::Display for IngestionJobSortByAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IngestionJobSortByAttribute::StartedAt => write!(f, "STARTED_AT"),
+            IngestionJobSortByAttribute::Status => write!(f, "STATUS"),
+            IngestionJobSortByAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

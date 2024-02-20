@@ -106,3 +106,14 @@ impl FederationStatus {
         }
     }
 }
+impl ::std::fmt::Display for FederationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FederationStatus::Disabled => write!(f, "DISABLED"),
+            FederationStatus::Disabling => write!(f, "DISABLING"),
+            FederationStatus::Enabled => write!(f, "ENABLED"),
+            FederationStatus::Enabling => write!(f, "ENABLING"),
+            FederationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

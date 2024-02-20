@@ -96,3 +96,12 @@ impl NodeSignalValue {
         }
     }
 }
+impl ::std::fmt::Display for NodeSignalValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeSignalValue::Pause => write!(f, "PAUSE"),
+            NodeSignalValue::Resume => write!(f, "RESUME"),
+            NodeSignalValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

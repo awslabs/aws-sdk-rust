@@ -96,3 +96,12 @@ impl RightsizingType {
         }
     }
 }
+impl ::std::fmt::Display for RightsizingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RightsizingType::Modify => write!(f, "MODIFY"),
+            RightsizingType::Terminate => write!(f, "TERMINATE"),
+            RightsizingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

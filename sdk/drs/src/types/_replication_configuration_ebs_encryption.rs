@@ -101,3 +101,13 @@ impl ReplicationConfigurationEbsEncryption {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationConfigurationEbsEncryption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationConfigurationEbsEncryption::Custom => write!(f, "CUSTOM"),
+            ReplicationConfigurationEbsEncryption::Default => write!(f, "DEFAULT"),
+            ReplicationConfigurationEbsEncryption::None => write!(f, "NONE"),
+            ReplicationConfigurationEbsEncryption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

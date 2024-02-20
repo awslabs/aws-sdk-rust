@@ -96,3 +96,12 @@ impl ResourceSetStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceSetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceSetStatus::Active => write!(f, "ACTIVE"),
+            ResourceSetStatus::OutOfAdminScope => write!(f, "OUT_OF_ADMIN_SCOPE"),
+            ResourceSetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

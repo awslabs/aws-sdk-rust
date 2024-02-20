@@ -101,3 +101,13 @@ impl StatisticsAutoGenerationMode {
         }
     }
 }
+impl ::std::fmt::Display for StatisticsAutoGenerationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatisticsAutoGenerationMode::DisableAutocompute => write!(f, "disableAutoCompute"),
+            StatisticsAutoGenerationMode::EnableAutocompute => write!(f, "enableAutoCompute"),
+            StatisticsAutoGenerationMode::Refresh => write!(f, "refresh"),
+            StatisticsAutoGenerationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

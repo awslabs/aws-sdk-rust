@@ -101,3 +101,13 @@ impl ListDeviceFleetsSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ListDeviceFleetsSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListDeviceFleetsSortBy::CreationTime => write!(f, "CREATION_TIME"),
+            ListDeviceFleetsSortBy::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
+            ListDeviceFleetsSortBy::Name => write!(f, "NAME"),
+            ListDeviceFleetsSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

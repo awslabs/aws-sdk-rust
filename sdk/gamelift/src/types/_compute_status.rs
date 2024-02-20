@@ -101,3 +101,13 @@ impl ComputeStatus {
         }
     }
 }
+impl ::std::fmt::Display for ComputeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComputeStatus::Active => write!(f, "ACTIVE"),
+            ComputeStatus::Pending => write!(f, "PENDING"),
+            ComputeStatus::Terminating => write!(f, "TERMINATING"),
+            ComputeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

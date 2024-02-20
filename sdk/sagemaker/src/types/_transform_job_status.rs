@@ -111,3 +111,15 @@ impl TransformJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for TransformJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransformJobStatus::Completed => write!(f, "Completed"),
+            TransformJobStatus::Failed => write!(f, "Failed"),
+            TransformJobStatus::InProgress => write!(f, "InProgress"),
+            TransformJobStatus::Stopped => write!(f, "Stopped"),
+            TransformJobStatus::Stopping => write!(f, "Stopping"),
+            TransformJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

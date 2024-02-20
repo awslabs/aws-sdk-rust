@@ -96,3 +96,12 @@ impl Feedback {
         }
     }
 }
+impl ::std::fmt::Display for Feedback {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Feedback::NotUseful => write!(f, "NOT_USEFUL"),
+            Feedback::Useful => write!(f, "USEFUL"),
+            Feedback::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl Brevity {
         }
     }
 }
+impl ::std::fmt::Display for Brevity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Brevity::On => write!(f, "ON"),
+            Brevity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

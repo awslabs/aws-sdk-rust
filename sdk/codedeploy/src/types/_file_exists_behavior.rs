@@ -101,3 +101,13 @@ impl FileExistsBehavior {
         }
     }
 }
+impl ::std::fmt::Display for FileExistsBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileExistsBehavior::Disallow => write!(f, "DISALLOW"),
+            FileExistsBehavior::Overwrite => write!(f, "OVERWRITE"),
+            FileExistsBehavior::Retain => write!(f, "RETAIN"),
+            FileExistsBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AggregatedSourceStatusType {
         }
     }
 }
+impl ::std::fmt::Display for AggregatedSourceStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregatedSourceStatusType::Failed => write!(f, "FAILED"),
+            AggregatedSourceStatusType::Outdated => write!(f, "OUTDATED"),
+            AggregatedSourceStatusType::Succeeded => write!(f, "SUCCEEDED"),
+            AggregatedSourceStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

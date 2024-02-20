@@ -96,3 +96,12 @@ impl ListWorkforcesSortByOptions {
         }
     }
 }
+impl ::std::fmt::Display for ListWorkforcesSortByOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListWorkforcesSortByOptions::CreateDate => write!(f, "CreateDate"),
+            ListWorkforcesSortByOptions::Name => write!(f, "Name"),
+            ListWorkforcesSortByOptions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

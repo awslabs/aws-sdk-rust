@@ -96,3 +96,12 @@ impl ScriptType {
         }
     }
 }
+impl ::std::fmt::Display for ScriptType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScriptType::PowershellScript => write!(f, "POWERSHELL_SCRIPT"),
+            ScriptType::ShellScript => write!(f, "SHELL_SCRIPT"),
+            ScriptType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

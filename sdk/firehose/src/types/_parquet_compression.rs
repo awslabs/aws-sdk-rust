@@ -101,3 +101,13 @@ impl ParquetCompression {
         }
     }
 }
+impl ::std::fmt::Display for ParquetCompression {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParquetCompression::Gzip => write!(f, "GZIP"),
+            ParquetCompression::Snappy => write!(f, "SNAPPY"),
+            ParquetCompression::Uncompressed => write!(f, "UNCOMPRESSED"),
+            ParquetCompression::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

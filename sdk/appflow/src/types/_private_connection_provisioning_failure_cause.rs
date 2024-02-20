@@ -119,3 +119,15 @@ impl PrivateConnectionProvisioningFailureCause {
         }
     }
 }
+impl ::std::fmt::Display for PrivateConnectionProvisioningFailureCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrivateConnectionProvisioningFailureCause::AccessDenied => write!(f, "ACCESS_DENIED"),
+            PrivateConnectionProvisioningFailureCause::ConnectorAuthentication => write!(f, "CONNECTOR_AUTHENTICATION"),
+            PrivateConnectionProvisioningFailureCause::ConnectorServer => write!(f, "CONNECTOR_SERVER"),
+            PrivateConnectionProvisioningFailureCause::InternalServer => write!(f, "INTERNAL_SERVER"),
+            PrivateConnectionProvisioningFailureCause::Validation => write!(f, "VALIDATION"),
+            PrivateConnectionProvisioningFailureCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

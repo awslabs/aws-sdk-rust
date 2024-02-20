@@ -101,3 +101,13 @@ impl GatewayCapacity {
         }
     }
 }
+impl ::std::fmt::Display for GatewayCapacity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GatewayCapacity::Large => write!(f, "Large"),
+            GatewayCapacity::Medium => write!(f, "Medium"),
+            GatewayCapacity::Small => write!(f, "Small"),
+            GatewayCapacity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -159,3 +159,22 @@ impl ImageStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImageStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageStatus::Available => write!(f, "AVAILABLE"),
+            ImageStatus::Building => write!(f, "BUILDING"),
+            ImageStatus::Cancelled => write!(f, "CANCELLED"),
+            ImageStatus::Creating => write!(f, "CREATING"),
+            ImageStatus::Deleted => write!(f, "DELETED"),
+            ImageStatus::Deprecated => write!(f, "DEPRECATED"),
+            ImageStatus::Disabled => write!(f, "DISABLED"),
+            ImageStatus::Distributing => write!(f, "DISTRIBUTING"),
+            ImageStatus::Failed => write!(f, "FAILED"),
+            ImageStatus::Integrating => write!(f, "INTEGRATING"),
+            ImageStatus::Pending => write!(f, "PENDING"),
+            ImageStatus::Testing => write!(f, "TESTING"),
+            ImageStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

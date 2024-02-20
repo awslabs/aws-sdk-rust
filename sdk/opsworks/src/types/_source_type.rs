@@ -106,3 +106,14 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::Archive => write!(f, "archive"),
+            SourceType::Git => write!(f, "git"),
+            SourceType::S3 => write!(f, "s3"),
+            SourceType::Svn => write!(f, "svn"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

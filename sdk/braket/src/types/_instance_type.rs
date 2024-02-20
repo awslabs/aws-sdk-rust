@@ -321,3 +321,49 @@ impl InstanceType {
         }
     }
 }
+impl ::std::fmt::Display for InstanceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceType::MlC42Xlarge => write!(f, "ml.c4.2xlarge"),
+            InstanceType::MlC44Xlarge => write!(f, "ml.c4.4xlarge"),
+            InstanceType::MlC48Xlarge => write!(f, "ml.c4.8xlarge"),
+            InstanceType::MlC4Xlarge => write!(f, "ml.c4.xlarge"),
+            InstanceType::MlC518Xlarge => write!(f, "ml.c5.18xlarge"),
+            InstanceType::MlC52Xlarge => write!(f, "ml.c5.2xlarge"),
+            InstanceType::MlC54Xlarge => write!(f, "ml.c5.4xlarge"),
+            InstanceType::MlC59Xlarge => write!(f, "ml.c5.9xlarge"),
+            InstanceType::MlC5Xlarge => write!(f, "ml.c5.xlarge"),
+            InstanceType::MlC5N18Xlarge => write!(f, "ml.c5n.18xlarge"),
+            InstanceType::MlC5N2Xlarge => write!(f, "ml.c5n.2xlarge"),
+            InstanceType::MlC5N4Xlarge => write!(f, "ml.c5n.4xlarge"),
+            InstanceType::MlC5N9Xlarge => write!(f, "ml.c5n.9xlarge"),
+            InstanceType::MlC5NXlarge => write!(f, "ml.c5n.xlarge"),
+            InstanceType::MlG4Dn12Xlarge => write!(f, "ml.g4dn.12xlarge"),
+            InstanceType::MlG4Dn16Xlarge => write!(f, "ml.g4dn.16xlarge"),
+            InstanceType::MlG4Dn2Xlarge => write!(f, "ml.g4dn.2xlarge"),
+            InstanceType::MlG4Dn4Xlarge => write!(f, "ml.g4dn.4xlarge"),
+            InstanceType::MlG4Dn8Xlarge => write!(f, "ml.g4dn.8xlarge"),
+            InstanceType::MlG4DnXlarge => write!(f, "ml.g4dn.xlarge"),
+            InstanceType::MlM410Xlarge => write!(f, "ml.m4.10xlarge"),
+            InstanceType::MlM416Xlarge => write!(f, "ml.m4.16xlarge"),
+            InstanceType::MlM42Xlarge => write!(f, "ml.m4.2xlarge"),
+            InstanceType::MlM44Xlarge => write!(f, "ml.m4.4xlarge"),
+            InstanceType::MlM4Xlarge => write!(f, "ml.m4.xlarge"),
+            InstanceType::MlM512Xlarge => write!(f, "ml.m5.12xlarge"),
+            InstanceType::MlM524Xlarge => write!(f, "ml.m5.24xlarge"),
+            InstanceType::MlM52Xlarge => write!(f, "ml.m5.2xlarge"),
+            InstanceType::MlM54Xlarge => write!(f, "ml.m5.4xlarge"),
+            InstanceType::MlM5Large => write!(f, "ml.m5.large"),
+            InstanceType::MlM5Xlarge => write!(f, "ml.m5.xlarge"),
+            InstanceType::MlP216Xlarge => write!(f, "ml.p2.16xlarge"),
+            InstanceType::MlP28Xlarge => write!(f, "ml.p2.8xlarge"),
+            InstanceType::MlP2Xlarge => write!(f, "ml.p2.xlarge"),
+            InstanceType::MlP316Xlarge => write!(f, "ml.p3.16xlarge"),
+            InstanceType::MlP32Xlarge => write!(f, "ml.p3.2xlarge"),
+            InstanceType::MlP38Xlarge => write!(f, "ml.p3.8xlarge"),
+            InstanceType::MlP3Dn24Xlarge => write!(f, "ml.p3dn.24xlarge"),
+            InstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
+            InstanceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

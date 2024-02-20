@@ -96,3 +96,12 @@ impl ImagePullCredentialsType {
         }
     }
 }
+impl ::std::fmt::Display for ImagePullCredentialsType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImagePullCredentialsType::Codebuild => write!(f, "CODEBUILD"),
+            ImagePullCredentialsType::ServiceRole => write!(f, "SERVICE_ROLE"),
+            ImagePullCredentialsType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

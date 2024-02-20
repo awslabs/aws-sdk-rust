@@ -106,3 +106,14 @@ impl GlobalTableStatus {
         }
     }
 }
+impl ::std::fmt::Display for GlobalTableStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GlobalTableStatus::Active => write!(f, "ACTIVE"),
+            GlobalTableStatus::Creating => write!(f, "CREATING"),
+            GlobalTableStatus::Deleting => write!(f, "DELETING"),
+            GlobalTableStatus::Updating => write!(f, "UPDATING"),
+            GlobalTableStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

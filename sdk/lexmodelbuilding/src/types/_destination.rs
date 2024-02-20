@@ -96,3 +96,12 @@ impl Destination {
         }
     }
 }
+impl ::std::fmt::Display for Destination {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Destination::CloudwatchLogs => write!(f, "CLOUDWATCH_LOGS"),
+            Destination::S3 => write!(f, "S3"),
+            Destination::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

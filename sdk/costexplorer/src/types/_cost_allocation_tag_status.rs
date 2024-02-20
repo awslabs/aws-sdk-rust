@@ -96,3 +96,12 @@ impl CostAllocationTagStatus {
         }
     }
 }
+impl ::std::fmt::Display for CostAllocationTagStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CostAllocationTagStatus::Active => write!(f, "Active"),
+            CostAllocationTagStatus::Inactive => write!(f, "Inactive"),
+            CostAllocationTagStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

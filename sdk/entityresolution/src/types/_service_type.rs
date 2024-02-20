@@ -96,3 +96,12 @@ impl ServiceType {
         }
     }
 }
+impl ::std::fmt::Display for ServiceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceType::Assignment => write!(f, "ASSIGNMENT"),
+            ServiceType::IdMapping => write!(f, "ID_MAPPING"),
+            ServiceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

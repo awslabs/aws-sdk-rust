@@ -101,3 +101,13 @@ impl SalesforceKnowledgeArticleState {
         }
     }
 }
+impl ::std::fmt::Display for SalesforceKnowledgeArticleState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SalesforceKnowledgeArticleState::Archived => write!(f, "ARCHIVED"),
+            SalesforceKnowledgeArticleState::Draft => write!(f, "DRAFT"),
+            SalesforceKnowledgeArticleState::Published => write!(f, "PUBLISHED"),
+            SalesforceKnowledgeArticleState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl FilterRuleName {
         }
     }
 }
+impl ::std::fmt::Display for FilterRuleName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterRuleName::Prefix => write!(f, "prefix"),
+            FilterRuleName::Suffix => write!(f, "suffix"),
+            FilterRuleName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

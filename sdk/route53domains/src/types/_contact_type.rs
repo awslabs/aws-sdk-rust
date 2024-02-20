@@ -111,3 +111,15 @@ impl ContactType {
         }
     }
 }
+impl ::std::fmt::Display for ContactType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContactType::Association => write!(f, "ASSOCIATION"),
+            ContactType::Company => write!(f, "COMPANY"),
+            ContactType::Person => write!(f, "PERSON"),
+            ContactType::PublicBody => write!(f, "PUBLIC_BODY"),
+            ContactType::Reseller => write!(f, "RESELLER"),
+            ContactType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

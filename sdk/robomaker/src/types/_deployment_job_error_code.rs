@@ -231,3 +231,34 @@ impl DeploymentJobErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentJobErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentJobErrorCode::BadLambdaAssociated => write!(f, "BadLambdaAssociated"),
+            DeploymentJobErrorCode::BadPermissionError => write!(f, "BadPermissionError"),
+            DeploymentJobErrorCode::DeploymentFleetDoesNotExist => write!(f, "DeploymentFleetDoesNotExist"),
+            DeploymentJobErrorCode::DownloadConditionFailed => write!(f, "DownloadConditionFailed"),
+            DeploymentJobErrorCode::EnvironmentSetupError => write!(f, "EnvironmentSetupError"),
+            DeploymentJobErrorCode::EtagMismatch => write!(f, "EtagMismatch"),
+            DeploymentJobErrorCode::ExtractingBundleFailure => write!(f, "ExtractingBundleFailure"),
+            DeploymentJobErrorCode::FailureThresholdBreached => write!(f, "FailureThresholdBreached"),
+            DeploymentJobErrorCode::FleetDeploymentTimeout => write!(f, "FleetDeploymentTimeout"),
+            DeploymentJobErrorCode::GreengrassDeploymentFailed => write!(f, "GreengrassDeploymentFailed"),
+            DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist => write!(f, "GreengrassGroupVersionDoesNotExist"),
+            DeploymentJobErrorCode::InternalServerError => write!(f, "InternalServerError"),
+            DeploymentJobErrorCode::InvalidGreengrassGroup => write!(f, "InvalidGreengrassGroup"),
+            DeploymentJobErrorCode::LambdaDeleted => write!(f, "LambdaDeleted"),
+            DeploymentJobErrorCode::MissingRobotApplicationArchitecture => write!(f, "MissingRobotApplicationArchitecture"),
+            DeploymentJobErrorCode::MissingRobotArchitecture => write!(f, "MissingRobotArchitecture"),
+            DeploymentJobErrorCode::MissingRobotDeploymentResource => write!(f, "MissingRobotDeploymentResource"),
+            DeploymentJobErrorCode::PostLaunchFileFailure => write!(f, "PostLaunchFileFailure"),
+            DeploymentJobErrorCode::PreLaunchFileFailure => write!(f, "PreLaunchFileFailure"),
+            DeploymentJobErrorCode::ResourceNotFound => write!(f, "ResourceNotFound"),
+            DeploymentJobErrorCode::RobotAgentConnectionTimeout => write!(f, "RobotAgentConnectionTimeout"),
+            DeploymentJobErrorCode::RobotApplicationDoesNotExist => write!(f, "RobotApplicationDoesNotExist"),
+            DeploymentJobErrorCode::RobotDeploymentAborted => write!(f, "RobotDeploymentAborted"),
+            DeploymentJobErrorCode::RobotDeploymentNoResponse => write!(f, "RobotDeploymentNoResponse"),
+            DeploymentJobErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

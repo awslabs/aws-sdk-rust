@@ -101,3 +101,13 @@ impl ClientBroker {
         }
     }
 }
+impl ::std::fmt::Display for ClientBroker {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientBroker::Plaintext => write!(f, "PLAINTEXT"),
+            ClientBroker::Tls => write!(f, "TLS"),
+            ClientBroker::TlsPlaintext => write!(f, "TLS_PLAINTEXT"),
+            ClientBroker::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

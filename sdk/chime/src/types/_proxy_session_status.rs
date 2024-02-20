@@ -101,3 +101,13 @@ impl ProxySessionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProxySessionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProxySessionStatus::Closed => write!(f, "Closed"),
+            ProxySessionStatus::InProgress => write!(f, "InProgress"),
+            ProxySessionStatus::Open => write!(f, "Open"),
+            ProxySessionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

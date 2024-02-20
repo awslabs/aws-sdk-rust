@@ -135,3 +135,18 @@ impl ConfigChangeStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConfigChangeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigChangeStatus::ApplyingChanges => write!(f, "ApplyingChanges"),
+            ConfigChangeStatus::Cancelled => write!(f, "Cancelled"),
+            ConfigChangeStatus::Completed => write!(f, "Completed"),
+            ConfigChangeStatus::Initializing => write!(f, "Initializing"),
+            ConfigChangeStatus::Pending => write!(f, "Pending"),
+            ConfigChangeStatus::PendingUserInput => write!(f, "PendingUserInput"),
+            ConfigChangeStatus::Validating => write!(f, "Validating"),
+            ConfigChangeStatus::ValidationFailed => write!(f, "ValidationFailed"),
+            ConfigChangeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

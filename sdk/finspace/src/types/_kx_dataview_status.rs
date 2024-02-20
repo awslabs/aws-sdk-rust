@@ -111,3 +111,15 @@ impl KxDataviewStatus {
         }
     }
 }
+impl ::std::fmt::Display for KxDataviewStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KxDataviewStatus::Active => write!(f, "ACTIVE"),
+            KxDataviewStatus::Creating => write!(f, "CREATING"),
+            KxDataviewStatus::Deleting => write!(f, "DELETING"),
+            KxDataviewStatus::Failed => write!(f, "FAILED"),
+            KxDataviewStatus::Updating => write!(f, "UPDATING"),
+            KxDataviewStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

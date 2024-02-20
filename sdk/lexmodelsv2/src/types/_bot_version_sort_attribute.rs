@@ -91,3 +91,11 @@ impl BotVersionSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for BotVersionSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotVersionSortAttribute::BotVersion => write!(f, "BotVersion"),
+            BotVersionSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

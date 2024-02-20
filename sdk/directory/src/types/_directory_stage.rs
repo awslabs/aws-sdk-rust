@@ -153,3 +153,21 @@ impl DirectoryStage {
         }
     }
 }
+impl ::std::fmt::Display for DirectoryStage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectoryStage::Active => write!(f, "Active"),
+            DirectoryStage::Created => write!(f, "Created"),
+            DirectoryStage::Creating => write!(f, "Creating"),
+            DirectoryStage::Deleted => write!(f, "Deleted"),
+            DirectoryStage::Deleting => write!(f, "Deleting"),
+            DirectoryStage::Failed => write!(f, "Failed"),
+            DirectoryStage::Impaired => write!(f, "Impaired"),
+            DirectoryStage::Inoperable => write!(f, "Inoperable"),
+            DirectoryStage::Requested => write!(f, "Requested"),
+            DirectoryStage::Restorefailed => write!(f, "RestoreFailed"),
+            DirectoryStage::Restoring => write!(f, "Restoring"),
+            DirectoryStage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

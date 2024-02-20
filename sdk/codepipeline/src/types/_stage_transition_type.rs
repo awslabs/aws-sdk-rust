@@ -96,3 +96,12 @@ impl StageTransitionType {
         }
     }
 }
+impl ::std::fmt::Display for StageTransitionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StageTransitionType::Inbound => write!(f, "Inbound"),
+            StageTransitionType::Outbound => write!(f, "Outbound"),
+            StageTransitionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

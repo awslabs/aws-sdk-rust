@@ -101,3 +101,13 @@ impl BootModeValues {
         }
     }
 }
+impl ::std::fmt::Display for BootModeValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BootModeValues::LegacyBios => write!(f, "legacy-bios"),
+            BootModeValues::Uefi => write!(f, "uefi"),
+            BootModeValues::UefiPreferred => write!(f, "uefi-preferred"),
+            BootModeValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

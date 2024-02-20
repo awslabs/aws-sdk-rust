@@ -96,3 +96,12 @@ impl PositionConfigurationFec {
         }
     }
 }
+impl ::std::fmt::Display for PositionConfigurationFec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PositionConfigurationFec::None => write!(f, "NONE"),
+            PositionConfigurationFec::Rose => write!(f, "ROSE"),
+            PositionConfigurationFec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

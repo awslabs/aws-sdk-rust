@@ -91,3 +91,11 @@ impl ConcatenationSourceType {
         }
     }
 }
+impl ::std::fmt::Display for ConcatenationSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConcatenationSourceType::MediaCapturePipeline => write!(f, "MediaCapturePipeline"),
+            ConcatenationSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

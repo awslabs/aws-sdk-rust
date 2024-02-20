@@ -111,3 +111,15 @@ impl CopyJobState {
         }
     }
 }
+impl ::std::fmt::Display for CopyJobState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CopyJobState::Completed => write!(f, "COMPLETED"),
+            CopyJobState::Created => write!(f, "CREATED"),
+            CopyJobState::Failed => write!(f, "FAILED"),
+            CopyJobState::Partial => write!(f, "PARTIAL"),
+            CopyJobState::Running => write!(f, "RUNNING"),
+            CopyJobState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

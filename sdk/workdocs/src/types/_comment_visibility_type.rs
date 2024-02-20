@@ -96,3 +96,12 @@ impl CommentVisibilityType {
         }
     }
 }
+impl ::std::fmt::Display for CommentVisibilityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CommentVisibilityType::Private => write!(f, "PRIVATE"),
+            CommentVisibilityType::Public => write!(f, "PUBLIC"),
+            CommentVisibilityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

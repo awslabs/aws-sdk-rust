@@ -171,3 +171,24 @@ impl TargetDestination {
         }
     }
 }
+impl ::std::fmt::Display for TargetDestination {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetDestination::AwsElasticBeanstalk => write!(f, "AWS Elastic BeanStalk"),
+            TargetDestination::AwsFargate => write!(f, "AWS Fargate"),
+            TargetDestination::AmazonDocumentdb => write!(f, "Amazon DocumentDB"),
+            TargetDestination::AmazonDynamodb => write!(f, "Amazon DynamoDB"),
+            TargetDestination::AmazonElasticCloudCompute => write!(f, "Amazon Elastic Cloud Compute (EC2)"),
+            TargetDestination::AmazonElasticContainerService => write!(f, "Amazon Elastic Container Service (ECS)"),
+            TargetDestination::AmazonElasticKubernetesService => write!(f, "Amazon Elastic Kubernetes Service (EKS)"),
+            TargetDestination::AmazonRds => write!(f, "Amazon Relational Database Service"),
+            TargetDestination::AmazonRdsMysql => write!(f, "Amazon Relational Database Service on MySQL"),
+            TargetDestination::AmazonRdsPostgresql => write!(f, "Amazon Relational Database Service on PostgreSQL"),
+            TargetDestination::AuroraMysql => write!(f, "Aurora MySQL"),
+            TargetDestination::AuroraPostgresql => write!(f, "Aurora PostgreSQL"),
+            TargetDestination::BabelfishAuroraPostgresql => write!(f, "Babelfish for Aurora PostgreSQL"),
+            TargetDestination::NoneSpecified => write!(f, "None specified"),
+            TargetDestination::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

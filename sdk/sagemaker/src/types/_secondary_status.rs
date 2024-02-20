@@ -189,3 +189,27 @@ impl SecondaryStatus {
         }
     }
 }
+impl ::std::fmt::Display for SecondaryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SecondaryStatus::Completed => write!(f, "Completed"),
+            SecondaryStatus::Downloading => write!(f, "Downloading"),
+            SecondaryStatus::DownloadingTrainingImage => write!(f, "DownloadingTrainingImage"),
+            SecondaryStatus::Failed => write!(f, "Failed"),
+            SecondaryStatus::Interrupted => write!(f, "Interrupted"),
+            SecondaryStatus::LaunchingMlInstances => write!(f, "LaunchingMLInstances"),
+            SecondaryStatus::MaxRuntimeExceeded => write!(f, "MaxRuntimeExceeded"),
+            SecondaryStatus::MaxWaitTimeExceeded => write!(f, "MaxWaitTimeExceeded"),
+            SecondaryStatus::Pending => write!(f, "Pending"),
+            SecondaryStatus::PreparingTrainingStack => write!(f, "PreparingTrainingStack"),
+            SecondaryStatus::Restarting => write!(f, "Restarting"),
+            SecondaryStatus::Starting => write!(f, "Starting"),
+            SecondaryStatus::Stopped => write!(f, "Stopped"),
+            SecondaryStatus::Stopping => write!(f, "Stopping"),
+            SecondaryStatus::Training => write!(f, "Training"),
+            SecondaryStatus::Updating => write!(f, "Updating"),
+            SecondaryStatus::Uploading => write!(f, "Uploading"),
+            SecondaryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl JobManifestFormat {
         }
     }
 }
+impl ::std::fmt::Display for JobManifestFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobManifestFormat::S3BatchOperationsCsv20180820 => write!(f, "S3BatchOperations_CSV_20180820"),
+            JobManifestFormat::S3InventoryReportCsv20161130 => write!(f, "S3InventoryReport_CSV_20161130"),
+            JobManifestFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

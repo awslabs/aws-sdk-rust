@@ -96,3 +96,12 @@ impl BusinessReportFormat {
         }
     }
 }
+impl ::std::fmt::Display for BusinessReportFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BusinessReportFormat::Csv => write!(f, "CSV"),
+            BusinessReportFormat::CsvZip => write!(f, "CSV_ZIP"),
+            BusinessReportFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

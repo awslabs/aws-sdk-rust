@@ -279,3 +279,42 @@ impl TransformInstanceType {
         }
     }
 }
+impl ::std::fmt::Display for TransformInstanceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransformInstanceType::MlC42Xlarge => write!(f, "ml.c4.2xlarge"),
+            TransformInstanceType::MlC44Xlarge => write!(f, "ml.c4.4xlarge"),
+            TransformInstanceType::MlC48Xlarge => write!(f, "ml.c4.8xlarge"),
+            TransformInstanceType::MlC4Xlarge => write!(f, "ml.c4.xlarge"),
+            TransformInstanceType::MlC518Xlarge => write!(f, "ml.c5.18xlarge"),
+            TransformInstanceType::MlC52Xlarge => write!(f, "ml.c5.2xlarge"),
+            TransformInstanceType::MlC54Xlarge => write!(f, "ml.c5.4xlarge"),
+            TransformInstanceType::MlC59Xlarge => write!(f, "ml.c5.9xlarge"),
+            TransformInstanceType::MlC5Xlarge => write!(f, "ml.c5.xlarge"),
+            TransformInstanceType::MlG4Dn12Xlarge => write!(f, "ml.g4dn.12xlarge"),
+            TransformInstanceType::MlG4Dn16Xlarge => write!(f, "ml.g4dn.16xlarge"),
+            TransformInstanceType::MlG4Dn2Xlarge => write!(f, "ml.g4dn.2xlarge"),
+            TransformInstanceType::MlG4Dn4Xlarge => write!(f, "ml.g4dn.4xlarge"),
+            TransformInstanceType::MlG4Dn8Xlarge => write!(f, "ml.g4dn.8xlarge"),
+            TransformInstanceType::MlG4DnXlarge => write!(f, "ml.g4dn.xlarge"),
+            TransformInstanceType::MlM410Xlarge => write!(f, "ml.m4.10xlarge"),
+            TransformInstanceType::MlM416Xlarge => write!(f, "ml.m4.16xlarge"),
+            TransformInstanceType::MlM42Xlarge => write!(f, "ml.m4.2xlarge"),
+            TransformInstanceType::MlM44Xlarge => write!(f, "ml.m4.4xlarge"),
+            TransformInstanceType::MlM4Xlarge => write!(f, "ml.m4.xlarge"),
+            TransformInstanceType::MlM512Xlarge => write!(f, "ml.m5.12xlarge"),
+            TransformInstanceType::MlM524Xlarge => write!(f, "ml.m5.24xlarge"),
+            TransformInstanceType::MlM52Xlarge => write!(f, "ml.m5.2xlarge"),
+            TransformInstanceType::MlM54Xlarge => write!(f, "ml.m5.4xlarge"),
+            TransformInstanceType::MlM5Large => write!(f, "ml.m5.large"),
+            TransformInstanceType::MlM5Xlarge => write!(f, "ml.m5.xlarge"),
+            TransformInstanceType::MlP216Xlarge => write!(f, "ml.p2.16xlarge"),
+            TransformInstanceType::MlP28Xlarge => write!(f, "ml.p2.8xlarge"),
+            TransformInstanceType::MlP2Xlarge => write!(f, "ml.p2.xlarge"),
+            TransformInstanceType::MlP316Xlarge => write!(f, "ml.p3.16xlarge"),
+            TransformInstanceType::MlP32Xlarge => write!(f, "ml.p3.2xlarge"),
+            TransformInstanceType::MlP38Xlarge => write!(f, "ml.p3.8xlarge"),
+            TransformInstanceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

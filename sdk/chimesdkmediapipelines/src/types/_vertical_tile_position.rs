@@ -96,3 +96,12 @@ impl VerticalTilePosition {
         }
     }
 }
+impl ::std::fmt::Display for VerticalTilePosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerticalTilePosition::Left => write!(f, "Left"),
+            VerticalTilePosition::Right => write!(f, "Right"),
+            VerticalTilePosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

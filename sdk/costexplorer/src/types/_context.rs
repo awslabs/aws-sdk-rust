@@ -101,3 +101,13 @@ impl Context {
         }
     }
 }
+impl ::std::fmt::Display for Context {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Context::CostAndUsage => write!(f, "COST_AND_USAGE"),
+            Context::Reservations => write!(f, "RESERVATIONS"),
+            Context::SavingsPlans => write!(f, "SAVINGS_PLANS"),
+            Context::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -153,3 +153,21 @@ impl Protocol {
         }
     }
 }
+impl ::std::fmt::Display for Protocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Protocol::Cdi => write!(f, "cdi"),
+            Protocol::FujitsuQos => write!(f, "fujitsu-qos"),
+            Protocol::Rist => write!(f, "rist"),
+            Protocol::Rtp => write!(f, "rtp"),
+            Protocol::RtpFec => write!(f, "rtp-fec"),
+            Protocol::SrtCaller => write!(f, "srt-caller"),
+            Protocol::SrtListener => write!(f, "srt-listener"),
+            Protocol::St2110Jpegxs => write!(f, "st2110-jpegxs"),
+            Protocol::Udp => write!(f, "udp"),
+            Protocol::ZixiPull => write!(f, "zixi-pull"),
+            Protocol::ZixiPush => write!(f, "zixi-push"),
+            Protocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

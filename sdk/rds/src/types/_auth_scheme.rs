@@ -91,3 +91,11 @@ impl AuthScheme {
         }
     }
 }
+impl ::std::fmt::Display for AuthScheme {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthScheme::Secrets => write!(f, "SECRETS"),
+            AuthScheme::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ImageLayerSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ImageLayerSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageLayerSortBy::All => write!(f, "ALL"),
+            ImageLayerSortBy::Critical => write!(f, "CRITICAL"),
+            ImageLayerSortBy::High => write!(f, "HIGH"),
+            ImageLayerSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

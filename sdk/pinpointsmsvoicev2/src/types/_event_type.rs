@@ -237,3 +237,35 @@ impl EventType {
         }
     }
 }
+impl ::std::fmt::Display for EventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventType::All => write!(f, "ALL"),
+            EventType::TextAll => write!(f, "TEXT_ALL"),
+            EventType::TextBlocked => write!(f, "TEXT_BLOCKED"),
+            EventType::TextCarrierBlocked => write!(f, "TEXT_CARRIER_BLOCKED"),
+            EventType::TextCarrierUnreachable => write!(f, "TEXT_CARRIER_UNREACHABLE"),
+            EventType::TextDelivered => write!(f, "TEXT_DELIVERED"),
+            EventType::TextInvalid => write!(f, "TEXT_INVALID"),
+            EventType::TextInvalidMessage => write!(f, "TEXT_INVALID_MESSAGE"),
+            EventType::TextPending => write!(f, "TEXT_PENDING"),
+            EventType::TextQueued => write!(f, "TEXT_QUEUED"),
+            EventType::TextSent => write!(f, "TEXT_SENT"),
+            EventType::TextSpam => write!(f, "TEXT_SPAM"),
+            EventType::TextSuccessful => write!(f, "TEXT_SUCCESSFUL"),
+            EventType::TextTtlExpired => write!(f, "TEXT_TTL_EXPIRED"),
+            EventType::TextUnknown => write!(f, "TEXT_UNKNOWN"),
+            EventType::TextUnreachable => write!(f, "TEXT_UNREACHABLE"),
+            EventType::VoiceAll => write!(f, "VOICE_ALL"),
+            EventType::VoiceAnswered => write!(f, "VOICE_ANSWERED"),
+            EventType::VoiceBusy => write!(f, "VOICE_BUSY"),
+            EventType::VoiceCompleted => write!(f, "VOICE_COMPLETED"),
+            EventType::VoiceFailed => write!(f, "VOICE_FAILED"),
+            EventType::VoiceInitiated => write!(f, "VOICE_INITIATED"),
+            EventType::VoiceNoAnswer => write!(f, "VOICE_NO_ANSWER"),
+            EventType::VoiceRinging => write!(f, "VOICE_RINGING"),
+            EventType::VoiceTtlExpired => write!(f, "VOICE_TTL_EXPIRED"),
+            EventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl ProbeState {
         }
     }
 }
+impl ::std::fmt::Display for ProbeState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProbeState::Active => write!(f, "ACTIVE"),
+            ProbeState::Deleted => write!(f, "DELETED"),
+            ProbeState::Deleting => write!(f, "DELETING"),
+            ProbeState::Error => write!(f, "ERROR"),
+            ProbeState::Inactive => write!(f, "INACTIVE"),
+            ProbeState::Pending => write!(f, "PENDING"),
+            ProbeState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

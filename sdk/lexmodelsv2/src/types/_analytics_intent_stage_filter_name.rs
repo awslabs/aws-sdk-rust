@@ -141,3 +141,19 @@ impl AnalyticsIntentStageFilterName {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsIntentStageFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsIntentStageFilterName::BotAliasId => write!(f, "BotAliasId"),
+            AnalyticsIntentStageFilterName::BotVersion => write!(f, "BotVersion"),
+            AnalyticsIntentStageFilterName::Channel => write!(f, "Channel"),
+            AnalyticsIntentStageFilterName::IntentName => write!(f, "IntentName"),
+            AnalyticsIntentStageFilterName::IntentStageName => write!(f, "IntentStageName"),
+            AnalyticsIntentStageFilterName::LocaleId => write!(f, "LocaleId"),
+            AnalyticsIntentStageFilterName::Modality => write!(f, "Modality"),
+            AnalyticsIntentStageFilterName::OriginatingRequestId => write!(f, "OriginatingRequestId"),
+            AnalyticsIntentStageFilterName::SessionId => write!(f, "SessionId"),
+            AnalyticsIntentStageFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

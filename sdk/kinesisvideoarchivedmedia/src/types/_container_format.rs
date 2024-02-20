@@ -96,3 +96,12 @@ impl ContainerFormat {
         }
     }
 }
+impl ::std::fmt::Display for ContainerFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerFormat::FragmentedMp4 => write!(f, "FRAGMENTED_MP4"),
+            ContainerFormat::MpegTs => write!(f, "MPEG_TS"),
+            ContainerFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

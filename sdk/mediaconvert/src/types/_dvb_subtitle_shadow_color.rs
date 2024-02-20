@@ -106,3 +106,14 @@ impl DvbSubtitleShadowColor {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubtitleShadowColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubtitleShadowColor::Auto => write!(f, "AUTO"),
+            DvbSubtitleShadowColor::Black => write!(f, "BLACK"),
+            DvbSubtitleShadowColor::None => write!(f, "NONE"),
+            DvbSubtitleShadowColor::White => write!(f, "WHITE"),
+            DvbSubtitleShadowColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

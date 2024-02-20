@@ -106,3 +106,14 @@ impl UpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for UpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateStatus::Cancelled => write!(f, "Cancelled"),
+            UpdateStatus::Failed => write!(f, "Failed"),
+            UpdateStatus::InProgress => write!(f, "InProgress"),
+            UpdateStatus::Successful => write!(f, "Successful"),
+            UpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

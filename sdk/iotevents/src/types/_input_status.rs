@@ -106,3 +106,14 @@ impl InputStatus {
         }
     }
 }
+impl ::std::fmt::Display for InputStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputStatus::Active => write!(f, "ACTIVE"),
+            InputStatus::Creating => write!(f, "CREATING"),
+            InputStatus::Deleting => write!(f, "DELETING"),
+            InputStatus::Updating => write!(f, "UPDATING"),
+            InputStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

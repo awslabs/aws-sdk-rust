@@ -111,3 +111,15 @@ impl DeliveryStreamStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeliveryStreamStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeliveryStreamStatus::Active => write!(f, "ACTIVE"),
+            DeliveryStreamStatus::Creating => write!(f, "CREATING"),
+            DeliveryStreamStatus::CreatingFailed => write!(f, "CREATING_FAILED"),
+            DeliveryStreamStatus::Deleting => write!(f, "DELETING"),
+            DeliveryStreamStatus::DeletingFailed => write!(f, "DELETING_FAILED"),
+            DeliveryStreamStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

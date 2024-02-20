@@ -101,3 +101,13 @@ impl AggregationTypeName {
         }
     }
 }
+impl ::std::fmt::Display for AggregationTypeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregationTypeName::Cardinality => write!(f, "Cardinality"),
+            AggregationTypeName::Percentiles => write!(f, "Percentiles"),
+            AggregationTypeName::Statistics => write!(f, "Statistics"),
+            AggregationTypeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl LoadBalancerTlsCertificateDomainStatus {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerTlsCertificateDomainStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerTlsCertificateDomainStatus::Failed => write!(f, "FAILED"),
+            LoadBalancerTlsCertificateDomainStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
+            LoadBalancerTlsCertificateDomainStatus::Success => write!(f, "SUCCESS"),
+            LoadBalancerTlsCertificateDomainStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -131,3 +131,19 @@ impl CompressionFormat {
         }
     }
 }
+impl ::std::fmt::Display for CompressionFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CompressionFormat::Brotli => write!(f, "BROTLI"),
+            CompressionFormat::Bzip2 => write!(f, "BZIP2"),
+            CompressionFormat::Deflate => write!(f, "DEFLATE"),
+            CompressionFormat::Gzip => write!(f, "GZIP"),
+            CompressionFormat::Lz4 => write!(f, "LZ4"),
+            CompressionFormat::Lzo => write!(f, "LZO"),
+            CompressionFormat::Snappy => write!(f, "SNAPPY"),
+            CompressionFormat::Zlib => write!(f, "ZLIB"),
+            CompressionFormat::Zstd => write!(f, "ZSTD"),
+            CompressionFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

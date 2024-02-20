@@ -91,3 +91,11 @@ impl ContentIdentificationType {
         }
     }
 }
+impl ::std::fmt::Display for ContentIdentificationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentIdentificationType::Pii => write!(f, "PII"),
+            ContentIdentificationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Framework {
         }
     }
 }
+impl ::std::fmt::Display for Framework {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Framework::Ethereum => write!(f, "ETHEREUM"),
+            Framework::HyperledgerFabric => write!(f, "HYPERLEDGER_FABRIC"),
+            Framework::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

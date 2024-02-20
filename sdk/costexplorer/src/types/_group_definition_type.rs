@@ -101,3 +101,13 @@ impl GroupDefinitionType {
         }
     }
 }
+impl ::std::fmt::Display for GroupDefinitionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupDefinitionType::CostCategory => write!(f, "COST_CATEGORY"),
+            GroupDefinitionType::Dimension => write!(f, "DIMENSION"),
+            GroupDefinitionType::Tag => write!(f, "TAG"),
+            GroupDefinitionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

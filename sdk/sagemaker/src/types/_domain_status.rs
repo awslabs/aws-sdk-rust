@@ -121,3 +121,17 @@ impl DomainStatus {
         }
     }
 }
+impl ::std::fmt::Display for DomainStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainStatus::DeleteFailed => write!(f, "Delete_Failed"),
+            DomainStatus::Deleting => write!(f, "Deleting"),
+            DomainStatus::Failed => write!(f, "Failed"),
+            DomainStatus::InService => write!(f, "InService"),
+            DomainStatus::Pending => write!(f, "Pending"),
+            DomainStatus::UpdateFailed => write!(f, "Update_Failed"),
+            DomainStatus::Updating => write!(f, "Updating"),
+            DomainStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl Comparator {
         }
     }
 }
+impl ::std::fmt::Display for Comparator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Comparator::Equals => write!(f, "EQUALS"),
+            Comparator::GreaterThan => write!(f, "GREATER_THAN"),
+            Comparator::GreaterThanEquals => write!(f, "GREATER_THAN_EQUALS"),
+            Comparator::LessThan => write!(f, "LESS_THAN"),
+            Comparator::LessThanEquals => write!(f, "LESS_THAN_EQUALS"),
+            Comparator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

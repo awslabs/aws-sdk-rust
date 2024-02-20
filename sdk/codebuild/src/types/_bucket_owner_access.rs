@@ -142,3 +142,13 @@ impl BucketOwnerAccess {
         }
     }
 }
+impl ::std::fmt::Display for BucketOwnerAccess {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BucketOwnerAccess::Full => write!(f, "FULL"),
+            BucketOwnerAccess::None => write!(f, "NONE"),
+            BucketOwnerAccess::ReadOnly => write!(f, "READ_ONLY"),
+            BucketOwnerAccess::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

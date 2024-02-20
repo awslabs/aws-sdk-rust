@@ -96,3 +96,12 @@ impl PlatformCapability {
         }
     }
 }
+impl ::std::fmt::Display for PlatformCapability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlatformCapability::Ec2 => write!(f, "EC2"),
+            PlatformCapability::Fargate => write!(f, "FARGATE"),
+            PlatformCapability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

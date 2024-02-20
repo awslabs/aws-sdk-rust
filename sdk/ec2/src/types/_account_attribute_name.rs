@@ -96,3 +96,12 @@ impl AccountAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for AccountAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountAttributeName::DefaultVpc => write!(f, "default-vpc"),
+            AccountAttributeName::SupportedPlatforms => write!(f, "supported-platforms"),
+            AccountAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

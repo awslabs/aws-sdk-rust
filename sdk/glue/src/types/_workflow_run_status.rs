@@ -111,3 +111,15 @@ impl WorkflowRunStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowRunStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowRunStatus::Completed => write!(f, "COMPLETED"),
+            WorkflowRunStatus::Error => write!(f, "ERROR"),
+            WorkflowRunStatus::Running => write!(f, "RUNNING"),
+            WorkflowRunStatus::Stopped => write!(f, "STOPPED"),
+            WorkflowRunStatus::Stopping => write!(f, "STOPPING"),
+            WorkflowRunStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

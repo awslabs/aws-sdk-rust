@@ -96,3 +96,12 @@ impl PatchOperationType {
         }
     }
 }
+impl ::std::fmt::Display for PatchOperationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PatchOperationType::Install => write!(f, "Install"),
+            PatchOperationType::Scan => write!(f, "Scan"),
+            PatchOperationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

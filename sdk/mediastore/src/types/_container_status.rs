@@ -101,3 +101,13 @@ impl ContainerStatus {
         }
     }
 }
+impl ::std::fmt::Display for ContainerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerStatus::Active => write!(f, "ACTIVE"),
+            ContainerStatus::Creating => write!(f, "CREATING"),
+            ContainerStatus::Deleting => write!(f, "DELETING"),
+            ContainerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

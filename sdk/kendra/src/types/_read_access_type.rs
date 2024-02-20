@@ -96,3 +96,12 @@ impl ReadAccessType {
         }
     }
 }
+impl ::std::fmt::Display for ReadAccessType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReadAccessType::Allow => write!(f, "ALLOW"),
+            ReadAccessType::Deny => write!(f, "DENY"),
+            ReadAccessType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

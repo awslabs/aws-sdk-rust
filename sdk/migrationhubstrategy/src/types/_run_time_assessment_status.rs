@@ -129,3 +129,17 @@ impl RunTimeAssessmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for RunTimeAssessmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RunTimeAssessmentStatus::DcFailed => write!(f, "dataCollectionTaskFailed"),
+            RunTimeAssessmentStatus::DcPartialSuccess => write!(f, "dataCollectionTaskPartialSuccess"),
+            RunTimeAssessmentStatus::DcReqSent => write!(f, "dataCollectionTaskScheduled"),
+            RunTimeAssessmentStatus::DcStarted => write!(f, "dataCollectionTaskStarted"),
+            RunTimeAssessmentStatus::DcStopped => write!(f, "dataCollectionTaskStopped"),
+            RunTimeAssessmentStatus::DcSuccess => write!(f, "dataCollectionTaskSuccess"),
+            RunTimeAssessmentStatus::DcToBeScheduled => write!(f, "dataCollectionTaskToBeScheduled"),
+            RunTimeAssessmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

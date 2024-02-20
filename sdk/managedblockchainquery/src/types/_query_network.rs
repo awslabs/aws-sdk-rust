@@ -106,3 +106,14 @@ impl QueryNetwork {
         }
     }
 }
+impl ::std::fmt::Display for QueryNetwork {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryNetwork::BitcoinMainnet => write!(f, "BITCOIN_MAINNET"),
+            QueryNetwork::BitcoinTestnet => write!(f, "BITCOIN_TESTNET"),
+            QueryNetwork::EthereumMainnet => write!(f, "ETHEREUM_MAINNET"),
+            QueryNetwork::EthereumSepoliaTestnet => write!(f, "ETHEREUM_SEPOLIA_TESTNET"),
+            QueryNetwork::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DeviceStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceStatus::Active => write!(f, "ACTIVE"),
+            DeviceStatus::SignedOut => write!(f, "SIGNED_OUT"),
+            DeviceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

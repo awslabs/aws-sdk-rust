@@ -96,3 +96,12 @@ impl SortLineageGroupsBy {
         }
     }
 }
+impl ::std::fmt::Display for SortLineageGroupsBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortLineageGroupsBy::CreationTime => write!(f, "CreationTime"),
+            SortLineageGroupsBy::Name => write!(f, "Name"),
+            SortLineageGroupsBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

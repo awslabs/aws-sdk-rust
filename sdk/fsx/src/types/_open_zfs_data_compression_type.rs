@@ -101,3 +101,13 @@ impl OpenZfsDataCompressionType {
         }
     }
 }
+impl ::std::fmt::Display for OpenZfsDataCompressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpenZfsDataCompressionType::Lz4 => write!(f, "LZ4"),
+            OpenZfsDataCompressionType::None => write!(f, "NONE"),
+            OpenZfsDataCompressionType::Zstd => write!(f, "ZSTD"),
+            OpenZfsDataCompressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -219,3 +219,36 @@ impl ScalableDimension {
         }
     }
 }
+impl ::std::fmt::Display for ScalableDimension {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalableDimension::AppstreamFleetDesiredCapacity => write!(f, "appstream:fleet:DesiredCapacity"),
+            ScalableDimension::CassandraTableReadCapacityUnits => write!(f, "cassandra:table:ReadCapacityUnits"),
+            ScalableDimension::CassandraTableWriteCapacityUnits => write!(f, "cassandra:table:WriteCapacityUnits"),
+            ScalableDimension::ComprehendDocClassifierEndpointInferenceUnits => {
+                write!(f, "comprehend:document-classifier-endpoint:DesiredInferenceUnits")
+            }
+            ScalableDimension::ComprehendEntityRecognizerEndpointInferenceUnits => {
+                write!(f, "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits")
+            }
+            ScalableDimension::CustomResourceScalableDimension => write!(f, "custom-resource:ResourceType:Property"),
+            ScalableDimension::DynamoDbIndexReadCapacityUnits => write!(f, "dynamodb:index:ReadCapacityUnits"),
+            ScalableDimension::DynamoDbIndexWriteCapacityUnits => write!(f, "dynamodb:index:WriteCapacityUnits"),
+            ScalableDimension::DynamoDbTableReadCapacityUnits => write!(f, "dynamodb:table:ReadCapacityUnits"),
+            ScalableDimension::DynamoDbTableWriteCapacityUnits => write!(f, "dynamodb:table:WriteCapacityUnits"),
+            ScalableDimension::Ec2SpotFleetRequestTargetCapacity => write!(f, "ec2:spot-fleet-request:TargetCapacity"),
+            ScalableDimension::EcsServiceDesiredCount => write!(f, "ecs:service:DesiredCount"),
+            ScalableDimension::ElastiCacheReplicationGroupNodeGroups => write!(f, "elasticache:replication-group:NodeGroups"),
+            ScalableDimension::ElastiCacheReplicationGroupReplicas => write!(f, "elasticache:replication-group:Replicas"),
+            ScalableDimension::EmrInstanceGroupInstanceCount => write!(f, "elasticmapreduce:instancegroup:InstanceCount"),
+            ScalableDimension::KafkaBrokerStorageVolumeSize => write!(f, "kafka:broker-storage:VolumeSize"),
+            ScalableDimension::LambdaFunctionProvisionedConcurrency => write!(f, "lambda:function:ProvisionedConcurrency"),
+            ScalableDimension::NeptuneClusterReadReplicaCount => write!(f, "neptune:cluster:ReadReplicaCount"),
+            ScalableDimension::RdsClusterReadReplicaCount => write!(f, "rds:cluster:ReadReplicaCount"),
+            ScalableDimension::SageMakerInferenceComponentDesiredCopyCount => write!(f, "sagemaker:inference-component:DesiredCopyCount"),
+            ScalableDimension::SageMakerVariantDesiredInstanceCount => write!(f, "sagemaker:variant:DesiredInstanceCount"),
+            ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => write!(f, "sagemaker:variant:DesiredProvisionedConcurrency"),
+            ScalableDimension::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

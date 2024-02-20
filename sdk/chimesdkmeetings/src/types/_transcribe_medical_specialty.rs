@@ -116,3 +116,16 @@ impl TranscribeMedicalSpecialty {
         }
     }
 }
+impl ::std::fmt::Display for TranscribeMedicalSpecialty {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TranscribeMedicalSpecialty::Cardiology => write!(f, "CARDIOLOGY"),
+            TranscribeMedicalSpecialty::Neurology => write!(f, "NEUROLOGY"),
+            TranscribeMedicalSpecialty::Oncology => write!(f, "ONCOLOGY"),
+            TranscribeMedicalSpecialty::Primarycare => write!(f, "PRIMARYCARE"),
+            TranscribeMedicalSpecialty::Radiology => write!(f, "RADIOLOGY"),
+            TranscribeMedicalSpecialty::Urology => write!(f, "UROLOGY"),
+            TranscribeMedicalSpecialty::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl CommandPluginStatus {
         }
     }
 }
+impl ::std::fmt::Display for CommandPluginStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CommandPluginStatus::Cancelled => write!(f, "Cancelled"),
+            CommandPluginStatus::Failed => write!(f, "Failed"),
+            CommandPluginStatus::InProgress => write!(f, "InProgress"),
+            CommandPluginStatus::Pending => write!(f, "Pending"),
+            CommandPluginStatus::Success => write!(f, "Success"),
+            CommandPluginStatus::TimedOut => write!(f, "TimedOut"),
+            CommandPluginStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl PortalState {
         }
     }
 }
+impl ::std::fmt::Display for PortalState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PortalState::Active => write!(f, "ACTIVE"),
+            PortalState::Creating => write!(f, "CREATING"),
+            PortalState::Deleting => write!(f, "DELETING"),
+            PortalState::Failed => write!(f, "FAILED"),
+            PortalState::Updating => write!(f, "UPDATING"),
+            PortalState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

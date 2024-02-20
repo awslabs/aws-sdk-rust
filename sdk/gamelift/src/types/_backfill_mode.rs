@@ -96,3 +96,12 @@ impl BackfillMode {
         }
     }
 }
+impl ::std::fmt::Display for BackfillMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackfillMode::Automatic => write!(f, "AUTOMATIC"),
+            BackfillMode::Manual => write!(f, "MANUAL"),
+            BackfillMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

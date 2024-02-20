@@ -96,3 +96,12 @@ impl SheetContentType {
         }
     }
 }
+impl ::std::fmt::Display for SheetContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SheetContentType::Interactive => write!(f, "INTERACTIVE"),
+            SheetContentType::Paginated => write!(f, "PAGINATED"),
+            SheetContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

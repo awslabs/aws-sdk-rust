@@ -101,3 +101,13 @@ impl AutoScalingPolicyStateChangeReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for AutoScalingPolicyStateChangeReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoScalingPolicyStateChangeReasonCode::CleanupFailure => write!(f, "CLEANUP_FAILURE"),
+            AutoScalingPolicyStateChangeReasonCode::ProvisionFailure => write!(f, "PROVISION_FAILURE"),
+            AutoScalingPolicyStateChangeReasonCode::UserRequest => write!(f, "USER_REQUEST"),
+            AutoScalingPolicyStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

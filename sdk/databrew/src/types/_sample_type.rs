@@ -101,3 +101,13 @@ impl SampleType {
         }
     }
 }
+impl ::std::fmt::Display for SampleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SampleType::FirstN => write!(f, "FIRST_N"),
+            SampleType::LastN => write!(f, "LAST_N"),
+            SampleType::Random => write!(f, "RANDOM"),
+            SampleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

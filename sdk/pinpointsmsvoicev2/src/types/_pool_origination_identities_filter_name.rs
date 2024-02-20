@@ -96,3 +96,12 @@ impl PoolOriginationIdentitiesFilterName {
         }
     }
 }
+impl ::std::fmt::Display for PoolOriginationIdentitiesFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PoolOriginationIdentitiesFilterName::IsoCountryCode => write!(f, "iso-country-code"),
+            PoolOriginationIdentitiesFilterName::NumberCapability => write!(f, "number-capability"),
+            PoolOriginationIdentitiesFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

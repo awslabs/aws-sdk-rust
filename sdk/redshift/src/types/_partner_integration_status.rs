@@ -106,3 +106,14 @@ impl PartnerIntegrationStatus {
         }
     }
 }
+impl ::std::fmt::Display for PartnerIntegrationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PartnerIntegrationStatus::Active => write!(f, "Active"),
+            PartnerIntegrationStatus::ConnectionFailure => write!(f, "ConnectionFailure"),
+            PartnerIntegrationStatus::Inactive => write!(f, "Inactive"),
+            PartnerIntegrationStatus::RuntimeFailure => write!(f, "RuntimeFailure"),
+            PartnerIntegrationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

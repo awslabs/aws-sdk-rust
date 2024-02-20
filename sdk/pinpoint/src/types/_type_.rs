@@ -101,3 +101,13 @@ impl Type {
         }
     }
 }
+impl ::std::fmt::Display for Type {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Type::All => write!(f, "ALL"),
+            Type::Any => write!(f, "ANY"),
+            Type::None => write!(f, "NONE"),
+            Type::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

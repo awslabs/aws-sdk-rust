@@ -96,3 +96,12 @@ impl XavcSpatialAdaptiveQuantization {
         }
     }
 }
+impl ::std::fmt::Display for XavcSpatialAdaptiveQuantization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcSpatialAdaptiveQuantization::Disabled => write!(f, "DISABLED"),
+            XavcSpatialAdaptiveQuantization::Enabled => write!(f, "ENABLED"),
+            XavcSpatialAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl TopicUserExperienceVersion {
         }
     }
 }
+impl ::std::fmt::Display for TopicUserExperienceVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TopicUserExperienceVersion::Legacy => write!(f, "LEGACY"),
+            TopicUserExperienceVersion::NewReaderExperience => write!(f, "NEW_READER_EXPERIENCE"),
+            TopicUserExperienceVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

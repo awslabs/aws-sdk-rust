@@ -101,3 +101,13 @@ impl AggregationResourceType {
         }
     }
 }
+impl ::std::fmt::Display for AggregationResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregationResourceType::AwsEc2Instance => write!(f, "AWS_EC2_INSTANCE"),
+            AggregationResourceType::AwsEcrContainerImage => write!(f, "AWS_ECR_CONTAINER_IMAGE"),
+            AggregationResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
+            AggregationResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

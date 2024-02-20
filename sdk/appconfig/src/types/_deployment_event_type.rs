@@ -123,3 +123,16 @@ impl DeploymentEventType {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentEventType::BakeTimeStarted => write!(f, "BAKE_TIME_STARTED"),
+            DeploymentEventType::DeploymentCompleted => write!(f, "DEPLOYMENT_COMPLETED"),
+            DeploymentEventType::DeploymentStarted => write!(f, "DEPLOYMENT_STARTED"),
+            DeploymentEventType::PercentageUpdated => write!(f, "PERCENTAGE_UPDATED"),
+            DeploymentEventType::RollbackCompleted => write!(f, "ROLLBACK_COMPLETED"),
+            DeploymentEventType::RollbackStarted => write!(f, "ROLLBACK_STARTED"),
+            DeploymentEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

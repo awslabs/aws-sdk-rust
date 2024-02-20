@@ -111,3 +111,15 @@ impl OutputFormat {
         }
     }
 }
+impl ::std::fmt::Display for OutputFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputFormat::Json => write!(f, "json"),
+            OutputFormat::Parquet => write!(f, "parquet"),
+            OutputFormat::Plain => write!(f, "plain"),
+            OutputFormat::Raw => write!(f, "raw"),
+            OutputFormat::W3C => write!(f, "w3c"),
+            OutputFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

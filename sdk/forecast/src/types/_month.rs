@@ -159,3 +159,22 @@ impl Month {
         }
     }
 }
+impl ::std::fmt::Display for Month {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Month::April => write!(f, "APRIL"),
+            Month::August => write!(f, "AUGUST"),
+            Month::December => write!(f, "DECEMBER"),
+            Month::February => write!(f, "FEBRUARY"),
+            Month::January => write!(f, "JANUARY"),
+            Month::July => write!(f, "JULY"),
+            Month::June => write!(f, "JUNE"),
+            Month::March => write!(f, "MARCH"),
+            Month::May => write!(f, "MAY"),
+            Month::November => write!(f, "NOVEMBER"),
+            Month::October => write!(f, "OCTOBER"),
+            Month::September => write!(f, "SEPTEMBER"),
+            Month::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

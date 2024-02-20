@@ -91,3 +91,11 @@ impl EventSourceName {
         }
     }
 }
+impl ::std::fmt::Display for EventSourceName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventSourceName::UserNotification => write!(f, "userNotification"),
+            EventSourceName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

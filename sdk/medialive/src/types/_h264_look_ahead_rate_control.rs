@@ -101,3 +101,13 @@ impl H264LookAheadRateControl {
         }
     }
 }
+impl ::std::fmt::Display for H264LookAheadRateControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264LookAheadRateControl::High => write!(f, "HIGH"),
+            H264LookAheadRateControl::Low => write!(f, "LOW"),
+            H264LookAheadRateControl::Medium => write!(f, "MEDIUM"),
+            H264LookAheadRateControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

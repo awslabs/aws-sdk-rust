@@ -101,3 +101,13 @@ impl PhoneNumberAssociationName {
         }
     }
 }
+impl ::std::fmt::Display for PhoneNumberAssociationName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhoneNumberAssociationName::SipRuleId => write!(f, "SipRuleId"),
+            PhoneNumberAssociationName::VoiceConnectorGroupId => write!(f, "VoiceConnectorGroupId"),
+            PhoneNumberAssociationName::VoiceConnectorId => write!(f, "VoiceConnectorId"),
+            PhoneNumberAssociationName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

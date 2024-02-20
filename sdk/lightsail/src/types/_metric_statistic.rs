@@ -111,3 +111,15 @@ impl MetricStatistic {
         }
     }
 }
+impl ::std::fmt::Display for MetricStatistic {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricStatistic::Average => write!(f, "Average"),
+            MetricStatistic::Maximum => write!(f, "Maximum"),
+            MetricStatistic::Minimum => write!(f, "Minimum"),
+            MetricStatistic::SampleCount => write!(f, "SampleCount"),
+            MetricStatistic::Sum => write!(f, "Sum"),
+            MetricStatistic::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

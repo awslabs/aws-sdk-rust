@@ -91,3 +91,11 @@ impl ExternalConnectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExternalConnectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExternalConnectionStatus::Available => write!(f, "Available"),
+            ExternalConnectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

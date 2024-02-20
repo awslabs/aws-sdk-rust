@@ -96,3 +96,12 @@ impl FederationProtocol {
         }
     }
 }
+impl ::std::fmt::Display for FederationProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FederationProtocol::Oauth => write!(f, "OAUTH"),
+            FederationProtocol::Saml => write!(f, "SAML"),
+            FederationProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

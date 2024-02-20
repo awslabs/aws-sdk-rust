@@ -101,3 +101,13 @@ impl ResourceRegionScopeFilter {
         }
     }
 }
+impl ::std::fmt::Display for ResourceRegionScopeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceRegionScopeFilter::All => write!(f, "ALL"),
+            ResourceRegionScopeFilter::Global => write!(f, "GLOBAL"),
+            ResourceRegionScopeFilter::Regional => write!(f, "REGIONAL"),
+            ResourceRegionScopeFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

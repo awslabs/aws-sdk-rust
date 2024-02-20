@@ -101,3 +101,13 @@ impl NetworkType {
         }
     }
 }
+impl ::std::fmt::Display for NetworkType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkType::DualStack => write!(f, "dual_stack"),
+            NetworkType::Ipv4 => write!(f, "ipv4"),
+            NetworkType::Ipv6 => write!(f, "ipv6"),
+            NetworkType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

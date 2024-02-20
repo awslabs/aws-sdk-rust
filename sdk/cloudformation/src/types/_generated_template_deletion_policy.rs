@@ -96,3 +96,12 @@ impl GeneratedTemplateDeletionPolicy {
         }
     }
 }
+impl ::std::fmt::Display for GeneratedTemplateDeletionPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GeneratedTemplateDeletionPolicy::Delete => write!(f, "DELETE"),
+            GeneratedTemplateDeletionPolicy::Retain => write!(f, "RETAIN"),
+            GeneratedTemplateDeletionPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

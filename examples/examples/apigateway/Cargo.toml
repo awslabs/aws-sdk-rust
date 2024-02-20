@@ -7,9 +7,9 @@ publish = false
 
 [dependencies]
 thiserror = "1.0"
-aws-config= { version = "1.1.4", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.1.6", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-apigateway= { version = "1.14.0", path = "../../../sdk/apigateway" }
-aws-smithy-types-convert= { version = "0.60.4", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
+aws-smithy-types-convert= { version = "0.60.5", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 
 [dependencies.clap]
 version = "~4.4"

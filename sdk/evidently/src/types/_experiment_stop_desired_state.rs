@@ -96,3 +96,12 @@ impl ExperimentStopDesiredState {
         }
     }
 }
+impl ::std::fmt::Display for ExperimentStopDesiredState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExperimentStopDesiredState::Cancelled => write!(f, "CANCELLED"),
+            ExperimentStopDesiredState::Completed => write!(f, "COMPLETED"),
+            ExperimentStopDesiredState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

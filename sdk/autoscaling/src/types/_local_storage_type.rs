@@ -96,3 +96,12 @@ impl LocalStorageType {
         }
     }
 }
+impl ::std::fmt::Display for LocalStorageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocalStorageType::Hdd => write!(f, "hdd"),
+            LocalStorageType::Ssd => write!(f, "ssd"),
+            LocalStorageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

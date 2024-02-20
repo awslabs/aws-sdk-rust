@@ -96,3 +96,12 @@ impl QualificationTypeStatus {
         }
     }
 }
+impl ::std::fmt::Display for QualificationTypeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QualificationTypeStatus::Active => write!(f, "Active"),
+            QualificationTypeStatus::Inactive => write!(f, "Inactive"),
+            QualificationTypeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

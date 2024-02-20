@@ -91,3 +91,11 @@ impl TracingVendor {
         }
     }
 }
+impl ::std::fmt::Display for TracingVendor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TracingVendor::Awsxray => write!(f, "AWSXRAY"),
+            TracingVendor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

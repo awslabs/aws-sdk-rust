@@ -101,3 +101,13 @@ impl EnablementStatus {
         }
     }
 }
+impl ::std::fmt::Display for EnablementStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnablementStatus::Failed => write!(f, "FAILED"),
+            EnablementStatus::Succeeded => write!(f, "SUCCEEDED"),
+            EnablementStatus::UnderChange => write!(f, "UNDER_CHANGE"),
+            EnablementStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

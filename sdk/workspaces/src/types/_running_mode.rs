@@ -101,3 +101,13 @@ impl RunningMode {
         }
     }
 }
+impl ::std::fmt::Display for RunningMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RunningMode::AlwaysOn => write!(f, "ALWAYS_ON"),
+            RunningMode::AutoStop => write!(f, "AUTO_STOP"),
+            RunningMode::Manual => write!(f, "MANUAL"),
+            RunningMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

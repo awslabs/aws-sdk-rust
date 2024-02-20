@@ -106,3 +106,14 @@ impl TreatMissingData {
         }
     }
 }
+impl ::std::fmt::Display for TreatMissingData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TreatMissingData::Breaching => write!(f, "breaching"),
+            TreatMissingData::Ignore => write!(f, "ignore"),
+            TreatMissingData::Missing => write!(f, "missing"),
+            TreatMissingData::NotBreaching => write!(f, "notBreaching"),
+            TreatMissingData::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

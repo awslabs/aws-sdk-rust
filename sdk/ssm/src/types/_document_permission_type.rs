@@ -91,3 +91,11 @@ impl DocumentPermissionType {
         }
     }
 }
+impl ::std::fmt::Display for DocumentPermissionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentPermissionType::Share => write!(f, "Share"),
+            DocumentPermissionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

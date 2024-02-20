@@ -101,3 +101,13 @@ impl WebCrawlerMode {
         }
     }
 }
+impl ::std::fmt::Display for WebCrawlerMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WebCrawlerMode::Everything => write!(f, "EVERYTHING"),
+            WebCrawlerMode::HostOnly => write!(f, "HOST_ONLY"),
+            WebCrawlerMode::Subdomains => write!(f, "SUBDOMAINS"),
+            WebCrawlerMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

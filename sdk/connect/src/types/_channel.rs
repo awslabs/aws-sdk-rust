@@ -101,3 +101,13 @@ impl Channel {
         }
     }
 }
+impl ::std::fmt::Display for Channel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Channel::Chat => write!(f, "CHAT"),
+            Channel::Task => write!(f, "TASK"),
+            Channel::Voice => write!(f, "VOICE"),
+            Channel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

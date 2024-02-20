@@ -111,3 +111,15 @@ impl IndexState {
         }
     }
 }
+impl ::std::fmt::Display for IndexState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IndexState::Active => write!(f, "ACTIVE"),
+            IndexState::Creating => write!(f, "CREATING"),
+            IndexState::Deleted => write!(f, "DELETED"),
+            IndexState::Deleting => write!(f, "DELETING"),
+            IndexState::Updating => write!(f, "UPDATING"),
+            IndexState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

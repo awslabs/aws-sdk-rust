@@ -103,3 +103,13 @@ impl DirectConnectGatewayAssociationProposalState {
         }
     }
 }
+impl ::std::fmt::Display for DirectConnectGatewayAssociationProposalState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectConnectGatewayAssociationProposalState::Accepted => write!(f, "accepted"),
+            DirectConnectGatewayAssociationProposalState::Deleted => write!(f, "deleted"),
+            DirectConnectGatewayAssociationProposalState::Requested => write!(f, "requested"),
+            DirectConnectGatewayAssociationProposalState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

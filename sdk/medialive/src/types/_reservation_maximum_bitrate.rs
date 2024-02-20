@@ -101,3 +101,13 @@ impl ReservationMaximumBitrate {
         }
     }
 }
+impl ::std::fmt::Display for ReservationMaximumBitrate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservationMaximumBitrate::Max10Mbps => write!(f, "MAX_10_MBPS"),
+            ReservationMaximumBitrate::Max20Mbps => write!(f, "MAX_20_MBPS"),
+            ReservationMaximumBitrate::Max50Mbps => write!(f, "MAX_50_MBPS"),
+            ReservationMaximumBitrate::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

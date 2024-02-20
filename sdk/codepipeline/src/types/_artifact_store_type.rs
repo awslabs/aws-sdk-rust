@@ -91,3 +91,11 @@ impl ArtifactStoreType {
         }
     }
 }
+impl ::std::fmt::Display for ArtifactStoreType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArtifactStoreType::S3 => write!(f, "S3"),
+            ArtifactStoreType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

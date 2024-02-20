@@ -96,3 +96,12 @@ impl DeploymentHistoryFilter {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentHistoryFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentHistoryFilter::All => write!(f, "ALL"),
+            DeploymentHistoryFilter::LatestOnly => write!(f, "LATEST_ONLY"),
+            DeploymentHistoryFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

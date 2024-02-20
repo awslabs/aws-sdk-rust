@@ -96,3 +96,12 @@ impl DurationUnit {
         }
     }
 }
+impl ::std::fmt::Display for DurationUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DurationUnit::Ms => write!(f, "ms"),
+            DurationUnit::S => write!(f, "s"),
+            DurationUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl Icd10CmTraitName {
         }
     }
 }
+impl ::std::fmt::Display for Icd10CmTraitName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Icd10CmTraitName::Diagnosis => write!(f, "DIAGNOSIS"),
+            Icd10CmTraitName::Hypothetical => write!(f, "HYPOTHETICAL"),
+            Icd10CmTraitName::LowConfidence => write!(f, "LOW_CONFIDENCE"),
+            Icd10CmTraitName::Negation => write!(f, "NEGATION"),
+            Icd10CmTraitName::PertainsToFamily => write!(f, "PERTAINS_TO_FAMILY"),
+            Icd10CmTraitName::Sign => write!(f, "SIGN"),
+            Icd10CmTraitName::Symptom => write!(f, "SYMPTOM"),
+            Icd10CmTraitName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

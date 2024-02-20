@@ -101,3 +101,13 @@ impl StreamOrder {
         }
     }
 }
+impl ::std::fmt::Display for StreamOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamOrder::Original => write!(f, "ORIGINAL"),
+            StreamOrder::VideoBitrateAscending => write!(f, "VIDEO_BITRATE_ASCENDING"),
+            StreamOrder::VideoBitrateDescending => write!(f, "VIDEO_BITRATE_DESCENDING"),
+            StreamOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

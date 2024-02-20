@@ -106,3 +106,14 @@ impl ExportTaskState {
         }
     }
 }
+impl ::std::fmt::Display for ExportTaskState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportTaskState::Active => write!(f, "active"),
+            ExportTaskState::Cancelled => write!(f, "cancelled"),
+            ExportTaskState::Cancelling => write!(f, "cancelling"),
+            ExportTaskState::Completed => write!(f, "completed"),
+            ExportTaskState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

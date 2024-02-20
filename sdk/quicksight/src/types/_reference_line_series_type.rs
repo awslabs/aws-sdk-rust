@@ -96,3 +96,12 @@ impl ReferenceLineSeriesType {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceLineSeriesType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceLineSeriesType::Bar => write!(f, "BAR"),
+            ReferenceLineSeriesType::Line => write!(f, "LINE"),
+            ReferenceLineSeriesType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

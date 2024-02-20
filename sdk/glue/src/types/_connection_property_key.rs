@@ -339,3 +339,52 @@ impl ConnectionPropertyKey {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionPropertyKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionPropertyKey::ConfigFiles => write!(f, "CONFIG_FILES"),
+            ConnectionPropertyKey::ConnectionUrl => write!(f, "CONNECTION_URL"),
+            ConnectionPropertyKey::ConnectorClassName => write!(f, "CONNECTOR_CLASS_NAME"),
+            ConnectionPropertyKey::ConnectorType => write!(f, "CONNECTOR_TYPE"),
+            ConnectionPropertyKey::ConnectorUrl => write!(f, "CONNECTOR_URL"),
+            ConnectionPropertyKey::CustomJdbcCert => write!(f, "CUSTOM_JDBC_CERT"),
+            ConnectionPropertyKey::CustomJdbcCertString => write!(f, "CUSTOM_JDBC_CERT_STRING"),
+            ConnectionPropertyKey::EncryptedKafkaClientKeystorePassword => write!(f, "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD"),
+            ConnectionPropertyKey::EncryptedKafkaClientKeyPassword => write!(f, "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD"),
+            ConnectionPropertyKey::EncryptedKafkaSaslPlainPassword => write!(f, "ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD"),
+            ConnectionPropertyKey::EncryptedKafkaSaslScramPassword => write!(f, "ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD"),
+            ConnectionPropertyKey::EncryptedPassword => write!(f, "ENCRYPTED_PASSWORD"),
+            ConnectionPropertyKey::Host => write!(f, "HOST"),
+            ConnectionPropertyKey::InstanceId => write!(f, "INSTANCE_ID"),
+            ConnectionPropertyKey::JdbcConnectionUrl => write!(f, "JDBC_CONNECTION_URL"),
+            ConnectionPropertyKey::JdbcDriverClassName => write!(f, "JDBC_DRIVER_CLASS_NAME"),
+            ConnectionPropertyKey::JdbcDriverJarUri => write!(f, "JDBC_DRIVER_JAR_URI"),
+            ConnectionPropertyKey::JdbcEnforceSsl => write!(f, "JDBC_ENFORCE_SSL"),
+            ConnectionPropertyKey::JdbcEngine => write!(f, "JDBC_ENGINE"),
+            ConnectionPropertyKey::JdbcEngineVersion => write!(f, "JDBC_ENGINE_VERSION"),
+            ConnectionPropertyKey::KafkaBootstrapServers => write!(f, "KAFKA_BOOTSTRAP_SERVERS"),
+            ConnectionPropertyKey::KafkaClientKeystore => write!(f, "KAFKA_CLIENT_KEYSTORE"),
+            ConnectionPropertyKey::KafkaClientKeystorePassword => write!(f, "KAFKA_CLIENT_KEYSTORE_PASSWORD"),
+            ConnectionPropertyKey::KafkaClientKeyPassword => write!(f, "KAFKA_CLIENT_KEY_PASSWORD"),
+            ConnectionPropertyKey::KafkaCustomCert => write!(f, "KAFKA_CUSTOM_CERT"),
+            ConnectionPropertyKey::KafkaSaslGssapiKeytab => write!(f, "KAFKA_SASL_GSSAPI_KEYTAB"),
+            ConnectionPropertyKey::KafkaSaslGssapiKrb5Conf => write!(f, "KAFKA_SASL_GSSAPI_KRB5_CONF"),
+            ConnectionPropertyKey::KafkaSaslGssapiPrincipal => write!(f, "KAFKA_SASL_GSSAPI_PRINCIPAL"),
+            ConnectionPropertyKey::KafkaSaslGssapiService => write!(f, "KAFKA_SASL_GSSAPI_SERVICE"),
+            ConnectionPropertyKey::KafkaSaslMechanism => write!(f, "KAFKA_SASL_MECHANISM"),
+            ConnectionPropertyKey::KafkaSaslPlainPassword => write!(f, "KAFKA_SASL_PLAIN_PASSWORD"),
+            ConnectionPropertyKey::KafkaSaslPlainUsername => write!(f, "KAFKA_SASL_PLAIN_USERNAME"),
+            ConnectionPropertyKey::KafkaSaslScramPassword => write!(f, "KAFKA_SASL_SCRAM_PASSWORD"),
+            ConnectionPropertyKey::KafkaSaslScramSecretsArn => write!(f, "KAFKA_SASL_SCRAM_SECRETS_ARN"),
+            ConnectionPropertyKey::KafkaSaslScramUsername => write!(f, "KAFKA_SASL_SCRAM_USERNAME"),
+            ConnectionPropertyKey::KafkaSkipCustomCertValidation => write!(f, "KAFKA_SKIP_CUSTOM_CERT_VALIDATION"),
+            ConnectionPropertyKey::KafkaSslEnabled => write!(f, "KAFKA_SSL_ENABLED"),
+            ConnectionPropertyKey::Password => write!(f, "PASSWORD"),
+            ConnectionPropertyKey::Port => write!(f, "PORT"),
+            ConnectionPropertyKey::SecretId => write!(f, "SECRET_ID"),
+            ConnectionPropertyKey::SkipCustomJdbcCertValidation => write!(f, "SKIP_CUSTOM_JDBC_CERT_VALIDATION"),
+            ConnectionPropertyKey::UserName => write!(f, "USERNAME"),
+            ConnectionPropertyKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

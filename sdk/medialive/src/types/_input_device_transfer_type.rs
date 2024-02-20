@@ -96,3 +96,12 @@ impl InputDeviceTransferType {
         }
     }
 }
+impl ::std::fmt::Display for InputDeviceTransferType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDeviceTransferType::Incoming => write!(f, "INCOMING"),
+            InputDeviceTransferType::Outgoing => write!(f, "OUTGOING"),
+            InputDeviceTransferType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

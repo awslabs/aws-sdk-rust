@@ -111,3 +111,15 @@ impl ReplicatorState {
         }
     }
 }
+impl ::std::fmt::Display for ReplicatorState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicatorState::Creating => write!(f, "CREATING"),
+            ReplicatorState::Deleting => write!(f, "DELETING"),
+            ReplicatorState::Failed => write!(f, "FAILED"),
+            ReplicatorState::Running => write!(f, "RUNNING"),
+            ReplicatorState::Updating => write!(f, "UPDATING"),
+            ReplicatorState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

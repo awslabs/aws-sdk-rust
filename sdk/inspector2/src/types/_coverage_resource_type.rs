@@ -106,3 +106,14 @@ impl CoverageResourceType {
         }
     }
 }
+impl ::std::fmt::Display for CoverageResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CoverageResourceType::AwsEc2Instance => write!(f, "AWS_EC2_INSTANCE"),
+            CoverageResourceType::AwsEcrContainerImage => write!(f, "AWS_ECR_CONTAINER_IMAGE"),
+            CoverageResourceType::AwsEcrRepository => write!(f, "AWS_ECR_REPOSITORY"),
+            CoverageResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
+            CoverageResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

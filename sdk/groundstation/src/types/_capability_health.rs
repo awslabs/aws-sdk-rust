@@ -96,3 +96,12 @@ impl CapabilityHealth {
         }
     }
 }
+impl ::std::fmt::Display for CapabilityHealth {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapabilityHealth::Healthy => write!(f, "HEALTHY"),
+            CapabilityHealth::Unhealthy => write!(f, "UNHEALTHY"),
+            CapabilityHealth::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

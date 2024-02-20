@@ -96,3 +96,12 @@ impl AuthenticationScheme {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationScheme {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationScheme::Akamai => write!(f, "AKAMAI"),
+            AuthenticationScheme::Common => write!(f, "COMMON"),
+            AuthenticationScheme::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl AudienceModelStatus {
         }
     }
 }
+impl ::std::fmt::Display for AudienceModelStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudienceModelStatus::Active => write!(f, "ACTIVE"),
+            AudienceModelStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            AudienceModelStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            AudienceModelStatus::CreatePending => write!(f, "CREATE_PENDING"),
+            AudienceModelStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            AudienceModelStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            AudienceModelStatus::DeletePending => write!(f, "DELETE_PENDING"),
+            AudienceModelStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

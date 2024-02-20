@@ -96,3 +96,12 @@ impl InitiatedBy {
         }
     }
 }
+impl ::std::fmt::Display for InitiatedBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InitiatedBy::Customer => write!(f, "CUSTOMER"),
+            InitiatedBy::Service => write!(f, "SERVICE"),
+            InitiatedBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

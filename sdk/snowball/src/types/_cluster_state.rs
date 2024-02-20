@@ -111,3 +111,15 @@ impl ClusterState {
         }
     }
 }
+impl ::std::fmt::Display for ClusterState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterState::AwaitingQuorum => write!(f, "AwaitingQuorum"),
+            ClusterState::Cancelled => write!(f, "Cancelled"),
+            ClusterState::Complete => write!(f, "Complete"),
+            ClusterState::InUse => write!(f, "InUse"),
+            ClusterState::Pending => write!(f, "Pending"),
+            ClusterState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

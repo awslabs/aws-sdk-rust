@@ -129,3 +129,17 @@ impl BundleTaskState {
         }
     }
 }
+impl ::std::fmt::Display for BundleTaskState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BundleTaskState::Bundling => write!(f, "bundling"),
+            BundleTaskState::Cancelling => write!(f, "cancelling"),
+            BundleTaskState::Complete => write!(f, "complete"),
+            BundleTaskState::Failed => write!(f, "failed"),
+            BundleTaskState::Pending => write!(f, "pending"),
+            BundleTaskState::Storing => write!(f, "storing"),
+            BundleTaskState::WaitingForShutdown => write!(f, "waiting-for-shutdown"),
+            BundleTaskState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl AgentUpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for AgentUpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgentUpdateStatus::Failed => write!(f, "FAILED"),
+            AgentUpdateStatus::Pending => write!(f, "PENDING"),
+            AgentUpdateStatus::Staged => write!(f, "STAGED"),
+            AgentUpdateStatus::Staging => write!(f, "STAGING"),
+            AgentUpdateStatus::Updated => write!(f, "UPDATED"),
+            AgentUpdateStatus::Updating => write!(f, "UPDATING"),
+            AgentUpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

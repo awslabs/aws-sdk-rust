@@ -106,3 +106,14 @@ impl UsageStatisticsFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for UsageStatisticsFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageStatisticsFilterKey::AccountId => write!(f, "accountId"),
+            UsageStatisticsFilterKey::FreeTrialStartDate => write!(f, "freeTrialStartDate"),
+            UsageStatisticsFilterKey::ServiceLimit => write!(f, "serviceLimit"),
+            UsageStatisticsFilterKey::Total => write!(f, "total"),
+            UsageStatisticsFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl BotReplicaStatus {
         }
     }
 }
+impl ::std::fmt::Display for BotReplicaStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotReplicaStatus::Deleting => write!(f, "Deleting"),
+            BotReplicaStatus::Enabled => write!(f, "Enabled"),
+            BotReplicaStatus::Enabling => write!(f, "Enabling"),
+            BotReplicaStatus::Failed => write!(f, "Failed"),
+            BotReplicaStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

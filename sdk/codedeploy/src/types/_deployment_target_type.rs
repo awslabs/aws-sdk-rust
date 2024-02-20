@@ -106,3 +106,14 @@ impl DeploymentTargetType {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentTargetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentTargetType::CloudformationTarget => write!(f, "CloudFormationTarget"),
+            DeploymentTargetType::EcsTarget => write!(f, "ECSTarget"),
+            DeploymentTargetType::InstanceTarget => write!(f, "InstanceTarget"),
+            DeploymentTargetType::LambdaTarget => write!(f, "LambdaTarget"),
+            DeploymentTargetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

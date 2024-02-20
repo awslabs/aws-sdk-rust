@@ -111,3 +111,15 @@ impl CampaignState {
         }
     }
 }
+impl ::std::fmt::Display for CampaignState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CampaignState::Failed => write!(f, "Failed"),
+            CampaignState::Initialized => write!(f, "Initialized"),
+            CampaignState::Paused => write!(f, "Paused"),
+            CampaignState::Running => write!(f, "Running"),
+            CampaignState::Stopped => write!(f, "Stopped"),
+            CampaignState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl RenderRecommendationType {
         }
     }
 }
+impl ::std::fmt::Display for RenderRecommendationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RenderRecommendationType::Alarm => write!(f, "Alarm"),
+            RenderRecommendationType::Sop => write!(f, "Sop"),
+            RenderRecommendationType::Test => write!(f, "Test"),
+            RenderRecommendationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

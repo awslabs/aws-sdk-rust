@@ -96,3 +96,12 @@ impl DistanceUnit {
         }
     }
 }
+impl ::std::fmt::Display for DistanceUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DistanceUnit::Imperial => write!(f, "IMPERIAL"),
+            DistanceUnit::Metric => write!(f, "METRIC"),
+            DistanceUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

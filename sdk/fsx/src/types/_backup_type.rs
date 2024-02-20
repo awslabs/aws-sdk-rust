@@ -101,3 +101,13 @@ impl BackupType {
         }
     }
 }
+impl ::std::fmt::Display for BackupType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackupType::Automatic => write!(f, "AUTOMATIC"),
+            BackupType::AwsBackup => write!(f, "AWS_BACKUP"),
+            BackupType::UserInitiated => write!(f, "USER_INITIATED"),
+            BackupType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

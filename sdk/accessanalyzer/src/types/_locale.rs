@@ -136,3 +136,20 @@ impl Locale {
         }
     }
 }
+impl ::std::fmt::Display for Locale {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Locale::De => write!(f, "DE"),
+            Locale::En => write!(f, "EN"),
+            Locale::Es => write!(f, "ES"),
+            Locale::Fr => write!(f, "FR"),
+            Locale::It => write!(f, "IT"),
+            Locale::Ja => write!(f, "JA"),
+            Locale::Ko => write!(f, "KO"),
+            Locale::PtBr => write!(f, "PT_BR"),
+            Locale::ZhCn => write!(f, "ZH_CN"),
+            Locale::ZhTw => write!(f, "ZH_TW"),
+            Locale::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

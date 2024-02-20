@@ -106,3 +106,14 @@ impl AudioSelectorType {
         }
     }
 }
+impl ::std::fmt::Display for AudioSelectorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioSelectorType::HlsRenditionGroup => write!(f, "HLS_RENDITION_GROUP"),
+            AudioSelectorType::LanguageCode => write!(f, "LANGUAGE_CODE"),
+            AudioSelectorType::Pid => write!(f, "PID"),
+            AudioSelectorType::Track => write!(f, "TRACK"),
+            AudioSelectorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

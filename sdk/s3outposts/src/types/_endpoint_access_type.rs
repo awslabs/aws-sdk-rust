@@ -96,3 +96,12 @@ impl EndpointAccessType {
         }
     }
 }
+impl ::std::fmt::Display for EndpointAccessType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointAccessType::CustomerOwnedIp => write!(f, "CustomerOwnedIp"),
+            EndpointAccessType::Private => write!(f, "Private"),
+            EndpointAccessType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

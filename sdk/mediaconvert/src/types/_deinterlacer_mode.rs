@@ -104,3 +104,13 @@ impl DeinterlacerMode {
         }
     }
 }
+impl ::std::fmt::Display for DeinterlacerMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeinterlacerMode::Adaptive => write!(f, "ADAPTIVE"),
+            DeinterlacerMode::Deinterlace => write!(f, "DEINTERLACE"),
+            DeinterlacerMode::InverseTelecine => write!(f, "INVERSE_TELECINE"),
+            DeinterlacerMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

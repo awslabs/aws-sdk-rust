@@ -96,3 +96,12 @@ impl WordCloudWordCasing {
         }
     }
 }
+impl ::std::fmt::Display for WordCloudWordCasing {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WordCloudWordCasing::ExistingCase => write!(f, "EXISTING_CASE"),
+            WordCloudWordCasing::LowerCase => write!(f, "LOWER_CASE"),
+            WordCloudWordCasing::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

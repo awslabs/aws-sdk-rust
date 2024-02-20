@@ -106,3 +106,14 @@ impl HttpVersion {
         }
     }
 }
+impl ::std::fmt::Display for HttpVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HttpVersion::Http11 => write!(f, "http1.1"),
+            HttpVersion::Http2 => write!(f, "http2"),
+            HttpVersion::Http2and3 => write!(f, "http2and3"),
+            HttpVersion::Http3 => write!(f, "http3"),
+            HttpVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

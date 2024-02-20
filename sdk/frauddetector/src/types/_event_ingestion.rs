@@ -96,3 +96,12 @@ impl EventIngestion {
         }
     }
 }
+impl ::std::fmt::Display for EventIngestion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventIngestion::Disabled => write!(f, "DISABLED"),
+            EventIngestion::Enabled => write!(f, "ENABLED"),
+            EventIngestion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

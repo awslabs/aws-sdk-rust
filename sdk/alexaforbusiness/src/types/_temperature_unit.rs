@@ -96,3 +96,12 @@ impl TemperatureUnit {
         }
     }
 }
+impl ::std::fmt::Display for TemperatureUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemperatureUnit::Celsius => write!(f, "CELSIUS"),
+            TemperatureUnit::Fahrenheit => write!(f, "FAHRENHEIT"),
+            TemperatureUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

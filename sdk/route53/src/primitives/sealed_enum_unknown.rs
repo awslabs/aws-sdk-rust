@@ -14,3 +14,8 @@ impl UnknownVariantValue {
         &self.0
     }
 }
+impl ::std::fmt::Display for UnknownVariantValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        write!(f, "{}", self.0)
+    }
+}

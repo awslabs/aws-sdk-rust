@@ -101,3 +101,13 @@ impl NotificationTarget {
         }
     }
 }
+impl ::std::fmt::Display for NotificationTarget {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationTarget::EventBridge => write!(f, "EventBridge"),
+            NotificationTarget::Sns => write!(f, "SNS"),
+            NotificationTarget::Sqs => write!(f, "SQS"),
+            NotificationTarget::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SharedResourceSortByType {
         }
     }
 }
+impl ::std::fmt::Display for SharedResourceSortByType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SharedResourceSortByType::Arn => write!(f, "ARN"),
+            SharedResourceSortByType::ModifiedTime => write!(f, "MODIFIED_TIME"),
+            SharedResourceSortByType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

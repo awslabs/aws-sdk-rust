@@ -116,3 +116,16 @@ impl FilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for FilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterOperator::Eq => write!(f, "EQ"),
+            FilterOperator::Ge => write!(f, "GE"),
+            FilterOperator::Gt => write!(f, "GT"),
+            FilterOperator::Le => write!(f, "LE"),
+            FilterOperator::Lt => write!(f, "LT"),
+            FilterOperator::Ne => write!(f, "NE"),
+            FilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

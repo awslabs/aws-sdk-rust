@@ -106,3 +106,14 @@ impl SearchResourceType {
         }
     }
 }
+impl ::std::fmt::Display for SearchResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchResourceType::Comment => write!(f, "COMMENT"),
+            SearchResourceType::Document => write!(f, "DOCUMENT"),
+            SearchResourceType::DocumentVersion => write!(f, "DOCUMENT_VERSION"),
+            SearchResourceType::Folder => write!(f, "FOLDER"),
+            SearchResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

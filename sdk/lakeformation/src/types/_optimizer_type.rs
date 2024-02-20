@@ -101,3 +101,13 @@ impl OptimizerType {
         }
     }
 }
+impl ::std::fmt::Display for OptimizerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OptimizerType::Generic => write!(f, "ALL"),
+            OptimizerType::Compaction => write!(f, "COMPACTION"),
+            OptimizerType::GarbageCollection => write!(f, "GARBAGE_COLLECTION"),
+            OptimizerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

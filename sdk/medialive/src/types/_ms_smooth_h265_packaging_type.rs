@@ -96,3 +96,12 @@ impl MsSmoothH265PackagingType {
         }
     }
 }
+impl ::std::fmt::Display for MsSmoothH265PackagingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MsSmoothH265PackagingType::Hev1 => write!(f, "HEV1"),
+            MsSmoothH265PackagingType::Hvc1 => write!(f, "HVC1"),
+            MsSmoothH265PackagingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

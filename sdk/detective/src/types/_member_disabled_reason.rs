@@ -96,3 +96,12 @@ impl MemberDisabledReason {
         }
     }
 }
+impl ::std::fmt::Display for MemberDisabledReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberDisabledReason::VolumeTooHigh => write!(f, "VOLUME_TOO_HIGH"),
+            MemberDisabledReason::VolumeUnknown => write!(f, "VOLUME_UNKNOWN"),
+            MemberDisabledReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

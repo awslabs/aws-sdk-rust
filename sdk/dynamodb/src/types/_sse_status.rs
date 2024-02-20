@@ -111,3 +111,15 @@ impl SseStatus {
         }
     }
 }
+impl ::std::fmt::Display for SseStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SseStatus::Disabled => write!(f, "DISABLED"),
+            SseStatus::Disabling => write!(f, "DISABLING"),
+            SseStatus::Enabled => write!(f, "ENABLED"),
+            SseStatus::Enabling => write!(f, "ENABLING"),
+            SseStatus::Updating => write!(f, "UPDATING"),
+            SseStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

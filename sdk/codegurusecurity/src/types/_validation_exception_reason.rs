@@ -117,3 +117,15 @@ impl ValidationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ValidationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationExceptionReason::CannotParse => write!(f, "cannotParse"),
+            ValidationExceptionReason::FieldValidationFailed => write!(f, "fieldValidationFailed"),
+            ValidationExceptionReason::LambdaCodeShaMismatch => write!(f, "lambdaCodeShaMisMatch"),
+            ValidationExceptionReason::Other => write!(f, "other"),
+            ValidationExceptionReason::UnknownOperation => write!(f, "unknownOperation"),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

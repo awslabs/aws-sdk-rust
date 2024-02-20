@@ -101,3 +101,13 @@ impl FailoverStatus {
         }
     }
 }
+impl ::std::fmt::Display for FailoverStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailoverStatus::Cancelling => write!(f, "cancelling"),
+            FailoverStatus::FailingOver => write!(f, "failing-over"),
+            FailoverStatus::Pending => write!(f, "pending"),
+            FailoverStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AutoRegistrationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AutoRegistrationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoRegistrationStatus::Disable => write!(f, "DISABLE"),
+            AutoRegistrationStatus::Enable => write!(f, "ENABLE"),
+            AutoRegistrationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

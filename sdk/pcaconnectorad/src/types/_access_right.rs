@@ -96,3 +96,12 @@ impl AccessRight {
         }
     }
 }
+impl ::std::fmt::Display for AccessRight {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessRight::Allow => write!(f, "ALLOW"),
+            AccessRight::Deny => write!(f, "DENY"),
+            AccessRight::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl LiveConnectorSinkType {
         }
     }
 }
+impl ::std::fmt::Display for LiveConnectorSinkType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LiveConnectorSinkType::Rtmp => write!(f, "RTMP"),
+            LiveConnectorSinkType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

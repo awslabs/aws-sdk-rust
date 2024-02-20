@@ -96,3 +96,12 @@ impl SoftwareSetUpdateSchedule {
         }
     }
 }
+impl ::std::fmt::Display for SoftwareSetUpdateSchedule {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SoftwareSetUpdateSchedule::ApplyImmediately => write!(f, "APPLY_IMMEDIATELY"),
+            SoftwareSetUpdateSchedule::UseMaintenanceWindow => write!(f, "USE_MAINTENANCE_WINDOW"),
+            SoftwareSetUpdateSchedule::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -123,3 +123,16 @@ impl FastLaunchStateCode {
         }
     }
 }
+impl ::std::fmt::Display for FastLaunchStateCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FastLaunchStateCode::Disabling => write!(f, "disabling"),
+            FastLaunchStateCode::DisablingFailed => write!(f, "disabling-failed"),
+            FastLaunchStateCode::Enabled => write!(f, "enabled"),
+            FastLaunchStateCode::EnabledFailed => write!(f, "enabled-failed"),
+            FastLaunchStateCode::Enabling => write!(f, "enabling"),
+            FastLaunchStateCode::EnablingFailed => write!(f, "enabling-failed"),
+            FastLaunchStateCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

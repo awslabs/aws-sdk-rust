@@ -101,3 +101,13 @@ impl PostLaunchActionExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for PostLaunchActionExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PostLaunchActionExecutionStatus::Failed => write!(f, "FAILED"),
+            PostLaunchActionExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            PostLaunchActionExecutionStatus::Success => write!(f, "SUCCESS"),
+            PostLaunchActionExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -123,3 +123,16 @@ impl SigningAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for SigningAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SigningAlgorithm::Sha256Withecdsa => write!(f, "SHA256WITHECDSA"),
+            SigningAlgorithm::Sha256Withrsa => write!(f, "SHA256WITHRSA"),
+            SigningAlgorithm::Sha384Withecdsa => write!(f, "SHA384WITHECDSA"),
+            SigningAlgorithm::Sha384Withrsa => write!(f, "SHA384WITHRSA"),
+            SigningAlgorithm::Sha512Withecdsa => write!(f, "SHA512WITHECDSA"),
+            SigningAlgorithm::Sha512Withrsa => write!(f, "SHA512WITHRSA"),
+            SigningAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

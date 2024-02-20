@@ -96,3 +96,12 @@ impl HlsDirectoryStructure {
         }
     }
 }
+impl ::std::fmt::Display for HlsDirectoryStructure {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsDirectoryStructure::SingleDirectory => write!(f, "SINGLE_DIRECTORY"),
+            HlsDirectoryStructure::SubdirectoryPerStream => write!(f, "SUBDIRECTORY_PER_STREAM"),
+            HlsDirectoryStructure::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

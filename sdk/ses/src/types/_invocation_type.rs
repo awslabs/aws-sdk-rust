@@ -96,3 +96,12 @@ impl InvocationType {
         }
     }
 }
+impl ::std::fmt::Display for InvocationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InvocationType::Event => write!(f, "Event"),
+            InvocationType::RequestResponse => write!(f, "RequestResponse"),
+            InvocationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

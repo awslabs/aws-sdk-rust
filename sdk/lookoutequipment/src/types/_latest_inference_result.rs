@@ -96,3 +96,12 @@ impl LatestInferenceResult {
         }
     }
 }
+impl ::std::fmt::Display for LatestInferenceResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LatestInferenceResult::Anomalous => write!(f, "ANOMALOUS"),
+            LatestInferenceResult::Normal => write!(f, "NORMAL"),
+            LatestInferenceResult::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

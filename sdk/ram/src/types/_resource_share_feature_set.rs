@@ -101,3 +101,13 @@ impl ResourceShareFeatureSet {
         }
     }
 }
+impl ::std::fmt::Display for ResourceShareFeatureSet {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceShareFeatureSet::CreatedFromPolicy => write!(f, "CREATED_FROM_POLICY"),
+            ResourceShareFeatureSet::PromotingToStandard => write!(f, "PROMOTING_TO_STANDARD"),
+            ResourceShareFeatureSet::Standard => write!(f, "STANDARD"),
+            ResourceShareFeatureSet::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl KeyUsagePropertyType {
         }
     }
 }
+impl ::std::fmt::Display for KeyUsagePropertyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyUsagePropertyType::All => write!(f, "ALL"),
+            KeyUsagePropertyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

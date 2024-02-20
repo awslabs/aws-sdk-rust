@@ -106,3 +106,14 @@ impl ImportResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ImportResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportResourceType::Bot => write!(f, "Bot"),
+            ImportResourceType::BotLocale => write!(f, "BotLocale"),
+            ImportResourceType::CustomVocabulary => write!(f, "CustomVocabulary"),
+            ImportResourceType::TestSet => write!(f, "TestSet"),
+            ImportResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ManifestLayout {
         }
     }
 }
+impl ::std::fmt::Display for ManifestLayout {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ManifestLayout::Compact => write!(f, "COMPACT"),
+            ManifestLayout::DrmTopLevelCompact => write!(f, "DRM_TOP_LEVEL_COMPACT"),
+            ManifestLayout::Full => write!(f, "FULL"),
+            ManifestLayout::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

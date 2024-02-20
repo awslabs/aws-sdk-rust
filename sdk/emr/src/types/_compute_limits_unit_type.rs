@@ -101,3 +101,13 @@ impl ComputeLimitsUnitType {
         }
     }
 }
+impl ::std::fmt::Display for ComputeLimitsUnitType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComputeLimitsUnitType::InstanceFleetUnits => write!(f, "InstanceFleetUnits"),
+            ComputeLimitsUnitType::Instances => write!(f, "Instances"),
+            ComputeLimitsUnitType::Vcpu => write!(f, "VCPU"),
+            ComputeLimitsUnitType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

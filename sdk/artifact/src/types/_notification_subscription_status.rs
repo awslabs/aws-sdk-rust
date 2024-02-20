@@ -96,3 +96,12 @@ impl NotificationSubscriptionStatus {
         }
     }
 }
+impl ::std::fmt::Display for NotificationSubscriptionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationSubscriptionStatus::NotSubscribed => write!(f, "NOT_SUBSCRIBED"),
+            NotificationSubscriptionStatus::Subscribed => write!(f, "SUBSCRIBED"),
+            NotificationSubscriptionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

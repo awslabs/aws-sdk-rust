@@ -96,3 +96,12 @@ impl ObjectVersionIds {
         }
     }
 }
+impl ::std::fmt::Display for ObjectVersionIds {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectVersionIds::Include => write!(f, "INCLUDE"),
+            ObjectVersionIds::None => write!(f, "NONE"),
+            ObjectVersionIds::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

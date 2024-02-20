@@ -96,3 +96,12 @@ impl ResourceLocationValues {
         }
     }
 }
+impl ::std::fmt::Display for ResourceLocationValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceLocationValues::Cloud => write!(f, "CLOUD"),
+            ResourceLocationValues::Outpost => write!(f, "OUTPOST"),
+            ResourceLocationValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

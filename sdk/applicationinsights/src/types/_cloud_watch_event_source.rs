@@ -106,3 +106,14 @@ impl CloudWatchEventSource {
         }
     }
 }
+impl ::std::fmt::Display for CloudWatchEventSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CloudWatchEventSource::CodeDeploy => write!(f, "CODE_DEPLOY"),
+            CloudWatchEventSource::Ec2 => write!(f, "EC2"),
+            CloudWatchEventSource::Health => write!(f, "HEALTH"),
+            CloudWatchEventSource::Rds => write!(f, "RDS"),
+            CloudWatchEventSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

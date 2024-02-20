@@ -91,3 +91,11 @@ impl RetrieveAndGenerateType {
         }
     }
 }
+impl ::std::fmt::Display for RetrieveAndGenerateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetrieveAndGenerateType::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
+            RetrieveAndGenerateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

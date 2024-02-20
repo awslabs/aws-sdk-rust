@@ -129,3 +129,17 @@ impl LoggingConfigurationState {
         }
     }
 }
+impl ::std::fmt::Display for LoggingConfigurationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoggingConfigurationState::Active => write!(f, "ACTIVE"),
+            LoggingConfigurationState::CreateFailed => write!(f, "CREATE_FAILED"),
+            LoggingConfigurationState::Creating => write!(f, "CREATING"),
+            LoggingConfigurationState::DeleteFailed => write!(f, "DELETE_FAILED"),
+            LoggingConfigurationState::Deleting => write!(f, "DELETING"),
+            LoggingConfigurationState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            LoggingConfigurationState::Updating => write!(f, "UPDATING"),
+            LoggingConfigurationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,14 @@ impl PermissionType {
         }
     }
 }
+impl ::std::fmt::Display for PermissionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionType::CellFilterPermission => write!(f, "CELL_FILTER_PERMISSION"),
+            PermissionType::ColumnPermission => write!(f, "COLUMN_PERMISSION"),
+            PermissionType::NestedCellPermission => write!(f, "NESTED_CELL_PERMISSION"),
+            PermissionType::NestedPermission => write!(f, "NESTED_PERMISSION"),
+            PermissionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

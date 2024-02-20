@@ -91,3 +91,11 @@ impl TemplateStatus {
         }
     }
 }
+impl ::std::fmt::Display for TemplateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemplateStatus::Created => write!(f, "CREATED"),
+            TemplateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

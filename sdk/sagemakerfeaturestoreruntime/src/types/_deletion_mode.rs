@@ -96,3 +96,12 @@ impl DeletionMode {
         }
     }
 }
+impl ::std::fmt::Display for DeletionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeletionMode::HardDelete => write!(f, "HardDelete"),
+            DeletionMode::SoftDelete => write!(f, "SoftDelete"),
+            DeletionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

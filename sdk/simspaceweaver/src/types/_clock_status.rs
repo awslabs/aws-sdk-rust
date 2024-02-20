@@ -111,3 +111,15 @@ impl ClockStatus {
         }
     }
 }
+impl ::std::fmt::Display for ClockStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClockStatus::Started => write!(f, "STARTED"),
+            ClockStatus::Starting => write!(f, "STARTING"),
+            ClockStatus::Stopped => write!(f, "STOPPED"),
+            ClockStatus::Stopping => write!(f, "STOPPING"),
+            ClockStatus::UnknownValue => write!(f, "UNKNOWN"),
+            ClockStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

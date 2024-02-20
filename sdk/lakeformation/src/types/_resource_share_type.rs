@@ -96,3 +96,12 @@ impl ResourceShareType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceShareType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceShareType::All => write!(f, "ALL"),
+            ResourceShareType::Foreign => write!(f, "FOREIGN"),
+            ResourceShareType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

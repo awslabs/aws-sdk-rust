@@ -91,3 +91,11 @@ impl RecordType {
         }
     }
 }
+impl ::std::fmt::Display for RecordType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordType::Cname => write!(f, "CNAME"),
+            RecordType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

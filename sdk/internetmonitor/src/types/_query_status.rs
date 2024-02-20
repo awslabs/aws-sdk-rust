@@ -111,3 +111,15 @@ impl QueryStatus {
         }
     }
 }
+impl ::std::fmt::Display for QueryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryStatus::Canceled => write!(f, "CANCELED"),
+            QueryStatus::Failed => write!(f, "FAILED"),
+            QueryStatus::Queued => write!(f, "QUEUED"),
+            QueryStatus::Running => write!(f, "RUNNING"),
+            QueryStatus::Succeeded => write!(f, "SUCCEEDED"),
+            QueryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

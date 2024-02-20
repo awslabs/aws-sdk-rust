@@ -101,3 +101,13 @@ impl OriginAccessControlSigningBehaviors {
         }
     }
 }
+impl ::std::fmt::Display for OriginAccessControlSigningBehaviors {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginAccessControlSigningBehaviors::Always => write!(f, "always"),
+            OriginAccessControlSigningBehaviors::Never => write!(f, "never"),
+            OriginAccessControlSigningBehaviors::NoOverride => write!(f, "no-override"),
+            OriginAccessControlSigningBehaviors::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

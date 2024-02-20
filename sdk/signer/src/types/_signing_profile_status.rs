@@ -101,3 +101,13 @@ impl SigningProfileStatus {
         }
     }
 }
+impl ::std::fmt::Display for SigningProfileStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SigningProfileStatus::Active => write!(f, "Active"),
+            SigningProfileStatus::Canceled => write!(f, "Canceled"),
+            SigningProfileStatus::Revoked => write!(f, "Revoked"),
+            SigningProfileStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

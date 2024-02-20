@@ -106,3 +106,14 @@ impl ParameterExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ParameterExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParameterExceptionReason::IllegalArgument => write!(f, "ILLEGAL_ARGUMENT"),
+            ParameterExceptionReason::IllegalCombination => write!(f, "ILLEGAL_COMBINATION"),
+            ParameterExceptionReason::InvalidOption => write!(f, "INVALID_OPTION"),
+            ParameterExceptionReason::InvalidTagKey => write!(f, "INVALID_TAG_KEY"),
+            ParameterExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -204,3 +204,33 @@ impl VocabularyLanguageCode {
         }
     }
 }
+impl ::std::fmt::Display for VocabularyLanguageCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VocabularyLanguageCode::ArAe => write!(f, "ar-AE"),
+            VocabularyLanguageCode::DeCh => write!(f, "de-CH"),
+            VocabularyLanguageCode::DeDe => write!(f, "de-DE"),
+            VocabularyLanguageCode::EnAb => write!(f, "en-AB"),
+            VocabularyLanguageCode::EnAu => write!(f, "en-AU"),
+            VocabularyLanguageCode::EnGb => write!(f, "en-GB"),
+            VocabularyLanguageCode::EnIe => write!(f, "en-IE"),
+            VocabularyLanguageCode::EnIn => write!(f, "en-IN"),
+            VocabularyLanguageCode::EnNz => write!(f, "en-NZ"),
+            VocabularyLanguageCode::EnUs => write!(f, "en-US"),
+            VocabularyLanguageCode::EnWl => write!(f, "en-WL"),
+            VocabularyLanguageCode::EnZa => write!(f, "en-ZA"),
+            VocabularyLanguageCode::EsEs => write!(f, "es-ES"),
+            VocabularyLanguageCode::EsUs => write!(f, "es-US"),
+            VocabularyLanguageCode::FrCa => write!(f, "fr-CA"),
+            VocabularyLanguageCode::FrFr => write!(f, "fr-FR"),
+            VocabularyLanguageCode::HiIn => write!(f, "hi-IN"),
+            VocabularyLanguageCode::ItIt => write!(f, "it-IT"),
+            VocabularyLanguageCode::JaJp => write!(f, "ja-JP"),
+            VocabularyLanguageCode::KoKr => write!(f, "ko-KR"),
+            VocabularyLanguageCode::PtBr => write!(f, "pt-BR"),
+            VocabularyLanguageCode::PtPt => write!(f, "pt-PT"),
+            VocabularyLanguageCode::ZhCn => write!(f, "zh-CN"),
+            VocabularyLanguageCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

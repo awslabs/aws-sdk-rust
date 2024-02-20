@@ -183,3 +183,26 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::AccessDenied => write!(f, "AccessDenied"),
+            ErrorCode::BadRequest => write!(f, "BadRequest"),
+            ErrorCode::Conflict => write!(f, "Conflict"),
+            ErrorCode::Forbidden => write!(f, "Forbidden"),
+            ErrorCode::Gone => write!(f, "Gone"),
+            ErrorCode::NotFound => write!(f, "NotFound"),
+            ErrorCode::PhoneNumberAssociationsExist => write!(f, "PhoneNumberAssociationsExist"),
+            ErrorCode::PreconditionFailed => write!(f, "PreconditionFailed"),
+            ErrorCode::ResourceLimitExceeded => write!(f, "ResourceLimitExceeded"),
+            ErrorCode::ServiceFailure => write!(f, "ServiceFailure"),
+            ErrorCode::ServiceUnavailable => write!(f, "ServiceUnavailable"),
+            ErrorCode::Throttled => write!(f, "Throttled"),
+            ErrorCode::Throttling => write!(f, "Throttling"),
+            ErrorCode::Unauthorized => write!(f, "Unauthorized"),
+            ErrorCode::Unprocessable => write!(f, "Unprocessable"),
+            ErrorCode::VoiceConnectorGroupAssociationsExist => write!(f, "VoiceConnectorGroupAssociationsExist"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

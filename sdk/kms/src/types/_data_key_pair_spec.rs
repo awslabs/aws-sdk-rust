@@ -135,3 +135,18 @@ impl DataKeyPairSpec {
         }
     }
 }
+impl ::std::fmt::Display for DataKeyPairSpec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataKeyPairSpec::EccNistP256 => write!(f, "ECC_NIST_P256"),
+            DataKeyPairSpec::EccNistP384 => write!(f, "ECC_NIST_P384"),
+            DataKeyPairSpec::EccNistP521 => write!(f, "ECC_NIST_P521"),
+            DataKeyPairSpec::EccSecgP256K1 => write!(f, "ECC_SECG_P256K1"),
+            DataKeyPairSpec::Rsa2048 => write!(f, "RSA_2048"),
+            DataKeyPairSpec::Rsa3072 => write!(f, "RSA_3072"),
+            DataKeyPairSpec::Rsa4096 => write!(f, "RSA_4096"),
+            DataKeyPairSpec::Sm2 => write!(f, "SM2"),
+            DataKeyPairSpec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl CoreNetworkState {
         }
     }
 }
+impl ::std::fmt::Display for CoreNetworkState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CoreNetworkState::Available => write!(f, "AVAILABLE"),
+            CoreNetworkState::Creating => write!(f, "CREATING"),
+            CoreNetworkState::Deleting => write!(f, "DELETING"),
+            CoreNetworkState::Updating => write!(f, "UPDATING"),
+            CoreNetworkState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

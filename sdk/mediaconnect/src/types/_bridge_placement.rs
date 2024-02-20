@@ -96,3 +96,12 @@ impl BridgePlacement {
         }
     }
 }
+impl ::std::fmt::Display for BridgePlacement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BridgePlacement::Available => write!(f, "AVAILABLE"),
+            BridgePlacement::Locked => write!(f, "LOCKED"),
+            BridgePlacement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

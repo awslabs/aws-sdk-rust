@@ -213,3 +213,31 @@ impl ServiceNowConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for ServiceNowConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceNowConnectorOperator::Addition => write!(f, "ADDITION"),
+            ServiceNowConnectorOperator::Between => write!(f, "BETWEEN"),
+            ServiceNowConnectorOperator::Contains => write!(f, "CONTAINS"),
+            ServiceNowConnectorOperator::Division => write!(f, "DIVISION"),
+            ServiceNowConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            ServiceNowConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
+            ServiceNowConnectorOperator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
+            ServiceNowConnectorOperator::LessThan => write!(f, "LESS_THAN"),
+            ServiceNowConnectorOperator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
+            ServiceNowConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            ServiceNowConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            ServiceNowConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            ServiceNowConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            ServiceNowConnectorOperator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
+            ServiceNowConnectorOperator::NoOp => write!(f, "NO_OP"),
+            ServiceNowConnectorOperator::Projection => write!(f, "PROJECTION"),
+            ServiceNowConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            ServiceNowConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            ServiceNowConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            ServiceNowConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            ServiceNowConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            ServiceNowConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

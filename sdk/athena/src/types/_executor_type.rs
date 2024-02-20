@@ -101,3 +101,13 @@ impl ExecutorType {
         }
     }
 }
+impl ::std::fmt::Display for ExecutorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutorType::Coordinator => write!(f, "COORDINATOR"),
+            ExecutorType::Gateway => write!(f, "GATEWAY"),
+            ExecutorType::Worker => write!(f, "WORKER"),
+            ExecutorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

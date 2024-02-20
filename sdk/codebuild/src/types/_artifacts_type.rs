@@ -101,3 +101,13 @@ impl ArtifactsType {
         }
     }
 }
+impl ::std::fmt::Display for ArtifactsType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArtifactsType::Codepipeline => write!(f, "CODEPIPELINE"),
+            ArtifactsType::NoArtifacts => write!(f, "NO_ARTIFACTS"),
+            ArtifactsType::S3 => write!(f, "S3"),
+            ArtifactsType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

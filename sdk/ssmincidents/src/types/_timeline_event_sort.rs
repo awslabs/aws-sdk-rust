@@ -91,3 +91,11 @@ impl TimelineEventSort {
         }
     }
 }
+impl ::std::fmt::Display for TimelineEventSort {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimelineEventSort::EventTime => write!(f, "EVENT_TIME"),
+            TimelineEventSort::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

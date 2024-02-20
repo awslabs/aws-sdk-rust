@@ -106,3 +106,14 @@ impl ResourceItemStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceItemStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceItemStatus::Failed => write!(f, "FAILED"),
+            ResourceItemStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ResourceItemStatus::Skipped => write!(f, "SKIPPED"),
+            ResourceItemStatus::Success => write!(f, "SUCCESS"),
+            ResourceItemStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

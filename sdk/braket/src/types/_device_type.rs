@@ -96,3 +96,12 @@ impl DeviceType {
         }
     }
 }
+impl ::std::fmt::Display for DeviceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceType::Qpu => write!(f, "QPU"),
+            DeviceType::Simulator => write!(f, "SIMULATOR"),
+            DeviceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

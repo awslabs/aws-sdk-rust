@@ -141,3 +141,19 @@ impl LineItemStatus {
         }
     }
 }
+impl ::std::fmt::Display for LineItemStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LineItemStatus::Building => write!(f, "BUILDING"),
+            LineItemStatus::Cancelled => write!(f, "CANCELLED"),
+            LineItemStatus::Delivered => write!(f, "DELIVERED"),
+            LineItemStatus::Error => write!(f, "ERROR"),
+            LineItemStatus::Installed => write!(f, "INSTALLED"),
+            LineItemStatus::Installing => write!(f, "INSTALLING"),
+            LineItemStatus::Preparing => write!(f, "PREPARING"),
+            LineItemStatus::Replaced => write!(f, "REPLACED"),
+            LineItemStatus::Shipped => write!(f, "SHIPPED"),
+            LineItemStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

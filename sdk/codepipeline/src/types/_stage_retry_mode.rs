@@ -96,3 +96,12 @@ impl StageRetryMode {
         }
     }
 }
+impl ::std::fmt::Display for StageRetryMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StageRetryMode::AllActions => write!(f, "ALL_ACTIONS"),
+            StageRetryMode::FailedActions => write!(f, "FAILED_ACTIONS"),
+            StageRetryMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

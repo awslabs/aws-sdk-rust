@@ -128,3 +128,14 @@ impl ListRecommendationsFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for ListRecommendationsFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListRecommendationsFilterKey::Impact => write!(f, "IMPACT"),
+            ListRecommendationsFilterKey::ResourceArn => write!(f, "RESOURCE_ARN"),
+            ListRecommendationsFilterKey::Status => write!(f, "STATUS"),
+            ListRecommendationsFilterKey::Type => write!(f, "TYPE"),
+            ListRecommendationsFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

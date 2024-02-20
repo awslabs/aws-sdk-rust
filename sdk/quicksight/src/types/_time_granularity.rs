@@ -131,3 +131,19 @@ impl TimeGranularity {
         }
     }
 }
+impl ::std::fmt::Display for TimeGranularity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimeGranularity::Day => write!(f, "DAY"),
+            TimeGranularity::Hour => write!(f, "HOUR"),
+            TimeGranularity::Millisecond => write!(f, "MILLISECOND"),
+            TimeGranularity::Minute => write!(f, "MINUTE"),
+            TimeGranularity::Month => write!(f, "MONTH"),
+            TimeGranularity::Quarter => write!(f, "QUARTER"),
+            TimeGranularity::Second => write!(f, "SECOND"),
+            TimeGranularity::Week => write!(f, "WEEK"),
+            TimeGranularity::Year => write!(f, "YEAR"),
+            TimeGranularity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AlphaBehavior {
         }
     }
 }
+impl ::std::fmt::Display for AlphaBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlphaBehavior::Discard => write!(f, "DISCARD"),
+            AlphaBehavior::RemapToLuma => write!(f, "REMAP_TO_LUMA"),
+            AlphaBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

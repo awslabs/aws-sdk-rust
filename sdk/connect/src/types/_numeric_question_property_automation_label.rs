@@ -135,3 +135,18 @@ impl NumericQuestionPropertyAutomationLabel {
         }
     }
 }
+impl ::std::fmt::Display for NumericQuestionPropertyAutomationLabel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => write!(f, "AGENT_INTERACTION_DURATION"),
+            NumericQuestionPropertyAutomationLabel::ContactDuration => write!(f, "CONTACT_DURATION"),
+            NumericQuestionPropertyAutomationLabel::CustomerHoldTime => write!(f, "CUSTOMER_HOLD_TIME"),
+            NumericQuestionPropertyAutomationLabel::NonTalkTime => write!(f, "NON_TALK_TIME"),
+            NumericQuestionPropertyAutomationLabel::NonTalkTimePercentage => write!(f, "NON_TALK_TIME_PERCENTAGE"),
+            NumericQuestionPropertyAutomationLabel::NumberOfInterruptions => write!(f, "NUMBER_OF_INTERRUPTIONS"),
+            NumericQuestionPropertyAutomationLabel::OverallAgentSentimentScore => write!(f, "OVERALL_AGENT_SENTIMENT_SCORE"),
+            NumericQuestionPropertyAutomationLabel::OverallCustomerSentimentScore => write!(f, "OVERALL_CUSTOMER_SENTIMENT_SCORE"),
+            NumericQuestionPropertyAutomationLabel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

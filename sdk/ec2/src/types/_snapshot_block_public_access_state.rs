@@ -101,3 +101,13 @@ impl SnapshotBlockPublicAccessState {
         }
     }
 }
+impl ::std::fmt::Display for SnapshotBlockPublicAccessState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapshotBlockPublicAccessState::BlockAllSharing => write!(f, "block-all-sharing"),
+            SnapshotBlockPublicAccessState::BlockNewSharing => write!(f, "block-new-sharing"),
+            SnapshotBlockPublicAccessState::Unblocked => write!(f, "unblocked"),
+            SnapshotBlockPublicAccessState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl AnnotationType {
         }
     }
 }
+impl ::std::fmt::Display for AnnotationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnnotationType::ChrPos => write!(f, "CHR_POS"),
+            AnnotationType::ChrPosRefAlt => write!(f, "CHR_POS_REF_ALT"),
+            AnnotationType::ChrStartEndOneBase => write!(f, "CHR_START_END_ONE_BASE"),
+            AnnotationType::ChrStartEndRefAltOneBase => write!(f, "CHR_START_END_REF_ALT_ONE_BASE"),
+            AnnotationType::ChrStartEndRefAltZeroBase => write!(f, "CHR_START_END_REF_ALT_ZERO_BASE"),
+            AnnotationType::ChrStartEndZeroBase => write!(f, "CHR_START_END_ZERO_BASE"),
+            AnnotationType::Generic => write!(f, "GENERIC"),
+            AnnotationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

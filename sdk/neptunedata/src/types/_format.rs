@@ -116,3 +116,16 @@ impl Format {
         }
     }
 }
+impl ::std::fmt::Display for Format {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Format::Csv => write!(f, "csv"),
+            Format::Nquads => write!(f, "nquads"),
+            Format::Ntriples => write!(f, "ntriples"),
+            Format::Opencypher => write!(f, "opencypher"),
+            Format::Rdfxml => write!(f, "rdfxml"),
+            Format::Turtle => write!(f, "turtle"),
+            Format::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

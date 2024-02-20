@@ -129,3 +129,17 @@ impl ActiveDirectoryStatus {
         }
     }
 }
+impl ::std::fmt::Display for ActiveDirectoryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActiveDirectoryStatus::AccessDenied => write!(f, "ACCESS_DENIED"),
+            ActiveDirectoryStatus::Detached => write!(f, "DETACHED"),
+            ActiveDirectoryStatus::Joined => write!(f, "JOINED"),
+            ActiveDirectoryStatus::Joining => write!(f, "JOINING"),
+            ActiveDirectoryStatus::NetworkError => write!(f, "NETWORK_ERROR"),
+            ActiveDirectoryStatus::Timeout => write!(f, "TIMEOUT"),
+            ActiveDirectoryStatus::UnknownError => write!(f, "UNKNOWN_ERROR"),
+            ActiveDirectoryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

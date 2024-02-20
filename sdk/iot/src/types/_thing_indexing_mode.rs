@@ -101,3 +101,13 @@ impl ThingIndexingMode {
         }
     }
 }
+impl ::std::fmt::Display for ThingIndexingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThingIndexingMode::Off => write!(f, "OFF"),
+            ThingIndexingMode::Registry => write!(f, "REGISTRY"),
+            ThingIndexingMode::RegistryAndShadow => write!(f, "REGISTRY_AND_SHADOW"),
+            ThingIndexingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

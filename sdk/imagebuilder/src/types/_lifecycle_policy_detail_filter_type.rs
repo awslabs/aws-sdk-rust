@@ -96,3 +96,12 @@ impl LifecyclePolicyDetailFilterType {
         }
     }
 }
+impl ::std::fmt::Display for LifecyclePolicyDetailFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecyclePolicyDetailFilterType::Age => write!(f, "AGE"),
+            LifecyclePolicyDetailFilterType::Count => write!(f, "COUNT"),
+            LifecyclePolicyDetailFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

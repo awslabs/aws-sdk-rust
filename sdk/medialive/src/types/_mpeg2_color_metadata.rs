@@ -96,3 +96,12 @@ impl Mpeg2ColorMetadata {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2ColorMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2ColorMetadata::Ignore => write!(f, "IGNORE"),
+            Mpeg2ColorMetadata::Insert => write!(f, "INSERT"),
+            Mpeg2ColorMetadata::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

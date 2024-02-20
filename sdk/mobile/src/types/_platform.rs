@@ -123,3 +123,17 @@ impl Platform {
         }
     }
 }
+impl ::std::fmt::Display for Platform {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Platform::Android => write!(f, "ANDROID"),
+            Platform::Javascript => write!(f, "JAVASCRIPT"),
+            Platform::Linux => write!(f, "LINUX"),
+            Platform::Objc => write!(f, "OBJC"),
+            Platform::Osx => write!(f, "OSX"),
+            Platform::Swift => write!(f, "SWIFT"),
+            Platform::Windows => write!(f, "WINDOWS"),
+            Platform::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ContactType {
         }
     }
 }
+impl ::std::fmt::Display for ContactType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContactType::Escalation => write!(f, "ESCALATION"),
+            ContactType::OncallSchedule => write!(f, "ONCALL_SCHEDULE"),
+            ContactType::Personal => write!(f, "PERSONAL"),
+            ContactType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

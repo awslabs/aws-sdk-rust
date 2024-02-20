@@ -264,3 +264,45 @@ impl AnalysisSchemeLanguage {
         }
     }
 }
+impl ::std::fmt::Display for AnalysisSchemeLanguage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalysisSchemeLanguage::Ar => write!(f, "ar"),
+            AnalysisSchemeLanguage::Bg => write!(f, "bg"),
+            AnalysisSchemeLanguage::Ca => write!(f, "ca"),
+            AnalysisSchemeLanguage::Cs => write!(f, "cs"),
+            AnalysisSchemeLanguage::Da => write!(f, "da"),
+            AnalysisSchemeLanguage::De => write!(f, "de"),
+            AnalysisSchemeLanguage::El => write!(f, "el"),
+            AnalysisSchemeLanguage::En => write!(f, "en"),
+            AnalysisSchemeLanguage::Es => write!(f, "es"),
+            AnalysisSchemeLanguage::Eu => write!(f, "eu"),
+            AnalysisSchemeLanguage::Fa => write!(f, "fa"),
+            AnalysisSchemeLanguage::Fi => write!(f, "fi"),
+            AnalysisSchemeLanguage::Fr => write!(f, "fr"),
+            AnalysisSchemeLanguage::Ga => write!(f, "ga"),
+            AnalysisSchemeLanguage::Gl => write!(f, "gl"),
+            AnalysisSchemeLanguage::He => write!(f, "he"),
+            AnalysisSchemeLanguage::Hi => write!(f, "hi"),
+            AnalysisSchemeLanguage::Hu => write!(f, "hu"),
+            AnalysisSchemeLanguage::Hy => write!(f, "hy"),
+            AnalysisSchemeLanguage::Id => write!(f, "id"),
+            AnalysisSchemeLanguage::It => write!(f, "it"),
+            AnalysisSchemeLanguage::Ja => write!(f, "ja"),
+            AnalysisSchemeLanguage::Ko => write!(f, "ko"),
+            AnalysisSchemeLanguage::Lv => write!(f, "lv"),
+            AnalysisSchemeLanguage::Mul => write!(f, "mul"),
+            AnalysisSchemeLanguage::Nl => write!(f, "nl"),
+            AnalysisSchemeLanguage::No => write!(f, "no"),
+            AnalysisSchemeLanguage::Pt => write!(f, "pt"),
+            AnalysisSchemeLanguage::Ro => write!(f, "ro"),
+            AnalysisSchemeLanguage::Ru => write!(f, "ru"),
+            AnalysisSchemeLanguage::Sv => write!(f, "sv"),
+            AnalysisSchemeLanguage::Th => write!(f, "th"),
+            AnalysisSchemeLanguage::Tr => write!(f, "tr"),
+            AnalysisSchemeLanguage::ZhHans => write!(f, "zh-Hans"),
+            AnalysisSchemeLanguage::ZhHant => write!(f, "zh-Hant"),
+            AnalysisSchemeLanguage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

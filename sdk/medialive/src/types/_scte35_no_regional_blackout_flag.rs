@@ -96,3 +96,12 @@ impl Scte35NoRegionalBlackoutFlag {
         }
     }
 }
+impl ::std::fmt::Display for Scte35NoRegionalBlackoutFlag {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Scte35NoRegionalBlackoutFlag::NoRegionalBlackout => write!(f, "NO_REGIONAL_BLACKOUT"),
+            Scte35NoRegionalBlackoutFlag::RegionalBlackout => write!(f, "REGIONAL_BLACKOUT"),
+            Scte35NoRegionalBlackoutFlag::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

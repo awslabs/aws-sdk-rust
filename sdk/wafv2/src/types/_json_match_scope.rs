@@ -101,3 +101,13 @@ impl JsonMatchScope {
         }
     }
 }
+impl ::std::fmt::Display for JsonMatchScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JsonMatchScope::All => write!(f, "ALL"),
+            JsonMatchScope::Key => write!(f, "KEY"),
+            JsonMatchScope::Value => write!(f, "VALUE"),
+            JsonMatchScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

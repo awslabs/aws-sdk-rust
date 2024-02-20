@@ -106,3 +106,14 @@ impl ConfigurationSetAttribute {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationSetAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationSetAttribute::DeliveryOptions => write!(f, "deliveryOptions"),
+            ConfigurationSetAttribute::EventDestinations => write!(f, "eventDestinations"),
+            ConfigurationSetAttribute::ReputationOptions => write!(f, "reputationOptions"),
+            ConfigurationSetAttribute::TrackingOptions => write!(f, "trackingOptions"),
+            ConfigurationSetAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

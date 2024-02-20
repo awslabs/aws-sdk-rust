@@ -225,3 +225,33 @@ impl KeyUsage {
         }
     }
 }
+impl ::std::fmt::Display for KeyUsage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyUsage::Tr31B0BaseDerivationKey => write!(f, "TR31_B0_BASE_DERIVATION_KEY"),
+            KeyUsage::Tr31C0CardVerificationKey => write!(f, "TR31_C0_CARD_VERIFICATION_KEY"),
+            KeyUsage::Tr31D0SymmetricDataEncryptionKey => write!(f, "TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY"),
+            KeyUsage::Tr31D1AsymmetricKeyForDataEncryption => write!(f, "TR31_D1_ASYMMETRIC_KEY_FOR_DATA_ENCRYPTION"),
+            KeyUsage::Tr31E0EmvMkeyAppCryptograms => write!(f, "TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS"),
+            KeyUsage::Tr31E1EmvMkeyConfidentiality => write!(f, "TR31_E1_EMV_MKEY_CONFIDENTIALITY"),
+            KeyUsage::Tr31E2EmvMkeyIntegrity => write!(f, "TR31_E2_EMV_MKEY_INTEGRITY"),
+            KeyUsage::Tr31E4EmvMkeyDynamicNumbers => write!(f, "TR31_E4_EMV_MKEY_DYNAMIC_NUMBERS"),
+            KeyUsage::Tr31E5EmvMkeyCardPersonalization => write!(f, "TR31_E5_EMV_MKEY_CARD_PERSONALIZATION"),
+            KeyUsage::Tr31E6EmvMkeyOther => write!(f, "TR31_E6_EMV_MKEY_OTHER"),
+            KeyUsage::Tr31K0KeyEncryptionKey => write!(f, "TR31_K0_KEY_ENCRYPTION_KEY"),
+            KeyUsage::Tr31K1KeyBlockProtectionKey => write!(f, "TR31_K1_KEY_BLOCK_PROTECTION_KEY"),
+            KeyUsage::Tr31K2Tr34AsymmetricKey => write!(f, "TR31_K2_TR34_ASYMMETRIC_KEY"),
+            KeyUsage::Tr31K3AsymmetricKeyForKeyAgreement => write!(f, "TR31_K3_ASYMMETRIC_KEY_FOR_KEY_AGREEMENT"),
+            KeyUsage::Tr31M1Iso97971MacKey => write!(f, "TR31_M1_ISO_9797_1_MAC_KEY"),
+            KeyUsage::Tr31M3Iso97973MacKey => write!(f, "TR31_M3_ISO_9797_3_MAC_KEY"),
+            KeyUsage::Tr31M6Iso97975CmacKey => write!(f, "TR31_M6_ISO_9797_5_CMAC_KEY"),
+            KeyUsage::Tr31M7HmacKey => write!(f, "TR31_M7_HMAC_KEY"),
+            KeyUsage::Tr31P0PinEncryptionKey => write!(f, "TR31_P0_PIN_ENCRYPTION_KEY"),
+            KeyUsage::Tr31P1PinGenerationKey => write!(f, "TR31_P1_PIN_GENERATION_KEY"),
+            KeyUsage::Tr31S0AsymmetricKeyForDigitalSignature => write!(f, "TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE"),
+            KeyUsage::Tr31V1Ibm3624PinVerificationKey => write!(f, "TR31_V1_IBM3624_PIN_VERIFICATION_KEY"),
+            KeyUsage::Tr31V2VisaPinVerificationKey => write!(f, "TR31_V2_VISA_PIN_VERIFICATION_KEY"),
+            KeyUsage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

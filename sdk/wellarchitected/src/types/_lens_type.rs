@@ -101,3 +101,13 @@ impl LensType {
         }
     }
 }
+impl ::std::fmt::Display for LensType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LensType::AwsOfficial => write!(f, "AWS_OFFICIAL"),
+            LensType::CustomSelf => write!(f, "CUSTOM_SELF"),
+            LensType::CustomShared => write!(f, "CUSTOM_SHARED"),
+            LensType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

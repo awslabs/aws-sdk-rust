@@ -96,3 +96,12 @@ impl AvailabilityProviderType {
         }
     }
 }
+impl ::std::fmt::Display for AvailabilityProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AvailabilityProviderType::Ews => write!(f, "EWS"),
+            AvailabilityProviderType::Lambda => write!(f, "LAMBDA"),
+            AvailabilityProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

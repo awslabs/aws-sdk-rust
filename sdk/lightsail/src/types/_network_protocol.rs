@@ -106,3 +106,14 @@ impl NetworkProtocol {
         }
     }
 }
+impl ::std::fmt::Display for NetworkProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkProtocol::All => write!(f, "all"),
+            NetworkProtocol::Icmp => write!(f, "icmp"),
+            NetworkProtocol::Tcp => write!(f, "tcp"),
+            NetworkProtocol::Udp => write!(f, "udp"),
+            NetworkProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

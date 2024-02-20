@@ -96,3 +96,12 @@ impl PropertyValueType {
         }
     }
 }
+impl ::std::fmt::Display for PropertyValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PropertyValueType::PlainText => write!(f, "PLAIN_TEXT"),
+            PropertyValueType::StringifiedJson => write!(f, "STRINGIFIED_JSON"),
+            PropertyValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

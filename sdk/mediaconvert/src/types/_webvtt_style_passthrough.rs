@@ -101,3 +101,13 @@ impl WebvttStylePassthrough {
         }
     }
 }
+impl ::std::fmt::Display for WebvttStylePassthrough {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WebvttStylePassthrough::Disabled => write!(f, "DISABLED"),
+            WebvttStylePassthrough::Enabled => write!(f, "ENABLED"),
+            WebvttStylePassthrough::Strict => write!(f, "STRICT"),
+            WebvttStylePassthrough::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

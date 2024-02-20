@@ -106,3 +106,14 @@ impl UserSearchType {
         }
     }
 }
+impl ::std::fmt::Display for UserSearchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserSearchType::DatazoneIamUser => write!(f, "DATAZONE_IAM_USER"),
+            UserSearchType::DatazoneSsoUser => write!(f, "DATAZONE_SSO_USER"),
+            UserSearchType::DatazoneUser => write!(f, "DATAZONE_USER"),
+            UserSearchType::SsoUser => write!(f, "SSO_USER"),
+            UserSearchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl RobotSoftwareSuiteVersionType {
         }
     }
 }
+impl ::std::fmt::Display for RobotSoftwareSuiteVersionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RobotSoftwareSuiteVersionType::Dashing => write!(f, "Dashing"),
+            RobotSoftwareSuiteVersionType::Foxy => write!(f, "Foxy"),
+            RobotSoftwareSuiteVersionType::Kinetic => write!(f, "Kinetic"),
+            RobotSoftwareSuiteVersionType::Melodic => write!(f, "Melodic"),
+            RobotSoftwareSuiteVersionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

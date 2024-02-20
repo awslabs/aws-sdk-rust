@@ -96,3 +96,12 @@ impl Fmp4TimedMetadataBehavior {
         }
     }
 }
+impl ::std::fmt::Display for Fmp4TimedMetadataBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Fmp4TimedMetadataBehavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
+            Fmp4TimedMetadataBehavior::Passthrough => write!(f, "PASSTHROUGH"),
+            Fmp4TimedMetadataBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

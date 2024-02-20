@@ -91,3 +91,11 @@ impl ApiKeysFormat {
         }
     }
 }
+impl ::std::fmt::Display for ApiKeysFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApiKeysFormat::Csv => write!(f, "csv"),
+            ApiKeysFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

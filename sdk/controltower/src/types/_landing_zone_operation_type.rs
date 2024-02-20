@@ -106,3 +106,14 @@ impl LandingZoneOperationType {
         }
     }
 }
+impl ::std::fmt::Display for LandingZoneOperationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LandingZoneOperationType::Create => write!(f, "CREATE"),
+            LandingZoneOperationType::Delete => write!(f, "DELETE"),
+            LandingZoneOperationType::Reset => write!(f, "RESET"),
+            LandingZoneOperationType::Update => write!(f, "UPDATE"),
+            LandingZoneOperationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

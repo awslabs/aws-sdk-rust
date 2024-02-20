@@ -101,3 +101,13 @@ impl AliasAttributeType {
         }
     }
 }
+impl ::std::fmt::Display for AliasAttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AliasAttributeType::Email => write!(f, "email"),
+            AliasAttributeType::PhoneNumber => write!(f, "phone_number"),
+            AliasAttributeType::PreferredUsername => write!(f, "preferred_username"),
+            AliasAttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

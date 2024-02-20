@@ -121,3 +121,17 @@ impl PhoneNumberType {
         }
     }
 }
+impl ::std::fmt::Display for PhoneNumberType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhoneNumberType::Did => write!(f, "DID"),
+            PhoneNumberType::Shared => write!(f, "SHARED"),
+            PhoneNumberType::ShortCode => write!(f, "SHORT_CODE"),
+            PhoneNumberType::ThirdPartyDid => write!(f, "THIRD_PARTY_DID"),
+            PhoneNumberType::ThirdPartyTf => write!(f, "THIRD_PARTY_TF"),
+            PhoneNumberType::TollFree => write!(f, "TOLL_FREE"),
+            PhoneNumberType::Uifn => write!(f, "UIFN"),
+            PhoneNumberType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

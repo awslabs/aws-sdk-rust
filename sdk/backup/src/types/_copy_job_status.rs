@@ -153,3 +153,21 @@ impl CopyJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for CopyJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CopyJobStatus::Aborted => write!(f, "ABORTED"),
+            CopyJobStatus::Aborting => write!(f, "ABORTING"),
+            CopyJobStatus::AggregateAll => write!(f, "AGGREGATE_ALL"),
+            CopyJobStatus::Any => write!(f, "ANY"),
+            CopyJobStatus::Completed => write!(f, "COMPLETED"),
+            CopyJobStatus::Completing => write!(f, "COMPLETING"),
+            CopyJobStatus::Created => write!(f, "CREATED"),
+            CopyJobStatus::Failed => write!(f, "FAILED"),
+            CopyJobStatus::Failing => write!(f, "FAILING"),
+            CopyJobStatus::Partial => write!(f, "PARTIAL"),
+            CopyJobStatus::Running => write!(f, "RUNNING"),
+            CopyJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

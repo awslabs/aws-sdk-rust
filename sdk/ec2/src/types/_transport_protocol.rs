@@ -96,3 +96,12 @@ impl TransportProtocol {
         }
     }
 }
+impl ::std::fmt::Display for TransportProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransportProtocol::Tcp => write!(f, "tcp"),
+            TransportProtocol::Udp => write!(f, "udp"),
+            TransportProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

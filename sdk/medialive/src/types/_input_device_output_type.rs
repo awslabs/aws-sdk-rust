@@ -101,3 +101,13 @@ impl InputDeviceOutputType {
         }
     }
 }
+impl ::std::fmt::Display for InputDeviceOutputType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDeviceOutputType::MediaconnectFlow => write!(f, "MEDIACONNECT_FLOW"),
+            InputDeviceOutputType::MedialiveInput => write!(f, "MEDIALIVE_INPUT"),
+            InputDeviceOutputType::None => write!(f, "NONE"),
+            InputDeviceOutputType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

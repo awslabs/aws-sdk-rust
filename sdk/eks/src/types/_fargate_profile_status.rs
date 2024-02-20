@@ -111,3 +111,15 @@ impl FargateProfileStatus {
         }
     }
 }
+impl ::std::fmt::Display for FargateProfileStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FargateProfileStatus::Active => write!(f, "ACTIVE"),
+            FargateProfileStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            FargateProfileStatus::Creating => write!(f, "CREATING"),
+            FargateProfileStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            FargateProfileStatus::Deleting => write!(f, "DELETING"),
+            FargateProfileStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

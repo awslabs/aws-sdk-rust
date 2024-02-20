@@ -96,3 +96,12 @@ impl VolumeFilterName {
         }
     }
 }
+impl ::std::fmt::Display for VolumeFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeFilterName::FileSystemId => write!(f, "file-system-id"),
+            VolumeFilterName::StorageVirtualMachineId => write!(f, "storage-virtual-machine-id"),
+            VolumeFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

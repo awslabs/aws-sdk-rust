@@ -201,3 +201,29 @@ impl ErrorResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ErrorResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorResourceType::ApiGateway => write!(f, "API_GATEWAY"),
+            ErrorResourceType::Application => write!(f, "APPLICATION"),
+            ErrorResourceType::Environment => write!(f, "ENVIRONMENT"),
+            ErrorResourceType::IamRole => write!(f, "IAM_ROLE"),
+            ErrorResourceType::Lambda => write!(f, "LAMBDA"),
+            ErrorResourceType::LoadBalancerListener => write!(f, "LOAD_BALANCER_LISTENER"),
+            ErrorResourceType::Nlb => write!(f, "NLB"),
+            ErrorResourceType::ResourceShare => write!(f, "RESOURCE_SHARE"),
+            ErrorResourceType::Route => write!(f, "ROUTE"),
+            ErrorResourceType::RouteTable => write!(f, "ROUTE_TABLE"),
+            ErrorResourceType::SecurityGroup => write!(f, "SECURITY_GROUP"),
+            ErrorResourceType::Service => write!(f, "SERVICE"),
+            ErrorResourceType::Subnet => write!(f, "SUBNET"),
+            ErrorResourceType::TargetGroup => write!(f, "TARGET_GROUP"),
+            ErrorResourceType::TransitGateway => write!(f, "TRANSIT_GATEWAY"),
+            ErrorResourceType::TransitGatewayAttachment => write!(f, "TRANSIT_GATEWAY_ATTACHMENT"),
+            ErrorResourceType::Vpc => write!(f, "VPC"),
+            ErrorResourceType::VpcEndpointServiceConfiguration => write!(f, "VPC_ENDPOINT_SERVICE_CONFIGURATION"),
+            ErrorResourceType::VpcLink => write!(f, "VPC_LINK"),
+            ErrorResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

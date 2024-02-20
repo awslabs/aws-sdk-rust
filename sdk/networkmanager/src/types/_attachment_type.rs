@@ -106,3 +106,14 @@ impl AttachmentType {
         }
     }
 }
+impl ::std::fmt::Display for AttachmentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttachmentType::Connect => write!(f, "CONNECT"),
+            AttachmentType::SiteToSiteVpn => write!(f, "SITE_TO_SITE_VPN"),
+            AttachmentType::TransitGatewayRouteTable => write!(f, "TRANSIT_GATEWAY_ROUTE_TABLE"),
+            AttachmentType::Vpc => write!(f, "VPC"),
+            AttachmentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

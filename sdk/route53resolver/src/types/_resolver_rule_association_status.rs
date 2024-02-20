@@ -111,3 +111,15 @@ impl ResolverRuleAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResolverRuleAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverRuleAssociationStatus::Complete => write!(f, "COMPLETE"),
+            ResolverRuleAssociationStatus::Creating => write!(f, "CREATING"),
+            ResolverRuleAssociationStatus::Deleting => write!(f, "DELETING"),
+            ResolverRuleAssociationStatus::Failed => write!(f, "FAILED"),
+            ResolverRuleAssociationStatus::Overridden => write!(f, "OVERRIDDEN"),
+            ResolverRuleAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

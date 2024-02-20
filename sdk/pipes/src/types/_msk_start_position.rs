@@ -96,3 +96,12 @@ impl MskStartPosition {
         }
     }
 }
+impl ::std::fmt::Display for MskStartPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MskStartPosition::Latest => write!(f, "LATEST"),
+            MskStartPosition::TrimHorizon => write!(f, "TRIM_HORIZON"),
+            MskStartPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AccountSortBy {
         }
     }
 }
+impl ::std::fmt::Display for AccountSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountSortBy::All => write!(f, "ALL"),
+            AccountSortBy::Critical => write!(f, "CRITICAL"),
+            AccountSortBy::High => write!(f, "HIGH"),
+            AccountSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

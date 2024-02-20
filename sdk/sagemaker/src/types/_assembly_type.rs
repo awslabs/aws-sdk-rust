@@ -96,3 +96,12 @@ impl AssemblyType {
         }
     }
 }
+impl ::std::fmt::Display for AssemblyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssemblyType::Line => write!(f, "Line"),
+            AssemblyType::None => write!(f, "None"),
+            AssemblyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

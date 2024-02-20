@@ -201,3 +201,29 @@ impl AutoMlJobSecondaryStatus {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlJobSecondaryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlJobSecondaryStatus::AnalyzingData => write!(f, "AnalyzingData"),
+            AutoMlJobSecondaryStatus::CandidateDefinitionsGenerated => write!(f, "CandidateDefinitionsGenerated"),
+            AutoMlJobSecondaryStatus::Completed => write!(f, "Completed"),
+            AutoMlJobSecondaryStatus::DeployingModel => write!(f, "DeployingModel"),
+            AutoMlJobSecondaryStatus::ExplainabilityError => write!(f, "ExplainabilityError"),
+            AutoMlJobSecondaryStatus::Failed => write!(f, "Failed"),
+            AutoMlJobSecondaryStatus::FeatureEngineering => write!(f, "FeatureEngineering"),
+            AutoMlJobSecondaryStatus::GeneratingExplainabilityReport => write!(f, "GeneratingExplainabilityReport"),
+            AutoMlJobSecondaryStatus::GeneratingModelInsightsReport => write!(f, "GeneratingModelInsightsReport"),
+            AutoMlJobSecondaryStatus::MaxAutoMlJobRuntimeReached => write!(f, "MaxAutoMLJobRuntimeReached"),
+            AutoMlJobSecondaryStatus::MaxCandidatesReached => write!(f, "MaxCandidatesReached"),
+            AutoMlJobSecondaryStatus::ModelDeploymentError => write!(f, "ModelDeploymentError"),
+            AutoMlJobSecondaryStatus::ModelInsightsError => write!(f, "ModelInsightsError"),
+            AutoMlJobSecondaryStatus::ModelTuning => write!(f, "ModelTuning"),
+            AutoMlJobSecondaryStatus::PreTraining => write!(f, "PreTraining"),
+            AutoMlJobSecondaryStatus::Starting => write!(f, "Starting"),
+            AutoMlJobSecondaryStatus::Stopped => write!(f, "Stopped"),
+            AutoMlJobSecondaryStatus::Stopping => write!(f, "Stopping"),
+            AutoMlJobSecondaryStatus::TrainingModels => write!(f, "TrainingModels"),
+            AutoMlJobSecondaryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

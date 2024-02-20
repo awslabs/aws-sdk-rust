@@ -147,3 +147,20 @@ impl ImportTaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImportTaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportTaskStatus::AnalyzingData => write!(f, "ANALYZING_DATA"),
+            ImportTaskStatus::Cancelled => write!(f, "CANCELLED"),
+            ImportTaskStatus::Cancelling => write!(f, "CANCELLING"),
+            ImportTaskStatus::Exporting => write!(f, "EXPORTING"),
+            ImportTaskStatus::Failed => write!(f, "FAILED"),
+            ImportTaskStatus::Importing => write!(f, "IMPORTING"),
+            ImportTaskStatus::Initializing => write!(f, "INITIALIZING"),
+            ImportTaskStatus::Reprovisioning => write!(f, "REPROVISIONING"),
+            ImportTaskStatus::RollingBack => write!(f, "ROLLING_BACK"),
+            ImportTaskStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ImportTaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

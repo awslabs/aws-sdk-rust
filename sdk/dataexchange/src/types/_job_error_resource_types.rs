@@ -101,3 +101,13 @@ impl JobErrorResourceTypes {
         }
     }
 }
+impl ::std::fmt::Display for JobErrorResourceTypes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobErrorResourceTypes::Asset => write!(f, "ASSET"),
+            JobErrorResourceTypes::DataSet => write!(f, "DATA_SET"),
+            JobErrorResourceTypes::Revision => write!(f, "REVISION"),
+            JobErrorResourceTypes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

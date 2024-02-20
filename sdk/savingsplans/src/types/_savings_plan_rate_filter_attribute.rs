@@ -116,3 +116,16 @@ impl SavingsPlanRateFilterAttribute {
         }
     }
 }
+impl ::std::fmt::Display for SavingsPlanRateFilterAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SavingsPlanRateFilterAttribute::InstanceFamily => write!(f, "instanceFamily"),
+            SavingsPlanRateFilterAttribute::InstanceType => write!(f, "instanceType"),
+            SavingsPlanRateFilterAttribute::ProductDescription => write!(f, "productDescription"),
+            SavingsPlanRateFilterAttribute::ProductId => write!(f, "productId"),
+            SavingsPlanRateFilterAttribute::Region => write!(f, "region"),
+            SavingsPlanRateFilterAttribute::Tenancy => write!(f, "tenancy"),
+            SavingsPlanRateFilterAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl PackageSortBy {
         }
     }
 }
+impl ::std::fmt::Display for PackageSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageSortBy::All => write!(f, "ALL"),
+            PackageSortBy::Critical => write!(f, "CRITICAL"),
+            PackageSortBy::High => write!(f, "HIGH"),
+            PackageSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

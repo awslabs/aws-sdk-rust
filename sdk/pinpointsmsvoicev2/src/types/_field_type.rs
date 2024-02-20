@@ -101,3 +101,13 @@ impl FieldType {
         }
     }
 }
+impl ::std::fmt::Display for FieldType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FieldType::Attachment => write!(f, "ATTACHMENT"),
+            FieldType::Select => write!(f, "SELECT"),
+            FieldType::Text => write!(f, "TEXT"),
+            FieldType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

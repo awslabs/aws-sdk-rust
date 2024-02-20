@@ -96,3 +96,12 @@ impl TrustStoreStatus {
         }
     }
 }
+impl ::std::fmt::Display for TrustStoreStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrustStoreStatus::Active => write!(f, "ACTIVE"),
+            TrustStoreStatus::Creating => write!(f, "CREATING"),
+            TrustStoreStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

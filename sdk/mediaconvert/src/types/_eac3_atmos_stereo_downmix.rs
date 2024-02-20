@@ -106,3 +106,14 @@ impl Eac3AtmosStereoDownmix {
         }
     }
 }
+impl ::std::fmt::Display for Eac3AtmosStereoDownmix {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3AtmosStereoDownmix::Dpl2 => write!(f, "DPL2"),
+            Eac3AtmosStereoDownmix::NotIndicated => write!(f, "NOT_INDICATED"),
+            Eac3AtmosStereoDownmix::Stereo => write!(f, "STEREO"),
+            Eac3AtmosStereoDownmix::Surround => write!(f, "SURROUND"),
+            Eac3AtmosStereoDownmix::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

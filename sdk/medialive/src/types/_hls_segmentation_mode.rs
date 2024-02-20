@@ -96,3 +96,12 @@ impl HlsSegmentationMode {
         }
     }
 }
+impl ::std::fmt::Display for HlsSegmentationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsSegmentationMode::UseInputSegmentation => write!(f, "USE_INPUT_SEGMENTATION"),
+            HlsSegmentationMode::UseSegmentDuration => write!(f, "USE_SEGMENT_DURATION"),
+            HlsSegmentationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

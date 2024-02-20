@@ -116,3 +116,16 @@ impl InstanceStateName {
         }
     }
 }
+impl ::std::fmt::Display for InstanceStateName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceStateName::Pending => write!(f, "pending"),
+            InstanceStateName::Running => write!(f, "running"),
+            InstanceStateName::ShuttingDown => write!(f, "shutting-down"),
+            InstanceStateName::Stopped => write!(f, "stopped"),
+            InstanceStateName::Stopping => write!(f, "stopping"),
+            InstanceStateName::Terminated => write!(f, "terminated"),
+            InstanceStateName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

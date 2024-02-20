@@ -111,3 +111,15 @@ impl HitStatus {
         }
     }
 }
+impl ::std::fmt::Display for HitStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HitStatus::Assignable => write!(f, "Assignable"),
+            HitStatus::Disposed => write!(f, "Disposed"),
+            HitStatus::Reviewable => write!(f, "Reviewable"),
+            HitStatus::Reviewing => write!(f, "Reviewing"),
+            HitStatus::Unassignable => write!(f, "Unassignable"),
+            HitStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

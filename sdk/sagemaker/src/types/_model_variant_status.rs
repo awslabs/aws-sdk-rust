@@ -111,3 +111,15 @@ impl ModelVariantStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelVariantStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelVariantStatus::Creating => write!(f, "Creating"),
+            ModelVariantStatus::Deleted => write!(f, "Deleted"),
+            ModelVariantStatus::Deleting => write!(f, "Deleting"),
+            ModelVariantStatus::InService => write!(f, "InService"),
+            ModelVariantStatus::Updating => write!(f, "Updating"),
+            ModelVariantStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

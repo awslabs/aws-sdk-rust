@@ -96,3 +96,12 @@ impl CmafWriteHlsManifest {
         }
     }
 }
+impl ::std::fmt::Display for CmafWriteHlsManifest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafWriteHlsManifest::Disabled => write!(f, "DISABLED"),
+            CmafWriteHlsManifest::Enabled => write!(f, "ENABLED"),
+            CmafWriteHlsManifest::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

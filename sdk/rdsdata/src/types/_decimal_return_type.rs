@@ -96,3 +96,12 @@ impl DecimalReturnType {
         }
     }
 }
+impl ::std::fmt::Display for DecimalReturnType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DecimalReturnType::DoubleOrLong => write!(f, "DOUBLE_OR_LONG"),
+            DecimalReturnType::String => write!(f, "STRING"),
+            DecimalReturnType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

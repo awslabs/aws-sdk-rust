@@ -101,3 +101,13 @@ impl LastCrawlStatus {
         }
     }
 }
+impl ::std::fmt::Display for LastCrawlStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LastCrawlStatus::Cancelled => write!(f, "CANCELLED"),
+            LastCrawlStatus::Failed => write!(f, "FAILED"),
+            LastCrawlStatus::Succeeded => write!(f, "SUCCEEDED"),
+            LastCrawlStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

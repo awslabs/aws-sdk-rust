@@ -96,3 +96,12 @@ impl RuleType {
         }
     }
 }
+impl ::std::fmt::Display for RuleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleType::ContentBlockerRule => write!(f, "CONTENT_BLOCKER_RULE"),
+            RuleType::ContentRetrievalRule => write!(f, "CONTENT_RETRIEVAL_RULE"),
+            RuleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -98,3 +98,12 @@ impl MulticastFrameInfo {
         }
     }
 }
+impl ::std::fmt::Display for MulticastFrameInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MulticastFrameInfo::Disabled => write!(f, "DISABLED"),
+            MulticastFrameInfo::Enabled => write!(f, "ENABLED"),
+            MulticastFrameInfo::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

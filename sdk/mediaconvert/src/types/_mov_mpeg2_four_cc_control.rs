@@ -96,3 +96,12 @@ impl MovMpeg2FourCcControl {
         }
     }
 }
+impl ::std::fmt::Display for MovMpeg2FourCcControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MovMpeg2FourCcControl::Mpeg => write!(f, "MPEG"),
+            MovMpeg2FourCcControl::Xdcam => write!(f, "XDCAM"),
+            MovMpeg2FourCcControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

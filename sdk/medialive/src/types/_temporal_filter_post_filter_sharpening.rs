@@ -101,3 +101,13 @@ impl TemporalFilterPostFilterSharpening {
         }
     }
 }
+impl ::std::fmt::Display for TemporalFilterPostFilterSharpening {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemporalFilterPostFilterSharpening::Auto => write!(f, "AUTO"),
+            TemporalFilterPostFilterSharpening::Disabled => write!(f, "DISABLED"),
+            TemporalFilterPostFilterSharpening::Enabled => write!(f, "ENABLED"),
+            TemporalFilterPostFilterSharpening::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

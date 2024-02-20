@@ -101,3 +101,13 @@ impl NodeStatus {
         }
     }
 }
+impl ::std::fmt::Display for NodeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeStatus::Active => write!(f, "Active"),
+            NodeStatus::NotAvailable => write!(f, "NotAvailable"),
+            NodeStatus::StandBy => write!(f, "StandBy"),
+            NodeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

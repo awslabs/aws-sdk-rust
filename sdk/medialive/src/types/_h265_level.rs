@@ -171,3 +171,24 @@ impl H265Level {
         }
     }
 }
+impl ::std::fmt::Display for H265Level {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265Level::H265Level1 => write!(f, "H265_LEVEL_1"),
+            H265Level::H265Level2 => write!(f, "H265_LEVEL_2"),
+            H265Level::H265Level21 => write!(f, "H265_LEVEL_2_1"),
+            H265Level::H265Level3 => write!(f, "H265_LEVEL_3"),
+            H265Level::H265Level31 => write!(f, "H265_LEVEL_3_1"),
+            H265Level::H265Level4 => write!(f, "H265_LEVEL_4"),
+            H265Level::H265Level41 => write!(f, "H265_LEVEL_4_1"),
+            H265Level::H265Level5 => write!(f, "H265_LEVEL_5"),
+            H265Level::H265Level51 => write!(f, "H265_LEVEL_5_1"),
+            H265Level::H265Level52 => write!(f, "H265_LEVEL_5_2"),
+            H265Level::H265Level6 => write!(f, "H265_LEVEL_6"),
+            H265Level::H265Level61 => write!(f, "H265_LEVEL_6_1"),
+            H265Level::H265Level62 => write!(f, "H265_LEVEL_6_2"),
+            H265Level::H265LevelAuto => write!(f, "H265_LEVEL_AUTO"),
+            H265Level::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

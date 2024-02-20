@@ -101,3 +101,13 @@ impl DvbSubDestinationBackgroundColor {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubDestinationBackgroundColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubDestinationBackgroundColor::Black => write!(f, "BLACK"),
+            DvbSubDestinationBackgroundColor::None => write!(f, "NONE"),
+            DvbSubDestinationBackgroundColor::White => write!(f, "WHITE"),
+            DvbSubDestinationBackgroundColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

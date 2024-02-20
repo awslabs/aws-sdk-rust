@@ -96,3 +96,12 @@ impl TableOrientation {
         }
     }
 }
+impl ::std::fmt::Display for TableOrientation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableOrientation::Horizontal => write!(f, "HORIZONTAL"),
+            TableOrientation::Vertical => write!(f, "VERTICAL"),
+            TableOrientation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl PresetSpeke20Audio {
         }
     }
 }
+impl ::std::fmt::Display for PresetSpeke20Audio {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PresetSpeke20Audio::PresetAudio1 => write!(f, "PRESET_AUDIO_1"),
+            PresetSpeke20Audio::PresetAudio2 => write!(f, "PRESET_AUDIO_2"),
+            PresetSpeke20Audio::PresetAudio3 => write!(f, "PRESET_AUDIO_3"),
+            PresetSpeke20Audio::Shared => write!(f, "SHARED"),
+            PresetSpeke20Audio::Unencrypted => write!(f, "UNENCRYPTED"),
+            PresetSpeke20Audio::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

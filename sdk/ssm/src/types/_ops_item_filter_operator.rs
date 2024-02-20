@@ -106,3 +106,14 @@ impl OpsItemFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for OpsItemFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpsItemFilterOperator::Contains => write!(f, "Contains"),
+            OpsItemFilterOperator::Equal => write!(f, "Equal"),
+            OpsItemFilterOperator::GreaterThan => write!(f, "GreaterThan"),
+            OpsItemFilterOperator::LessThan => write!(f, "LessThan"),
+            OpsItemFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

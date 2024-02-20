@@ -106,3 +106,14 @@ impl TransitGatewayAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayAssociationState::Associated => write!(f, "associated"),
+            TransitGatewayAssociationState::Associating => write!(f, "associating"),
+            TransitGatewayAssociationState::Disassociated => write!(f, "disassociated"),
+            TransitGatewayAssociationState::Disassociating => write!(f, "disassociating"),
+            TransitGatewayAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

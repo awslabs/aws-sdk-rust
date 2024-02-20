@@ -96,3 +96,12 @@ impl OutpostMode {
         }
     }
 }
+impl ::std::fmt::Display for OutpostMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutpostMode::CrossOutpost => write!(f, "cross-outpost"),
+            OutpostMode::SingleOutpost => write!(f, "single-outpost"),
+            OutpostMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

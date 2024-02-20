@@ -106,3 +106,14 @@ impl UnprocessedErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for UnprocessedErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnprocessedErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            UnprocessedErrorCode::InvalidInput => write!(f, "INVALID_INPUT"),
+            UnprocessedErrorCode::LimitExceeded => write!(f, "LIMIT_EXCEEDED"),
+            UnprocessedErrorCode::NotFound => write!(f, "NOT_FOUND"),
+            UnprocessedErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl TagTarget {
         }
     }
 }
+impl ::std::fmt::Display for TagTarget {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TagTarget::S3Object => write!(f, "S3_OBJECT"),
+            TagTarget::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

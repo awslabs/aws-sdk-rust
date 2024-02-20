@@ -96,3 +96,12 @@ impl VnfOperationalState {
         }
     }
 }
+impl ::std::fmt::Display for VnfOperationalState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VnfOperationalState::Started => write!(f, "STARTED"),
+            VnfOperationalState::Stopped => write!(f, "STOPPED"),
+            VnfOperationalState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

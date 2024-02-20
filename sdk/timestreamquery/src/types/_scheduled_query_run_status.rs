@@ -111,3 +111,14 @@ impl ScheduledQueryRunStatus {
         }
     }
 }
+impl ::std::fmt::Display for ScheduledQueryRunStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduledQueryRunStatus::AutoTriggerFailure => write!(f, "AUTO_TRIGGER_FAILURE"),
+            ScheduledQueryRunStatus::AutoTriggerSuccess => write!(f, "AUTO_TRIGGER_SUCCESS"),
+            ScheduledQueryRunStatus::ManualTriggerFailure => write!(f, "MANUAL_TRIGGER_FAILURE"),
+            ScheduledQueryRunStatus::ManualTriggerSuccess => write!(f, "MANUAL_TRIGGER_SUCCESS"),
+            ScheduledQueryRunStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

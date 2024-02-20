@@ -159,3 +159,22 @@ impl IpamPoolState {
         }
     }
 }
+impl ::std::fmt::Display for IpamPoolState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamPoolState::CreateComplete => write!(f, "create-complete"),
+            IpamPoolState::CreateFailed => write!(f, "create-failed"),
+            IpamPoolState::CreateInProgress => write!(f, "create-in-progress"),
+            IpamPoolState::DeleteComplete => write!(f, "delete-complete"),
+            IpamPoolState::DeleteFailed => write!(f, "delete-failed"),
+            IpamPoolState::DeleteInProgress => write!(f, "delete-in-progress"),
+            IpamPoolState::IsolateComplete => write!(f, "isolate-complete"),
+            IpamPoolState::IsolateInProgress => write!(f, "isolate-in-progress"),
+            IpamPoolState::ModifyComplete => write!(f, "modify-complete"),
+            IpamPoolState::ModifyFailed => write!(f, "modify-failed"),
+            IpamPoolState::ModifyInProgress => write!(f, "modify-in-progress"),
+            IpamPoolState::RestoreInProgress => write!(f, "restore-in-progress"),
+            IpamPoolState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

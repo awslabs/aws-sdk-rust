@@ -101,3 +101,13 @@ impl PrimaryValueDisplayType {
         }
     }
 }
+impl ::std::fmt::Display for PrimaryValueDisplayType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrimaryValueDisplayType::Actual => write!(f, "ACTUAL"),
+            PrimaryValueDisplayType::Comparison => write!(f, "COMPARISON"),
+            PrimaryValueDisplayType::Hidden => write!(f, "HIDDEN"),
+            PrimaryValueDisplayType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

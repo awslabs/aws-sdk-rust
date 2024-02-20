@@ -96,3 +96,12 @@ impl UploadCategory {
         }
     }
 }
+impl ::std::fmt::Display for UploadCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UploadCategory::Curated => write!(f, "CURATED"),
+            UploadCategory::Private => write!(f, "PRIVATE"),
+            UploadCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

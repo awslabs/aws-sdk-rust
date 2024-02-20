@@ -111,3 +111,15 @@ impl S3Permission {
         }
     }
 }
+impl ::std::fmt::Display for S3Permission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3Permission::FullControl => write!(f, "FULL_CONTROL"),
+            S3Permission::Read => write!(f, "READ"),
+            S3Permission::ReadAcp => write!(f, "READ_ACP"),
+            S3Permission::Write => write!(f, "WRITE"),
+            S3Permission::WriteAcp => write!(f, "WRITE_ACP"),
+            S3Permission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

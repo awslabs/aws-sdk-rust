@@ -135,3 +135,18 @@ impl Compatibility {
         }
     }
 }
+impl ::std::fmt::Display for Compatibility {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Compatibility::Backward => write!(f, "BACKWARD"),
+            Compatibility::BackwardAll => write!(f, "BACKWARD_ALL"),
+            Compatibility::Disabled => write!(f, "DISABLED"),
+            Compatibility::Forward => write!(f, "FORWARD"),
+            Compatibility::ForwardAll => write!(f, "FORWARD_ALL"),
+            Compatibility::Full => write!(f, "FULL"),
+            Compatibility::FullAll => write!(f, "FULL_ALL"),
+            Compatibility::None => write!(f, "NONE"),
+            Compatibility::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

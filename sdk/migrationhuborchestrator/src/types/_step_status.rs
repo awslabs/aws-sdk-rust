@@ -129,3 +129,17 @@ impl StepStatus {
         }
     }
 }
+impl ::std::fmt::Display for StepStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StepStatus::AwaitingDependencies => write!(f, "AWAITING_DEPENDENCIES"),
+            StepStatus::Completed => write!(f, "COMPLETED"),
+            StepStatus::Failed => write!(f, "FAILED"),
+            StepStatus::InProgress => write!(f, "IN_PROGRESS"),
+            StepStatus::Paused => write!(f, "PAUSED"),
+            StepStatus::Ready => write!(f, "READY"),
+            StepStatus::UserAttentionRequired => write!(f, "USER_ATTENTION_REQUIRED"),
+            StepStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

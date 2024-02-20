@@ -121,3 +121,17 @@ impl Strategy {
         }
     }
 }
+impl ::std::fmt::Display for Strategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Strategy::Refactor => write!(f, "Refactor"),
+            Strategy::Rehost => write!(f, "Rehost"),
+            Strategy::Relocate => write!(f, "Relocate"),
+            Strategy::Replatform => write!(f, "Replatform"),
+            Strategy::Repurchase => write!(f, "Repurchase"),
+            Strategy::Retain => write!(f, "Retain"),
+            Strategy::Retirement => write!(f, "Retirement"),
+            Strategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

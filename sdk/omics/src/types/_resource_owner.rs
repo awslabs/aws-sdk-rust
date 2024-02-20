@@ -98,3 +98,12 @@ impl ResourceOwner {
         }
     }
 }
+impl ::std::fmt::Display for ResourceOwner {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceOwner::Other => write!(f, "OTHER"),
+            ResourceOwner::SelfValue => write!(f, "SELF"),
+            ResourceOwner::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

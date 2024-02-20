@@ -96,3 +96,12 @@ impl FleetReplacementStrategy {
         }
     }
 }
+impl ::std::fmt::Display for FleetReplacementStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetReplacementStrategy::Launch => write!(f, "launch"),
+            FleetReplacementStrategy::LaunchBeforeTerminate => write!(f, "launch-before-terminate"),
+            FleetReplacementStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

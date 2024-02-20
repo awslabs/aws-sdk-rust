@@ -96,3 +96,12 @@ impl CmafManifestCompression {
         }
     }
 }
+impl ::std::fmt::Display for CmafManifestCompression {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafManifestCompression::Gzip => write!(f, "GZIP"),
+            CmafManifestCompression::None => write!(f, "NONE"),
+            CmafManifestCompression::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

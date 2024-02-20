@@ -91,3 +91,11 @@ impl RevocationType {
         }
     }
 }
+impl ::std::fmt::Display for RevocationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RevocationType::Crl => write!(f, "CRL"),
+            RevocationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl AnalyticsModality {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsModality {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsModality::Dtmf => write!(f, "DTMF"),
+            AnalyticsModality::MultiMode => write!(f, "MultiMode"),
+            AnalyticsModality::Speech => write!(f, "Speech"),
+            AnalyticsModality::Text => write!(f, "Text"),
+            AnalyticsModality::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

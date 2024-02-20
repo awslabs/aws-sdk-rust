@@ -183,3 +183,26 @@ impl DataReplicationErrorString {
         }
     }
 }
+impl ::std::fmt::Display for DataReplicationErrorString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataReplicationErrorString::AgentNotSeen => write!(f, "AGENT_NOT_SEEN"),
+            DataReplicationErrorString::FailedToAttachStagingDisks => write!(f, "FAILED_TO_ATTACH_STAGING_DISKS"),
+            DataReplicationErrorString::FailedToAuthenticateWithService => write!(f, "FAILED_TO_AUTHENTICATE_WITH_SERVICE"),
+            DataReplicationErrorString::FailedToBootReplicationServer => write!(f, "FAILED_TO_BOOT_REPLICATION_SERVER"),
+            DataReplicationErrorString::FailedToConnectAgentToReplicationServer => write!(f, "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER"),
+            DataReplicationErrorString::FailedToCreateSecurityGroup => write!(f, "FAILED_TO_CREATE_SECURITY_GROUP"),
+            DataReplicationErrorString::FailedToCreateStagingDisks => write!(f, "FAILED_TO_CREATE_STAGING_DISKS"),
+            DataReplicationErrorString::FailedToDownloadReplicationSoftware => write!(f, "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE"),
+            DataReplicationErrorString::FailedToLaunchReplicationServer => write!(f, "FAILED_TO_LAUNCH_REPLICATION_SERVER"),
+            DataReplicationErrorString::FailedToPairReplicationServerWithAgent => write!(f, "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT"),
+            DataReplicationErrorString::FailedToStartDataTransfer => write!(f, "FAILED_TO_START_DATA_TRANSFER"),
+            DataReplicationErrorString::LastSnapshotJobFailed => write!(f, "LAST_SNAPSHOT_JOB_FAILED"),
+            DataReplicationErrorString::NotConverging => write!(f, "NOT_CONVERGING"),
+            DataReplicationErrorString::SnapshotsFailure => write!(f, "SNAPSHOTS_FAILURE"),
+            DataReplicationErrorString::UnstableNetwork => write!(f, "UNSTABLE_NETWORK"),
+            DataReplicationErrorString::UnsupportedVmConfiguration => write!(f, "UNSUPPORTED_VM_CONFIGURATION"),
+            DataReplicationErrorString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

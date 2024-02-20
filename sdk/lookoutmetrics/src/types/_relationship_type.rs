@@ -96,3 +96,12 @@ impl RelationshipType {
         }
     }
 }
+impl ::std::fmt::Display for RelationshipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelationshipType::CauseOfInputAnomalyGroup => write!(f, "CAUSE_OF_INPUT_ANOMALY_GROUP"),
+            RelationshipType::EffectOfInputAnomalyGroup => write!(f, "EFFECT_OF_INPUT_ANOMALY_GROUP"),
+            RelationshipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

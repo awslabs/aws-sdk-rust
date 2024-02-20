@@ -101,3 +101,13 @@ impl WindowsDeploymentType {
         }
     }
 }
+impl ::std::fmt::Display for WindowsDeploymentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WindowsDeploymentType::MultiAz1 => write!(f, "MULTI_AZ_1"),
+            WindowsDeploymentType::SingleAz1 => write!(f, "SINGLE_AZ_1"),
+            WindowsDeploymentType::SingleAz2 => write!(f, "SINGLE_AZ_2"),
+            WindowsDeploymentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

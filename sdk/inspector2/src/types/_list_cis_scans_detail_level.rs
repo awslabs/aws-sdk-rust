@@ -96,3 +96,12 @@ impl ListCisScansDetailLevel {
         }
     }
 }
+impl ::std::fmt::Display for ListCisScansDetailLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListCisScansDetailLevel::Member => write!(f, "MEMBER"),
+            ListCisScansDetailLevel::Organization => write!(f, "ORGANIZATION"),
+            ListCisScansDetailLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

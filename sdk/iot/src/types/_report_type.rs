@@ -96,3 +96,12 @@ impl ReportType {
         }
     }
 }
+impl ::std::fmt::Display for ReportType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportType::Errors => write!(f, "ERRORS"),
+            ReportType::Results => write!(f, "RESULTS"),
+            ReportType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

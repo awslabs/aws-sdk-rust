@@ -96,3 +96,12 @@ impl RegionConcurrencyType {
         }
     }
 }
+impl ::std::fmt::Display for RegionConcurrencyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegionConcurrencyType::Parallel => write!(f, "PARALLEL"),
+            RegionConcurrencyType::Sequential => write!(f, "SEQUENTIAL"),
+            RegionConcurrencyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -108,3 +108,14 @@ impl TransitGatewayConnectPeerAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayConnectPeerAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayConnectPeerAssociationState::Available => write!(f, "AVAILABLE"),
+            TransitGatewayConnectPeerAssociationState::Deleted => write!(f, "DELETED"),
+            TransitGatewayConnectPeerAssociationState::Deleting => write!(f, "DELETING"),
+            TransitGatewayConnectPeerAssociationState::Pending => write!(f, "PENDING"),
+            TransitGatewayConnectPeerAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

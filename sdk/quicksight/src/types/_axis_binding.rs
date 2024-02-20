@@ -96,3 +96,12 @@ impl AxisBinding {
         }
     }
 }
+impl ::std::fmt::Display for AxisBinding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AxisBinding::PrimaryYaxis => write!(f, "PRIMARY_YAXIS"),
+            AxisBinding::SecondaryYaxis => write!(f, "SECONDARY_YAXIS"),
+            AxisBinding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

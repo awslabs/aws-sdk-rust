@@ -106,3 +106,14 @@ impl ContainerProductVisibilityString {
         }
     }
 }
+impl ::std::fmt::Display for ContainerProductVisibilityString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerProductVisibilityString::Draft => write!(f, "Draft"),
+            ContainerProductVisibilityString::Limited => write!(f, "Limited"),
+            ContainerProductVisibilityString::Public => write!(f, "Public"),
+            ContainerProductVisibilityString::Restricted => write!(f, "Restricted"),
+            ContainerProductVisibilityString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

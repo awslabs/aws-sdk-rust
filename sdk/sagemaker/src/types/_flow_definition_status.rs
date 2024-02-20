@@ -106,3 +106,14 @@ impl FlowDefinitionStatus {
         }
     }
 }
+impl ::std::fmt::Display for FlowDefinitionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlowDefinitionStatus::Active => write!(f, "Active"),
+            FlowDefinitionStatus::Deleting => write!(f, "Deleting"),
+            FlowDefinitionStatus::Failed => write!(f, "Failed"),
+            FlowDefinitionStatus::Initializing => write!(f, "Initializing"),
+            FlowDefinitionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

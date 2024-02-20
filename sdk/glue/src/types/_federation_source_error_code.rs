@@ -117,3 +117,15 @@ impl FederationSourceErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for FederationSourceErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FederationSourceErrorCode::InternalServiceException => write!(f, "InternalServiceException"),
+            FederationSourceErrorCode::InvalidResponseException => write!(f, "InvalidResponseException"),
+            FederationSourceErrorCode::OperationNotSupportedException => write!(f, "OperationNotSupportedException"),
+            FederationSourceErrorCode::OperationTimeoutException => write!(f, "OperationTimeoutException"),
+            FederationSourceErrorCode::ThrottlingException => write!(f, "ThrottlingException"),
+            FederationSourceErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

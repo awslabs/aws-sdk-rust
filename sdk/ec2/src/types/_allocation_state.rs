@@ -123,3 +123,16 @@ impl AllocationState {
         }
     }
 }
+impl ::std::fmt::Display for AllocationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllocationState::Available => write!(f, "available"),
+            AllocationState::Pending => write!(f, "pending"),
+            AllocationState::PermanentFailure => write!(f, "permanent-failure"),
+            AllocationState::Released => write!(f, "released"),
+            AllocationState::ReleasedPermanentFailure => write!(f, "released-permanent-failure"),
+            AllocationState::UnderAssessment => write!(f, "under-assessment"),
+            AllocationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

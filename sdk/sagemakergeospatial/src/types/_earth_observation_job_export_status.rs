@@ -101,3 +101,13 @@ impl EarthObservationJobExportStatus {
         }
     }
 }
+impl ::std::fmt::Display for EarthObservationJobExportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EarthObservationJobExportStatus::Failed => write!(f, "FAILED"),
+            EarthObservationJobExportStatus::InProgress => write!(f, "IN_PROGRESS"),
+            EarthObservationJobExportStatus::Succeeded => write!(f, "SUCCEEDED"),
+            EarthObservationJobExportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

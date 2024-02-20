@@ -101,3 +101,12 @@ impl VpcEndpointErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for VpcEndpointErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcEndpointErrorCode::EndpointNotFound => write!(f, "ENDPOINT_NOT_FOUND"),
+            VpcEndpointErrorCode::ServerError => write!(f, "SERVER_ERROR"),
+            VpcEndpointErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

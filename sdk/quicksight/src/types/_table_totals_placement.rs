@@ -101,3 +101,13 @@ impl TableTotalsPlacement {
         }
     }
 }
+impl ::std::fmt::Display for TableTotalsPlacement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableTotalsPlacement::Auto => write!(f, "AUTO"),
+            TableTotalsPlacement::End => write!(f, "END"),
+            TableTotalsPlacement::Start => write!(f, "START"),
+            TableTotalsPlacement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

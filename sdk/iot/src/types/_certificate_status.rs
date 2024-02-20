@@ -123,3 +123,16 @@ impl CertificateStatus {
         }
     }
 }
+impl ::std::fmt::Display for CertificateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateStatus::Active => write!(f, "ACTIVE"),
+            CertificateStatus::Inactive => write!(f, "INACTIVE"),
+            CertificateStatus::PendingActivation => write!(f, "PENDING_ACTIVATION"),
+            CertificateStatus::PendingTransfer => write!(f, "PENDING_TRANSFER"),
+            CertificateStatus::RegisterInactive => write!(f, "REGISTER_INACTIVE"),
+            CertificateStatus::Revoked => write!(f, "REVOKED"),
+            CertificateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

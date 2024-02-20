@@ -141,3 +141,19 @@ impl ContentCategoryType {
         }
     }
 }
+impl ::std::fmt::Display for ContentCategoryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentCategoryType::Audio => write!(f, "AUDIO"),
+            ContentCategoryType::Document => write!(f, "DOCUMENT"),
+            ContentCategoryType::Image => write!(f, "IMAGE"),
+            ContentCategoryType::Other => write!(f, "OTHER"),
+            ContentCategoryType::Pdf => write!(f, "PDF"),
+            ContentCategoryType::Presentation => write!(f, "PRESENTATION"),
+            ContentCategoryType::SourceCode => write!(f, "SOURCE_CODE"),
+            ContentCategoryType::Spreadsheet => write!(f, "SPREADSHEET"),
+            ContentCategoryType::Video => write!(f, "VIDEO"),
+            ContentCategoryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

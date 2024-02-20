@@ -96,3 +96,12 @@ impl SupportedDataTransferType {
         }
     }
 }
+impl ::std::fmt::Display for SupportedDataTransferType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SupportedDataTransferType::File => write!(f, "FILE"),
+            SupportedDataTransferType::Record => write!(f, "RECORD"),
+            SupportedDataTransferType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

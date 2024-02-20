@@ -106,3 +106,14 @@ impl S3BucketRegion {
         }
     }
 }
+impl ::std::fmt::Display for S3BucketRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3BucketRegion::AfSouth1 => write!(f, "af-south-1"),
+            S3BucketRegion::ApEast1 => write!(f, "ap-east-1"),
+            S3BucketRegion::EuSouth1 => write!(f, "eu-south-1"),
+            S3BucketRegion::MeSouth1 => write!(f, "me-south-1"),
+            S3BucketRegion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

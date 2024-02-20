@@ -96,3 +96,12 @@ impl RecommendationType {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationType::Priority => write!(f, "priority"),
+            RecommendationType::Standard => write!(f, "standard"),
+            RecommendationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

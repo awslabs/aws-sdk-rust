@@ -96,3 +96,12 @@ impl ActivityStreamMode {
         }
     }
 }
+impl ::std::fmt::Display for ActivityStreamMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActivityStreamMode::Async => write!(f, "async"),
+            ActivityStreamMode::Sync => write!(f, "sync"),
+            ActivityStreamMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

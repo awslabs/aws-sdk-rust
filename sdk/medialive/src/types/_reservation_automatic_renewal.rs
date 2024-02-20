@@ -101,3 +101,13 @@ impl ReservationAutomaticRenewal {
         }
     }
 }
+impl ::std::fmt::Display for ReservationAutomaticRenewal {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservationAutomaticRenewal::Disabled => write!(f, "DISABLED"),
+            ReservationAutomaticRenewal::Enabled => write!(f, "ENABLED"),
+            ReservationAutomaticRenewal::Unavailable => write!(f, "UNAVAILABLE"),
+            ReservationAutomaticRenewal::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

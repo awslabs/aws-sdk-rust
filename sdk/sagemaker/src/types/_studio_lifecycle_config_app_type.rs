@@ -106,3 +106,14 @@ impl StudioLifecycleConfigAppType {
         }
     }
 }
+impl ::std::fmt::Display for StudioLifecycleConfigAppType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StudioLifecycleConfigAppType::CodeEditor => write!(f, "CodeEditor"),
+            StudioLifecycleConfigAppType::JupyterLab => write!(f, "JupyterLab"),
+            StudioLifecycleConfigAppType::JupyterServer => write!(f, "JupyterServer"),
+            StudioLifecycleConfigAppType::KernelGateway => write!(f, "KernelGateway"),
+            StudioLifecycleConfigAppType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

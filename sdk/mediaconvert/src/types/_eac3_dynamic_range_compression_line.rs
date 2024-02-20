@@ -116,3 +116,16 @@ impl Eac3DynamicRangeCompressionLine {
         }
     }
 }
+impl ::std::fmt::Display for Eac3DynamicRangeCompressionLine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3DynamicRangeCompressionLine::FilmLight => write!(f, "FILM_LIGHT"),
+            Eac3DynamicRangeCompressionLine::FilmStandard => write!(f, "FILM_STANDARD"),
+            Eac3DynamicRangeCompressionLine::MusicLight => write!(f, "MUSIC_LIGHT"),
+            Eac3DynamicRangeCompressionLine::MusicStandard => write!(f, "MUSIC_STANDARD"),
+            Eac3DynamicRangeCompressionLine::None => write!(f, "NONE"),
+            Eac3DynamicRangeCompressionLine::Speech => write!(f, "SPEECH"),
+            Eac3DynamicRangeCompressionLine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

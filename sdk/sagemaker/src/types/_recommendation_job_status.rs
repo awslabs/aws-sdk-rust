@@ -135,3 +135,18 @@ impl RecommendationJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationJobStatus::Completed => write!(f, "COMPLETED"),
+            RecommendationJobStatus::Deleted => write!(f, "DELETED"),
+            RecommendationJobStatus::Deleting => write!(f, "DELETING"),
+            RecommendationJobStatus::Failed => write!(f, "FAILED"),
+            RecommendationJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            RecommendationJobStatus::Pending => write!(f, "PENDING"),
+            RecommendationJobStatus::Stopped => write!(f, "STOPPED"),
+            RecommendationJobStatus::Stopping => write!(f, "STOPPING"),
+            RecommendationJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

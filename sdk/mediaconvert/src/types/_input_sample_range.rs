@@ -101,3 +101,13 @@ impl InputSampleRange {
         }
     }
 }
+impl ::std::fmt::Display for InputSampleRange {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputSampleRange::Follow => write!(f, "FOLLOW"),
+            InputSampleRange::FullRange => write!(f, "FULL_RANGE"),
+            InputSampleRange::LimitedRange => write!(f, "LIMITED_RANGE"),
+            InputSampleRange::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

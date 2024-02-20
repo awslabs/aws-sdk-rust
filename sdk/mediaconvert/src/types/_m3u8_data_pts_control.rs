@@ -96,3 +96,12 @@ impl M3u8DataPtsControl {
         }
     }
 }
+impl ::std::fmt::Display for M3u8DataPtsControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M3u8DataPtsControl::AlignToVideo => write!(f, "ALIGN_TO_VIDEO"),
+            M3u8DataPtsControl::Auto => write!(f, "AUTO"),
+            M3u8DataPtsControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

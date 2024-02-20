@@ -91,3 +91,11 @@ impl NotificationResourceType {
         }
     }
 }
+impl ::std::fmt::Display for NotificationResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationResourceType::Project => write!(f, "PROJECT"),
+            NotificationResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -131,3 +131,19 @@ impl EnvironmentHealthStatus {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentHealthStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentHealthStatus::Degraded => write!(f, "Degraded"),
+            EnvironmentHealthStatus::Info => write!(f, "Info"),
+            EnvironmentHealthStatus::NoData => write!(f, "NoData"),
+            EnvironmentHealthStatus::Ok => write!(f, "Ok"),
+            EnvironmentHealthStatus::Pending => write!(f, "Pending"),
+            EnvironmentHealthStatus::Severe => write!(f, "Severe"),
+            EnvironmentHealthStatus::Suspended => write!(f, "Suspended"),
+            EnvironmentHealthStatus::UnknownValue => write!(f, "Unknown"),
+            EnvironmentHealthStatus::Warning => write!(f, "Warning"),
+            EnvironmentHealthStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

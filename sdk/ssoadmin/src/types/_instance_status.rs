@@ -101,3 +101,13 @@ impl InstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for InstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceStatus::Active => write!(f, "ACTIVE"),
+            InstanceStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            InstanceStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            InstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

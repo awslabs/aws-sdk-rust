@@ -91,3 +91,11 @@ impl ExportDataFormat {
         }
     }
 }
+impl ::std::fmt::Display for ExportDataFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportDataFormat::Csv => write!(f, "CSV"),
+            ExportDataFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

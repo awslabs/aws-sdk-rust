@@ -106,3 +106,14 @@ impl IoTJobExecutionFailureType {
         }
     }
 }
+impl ::std::fmt::Display for IoTJobExecutionFailureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IoTJobExecutionFailureType::All => write!(f, "ALL"),
+            IoTJobExecutionFailureType::Failed => write!(f, "FAILED"),
+            IoTJobExecutionFailureType::Rejected => write!(f, "REJECTED"),
+            IoTJobExecutionFailureType::TimedOut => write!(f, "TIMED_OUT"),
+            IoTJobExecutionFailureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Logging {
         }
     }
 }
+impl ::std::fmt::Display for Logging {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Logging::Disabled => write!(f, "DISABLED"),
+            Logging::Enabled => write!(f, "ENABLED"),
+            Logging::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

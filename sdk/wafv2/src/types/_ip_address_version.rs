@@ -96,3 +96,12 @@ impl IpAddressVersion {
         }
     }
 }
+impl ::std::fmt::Display for IpAddressVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpAddressVersion::Ipv4 => write!(f, "IPV4"),
+            IpAddressVersion::Ipv6 => write!(f, "IPV6"),
+            IpAddressVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

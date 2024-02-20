@@ -96,3 +96,12 @@ impl HlsDiscontinuityTags {
         }
     }
 }
+impl ::std::fmt::Display for HlsDiscontinuityTags {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsDiscontinuityTags::Insert => write!(f, "INSERT"),
+            HlsDiscontinuityTags::NeverInsert => write!(f, "NEVER_INSERT"),
+            HlsDiscontinuityTags::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

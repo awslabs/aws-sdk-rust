@@ -177,3 +177,25 @@ impl InforNexusConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for InforNexusConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InforNexusConnectorOperator::Addition => write!(f, "ADDITION"),
+            InforNexusConnectorOperator::Between => write!(f, "BETWEEN"),
+            InforNexusConnectorOperator::Division => write!(f, "DIVISION"),
+            InforNexusConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            InforNexusConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            InforNexusConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            InforNexusConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            InforNexusConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            InforNexusConnectorOperator::NoOp => write!(f, "NO_OP"),
+            InforNexusConnectorOperator::Projection => write!(f, "PROJECTION"),
+            InforNexusConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            InforNexusConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            InforNexusConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            InforNexusConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            InforNexusConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            InforNexusConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

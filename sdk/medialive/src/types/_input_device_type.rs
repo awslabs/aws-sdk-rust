@@ -96,3 +96,12 @@ impl InputDeviceType {
         }
     }
 }
+impl ::std::fmt::Display for InputDeviceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDeviceType::Hd => write!(f, "HD"),
+            InputDeviceType::Uhd => write!(f, "UHD"),
+            InputDeviceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

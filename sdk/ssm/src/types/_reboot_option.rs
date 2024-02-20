@@ -96,3 +96,12 @@ impl RebootOption {
         }
     }
 }
+impl ::std::fmt::Display for RebootOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RebootOption::NoReboot => write!(f, "NoReboot"),
+            RebootOption::RebootIfNeeded => write!(f, "RebootIfNeeded"),
+            RebootOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

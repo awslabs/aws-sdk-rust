@@ -96,3 +96,12 @@ impl MediaPipelineStatusUpdate {
         }
     }
 }
+impl ::std::fmt::Display for MediaPipelineStatusUpdate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaPipelineStatusUpdate::Pause => write!(f, "Pause"),
+            MediaPipelineStatusUpdate::Resume => write!(f, "Resume"),
+            MediaPipelineStatusUpdate::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

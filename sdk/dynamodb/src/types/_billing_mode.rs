@@ -96,3 +96,12 @@ impl BillingMode {
         }
     }
 }
+impl ::std::fmt::Display for BillingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BillingMode::PayPerRequest => write!(f, "PAY_PER_REQUEST"),
+            BillingMode::Provisioned => write!(f, "PROVISIONED"),
+            BillingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

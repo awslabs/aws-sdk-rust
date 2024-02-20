@@ -101,3 +101,13 @@ impl SimulationSoftwareSuiteType {
         }
     }
 }
+impl ::std::fmt::Display for SimulationSoftwareSuiteType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SimulationSoftwareSuiteType::Gazebo => write!(f, "Gazebo"),
+            SimulationSoftwareSuiteType::RosbagPlay => write!(f, "RosbagPlay"),
+            SimulationSoftwareSuiteType::SimulationRuntime => write!(f, "SimulationRuntime"),
+            SimulationSoftwareSuiteType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

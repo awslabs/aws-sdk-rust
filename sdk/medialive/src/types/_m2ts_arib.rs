@@ -96,3 +96,12 @@ impl M2tsArib {
         }
     }
 }
+impl ::std::fmt::Display for M2tsArib {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsArib::Disabled => write!(f, "DISABLED"),
+            M2tsArib::Enabled => write!(f, "ENABLED"),
+            M2tsArib::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

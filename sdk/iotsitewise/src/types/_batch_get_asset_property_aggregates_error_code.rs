@@ -101,3 +101,13 @@ impl BatchGetAssetPropertyAggregatesErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for BatchGetAssetPropertyAggregatesErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchGetAssetPropertyAggregatesErrorCode::AccessDeniedException => write!(f, "AccessDeniedException"),
+            BatchGetAssetPropertyAggregatesErrorCode::InvalidRequestException => write!(f, "InvalidRequestException"),
+            BatchGetAssetPropertyAggregatesErrorCode::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
+            BatchGetAssetPropertyAggregatesErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl NetworkResourceFilterKeys {
         }
     }
 }
+impl ::std::fmt::Display for NetworkResourceFilterKeys {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkResourceFilterKeys::Order => write!(f, "ORDER"),
+            NetworkResourceFilterKeys::Status => write!(f, "STATUS"),
+            NetworkResourceFilterKeys::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

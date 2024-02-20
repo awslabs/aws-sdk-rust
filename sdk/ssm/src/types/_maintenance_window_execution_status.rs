@@ -135,3 +135,18 @@ impl MaintenanceWindowExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for MaintenanceWindowExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaintenanceWindowExecutionStatus::Cancelled => write!(f, "CANCELLED"),
+            MaintenanceWindowExecutionStatus::Cancelling => write!(f, "CANCELLING"),
+            MaintenanceWindowExecutionStatus::Failed => write!(f, "FAILED"),
+            MaintenanceWindowExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            MaintenanceWindowExecutionStatus::Pending => write!(f, "PENDING"),
+            MaintenanceWindowExecutionStatus::SkippedOverlapping => write!(f, "SKIPPED_OVERLAPPING"),
+            MaintenanceWindowExecutionStatus::Success => write!(f, "SUCCESS"),
+            MaintenanceWindowExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
+            MaintenanceWindowExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

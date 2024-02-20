@@ -101,3 +101,13 @@ impl RequirePin {
         }
     }
 }
+impl ::std::fmt::Display for RequirePin {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RequirePin::No => write!(f, "NO"),
+            RequirePin::Optional => write!(f, "OPTIONAL"),
+            RequirePin::Yes => write!(f, "YES"),
+            RequirePin::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

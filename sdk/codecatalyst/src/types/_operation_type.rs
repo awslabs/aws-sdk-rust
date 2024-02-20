@@ -96,3 +96,12 @@ impl OperationType {
         }
     }
 }
+impl ::std::fmt::Display for OperationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationType::Mutation => write!(f, "MUTATION"),
+            OperationType::Readonly => write!(f, "READONLY"),
+            OperationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

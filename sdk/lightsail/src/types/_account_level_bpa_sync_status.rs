@@ -106,3 +106,14 @@ impl AccountLevelBpaSyncStatus {
         }
     }
 }
+impl ::std::fmt::Display for AccountLevelBpaSyncStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountLevelBpaSyncStatus::Defaulted => write!(f, "Defaulted"),
+            AccountLevelBpaSyncStatus::Failed => write!(f, "Failed"),
+            AccountLevelBpaSyncStatus::InSync => write!(f, "InSync"),
+            AccountLevelBpaSyncStatus::NeverSynced => write!(f, "NeverSynced"),
+            AccountLevelBpaSyncStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

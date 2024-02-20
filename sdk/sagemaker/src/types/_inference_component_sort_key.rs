@@ -101,3 +101,13 @@ impl InferenceComponentSortKey {
         }
     }
 }
+impl ::std::fmt::Display for InferenceComponentSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferenceComponentSortKey::CreationTime => write!(f, "CreationTime"),
+            InferenceComponentSortKey::Name => write!(f, "Name"),
+            InferenceComponentSortKey::Status => write!(f, "Status"),
+            InferenceComponentSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

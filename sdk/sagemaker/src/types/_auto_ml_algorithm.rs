@@ -141,3 +141,19 @@ impl AutoMlAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlAlgorithm::Catboost => write!(f, "catboost"),
+            AutoMlAlgorithm::ExtraTrees => write!(f, "extra-trees"),
+            AutoMlAlgorithm::Fastai => write!(f, "fastai"),
+            AutoMlAlgorithm::Lightgbm => write!(f, "lightgbm"),
+            AutoMlAlgorithm::LinearLearner => write!(f, "linear-learner"),
+            AutoMlAlgorithm::Mlp => write!(f, "mlp"),
+            AutoMlAlgorithm::NnTorch => write!(f, "nn-torch"),
+            AutoMlAlgorithm::Randomforest => write!(f, "randomforest"),
+            AutoMlAlgorithm::Xgboost => write!(f, "xgboost"),
+            AutoMlAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

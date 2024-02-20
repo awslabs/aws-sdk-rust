@@ -91,3 +91,11 @@ impl FleetAction {
         }
     }
 }
+impl ::std::fmt::Display for FleetAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetAction::AutoScaling => write!(f, "AUTO_SCALING"),
+            FleetAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

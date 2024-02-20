@@ -96,3 +96,12 @@ impl ConflictDetectionType {
         }
     }
 }
+impl ::std::fmt::Display for ConflictDetectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConflictDetectionType::None => write!(f, "NONE"),
+            ConflictDetectionType::Version => write!(f, "VERSION"),
+            ConflictDetectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

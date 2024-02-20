@@ -117,3 +117,15 @@ impl UnprocessableExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for UnprocessableExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnprocessableExceptionReason::InternalLimitExceeded => write!(f, "INTERNAL_LIMIT_EXCEEDED"),
+            UnprocessableExceptionReason::MemoryLimitExceeded => write!(f, "MEMORY_LIMIT_EXCEEDED"),
+            UnprocessableExceptionReason::PartitionFull => write!(f, "PARTITION_FULL"),
+            UnprocessableExceptionReason::QueryTimeout => write!(f, "QUERY_TIMEOUT"),
+            UnprocessableExceptionReason::StorageLimitExceeded => write!(f, "STORAGE_LIMIT_EXCEEDED"),
+            UnprocessableExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

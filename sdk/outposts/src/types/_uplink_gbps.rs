@@ -106,3 +106,14 @@ impl UplinkGbps {
         }
     }
 }
+impl ::std::fmt::Display for UplinkGbps {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UplinkGbps::Uplink100G => write!(f, "UPLINK_100G"),
+            UplinkGbps::Uplink10G => write!(f, "UPLINK_10G"),
+            UplinkGbps::Uplink1G => write!(f, "UPLINK_1G"),
+            UplinkGbps::Uplink40G => write!(f, "UPLINK_40G"),
+            UplinkGbps::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl AcceptLanguage {
         }
     }
 }
+impl ::std::fmt::Display for AcceptLanguage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AcceptLanguage::EnUs => write!(f, "EN_US"),
+            AcceptLanguage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl WorkflowExport {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowExport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowExport::Definition => write!(f, "DEFINITION"),
+            WorkflowExport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -291,3 +291,44 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::AgentIssue => write!(f, "AGENT_ISSUE"),
+            ErrorCode::AlarmActive => write!(f, "ALARM_ACTIVE"),
+            ErrorCode::ApplicationMissing => write!(f, "APPLICATION_MISSING"),
+            ErrorCode::AutoscalingValidationError => write!(f, "AUTOSCALING_VALIDATION_ERROR"),
+            ErrorCode::AutoScalingConfiguration => write!(f, "AUTO_SCALING_CONFIGURATION"),
+            ErrorCode::AutoScalingIamRolePermissions => write!(f, "AUTO_SCALING_IAM_ROLE_PERMISSIONS"),
+            ErrorCode::CloudformationStackFailure => write!(f, "CLOUDFORMATION_STACK_FAILURE"),
+            ErrorCode::CodedeployResourceCannotBeFound => write!(f, "CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND"),
+            ErrorCode::CustomerApplicationUnhealthy => write!(f, "CUSTOMER_APPLICATION_UNHEALTHY"),
+            ErrorCode::DeploymentGroupMissing => write!(f, "DEPLOYMENT_GROUP_MISSING"),
+            ErrorCode::EcsUpdateError => write!(f, "ECS_UPDATE_ERROR"),
+            ErrorCode::ElasticLoadBalancingInvalid => write!(f, "ELASTIC_LOAD_BALANCING_INVALID"),
+            ErrorCode::ElbInvalidInstance => write!(f, "ELB_INVALID_INSTANCE"),
+            ErrorCode::HealthConstraints => write!(f, "HEALTH_CONSTRAINTS"),
+            ErrorCode::HealthConstraintsInvalid => write!(f, "HEALTH_CONSTRAINTS_INVALID"),
+            ErrorCode::HookExecutionFailure => write!(f, "HOOK_EXECUTION_FAILURE"),
+            ErrorCode::IamRoleMissing => write!(f, "IAM_ROLE_MISSING"),
+            ErrorCode::IamRolePermissions => write!(f, "IAM_ROLE_PERMISSIONS"),
+            ErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            ErrorCode::InvalidEcsService => write!(f, "INVALID_ECS_SERVICE"),
+            ErrorCode::InvalidLambdaConfiguration => write!(f, "INVALID_LAMBDA_CONFIGURATION"),
+            ErrorCode::InvalidLambdaFunction => write!(f, "INVALID_LAMBDA_FUNCTION"),
+            ErrorCode::InvalidRevision => write!(f, "INVALID_REVISION"),
+            ErrorCode::ManualStop => write!(f, "MANUAL_STOP"),
+            ErrorCode::MissingBlueGreenDeploymentConfiguration => write!(f, "MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION"),
+            ErrorCode::MissingElbInformation => write!(f, "MISSING_ELB_INFORMATION"),
+            ErrorCode::MissingGithubToken => write!(f, "MISSING_GITHUB_TOKEN"),
+            ErrorCode::NoEc2Subscription => write!(f, "NO_EC2_SUBSCRIPTION"),
+            ErrorCode::NoInstances => write!(f, "NO_INSTANCES"),
+            ErrorCode::OverMaxInstances => write!(f, "OVER_MAX_INSTANCES"),
+            ErrorCode::ResourceLimitExceeded => write!(f, "RESOURCE_LIMIT_EXCEEDED"),
+            ErrorCode::RevisionMissing => write!(f, "REVISION_MISSING"),
+            ErrorCode::Throttled => write!(f, "THROTTLED"),
+            ErrorCode::Timeout => write!(f, "TIMEOUT"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

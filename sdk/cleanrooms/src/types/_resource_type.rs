@@ -106,3 +106,14 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Collaboration => write!(f, "COLLABORATION"),
+            ResourceType::ConfiguredTable => write!(f, "CONFIGURED_TABLE"),
+            ResourceType::ConfiguredTableAssociation => write!(f, "CONFIGURED_TABLE_ASSOCIATION"),
+            ResourceType::Membership => write!(f, "MEMBERSHIP"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

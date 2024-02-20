@@ -106,3 +106,14 @@ impl TimecodeBurninFontSize {
         }
     }
 }
+impl ::std::fmt::Display for TimecodeBurninFontSize {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimecodeBurninFontSize::ExtraSmall10 => write!(f, "EXTRA_SMALL_10"),
+            TimecodeBurninFontSize::Large48 => write!(f, "LARGE_48"),
+            TimecodeBurninFontSize::Medium32 => write!(f, "MEDIUM_32"),
+            TimecodeBurninFontSize::Small16 => write!(f, "SMALL_16"),
+            TimecodeBurninFontSize::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

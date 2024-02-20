@@ -101,3 +101,13 @@ impl RecorderStatus {
         }
     }
 }
+impl ::std::fmt::Display for RecorderStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecorderStatus::Failure => write!(f, "Failure"),
+            RecorderStatus::Pending => write!(f, "Pending"),
+            RecorderStatus::Success => write!(f, "Success"),
+            RecorderStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

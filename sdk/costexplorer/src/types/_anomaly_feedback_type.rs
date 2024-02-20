@@ -101,3 +101,13 @@ impl AnomalyFeedbackType {
         }
     }
 }
+impl ::std::fmt::Display for AnomalyFeedbackType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnomalyFeedbackType::No => write!(f, "NO"),
+            AnomalyFeedbackType::PlannedActivity => write!(f, "PLANNED_ACTIVITY"),
+            AnomalyFeedbackType::Yes => write!(f, "YES"),
+            AnomalyFeedbackType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

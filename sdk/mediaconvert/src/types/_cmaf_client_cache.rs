@@ -96,3 +96,12 @@ impl CmafClientCache {
         }
     }
 }
+impl ::std::fmt::Display for CmafClientCache {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafClientCache::Disabled => write!(f, "DISABLED"),
+            CmafClientCache::Enabled => write!(f, "ENABLED"),
+            CmafClientCache::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

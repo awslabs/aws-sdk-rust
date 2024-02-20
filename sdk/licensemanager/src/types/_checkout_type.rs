@@ -96,3 +96,12 @@ impl CheckoutType {
         }
     }
 }
+impl ::std::fmt::Display for CheckoutType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CheckoutType::Perpetual => write!(f, "PERPETUAL"),
+            CheckoutType::Provisional => write!(f, "PROVISIONAL"),
+            CheckoutType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

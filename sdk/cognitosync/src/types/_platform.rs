@@ -106,3 +106,14 @@ impl Platform {
         }
     }
 }
+impl ::std::fmt::Display for Platform {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Platform::Adm => write!(f, "ADM"),
+            Platform::Apns => write!(f, "APNS"),
+            Platform::ApnsSandbox => write!(f, "APNS_SANDBOX"),
+            Platform::Gcm => write!(f, "GCM"),
+            Platform::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

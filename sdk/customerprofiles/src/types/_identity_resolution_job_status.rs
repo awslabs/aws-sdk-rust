@@ -129,3 +129,17 @@ impl IdentityResolutionJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for IdentityResolutionJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IdentityResolutionJobStatus::Completed => write!(f, "COMPLETED"),
+            IdentityResolutionJobStatus::Failed => write!(f, "FAILED"),
+            IdentityResolutionJobStatus::FindMatching => write!(f, "FIND_MATCHING"),
+            IdentityResolutionJobStatus::Merging => write!(f, "MERGING"),
+            IdentityResolutionJobStatus::PartialSuccess => write!(f, "PARTIAL_SUCCESS"),
+            IdentityResolutionJobStatus::Pending => write!(f, "PENDING"),
+            IdentityResolutionJobStatus::Preprocessing => write!(f, "PREPROCESSING"),
+            IdentityResolutionJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

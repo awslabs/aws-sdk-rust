@@ -111,3 +111,15 @@ impl WorkloadImprovementStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorkloadImprovementStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkloadImprovementStatus::Complete => write!(f, "COMPLETE"),
+            WorkloadImprovementStatus::InProgress => write!(f, "IN_PROGRESS"),
+            WorkloadImprovementStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
+            WorkloadImprovementStatus::NotStarted => write!(f, "NOT_STARTED"),
+            WorkloadImprovementStatus::RiskAcknowledged => write!(f, "RISK_ACKNOWLEDGED"),
+            WorkloadImprovementStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

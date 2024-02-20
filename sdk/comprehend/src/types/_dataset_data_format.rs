@@ -96,3 +96,12 @@ impl DatasetDataFormat {
         }
     }
 }
+impl ::std::fmt::Display for DatasetDataFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetDataFormat::AugmentedManifest => write!(f, "AUGMENTED_MANIFEST"),
+            DatasetDataFormat::ComprehendCsv => write!(f, "COMPREHEND_CSV"),
+            DatasetDataFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

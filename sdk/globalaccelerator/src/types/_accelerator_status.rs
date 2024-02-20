@@ -96,3 +96,12 @@ impl AcceleratorStatus {
         }
     }
 }
+impl ::std::fmt::Display for AcceleratorStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AcceleratorStatus::Deployed => write!(f, "DEPLOYED"),
+            AcceleratorStatus::InProgress => write!(f, "IN_PROGRESS"),
+            AcceleratorStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

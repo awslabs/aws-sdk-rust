@@ -111,3 +111,15 @@ impl EventClass {
         }
     }
 }
+impl ::std::fmt::Display for EventClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventClass::ConfigChange => write!(f, "CONFIG_CHANGE"),
+            EventClass::Deployment => write!(f, "DEPLOYMENT"),
+            EventClass::Infrastructure => write!(f, "INFRASTRUCTURE"),
+            EventClass::SchemaChange => write!(f, "SCHEMA_CHANGE"),
+            EventClass::SecurityChange => write!(f, "SECURITY_CHANGE"),
+            EventClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

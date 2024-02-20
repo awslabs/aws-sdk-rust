@@ -96,3 +96,12 @@ impl Compression {
         }
     }
 }
+impl ::std::fmt::Display for Compression {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Compression::Off => write!(f, "OFF"),
+            Compression::Snappy => write!(f, "SNAPPY"),
+            Compression::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

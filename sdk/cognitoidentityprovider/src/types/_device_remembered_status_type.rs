@@ -96,3 +96,12 @@ impl DeviceRememberedStatusType {
         }
     }
 }
+impl ::std::fmt::Display for DeviceRememberedStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceRememberedStatusType::NotRemembered => write!(f, "not_remembered"),
+            DeviceRememberedStatusType::Remembered => write!(f, "remembered"),
+            DeviceRememberedStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

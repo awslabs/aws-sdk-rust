@@ -96,3 +96,12 @@ impl GoogleAnalyticsConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for GoogleAnalyticsConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GoogleAnalyticsConnectorOperator::Between => write!(f, "BETWEEN"),
+            GoogleAnalyticsConnectorOperator::Projection => write!(f, "PROJECTION"),
+            GoogleAnalyticsConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

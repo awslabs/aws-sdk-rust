@@ -96,3 +96,12 @@ impl InspectionLevel {
         }
     }
 }
+impl ::std::fmt::Display for InspectionLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InspectionLevel::Common => write!(f, "COMMON"),
+            InspectionLevel::Targeted => write!(f, "TARGETED"),
+            InspectionLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

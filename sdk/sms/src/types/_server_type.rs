@@ -91,3 +91,11 @@ impl ServerType {
         }
     }
 }
+impl ::std::fmt::Display for ServerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServerType::VirtualMachine => write!(f, "VIRTUAL_MACHINE"),
+            ServerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

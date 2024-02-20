@@ -101,3 +101,13 @@ impl ProblemType {
         }
     }
 }
+impl ::std::fmt::Display for ProblemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProblemType::BinaryClassification => write!(f, "BinaryClassification"),
+            ProblemType::MulticlassClassification => write!(f, "MulticlassClassification"),
+            ProblemType::Regression => write!(f, "Regression"),
+            ProblemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

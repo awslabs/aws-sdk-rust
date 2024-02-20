@@ -91,3 +91,11 @@ impl CostCategoryRuleVersion {
         }
     }
 }
+impl ::std::fmt::Display for CostCategoryRuleVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CostCategoryRuleVersion::CostCategoryExpressionV1 => write!(f, "CostCategoryExpression.v1"),
+            CostCategoryRuleVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

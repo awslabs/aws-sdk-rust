@@ -96,3 +96,12 @@ impl FailoverMode {
         }
     }
 }
+impl ::std::fmt::Display for FailoverMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailoverMode::Failover => write!(f, "FAILOVER"),
+            FailoverMode::Merge => write!(f, "MERGE"),
+            FailoverMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

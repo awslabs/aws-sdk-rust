@@ -126,3 +126,18 @@ impl SessionState {
         }
     }
 }
+impl ::std::fmt::Display for SessionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SessionState::Busy => write!(f, "BUSY"),
+            SessionState::Created => write!(f, "CREATED"),
+            SessionState::Creating => write!(f, "CREATING"),
+            SessionState::Degraded => write!(f, "DEGRADED"),
+            SessionState::Failed => write!(f, "FAILED"),
+            SessionState::Idle => write!(f, "IDLE"),
+            SessionState::Terminated => write!(f, "TERMINATED"),
+            SessionState::Terminating => write!(f, "TERMINATING"),
+            SessionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

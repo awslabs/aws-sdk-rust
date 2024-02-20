@@ -91,3 +91,11 @@ impl TargetStorageTier {
         }
     }
 }
+impl ::std::fmt::Display for TargetStorageTier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetStorageTier::Archive => write!(f, "archive"),
+            TargetStorageTier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

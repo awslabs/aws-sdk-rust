@@ -101,3 +101,13 @@ impl ConfirmationState {
         }
     }
 }
+impl ::std::fmt::Display for ConfirmationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfirmationState::Confirmed => write!(f, "Confirmed"),
+            ConfirmationState::Denied => write!(f, "Denied"),
+            ConfirmationState::None => write!(f, "None"),
+            ConfirmationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

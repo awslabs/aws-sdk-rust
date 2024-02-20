@@ -101,3 +101,13 @@ impl WarmPoolState {
         }
     }
 }
+impl ::std::fmt::Display for WarmPoolState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WarmPoolState::Hibernated => write!(f, "Hibernated"),
+            WarmPoolState::Running => write!(f, "Running"),
+            WarmPoolState::Stopped => write!(f, "Stopped"),
+            WarmPoolState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

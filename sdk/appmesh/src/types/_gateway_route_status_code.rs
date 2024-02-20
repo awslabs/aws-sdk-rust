@@ -101,3 +101,13 @@ impl GatewayRouteStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for GatewayRouteStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GatewayRouteStatusCode::Active => write!(f, "ACTIVE"),
+            GatewayRouteStatusCode::Deleted => write!(f, "DELETED"),
+            GatewayRouteStatusCode::Inactive => write!(f, "INACTIVE"),
+            GatewayRouteStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

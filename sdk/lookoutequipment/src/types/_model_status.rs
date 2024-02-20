@@ -106,3 +106,14 @@ impl ModelStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelStatus::Failed => write!(f, "FAILED"),
+            ModelStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
+            ModelStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ModelStatus::Success => write!(f, "SUCCESS"),
+            ModelStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

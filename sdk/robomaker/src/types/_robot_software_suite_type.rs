@@ -101,3 +101,13 @@ impl RobotSoftwareSuiteType {
         }
     }
 }
+impl ::std::fmt::Display for RobotSoftwareSuiteType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RobotSoftwareSuiteType::General => write!(f, "General"),
+            RobotSoftwareSuiteType::Ros => write!(f, "ROS"),
+            RobotSoftwareSuiteType::Ros2 => write!(f, "ROS2"),
+            RobotSoftwareSuiteType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

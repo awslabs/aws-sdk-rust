@@ -96,3 +96,12 @@ impl Mpeg2ColorSpace {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2ColorSpace {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2ColorSpace::Auto => write!(f, "AUTO"),
+            Mpeg2ColorSpace::Passthrough => write!(f, "PASSTHROUGH"),
+            Mpeg2ColorSpace::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

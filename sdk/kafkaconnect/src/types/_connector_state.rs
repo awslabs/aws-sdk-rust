@@ -111,3 +111,15 @@ impl ConnectorState {
         }
     }
 }
+impl ::std::fmt::Display for ConnectorState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectorState::Creating => write!(f, "CREATING"),
+            ConnectorState::Deleting => write!(f, "DELETING"),
+            ConnectorState::Failed => write!(f, "FAILED"),
+            ConnectorState::Running => write!(f, "RUNNING"),
+            ConnectorState::Updating => write!(f, "UPDATING"),
+            ConnectorState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -103,3 +103,13 @@ impl NoiseFilterPostTemporalSharpeningStrength {
         }
     }
 }
+impl ::std::fmt::Display for NoiseFilterPostTemporalSharpeningStrength {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NoiseFilterPostTemporalSharpeningStrength::High => write!(f, "HIGH"),
+            NoiseFilterPostTemporalSharpeningStrength::Low => write!(f, "LOW"),
+            NoiseFilterPostTemporalSharpeningStrength::Medium => write!(f, "MEDIUM"),
+            NoiseFilterPostTemporalSharpeningStrength::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

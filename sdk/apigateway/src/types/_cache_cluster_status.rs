@@ -117,3 +117,15 @@ impl CacheClusterStatus {
         }
     }
 }
+impl ::std::fmt::Display for CacheClusterStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CacheClusterStatus::Available => write!(f, "AVAILABLE"),
+            CacheClusterStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            CacheClusterStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            CacheClusterStatus::FlushInProgress => write!(f, "FLUSH_IN_PROGRESS"),
+            CacheClusterStatus::NotAvailable => write!(f, "NOT_AVAILABLE"),
+            CacheClusterStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

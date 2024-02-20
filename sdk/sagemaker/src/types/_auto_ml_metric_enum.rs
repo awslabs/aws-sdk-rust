@@ -189,3 +189,27 @@ impl AutoMlMetricEnum {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlMetricEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlMetricEnum::Auc => write!(f, "AUC"),
+            AutoMlMetricEnum::Accuracy => write!(f, "Accuracy"),
+            AutoMlMetricEnum::AverageWeightedQuantileLoss => write!(f, "AverageWeightedQuantileLoss"),
+            AutoMlMetricEnum::BalancedAccuracy => write!(f, "BalancedAccuracy"),
+            AutoMlMetricEnum::F1 => write!(f, "F1"),
+            AutoMlMetricEnum::F1Macro => write!(f, "F1macro"),
+            AutoMlMetricEnum::Mae => write!(f, "MAE"),
+            AutoMlMetricEnum::Mape => write!(f, "MAPE"),
+            AutoMlMetricEnum::Mase => write!(f, "MASE"),
+            AutoMlMetricEnum::Mse => write!(f, "MSE"),
+            AutoMlMetricEnum::Precision => write!(f, "Precision"),
+            AutoMlMetricEnum::PrecisionMacro => write!(f, "PrecisionMacro"),
+            AutoMlMetricEnum::R2 => write!(f, "R2"),
+            AutoMlMetricEnum::Rmse => write!(f, "RMSE"),
+            AutoMlMetricEnum::Recall => write!(f, "Recall"),
+            AutoMlMetricEnum::RecallMacro => write!(f, "RecallMacro"),
+            AutoMlMetricEnum::Wape => write!(f, "WAPE"),
+            AutoMlMetricEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

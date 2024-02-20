@@ -96,3 +96,12 @@ impl AutoRenew {
         }
     }
 }
+impl ::std::fmt::Display for AutoRenew {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoRenew::Disabled => write!(f, "DISABLED"),
+            AutoRenew::Enabled => write!(f, "ENABLED"),
+            AutoRenew::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

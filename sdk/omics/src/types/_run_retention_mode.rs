@@ -96,3 +96,12 @@ impl RunRetentionMode {
         }
     }
 }
+impl ::std::fmt::Display for RunRetentionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RunRetentionMode::Remove => write!(f, "REMOVE"),
+            RunRetentionMode::Retain => write!(f, "RETAIN"),
+            RunRetentionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

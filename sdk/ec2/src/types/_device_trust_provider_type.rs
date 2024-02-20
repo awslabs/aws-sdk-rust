@@ -101,3 +101,13 @@ impl DeviceTrustProviderType {
         }
     }
 }
+impl ::std::fmt::Display for DeviceTrustProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceTrustProviderType::Crowdstrike => write!(f, "crowdstrike"),
+            DeviceTrustProviderType::Jamf => write!(f, "jamf"),
+            DeviceTrustProviderType::Jumpcloud => write!(f, "jumpcloud"),
+            DeviceTrustProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

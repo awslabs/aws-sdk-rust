@@ -101,3 +101,13 @@ impl S3ObjectEncryptionType {
         }
     }
 }
+impl ::std::fmt::Display for S3ObjectEncryptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3ObjectEncryptionType::NoEncryption => write!(f, "NO_ENCRYPTION"),
+            S3ObjectEncryptionType::SseKms => write!(f, "SSE_KMS"),
+            S3ObjectEncryptionType::SseS3 => write!(f, "SSE_S3"),
+            S3ObjectEncryptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

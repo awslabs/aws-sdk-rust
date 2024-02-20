@@ -96,3 +96,12 @@ impl EnvironmentType {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentType::Ec2 => write!(f, "ec2"),
+            EnvironmentType::Ssh => write!(f, "ssh"),
+            EnvironmentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

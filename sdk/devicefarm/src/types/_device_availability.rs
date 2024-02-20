@@ -106,3 +106,14 @@ impl DeviceAvailability {
         }
     }
 }
+impl ::std::fmt::Display for DeviceAvailability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceAvailability::Available => write!(f, "AVAILABLE"),
+            DeviceAvailability::Busy => write!(f, "BUSY"),
+            DeviceAvailability::HighlyAvailable => write!(f, "HIGHLY_AVAILABLE"),
+            DeviceAvailability::TemporaryNotAvailable => write!(f, "TEMPORARY_NOT_AVAILABLE"),
+            DeviceAvailability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

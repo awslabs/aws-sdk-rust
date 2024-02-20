@@ -106,3 +106,14 @@ impl AllocationType {
         }
     }
 }
+impl ::std::fmt::Display for AllocationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllocationType::ElasticIp => write!(f, "ELASTIC_IP"),
+            AllocationType::Overlay => write!(f, "OVERLAY"),
+            AllocationType::UnknownValue => write!(f, "UNKNOWN"),
+            AllocationType::VpcSubnet => write!(f, "VPC_SUBNET"),
+            AllocationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

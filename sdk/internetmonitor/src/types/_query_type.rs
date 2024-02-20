@@ -101,3 +101,13 @@ impl QueryType {
         }
     }
 }
+impl ::std::fmt::Display for QueryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryType::Measurements => write!(f, "MEASUREMENTS"),
+            QueryType::TopLocations => write!(f, "TOP_LOCATIONS"),
+            QueryType::TopLocationDetails => write!(f, "TOP_LOCATION_DETAILS"),
+            QueryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

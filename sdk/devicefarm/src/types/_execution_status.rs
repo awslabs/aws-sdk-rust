@@ -141,3 +141,19 @@ impl ExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionStatus::Completed => write!(f, "COMPLETED"),
+            ExecutionStatus::Pending => write!(f, "PENDING"),
+            ExecutionStatus::PendingConcurrnecy => write!(f, "PENDING_CONCURRENCY"),
+            ExecutionStatus::PendingDevice => write!(f, "PENDING_DEVICE"),
+            ExecutionStatus::Preparing => write!(f, "PREPARING"),
+            ExecutionStatus::Processing => write!(f, "PROCESSING"),
+            ExecutionStatus::Running => write!(f, "RUNNING"),
+            ExecutionStatus::Scheduling => write!(f, "SCHEDULING"),
+            ExecutionStatus::Stopping => write!(f, "STOPPING"),
+            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

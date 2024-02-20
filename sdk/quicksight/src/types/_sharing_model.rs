@@ -96,3 +96,12 @@ impl SharingModel {
         }
     }
 }
+impl ::std::fmt::Display for SharingModel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SharingModel::Account => write!(f, "ACCOUNT"),
+            SharingModel::Namespace => write!(f, "NAMESPACE"),
+            SharingModel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

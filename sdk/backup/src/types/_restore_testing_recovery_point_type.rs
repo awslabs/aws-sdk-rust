@@ -96,3 +96,12 @@ impl RestoreTestingRecoveryPointType {
         }
     }
 }
+impl ::std::fmt::Display for RestoreTestingRecoveryPointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RestoreTestingRecoveryPointType::Continuous => write!(f, "CONTINUOUS"),
+            RestoreTestingRecoveryPointType::Snapshot => write!(f, "SNAPSHOT"),
+            RestoreTestingRecoveryPointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

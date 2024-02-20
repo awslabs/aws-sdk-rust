@@ -183,3 +183,26 @@ impl StreamingSessionStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for StreamingSessionStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamingSessionStatusCode::ActiveDirectoryDomainJoinError => write!(f, "ACTIVE_DIRECTORY_DOMAIN_JOIN_ERROR"),
+            StreamingSessionStatusCode::AmiValidationError => write!(f, "AMI_VALIDATION_ERROR"),
+            StreamingSessionStatusCode::DecryptStreamingImageError => write!(f, "DECRYPT_STREAMING_IMAGE_ERROR"),
+            StreamingSessionStatusCode::InitializationScriptError => write!(f, "INITIALIZATION_SCRIPT_ERROR"),
+            StreamingSessionStatusCode::InsufficientCapacity => write!(f, "INSUFFICIENT_CAPACITY"),
+            StreamingSessionStatusCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            StreamingSessionStatusCode::NetworkConnectionError => write!(f, "NETWORK_CONNECTION_ERROR"),
+            StreamingSessionStatusCode::NetworkInterfaceError => write!(f, "NETWORK_INTERFACE_ERROR"),
+            StreamingSessionStatusCode::StreamingSessionCreateInProgress => write!(f, "STREAMING_SESSION_CREATE_IN_PROGRESS"),
+            StreamingSessionStatusCode::StreamingSessionDeleted => write!(f, "STREAMING_SESSION_DELETED"),
+            StreamingSessionStatusCode::StreamingSessionDeleteInProgress => write!(f, "STREAMING_SESSION_DELETE_IN_PROGRESS"),
+            StreamingSessionStatusCode::StreamingSessionReady => write!(f, "STREAMING_SESSION_READY"),
+            StreamingSessionStatusCode::StreamingSessionStarted => write!(f, "STREAMING_SESSION_STARTED"),
+            StreamingSessionStatusCode::StreamingSessionStartInProgress => write!(f, "STREAMING_SESSION_START_IN_PROGRESS"),
+            StreamingSessionStatusCode::StreamingSessionStopped => write!(f, "STREAMING_SESSION_STOPPED"),
+            StreamingSessionStatusCode::StreamingSessionStopInProgress => write!(f, "STREAMING_SESSION_STOP_IN_PROGRESS"),
+            StreamingSessionStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

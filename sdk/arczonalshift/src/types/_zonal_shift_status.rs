@@ -101,3 +101,13 @@ impl ZonalShiftStatus {
         }
     }
 }
+impl ::std::fmt::Display for ZonalShiftStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ZonalShiftStatus::Active => write!(f, "ACTIVE"),
+            ZonalShiftStatus::Canceled => write!(f, "CANCELED"),
+            ZonalShiftStatus::Expired => write!(f, "EXPIRED"),
+            ZonalShiftStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

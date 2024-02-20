@@ -96,3 +96,12 @@ impl DisassociatedDataStorageState {
         }
     }
 }
+impl ::std::fmt::Display for DisassociatedDataStorageState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DisassociatedDataStorageState::Disabled => write!(f, "DISABLED"),
+            DisassociatedDataStorageState::Enabled => write!(f, "ENABLED"),
+            DisassociatedDataStorageState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

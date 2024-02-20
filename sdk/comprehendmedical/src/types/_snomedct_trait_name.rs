@@ -141,3 +141,19 @@ impl SnomedctTraitName {
         }
     }
 }
+impl ::std::fmt::Display for SnomedctTraitName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnomedctTraitName::Diagnosis => write!(f, "DIAGNOSIS"),
+            SnomedctTraitName::Future => write!(f, "FUTURE"),
+            SnomedctTraitName::Hypothetical => write!(f, "HYPOTHETICAL"),
+            SnomedctTraitName::LowConfidence => write!(f, "LOW_CONFIDENCE"),
+            SnomedctTraitName::Negation => write!(f, "NEGATION"),
+            SnomedctTraitName::PastHistory => write!(f, "PAST_HISTORY"),
+            SnomedctTraitName::PertainsToFamily => write!(f, "PERTAINS_TO_FAMILY"),
+            SnomedctTraitName::Sign => write!(f, "SIGN"),
+            SnomedctTraitName::Symptom => write!(f, "SYMPTOM"),
+            SnomedctTraitName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

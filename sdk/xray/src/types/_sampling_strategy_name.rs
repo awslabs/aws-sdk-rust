@@ -96,3 +96,12 @@ impl SamplingStrategyName {
         }
     }
 }
+impl ::std::fmt::Display for SamplingStrategyName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SamplingStrategyName::FixedRate => write!(f, "FixedRate"),
+            SamplingStrategyName::PartialScan => write!(f, "PartialScan"),
+            SamplingStrategyName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

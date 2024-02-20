@@ -96,3 +96,12 @@ impl EfsAuthorizationConfigIam {
         }
     }
 }
+impl ::std::fmt::Display for EfsAuthorizationConfigIam {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EfsAuthorizationConfigIam::Disabled => write!(f, "DISABLED"),
+            EfsAuthorizationConfigIam::Enabled => write!(f, "ENABLED"),
+            EfsAuthorizationConfigIam::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

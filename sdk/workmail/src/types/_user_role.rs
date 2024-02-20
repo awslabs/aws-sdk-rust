@@ -106,3 +106,14 @@ impl UserRole {
         }
     }
 }
+impl ::std::fmt::Display for UserRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserRole::RemoteUser => write!(f, "REMOTE_USER"),
+            UserRole::Resource => write!(f, "RESOURCE"),
+            UserRole::SystemUser => write!(f, "SYSTEM_USER"),
+            UserRole::User => write!(f, "USER"),
+            UserRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

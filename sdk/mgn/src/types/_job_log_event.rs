@@ -183,3 +183,26 @@ impl JobLogEvent {
         }
     }
 }
+impl ::std::fmt::Display for JobLogEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobLogEvent::CleanupEnd => write!(f, "CLEANUP_END"),
+            JobLogEvent::CleanupFail => write!(f, "CLEANUP_FAIL"),
+            JobLogEvent::CleanupStart => write!(f, "CLEANUP_START"),
+            JobLogEvent::ConversionEnd => write!(f, "CONVERSION_END"),
+            JobLogEvent::ConversionFail => write!(f, "CONVERSION_FAIL"),
+            JobLogEvent::ConversionStart => write!(f, "CONVERSION_START"),
+            JobLogEvent::JobCancel => write!(f, "JOB_CANCEL"),
+            JobLogEvent::JobEnd => write!(f, "JOB_END"),
+            JobLogEvent::JobStart => write!(f, "JOB_START"),
+            JobLogEvent::LaunchFailed => write!(f, "LAUNCH_FAILED"),
+            JobLogEvent::LaunchStart => write!(f, "LAUNCH_START"),
+            JobLogEvent::ServerSkipped => write!(f, "SERVER_SKIPPED"),
+            JobLogEvent::SnapshotEnd => write!(f, "SNAPSHOT_END"),
+            JobLogEvent::SnapshotFail => write!(f, "SNAPSHOT_FAIL"),
+            JobLogEvent::SnapshotStart => write!(f, "SNAPSHOT_START"),
+            JobLogEvent::UsingPreviousSnapshot => write!(f, "USING_PREVIOUS_SNAPSHOT"),
+            JobLogEvent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

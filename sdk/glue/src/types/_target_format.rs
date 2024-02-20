@@ -121,3 +121,17 @@ impl TargetFormat {
         }
     }
 }
+impl ::std::fmt::Display for TargetFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetFormat::Avro => write!(f, "avro"),
+            TargetFormat::Csv => write!(f, "csv"),
+            TargetFormat::Delta => write!(f, "delta"),
+            TargetFormat::Hudi => write!(f, "hudi"),
+            TargetFormat::Json => write!(f, "json"),
+            TargetFormat::Orc => write!(f, "orc"),
+            TargetFormat::Parquet => write!(f, "parquet"),
+            TargetFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

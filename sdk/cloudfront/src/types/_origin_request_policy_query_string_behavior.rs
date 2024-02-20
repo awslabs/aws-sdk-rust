@@ -106,3 +106,14 @@ impl OriginRequestPolicyQueryStringBehavior {
         }
     }
 }
+impl ::std::fmt::Display for OriginRequestPolicyQueryStringBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginRequestPolicyQueryStringBehavior::All => write!(f, "all"),
+            OriginRequestPolicyQueryStringBehavior::AllExcept => write!(f, "allExcept"),
+            OriginRequestPolicyQueryStringBehavior::None => write!(f, "none"),
+            OriginRequestPolicyQueryStringBehavior::Whitelist => write!(f, "whitelist"),
+            OriginRequestPolicyQueryStringBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

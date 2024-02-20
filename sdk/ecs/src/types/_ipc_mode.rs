@@ -101,3 +101,13 @@ impl IpcMode {
         }
     }
 }
+impl ::std::fmt::Display for IpcMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpcMode::Host => write!(f, "host"),
+            IpcMode::None => write!(f, "none"),
+            IpcMode::Task => write!(f, "task"),
+            IpcMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

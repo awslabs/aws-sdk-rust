@@ -111,3 +111,15 @@ impl StreamStatus {
         }
     }
 }
+impl ::std::fmt::Display for StreamStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamStatus::Active => write!(f, "ACTIVE"),
+            StreamStatus::Canceled => write!(f, "CANCELED"),
+            StreamStatus::Completed => write!(f, "COMPLETED"),
+            StreamStatus::Failed => write!(f, "FAILED"),
+            StreamStatus::Impaired => write!(f, "IMPAIRED"),
+            StreamStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DataKeySpec {
         }
     }
 }
+impl ::std::fmt::Display for DataKeySpec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataKeySpec::Aes128 => write!(f, "AES_128"),
+            DataKeySpec::Aes256 => write!(f, "AES_256"),
+            DataKeySpec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

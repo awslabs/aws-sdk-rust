@@ -96,3 +96,12 @@ impl DryRunMode {
         }
     }
 }
+impl ::std::fmt::Display for DryRunMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DryRunMode::Basic => write!(f, "Basic"),
+            DryRunMode::Verbose => write!(f, "Verbose"),
+            DryRunMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

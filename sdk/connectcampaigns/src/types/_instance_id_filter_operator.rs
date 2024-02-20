@@ -91,3 +91,11 @@ impl InstanceIdFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for InstanceIdFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceIdFilterOperator::Eq => write!(f, "Eq"),
+            InstanceIdFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

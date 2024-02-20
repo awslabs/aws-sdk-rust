@@ -96,3 +96,12 @@ impl DeliveryMethod {
         }
     }
 }
+impl ::std::fmt::Display for DeliveryMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeliveryMethod::Email => write!(f, "EMAIL"),
+            DeliveryMethod::Sms => write!(f, "SMS"),
+            DeliveryMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

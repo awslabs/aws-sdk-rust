@@ -91,3 +91,11 @@ impl VolumeType {
         }
     }
 }
+impl ::std::fmt::Display for VolumeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeType::Nas1 => write!(f, "NAS_1"),
+            VolumeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

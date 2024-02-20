@@ -96,3 +96,12 @@ impl MovReference {
         }
     }
 }
+impl ::std::fmt::Display for MovReference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MovReference::External => write!(f, "EXTERNAL"),
+            MovReference::SelfContained => write!(f, "SELF_CONTAINED"),
+            MovReference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

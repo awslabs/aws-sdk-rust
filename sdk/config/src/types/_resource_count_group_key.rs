@@ -101,3 +101,13 @@ impl ResourceCountGroupKey {
         }
     }
 }
+impl ::std::fmt::Display for ResourceCountGroupKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceCountGroupKey::AccountId => write!(f, "ACCOUNT_ID"),
+            ResourceCountGroupKey::AwsRegion => write!(f, "AWS_REGION"),
+            ResourceCountGroupKey::ResourceType => write!(f, "RESOURCE_TYPE"),
+            ResourceCountGroupKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

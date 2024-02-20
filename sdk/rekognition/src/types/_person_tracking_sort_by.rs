@@ -96,3 +96,12 @@ impl PersonTrackingSortBy {
         }
     }
 }
+impl ::std::fmt::Display for PersonTrackingSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PersonTrackingSortBy::Index => write!(f, "INDEX"),
+            PersonTrackingSortBy::Timestamp => write!(f, "TIMESTAMP"),
+            PersonTrackingSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

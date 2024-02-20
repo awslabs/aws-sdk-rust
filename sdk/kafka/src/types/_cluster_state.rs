@@ -135,3 +135,18 @@ impl ClusterState {
         }
     }
 }
+impl ::std::fmt::Display for ClusterState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterState::Active => write!(f, "ACTIVE"),
+            ClusterState::Creating => write!(f, "CREATING"),
+            ClusterState::Deleting => write!(f, "DELETING"),
+            ClusterState::Failed => write!(f, "FAILED"),
+            ClusterState::Healing => write!(f, "HEALING"),
+            ClusterState::Maintenance => write!(f, "MAINTENANCE"),
+            ClusterState::RebootingBroker => write!(f, "REBOOTING_BROKER"),
+            ClusterState::Updating => write!(f, "UPDATING"),
+            ClusterState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

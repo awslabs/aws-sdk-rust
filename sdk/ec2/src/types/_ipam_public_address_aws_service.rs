@@ -141,3 +141,19 @@ impl IpamPublicAddressAwsService {
         }
     }
 }
+impl ::std::fmt::Display for IpamPublicAddressAwsService {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamPublicAddressAwsService::Dms => write!(f, "database-migration-service"),
+            IpamPublicAddressAwsService::Ecs => write!(f, "elastic-container-service"),
+            IpamPublicAddressAwsService::Aga => write!(f, "global-accelerator"),
+            IpamPublicAddressAwsService::Ec2Lb => write!(f, "load-balancer"),
+            IpamPublicAddressAwsService::NatGateway => write!(f, "nat-gateway"),
+            IpamPublicAddressAwsService::Other => write!(f, "other"),
+            IpamPublicAddressAwsService::Redshift => write!(f, "redshift"),
+            IpamPublicAddressAwsService::Rds => write!(f, "relational-database-service"),
+            IpamPublicAddressAwsService::S2SVpn => write!(f, "site-to-site-vpn"),
+            IpamPublicAddressAwsService::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

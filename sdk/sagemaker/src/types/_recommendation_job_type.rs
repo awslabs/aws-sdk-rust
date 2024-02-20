@@ -96,3 +96,12 @@ impl RecommendationJobType {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationJobType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationJobType::Advanced => write!(f, "Advanced"),
+            RecommendationJobType::Default => write!(f, "Default"),
+            RecommendationJobType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

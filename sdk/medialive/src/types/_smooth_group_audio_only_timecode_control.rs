@@ -96,3 +96,12 @@ impl SmoothGroupAudioOnlyTimecodeControl {
         }
     }
 }
+impl ::std::fmt::Display for SmoothGroupAudioOnlyTimecodeControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SmoothGroupAudioOnlyTimecodeControl::Passthrough => write!(f, "PASSTHROUGH"),
+            SmoothGroupAudioOnlyTimecodeControl::UseConfiguredClock => write!(f, "USE_CONFIGURED_CLOCK"),
+            SmoothGroupAudioOnlyTimecodeControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl PlaylistType {
         }
     }
 }
+impl ::std::fmt::Display for PlaylistType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlaylistType::Event => write!(f, "EVENT"),
+            PlaylistType::None => write!(f, "NONE"),
+            PlaylistType::Vod => write!(f, "VOD"),
+            PlaylistType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

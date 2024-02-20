@@ -91,3 +91,11 @@ impl MonitorDimension {
         }
     }
 }
+impl ::std::fmt::Display for MonitorDimension {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitorDimension::Service => write!(f, "SERVICE"),
+            MonitorDimension::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

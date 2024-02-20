@@ -159,3 +159,22 @@ impl DataReplicationState {
         }
     }
 }
+impl ::std::fmt::Display for DataReplicationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataReplicationState::Backlog => write!(f, "BACKLOG"),
+            DataReplicationState::Continuous => write!(f, "CONTINUOUS"),
+            DataReplicationState::CreatingSnapshot => write!(f, "CREATING_SNAPSHOT"),
+            DataReplicationState::Disconnected => write!(f, "DISCONNECTED"),
+            DataReplicationState::InitialSync => write!(f, "INITIAL_SYNC"),
+            DataReplicationState::Initiating => write!(f, "INITIATING"),
+            DataReplicationState::Paused => write!(f, "PAUSED"),
+            DataReplicationState::PendingSnapshotShipping => write!(f, "PENDING_SNAPSHOT_SHIPPING"),
+            DataReplicationState::Rescan => write!(f, "RESCAN"),
+            DataReplicationState::ShippingSnapshot => write!(f, "SHIPPING_SNAPSHOT"),
+            DataReplicationState::Stalled => write!(f, "STALLED"),
+            DataReplicationState::Stopped => write!(f, "STOPPED"),
+            DataReplicationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

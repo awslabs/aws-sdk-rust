@@ -96,3 +96,12 @@ impl FollowPoint {
         }
     }
 }
+impl ::std::fmt::Display for FollowPoint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FollowPoint::End => write!(f, "END"),
+            FollowPoint::Start => write!(f, "START"),
+            FollowPoint::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

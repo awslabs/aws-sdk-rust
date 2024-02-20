@@ -101,3 +101,13 @@ impl Action {
         }
     }
 }
+impl ::std::fmt::Display for Action {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Action::Alert => write!(f, "ALERT"),
+            Action::Allow => write!(f, "ALLOW"),
+            Action::Block => write!(f, "BLOCK"),
+            Action::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

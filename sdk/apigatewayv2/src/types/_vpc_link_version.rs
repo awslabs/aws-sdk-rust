@@ -91,3 +91,11 @@ impl VpcLinkVersion {
         }
     }
 }
+impl ::std::fmt::Display for VpcLinkVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcLinkVersion::V2 => write!(f, "V2"),
+            VpcLinkVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

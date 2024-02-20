@@ -106,3 +106,14 @@ impl DataProductSortBy {
         }
     }
 }
+impl ::std::fmt::Display for DataProductSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataProductSortBy::EntityId => write!(f, "EntityId"),
+            DataProductSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
+            DataProductSortBy::ProductTitle => write!(f, "ProductTitle"),
+            DataProductSortBy::Visibility => write!(f, "Visibility"),
+            DataProductSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl DeviceSoftwareSetComplianceStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceSoftwareSetComplianceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceSoftwareSetComplianceStatus::Compliant => write!(f, "COMPLIANT"),
+            DeviceSoftwareSetComplianceStatus::None => write!(f, "NONE"),
+            DeviceSoftwareSetComplianceStatus::NotCompliant => write!(f, "NOT_COMPLIANT"),
+            DeviceSoftwareSetComplianceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

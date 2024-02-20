@@ -96,3 +96,12 @@ impl OutputFormat {
         }
     }
 }
+impl ::std::fmt::Display for OutputFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputFormat::Excel => write!(f, "Excel"),
+            OutputFormat::Json => write!(f, "Json"),
+            OutputFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl WakeWord {
         }
     }
 }
+impl ::std::fmt::Display for WakeWord {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WakeWord::Alexa => write!(f, "ALEXA"),
+            WakeWord::Amazon => write!(f, "AMAZON"),
+            WakeWord::Computer => write!(f, "COMPUTER"),
+            WakeWord::Echo => write!(f, "ECHO"),
+            WakeWord::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

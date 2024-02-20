@@ -189,3 +189,27 @@ impl SalesforceStandardObjectName {
         }
     }
 }
+impl ::std::fmt::Display for SalesforceStandardObjectName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SalesforceStandardObjectName::Account => write!(f, "ACCOUNT"),
+            SalesforceStandardObjectName::Campaign => write!(f, "CAMPAIGN"),
+            SalesforceStandardObjectName::Case => write!(f, "CASE"),
+            SalesforceStandardObjectName::Contact => write!(f, "CONTACT"),
+            SalesforceStandardObjectName::Contract => write!(f, "CONTRACT"),
+            SalesforceStandardObjectName::Document => write!(f, "DOCUMENT"),
+            SalesforceStandardObjectName::Group => write!(f, "GROUP"),
+            SalesforceStandardObjectName::Idea => write!(f, "IDEA"),
+            SalesforceStandardObjectName::Lead => write!(f, "LEAD"),
+            SalesforceStandardObjectName::Opportunity => write!(f, "OPPORTUNITY"),
+            SalesforceStandardObjectName::Partner => write!(f, "PARTNER"),
+            SalesforceStandardObjectName::Pricebook => write!(f, "PRICEBOOK"),
+            SalesforceStandardObjectName::Product => write!(f, "PRODUCT"),
+            SalesforceStandardObjectName::Profile => write!(f, "PROFILE"),
+            SalesforceStandardObjectName::Solution => write!(f, "SOLUTION"),
+            SalesforceStandardObjectName::Task => write!(f, "TASK"),
+            SalesforceStandardObjectName::User => write!(f, "USER"),
+            SalesforceStandardObjectName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

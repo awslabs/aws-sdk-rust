@@ -96,3 +96,12 @@ impl AppBlockState {
         }
     }
 }
+impl ::std::fmt::Display for AppBlockState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppBlockState::Active => write!(f, "ACTIVE"),
+            AppBlockState::Inactive => write!(f, "INACTIVE"),
+            AppBlockState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

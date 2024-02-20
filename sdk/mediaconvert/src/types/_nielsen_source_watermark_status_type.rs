@@ -96,3 +96,12 @@ impl NielsenSourceWatermarkStatusType {
         }
     }
 }
+impl ::std::fmt::Display for NielsenSourceWatermarkStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NielsenSourceWatermarkStatusType::Clean => write!(f, "CLEAN"),
+            NielsenSourceWatermarkStatusType::Watermarked => write!(f, "WATERMARKED"),
+            NielsenSourceWatermarkStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

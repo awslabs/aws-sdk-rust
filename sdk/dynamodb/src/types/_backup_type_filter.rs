@@ -106,3 +106,14 @@ impl BackupTypeFilter {
         }
     }
 }
+impl ::std::fmt::Display for BackupTypeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackupTypeFilter::All => write!(f, "ALL"),
+            BackupTypeFilter::AwsBackup => write!(f, "AWS_BACKUP"),
+            BackupTypeFilter::System => write!(f, "SYSTEM"),
+            BackupTypeFilter::User => write!(f, "USER"),
+            BackupTypeFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

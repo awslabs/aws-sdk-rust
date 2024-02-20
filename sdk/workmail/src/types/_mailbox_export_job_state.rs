@@ -106,3 +106,14 @@ impl MailboxExportJobState {
         }
     }
 }
+impl ::std::fmt::Display for MailboxExportJobState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MailboxExportJobState::Cancelled => write!(f, "CANCELLED"),
+            MailboxExportJobState::Completed => write!(f, "COMPLETED"),
+            MailboxExportJobState::Failed => write!(f, "FAILED"),
+            MailboxExportJobState::Running => write!(f, "RUNNING"),
+            MailboxExportJobState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

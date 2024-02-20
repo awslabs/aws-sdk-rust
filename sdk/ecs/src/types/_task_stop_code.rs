@@ -123,3 +123,16 @@ impl TaskStopCode {
         }
     }
 }
+impl ::std::fmt::Display for TaskStopCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskStopCode::EssentialContainerExited => write!(f, "EssentialContainerExited"),
+            TaskStopCode::ServiceSchedulerInitiated => write!(f, "ServiceSchedulerInitiated"),
+            TaskStopCode::SpotInterruption => write!(f, "SpotInterruption"),
+            TaskStopCode::TaskFailedToStart => write!(f, "TaskFailedToStart"),
+            TaskStopCode::TerminationNotice => write!(f, "TerminationNotice"),
+            TaskStopCode::UserInitiated => write!(f, "UserInitiated"),
+            TaskStopCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SectionPageBreakStatus {
         }
     }
 }
+impl ::std::fmt::Display for SectionPageBreakStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SectionPageBreakStatus::Disabled => write!(f, "DISABLED"),
+            SectionPageBreakStatus::Enabled => write!(f, "ENABLED"),
+            SectionPageBreakStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

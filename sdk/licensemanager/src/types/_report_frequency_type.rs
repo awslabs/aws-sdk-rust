@@ -101,3 +101,13 @@ impl ReportFrequencyType {
         }
     }
 }
+impl ::std::fmt::Display for ReportFrequencyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportFrequencyType::Day => write!(f, "DAY"),
+            ReportFrequencyType::Month => write!(f, "MONTH"),
+            ReportFrequencyType::Week => write!(f, "WEEK"),
+            ReportFrequencyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

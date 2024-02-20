@@ -101,3 +101,13 @@ impl PolicyTypeStatus {
         }
     }
 }
+impl ::std::fmt::Display for PolicyTypeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyTypeStatus::Enabled => write!(f, "ENABLED"),
+            PolicyTypeStatus::PendingDisable => write!(f, "PENDING_DISABLE"),
+            PolicyTypeStatus::PendingEnable => write!(f, "PENDING_ENABLE"),
+            PolicyTypeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

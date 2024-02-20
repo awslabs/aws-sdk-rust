@@ -91,3 +91,11 @@ impl ResetImageAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for ResetImageAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResetImageAttributeName::LaunchPermission => write!(f, "launchPermission"),
+            ResetImageAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

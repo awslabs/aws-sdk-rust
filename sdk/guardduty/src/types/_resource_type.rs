@@ -101,3 +101,13 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Ec2 => write!(f, "EC2"),
+            ResourceType::Ecs => write!(f, "ECS"),
+            ResourceType::Eks => write!(f, "EKS"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

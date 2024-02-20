@@ -101,3 +101,13 @@ impl H264FramerateConversionAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for H264FramerateConversionAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264FramerateConversionAlgorithm::DuplicateDrop => write!(f, "DUPLICATE_DROP"),
+            H264FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
+            H264FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
+            H264FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

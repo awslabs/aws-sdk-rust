@@ -101,3 +101,13 @@ impl EventErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for EventErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventErrorCode::InsufficientCapabilities => write!(f, "INSUFFICIENT_CAPABILITIES"),
+            EventErrorCode::PublisherNotFound => write!(f, "PUBLISHER_NOT_FOUND"),
+            EventErrorCode::QuotaExceeded => write!(f, "QUOTA_EXCEEDED"),
+            EventErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

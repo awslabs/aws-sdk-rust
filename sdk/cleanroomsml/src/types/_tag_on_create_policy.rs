@@ -96,3 +96,12 @@ impl TagOnCreatePolicy {
         }
     }
 }
+impl ::std::fmt::Display for TagOnCreatePolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TagOnCreatePolicy::FromParentResource => write!(f, "FROM_PARENT_RESOURCE"),
+            TagOnCreatePolicy::None => write!(f, "NONE"),
+            TagOnCreatePolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

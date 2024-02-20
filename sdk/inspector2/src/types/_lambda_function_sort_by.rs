@@ -101,3 +101,13 @@ impl LambdaFunctionSortBy {
         }
     }
 }
+impl ::std::fmt::Display for LambdaFunctionSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaFunctionSortBy::All => write!(f, "ALL"),
+            LambdaFunctionSortBy::Critical => write!(f, "CRITICAL"),
+            LambdaFunctionSortBy::High => write!(f, "HIGH"),
+            LambdaFunctionSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

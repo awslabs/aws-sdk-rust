@@ -96,3 +96,12 @@ impl CpuVendorArchitecture {
         }
     }
 }
+impl ::std::fmt::Display for CpuVendorArchitecture {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CpuVendorArchitecture::AwsArm64 => write!(f, "AWS_ARM64"),
+            CpuVendorArchitecture::Current => write!(f, "CURRENT"),
+            CpuVendorArchitecture::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

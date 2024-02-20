@@ -101,3 +101,13 @@ impl WrappingKeySpec {
         }
     }
 }
+impl ::std::fmt::Display for WrappingKeySpec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WrappingKeySpec::Rsa2048 => write!(f, "RSA_2048"),
+            WrappingKeySpec::Rsa3072 => write!(f, "RSA_3072"),
+            WrappingKeySpec::Rsa4096 => write!(f, "RSA_4096"),
+            WrappingKeySpec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl PipelineExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for PipelineExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PipelineExecutionStatus::Executing => write!(f, "Executing"),
+            PipelineExecutionStatus::Failed => write!(f, "Failed"),
+            PipelineExecutionStatus::Stopped => write!(f, "Stopped"),
+            PipelineExecutionStatus::Stopping => write!(f, "Stopping"),
+            PipelineExecutionStatus::Succeeded => write!(f, "Succeeded"),
+            PipelineExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

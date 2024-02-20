@@ -135,3 +135,18 @@ impl CannedAccessControlList {
         }
     }
 }
+impl ::std::fmt::Display for CannedAccessControlList {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CannedAccessControlList::AuthenticatedRead => write!(f, "authenticated-read"),
+            CannedAccessControlList::AwsExecRead => write!(f, "aws-exec-read"),
+            CannedAccessControlList::BucketOwnerFullControl => write!(f, "bucket-owner-full-control"),
+            CannedAccessControlList::BucketOwnerRead => write!(f, "bucket-owner-read"),
+            CannedAccessControlList::LogDeliveryWrite => write!(f, "log-delivery-write"),
+            CannedAccessControlList::Private => write!(f, "private"),
+            CannedAccessControlList::PublicRead => write!(f, "public-read"),
+            CannedAccessControlList::PublicReadWrite => write!(f, "public-read-write"),
+            CannedAccessControlList::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

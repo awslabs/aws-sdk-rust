@@ -96,3 +96,12 @@ impl EvaluationFormVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationFormVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationFormVersionStatus::Active => write!(f, "ACTIVE"),
+            EvaluationFormVersionStatus::Draft => write!(f, "DRAFT"),
+            EvaluationFormVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

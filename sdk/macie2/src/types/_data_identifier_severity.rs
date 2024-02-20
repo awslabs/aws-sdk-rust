@@ -101,3 +101,13 @@ impl DataIdentifierSeverity {
         }
     }
 }
+impl ::std::fmt::Display for DataIdentifierSeverity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataIdentifierSeverity::High => write!(f, "HIGH"),
+            DataIdentifierSeverity::Low => write!(f, "LOW"),
+            DataIdentifierSeverity::Medium => write!(f, "MEDIUM"),
+            DataIdentifierSeverity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

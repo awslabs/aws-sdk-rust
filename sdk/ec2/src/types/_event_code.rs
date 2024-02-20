@@ -117,3 +117,15 @@ impl EventCode {
         }
     }
 }
+impl ::std::fmt::Display for EventCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventCode::InstanceReboot => write!(f, "instance-reboot"),
+            EventCode::InstanceRetirement => write!(f, "instance-retirement"),
+            EventCode::InstanceStop => write!(f, "instance-stop"),
+            EventCode::SystemMaintenance => write!(f, "system-maintenance"),
+            EventCode::SystemReboot => write!(f, "system-reboot"),
+            EventCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl HostRole {
         }
     }
 }
+impl ::std::fmt::Display for HostRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HostRole::Leader => write!(f, "LEADER"),
+            HostRole::Standby => write!(f, "STANDBY"),
+            HostRole::UnknownValue => write!(f, "UNKNOWN"),
+            HostRole::Worker => write!(f, "WORKER"),
+            HostRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

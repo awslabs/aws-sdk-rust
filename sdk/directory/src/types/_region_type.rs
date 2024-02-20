@@ -96,3 +96,12 @@ impl RegionType {
         }
     }
 }
+impl ::std::fmt::Display for RegionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegionType::Additional => write!(f, "Additional"),
+            RegionType::Primary => write!(f, "Primary"),
+            RegionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

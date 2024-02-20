@@ -111,3 +111,15 @@ impl CustomerActionName {
         }
     }
 }
+impl ::std::fmt::Display for CustomerActionName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomerActionName::Acknowledge => write!(f, "ACKNOWLEDGE"),
+            CustomerActionName::Disable => write!(f, "DISABLE"),
+            CustomerActionName::Enable => write!(f, "ENABLE"),
+            CustomerActionName::Reset => write!(f, "RESET"),
+            CustomerActionName::Snooze => write!(f, "SNOOZE"),
+            CustomerActionName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

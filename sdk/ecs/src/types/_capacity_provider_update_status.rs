@@ -123,3 +123,16 @@ impl CapacityProviderUpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for CapacityProviderUpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapacityProviderUpdateStatus::DeleteComplete => write!(f, "DELETE_COMPLETE"),
+            CapacityProviderUpdateStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            CapacityProviderUpdateStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            CapacityProviderUpdateStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
+            CapacityProviderUpdateStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            CapacityProviderUpdateStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            CapacityProviderUpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

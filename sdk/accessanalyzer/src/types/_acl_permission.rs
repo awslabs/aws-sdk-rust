@@ -111,3 +111,15 @@ impl AclPermission {
         }
     }
 }
+impl ::std::fmt::Display for AclPermission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AclPermission::FullControl => write!(f, "FULL_CONTROL"),
+            AclPermission::Read => write!(f, "READ"),
+            AclPermission::ReadAcp => write!(f, "READ_ACP"),
+            AclPermission::Write => write!(f, "WRITE"),
+            AclPermission::WriteAcp => write!(f, "WRITE_ACP"),
+            AclPermission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

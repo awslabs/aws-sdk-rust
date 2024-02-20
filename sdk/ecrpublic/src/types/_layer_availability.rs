@@ -96,3 +96,12 @@ impl LayerAvailability {
         }
     }
 }
+impl ::std::fmt::Display for LayerAvailability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LayerAvailability::Available => write!(f, "AVAILABLE"),
+            LayerAvailability::Unavailable => write!(f, "UNAVAILABLE"),
+            LayerAvailability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

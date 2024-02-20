@@ -106,3 +106,14 @@ impl Grouping {
         }
     }
 }
+impl ::std::fmt::Display for Grouping {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Grouping::Channel => write!(f, "CHANNEL"),
+            Grouping::Queue => write!(f, "QUEUE"),
+            Grouping::RoutingProfile => write!(f, "ROUTING_PROFILE"),
+            Grouping::RoutingStepExpression => write!(f, "ROUTING_STEP_EXPRESSION"),
+            Grouping::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

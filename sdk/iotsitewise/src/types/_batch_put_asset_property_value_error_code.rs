@@ -141,3 +141,19 @@ impl BatchPutAssetPropertyValueErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for BatchPutAssetPropertyValueErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchPutAssetPropertyValueErrorCode::AccessDeniedException => write!(f, "AccessDeniedException"),
+            BatchPutAssetPropertyValueErrorCode::ConflictingOperationException => write!(f, "ConflictingOperationException"),
+            BatchPutAssetPropertyValueErrorCode::InternalFailureException => write!(f, "InternalFailureException"),
+            BatchPutAssetPropertyValueErrorCode::InvalidRequestException => write!(f, "InvalidRequestException"),
+            BatchPutAssetPropertyValueErrorCode::LimitExceededException => write!(f, "LimitExceededException"),
+            BatchPutAssetPropertyValueErrorCode::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
+            BatchPutAssetPropertyValueErrorCode::ServiceUnavailableException => write!(f, "ServiceUnavailableException"),
+            BatchPutAssetPropertyValueErrorCode::ThrottlingException => write!(f, "ThrottlingException"),
+            BatchPutAssetPropertyValueErrorCode::TimestampOutOfRangeException => write!(f, "TimestampOutOfRangeException"),
+            BatchPutAssetPropertyValueErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

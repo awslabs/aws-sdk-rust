@@ -96,3 +96,12 @@ impl CertificateType {
         }
     }
 }
+impl ::std::fmt::Display for CertificateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateType::AmplifyManaged => write!(f, "AMPLIFY_MANAGED"),
+            CertificateType::Custom => write!(f, "CUSTOM"),
+            CertificateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl EvaluationMode {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationMode::Detective => write!(f, "DETECTIVE"),
+            EvaluationMode::Proactive => write!(f, "PROACTIVE"),
+            EvaluationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

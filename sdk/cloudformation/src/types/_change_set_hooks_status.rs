@@ -101,3 +101,13 @@ impl ChangeSetHooksStatus {
         }
     }
 }
+impl ::std::fmt::Display for ChangeSetHooksStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeSetHooksStatus::Planned => write!(f, "PLANNED"),
+            ChangeSetHooksStatus::Planning => write!(f, "PLANNING"),
+            ChangeSetHooksStatus::Unavailable => write!(f, "UNAVAILABLE"),
+            ChangeSetHooksStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

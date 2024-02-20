@@ -91,3 +91,11 @@ impl LifecyclePolicyType {
         }
     }
 }
+impl ::std::fmt::Display for LifecyclePolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecyclePolicyType::Retention => write!(f, "retention"),
+            LifecyclePolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

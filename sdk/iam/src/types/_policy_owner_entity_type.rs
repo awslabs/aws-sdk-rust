@@ -101,3 +101,13 @@ impl PolicyOwnerEntityType {
         }
     }
 }
+impl ::std::fmt::Display for PolicyOwnerEntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyOwnerEntityType::Group => write!(f, "GROUP"),
+            PolicyOwnerEntityType::Role => write!(f, "ROLE"),
+            PolicyOwnerEntityType::User => write!(f, "USER"),
+            PolicyOwnerEntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

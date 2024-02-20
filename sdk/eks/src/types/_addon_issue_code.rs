@@ -135,3 +135,18 @@ impl AddonIssueCode {
         }
     }
 }
+impl ::std::fmt::Display for AddonIssueCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AddonIssueCode::AccessDenied => write!(f, "AccessDenied"),
+            AddonIssueCode::AdmissionRequestDenied => write!(f, "AdmissionRequestDenied"),
+            AddonIssueCode::ClusterUnreachable => write!(f, "ClusterUnreachable"),
+            AddonIssueCode::ConfigurationConflict => write!(f, "ConfigurationConflict"),
+            AddonIssueCode::InsufficientNumberOfReplicas => write!(f, "InsufficientNumberOfReplicas"),
+            AddonIssueCode::InternalFailure => write!(f, "InternalFailure"),
+            AddonIssueCode::K8SResourceNotFound => write!(f, "K8sResourceNotFound"),
+            AddonIssueCode::UnsupportedAddonModification => write!(f, "UnsupportedAddonModification"),
+            AddonIssueCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

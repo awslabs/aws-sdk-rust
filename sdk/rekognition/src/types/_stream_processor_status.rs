@@ -116,3 +116,16 @@ impl StreamProcessorStatus {
         }
     }
 }
+impl ::std::fmt::Display for StreamProcessorStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamProcessorStatus::Failed => write!(f, "FAILED"),
+            StreamProcessorStatus::Running => write!(f, "RUNNING"),
+            StreamProcessorStatus::Starting => write!(f, "STARTING"),
+            StreamProcessorStatus::Stopped => write!(f, "STOPPED"),
+            StreamProcessorStatus::Stopping => write!(f, "STOPPING"),
+            StreamProcessorStatus::Updating => write!(f, "UPDATING"),
+            StreamProcessorStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

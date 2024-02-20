@@ -117,3 +117,15 @@ impl AssetType {
         }
     }
 }
+impl ::std::fmt::Display for AssetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetType::ApiGatewayApi => write!(f, "API_GATEWAY_API"),
+            AssetType::LakeFormationDataPermission => write!(f, "LAKE_FORMATION_DATA_PERMISSION"),
+            AssetType::RedshiftDataShare => write!(f, "REDSHIFT_DATA_SHARE"),
+            AssetType::S3DataAccess => write!(f, "S3_DATA_ACCESS"),
+            AssetType::S3Snapshot => write!(f, "S3_SNAPSHOT"),
+            AssetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

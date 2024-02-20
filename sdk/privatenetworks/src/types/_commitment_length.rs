@@ -101,3 +101,13 @@ impl CommitmentLength {
         }
     }
 }
+impl ::std::fmt::Display for CommitmentLength {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CommitmentLength::OneYear => write!(f, "ONE_YEAR"),
+            CommitmentLength::SixtyDays => write!(f, "SIXTY_DAYS"),
+            CommitmentLength::ThreeYears => write!(f, "THREE_YEARS"),
+            CommitmentLength::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

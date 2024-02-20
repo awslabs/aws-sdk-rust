@@ -111,3 +111,14 @@ impl StartTimerFailedCause {
         }
     }
 }
+impl ::std::fmt::Display for StartTimerFailedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StartTimerFailedCause::OpenTimersLimitExceeded => write!(f, "OPEN_TIMERS_LIMIT_EXCEEDED"),
+            StartTimerFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
+            StartTimerFailedCause::TimerCreationRateExceeded => write!(f, "TIMER_CREATION_RATE_EXCEEDED"),
+            StartTimerFailedCause::TimerIdAlreadyInUse => write!(f, "TIMER_ID_ALREADY_IN_USE"),
+            StartTimerFailedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

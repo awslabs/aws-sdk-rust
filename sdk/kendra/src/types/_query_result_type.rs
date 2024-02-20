@@ -101,3 +101,13 @@ impl QueryResultType {
         }
     }
 }
+impl ::std::fmt::Display for QueryResultType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryResultType::Answer => write!(f, "ANSWER"),
+            QueryResultType::Document => write!(f, "DOCUMENT"),
+            QueryResultType::QuestionAnswer => write!(f, "QUESTION_ANSWER"),
+            QueryResultType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

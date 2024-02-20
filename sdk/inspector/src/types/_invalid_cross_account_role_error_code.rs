@@ -96,3 +96,14 @@ impl InvalidCrossAccountRoleErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for InvalidCrossAccountRoleErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship => {
+                write!(f, "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP")
+            }
+            InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy => write!(f, "ROLE_DOES_NOT_HAVE_CORRECT_POLICY"),
+            InvalidCrossAccountRoleErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ClientVersion {
         }
     }
 }
+impl ::std::fmt::Display for ClientVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientVersion::FiveOne => write!(f, "5.1"),
+            ClientVersion::FiveThree => write!(f, "5.3"),
+            ClientVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

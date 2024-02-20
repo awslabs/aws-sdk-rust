@@ -96,3 +96,12 @@ impl Vp8QualityTuningLevel {
         }
     }
 }
+impl ::std::fmt::Display for Vp8QualityTuningLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Vp8QualityTuningLevel::MultiPass => write!(f, "MULTI_PASS"),
+            Vp8QualityTuningLevel::MultiPassHq => write!(f, "MULTI_PASS_HQ"),
+            Vp8QualityTuningLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

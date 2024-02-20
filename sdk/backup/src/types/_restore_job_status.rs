@@ -111,3 +111,15 @@ impl RestoreJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for RestoreJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RestoreJobStatus::Aborted => write!(f, "ABORTED"),
+            RestoreJobStatus::Completed => write!(f, "COMPLETED"),
+            RestoreJobStatus::Failed => write!(f, "FAILED"),
+            RestoreJobStatus::Pending => write!(f, "PENDING"),
+            RestoreJobStatus::Running => write!(f, "RUNNING"),
+            RestoreJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

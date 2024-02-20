@@ -96,3 +96,12 @@ impl DefaultGatewayRouteRewrite {
         }
     }
 }
+impl ::std::fmt::Display for DefaultGatewayRouteRewrite {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DefaultGatewayRouteRewrite::Disabled => write!(f, "DISABLED"),
+            DefaultGatewayRouteRewrite::Enabled => write!(f, "ENABLED"),
+            DefaultGatewayRouteRewrite::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

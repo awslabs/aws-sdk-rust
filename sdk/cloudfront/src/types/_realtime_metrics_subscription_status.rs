@@ -96,3 +96,12 @@ impl RealtimeMetricsSubscriptionStatus {
         }
     }
 }
+impl ::std::fmt::Display for RealtimeMetricsSubscriptionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RealtimeMetricsSubscriptionStatus::Disabled => write!(f, "Disabled"),
+            RealtimeMetricsSubscriptionStatus::Enabled => write!(f, "Enabled"),
+            RealtimeMetricsSubscriptionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

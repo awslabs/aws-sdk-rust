@@ -106,3 +106,14 @@ impl PlacementGroupState {
         }
     }
 }
+impl ::std::fmt::Display for PlacementGroupState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlacementGroupState::Available => write!(f, "available"),
+            PlacementGroupState::Deleted => write!(f, "deleted"),
+            PlacementGroupState::Deleting => write!(f, "deleting"),
+            PlacementGroupState::Pending => write!(f, "pending"),
+            PlacementGroupState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ReplicationEndpointTypeValue {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationEndpointTypeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationEndpointTypeValue::Source => write!(f, "source"),
+            ReplicationEndpointTypeValue::Target => write!(f, "target"),
+            ReplicationEndpointTypeValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

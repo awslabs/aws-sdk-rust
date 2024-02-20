@@ -117,3 +117,15 @@ impl AllocationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for AllocationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllocationStrategy::CapacityOptimized => write!(f, "capacityOptimized"),
+            AllocationStrategy::CapacityOptimizedPrioritized => write!(f, "capacityOptimizedPrioritized"),
+            AllocationStrategy::Diversified => write!(f, "diversified"),
+            AllocationStrategy::LowestPrice => write!(f, "lowestPrice"),
+            AllocationStrategy::PriceCapacityOptimized => write!(f, "priceCapacityOptimized"),
+            AllocationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

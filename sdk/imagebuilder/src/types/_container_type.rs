@@ -91,3 +91,11 @@ impl ContainerType {
         }
     }
 }
+impl ::std::fmt::Display for ContainerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerType::Docker => write!(f, "DOCKER"),
+            ContainerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

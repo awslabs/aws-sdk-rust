@@ -96,3 +96,12 @@ impl Effect {
         }
     }
 }
+impl ::std::fmt::Display for Effect {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Effect::Allow => write!(f, "Allow"),
+            Effect::Deny => write!(f, "Deny"),
+            Effect::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

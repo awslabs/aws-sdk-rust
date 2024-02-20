@@ -105,3 +105,15 @@ impl OrganizationConfigRuleTriggerType {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationConfigRuleTriggerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationConfigRuleTriggerType::ConfigurationItemChangeNotification => write!(f, "ConfigurationItemChangeNotification"),
+            OrganizationConfigRuleTriggerType::OversizedConfigurationItemChangeNotifcation => {
+                write!(f, "OversizedConfigurationItemChangeNotification")
+            }
+            OrganizationConfigRuleTriggerType::ScheduledNotification => write!(f, "ScheduledNotification"),
+            OrganizationConfigRuleTriggerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

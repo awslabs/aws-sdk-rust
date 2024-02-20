@@ -165,3 +165,23 @@ impl ChannelType {
         }
     }
 }
+impl ::std::fmt::Display for ChannelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelType::Adm => write!(f, "ADM"),
+            ChannelType::Apns => write!(f, "APNS"),
+            ChannelType::ApnsSandbox => write!(f, "APNS_SANDBOX"),
+            ChannelType::ApnsVoip => write!(f, "APNS_VOIP"),
+            ChannelType::ApnsVoipSandbox => write!(f, "APNS_VOIP_SANDBOX"),
+            ChannelType::Baidu => write!(f, "BAIDU"),
+            ChannelType::Custom => write!(f, "CUSTOM"),
+            ChannelType::Email => write!(f, "EMAIL"),
+            ChannelType::Gcm => write!(f, "GCM"),
+            ChannelType::InApp => write!(f, "IN_APP"),
+            ChannelType::Push => write!(f, "PUSH"),
+            ChannelType::Sms => write!(f, "SMS"),
+            ChannelType::Voice => write!(f, "VOICE"),
+            ChannelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

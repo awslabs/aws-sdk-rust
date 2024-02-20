@@ -106,3 +106,14 @@ impl DirectConnectGatewayAttachmentState {
         }
     }
 }
+impl ::std::fmt::Display for DirectConnectGatewayAttachmentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectConnectGatewayAttachmentState::Attached => write!(f, "attached"),
+            DirectConnectGatewayAttachmentState::Attaching => write!(f, "attaching"),
+            DirectConnectGatewayAttachmentState::Detached => write!(f, "detached"),
+            DirectConnectGatewayAttachmentState::Detaching => write!(f, "detaching"),
+            DirectConnectGatewayAttachmentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

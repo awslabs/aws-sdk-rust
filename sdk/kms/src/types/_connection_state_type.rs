@@ -111,3 +111,15 @@ impl ConnectionStateType {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionStateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionStateType::Connected => write!(f, "CONNECTED"),
+            ConnectionStateType::Connecting => write!(f, "CONNECTING"),
+            ConnectionStateType::Disconnected => write!(f, "DISCONNECTED"),
+            ConnectionStateType::Disconnecting => write!(f, "DISCONNECTING"),
+            ConnectionStateType::Failed => write!(f, "FAILED"),
+            ConnectionStateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

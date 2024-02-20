@@ -101,3 +101,13 @@ impl OfflineStoreStatusValue {
         }
     }
 }
+impl ::std::fmt::Display for OfflineStoreStatusValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OfflineStoreStatusValue::Active => write!(f, "Active"),
+            OfflineStoreStatusValue::Blocked => write!(f, "Blocked"),
+            OfflineStoreStatusValue::Disabled => write!(f, "Disabled"),
+            OfflineStoreStatusValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

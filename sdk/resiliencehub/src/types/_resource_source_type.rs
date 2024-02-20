@@ -96,3 +96,12 @@ impl ResourceSourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceSourceType::AppTemplate => write!(f, "AppTemplate"),
+            ResourceSourceType::Discovered => write!(f, "Discovered"),
+            ResourceSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

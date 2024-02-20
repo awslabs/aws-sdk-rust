@@ -101,3 +101,13 @@ impl DataCatalogType {
         }
     }
 }
+impl ::std::fmt::Display for DataCatalogType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataCatalogType::Glue => write!(f, "GLUE"),
+            DataCatalogType::Hive => write!(f, "HIVE"),
+            DataCatalogType::Lambda => write!(f, "LAMBDA"),
+            DataCatalogType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

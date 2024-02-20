@@ -106,3 +106,14 @@ impl PaddingType {
         }
     }
 }
+impl ::std::fmt::Display for PaddingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PaddingType::OaepSha1 => write!(f, "OAEP_SHA1"),
+            PaddingType::OaepSha256 => write!(f, "OAEP_SHA256"),
+            PaddingType::OaepSha512 => write!(f, "OAEP_SHA512"),
+            PaddingType::Pkcs1 => write!(f, "PKCS1"),
+            PaddingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

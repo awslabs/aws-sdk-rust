@@ -111,3 +111,14 @@ impl SelfManageTargetDestination {
         }
     }
 }
+impl ::std::fmt::Display for SelfManageTargetDestination {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SelfManageTargetDestination::AmazonElasticCloudCompute => write!(f, "Amazon Elastic Cloud Compute (EC2)"),
+            SelfManageTargetDestination::AmazonElasticContainerService => write!(f, "Amazon Elastic Container Service (ECS)"),
+            SelfManageTargetDestination::AmazonElasticKubernetesService => write!(f, "Amazon Elastic Kubernetes Service (EKS)"),
+            SelfManageTargetDestination::NoneSpecified => write!(f, "None specified"),
+            SelfManageTargetDestination::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

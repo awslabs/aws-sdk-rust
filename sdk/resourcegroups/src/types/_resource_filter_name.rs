@@ -91,3 +91,11 @@ impl ResourceFilterName {
         }
     }
 }
+impl ::std::fmt::Display for ResourceFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceFilterName::ResourceType => write!(f, "resource-type"),
+            ResourceFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

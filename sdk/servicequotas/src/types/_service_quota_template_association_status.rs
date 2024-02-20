@@ -96,3 +96,12 @@ impl ServiceQuotaTemplateAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServiceQuotaTemplateAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceQuotaTemplateAssociationStatus::Associated => write!(f, "ASSOCIATED"),
+            ServiceQuotaTemplateAssociationStatus::Disassociated => write!(f, "DISASSOCIATED"),
+            ServiceQuotaTemplateAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

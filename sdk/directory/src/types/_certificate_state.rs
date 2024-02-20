@@ -123,3 +123,16 @@ impl CertificateState {
         }
     }
 }
+impl ::std::fmt::Display for CertificateState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateState::DeregisterFailed => write!(f, "DeregisterFailed"),
+            CertificateState::Deregistered => write!(f, "Deregistered"),
+            CertificateState::Deregistering => write!(f, "Deregistering"),
+            CertificateState::RegisterFailed => write!(f, "RegisterFailed"),
+            CertificateState::Registered => write!(f, "Registered"),
+            CertificateState::Registering => write!(f, "Registering"),
+            CertificateState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

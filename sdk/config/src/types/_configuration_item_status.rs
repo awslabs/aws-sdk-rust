@@ -117,3 +117,15 @@ impl ConfigurationItemStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationItemStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationItemStatus::Ok => write!(f, "OK"),
+            ConfigurationItemStatus::ResourceDeleted => write!(f, "ResourceDeleted"),
+            ConfigurationItemStatus::ResourceDeletedNotRecorded => write!(f, "ResourceDeletedNotRecorded"),
+            ConfigurationItemStatus::ResourceDiscovered => write!(f, "ResourceDiscovered"),
+            ConfigurationItemStatus::ResourceNotRecorded => write!(f, "ResourceNotRecorded"),
+            ConfigurationItemStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

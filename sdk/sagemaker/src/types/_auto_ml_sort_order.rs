@@ -96,3 +96,12 @@ impl AutoMlSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlSortOrder::Ascending => write!(f, "Ascending"),
+            AutoMlSortOrder::Descending => write!(f, "Descending"),
+            AutoMlSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

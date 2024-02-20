@@ -116,3 +116,16 @@ impl NotificationEvent {
         }
     }
 }
+impl ::std::fmt::Display for NotificationEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationEvent::All => write!(f, "All"),
+            NotificationEvent::Cancelled => write!(f, "Cancelled"),
+            NotificationEvent::Failed => write!(f, "Failed"),
+            NotificationEvent::InProgress => write!(f, "InProgress"),
+            NotificationEvent::Success => write!(f, "Success"),
+            NotificationEvent::TimedOut => write!(f, "TimedOut"),
+            NotificationEvent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

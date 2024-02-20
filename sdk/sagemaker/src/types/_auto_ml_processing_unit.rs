@@ -96,3 +96,12 @@ impl AutoMlProcessingUnit {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlProcessingUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlProcessingUnit::Cpu => write!(f, "CPU"),
+            AutoMlProcessingUnit::Gpu => write!(f, "GPU"),
+            AutoMlProcessingUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

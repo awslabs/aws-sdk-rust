@@ -101,3 +101,13 @@ impl AnalyticsMetricStatistic {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsMetricStatistic {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsMetricStatistic::Avg => write!(f, "Avg"),
+            AnalyticsMetricStatistic::Max => write!(f, "Max"),
+            AnalyticsMetricStatistic::Sum => write!(f, "Sum"),
+            AnalyticsMetricStatistic::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

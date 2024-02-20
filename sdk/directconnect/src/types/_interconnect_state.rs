@@ -121,3 +121,17 @@ impl InterconnectState {
         }
     }
 }
+impl ::std::fmt::Display for InterconnectState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InterconnectState::Available => write!(f, "available"),
+            InterconnectState::Deleted => write!(f, "deleted"),
+            InterconnectState::Deleting => write!(f, "deleting"),
+            InterconnectState::Down => write!(f, "down"),
+            InterconnectState::Pending => write!(f, "pending"),
+            InterconnectState::Requested => write!(f, "requested"),
+            InterconnectState::UnknownValue => write!(f, "unknown"),
+            InterconnectState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

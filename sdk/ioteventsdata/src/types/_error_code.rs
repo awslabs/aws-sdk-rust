@@ -117,3 +117,15 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::InternalFailureException => write!(f, "InternalFailureException"),
+            ErrorCode::InvalidRequestException => write!(f, "InvalidRequestException"),
+            ErrorCode::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
+            ErrorCode::ServiceUnavailableException => write!(f, "ServiceUnavailableException"),
+            ErrorCode::ThrottlingException => write!(f, "ThrottlingException"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

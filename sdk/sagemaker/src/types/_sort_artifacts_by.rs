@@ -91,3 +91,11 @@ impl SortArtifactsBy {
         }
     }
 }
+impl ::std::fmt::Display for SortArtifactsBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortArtifactsBy::CreationTime => write!(f, "CreationTime"),
+            SortArtifactsBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

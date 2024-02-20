@@ -96,3 +96,12 @@ impl VerifySoftwareTokenResponseType {
         }
     }
 }
+impl ::std::fmt::Display for VerifySoftwareTokenResponseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerifySoftwareTokenResponseType::Error => write!(f, "ERROR"),
+            VerifySoftwareTokenResponseType::Success => write!(f, "SUCCESS"),
+            VerifySoftwareTokenResponseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

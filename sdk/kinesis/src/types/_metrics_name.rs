@@ -135,3 +135,18 @@ impl MetricsName {
         }
     }
 }
+impl ::std::fmt::Display for MetricsName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricsName::All => write!(f, "ALL"),
+            MetricsName::IncomingBytes => write!(f, "IncomingBytes"),
+            MetricsName::IncomingRecords => write!(f, "IncomingRecords"),
+            MetricsName::IteratorAgeMilliseconds => write!(f, "IteratorAgeMilliseconds"),
+            MetricsName::OutgoingBytes => write!(f, "OutgoingBytes"),
+            MetricsName::OutgoingRecords => write!(f, "OutgoingRecords"),
+            MetricsName::ReadProvisionedThroughputExceeded => write!(f, "ReadProvisionedThroughputExceeded"),
+            MetricsName::WriteProvisionedThroughputExceeded => write!(f, "WriteProvisionedThroughputExceeded"),
+            MetricsName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl IngestionDestinationStatus {
         }
     }
 }
+impl ::std::fmt::Display for IngestionDestinationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IngestionDestinationStatus::Active => write!(f, "Active"),
+            IngestionDestinationStatus::Failed => write!(f, "Failed"),
+            IngestionDestinationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

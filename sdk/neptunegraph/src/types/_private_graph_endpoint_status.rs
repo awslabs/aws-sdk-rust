@@ -106,3 +106,14 @@ impl PrivateGraphEndpointStatus {
         }
     }
 }
+impl ::std::fmt::Display for PrivateGraphEndpointStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrivateGraphEndpointStatus::Available => write!(f, "AVAILABLE"),
+            PrivateGraphEndpointStatus::Creating => write!(f, "CREATING"),
+            PrivateGraphEndpointStatus::Deleting => write!(f, "DELETING"),
+            PrivateGraphEndpointStatus::Failed => write!(f, "FAILED"),
+            PrivateGraphEndpointStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

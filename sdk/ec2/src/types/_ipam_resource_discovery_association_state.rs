@@ -141,3 +141,19 @@ impl IpamResourceDiscoveryAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for IpamResourceDiscoveryAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamResourceDiscoveryAssociationState::AssociateComplete => write!(f, "associate-complete"),
+            IpamResourceDiscoveryAssociationState::AssociateFailed => write!(f, "associate-failed"),
+            IpamResourceDiscoveryAssociationState::AssociateInProgress => write!(f, "associate-in-progress"),
+            IpamResourceDiscoveryAssociationState::DisassociateComplete => write!(f, "disassociate-complete"),
+            IpamResourceDiscoveryAssociationState::DisassociateFailed => write!(f, "disassociate-failed"),
+            IpamResourceDiscoveryAssociationState::DisassociateInProgress => write!(f, "disassociate-in-progress"),
+            IpamResourceDiscoveryAssociationState::IsolateComplete => write!(f, "isolate-complete"),
+            IpamResourceDiscoveryAssociationState::IsolateInProgress => write!(f, "isolate-in-progress"),
+            IpamResourceDiscoveryAssociationState::RestoreInProgress => write!(f, "restore-in-progress"),
+            IpamResourceDiscoveryAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

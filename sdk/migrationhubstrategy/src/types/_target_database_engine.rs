@@ -147,3 +147,20 @@ impl TargetDatabaseEngine {
         }
     }
 }
+impl ::std::fmt::Display for TargetDatabaseEngine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetDatabaseEngine::AwsPostgresql => write!(f, "AWS PostgreSQL"),
+            TargetDatabaseEngine::AmazonAurora => write!(f, "Amazon Aurora"),
+            TargetDatabaseEngine::Db2Luw => write!(f, "Db2 LUW"),
+            TargetDatabaseEngine::MariaDb => write!(f, "MariaDB"),
+            TargetDatabaseEngine::MicrosoftSqlServer => write!(f, "Microsoft SQL Server"),
+            TargetDatabaseEngine::MongoDb => write!(f, "MongoDB"),
+            TargetDatabaseEngine::Mysql => write!(f, "MySQL"),
+            TargetDatabaseEngine::NoneSpecified => write!(f, "None specified"),
+            TargetDatabaseEngine::OracleDatabase => write!(f, "Oracle Database"),
+            TargetDatabaseEngine::Sap => write!(f, "SAP"),
+            TargetDatabaseEngine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

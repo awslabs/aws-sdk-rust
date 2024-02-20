@@ -91,3 +91,11 @@ impl TargetResourceType {
         }
     }
 }
+impl ::std::fmt::Display for TargetResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetResourceType::Asset => write!(f, "ASSET"),
+            TargetResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl HubContentStatus {
         }
     }
 }
+impl ::std::fmt::Display for HubContentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HubContentStatus::Available => write!(f, "Available"),
+            HubContentStatus::DeleteFailed => write!(f, "DeleteFailed"),
+            HubContentStatus::Deleting => write!(f, "Deleting"),
+            HubContentStatus::ImportFailed => write!(f, "ImportFailed"),
+            HubContentStatus::Importing => write!(f, "Importing"),
+            HubContentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

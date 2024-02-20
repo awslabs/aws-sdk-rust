@@ -101,3 +101,13 @@ impl FindingStatus {
         }
     }
 }
+impl ::std::fmt::Display for FindingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingStatus::Active => write!(f, "ACTIVE"),
+            FindingStatus::Closed => write!(f, "CLOSED"),
+            FindingStatus::Suppressed => write!(f, "SUPPRESSED"),
+            FindingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

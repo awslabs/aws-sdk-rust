@@ -101,3 +101,13 @@ impl DifferenceStatus {
         }
     }
 }
+impl ::std::fmt::Display for DifferenceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DifferenceStatus::Deleted => write!(f, "DELETED"),
+            DifferenceStatus::New => write!(f, "NEW"),
+            DifferenceStatus::Updated => write!(f, "UPDATED"),
+            DifferenceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

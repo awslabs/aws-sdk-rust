@@ -96,3 +96,12 @@ impl ResolverKind {
         }
     }
 }
+impl ::std::fmt::Display for ResolverKind {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverKind::Pipeline => write!(f, "PIPELINE"),
+            ResolverKind::Unit => write!(f, "UNIT"),
+            ResolverKind::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

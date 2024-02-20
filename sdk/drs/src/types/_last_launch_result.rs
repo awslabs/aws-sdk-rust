@@ -106,3 +106,14 @@ impl LastLaunchResult {
         }
     }
 }
+impl ::std::fmt::Display for LastLaunchResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LastLaunchResult::Failed => write!(f, "FAILED"),
+            LastLaunchResult::NotStarted => write!(f, "NOT_STARTED"),
+            LastLaunchResult::Pending => write!(f, "PENDING"),
+            LastLaunchResult::Succeeded => write!(f, "SUCCEEDED"),
+            LastLaunchResult::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

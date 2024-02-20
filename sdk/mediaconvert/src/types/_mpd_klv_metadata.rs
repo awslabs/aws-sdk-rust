@@ -96,3 +96,12 @@ impl MpdKlvMetadata {
         }
     }
 }
+impl ::std::fmt::Display for MpdKlvMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MpdKlvMetadata::None => write!(f, "NONE"),
+            MpdKlvMetadata::Passthrough => write!(f, "PASSTHROUGH"),
+            MpdKlvMetadata::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

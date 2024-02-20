@@ -101,3 +101,13 @@ impl UploadStatus {
         }
     }
 }
+impl ::std::fmt::Display for UploadStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UploadStatus::Failed => write!(f, "FAILED"),
+            UploadStatus::InProgress => write!(f, "IN_PROGRESS"),
+            UploadStatus::Succeeded => write!(f, "SUCCEEDED"),
+            UploadStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

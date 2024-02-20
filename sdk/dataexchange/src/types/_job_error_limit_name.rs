@@ -117,3 +117,15 @@ impl JobErrorLimitName {
         }
     }
 }
+impl ::std::fmt::Display for JobErrorLimitName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobErrorLimitName::AwsLakeFormationDataPermissionAssetsPerRevision => write!(f, "AWS Lake Formation data permission assets per revision"),
+            JobErrorLimitName::AmazonRedshiftDatashareAssetsPerRevision => write!(f, "Amazon Redshift datashare assets per revision"),
+            JobErrorLimitName::AmazonS3DataAccessAssetsPerRevision => write!(f, "Amazon S3 data access assets per revision"),
+            JobErrorLimitName::AssetSizeInGb => write!(f, "Asset size in GB"),
+            JobErrorLimitName::AssetsPerRevision => write!(f, "Assets per revision"),
+            JobErrorLimitName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

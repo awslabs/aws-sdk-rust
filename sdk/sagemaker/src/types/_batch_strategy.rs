@@ -96,3 +96,12 @@ impl BatchStrategy {
         }
     }
 }
+impl ::std::fmt::Display for BatchStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchStrategy::MultiRecord => write!(f, "MultiRecord"),
+            BatchStrategy::SingleRecord => write!(f, "SingleRecord"),
+            BatchStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

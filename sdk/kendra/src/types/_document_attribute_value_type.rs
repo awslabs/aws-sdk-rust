@@ -106,3 +106,14 @@ impl DocumentAttributeValueType {
         }
     }
 }
+impl ::std::fmt::Display for DocumentAttributeValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentAttributeValueType::DateValue => write!(f, "DATE_VALUE"),
+            DocumentAttributeValueType::LongValue => write!(f, "LONG_VALUE"),
+            DocumentAttributeValueType::StringListValue => write!(f, "STRING_LIST_VALUE"),
+            DocumentAttributeValueType::StringValue => write!(f, "STRING_VALUE"),
+            DocumentAttributeValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

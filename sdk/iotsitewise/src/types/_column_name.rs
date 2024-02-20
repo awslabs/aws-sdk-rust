@@ -135,3 +135,18 @@ impl ColumnName {
         }
     }
 }
+impl ::std::fmt::Display for ColumnName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnName::Alias => write!(f, "ALIAS"),
+            ColumnName::AssetId => write!(f, "ASSET_ID"),
+            ColumnName::DataType => write!(f, "DATA_TYPE"),
+            ColumnName::PropertyId => write!(f, "PROPERTY_ID"),
+            ColumnName::Quality => write!(f, "QUALITY"),
+            ColumnName::TimestampNanoOffset => write!(f, "TIMESTAMP_NANO_OFFSET"),
+            ColumnName::TimestampSeconds => write!(f, "TIMESTAMP_SECONDS"),
+            ColumnName::Value => write!(f, "VALUE"),
+            ColumnName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

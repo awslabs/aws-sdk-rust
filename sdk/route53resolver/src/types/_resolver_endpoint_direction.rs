@@ -96,3 +96,12 @@ impl ResolverEndpointDirection {
         }
     }
 }
+impl ::std::fmt::Display for ResolverEndpointDirection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverEndpointDirection::Inbound => write!(f, "INBOUND"),
+            ResolverEndpointDirection::Outbound => write!(f, "OUTBOUND"),
+            ResolverEndpointDirection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

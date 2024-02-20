@@ -101,3 +101,13 @@ impl NodeType {
         }
     }
 }
+impl ::std::fmt::Display for NodeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeType::Crawler => write!(f, "CRAWLER"),
+            NodeType::Job => write!(f, "JOB"),
+            NodeType::Trigger => write!(f, "TRIGGER"),
+            NodeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

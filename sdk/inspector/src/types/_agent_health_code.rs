@@ -116,3 +116,16 @@ impl AgentHealthCode {
         }
     }
 }
+impl ::std::fmt::Display for AgentHealthCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgentHealthCode::Idle => write!(f, "IDLE"),
+            AgentHealthCode::Running => write!(f, "RUNNING"),
+            AgentHealthCode::Shutdown => write!(f, "SHUTDOWN"),
+            AgentHealthCode::Throttled => write!(f, "THROTTLED"),
+            AgentHealthCode::Unhealthy => write!(f, "UNHEALTHY"),
+            AgentHealthCode::UnknownValue => write!(f, "UNKNOWN"),
+            AgentHealthCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl NotebookInstanceLifecycleConfigSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for NotebookInstanceLifecycleConfigSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotebookInstanceLifecycleConfigSortOrder::Ascending => write!(f, "Ascending"),
+            NotebookInstanceLifecycleConfigSortOrder::Descending => write!(f, "Descending"),
+            NotebookInstanceLifecycleConfigSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

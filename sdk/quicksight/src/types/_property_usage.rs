@@ -101,3 +101,13 @@ impl PropertyUsage {
         }
     }
 }
+impl ::std::fmt::Display for PropertyUsage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PropertyUsage::Dimension => write!(f, "DIMENSION"),
+            PropertyUsage::Inherit => write!(f, "INHERIT"),
+            PropertyUsage::Measure => write!(f, "MEASURE"),
+            PropertyUsage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

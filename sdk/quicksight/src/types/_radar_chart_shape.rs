@@ -96,3 +96,12 @@ impl RadarChartShape {
         }
     }
 }
+impl ::std::fmt::Display for RadarChartShape {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RadarChartShape::Circle => write!(f, "CIRCLE"),
+            RadarChartShape::Polygon => write!(f, "POLYGON"),
+            RadarChartShape::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

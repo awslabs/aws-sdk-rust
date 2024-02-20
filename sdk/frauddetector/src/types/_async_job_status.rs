@@ -123,3 +123,16 @@ impl AsyncJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for AsyncJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AsyncJobStatus::Canceled => write!(f, "CANCELED"),
+            AsyncJobStatus::CancelInProgress => write!(f, "CANCEL_IN_PROGRESS"),
+            AsyncJobStatus::Complete => write!(f, "COMPLETE"),
+            AsyncJobStatus::Failed => write!(f, "FAILED"),
+            AsyncJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            AsyncJobStatus::InProgressInitializing => write!(f, "IN_PROGRESS_INITIALIZING"),
+            AsyncJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

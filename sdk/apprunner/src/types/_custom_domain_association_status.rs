@@ -129,3 +129,17 @@ impl CustomDomainAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for CustomDomainAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomDomainAssociationStatus::Active => write!(f, "ACTIVE"),
+            CustomDomainAssociationStatus::BindingCertificate => write!(f, "BINDING_CERTIFICATE"),
+            CustomDomainAssociationStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            CustomDomainAssociationStatus::Creating => write!(f, "CREATING"),
+            CustomDomainAssociationStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            CustomDomainAssociationStatus::Deleting => write!(f, "DELETING"),
+            CustomDomainAssociationStatus::PendingCertificateDnsValidation => write!(f, "PENDING_CERTIFICATE_DNS_VALIDATION"),
+            CustomDomainAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

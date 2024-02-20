@@ -96,3 +96,12 @@ impl AutoMlJobObjectiveType {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlJobObjectiveType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlJobObjectiveType::Maximize => write!(f, "Maximize"),
+            AutoMlJobObjectiveType::Minimize => write!(f, "Minimize"),
+            AutoMlJobObjectiveType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

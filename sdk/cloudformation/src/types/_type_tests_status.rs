@@ -106,3 +106,14 @@ impl TypeTestsStatus {
         }
     }
 }
+impl ::std::fmt::Display for TypeTestsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TypeTestsStatus::Failed => write!(f, "FAILED"),
+            TypeTestsStatus::InProgress => write!(f, "IN_PROGRESS"),
+            TypeTestsStatus::NotTested => write!(f, "NOT_TESTED"),
+            TypeTestsStatus::Passed => write!(f, "PASSED"),
+            TypeTestsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

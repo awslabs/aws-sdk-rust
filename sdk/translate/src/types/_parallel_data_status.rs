@@ -111,3 +111,15 @@ impl ParallelDataStatus {
         }
     }
 }
+impl ::std::fmt::Display for ParallelDataStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParallelDataStatus::Active => write!(f, "ACTIVE"),
+            ParallelDataStatus::Creating => write!(f, "CREATING"),
+            ParallelDataStatus::Deleting => write!(f, "DELETING"),
+            ParallelDataStatus::Failed => write!(f, "FAILED"),
+            ParallelDataStatus::Updating => write!(f, "UPDATING"),
+            ParallelDataStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

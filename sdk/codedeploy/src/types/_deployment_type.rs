@@ -96,3 +96,12 @@ impl DeploymentType {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentType::BlueGreen => write!(f, "BLUE_GREEN"),
+            DeploymentType::InPlace => write!(f, "IN_PLACE"),
+            DeploymentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

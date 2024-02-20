@@ -116,3 +116,16 @@ impl DestinationState {
         }
     }
 }
+impl ::std::fmt::Display for DestinationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DestinationState::Active => write!(f, "ACTIVE"),
+            DestinationState::Failed => write!(f, "FAILED"),
+            DestinationState::Reconnecting => write!(f, "RECONNECTING"),
+            DestinationState::Starting => write!(f, "STARTING"),
+            DestinationState::Stopped => write!(f, "STOPPED"),
+            DestinationState::Stopping => write!(f, "STOPPING"),
+            DestinationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

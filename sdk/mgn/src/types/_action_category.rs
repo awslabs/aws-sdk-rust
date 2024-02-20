@@ -147,3 +147,20 @@ impl ActionCategory {
         }
     }
 }
+impl ::std::fmt::Display for ActionCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionCategory::Backup => write!(f, "BACKUP"),
+            ActionCategory::Configuration => write!(f, "CONFIGURATION"),
+            ActionCategory::DisasterRecovery => write!(f, "DISASTER_RECOVERY"),
+            ActionCategory::LicenseAndSubscription => write!(f, "LICENSE_AND_SUBSCRIPTION"),
+            ActionCategory::Networking => write!(f, "NETWORKING"),
+            ActionCategory::Observability => write!(f, "OBSERVABILITY"),
+            ActionCategory::OperatingSystem => write!(f, "OPERATING_SYSTEM"),
+            ActionCategory::Other => write!(f, "OTHER"),
+            ActionCategory::Security => write!(f, "SECURITY"),
+            ActionCategory::Validation => write!(f, "VALIDATION"),
+            ActionCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

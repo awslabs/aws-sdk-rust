@@ -91,3 +91,11 @@ impl RetrievalResultLocationType {
         }
     }
 }
+impl ::std::fmt::Display for RetrievalResultLocationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetrievalResultLocationType::S3 => write!(f, "S3"),
+            RetrievalResultLocationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

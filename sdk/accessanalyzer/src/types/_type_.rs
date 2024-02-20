@@ -106,3 +106,14 @@ impl Type {
         }
     }
 }
+impl ::std::fmt::Display for Type {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Type::Account => write!(f, "ACCOUNT"),
+            Type::AccountUnusedAccess => write!(f, "ACCOUNT_UNUSED_ACCESS"),
+            Type::Organization => write!(f, "ORGANIZATION"),
+            Type::OrganizationUnusedAccess => write!(f, "ORGANIZATION_UNUSED_ACCESS"),
+            Type::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

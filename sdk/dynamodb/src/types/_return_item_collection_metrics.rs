@@ -96,3 +96,12 @@ impl ReturnItemCollectionMetrics {
         }
     }
 }
+impl ::std::fmt::Display for ReturnItemCollectionMetrics {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReturnItemCollectionMetrics::None => write!(f, "NONE"),
+            ReturnItemCollectionMetrics::Size => write!(f, "SIZE"),
+            ReturnItemCollectionMetrics::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

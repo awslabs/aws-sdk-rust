@@ -117,3 +117,15 @@ impl AssociateResourceErrorReason {
         }
     }
 }
+impl ::std::fmt::Display for AssociateResourceErrorReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociateResourceErrorReason::IllegalCustomlineitem => write!(f, "ILLEGAL_CUSTOMLINEITEM"),
+            AssociateResourceErrorReason::InternalServerException => write!(f, "INTERNAL_SERVER_EXCEPTION"),
+            AssociateResourceErrorReason::InvalidArn => write!(f, "INVALID_ARN"),
+            AssociateResourceErrorReason::InvalidBillingPeriodRange => write!(f, "INVALID_BILLING_PERIOD_RANGE"),
+            AssociateResourceErrorReason::ServiceLimitExceeded => write!(f, "SERVICE_LIMIT_EXCEEDED"),
+            AssociateResourceErrorReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

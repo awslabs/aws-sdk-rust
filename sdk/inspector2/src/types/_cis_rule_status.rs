@@ -121,3 +121,17 @@ impl CisRuleStatus {
         }
     }
 }
+impl ::std::fmt::Display for CisRuleStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisRuleStatus::Error => write!(f, "ERROR"),
+            CisRuleStatus::Failed => write!(f, "FAILED"),
+            CisRuleStatus::Informational => write!(f, "INFORMATIONAL"),
+            CisRuleStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
+            CisRuleStatus::NotEvaluated => write!(f, "NOT_EVALUATED"),
+            CisRuleStatus::Passed => write!(f, "PASSED"),
+            CisRuleStatus::UnknownValue => write!(f, "UNKNOWN"),
+            CisRuleStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

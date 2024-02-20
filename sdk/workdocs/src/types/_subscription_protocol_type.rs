@@ -96,3 +96,12 @@ impl SubscriptionProtocolType {
         }
     }
 }
+impl ::std::fmt::Display for SubscriptionProtocolType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubscriptionProtocolType::Https => write!(f, "HTTPS"),
+            SubscriptionProtocolType::Sqs => write!(f, "SQS"),
+            SubscriptionProtocolType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

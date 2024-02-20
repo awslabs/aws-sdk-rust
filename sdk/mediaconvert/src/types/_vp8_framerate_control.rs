@@ -96,3 +96,12 @@ impl Vp8FramerateControl {
         }
     }
 }
+impl ::std::fmt::Display for Vp8FramerateControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Vp8FramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            Vp8FramerateControl::Specified => write!(f, "SPECIFIED"),
+            Vp8FramerateControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ApiGatewayEndpointType {
         }
     }
 }
+impl ::std::fmt::Display for ApiGatewayEndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApiGatewayEndpointType::Private => write!(f, "PRIVATE"),
+            ApiGatewayEndpointType::Regional => write!(f, "REGIONAL"),
+            ApiGatewayEndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

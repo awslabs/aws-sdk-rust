@@ -159,3 +159,22 @@ impl IpamScopeState {
         }
     }
 }
+impl ::std::fmt::Display for IpamScopeState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamScopeState::CreateComplete => write!(f, "create-complete"),
+            IpamScopeState::CreateFailed => write!(f, "create-failed"),
+            IpamScopeState::CreateInProgress => write!(f, "create-in-progress"),
+            IpamScopeState::DeleteComplete => write!(f, "delete-complete"),
+            IpamScopeState::DeleteFailed => write!(f, "delete-failed"),
+            IpamScopeState::DeleteInProgress => write!(f, "delete-in-progress"),
+            IpamScopeState::IsolateComplete => write!(f, "isolate-complete"),
+            IpamScopeState::IsolateInProgress => write!(f, "isolate-in-progress"),
+            IpamScopeState::ModifyComplete => write!(f, "modify-complete"),
+            IpamScopeState::ModifyFailed => write!(f, "modify-failed"),
+            IpamScopeState::ModifyInProgress => write!(f, "modify-in-progress"),
+            IpamScopeState::RestoreInProgress => write!(f, "restore-in-progress"),
+            IpamScopeState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

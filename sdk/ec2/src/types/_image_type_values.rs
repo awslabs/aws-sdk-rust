@@ -101,3 +101,13 @@ impl ImageTypeValues {
         }
     }
 }
+impl ::std::fmt::Display for ImageTypeValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageTypeValues::Kernel => write!(f, "kernel"),
+            ImageTypeValues::Machine => write!(f, "machine"),
+            ImageTypeValues::Ramdisk => write!(f, "ramdisk"),
+            ImageTypeValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

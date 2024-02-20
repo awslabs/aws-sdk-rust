@@ -101,3 +101,13 @@ impl RuleBasedMatchingStatus {
         }
     }
 }
+impl ::std::fmt::Display for RuleBasedMatchingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleBasedMatchingStatus::Active => write!(f, "ACTIVE"),
+            RuleBasedMatchingStatus::InProgress => write!(f, "IN_PROGRESS"),
+            RuleBasedMatchingStatus::Pending => write!(f, "PENDING"),
+            RuleBasedMatchingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

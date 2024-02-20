@@ -96,3 +96,12 @@ impl ComponentVisibilityScope {
         }
     }
 }
+impl ::std::fmt::Display for ComponentVisibilityScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComponentVisibilityScope::Private => write!(f, "PRIVATE"),
+            ComponentVisibilityScope::Public => write!(f, "PUBLIC"),
+            ComponentVisibilityScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

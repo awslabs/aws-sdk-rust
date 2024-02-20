@@ -91,3 +91,11 @@ impl ComparisonOperator {
         }
     }
 }
+impl ::std::fmt::Display for ComparisonOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComparisonOperator::BeginsWith => write!(f, "BEGINS_WITH"),
+            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

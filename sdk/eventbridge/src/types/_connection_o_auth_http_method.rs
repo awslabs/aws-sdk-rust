@@ -101,3 +101,13 @@ impl ConnectionOAuthHttpMethod {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionOAuthHttpMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionOAuthHttpMethod::Get => write!(f, "GET"),
+            ConnectionOAuthHttpMethod::Post => write!(f, "POST"),
+            ConnectionOAuthHttpMethod::Put => write!(f, "PUT"),
+            ConnectionOAuthHttpMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

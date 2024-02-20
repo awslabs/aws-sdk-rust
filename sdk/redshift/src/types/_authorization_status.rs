@@ -96,3 +96,12 @@ impl AuthorizationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AuthorizationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthorizationStatus::Authorized => write!(f, "Authorized"),
+            AuthorizationStatus::Revoking => write!(f, "Revoking"),
+            AuthorizationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

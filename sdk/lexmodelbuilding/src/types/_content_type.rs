@@ -101,3 +101,13 @@ impl ContentType {
         }
     }
 }
+impl ::std::fmt::Display for ContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentType::CustomPayload => write!(f, "CustomPayload"),
+            ContentType::PlainText => write!(f, "PlainText"),
+            ContentType::Ssml => write!(f, "SSML"),
+            ContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

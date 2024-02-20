@@ -96,3 +96,12 @@ impl AuthTokenUpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for AuthTokenUpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthTokenUpdateStatus::Rotating => write!(f, "ROTATING"),
+            AuthTokenUpdateStatus::Setting => write!(f, "SETTING"),
+            AuthTokenUpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AppReplicationConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AppReplicationConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppReplicationConfigurationStatus::Configured => write!(f, "CONFIGURED"),
+            AppReplicationConfigurationStatus::NotConfigured => write!(f, "NOT_CONFIGURED"),
+            AppReplicationConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

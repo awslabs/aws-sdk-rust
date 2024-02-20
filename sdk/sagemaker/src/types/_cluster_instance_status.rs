@@ -111,3 +111,15 @@ impl ClusterInstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ClusterInstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterInstanceStatus::Failure => write!(f, "Failure"),
+            ClusterInstanceStatus::Pending => write!(f, "Pending"),
+            ClusterInstanceStatus::Running => write!(f, "Running"),
+            ClusterInstanceStatus::ShuttingDown => write!(f, "ShuttingDown"),
+            ClusterInstanceStatus::SystemUpdating => write!(f, "SystemUpdating"),
+            ClusterInstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

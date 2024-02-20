@@ -101,3 +101,13 @@ impl RegistryAliasStatus {
         }
     }
 }
+impl ::std::fmt::Display for RegistryAliasStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistryAliasStatus::Active => write!(f, "ACTIVE"),
+            RegistryAliasStatus::Pending => write!(f, "PENDING"),
+            RegistryAliasStatus::Rejected => write!(f, "REJECTED"),
+            RegistryAliasStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

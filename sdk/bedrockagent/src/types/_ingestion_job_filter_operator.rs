@@ -91,3 +91,11 @@ impl IngestionJobFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for IngestionJobFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IngestionJobFilterOperator::Eq => write!(f, "EQ"),
+            IngestionJobFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

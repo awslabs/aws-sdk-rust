@@ -135,3 +135,18 @@ impl ImageState {
         }
     }
 }
+impl ::std::fmt::Display for ImageState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageState::Available => write!(f, "available"),
+            ImageState::Deregistered => write!(f, "deregistered"),
+            ImageState::Disabled => write!(f, "disabled"),
+            ImageState::Error => write!(f, "error"),
+            ImageState::Failed => write!(f, "failed"),
+            ImageState::Invalid => write!(f, "invalid"),
+            ImageState::Pending => write!(f, "pending"),
+            ImageState::Transient => write!(f, "transient"),
+            ImageState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl PatchComplianceDataState {
         }
     }
 }
+impl ::std::fmt::Display for PatchComplianceDataState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PatchComplianceDataState::Failed => write!(f, "FAILED"),
+            PatchComplianceDataState::Installed => write!(f, "INSTALLED"),
+            PatchComplianceDataState::InstalledOther => write!(f, "INSTALLED_OTHER"),
+            PatchComplianceDataState::InstalledPendingReboot => write!(f, "INSTALLED_PENDING_REBOOT"),
+            PatchComplianceDataState::InstalledRejected => write!(f, "INSTALLED_REJECTED"),
+            PatchComplianceDataState::Missing => write!(f, "MISSING"),
+            PatchComplianceDataState::NotApplicable => write!(f, "NOT_APPLICABLE"),
+            PatchComplianceDataState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

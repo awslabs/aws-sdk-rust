@@ -96,3 +96,12 @@ impl CanvasOrientation {
         }
     }
 }
+impl ::std::fmt::Display for CanvasOrientation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CanvasOrientation::Landscape => write!(f, "Landscape"),
+            CanvasOrientation::Portrait => write!(f, "Portrait"),
+            CanvasOrientation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

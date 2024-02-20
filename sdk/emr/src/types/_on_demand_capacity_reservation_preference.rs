@@ -96,3 +96,12 @@ impl OnDemandCapacityReservationPreference {
         }
     }
 }
+impl ::std::fmt::Display for OnDemandCapacityReservationPreference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OnDemandCapacityReservationPreference::None => write!(f, "none"),
+            OnDemandCapacityReservationPreference::Open => write!(f, "open"),
+            OnDemandCapacityReservationPreference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

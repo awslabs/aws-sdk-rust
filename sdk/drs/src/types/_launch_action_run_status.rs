@@ -101,3 +101,13 @@ impl LaunchActionRunStatus {
         }
     }
 }
+impl ::std::fmt::Display for LaunchActionRunStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchActionRunStatus::Failed => write!(f, "FAILED"),
+            LaunchActionRunStatus::InProgress => write!(f, "IN_PROGRESS"),
+            LaunchActionRunStatus::Succeeded => write!(f, "SUCCEEDED"),
+            LaunchActionRunStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

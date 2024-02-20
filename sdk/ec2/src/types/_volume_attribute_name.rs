@@ -96,3 +96,12 @@ impl VolumeAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for VolumeAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeAttributeName::AutoEnableIo => write!(f, "autoEnableIO"),
+            VolumeAttributeName::ProductCodes => write!(f, "productCodes"),
+            VolumeAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl UpgradeStatus {
         }
     }
 }
+impl ::std::fmt::Display for UpgradeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpgradeStatus::Failed => write!(f, "FAILED"),
+            UpgradeStatus::InProgress => write!(f, "IN_PROGRESS"),
+            UpgradeStatus::Succeeded => write!(f, "SUCCEEDED"),
+            UpgradeStatus::SucceededWithIssues => write!(f, "SUCCEEDED_WITH_ISSUES"),
+            UpgradeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

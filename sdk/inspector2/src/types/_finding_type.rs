@@ -101,3 +101,13 @@ impl FindingType {
         }
     }
 }
+impl ::std::fmt::Display for FindingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingType::CodeVulnerability => write!(f, "CODE_VULNERABILITY"),
+            FindingType::NetworkReachability => write!(f, "NETWORK_REACHABILITY"),
+            FindingType::PackageVulnerability => write!(f, "PACKAGE_VULNERABILITY"),
+            FindingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

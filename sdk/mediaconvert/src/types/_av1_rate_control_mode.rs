@@ -91,3 +91,11 @@ impl Av1RateControlMode {
         }
     }
 }
+impl ::std::fmt::Display for Av1RateControlMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Av1RateControlMode::Qvbr => write!(f, "QVBR"),
+            Av1RateControlMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ProcessingS3UploadMode {
         }
     }
 }
+impl ::std::fmt::Display for ProcessingS3UploadMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProcessingS3UploadMode::Continuous => write!(f, "Continuous"),
+            ProcessingS3UploadMode::EndOfJob => write!(f, "EndOfJob"),
+            ProcessingS3UploadMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

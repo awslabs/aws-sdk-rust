@@ -106,3 +106,14 @@ impl OnboardStatus {
         }
     }
 }
+impl ::std::fmt::Display for OnboardStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OnboardStatus::Failed => write!(f, "FAILED"),
+            OnboardStatus::Initialized => write!(f, "INITIALIZED"),
+            OnboardStatus::Onboarded => write!(f, "ONBOARDED"),
+            OnboardStatus::Pending => write!(f, "PENDING"),
+            OnboardStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

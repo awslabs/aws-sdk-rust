@@ -96,3 +96,12 @@ impl JsonFileCompression {
         }
     }
 }
+impl ::std::fmt::Display for JsonFileCompression {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JsonFileCompression::Gzip => write!(f, "GZIP"),
+            JsonFileCompression::None => write!(f, "NONE"),
+            JsonFileCompression::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

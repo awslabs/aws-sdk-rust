@@ -96,3 +96,12 @@ impl AddressType {
         }
     }
 }
+impl ::std::fmt::Display for AddressType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AddressType::OperatingAddress => write!(f, "OPERATING_ADDRESS"),
+            AddressType::ShippingAddress => write!(f, "SHIPPING_ADDRESS"),
+            AddressType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

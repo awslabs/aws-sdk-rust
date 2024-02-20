@@ -96,3 +96,12 @@ impl AttackLayer {
         }
     }
 }
+impl ::std::fmt::Display for AttackLayer {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttackLayer::Application => write!(f, "APPLICATION"),
+            AttackLayer::Network => write!(f, "NETWORK"),
+            AttackLayer::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

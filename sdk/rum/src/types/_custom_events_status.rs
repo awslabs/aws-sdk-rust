@@ -96,3 +96,12 @@ impl CustomEventsStatus {
         }
     }
 }
+impl ::std::fmt::Display for CustomEventsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomEventsStatus::Disabled => write!(f, "DISABLED"),
+            CustomEventsStatus::Enabled => write!(f, "ENABLED"),
+            CustomEventsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

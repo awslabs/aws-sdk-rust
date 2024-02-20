@@ -91,3 +91,11 @@ impl Unit {
         }
     }
 }
+impl ::std::fmt::Display for Unit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Unit::Meters => write!(f, "METERS"),
+            Unit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

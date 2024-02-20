@@ -106,3 +106,14 @@ impl DataLakeStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataLakeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataLakeStatus::Completed => write!(f, "COMPLETED"),
+            DataLakeStatus::Failed => write!(f, "FAILED"),
+            DataLakeStatus::Initialized => write!(f, "INITIALIZED"),
+            DataLakeStatus::Pending => write!(f, "PENDING"),
+            DataLakeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

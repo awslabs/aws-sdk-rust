@@ -177,3 +177,25 @@ impl OperatingSystem {
         }
     }
 }
+impl ::std::fmt::Display for OperatingSystem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperatingSystem::AlmaLinux => write!(f, "ALMA_LINUX"),
+            OperatingSystem::AmazonLinux => write!(f, "AMAZON_LINUX"),
+            OperatingSystem::AmazonLinux2 => write!(f, "AMAZON_LINUX_2"),
+            OperatingSystem::AmazonLinux2022 => write!(f, "AMAZON_LINUX_2022"),
+            OperatingSystem::AmazonLinux2023 => write!(f, "AMAZON_LINUX_2023"),
+            OperatingSystem::CentOs => write!(f, "CENTOS"),
+            OperatingSystem::Debian => write!(f, "DEBIAN"),
+            OperatingSystem::MacOs => write!(f, "MACOS"),
+            OperatingSystem::OracleLinux => write!(f, "ORACLE_LINUX"),
+            OperatingSystem::Raspbian => write!(f, "RASPBIAN"),
+            OperatingSystem::RedhatEnterpriseLinux => write!(f, "REDHAT_ENTERPRISE_LINUX"),
+            OperatingSystem::RockyLinux => write!(f, "ROCKY_LINUX"),
+            OperatingSystem::Suse => write!(f, "SUSE"),
+            OperatingSystem::Ubuntu => write!(f, "UBUNTU"),
+            OperatingSystem::Windows => write!(f, "WINDOWS"),
+            OperatingSystem::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

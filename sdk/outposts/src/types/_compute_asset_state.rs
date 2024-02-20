@@ -101,3 +101,13 @@ impl ComputeAssetState {
         }
     }
 }
+impl ::std::fmt::Display for ComputeAssetState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComputeAssetState::Active => write!(f, "ACTIVE"),
+            ComputeAssetState::Isolated => write!(f, "ISOLATED"),
+            ComputeAssetState::Retiring => write!(f, "RETIRING"),
+            ComputeAssetState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -153,3 +153,21 @@ impl ConfluenceAttachmentFieldName {
         }
     }
 }
+impl ::std::fmt::Display for ConfluenceAttachmentFieldName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfluenceAttachmentFieldName::Author => write!(f, "AUTHOR"),
+            ConfluenceAttachmentFieldName::ContentType => write!(f, "CONTENT_TYPE"),
+            ConfluenceAttachmentFieldName::CreatedDate => write!(f, "CREATED_DATE"),
+            ConfluenceAttachmentFieldName::DisplayUrl => write!(f, "DISPLAY_URL"),
+            ConfluenceAttachmentFieldName::FileSize => write!(f, "FILE_SIZE"),
+            ConfluenceAttachmentFieldName::ItemType => write!(f, "ITEM_TYPE"),
+            ConfluenceAttachmentFieldName::ParentId => write!(f, "PARENT_ID"),
+            ConfluenceAttachmentFieldName::SpaceKey => write!(f, "SPACE_KEY"),
+            ConfluenceAttachmentFieldName::SpaceName => write!(f, "SPACE_NAME"),
+            ConfluenceAttachmentFieldName::Url => write!(f, "URL"),
+            ConfluenceAttachmentFieldName::Version => write!(f, "VERSION"),
+            ConfluenceAttachmentFieldName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

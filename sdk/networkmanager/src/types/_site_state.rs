@@ -106,3 +106,14 @@ impl SiteState {
         }
     }
 }
+impl ::std::fmt::Display for SiteState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SiteState::Available => write!(f, "AVAILABLE"),
+            SiteState::Deleting => write!(f, "DELETING"),
+            SiteState::Pending => write!(f, "PENDING"),
+            SiteState::Updating => write!(f, "UPDATING"),
+            SiteState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

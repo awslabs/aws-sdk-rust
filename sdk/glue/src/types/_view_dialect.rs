@@ -101,3 +101,13 @@ impl ViewDialect {
         }
     }
 }
+impl ::std::fmt::Display for ViewDialect {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ViewDialect::Athena => write!(f, "ATHENA"),
+            ViewDialect::Redshift => write!(f, "REDSHIFT"),
+            ViewDialect::Spark => write!(f, "SPARK"),
+            ViewDialect::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

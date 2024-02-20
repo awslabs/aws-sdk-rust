@@ -96,3 +96,12 @@ impl TargetSelection {
         }
     }
 }
+impl ::std::fmt::Display for TargetSelection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetSelection::Continuous => write!(f, "CONTINUOUS"),
+            TargetSelection::Snapshot => write!(f, "SNAPSHOT"),
+            TargetSelection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

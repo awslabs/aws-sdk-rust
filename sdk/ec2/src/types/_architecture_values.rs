@@ -111,3 +111,15 @@ impl ArchitectureValues {
         }
     }
 }
+impl ::std::fmt::Display for ArchitectureValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArchitectureValues::Arm64 => write!(f, "arm64"),
+            ArchitectureValues::Arm64Mac => write!(f, "arm64_mac"),
+            ArchitectureValues::I386 => write!(f, "i386"),
+            ArchitectureValues::X8664 => write!(f, "x86_64"),
+            ArchitectureValues::X8664Mac => write!(f, "x86_64_mac"),
+            ArchitectureValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl RetentionType {
         }
     }
 }
+impl ::std::fmt::Display for RetentionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetentionType::Delete => write!(f, "Delete"),
+            RetentionType::Retain => write!(f, "Retain"),
+            RetentionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

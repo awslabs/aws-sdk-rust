@@ -121,3 +121,17 @@ impl StepExecutionState {
         }
     }
 }
+impl ::std::fmt::Display for StepExecutionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StepExecutionState::Cancelled => write!(f, "CANCELLED"),
+            StepExecutionState::Completed => write!(f, "COMPLETED"),
+            StepExecutionState::Continue => write!(f, "CONTINUE"),
+            StepExecutionState::Failed => write!(f, "FAILED"),
+            StepExecutionState::Interrupted => write!(f, "INTERRUPTED"),
+            StepExecutionState::Pending => write!(f, "PENDING"),
+            StepExecutionState::Running => write!(f, "RUNNING"),
+            StepExecutionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

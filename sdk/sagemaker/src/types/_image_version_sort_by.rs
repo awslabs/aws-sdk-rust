@@ -101,3 +101,13 @@ impl ImageVersionSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ImageVersionSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageVersionSortBy::CreationTime => write!(f, "CREATION_TIME"),
+            ImageVersionSortBy::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
+            ImageVersionSortBy::Version => write!(f, "VERSION"),
+            ImageVersionSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

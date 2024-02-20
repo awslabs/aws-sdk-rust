@@ -123,3 +123,16 @@ impl TrafficDistributionGroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for TrafficDistributionGroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrafficDistributionGroupStatus::Active => write!(f, "ACTIVE"),
+            TrafficDistributionGroupStatus::CreationFailed => write!(f, "CREATION_FAILED"),
+            TrafficDistributionGroupStatus::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
+            TrafficDistributionGroupStatus::DeletionFailed => write!(f, "DELETION_FAILED"),
+            TrafficDistributionGroupStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
+            TrafficDistributionGroupStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            TrafficDistributionGroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

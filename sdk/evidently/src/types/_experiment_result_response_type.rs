@@ -117,3 +117,15 @@ impl ExperimentResultResponseType {
         }
     }
 }
+impl ::std::fmt::Display for ExperimentResultResponseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExperimentResultResponseType::ConfidenceIntervalLowerbound => write!(f, "ConfidenceIntervalLowerBound"),
+            ExperimentResultResponseType::ConfidenceIntervalUpperbound => write!(f, "ConfidenceIntervalUpperBound"),
+            ExperimentResultResponseType::Mean => write!(f, "Mean"),
+            ExperimentResultResponseType::PValue => write!(f, "PValue"),
+            ExperimentResultResponseType::TreatmentEffect => write!(f, "TreatmentEffect"),
+            ExperimentResultResponseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

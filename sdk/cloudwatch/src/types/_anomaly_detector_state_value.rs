@@ -101,3 +101,13 @@ impl AnomalyDetectorStateValue {
         }
     }
 }
+impl ::std::fmt::Display for AnomalyDetectorStateValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnomalyDetectorStateValue::PendingTraining => write!(f, "PENDING_TRAINING"),
+            AnomalyDetectorStateValue::Trained => write!(f, "TRAINED"),
+            AnomalyDetectorStateValue::TrainedInsufficientData => write!(f, "TRAINED_INSUFFICIENT_DATA"),
+            AnomalyDetectorStateValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

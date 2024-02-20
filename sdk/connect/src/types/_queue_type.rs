@@ -96,3 +96,12 @@ impl QueueType {
         }
     }
 }
+impl ::std::fmt::Display for QueueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueueType::Agent => write!(f, "AGENT"),
+            QueueType::Standard => write!(f, "STANDARD"),
+            QueueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

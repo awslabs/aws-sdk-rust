@@ -111,3 +111,15 @@ impl AnalyticsCommonFilterName {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsCommonFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsCommonFilterName::BotAliasId => write!(f, "BotAliasId"),
+            AnalyticsCommonFilterName::BotVersion => write!(f, "BotVersion"),
+            AnalyticsCommonFilterName::Channel => write!(f, "Channel"),
+            AnalyticsCommonFilterName::LocaleId => write!(f, "LocaleId"),
+            AnalyticsCommonFilterName::Modality => write!(f, "Modality"),
+            AnalyticsCommonFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

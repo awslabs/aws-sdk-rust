@@ -91,3 +91,11 @@ impl EbsResourceType {
         }
     }
 }
+impl ::std::fmt::Display for EbsResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EbsResourceType::Volume => write!(f, "volume"),
+            EbsResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

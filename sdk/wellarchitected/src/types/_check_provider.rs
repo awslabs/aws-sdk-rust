@@ -91,3 +91,11 @@ impl CheckProvider {
         }
     }
 }
+impl ::std::fmt::Display for CheckProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CheckProvider::TrustedAdvisor => write!(f, "TRUSTED_ADVISOR"),
+            CheckProvider::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

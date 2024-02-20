@@ -96,3 +96,12 @@ impl MulticastSupportValue {
         }
     }
 }
+impl ::std::fmt::Display for MulticastSupportValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MulticastSupportValue::Disable => write!(f, "disable"),
+            MulticastSupportValue::Enable => write!(f, "enable"),
+            MulticastSupportValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

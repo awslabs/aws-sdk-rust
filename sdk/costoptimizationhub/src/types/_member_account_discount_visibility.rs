@@ -96,3 +96,12 @@ impl MemberAccountDiscountVisibility {
         }
     }
 }
+impl ::std::fmt::Display for MemberAccountDiscountVisibility {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberAccountDiscountVisibility::All => write!(f, "All"),
+            MemberAccountDiscountVisibility::None => write!(f, "None"),
+            MemberAccountDiscountVisibility::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

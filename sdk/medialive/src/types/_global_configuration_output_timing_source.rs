@@ -96,3 +96,12 @@ impl GlobalConfigurationOutputTimingSource {
         }
     }
 }
+impl ::std::fmt::Display for GlobalConfigurationOutputTimingSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GlobalConfigurationOutputTimingSource::InputClock => write!(f, "INPUT_CLOCK"),
+            GlobalConfigurationOutputTimingSource::SystemClock => write!(f, "SYSTEM_CLOCK"),
+            GlobalConfigurationOutputTimingSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

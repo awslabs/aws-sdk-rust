@@ -96,3 +96,12 @@ impl RejectRuleBehavior {
         }
     }
 }
+impl ::std::fmt::Display for RejectRuleBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RejectRuleBehavior::All => write!(f, "ALL"),
+            RejectRuleBehavior::None => write!(f, "NONE"),
+            RejectRuleBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

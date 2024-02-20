@@ -140,3 +140,18 @@ impl ColorSpaceConversion {
         }
     }
 }
+impl ::std::fmt::Display for ColorSpaceConversion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColorSpaceConversion::Force601 => write!(f, "FORCE_601"),
+            ColorSpaceConversion::Force709 => write!(f, "FORCE_709"),
+            ColorSpaceConversion::ForceHdr10 => write!(f, "FORCE_HDR10"),
+            ColorSpaceConversion::ForceHlg2020 => write!(f, "FORCE_HLG_2020"),
+            ColorSpaceConversion::ForceP3D65Hdr => write!(f, "FORCE_P3D65_HDR"),
+            ColorSpaceConversion::ForceP3D65Sdr => write!(f, "FORCE_P3D65_SDR"),
+            ColorSpaceConversion::ForceP3Dci => write!(f, "FORCE_P3DCI"),
+            ColorSpaceConversion::None => write!(f, "NONE"),
+            ColorSpaceConversion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl R53HostedZoneDeletionStateCode {
         }
     }
 }
+impl ::std::fmt::Display for R53HostedZoneDeletionStateCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            R53HostedZoneDeletionStateCode::Failed => write!(f, "FAILED"),
+            R53HostedZoneDeletionStateCode::Pending => write!(f, "PENDING"),
+            R53HostedZoneDeletionStateCode::Started => write!(f, "STARTED"),
+            R53HostedZoneDeletionStateCode::Succeeded => write!(f, "SUCCEEDED"),
+            R53HostedZoneDeletionStateCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

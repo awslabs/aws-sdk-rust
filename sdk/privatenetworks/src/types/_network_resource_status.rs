@@ -141,3 +141,19 @@ impl NetworkResourceStatus {
         }
     }
 }
+impl ::std::fmt::Display for NetworkResourceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkResourceStatus::Available => write!(f, "AVAILABLE"),
+            NetworkResourceStatus::CreatingShippingLabel => write!(f, "CREATING_SHIPPING_LABEL"),
+            NetworkResourceStatus::Deleted => write!(f, "DELETED"),
+            NetworkResourceStatus::Deleting => write!(f, "DELETING"),
+            NetworkResourceStatus::Pending => write!(f, "PENDING"),
+            NetworkResourceStatus::PendingReturn => write!(f, "PENDING_RETURN"),
+            NetworkResourceStatus::Provisioned => write!(f, "PROVISIONED"),
+            NetworkResourceStatus::Provisioning => write!(f, "PROVISIONING"),
+            NetworkResourceStatus::Shipped => write!(f, "SHIPPED"),
+            NetworkResourceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AuditResults {
         }
     }
 }
+impl ::std::fmt::Display for AuditResults {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditResults::Healthy => write!(f, "HEALTHY"),
+            AuditResults::Unhealthy => write!(f, "UNHEALTHY"),
+            AuditResults::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

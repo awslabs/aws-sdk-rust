@@ -129,3 +129,17 @@ impl ComponentStatus {
         }
     }
 }
+impl ::std::fmt::Display for ComponentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComponentStatus::Activated => write!(f, "ACTIVATED"),
+            ComponentStatus::Running => write!(f, "RUNNING"),
+            ComponentStatus::RunningWithError => write!(f, "RUNNING_WITH_ERROR"),
+            ComponentStatus::Starting => write!(f, "STARTING"),
+            ComponentStatus::Stopped => write!(f, "STOPPED"),
+            ComponentStatus::Stopping => write!(f, "STOPPING"),
+            ComponentStatus::Undefined => write!(f, "UNDEFINED"),
+            ComponentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

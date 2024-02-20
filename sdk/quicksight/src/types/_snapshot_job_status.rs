@@ -106,3 +106,14 @@ impl SnapshotJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for SnapshotJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapshotJobStatus::Completed => write!(f, "COMPLETED"),
+            SnapshotJobStatus::Failed => write!(f, "FAILED"),
+            SnapshotJobStatus::Queued => write!(f, "QUEUED"),
+            SnapshotJobStatus::Running => write!(f, "RUNNING"),
+            SnapshotJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl EncryptionMethod {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionMethod::Aes128 => write!(f, "AES_128"),
+            EncryptionMethod::SampleAes => write!(f, "SAMPLE_AES"),
+            EncryptionMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

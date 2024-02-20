@@ -96,3 +96,12 @@ impl AdditionalOptionKeys {
         }
     }
 }
+impl ::std::fmt::Display for AdditionalOptionKeys {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdditionalOptionKeys::ObservationsOption => write!(f, "observations.scope"),
+            AdditionalOptionKeys::CacheOption => write!(f, "performanceTuning.caching"),
+            AdditionalOptionKeys::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

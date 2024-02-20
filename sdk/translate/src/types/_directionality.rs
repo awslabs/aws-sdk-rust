@@ -96,3 +96,12 @@ impl Directionality {
         }
     }
 }
+impl ::std::fmt::Display for Directionality {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Directionality::Multi => write!(f, "MULTI"),
+            Directionality::Uni => write!(f, "UNI"),
+            Directionality::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

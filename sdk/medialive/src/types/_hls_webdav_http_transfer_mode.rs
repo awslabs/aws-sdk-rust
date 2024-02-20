@@ -96,3 +96,12 @@ impl HlsWebdavHttpTransferMode {
         }
     }
 }
+impl ::std::fmt::Display for HlsWebdavHttpTransferMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsWebdavHttpTransferMode::Chunked => write!(f, "CHUNKED"),
+            HlsWebdavHttpTransferMode::NonChunked => write!(f, "NON_CHUNKED"),
+            HlsWebdavHttpTransferMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

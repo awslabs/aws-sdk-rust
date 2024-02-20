@@ -147,3 +147,20 @@ impl SigningAlgorithmSpec {
         }
     }
 }
+impl ::std::fmt::Display for SigningAlgorithmSpec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SigningAlgorithmSpec::EcdsaSha256 => write!(f, "ECDSA_SHA_256"),
+            SigningAlgorithmSpec::EcdsaSha384 => write!(f, "ECDSA_SHA_384"),
+            SigningAlgorithmSpec::EcdsaSha512 => write!(f, "ECDSA_SHA_512"),
+            SigningAlgorithmSpec::RsassaPkcs1V15Sha256 => write!(f, "RSASSA_PKCS1_V1_5_SHA_256"),
+            SigningAlgorithmSpec::RsassaPkcs1V15Sha384 => write!(f, "RSASSA_PKCS1_V1_5_SHA_384"),
+            SigningAlgorithmSpec::RsassaPkcs1V15Sha512 => write!(f, "RSASSA_PKCS1_V1_5_SHA_512"),
+            SigningAlgorithmSpec::RsassaPssSha256 => write!(f, "RSASSA_PSS_SHA_256"),
+            SigningAlgorithmSpec::RsassaPssSha384 => write!(f, "RSASSA_PSS_SHA_384"),
+            SigningAlgorithmSpec::RsassaPssSha512 => write!(f, "RSASSA_PSS_SHA_512"),
+            SigningAlgorithmSpec::Sm2Dsa => write!(f, "SM2DSA"),
+            SigningAlgorithmSpec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

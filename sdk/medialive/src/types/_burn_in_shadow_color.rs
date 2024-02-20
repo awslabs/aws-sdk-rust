@@ -101,3 +101,13 @@ impl BurnInShadowColor {
         }
     }
 }
+impl ::std::fmt::Display for BurnInShadowColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurnInShadowColor::Black => write!(f, "BLACK"),
+            BurnInShadowColor::None => write!(f, "NONE"),
+            BurnInShadowColor::White => write!(f, "WHITE"),
+            BurnInShadowColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

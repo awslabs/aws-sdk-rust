@@ -111,3 +111,15 @@ impl LaunchActionCategory {
         }
     }
 }
+impl ::std::fmt::Display for LaunchActionCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchActionCategory::Configuration => write!(f, "CONFIGURATION"),
+            LaunchActionCategory::Monitoring => write!(f, "MONITORING"),
+            LaunchActionCategory::Other => write!(f, "OTHER"),
+            LaunchActionCategory::Security => write!(f, "SECURITY"),
+            LaunchActionCategory::Validation => write!(f, "VALIDATION"),
+            LaunchActionCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

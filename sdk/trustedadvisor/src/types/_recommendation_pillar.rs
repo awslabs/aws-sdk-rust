@@ -123,3 +123,16 @@ impl RecommendationPillar {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationPillar {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationPillar::CostOptimizing => write!(f, "cost_optimizing"),
+            RecommendationPillar::FaultTolerance => write!(f, "fault_tolerance"),
+            RecommendationPillar::OperationalExcellence => write!(f, "operational_excellence"),
+            RecommendationPillar::Performance => write!(f, "performance"),
+            RecommendationPillar::Security => write!(f, "security"),
+            RecommendationPillar::ServiceLimits => write!(f, "service_limits"),
+            RecommendationPillar::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl NetworkFilterKeys {
         }
     }
 }
+impl ::std::fmt::Display for NetworkFilterKeys {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkFilterKeys::Status => write!(f, "STATUS"),
+            NetworkFilterKeys::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

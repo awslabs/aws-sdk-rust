@@ -111,3 +111,15 @@ impl MemberType {
         }
     }
 }
+impl ::std::fmt::Display for MemberType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberType::Analysis => write!(f, "ANALYSIS"),
+            MemberType::Dashboard => write!(f, "DASHBOARD"),
+            MemberType::Dataset => write!(f, "DATASET"),
+            MemberType::Datasource => write!(f, "DATASOURCE"),
+            MemberType::Topic => write!(f, "TOPIC"),
+            MemberType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

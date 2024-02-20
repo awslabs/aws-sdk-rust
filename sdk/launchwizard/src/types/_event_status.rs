@@ -135,3 +135,18 @@ impl EventStatus {
         }
     }
 }
+impl ::std::fmt::Display for EventStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventStatus::Canceled => write!(f, "CANCELED"),
+            EventStatus::Canceling => write!(f, "CANCELING"),
+            EventStatus::Completed => write!(f, "COMPLETED"),
+            EventStatus::Created => write!(f, "CREATED"),
+            EventStatus::Failed => write!(f, "FAILED"),
+            EventStatus::InProgress => write!(f, "IN_PROGRESS"),
+            EventStatus::Pending => write!(f, "PENDING"),
+            EventStatus::TimedOut => write!(f, "TIMED_OUT"),
+            EventStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

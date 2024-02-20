@@ -126,3 +126,18 @@ impl JobComparator {
         }
     }
 }
+impl ::std::fmt::Display for JobComparator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobComparator::Contains => write!(f, "CONTAINS"),
+            JobComparator::Eq => write!(f, "EQ"),
+            JobComparator::Gt => write!(f, "GT"),
+            JobComparator::Gte => write!(f, "GTE"),
+            JobComparator::Lt => write!(f, "LT"),
+            JobComparator::Lte => write!(f, "LTE"),
+            JobComparator::Ne => write!(f, "NE"),
+            JobComparator::StartsWith => write!(f, "STARTS_WITH"),
+            JobComparator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

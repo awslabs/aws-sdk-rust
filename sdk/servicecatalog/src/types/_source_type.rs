@@ -91,3 +91,11 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::Codestar => write!(f, "CODESTAR"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

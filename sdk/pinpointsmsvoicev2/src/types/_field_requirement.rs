@@ -101,3 +101,13 @@ impl FieldRequirement {
         }
     }
 }
+impl ::std::fmt::Display for FieldRequirement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FieldRequirement::Conditional => write!(f, "CONDITIONAL"),
+            FieldRequirement::Optional => write!(f, "OPTIONAL"),
+            FieldRequirement::Required => write!(f, "REQUIRED"),
+            FieldRequirement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

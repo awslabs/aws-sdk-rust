@@ -96,3 +96,12 @@ impl TrainingRepositoryAccessMode {
         }
     }
 }
+impl ::std::fmt::Display for TrainingRepositoryAccessMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrainingRepositoryAccessMode::Platform => write!(f, "Platform"),
+            TrainingRepositoryAccessMode::Vpc => write!(f, "Vpc"),
+            TrainingRepositoryAccessMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

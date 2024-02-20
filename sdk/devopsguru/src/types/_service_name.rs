@@ -237,3 +237,35 @@ impl ServiceName {
         }
     }
 }
+impl ::std::fmt::Display for ServiceName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceName::ApiGateway => write!(f, "API_GATEWAY"),
+            ServiceName::ApplicationElb => write!(f, "APPLICATION_ELB"),
+            ServiceName::AutoScalingGroup => write!(f, "AUTO_SCALING_GROUP"),
+            ServiceName::CloudFront => write!(f, "CLOUD_FRONT"),
+            ServiceName::DynamoDb => write!(f, "DYNAMO_DB"),
+            ServiceName::Ec2 => write!(f, "EC2"),
+            ServiceName::Ecs => write!(f, "ECS"),
+            ServiceName::Eks => write!(f, "EKS"),
+            ServiceName::ElasticBeanstalk => write!(f, "ELASTIC_BEANSTALK"),
+            ServiceName::ElastiCache => write!(f, "ELASTI_CACHE"),
+            ServiceName::Elb => write!(f, "ELB"),
+            ServiceName::Es => write!(f, "ES"),
+            ServiceName::Kinesis => write!(f, "KINESIS"),
+            ServiceName::Lambda => write!(f, "LAMBDA"),
+            ServiceName::NatGateway => write!(f, "NAT_GATEWAY"),
+            ServiceName::NetworkElb => write!(f, "NETWORK_ELB"),
+            ServiceName::Rds => write!(f, "RDS"),
+            ServiceName::Redshift => write!(f, "REDSHIFT"),
+            ServiceName::Route53 => write!(f, "ROUTE_53"),
+            ServiceName::S3 => write!(f, "S3"),
+            ServiceName::SageMaker => write!(f, "SAGE_MAKER"),
+            ServiceName::Sns => write!(f, "SNS"),
+            ServiceName::Sqs => write!(f, "SQS"),
+            ServiceName::StepFunctions => write!(f, "STEP_FUNCTIONS"),
+            ServiceName::Swf => write!(f, "SWF"),
+            ServiceName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

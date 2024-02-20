@@ -96,3 +96,12 @@ impl EncoderProfile {
         }
     }
 }
+impl ::std::fmt::Display for EncoderProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncoderProfile::High => write!(f, "high"),
+            EncoderProfile::Main => write!(f, "main"),
+            EncoderProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

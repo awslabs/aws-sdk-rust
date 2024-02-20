@@ -111,3 +111,14 @@ impl RuleType {
         }
     }
 }
+impl ::std::fmt::Display for RuleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleType::AllowedRenditions => write!(f, "ALLOWED_RENDITIONS"),
+            RuleType::ForceIncludeRenditions => write!(f, "FORCE_INCLUDE_RENDITIONS"),
+            RuleType::MinBottomRenditionSize => write!(f, "MIN_BOTTOM_RENDITION_SIZE"),
+            RuleType::MinTopRenditionSize => write!(f, "MIN_TOP_RENDITION_SIZE"),
+            RuleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

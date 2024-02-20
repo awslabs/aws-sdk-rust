@@ -106,3 +106,14 @@ impl RateBasedStatementAggregateKeyType {
         }
     }
 }
+impl ::std::fmt::Display for RateBasedStatementAggregateKeyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RateBasedStatementAggregateKeyType::Constant => write!(f, "CONSTANT"),
+            RateBasedStatementAggregateKeyType::CustomKeys => write!(f, "CUSTOM_KEYS"),
+            RateBasedStatementAggregateKeyType::ForwardedIp => write!(f, "FORWARDED_IP"),
+            RateBasedStatementAggregateKeyType::Ip => write!(f, "IP"),
+            RateBasedStatementAggregateKeyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

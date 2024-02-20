@@ -96,3 +96,12 @@ impl AugmentedManifestsDocumentTypeFormat {
         }
     }
 }
+impl ::std::fmt::Display for AugmentedManifestsDocumentTypeFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AugmentedManifestsDocumentTypeFormat::PlainTextDocument => write!(f, "PLAIN_TEXT_DOCUMENT"),
+            AugmentedManifestsDocumentTypeFormat::SemiStructuredDocument => write!(f, "SEMI_STRUCTURED_DOCUMENT"),
+            AugmentedManifestsDocumentTypeFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

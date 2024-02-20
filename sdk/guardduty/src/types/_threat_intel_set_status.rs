@@ -121,3 +121,17 @@ impl ThreatIntelSetStatus {
         }
     }
 }
+impl ::std::fmt::Display for ThreatIntelSetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThreatIntelSetStatus::Activating => write!(f, "ACTIVATING"),
+            ThreatIntelSetStatus::Active => write!(f, "ACTIVE"),
+            ThreatIntelSetStatus::Deactivating => write!(f, "DEACTIVATING"),
+            ThreatIntelSetStatus::Deleted => write!(f, "DELETED"),
+            ThreatIntelSetStatus::DeletePending => write!(f, "DELETE_PENDING"),
+            ThreatIntelSetStatus::Error => write!(f, "ERROR"),
+            ThreatIntelSetStatus::Inactive => write!(f, "INACTIVE"),
+            ThreatIntelSetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

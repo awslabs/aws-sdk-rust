@@ -129,3 +129,17 @@ impl FilterName {
         }
     }
 }
+impl ::std::fmt::Display for FilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterName::BackupType => write!(f, "backup-type"),
+            FilterName::DataRepositoryType => write!(f, "data-repository-type"),
+            FilterName::FileCacheId => write!(f, "file-cache-id"),
+            FilterName::FileCacheType => write!(f, "file-cache-type"),
+            FilterName::FileSystemId => write!(f, "file-system-id"),
+            FilterName::FileSystemType => write!(f, "file-system-type"),
+            FilterName::VolumeId => write!(f, "volume-id"),
+            FilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

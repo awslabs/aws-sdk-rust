@@ -106,3 +106,14 @@ impl IpamComplianceStatus {
         }
     }
 }
+impl ::std::fmt::Display for IpamComplianceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamComplianceStatus::Compliant => write!(f, "compliant"),
+            IpamComplianceStatus::Ignored => write!(f, "ignored"),
+            IpamComplianceStatus::Noncompliant => write!(f, "noncompliant"),
+            IpamComplianceStatus::Unmanaged => write!(f, "unmanaged"),
+            IpamComplianceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

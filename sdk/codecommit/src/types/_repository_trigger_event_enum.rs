@@ -106,3 +106,14 @@ impl RepositoryTriggerEventEnum {
         }
     }
 }
+impl ::std::fmt::Display for RepositoryTriggerEventEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RepositoryTriggerEventEnum::All => write!(f, "all"),
+            RepositoryTriggerEventEnum::CreateReference => write!(f, "createReference"),
+            RepositoryTriggerEventEnum::DeleteReference => write!(f, "deleteReference"),
+            RepositoryTriggerEventEnum::UpdateReference => write!(f, "updateReference"),
+            RepositoryTriggerEventEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

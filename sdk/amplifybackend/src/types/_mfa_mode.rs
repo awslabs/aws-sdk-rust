@@ -101,3 +101,13 @@ impl MfaMode {
         }
     }
 }
+impl ::std::fmt::Display for MfaMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MfaMode::Off => write!(f, "OFF"),
+            MfaMode::On => write!(f, "ON"),
+            MfaMode::Optional => write!(f, "OPTIONAL"),
+            MfaMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

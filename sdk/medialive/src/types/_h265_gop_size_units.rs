@@ -96,3 +96,12 @@ impl H265GopSizeUnits {
         }
     }
 }
+impl ::std::fmt::Display for H265GopSizeUnits {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265GopSizeUnits::Frames => write!(f, "FRAMES"),
+            H265GopSizeUnits::Seconds => write!(f, "SECONDS"),
+            H265GopSizeUnits::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

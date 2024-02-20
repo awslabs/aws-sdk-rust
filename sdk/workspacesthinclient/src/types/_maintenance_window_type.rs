@@ -96,3 +96,12 @@ impl MaintenanceWindowType {
         }
     }
 }
+impl ::std::fmt::Display for MaintenanceWindowType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaintenanceWindowType::Custom => write!(f, "CUSTOM"),
+            MaintenanceWindowType::System => write!(f, "SYSTEM"),
+            MaintenanceWindowType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

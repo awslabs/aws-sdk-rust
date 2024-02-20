@@ -96,3 +96,12 @@ impl ThingConnectivityIndexingMode {
         }
     }
 }
+impl ::std::fmt::Display for ThingConnectivityIndexingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThingConnectivityIndexingMode::Off => write!(f, "OFF"),
+            ThingConnectivityIndexingMode::Status => write!(f, "STATUS"),
+            ThingConnectivityIndexingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

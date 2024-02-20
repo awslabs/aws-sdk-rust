@@ -106,3 +106,14 @@ impl S3ChecksumAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for S3ChecksumAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3ChecksumAlgorithm::Crc32 => write!(f, "CRC32"),
+            S3ChecksumAlgorithm::Crc32C => write!(f, "CRC32C"),
+            S3ChecksumAlgorithm::Sha1 => write!(f, "SHA1"),
+            S3ChecksumAlgorithm::Sha256 => write!(f, "SHA256"),
+            S3ChecksumAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

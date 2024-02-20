@@ -91,3 +91,11 @@ impl TargetProtectedQueryStatus {
         }
     }
 }
+impl ::std::fmt::Display for TargetProtectedQueryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetProtectedQueryStatus::Cancelled => write!(f, "CANCELLED"),
+            TargetProtectedQueryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

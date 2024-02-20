@@ -96,3 +96,12 @@ impl H265ParControl {
         }
     }
 }
+impl ::std::fmt::Display for H265ParControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265ParControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            H265ParControl::Specified => write!(f, "SPECIFIED"),
+            H265ParControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

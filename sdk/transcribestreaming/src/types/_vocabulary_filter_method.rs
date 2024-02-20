@@ -101,3 +101,13 @@ impl VocabularyFilterMethod {
         }
     }
 }
+impl ::std::fmt::Display for VocabularyFilterMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VocabularyFilterMethod::Mask => write!(f, "mask"),
+            VocabularyFilterMethod::Remove => write!(f, "remove"),
+            VocabularyFilterMethod::Tag => write!(f, "tag"),
+            VocabularyFilterMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

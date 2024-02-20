@@ -101,3 +101,13 @@ impl SslSupportMethod {
         }
     }
 }
+impl ::std::fmt::Display for SslSupportMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SslSupportMethod::SniOnly => write!(f, "sni-only"),
+            SslSupportMethod::StaticIp => write!(f, "static-ip"),
+            SslSupportMethod::Vip => write!(f, "vip"),
+            SslSupportMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

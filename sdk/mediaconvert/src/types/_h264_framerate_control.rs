@@ -96,3 +96,12 @@ impl H264FramerateControl {
         }
     }
 }
+impl ::std::fmt::Display for H264FramerateControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264FramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            H264FramerateControl::Specified => write!(f, "SPECIFIED"),
+            H264FramerateControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

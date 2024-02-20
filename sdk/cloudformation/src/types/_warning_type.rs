@@ -101,3 +101,13 @@ impl WarningType {
         }
     }
 }
+impl ::std::fmt::Display for WarningType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WarningType::MutuallyExclusiveProperties => write!(f, "MUTUALLY_EXCLUSIVE_PROPERTIES"),
+            WarningType::MutuallyExclusiveTypes => write!(f, "MUTUALLY_EXCLUSIVE_TYPES"),
+            WarningType::UnsupportedProperties => write!(f, "UNSUPPORTED_PROPERTIES"),
+            WarningType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

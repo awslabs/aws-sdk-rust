@@ -96,3 +96,12 @@ impl TableTagPolicyLfPermission {
         }
     }
 }
+impl ::std::fmt::Display for TableTagPolicyLfPermission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableTagPolicyLfPermission::Describe => write!(f, "DESCRIBE"),
+            TableTagPolicyLfPermission::Select => write!(f, "SELECT"),
+            TableTagPolicyLfPermission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

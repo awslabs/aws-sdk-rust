@@ -96,3 +96,12 @@ impl SearchQueryScopeType {
         }
     }
 }
+impl ::std::fmt::Display for SearchQueryScopeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchQueryScopeType::Content => write!(f, "CONTENT"),
+            SearchQueryScopeType::Name => write!(f, "NAME"),
+            SearchQueryScopeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

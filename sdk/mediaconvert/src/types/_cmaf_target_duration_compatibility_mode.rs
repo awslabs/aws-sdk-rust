@@ -96,3 +96,12 @@ impl CmafTargetDurationCompatibilityMode {
         }
     }
 }
+impl ::std::fmt::Display for CmafTargetDurationCompatibilityMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafTargetDurationCompatibilityMode::Legacy => write!(f, "LEGACY"),
+            CmafTargetDurationCompatibilityMode::SpecCompliant => write!(f, "SPEC_COMPLIANT"),
+            CmafTargetDurationCompatibilityMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

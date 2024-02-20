@@ -96,3 +96,12 @@ impl EnvironmentInfoType {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentInfoType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentInfoType::Bundle => write!(f, "bundle"),
+            EnvironmentInfoType::Tail => write!(f, "tail"),
+            EnvironmentInfoType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

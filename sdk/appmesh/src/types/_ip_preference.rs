@@ -106,3 +106,14 @@ impl IpPreference {
         }
     }
 }
+impl ::std::fmt::Display for IpPreference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpPreference::IPv4Only => write!(f, "IPv4_ONLY"),
+            IpPreference::IPv4Preferred => write!(f, "IPv4_PREFERRED"),
+            IpPreference::IPv6Only => write!(f, "IPv6_ONLY"),
+            IpPreference::IPv6Preferred => write!(f, "IPv6_PREFERRED"),
+            IpPreference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

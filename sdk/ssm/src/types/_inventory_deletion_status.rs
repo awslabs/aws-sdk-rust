@@ -96,3 +96,12 @@ impl InventoryDeletionStatus {
         }
     }
 }
+impl ::std::fmt::Display for InventoryDeletionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InventoryDeletionStatus::Complete => write!(f, "Complete"),
+            InventoryDeletionStatus::InProgress => write!(f, "InProgress"),
+            InventoryDeletionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

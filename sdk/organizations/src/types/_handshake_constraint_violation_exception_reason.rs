@@ -157,3 +157,28 @@ impl HandshakeConstraintViolationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for HandshakeConstraintViolationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HandshakeConstraintViolationExceptionReason::AccountNumberLimitExceeded => write!(f, "ACCOUNT_NUMBER_LIMIT_EXCEEDED"),
+            HandshakeConstraintViolationExceptionReason::AlreadyInAnOrganization => write!(f, "ALREADY_IN_AN_ORGANIZATION"),
+            HandshakeConstraintViolationExceptionReason::HandshakeRateLimitExceeded => write!(f, "HANDSHAKE_RATE_LIMIT_EXCEEDED"),
+            HandshakeConstraintViolationExceptionReason::InviteDisabledDuringEnableAllFeatures => {
+                write!(f, "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES")
+            }
+            HandshakeConstraintViolationExceptionReason::ManagementAccountEmailNotVerified => write!(f, "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED"),
+            HandshakeConstraintViolationExceptionReason::OrganizationAlreadyHasAllFeatures => write!(f, "ORGANIZATION_ALREADY_HAS_ALL_FEATURES"),
+            HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord => {
+                write!(f, "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD")
+            }
+            HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration => {
+                write!(f, "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION")
+            }
+            HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded => {
+                write!(f, "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED")
+            }
+            HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => write!(f, "PAYMENT_INSTRUMENT_REQUIRED"),
+            HandshakeConstraintViolationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

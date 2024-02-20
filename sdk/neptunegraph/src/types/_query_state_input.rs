@@ -106,3 +106,14 @@ impl QueryStateInput {
         }
     }
 }
+impl ::std::fmt::Display for QueryStateInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryStateInput::All => write!(f, "ALL"),
+            QueryStateInput::Cancelling => write!(f, "CANCELLING"),
+            QueryStateInput::Running => write!(f, "RUNNING"),
+            QueryStateInput::Waiting => write!(f, "WAITING"),
+            QueryStateInput::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

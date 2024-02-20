@@ -91,3 +91,11 @@ impl ModelSource {
         }
     }
 }
+impl ::std::fmt::Display for ModelSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelSource::Sagemaker => write!(f, "SAGEMAKER"),
+            ModelSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

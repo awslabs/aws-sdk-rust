@@ -297,3 +297,45 @@ impl VpcRegion {
         }
     }
 }
+impl ::std::fmt::Display for VpcRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcRegion::AfSouth1 => write!(f, "af-south-1"),
+            VpcRegion::ApEast1 => write!(f, "ap-east-1"),
+            VpcRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
+            VpcRegion::ApNortheast2 => write!(f, "ap-northeast-2"),
+            VpcRegion::ApNortheast3 => write!(f, "ap-northeast-3"),
+            VpcRegion::ApSouth1 => write!(f, "ap-south-1"),
+            VpcRegion::ApSouth2 => write!(f, "ap-south-2"),
+            VpcRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
+            VpcRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
+            VpcRegion::ApSoutheast3 => write!(f, "ap-southeast-3"),
+            VpcRegion::ApSoutheast4 => write!(f, "ap-southeast-4"),
+            VpcRegion::CaCentral1 => write!(f, "ca-central-1"),
+            VpcRegion::CaWest1 => write!(f, "ca-west-1"),
+            VpcRegion::CnNorth1 => write!(f, "cn-north-1"),
+            VpcRegion::EuCentral1 => write!(f, "eu-central-1"),
+            VpcRegion::EuCentral2 => write!(f, "eu-central-2"),
+            VpcRegion::EuNorth1 => write!(f, "eu-north-1"),
+            VpcRegion::EuSouth1 => write!(f, "eu-south-1"),
+            VpcRegion::EuSouth2 => write!(f, "eu-south-2"),
+            VpcRegion::EuWest1 => write!(f, "eu-west-1"),
+            VpcRegion::EuWest2 => write!(f, "eu-west-2"),
+            VpcRegion::EuWest3 => write!(f, "eu-west-3"),
+            VpcRegion::IlCentral1 => write!(f, "il-central-1"),
+            VpcRegion::MeCentral1 => write!(f, "me-central-1"),
+            VpcRegion::MeSouth1 => write!(f, "me-south-1"),
+            VpcRegion::SaEast1 => write!(f, "sa-east-1"),
+            VpcRegion::UsEast1 => write!(f, "us-east-1"),
+            VpcRegion::UsEast2 => write!(f, "us-east-2"),
+            VpcRegion::UsGovEast1 => write!(f, "us-gov-east-1"),
+            VpcRegion::UsGovWest1 => write!(f, "us-gov-west-1"),
+            VpcRegion::UsIsoEast1 => write!(f, "us-iso-east-1"),
+            VpcRegion::UsIsoWest1 => write!(f, "us-iso-west-1"),
+            VpcRegion::UsIsobEast1 => write!(f, "us-isob-east-1"),
+            VpcRegion::UsWest1 => write!(f, "us-west-1"),
+            VpcRegion::UsWest2 => write!(f, "us-west-2"),
+            VpcRegion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

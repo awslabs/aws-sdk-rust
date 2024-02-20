@@ -96,3 +96,12 @@ impl WarmTierState {
         }
     }
 }
+impl ::std::fmt::Display for WarmTierState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WarmTierState::Disabled => write!(f, "DISABLED"),
+            WarmTierState::Enabled => write!(f, "ENABLED"),
+            WarmTierState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

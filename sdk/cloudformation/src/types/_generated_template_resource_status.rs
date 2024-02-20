@@ -106,3 +106,14 @@ impl GeneratedTemplateResourceStatus {
         }
     }
 }
+impl ::std::fmt::Display for GeneratedTemplateResourceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GeneratedTemplateResourceStatus::Complete => write!(f, "COMPLETE"),
+            GeneratedTemplateResourceStatus::Failed => write!(f, "FAILED"),
+            GeneratedTemplateResourceStatus::InProgress => write!(f, "IN_PROGRESS"),
+            GeneratedTemplateResourceStatus::Pending => write!(f, "PENDING"),
+            GeneratedTemplateResourceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AuditReportResponseFormat {
         }
     }
 }
+impl ::std::fmt::Display for AuditReportResponseFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditReportResponseFormat::Csv => write!(f, "CSV"),
+            AuditReportResponseFormat::Json => write!(f, "JSON"),
+            AuditReportResponseFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

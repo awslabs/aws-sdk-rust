@@ -147,3 +147,20 @@ impl SimulationJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for SimulationJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SimulationJobStatus::Canceled => write!(f, "Canceled"),
+            SimulationJobStatus::Completed => write!(f, "Completed"),
+            SimulationJobStatus::Failed => write!(f, "Failed"),
+            SimulationJobStatus::Pending => write!(f, "Pending"),
+            SimulationJobStatus::Preparing => write!(f, "Preparing"),
+            SimulationJobStatus::Restarting => write!(f, "Restarting"),
+            SimulationJobStatus::Running => write!(f, "Running"),
+            SimulationJobStatus::RunningFailed => write!(f, "RunningFailed"),
+            SimulationJobStatus::Terminated => write!(f, "Terminated"),
+            SimulationJobStatus::Terminating => write!(f, "Terminating"),
+            SimulationJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl PackageImportJobType {
         }
     }
 }
+impl ::std::fmt::Display for PackageImportJobType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageImportJobType::MarketplaceNodePackageVersion => write!(f, "MARKETPLACE_NODE_PACKAGE_VERSION"),
+            PackageImportJobType::NodePackageVersion => write!(f, "NODE_PACKAGE_VERSION"),
+            PackageImportJobType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

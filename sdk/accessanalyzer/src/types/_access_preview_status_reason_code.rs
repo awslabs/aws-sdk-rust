@@ -96,3 +96,12 @@ impl AccessPreviewStatusReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for AccessPreviewStatusReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessPreviewStatusReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            AccessPreviewStatusReasonCode::InvalidConfiguration => write!(f, "INVALID_CONFIGURATION"),
+            AccessPreviewStatusReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

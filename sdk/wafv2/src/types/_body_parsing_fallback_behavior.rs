@@ -101,3 +101,13 @@ impl BodyParsingFallbackBehavior {
         }
     }
 }
+impl ::std::fmt::Display for BodyParsingFallbackBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BodyParsingFallbackBehavior::EvaluateAsString => write!(f, "EVALUATE_AS_STRING"),
+            BodyParsingFallbackBehavior::Match => write!(f, "MATCH"),
+            BodyParsingFallbackBehavior::NoMatch => write!(f, "NO_MATCH"),
+            BodyParsingFallbackBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

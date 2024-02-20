@@ -96,3 +96,12 @@ impl ConsistencyLevel {
         }
     }
 }
+impl ::std::fmt::Display for ConsistencyLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConsistencyLevel::Eventual => write!(f, "EVENTUAL"),
+            ConsistencyLevel::Serializable => write!(f, "SERIALIZABLE"),
+            ConsistencyLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

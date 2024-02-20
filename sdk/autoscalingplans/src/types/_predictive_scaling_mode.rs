@@ -96,3 +96,12 @@ impl PredictiveScalingMode {
         }
     }
 }
+impl ::std::fmt::Display for PredictiveScalingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PredictiveScalingMode::ForecastAndScale => write!(f, "ForecastAndScale"),
+            PredictiveScalingMode::ForecastOnly => write!(f, "ForecastOnly"),
+            PredictiveScalingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

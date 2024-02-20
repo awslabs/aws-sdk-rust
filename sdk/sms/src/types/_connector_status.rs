@@ -96,3 +96,12 @@ impl ConnectorStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConnectorStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectorStatus::Healthy => write!(f, "HEALTHY"),
+            ConnectorStatus::Unhealthy => write!(f, "UNHEALTHY"),
+            ConnectorStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

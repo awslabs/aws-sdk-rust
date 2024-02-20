@@ -96,3 +96,12 @@ impl InputScanType {
         }
     }
 }
+impl ::std::fmt::Display for InputScanType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputScanType::Auto => write!(f, "AUTO"),
+            InputScanType::Psf => write!(f, "PSF"),
+            InputScanType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ArcThicknessOptions {
         }
     }
 }
+impl ::std::fmt::Display for ArcThicknessOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArcThicknessOptions::Large => write!(f, "LARGE"),
+            ArcThicknessOptions::Medium => write!(f, "MEDIUM"),
+            ArcThicknessOptions::Small => write!(f, "SMALL"),
+            ArcThicknessOptions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

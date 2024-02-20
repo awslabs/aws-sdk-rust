@@ -96,3 +96,12 @@ impl OutdatedInstancesStrategy {
         }
     }
 }
+impl ::std::fmt::Display for OutdatedInstancesStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutdatedInstancesStrategy::Ignore => write!(f, "IGNORE"),
+            OutdatedInstancesStrategy::Update => write!(f, "UPDATE"),
+            OutdatedInstancesStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

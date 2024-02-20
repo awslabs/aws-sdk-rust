@@ -96,3 +96,12 @@ impl QuerySuggestionsStatus {
         }
     }
 }
+impl ::std::fmt::Display for QuerySuggestionsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuerySuggestionsStatus::Active => write!(f, "ACTIVE"),
+            QuerySuggestionsStatus::Updating => write!(f, "UPDATING"),
+            QuerySuggestionsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

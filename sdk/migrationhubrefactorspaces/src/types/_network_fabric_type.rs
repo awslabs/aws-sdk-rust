@@ -96,3 +96,12 @@ impl NetworkFabricType {
         }
     }
 }
+impl ::std::fmt::Display for NetworkFabricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkFabricType::None => write!(f, "NONE"),
+            NetworkFabricType::TransitGateway => write!(f, "TRANSIT_GATEWAY"),
+            NetworkFabricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

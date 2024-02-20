@@ -96,3 +96,12 @@ impl LambdaIsolationMode {
         }
     }
 }
+impl ::std::fmt::Display for LambdaIsolationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaIsolationMode::GreengrassContainer => write!(f, "GreengrassContainer"),
+            LambdaIsolationMode::NoContainer => write!(f, "NoContainer"),
+            LambdaIsolationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ModelType {
         }
     }
 }
+impl ::std::fmt::Display for ModelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelType::DocumentClassifier => write!(f, "DOCUMENT_CLASSIFIER"),
+            ModelType::EntityRecognizer => write!(f, "ENTITY_RECOGNIZER"),
+            ModelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

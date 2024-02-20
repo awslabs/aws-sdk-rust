@@ -101,3 +101,13 @@ impl InputResolution {
         }
     }
 }
+impl ::std::fmt::Display for InputResolution {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputResolution::Hd => write!(f, "HD"),
+            InputResolution::Sd => write!(f, "SD"),
+            InputResolution::Uhd => write!(f, "UHD"),
+            InputResolution::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

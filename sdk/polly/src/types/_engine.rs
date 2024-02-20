@@ -101,3 +101,13 @@ impl Engine {
         }
     }
 }
+impl ::std::fmt::Display for Engine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Engine::LongForm => write!(f, "long-form"),
+            Engine::Neural => write!(f, "neural"),
+            Engine::Standard => write!(f, "standard"),
+            Engine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

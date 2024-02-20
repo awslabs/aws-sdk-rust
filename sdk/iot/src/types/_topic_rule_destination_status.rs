@@ -111,3 +111,15 @@ impl TopicRuleDestinationStatus {
         }
     }
 }
+impl ::std::fmt::Display for TopicRuleDestinationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TopicRuleDestinationStatus::Deleting => write!(f, "DELETING"),
+            TopicRuleDestinationStatus::Disabled => write!(f, "DISABLED"),
+            TopicRuleDestinationStatus::Enabled => write!(f, "ENABLED"),
+            TopicRuleDestinationStatus::Error => write!(f, "ERROR"),
+            TopicRuleDestinationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            TopicRuleDestinationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

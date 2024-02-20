@@ -106,3 +106,14 @@ impl AuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationType::Apikey => write!(f, "APIKEY"),
+            AuthenticationType::Basic => write!(f, "BASIC"),
+            AuthenticationType::Custom => write!(f, "CUSTOM"),
+            AuthenticationType::Oauth2 => write!(f, "OAUTH2"),
+            AuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

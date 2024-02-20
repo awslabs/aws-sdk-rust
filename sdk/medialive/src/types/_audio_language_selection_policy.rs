@@ -96,3 +96,12 @@ impl AudioLanguageSelectionPolicy {
         }
     }
 }
+impl ::std::fmt::Display for AudioLanguageSelectionPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioLanguageSelectionPolicy::Loose => write!(f, "LOOSE"),
+            AudioLanguageSelectionPolicy::Strict => write!(f, "STRICT"),
+            AudioLanguageSelectionPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

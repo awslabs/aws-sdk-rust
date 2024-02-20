@@ -96,3 +96,12 @@ impl EncryptionAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionAlgorithm::Ecdsa => write!(f, "ECDSA"),
+            EncryptionAlgorithm::Rsa => write!(f, "RSA"),
+            EncryptionAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

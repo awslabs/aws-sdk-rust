@@ -111,3 +111,15 @@ impl SummaryStatus {
         }
     }
 }
+impl ::std::fmt::Display for SummaryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SummaryStatus::Impaired => write!(f, "impaired"),
+            SummaryStatus::Initializing => write!(f, "initializing"),
+            SummaryStatus::InsufficientData => write!(f, "insufficient-data"),
+            SummaryStatus::NotApplicable => write!(f, "not-applicable"),
+            SummaryStatus::Ok => write!(f, "ok"),
+            SummaryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

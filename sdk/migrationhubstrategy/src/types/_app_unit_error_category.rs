@@ -117,3 +117,15 @@ impl AppUnitErrorCategory {
         }
     }
 }
+impl ::std::fmt::Display for AppUnitErrorCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppUnitErrorCategory::ConnectivityError => write!(f, "CONNECTIVITY_ERROR"),
+            AppUnitErrorCategory::CredentialError => write!(f, "CREDENTIAL_ERROR"),
+            AppUnitErrorCategory::OtherError => write!(f, "OTHER_ERROR"),
+            AppUnitErrorCategory::PermissionError => write!(f, "PERMISSION_ERROR"),
+            AppUnitErrorCategory::UnsupportedError => write!(f, "UNSUPPORTED_ERROR"),
+            AppUnitErrorCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

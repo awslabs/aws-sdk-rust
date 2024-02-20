@@ -116,3 +116,16 @@ impl DvbSubDestinationOutlineColor {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubDestinationOutlineColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubDestinationOutlineColor::Black => write!(f, "BLACK"),
+            DvbSubDestinationOutlineColor::Blue => write!(f, "BLUE"),
+            DvbSubDestinationOutlineColor::Green => write!(f, "GREEN"),
+            DvbSubDestinationOutlineColor::Red => write!(f, "RED"),
+            DvbSubDestinationOutlineColor::White => write!(f, "WHITE"),
+            DvbSubDestinationOutlineColor::Yellow => write!(f, "YELLOW"),
+            DvbSubDestinationOutlineColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

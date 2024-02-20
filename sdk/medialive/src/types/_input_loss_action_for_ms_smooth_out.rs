@@ -96,3 +96,12 @@ impl InputLossActionForMsSmoothOut {
         }
     }
 }
+impl ::std::fmt::Display for InputLossActionForMsSmoothOut {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputLossActionForMsSmoothOut::EmitOutput => write!(f, "EMIT_OUTPUT"),
+            InputLossActionForMsSmoothOut::PauseOutput => write!(f, "PAUSE_OUTPUT"),
+            InputLossActionForMsSmoothOut::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

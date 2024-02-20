@@ -91,3 +91,11 @@ impl FeedbackKey {
         }
     }
 }
+impl ::std::fmt::Display for FeedbackKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeedbackKey::InsightsFeedback => write!(f, "INSIGHTS_FEEDBACK"),
+            FeedbackKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

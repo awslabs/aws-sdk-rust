@@ -96,3 +96,12 @@ impl ProtocolType {
         }
     }
 }
+impl ::std::fmt::Display for ProtocolType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProtocolType::Http => write!(f, "HTTP"),
+            ProtocolType::Websocket => write!(f, "WEBSOCKET"),
+            ProtocolType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

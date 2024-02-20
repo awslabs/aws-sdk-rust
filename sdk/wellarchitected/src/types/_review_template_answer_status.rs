@@ -96,3 +96,12 @@ impl ReviewTemplateAnswerStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReviewTemplateAnswerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReviewTemplateAnswerStatus::Answered => write!(f, "ANSWERED"),
+            ReviewTemplateAnswerStatus::Unanswered => write!(f, "UNANSWERED"),
+            ReviewTemplateAnswerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

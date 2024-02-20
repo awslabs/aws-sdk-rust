@@ -96,3 +96,12 @@ impl ChannelMembershipType {
         }
     }
 }
+impl ::std::fmt::Display for ChannelMembershipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelMembershipType::Default => write!(f, "DEFAULT"),
+            ChannelMembershipType::Hidden => write!(f, "HIDDEN"),
+            ChannelMembershipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

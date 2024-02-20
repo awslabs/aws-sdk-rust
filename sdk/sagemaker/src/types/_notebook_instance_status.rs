@@ -121,3 +121,17 @@ impl NotebookInstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for NotebookInstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotebookInstanceStatus::Deleting => write!(f, "Deleting"),
+            NotebookInstanceStatus::Failed => write!(f, "Failed"),
+            NotebookInstanceStatus::InService => write!(f, "InService"),
+            NotebookInstanceStatus::Pending => write!(f, "Pending"),
+            NotebookInstanceStatus::Stopped => write!(f, "Stopped"),
+            NotebookInstanceStatus::Stopping => write!(f, "Stopping"),
+            NotebookInstanceStatus::Updating => write!(f, "Updating"),
+            NotebookInstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

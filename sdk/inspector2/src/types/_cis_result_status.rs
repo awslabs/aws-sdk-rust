@@ -101,3 +101,13 @@ impl CisResultStatus {
         }
     }
 }
+impl ::std::fmt::Display for CisResultStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisResultStatus::Failed => write!(f, "FAILED"),
+            CisResultStatus::Passed => write!(f, "PASSED"),
+            CisResultStatus::Skipped => write!(f, "SKIPPED"),
+            CisResultStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

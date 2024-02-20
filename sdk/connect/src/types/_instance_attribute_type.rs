@@ -153,3 +153,21 @@ impl InstanceAttributeType {
         }
     }
 }
+impl ::std::fmt::Display for InstanceAttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceAttributeType::AutoResolveBestVoices => write!(f, "AUTO_RESOLVE_BEST_VOICES"),
+            InstanceAttributeType::ContactflowLogs => write!(f, "CONTACTFLOW_LOGS"),
+            InstanceAttributeType::ContactLens => write!(f, "CONTACT_LENS"),
+            InstanceAttributeType::EarlyMedia => write!(f, "EARLY_MEDIA"),
+            InstanceAttributeType::EnhancedChatMonitoring => write!(f, "ENHANCED_CHAT_MONITORING"),
+            InstanceAttributeType::EnhancedContactMonitoring => write!(f, "ENHANCED_CONTACT_MONITORING"),
+            InstanceAttributeType::HighVolumeOutbound => write!(f, "HIGH_VOLUME_OUTBOUND"),
+            InstanceAttributeType::InboundCalls => write!(f, "INBOUND_CALLS"),
+            InstanceAttributeType::MultiPartyConference => write!(f, "MULTI_PARTY_CONFERENCE"),
+            InstanceAttributeType::OutboundCalls => write!(f, "OUTBOUND_CALLS"),
+            InstanceAttributeType::UseCustomTtsVoices => write!(f, "USE_CUSTOM_TTS_VOICES"),
+            InstanceAttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

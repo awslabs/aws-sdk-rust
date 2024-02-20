@@ -189,3 +189,27 @@ impl CodegenGenericDataFieldDataType {
         }
     }
 }
+impl ::std::fmt::Display for CodegenGenericDataFieldDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CodegenGenericDataFieldDataType::AwsDate => write!(f, "AWSDate"),
+            CodegenGenericDataFieldDataType::AwsDateTime => write!(f, "AWSDateTime"),
+            CodegenGenericDataFieldDataType::AwsEmail => write!(f, "AWSEmail"),
+            CodegenGenericDataFieldDataType::AwsIpAddress => write!(f, "AWSIPAddress"),
+            CodegenGenericDataFieldDataType::AwsJson => write!(f, "AWSJSON"),
+            CodegenGenericDataFieldDataType::AwsPhone => write!(f, "AWSPhone"),
+            CodegenGenericDataFieldDataType::AwsTime => write!(f, "AWSTime"),
+            CodegenGenericDataFieldDataType::AwsTimestamp => write!(f, "AWSTimestamp"),
+            CodegenGenericDataFieldDataType::AwsUrl => write!(f, "AWSURL"),
+            CodegenGenericDataFieldDataType::Boolean => write!(f, "Boolean"),
+            CodegenGenericDataFieldDataType::Enum => write!(f, "Enum"),
+            CodegenGenericDataFieldDataType::Float => write!(f, "Float"),
+            CodegenGenericDataFieldDataType::Id => write!(f, "ID"),
+            CodegenGenericDataFieldDataType::Int => write!(f, "Int"),
+            CodegenGenericDataFieldDataType::Model => write!(f, "Model"),
+            CodegenGenericDataFieldDataType::NonModel => write!(f, "NonModel"),
+            CodegenGenericDataFieldDataType::String => write!(f, "String"),
+            CodegenGenericDataFieldDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl EvidenceFinderBackfillStatus {
         }
     }
 }
+impl ::std::fmt::Display for EvidenceFinderBackfillStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvidenceFinderBackfillStatus::Completed => write!(f, "COMPLETED"),
+            EvidenceFinderBackfillStatus::InProgress => write!(f, "IN_PROGRESS"),
+            EvidenceFinderBackfillStatus::NotStarted => write!(f, "NOT_STARTED"),
+            EvidenceFinderBackfillStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

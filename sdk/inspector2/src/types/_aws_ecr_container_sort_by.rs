@@ -101,3 +101,13 @@ impl AwsEcrContainerSortBy {
         }
     }
 }
+impl ::std::fmt::Display for AwsEcrContainerSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AwsEcrContainerSortBy::All => write!(f, "ALL"),
+            AwsEcrContainerSortBy::Critical => write!(f, "CRITICAL"),
+            AwsEcrContainerSortBy::High => write!(f, "HIGH"),
+            AwsEcrContainerSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

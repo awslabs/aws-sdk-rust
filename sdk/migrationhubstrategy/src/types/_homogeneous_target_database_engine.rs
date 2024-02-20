@@ -91,3 +91,11 @@ impl HomogeneousTargetDatabaseEngine {
         }
     }
 }
+impl ::std::fmt::Display for HomogeneousTargetDatabaseEngine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HomogeneousTargetDatabaseEngine::NoneSpecified => write!(f, "None specified"),
+            HomogeneousTargetDatabaseEngine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

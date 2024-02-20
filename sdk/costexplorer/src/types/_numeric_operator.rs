@@ -123,3 +123,16 @@ impl NumericOperator {
         }
     }
 }
+impl ::std::fmt::Display for NumericOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NumericOperator::Between => write!(f, "BETWEEN"),
+            NumericOperator::Equal => write!(f, "EQUAL"),
+            NumericOperator::GreaterThan => write!(f, "GREATER_THAN"),
+            NumericOperator::GreaterThanOrEqual => write!(f, "GREATER_THAN_OR_EQUAL"),
+            NumericOperator::LessThan => write!(f, "LESS_THAN"),
+            NumericOperator::LessThanOrEqual => write!(f, "LESS_THAN_OR_EQUAL"),
+            NumericOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

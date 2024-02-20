@@ -96,3 +96,12 @@ impl CeState {
         }
     }
 }
+impl ::std::fmt::Display for CeState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CeState::Disabled => write!(f, "DISABLED"),
+            CeState::Enabled => write!(f, "ENABLED"),
+            CeState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

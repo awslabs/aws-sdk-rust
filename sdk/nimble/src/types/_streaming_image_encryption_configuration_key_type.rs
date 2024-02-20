@@ -93,3 +93,11 @@ impl StreamingImageEncryptionConfigurationKeyType {
         }
     }
 }
+impl ::std::fmt::Display for StreamingImageEncryptionConfigurationKeyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamingImageEncryptionConfigurationKeyType::CustomerManagedKey => write!(f, "CUSTOMER_MANAGED_KEY"),
+            StreamingImageEncryptionConfigurationKeyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

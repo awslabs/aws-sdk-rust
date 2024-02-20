@@ -101,3 +101,13 @@ impl FirewallStatusValue {
         }
     }
 }
+impl ::std::fmt::Display for FirewallStatusValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FirewallStatusValue::Deleting => write!(f, "DELETING"),
+            FirewallStatusValue::Provisioning => write!(f, "PROVISIONING"),
+            FirewallStatusValue::Ready => write!(f, "READY"),
+            FirewallStatusValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

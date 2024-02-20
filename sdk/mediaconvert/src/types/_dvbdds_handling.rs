@@ -101,3 +101,13 @@ impl DvbddsHandling {
         }
     }
 }
+impl ::std::fmt::Display for DvbddsHandling {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbddsHandling::None => write!(f, "NONE"),
+            DvbddsHandling::NoDisplayWindow => write!(f, "NO_DISPLAY_WINDOW"),
+            DvbddsHandling::Specified => write!(f, "SPECIFIED"),
+            DvbddsHandling::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

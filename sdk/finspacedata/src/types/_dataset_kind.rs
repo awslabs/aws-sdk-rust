@@ -96,3 +96,12 @@ impl DatasetKind {
         }
     }
 }
+impl ::std::fmt::Display for DatasetKind {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetKind::NonTabular => write!(f, "NON_TABULAR"),
+            DatasetKind::Tabular => write!(f, "TABULAR"),
+            DatasetKind::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

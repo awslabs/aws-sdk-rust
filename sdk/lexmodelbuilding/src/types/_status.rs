@@ -111,3 +111,15 @@ impl Status {
         }
     }
 }
+impl ::std::fmt::Display for Status {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Status::Building => write!(f, "BUILDING"),
+            Status::Failed => write!(f, "FAILED"),
+            Status::NotBuilt => write!(f, "NOT_BUILT"),
+            Status::Ready => write!(f, "READY"),
+            Status::ReadyBasicTesting => write!(f, "READY_BASIC_TESTING"),
+            Status::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AutoPlacement {
         }
     }
 }
+impl ::std::fmt::Display for AutoPlacement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoPlacement::Off => write!(f, "off"),
+            AutoPlacement::On => write!(f, "on"),
+            AutoPlacement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

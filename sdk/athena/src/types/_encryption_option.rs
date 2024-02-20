@@ -101,3 +101,13 @@ impl EncryptionOption {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionOption::CseKms => write!(f, "CSE_KMS"),
+            EncryptionOption::SseKms => write!(f, "SSE_KMS"),
+            EncryptionOption::SseS3 => write!(f, "SSE_S3"),
+            EncryptionOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl QueryStateString {
         }
     }
 }
+impl ::std::fmt::Display for QueryStateString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryStateString::Error => write!(f, "ERROR"),
+            QueryStateString::Expired => write!(f, "EXPIRED"),
+            QueryStateString::Finished => write!(f, "FINISHED"),
+            QueryStateString::Pending => write!(f, "PENDING"),
+            QueryStateString::WorkunitsAvailable => write!(f, "WORKUNITS_AVAILABLE"),
+            QueryStateString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

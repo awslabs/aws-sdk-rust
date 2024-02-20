@@ -96,3 +96,12 @@ impl S3ObjectAcl {
         }
     }
 }
+impl ::std::fmt::Display for S3ObjectAcl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3ObjectAcl::BucketOwnerFullControl => write!(f, "BUCKET_OWNER_FULL_CONTROL"),
+            S3ObjectAcl::PublicRead => write!(f, "PUBLIC_READ"),
+            S3ObjectAcl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

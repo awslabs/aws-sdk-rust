@@ -135,3 +135,18 @@ impl InboundConnectionStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for InboundConnectionStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InboundConnectionStatusCode::Active => write!(f, "ACTIVE"),
+            InboundConnectionStatusCode::Approved => write!(f, "APPROVED"),
+            InboundConnectionStatusCode::Deleted => write!(f, "DELETED"),
+            InboundConnectionStatusCode::Deleting => write!(f, "DELETING"),
+            InboundConnectionStatusCode::PendingAcceptance => write!(f, "PENDING_ACCEPTANCE"),
+            InboundConnectionStatusCode::Provisioning => write!(f, "PROVISIONING"),
+            InboundConnectionStatusCode::Rejected => write!(f, "REJECTED"),
+            InboundConnectionStatusCode::Rejecting => write!(f, "REJECTING"),
+            InboundConnectionStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

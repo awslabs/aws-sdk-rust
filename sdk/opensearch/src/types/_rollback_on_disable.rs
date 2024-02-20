@@ -96,3 +96,12 @@ impl RollbackOnDisable {
         }
     }
 }
+impl ::std::fmt::Display for RollbackOnDisable {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RollbackOnDisable::DefaultRollback => write!(f, "DEFAULT_ROLLBACK"),
+            RollbackOnDisable::NoRollback => write!(f, "NO_ROLLBACK"),
+            RollbackOnDisable::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

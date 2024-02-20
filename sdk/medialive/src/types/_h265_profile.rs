@@ -96,3 +96,12 @@ impl H265Profile {
         }
     }
 }
+impl ::std::fmt::Display for H265Profile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265Profile::Main => write!(f, "MAIN"),
+            H265Profile::Main10Bit => write!(f, "MAIN_10BIT"),
+            H265Profile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

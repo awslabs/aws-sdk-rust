@@ -111,3 +111,15 @@ impl State {
         }
     }
 }
+impl ::std::fmt::Display for State {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            State::Active => write!(f, "ACTIVE"),
+            State::Creating => write!(f, "CREATING"),
+            State::Deleting => write!(f, "DELETING"),
+            State::Error => write!(f, "ERROR"),
+            State::Updating => write!(f, "UPDATING"),
+            State::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

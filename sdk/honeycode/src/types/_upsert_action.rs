@@ -96,3 +96,12 @@ impl UpsertAction {
         }
     }
 }
+impl ::std::fmt::Display for UpsertAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpsertAction::Appended => write!(f, "APPENDED"),
+            UpsertAction::Updated => write!(f, "UPDATED"),
+            UpsertAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

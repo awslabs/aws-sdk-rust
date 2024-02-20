@@ -96,3 +96,12 @@ impl LaunchTemplateAutoRecoveryState {
         }
     }
 }
+impl ::std::fmt::Display for LaunchTemplateAutoRecoveryState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchTemplateAutoRecoveryState::Default => write!(f, "default"),
+            LaunchTemplateAutoRecoveryState::Disabled => write!(f, "disabled"),
+            LaunchTemplateAutoRecoveryState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

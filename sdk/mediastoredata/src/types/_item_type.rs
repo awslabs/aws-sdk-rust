@@ -96,3 +96,12 @@ impl ItemType {
         }
     }
 }
+impl ::std::fmt::Display for ItemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ItemType::Folder => write!(f, "FOLDER"),
+            ItemType::Object => write!(f, "OBJECT"),
+            ItemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl MetricSourceProvider {
         }
     }
 }
+impl ::std::fmt::Display for MetricSourceProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricSourceProvider::CloudWatchAppInsights => write!(f, "CloudWatchApplicationInsights"),
+            MetricSourceProvider::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

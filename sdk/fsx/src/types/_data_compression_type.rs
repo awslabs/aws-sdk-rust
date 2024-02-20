@@ -96,3 +96,12 @@ impl DataCompressionType {
         }
     }
 }
+impl ::std::fmt::Display for DataCompressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataCompressionType::Lz4 => write!(f, "LZ4"),
+            DataCompressionType::None => write!(f, "NONE"),
+            DataCompressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

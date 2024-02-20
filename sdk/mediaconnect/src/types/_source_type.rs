@@ -96,3 +96,12 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::Entitled => write!(f, "ENTITLED"),
+            SourceType::Owned => write!(f, "OWNED"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

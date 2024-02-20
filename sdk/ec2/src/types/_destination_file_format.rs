@@ -96,3 +96,12 @@ impl DestinationFileFormat {
         }
     }
 }
+impl ::std::fmt::Display for DestinationFileFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DestinationFileFormat::Parquet => write!(f, "parquet"),
+            DestinationFileFormat::PlainText => write!(f, "plain-text"),
+            DestinationFileFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ModelStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelStatus::Active => write!(f, "ACTIVE"),
+            ModelStatus::Expired => write!(f, "EXPIRED"),
+            ModelStatus::PendingBuild => write!(f, "PENDING_BUILD"),
+            ModelStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

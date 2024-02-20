@@ -96,3 +96,12 @@ impl Mpeg2ScanTypeConversionMode {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2ScanTypeConversionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2ScanTypeConversionMode::Interlaced => write!(f, "INTERLACED"),
+            Mpeg2ScanTypeConversionMode::InterlacedOptimize => write!(f, "INTERLACED_OPTIMIZE"),
+            Mpeg2ScanTypeConversionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

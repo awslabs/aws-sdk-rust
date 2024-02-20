@@ -96,3 +96,12 @@ impl VoiceAnalyticsConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for VoiceAnalyticsConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VoiceAnalyticsConfigurationStatus::Disabled => write!(f, "Disabled"),
+            VoiceAnalyticsConfigurationStatus::Enabled => write!(f, "Enabled"),
+            VoiceAnalyticsConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

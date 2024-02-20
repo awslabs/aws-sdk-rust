@@ -96,3 +96,12 @@ impl MembershipType {
         }
     }
 }
+impl ::std::fmt::Display for MembershipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MembershipType::Datasource => write!(f, "DATASOURCE"),
+            MembershipType::Index => write!(f, "INDEX"),
+            MembershipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

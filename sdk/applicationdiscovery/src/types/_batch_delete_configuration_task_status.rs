@@ -111,3 +111,15 @@ impl BatchDeleteConfigurationTaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for BatchDeleteConfigurationTaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchDeleteConfigurationTaskStatus::Completed => write!(f, "COMPLETED"),
+            BatchDeleteConfigurationTaskStatus::Deleting => write!(f, "DELETING"),
+            BatchDeleteConfigurationTaskStatus::Failed => write!(f, "FAILED"),
+            BatchDeleteConfigurationTaskStatus::Initializing => write!(f, "INITIALIZING"),
+            BatchDeleteConfigurationTaskStatus::Validating => write!(f, "VALIDATING"),
+            BatchDeleteConfigurationTaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

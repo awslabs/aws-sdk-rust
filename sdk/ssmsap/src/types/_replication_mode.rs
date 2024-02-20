@@ -111,3 +111,15 @@ impl ReplicationMode {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationMode::Async => write!(f, "ASYNC"),
+            ReplicationMode::None => write!(f, "NONE"),
+            ReplicationMode::Primary => write!(f, "PRIMARY"),
+            ReplicationMode::Sync => write!(f, "SYNC"),
+            ReplicationMode::Syncmem => write!(f, "SYNCMEM"),
+            ReplicationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

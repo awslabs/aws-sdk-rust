@@ -101,3 +101,13 @@ impl WorkspaceImageState {
         }
     }
 }
+impl ::std::fmt::Display for WorkspaceImageState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkspaceImageState::Available => write!(f, "AVAILABLE"),
+            WorkspaceImageState::Error => write!(f, "ERROR"),
+            WorkspaceImageState::Pending => write!(f, "PENDING"),
+            WorkspaceImageState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

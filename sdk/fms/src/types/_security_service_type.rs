@@ -147,3 +147,20 @@ impl SecurityServiceType {
         }
     }
 }
+impl ::std::fmt::Display for SecurityServiceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SecurityServiceType::DnsFirewall => write!(f, "DNS_FIREWALL"),
+            SecurityServiceType::ImportNetworkFirewall => write!(f, "IMPORT_NETWORK_FIREWALL"),
+            SecurityServiceType::NetworkFirewall => write!(f, "NETWORK_FIREWALL"),
+            SecurityServiceType::SecurityGroupsCommon => write!(f, "SECURITY_GROUPS_COMMON"),
+            SecurityServiceType::SecurityGroupsContentAudit => write!(f, "SECURITY_GROUPS_CONTENT_AUDIT"),
+            SecurityServiceType::SecurityGroupsUsageAudit => write!(f, "SECURITY_GROUPS_USAGE_AUDIT"),
+            SecurityServiceType::ShieldAdvanced => write!(f, "SHIELD_ADVANCED"),
+            SecurityServiceType::ThirdPartyFirewall => write!(f, "THIRD_PARTY_FIREWALL"),
+            SecurityServiceType::Waf => write!(f, "WAF"),
+            SecurityServiceType::Wafv2 => write!(f, "WAFV2"),
+            SecurityServiceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

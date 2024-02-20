@@ -111,3 +111,14 @@ impl ReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for ReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReasonCode::AwsServiceAccessDisabled => write!(f, "AWS_SERVICE_ACCESS_DISABLED"),
+            ReasonCode::DelegatedAdministratorDeregistered => write!(f, "DELEGATED_ADMINISTRATOR_DEREGISTERED"),
+            ReasonCode::OrganizationDeleted => write!(f, "ORGANIZATION_DELETED"),
+            ReasonCode::ServiceLinkedRoleCreationFailed => write!(f, "SERVICE_LINKED_ROLE_CREATION_FAILED"),
+            ReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SubnetCidrReservationType {
         }
     }
 }
+impl ::std::fmt::Display for SubnetCidrReservationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubnetCidrReservationType::Explicit => write!(f, "explicit"),
+            SubnetCidrReservationType::Prefix => write!(f, "prefix"),
+            SubnetCidrReservationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

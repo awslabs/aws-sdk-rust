@@ -96,3 +96,12 @@ impl EcsResourceRequirementType {
         }
     }
 }
+impl ::std::fmt::Display for EcsResourceRequirementType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcsResourceRequirementType::Gpu => write!(f, "GPU"),
+            EcsResourceRequirementType::InferenceAccelerator => write!(f, "InferenceAccelerator"),
+            EcsResourceRequirementType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

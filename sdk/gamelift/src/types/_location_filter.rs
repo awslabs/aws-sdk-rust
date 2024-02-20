@@ -96,3 +96,12 @@ impl LocationFilter {
         }
     }
 }
+impl ::std::fmt::Display for LocationFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocationFilter::Aws => write!(f, "AWS"),
+            LocationFilter::Custom => write!(f, "CUSTOM"),
+            LocationFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

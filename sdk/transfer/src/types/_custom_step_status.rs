@@ -96,3 +96,12 @@ impl CustomStepStatus {
         }
     }
 }
+impl ::std::fmt::Display for CustomStepStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomStepStatus::Failure => write!(f, "FAILURE"),
+            CustomStepStatus::Success => write!(f, "SUCCESS"),
+            CustomStepStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

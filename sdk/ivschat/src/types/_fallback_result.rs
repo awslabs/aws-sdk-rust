@@ -96,3 +96,12 @@ impl FallbackResult {
         }
     }
 }
+impl ::std::fmt::Display for FallbackResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FallbackResult::Allow => write!(f, "ALLOW"),
+            FallbackResult::Deny => write!(f, "DENY"),
+            FallbackResult::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

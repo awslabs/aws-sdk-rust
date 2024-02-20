@@ -116,3 +116,16 @@ impl DvbSubDestinationFontColor {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubDestinationFontColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubDestinationFontColor::Black => write!(f, "BLACK"),
+            DvbSubDestinationFontColor::Blue => write!(f, "BLUE"),
+            DvbSubDestinationFontColor::Green => write!(f, "GREEN"),
+            DvbSubDestinationFontColor::Red => write!(f, "RED"),
+            DvbSubDestinationFontColor::White => write!(f, "WHITE"),
+            DvbSubDestinationFontColor::Yellow => write!(f, "YELLOW"),
+            DvbSubDestinationFontColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

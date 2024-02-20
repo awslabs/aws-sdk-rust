@@ -98,3 +98,12 @@ impl EvaluationFormSingleSelectQuestionDisplayMode {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationFormSingleSelectQuestionDisplayMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationFormSingleSelectQuestionDisplayMode::Dropdown => write!(f, "DROPDOWN"),
+            EvaluationFormSingleSelectQuestionDisplayMode::Radio => write!(f, "RADIO"),
+            EvaluationFormSingleSelectQuestionDisplayMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

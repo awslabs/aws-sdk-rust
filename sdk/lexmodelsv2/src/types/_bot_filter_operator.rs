@@ -101,3 +101,13 @@ impl BotFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for BotFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotFilterOperator::Contains => write!(f, "CO"),
+            BotFilterOperator::Equals => write!(f, "EQ"),
+            BotFilterOperator::NotEquals => write!(f, "NE"),
+            BotFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

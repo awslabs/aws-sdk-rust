@@ -106,3 +106,14 @@ impl ArtifactSourceIdType {
         }
     }
 }
+impl ::std::fmt::Display for ArtifactSourceIdType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArtifactSourceIdType::Custom => write!(f, "Custom"),
+            ArtifactSourceIdType::Md5Hash => write!(f, "MD5Hash"),
+            ArtifactSourceIdType::S3Etag => write!(f, "S3ETag"),
+            ArtifactSourceIdType::S3Version => write!(f, "S3Version"),
+            ArtifactSourceIdType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

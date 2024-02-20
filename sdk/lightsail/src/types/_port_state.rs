@@ -96,3 +96,12 @@ impl PortState {
         }
     }
 }
+impl ::std::fmt::Display for PortState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PortState::Closed => write!(f, "closed"),
+            PortState::Open => write!(f, "open"),
+            PortState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

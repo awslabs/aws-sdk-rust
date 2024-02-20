@@ -111,3 +111,15 @@ impl WorkspaceDirectoryState {
         }
     }
 }
+impl ::std::fmt::Display for WorkspaceDirectoryState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkspaceDirectoryState::Deregistered => write!(f, "DEREGISTERED"),
+            WorkspaceDirectoryState::Deregistering => write!(f, "DEREGISTERING"),
+            WorkspaceDirectoryState::Error => write!(f, "ERROR"),
+            WorkspaceDirectoryState::Registered => write!(f, "REGISTERED"),
+            WorkspaceDirectoryState::Registering => write!(f, "REGISTERING"),
+            WorkspaceDirectoryState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

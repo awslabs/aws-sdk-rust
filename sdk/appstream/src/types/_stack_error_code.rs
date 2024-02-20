@@ -96,3 +96,12 @@ impl StackErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for StackErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackErrorCode::InternalServiceError => write!(f, "INTERNAL_SERVICE_ERROR"),
+            StackErrorCode::StorageConnectorError => write!(f, "STORAGE_CONNECTOR_ERROR"),
+            StackErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

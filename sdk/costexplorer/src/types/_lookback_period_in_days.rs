@@ -101,3 +101,13 @@ impl LookbackPeriodInDays {
         }
     }
 }
+impl ::std::fmt::Display for LookbackPeriodInDays {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LookbackPeriodInDays::SevenDays => write!(f, "SEVEN_DAYS"),
+            LookbackPeriodInDays::SixtyDays => write!(f, "SIXTY_DAYS"),
+            LookbackPeriodInDays::ThirtyDays => write!(f, "THIRTY_DAYS"),
+            LookbackPeriodInDays::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

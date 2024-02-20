@@ -96,3 +96,12 @@ impl EcsServiceMetricName {
         }
     }
 }
+impl ::std::fmt::Display for EcsServiceMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcsServiceMetricName::Cpu => write!(f, "Cpu"),
+            EcsServiceMetricName::Memory => write!(f, "Memory"),
+            EcsServiceMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

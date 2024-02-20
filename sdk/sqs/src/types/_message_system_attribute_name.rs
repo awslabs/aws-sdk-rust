@@ -141,3 +141,19 @@ impl MessageSystemAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for MessageSystemAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessageSystemAttributeName::AwsTraceHeader => write!(f, "AWSTraceHeader"),
+            MessageSystemAttributeName::ApproximateFirstReceiveTimestamp => write!(f, "ApproximateFirstReceiveTimestamp"),
+            MessageSystemAttributeName::ApproximateReceiveCount => write!(f, "ApproximateReceiveCount"),
+            MessageSystemAttributeName::DeadLetterQueueSourceArn => write!(f, "DeadLetterQueueSourceArn"),
+            MessageSystemAttributeName::MessageDeduplicationId => write!(f, "MessageDeduplicationId"),
+            MessageSystemAttributeName::MessageGroupId => write!(f, "MessageGroupId"),
+            MessageSystemAttributeName::SenderId => write!(f, "SenderId"),
+            MessageSystemAttributeName::SentTimestamp => write!(f, "SentTimestamp"),
+            MessageSystemAttributeName::SequenceNumber => write!(f, "SequenceNumber"),
+            MessageSystemAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

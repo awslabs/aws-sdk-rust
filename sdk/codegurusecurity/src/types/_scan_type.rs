@@ -96,3 +96,12 @@ impl ScanType {
         }
     }
 }
+impl ::std::fmt::Display for ScanType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScanType::Express => write!(f, "Express"),
+            ScanType::Standard => write!(f, "Standard"),
+            ScanType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

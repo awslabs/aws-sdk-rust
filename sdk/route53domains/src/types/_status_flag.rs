@@ -117,3 +117,15 @@ impl StatusFlag {
         }
     }
 }
+impl ::std::fmt::Display for StatusFlag {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatusFlag::PendingAcceptance => write!(f, "PENDING_ACCEPTANCE"),
+            StatusFlag::PendingAuthorization => write!(f, "PENDING_AUTHORIZATION"),
+            StatusFlag::PendingCustomerAction => write!(f, "PENDING_CUSTOMER_ACTION"),
+            StatusFlag::PendingPaymentVerification => write!(f, "PENDING_PAYMENT_VERIFICATION"),
+            StatusFlag::PendingSupportCase => write!(f, "PENDING_SUPPORT_CASE"),
+            StatusFlag::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

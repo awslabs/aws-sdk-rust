@@ -189,3 +189,27 @@ impl H264Level {
         }
     }
 }
+impl ::std::fmt::Display for H264Level {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264Level::H264Level1 => write!(f, "H264_LEVEL_1"),
+            H264Level::H264Level11 => write!(f, "H264_LEVEL_1_1"),
+            H264Level::H264Level12 => write!(f, "H264_LEVEL_1_2"),
+            H264Level::H264Level13 => write!(f, "H264_LEVEL_1_3"),
+            H264Level::H264Level2 => write!(f, "H264_LEVEL_2"),
+            H264Level::H264Level21 => write!(f, "H264_LEVEL_2_1"),
+            H264Level::H264Level22 => write!(f, "H264_LEVEL_2_2"),
+            H264Level::H264Level3 => write!(f, "H264_LEVEL_3"),
+            H264Level::H264Level31 => write!(f, "H264_LEVEL_3_1"),
+            H264Level::H264Level32 => write!(f, "H264_LEVEL_3_2"),
+            H264Level::H264Level4 => write!(f, "H264_LEVEL_4"),
+            H264Level::H264Level41 => write!(f, "H264_LEVEL_4_1"),
+            H264Level::H264Level42 => write!(f, "H264_LEVEL_4_2"),
+            H264Level::H264Level5 => write!(f, "H264_LEVEL_5"),
+            H264Level::H264Level51 => write!(f, "H264_LEVEL_5_1"),
+            H264Level::H264Level52 => write!(f, "H264_LEVEL_5_2"),
+            H264Level::H264LevelAuto => write!(f, "H264_LEVEL_AUTO"),
+            H264Level::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

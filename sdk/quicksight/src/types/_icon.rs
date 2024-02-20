@@ -243,3 +243,36 @@ impl Icon {
         }
     }
 }
+impl ::std::fmt::Display for Icon {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Icon::ArrowDown => write!(f, "ARROW_DOWN"),
+            Icon::ArrowDownLeft => write!(f, "ARROW_DOWN_LEFT"),
+            Icon::ArrowDownRight => write!(f, "ARROW_DOWN_RIGHT"),
+            Icon::ArrowLeft => write!(f, "ARROW_LEFT"),
+            Icon::ArrowRight => write!(f, "ARROW_RIGHT"),
+            Icon::ArrowUp => write!(f, "ARROW_UP"),
+            Icon::ArrowUpLeft => write!(f, "ARROW_UP_LEFT"),
+            Icon::ArrowUpRight => write!(f, "ARROW_UP_RIGHT"),
+            Icon::CaretDown => write!(f, "CARET_DOWN"),
+            Icon::CaretUp => write!(f, "CARET_UP"),
+            Icon::Checkmark => write!(f, "CHECKMARK"),
+            Icon::Circle => write!(f, "CIRCLE"),
+            Icon::FaceDown => write!(f, "FACE_DOWN"),
+            Icon::FaceFlat => write!(f, "FACE_FLAT"),
+            Icon::FaceUp => write!(f, "FACE_UP"),
+            Icon::Flag => write!(f, "FLAG"),
+            Icon::Minus => write!(f, "MINUS"),
+            Icon::OneBar => write!(f, "ONE_BAR"),
+            Icon::Plus => write!(f, "PLUS"),
+            Icon::Square => write!(f, "SQUARE"),
+            Icon::ThreeBar => write!(f, "THREE_BAR"),
+            Icon::ThumbsDown => write!(f, "THUMBS_DOWN"),
+            Icon::ThumbsUp => write!(f, "THUMBS_UP"),
+            Icon::Triangle => write!(f, "TRIANGLE"),
+            Icon::TwoBar => write!(f, "TWO_BAR"),
+            Icon::X => write!(f, "X"),
+            Icon::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl FlowStatus {
         }
     }
 }
+impl ::std::fmt::Display for FlowStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlowStatus::Active => write!(f, "Active"),
+            FlowStatus::Deleted => write!(f, "Deleted"),
+            FlowStatus::Deprecated => write!(f, "Deprecated"),
+            FlowStatus::Draft => write!(f, "Draft"),
+            FlowStatus::Errored => write!(f, "Errored"),
+            FlowStatus::Suspended => write!(f, "Suspended"),
+            FlowStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

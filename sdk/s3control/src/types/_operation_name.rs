@@ -141,3 +141,19 @@ impl OperationName {
         }
     }
 }
+impl ::std::fmt::Display for OperationName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationName::LambdaInvoke => write!(f, "LambdaInvoke"),
+            OperationName::S3DeleteObjectTagging => write!(f, "S3DeleteObjectTagging"),
+            OperationName::S3InitiateRestoreObject => write!(f, "S3InitiateRestoreObject"),
+            OperationName::S3PutObjectAcl => write!(f, "S3PutObjectAcl"),
+            OperationName::S3PutObjectCopy => write!(f, "S3PutObjectCopy"),
+            OperationName::S3PutObjectLegalHold => write!(f, "S3PutObjectLegalHold"),
+            OperationName::S3PutObjectRetention => write!(f, "S3PutObjectRetention"),
+            OperationName::S3PutObjectTagging => write!(f, "S3PutObjectTagging"),
+            OperationName::S3ReplicateObject => write!(f, "S3ReplicateObject"),
+            OperationName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

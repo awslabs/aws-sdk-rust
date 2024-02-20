@@ -106,3 +106,14 @@ impl SourceCodeAnalyzerName {
         }
     }
 }
+impl ::std::fmt::Display for SourceCodeAnalyzerName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceCodeAnalyzerName::BytecodeAnalyzer => write!(f, "BYTECODE_ANALYZER"),
+            SourceCodeAnalyzerName::CsharpAnalyzer => write!(f, "CSHARP_ANALYZER"),
+            SourceCodeAnalyzerName::JavaAnalyzer => write!(f, "JAVA_ANALYZER"),
+            SourceCodeAnalyzerName::PortingAssistant => write!(f, "PORTING_ASSISTANT"),
+            SourceCodeAnalyzerName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

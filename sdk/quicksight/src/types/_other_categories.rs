@@ -96,3 +96,12 @@ impl OtherCategories {
         }
     }
 }
+impl ::std::fmt::Display for OtherCategories {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OtherCategories::Exclude => write!(f, "EXCLUDE"),
+            OtherCategories::Include => write!(f, "INCLUDE"),
+            OtherCategories::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

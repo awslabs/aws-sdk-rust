@@ -96,3 +96,12 @@ impl RecoverySnapshotsOrder {
         }
     }
 }
+impl ::std::fmt::Display for RecoverySnapshotsOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecoverySnapshotsOrder::Asc => write!(f, "ASC"),
+            RecoverySnapshotsOrder::Desc => write!(f, "DESC"),
+            RecoverySnapshotsOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

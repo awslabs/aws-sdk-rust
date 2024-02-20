@@ -117,3 +117,15 @@ impl FindingType {
         }
     }
 }
+impl ::std::fmt::Display for FindingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingType::ExternalAccess => write!(f, "ExternalAccess"),
+            FindingType::UnusedIamRole => write!(f, "UnusedIAMRole"),
+            FindingType::UnusedIamUserAccessKey => write!(f, "UnusedIAMUserAccessKey"),
+            FindingType::UnusedIamUserPassword => write!(f, "UnusedIAMUserPassword"),
+            FindingType::UnusedPermission => write!(f, "UnusedPermission"),
+            FindingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

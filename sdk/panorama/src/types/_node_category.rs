@@ -106,3 +106,14 @@ impl NodeCategory {
         }
     }
 }
+impl ::std::fmt::Display for NodeCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeCategory::BusinessLogic => write!(f, "BUSINESS_LOGIC"),
+            NodeCategory::MediaSink => write!(f, "MEDIA_SINK"),
+            NodeCategory::MediaSource => write!(f, "MEDIA_SOURCE"),
+            NodeCategory::MlModel => write!(f, "ML_MODEL"),
+            NodeCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

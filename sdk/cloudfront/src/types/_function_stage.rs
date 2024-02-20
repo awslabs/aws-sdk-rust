@@ -96,3 +96,12 @@ impl FunctionStage {
         }
     }
 }
+impl ::std::fmt::Display for FunctionStage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FunctionStage::Development => write!(f, "DEVELOPMENT"),
+            FunctionStage::Live => write!(f, "LIVE"),
+            FunctionStage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl KeyManagerType {
         }
     }
 }
+impl ::std::fmt::Display for KeyManagerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyManagerType::Aws => write!(f, "AWS"),
+            KeyManagerType::Customer => write!(f, "CUSTOMER"),
+            KeyManagerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

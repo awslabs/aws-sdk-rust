@@ -96,3 +96,12 @@ impl AccessType {
         }
     }
 }
+impl ::std::fmt::Display for AccessType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessType::Private => write!(f, "private"),
+            AccessType::Public => write!(f, "public"),
+            AccessType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

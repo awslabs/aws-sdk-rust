@@ -96,3 +96,12 @@ impl ListenerProtocol {
         }
     }
 }
+impl ::std::fmt::Display for ListenerProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListenerProtocol::Http => write!(f, "HTTP"),
+            ListenerProtocol::Https => write!(f, "HTTPS"),
+            ListenerProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

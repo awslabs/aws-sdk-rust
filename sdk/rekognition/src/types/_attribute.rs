@@ -171,3 +171,24 @@ impl Attribute {
         }
     }
 }
+impl ::std::fmt::Display for Attribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Attribute::AgeRange => write!(f, "AGE_RANGE"),
+            Attribute::All => write!(f, "ALL"),
+            Attribute::Beard => write!(f, "BEARD"),
+            Attribute::Default => write!(f, "DEFAULT"),
+            Attribute::Emotions => write!(f, "EMOTIONS"),
+            Attribute::Eyeglasses => write!(f, "EYEGLASSES"),
+            Attribute::EyesOpen => write!(f, "EYES_OPEN"),
+            Attribute::EyeDirection => write!(f, "EYE_DIRECTION"),
+            Attribute::FaceOccluded => write!(f, "FACE_OCCLUDED"),
+            Attribute::Gender => write!(f, "GENDER"),
+            Attribute::MouthOpen => write!(f, "MOUTH_OPEN"),
+            Attribute::Mustache => write!(f, "MUSTACHE"),
+            Attribute::Smile => write!(f, "SMILE"),
+            Attribute::Sunglasses => write!(f, "SUNGLASSES"),
+            Attribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

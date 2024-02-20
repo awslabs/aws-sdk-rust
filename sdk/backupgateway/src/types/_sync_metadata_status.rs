@@ -111,3 +111,15 @@ impl SyncMetadataStatus {
         }
     }
 }
+impl ::std::fmt::Display for SyncMetadataStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SyncMetadataStatus::Created => write!(f, "CREATED"),
+            SyncMetadataStatus::Failed => write!(f, "FAILED"),
+            SyncMetadataStatus::PartiallyFailed => write!(f, "PARTIALLY_FAILED"),
+            SyncMetadataStatus::Running => write!(f, "RUNNING"),
+            SyncMetadataStatus::Succeeded => write!(f, "SUCCEEDED"),
+            SyncMetadataStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

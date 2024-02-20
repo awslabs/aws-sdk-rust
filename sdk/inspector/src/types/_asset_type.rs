@@ -91,3 +91,11 @@ impl AssetType {
         }
     }
 }
+impl ::std::fmt::Display for AssetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetType::Ec2Instance => write!(f, "ec2-instance"),
+            AssetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

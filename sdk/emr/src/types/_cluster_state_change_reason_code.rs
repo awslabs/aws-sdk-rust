@@ -135,3 +135,18 @@ impl ClusterStateChangeReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for ClusterStateChangeReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterStateChangeReasonCode::AllStepsCompleted => write!(f, "ALL_STEPS_COMPLETED"),
+            ClusterStateChangeReasonCode::BootstrapFailure => write!(f, "BOOTSTRAP_FAILURE"),
+            ClusterStateChangeReasonCode::InstanceFailure => write!(f, "INSTANCE_FAILURE"),
+            ClusterStateChangeReasonCode::InstanceFleetTimeout => write!(f, "INSTANCE_FLEET_TIMEOUT"),
+            ClusterStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            ClusterStateChangeReasonCode::StepFailure => write!(f, "STEP_FAILURE"),
+            ClusterStateChangeReasonCode::UserRequest => write!(f, "USER_REQUEST"),
+            ClusterStateChangeReasonCode::ValidationError => write!(f, "VALIDATION_ERROR"),
+            ClusterStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

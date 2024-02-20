@@ -116,3 +116,16 @@ impl StatusType {
         }
     }
 }
+impl ::std::fmt::Display for StatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatusType::Failed => write!(f, "FAILED"),
+            StatusType::Fault => write!(f, "FAULT"),
+            StatusType::InProgress => write!(f, "IN_PROGRESS"),
+            StatusType::Stopped => write!(f, "STOPPED"),
+            StatusType::Succeeded => write!(f, "SUCCEEDED"),
+            StatusType::TimedOut => write!(f, "TIMED_OUT"),
+            StatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

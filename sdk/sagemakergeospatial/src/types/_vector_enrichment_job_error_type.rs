@@ -96,3 +96,12 @@ impl VectorEnrichmentJobErrorType {
         }
     }
 }
+impl ::std::fmt::Display for VectorEnrichmentJobErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VectorEnrichmentJobErrorType::ClientError => write!(f, "CLIENT_ERROR"),
+            VectorEnrichmentJobErrorType::ServerError => write!(f, "SERVER_ERROR"),
+            VectorEnrichmentJobErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl WindowsAccessAuditLogLevel {
         }
     }
 }
+impl ::std::fmt::Display for WindowsAccessAuditLogLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WindowsAccessAuditLogLevel::Disabled => write!(f, "DISABLED"),
+            WindowsAccessAuditLogLevel::FailureOnly => write!(f, "FAILURE_ONLY"),
+            WindowsAccessAuditLogLevel::SuccessAndFailure => write!(f, "SUCCESS_AND_FAILURE"),
+            WindowsAccessAuditLogLevel::SuccessOnly => write!(f, "SUCCESS_ONLY"),
+            WindowsAccessAuditLogLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

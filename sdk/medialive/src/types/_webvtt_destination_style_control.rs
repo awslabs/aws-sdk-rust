@@ -96,3 +96,12 @@ impl WebvttDestinationStyleControl {
         }
     }
 }
+impl ::std::fmt::Display for WebvttDestinationStyleControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WebvttDestinationStyleControl::NoStyleData => write!(f, "NO_STYLE_DATA"),
+            WebvttDestinationStyleControl::Passthrough => write!(f, "PASSTHROUGH"),
+            WebvttDestinationStyleControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

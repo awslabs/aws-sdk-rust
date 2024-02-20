@@ -123,3 +123,16 @@ impl ShardFilterType {
         }
     }
 }
+impl ::std::fmt::Display for ShardFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShardFilterType::AfterShardId => write!(f, "AFTER_SHARD_ID"),
+            ShardFilterType::AtLatest => write!(f, "AT_LATEST"),
+            ShardFilterType::AtTimestamp => write!(f, "AT_TIMESTAMP"),
+            ShardFilterType::AtTrimHorizon => write!(f, "AT_TRIM_HORIZON"),
+            ShardFilterType::FromTimestamp => write!(f, "FROM_TIMESTAMP"),
+            ShardFilterType::FromTrimHorizon => write!(f, "FROM_TRIM_HORIZON"),
+            ShardFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

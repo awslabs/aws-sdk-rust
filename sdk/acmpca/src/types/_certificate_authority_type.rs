@@ -96,3 +96,12 @@ impl CertificateAuthorityType {
         }
     }
 }
+impl ::std::fmt::Display for CertificateAuthorityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateAuthorityType::Root => write!(f, "ROOT"),
+            CertificateAuthorityType::Subordinate => write!(f, "SUBORDINATE"),
+            CertificateAuthorityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

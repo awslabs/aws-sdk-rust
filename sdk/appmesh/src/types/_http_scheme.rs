@@ -96,3 +96,12 @@ impl HttpScheme {
         }
     }
 }
+impl ::std::fmt::Display for HttpScheme {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HttpScheme::Http => write!(f, "http"),
+            HttpScheme::Https => write!(f, "https"),
+            HttpScheme::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

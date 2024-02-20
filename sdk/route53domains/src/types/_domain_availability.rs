@@ -147,3 +147,20 @@ impl DomainAvailability {
         }
     }
 }
+impl ::std::fmt::Display for DomainAvailability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainAvailability::Available => write!(f, "AVAILABLE"),
+            DomainAvailability::AvailablePreorder => write!(f, "AVAILABLE_PREORDER"),
+            DomainAvailability::AvailableReserved => write!(f, "AVAILABLE_RESERVED"),
+            DomainAvailability::DontKnow => write!(f, "DONT_KNOW"),
+            DomainAvailability::InvalidNameForTld => write!(f, "INVALID_NAME_FOR_TLD"),
+            DomainAvailability::Pending => write!(f, "PENDING"),
+            DomainAvailability::Reserved => write!(f, "RESERVED"),
+            DomainAvailability::Unavailable => write!(f, "UNAVAILABLE"),
+            DomainAvailability::UnavailablePremium => write!(f, "UNAVAILABLE_PREMIUM"),
+            DomainAvailability::UnavailableRestricted => write!(f, "UNAVAILABLE_RESTRICTED"),
+            DomainAvailability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

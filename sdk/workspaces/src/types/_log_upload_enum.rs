@@ -96,3 +96,12 @@ impl LogUploadEnum {
         }
     }
 }
+impl ::std::fmt::Display for LogUploadEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogUploadEnum::Disabled => write!(f, "DISABLED"),
+            LogUploadEnum::Enabled => write!(f, "ENABLED"),
+            LogUploadEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl TriggerMode {
         }
     }
 }
+impl ::std::fmt::Display for TriggerMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TriggerMode::Always => write!(f, "ALWAYS"),
+            TriggerMode::RisingEdge => write!(f, "RISING_EDGE"),
+            TriggerMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ResolutionOption {
         }
     }
 }
+impl ::std::fmt::Display for ResolutionOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolutionOption::Fhd => write!(f, "FHD"),
+            ResolutionOption::Hd => write!(f, "HD"),
+            ResolutionOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

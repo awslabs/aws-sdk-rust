@@ -96,3 +96,12 @@ impl RealTimeContactAnalysisSupportedChannel {
         }
     }
 }
+impl ::std::fmt::Display for RealTimeContactAnalysisSupportedChannel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RealTimeContactAnalysisSupportedChannel::Chat => write!(f, "CHAT"),
+            RealTimeContactAnalysisSupportedChannel::Voice => write!(f, "VOICE"),
+            RealTimeContactAnalysisSupportedChannel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

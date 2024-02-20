@@ -106,3 +106,14 @@ impl VirtualClusterState {
         }
     }
 }
+impl ::std::fmt::Display for VirtualClusterState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VirtualClusterState::Arrested => write!(f, "ARRESTED"),
+            VirtualClusterState::Running => write!(f, "RUNNING"),
+            VirtualClusterState::Terminated => write!(f, "TERMINATED"),
+            VirtualClusterState::Terminating => write!(f, "TERMINATING"),
+            VirtualClusterState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl UsageStatisticsSortKey {
         }
     }
 }
+impl ::std::fmt::Display for UsageStatisticsSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageStatisticsSortKey::AccountId => write!(f, "accountId"),
+            UsageStatisticsSortKey::FreeTrialStartDate => write!(f, "freeTrialStartDate"),
+            UsageStatisticsSortKey::ServiceLimitValue => write!(f, "serviceLimitValue"),
+            UsageStatisticsSortKey::Total => write!(f, "total"),
+            UsageStatisticsSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CapacityReservationPreference {
         }
     }
 }
+impl ::std::fmt::Display for CapacityReservationPreference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapacityReservationPreference::None => write!(f, "none"),
+            CapacityReservationPreference::Open => write!(f, "open"),
+            CapacityReservationPreference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

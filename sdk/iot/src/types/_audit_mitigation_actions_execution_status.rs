@@ -116,3 +116,16 @@ impl AuditMitigationActionsExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for AuditMitigationActionsExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditMitigationActionsExecutionStatus::Canceled => write!(f, "CANCELED"),
+            AuditMitigationActionsExecutionStatus::Completed => write!(f, "COMPLETED"),
+            AuditMitigationActionsExecutionStatus::Failed => write!(f, "FAILED"),
+            AuditMitigationActionsExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            AuditMitigationActionsExecutionStatus::Pending => write!(f, "PENDING"),
+            AuditMitigationActionsExecutionStatus::Skipped => write!(f, "SKIPPED"),
+            AuditMitigationActionsExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

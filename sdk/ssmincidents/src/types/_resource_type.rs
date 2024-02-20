@@ -111,3 +111,15 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::IncidentRecord => write!(f, "INCIDENT_RECORD"),
+            ResourceType::ReplicationSet => write!(f, "REPLICATION_SET"),
+            ResourceType::ResourcePolicy => write!(f, "RESOURCE_POLICY"),
+            ResourceType::ResponsePlan => write!(f, "RESPONSE_PLAN"),
+            ResourceType::TimelineEvent => write!(f, "TIMELINE_EVENT"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

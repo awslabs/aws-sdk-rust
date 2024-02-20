@@ -106,3 +106,14 @@ impl ScalingType {
         }
     }
 }
+impl ::std::fmt::Display for ScalingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalingType::Auto => write!(f, "Auto"),
+            ScalingType::Linear => write!(f, "Linear"),
+            ScalingType::Logarithmic => write!(f, "Logarithmic"),
+            ScalingType::ReverseLogarithmic => write!(f, "ReverseLogarithmic"),
+            ScalingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl RemoteManagement {
         }
     }
 }
+impl ::std::fmt::Display for RemoteManagement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RemoteManagement::InstalledAutostart => write!(f, "INSTALLED_AUTOSTART"),
+            RemoteManagement::InstalledOnly => write!(f, "INSTALLED_ONLY"),
+            RemoteManagement::NotInstalled => write!(f, "NOT_INSTALLED"),
+            RemoteManagement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

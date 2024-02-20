@@ -131,3 +131,19 @@ impl HttpMethod {
         }
     }
 }
+impl ::std::fmt::Display for HttpMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HttpMethod::Connect => write!(f, "CONNECT"),
+            HttpMethod::Delete => write!(f, "DELETE"),
+            HttpMethod::Get => write!(f, "GET"),
+            HttpMethod::Head => write!(f, "HEAD"),
+            HttpMethod::Options => write!(f, "OPTIONS"),
+            HttpMethod::Patch => write!(f, "PATCH"),
+            HttpMethod::Post => write!(f, "POST"),
+            HttpMethod::Put => write!(f, "PUT"),
+            HttpMethod::Trace => write!(f, "TRACE"),
+            HttpMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

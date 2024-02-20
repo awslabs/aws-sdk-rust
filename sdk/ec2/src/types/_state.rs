@@ -135,3 +135,18 @@ impl State {
         }
     }
 }
+impl ::std::fmt::Display for State {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            State::Available => write!(f, "Available"),
+            State::Deleted => write!(f, "Deleted"),
+            State::Deleting => write!(f, "Deleting"),
+            State::Expired => write!(f, "Expired"),
+            State::Failed => write!(f, "Failed"),
+            State::Pending => write!(f, "Pending"),
+            State::PendingAcceptance => write!(f, "PendingAcceptance"),
+            State::Rejected => write!(f, "Rejected"),
+            State::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

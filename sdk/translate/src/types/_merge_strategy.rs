@@ -91,3 +91,11 @@ impl MergeStrategy {
         }
     }
 }
+impl ::std::fmt::Display for MergeStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MergeStrategy::Overwrite => write!(f, "OVERWRITE"),
+            MergeStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

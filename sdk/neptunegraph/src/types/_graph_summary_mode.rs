@@ -96,3 +96,12 @@ impl GraphSummaryMode {
         }
     }
 }
+impl ::std::fmt::Display for GraphSummaryMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GraphSummaryMode::Basic => write!(f, "BASIC"),
+            GraphSummaryMode::Detailed => write!(f, "DETAILED"),
+            GraphSummaryMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

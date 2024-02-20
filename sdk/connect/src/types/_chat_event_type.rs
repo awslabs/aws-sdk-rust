@@ -101,3 +101,13 @@ impl ChatEventType {
         }
     }
 }
+impl ::std::fmt::Display for ChatEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChatEventType::Disconnect => write!(f, "DISCONNECT"),
+            ChatEventType::Event => write!(f, "EVENT"),
+            ChatEventType::Message => write!(f, "MESSAGE"),
+            ChatEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

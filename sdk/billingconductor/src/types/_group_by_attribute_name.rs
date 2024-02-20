@@ -96,3 +96,12 @@ impl GroupByAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for GroupByAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupByAttributeName::BillingPeriod => write!(f, "BILLING_PERIOD"),
+            GroupByAttributeName::ProductName => write!(f, "PRODUCT_NAME"),
+            GroupByAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

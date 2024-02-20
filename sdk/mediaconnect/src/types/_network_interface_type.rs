@@ -96,3 +96,12 @@ impl NetworkInterfaceType {
         }
     }
 }
+impl ::std::fmt::Display for NetworkInterfaceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkInterfaceType::Efa => write!(f, "efa"),
+            NetworkInterfaceType::Ena => write!(f, "ena"),
+            NetworkInterfaceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

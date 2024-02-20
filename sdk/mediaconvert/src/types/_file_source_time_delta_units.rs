@@ -96,3 +96,12 @@ impl FileSourceTimeDeltaUnits {
         }
     }
 }
+impl ::std::fmt::Display for FileSourceTimeDeltaUnits {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileSourceTimeDeltaUnits::Milliseconds => write!(f, "MILLISECONDS"),
+            FileSourceTimeDeltaUnits::Seconds => write!(f, "SECONDS"),
+            FileSourceTimeDeltaUnits::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

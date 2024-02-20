@@ -183,3 +183,26 @@ impl MarketoConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for MarketoConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MarketoConnectorOperator::Addition => write!(f, "ADDITION"),
+            MarketoConnectorOperator::Between => write!(f, "BETWEEN"),
+            MarketoConnectorOperator::Division => write!(f, "DIVISION"),
+            MarketoConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
+            MarketoConnectorOperator::LessThan => write!(f, "LESS_THAN"),
+            MarketoConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            MarketoConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            MarketoConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            MarketoConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            MarketoConnectorOperator::NoOp => write!(f, "NO_OP"),
+            MarketoConnectorOperator::Projection => write!(f, "PROJECTION"),
+            MarketoConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            MarketoConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            MarketoConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            MarketoConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            MarketoConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            MarketoConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

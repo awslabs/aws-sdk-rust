@@ -101,3 +101,13 @@ impl UnlockState {
         }
     }
 }
+impl ::std::fmt::Display for UnlockState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnlockState::Locked => write!(f, "LOCKED"),
+            UnlockState::Unlocked => write!(f, "UNLOCKED"),
+            UnlockState::Unlocking => write!(f, "UNLOCKING"),
+            UnlockState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

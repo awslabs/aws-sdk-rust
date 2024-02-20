@@ -111,3 +111,15 @@ impl ParticipantRole {
         }
     }
 }
+impl ::std::fmt::Display for ParticipantRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParticipantRole::Agent => write!(f, "AGENT"),
+            ParticipantRole::Customer => write!(f, "CUSTOMER"),
+            ParticipantRole::CustomBot => write!(f, "CUSTOM_BOT"),
+            ParticipantRole::Supervisor => write!(f, "SUPERVISOR"),
+            ParticipantRole::System => write!(f, "SYSTEM"),
+            ParticipantRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

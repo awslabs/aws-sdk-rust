@@ -96,3 +96,12 @@ impl RegistryStatus {
         }
     }
 }
+impl ::std::fmt::Display for RegistryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistryStatus::Available => write!(f, "AVAILABLE"),
+            RegistryStatus::Deleting => write!(f, "DELETING"),
+            RegistryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

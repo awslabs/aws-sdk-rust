@@ -96,3 +96,12 @@ impl RepositoryAccessMode {
         }
     }
 }
+impl ::std::fmt::Display for RepositoryAccessMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RepositoryAccessMode::Platform => write!(f, "Platform"),
+            RepositoryAccessMode::Vpc => write!(f, "Vpc"),
+            RepositoryAccessMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

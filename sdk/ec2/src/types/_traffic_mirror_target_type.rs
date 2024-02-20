@@ -101,3 +101,13 @@ impl TrafficMirrorTargetType {
         }
     }
 }
+impl ::std::fmt::Display for TrafficMirrorTargetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrafficMirrorTargetType::GatewayLoadBalancerEndpoint => write!(f, "gateway-load-balancer-endpoint"),
+            TrafficMirrorTargetType::NetworkInterface => write!(f, "network-interface"),
+            TrafficMirrorTargetType::NetworkLoadBalancer => write!(f, "network-load-balancer"),
+            TrafficMirrorTargetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

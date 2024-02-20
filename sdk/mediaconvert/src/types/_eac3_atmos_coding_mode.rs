@@ -106,3 +106,14 @@ impl Eac3AtmosCodingMode {
         }
     }
 }
+impl ::std::fmt::Display for Eac3AtmosCodingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3AtmosCodingMode::CodingMode514 => write!(f, "CODING_MODE_5_1_4"),
+            Eac3AtmosCodingMode::CodingMode714 => write!(f, "CODING_MODE_7_1_4"),
+            Eac3AtmosCodingMode::CodingMode916 => write!(f, "CODING_MODE_9_1_6"),
+            Eac3AtmosCodingMode::CodingModeAuto => write!(f, "CODING_MODE_AUTO"),
+            Eac3AtmosCodingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

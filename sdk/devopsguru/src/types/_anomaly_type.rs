@@ -96,3 +96,12 @@ impl AnomalyType {
         }
     }
 }
+impl ::std::fmt::Display for AnomalyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnomalyType::Causal => write!(f, "CAUSAL"),
+            AnomalyType::Contextual => write!(f, "CONTEXTUAL"),
+            AnomalyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

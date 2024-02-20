@@ -96,3 +96,12 @@ impl H264EndOfStreamMarkers {
         }
     }
 }
+impl ::std::fmt::Display for H264EndOfStreamMarkers {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264EndOfStreamMarkers::Include => write!(f, "INCLUDE"),
+            H264EndOfStreamMarkers::Suppress => write!(f, "SUPPRESS"),
+            H264EndOfStreamMarkers::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

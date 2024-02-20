@@ -96,3 +96,12 @@ impl ChangeDirectionEnum {
         }
     }
 }
+impl ::std::fmt::Display for ChangeDirectionEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeDirectionEnum::Decrease => write!(f, "DECREASE"),
+            ChangeDirectionEnum::Increase => write!(f, "INCREASE"),
+            ChangeDirectionEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl LensStatus {
         }
     }
 }
+impl ::std::fmt::Display for LensStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LensStatus::Current => write!(f, "CURRENT"),
+            LensStatus::Deleted => write!(f, "DELETED"),
+            LensStatus::Deprecated => write!(f, "DEPRECATED"),
+            LensStatus::NotCurrent => write!(f, "NOT_CURRENT"),
+            LensStatus::Unshared => write!(f, "UNSHARED"),
+            LensStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

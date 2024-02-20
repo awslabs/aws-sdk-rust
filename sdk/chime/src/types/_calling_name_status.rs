@@ -106,3 +106,14 @@ impl CallingNameStatus {
         }
     }
 }
+impl ::std::fmt::Display for CallingNameStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CallingNameStatus::Unassigned => write!(f, "Unassigned"),
+            CallingNameStatus::UpdateFailed => write!(f, "UpdateFailed"),
+            CallingNameStatus::UpdateInProgress => write!(f, "UpdateInProgress"),
+            CallingNameStatus::UpdateSucceeded => write!(f, "UpdateSucceeded"),
+            CallingNameStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

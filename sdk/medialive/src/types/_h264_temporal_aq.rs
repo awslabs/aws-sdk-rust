@@ -96,3 +96,12 @@ impl H264TemporalAq {
         }
     }
 }
+impl ::std::fmt::Display for H264TemporalAq {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264TemporalAq::Disabled => write!(f, "DISABLED"),
+            H264TemporalAq::Enabled => write!(f, "ENABLED"),
+            H264TemporalAq::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

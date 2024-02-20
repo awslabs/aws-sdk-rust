@@ -96,3 +96,12 @@ impl ValueWhenUnsetOption {
         }
     }
 }
+impl ::std::fmt::Display for ValueWhenUnsetOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValueWhenUnsetOption::Null => write!(f, "NULL"),
+            ValueWhenUnsetOption::RecommendedValue => write!(f, "RECOMMENDED_VALUE"),
+            ValueWhenUnsetOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

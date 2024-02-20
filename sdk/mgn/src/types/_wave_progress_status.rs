@@ -101,3 +101,13 @@ impl WaveProgressStatus {
         }
     }
 }
+impl ::std::fmt::Display for WaveProgressStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WaveProgressStatus::Completed => write!(f, "COMPLETED"),
+            WaveProgressStatus::InProgress => write!(f, "IN_PROGRESS"),
+            WaveProgressStatus::NotStarted => write!(f, "NOT_STARTED"),
+            WaveProgressStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

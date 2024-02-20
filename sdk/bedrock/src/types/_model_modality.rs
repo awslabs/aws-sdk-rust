@@ -101,3 +101,13 @@ impl ModelModality {
         }
     }
 }
+impl ::std::fmt::Display for ModelModality {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelModality::Embedding => write!(f, "EMBEDDING"),
+            ModelModality::Image => write!(f, "IMAGE"),
+            ModelModality::Text => write!(f, "TEXT"),
+            ModelModality::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

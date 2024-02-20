@@ -106,3 +106,14 @@ impl Condition {
         }
     }
 }
+impl ::std::fmt::Display for Condition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Condition::Contains => write!(f, "CONTAINS"),
+            Condition::Equals => write!(f, "EQUALS"),
+            Condition::NotContains => write!(f, "NOT_CONTAINS"),
+            Condition::NotEquals => write!(f, "NOT_EQUALS"),
+            Condition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl MessageType {
         }
     }
 }
+impl ::std::fmt::Display for MessageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessageType::SpliceInsert => write!(f, "SPLICE_INSERT"),
+            MessageType::TimeSignal => write!(f, "TIME_SIGNAL"),
+            MessageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

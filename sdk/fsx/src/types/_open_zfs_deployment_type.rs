@@ -101,3 +101,13 @@ impl OpenZfsDeploymentType {
         }
     }
 }
+impl ::std::fmt::Display for OpenZfsDeploymentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpenZfsDeploymentType::MultiAz1 => write!(f, "MULTI_AZ_1"),
+            OpenZfsDeploymentType::SingleAz1 => write!(f, "SINGLE_AZ_1"),
+            OpenZfsDeploymentType::SingleAz2 => write!(f, "SINGLE_AZ_2"),
+            OpenZfsDeploymentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

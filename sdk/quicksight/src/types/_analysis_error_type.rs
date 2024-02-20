@@ -147,3 +147,20 @@ impl AnalysisErrorType {
         }
     }
 }
+impl ::std::fmt::Display for AnalysisErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalysisErrorType::AccessDenied => write!(f, "ACCESS_DENIED"),
+            AnalysisErrorType::ColumnGeographicRoleMismatch => write!(f, "COLUMN_GEOGRAPHIC_ROLE_MISMATCH"),
+            AnalysisErrorType::ColumnReplacementMissing => write!(f, "COLUMN_REPLACEMENT_MISSING"),
+            AnalysisErrorType::ColumnTypeMismatch => write!(f, "COLUMN_TYPE_MISMATCH"),
+            AnalysisErrorType::DataSetNotFound => write!(f, "DATA_SET_NOT_FOUND"),
+            AnalysisErrorType::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            AnalysisErrorType::ParameterNotFound => write!(f, "PARAMETER_NOT_FOUND"),
+            AnalysisErrorType::ParameterTypeInvalid => write!(f, "PARAMETER_TYPE_INVALID"),
+            AnalysisErrorType::ParameterValueIncompatible => write!(f, "PARAMETER_VALUE_INCOMPATIBLE"),
+            AnalysisErrorType::SourceNotFound => write!(f, "SOURCE_NOT_FOUND"),
+            AnalysisErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

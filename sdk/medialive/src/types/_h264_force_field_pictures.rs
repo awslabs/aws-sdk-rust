@@ -96,3 +96,12 @@ impl H264ForceFieldPictures {
         }
     }
 }
+impl ::std::fmt::Display for H264ForceFieldPictures {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264ForceFieldPictures::Disabled => write!(f, "DISABLED"),
+            H264ForceFieldPictures::Enabled => write!(f, "ENABLED"),
+            H264ForceFieldPictures::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

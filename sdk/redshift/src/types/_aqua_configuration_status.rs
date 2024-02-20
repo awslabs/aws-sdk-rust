@@ -101,3 +101,13 @@ impl AquaConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AquaConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AquaConfigurationStatus::Auto => write!(f, "auto"),
+            AquaConfigurationStatus::Disabled => write!(f, "disabled"),
+            AquaConfigurationStatus::Enabled => write!(f, "enabled"),
+            AquaConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

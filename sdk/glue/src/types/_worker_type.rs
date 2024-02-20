@@ -121,3 +121,17 @@ impl WorkerType {
         }
     }
 }
+impl ::std::fmt::Display for WorkerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkerType::G025X => write!(f, "G.025X"),
+            WorkerType::G1X => write!(f, "G.1X"),
+            WorkerType::G2X => write!(f, "G.2X"),
+            WorkerType::G4X => write!(f, "G.4X"),
+            WorkerType::G8X => write!(f, "G.8X"),
+            WorkerType::Standard => write!(f, "Standard"),
+            WorkerType::Z2X => write!(f, "Z.2X"),
+            WorkerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

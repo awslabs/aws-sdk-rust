@@ -91,3 +91,11 @@ impl HookTargetType {
         }
     }
 }
+impl ::std::fmt::Display for HookTargetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HookTargetType::Resource => write!(f, "RESOURCE"),
+            HookTargetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -147,3 +147,20 @@ impl Operator {
         }
     }
 }
+impl ::std::fmt::Display for Operator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Operator::Contains => write!(f, "Contains"),
+            Operator::Equals => write!(f, "Equals"),
+            Operator::Exists => write!(f, "Exists"),
+            Operator::GreaterThan => write!(f, "GreaterThan"),
+            Operator::GreaterThanOrEqualTo => write!(f, "GreaterThanOrEqualTo"),
+            Operator::In => write!(f, "In"),
+            Operator::LessThan => write!(f, "LessThan"),
+            Operator::LessThanOrEqualTo => write!(f, "LessThanOrEqualTo"),
+            Operator::NotEquals => write!(f, "NotEquals"),
+            Operator::NotExists => write!(f, "NotExists"),
+            Operator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

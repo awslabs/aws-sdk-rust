@@ -96,3 +96,12 @@ impl NielsenWatermarksDistributionTypes {
         }
     }
 }
+impl ::std::fmt::Display for NielsenWatermarksDistributionTypes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NielsenWatermarksDistributionTypes::FinalDistributor => write!(f, "FINAL_DISTRIBUTOR"),
+            NielsenWatermarksDistributionTypes::ProgramContent => write!(f, "PROGRAM_CONTENT"),
+            NielsenWatermarksDistributionTypes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

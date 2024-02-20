@@ -96,3 +96,12 @@ impl SegmentType {
         }
     }
 }
+impl ::std::fmt::Display for SegmentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SegmentType::Dimensional => write!(f, "DIMENSIONAL"),
+            SegmentType::Import => write!(f, "IMPORT"),
+            SegmentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

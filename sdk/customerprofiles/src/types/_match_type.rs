@@ -96,3 +96,12 @@ impl MatchType {
         }
     }
 }
+impl ::std::fmt::Display for MatchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MatchType::MlBasedMatching => write!(f, "ML_BASED_MATCHING"),
+            MatchType::RuleBasedMatching => write!(f, "RULE_BASED_MATCHING"),
+            MatchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

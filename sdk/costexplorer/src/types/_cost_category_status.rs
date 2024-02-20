@@ -96,3 +96,12 @@ impl CostCategoryStatus {
         }
     }
 }
+impl ::std::fmt::Display for CostCategoryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CostCategoryStatus::Applied => write!(f, "APPLIED"),
+            CostCategoryStatus::Processing => write!(f, "PROCESSING"),
+            CostCategoryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

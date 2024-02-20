@@ -101,3 +101,13 @@ impl StringComparisonType {
         }
     }
 }
+impl ::std::fmt::Display for StringComparisonType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StringComparisonType::Contains => write!(f, "CONTAINS"),
+            StringComparisonType::Exact => write!(f, "EXACT"),
+            StringComparisonType::StartsWith => write!(f, "STARTS_WITH"),
+            StringComparisonType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

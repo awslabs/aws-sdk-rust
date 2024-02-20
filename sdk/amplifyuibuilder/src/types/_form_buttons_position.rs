@@ -101,3 +101,13 @@ impl FormButtonsPosition {
         }
     }
 }
+impl ::std::fmt::Display for FormButtonsPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FormButtonsPosition::Bottom => write!(f, "bottom"),
+            FormButtonsPosition::Top => write!(f, "top"),
+            FormButtonsPosition::TopAndBottom => write!(f, "top_and_bottom"),
+            FormButtonsPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

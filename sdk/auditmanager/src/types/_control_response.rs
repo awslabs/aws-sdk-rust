@@ -106,3 +106,14 @@ impl ControlResponse {
         }
     }
 }
+impl ::std::fmt::Display for ControlResponse {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ControlResponse::Automate => write!(f, "AUTOMATE"),
+            ControlResponse::Defer => write!(f, "DEFER"),
+            ControlResponse::Ignore => write!(f, "IGNORE"),
+            ControlResponse::Manual => write!(f, "MANUAL"),
+            ControlResponse::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

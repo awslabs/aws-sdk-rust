@@ -106,3 +106,14 @@ impl EnvironmentState {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentState::Active => write!(f, "ACTIVE"),
+            EnvironmentState::Creating => write!(f, "CREATING"),
+            EnvironmentState::Deleting => write!(f, "DELETING"),
+            EnvironmentState::Failed => write!(f, "FAILED"),
+            EnvironmentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

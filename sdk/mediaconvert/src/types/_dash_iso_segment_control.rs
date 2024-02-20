@@ -96,3 +96,12 @@ impl DashIsoSegmentControl {
         }
     }
 }
+impl ::std::fmt::Display for DashIsoSegmentControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashIsoSegmentControl::SegmentedFiles => write!(f, "SEGMENTED_FILES"),
+            DashIsoSegmentControl::SingleFile => write!(f, "SINGLE_FILE"),
+            DashIsoSegmentControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl AuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationType::DirectoryIdentity => write!(f, "DIRECTORY_IDENTITY"),
+            AuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

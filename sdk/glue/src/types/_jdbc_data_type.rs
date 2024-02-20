@@ -321,3 +321,49 @@ impl JdbcDataType {
         }
     }
 }
+impl ::std::fmt::Display for JdbcDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JdbcDataType::Array => write!(f, "ARRAY"),
+            JdbcDataType::Bigint => write!(f, "BIGINT"),
+            JdbcDataType::Binary => write!(f, "BINARY"),
+            JdbcDataType::Bit => write!(f, "BIT"),
+            JdbcDataType::Blob => write!(f, "BLOB"),
+            JdbcDataType::Boolean => write!(f, "BOOLEAN"),
+            JdbcDataType::Char => write!(f, "CHAR"),
+            JdbcDataType::Clob => write!(f, "CLOB"),
+            JdbcDataType::Datalink => write!(f, "DATALINK"),
+            JdbcDataType::Date => write!(f, "DATE"),
+            JdbcDataType::Decimal => write!(f, "DECIMAL"),
+            JdbcDataType::Distinct => write!(f, "DISTINCT"),
+            JdbcDataType::Double => write!(f, "DOUBLE"),
+            JdbcDataType::Float => write!(f, "FLOAT"),
+            JdbcDataType::Integer => write!(f, "INTEGER"),
+            JdbcDataType::JavaObject => write!(f, "JAVA_OBJECT"),
+            JdbcDataType::Longnvarchar => write!(f, "LONGNVARCHAR"),
+            JdbcDataType::Longvarbinary => write!(f, "LONGVARBINARY"),
+            JdbcDataType::Longvarchar => write!(f, "LONGVARCHAR"),
+            JdbcDataType::Nchar => write!(f, "NCHAR"),
+            JdbcDataType::Nclob => write!(f, "NCLOB"),
+            JdbcDataType::Null => write!(f, "NULL"),
+            JdbcDataType::Numeric => write!(f, "NUMERIC"),
+            JdbcDataType::Nvarchar => write!(f, "NVARCHAR"),
+            JdbcDataType::Other => write!(f, "OTHER"),
+            JdbcDataType::Real => write!(f, "REAL"),
+            JdbcDataType::Ref => write!(f, "REF"),
+            JdbcDataType::RefCursor => write!(f, "REF_CURSOR"),
+            JdbcDataType::Rowid => write!(f, "ROWID"),
+            JdbcDataType::Smallint => write!(f, "SMALLINT"),
+            JdbcDataType::Sqlxml => write!(f, "SQLXML"),
+            JdbcDataType::Struct => write!(f, "STRUCT"),
+            JdbcDataType::Time => write!(f, "TIME"),
+            JdbcDataType::Timestamp => write!(f, "TIMESTAMP"),
+            JdbcDataType::TimestampWithTimezone => write!(f, "TIMESTAMP_WITH_TIMEZONE"),
+            JdbcDataType::TimeWithTimezone => write!(f, "TIME_WITH_TIMEZONE"),
+            JdbcDataType::Tinyint => write!(f, "TINYINT"),
+            JdbcDataType::Varbinary => write!(f, "VARBINARY"),
+            JdbcDataType::Varchar => write!(f, "VARCHAR"),
+            JdbcDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

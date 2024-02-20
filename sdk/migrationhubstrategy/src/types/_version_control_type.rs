@@ -101,3 +101,13 @@ impl VersionControlType {
         }
     }
 }
+impl ::std::fmt::Display for VersionControlType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VersionControlType::AzureDevopsGit => write!(f, "AZURE_DEVOPS_GIT"),
+            VersionControlType::Github => write!(f, "GITHUB"),
+            VersionControlType::GithubEnterprise => write!(f, "GITHUB_ENTERPRISE"),
+            VersionControlType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

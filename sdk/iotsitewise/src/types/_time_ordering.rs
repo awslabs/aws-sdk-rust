@@ -96,3 +96,12 @@ impl TimeOrdering {
         }
     }
 }
+impl ::std::fmt::Display for TimeOrdering {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimeOrdering::Ascending => write!(f, "ASCENDING"),
+            TimeOrdering::Descending => write!(f, "DESCENDING"),
+            TimeOrdering::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

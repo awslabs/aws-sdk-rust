@@ -101,3 +101,13 @@ impl FileModeTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for FileModeTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileModeTypeEnum::Executable => write!(f, "EXECUTABLE"),
+            FileModeTypeEnum::Normal => write!(f, "NORMAL"),
+            FileModeTypeEnum::Symlink => write!(f, "SYMLINK"),
+            FileModeTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

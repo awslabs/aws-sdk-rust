@@ -96,3 +96,12 @@ impl MergeStrategy {
         }
     }
 }
+impl ::std::fmt::Display for MergeStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MergeStrategy::FailOnConflict => write!(f, "FAIL_ON_CONFLICT"),
+            MergeStrategy::OverwriteLatest => write!(f, "OVERWRITE_LATEST"),
+            MergeStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl BatchResourceRequirementType {
         }
     }
 }
+impl ::std::fmt::Display for BatchResourceRequirementType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchResourceRequirementType::Gpu => write!(f, "GPU"),
+            BatchResourceRequirementType::Memory => write!(f, "MEMORY"),
+            BatchResourceRequirementType::Vcpu => write!(f, "VCPU"),
+            BatchResourceRequirementType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

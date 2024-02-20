@@ -101,3 +101,13 @@ impl ResolveConflicts {
         }
     }
 }
+impl ::std::fmt::Display for ResolveConflicts {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolveConflicts::None => write!(f, "NONE"),
+            ResolveConflicts::Overwrite => write!(f, "OVERWRITE"),
+            ResolveConflicts::Preserve => write!(f, "PRESERVE"),
+            ResolveConflicts::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

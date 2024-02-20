@@ -96,3 +96,12 @@ impl ExportSnapshotRecordSourceType {
         }
     }
 }
+impl ::std::fmt::Display for ExportSnapshotRecordSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportSnapshotRecordSourceType::DiskSnapshot => write!(f, "DiskSnapshot"),
+            ExportSnapshotRecordSourceType::InstanceSnapshot => write!(f, "InstanceSnapshot"),
+            ExportSnapshotRecordSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl BusinessReportInterval {
         }
     }
 }
+impl ::std::fmt::Display for BusinessReportInterval {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BusinessReportInterval::OneDay => write!(f, "ONE_DAY"),
+            BusinessReportInterval::OneWeek => write!(f, "ONE_WEEK"),
+            BusinessReportInterval::ThirtyDays => write!(f, "THIRTY_DAYS"),
+            BusinessReportInterval::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

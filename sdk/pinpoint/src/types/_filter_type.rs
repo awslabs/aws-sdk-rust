@@ -96,3 +96,12 @@ impl FilterType {
         }
     }
 }
+impl ::std::fmt::Display for FilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterType::Endpoint => write!(f, "ENDPOINT"),
+            FilterType::System => write!(f, "SYSTEM"),
+            FilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

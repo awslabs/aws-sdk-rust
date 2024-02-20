@@ -101,3 +101,13 @@ impl ViolationEventType {
         }
     }
 }
+impl ::std::fmt::Display for ViolationEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ViolationEventType::AlarmCleared => write!(f, "alarm-cleared"),
+            ViolationEventType::AlarmInvalidated => write!(f, "alarm-invalidated"),
+            ViolationEventType::InAlarm => write!(f, "in-alarm"),
+            ViolationEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

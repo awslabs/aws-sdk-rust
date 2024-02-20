@@ -96,3 +96,12 @@ impl AccessType {
         }
     }
 }
+impl ::std::fmt::Display for AccessType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessType::Lakeformation => write!(f, "LAKEFORMATION"),
+            AccessType::S3 => write!(f, "S3"),
+            AccessType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

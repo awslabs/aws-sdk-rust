@@ -96,3 +96,12 @@ impl WorkloadEnvironment {
         }
     }
 }
+impl ::std::fmt::Display for WorkloadEnvironment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkloadEnvironment::Preproduction => write!(f, "PREPRODUCTION"),
+            WorkloadEnvironment::Production => write!(f, "PRODUCTION"),
+            WorkloadEnvironment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AssociationExecutionFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for AssociationExecutionFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationExecutionFilterKey::CreatedTime => write!(f, "CreatedTime"),
+            AssociationExecutionFilterKey::ExecutionId => write!(f, "ExecutionId"),
+            AssociationExecutionFilterKey::Status => write!(f, "Status"),
+            AssociationExecutionFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl PlatformStatus {
         }
     }
 }
+impl ::std::fmt::Display for PlatformStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlatformStatus::Creating => write!(f, "Creating"),
+            PlatformStatus::Deleted => write!(f, "Deleted"),
+            PlatformStatus::Deleting => write!(f, "Deleting"),
+            PlatformStatus::Failed => write!(f, "Failed"),
+            PlatformStatus::Ready => write!(f, "Ready"),
+            PlatformStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

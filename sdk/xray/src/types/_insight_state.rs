@@ -96,3 +96,12 @@ impl InsightState {
         }
     }
 }
+impl ::std::fmt::Display for InsightState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InsightState::Active => write!(f, "ACTIVE"),
+            InsightState::Closed => write!(f, "CLOSED"),
+            InsightState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

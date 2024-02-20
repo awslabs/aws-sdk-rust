@@ -93,3 +93,11 @@ impl AssetBundleExportJobAnalysisPropertyToOverride {
         }
     }
 }
+impl ::std::fmt::Display for AssetBundleExportJobAnalysisPropertyToOverride {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetBundleExportJobAnalysisPropertyToOverride::Name => write!(f, "Name"),
+            AssetBundleExportJobAnalysisPropertyToOverride::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

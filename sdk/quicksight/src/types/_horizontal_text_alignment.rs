@@ -106,3 +106,14 @@ impl HorizontalTextAlignment {
         }
     }
 }
+impl ::std::fmt::Display for HorizontalTextAlignment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HorizontalTextAlignment::Auto => write!(f, "AUTO"),
+            HorizontalTextAlignment::Center => write!(f, "CENTER"),
+            HorizontalTextAlignment::Left => write!(f, "LEFT"),
+            HorizontalTextAlignment::Right => write!(f, "RIGHT"),
+            HorizontalTextAlignment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

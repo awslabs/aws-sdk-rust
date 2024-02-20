@@ -96,3 +96,12 @@ impl EnableSetting {
         }
     }
 }
+impl ::std::fmt::Display for EnableSetting {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnableSetting::Disabled => write!(f, "DISABLED"),
+            EnableSetting::Enabled => write!(f, "ENABLED"),
+            EnableSetting::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl Av1AdaptiveQuantization {
         }
     }
 }
+impl ::std::fmt::Display for Av1AdaptiveQuantization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Av1AdaptiveQuantization::High => write!(f, "HIGH"),
+            Av1AdaptiveQuantization::Higher => write!(f, "HIGHER"),
+            Av1AdaptiveQuantization::Low => write!(f, "LOW"),
+            Av1AdaptiveQuantization::Max => write!(f, "MAX"),
+            Av1AdaptiveQuantization::Medium => write!(f, "MEDIUM"),
+            Av1AdaptiveQuantization::Off => write!(f, "OFF"),
+            Av1AdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

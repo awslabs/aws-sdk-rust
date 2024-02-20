@@ -106,3 +106,14 @@ impl PortInfoSourceType {
         }
     }
 }
+impl ::std::fmt::Display for PortInfoSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PortInfoSourceType::Closed => write!(f, "CLOSED"),
+            PortInfoSourceType::Default => write!(f, "DEFAULT"),
+            PortInfoSourceType::Instance => write!(f, "INSTANCE"),
+            PortInfoSourceType::None => write!(f, "NONE"),
+            PortInfoSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

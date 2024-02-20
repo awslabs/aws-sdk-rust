@@ -123,3 +123,16 @@ impl TextTransformation {
         }
     }
 }
+impl ::std::fmt::Display for TextTransformation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TextTransformation::CmdLine => write!(f, "CMD_LINE"),
+            TextTransformation::CompressWhiteSpace => write!(f, "COMPRESS_WHITE_SPACE"),
+            TextTransformation::HtmlEntityDecode => write!(f, "HTML_ENTITY_DECODE"),
+            TextTransformation::Lowercase => write!(f, "LOWERCASE"),
+            TextTransformation::None => write!(f, "NONE"),
+            TextTransformation::UrlDecode => write!(f, "URL_DECODE"),
+            TextTransformation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

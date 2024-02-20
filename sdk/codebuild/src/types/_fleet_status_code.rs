@@ -129,3 +129,17 @@ impl FleetStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for FleetStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetStatusCode::Active => write!(f, "ACTIVE"),
+            FleetStatusCode::CreateFailed => write!(f, "CREATE_FAILED"),
+            FleetStatusCode::Creating => write!(f, "CREATING"),
+            FleetStatusCode::Deleting => write!(f, "DELETING"),
+            FleetStatusCode::Rotating => write!(f, "ROTATING"),
+            FleetStatusCode::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
+            FleetStatusCode::Updating => write!(f, "UPDATING"),
+            FleetStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

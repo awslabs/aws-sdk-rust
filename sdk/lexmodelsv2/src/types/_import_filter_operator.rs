@@ -96,3 +96,12 @@ impl ImportFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for ImportFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportFilterOperator::Contains => write!(f, "CO"),
+            ImportFilterOperator::Equals => write!(f, "EQ"),
+            ImportFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

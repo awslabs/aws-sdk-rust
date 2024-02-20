@@ -96,3 +96,12 @@ impl RoutingPolicy {
         }
     }
 }
+impl ::std::fmt::Display for RoutingPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RoutingPolicy::Multivalue => write!(f, "MULTIVALUE"),
+            RoutingPolicy::Weighted => write!(f, "WEIGHTED"),
+            RoutingPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

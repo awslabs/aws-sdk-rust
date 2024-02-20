@@ -171,3 +171,24 @@ impl AlgorithmNameGeoMosaic {
         }
     }
 }
+impl ::std::fmt::Display for AlgorithmNameGeoMosaic {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlgorithmNameGeoMosaic::Average => write!(f, "AVERAGE"),
+            AlgorithmNameGeoMosaic::Bilinear => write!(f, "BILINEAR"),
+            AlgorithmNameGeoMosaic::Cubic => write!(f, "CUBIC"),
+            AlgorithmNameGeoMosaic::Cubicspline => write!(f, "CUBICSPLINE"),
+            AlgorithmNameGeoMosaic::Lanczos => write!(f, "LANCZOS"),
+            AlgorithmNameGeoMosaic::Max => write!(f, "MAX"),
+            AlgorithmNameGeoMosaic::Med => write!(f, "MED"),
+            AlgorithmNameGeoMosaic::Min => write!(f, "MIN"),
+            AlgorithmNameGeoMosaic::Mode => write!(f, "MODE"),
+            AlgorithmNameGeoMosaic::Near => write!(f, "NEAR"),
+            AlgorithmNameGeoMosaic::Q1 => write!(f, "Q1"),
+            AlgorithmNameGeoMosaic::Q3 => write!(f, "Q3"),
+            AlgorithmNameGeoMosaic::Rms => write!(f, "RMS"),
+            AlgorithmNameGeoMosaic::Sum => write!(f, "SUM"),
+            AlgorithmNameGeoMosaic::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

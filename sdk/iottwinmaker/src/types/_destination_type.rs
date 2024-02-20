@@ -101,3 +101,13 @@ impl DestinationType {
         }
     }
 }
+impl ::std::fmt::Display for DestinationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DestinationType::Iotsitewise => write!(f, "iotsitewise"),
+            DestinationType::Iottwinmaker => write!(f, "iottwinmaker"),
+            DestinationType::S3 => write!(f, "s3"),
+            DestinationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl IpamTier {
         }
     }
 }
+impl ::std::fmt::Display for IpamTier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamTier::Advanced => write!(f, "advanced"),
+            IpamTier::Free => write!(f, "free"),
+            IpamTier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

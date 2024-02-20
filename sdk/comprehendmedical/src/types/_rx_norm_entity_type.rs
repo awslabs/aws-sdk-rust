@@ -96,3 +96,12 @@ impl RxNormEntityType {
         }
     }
 }
+impl ::std::fmt::Display for RxNormEntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RxNormEntityType::BrandName => write!(f, "BRAND_NAME"),
+            RxNormEntityType::GenericName => write!(f, "GENERIC_NAME"),
+            RxNormEntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

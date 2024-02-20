@@ -101,3 +101,13 @@ impl BgpStatus {
         }
     }
 }
+impl ::std::fmt::Display for BgpStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BgpStatus::Down => write!(f, "down"),
+            BgpStatus::UnknownValue => write!(f, "unknown"),
+            BgpStatus::Up => write!(f, "up"),
+            BgpStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

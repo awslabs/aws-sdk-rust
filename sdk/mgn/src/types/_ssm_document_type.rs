@@ -96,3 +96,12 @@ impl SsmDocumentType {
         }
     }
 }
+impl ::std::fmt::Display for SsmDocumentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SsmDocumentType::Automation => write!(f, "AUTOMATION"),
+            SsmDocumentType::Command => write!(f, "COMMAND"),
+            SsmDocumentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -98,3 +98,12 @@ impl Scte35SpliceInsertWebDeliveryAllowedBehavior {
         }
     }
 }
+impl ::std::fmt::Display for Scte35SpliceInsertWebDeliveryAllowedBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Scte35SpliceInsertWebDeliveryAllowedBehavior::Follow => write!(f, "FOLLOW"),
+            Scte35SpliceInsertWebDeliveryAllowedBehavior::Ignore => write!(f, "IGNORE"),
+            Scte35SpliceInsertWebDeliveryAllowedBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

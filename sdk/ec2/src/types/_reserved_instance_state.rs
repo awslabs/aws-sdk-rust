@@ -116,3 +116,16 @@ impl ReservedInstanceState {
         }
     }
 }
+impl ::std::fmt::Display for ReservedInstanceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservedInstanceState::Active => write!(f, "active"),
+            ReservedInstanceState::PaymentFailed => write!(f, "payment-failed"),
+            ReservedInstanceState::PaymentPending => write!(f, "payment-pending"),
+            ReservedInstanceState::Queued => write!(f, "queued"),
+            ReservedInstanceState::QueuedDeleted => write!(f, "queued-deleted"),
+            ReservedInstanceState::Retired => write!(f, "retired"),
+            ReservedInstanceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl WidgetStatus {
         }
     }
 }
+impl ::std::fmt::Display for WidgetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WidgetStatus::Disabled => write!(f, "DISABLED"),
+            WidgetStatus::Enabled => write!(f, "ENABLED"),
+            WidgetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Question {
         }
     }
 }
+impl ::std::fmt::Display for Question {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Question::Answered => write!(f, "ANSWERED"),
+            Question::Unanswered => write!(f, "UNANSWERED"),
+            Question::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

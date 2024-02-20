@@ -96,3 +96,12 @@ impl AudioNormalizationPeakCalculation {
         }
     }
 }
+impl ::std::fmt::Display for AudioNormalizationPeakCalculation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioNormalizationPeakCalculation::None => write!(f, "NONE"),
+            AudioNormalizationPeakCalculation::TruePeak => write!(f, "TRUE_PEAK"),
+            AudioNormalizationPeakCalculation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

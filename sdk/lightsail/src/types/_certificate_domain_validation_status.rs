@@ -101,3 +101,13 @@ impl CertificateDomainValidationStatus {
         }
     }
 }
+impl ::std::fmt::Display for CertificateDomainValidationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateDomainValidationStatus::Failed => write!(f, "FAILED"),
+            CertificateDomainValidationStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
+            CertificateDomainValidationStatus::Success => write!(f, "SUCCESS"),
+            CertificateDomainValidationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

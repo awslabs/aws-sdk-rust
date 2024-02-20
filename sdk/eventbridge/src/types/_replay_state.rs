@@ -116,3 +116,16 @@ impl ReplayState {
         }
     }
 }
+impl ::std::fmt::Display for ReplayState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplayState::Cancelled => write!(f, "CANCELLED"),
+            ReplayState::Cancelling => write!(f, "CANCELLING"),
+            ReplayState::Completed => write!(f, "COMPLETED"),
+            ReplayState::Failed => write!(f, "FAILED"),
+            ReplayState::Running => write!(f, "RUNNING"),
+            ReplayState::Starting => write!(f, "STARTING"),
+            ReplayState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -143,3 +143,21 @@ impl TargetSamplingRate {
         }
     }
 }
+impl ::std::fmt::Display for TargetSamplingRate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetSamplingRate::Pt10M => write!(f, "PT10M"),
+            TargetSamplingRate::Pt10S => write!(f, "PT10S"),
+            TargetSamplingRate::Pt15M => write!(f, "PT15M"),
+            TargetSamplingRate::Pt15S => write!(f, "PT15S"),
+            TargetSamplingRate::Pt1H => write!(f, "PT1H"),
+            TargetSamplingRate::Pt1M => write!(f, "PT1M"),
+            TargetSamplingRate::Pt1S => write!(f, "PT1S"),
+            TargetSamplingRate::Pt30M => write!(f, "PT30M"),
+            TargetSamplingRate::Pt30S => write!(f, "PT30S"),
+            TargetSamplingRate::Pt5M => write!(f, "PT5M"),
+            TargetSamplingRate::Pt5S => write!(f, "PT5S"),
+            TargetSamplingRate::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

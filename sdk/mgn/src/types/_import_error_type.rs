@@ -96,3 +96,12 @@ impl ImportErrorType {
         }
     }
 }
+impl ::std::fmt::Display for ImportErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportErrorType::ProcessingError => write!(f, "PROCESSING_ERROR"),
+            ImportErrorType::ValidationError => write!(f, "VALIDATION_ERROR"),
+            ImportErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

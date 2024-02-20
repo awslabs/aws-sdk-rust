@@ -91,3 +91,11 @@ impl LicenseName {
         }
     }
 }
+impl ::std::fmt::Display for LicenseName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LicenseName::Sqlserver => write!(f, "SQLServer"),
+            LicenseName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

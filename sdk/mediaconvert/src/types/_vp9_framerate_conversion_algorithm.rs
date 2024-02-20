@@ -101,3 +101,13 @@ impl Vp9FramerateConversionAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for Vp9FramerateConversionAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Vp9FramerateConversionAlgorithm::DuplicateDrop => write!(f, "DUPLICATE_DROP"),
+            Vp9FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
+            Vp9FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
+            Vp9FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

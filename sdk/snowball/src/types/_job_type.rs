@@ -101,3 +101,13 @@ impl JobType {
         }
     }
 }
+impl ::std::fmt::Display for JobType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobType::Export => write!(f, "EXPORT"),
+            JobType::Import => write!(f, "IMPORT"),
+            JobType::LocalUse => write!(f, "LOCAL_USE"),
+            JobType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

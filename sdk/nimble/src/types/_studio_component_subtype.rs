@@ -106,3 +106,14 @@ impl StudioComponentSubtype {
         }
     }
 }
+impl ::std::fmt::Display for StudioComponentSubtype {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StudioComponentSubtype::AmazonFsxForLustre => write!(f, "AMAZON_FSX_FOR_LUSTRE"),
+            StudioComponentSubtype::AmazonFsxForWindows => write!(f, "AMAZON_FSX_FOR_WINDOWS"),
+            StudioComponentSubtype::AwsManagedMicrosoftAd => write!(f, "AWS_MANAGED_MICROSOFT_AD"),
+            StudioComponentSubtype::Custom => write!(f, "CUSTOM"),
+            StudioComponentSubtype::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl Stage {
         }
     }
 }
+impl ::std::fmt::Display for Stage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Stage::Beta => write!(f, "BETA"),
+            Stage::Development => write!(f, "DEVELOPMENT"),
+            Stage::Experimental => write!(f, "EXPERIMENTAL"),
+            Stage::Production => write!(f, "PRODUCTION"),
+            Stage::PullRequest => write!(f, "PULL_REQUEST"),
+            Stage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

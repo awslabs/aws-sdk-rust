@@ -101,3 +101,13 @@ impl ExportEnvironment {
         }
     }
 }
+impl ::std::fmt::Display for ExportEnvironment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportEnvironment::Citrix => write!(f, "citrix"),
+            ExportEnvironment::Microsoft => write!(f, "microsoft"),
+            ExportEnvironment::Vmware => write!(f, "vmware"),
+            ExportEnvironment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ExitBehavior {
         }
     }
 }
+impl ::std::fmt::Display for ExitBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExitBehavior::Fail => write!(f, "FAIL"),
+            ExitBehavior::Restart => write!(f, "RESTART"),
+            ExitBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

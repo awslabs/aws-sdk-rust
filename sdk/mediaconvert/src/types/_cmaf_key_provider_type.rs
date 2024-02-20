@@ -96,3 +96,12 @@ impl CmafKeyProviderType {
         }
     }
 }
+impl ::std::fmt::Display for CmafKeyProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafKeyProviderType::Speke => write!(f, "SPEKE"),
+            CmafKeyProviderType::StaticKey => write!(f, "STATIC_KEY"),
+            CmafKeyProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

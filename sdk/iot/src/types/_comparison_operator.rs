@@ -147,3 +147,20 @@ impl ComparisonOperator {
         }
     }
 }
+impl ::std::fmt::Display for ComparisonOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComparisonOperator::GreaterThan => write!(f, "greater-than"),
+            ComparisonOperator::GreaterThanEquals => write!(f, "greater-than-equals"),
+            ComparisonOperator::InCidrSet => write!(f, "in-cidr-set"),
+            ComparisonOperator::InPortSet => write!(f, "in-port-set"),
+            ComparisonOperator::InSet => write!(f, "in-set"),
+            ComparisonOperator::LessThan => write!(f, "less-than"),
+            ComparisonOperator::LessThanEquals => write!(f, "less-than-equals"),
+            ComparisonOperator::NotInCidrSet => write!(f, "not-in-cidr-set"),
+            ComparisonOperator::NotInPortSet => write!(f, "not-in-port-set"),
+            ComparisonOperator::NotInSet => write!(f, "not-in-set"),
+            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

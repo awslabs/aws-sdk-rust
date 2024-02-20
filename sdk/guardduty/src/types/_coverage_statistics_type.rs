@@ -96,3 +96,12 @@ impl CoverageStatisticsType {
         }
     }
 }
+impl ::std::fmt::Display for CoverageStatisticsType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CoverageStatisticsType::CountByCoverageStatus => write!(f, "COUNT_BY_COVERAGE_STATUS"),
+            CoverageStatisticsType::CountByResourceType => write!(f, "COUNT_BY_RESOURCE_TYPE"),
+            CoverageStatisticsType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ReprocessingStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReprocessingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReprocessingStatus::Cancelled => write!(f, "CANCELLED"),
+            ReprocessingStatus::Failed => write!(f, "FAILED"),
+            ReprocessingStatus::Running => write!(f, "RUNNING"),
+            ReprocessingStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ReprocessingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

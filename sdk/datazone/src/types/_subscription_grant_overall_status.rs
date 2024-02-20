@@ -129,3 +129,17 @@ impl SubscriptionGrantOverallStatus {
         }
     }
 }
+impl ::std::fmt::Display for SubscriptionGrantOverallStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubscriptionGrantOverallStatus::Completed => write!(f, "COMPLETED"),
+            SubscriptionGrantOverallStatus::GrantAndRevokeFailed => write!(f, "GRANT_AND_REVOKE_FAILED"),
+            SubscriptionGrantOverallStatus::GrantFailed => write!(f, "GRANT_FAILED"),
+            SubscriptionGrantOverallStatus::Inaccessible => write!(f, "INACCESSIBLE"),
+            SubscriptionGrantOverallStatus::InProgress => write!(f, "IN_PROGRESS"),
+            SubscriptionGrantOverallStatus::Pending => write!(f, "PENDING"),
+            SubscriptionGrantOverallStatus::RevokeFailed => write!(f, "REVOKE_FAILED"),
+            SubscriptionGrantOverallStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

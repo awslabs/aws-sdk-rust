@@ -96,3 +96,12 @@ impl EmbeddedTerminateCaptions {
         }
     }
 }
+impl ::std::fmt::Display for EmbeddedTerminateCaptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EmbeddedTerminateCaptions::Disabled => write!(f, "DISABLED"),
+            EmbeddedTerminateCaptions::EndOfInput => write!(f, "END_OF_INPUT"),
+            EmbeddedTerminateCaptions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

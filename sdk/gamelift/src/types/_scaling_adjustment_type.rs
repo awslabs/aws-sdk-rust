@@ -101,3 +101,13 @@ impl ScalingAdjustmentType {
         }
     }
 }
+impl ::std::fmt::Display for ScalingAdjustmentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalingAdjustmentType::ChangeInCapacity => write!(f, "ChangeInCapacity"),
+            ScalingAdjustmentType::ExactCapacity => write!(f, "ExactCapacity"),
+            ScalingAdjustmentType::PercentChangeInCapacity => write!(f, "PercentChangeInCapacity"),
+            ScalingAdjustmentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

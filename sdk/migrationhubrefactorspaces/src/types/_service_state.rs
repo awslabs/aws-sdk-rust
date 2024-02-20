@@ -106,3 +106,14 @@ impl ServiceState {
         }
     }
 }
+impl ::std::fmt::Display for ServiceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceState::Active => write!(f, "ACTIVE"),
+            ServiceState::Creating => write!(f, "CREATING"),
+            ServiceState::Deleting => write!(f, "DELETING"),
+            ServiceState::Failed => write!(f, "FAILED"),
+            ServiceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

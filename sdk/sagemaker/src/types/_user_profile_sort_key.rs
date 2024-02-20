@@ -96,3 +96,12 @@ impl UserProfileSortKey {
         }
     }
 }
+impl ::std::fmt::Display for UserProfileSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserProfileSortKey::CreationTime => write!(f, "CreationTime"),
+            UserProfileSortKey::LastModifiedTime => write!(f, "LastModifiedTime"),
+            UserProfileSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

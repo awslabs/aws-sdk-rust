@@ -96,3 +96,12 @@ impl Scte35InputMode {
         }
     }
 }
+impl ::std::fmt::Display for Scte35InputMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Scte35InputMode::Fixed => write!(f, "FIXED"),
+            Scte35InputMode::FollowActive => write!(f, "FOLLOW_ACTIVE"),
+            Scte35InputMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl DbProxyStatus {
         }
     }
 }
+impl ::std::fmt::Display for DbProxyStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DbProxyStatus::Available => write!(f, "available"),
+            DbProxyStatus::Creating => write!(f, "creating"),
+            DbProxyStatus::Deleting => write!(f, "deleting"),
+            DbProxyStatus::IncompatibleNetwork => write!(f, "incompatible-network"),
+            DbProxyStatus::InsufficientResourceLimits => write!(f, "insufficient-resource-limits"),
+            DbProxyStatus::Modifying => write!(f, "modifying"),
+            DbProxyStatus::Reactivating => write!(f, "reactivating"),
+            DbProxyStatus::Suspended => write!(f, "suspended"),
+            DbProxyStatus::Suspending => write!(f, "suspending"),
+            DbProxyStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

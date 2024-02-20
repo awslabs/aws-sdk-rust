@@ -101,3 +101,13 @@ impl TargetGroupProtocolVersion {
         }
     }
 }
+impl ::std::fmt::Display for TargetGroupProtocolVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetGroupProtocolVersion::Grpc => write!(f, "GRPC"),
+            TargetGroupProtocolVersion::Http1 => write!(f, "HTTP1"),
+            TargetGroupProtocolVersion::Http2 => write!(f, "HTTP2"),
+            TargetGroupProtocolVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

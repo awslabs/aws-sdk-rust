@@ -101,3 +101,13 @@ impl RadiusStatus {
         }
     }
 }
+impl ::std::fmt::Display for RadiusStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RadiusStatus::Completed => write!(f, "Completed"),
+            RadiusStatus::Creating => write!(f, "Creating"),
+            RadiusStatus::Failed => write!(f, "Failed"),
+            RadiusStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl DesiredState {
         }
     }
 }
+impl ::std::fmt::Display for DesiredState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DesiredState::Removed => write!(f, "REMOVED"),
+            DesiredState::Running => write!(f, "RUNNING"),
+            DesiredState::Stopped => write!(f, "STOPPED"),
+            DesiredState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,14 @@ impl BpaStatusMessage {
         }
     }
 }
+impl ::std::fmt::Display for BpaStatusMessage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BpaStatusMessage::DefaultedForSlrMissing => write!(f, "DEFAULTED_FOR_SLR_MISSING"),
+            BpaStatusMessage::DefaultedForSlrMissingOnHold => write!(f, "DEFAULTED_FOR_SLR_MISSING_ON_HOLD"),
+            BpaStatusMessage::SyncOnHold => write!(f, "SYNC_ON_HOLD"),
+            BpaStatusMessage::UnknownValue => write!(f, "Unknown"),
+            BpaStatusMessage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

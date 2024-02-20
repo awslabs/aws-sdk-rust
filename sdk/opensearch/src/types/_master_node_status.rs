@@ -96,3 +96,12 @@ impl MasterNodeStatus {
         }
     }
 }
+impl ::std::fmt::Display for MasterNodeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MasterNodeStatus::Available => write!(f, "Available"),
+            MasterNodeStatus::UnAvailable => write!(f, "UnAvailable"),
+            MasterNodeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

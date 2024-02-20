@@ -96,3 +96,12 @@ impl GlobalConfigurationInputEndAction {
         }
     }
 }
+impl ::std::fmt::Display for GlobalConfigurationInputEndAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GlobalConfigurationInputEndAction::None => write!(f, "NONE"),
+            GlobalConfigurationInputEndAction::SwitchAndLoopInputs => write!(f, "SWITCH_AND_LOOP_INPUTS"),
+            GlobalConfigurationInputEndAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

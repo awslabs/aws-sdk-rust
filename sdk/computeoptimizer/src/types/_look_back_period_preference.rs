@@ -101,3 +101,13 @@ impl LookBackPeriodPreference {
         }
     }
 }
+impl ::std::fmt::Display for LookBackPeriodPreference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LookBackPeriodPreference::Days14 => write!(f, "DAYS_14"),
+            LookBackPeriodPreference::Days32 => write!(f, "DAYS_32"),
+            LookBackPeriodPreference::Days93 => write!(f, "DAYS_93"),
+            LookBackPeriodPreference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

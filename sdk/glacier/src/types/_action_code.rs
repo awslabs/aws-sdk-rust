@@ -101,3 +101,13 @@ impl ActionCode {
         }
     }
 }
+impl ::std::fmt::Display for ActionCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionCode::ArchiveRetrieval => write!(f, "ArchiveRetrieval"),
+            ActionCode::InventoryRetrieval => write!(f, "InventoryRetrieval"),
+            ActionCode::Select => write!(f, "Select"),
+            ActionCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

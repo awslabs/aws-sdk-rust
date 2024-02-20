@@ -96,3 +96,12 @@ impl ImageTagMutability {
         }
     }
 }
+impl ::std::fmt::Display for ImageTagMutability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageTagMutability::Immutable => write!(f, "IMMUTABLE"),
+            ImageTagMutability::Mutable => write!(f, "MUTABLE"),
+            ImageTagMutability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ParticipantState {
         }
     }
 }
+impl ::std::fmt::Display for ParticipantState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParticipantState::Connected => write!(f, "CONNECTED"),
+            ParticipantState::Disconnected => write!(f, "DISCONNECTED"),
+            ParticipantState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

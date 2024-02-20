@@ -101,3 +101,13 @@ impl CloudHsmObjectState {
         }
     }
 }
+impl ::std::fmt::Display for CloudHsmObjectState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CloudHsmObjectState::Degraded => write!(f, "DEGRADED"),
+            CloudHsmObjectState::Ready => write!(f, "READY"),
+            CloudHsmObjectState::Updating => write!(f, "UPDATING"),
+            CloudHsmObjectState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

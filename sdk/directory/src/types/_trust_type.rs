@@ -96,3 +96,12 @@ impl TrustType {
         }
     }
 }
+impl ::std::fmt::Display for TrustType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrustType::External => write!(f, "External"),
+            TrustType::Forest => write!(f, "Forest"),
+            TrustType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -147,3 +147,20 @@ impl InputType {
         }
     }
 }
+impl ::std::fmt::Display for InputType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputType::AwsCdi => write!(f, "AWS_CDI"),
+            InputType::InputDevice => write!(f, "INPUT_DEVICE"),
+            InputType::Mediaconnect => write!(f, "MEDIACONNECT"),
+            InputType::Mp4File => write!(f, "MP4_FILE"),
+            InputType::RtmpPull => write!(f, "RTMP_PULL"),
+            InputType::RtmpPush => write!(f, "RTMP_PUSH"),
+            InputType::RtpPush => write!(f, "RTP_PUSH"),
+            InputType::TsFile => write!(f, "TS_FILE"),
+            InputType::UdpPush => write!(f, "UDP_PUSH"),
+            InputType::UrlPull => write!(f, "URL_PULL"),
+            InputType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

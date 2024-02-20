@@ -111,3 +111,15 @@ impl SyncResourceState {
         }
     }
 }
+impl ::std::fmt::Display for SyncResourceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SyncResourceState::Deleted => write!(f, "DELETED"),
+            SyncResourceState::Error => write!(f, "ERROR"),
+            SyncResourceState::Initializing => write!(f, "INITIALIZING"),
+            SyncResourceState::InSync => write!(f, "IN_SYNC"),
+            SyncResourceState::Processing => write!(f, "PROCESSING"),
+            SyncResourceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

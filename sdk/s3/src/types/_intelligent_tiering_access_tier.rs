@@ -96,3 +96,12 @@ impl IntelligentTieringAccessTier {
         }
     }
 }
+impl ::std::fmt::Display for IntelligentTieringAccessTier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntelligentTieringAccessTier::ArchiveAccess => write!(f, "ARCHIVE_ACCESS"),
+            IntelligentTieringAccessTier::DeepArchiveAccess => write!(f, "DEEP_ARCHIVE_ACCESS"),
+            IntelligentTieringAccessTier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

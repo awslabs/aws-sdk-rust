@@ -96,3 +96,12 @@ impl OperationalState {
         }
     }
 }
+impl ::std::fmt::Display for OperationalState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationalState::Disabled => write!(f, "DISABLED"),
+            OperationalState::Enabled => write!(f, "ENABLED"),
+            OperationalState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

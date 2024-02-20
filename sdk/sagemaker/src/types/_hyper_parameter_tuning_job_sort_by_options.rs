@@ -101,3 +101,13 @@ impl HyperParameterTuningJobSortByOptions {
         }
     }
 }
+impl ::std::fmt::Display for HyperParameterTuningJobSortByOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HyperParameterTuningJobSortByOptions::CreationTime => write!(f, "CreationTime"),
+            HyperParameterTuningJobSortByOptions::Name => write!(f, "Name"),
+            HyperParameterTuningJobSortByOptions::Status => write!(f, "Status"),
+            HyperParameterTuningJobSortByOptions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

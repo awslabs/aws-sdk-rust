@@ -96,3 +96,12 @@ impl RecommendationTarget {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationTarget {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationTarget::CrossInstanceFamily => write!(f, "CROSS_INSTANCE_FAMILY"),
+            RecommendationTarget::SameInstanceFamily => write!(f, "SAME_INSTANCE_FAMILY"),
+            RecommendationTarget::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

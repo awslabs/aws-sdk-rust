@@ -153,3 +153,21 @@ impl AggregationType {
         }
     }
 }
+impl ::std::fmt::Display for AggregationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregationType::Account => write!(f, "ACCOUNT"),
+            AggregationType::Ami => write!(f, "AMI"),
+            AggregationType::AwsEc2Instance => write!(f, "AWS_EC2_INSTANCE"),
+            AggregationType::AwsEcrContainer => write!(f, "AWS_ECR_CONTAINER"),
+            AggregationType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
+            AggregationType::FindingType => write!(f, "FINDING_TYPE"),
+            AggregationType::ImageLayer => write!(f, "IMAGE_LAYER"),
+            AggregationType::LambdaLayer => write!(f, "LAMBDA_LAYER"),
+            AggregationType::Package => write!(f, "PACKAGE"),
+            AggregationType::Repository => write!(f, "REPOSITORY"),
+            AggregationType::Title => write!(f, "TITLE"),
+            AggregationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

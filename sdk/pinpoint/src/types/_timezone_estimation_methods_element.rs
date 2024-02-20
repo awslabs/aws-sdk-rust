@@ -96,3 +96,12 @@ impl TimezoneEstimationMethodsElement {
         }
     }
 }
+impl ::std::fmt::Display for TimezoneEstimationMethodsElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimezoneEstimationMethodsElement::PhoneNumber => write!(f, "PHONE_NUMBER"),
+            TimezoneEstimationMethodsElement::PostalCode => write!(f, "POSTAL_CODE"),
+            TimezoneEstimationMethodsElement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

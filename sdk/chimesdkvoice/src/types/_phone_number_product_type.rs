@@ -96,3 +96,12 @@ impl PhoneNumberProductType {
         }
     }
 }
+impl ::std::fmt::Display for PhoneNumberProductType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhoneNumberProductType::SipMediaApplicationDialIn => write!(f, "SipMediaApplicationDialIn"),
+            PhoneNumberProductType::VoiceConnector => write!(f, "VoiceConnector"),
+            PhoneNumberProductType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

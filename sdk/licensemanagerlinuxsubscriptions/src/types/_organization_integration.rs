@@ -96,3 +96,12 @@ impl OrganizationIntegration {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationIntegration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationIntegration::Disabled => write!(f, "Disabled"),
+            OrganizationIntegration::Enabled => write!(f, "Enabled"),
+            OrganizationIntegration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

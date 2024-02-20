@@ -121,3 +121,17 @@ impl HoursOfOperationDays {
         }
     }
 }
+impl ::std::fmt::Display for HoursOfOperationDays {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HoursOfOperationDays::Friday => write!(f, "FRIDAY"),
+            HoursOfOperationDays::Monday => write!(f, "MONDAY"),
+            HoursOfOperationDays::Saturday => write!(f, "SATURDAY"),
+            HoursOfOperationDays::Sunday => write!(f, "SUNDAY"),
+            HoursOfOperationDays::Thursday => write!(f, "THURSDAY"),
+            HoursOfOperationDays::Tuesday => write!(f, "TUESDAY"),
+            HoursOfOperationDays::Wednesday => write!(f, "WEDNESDAY"),
+            HoursOfOperationDays::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

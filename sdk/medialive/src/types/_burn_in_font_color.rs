@@ -116,3 +116,16 @@ impl BurnInFontColor {
         }
     }
 }
+impl ::std::fmt::Display for BurnInFontColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurnInFontColor::Black => write!(f, "BLACK"),
+            BurnInFontColor::Blue => write!(f, "BLUE"),
+            BurnInFontColor::Green => write!(f, "GREEN"),
+            BurnInFontColor::Red => write!(f, "RED"),
+            BurnInFontColor::White => write!(f, "WHITE"),
+            BurnInFontColor::Yellow => write!(f, "YELLOW"),
+            BurnInFontColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

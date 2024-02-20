@@ -96,3 +96,12 @@ impl PluginHealth {
         }
     }
 }
+impl ::std::fmt::Display for PluginHealth {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PluginHealth::PluginHealthy => write!(f, "HEALTHY"),
+            PluginHealth::PluginUnhealthy => write!(f, "UNHEALTHY"),
+            PluginHealth::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

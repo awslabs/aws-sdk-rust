@@ -96,3 +96,12 @@ impl AnalyticsUtteranceField {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsUtteranceField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsUtteranceField::UtteranceState => write!(f, "UtteranceState"),
+            AnalyticsUtteranceField::UtteranceText => write!(f, "UtteranceText"),
+            AnalyticsUtteranceField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

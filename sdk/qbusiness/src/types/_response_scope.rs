@@ -96,3 +96,12 @@ impl ResponseScope {
         }
     }
 }
+impl ::std::fmt::Display for ResponseScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResponseScope::EnterpriseContentOnly => write!(f, "ENTERPRISE_CONTENT_ONLY"),
+            ResponseScope::ExtendedKnowledgeEnabled => write!(f, "EXTENDED_KNOWLEDGE_ENABLED"),
+            ResponseScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

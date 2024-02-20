@@ -101,3 +101,13 @@ impl FailureReason {
         }
     }
 }
+impl ::std::fmt::Display for FailureReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailureReason::Other => write!(f, "OTHER"),
+            FailureReason::RequestTimedOut => write!(f, "REQUEST_TIMED_OUT"),
+            FailureReason::UnsupportedAlgorithm => write!(f, "UNSUPPORTED_ALGORITHM"),
+            FailureReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

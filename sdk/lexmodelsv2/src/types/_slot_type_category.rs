@@ -106,3 +106,14 @@ impl SlotTypeCategory {
         }
     }
 }
+impl ::std::fmt::Display for SlotTypeCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlotTypeCategory::Composite => write!(f, "Composite"),
+            SlotTypeCategory::Custom => write!(f, "Custom"),
+            SlotTypeCategory::Extended => write!(f, "Extended"),
+            SlotTypeCategory::ExternalGrammar => write!(f, "ExternalGrammar"),
+            SlotTypeCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

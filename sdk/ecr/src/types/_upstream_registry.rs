@@ -123,3 +123,16 @@ impl UpstreamRegistry {
         }
     }
 }
+impl ::std::fmt::Display for UpstreamRegistry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpstreamRegistry::AzureContainerRegistry => write!(f, "azure-container-registry"),
+            UpstreamRegistry::DockerHub => write!(f, "docker-hub"),
+            UpstreamRegistry::EcrPublic => write!(f, "ecr-public"),
+            UpstreamRegistry::GitHubContainerRegistry => write!(f, "github-container-registry"),
+            UpstreamRegistry::K8s => write!(f, "k8s"),
+            UpstreamRegistry::Quay => write!(f, "quay"),
+            UpstreamRegistry::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

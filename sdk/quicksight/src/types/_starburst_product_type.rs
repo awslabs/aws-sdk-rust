@@ -96,3 +96,12 @@ impl StarburstProductType {
         }
     }
 }
+impl ::std::fmt::Display for StarburstProductType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StarburstProductType::Enterprise => write!(f, "ENTERPRISE"),
+            StarburstProductType::Galaxy => write!(f, "GALAXY"),
+            StarburstProductType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

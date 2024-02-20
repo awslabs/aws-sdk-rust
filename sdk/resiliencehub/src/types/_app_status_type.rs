@@ -96,3 +96,12 @@ impl AppStatusType {
         }
     }
 }
+impl ::std::fmt::Display for AppStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppStatusType::Active => write!(f, "Active"),
+            AppStatusType::Deleting => write!(f, "Deleting"),
+            AppStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

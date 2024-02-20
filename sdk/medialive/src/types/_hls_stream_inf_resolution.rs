@@ -96,3 +96,12 @@ impl HlsStreamInfResolution {
         }
     }
 }
+impl ::std::fmt::Display for HlsStreamInfResolution {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsStreamInfResolution::Exclude => write!(f, "EXCLUDE"),
+            HlsStreamInfResolution::Include => write!(f, "INCLUDE"),
+            HlsStreamInfResolution::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AnomalyResultEnum {
         }
     }
 }
+impl ::std::fmt::Display for AnomalyResultEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnomalyResultEnum::Anomalous => write!(f, "anomalous"),
+            AnomalyResultEnum::Normal => write!(f, "normal"),
+            AnomalyResultEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

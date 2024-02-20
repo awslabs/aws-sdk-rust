@@ -101,3 +101,13 @@ impl EnaSupport {
         }
     }
 }
+impl ::std::fmt::Display for EnaSupport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnaSupport::Required => write!(f, "required"),
+            EnaSupport::Supported => write!(f, "supported"),
+            EnaSupport::Unsupported => write!(f, "unsupported"),
+            EnaSupport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

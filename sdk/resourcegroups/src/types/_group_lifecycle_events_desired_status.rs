@@ -96,3 +96,12 @@ impl GroupLifecycleEventsDesiredStatus {
         }
     }
 }
+impl ::std::fmt::Display for GroupLifecycleEventsDesiredStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupLifecycleEventsDesiredStatus::Active => write!(f, "ACTIVE"),
+            GroupLifecycleEventsDesiredStatus::Inactive => write!(f, "INACTIVE"),
+            GroupLifecycleEventsDesiredStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

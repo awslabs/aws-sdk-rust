@@ -96,3 +96,12 @@ impl AutoEnableStandards {
         }
     }
 }
+impl ::std::fmt::Display for AutoEnableStandards {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoEnableStandards::Default => write!(f, "DEFAULT"),
+            AutoEnableStandards::None => write!(f, "NONE"),
+            AutoEnableStandards::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

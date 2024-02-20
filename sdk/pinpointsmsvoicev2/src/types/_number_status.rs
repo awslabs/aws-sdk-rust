@@ -111,3 +111,15 @@ impl NumberStatus {
         }
     }
 }
+impl ::std::fmt::Display for NumberStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NumberStatus::Active => write!(f, "ACTIVE"),
+            NumberStatus::Associating => write!(f, "ASSOCIATING"),
+            NumberStatus::Deleted => write!(f, "DELETED"),
+            NumberStatus::Disassociating => write!(f, "DISASSOCIATING"),
+            NumberStatus::Pending => write!(f, "PENDING"),
+            NumberStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

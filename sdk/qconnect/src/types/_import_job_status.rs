@@ -123,3 +123,16 @@ impl ImportJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImportJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportJobStatus::Complete => write!(f, "COMPLETE"),
+            ImportJobStatus::Deleted => write!(f, "DELETED"),
+            ImportJobStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ImportJobStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ImportJobStatus::Failed => write!(f, "FAILED"),
+            ImportJobStatus::StartInProgress => write!(f, "START_IN_PROGRESS"),
+            ImportJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

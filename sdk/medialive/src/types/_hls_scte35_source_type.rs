@@ -96,3 +96,12 @@ impl HlsScte35SourceType {
         }
     }
 }
+impl ::std::fmt::Display for HlsScte35SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsScte35SourceType::Manifest => write!(f, "MANIFEST"),
+            HlsScte35SourceType::Segments => write!(f, "SEGMENTS"),
+            HlsScte35SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

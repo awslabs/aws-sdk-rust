@@ -96,3 +96,12 @@ impl DocumentClassifierMode {
         }
     }
 }
+impl ::std::fmt::Display for DocumentClassifierMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentClassifierMode::MultiClass => write!(f, "MULTI_CLASS"),
+            DocumentClassifierMode::MultiLabel => write!(f, "MULTI_LABEL"),
+            DocumentClassifierMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

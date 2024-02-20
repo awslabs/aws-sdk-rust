@@ -116,3 +116,16 @@ impl FacetAttributeType {
         }
     }
 }
+impl ::std::fmt::Display for FacetAttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FacetAttributeType::Binary => write!(f, "BINARY"),
+            FacetAttributeType::Boolean => write!(f, "BOOLEAN"),
+            FacetAttributeType::Datetime => write!(f, "DATETIME"),
+            FacetAttributeType::Number => write!(f, "NUMBER"),
+            FacetAttributeType::String => write!(f, "STRING"),
+            FacetAttributeType::Variant => write!(f, "VARIANT"),
+            FacetAttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

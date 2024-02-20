@@ -91,3 +91,11 @@ impl TemplateType {
         }
     }
 }
+impl ::std::fmt::Display for TemplateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemplateType::RtspCameraStream => write!(f, "RTSP_CAMERA_STREAM"),
+            TemplateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

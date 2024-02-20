@@ -96,3 +96,12 @@ impl AnalysisType {
         }
     }
 }
+impl ::std::fmt::Display for AnalysisType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalysisType::All => write!(f, "All"),
+            AnalysisType::Security => write!(f, "Security"),
+            AnalysisType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CertificateBasedAuthStatusEnum {
         }
     }
 }
+impl ::std::fmt::Display for CertificateBasedAuthStatusEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateBasedAuthStatusEnum::Disabled => write!(f, "DISABLED"),
+            CertificateBasedAuthStatusEnum::Enabled => write!(f, "ENABLED"),
+            CertificateBasedAuthStatusEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

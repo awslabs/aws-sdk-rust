@@ -101,3 +101,13 @@ impl AuthDecision {
         }
     }
 }
+impl ::std::fmt::Display for AuthDecision {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthDecision::Allowed => write!(f, "ALLOWED"),
+            AuthDecision::ExplicitDeny => write!(f, "EXPLICIT_DENY"),
+            AuthDecision::ImplicitDeny => write!(f, "IMPLICIT_DENY"),
+            AuthDecision::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

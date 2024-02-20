@@ -96,3 +96,12 @@ impl HlsAudioOnlyContainer {
         }
     }
 }
+impl ::std::fmt::Display for HlsAudioOnlyContainer {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsAudioOnlyContainer::Automatic => write!(f, "AUTOMATIC"),
+            HlsAudioOnlyContainer::M2Ts => write!(f, "M2TS"),
+            HlsAudioOnlyContainer::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

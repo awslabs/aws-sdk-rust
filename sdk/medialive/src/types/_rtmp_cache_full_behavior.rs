@@ -96,3 +96,12 @@ impl RtmpCacheFullBehavior {
         }
     }
 }
+impl ::std::fmt::Display for RtmpCacheFullBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RtmpCacheFullBehavior::DisconnectImmediately => write!(f, "DISCONNECT_IMMEDIATELY"),
+            RtmpCacheFullBehavior::WaitForServer => write!(f, "WAIT_FOR_SERVER"),
+            RtmpCacheFullBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl HitAccessActions {
         }
     }
 }
+impl ::std::fmt::Display for HitAccessActions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HitAccessActions::Accept => write!(f, "Accept"),
+            HitAccessActions::DiscoverPreviewAndAccept => write!(f, "DiscoverPreviewAndAccept"),
+            HitAccessActions::PreviewAndAccept => write!(f, "PreviewAndAccept"),
+            HitAccessActions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

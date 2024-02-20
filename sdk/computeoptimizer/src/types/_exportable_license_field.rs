@@ -213,3 +213,37 @@ impl ExportableLicenseField {
         }
     }
 }
+impl ::std::fmt::Display for ExportableLicenseField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportableLicenseField::AccountId => write!(f, "AccountId"),
+            ExportableLicenseField::CurrentLicenseConfigurationInstanceType => write!(f, "CurrentLicenseConfigurationInstanceType"),
+            ExportableLicenseField::CurrentLicenseConfigurationLicenseEdition => write!(f, "CurrentLicenseConfigurationLicenseEdition"),
+            ExportableLicenseField::CurrentLicenseConfigurationLicenseModel => write!(f, "CurrentLicenseConfigurationLicenseModel"),
+            ExportableLicenseField::CurrentLicenseConfigurationLicenseName => write!(f, "CurrentLicenseConfigurationLicenseName"),
+            ExportableLicenseField::CurrentLicenseConfigurationLicenseVersion => write!(f, "CurrentLicenseConfigurationLicenseVersion"),
+            ExportableLicenseField::CurrentLicenseConfigurationMetricsSource => write!(f, "CurrentLicenseConfigurationMetricsSource"),
+            ExportableLicenseField::CurrentLicenseConfigurationNumberOfCores => write!(f, "CurrentLicenseConfigurationNumberOfCores"),
+            ExportableLicenseField::CurrentLicenseConfigurationOperatingSystem => write!(f, "CurrentLicenseConfigurationOperatingSystem"),
+            ExportableLicenseField::LicenseFinding => write!(f, "Finding"),
+            ExportableLicenseField::LicenseFindingReasonCodes => write!(f, "FindingReasonCodes"),
+            ExportableLicenseField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
+            ExportableLicenseField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
+            ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency")
+            }
+            ExportableLicenseField::RecommendationOptionsEstimatedMonthlySavingsValue => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue")
+            }
+            ExportableLicenseField::RecommendationOptionsLicenseEdition => write!(f, "RecommendationOptionsLicenseEdition"),
+            ExportableLicenseField::RecommendationOptionsLicenseModel => write!(f, "RecommendationOptionsLicenseModel"),
+            ExportableLicenseField::RecommendationOptionsOperatingSystem => write!(f, "RecommendationOptionsOperatingSystem"),
+            ExportableLicenseField::RecommendationOptionsSavingsOpportunityPercentage => {
+                write!(f, "RecommendationOptionsSavingsOpportunityPercentage")
+            }
+            ExportableLicenseField::ResourceArn => write!(f, "ResourceArn"),
+            ExportableLicenseField::Tags => write!(f, "Tags"),
+            ExportableLicenseField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

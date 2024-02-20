@@ -96,3 +96,12 @@ impl CachePolicyHeaderBehavior {
         }
     }
 }
+impl ::std::fmt::Display for CachePolicyHeaderBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CachePolicyHeaderBehavior::None => write!(f, "none"),
+            CachePolicyHeaderBehavior::Whitelist => write!(f, "whitelist"),
+            CachePolicyHeaderBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

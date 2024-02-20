@@ -96,3 +96,12 @@ impl LastRunErrorStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for LastRunErrorStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LastRunErrorStatusCode::Error => write!(f, "ERROR"),
+            LastRunErrorStatusCode::None => write!(f, "NONE"),
+            LastRunErrorStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

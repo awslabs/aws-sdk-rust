@@ -121,3 +121,17 @@ impl DataSourceSyncJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceSyncJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceSyncJobStatus::Aborted => write!(f, "ABORTED"),
+            DataSourceSyncJobStatus::Failed => write!(f, "FAILED"),
+            DataSourceSyncJobStatus::Incomplete => write!(f, "INCOMPLETE"),
+            DataSourceSyncJobStatus::Stopping => write!(f, "STOPPING"),
+            DataSourceSyncJobStatus::Succeeded => write!(f, "SUCCEEDED"),
+            DataSourceSyncJobStatus::Syncing => write!(f, "SYNCING"),
+            DataSourceSyncJobStatus::SyncingIndexing => write!(f, "SYNCING_INDEXING"),
+            DataSourceSyncJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl DescriptorContentType {
         }
     }
 }
+impl ::std::fmt::Display for DescriptorContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DescriptorContentType::TextPlain => write!(f, "text/plain"),
+            DescriptorContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

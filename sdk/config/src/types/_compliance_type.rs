@@ -106,3 +106,14 @@ impl ComplianceType {
         }
     }
 }
+impl ::std::fmt::Display for ComplianceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComplianceType::Compliant => write!(f, "COMPLIANT"),
+            ComplianceType::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
+            ComplianceType::NonCompliant => write!(f, "NON_COMPLIANT"),
+            ComplianceType::NotApplicable => write!(f, "NOT_APPLICABLE"),
+            ComplianceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

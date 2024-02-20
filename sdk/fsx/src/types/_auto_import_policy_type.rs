@@ -106,3 +106,14 @@ impl AutoImportPolicyType {
         }
     }
 }
+impl ::std::fmt::Display for AutoImportPolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoImportPolicyType::New => write!(f, "NEW"),
+            AutoImportPolicyType::NewChanged => write!(f, "NEW_CHANGED"),
+            AutoImportPolicyType::NewChangedDeleted => write!(f, "NEW_CHANGED_DELETED"),
+            AutoImportPolicyType::None => write!(f, "NONE"),
+            AutoImportPolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

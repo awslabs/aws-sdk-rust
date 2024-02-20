@@ -101,3 +101,13 @@ impl ComputeType {
         }
     }
 }
+impl ::std::fmt::Display for ComputeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComputeType::BuildGeneral1Large => write!(f, "BUILD_GENERAL1_LARGE"),
+            ComputeType::BuildGeneral1Medium => write!(f, "BUILD_GENERAL1_MEDIUM"),
+            ComputeType::BuildGeneral1Small => write!(f, "BUILD_GENERAL1_SMALL"),
+            ComputeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

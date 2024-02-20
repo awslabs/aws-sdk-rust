@@ -101,3 +101,13 @@ impl PermissionType {
         }
     }
 }
+impl ::std::fmt::Display for PermissionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionType::FullAccess => write!(f, "FULL_ACCESS"),
+            PermissionType::SendAs => write!(f, "SEND_AS"),
+            PermissionType::SendOnBehalf => write!(f, "SEND_ON_BEHALF"),
+            PermissionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

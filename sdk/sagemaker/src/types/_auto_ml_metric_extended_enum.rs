@@ -243,3 +243,36 @@ impl AutoMlMetricExtendedEnum {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlMetricExtendedEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlMetricExtendedEnum::Auc => write!(f, "AUC"),
+            AutoMlMetricExtendedEnum::Accuracy => write!(f, "Accuracy"),
+            AutoMlMetricExtendedEnum::AverageWeightedQuantileLoss => write!(f, "AverageWeightedQuantileLoss"),
+            AutoMlMetricExtendedEnum::BalancedAccuracy => write!(f, "BalancedAccuracy"),
+            AutoMlMetricExtendedEnum::F1 => write!(f, "F1"),
+            AutoMlMetricExtendedEnum::F1Macro => write!(f, "F1macro"),
+            AutoMlMetricExtendedEnum::InferenceLatency => write!(f, "InferenceLatency"),
+            AutoMlMetricExtendedEnum::LogLoss => write!(f, "LogLoss"),
+            AutoMlMetricExtendedEnum::Mae => write!(f, "MAE"),
+            AutoMlMetricExtendedEnum::Mape => write!(f, "MAPE"),
+            AutoMlMetricExtendedEnum::Mase => write!(f, "MASE"),
+            AutoMlMetricExtendedEnum::Mse => write!(f, "MSE"),
+            AutoMlMetricExtendedEnum::Perplexity => write!(f, "Perplexity"),
+            AutoMlMetricExtendedEnum::Precision => write!(f, "Precision"),
+            AutoMlMetricExtendedEnum::PrecisionMacro => write!(f, "PrecisionMacro"),
+            AutoMlMetricExtendedEnum::R2 => write!(f, "R2"),
+            AutoMlMetricExtendedEnum::Rmse => write!(f, "RMSE"),
+            AutoMlMetricExtendedEnum::Recall => write!(f, "Recall"),
+            AutoMlMetricExtendedEnum::RecallMacro => write!(f, "RecallMacro"),
+            AutoMlMetricExtendedEnum::Rouge1 => write!(f, "Rouge1"),
+            AutoMlMetricExtendedEnum::Rouge2 => write!(f, "Rouge2"),
+            AutoMlMetricExtendedEnum::Rougel => write!(f, "RougeL"),
+            AutoMlMetricExtendedEnum::RougelSum => write!(f, "RougeLSum"),
+            AutoMlMetricExtendedEnum::TrainingLoss => write!(f, "TrainingLoss"),
+            AutoMlMetricExtendedEnum::ValidationLoss => write!(f, "ValidationLoss"),
+            AutoMlMetricExtendedEnum::Wape => write!(f, "WAPE"),
+            AutoMlMetricExtendedEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

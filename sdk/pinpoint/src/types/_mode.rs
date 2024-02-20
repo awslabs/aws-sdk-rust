@@ -96,3 +96,12 @@ impl Mode {
         }
     }
 }
+impl ::std::fmt::Display for Mode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mode::Delivery => write!(f, "DELIVERY"),
+            Mode::Filter => write!(f, "FILTER"),
+            Mode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

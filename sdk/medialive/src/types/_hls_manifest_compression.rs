@@ -96,3 +96,12 @@ impl HlsManifestCompression {
         }
     }
 }
+impl ::std::fmt::Display for HlsManifestCompression {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsManifestCompression::Gzip => write!(f, "GZIP"),
+            HlsManifestCompression::None => write!(f, "NONE"),
+            HlsManifestCompression::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

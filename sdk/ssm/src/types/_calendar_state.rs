@@ -96,3 +96,12 @@ impl CalendarState {
         }
     }
 }
+impl ::std::fmt::Display for CalendarState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CalendarState::Closed => write!(f, "CLOSED"),
+            CalendarState::Open => write!(f, "OPEN"),
+            CalendarState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

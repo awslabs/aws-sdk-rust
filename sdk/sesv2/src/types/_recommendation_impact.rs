@@ -96,3 +96,12 @@ impl RecommendationImpact {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationImpact {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationImpact::High => write!(f, "HIGH"),
+            RecommendationImpact::Low => write!(f, "LOW"),
+            RecommendationImpact::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

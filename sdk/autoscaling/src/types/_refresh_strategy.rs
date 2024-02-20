@@ -91,3 +91,11 @@ impl RefreshStrategy {
         }
     }
 }
+impl ::std::fmt::Display for RefreshStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RefreshStrategy::Rolling => write!(f, "Rolling"),
+            RefreshStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

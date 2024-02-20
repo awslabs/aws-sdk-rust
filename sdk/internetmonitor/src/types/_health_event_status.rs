@@ -96,3 +96,12 @@ impl HealthEventStatus {
         }
     }
 }
+impl ::std::fmt::Display for HealthEventStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HealthEventStatus::Active => write!(f, "ACTIVE"),
+            HealthEventStatus::Resolved => write!(f, "RESOLVED"),
+            HealthEventStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

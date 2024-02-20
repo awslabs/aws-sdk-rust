@@ -111,3 +111,15 @@ impl Risk {
         }
     }
 }
+impl ::std::fmt::Display for Risk {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Risk::High => write!(f, "HIGH"),
+            Risk::Medium => write!(f, "MEDIUM"),
+            Risk::None => write!(f, "NONE"),
+            Risk::NotApplicable => write!(f, "NOT_APPLICABLE"),
+            Risk::Unanswered => write!(f, "UNANSWERED"),
+            Risk::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

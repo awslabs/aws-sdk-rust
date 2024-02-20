@@ -96,3 +96,12 @@ impl ReplicationState {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationState::Disabled => write!(f, "DISABLED"),
+            ReplicationState::Enabled => write!(f, "ENABLED"),
+            ReplicationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

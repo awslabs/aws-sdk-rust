@@ -96,3 +96,12 @@ impl InsightStatus {
         }
     }
 }
+impl ::std::fmt::Display for InsightStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InsightStatus::Closed => write!(f, "CLOSED"),
+            InsightStatus::Ongoing => write!(f, "ONGOING"),
+            InsightStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

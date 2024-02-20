@@ -101,3 +101,13 @@ impl AnomalySubscriptionFrequency {
         }
     }
 }
+impl ::std::fmt::Display for AnomalySubscriptionFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnomalySubscriptionFrequency::Daily => write!(f, "DAILY"),
+            AnomalySubscriptionFrequency::Immediate => write!(f, "IMMEDIATE"),
+            AnomalySubscriptionFrequency::Weekly => write!(f, "WEEKLY"),
+            AnomalySubscriptionFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

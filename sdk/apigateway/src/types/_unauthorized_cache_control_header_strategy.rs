@@ -101,3 +101,13 @@ impl UnauthorizedCacheControlHeaderStrategy {
         }
     }
 }
+impl ::std::fmt::Display for UnauthorizedCacheControlHeaderStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnauthorizedCacheControlHeaderStrategy::FailWith403 => write!(f, "FAIL_WITH_403"),
+            UnauthorizedCacheControlHeaderStrategy::SucceedWithoutResponseHeader => write!(f, "SUCCEED_WITHOUT_RESPONSE_HEADER"),
+            UnauthorizedCacheControlHeaderStrategy::SucceedWithResponseHeader => write!(f, "SUCCEED_WITH_RESPONSE_HEADER"),
+            UnauthorizedCacheControlHeaderStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

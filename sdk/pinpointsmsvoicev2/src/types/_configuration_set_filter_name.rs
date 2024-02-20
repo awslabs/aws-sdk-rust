@@ -111,3 +111,14 @@ impl ConfigurationSetFilterName {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationSetFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationSetFilterName::DefaultMessageType => write!(f, "default-message-type"),
+            ConfigurationSetFilterName::DefaultSenderId => write!(f, "default-sender-id"),
+            ConfigurationSetFilterName::EventDestinationName => write!(f, "event-destination-name"),
+            ConfigurationSetFilterName::MatchingEventTypes => write!(f, "matching-event-types"),
+            ConfigurationSetFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

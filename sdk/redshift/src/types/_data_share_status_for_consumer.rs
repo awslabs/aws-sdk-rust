@@ -96,3 +96,12 @@ impl DataShareStatusForConsumer {
         }
     }
 }
+impl ::std::fmt::Display for DataShareStatusForConsumer {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataShareStatusForConsumer::Active => write!(f, "ACTIVE"),
+            DataShareStatusForConsumer::Available => write!(f, "AVAILABLE"),
+            DataShareStatusForConsumer::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

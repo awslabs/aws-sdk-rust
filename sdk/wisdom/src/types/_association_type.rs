@@ -91,3 +91,11 @@ impl AssociationType {
         }
     }
 }
+impl ::std::fmt::Display for AssociationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationType::KnowledgeBase => write!(f, "KNOWLEDGE_BASE"),
+            AssociationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

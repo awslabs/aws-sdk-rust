@@ -201,3 +201,29 @@ impl OpsItemStatus {
         }
     }
 }
+impl ::std::fmt::Display for OpsItemStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpsItemStatus::Approved => write!(f, "Approved"),
+            OpsItemStatus::Cancelled => write!(f, "Cancelled"),
+            OpsItemStatus::Cancelling => write!(f, "Cancelling"),
+            OpsItemStatus::ChangeCalendarOverrideApproved => write!(f, "ChangeCalendarOverrideApproved"),
+            OpsItemStatus::ChangeCalendarOverrideRejected => write!(f, "ChangeCalendarOverrideRejected"),
+            OpsItemStatus::Closed => write!(f, "Closed"),
+            OpsItemStatus::CompletedWithFailure => write!(f, "CompletedWithFailure"),
+            OpsItemStatus::CompletedWithSuccess => write!(f, "CompletedWithSuccess"),
+            OpsItemStatus::Failed => write!(f, "Failed"),
+            OpsItemStatus::InProgress => write!(f, "InProgress"),
+            OpsItemStatus::Open => write!(f, "Open"),
+            OpsItemStatus::Pending => write!(f, "Pending"),
+            OpsItemStatus::PendingApproval => write!(f, "PendingApproval"),
+            OpsItemStatus::PendingChangeCalendarOverride => write!(f, "PendingChangeCalendarOverride"),
+            OpsItemStatus::Rejected => write!(f, "Rejected"),
+            OpsItemStatus::Resolved => write!(f, "Resolved"),
+            OpsItemStatus::RunbookInProgress => write!(f, "RunbookInProgress"),
+            OpsItemStatus::Scheduled => write!(f, "Scheduled"),
+            OpsItemStatus::TimedOut => write!(f, "TimedOut"),
+            OpsItemStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

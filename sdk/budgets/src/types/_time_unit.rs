@@ -106,3 +106,14 @@ impl TimeUnit {
         }
     }
 }
+impl ::std::fmt::Display for TimeUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TimeUnit::Annually => write!(f, "ANNUALLY"),
+            TimeUnit::Daily => write!(f, "DAILY"),
+            TimeUnit::Monthly => write!(f, "MONTHLY"),
+            TimeUnit::Quarterly => write!(f, "QUARTERLY"),
+            TimeUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

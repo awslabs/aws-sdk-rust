@@ -96,3 +96,12 @@ impl AuthType {
         }
     }
 }
+impl ::std::fmt::Display for AuthType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthType::Disabled => write!(f, "DISABLED"),
+            AuthType::IamIdc => write!(f, "IAM_IDC"),
+            AuthType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

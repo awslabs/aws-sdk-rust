@@ -96,3 +96,12 @@ impl RoutingStrategyType {
         }
     }
 }
+impl ::std::fmt::Display for RoutingStrategyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RoutingStrategyType::Simple => write!(f, "SIMPLE"),
+            RoutingStrategyType::Terminal => write!(f, "TERMINAL"),
+            RoutingStrategyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

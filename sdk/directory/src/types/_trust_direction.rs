@@ -101,3 +101,13 @@ impl TrustDirection {
         }
     }
 }
+impl ::std::fmt::Display for TrustDirection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrustDirection::OneWayIncoming => write!(f, "One-Way: Incoming"),
+            TrustDirection::OneWayOutgoing => write!(f, "One-Way: Outgoing"),
+            TrustDirection::TwoWay => write!(f, "Two-Way"),
+            TrustDirection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

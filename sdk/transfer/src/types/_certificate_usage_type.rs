@@ -96,3 +96,12 @@ impl CertificateUsageType {
         }
     }
 }
+impl ::std::fmt::Display for CertificateUsageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateUsageType::Encryption => write!(f, "ENCRYPTION"),
+            CertificateUsageType::Signing => write!(f, "SIGNING"),
+            CertificateUsageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

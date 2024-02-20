@@ -165,3 +165,23 @@ impl StreamingInstanceType {
         }
     }
 }
+impl ::std::fmt::Display for StreamingInstanceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamingInstanceType::G34xlarge => write!(f, "g3.4xlarge"),
+            StreamingInstanceType::G3sXlarge => write!(f, "g3s.xlarge"),
+            StreamingInstanceType::G4dn12xlarge => write!(f, "g4dn.12xlarge"),
+            StreamingInstanceType::G4dn16xlarge => write!(f, "g4dn.16xlarge"),
+            StreamingInstanceType::G4dn2xlarge => write!(f, "g4dn.2xlarge"),
+            StreamingInstanceType::G4dn4xlarge => write!(f, "g4dn.4xlarge"),
+            StreamingInstanceType::G4dn8xlarge => write!(f, "g4dn.8xlarge"),
+            StreamingInstanceType::G4dnXlarge => write!(f, "g4dn.xlarge"),
+            StreamingInstanceType::G516xlarge => write!(f, "g5.16xlarge"),
+            StreamingInstanceType::G52xlarge => write!(f, "g5.2xlarge"),
+            StreamingInstanceType::G54xlarge => write!(f, "g5.4xlarge"),
+            StreamingInstanceType::G58xlarge => write!(f, "g5.8xlarge"),
+            StreamingInstanceType::G5Xlarge => write!(f, "g5.xlarge"),
+            StreamingInstanceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

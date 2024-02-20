@@ -96,3 +96,12 @@ impl ImageType {
         }
     }
 }
+impl ::std::fmt::Display for ImageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageType::Owned => write!(f, "OWNED"),
+            ImageType::Shared => write!(f, "SHARED"),
+            ImageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

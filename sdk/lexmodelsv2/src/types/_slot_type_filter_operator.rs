@@ -96,3 +96,12 @@ impl SlotTypeFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for SlotTypeFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlotTypeFilterOperator::Contains => write!(f, "CO"),
+            SlotTypeFilterOperator::Equals => write!(f, "EQ"),
+            SlotTypeFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

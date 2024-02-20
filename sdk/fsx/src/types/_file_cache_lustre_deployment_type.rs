@@ -91,3 +91,11 @@ impl FileCacheLustreDeploymentType {
         }
     }
 }
+impl ::std::fmt::Display for FileCacheLustreDeploymentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileCacheLustreDeploymentType::Cache1 => write!(f, "CACHE_1"),
+            FileCacheLustreDeploymentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

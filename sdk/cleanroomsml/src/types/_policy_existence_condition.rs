@@ -96,3 +96,12 @@ impl PolicyExistenceCondition {
         }
     }
 }
+impl ::std::fmt::Display for PolicyExistenceCondition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyExistenceCondition::PolicyMustExist => write!(f, "POLICY_MUST_EXIST"),
+            PolicyExistenceCondition::PolicyMustNotExist => write!(f, "POLICY_MUST_NOT_EXIST"),
+            PolicyExistenceCondition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

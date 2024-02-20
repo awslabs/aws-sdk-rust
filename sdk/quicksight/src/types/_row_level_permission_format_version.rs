@@ -96,3 +96,12 @@ impl RowLevelPermissionFormatVersion {
         }
     }
 }
+impl ::std::fmt::Display for RowLevelPermissionFormatVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RowLevelPermissionFormatVersion::Version1 => write!(f, "VERSION_1"),
+            RowLevelPermissionFormatVersion::Version2 => write!(f, "VERSION_2"),
+            RowLevelPermissionFormatVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

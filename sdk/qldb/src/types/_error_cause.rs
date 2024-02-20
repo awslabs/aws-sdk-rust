@@ -96,3 +96,12 @@ impl ErrorCause {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCause::IamPermissionRevoked => write!(f, "IAM_PERMISSION_REVOKED"),
+            ErrorCause::KinesisStreamNotFound => write!(f, "KINESIS_STREAM_NOT_FOUND"),
+            ErrorCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

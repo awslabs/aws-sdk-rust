@@ -111,3 +111,15 @@ impl LocalWriteForwardingStatus {
         }
     }
 }
+impl ::std::fmt::Display for LocalWriteForwardingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocalWriteForwardingStatus::Disabled => write!(f, "disabled"),
+            LocalWriteForwardingStatus::Disabling => write!(f, "disabling"),
+            LocalWriteForwardingStatus::Enabled => write!(f, "enabled"),
+            LocalWriteForwardingStatus::Enabling => write!(f, "enabling"),
+            LocalWriteForwardingStatus::Requested => write!(f, "requested"),
+            LocalWriteForwardingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

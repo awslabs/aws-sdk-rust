@@ -96,3 +96,12 @@ impl MfaDelete {
         }
     }
 }
+impl ::std::fmt::Display for MfaDelete {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MfaDelete::Disabled => write!(f, "Disabled"),
+            MfaDelete::Enabled => write!(f, "Enabled"),
+            MfaDelete::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

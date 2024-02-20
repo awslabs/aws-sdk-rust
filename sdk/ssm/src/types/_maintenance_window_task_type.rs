@@ -106,3 +106,14 @@ impl MaintenanceWindowTaskType {
         }
     }
 }
+impl ::std::fmt::Display for MaintenanceWindowTaskType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaintenanceWindowTaskType::Automation => write!(f, "AUTOMATION"),
+            MaintenanceWindowTaskType::Lambda => write!(f, "LAMBDA"),
+            MaintenanceWindowTaskType::RunCommand => write!(f, "RUN_COMMAND"),
+            MaintenanceWindowTaskType::StepFunctions => write!(f, "STEP_FUNCTIONS"),
+            MaintenanceWindowTaskType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

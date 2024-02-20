@@ -129,3 +129,17 @@ impl ExecutionStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionStatusCode::DeliveryFailure => write!(f, "DELIVERY_FAILURE"),
+            ExecutionStatusCode::DeliveryInProcess => write!(f, "DELIVERY_IN_PROCESS"),
+            ExecutionStatusCode::DeliverySuccess => write!(f, "DELIVERY_SUCCESS"),
+            ExecutionStatusCode::InitiationInProcess => write!(f, "INITIATION_IN_PROCESS"),
+            ExecutionStatusCode::QueryFailure => write!(f, "QUERY_FAILURE"),
+            ExecutionStatusCode::QueryInProcess => write!(f, "QUERY_IN_PROCESS"),
+            ExecutionStatusCode::QueryQueued => write!(f, "QUERY_QUEUED"),
+            ExecutionStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

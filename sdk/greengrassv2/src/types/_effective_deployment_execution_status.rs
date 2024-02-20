@@ -135,3 +135,18 @@ impl EffectiveDeploymentExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for EffectiveDeploymentExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EffectiveDeploymentExecutionStatus::Canceled => write!(f, "CANCELED"),
+            EffectiveDeploymentExecutionStatus::Completed => write!(f, "COMPLETED"),
+            EffectiveDeploymentExecutionStatus::Failed => write!(f, "FAILED"),
+            EffectiveDeploymentExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            EffectiveDeploymentExecutionStatus::Queued => write!(f, "QUEUED"),
+            EffectiveDeploymentExecutionStatus::Rejected => write!(f, "REJECTED"),
+            EffectiveDeploymentExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
+            EffectiveDeploymentExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
+            EffectiveDeploymentExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

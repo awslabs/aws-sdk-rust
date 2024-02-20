@@ -154,3 +154,16 @@ impl Transferable {
         }
     }
 }
+impl ::std::fmt::Display for Transferable {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Transferable::DomainInAnotherAccount => write!(f, "DOMAIN_IN_ANOTHER_ACCOUNT"),
+            Transferable::DomainInOwnAccount => write!(f, "DOMAIN_IN_OWN_ACCOUNT"),
+            Transferable::DontKnow => write!(f, "DONT_KNOW"),
+            Transferable::PremiumDomain => write!(f, "PREMIUM_DOMAIN"),
+            Transferable::Transferable => write!(f, "TRANSFERABLE"),
+            Transferable::Untransferable => write!(f, "UNTRANSFERABLE"),
+            Transferable::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

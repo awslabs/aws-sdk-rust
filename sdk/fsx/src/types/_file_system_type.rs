@@ -106,3 +106,14 @@ impl FileSystemType {
         }
     }
 }
+impl ::std::fmt::Display for FileSystemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileSystemType::Lustre => write!(f, "LUSTRE"),
+            FileSystemType::Ontap => write!(f, "ONTAP"),
+            FileSystemType::Openzfs => write!(f, "OPENZFS"),
+            FileSystemType::Windows => write!(f, "WINDOWS"),
+            FileSystemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Vp9FramerateControl {
         }
     }
 }
+impl ::std::fmt::Display for Vp9FramerateControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Vp9FramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            Vp9FramerateControl::Specified => write!(f, "SPECIFIED"),
+            Vp9FramerateControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

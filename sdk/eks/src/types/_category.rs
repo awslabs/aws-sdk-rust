@@ -91,3 +91,11 @@ impl Category {
         }
     }
 }
+impl ::std::fmt::Display for Category {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Category::UpgradeReadiness => write!(f, "UPGRADE_READINESS"),
+            Category::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

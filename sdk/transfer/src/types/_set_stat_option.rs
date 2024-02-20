@@ -96,3 +96,12 @@ impl SetStatOption {
         }
     }
 }
+impl ::std::fmt::Display for SetStatOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SetStatOption::Default => write!(f, "DEFAULT"),
+            SetStatOption::EnableNoOp => write!(f, "ENABLE_NO_OP"),
+            SetStatOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

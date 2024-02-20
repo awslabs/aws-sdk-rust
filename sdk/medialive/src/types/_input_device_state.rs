@@ -96,3 +96,12 @@ impl InputDeviceState {
         }
     }
 }
+impl ::std::fmt::Display for InputDeviceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDeviceState::Idle => write!(f, "IDLE"),
+            InputDeviceState::Streaming => write!(f, "STREAMING"),
+            InputDeviceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

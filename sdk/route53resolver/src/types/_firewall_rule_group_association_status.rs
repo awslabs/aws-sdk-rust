@@ -101,3 +101,13 @@ impl FirewallRuleGroupAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for FirewallRuleGroupAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FirewallRuleGroupAssociationStatus::Complete => write!(f, "COMPLETE"),
+            FirewallRuleGroupAssociationStatus::Deleting => write!(f, "DELETING"),
+            FirewallRuleGroupAssociationStatus::Updating => write!(f, "UPDATING"),
+            FirewallRuleGroupAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

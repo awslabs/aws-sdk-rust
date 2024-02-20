@@ -101,3 +101,13 @@ impl CharLengthSemantics {
         }
     }
 }
+impl ::std::fmt::Display for CharLengthSemantics {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CharLengthSemantics::Byte => write!(f, "byte"),
+            CharLengthSemantics::Char => write!(f, "char"),
+            CharLengthSemantics::Default => write!(f, "default"),
+            CharLengthSemantics::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

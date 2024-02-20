@@ -106,3 +106,14 @@ impl AmiProductVisibilityString {
         }
     }
 }
+impl ::std::fmt::Display for AmiProductVisibilityString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AmiProductVisibilityString::Draft => write!(f, "Draft"),
+            AmiProductVisibilityString::Limited => write!(f, "Limited"),
+            AmiProductVisibilityString::Public => write!(f, "Public"),
+            AmiProductVisibilityString::Restricted => write!(f, "Restricted"),
+            AmiProductVisibilityString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

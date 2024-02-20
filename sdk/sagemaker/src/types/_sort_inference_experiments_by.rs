@@ -101,3 +101,13 @@ impl SortInferenceExperimentsBy {
         }
     }
 }
+impl ::std::fmt::Display for SortInferenceExperimentsBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortInferenceExperimentsBy::CreationTime => write!(f, "CreationTime"),
+            SortInferenceExperimentsBy::Name => write!(f, "Name"),
+            SortInferenceExperimentsBy::Status => write!(f, "Status"),
+            SortInferenceExperimentsBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

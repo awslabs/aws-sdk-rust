@@ -106,3 +106,14 @@ impl PrincipalRoleType {
         }
     }
 }
+impl ::std::fmt::Display for PrincipalRoleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrincipalRoleType::Contributor => write!(f, "CONTRIBUTOR"),
+            PrincipalRoleType::Coowner => write!(f, "COOWNER"),
+            PrincipalRoleType::Owner => write!(f, "OWNER"),
+            PrincipalRoleType::Viewer => write!(f, "VIEWER"),
+            PrincipalRoleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

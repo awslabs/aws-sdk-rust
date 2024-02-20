@@ -129,3 +129,17 @@ impl ApplicationPermission {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationPermission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationPermission::AccessNotebooks => write!(f, "AccessNotebooks"),
+            ApplicationPermission::CreateDataset => write!(f, "CreateDataset"),
+            ApplicationPermission::GetTemporaryCredentials => write!(f, "GetTemporaryCredentials"),
+            ApplicationPermission::ManageAttributeSets => write!(f, "ManageAttributeSets"),
+            ApplicationPermission::ManageClusters => write!(f, "ManageClusters"),
+            ApplicationPermission::ManageUsersAndGroups => write!(f, "ManageUsersAndGroups"),
+            ApplicationPermission::ViewAuditData => write!(f, "ViewAuditData"),
+            ApplicationPermission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl QuestionType {
         }
     }
 }
+impl ::std::fmt::Display for QuestionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuestionType::NonPrioritized => write!(f, "NON_PRIORITIZED"),
+            QuestionType::Prioritized => write!(f, "PRIORITIZED"),
+            QuestionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

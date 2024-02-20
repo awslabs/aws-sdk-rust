@@ -121,3 +121,17 @@ impl VolumeType {
         }
     }
 }
+impl ::std::fmt::Display for VolumeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeType::Gp2 => write!(f, "gp2"),
+            VolumeType::Gp3 => write!(f, "gp3"),
+            VolumeType::Io1 => write!(f, "io1"),
+            VolumeType::Io2 => write!(f, "io2"),
+            VolumeType::Sc1 => write!(f, "sc1"),
+            VolumeType::St1 => write!(f, "st1"),
+            VolumeType::Standard => write!(f, "standard"),
+            VolumeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -135,3 +135,18 @@ impl KxClusterStatus {
         }
     }
 }
+impl ::std::fmt::Display for KxClusterStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KxClusterStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            KxClusterStatus::Creating => write!(f, "CREATING"),
+            KxClusterStatus::Deleted => write!(f, "DELETED"),
+            KxClusterStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            KxClusterStatus::Deleting => write!(f, "DELETING"),
+            KxClusterStatus::Pending => write!(f, "PENDING"),
+            KxClusterStatus::Running => write!(f, "RUNNING"),
+            KxClusterStatus::Updating => write!(f, "UPDATING"),
+            KxClusterStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

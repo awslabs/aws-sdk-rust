@@ -111,3 +111,15 @@ impl TransitionStorageClass {
         }
     }
 }
+impl ::std::fmt::Display for TransitionStorageClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitionStorageClass::DeepArchive => write!(f, "DEEP_ARCHIVE"),
+            TransitionStorageClass::Glacier => write!(f, "GLACIER"),
+            TransitionStorageClass::IntelligentTiering => write!(f, "INTELLIGENT_TIERING"),
+            TransitionStorageClass::OnezoneIa => write!(f, "ONEZONE_IA"),
+            TransitionStorageClass::StandardIa => write!(f, "STANDARD_IA"),
+            TransitionStorageClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

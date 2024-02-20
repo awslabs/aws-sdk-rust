@@ -106,3 +106,14 @@ impl DirectoryType {
         }
     }
 }
+impl ::std::fmt::Display for DirectoryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectoryType::AdConnector => write!(f, "ADConnector"),
+            DirectoryType::MicrosoftAd => write!(f, "MicrosoftAD"),
+            DirectoryType::SharedMicrosoftAd => write!(f, "SharedMicrosoftAD"),
+            DirectoryType::SimpleAd => write!(f, "SimpleAD"),
+            DirectoryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

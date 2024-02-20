@@ -96,3 +96,12 @@ impl AccessDeniedExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for AccessDeniedExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessDeniedExceptionReason::DependencyAccessDenied => write!(f, "DEPENDENCY_ACCESS_DENIED"),
+            AccessDeniedExceptionReason::UnauthorizedAccount => write!(f, "UNAUTHORIZED_ACCOUNT"),
+            AccessDeniedExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

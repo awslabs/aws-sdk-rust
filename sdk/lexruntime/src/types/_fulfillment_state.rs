@@ -101,3 +101,13 @@ impl FulfillmentState {
         }
     }
 }
+impl ::std::fmt::Display for FulfillmentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FulfillmentState::Failed => write!(f, "Failed"),
+            FulfillmentState::Fulfilled => write!(f, "Fulfilled"),
+            FulfillmentState::ReadyForFulfillment => write!(f, "ReadyForFulfillment"),
+            FulfillmentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

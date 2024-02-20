@@ -96,3 +96,12 @@ impl ErrorType {
         }
     }
 }
+impl ::std::fmt::Display for ErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorType::ResourceNotFoundException => write!(f, "RESOURCE_NOT_FOUND_EXCEPTION"),
+            ErrorType::ValidationException => write!(f, "VALIDATION_EXCEPTION"),
+            ErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

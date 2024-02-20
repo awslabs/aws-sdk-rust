@@ -96,3 +96,12 @@ impl MpdScte35Source {
         }
     }
 }
+impl ::std::fmt::Display for MpdScte35Source {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MpdScte35Source::None => write!(f, "NONE"),
+            MpdScte35Source::Passthrough => write!(f, "PASSTHROUGH"),
+            MpdScte35Source::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

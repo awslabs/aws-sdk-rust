@@ -98,3 +98,12 @@ impl LaunchTemplateInstanceMetadataOptionsState {
         }
     }
 }
+impl ::std::fmt::Display for LaunchTemplateInstanceMetadataOptionsState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchTemplateInstanceMetadataOptionsState::Applied => write!(f, "applied"),
+            LaunchTemplateInstanceMetadataOptionsState::Pending => write!(f, "pending"),
+            LaunchTemplateInstanceMetadataOptionsState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

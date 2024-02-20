@@ -101,3 +101,13 @@ impl ConfigurationEventStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationEventStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationEventStatus::Error => write!(f, "ERROR"),
+            ConfigurationEventStatus::Info => write!(f, "INFO"),
+            ConfigurationEventStatus::Warn => write!(f, "WARN"),
+            ConfigurationEventStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

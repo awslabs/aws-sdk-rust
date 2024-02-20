@@ -101,3 +101,13 @@ impl TrafficRoutingConfigType {
         }
     }
 }
+impl ::std::fmt::Display for TrafficRoutingConfigType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrafficRoutingConfigType::AllAtOnce => write!(f, "ALL_AT_ONCE"),
+            TrafficRoutingConfigType::Canary => write!(f, "CANARY"),
+            TrafficRoutingConfigType::Linear => write!(f, "LINEAR"),
+            TrafficRoutingConfigType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,14 @@ impl MessageType {
         }
     }
 }
+impl ::std::fmt::Display for MessageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessageType::ConfigurationItemChangeNotification => write!(f, "ConfigurationItemChangeNotification"),
+            MessageType::ConfigurationSnapshotDeliveryCompleted => write!(f, "ConfigurationSnapshotDeliveryCompleted"),
+            MessageType::OversizedConfigurationItemChangeNotification => write!(f, "OversizedConfigurationItemChangeNotification"),
+            MessageType::ScheduledNotification => write!(f, "ScheduledNotification"),
+            MessageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

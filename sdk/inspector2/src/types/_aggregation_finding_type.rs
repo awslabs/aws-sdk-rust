@@ -101,3 +101,13 @@ impl AggregationFindingType {
         }
     }
 }
+impl ::std::fmt::Display for AggregationFindingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregationFindingType::CodeVulnerability => write!(f, "CODE_VULNERABILITY"),
+            AggregationFindingType::NetworkReachability => write!(f, "NETWORK_REACHABILITY"),
+            AggregationFindingType::PackageVulnerability => write!(f, "PACKAGE_VULNERABILITY"),
+            AggregationFindingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

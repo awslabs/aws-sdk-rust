@@ -96,3 +96,12 @@ impl TextQualifier {
         }
     }
 }
+impl ::std::fmt::Display for TextQualifier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TextQualifier::DoubleQuote => write!(f, "DOUBLE_QUOTE"),
+            TextQualifier::SingleQuote => write!(f, "SINGLE_QUOTE"),
+            TextQualifier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

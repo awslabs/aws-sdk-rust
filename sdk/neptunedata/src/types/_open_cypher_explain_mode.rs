@@ -101,3 +101,13 @@ impl OpenCypherExplainMode {
         }
     }
 }
+impl ::std::fmt::Display for OpenCypherExplainMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpenCypherExplainMode::Details => write!(f, "details"),
+            OpenCypherExplainMode::Dynamic => write!(f, "dynamic"),
+            OpenCypherExplainMode::Static => write!(f, "static"),
+            OpenCypherExplainMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

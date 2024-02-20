@@ -96,3 +96,12 @@ impl AwsIamAccessKeyStatus {
         }
     }
 }
+impl ::std::fmt::Display for AwsIamAccessKeyStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AwsIamAccessKeyStatus::Active => write!(f, "Active"),
+            AwsIamAccessKeyStatus::Inactive => write!(f, "Inactive"),
+            AwsIamAccessKeyStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

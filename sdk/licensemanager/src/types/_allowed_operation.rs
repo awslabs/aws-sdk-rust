@@ -129,3 +129,17 @@ impl AllowedOperation {
         }
     }
 }
+impl ::std::fmt::Display for AllowedOperation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllowedOperation::CheckInLicense => write!(f, "CheckInLicense"),
+            AllowedOperation::CheckoutBorrowLicense => write!(f, "CheckoutBorrowLicense"),
+            AllowedOperation::CheckoutLicense => write!(f, "CheckoutLicense"),
+            AllowedOperation::CreateGrant => write!(f, "CreateGrant"),
+            AllowedOperation::CreateToken => write!(f, "CreateToken"),
+            AllowedOperation::ExtendConsumptionLicense => write!(f, "ExtendConsumptionLicense"),
+            AllowedOperation::ListPurchasedLicenses => write!(f, "ListPurchasedLicenses"),
+            AllowedOperation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

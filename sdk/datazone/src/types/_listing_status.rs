@@ -101,3 +101,13 @@ impl ListingStatus {
         }
     }
 }
+impl ::std::fmt::Display for ListingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListingStatus::Active => write!(f, "ACTIVE"),
+            ListingStatus::Creating => write!(f, "CREATING"),
+            ListingStatus::Inactive => write!(f, "INACTIVE"),
+            ListingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

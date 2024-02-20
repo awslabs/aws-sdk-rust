@@ -117,3 +117,15 @@ impl UsageType {
         }
     }
 }
+impl ::std::fmt::Display for UsageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageType::Ec2InstanceHours => write!(f, "EC2_INSTANCE_HOURS"),
+            UsageType::EcrInitialScan => write!(f, "ECR_INITIAL_SCAN"),
+            UsageType::EcrRescan => write!(f, "ECR_RESCAN"),
+            UsageType::LambdaFunctionCodeHours => write!(f, "LAMBDA_FUNCTION_CODE_HOURS"),
+            UsageType::LambdaFunctionHours => write!(f, "LAMBDA_FUNCTION_HOURS"),
+            UsageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

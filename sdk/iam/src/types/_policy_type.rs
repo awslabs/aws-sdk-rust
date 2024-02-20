@@ -96,3 +96,12 @@ impl PolicyType {
         }
     }
 }
+impl ::std::fmt::Display for PolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyType::Inline => write!(f, "INLINE"),
+            PolicyType::Managed => write!(f, "MANAGED"),
+            PolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

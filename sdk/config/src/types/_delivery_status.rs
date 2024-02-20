@@ -101,3 +101,13 @@ impl DeliveryStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeliveryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeliveryStatus::Failure => write!(f, "Failure"),
+            DeliveryStatus::NotApplicable => write!(f, "Not_Applicable"),
+            DeliveryStatus::Success => write!(f, "Success"),
+            DeliveryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

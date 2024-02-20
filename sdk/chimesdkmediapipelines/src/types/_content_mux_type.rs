@@ -91,3 +91,11 @@ impl ContentMuxType {
         }
     }
 }
+impl ::std::fmt::Display for ContentMuxType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentMuxType::ContentOnly => write!(f, "ContentOnly"),
+            ContentMuxType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

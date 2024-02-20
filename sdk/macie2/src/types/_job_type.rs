@@ -96,3 +96,12 @@ impl JobType {
         }
     }
 }
+impl ::std::fmt::Display for JobType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobType::OneTime => write!(f, "ONE_TIME"),
+            JobType::Scheduled => write!(f, "SCHEDULED"),
+            JobType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

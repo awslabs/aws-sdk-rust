@@ -101,3 +101,13 @@ impl CandidateSortBy {
         }
     }
 }
+impl ::std::fmt::Display for CandidateSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CandidateSortBy::CreationTime => write!(f, "CreationTime"),
+            CandidateSortBy::FinalObjectiveMetricValue => write!(f, "FinalObjectiveMetricValue"),
+            CandidateSortBy::Status => write!(f, "Status"),
+            CandidateSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

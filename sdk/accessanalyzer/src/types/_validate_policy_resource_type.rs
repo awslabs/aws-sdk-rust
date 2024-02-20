@@ -117,3 +117,15 @@ impl ValidatePolicyResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ValidatePolicyResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidatePolicyResourceType::RoleTrust => write!(f, "AWS::IAM::AssumeRolePolicyDocument"),
+            ValidatePolicyResourceType::S3AccessPoint => write!(f, "AWS::S3::AccessPoint"),
+            ValidatePolicyResourceType::S3Bucket => write!(f, "AWS::S3::Bucket"),
+            ValidatePolicyResourceType::S3MultiRegionAccessPoint => write!(f, "AWS::S3::MultiRegionAccessPoint"),
+            ValidatePolicyResourceType::S3ObjectLambdaAccessPoint => write!(f, "AWS::S3ObjectLambda::AccessPoint"),
+            ValidatePolicyResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

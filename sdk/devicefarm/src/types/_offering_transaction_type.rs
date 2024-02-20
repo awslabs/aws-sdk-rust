@@ -101,3 +101,13 @@ impl OfferingTransactionType {
         }
     }
 }
+impl ::std::fmt::Display for OfferingTransactionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OfferingTransactionType::Purchase => write!(f, "PURCHASE"),
+            OfferingTransactionType::Renew => write!(f, "RENEW"),
+            OfferingTransactionType::System => write!(f, "SYSTEM"),
+            OfferingTransactionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

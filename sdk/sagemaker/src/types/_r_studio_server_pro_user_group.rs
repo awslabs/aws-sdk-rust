@@ -96,3 +96,12 @@ impl RStudioServerProUserGroup {
         }
     }
 }
+impl ::std::fmt::Display for RStudioServerProUserGroup {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RStudioServerProUserGroup::Admin => write!(f, "R_STUDIO_ADMIN"),
+            RStudioServerProUserGroup::User => write!(f, "R_STUDIO_USER"),
+            RStudioServerProUserGroup::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

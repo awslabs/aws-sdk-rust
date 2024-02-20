@@ -106,3 +106,14 @@ impl EncryptionAlg {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionAlg {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionAlg::Aes128Cbc => write!(f, "AES128_CBC"),
+            EncryptionAlg::Aes192Cbc => write!(f, "AES192_CBC"),
+            EncryptionAlg::Aes256Cbc => write!(f, "AES256_CBC"),
+            EncryptionAlg::None => write!(f, "NONE"),
+            EncryptionAlg::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

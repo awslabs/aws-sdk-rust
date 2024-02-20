@@ -101,3 +101,13 @@ impl ActionOwner {
         }
     }
 }
+impl ::std::fmt::Display for ActionOwner {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionOwner::Aws => write!(f, "AWS"),
+            ActionOwner::Custom => write!(f, "Custom"),
+            ActionOwner::ThirdParty => write!(f, "ThirdParty"),
+            ActionOwner::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

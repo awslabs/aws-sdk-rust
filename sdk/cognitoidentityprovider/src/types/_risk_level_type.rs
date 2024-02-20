@@ -101,3 +101,13 @@ impl RiskLevelType {
         }
     }
 }
+impl ::std::fmt::Display for RiskLevelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RiskLevelType::High => write!(f, "High"),
+            RiskLevelType::Low => write!(f, "Low"),
+            RiskLevelType::Medium => write!(f, "Medium"),
+            RiskLevelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

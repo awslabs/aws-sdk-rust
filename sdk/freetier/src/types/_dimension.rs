@@ -129,3 +129,17 @@ impl Dimension {
         }
     }
 }
+impl ::std::fmt::Display for Dimension {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Dimension::Description => write!(f, "DESCRIPTION"),
+            Dimension::FreeTierType => write!(f, "FREE_TIER_TYPE"),
+            Dimension::Operation => write!(f, "OPERATION"),
+            Dimension::Region => write!(f, "REGION"),
+            Dimension::Service => write!(f, "SERVICE"),
+            Dimension::UsagePercentage => write!(f, "USAGE_PERCENTAGE"),
+            Dimension::UsageType => write!(f, "USAGE_TYPE"),
+            Dimension::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

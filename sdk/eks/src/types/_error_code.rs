@@ -189,3 +189,27 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::AccessDenied => write!(f, "AccessDenied"),
+            ErrorCode::AdmissionRequestDenied => write!(f, "AdmissionRequestDenied"),
+            ErrorCode::ClusterUnreachable => write!(f, "ClusterUnreachable"),
+            ErrorCode::ConfigurationConflict => write!(f, "ConfigurationConflict"),
+            ErrorCode::EniLimitReached => write!(f, "EniLimitReached"),
+            ErrorCode::InsufficientFreeAddresses => write!(f, "InsufficientFreeAddresses"),
+            ErrorCode::InsufficientNumberOfReplicas => write!(f, "InsufficientNumberOfReplicas"),
+            ErrorCode::IpNotAvailable => write!(f, "IpNotAvailable"),
+            ErrorCode::K8SResourceNotFound => write!(f, "K8sResourceNotFound"),
+            ErrorCode::NodeCreationFailure => write!(f, "NodeCreationFailure"),
+            ErrorCode::OperationNotPermitted => write!(f, "OperationNotPermitted"),
+            ErrorCode::PodEvictionFailure => write!(f, "PodEvictionFailure"),
+            ErrorCode::SecurityGroupNotFound => write!(f, "SecurityGroupNotFound"),
+            ErrorCode::SubnetNotFound => write!(f, "SubnetNotFound"),
+            ErrorCode::UnknownValue => write!(f, "Unknown"),
+            ErrorCode::UnsupportedAddonModification => write!(f, "UnsupportedAddonModification"),
+            ErrorCode::VpcIdNotFound => write!(f, "VpcIdNotFound"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

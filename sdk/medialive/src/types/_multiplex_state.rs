@@ -141,3 +141,19 @@ impl MultiplexState {
         }
     }
 }
+impl ::std::fmt::Display for MultiplexState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MultiplexState::CreateFailed => write!(f, "CREATE_FAILED"),
+            MultiplexState::Creating => write!(f, "CREATING"),
+            MultiplexState::Deleted => write!(f, "DELETED"),
+            MultiplexState::Deleting => write!(f, "DELETING"),
+            MultiplexState::Idle => write!(f, "IDLE"),
+            MultiplexState::Recovering => write!(f, "RECOVERING"),
+            MultiplexState::Running => write!(f, "RUNNING"),
+            MultiplexState::Starting => write!(f, "STARTING"),
+            MultiplexState::Stopping => write!(f, "STOPPING"),
+            MultiplexState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

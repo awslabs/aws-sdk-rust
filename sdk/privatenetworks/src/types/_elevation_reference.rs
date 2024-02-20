@@ -96,3 +96,12 @@ impl ElevationReference {
         }
     }
 }
+impl ::std::fmt::Display for ElevationReference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ElevationReference::Agl => write!(f, "AGL"),
+            ElevationReference::Amsl => write!(f, "AMSL"),
+            ElevationReference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

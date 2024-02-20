@@ -126,3 +126,18 @@ impl RetentionPeriodType {
         }
     }
 }
+impl ::std::fmt::Display for RetentionPeriodType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetentionPeriodType::Days => write!(f, "DAYS"),
+            RetentionPeriodType::Hours => write!(f, "HOURS"),
+            RetentionPeriodType::Infinite => write!(f, "INFINITE"),
+            RetentionPeriodType::Minutes => write!(f, "MINUTES"),
+            RetentionPeriodType::Months => write!(f, "MONTHS"),
+            RetentionPeriodType::Seconds => write!(f, "SECONDS"),
+            RetentionPeriodType::Unspecified => write!(f, "UNSPECIFIED"),
+            RetentionPeriodType::Years => write!(f, "YEARS"),
+            RetentionPeriodType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

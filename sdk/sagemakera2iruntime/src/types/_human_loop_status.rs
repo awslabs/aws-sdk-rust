@@ -111,3 +111,15 @@ impl HumanLoopStatus {
         }
     }
 }
+impl ::std::fmt::Display for HumanLoopStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HumanLoopStatus::Completed => write!(f, "Completed"),
+            HumanLoopStatus::Failed => write!(f, "Failed"),
+            HumanLoopStatus::InProgress => write!(f, "InProgress"),
+            HumanLoopStatus::Stopped => write!(f, "Stopped"),
+            HumanLoopStatus::Stopping => write!(f, "Stopping"),
+            HumanLoopStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ImportExportFileFormat {
         }
     }
 }
+impl ::std::fmt::Display for ImportExportFileFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportExportFileFormat::Csv => write!(f, "CSV"),
+            ImportExportFileFormat::LexJson => write!(f, "LexJson"),
+            ImportExportFileFormat::Tsv => write!(f, "TSV"),
+            ImportExportFileFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

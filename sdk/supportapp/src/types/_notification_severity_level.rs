@@ -101,3 +101,13 @@ impl NotificationSeverityLevel {
         }
     }
 }
+impl ::std::fmt::Display for NotificationSeverityLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationSeverityLevel::All => write!(f, "all"),
+            NotificationSeverityLevel::High => write!(f, "high"),
+            NotificationSeverityLevel::None => write!(f, "none"),
+            NotificationSeverityLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl BotFilterName {
         }
     }
 }
+impl ::std::fmt::Display for BotFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotFilterName::BotName => write!(f, "BotName"),
+            BotFilterName::BotType => write!(f, "BotType"),
+            BotFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

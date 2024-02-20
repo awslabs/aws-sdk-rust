@@ -116,3 +116,16 @@ impl Ac3DynamicRangeCompressionLine {
         }
     }
 }
+impl ::std::fmt::Display for Ac3DynamicRangeCompressionLine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ac3DynamicRangeCompressionLine::FilmLight => write!(f, "FILM_LIGHT"),
+            Ac3DynamicRangeCompressionLine::FilmStandard => write!(f, "FILM_STANDARD"),
+            Ac3DynamicRangeCompressionLine::MusicLight => write!(f, "MUSIC_LIGHT"),
+            Ac3DynamicRangeCompressionLine::MusicStandard => write!(f, "MUSIC_STANDARD"),
+            Ac3DynamicRangeCompressionLine::None => write!(f, "NONE"),
+            Ac3DynamicRangeCompressionLine::Speech => write!(f, "SPEECH"),
+            Ac3DynamicRangeCompressionLine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

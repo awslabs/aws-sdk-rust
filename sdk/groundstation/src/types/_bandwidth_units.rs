@@ -101,3 +101,13 @@ impl BandwidthUnits {
         }
     }
 }
+impl ::std::fmt::Display for BandwidthUnits {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BandwidthUnits::Ghz => write!(f, "GHz"),
+            BandwidthUnits::Mhz => write!(f, "MHz"),
+            BandwidthUnits::Khz => write!(f, "kHz"),
+            BandwidthUnits::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

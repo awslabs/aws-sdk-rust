@@ -96,3 +96,12 @@ impl LinuxSubscriptionsDiscovery {
         }
     }
 }
+impl ::std::fmt::Display for LinuxSubscriptionsDiscovery {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LinuxSubscriptionsDiscovery::Disabled => write!(f, "Disabled"),
+            LinuxSubscriptionsDiscovery::Enabled => write!(f, "Enabled"),
+            LinuxSubscriptionsDiscovery::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

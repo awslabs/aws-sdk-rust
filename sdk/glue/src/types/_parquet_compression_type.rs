@@ -111,3 +111,15 @@ impl ParquetCompressionType {
         }
     }
 }
+impl ::std::fmt::Display for ParquetCompressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParquetCompressionType::Gzip => write!(f, "gzip"),
+            ParquetCompressionType::Lzo => write!(f, "lzo"),
+            ParquetCompressionType::None => write!(f, "none"),
+            ParquetCompressionType::Snappy => write!(f, "snappy"),
+            ParquetCompressionType::Uncompressed => write!(f, "uncompressed"),
+            ParquetCompressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

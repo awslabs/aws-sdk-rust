@@ -101,3 +101,13 @@ impl RegistryType {
         }
     }
 }
+impl ::std::fmt::Display for RegistryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistryType::Hook => write!(f, "HOOK"),
+            RegistryType::Module => write!(f, "MODULE"),
+            RegistryType::Resource => write!(f, "RESOURCE"),
+            RegistryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

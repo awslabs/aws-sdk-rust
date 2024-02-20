@@ -106,3 +106,14 @@ impl AccelerationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AccelerationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccelerationStatus::Accelerated => write!(f, "ACCELERATED"),
+            AccelerationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            AccelerationStatus::NotAccelerated => write!(f, "NOT_ACCELERATED"),
+            AccelerationStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
+            AccelerationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

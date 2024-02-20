@@ -126,3 +126,18 @@ impl ShareRequestStatus {
         }
     }
 }
+impl ::std::fmt::Display for ShareRequestStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareRequestStatus::Active => write!(f, "ACTIVE"),
+            ShareRequestStatus::Declined => write!(f, "DECLINED"),
+            ShareRequestStatus::Expired => write!(f, "EXPIRED"),
+            ShareRequestStatus::Expiring => write!(f, "EXPIRING"),
+            ShareRequestStatus::Failed => write!(f, "FAILED"),
+            ShareRequestStatus::Replicating => write!(f, "REPLICATING"),
+            ShareRequestStatus::Revoked => write!(f, "REVOKED"),
+            ShareRequestStatus::Shared => write!(f, "SHARED"),
+            ShareRequestStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

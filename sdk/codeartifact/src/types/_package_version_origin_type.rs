@@ -101,3 +101,13 @@ impl PackageVersionOriginType {
         }
     }
 }
+impl ::std::fmt::Display for PackageVersionOriginType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageVersionOriginType::External => write!(f, "EXTERNAL"),
+            PackageVersionOriginType::Internal => write!(f, "INTERNAL"),
+            PackageVersionOriginType::UnknownValue => write!(f, "UNKNOWN"),
+            PackageVersionOriginType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

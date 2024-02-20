@@ -101,3 +101,13 @@ impl AgentStatusType {
         }
     }
 }
+impl ::std::fmt::Display for AgentStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgentStatusType::Custom => write!(f, "CUSTOM"),
+            AgentStatusType::Offline => write!(f, "OFFLINE"),
+            AgentStatusType::Routable => write!(f, "ROUTABLE"),
+            AgentStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

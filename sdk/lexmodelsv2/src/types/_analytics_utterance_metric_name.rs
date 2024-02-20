@@ -106,3 +106,14 @@ impl AnalyticsUtteranceMetricName {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsUtteranceMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsUtteranceMetricName::Count => write!(f, "Count"),
+            AnalyticsUtteranceMetricName::Detected => write!(f, "Detected"),
+            AnalyticsUtteranceMetricName::Missed => write!(f, "Missed"),
+            AnalyticsUtteranceMetricName::UtteranceTimestamp => write!(f, "UtteranceTimestamp"),
+            AnalyticsUtteranceMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

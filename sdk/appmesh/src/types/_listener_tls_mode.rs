@@ -101,3 +101,13 @@ impl ListenerTlsMode {
         }
     }
 }
+impl ::std::fmt::Display for ListenerTlsMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListenerTlsMode::Disabled => write!(f, "DISABLED"),
+            ListenerTlsMode::Permissive => write!(f, "PERMISSIVE"),
+            ListenerTlsMode::Strict => write!(f, "STRICT"),
+            ListenerTlsMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

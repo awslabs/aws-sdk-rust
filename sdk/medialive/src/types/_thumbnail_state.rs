@@ -96,3 +96,12 @@ impl ThumbnailState {
         }
     }
 }
+impl ::std::fmt::Display for ThumbnailState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThumbnailState::Auto => write!(f, "AUTO"),
+            ThumbnailState::Disabled => write!(f, "DISABLED"),
+            ThumbnailState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ReplacePermissionAssociationsWorkStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReplacePermissionAssociationsWorkStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplacePermissionAssociationsWorkStatus::Completed => write!(f, "COMPLETED"),
+            ReplacePermissionAssociationsWorkStatus::Failed => write!(f, "FAILED"),
+            ReplacePermissionAssociationsWorkStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ReplacePermissionAssociationsWorkStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

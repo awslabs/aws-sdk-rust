@@ -106,3 +106,14 @@ impl IngestionJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for IngestionJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IngestionJobStatus::Complete => write!(f, "COMPLETE"),
+            IngestionJobStatus::Failed => write!(f, "FAILED"),
+            IngestionJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            IngestionJobStatus::Starting => write!(f, "STARTING"),
+            IngestionJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

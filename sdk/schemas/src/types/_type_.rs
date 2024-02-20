@@ -96,3 +96,12 @@ impl Type {
         }
     }
 }
+impl ::std::fmt::Display for Type {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Type::JsonSchemaDraft4 => write!(f, "JSONSchemaDraft4"),
+            Type::OpenApi3 => write!(f, "OpenApi3"),
+            Type::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

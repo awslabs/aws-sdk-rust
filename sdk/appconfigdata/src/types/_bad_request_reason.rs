@@ -92,3 +92,11 @@ impl BadRequestReason {
         }
     }
 }
+impl ::std::fmt::Display for BadRequestReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BadRequestReason::InvalidParameters => write!(f, "InvalidParameters"),
+            BadRequestReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

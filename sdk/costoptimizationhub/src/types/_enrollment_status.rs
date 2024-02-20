@@ -96,3 +96,12 @@ impl EnrollmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for EnrollmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnrollmentStatus::Active => write!(f, "Active"),
+            EnrollmentStatus::Inactive => write!(f, "Inactive"),
+            EnrollmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

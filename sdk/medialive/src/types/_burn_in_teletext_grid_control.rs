@@ -96,3 +96,12 @@ impl BurnInTeletextGridControl {
         }
     }
 }
+impl ::std::fmt::Display for BurnInTeletextGridControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurnInTeletextGridControl::Fixed => write!(f, "FIXED"),
+            BurnInTeletextGridControl::Scaled => write!(f, "SCALED"),
+            BurnInTeletextGridControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

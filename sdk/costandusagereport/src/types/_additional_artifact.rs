@@ -101,3 +101,13 @@ impl AdditionalArtifact {
         }
     }
 }
+impl ::std::fmt::Display for AdditionalArtifact {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdditionalArtifact::Athena => write!(f, "ATHENA"),
+            AdditionalArtifact::Quicksight => write!(f, "QUICKSIGHT"),
+            AdditionalArtifact::Redshift => write!(f, "REDSHIFT"),
+            AdditionalArtifact::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

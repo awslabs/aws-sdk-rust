@@ -91,3 +91,11 @@ impl PipelineTriggerProviderType {
         }
     }
 }
+impl ::std::fmt::Display for PipelineTriggerProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PipelineTriggerProviderType::CodeStarSourceConnection => write!(f, "CodeStarSourceConnection"),
+            PipelineTriggerProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AnalyticsInterval {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsInterval {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsInterval::OneDay => write!(f, "OneDay"),
+            AnalyticsInterval::OneHour => write!(f, "OneHour"),
+            AnalyticsInterval::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -135,3 +135,18 @@ impl DataAssetActivityStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataAssetActivityStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataAssetActivityStatus::Failed => write!(f, "FAILED"),
+            DataAssetActivityStatus::PublishingFailed => write!(f, "PUBLISHING_FAILED"),
+            DataAssetActivityStatus::SkippedAlreadyImported => write!(f, "SKIPPED_ALREADY_IMPORTED"),
+            DataAssetActivityStatus::SkippedArchived => write!(f, "SKIPPED_ARCHIVED"),
+            DataAssetActivityStatus::SkippedNoAccess => write!(f, "SKIPPED_NO_ACCESS"),
+            DataAssetActivityStatus::SucceededCreated => write!(f, "SUCCEEDED_CREATED"),
+            DataAssetActivityStatus::SucceededUpdated => write!(f, "SUCCEEDED_UPDATED"),
+            DataAssetActivityStatus::Unchanged => write!(f, "UNCHANGED"),
+            DataAssetActivityStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -135,3 +135,18 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::CompositeComponentFailure => write!(f, "COMPOSITE_COMPONENT_FAILURE"),
+            ErrorCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            ErrorCode::ProcessingError => write!(f, "PROCESSING_ERROR"),
+            ErrorCode::SyncCreatingError => write!(f, "SYNC_CREATING_ERROR"),
+            ErrorCode::SyncDeletingError => write!(f, "SYNC_DELETING_ERROR"),
+            ErrorCode::SyncInitializingError => write!(f, "SYNC_INITIALIZING_ERROR"),
+            ErrorCode::SyncProcessingError => write!(f, "SYNC_PROCESSING_ERROR"),
+            ErrorCode::ValidationError => write!(f, "VALIDATION_ERROR"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

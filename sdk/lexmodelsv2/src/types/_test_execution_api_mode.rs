@@ -96,3 +96,12 @@ impl TestExecutionApiMode {
         }
     }
 }
+impl ::std::fmt::Display for TestExecutionApiMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestExecutionApiMode::NonStreaming => write!(f, "NonStreaming"),
+            TestExecutionApiMode::Streaming => write!(f, "Streaming"),
+            TestExecutionApiMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

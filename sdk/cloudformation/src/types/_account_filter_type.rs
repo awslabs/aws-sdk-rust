@@ -106,3 +106,14 @@ impl AccountFilterType {
         }
     }
 }
+impl ::std::fmt::Display for AccountFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountFilterType::Difference => write!(f, "DIFFERENCE"),
+            AccountFilterType::Intersection => write!(f, "INTERSECTION"),
+            AccountFilterType::None => write!(f, "NONE"),
+            AccountFilterType::Union => write!(f, "UNION"),
+            AccountFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

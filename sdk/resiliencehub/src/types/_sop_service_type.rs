@@ -91,3 +91,11 @@ impl SopServiceType {
         }
     }
 }
+impl ::std::fmt::Display for SopServiceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SopServiceType::Ssm => write!(f, "SSM"),
+            SopServiceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

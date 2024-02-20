@@ -141,3 +141,19 @@ impl ResourceTypeForTagging {
         }
     }
 }
+impl ::std::fmt::Display for ResourceTypeForTagging {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceTypeForTagging::Association => write!(f, "Association"),
+            ResourceTypeForTagging::Automation => write!(f, "Automation"),
+            ResourceTypeForTagging::Document => write!(f, "Document"),
+            ResourceTypeForTagging::MaintenanceWindow => write!(f, "MaintenanceWindow"),
+            ResourceTypeForTagging::ManagedInstance => write!(f, "ManagedInstance"),
+            ResourceTypeForTagging::OpsItem => write!(f, "OpsItem"),
+            ResourceTypeForTagging::Opsmetadata => write!(f, "OpsMetadata"),
+            ResourceTypeForTagging::Parameter => write!(f, "Parameter"),
+            ResourceTypeForTagging::PatchBaseline => write!(f, "PatchBaseline"),
+            ResourceTypeForTagging::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

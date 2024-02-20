@@ -121,3 +121,13 @@ impl ObjectOwnership {
         }
     }
 }
+impl ::std::fmt::Display for ObjectOwnership {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectOwnership::BucketOwnerEnforced => write!(f, "BucketOwnerEnforced"),
+            ObjectOwnership::BucketOwnerPreferred => write!(f, "BucketOwnerPreferred"),
+            ObjectOwnership::ObjectWriter => write!(f, "ObjectWriter"),
+            ObjectOwnership::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

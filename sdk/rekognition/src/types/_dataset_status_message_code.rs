@@ -101,3 +101,13 @@ impl DatasetStatusMessageCode {
         }
     }
 }
+impl ::std::fmt::Display for DatasetStatusMessageCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetStatusMessageCode::ClientError => write!(f, "CLIENT_ERROR"),
+            DatasetStatusMessageCode::ServiceError => write!(f, "SERVICE_ERROR"),
+            DatasetStatusMessageCode::Success => write!(f, "SUCCESS"),
+            DatasetStatusMessageCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl WafActionType {
         }
     }
 }
+impl ::std::fmt::Display for WafActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WafActionType::Allow => write!(f, "ALLOW"),
+            WafActionType::Block => write!(f, "BLOCK"),
+            WafActionType::Count => write!(f, "COUNT"),
+            WafActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DataIdentifierType {
         }
     }
 }
+impl ::std::fmt::Display for DataIdentifierType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataIdentifierType::Custom => write!(f, "CUSTOM"),
+            DataIdentifierType::Managed => write!(f, "MANAGED"),
+            DataIdentifierType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

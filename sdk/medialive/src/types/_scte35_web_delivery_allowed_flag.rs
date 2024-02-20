@@ -96,3 +96,12 @@ impl Scte35WebDeliveryAllowedFlag {
         }
     }
 }
+impl ::std::fmt::Display for Scte35WebDeliveryAllowedFlag {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Scte35WebDeliveryAllowedFlag::WebDeliveryAllowed => write!(f, "WEB_DELIVERY_ALLOWED"),
+            Scte35WebDeliveryAllowedFlag::WebDeliveryNotAllowed => write!(f, "WEB_DELIVERY_NOT_ALLOWED"),
+            Scte35WebDeliveryAllowedFlag::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

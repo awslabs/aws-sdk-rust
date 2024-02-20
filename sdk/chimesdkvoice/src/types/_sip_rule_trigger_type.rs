@@ -96,3 +96,12 @@ impl SipRuleTriggerType {
         }
     }
 }
+impl ::std::fmt::Display for SipRuleTriggerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SipRuleTriggerType::RequestUriHostname => write!(f, "RequestUriHostname"),
+            SipRuleTriggerType::ToPhoneNumber => write!(f, "ToPhoneNumber"),
+            SipRuleTriggerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

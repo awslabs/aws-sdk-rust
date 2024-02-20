@@ -111,3 +111,15 @@ impl DirectoryConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for DirectoryConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectoryConfigurationStatus::Default => write!(f, "Default"),
+            DirectoryConfigurationStatus::Failed => write!(f, "Failed"),
+            DirectoryConfigurationStatus::Requested => write!(f, "Requested"),
+            DirectoryConfigurationStatus::Updated => write!(f, "Updated"),
+            DirectoryConfigurationStatus::Updating => write!(f, "Updating"),
+            DirectoryConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

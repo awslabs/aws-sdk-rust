@@ -96,3 +96,12 @@ impl SmallMultiplesAxisPlacement {
         }
     }
 }
+impl ::std::fmt::Display for SmallMultiplesAxisPlacement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SmallMultiplesAxisPlacement::Inside => write!(f, "INSIDE"),
+            SmallMultiplesAxisPlacement::Outside => write!(f, "OUTSIDE"),
+            SmallMultiplesAxisPlacement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

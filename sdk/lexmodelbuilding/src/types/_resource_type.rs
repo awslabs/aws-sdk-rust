@@ -101,3 +101,13 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Bot => write!(f, "BOT"),
+            ResourceType::Intent => write!(f, "INTENT"),
+            ResourceType::SlotType => write!(f, "SLOT_TYPE"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

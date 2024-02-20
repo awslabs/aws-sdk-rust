@@ -123,3 +123,16 @@ impl ConflictExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ConflictExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConflictExceptionReason::AutoshiftEnabled => write!(f, "AutoShiftEnabled"),
+            ConflictExceptionReason::PracticeConfigurationAlreadyExists => write!(f, "PracticeConfigurationAlreadyExists"),
+            ConflictExceptionReason::PracticeConfigurationDoesNotExist => write!(f, "PracticeConfigurationDoesNotExist"),
+            ConflictExceptionReason::SimultaneousZonalShiftsConflict => write!(f, "SimultaneousZonalShiftsConflict"),
+            ConflictExceptionReason::ZonalShiftAlreadyExists => write!(f, "ZonalShiftAlreadyExists"),
+            ConflictExceptionReason::ZonalShiftStatusNotActive => write!(f, "ZonalShiftStatusNotActive"),
+            ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

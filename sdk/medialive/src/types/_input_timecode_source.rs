@@ -96,3 +96,12 @@ impl InputTimecodeSource {
         }
     }
 }
+impl ::std::fmt::Display for InputTimecodeSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputTimecodeSource::Embedded => write!(f, "EMBEDDED"),
+            InputTimecodeSource::Zerobased => write!(f, "ZEROBASED"),
+            InputTimecodeSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

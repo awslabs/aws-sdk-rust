@@ -106,3 +106,14 @@ impl CachePolicyQueryStringBehavior {
         }
     }
 }
+impl ::std::fmt::Display for CachePolicyQueryStringBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CachePolicyQueryStringBehavior::All => write!(f, "all"),
+            CachePolicyQueryStringBehavior::AllExcept => write!(f, "allExcept"),
+            CachePolicyQueryStringBehavior::None => write!(f, "none"),
+            CachePolicyQueryStringBehavior::Whitelist => write!(f, "whitelist"),
+            CachePolicyQueryStringBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

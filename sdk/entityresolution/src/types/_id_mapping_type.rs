@@ -91,3 +91,11 @@ impl IdMappingType {
         }
     }
 }
+impl ::std::fmt::Display for IdMappingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IdMappingType::Provider => write!(f, "PROVIDER"),
+            IdMappingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

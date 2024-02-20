@@ -96,3 +96,12 @@ impl ContentEncoding {
         }
     }
 }
+impl ::std::fmt::Display for ContentEncoding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentEncoding::Gzip => write!(f, "GZIP"),
+            ContentEncoding::None => write!(f, "NONE"),
+            ContentEncoding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

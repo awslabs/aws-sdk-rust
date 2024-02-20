@@ -96,3 +96,12 @@ impl ReplicationType {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationType::AgentBased => write!(f, "AGENT_BASED"),
+            ReplicationType::SnapshotShipping => write!(f, "SNAPSHOT_SHIPPING"),
+            ReplicationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

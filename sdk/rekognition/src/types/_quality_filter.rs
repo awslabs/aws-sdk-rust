@@ -111,3 +111,15 @@ impl QualityFilter {
         }
     }
 }
+impl ::std::fmt::Display for QualityFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QualityFilter::Auto => write!(f, "AUTO"),
+            QualityFilter::High => write!(f, "HIGH"),
+            QualityFilter::Low => write!(f, "LOW"),
+            QualityFilter::Medium => write!(f, "MEDIUM"),
+            QualityFilter::None => write!(f, "NONE"),
+            QualityFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

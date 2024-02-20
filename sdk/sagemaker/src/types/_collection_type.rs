@@ -101,3 +101,13 @@ impl CollectionType {
         }
     }
 }
+impl ::std::fmt::Display for CollectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CollectionType::List => write!(f, "List"),
+            CollectionType::Set => write!(f, "Set"),
+            CollectionType::Vector => write!(f, "Vector"),
+            CollectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

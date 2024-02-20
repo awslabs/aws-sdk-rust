@@ -123,3 +123,16 @@ impl StreamingSessionStreamState {
         }
     }
 }
+impl ::std::fmt::Display for StreamingSessionStreamState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamingSessionStreamState::CreateFailed => write!(f, "CREATE_FAILED"),
+            StreamingSessionStreamState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            StreamingSessionStreamState::Deleted => write!(f, "DELETED"),
+            StreamingSessionStreamState::DeleteFailed => write!(f, "DELETE_FAILED"),
+            StreamingSessionStreamState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            StreamingSessionStreamState::Ready => write!(f, "READY"),
+            StreamingSessionStreamState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

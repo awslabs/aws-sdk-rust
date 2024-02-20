@@ -101,3 +101,13 @@ impl EcrRescanDurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for EcrRescanDurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcrRescanDurationStatus::Failed => write!(f, "FAILED"),
+            EcrRescanDurationStatus::Pending => write!(f, "PENDING"),
+            EcrRescanDurationStatus::Success => write!(f, "SUCCESS"),
+            EcrRescanDurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

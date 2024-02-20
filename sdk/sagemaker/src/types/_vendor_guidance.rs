@@ -106,3 +106,14 @@ impl VendorGuidance {
         }
     }
 }
+impl ::std::fmt::Display for VendorGuidance {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VendorGuidance::Archived => write!(f, "ARCHIVED"),
+            VendorGuidance::NotProvided => write!(f, "NOT_PROVIDED"),
+            VendorGuidance::Stable => write!(f, "STABLE"),
+            VendorGuidance::ToBeArchived => write!(f, "TO_BE_ARCHIVED"),
+            VendorGuidance::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

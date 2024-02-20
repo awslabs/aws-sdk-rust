@@ -101,3 +101,13 @@ impl ConfigStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConfigStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigStatus::Active => write!(f, "ACTIVE"),
+            ConfigStatus::Creating => write!(f, "CREATING"),
+            ConfigStatus::Deleting => write!(f, "DELETING"),
+            ConfigStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

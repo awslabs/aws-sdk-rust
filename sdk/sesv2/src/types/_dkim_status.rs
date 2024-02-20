@@ -141,3 +141,15 @@ impl DkimStatus {
         }
     }
 }
+impl ::std::fmt::Display for DkimStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DkimStatus::Failed => write!(f, "FAILED"),
+            DkimStatus::NotStarted => write!(f, "NOT_STARTED"),
+            DkimStatus::Pending => write!(f, "PENDING"),
+            DkimStatus::Success => write!(f, "SUCCESS"),
+            DkimStatus::TemporaryFailure => write!(f, "TEMPORARY_FAILURE"),
+            DkimStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

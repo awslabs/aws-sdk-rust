@@ -121,3 +121,17 @@ impl MetadataTransferJobState {
         }
     }
 }
+impl ::std::fmt::Display for MetadataTransferJobState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetadataTransferJobState::Cancelled => write!(f, "CANCELLED"),
+            MetadataTransferJobState::Cancelling => write!(f, "CANCELLING"),
+            MetadataTransferJobState::Completed => write!(f, "COMPLETED"),
+            MetadataTransferJobState::Error => write!(f, "ERROR"),
+            MetadataTransferJobState::Pending => write!(f, "PENDING"),
+            MetadataTransferJobState::Running => write!(f, "RUNNING"),
+            MetadataTransferJobState::Validating => write!(f, "VALIDATING"),
+            MetadataTransferJobState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LogsConfigStatusType {
         }
     }
 }
+impl ::std::fmt::Display for LogsConfigStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogsConfigStatusType::Disabled => write!(f, "DISABLED"),
+            LogsConfigStatusType::Enabled => write!(f, "ENABLED"),
+            LogsConfigStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

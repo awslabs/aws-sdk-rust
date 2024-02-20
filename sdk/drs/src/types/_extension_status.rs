@@ -101,3 +101,13 @@ impl ExtensionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExtensionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExtensionStatus::Extended => write!(f, "EXTENDED"),
+            ExtensionStatus::ExtensionError => write!(f, "EXTENSION_ERROR"),
+            ExtensionStatus::NotExtended => write!(f, "NOT_EXTENDED"),
+            ExtensionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

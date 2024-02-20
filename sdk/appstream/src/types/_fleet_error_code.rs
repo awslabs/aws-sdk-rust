@@ -267,3 +267,42 @@ impl FleetErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for FleetErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetErrorCode::DomainJoinErrorAccessDenied => write!(f, "DOMAIN_JOIN_ERROR_ACCESS_DENIED"),
+            FleetErrorCode::DomainJoinErrorDsMachineAccountQuotaExceeded => write!(f, "DOMAIN_JOIN_ERROR_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED"),
+            FleetErrorCode::DomainJoinErrorFileNotFound => write!(f, "DOMAIN_JOIN_ERROR_FILE_NOT_FOUND"),
+            FleetErrorCode::DomainJoinErrorInvalidParameter => write!(f, "DOMAIN_JOIN_ERROR_INVALID_PARAMETER"),
+            FleetErrorCode::DomainJoinErrorLogonFailure => write!(f, "DOMAIN_JOIN_ERROR_LOGON_FAILURE"),
+            FleetErrorCode::DomainJoinErrorMoreData => write!(f, "DOMAIN_JOIN_ERROR_MORE_DATA"),
+            FleetErrorCode::DomainJoinErrorNotSupported => write!(f, "DOMAIN_JOIN_ERROR_NOT_SUPPORTED"),
+            FleetErrorCode::DomainJoinErrorNoSuchDomain => write!(f, "DOMAIN_JOIN_ERROR_NO_SUCH_DOMAIN"),
+            FleetErrorCode::DomainJoinInternalServiceError => write!(f, "DOMAIN_JOIN_INTERNAL_SERVICE_ERROR"),
+            FleetErrorCode::DomainJoinNerrInvalidWorkgroupName => write!(f, "DOMAIN_JOIN_NERR_INVALID_WORKGROUP_NAME"),
+            FleetErrorCode::DomainJoinNerrPasswordExpired => write!(f, "DOMAIN_JOIN_NERR_PASSWORD_EXPIRED"),
+            FleetErrorCode::DomainJoinNerrWorkstationNotStarted => write!(f, "DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED"),
+            FleetErrorCode::FleetInstanceProvisioningFailure => write!(f, "FLEET_INSTANCE_PROVISIONING_FAILURE"),
+            FleetErrorCode::FleetStopped => write!(f, "FLEET_STOPPED"),
+            FleetErrorCode::IamServiceRoleIsMissing => write!(f, "IAM_SERVICE_ROLE_IS_MISSING"),
+            FleetErrorCode::IamServiceRoleMissingDescribeSecurityGroupsAction => {
+                write!(f, "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SECURITY_GROUPS_ACTION")
+            }
+            FleetErrorCode::IamServiceRoleMissingDescribeSubnetAction => write!(f, "IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION"),
+            FleetErrorCode::IamServiceRoleMissingEniCreateAction => write!(f, "IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION"),
+            FleetErrorCode::IamServiceRoleMissingEniDeleteAction => write!(f, "IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION"),
+            FleetErrorCode::IamServiceRoleMissingEniDescribeAction => write!(f, "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION"),
+            FleetErrorCode::IgwNotAttached => write!(f, "IGW_NOT_ATTACHED"),
+            FleetErrorCode::ImageNotFound => write!(f, "IMAGE_NOT_FOUND"),
+            FleetErrorCode::InternalServiceError => write!(f, "INTERNAL_SERVICE_ERROR"),
+            FleetErrorCode::InvalidSubnetConfiguration => write!(f, "INVALID_SUBNET_CONFIGURATION"),
+            FleetErrorCode::MachineRoleIsMissing => write!(f, "MACHINE_ROLE_IS_MISSING"),
+            FleetErrorCode::NetworkInterfaceLimitExceeded => write!(f, "NETWORK_INTERFACE_LIMIT_EXCEEDED"),
+            FleetErrorCode::SecurityGroupsNotFound => write!(f, "SECURITY_GROUPS_NOT_FOUND"),
+            FleetErrorCode::StsDisabledInRegion => write!(f, "STS_DISABLED_IN_REGION"),
+            FleetErrorCode::SubnetHasInsufficientIpAddresses => write!(f, "SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES"),
+            FleetErrorCode::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),
+            FleetErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

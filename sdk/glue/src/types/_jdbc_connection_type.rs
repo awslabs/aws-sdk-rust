@@ -111,3 +111,15 @@ impl JdbcConnectionType {
         }
     }
 }
+impl ::std::fmt::Display for JdbcConnectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JdbcConnectionType::Mysql => write!(f, "mysql"),
+            JdbcConnectionType::Oracle => write!(f, "oracle"),
+            JdbcConnectionType::Postgresql => write!(f, "postgresql"),
+            JdbcConnectionType::Redshift => write!(f, "redshift"),
+            JdbcConnectionType::Sqlserver => write!(f, "sqlserver"),
+            JdbcConnectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl UpdateRuntimeOn {
         }
     }
 }
+impl ::std::fmt::Display for UpdateRuntimeOn {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateRuntimeOn::Auto => write!(f, "Auto"),
+            UpdateRuntimeOn::FunctionUpdate => write!(f, "FunctionUpdate"),
+            UpdateRuntimeOn::Manual => write!(f, "Manual"),
+            UpdateRuntimeOn::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

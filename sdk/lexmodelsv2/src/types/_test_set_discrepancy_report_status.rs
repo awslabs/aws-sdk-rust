@@ -101,3 +101,13 @@ impl TestSetDiscrepancyReportStatus {
         }
     }
 }
+impl ::std::fmt::Display for TestSetDiscrepancyReportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestSetDiscrepancyReportStatus::Completed => write!(f, "Completed"),
+            TestSetDiscrepancyReportStatus::Failed => write!(f, "Failed"),
+            TestSetDiscrepancyReportStatus::InProgress => write!(f, "InProgress"),
+            TestSetDiscrepancyReportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

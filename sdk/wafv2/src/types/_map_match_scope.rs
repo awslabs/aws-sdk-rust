@@ -101,3 +101,13 @@ impl MapMatchScope {
         }
     }
 }
+impl ::std::fmt::Display for MapMatchScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MapMatchScope::All => write!(f, "ALL"),
+            MapMatchScope::Key => write!(f, "KEY"),
+            MapMatchScope::Value => write!(f, "VALUE"),
+            MapMatchScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

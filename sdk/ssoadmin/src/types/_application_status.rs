@@ -96,3 +96,12 @@ impl ApplicationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationStatus::Disabled => write!(f, "DISABLED"),
+            ApplicationStatus::Enabled => write!(f, "ENABLED"),
+            ApplicationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

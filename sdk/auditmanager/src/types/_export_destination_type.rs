@@ -91,3 +91,11 @@ impl ExportDestinationType {
         }
     }
 }
+impl ::std::fmt::Display for ExportDestinationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportDestinationType::S3 => write!(f, "S3"),
+            ExportDestinationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

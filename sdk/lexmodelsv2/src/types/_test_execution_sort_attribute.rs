@@ -96,3 +96,12 @@ impl TestExecutionSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for TestExecutionSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestExecutionSortAttribute::CreationDateTime => write!(f, "CreationDateTime"),
+            TestExecutionSortAttribute::TestSetName => write!(f, "TestSetName"),
+            TestExecutionSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

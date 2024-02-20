@@ -97,3 +97,12 @@ impl ImportDestinationType {
         }
     }
 }
+impl ::std::fmt::Display for ImportDestinationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportDestinationType::ContactList => write!(f, "CONTACT_LIST"),
+            ImportDestinationType::SuppressionList => write!(f, "SUPPRESSION_LIST"),
+            ImportDestinationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

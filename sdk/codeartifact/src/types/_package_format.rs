@@ -116,3 +116,16 @@ impl PackageFormat {
         }
     }
 }
+impl ::std::fmt::Display for PackageFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageFormat::Generic => write!(f, "generic"),
+            PackageFormat::Maven => write!(f, "maven"),
+            PackageFormat::Npm => write!(f, "npm"),
+            PackageFormat::Nuget => write!(f, "nuget"),
+            PackageFormat::Pypi => write!(f, "pypi"),
+            PackageFormat::Swift => write!(f, "swift"),
+            PackageFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -165,3 +165,23 @@ impl NamedEntityAggType {
         }
     }
 }
+impl ::std::fmt::Display for NamedEntityAggType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NamedEntityAggType::Average => write!(f, "AVERAGE"),
+            NamedEntityAggType::Count => write!(f, "COUNT"),
+            NamedEntityAggType::Custom => write!(f, "CUSTOM"),
+            NamedEntityAggType::DistinctCount => write!(f, "DISTINCT_COUNT"),
+            NamedEntityAggType::Max => write!(f, "MAX"),
+            NamedEntityAggType::Median => write!(f, "MEDIAN"),
+            NamedEntityAggType::Min => write!(f, "MIN"),
+            NamedEntityAggType::Percentile => write!(f, "PERCENTILE"),
+            NamedEntityAggType::Stdev => write!(f, "STDEV"),
+            NamedEntityAggType::Stdevp => write!(f, "STDEVP"),
+            NamedEntityAggType::Sum => write!(f, "SUM"),
+            NamedEntityAggType::Var => write!(f, "VAR"),
+            NamedEntityAggType::Varp => write!(f, "VARP"),
+            NamedEntityAggType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

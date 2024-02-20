@@ -165,3 +165,23 @@ impl WorkspaceStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorkspaceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkspaceStatus::Active => write!(f, "ACTIVE"),
+            WorkspaceStatus::Creating => write!(f, "CREATING"),
+            WorkspaceStatus::CreationFailed => write!(f, "CREATION_FAILED"),
+            WorkspaceStatus::Deleting => write!(f, "DELETING"),
+            WorkspaceStatus::DeletionFailed => write!(f, "DELETION_FAILED"),
+            WorkspaceStatus::Failed => write!(f, "FAILED"),
+            WorkspaceStatus::LicenseRemovalFailed => write!(f, "LICENSE_REMOVAL_FAILED"),
+            WorkspaceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            WorkspaceStatus::Updating => write!(f, "UPDATING"),
+            WorkspaceStatus::UpgradeFailed => write!(f, "UPGRADE_FAILED"),
+            WorkspaceStatus::Upgrading => write!(f, "UPGRADING"),
+            WorkspaceStatus::VersionUpdateFailed => write!(f, "VERSION_UPDATE_FAILED"),
+            WorkspaceStatus::VersionUpdating => write!(f, "VERSION_UPDATING"),
+            WorkspaceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

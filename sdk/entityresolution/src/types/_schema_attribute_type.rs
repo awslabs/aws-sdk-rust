@@ -207,3 +207,30 @@ impl SchemaAttributeType {
         }
     }
 }
+impl ::std::fmt::Display for SchemaAttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SchemaAttributeType::Address => write!(f, "ADDRESS"),
+            SchemaAttributeType::AddressCity => write!(f, "ADDRESS_CITY"),
+            SchemaAttributeType::AddressCountry => write!(f, "ADDRESS_COUNTRY"),
+            SchemaAttributeType::AddressPostalcode => write!(f, "ADDRESS_POSTALCODE"),
+            SchemaAttributeType::AddressState => write!(f, "ADDRESS_STATE"),
+            SchemaAttributeType::AddressStreet1 => write!(f, "ADDRESS_STREET1"),
+            SchemaAttributeType::AddressStreet2 => write!(f, "ADDRESS_STREET2"),
+            SchemaAttributeType::AddressStreet3 => write!(f, "ADDRESS_STREET3"),
+            SchemaAttributeType::Date => write!(f, "DATE"),
+            SchemaAttributeType::EmailAddress => write!(f, "EMAIL_ADDRESS"),
+            SchemaAttributeType::Name => write!(f, "NAME"),
+            SchemaAttributeType::NameFirst => write!(f, "NAME_FIRST"),
+            SchemaAttributeType::NameLast => write!(f, "NAME_LAST"),
+            SchemaAttributeType::NameMiddle => write!(f, "NAME_MIDDLE"),
+            SchemaAttributeType::Phone => write!(f, "PHONE"),
+            SchemaAttributeType::PhoneCountrycode => write!(f, "PHONE_COUNTRYCODE"),
+            SchemaAttributeType::PhoneNumber => write!(f, "PHONE_NUMBER"),
+            SchemaAttributeType::ProviderId => write!(f, "PROVIDER_ID"),
+            SchemaAttributeType::String => write!(f, "STRING"),
+            SchemaAttributeType::UniqueId => write!(f, "UNIQUE_ID"),
+            SchemaAttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

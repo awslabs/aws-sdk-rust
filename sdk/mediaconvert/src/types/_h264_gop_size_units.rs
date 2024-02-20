@@ -101,3 +101,13 @@ impl H264GopSizeUnits {
         }
     }
 }
+impl ::std::fmt::Display for H264GopSizeUnits {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264GopSizeUnits::Auto => write!(f, "AUTO"),
+            H264GopSizeUnits::Frames => write!(f, "FRAMES"),
+            H264GopSizeUnits::Seconds => write!(f, "SECONDS"),
+            H264GopSizeUnits::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

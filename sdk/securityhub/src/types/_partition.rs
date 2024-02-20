@@ -101,3 +101,13 @@ impl Partition {
         }
     }
 }
+impl ::std::fmt::Display for Partition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Partition::Aws => write!(f, "aws"),
+            Partition::AwsCn => write!(f, "aws-cn"),
+            Partition::AwsUsGov => write!(f, "aws-us-gov"),
+            Partition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ValidationStrategyMode {
         }
     }
 }
+impl ::std::fmt::Display for ValidationStrategyMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationStrategyMode::Lenient => write!(f, "LENIENT"),
+            ValidationStrategyMode::Strict => write!(f, "STRICT"),
+            ValidationStrategyMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

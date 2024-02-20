@@ -121,3 +121,17 @@ impl QuantumTaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for QuantumTaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuantumTaskStatus::Cancelled => write!(f, "CANCELLED"),
+            QuantumTaskStatus::Cancelling => write!(f, "CANCELLING"),
+            QuantumTaskStatus::Completed => write!(f, "COMPLETED"),
+            QuantumTaskStatus::Created => write!(f, "CREATED"),
+            QuantumTaskStatus::Failed => write!(f, "FAILED"),
+            QuantumTaskStatus::Queued => write!(f, "QUEUED"),
+            QuantumTaskStatus::Running => write!(f, "RUNNING"),
+            QuantumTaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

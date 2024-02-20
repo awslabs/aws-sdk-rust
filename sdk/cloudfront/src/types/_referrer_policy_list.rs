@@ -135,3 +135,18 @@ impl ReferrerPolicyList {
         }
     }
 }
+impl ::std::fmt::Display for ReferrerPolicyList {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferrerPolicyList::NoReferrer => write!(f, "no-referrer"),
+            ReferrerPolicyList::NoReferrerWhenDowngrade => write!(f, "no-referrer-when-downgrade"),
+            ReferrerPolicyList::Origin => write!(f, "origin"),
+            ReferrerPolicyList::OriginWhenCrossOrigin => write!(f, "origin-when-cross-origin"),
+            ReferrerPolicyList::SameOrigin => write!(f, "same-origin"),
+            ReferrerPolicyList::StrictOrigin => write!(f, "strict-origin"),
+            ReferrerPolicyList::StrictOriginWhenCrossOrigin => write!(f, "strict-origin-when-cross-origin"),
+            ReferrerPolicyList::UnsafeUrl => write!(f, "unsafe-url"),
+            ReferrerPolicyList::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

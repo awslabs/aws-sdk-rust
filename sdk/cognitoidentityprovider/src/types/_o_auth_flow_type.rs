@@ -101,3 +101,13 @@ impl OAuthFlowType {
         }
     }
 }
+impl ::std::fmt::Display for OAuthFlowType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OAuthFlowType::ClientCredentials => write!(f, "client_credentials"),
+            OAuthFlowType::Code => write!(f, "code"),
+            OAuthFlowType::Implicit => write!(f, "implicit"),
+            OAuthFlowType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

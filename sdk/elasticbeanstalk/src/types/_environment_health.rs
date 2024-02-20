@@ -106,3 +106,14 @@ impl EnvironmentHealth {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentHealth {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentHealth::Green => write!(f, "Green"),
+            EnvironmentHealth::Grey => write!(f, "Grey"),
+            EnvironmentHealth::Red => write!(f, "Red"),
+            EnvironmentHealth::Yellow => write!(f, "Yellow"),
+            EnvironmentHealth::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

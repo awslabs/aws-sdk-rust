@@ -129,3 +129,17 @@ impl AudienceGenerationJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for AudienceGenerationJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudienceGenerationJobStatus::Active => write!(f, "ACTIVE"),
+            AudienceGenerationJobStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            AudienceGenerationJobStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            AudienceGenerationJobStatus::CreatePending => write!(f, "CREATE_PENDING"),
+            AudienceGenerationJobStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            AudienceGenerationJobStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            AudienceGenerationJobStatus::DeletePending => write!(f, "DELETE_PENDING"),
+            AudienceGenerationJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

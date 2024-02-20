@@ -96,3 +96,12 @@ impl ArchiveStatus {
         }
     }
 }
+impl ::std::fmt::Display for ArchiveStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArchiveStatus::ArchiveAccess => write!(f, "ARCHIVE_ACCESS"),
+            ArchiveStatus::DeepArchiveAccess => write!(f, "DEEP_ARCHIVE_ACCESS"),
+            ArchiveStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

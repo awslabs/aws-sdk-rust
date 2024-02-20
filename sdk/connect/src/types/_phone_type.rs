@@ -96,3 +96,12 @@ impl PhoneType {
         }
     }
 }
+impl ::std::fmt::Display for PhoneType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhoneType::DeskPhone => write!(f, "DESK_PHONE"),
+            PhoneType::SoftPhone => write!(f, "SOFT_PHONE"),
+            PhoneType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

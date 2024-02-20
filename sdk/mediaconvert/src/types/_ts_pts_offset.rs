@@ -96,3 +96,12 @@ impl TsPtsOffset {
         }
     }
 }
+impl ::std::fmt::Display for TsPtsOffset {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TsPtsOffset::Auto => write!(f, "AUTO"),
+            TsPtsOffset::Seconds => write!(f, "SECONDS"),
+            TsPtsOffset::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

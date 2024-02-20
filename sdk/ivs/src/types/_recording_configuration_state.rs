@@ -101,3 +101,13 @@ impl RecordingConfigurationState {
         }
     }
 }
+impl ::std::fmt::Display for RecordingConfigurationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordingConfigurationState::Active => write!(f, "ACTIVE"),
+            RecordingConfigurationState::CreateFailed => write!(f, "CREATE_FAILED"),
+            RecordingConfigurationState::Creating => write!(f, "CREATING"),
+            RecordingConfigurationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

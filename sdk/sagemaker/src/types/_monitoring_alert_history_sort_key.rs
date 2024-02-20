@@ -96,3 +96,12 @@ impl MonitoringAlertHistorySortKey {
         }
     }
 }
+impl ::std::fmt::Display for MonitoringAlertHistorySortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitoringAlertHistorySortKey::CreationTime => write!(f, "CreationTime"),
+            MonitoringAlertHistorySortKey::Status => write!(f, "Status"),
+            MonitoringAlertHistorySortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

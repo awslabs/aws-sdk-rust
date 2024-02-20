@@ -96,3 +96,12 @@ impl KeySpec {
         }
     }
 }
+impl ::std::fmt::Display for KeySpec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeySpec::KeyExchange => write!(f, "KEY_EXCHANGE"),
+            KeySpec::Signature => write!(f, "SIGNATURE"),
+            KeySpec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

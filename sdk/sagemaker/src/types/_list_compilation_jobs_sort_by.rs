@@ -101,3 +101,13 @@ impl ListCompilationJobsSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ListCompilationJobsSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListCompilationJobsSortBy::CreationTime => write!(f, "CreationTime"),
+            ListCompilationJobsSortBy::Name => write!(f, "Name"),
+            ListCompilationJobsSortBy::Status => write!(f, "Status"),
+            ListCompilationJobsSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

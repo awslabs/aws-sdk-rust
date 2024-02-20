@@ -96,3 +96,12 @@ impl OsVersion {
         }
     }
 }
+impl ::std::fmt::Display for OsVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OsVersion::Version2012 => write!(f, "SERVER_2012"),
+            OsVersion::Version2019 => write!(f, "SERVER_2019"),
+            OsVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

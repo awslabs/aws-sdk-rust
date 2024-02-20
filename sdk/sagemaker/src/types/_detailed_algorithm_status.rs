@@ -106,3 +106,14 @@ impl DetailedAlgorithmStatus {
         }
     }
 }
+impl ::std::fmt::Display for DetailedAlgorithmStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetailedAlgorithmStatus::Completed => write!(f, "Completed"),
+            DetailedAlgorithmStatus::Failed => write!(f, "Failed"),
+            DetailedAlgorithmStatus::InProgress => write!(f, "InProgress"),
+            DetailedAlgorithmStatus::NotStarted => write!(f, "NotStarted"),
+            DetailedAlgorithmStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -126,3 +126,18 @@ impl ComponentType {
         }
     }
 }
+impl ::std::fmt::Display for ComponentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComponentType::Abap => write!(f, "ABAP"),
+            ComponentType::Ascs => write!(f, "ASCS"),
+            ComponentType::Dialog => write!(f, "DIALOG"),
+            ComponentType::Ers => write!(f, "ERS"),
+            ComponentType::Hana => write!(f, "HANA"),
+            ComponentType::HanaNode => write!(f, "HANA_NODE"),
+            ComponentType::Wd => write!(f, "WD"),
+            ComponentType::Webdisp => write!(f, "WEBDISP"),
+            ComponentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

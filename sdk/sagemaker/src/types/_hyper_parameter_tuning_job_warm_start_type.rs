@@ -96,3 +96,12 @@ impl HyperParameterTuningJobWarmStartType {
         }
     }
 }
+impl ::std::fmt::Display for HyperParameterTuningJobWarmStartType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm => write!(f, "IdenticalDataAndAlgorithm"),
+            HyperParameterTuningJobWarmStartType::TransferLearning => write!(f, "TransferLearning"),
+            HyperParameterTuningJobWarmStartType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

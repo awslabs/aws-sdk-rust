@@ -106,3 +106,14 @@ impl StreamStatus {
         }
     }
 }
+impl ::std::fmt::Display for StreamStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamStatus::Disabled => write!(f, "DISABLED"),
+            StreamStatus::Disabling => write!(f, "DISABLING"),
+            StreamStatus::Enabled => write!(f, "ENABLED"),
+            StreamStatus::Enabling => write!(f, "ENABLING"),
+            StreamStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

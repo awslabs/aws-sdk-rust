@@ -96,3 +96,12 @@ impl Mp4MoovPlacement {
         }
     }
 }
+impl ::std::fmt::Display for Mp4MoovPlacement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mp4MoovPlacement::Normal => write!(f, "NORMAL"),
+            Mp4MoovPlacement::ProgressiveDownload => write!(f, "PROGRESSIVE_DOWNLOAD"),
+            Mp4MoovPlacement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

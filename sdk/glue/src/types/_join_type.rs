@@ -116,3 +116,16 @@ impl JoinType {
         }
     }
 }
+impl ::std::fmt::Display for JoinType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JoinType::Equijoin => write!(f, "equijoin"),
+            JoinType::Left => write!(f, "left"),
+            JoinType::LeftAnti => write!(f, "leftanti"),
+            JoinType::LeftSemi => write!(f, "leftsemi"),
+            JoinType::Outer => write!(f, "outer"),
+            JoinType::Right => write!(f, "right"),
+            JoinType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

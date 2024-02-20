@@ -96,3 +96,12 @@ impl Capability {
         }
     }
 }
+impl ::std::fmt::Display for Capability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Capability::Sms => write!(f, "SMS"),
+            Capability::Voice => write!(f, "Voice"),
+            Capability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

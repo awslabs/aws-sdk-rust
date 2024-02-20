@@ -96,3 +96,12 @@ impl ScanDirection {
         }
     }
 }
+impl ::std::fmt::Display for ScanDirection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScanDirection::Backward => write!(f, "BACKWARD"),
+            ScanDirection::Forward => write!(f, "FORWARD"),
+            ScanDirection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

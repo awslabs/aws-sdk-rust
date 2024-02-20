@@ -96,3 +96,12 @@ impl RegionAvailabilityStatus {
         }
     }
 }
+impl ::std::fmt::Display for RegionAvailabilityStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegionAvailabilityStatus::Available => write!(f, "AVAILABLE"),
+            RegionAvailabilityStatus::Unavailable => write!(f, "UNAVAILABLE"),
+            RegionAvailabilityStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

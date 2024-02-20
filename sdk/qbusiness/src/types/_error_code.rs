@@ -106,3 +106,14 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::InternalError => write!(f, "InternalError"),
+            ErrorCode::InvalidRequest => write!(f, "InvalidRequest"),
+            ErrorCode::ResourceInactive => write!(f, "ResourceInactive"),
+            ErrorCode::ResourceNotFound => write!(f, "ResourceNotFound"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

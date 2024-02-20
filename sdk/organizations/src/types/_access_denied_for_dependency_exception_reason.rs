@@ -91,3 +91,13 @@ impl AccessDeniedForDependencyExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for AccessDeniedForDependencyExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => {
+                write!(f, "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE")
+            }
+            AccessDeniedForDependencyExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

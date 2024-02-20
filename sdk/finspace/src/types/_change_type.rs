@@ -96,3 +96,12 @@ impl ChangeType {
         }
     }
 }
+impl ::std::fmt::Display for ChangeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeType::Delete => write!(f, "DELETE"),
+            ChangeType::Put => write!(f, "PUT"),
+            ChangeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

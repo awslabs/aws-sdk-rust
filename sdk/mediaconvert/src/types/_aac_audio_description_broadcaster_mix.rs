@@ -96,3 +96,12 @@ impl AacAudioDescriptionBroadcasterMix {
         }
     }
 }
+impl ::std::fmt::Display for AacAudioDescriptionBroadcasterMix {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AacAudioDescriptionBroadcasterMix::BroadcasterMixedAd => write!(f, "BROADCASTER_MIXED_AD"),
+            AacAudioDescriptionBroadcasterMix::Normal => write!(f, "NORMAL"),
+            AacAudioDescriptionBroadcasterMix::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

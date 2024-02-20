@@ -96,3 +96,12 @@ impl TargetLabel {
         }
     }
 }
+impl ::std::fmt::Display for TargetLabel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetLabel::Blue => write!(f, "Blue"),
+            TargetLabel::Green => write!(f, "Green"),
+            TargetLabel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

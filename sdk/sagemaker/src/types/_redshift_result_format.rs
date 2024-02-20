@@ -96,3 +96,12 @@ impl RedshiftResultFormat {
         }
     }
 }
+impl ::std::fmt::Display for RedshiftResultFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RedshiftResultFormat::Csv => write!(f, "CSV"),
+            RedshiftResultFormat::Parquet => write!(f, "PARQUET"),
+            RedshiftResultFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl RetryAction {
         }
     }
 }
+impl ::std::fmt::Display for RetryAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetryAction::Exit => write!(f, "EXIT"),
+            RetryAction::Retry => write!(f, "RETRY"),
+            RetryAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

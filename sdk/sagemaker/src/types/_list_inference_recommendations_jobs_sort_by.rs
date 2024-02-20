@@ -101,3 +101,13 @@ impl ListInferenceRecommendationsJobsSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ListInferenceRecommendationsJobsSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListInferenceRecommendationsJobsSortBy::CreationTime => write!(f, "CreationTime"),
+            ListInferenceRecommendationsJobsSortBy::Name => write!(f, "Name"),
+            ListInferenceRecommendationsJobsSortBy::Status => write!(f, "Status"),
+            ListInferenceRecommendationsJobsSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl SpotInstanceState {
         }
     }
 }
+impl ::std::fmt::Display for SpotInstanceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpotInstanceState::Active => write!(f, "active"),
+            SpotInstanceState::Cancelled => write!(f, "cancelled"),
+            SpotInstanceState::Closed => write!(f, "closed"),
+            SpotInstanceState::Disabled => write!(f, "disabled"),
+            SpotInstanceState::Failed => write!(f, "failed"),
+            SpotInstanceState::Open => write!(f, "open"),
+            SpotInstanceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

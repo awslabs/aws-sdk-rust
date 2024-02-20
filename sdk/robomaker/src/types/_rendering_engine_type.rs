@@ -91,3 +91,11 @@ impl RenderingEngineType {
         }
     }
 }
+impl ::std::fmt::Display for RenderingEngineType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RenderingEngineType::Ogre => write!(f, "OGRE"),
+            RenderingEngineType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

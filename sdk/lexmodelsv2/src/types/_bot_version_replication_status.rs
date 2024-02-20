@@ -106,3 +106,14 @@ impl BotVersionReplicationStatus {
         }
     }
 }
+impl ::std::fmt::Display for BotVersionReplicationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotVersionReplicationStatus::Available => write!(f, "Available"),
+            BotVersionReplicationStatus::Creating => write!(f, "Creating"),
+            BotVersionReplicationStatus::Deleting => write!(f, "Deleting"),
+            BotVersionReplicationStatus::Failed => write!(f, "Failed"),
+            BotVersionReplicationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

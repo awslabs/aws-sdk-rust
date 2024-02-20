@@ -96,3 +96,12 @@ impl PositionResourceType {
         }
     }
 }
+impl ::std::fmt::Display for PositionResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PositionResourceType::WirelessDevice => write!(f, "WirelessDevice"),
+            PositionResourceType::WirelessGateway => write!(f, "WirelessGateway"),
+            PositionResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

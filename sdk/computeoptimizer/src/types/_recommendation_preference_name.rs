@@ -123,3 +123,16 @@ impl RecommendationPreferenceName {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationPreferenceName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationPreferenceName::EnhancedInfrastructureMetrics => write!(f, "EnhancedInfrastructureMetrics"),
+            RecommendationPreferenceName::ExternalMetricsPreference => write!(f, "ExternalMetricsPreference"),
+            RecommendationPreferenceName::InferredWorkloadTypes => write!(f, "InferredWorkloadTypes"),
+            RecommendationPreferenceName::LookbackPeriodPreference => write!(f, "LookBackPeriodPreference"),
+            RecommendationPreferenceName::PreferredResources => write!(f, "PreferredResources"),
+            RecommendationPreferenceName::UtilizationPreferences => write!(f, "UtilizationPreferences"),
+            RecommendationPreferenceName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

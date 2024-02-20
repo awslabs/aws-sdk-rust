@@ -129,3 +129,17 @@ impl DocumentType {
         }
     }
 }
+impl ::std::fmt::Display for DocumentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentType::Image => write!(f, "IMAGE"),
+            DocumentType::MsWord => write!(f, "MS_WORD"),
+            DocumentType::NativePdf => write!(f, "NATIVE_PDF"),
+            DocumentType::PlainText => write!(f, "PLAIN_TEXT"),
+            DocumentType::ScannedPdf => write!(f, "SCANNED_PDF"),
+            DocumentType::TextractAnalyzeDocumentJson => write!(f, "TEXTRACT_ANALYZE_DOCUMENT_JSON"),
+            DocumentType::TextractDetectDocumentTextJson => write!(f, "TEXTRACT_DETECT_DOCUMENT_TEXT_JSON"),
+            DocumentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

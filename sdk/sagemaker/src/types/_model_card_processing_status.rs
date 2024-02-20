@@ -123,3 +123,16 @@ impl ModelCardProcessingStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelCardProcessingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelCardProcessingStatus::ContentDeleted => write!(f, "ContentDeleted"),
+            ModelCardProcessingStatus::DeleteCompleted => write!(f, "DeleteCompleted"),
+            ModelCardProcessingStatus::DeleteFailed => write!(f, "DeleteFailed"),
+            ModelCardProcessingStatus::DeleteInprogress => write!(f, "DeleteInProgress"),
+            ModelCardProcessingStatus::DeletePending => write!(f, "DeletePending"),
+            ModelCardProcessingStatus::ExportjobsDeleted => write!(f, "ExportJobsDeleted"),
+            ModelCardProcessingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

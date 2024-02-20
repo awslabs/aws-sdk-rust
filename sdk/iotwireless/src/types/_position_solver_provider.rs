@@ -91,3 +91,11 @@ impl PositionSolverProvider {
         }
     }
 }
+impl ::std::fmt::Display for PositionSolverProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PositionSolverProvider::Semtech => write!(f, "Semtech"),
+            PositionSolverProvider::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

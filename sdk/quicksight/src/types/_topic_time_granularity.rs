@@ -126,3 +126,18 @@ impl TopicTimeGranularity {
         }
     }
 }
+impl ::std::fmt::Display for TopicTimeGranularity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TopicTimeGranularity::Day => write!(f, "DAY"),
+            TopicTimeGranularity::Hour => write!(f, "HOUR"),
+            TopicTimeGranularity::Minute => write!(f, "MINUTE"),
+            TopicTimeGranularity::Month => write!(f, "MONTH"),
+            TopicTimeGranularity::Quarter => write!(f, "QUARTER"),
+            TopicTimeGranularity::Second => write!(f, "SECOND"),
+            TopicTimeGranularity::Week => write!(f, "WEEK"),
+            TopicTimeGranularity::Year => write!(f, "YEAR"),
+            TopicTimeGranularity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

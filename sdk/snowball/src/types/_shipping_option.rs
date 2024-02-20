@@ -106,3 +106,14 @@ impl ShippingOption {
         }
     }
 }
+impl ::std::fmt::Display for ShippingOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShippingOption::Express => write!(f, "EXPRESS"),
+            ShippingOption::NextDay => write!(f, "NEXT_DAY"),
+            ShippingOption::SecondDay => write!(f, "SECOND_DAY"),
+            ShippingOption::Standard => write!(f, "STANDARD"),
+            ShippingOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

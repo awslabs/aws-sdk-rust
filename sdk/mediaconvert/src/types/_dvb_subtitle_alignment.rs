@@ -101,3 +101,13 @@ impl DvbSubtitleAlignment {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubtitleAlignment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubtitleAlignment::Auto => write!(f, "AUTO"),
+            DvbSubtitleAlignment::Centered => write!(f, "CENTERED"),
+            DvbSubtitleAlignment::Left => write!(f, "LEFT"),
+            DvbSubtitleAlignment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl DatabaseOutputMode {
         }
     }
 }
+impl ::std::fmt::Display for DatabaseOutputMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatabaseOutputMode::NewTable => write!(f, "NEW_TABLE"),
+            DatabaseOutputMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

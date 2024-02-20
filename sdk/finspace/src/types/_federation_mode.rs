@@ -96,3 +96,12 @@ impl FederationMode {
         }
     }
 }
+impl ::std::fmt::Display for FederationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FederationMode::Federated => write!(f, "FEDERATED"),
+            FederationMode::Local => write!(f, "LOCAL"),
+            FederationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

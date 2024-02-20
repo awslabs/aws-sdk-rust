@@ -96,3 +96,12 @@ impl ReportPackagingType {
         }
     }
 }
+impl ::std::fmt::Display for ReportPackagingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportPackagingType::None => write!(f, "NONE"),
+            ReportPackagingType::Zip => write!(f, "ZIP"),
+            ReportPackagingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

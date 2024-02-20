@@ -91,3 +91,11 @@ impl BuiltInSlotTypeSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for BuiltInSlotTypeSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BuiltInSlotTypeSortAttribute::SlotTypeSignature => write!(f, "SlotTypeSignature"),
+            BuiltInSlotTypeSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

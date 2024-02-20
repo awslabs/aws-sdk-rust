@@ -106,3 +106,14 @@ impl ConfigurationEventResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationEventResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationEventResourceType::Cloudformation => write!(f, "CLOUDFORMATION"),
+            ConfigurationEventResourceType::CloudwatchAlarm => write!(f, "CLOUDWATCH_ALARM"),
+            ConfigurationEventResourceType::CloudwatchLog => write!(f, "CLOUDWATCH_LOG"),
+            ConfigurationEventResourceType::SsmAssociation => write!(f, "SSM_ASSOCIATION"),
+            ConfigurationEventResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

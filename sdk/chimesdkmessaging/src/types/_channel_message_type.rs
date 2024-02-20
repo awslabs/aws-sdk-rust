@@ -96,3 +96,12 @@ impl ChannelMessageType {
         }
     }
 }
+impl ::std::fmt::Display for ChannelMessageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelMessageType::Control => write!(f, "CONTROL"),
+            ChannelMessageType::Standard => write!(f, "STANDARD"),
+            ChannelMessageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

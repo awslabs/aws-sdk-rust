@@ -101,3 +101,13 @@ impl AlertCategory {
         }
     }
 }
+impl ::std::fmt::Display for AlertCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlertCategory::Info => write!(f, "INFO"),
+            AlertCategory::PlaybackWarning => write!(f, "PLAYBACK_WARNING"),
+            AlertCategory::SchedulingError => write!(f, "SCHEDULING_ERROR"),
+            AlertCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

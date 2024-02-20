@@ -96,3 +96,12 @@ impl TableClass {
         }
     }
 }
+impl ::std::fmt::Display for TableClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableClass::Standard => write!(f, "STANDARD"),
+            TableClass::StandardInfrequentAccess => write!(f, "STANDARD_INFREQUENT_ACCESS"),
+            TableClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

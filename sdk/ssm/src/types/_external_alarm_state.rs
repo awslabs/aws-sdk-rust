@@ -96,3 +96,12 @@ impl ExternalAlarmState {
         }
     }
 }
+impl ::std::fmt::Display for ExternalAlarmState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExternalAlarmState::Alarm => write!(f, "ALARM"),
+            ExternalAlarmState::UnknownValue => write!(f, "UNKNOWN"),
+            ExternalAlarmState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

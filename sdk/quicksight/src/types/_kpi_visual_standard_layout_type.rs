@@ -96,3 +96,12 @@ impl KpiVisualStandardLayoutType {
         }
     }
 }
+impl ::std::fmt::Display for KpiVisualStandardLayoutType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KpiVisualStandardLayoutType::Classic => write!(f, "CLASSIC"),
+            KpiVisualStandardLayoutType::Vertical => write!(f, "VERTICAL"),
+            KpiVisualStandardLayoutType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

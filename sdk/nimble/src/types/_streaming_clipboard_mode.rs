@@ -96,3 +96,12 @@ impl StreamingClipboardMode {
         }
     }
 }
+impl ::std::fmt::Display for StreamingClipboardMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamingClipboardMode::Disabled => write!(f, "DISABLED"),
+            StreamingClipboardMode::Enabled => write!(f, "ENABLED"),
+            StreamingClipboardMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl AccessorType {
         }
     }
 }
+impl ::std::fmt::Display for AccessorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessorType::BillingToken => write!(f, "BILLING_TOKEN"),
+            AccessorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

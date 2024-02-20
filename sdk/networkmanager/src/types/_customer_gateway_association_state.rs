@@ -106,3 +106,14 @@ impl CustomerGatewayAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for CustomerGatewayAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomerGatewayAssociationState::Available => write!(f, "AVAILABLE"),
+            CustomerGatewayAssociationState::Deleted => write!(f, "DELETED"),
+            CustomerGatewayAssociationState::Deleting => write!(f, "DELETING"),
+            CustomerGatewayAssociationState::Pending => write!(f, "PENDING"),
+            CustomerGatewayAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

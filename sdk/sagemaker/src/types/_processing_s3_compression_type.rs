@@ -96,3 +96,12 @@ impl ProcessingS3CompressionType {
         }
     }
 }
+impl ::std::fmt::Display for ProcessingS3CompressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProcessingS3CompressionType::Gzip => write!(f, "Gzip"),
+            ProcessingS3CompressionType::None => write!(f, "None"),
+            ProcessingS3CompressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

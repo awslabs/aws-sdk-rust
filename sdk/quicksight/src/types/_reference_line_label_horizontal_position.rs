@@ -101,3 +101,13 @@ impl ReferenceLineLabelHorizontalPosition {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceLineLabelHorizontalPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceLineLabelHorizontalPosition::Center => write!(f, "CENTER"),
+            ReferenceLineLabelHorizontalPosition::Left => write!(f, "LEFT"),
+            ReferenceLineLabelHorizontalPosition::Right => write!(f, "RIGHT"),
+            ReferenceLineLabelHorizontalPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

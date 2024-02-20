@@ -111,3 +111,15 @@ impl SortAssociationsBy {
         }
     }
 }
+impl ::std::fmt::Display for SortAssociationsBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortAssociationsBy::CreationTime => write!(f, "CreationTime"),
+            SortAssociationsBy::DestinationArn => write!(f, "DestinationArn"),
+            SortAssociationsBy::DestinationType => write!(f, "DestinationType"),
+            SortAssociationsBy::SourceArn => write!(f, "SourceArn"),
+            SortAssociationsBy::SourceType => write!(f, "SourceType"),
+            SortAssociationsBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

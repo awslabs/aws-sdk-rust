@@ -91,3 +91,11 @@ impl ElevationUnit {
         }
     }
 }
+impl ::std::fmt::Display for ElevationUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ElevationUnit::Feet => write!(f, "FEET"),
+            ElevationUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

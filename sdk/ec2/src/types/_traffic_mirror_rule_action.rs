@@ -96,3 +96,12 @@ impl TrafficMirrorRuleAction {
         }
     }
 }
+impl ::std::fmt::Display for TrafficMirrorRuleAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrafficMirrorRuleAction::Accept => write!(f, "accept"),
+            TrafficMirrorRuleAction::Reject => write!(f, "reject"),
+            TrafficMirrorRuleAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

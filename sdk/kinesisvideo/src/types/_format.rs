@@ -96,3 +96,12 @@ impl Format {
         }
     }
 }
+impl ::std::fmt::Display for Format {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Format::Jpeg => write!(f, "JPEG"),
+            Format::Png => write!(f, "PNG"),
+            Format::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

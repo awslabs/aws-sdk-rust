@@ -129,3 +129,17 @@ impl OrgFeature {
         }
     }
 }
+impl ::std::fmt::Display for OrgFeature {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrgFeature::EbsMalwareProtection => write!(f, "EBS_MALWARE_PROTECTION"),
+            OrgFeature::EksAuditLogs => write!(f, "EKS_AUDIT_LOGS"),
+            OrgFeature::EksRuntimeMonitoring => write!(f, "EKS_RUNTIME_MONITORING"),
+            OrgFeature::LambdaNetworkLogs => write!(f, "LAMBDA_NETWORK_LOGS"),
+            OrgFeature::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
+            OrgFeature::RuntimeMonitoring => write!(f, "RUNTIME_MONITORING"),
+            OrgFeature::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
+            OrgFeature::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

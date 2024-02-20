@@ -96,3 +96,12 @@ impl ApproximateCreationDateTimePrecision {
         }
     }
 }
+impl ::std::fmt::Display for ApproximateCreationDateTimePrecision {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApproximateCreationDateTimePrecision::Microsecond => write!(f, "MICROSECOND"),
+            ApproximateCreationDateTimePrecision::Millisecond => write!(f, "MILLISECOND"),
+            ApproximateCreationDateTimePrecision::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

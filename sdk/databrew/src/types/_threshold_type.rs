@@ -106,3 +106,14 @@ impl ThresholdType {
         }
     }
 }
+impl ::std::fmt::Display for ThresholdType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThresholdType::GreaterThan => write!(f, "GREATER_THAN"),
+            ThresholdType::GreaterThanOrEqual => write!(f, "GREATER_THAN_OR_EQUAL"),
+            ThresholdType::LessThan => write!(f, "LESS_THAN"),
+            ThresholdType::LessThanOrEqual => write!(f, "LESS_THAN_OR_EQUAL"),
+            ThresholdType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

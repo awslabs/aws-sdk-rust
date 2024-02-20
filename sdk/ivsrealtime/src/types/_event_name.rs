@@ -141,3 +141,19 @@ impl EventName {
         }
     }
 }
+impl ::std::fmt::Display for EventName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventName::Joined => write!(f, "JOINED"),
+            EventName::JoinError => write!(f, "JOIN_ERROR"),
+            EventName::Left => write!(f, "LEFT"),
+            EventName::PublishError => write!(f, "PUBLISH_ERROR"),
+            EventName::PublishStarted => write!(f, "PUBLISH_STARTED"),
+            EventName::PublishStopped => write!(f, "PUBLISH_STOPPED"),
+            EventName::SubscribeError => write!(f, "SUBSCRIBE_ERROR"),
+            EventName::SubscribeStarted => write!(f, "SUBSCRIBE_STARTED"),
+            EventName::SubscribeStopped => write!(f, "SUBSCRIBE_STOPPED"),
+            EventName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

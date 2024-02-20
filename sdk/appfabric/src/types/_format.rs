@@ -96,3 +96,12 @@ impl Format {
         }
     }
 }
+impl ::std::fmt::Display for Format {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Format::Json => write!(f, "json"),
+            Format::Parquet => write!(f, "parquet"),
+            Format::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

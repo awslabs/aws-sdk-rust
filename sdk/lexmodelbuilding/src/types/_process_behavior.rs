@@ -96,3 +96,12 @@ impl ProcessBehavior {
         }
     }
 }
+impl ::std::fmt::Display for ProcessBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProcessBehavior::Build => write!(f, "BUILD"),
+            ProcessBehavior::Save => write!(f, "SAVE"),
+            ProcessBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

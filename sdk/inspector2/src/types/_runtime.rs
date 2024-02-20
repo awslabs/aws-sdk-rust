@@ -177,3 +177,25 @@ impl Runtime {
         }
     }
 }
+impl ::std::fmt::Display for Runtime {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Runtime::Go1X => write!(f, "GO_1_X"),
+            Runtime::Java11 => write!(f, "JAVA_11"),
+            Runtime::Java17 => write!(f, "JAVA_17"),
+            Runtime::Java8 => write!(f, "JAVA_8"),
+            Runtime::Java8Al2 => write!(f, "JAVA_8_AL2"),
+            Runtime::Nodejs => write!(f, "NODEJS"),
+            Runtime::Nodejs12X => write!(f, "NODEJS_12_X"),
+            Runtime::Nodejs14X => write!(f, "NODEJS_14_X"),
+            Runtime::Nodejs16X => write!(f, "NODEJS_16_X"),
+            Runtime::Nodejs18X => write!(f, "NODEJS_18_X"),
+            Runtime::Python310 => write!(f, "PYTHON_3_10"),
+            Runtime::Python37 => write!(f, "PYTHON_3_7"),
+            Runtime::Python38 => write!(f, "PYTHON_3_8"),
+            Runtime::Python39 => write!(f, "PYTHON_3_9"),
+            Runtime::Unsupported => write!(f, "UNSUPPORTED"),
+            Runtime::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

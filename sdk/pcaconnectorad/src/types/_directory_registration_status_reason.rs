@@ -123,3 +123,16 @@ impl DirectoryRegistrationStatusReason {
         }
     }
 }
+impl ::std::fmt::Display for DirectoryRegistrationStatusReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectoryRegistrationStatusReason::DirectoryAccessDenied => write!(f, "DIRECTORY_ACCESS_DENIED"),
+            DirectoryRegistrationStatusReason::DirectoryNotActive => write!(f, "DIRECTORY_NOT_ACTIVE"),
+            DirectoryRegistrationStatusReason::DirectoryNotReachable => write!(f, "DIRECTORY_NOT_REACHABLE"),
+            DirectoryRegistrationStatusReason::DirectoryResourceNotFound => write!(f, "DIRECTORY_RESOURCE_NOT_FOUND"),
+            DirectoryRegistrationStatusReason::DirectoryTypeNotSupported => write!(f, "DIRECTORY_TYPE_NOT_SUPPORTED"),
+            DirectoryRegistrationStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            DirectoryRegistrationStatusReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

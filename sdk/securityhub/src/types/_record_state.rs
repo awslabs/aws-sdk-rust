@@ -96,3 +96,12 @@ impl RecordState {
         }
     }
 }
+impl ::std::fmt::Display for RecordState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordState::Active => write!(f, "ACTIVE"),
+            RecordState::Archived => write!(f, "ARCHIVED"),
+            RecordState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

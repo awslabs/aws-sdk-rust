@@ -106,3 +106,14 @@ impl PricingRuleScope {
         }
     }
 }
+impl ::std::fmt::Display for PricingRuleScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PricingRuleScope::BillingEntity => write!(f, "BILLING_ENTITY"),
+            PricingRuleScope::Global => write!(f, "GLOBAL"),
+            PricingRuleScope::Service => write!(f, "SERVICE"),
+            PricingRuleScope::Sku => write!(f, "SKU"),
+            PricingRuleScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

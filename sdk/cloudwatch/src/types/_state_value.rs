@@ -101,3 +101,13 @@ impl StateValue {
         }
     }
 }
+impl ::std::fmt::Display for StateValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StateValue::Alarm => write!(f, "ALARM"),
+            StateValue::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
+            StateValue::Ok => write!(f, "OK"),
+            StateValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

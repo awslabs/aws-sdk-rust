@@ -101,3 +101,13 @@ impl PingStatus {
         }
     }
 }
+impl ::std::fmt::Display for PingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PingStatus::ConnectionLost => write!(f, "ConnectionLost"),
+            PingStatus::Inactive => write!(f, "Inactive"),
+            PingStatus::Online => write!(f, "Online"),
+            PingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

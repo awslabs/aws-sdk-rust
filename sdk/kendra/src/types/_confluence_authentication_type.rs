@@ -96,3 +96,12 @@ impl ConfluenceAuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for ConfluenceAuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfluenceAuthenticationType::HttpBasic => write!(f, "HTTP_BASIC"),
+            ConfluenceAuthenticationType::Pat => write!(f, "PAT"),
+            ConfluenceAuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

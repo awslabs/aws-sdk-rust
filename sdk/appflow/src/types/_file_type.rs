@@ -101,3 +101,13 @@ impl FileType {
         }
     }
 }
+impl ::std::fmt::Display for FileType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileType::Csv => write!(f, "CSV"),
+            FileType::Json => write!(f, "JSON"),
+            FileType::Parquet => write!(f, "PARQUET"),
+            FileType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

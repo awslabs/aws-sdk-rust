@@ -111,3 +111,15 @@ impl NamespaceStatus {
         }
     }
 }
+impl ::std::fmt::Display for NamespaceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NamespaceStatus::Created => write!(f, "CREATED"),
+            NamespaceStatus::Creating => write!(f, "CREATING"),
+            NamespaceStatus::Deleting => write!(f, "DELETING"),
+            NamespaceStatus::NonRetryableFailure => write!(f, "NON_RETRYABLE_FAILURE"),
+            NamespaceStatus::RetryableFailure => write!(f, "RETRYABLE_FAILURE"),
+            NamespaceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

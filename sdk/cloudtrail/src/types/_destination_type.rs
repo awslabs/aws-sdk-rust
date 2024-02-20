@@ -96,3 +96,12 @@ impl DestinationType {
         }
     }
 }
+impl ::std::fmt::Display for DestinationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DestinationType::AwsService => write!(f, "AWS_SERVICE"),
+            DestinationType::EventDataStore => write!(f, "EVENT_DATA_STORE"),
+            DestinationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl LakeFormationDataPermissionType {
         }
     }
 }
+impl ::std::fmt::Display for LakeFormationDataPermissionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LakeFormationDataPermissionType::LfTagPolicy => write!(f, "LFTagPolicy"),
+            LakeFormationDataPermissionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

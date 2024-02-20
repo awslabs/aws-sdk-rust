@@ -101,3 +101,13 @@ impl FlexCacheEndpointType {
         }
     }
 }
+impl ::std::fmt::Display for FlexCacheEndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlexCacheEndpointType::Cache => write!(f, "CACHE"),
+            FlexCacheEndpointType::None => write!(f, "NONE"),
+            FlexCacheEndpointType::Origin => write!(f, "ORIGIN"),
+            FlexCacheEndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

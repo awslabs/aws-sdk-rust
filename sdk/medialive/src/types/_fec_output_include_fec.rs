@@ -96,3 +96,12 @@ impl FecOutputIncludeFec {
         }
     }
 }
+impl ::std::fmt::Display for FecOutputIncludeFec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FecOutputIncludeFec::Column => write!(f, "COLUMN"),
+            FecOutputIncludeFec::ColumnAndRow => write!(f, "COLUMN_AND_ROW"),
+            FecOutputIncludeFec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

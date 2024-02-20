@@ -106,3 +106,14 @@ impl TargetTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for TargetTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetTypeEnum::Alb => write!(f, "alb"),
+            TargetTypeEnum::Instance => write!(f, "instance"),
+            TargetTypeEnum::Ip => write!(f, "ip"),
+            TargetTypeEnum::Lambda => write!(f, "lambda"),
+            TargetTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

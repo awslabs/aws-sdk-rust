@@ -96,3 +96,12 @@ impl ChildType {
         }
     }
 }
+impl ::std::fmt::Display for ChildType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChildType::Account => write!(f, "ACCOUNT"),
+            ChildType::OrganizationalUnit => write!(f, "ORGANIZATIONAL_UNIT"),
+            ChildType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl FrequencyUnits {
         }
     }
 }
+impl ::std::fmt::Display for FrequencyUnits {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FrequencyUnits::Ghz => write!(f, "GHz"),
+            FrequencyUnits::Mhz => write!(f, "MHz"),
+            FrequencyUnits::Khz => write!(f, "kHz"),
+            FrequencyUnits::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

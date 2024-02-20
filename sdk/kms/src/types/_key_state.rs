@@ -135,3 +135,18 @@ impl KeyState {
         }
     }
 }
+impl ::std::fmt::Display for KeyState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyState::Creating => write!(f, "Creating"),
+            KeyState::Disabled => write!(f, "Disabled"),
+            KeyState::Enabled => write!(f, "Enabled"),
+            KeyState::PendingDeletion => write!(f, "PendingDeletion"),
+            KeyState::PendingImport => write!(f, "PendingImport"),
+            KeyState::PendingReplicaDeletion => write!(f, "PendingReplicaDeletion"),
+            KeyState::Unavailable => write!(f, "Unavailable"),
+            KeyState::Updating => write!(f, "Updating"),
+            KeyState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

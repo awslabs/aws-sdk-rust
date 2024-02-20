@@ -101,3 +101,13 @@ impl RecoveryOptionNameType {
         }
     }
 }
+impl ::std::fmt::Display for RecoveryOptionNameType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecoveryOptionNameType::AdminOnly => write!(f, "admin_only"),
+            RecoveryOptionNameType::VerifiedEmail => write!(f, "verified_email"),
+            RecoveryOptionNameType::VerifiedPhoneNumber => write!(f, "verified_phone_number"),
+            RecoveryOptionNameType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -159,3 +159,22 @@ impl Format {
         }
     }
 }
+impl ::std::fmt::Display for Format {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Format::Accounting => write!(f, "ACCOUNTING"),
+            Format::Auto => write!(f, "AUTO"),
+            Format::Contact => write!(f, "CONTACT"),
+            Format::Currency => write!(f, "CURRENCY"),
+            Format::Date => write!(f, "DATE"),
+            Format::DateTime => write!(f, "DATE_TIME"),
+            Format::Number => write!(f, "NUMBER"),
+            Format::Percentage => write!(f, "PERCENTAGE"),
+            Format::Rowlink => write!(f, "ROWLINK"),
+            Format::Rowset => write!(f, "ROWSET"),
+            Format::Text => write!(f, "TEXT"),
+            Format::Time => write!(f, "TIME"),
+            Format::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl EventType {
         }
     }
 }
+impl ::std::fmt::Display for EventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventType::Error => write!(f, "error"),
+            EventType::BatchChange => write!(f, "fleetRequestChange"),
+            EventType::Information => write!(f, "information"),
+            EventType::InstanceChange => write!(f, "instanceChange"),
+            EventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl RecoveryPointStatus {
         }
     }
 }
+impl ::std::fmt::Display for RecoveryPointStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecoveryPointStatus::Completed => write!(f, "COMPLETED"),
+            RecoveryPointStatus::Deleting => write!(f, "DELETING"),
+            RecoveryPointStatus::Expired => write!(f, "EXPIRED"),
+            RecoveryPointStatus::Partial => write!(f, "PARTIAL"),
+            RecoveryPointStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

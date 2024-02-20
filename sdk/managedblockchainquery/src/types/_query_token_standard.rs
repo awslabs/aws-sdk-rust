@@ -101,3 +101,13 @@ impl QueryTokenStandard {
         }
     }
 }
+impl ::std::fmt::Display for QueryTokenStandard {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryTokenStandard::Erc1155 => write!(f, "ERC1155"),
+            QueryTokenStandard::Erc20 => write!(f, "ERC20"),
+            QueryTokenStandard::Erc721 => write!(f, "ERC721"),
+            QueryTokenStandard::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

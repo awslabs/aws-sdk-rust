@@ -91,3 +91,11 @@ impl RestoreRequestType {
         }
     }
 }
+impl ::std::fmt::Display for RestoreRequestType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RestoreRequestType::Select => write!(f, "SELECT"),
+            RestoreRequestType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl FlatInvocations {
         }
     }
 }
+impl ::std::fmt::Display for FlatInvocations {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlatInvocations::Continue => write!(f, "Continue"),
+            FlatInvocations::Stop => write!(f, "Stop"),
+            FlatInvocations::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

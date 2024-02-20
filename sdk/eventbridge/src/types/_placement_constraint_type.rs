@@ -96,3 +96,12 @@ impl PlacementConstraintType {
         }
     }
 }
+impl ::std::fmt::Display for PlacementConstraintType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlacementConstraintType::DistinctInstance => write!(f, "distinctInstance"),
+            PlacementConstraintType::MemberOf => write!(f, "memberOf"),
+            PlacementConstraintType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

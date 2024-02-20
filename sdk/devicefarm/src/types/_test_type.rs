@@ -213,3 +213,31 @@ impl TestType {
         }
     }
 }
+impl ::std::fmt::Display for TestType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestType::AppiumJavaJunit => write!(f, "APPIUM_JAVA_JUNIT"),
+            TestType::AppiumJavaTestng => write!(f, "APPIUM_JAVA_TESTNG"),
+            TestType::AppiumNode => write!(f, "APPIUM_NODE"),
+            TestType::AppiumPython => write!(f, "APPIUM_PYTHON"),
+            TestType::AppiumRuby => write!(f, "APPIUM_RUBY"),
+            TestType::AppiumWebJavaJunit => write!(f, "APPIUM_WEB_JAVA_JUNIT"),
+            TestType::AppiumWebJavaTestng => write!(f, "APPIUM_WEB_JAVA_TESTNG"),
+            TestType::AppiumWebNode => write!(f, "APPIUM_WEB_NODE"),
+            TestType::AppiumWebPython => write!(f, "APPIUM_WEB_PYTHON"),
+            TestType::AppiumWebRuby => write!(f, "APPIUM_WEB_RUBY"),
+            TestType::BuiltinExplorer => write!(f, "BUILTIN_EXPLORER"),
+            TestType::BuiltinFuzz => write!(f, "BUILTIN_FUZZ"),
+            TestType::Calabash => write!(f, "CALABASH"),
+            TestType::Instrumentation => write!(f, "INSTRUMENTATION"),
+            TestType::RemoteAccessRecord => write!(f, "REMOTE_ACCESS_RECORD"),
+            TestType::RemoteAccessReplay => write!(f, "REMOTE_ACCESS_REPLAY"),
+            TestType::Uiautomation => write!(f, "UIAUTOMATION"),
+            TestType::Uiautomator => write!(f, "UIAUTOMATOR"),
+            TestType::WebPerformanceProfile => write!(f, "WEB_PERFORMANCE_PROFILE"),
+            TestType::Xctest => write!(f, "XCTEST"),
+            TestType::XctestUi => write!(f, "XCTEST_UI"),
+            TestType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

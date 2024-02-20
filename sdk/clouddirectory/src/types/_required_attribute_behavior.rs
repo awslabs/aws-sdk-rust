@@ -96,3 +96,12 @@ impl RequiredAttributeBehavior {
         }
     }
 }
+impl ::std::fmt::Display for RequiredAttributeBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RequiredAttributeBehavior::NotRequired => write!(f, "NOT_REQUIRED"),
+            RequiredAttributeBehavior::RequiredAlways => write!(f, "REQUIRED_ALWAYS"),
+            RequiredAttributeBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

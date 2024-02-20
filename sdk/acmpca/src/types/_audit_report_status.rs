@@ -101,3 +101,13 @@ impl AuditReportStatus {
         }
     }
 }
+impl ::std::fmt::Display for AuditReportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditReportStatus::Creating => write!(f, "CREATING"),
+            AuditReportStatus::Failed => write!(f, "FAILED"),
+            AuditReportStatus::Success => write!(f, "SUCCESS"),
+            AuditReportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

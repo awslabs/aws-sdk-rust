@@ -106,3 +106,14 @@ impl FeatureGroupSortBy {
         }
     }
 }
+impl ::std::fmt::Display for FeatureGroupSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeatureGroupSortBy::CreationTime => write!(f, "CreationTime"),
+            FeatureGroupSortBy::FeatureGroupStatus => write!(f, "FeatureGroupStatus"),
+            FeatureGroupSortBy::Name => write!(f, "Name"),
+            FeatureGroupSortBy::OfflineStoreStatus => write!(f, "OfflineStoreStatus"),
+            FeatureGroupSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl ServiceField {
         }
     }
 }
+impl ::std::fmt::Display for ServiceField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceField::Tags => write!(f, "TAGS"),
+            ServiceField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

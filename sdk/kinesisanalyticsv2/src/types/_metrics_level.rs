@@ -106,3 +106,14 @@ impl MetricsLevel {
         }
     }
 }
+impl ::std::fmt::Display for MetricsLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricsLevel::Application => write!(f, "APPLICATION"),
+            MetricsLevel::Operator => write!(f, "OPERATOR"),
+            MetricsLevel::Parallelism => write!(f, "PARALLELISM"),
+            MetricsLevel::Task => write!(f, "TASK"),
+            MetricsLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

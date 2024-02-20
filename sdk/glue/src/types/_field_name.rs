@@ -111,3 +111,15 @@ impl FieldName {
         }
     }
 }
+impl ::std::fmt::Display for FieldName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FieldName::CrawlId => write!(f, "CRAWL_ID"),
+            FieldName::DpuHour => write!(f, "DPU_HOUR"),
+            FieldName::EndTime => write!(f, "END_TIME"),
+            FieldName::StartTime => write!(f, "START_TIME"),
+            FieldName::State => write!(f, "STATE"),
+            FieldName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

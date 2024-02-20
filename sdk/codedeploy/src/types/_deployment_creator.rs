@@ -135,3 +135,18 @@ impl DeploymentCreator {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentCreator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentCreator::CloudFormation => write!(f, "CloudFormation"),
+            DeploymentCreator::CloudFormationRollback => write!(f, "CloudFormationRollback"),
+            DeploymentCreator::CodeDeploy => write!(f, "CodeDeploy"),
+            DeploymentCreator::CodeDeployAutoUpdate => write!(f, "CodeDeployAutoUpdate"),
+            DeploymentCreator::Autoscaling => write!(f, "autoscaling"),
+            DeploymentCreator::AutoscalingTermination => write!(f, "autoscalingTermination"),
+            DeploymentCreator::CodeDeployRollback => write!(f, "codeDeployRollback"),
+            DeploymentCreator::User => write!(f, "user"),
+            DeploymentCreator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

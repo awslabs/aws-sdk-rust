@@ -129,3 +129,17 @@ impl ActionType {
         }
     }
 }
+impl ::std::fmt::Display for ActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionType::AssignContactCategory => write!(f, "ASSIGN_CONTACT_CATEGORY"),
+            ActionType::CreateCase => write!(f, "CREATE_CASE"),
+            ActionType::CreateTask => write!(f, "CREATE_TASK"),
+            ActionType::EndAssociatedTasks => write!(f, "END_ASSOCIATED_TASKS"),
+            ActionType::GenerateEventbridgeEvent => write!(f, "GENERATE_EVENTBRIDGE_EVENT"),
+            ActionType::SendNotification => write!(f, "SEND_NOTIFICATION"),
+            ActionType::UpdateCase => write!(f, "UPDATE_CASE"),
+            ActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

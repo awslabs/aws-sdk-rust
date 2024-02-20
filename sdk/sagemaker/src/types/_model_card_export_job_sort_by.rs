@@ -101,3 +101,13 @@ impl ModelCardExportJobSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ModelCardExportJobSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelCardExportJobSortBy::CreationTime => write!(f, "CreationTime"),
+            ModelCardExportJobSortBy::Name => write!(f, "Name"),
+            ModelCardExportJobSortBy::Status => write!(f, "Status"),
+            ModelCardExportJobSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

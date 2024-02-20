@@ -91,3 +91,11 @@ impl RegistrationVersionFilterName {
         }
     }
 }
+impl ::std::fmt::Display for RegistrationVersionFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistrationVersionFilterName::RegistrationVersionStatus => write!(f, "registration-version-status"),
+            RegistrationVersionFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

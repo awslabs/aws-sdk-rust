@@ -96,3 +96,12 @@ impl CrossAccountFilterOption {
         }
     }
 }
+impl ::std::fmt::Display for CrossAccountFilterOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CrossAccountFilterOption::CrossAccount => write!(f, "CrossAccount"),
+            CrossAccountFilterOption::SameAccount => write!(f, "SameAccount"),
+            CrossAccountFilterOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

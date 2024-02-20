@@ -96,3 +96,12 @@ impl AgentStatusState {
         }
     }
 }
+impl ::std::fmt::Display for AgentStatusState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgentStatusState::Disabled => write!(f, "DISABLED"),
+            AgentStatusState::Enabled => write!(f, "ENABLED"),
+            AgentStatusState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

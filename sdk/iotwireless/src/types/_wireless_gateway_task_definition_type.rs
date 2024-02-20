@@ -91,3 +91,11 @@ impl WirelessGatewayTaskDefinitionType {
         }
     }
 }
+impl ::std::fmt::Display for WirelessGatewayTaskDefinitionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WirelessGatewayTaskDefinitionType::Update => write!(f, "UPDATE"),
+            WirelessGatewayTaskDefinitionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

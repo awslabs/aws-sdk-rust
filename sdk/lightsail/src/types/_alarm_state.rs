@@ -101,3 +101,13 @@ impl AlarmState {
         }
     }
 }
+impl ::std::fmt::Display for AlarmState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlarmState::Alarm => write!(f, "ALARM"),
+            AlarmState::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
+            AlarmState::Ok => write!(f, "OK"),
+            AlarmState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

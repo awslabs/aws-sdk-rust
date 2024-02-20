@@ -96,3 +96,12 @@ impl ProresTelecine {
         }
     }
 }
+impl ::std::fmt::Display for ProresTelecine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProresTelecine::Hard => write!(f, "HARD"),
+            ProresTelecine::None => write!(f, "NONE"),
+            ProresTelecine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

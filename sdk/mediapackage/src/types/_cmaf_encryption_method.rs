@@ -96,3 +96,12 @@ impl CmafEncryptionMethod {
         }
     }
 }
+impl ::std::fmt::Display for CmafEncryptionMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafEncryptionMethod::AesCtr => write!(f, "AES_CTR"),
+            CmafEncryptionMethod::SampleAes => write!(f, "SAMPLE_AES"),
+            CmafEncryptionMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

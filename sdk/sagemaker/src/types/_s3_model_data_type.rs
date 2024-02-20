@@ -96,3 +96,12 @@ impl S3ModelDataType {
         }
     }
 }
+impl ::std::fmt::Display for S3ModelDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3ModelDataType::S3Object => write!(f, "S3Object"),
+            S3ModelDataType::S3Prefix => write!(f, "S3Prefix"),
+            S3ModelDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl ReferenceImportJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceImportJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceImportJobStatus::Cancelled => write!(f, "CANCELLED"),
+            ReferenceImportJobStatus::Cancelling => write!(f, "CANCELLING"),
+            ReferenceImportJobStatus::Completed => write!(f, "COMPLETED"),
+            ReferenceImportJobStatus::CompletedWithFailures => write!(f, "COMPLETED_WITH_FAILURES"),
+            ReferenceImportJobStatus::Failed => write!(f, "FAILED"),
+            ReferenceImportJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ReferenceImportJobStatus::Submitted => write!(f, "SUBMITTED"),
+            ReferenceImportJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

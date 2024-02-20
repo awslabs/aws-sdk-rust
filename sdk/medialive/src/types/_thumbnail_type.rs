@@ -96,3 +96,12 @@ impl ThumbnailType {
         }
     }
 }
+impl ::std::fmt::Display for ThumbnailType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThumbnailType::CurrentActive => write!(f, "CURRENT_ACTIVE"),
+            ThumbnailType::Unspecified => write!(f, "UNSPECIFIED"),
+            ThumbnailType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

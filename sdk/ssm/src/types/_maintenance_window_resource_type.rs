@@ -96,3 +96,12 @@ impl MaintenanceWindowResourceType {
         }
     }
 }
+impl ::std::fmt::Display for MaintenanceWindowResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaintenanceWindowResourceType::Instance => write!(f, "INSTANCE"),
+            MaintenanceWindowResourceType::ResourceGroup => write!(f, "RESOURCE_GROUP"),
+            MaintenanceWindowResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

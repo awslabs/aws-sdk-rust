@@ -141,3 +141,19 @@ impl ReportInstanceReasonCodes {
         }
     }
 }
+impl ::std::fmt::Display for ReportInstanceReasonCodes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportInstanceReasonCodes::InstanceStuckInState => write!(f, "instance-stuck-in-state"),
+            ReportInstanceReasonCodes::NotAcceptingCredentials => write!(f, "not-accepting-credentials"),
+            ReportInstanceReasonCodes::Other => write!(f, "other"),
+            ReportInstanceReasonCodes::PasswordNotAvailable => write!(f, "password-not-available"),
+            ReportInstanceReasonCodes::PerformanceEbsVolume => write!(f, "performance-ebs-volume"),
+            ReportInstanceReasonCodes::PerformanceInstanceStore => write!(f, "performance-instance-store"),
+            ReportInstanceReasonCodes::PerformanceNetwork => write!(f, "performance-network"),
+            ReportInstanceReasonCodes::PerformanceOther => write!(f, "performance-other"),
+            ReportInstanceReasonCodes::Unresponsive => write!(f, "unresponsive"),
+            ReportInstanceReasonCodes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

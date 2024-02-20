@@ -96,3 +96,12 @@ impl CapacitySizeType {
         }
     }
 }
+impl ::std::fmt::Display for CapacitySizeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapacitySizeType::CapacityPercent => write!(f, "CAPACITY_PERCENT"),
+            CapacitySizeType::InstanceCount => write!(f, "INSTANCE_COUNT"),
+            CapacitySizeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl KnowledgeBaseType {
         }
     }
 }
+impl ::std::fmt::Display for KnowledgeBaseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KnowledgeBaseType::Vector => write!(f, "VECTOR"),
+            KnowledgeBaseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

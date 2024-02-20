@@ -96,3 +96,12 @@ impl LicenseType {
         }
     }
 }
+impl ::std::fmt::Display for LicenseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LicenseType::Enterprise => write!(f, "ENTERPRISE"),
+            LicenseType::EnterpriseFreeTrial => write!(f, "ENTERPRISE_FREE_TRIAL"),
+            LicenseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

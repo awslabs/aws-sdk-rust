@@ -96,3 +96,12 @@ impl RecommendationJobSupportedEndpointType {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationJobSupportedEndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationJobSupportedEndpointType::Realtime => write!(f, "RealTime"),
+            RecommendationJobSupportedEndpointType::Serverless => write!(f, "Serverless"),
+            RecommendationJobSupportedEndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

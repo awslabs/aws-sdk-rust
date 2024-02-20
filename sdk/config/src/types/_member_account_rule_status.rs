@@ -141,3 +141,19 @@ impl MemberAccountRuleStatus {
         }
     }
 }
+impl ::std::fmt::Display for MemberAccountRuleStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberAccountRuleStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            MemberAccountRuleStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            MemberAccountRuleStatus::CreateSuccessful => write!(f, "CREATE_SUCCESSFUL"),
+            MemberAccountRuleStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            MemberAccountRuleStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            MemberAccountRuleStatus::DeleteSuccessful => write!(f, "DELETE_SUCCESSFUL"),
+            MemberAccountRuleStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            MemberAccountRuleStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            MemberAccountRuleStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
+            MemberAccountRuleStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

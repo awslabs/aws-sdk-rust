@@ -96,3 +96,12 @@ impl HlsManifestDurationFormat {
         }
     }
 }
+impl ::std::fmt::Display for HlsManifestDurationFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsManifestDurationFormat::FloatingPoint => write!(f, "FLOATING_POINT"),
+            HlsManifestDurationFormat::Integer => write!(f, "INTEGER"),
+            HlsManifestDurationFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

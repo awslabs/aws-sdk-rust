@@ -101,3 +101,13 @@ impl EncodingTypeValue {
         }
     }
 }
+impl ::std::fmt::Display for EncodingTypeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncodingTypeValue::Plain => write!(f, "plain"),
+            EncodingTypeValue::PlainDictionary => write!(f, "plain-dictionary"),
+            EncodingTypeValue::RleDictionary => write!(f, "rle-dictionary"),
+            EncodingTypeValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SecurityPolicy {
         }
     }
 }
+impl ::std::fmt::Display for SecurityPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SecurityPolicy::Tls10 => write!(f, "TLS_1_0"),
+            SecurityPolicy::Tls12 => write!(f, "TLS_1_2"),
+            SecurityPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

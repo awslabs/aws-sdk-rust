@@ -111,3 +111,15 @@ impl GroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for GroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupStatus::Deleted => write!(f, "DELETED"),
+            GroupStatus::Deleting => write!(f, "DELETING"),
+            GroupStatus::Failed => write!(f, "FAILED"),
+            GroupStatus::Processing => write!(f, "PROCESSING"),
+            GroupStatus::Succeeded => write!(f, "SUCCEEDED"),
+            GroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

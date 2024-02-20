@@ -96,3 +96,12 @@ impl ShareInvitationAction {
         }
     }
 }
+impl ::std::fmt::Display for ShareInvitationAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareInvitationAction::Accept => write!(f, "ACCEPT"),
+            ShareInvitationAction::Reject => write!(f, "REJECT"),
+            ShareInvitationAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

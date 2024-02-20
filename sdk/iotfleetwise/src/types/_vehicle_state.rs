@@ -111,3 +111,15 @@ impl VehicleState {
         }
     }
 }
+impl ::std::fmt::Display for VehicleState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VehicleState::Created => write!(f, "CREATED"),
+            VehicleState::Deleting => write!(f, "DELETING"),
+            VehicleState::Healthy => write!(f, "HEALTHY"),
+            VehicleState::Ready => write!(f, "READY"),
+            VehicleState::Suspended => write!(f, "SUSPENDED"),
+            VehicleState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl Frequency {
         }
     }
 }
+impl ::std::fmt::Display for Frequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Frequency::P1D => write!(f, "P1D"),
+            Frequency::Pt10M => write!(f, "PT10M"),
+            Frequency::Pt1H => write!(f, "PT1H"),
+            Frequency::Pt5M => write!(f, "PT5M"),
+            Frequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

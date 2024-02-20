@@ -101,3 +101,13 @@ impl HealthCheckType {
         }
     }
 }
+impl ::std::fmt::Display for HealthCheckType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HealthCheckType::Http => write!(f, "HTTP"),
+            HealthCheckType::Https => write!(f, "HTTPS"),
+            HealthCheckType::Tcp => write!(f, "TCP"),
+            HealthCheckType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

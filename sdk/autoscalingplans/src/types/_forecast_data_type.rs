@@ -111,3 +111,14 @@ impl ForecastDataType {
         }
     }
 }
+impl ::std::fmt::Display for ForecastDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ForecastDataType::CapacityForecast => write!(f, "CapacityForecast"),
+            ForecastDataType::LoadForecast => write!(f, "LoadForecast"),
+            ForecastDataType::ScheduledActionMaxCapacity => write!(f, "ScheduledActionMaxCapacity"),
+            ForecastDataType::ScheduledActionMinCapacity => write!(f, "ScheduledActionMinCapacity"),
+            ForecastDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

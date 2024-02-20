@@ -101,3 +101,13 @@ impl AggregationPeriod {
         }
     }
 }
+impl ::std::fmt::Display for AggregationPeriod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregationPeriod::FourteenDays => write!(f, "FOURTEEN_DAYS"),
+            AggregationPeriod::OneDay => write!(f, "ONE_DAY"),
+            AggregationPeriod::SevenDays => write!(f, "SEVEN_DAYS"),
+            AggregationPeriod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl UsageClassType {
         }
     }
 }
+impl ::std::fmt::Display for UsageClassType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageClassType::CapacityBlock => write!(f, "capacity-block"),
+            UsageClassType::OnDemand => write!(f, "on-demand"),
+            UsageClassType::Spot => write!(f, "spot"),
+            UsageClassType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

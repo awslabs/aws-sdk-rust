@@ -101,3 +101,13 @@ impl OrgFeatureStatus {
         }
     }
 }
+impl ::std::fmt::Display for OrgFeatureStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrgFeatureStatus::All => write!(f, "ALL"),
+            OrgFeatureStatus::New => write!(f, "NEW"),
+            OrgFeatureStatus::None => write!(f, "NONE"),
+            OrgFeatureStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

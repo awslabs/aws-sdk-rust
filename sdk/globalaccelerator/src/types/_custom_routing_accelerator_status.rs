@@ -96,3 +96,12 @@ impl CustomRoutingAcceleratorStatus {
         }
     }
 }
+impl ::std::fmt::Display for CustomRoutingAcceleratorStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomRoutingAcceleratorStatus::Deployed => write!(f, "DEPLOYED"),
+            CustomRoutingAcceleratorStatus::InProgress => write!(f, "IN_PROGRESS"),
+            CustomRoutingAcceleratorStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl RedirectActionStatusCodeEnum {
         }
     }
 }
+impl ::std::fmt::Display for RedirectActionStatusCodeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RedirectActionStatusCodeEnum::Http301 => write!(f, "HTTP_301"),
+            RedirectActionStatusCodeEnum::Http302 => write!(f, "HTTP_302"),
+            RedirectActionStatusCodeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

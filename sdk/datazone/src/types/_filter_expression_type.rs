@@ -96,3 +96,12 @@ impl FilterExpressionType {
         }
     }
 }
+impl ::std::fmt::Display for FilterExpressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterExpressionType::Exclude => write!(f, "EXCLUDE"),
+            FilterExpressionType::Include => write!(f, "INCLUDE"),
+            FilterExpressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Vc3ScanTypeConversionMode {
         }
     }
 }
+impl ::std::fmt::Display for Vc3ScanTypeConversionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Vc3ScanTypeConversionMode::Interlaced => write!(f, "INTERLACED"),
+            Vc3ScanTypeConversionMode::InterlacedOptimize => write!(f, "INTERLACED_OPTIMIZE"),
+            Vc3ScanTypeConversionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl MigrationSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for MigrationSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MigrationSortAttribute::MigrationDateTime => write!(f, "MIGRATION_DATE_TIME"),
+            MigrationSortAttribute::V1BotName => write!(f, "V1_BOT_NAME"),
+            MigrationSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

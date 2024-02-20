@@ -135,3 +135,18 @@ impl H265CodecProfile {
         }
     }
 }
+impl ::std::fmt::Display for H265CodecProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265CodecProfile::Main10High => write!(f, "MAIN10_HIGH"),
+            H265CodecProfile::Main10Main => write!(f, "MAIN10_MAIN"),
+            H265CodecProfile::Main42210BitHigh => write!(f, "MAIN_422_10BIT_HIGH"),
+            H265CodecProfile::Main42210BitMain => write!(f, "MAIN_422_10BIT_MAIN"),
+            H265CodecProfile::Main4228BitHigh => write!(f, "MAIN_422_8BIT_HIGH"),
+            H265CodecProfile::Main4228BitMain => write!(f, "MAIN_422_8BIT_MAIN"),
+            H265CodecProfile::MainHigh => write!(f, "MAIN_HIGH"),
+            H265CodecProfile::MainMain => write!(f, "MAIN_MAIN"),
+            H265CodecProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

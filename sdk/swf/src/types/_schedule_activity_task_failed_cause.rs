@@ -153,3 +153,21 @@ impl ScheduleActivityTaskFailedCause {
         }
     }
 }
+impl ::std::fmt::Display for ScheduleActivityTaskFailedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded => write!(f, "ACTIVITY_CREATION_RATE_EXCEEDED"),
+            ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse => write!(f, "ACTIVITY_ID_ALREADY_IN_USE"),
+            ScheduleActivityTaskFailedCause::ActivityTypeDeprecated => write!(f, "ACTIVITY_TYPE_DEPRECATED"),
+            ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist => write!(f, "ACTIVITY_TYPE_DOES_NOT_EXIST"),
+            ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined => write!(f, "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED"),
+            ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined => write!(f, "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED"),
+            ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined => write!(f, "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED"),
+            ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined => write!(f, "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED"),
+            ScheduleActivityTaskFailedCause::DefaultTaskListUndefined => write!(f, "DEFAULT_TASK_LIST_UNDEFINED"),
+            ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded => write!(f, "OPEN_ACTIVITIES_LIMIT_EXCEEDED"),
+            ScheduleActivityTaskFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
+            ScheduleActivityTaskFailedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

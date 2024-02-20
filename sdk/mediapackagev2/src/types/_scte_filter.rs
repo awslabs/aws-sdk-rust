@@ -141,3 +141,19 @@ impl ScteFilter {
         }
     }
 }
+impl ::std::fmt::Display for ScteFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScteFilter::Break => write!(f, "BREAK"),
+            ScteFilter::DistributorAdvertisement => write!(f, "DISTRIBUTOR_ADVERTISEMENT"),
+            ScteFilter::DistributorOverlayPlacementOpportunity => write!(f, "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY"),
+            ScteFilter::DistributorPlacementOpportunity => write!(f, "DISTRIBUTOR_PLACEMENT_OPPORTUNITY"),
+            ScteFilter::Program => write!(f, "PROGRAM"),
+            ScteFilter::ProviderAdvertisement => write!(f, "PROVIDER_ADVERTISEMENT"),
+            ScteFilter::ProviderOverlayPlacementOpportunity => write!(f, "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"),
+            ScteFilter::ProviderPlacementOpportunity => write!(f, "PROVIDER_PLACEMENT_OPPORTUNITY"),
+            ScteFilter::SpliceInsert => write!(f, "SPLICE_INSERT"),
+            ScteFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

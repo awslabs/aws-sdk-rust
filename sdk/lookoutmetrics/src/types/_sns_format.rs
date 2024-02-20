@@ -101,3 +101,13 @@ impl SnsFormat {
         }
     }
 }
+impl ::std::fmt::Display for SnsFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnsFormat::Json => write!(f, "JSON"),
+            SnsFormat::LongText => write!(f, "LONG_TEXT"),
+            SnsFormat::ShortText => write!(f, "SHORT_TEXT"),
+            SnsFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

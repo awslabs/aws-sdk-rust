@@ -96,3 +96,12 @@ impl HostRecovery {
         }
     }
 }
+impl ::std::fmt::Display for HostRecovery {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HostRecovery::Off => write!(f, "off"),
+            HostRecovery::On => write!(f, "on"),
+            HostRecovery::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

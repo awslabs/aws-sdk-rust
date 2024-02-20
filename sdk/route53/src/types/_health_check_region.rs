@@ -135,3 +135,18 @@ impl HealthCheckRegion {
         }
     }
 }
+impl ::std::fmt::Display for HealthCheckRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HealthCheckRegion::ApNortheast1 => write!(f, "ap-northeast-1"),
+            HealthCheckRegion::ApSoutheast1 => write!(f, "ap-southeast-1"),
+            HealthCheckRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
+            HealthCheckRegion::EuWest1 => write!(f, "eu-west-1"),
+            HealthCheckRegion::SaEast1 => write!(f, "sa-east-1"),
+            HealthCheckRegion::UsEast1 => write!(f, "us-east-1"),
+            HealthCheckRegion::UsWest1 => write!(f, "us-west-1"),
+            HealthCheckRegion::UsWest2 => write!(f, "us-west-2"),
+            HealthCheckRegion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

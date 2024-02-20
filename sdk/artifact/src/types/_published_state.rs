@@ -96,3 +96,12 @@ impl PublishedState {
         }
     }
 }
+impl ::std::fmt::Display for PublishedState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PublishedState::Published => write!(f, "PUBLISHED"),
+            PublishedState::Unpublished => write!(f, "UNPUBLISHED"),
+            PublishedState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

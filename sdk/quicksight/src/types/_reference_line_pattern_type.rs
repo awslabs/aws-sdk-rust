@@ -101,3 +101,13 @@ impl ReferenceLinePatternType {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceLinePatternType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceLinePatternType::Dashed => write!(f, "DASHED"),
+            ReferenceLinePatternType::Dotted => write!(f, "DOTTED"),
+            ReferenceLinePatternType::Solid => write!(f, "SOLID"),
+            ReferenceLinePatternType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

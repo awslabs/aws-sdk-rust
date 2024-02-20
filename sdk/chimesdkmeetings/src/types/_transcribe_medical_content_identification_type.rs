@@ -93,3 +93,11 @@ impl TranscribeMedicalContentIdentificationType {
         }
     }
 }
+impl ::std::fmt::Display for TranscribeMedicalContentIdentificationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TranscribeMedicalContentIdentificationType::Phi => write!(f, "PHI"),
+            TranscribeMedicalContentIdentificationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

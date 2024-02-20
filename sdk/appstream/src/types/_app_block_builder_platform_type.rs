@@ -91,3 +91,11 @@ impl AppBlockBuilderPlatformType {
         }
     }
 }
+impl ::std::fmt::Display for AppBlockBuilderPlatformType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppBlockBuilderPlatformType::WindowsServer2019 => write!(f, "WINDOWS_SERVER_2019"),
+            AppBlockBuilderPlatformType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

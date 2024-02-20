@@ -101,3 +101,13 @@ impl AutoMlSortBy {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlSortBy::CreationTime => write!(f, "CreationTime"),
+            AutoMlSortBy::Name => write!(f, "Name"),
+            AutoMlSortBy::Status => write!(f, "Status"),
+            AutoMlSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

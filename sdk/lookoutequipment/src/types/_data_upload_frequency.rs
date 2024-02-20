@@ -111,3 +111,15 @@ impl DataUploadFrequency {
         }
     }
 }
+impl ::std::fmt::Display for DataUploadFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataUploadFrequency::Pt10M => write!(f, "PT10M"),
+            DataUploadFrequency::Pt15M => write!(f, "PT15M"),
+            DataUploadFrequency::Pt1H => write!(f, "PT1H"),
+            DataUploadFrequency::Pt30M => write!(f, "PT30M"),
+            DataUploadFrequency::Pt5M => write!(f, "PT5M"),
+            DataUploadFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

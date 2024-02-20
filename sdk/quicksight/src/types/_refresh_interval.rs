@@ -116,3 +116,16 @@ impl RefreshInterval {
         }
     }
 }
+impl ::std::fmt::Display for RefreshInterval {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RefreshInterval::Daily => write!(f, "DAILY"),
+            RefreshInterval::Hourly => write!(f, "HOURLY"),
+            RefreshInterval::Minute15 => write!(f, "MINUTE15"),
+            RefreshInterval::Minute30 => write!(f, "MINUTE30"),
+            RefreshInterval::Monthly => write!(f, "MONTHLY"),
+            RefreshInterval::Weekly => write!(f, "WEEKLY"),
+            RefreshInterval::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

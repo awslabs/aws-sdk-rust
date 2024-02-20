@@ -96,3 +96,12 @@ impl RemediationActionType {
         }
     }
 }
+impl ::std::fmt::Display for RemediationActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RemediationActionType::Modify => write!(f, "MODIFY"),
+            RemediationActionType::Remove => write!(f, "REMOVE"),
+            RemediationActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

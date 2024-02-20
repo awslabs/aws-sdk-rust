@@ -96,3 +96,12 @@ impl M3u8Scte35Behavior {
         }
     }
 }
+impl ::std::fmt::Display for M3u8Scte35Behavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M3u8Scte35Behavior::NoPassthrough => write!(f, "NO_PASSTHROUGH"),
+            M3u8Scte35Behavior::Passthrough => write!(f, "PASSTHROUGH"),
+            M3u8Scte35Behavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl ZonalStatistics {
         }
     }
 }
+impl ::std::fmt::Display for ZonalStatistics {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ZonalStatistics::Max => write!(f, "MAX"),
+            ZonalStatistics::Mean => write!(f, "MEAN"),
+            ZonalStatistics::Median => write!(f, "MEDIAN"),
+            ZonalStatistics::Min => write!(f, "MIN"),
+            ZonalStatistics::StandardDeviation => write!(f, "STANDARD_DEVIATION"),
+            ZonalStatistics::Sum => write!(f, "SUM"),
+            ZonalStatistics::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -159,3 +159,22 @@ impl Runtime {
         }
     }
 }
+impl ::std::fmt::Display for Runtime {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Runtime::Corretto11 => write!(f, "CORRETTO_11"),
+            Runtime::Corretto8 => write!(f, "CORRETTO_8"),
+            Runtime::Dotnet6 => write!(f, "DOTNET_6"),
+            Runtime::Go1 => write!(f, "GO_1"),
+            Runtime::Nodejs12 => write!(f, "NODEJS_12"),
+            Runtime::Nodejs14 => write!(f, "NODEJS_14"),
+            Runtime::Nodejs16 => write!(f, "NODEJS_16"),
+            Runtime::Nodejs18 => write!(f, "NODEJS_18"),
+            Runtime::Php81 => write!(f, "PHP_81"),
+            Runtime::Python3 => write!(f, "PYTHON_3"),
+            Runtime::Python311 => write!(f, "PYTHON_311"),
+            Runtime::Ruby31 => write!(f, "RUBY_31"),
+            Runtime::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

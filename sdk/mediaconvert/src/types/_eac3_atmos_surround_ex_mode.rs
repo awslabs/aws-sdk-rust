@@ -101,3 +101,13 @@ impl Eac3AtmosSurroundExMode {
         }
     }
 }
+impl ::std::fmt::Display for Eac3AtmosSurroundExMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3AtmosSurroundExMode::Disabled => write!(f, "DISABLED"),
+            Eac3AtmosSurroundExMode::Enabled => write!(f, "ENABLED"),
+            Eac3AtmosSurroundExMode::NotIndicated => write!(f, "NOT_INDICATED"),
+            Eac3AtmosSurroundExMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

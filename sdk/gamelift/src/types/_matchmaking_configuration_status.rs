@@ -135,3 +135,18 @@ impl MatchmakingConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for MatchmakingConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MatchmakingConfigurationStatus::Cancelled => write!(f, "CANCELLED"),
+            MatchmakingConfigurationStatus::Completed => write!(f, "COMPLETED"),
+            MatchmakingConfigurationStatus::Failed => write!(f, "FAILED"),
+            MatchmakingConfigurationStatus::Placing => write!(f, "PLACING"),
+            MatchmakingConfigurationStatus::Queued => write!(f, "QUEUED"),
+            MatchmakingConfigurationStatus::RequiresAcceptance => write!(f, "REQUIRES_ACCEPTANCE"),
+            MatchmakingConfigurationStatus::Searching => write!(f, "SEARCHING"),
+            MatchmakingConfigurationStatus::TimedOut => write!(f, "TIMED_OUT"),
+            MatchmakingConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

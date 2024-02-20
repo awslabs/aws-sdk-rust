@@ -96,3 +96,12 @@ impl SelectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for SelectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SelectionStatus::NotSelected => write!(f, "NOT_SELECTED"),
+            SelectionStatus::Selected => write!(f, "SELECTED"),
+            SelectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

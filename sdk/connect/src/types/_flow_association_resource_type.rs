@@ -91,3 +91,11 @@ impl FlowAssociationResourceType {
         }
     }
 }
+impl ::std::fmt::Display for FlowAssociationResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlowAssociationResourceType::SmsPhoneNumber => write!(f, "SMS_PHONE_NUMBER"),
+            FlowAssociationResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

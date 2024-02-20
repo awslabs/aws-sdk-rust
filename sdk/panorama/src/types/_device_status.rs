@@ -116,3 +116,16 @@ impl DeviceStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceStatus::AwaitingProvisioning => write!(f, "AWAITING_PROVISIONING"),
+            DeviceStatus::Deleting => write!(f, "DELETING"),
+            DeviceStatus::Error => write!(f, "ERROR"),
+            DeviceStatus::Failed => write!(f, "FAILED"),
+            DeviceStatus::Pending => write!(f, "PENDING"),
+            DeviceStatus::Succeeded => write!(f, "SUCCEEDED"),
+            DeviceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

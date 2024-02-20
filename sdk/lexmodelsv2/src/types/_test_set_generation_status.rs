@@ -106,3 +106,14 @@ impl TestSetGenerationStatus {
         }
     }
 }
+impl ::std::fmt::Display for TestSetGenerationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestSetGenerationStatus::Failed => write!(f, "Failed"),
+            TestSetGenerationStatus::Generating => write!(f, "Generating"),
+            TestSetGenerationStatus::Pending => write!(f, "Pending"),
+            TestSetGenerationStatus::Ready => write!(f, "Ready"),
+            TestSetGenerationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

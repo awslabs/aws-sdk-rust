@@ -96,3 +96,12 @@ impl PerformanceMode {
         }
     }
 }
+impl ::std::fmt::Display for PerformanceMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PerformanceMode::GeneralPurpose => write!(f, "generalPurpose"),
+            PerformanceMode::MaxIo => write!(f, "maxIO"),
+            PerformanceMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

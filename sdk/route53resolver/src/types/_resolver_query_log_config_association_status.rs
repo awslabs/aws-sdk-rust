@@ -111,3 +111,15 @@ impl ResolverQueryLogConfigAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResolverQueryLogConfigAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverQueryLogConfigAssociationStatus::ActionNeeded => write!(f, "ACTION_NEEDED"),
+            ResolverQueryLogConfigAssociationStatus::Active => write!(f, "ACTIVE"),
+            ResolverQueryLogConfigAssociationStatus::Creating => write!(f, "CREATING"),
+            ResolverQueryLogConfigAssociationStatus::Deleting => write!(f, "DELETING"),
+            ResolverQueryLogConfigAssociationStatus::Failed => write!(f, "FAILED"),
+            ResolverQueryLogConfigAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ConsumerStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConsumerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConsumerStatus::Active => write!(f, "ACTIVE"),
+            ConsumerStatus::Creating => write!(f, "CREATING"),
+            ConsumerStatus::Deleting => write!(f, "DELETING"),
+            ConsumerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

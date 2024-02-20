@@ -96,3 +96,12 @@ impl FacetStyle {
         }
     }
 }
+impl ::std::fmt::Display for FacetStyle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FacetStyle::Dynamic => write!(f, "DYNAMIC"),
+            FacetStyle::Static => write!(f, "STATIC"),
+            FacetStyle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

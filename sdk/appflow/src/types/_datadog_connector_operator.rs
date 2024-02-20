@@ -177,3 +177,25 @@ impl DatadogConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for DatadogConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatadogConnectorOperator::Addition => write!(f, "ADDITION"),
+            DatadogConnectorOperator::Between => write!(f, "BETWEEN"),
+            DatadogConnectorOperator::Division => write!(f, "DIVISION"),
+            DatadogConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            DatadogConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            DatadogConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            DatadogConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            DatadogConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            DatadogConnectorOperator::NoOp => write!(f, "NO_OP"),
+            DatadogConnectorOperator::Projection => write!(f, "PROJECTION"),
+            DatadogConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            DatadogConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            DatadogConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            DatadogConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            DatadogConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            DatadogConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

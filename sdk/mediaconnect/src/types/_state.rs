@@ -96,3 +96,12 @@ impl State {
         }
     }
 }
+impl ::std::fmt::Display for State {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            State::Disabled => write!(f, "DISABLED"),
+            State::Enabled => write!(f, "ENABLED"),
+            State::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

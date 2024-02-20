@@ -106,3 +106,14 @@ impl OverallChangeStatus {
         }
     }
 }
+impl ::std::fmt::Display for OverallChangeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OverallChangeStatus::Completed => write!(f, "COMPLETED"),
+            OverallChangeStatus::Failed => write!(f, "FAILED"),
+            OverallChangeStatus::Pending => write!(f, "PENDING"),
+            OverallChangeStatus::Processing => write!(f, "PROCESSING"),
+            OverallChangeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl RecordStatus {
         }
     }
 }
+impl ::std::fmt::Display for RecordStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordStatus::Created => write!(f, "CREATED"),
+            RecordStatus::Failed => write!(f, "FAILED"),
+            RecordStatus::InProgress => write!(f, "IN_PROGRESS"),
+            RecordStatus::InProgressInError => write!(f, "IN_PROGRESS_IN_ERROR"),
+            RecordStatus::Succeeded => write!(f, "SUCCEEDED"),
+            RecordStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

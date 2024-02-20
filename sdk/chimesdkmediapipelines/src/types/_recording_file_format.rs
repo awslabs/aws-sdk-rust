@@ -96,3 +96,12 @@ impl RecordingFileFormat {
         }
     }
 }
+impl ::std::fmt::Display for RecordingFileFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordingFileFormat::Opus => write!(f, "Opus"),
+            RecordingFileFormat::Wav => write!(f, "Wav"),
+            RecordingFileFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

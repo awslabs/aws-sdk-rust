@@ -121,3 +121,17 @@ impl H264AdaptiveQuantization {
         }
     }
 }
+impl ::std::fmt::Display for H264AdaptiveQuantization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264AdaptiveQuantization::Auto => write!(f, "AUTO"),
+            H264AdaptiveQuantization::High => write!(f, "HIGH"),
+            H264AdaptiveQuantization::Higher => write!(f, "HIGHER"),
+            H264AdaptiveQuantization::Low => write!(f, "LOW"),
+            H264AdaptiveQuantization::Max => write!(f, "MAX"),
+            H264AdaptiveQuantization::Medium => write!(f, "MEDIUM"),
+            H264AdaptiveQuantization::Off => write!(f, "OFF"),
+            H264AdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

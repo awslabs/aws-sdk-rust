@@ -101,3 +101,13 @@ impl AccessPreviewStatus {
         }
     }
 }
+impl ::std::fmt::Display for AccessPreviewStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessPreviewStatus::Completed => write!(f, "COMPLETED"),
+            AccessPreviewStatus::Creating => write!(f, "CREATING"),
+            AccessPreviewStatus::Failed => write!(f, "FAILED"),
+            AccessPreviewStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

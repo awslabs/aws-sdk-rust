@@ -96,3 +96,12 @@ impl DelegatedAdminStatus {
         }
     }
 }
+impl ::std::fmt::Display for DelegatedAdminStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DelegatedAdminStatus::DisableInProgress => write!(f, "DISABLE_IN_PROGRESS"),
+            DelegatedAdminStatus::Enabled => write!(f, "ENABLED"),
+            DelegatedAdminStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

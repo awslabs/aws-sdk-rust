@@ -116,3 +116,16 @@ impl TargetStatus {
         }
     }
 }
+impl ::std::fmt::Display for TargetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetStatus::Draining => write!(f, "DRAINING"),
+            TargetStatus::Healthy => write!(f, "HEALTHY"),
+            TargetStatus::Initial => write!(f, "INITIAL"),
+            TargetStatus::Unavailable => write!(f, "UNAVAILABLE"),
+            TargetStatus::Unhealthy => write!(f, "UNHEALTHY"),
+            TargetStatus::Unused => write!(f, "UNUSED"),
+            TargetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

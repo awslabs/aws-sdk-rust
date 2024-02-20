@@ -101,3 +101,13 @@ impl PolicyEvaluationDecisionType {
         }
     }
 }
+impl ::std::fmt::Display for PolicyEvaluationDecisionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyEvaluationDecisionType::Allowed => write!(f, "allowed"),
+            PolicyEvaluationDecisionType::ExplicitDeny => write!(f, "explicitDeny"),
+            PolicyEvaluationDecisionType::ImplicitDeny => write!(f, "implicitDeny"),
+            PolicyEvaluationDecisionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

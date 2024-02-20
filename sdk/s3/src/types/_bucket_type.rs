@@ -91,3 +91,11 @@ impl BucketType {
         }
     }
 }
+impl ::std::fmt::Display for BucketType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BucketType::Directory => write!(f, "Directory"),
+            BucketType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

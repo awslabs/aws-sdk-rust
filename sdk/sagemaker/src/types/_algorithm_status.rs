@@ -111,3 +111,15 @@ impl AlgorithmStatus {
         }
     }
 }
+impl ::std::fmt::Display for AlgorithmStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlgorithmStatus::Completed => write!(f, "Completed"),
+            AlgorithmStatus::Deleting => write!(f, "Deleting"),
+            AlgorithmStatus::Failed => write!(f, "Failed"),
+            AlgorithmStatus::InProgress => write!(f, "InProgress"),
+            AlgorithmStatus::Pending => write!(f, "Pending"),
+            AlgorithmStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl OrganizationRuleStatus {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationRuleStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationRuleStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            OrganizationRuleStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            OrganizationRuleStatus::CreateSuccessful => write!(f, "CREATE_SUCCESSFUL"),
+            OrganizationRuleStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            OrganizationRuleStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            OrganizationRuleStatus::DeleteSuccessful => write!(f, "DELETE_SUCCESSFUL"),
+            OrganizationRuleStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            OrganizationRuleStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            OrganizationRuleStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
+            OrganizationRuleStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl EntityType {
         }
     }
 }
+impl ::std::fmt::Display for EntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EntityType::AwsManagedPolicy => write!(f, "AWSManagedPolicy"),
+            EntityType::Group => write!(f, "Group"),
+            EntityType::LocalManagedPolicy => write!(f, "LocalManagedPolicy"),
+            EntityType::Role => write!(f, "Role"),
+            EntityType::User => write!(f, "User"),
+            EntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl TrafficMirrorSessionField {
         }
     }
 }
+impl ::std::fmt::Display for TrafficMirrorSessionField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrafficMirrorSessionField::Description => write!(f, "description"),
+            TrafficMirrorSessionField::PacketLength => write!(f, "packet-length"),
+            TrafficMirrorSessionField::VirtualNetworkId => write!(f, "virtual-network-id"),
+            TrafficMirrorSessionField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

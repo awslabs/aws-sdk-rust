@@ -101,3 +101,13 @@ impl SlotValueResolutionStrategy {
         }
     }
 }
+impl ::std::fmt::Display for SlotValueResolutionStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlotValueResolutionStrategy::Concatenation => write!(f, "Concatenation"),
+            SlotValueResolutionStrategy::OriginalValue => write!(f, "OriginalValue"),
+            SlotValueResolutionStrategy::TopResolution => write!(f, "TopResolution"),
+            SlotValueResolutionStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

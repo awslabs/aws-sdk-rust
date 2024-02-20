@@ -126,3 +126,18 @@ impl TcpFlag {
         }
     }
 }
+impl ::std::fmt::Display for TcpFlag {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TcpFlag::Ack => write!(f, "ACK"),
+            TcpFlag::Cwr => write!(f, "CWR"),
+            TcpFlag::Ece => write!(f, "ECE"),
+            TcpFlag::Fin => write!(f, "FIN"),
+            TcpFlag::Psh => write!(f, "PSH"),
+            TcpFlag::Rst => write!(f, "RST"),
+            TcpFlag::Syn => write!(f, "SYN"),
+            TcpFlag::Urg => write!(f, "URG"),
+            TcpFlag::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

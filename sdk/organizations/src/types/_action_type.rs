@@ -111,3 +111,14 @@ impl ActionType {
         }
     }
 }
+impl ::std::fmt::Display for ActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionType::AddOrganizationsServiceLinkedRole => write!(f, "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE"),
+            ActionType::ApproveAllFeatures => write!(f, "APPROVE_ALL_FEATURES"),
+            ActionType::EnableAllFeatures => write!(f, "ENABLE_ALL_FEATURES"),
+            ActionType::InviteAccountToOrganization => write!(f, "INVITE"),
+            ActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

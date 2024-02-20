@@ -123,3 +123,16 @@ impl LifecycleErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for LifecycleErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecycleErrorCode::ScriptFailed => write!(f, "ScriptFailed"),
+            LifecycleErrorCode::ScriptMissing => write!(f, "ScriptMissing"),
+            LifecycleErrorCode::ScriptNotExecutable => write!(f, "ScriptNotExecutable"),
+            LifecycleErrorCode::ScriptTimedOut => write!(f, "ScriptTimedOut"),
+            LifecycleErrorCode::Success => write!(f, "Success"),
+            LifecycleErrorCode::UnknownError => write!(f, "UnknownError"),
+            LifecycleErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

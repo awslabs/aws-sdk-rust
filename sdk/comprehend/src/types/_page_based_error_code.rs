@@ -117,3 +117,15 @@ impl PageBasedErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for PageBasedErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PageBasedErrorCode::InternalServerError => write!(f, "INTERNAL_SERVER_ERROR"),
+            PageBasedErrorCode::PageCharactersExceeded => write!(f, "PAGE_CHARACTERS_EXCEEDED"),
+            PageBasedErrorCode::PageSizeExceeded => write!(f, "PAGE_SIZE_EXCEEDED"),
+            PageBasedErrorCode::TextractBadPage => write!(f, "TEXTRACT_BAD_PAGE"),
+            PageBasedErrorCode::TextractProvisionedThroughputExceeded => write!(f, "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED"),
+            PageBasedErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

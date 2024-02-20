@@ -96,3 +96,12 @@ impl NegativeValueDisplayMode {
         }
     }
 }
+impl ::std::fmt::Display for NegativeValueDisplayMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NegativeValueDisplayMode::Negative => write!(f, "NEGATIVE"),
+            NegativeValueDisplayMode::Positive => write!(f, "POSITIVE"),
+            NegativeValueDisplayMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

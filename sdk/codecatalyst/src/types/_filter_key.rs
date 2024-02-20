@@ -96,3 +96,12 @@ impl FilterKey {
         }
     }
 }
+impl ::std::fmt::Display for FilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterKey::HasAccessTo => write!(f, "hasAccessTo"),
+            FilterKey::Name => write!(f, "name"),
+            FilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

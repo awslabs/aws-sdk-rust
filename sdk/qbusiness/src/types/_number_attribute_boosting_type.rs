@@ -96,3 +96,12 @@ impl NumberAttributeBoostingType {
         }
     }
 }
+impl ::std::fmt::Display for NumberAttributeBoostingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NumberAttributeBoostingType::PrioritizeLargerValues => write!(f, "PRIORITIZE_LARGER_VALUES"),
+            NumberAttributeBoostingType::PrioritizeSmallerValues => write!(f, "PRIORITIZE_SMALLER_VALUES"),
+            NumberAttributeBoostingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AutomatedDiscoveryStatus {
         }
     }
 }
+impl ::std::fmt::Display for AutomatedDiscoveryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutomatedDiscoveryStatus::Disabled => write!(f, "DISABLED"),
+            AutomatedDiscoveryStatus::Enabled => write!(f, "ENABLED"),
+            AutomatedDiscoveryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

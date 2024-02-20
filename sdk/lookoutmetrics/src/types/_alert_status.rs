@@ -96,3 +96,12 @@ impl AlertStatus {
         }
     }
 }
+impl ::std::fmt::Display for AlertStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlertStatus::Active => write!(f, "ACTIVE"),
+            AlertStatus::Inactive => write!(f, "INACTIVE"),
+            AlertStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

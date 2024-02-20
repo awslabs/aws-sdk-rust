@@ -101,3 +101,13 @@ impl KeywordAction {
         }
     }
 }
+impl ::std::fmt::Display for KeywordAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeywordAction::AutomaticResponse => write!(f, "AUTOMATIC_RESPONSE"),
+            KeywordAction::OptIn => write!(f, "OPT_IN"),
+            KeywordAction::OptOut => write!(f, "OPT_OUT"),
+            KeywordAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

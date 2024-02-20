@@ -96,3 +96,12 @@ impl ScalingMode {
         }
     }
 }
+impl ::std::fmt::Display for ScalingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalingMode::Managed => write!(f, "MANAGED"),
+            ScalingMode::Standard => write!(f, "STANDARD"),
+            ScalingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

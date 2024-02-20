@@ -96,3 +96,12 @@ impl OrganizationFeatureSet {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationFeatureSet {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationFeatureSet::All => write!(f, "ALL"),
+            OrganizationFeatureSet::ConsolidatedBilling => write!(f, "CONSOLIDATED_BILLING"),
+            OrganizationFeatureSet::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

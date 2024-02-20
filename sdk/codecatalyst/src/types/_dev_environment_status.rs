@@ -126,3 +126,18 @@ impl DevEnvironmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for DevEnvironmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DevEnvironmentStatus::Deleted => write!(f, "DELETED"),
+            DevEnvironmentStatus::Deleting => write!(f, "DELETING"),
+            DevEnvironmentStatus::Failed => write!(f, "FAILED"),
+            DevEnvironmentStatus::Pending => write!(f, "PENDING"),
+            DevEnvironmentStatus::Running => write!(f, "RUNNING"),
+            DevEnvironmentStatus::Starting => write!(f, "STARTING"),
+            DevEnvironmentStatus::Stopped => write!(f, "STOPPED"),
+            DevEnvironmentStatus::Stopping => write!(f, "STOPPING"),
+            DevEnvironmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

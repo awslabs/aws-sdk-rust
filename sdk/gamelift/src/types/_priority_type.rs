@@ -106,3 +106,14 @@ impl PriorityType {
         }
     }
 }
+impl ::std::fmt::Display for PriorityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PriorityType::Cost => write!(f, "COST"),
+            PriorityType::Destination => write!(f, "DESTINATION"),
+            PriorityType::Latency => write!(f, "LATENCY"),
+            PriorityType::Location => write!(f, "LOCATION"),
+            PriorityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

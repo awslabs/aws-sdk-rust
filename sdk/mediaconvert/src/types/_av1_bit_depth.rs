@@ -96,3 +96,12 @@ impl Av1BitDepth {
         }
     }
 }
+impl ::std::fmt::Display for Av1BitDepth {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Av1BitDepth::Bit10 => write!(f, "BIT_10"),
+            Av1BitDepth::Bit8 => write!(f, "BIT_8"),
+            Av1BitDepth::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

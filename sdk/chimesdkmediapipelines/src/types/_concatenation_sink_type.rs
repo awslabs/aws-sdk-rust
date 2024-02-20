@@ -91,3 +91,11 @@ impl ConcatenationSinkType {
         }
     }
 }
+impl ::std::fmt::Display for ConcatenationSinkType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConcatenationSinkType::S3Bucket => write!(f, "S3Bucket"),
+            ConcatenationSinkType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

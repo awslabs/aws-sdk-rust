@@ -96,3 +96,12 @@ impl EmbeddedTimecodeOverride {
         }
     }
 }
+impl ::std::fmt::Display for EmbeddedTimecodeOverride {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EmbeddedTimecodeOverride::None => write!(f, "NONE"),
+            EmbeddedTimecodeOverride::UseMdpm => write!(f, "USE_MDPM"),
+            EmbeddedTimecodeOverride::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

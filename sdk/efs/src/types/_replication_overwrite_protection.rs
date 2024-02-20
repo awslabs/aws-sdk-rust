@@ -101,3 +101,13 @@ impl ReplicationOverwriteProtection {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationOverwriteProtection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationOverwriteProtection::Disabled => write!(f, "DISABLED"),
+            ReplicationOverwriteProtection::Enabled => write!(f, "ENABLED"),
+            ReplicationOverwriteProtection::Replicating => write!(f, "REPLICATING"),
+            ReplicationOverwriteProtection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

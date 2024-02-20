@@ -96,3 +96,12 @@ impl Mp4CslgAtom {
         }
     }
 }
+impl ::std::fmt::Display for Mp4CslgAtom {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mp4CslgAtom::Exclude => write!(f, "EXCLUDE"),
+            Mp4CslgAtom::Include => write!(f, "INCLUDE"),
+            Mp4CslgAtom::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

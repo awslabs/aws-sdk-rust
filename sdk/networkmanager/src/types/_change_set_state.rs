@@ -123,3 +123,16 @@ impl ChangeSetState {
         }
     }
 }
+impl ::std::fmt::Display for ChangeSetState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeSetState::Executing => write!(f, "EXECUTING"),
+            ChangeSetState::ExecutionSucceeded => write!(f, "EXECUTION_SUCCEEDED"),
+            ChangeSetState::FailedGeneration => write!(f, "FAILED_GENERATION"),
+            ChangeSetState::OutOfDate => write!(f, "OUT_OF_DATE"),
+            ChangeSetState::PendingGeneration => write!(f, "PENDING_GENERATION"),
+            ChangeSetState::ReadyToExecute => write!(f, "READY_TO_EXECUTE"),
+            ChangeSetState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

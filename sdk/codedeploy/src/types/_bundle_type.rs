@@ -111,3 +111,15 @@ impl BundleType {
         }
     }
 }
+impl ::std::fmt::Display for BundleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BundleType::Json => write!(f, "JSON"),
+            BundleType::Yaml => write!(f, "YAML"),
+            BundleType::Tar => write!(f, "tar"),
+            BundleType::TarGZip => write!(f, "tgz"),
+            BundleType::Zip => write!(f, "zip"),
+            BundleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

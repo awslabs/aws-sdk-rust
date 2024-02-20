@@ -96,3 +96,12 @@ impl LaunchDisposition {
         }
     }
 }
+impl ::std::fmt::Display for LaunchDisposition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchDisposition::Started => write!(f, "STARTED"),
+            LaunchDisposition::Stopped => write!(f, "STOPPED"),
+            LaunchDisposition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

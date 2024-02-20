@@ -129,3 +129,17 @@ impl MemberStatus {
         }
     }
 }
+impl ::std::fmt::Display for MemberStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberStatus::Available => write!(f, "AVAILABLE"),
+            MemberStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            MemberStatus::Creating => write!(f, "CREATING"),
+            MemberStatus::Deleted => write!(f, "DELETED"),
+            MemberStatus::Deleting => write!(f, "DELETING"),
+            MemberStatus::InaccessibleEncryptionKey => write!(f, "INACCESSIBLE_ENCRYPTION_KEY"),
+            MemberStatus::Updating => write!(f, "UPDATING"),
+            MemberStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

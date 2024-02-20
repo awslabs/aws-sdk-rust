@@ -123,3 +123,16 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::ApiGateway => write!(f, "API_GATEWAY"),
+            ResourceType::ApplicationLoadBalancer => write!(f, "APPLICATION_LOAD_BALANCER"),
+            ResourceType::Appsync => write!(f, "APPSYNC"),
+            ResourceType::AppRunnerService => write!(f, "APP_RUNNER_SERVICE"),
+            ResourceType::CognitioUserPool => write!(f, "COGNITO_USER_POOL"),
+            ResourceType::VerifiedAccessInstance => write!(f, "VERIFIED_ACCESS_INSTANCE"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

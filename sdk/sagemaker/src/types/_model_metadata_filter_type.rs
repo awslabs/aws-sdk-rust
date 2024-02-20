@@ -106,3 +106,14 @@ impl ModelMetadataFilterType {
         }
     }
 }
+impl ::std::fmt::Display for ModelMetadataFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelMetadataFilterType::Domain => write!(f, "Domain"),
+            ModelMetadataFilterType::Framework => write!(f, "Framework"),
+            ModelMetadataFilterType::Frameworkversion => write!(f, "FrameworkVersion"),
+            ModelMetadataFilterType::Task => write!(f, "Task"),
+            ModelMetadataFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

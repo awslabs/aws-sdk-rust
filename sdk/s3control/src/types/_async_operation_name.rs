@@ -105,3 +105,13 @@ impl AsyncOperationName {
         }
     }
 }
+impl ::std::fmt::Display for AsyncOperationName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AsyncOperationName::CreateMultiRegionAccessPoint => write!(f, "CreateMultiRegionAccessPoint"),
+            AsyncOperationName::DeleteMultiRegionAccessPoint => write!(f, "DeleteMultiRegionAccessPoint"),
+            AsyncOperationName::PutMultiRegionAccessPointPolicy => write!(f, "PutMultiRegionAccessPointPolicy"),
+            AsyncOperationName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

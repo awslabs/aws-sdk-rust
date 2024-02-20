@@ -111,3 +111,15 @@ impl LogDeliveryConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for LogDeliveryConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogDeliveryConfigurationStatus::Active => write!(f, "active"),
+            LogDeliveryConfigurationStatus::Disabling => write!(f, "disabling"),
+            LogDeliveryConfigurationStatus::Enabling => write!(f, "enabling"),
+            LogDeliveryConfigurationStatus::Error => write!(f, "error"),
+            LogDeliveryConfigurationStatus::Modifying => write!(f, "modifying"),
+            LogDeliveryConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

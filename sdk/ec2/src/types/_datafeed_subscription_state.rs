@@ -96,3 +96,12 @@ impl DatafeedSubscriptionState {
         }
     }
 }
+impl ::std::fmt::Display for DatafeedSubscriptionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatafeedSubscriptionState::Active => write!(f, "Active"),
+            DatafeedSubscriptionState::Inactive => write!(f, "Inactive"),
+            DatafeedSubscriptionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

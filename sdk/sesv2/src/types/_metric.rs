@@ -211,3 +211,20 @@ impl Metric {
         }
     }
 }
+impl ::std::fmt::Display for Metric {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Metric::Click => write!(f, "CLICK"),
+            Metric::Complaint => write!(f, "COMPLAINT"),
+            Metric::Delivery => write!(f, "DELIVERY"),
+            Metric::DeliveryClick => write!(f, "DELIVERY_CLICK"),
+            Metric::DeliveryComplaint => write!(f, "DELIVERY_COMPLAINT"),
+            Metric::DeliveryOpen => write!(f, "DELIVERY_OPEN"),
+            Metric::Open => write!(f, "OPEN"),
+            Metric::PermanentBounce => write!(f, "PERMANENT_BOUNCE"),
+            Metric::Send => write!(f, "SEND"),
+            Metric::TransientBounce => write!(f, "TRANSIENT_BOUNCE"),
+            Metric::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AppInstanceUserEndpointType {
         }
     }
 }
+impl ::std::fmt::Display for AppInstanceUserEndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppInstanceUserEndpointType::Apns => write!(f, "APNS"),
+            AppInstanceUserEndpointType::ApnsSandbox => write!(f, "APNS_SANDBOX"),
+            AppInstanceUserEndpointType::Gcm => write!(f, "GCM"),
+            AppInstanceUserEndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

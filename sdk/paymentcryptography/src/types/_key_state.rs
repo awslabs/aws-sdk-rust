@@ -106,3 +106,14 @@ impl KeyState {
         }
     }
 }
+impl ::std::fmt::Display for KeyState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyState::CreateComplete => write!(f, "CREATE_COMPLETE"),
+            KeyState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            KeyState::DeleteComplete => write!(f, "DELETE_COMPLETE"),
+            KeyState::DeletePending => write!(f, "DELETE_PENDING"),
+            KeyState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

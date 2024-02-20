@@ -96,3 +96,12 @@ impl DeploymentReadyAction {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentReadyAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentReadyAction::ContinueDeployment => write!(f, "CONTINUE_DEPLOYMENT"),
+            DeploymentReadyAction::StopDeployment => write!(f, "STOP_DEPLOYMENT"),
+            DeploymentReadyAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

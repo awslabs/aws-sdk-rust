@@ -101,3 +101,13 @@ impl ReportStateType {
         }
     }
 }
+impl ::std::fmt::Display for ReportStateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportStateType::Complete => write!(f, "COMPLETE"),
+            ReportStateType::Inprogress => write!(f, "INPROGRESS"),
+            ReportStateType::Started => write!(f, "STARTED"),
+            ReportStateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

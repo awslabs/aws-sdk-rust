@@ -96,3 +96,12 @@ impl WordCloudCloudLayout {
         }
     }
 }
+impl ::std::fmt::Display for WordCloudCloudLayout {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WordCloudCloudLayout::Fluid => write!(f, "FLUID"),
+            WordCloudCloudLayout::Normal => write!(f, "NORMAL"),
+            WordCloudCloudLayout::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

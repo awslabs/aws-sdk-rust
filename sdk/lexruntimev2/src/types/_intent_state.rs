@@ -123,3 +123,16 @@ impl IntentState {
         }
     }
 }
+impl ::std::fmt::Display for IntentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntentState::Failed => write!(f, "Failed"),
+            IntentState::Fulfilled => write!(f, "Fulfilled"),
+            IntentState::FulfillmentInProgress => write!(f, "FulfillmentInProgress"),
+            IntentState::InProgress => write!(f, "InProgress"),
+            IntentState::ReadyForFulfillment => write!(f, "ReadyForFulfillment"),
+            IntentState::Waiting => write!(f, "Waiting"),
+            IntentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

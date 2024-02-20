@@ -96,3 +96,12 @@ impl ListDomainsAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for ListDomainsAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListDomainsAttributeName::DomainName => write!(f, "DomainName"),
+            ListDomainsAttributeName::Expiry => write!(f, "Expiry"),
+            ListDomainsAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

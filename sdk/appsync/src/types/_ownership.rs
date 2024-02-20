@@ -96,3 +96,12 @@ impl Ownership {
         }
     }
 }
+impl ::std::fmt::Display for Ownership {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ownership::CurrentAccount => write!(f, "CURRENT_ACCOUNT"),
+            Ownership::OtherAccounts => write!(f, "OTHER_ACCOUNTS"),
+            Ownership::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

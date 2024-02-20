@@ -106,3 +106,14 @@ impl RuleType {
         }
     }
 }
+impl ::std::fmt::Display for RuleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleType::BinaryLength => write!(f, "BINARY_LENGTH"),
+            RuleType::NumberComparison => write!(f, "NUMBER_COMPARISON"),
+            RuleType::StringFromSet => write!(f, "STRING_FROM_SET"),
+            RuleType::StringLength => write!(f, "STRING_LENGTH"),
+            RuleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl FolderFilterAttribute {
         }
     }
 }
+impl ::std::fmt::Display for FolderFilterAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FolderFilterAttribute::DirectQuicksightOwner => write!(f, "DIRECT_QUICKSIGHT_OWNER"),
+            FolderFilterAttribute::DirectQuicksightSoleOwner => write!(f, "DIRECT_QUICKSIGHT_SOLE_OWNER"),
+            FolderFilterAttribute::DirectQuicksightViewerOrOwner => write!(f, "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"),
+            FolderFilterAttribute::FolderName => write!(f, "FOLDER_NAME"),
+            FolderFilterAttribute::ParentFolderArn => write!(f, "PARENT_FOLDER_ARN"),
+            FolderFilterAttribute::QuicksightOwner => write!(f, "QUICKSIGHT_OWNER"),
+            FolderFilterAttribute::QuicksightViewerOrOwner => write!(f, "QUICKSIGHT_VIEWER_OR_OWNER"),
+            FolderFilterAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

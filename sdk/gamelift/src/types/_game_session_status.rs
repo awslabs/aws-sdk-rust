@@ -111,3 +111,15 @@ impl GameSessionStatus {
         }
     }
 }
+impl ::std::fmt::Display for GameSessionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GameSessionStatus::Activating => write!(f, "ACTIVATING"),
+            GameSessionStatus::Active => write!(f, "ACTIVE"),
+            GameSessionStatus::Error => write!(f, "ERROR"),
+            GameSessionStatus::Terminated => write!(f, "TERMINATED"),
+            GameSessionStatus::Terminating => write!(f, "TERMINATING"),
+            GameSessionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

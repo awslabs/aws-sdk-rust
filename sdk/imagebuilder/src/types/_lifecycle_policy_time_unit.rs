@@ -106,3 +106,14 @@ impl LifecyclePolicyTimeUnit {
         }
     }
 }
+impl ::std::fmt::Display for LifecyclePolicyTimeUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecyclePolicyTimeUnit::Days => write!(f, "DAYS"),
+            LifecyclePolicyTimeUnit::Months => write!(f, "MONTHS"),
+            LifecyclePolicyTimeUnit::Weeks => write!(f, "WEEKS"),
+            LifecyclePolicyTimeUnit::Years => write!(f, "YEARS"),
+            LifecyclePolicyTimeUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

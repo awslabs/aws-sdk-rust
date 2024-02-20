@@ -96,3 +96,12 @@ impl ModificationStateEnum {
         }
     }
 }
+impl ::std::fmt::Display for ModificationStateEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModificationStateEnum::UpdateInitiated => write!(f, "UPDATE_INITIATED"),
+            ModificationStateEnum::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            ModificationStateEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

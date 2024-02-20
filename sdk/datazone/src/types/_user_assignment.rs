@@ -96,3 +96,12 @@ impl UserAssignment {
         }
     }
 }
+impl ::std::fmt::Display for UserAssignment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserAssignment::Automatic => write!(f, "AUTOMATIC"),
+            UserAssignment::Manual => write!(f, "MANUAL"),
+            UserAssignment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

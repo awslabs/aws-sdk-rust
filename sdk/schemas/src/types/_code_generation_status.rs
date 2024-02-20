@@ -101,3 +101,13 @@ impl CodeGenerationStatus {
         }
     }
 }
+impl ::std::fmt::Display for CodeGenerationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CodeGenerationStatus::CreateComplete => write!(f, "CREATE_COMPLETE"),
+            CodeGenerationStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            CodeGenerationStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            CodeGenerationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

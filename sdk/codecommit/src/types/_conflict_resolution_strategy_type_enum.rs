@@ -106,3 +106,14 @@ impl ConflictResolutionStrategyTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for ConflictResolutionStrategyTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConflictResolutionStrategyTypeEnum::AcceptDestination => write!(f, "ACCEPT_DESTINATION"),
+            ConflictResolutionStrategyTypeEnum::AcceptSource => write!(f, "ACCEPT_SOURCE"),
+            ConflictResolutionStrategyTypeEnum::Automerge => write!(f, "AUTOMERGE"),
+            ConflictResolutionStrategyTypeEnum::None => write!(f, "NONE"),
+            ConflictResolutionStrategyTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

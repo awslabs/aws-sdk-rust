@@ -96,3 +96,12 @@ impl AppInstanceDataType {
         }
     }
 }
+impl ::std::fmt::Display for AppInstanceDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppInstanceDataType::Channel => write!(f, "Channel"),
+            AppInstanceDataType::ChannelMessage => write!(f, "ChannelMessage"),
+            AppInstanceDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

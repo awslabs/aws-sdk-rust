@@ -96,3 +96,12 @@ impl ModelCardSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ModelCardSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelCardSortBy::CreationTime => write!(f, "CreationTime"),
+            ModelCardSortBy::Name => write!(f, "Name"),
+            ModelCardSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

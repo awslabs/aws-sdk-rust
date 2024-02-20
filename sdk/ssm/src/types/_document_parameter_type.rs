@@ -96,3 +96,12 @@ impl DocumentParameterType {
         }
     }
 }
+impl ::std::fmt::Display for DocumentParameterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentParameterType::String => write!(f, "String"),
+            DocumentParameterType::StringList => write!(f, "StringList"),
+            DocumentParameterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

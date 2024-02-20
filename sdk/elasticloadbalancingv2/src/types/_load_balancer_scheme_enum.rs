@@ -96,3 +96,12 @@ impl LoadBalancerSchemeEnum {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerSchemeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerSchemeEnum::Internal => write!(f, "internal"),
+            LoadBalancerSchemeEnum::InternetFacing => write!(f, "internet-facing"),
+            LoadBalancerSchemeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

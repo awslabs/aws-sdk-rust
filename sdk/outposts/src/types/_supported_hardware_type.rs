@@ -96,3 +96,12 @@ impl SupportedHardwareType {
         }
     }
 }
+impl ::std::fmt::Display for SupportedHardwareType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SupportedHardwareType::Rack => write!(f, "RACK"),
+            SupportedHardwareType::Server => write!(f, "SERVER"),
+            SupportedHardwareType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

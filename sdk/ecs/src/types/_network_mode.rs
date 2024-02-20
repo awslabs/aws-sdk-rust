@@ -106,3 +106,14 @@ impl NetworkMode {
         }
     }
 }
+impl ::std::fmt::Display for NetworkMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkMode::Awsvpc => write!(f, "awsvpc"),
+            NetworkMode::Bridge => write!(f, "bridge"),
+            NetworkMode::Host => write!(f, "host"),
+            NetworkMode::None => write!(f, "none"),
+            NetworkMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

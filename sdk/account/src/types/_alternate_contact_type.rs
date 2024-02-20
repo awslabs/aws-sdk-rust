@@ -101,3 +101,13 @@ impl AlternateContactType {
         }
     }
 }
+impl ::std::fmt::Display for AlternateContactType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlternateContactType::Billing => write!(f, "BILLING"),
+            AlternateContactType::Operations => write!(f, "OPERATIONS"),
+            AlternateContactType::Security => write!(f, "SECURITY"),
+            AlternateContactType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl AvcIntraClass {
         }
     }
 }
+impl ::std::fmt::Display for AvcIntraClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AvcIntraClass::Class100 => write!(f, "CLASS_100"),
+            AvcIntraClass::Class200 => write!(f, "CLASS_200"),
+            AvcIntraClass::Class4K2K => write!(f, "CLASS_4K_2K"),
+            AvcIntraClass::Class50 => write!(f, "CLASS_50"),
+            AvcIntraClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

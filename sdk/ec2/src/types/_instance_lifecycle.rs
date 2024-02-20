@@ -96,3 +96,12 @@ impl InstanceLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for InstanceLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceLifecycle::OnDemand => write!(f, "on-demand"),
+            InstanceLifecycle::Spot => write!(f, "spot"),
+            InstanceLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

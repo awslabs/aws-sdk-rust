@@ -128,3 +128,14 @@ impl MailFromDomainStatus {
         }
     }
 }
+impl ::std::fmt::Display for MailFromDomainStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MailFromDomainStatus::Failed => write!(f, "FAILED"),
+            MailFromDomainStatus::Pending => write!(f, "PENDING"),
+            MailFromDomainStatus::Success => write!(f, "SUCCESS"),
+            MailFromDomainStatus::TemporaryFailure => write!(f, "TEMPORARY_FAILURE"),
+            MailFromDomainStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

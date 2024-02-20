@@ -96,3 +96,12 @@ impl EgressFilterType {
         }
     }
 }
+impl ::std::fmt::Display for EgressFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EgressFilterType::AllowAll => write!(f, "ALLOW_ALL"),
+            EgressFilterType::DropAll => write!(f, "DROP_ALL"),
+            EgressFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

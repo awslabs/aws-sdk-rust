@@ -126,3 +126,16 @@ impl State {
         }
     }
 }
+impl ::std::fmt::Display for State {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            State::Offline => write!(f, "OFFLINE"),
+            State::Online => write!(f, "ONLINE"),
+            State::Starting => write!(f, "STARTING"),
+            State::StartFailed => write!(f, "START_FAILED"),
+            State::Stopping => write!(f, "STOPPING"),
+            State::StopFailed => write!(f, "STOP_FAILED"),
+            State::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

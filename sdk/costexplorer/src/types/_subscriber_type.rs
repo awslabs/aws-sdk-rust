@@ -96,3 +96,12 @@ impl SubscriberType {
         }
     }
 }
+impl ::std::fmt::Display for SubscriberType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubscriberType::Email => write!(f, "EMAIL"),
+            SubscriberType::Sns => write!(f, "SNS"),
+            SubscriberType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

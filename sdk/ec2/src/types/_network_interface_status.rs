@@ -111,3 +111,15 @@ impl NetworkInterfaceStatus {
         }
     }
 }
+impl ::std::fmt::Display for NetworkInterfaceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkInterfaceStatus::Associated => write!(f, "associated"),
+            NetworkInterfaceStatus::Attaching => write!(f, "attaching"),
+            NetworkInterfaceStatus::Available => write!(f, "available"),
+            NetworkInterfaceStatus::Detaching => write!(f, "detaching"),
+            NetworkInterfaceStatus::InUse => write!(f, "in-use"),
+            NetworkInterfaceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

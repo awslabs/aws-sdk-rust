@@ -116,3 +116,16 @@ impl AlertManagerDefinitionStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for AlertManagerDefinitionStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlertManagerDefinitionStatusCode::Active => write!(f, "ACTIVE"),
+            AlertManagerDefinitionStatusCode::Creating => write!(f, "CREATING"),
+            AlertManagerDefinitionStatusCode::CreationFailed => write!(f, "CREATION_FAILED"),
+            AlertManagerDefinitionStatusCode::Deleting => write!(f, "DELETING"),
+            AlertManagerDefinitionStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            AlertManagerDefinitionStatusCode::Updating => write!(f, "UPDATING"),
+            AlertManagerDefinitionStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl UdpTimedMetadataId3Frame {
         }
     }
 }
+impl ::std::fmt::Display for UdpTimedMetadataId3Frame {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UdpTimedMetadataId3Frame::None => write!(f, "NONE"),
+            UdpTimedMetadataId3Frame::Priv => write!(f, "PRIV"),
+            UdpTimedMetadataId3Frame::Tdrl => write!(f, "TDRL"),
+            UdpTimedMetadataId3Frame::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

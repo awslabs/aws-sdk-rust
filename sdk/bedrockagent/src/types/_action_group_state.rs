@@ -96,3 +96,12 @@ impl ActionGroupState {
         }
     }
 }
+impl ::std::fmt::Display for ActionGroupState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionGroupState::Disabled => write!(f, "DISABLED"),
+            ActionGroupState::Enabled => write!(f, "ENABLED"),
+            ActionGroupState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

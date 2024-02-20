@@ -141,3 +141,19 @@ impl TransitionToArchiveRules {
         }
     }
 }
+impl ::std::fmt::Display for TransitionToArchiveRules {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitionToArchiveRules::After14Days => write!(f, "AFTER_14_DAYS"),
+            TransitionToArchiveRules::After180Days => write!(f, "AFTER_180_DAYS"),
+            TransitionToArchiveRules::After1Day => write!(f, "AFTER_1_DAY"),
+            TransitionToArchiveRules::After270Days => write!(f, "AFTER_270_DAYS"),
+            TransitionToArchiveRules::After30Days => write!(f, "AFTER_30_DAYS"),
+            TransitionToArchiveRules::After365Days => write!(f, "AFTER_365_DAYS"),
+            TransitionToArchiveRules::After60Days => write!(f, "AFTER_60_DAYS"),
+            TransitionToArchiveRules::After7Days => write!(f, "AFTER_7_DAYS"),
+            TransitionToArchiveRules::After90Days => write!(f, "AFTER_90_DAYS"),
+            TransitionToArchiveRules::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

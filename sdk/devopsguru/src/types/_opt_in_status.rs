@@ -97,3 +97,12 @@ impl OptInStatus {
         }
     }
 }
+impl ::std::fmt::Display for OptInStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OptInStatus::Disabled => write!(f, "DISABLED"),
+            OptInStatus::Enabled => write!(f, "ENABLED"),
+            OptInStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

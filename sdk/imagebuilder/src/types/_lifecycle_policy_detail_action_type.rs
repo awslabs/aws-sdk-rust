@@ -101,3 +101,13 @@ impl LifecyclePolicyDetailActionType {
         }
     }
 }
+impl ::std::fmt::Display for LifecyclePolicyDetailActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecyclePolicyDetailActionType::Delete => write!(f, "DELETE"),
+            LifecyclePolicyDetailActionType::Deprecate => write!(f, "DEPRECATE"),
+            LifecyclePolicyDetailActionType::Disable => write!(f, "DISABLE"),
+            LifecyclePolicyDetailActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

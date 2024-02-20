@@ -96,3 +96,12 @@ impl ParticipantTokenCapability {
         }
     }
 }
+impl ::std::fmt::Display for ParticipantTokenCapability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParticipantTokenCapability::Publish => write!(f, "PUBLISH"),
+            ParticipantTokenCapability::Subscribe => write!(f, "SUBSCRIBE"),
+            ParticipantTokenCapability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

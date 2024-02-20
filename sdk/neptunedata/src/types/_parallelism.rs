@@ -106,3 +106,14 @@ impl Parallelism {
         }
     }
 }
+impl ::std::fmt::Display for Parallelism {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Parallelism::High => write!(f, "HIGH"),
+            Parallelism::Low => write!(f, "LOW"),
+            Parallelism::Medium => write!(f, "MEDIUM"),
+            Parallelism::Oversubscribe => write!(f, "OVERSUBSCRIBE"),
+            Parallelism::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

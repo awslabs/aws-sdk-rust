@@ -91,3 +91,11 @@ impl OptionalObjectAttributes {
         }
     }
 }
+impl ::std::fmt::Display for OptionalObjectAttributes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OptionalObjectAttributes::RestoreStatus => write!(f, "RestoreStatus"),
+            OptionalObjectAttributes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

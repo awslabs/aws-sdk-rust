@@ -101,3 +101,13 @@ impl CacheMode {
         }
     }
 }
+impl ::std::fmt::Display for CacheMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CacheMode::LocalCustomCache => write!(f, "LOCAL_CUSTOM_CACHE"),
+            CacheMode::LocalDockerLayerCache => write!(f, "LOCAL_DOCKER_LAYER_CACHE"),
+            CacheMode::LocalSourceCache => write!(f, "LOCAL_SOURCE_CACHE"),
+            CacheMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

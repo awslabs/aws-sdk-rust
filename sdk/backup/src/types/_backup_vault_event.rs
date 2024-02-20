@@ -189,3 +189,27 @@ impl BackupVaultEvent {
         }
     }
 }
+impl ::std::fmt::Display for BackupVaultEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackupVaultEvent::BackupJobCompleted => write!(f, "BACKUP_JOB_COMPLETED"),
+            BackupVaultEvent::BackupJobExpired => write!(f, "BACKUP_JOB_EXPIRED"),
+            BackupVaultEvent::BackupJobFailed => write!(f, "BACKUP_JOB_FAILED"),
+            BackupVaultEvent::BackupJobStarted => write!(f, "BACKUP_JOB_STARTED"),
+            BackupVaultEvent::BackupJobSuccessful => write!(f, "BACKUP_JOB_SUCCESSFUL"),
+            BackupVaultEvent::BackupPlanCreated => write!(f, "BACKUP_PLAN_CREATED"),
+            BackupVaultEvent::BackupPlanModified => write!(f, "BACKUP_PLAN_MODIFIED"),
+            BackupVaultEvent::CopyJobFailed => write!(f, "COPY_JOB_FAILED"),
+            BackupVaultEvent::CopyJobStarted => write!(f, "COPY_JOB_STARTED"),
+            BackupVaultEvent::CopyJobSuccessful => write!(f, "COPY_JOB_SUCCESSFUL"),
+            BackupVaultEvent::RecoveryPointModified => write!(f, "RECOVERY_POINT_MODIFIED"),
+            BackupVaultEvent::RestoreJobCompleted => write!(f, "RESTORE_JOB_COMPLETED"),
+            BackupVaultEvent::RestoreJobFailed => write!(f, "RESTORE_JOB_FAILED"),
+            BackupVaultEvent::RestoreJobStarted => write!(f, "RESTORE_JOB_STARTED"),
+            BackupVaultEvent::RestoreJobSuccessful => write!(f, "RESTORE_JOB_SUCCESSFUL"),
+            BackupVaultEvent::S3BackupObjectFailed => write!(f, "S3_BACKUP_OBJECT_FAILED"),
+            BackupVaultEvent::S3RestoreObjectFailed => write!(f, "S3_RESTORE_OBJECT_FAILED"),
+            BackupVaultEvent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

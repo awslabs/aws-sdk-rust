@@ -117,3 +117,15 @@ impl InstanceStateChangeReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for InstanceStateChangeReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceStateChangeReasonCode::BootstrapFailure => write!(f, "BOOTSTRAP_FAILURE"),
+            InstanceStateChangeReasonCode::ClusterTerminated => write!(f, "CLUSTER_TERMINATED"),
+            InstanceStateChangeReasonCode::InstanceFailure => write!(f, "INSTANCE_FAILURE"),
+            InstanceStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            InstanceStateChangeReasonCode::ValidationError => write!(f, "VALIDATION_ERROR"),
+            InstanceStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

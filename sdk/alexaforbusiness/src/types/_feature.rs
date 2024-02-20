@@ -135,3 +135,18 @@ impl Feature {
         }
     }
 }
+impl ::std::fmt::Display for Feature {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Feature::All => write!(f, "ALL"),
+            Feature::Bluetooth => write!(f, "BLUETOOTH"),
+            Feature::Lists => write!(f, "LISTS"),
+            Feature::NetworkProfile => write!(f, "NETWORK_PROFILE"),
+            Feature::Notifications => write!(f, "NOTIFICATIONS"),
+            Feature::Settings => write!(f, "SETTINGS"),
+            Feature::Skills => write!(f, "SKILLS"),
+            Feature::Volume => write!(f, "VOLUME"),
+            Feature::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

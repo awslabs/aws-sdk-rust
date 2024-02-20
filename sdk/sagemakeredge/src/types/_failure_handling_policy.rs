@@ -96,3 +96,12 @@ impl FailureHandlingPolicy {
         }
     }
 }
+impl ::std::fmt::Display for FailureHandlingPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailureHandlingPolicy::DoNothing => write!(f, "DO_NOTHING"),
+            FailureHandlingPolicy::RollbackOnFailure => write!(f, "ROLLBACK_ON_FAILURE"),
+            FailureHandlingPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

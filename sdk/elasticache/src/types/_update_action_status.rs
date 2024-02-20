@@ -141,3 +141,19 @@ impl UpdateActionStatus {
         }
     }
 }
+impl ::std::fmt::Display for UpdateActionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateActionStatus::Complete => write!(f, "complete"),
+            UpdateActionStatus::InProgress => write!(f, "in-progress"),
+            UpdateActionStatus::NotApplicable => write!(f, "not-applicable"),
+            UpdateActionStatus::NotApplied => write!(f, "not-applied"),
+            UpdateActionStatus::Scheduled => write!(f, "scheduled"),
+            UpdateActionStatus::Scheduling => write!(f, "scheduling"),
+            UpdateActionStatus::Stopped => write!(f, "stopped"),
+            UpdateActionStatus::Stopping => write!(f, "stopping"),
+            UpdateActionStatus::WaitingToStart => write!(f, "waiting-to-start"),
+            UpdateActionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

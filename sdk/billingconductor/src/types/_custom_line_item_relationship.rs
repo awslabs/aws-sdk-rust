@@ -96,3 +96,12 @@ impl CustomLineItemRelationship {
         }
     }
 }
+impl ::std::fmt::Display for CustomLineItemRelationship {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomLineItemRelationship::Child => write!(f, "CHILD"),
+            CustomLineItemRelationship::Parent => write!(f, "PARENT"),
+            CustomLineItemRelationship::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

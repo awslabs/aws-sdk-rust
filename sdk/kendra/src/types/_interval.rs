@@ -123,3 +123,16 @@ impl Interval {
         }
     }
 }
+impl ::std::fmt::Display for Interval {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Interval::OneMonthAgo => write!(f, "ONE_MONTH_AGO"),
+            Interval::OneWeekAgo => write!(f, "ONE_WEEK_AGO"),
+            Interval::ThisMonth => write!(f, "THIS_MONTH"),
+            Interval::ThisWeek => write!(f, "THIS_WEEK"),
+            Interval::TwoMonthsAgo => write!(f, "TWO_MONTHS_AGO"),
+            Interval::TwoWeeksAgo => write!(f, "TWO_WEEKS_AGO"),
+            Interval::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

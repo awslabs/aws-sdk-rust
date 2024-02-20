@@ -96,3 +96,12 @@ impl EfsTransitEncryption {
         }
     }
 }
+impl ::std::fmt::Display for EfsTransitEncryption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EfsTransitEncryption::Disabled => write!(f, "DISABLED"),
+            EfsTransitEncryption::Enabled => write!(f, "ENABLED"),
+            EfsTransitEncryption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

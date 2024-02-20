@@ -96,3 +96,12 @@ impl PointInTimeRecoveryStatus {
         }
     }
 }
+impl ::std::fmt::Display for PointInTimeRecoveryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PointInTimeRecoveryStatus::Disabled => write!(f, "DISABLED"),
+            PointInTimeRecoveryStatus::Enabled => write!(f, "ENABLED"),
+            PointInTimeRecoveryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

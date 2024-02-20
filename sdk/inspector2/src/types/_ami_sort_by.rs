@@ -106,3 +106,14 @@ impl AmiSortBy {
         }
     }
 }
+impl ::std::fmt::Display for AmiSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AmiSortBy::AffectedInstances => write!(f, "AFFECTED_INSTANCES"),
+            AmiSortBy::All => write!(f, "ALL"),
+            AmiSortBy::Critical => write!(f, "CRITICAL"),
+            AmiSortBy::High => write!(f, "HIGH"),
+            AmiSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

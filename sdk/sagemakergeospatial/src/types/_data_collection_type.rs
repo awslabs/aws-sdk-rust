@@ -101,3 +101,13 @@ impl DataCollectionType {
         }
     }
 }
+impl ::std::fmt::Display for DataCollectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataCollectionType::Premium => write!(f, "PREMIUM"),
+            DataCollectionType::Public => write!(f, "PUBLIC"),
+            DataCollectionType::User => write!(f, "USER"),
+            DataCollectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

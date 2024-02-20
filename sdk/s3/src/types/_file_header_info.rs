@@ -101,3 +101,13 @@ impl FileHeaderInfo {
         }
     }
 }
+impl ::std::fmt::Display for FileHeaderInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileHeaderInfo::Ignore => write!(f, "IGNORE"),
+            FileHeaderInfo::None => write!(f, "NONE"),
+            FileHeaderInfo::Use => write!(f, "USE"),
+            FileHeaderInfo::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

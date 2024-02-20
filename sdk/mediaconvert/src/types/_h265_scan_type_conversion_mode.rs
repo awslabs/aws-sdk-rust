@@ -96,3 +96,12 @@ impl H265ScanTypeConversionMode {
         }
     }
 }
+impl ::std::fmt::Display for H265ScanTypeConversionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265ScanTypeConversionMode::Interlaced => write!(f, "INTERLACED"),
+            H265ScanTypeConversionMode::InterlacedOptimize => write!(f, "INTERLACED_OPTIMIZE"),
+            H265ScanTypeConversionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

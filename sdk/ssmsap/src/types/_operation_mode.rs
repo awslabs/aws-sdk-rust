@@ -111,3 +111,15 @@ impl OperationMode {
         }
     }
 }
+impl ::std::fmt::Display for OperationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationMode::DeltaDatashipping => write!(f, "DELTA_DATASHIPPING"),
+            OperationMode::Logreplay => write!(f, "LOGREPLAY"),
+            OperationMode::LogreplayReadaccess => write!(f, "LOGREPLAY_READACCESS"),
+            OperationMode::None => write!(f, "NONE"),
+            OperationMode::Primary => write!(f, "PRIMARY"),
+            OperationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

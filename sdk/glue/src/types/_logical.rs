@@ -96,3 +96,12 @@ impl Logical {
         }
     }
 }
+impl ::std::fmt::Display for Logical {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Logical::And => write!(f, "AND"),
+            Logical::Any => write!(f, "ANY"),
+            Logical::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

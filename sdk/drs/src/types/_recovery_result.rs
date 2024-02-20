@@ -129,3 +129,17 @@ impl RecoveryResult {
         }
     }
 }
+impl ::std::fmt::Display for RecoveryResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecoveryResult::AssociateFail => write!(f, "ASSOCIATE_FAIL"),
+            RecoveryResult::AssociateSuccess => write!(f, "ASSOCIATE_SUCCESS"),
+            RecoveryResult::Fail => write!(f, "FAIL"),
+            RecoveryResult::InProgress => write!(f, "IN_PROGRESS"),
+            RecoveryResult::NotStarted => write!(f, "NOT_STARTED"),
+            RecoveryResult::PartialSuccess => write!(f, "PARTIAL_SUCCESS"),
+            RecoveryResult::Success => write!(f, "SUCCESS"),
+            RecoveryResult::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

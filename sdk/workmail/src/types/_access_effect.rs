@@ -96,3 +96,12 @@ impl AccessEffect {
         }
     }
 }
+impl ::std::fmt::Display for AccessEffect {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessEffect::Allow => write!(f, "ALLOW"),
+            AccessEffect::Deny => write!(f, "DENY"),
+            AccessEffect::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

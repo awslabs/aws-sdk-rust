@@ -101,3 +101,13 @@ impl ForwardedIpPosition {
         }
     }
 }
+impl ::std::fmt::Display for ForwardedIpPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ForwardedIpPosition::Any => write!(f, "ANY"),
+            ForwardedIpPosition::First => write!(f, "FIRST"),
+            ForwardedIpPosition::Last => write!(f, "LAST"),
+            ForwardedIpPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

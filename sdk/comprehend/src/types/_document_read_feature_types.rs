@@ -96,3 +96,12 @@ impl DocumentReadFeatureTypes {
         }
     }
 }
+impl ::std::fmt::Display for DocumentReadFeatureTypes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentReadFeatureTypes::Forms => write!(f, "FORMS"),
+            DocumentReadFeatureTypes::Tables => write!(f, "TABLES"),
+            DocumentReadFeatureTypes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

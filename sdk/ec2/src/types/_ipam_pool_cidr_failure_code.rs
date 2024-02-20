@@ -96,3 +96,12 @@ impl IpamPoolCidrFailureCode {
         }
     }
 }
+impl ::std::fmt::Display for IpamPoolCidrFailureCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamPoolCidrFailureCode::CidrNotAvailable => write!(f, "cidr-not-available"),
+            IpamPoolCidrFailureCode::LimitExceeded => write!(f, "limit-exceeded"),
+            IpamPoolCidrFailureCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

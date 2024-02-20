@@ -106,3 +106,14 @@ impl WirelessDeviceSidewalkStatus {
         }
     }
 }
+impl ::std::fmt::Display for WirelessDeviceSidewalkStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WirelessDeviceSidewalkStatus::Activated => write!(f, "ACTIVATED"),
+            WirelessDeviceSidewalkStatus::Provisioned => write!(f, "PROVISIONED"),
+            WirelessDeviceSidewalkStatus::Registered => write!(f, "REGISTERED"),
+            WirelessDeviceSidewalkStatus::UnknownValue => write!(f, "UNKNOWN"),
+            WirelessDeviceSidewalkStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

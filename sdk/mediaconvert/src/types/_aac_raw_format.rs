@@ -96,3 +96,12 @@ impl AacRawFormat {
         }
     }
 }
+impl ::std::fmt::Display for AacRawFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AacRawFormat::LatmLoas => write!(f, "LATM_LOAS"),
+            AacRawFormat::None => write!(f, "NONE"),
+            AacRawFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

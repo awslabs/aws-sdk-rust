@@ -91,3 +91,11 @@ impl MedicalContentIdentificationType {
         }
     }
 }
+impl ::std::fmt::Display for MedicalContentIdentificationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MedicalContentIdentificationType::Phi => write!(f, "PHI"),
+            MedicalContentIdentificationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

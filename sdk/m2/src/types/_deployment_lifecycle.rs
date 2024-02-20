@@ -106,3 +106,14 @@ impl DeploymentLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentLifecycle::Deploying => write!(f, "Deploying"),
+            DeploymentLifecycle::Failed => write!(f, "Failed"),
+            DeploymentLifecycle::Succeeded => write!(f, "Succeeded"),
+            DeploymentLifecycle::DeployUpdate => write!(f, "Updating Deployment"),
+            DeploymentLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

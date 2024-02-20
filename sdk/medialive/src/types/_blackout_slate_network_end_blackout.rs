@@ -96,3 +96,12 @@ impl BlackoutSlateNetworkEndBlackout {
         }
     }
 }
+impl ::std::fmt::Display for BlackoutSlateNetworkEndBlackout {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BlackoutSlateNetworkEndBlackout::Disabled => write!(f, "DISABLED"),
+            BlackoutSlateNetworkEndBlackout::Enabled => write!(f, "ENABLED"),
+            BlackoutSlateNetworkEndBlackout::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

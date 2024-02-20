@@ -111,3 +111,15 @@ impl AggregationTransformationValue {
         }
     }
 }
+impl ::std::fmt::Display for AggregationTransformationValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregationTransformationValue::Avg => write!(f, "avg"),
+            AggregationTransformationValue::First => write!(f, "first"),
+            AggregationTransformationValue::Max => write!(f, "max"),
+            AggregationTransformationValue::Min => write!(f, "min"),
+            AggregationTransformationValue::Sum => write!(f, "sum"),
+            AggregationTransformationValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

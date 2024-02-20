@@ -96,3 +96,12 @@ impl FilterAction {
         }
     }
 }
+impl ::std::fmt::Display for FilterAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterAction::None => write!(f, "NONE"),
+            FilterAction::Suppress => write!(f, "SUPPRESS"),
+            FilterAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

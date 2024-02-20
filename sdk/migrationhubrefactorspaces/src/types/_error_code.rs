@@ -159,3 +159,22 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::InvalidResourceState => write!(f, "INVALID_RESOURCE_STATE"),
+            ErrorCode::NotAuthorized => write!(f, "NOT_AUTHORIZED"),
+            ErrorCode::RequestLimitExceeded => write!(f, "REQUEST_LIMIT_EXCEEDED"),
+            ErrorCode::ResourceCreationFailure => write!(f, "RESOURCE_CREATION_FAILURE"),
+            ErrorCode::ResourceDeletionFailure => write!(f, "RESOURCE_DELETION_FAILURE"),
+            ErrorCode::ResourceInUse => write!(f, "RESOURCE_IN_USE"),
+            ErrorCode::ResourceLimitExceeded => write!(f, "RESOURCE_LIMIT_EXCEEDED"),
+            ErrorCode::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
+            ErrorCode::ResourceRetrievalFailure => write!(f, "RESOURCE_RETRIEVAL_FAILURE"),
+            ErrorCode::ResourceUpdateFailure => write!(f, "RESOURCE_UPDATE_FAILURE"),
+            ErrorCode::ServiceEndpointHealthCheckFailure => write!(f, "SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE"),
+            ErrorCode::StateTransitionFailure => write!(f, "STATE_TRANSITION_FAILURE"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

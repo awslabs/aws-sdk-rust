@@ -101,3 +101,13 @@ impl ControlOperationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ControlOperationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ControlOperationStatus::Failed => write!(f, "FAILED"),
+            ControlOperationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ControlOperationStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ControlOperationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ResourcePermission {
         }
     }
 }
+impl ::std::fmt::Display for ResourcePermission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourcePermission::FullPermission => write!(f, "FULL_PERMISSION"),
+            ResourcePermission::MissingPermission => write!(f, "MISSING_PERMISSION"),
+            ResourcePermission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

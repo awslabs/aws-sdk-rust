@@ -135,3 +135,18 @@ impl ChangeSetStatus {
         }
     }
 }
+impl ::std::fmt::Display for ChangeSetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeSetStatus::CreateComplete => write!(f, "CREATE_COMPLETE"),
+            ChangeSetStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            ChangeSetStatus::CreatePending => write!(f, "CREATE_PENDING"),
+            ChangeSetStatus::DeleteComplete => write!(f, "DELETE_COMPLETE"),
+            ChangeSetStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ChangeSetStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ChangeSetStatus::DeletePending => write!(f, "DELETE_PENDING"),
+            ChangeSetStatus::Failed => write!(f, "FAILED"),
+            ChangeSetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

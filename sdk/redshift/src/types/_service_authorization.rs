@@ -96,3 +96,12 @@ impl ServiceAuthorization {
         }
     }
 }
+impl ::std::fmt::Display for ServiceAuthorization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceAuthorization::Disabled => write!(f, "Disabled"),
+            ServiceAuthorization::Enabled => write!(f, "Enabled"),
+            ServiceAuthorization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

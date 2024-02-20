@@ -91,3 +91,11 @@ impl ProvisionedProductViewFilterBy {
         }
     }
 }
+impl ::std::fmt::Display for ProvisionedProductViewFilterBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProvisionedProductViewFilterBy::SearchQuery => write!(f, "SearchQuery"),
+            ProvisionedProductViewFilterBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

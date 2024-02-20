@@ -96,3 +96,12 @@ impl ContentHandlingStrategy {
         }
     }
 }
+impl ::std::fmt::Display for ContentHandlingStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentHandlingStrategy::ConvertToBinary => write!(f, "CONVERT_TO_BINARY"),
+            ContentHandlingStrategy::ConvertToText => write!(f, "CONVERT_TO_TEXT"),
+            ContentHandlingStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

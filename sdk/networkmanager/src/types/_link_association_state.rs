@@ -106,3 +106,14 @@ impl LinkAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for LinkAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LinkAssociationState::Available => write!(f, "AVAILABLE"),
+            LinkAssociationState::Deleted => write!(f, "DELETED"),
+            LinkAssociationState::Deleting => write!(f, "DELETING"),
+            LinkAssociationState::Pending => write!(f, "PENDING"),
+            LinkAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

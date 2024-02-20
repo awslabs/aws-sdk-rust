@@ -135,3 +135,18 @@ impl Ac3BitstreamMode {
         }
     }
 }
+impl ::std::fmt::Display for Ac3BitstreamMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ac3BitstreamMode::Commentary => write!(f, "COMMENTARY"),
+            Ac3BitstreamMode::CompleteMain => write!(f, "COMPLETE_MAIN"),
+            Ac3BitstreamMode::Dialogue => write!(f, "DIALOGUE"),
+            Ac3BitstreamMode::Emergency => write!(f, "EMERGENCY"),
+            Ac3BitstreamMode::HearingImpaired => write!(f, "HEARING_IMPAIRED"),
+            Ac3BitstreamMode::MusicAndEffects => write!(f, "MUSIC_AND_EFFECTS"),
+            Ac3BitstreamMode::VisuallyImpaired => write!(f, "VISUALLY_IMPAIRED"),
+            Ac3BitstreamMode::VoiceOver => write!(f, "VOICE_OVER"),
+            Ac3BitstreamMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

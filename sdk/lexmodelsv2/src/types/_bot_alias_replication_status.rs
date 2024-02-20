@@ -111,3 +111,15 @@ impl BotAliasReplicationStatus {
         }
     }
 }
+impl ::std::fmt::Display for BotAliasReplicationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotAliasReplicationStatus::Available => write!(f, "Available"),
+            BotAliasReplicationStatus::Creating => write!(f, "Creating"),
+            BotAliasReplicationStatus::Deleting => write!(f, "Deleting"),
+            BotAliasReplicationStatus::Failed => write!(f, "Failed"),
+            BotAliasReplicationStatus::Updating => write!(f, "Updating"),
+            BotAliasReplicationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

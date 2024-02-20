@@ -101,3 +101,13 @@ impl ProresFramerateConversionAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for ProresFramerateConversionAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProresFramerateConversionAlgorithm::DuplicateDrop => write!(f, "DUPLICATE_DROP"),
+            ProresFramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
+            ProresFramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
+            ProresFramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

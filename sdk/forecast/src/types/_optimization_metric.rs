@@ -111,3 +111,15 @@ impl OptimizationMetric {
         }
     }
 }
+impl ::std::fmt::Display for OptimizationMetric {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OptimizationMetric::AverageWeightedQuantileLoss => write!(f, "AverageWeightedQuantileLoss"),
+            OptimizationMetric::Mape => write!(f, "MAPE"),
+            OptimizationMetric::Mase => write!(f, "MASE"),
+            OptimizationMetric::Rmse => write!(f, "RMSE"),
+            OptimizationMetric::Wape => write!(f, "WAPE"),
+            OptimizationMetric::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SessionMode {
         }
     }
 }
+impl ::std::fmt::Display for SessionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SessionMode::ReadOnly => write!(f, "ReadOnly"),
+            SessionMode::ReadWrite => write!(f, "ReadWrite"),
+            SessionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl MacAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for MacAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MacAlgorithm::Cmac => write!(f, "CMAC"),
+            MacAlgorithm::HmacSha224 => write!(f, "HMAC_SHA224"),
+            MacAlgorithm::HmacSha256 => write!(f, "HMAC_SHA256"),
+            MacAlgorithm::HmacSha384 => write!(f, "HMAC_SHA384"),
+            MacAlgorithm::HmacSha512 => write!(f, "HMAC_SHA512"),
+            MacAlgorithm::Iso9797Algorithm1 => write!(f, "ISO9797_ALGORITHM1"),
+            MacAlgorithm::Iso9797Algorithm3 => write!(f, "ISO9797_ALGORITHM3"),
+            MacAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

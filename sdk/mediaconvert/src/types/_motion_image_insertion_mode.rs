@@ -96,3 +96,12 @@ impl MotionImageInsertionMode {
         }
     }
 }
+impl ::std::fmt::Display for MotionImageInsertionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MotionImageInsertionMode::Mov => write!(f, "MOV"),
+            MotionImageInsertionMode::Png => write!(f, "PNG"),
+            MotionImageInsertionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

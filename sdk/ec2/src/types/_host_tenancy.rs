@@ -96,3 +96,12 @@ impl HostTenancy {
         }
     }
 }
+impl ::std::fmt::Display for HostTenancy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HostTenancy::Dedicated => write!(f, "dedicated"),
+            HostTenancy::Host => write!(f, "host"),
+            HostTenancy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

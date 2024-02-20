@@ -96,3 +96,12 @@ impl HttpEndpointS3BackupMode {
         }
     }
 }
+impl ::std::fmt::Display for HttpEndpointS3BackupMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HttpEndpointS3BackupMode::AllData => write!(f, "AllData"),
+            HttpEndpointS3BackupMode::FailedDataOnly => write!(f, "FailedDataOnly"),
+            HttpEndpointS3BackupMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

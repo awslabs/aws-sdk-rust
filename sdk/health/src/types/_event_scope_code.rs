@@ -101,3 +101,13 @@ impl EventScopeCode {
         }
     }
 }
+impl ::std::fmt::Display for EventScopeCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventScopeCode::AccountSpecific => write!(f, "ACCOUNT_SPECIFIC"),
+            EventScopeCode::None => write!(f, "NONE"),
+            EventScopeCode::Public => write!(f, "PUBLIC"),
+            EventScopeCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

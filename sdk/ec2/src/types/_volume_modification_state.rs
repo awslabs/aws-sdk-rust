@@ -106,3 +106,14 @@ impl VolumeModificationState {
         }
     }
 }
+impl ::std::fmt::Display for VolumeModificationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeModificationState::Completed => write!(f, "completed"),
+            VolumeModificationState::Failed => write!(f, "failed"),
+            VolumeModificationState::Modifying => write!(f, "modifying"),
+            VolumeModificationState::Optimizing => write!(f, "optimizing"),
+            VolumeModificationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

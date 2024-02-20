@@ -106,3 +106,14 @@ impl OutputFormat {
         }
     }
 }
+impl ::std::fmt::Display for OutputFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputFormat::Json => write!(f, "json"),
+            OutputFormat::Mp3 => write!(f, "mp3"),
+            OutputFormat::OggVorbis => write!(f, "ogg_vorbis"),
+            OutputFormat::Pcm => write!(f, "pcm"),
+            OutputFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

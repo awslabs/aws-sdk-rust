@@ -96,3 +96,12 @@ impl ShiftType {
         }
     }
 }
+impl ::std::fmt::Display for ShiftType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShiftType::Overridden => write!(f, "OVERRIDDEN"),
+            ShiftType::Regular => write!(f, "REGULAR"),
+            ShiftType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

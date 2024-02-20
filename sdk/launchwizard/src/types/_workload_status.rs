@@ -106,3 +106,14 @@ impl WorkloadStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorkloadStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkloadStatus::Active => write!(f, "ACTIVE"),
+            WorkloadStatus::Deleted => write!(f, "DELETED"),
+            WorkloadStatus::Disabled => write!(f, "DISABLED"),
+            WorkloadStatus::Inactive => write!(f, "INACTIVE"),
+            WorkloadStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

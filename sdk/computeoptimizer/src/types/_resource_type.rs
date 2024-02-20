@@ -129,3 +129,17 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::AutoScalingGroup => write!(f, "AutoScalingGroup"),
+            ResourceType::EbsVolume => write!(f, "EbsVolume"),
+            ResourceType::Ec2Instance => write!(f, "Ec2Instance"),
+            ResourceType::EcsService => write!(f, "EcsService"),
+            ResourceType::LambdaFunction => write!(f, "LambdaFunction"),
+            ResourceType::License => write!(f, "License"),
+            ResourceType::NotApplicable => write!(f, "NotApplicable"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

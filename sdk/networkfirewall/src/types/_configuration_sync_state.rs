@@ -101,3 +101,13 @@ impl ConfigurationSyncState {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationSyncState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationSyncState::CapacityConstrained => write!(f, "CAPACITY_CONSTRAINED"),
+            ConfigurationSyncState::InSync => write!(f, "IN_SYNC"),
+            ConfigurationSyncState::Pending => write!(f, "PENDING"),
+            ConfigurationSyncState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

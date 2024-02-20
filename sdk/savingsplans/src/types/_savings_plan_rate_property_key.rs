@@ -111,3 +111,15 @@ impl SavingsPlanRatePropertyKey {
         }
     }
 }
+impl ::std::fmt::Display for SavingsPlanRatePropertyKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SavingsPlanRatePropertyKey::InstanceFamily => write!(f, "instanceFamily"),
+            SavingsPlanRatePropertyKey::InstanceType => write!(f, "instanceType"),
+            SavingsPlanRatePropertyKey::ProductDescription => write!(f, "productDescription"),
+            SavingsPlanRatePropertyKey::Region => write!(f, "region"),
+            SavingsPlanRatePropertyKey::Tenancy => write!(f, "tenancy"),
+            SavingsPlanRatePropertyKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

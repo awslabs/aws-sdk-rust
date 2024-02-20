@@ -147,3 +147,20 @@ impl ResourceAttributeType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceAttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceAttributeType::BiosId => write!(f, "BIOS_ID"),
+            ResourceAttributeType::Fqdn => write!(f, "FQDN"),
+            ResourceAttributeType::Ipv4Address => write!(f, "IPV4_ADDRESS"),
+            ResourceAttributeType::Ipv6Address => write!(f, "IPV6_ADDRESS"),
+            ResourceAttributeType::MacAddress => write!(f, "MAC_ADDRESS"),
+            ResourceAttributeType::MotherboardSerialNumber => write!(f, "MOTHERBOARD_SERIAL_NUMBER"),
+            ResourceAttributeType::VmManagedObjectReference => write!(f, "VM_MANAGED_OBJECT_REFERENCE"),
+            ResourceAttributeType::VmManagerId => write!(f, "VM_MANAGER_ID"),
+            ResourceAttributeType::VmName => write!(f, "VM_NAME"),
+            ResourceAttributeType::VmPath => write!(f, "VM_PATH"),
+            ResourceAttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

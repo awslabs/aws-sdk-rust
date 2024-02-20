@@ -91,3 +91,11 @@ impl StorageClassAnalysisSchemaVersion {
         }
     }
 }
+impl ::std::fmt::Display for StorageClassAnalysisSchemaVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageClassAnalysisSchemaVersion::V1 => write!(f, "V_1"),
+            StorageClassAnalysisSchemaVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

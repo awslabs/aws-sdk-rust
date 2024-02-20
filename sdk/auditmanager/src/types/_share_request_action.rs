@@ -101,3 +101,13 @@ impl ShareRequestAction {
         }
     }
 }
+impl ::std::fmt::Display for ShareRequestAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareRequestAction::Accept => write!(f, "ACCEPT"),
+            ShareRequestAction::Decline => write!(f, "DECLINE"),
+            ShareRequestAction::Revoke => write!(f, "REVOKE"),
+            ShareRequestAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

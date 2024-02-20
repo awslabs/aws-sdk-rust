@@ -96,3 +96,12 @@ impl AppVisibility {
         }
     }
 }
+impl ::std::fmt::Display for AppVisibility {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppVisibility::All => write!(f, "ALL"),
+            AppVisibility::Associated => write!(f, "ASSOCIATED"),
+            AppVisibility::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

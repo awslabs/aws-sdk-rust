@@ -96,3 +96,12 @@ impl HlsClientCache {
         }
     }
 }
+impl ::std::fmt::Display for HlsClientCache {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsClientCache::Disabled => write!(f, "DISABLED"),
+            HlsClientCache::Enabled => write!(f, "ENABLED"),
+            HlsClientCache::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

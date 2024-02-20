@@ -96,3 +96,12 @@ impl AuthorizationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for AuthorizationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthorizationStrategy::AwsAuth => write!(f, "AWS_AUTH"),
+            AuthorizationStrategy::Smartv1 => write!(f, "SMART_ON_FHIR_V1"),
+            AuthorizationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

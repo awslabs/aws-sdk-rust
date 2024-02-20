@@ -106,3 +106,14 @@ impl RetentionIntervalUnitValues {
         }
     }
 }
+impl ::std::fmt::Display for RetentionIntervalUnitValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetentionIntervalUnitValues::Days => write!(f, "DAYS"),
+            RetentionIntervalUnitValues::Months => write!(f, "MONTHS"),
+            RetentionIntervalUnitValues::Weeks => write!(f, "WEEKS"),
+            RetentionIntervalUnitValues::Years => write!(f, "YEARS"),
+            RetentionIntervalUnitValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

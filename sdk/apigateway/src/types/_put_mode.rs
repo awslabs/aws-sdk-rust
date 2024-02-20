@@ -96,3 +96,12 @@ impl PutMode {
         }
     }
 }
+impl ::std::fmt::Display for PutMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PutMode::Merge => write!(f, "merge"),
+            PutMode::Overwrite => write!(f, "overwrite"),
+            PutMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

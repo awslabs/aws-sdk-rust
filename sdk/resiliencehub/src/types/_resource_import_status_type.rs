@@ -106,3 +106,14 @@ impl ResourceImportStatusType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceImportStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceImportStatusType::Failed => write!(f, "Failed"),
+            ResourceImportStatusType::InProgress => write!(f, "InProgress"),
+            ResourceImportStatusType::Pending => write!(f, "Pending"),
+            ResourceImportStatusType::Success => write!(f, "Success"),
+            ResourceImportStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

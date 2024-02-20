@@ -106,3 +106,14 @@ impl VpnState {
         }
     }
 }
+impl ::std::fmt::Display for VpnState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpnState::Available => write!(f, "available"),
+            VpnState::Deleted => write!(f, "deleted"),
+            VpnState::Deleting => write!(f, "deleting"),
+            VpnState::Pending => write!(f, "pending"),
+            VpnState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

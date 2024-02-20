@@ -101,3 +101,13 @@ impl AutodefinedReverseFlag {
         }
     }
 }
+impl ::std::fmt::Display for AutodefinedReverseFlag {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutodefinedReverseFlag::Disable => write!(f, "DISABLE"),
+            AutodefinedReverseFlag::Enable => write!(f, "ENABLE"),
+            AutodefinedReverseFlag::UseLocalResourceSetting => write!(f, "USE_LOCAL_RESOURCE_SETTING"),
+            AutodefinedReverseFlag::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

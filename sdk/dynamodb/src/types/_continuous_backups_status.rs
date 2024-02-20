@@ -96,3 +96,12 @@ impl ContinuousBackupsStatus {
         }
     }
 }
+impl ::std::fmt::Display for ContinuousBackupsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContinuousBackupsStatus::Disabled => write!(f, "DISABLED"),
+            ContinuousBackupsStatus::Enabled => write!(f, "ENABLED"),
+            ContinuousBackupsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

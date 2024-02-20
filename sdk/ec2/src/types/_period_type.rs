@@ -116,3 +116,16 @@ impl PeriodType {
         }
     }
 }
+impl ::std::fmt::Display for PeriodType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PeriodType::FifteenMinutes => write!(f, "fifteen-minutes"),
+            PeriodType::FiveMinutes => write!(f, "five-minutes"),
+            PeriodType::OneDay => write!(f, "one-day"),
+            PeriodType::OneHour => write!(f, "one-hour"),
+            PeriodType::OneWeek => write!(f, "one-week"),
+            PeriodType::ThreeHours => write!(f, "three-hours"),
+            PeriodType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

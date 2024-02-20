@@ -96,3 +96,12 @@ impl DocumentReadMode {
         }
     }
 }
+impl ::std::fmt::Display for DocumentReadMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentReadMode::ForceDocumentReadAction => write!(f, "FORCE_DOCUMENT_READ_ACTION"),
+            DocumentReadMode::ServiceDefault => write!(f, "SERVICE_DEFAULT"),
+            DocumentReadMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

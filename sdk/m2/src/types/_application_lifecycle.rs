@@ -153,3 +153,21 @@ impl ApplicationLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationLifecycle::Available => write!(f, "Available"),
+            ApplicationLifecycle::Created => write!(f, "Created"),
+            ApplicationLifecycle::Creating => write!(f, "Creating"),
+            ApplicationLifecycle::Deleting => write!(f, "Deleting"),
+            ApplicationLifecycle::DeletingFromEnvironment => write!(f, "Deleting From Environment"),
+            ApplicationLifecycle::Failed => write!(f, "Failed"),
+            ApplicationLifecycle::Ready => write!(f, "Ready"),
+            ApplicationLifecycle::Running => write!(f, "Running"),
+            ApplicationLifecycle::Starting => write!(f, "Starting"),
+            ApplicationLifecycle::Stopped => write!(f, "Stopped"),
+            ApplicationLifecycle::Stopping => write!(f, "Stopping"),
+            ApplicationLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

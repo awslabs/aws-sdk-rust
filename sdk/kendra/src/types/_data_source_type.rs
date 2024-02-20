@@ -201,3 +201,29 @@ impl DataSourceType {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceType::Alfresco => write!(f, "ALFRESCO"),
+            DataSourceType::Box => write!(f, "BOX"),
+            DataSourceType::Confluence => write!(f, "CONFLUENCE"),
+            DataSourceType::Custom => write!(f, "CUSTOM"),
+            DataSourceType::Database => write!(f, "DATABASE"),
+            DataSourceType::Fsx => write!(f, "FSX"),
+            DataSourceType::Github => write!(f, "GITHUB"),
+            DataSourceType::Googledrive => write!(f, "GOOGLEDRIVE"),
+            DataSourceType::Jira => write!(f, "JIRA"),
+            DataSourceType::Onedrive => write!(f, "ONEDRIVE"),
+            DataSourceType::Quip => write!(f, "QUIP"),
+            DataSourceType::S3 => write!(f, "S3"),
+            DataSourceType::Salesforce => write!(f, "SALESFORCE"),
+            DataSourceType::Servicenow => write!(f, "SERVICENOW"),
+            DataSourceType::Sharepoint => write!(f, "SHAREPOINT"),
+            DataSourceType::Slack => write!(f, "SLACK"),
+            DataSourceType::Template => write!(f, "TEMPLATE"),
+            DataSourceType::Webcrawler => write!(f, "WEBCRAWLER"),
+            DataSourceType::Workdocs => write!(f, "WORKDOCS"),
+            DataSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

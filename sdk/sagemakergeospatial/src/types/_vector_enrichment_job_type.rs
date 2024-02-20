@@ -96,3 +96,12 @@ impl VectorEnrichmentJobType {
         }
     }
 }
+impl ::std::fmt::Display for VectorEnrichmentJobType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VectorEnrichmentJobType::MapMatching => write!(f, "MAP_MATCHING"),
+            VectorEnrichmentJobType::ReverseGeocoding => write!(f, "REVERSE_GEOCODING"),
+            VectorEnrichmentJobType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

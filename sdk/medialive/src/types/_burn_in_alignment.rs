@@ -101,3 +101,13 @@ impl BurnInAlignment {
         }
     }
 }
+impl ::std::fmt::Display for BurnInAlignment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurnInAlignment::Centered => write!(f, "CENTERED"),
+            BurnInAlignment::Left => write!(f, "LEFT"),
+            BurnInAlignment::Smart => write!(f, "SMART"),
+            BurnInAlignment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

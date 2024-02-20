@@ -189,3 +189,27 @@ impl WorkspaceState {
         }
     }
 }
+impl ::std::fmt::Display for WorkspaceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkspaceState::AdminMaintenance => write!(f, "ADMIN_MAINTENANCE"),
+            WorkspaceState::Available => write!(f, "AVAILABLE"),
+            WorkspaceState::Error => write!(f, "ERROR"),
+            WorkspaceState::Impaired => write!(f, "IMPAIRED"),
+            WorkspaceState::Maintenance => write!(f, "MAINTENANCE"),
+            WorkspaceState::Pending => write!(f, "PENDING"),
+            WorkspaceState::Rebooting => write!(f, "REBOOTING"),
+            WorkspaceState::Rebuilding => write!(f, "REBUILDING"),
+            WorkspaceState::Restoring => write!(f, "RESTORING"),
+            WorkspaceState::Starting => write!(f, "STARTING"),
+            WorkspaceState::Stopped => write!(f, "STOPPED"),
+            WorkspaceState::Stopping => write!(f, "STOPPING"),
+            WorkspaceState::Suspended => write!(f, "SUSPENDED"),
+            WorkspaceState::Terminated => write!(f, "TERMINATED"),
+            WorkspaceState::Terminating => write!(f, "TERMINATING"),
+            WorkspaceState::Unhealthy => write!(f, "UNHEALTHY"),
+            WorkspaceState::Updating => write!(f, "UPDATING"),
+            WorkspaceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

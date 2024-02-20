@@ -129,3 +129,17 @@ impl AssetBundleImportJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for AssetBundleImportJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetBundleImportJobStatus::Failed => write!(f, "FAILED"),
+            AssetBundleImportJobStatus::FailedRollbackCompleted => write!(f, "FAILED_ROLLBACK_COMPLETED"),
+            AssetBundleImportJobStatus::FailedRollbackError => write!(f, "FAILED_ROLLBACK_ERROR"),
+            AssetBundleImportJobStatus::FailedRollbackInProgress => write!(f, "FAILED_ROLLBACK_IN_PROGRESS"),
+            AssetBundleImportJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            AssetBundleImportJobStatus::QueuedForImmediateExecution => write!(f, "QUEUED_FOR_IMMEDIATE_EXECUTION"),
+            AssetBundleImportJobStatus::Successful => write!(f, "SUCCESSFUL"),
+            AssetBundleImportJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

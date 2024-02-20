@@ -96,3 +96,12 @@ impl AssessmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for AssessmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssessmentStatus::Active => write!(f, "ACTIVE"),
+            AssessmentStatus::Inactive => write!(f, "INACTIVE"),
+            AssessmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

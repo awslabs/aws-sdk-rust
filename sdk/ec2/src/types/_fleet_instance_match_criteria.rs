@@ -91,3 +91,11 @@ impl FleetInstanceMatchCriteria {
         }
     }
 }
+impl ::std::fmt::Display for FleetInstanceMatchCriteria {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetInstanceMatchCriteria::Open => write!(f, "open"),
+            FleetInstanceMatchCriteria::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

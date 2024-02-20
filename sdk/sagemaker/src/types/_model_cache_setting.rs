@@ -96,3 +96,12 @@ impl ModelCacheSetting {
         }
     }
 }
+impl ::std::fmt::Display for ModelCacheSetting {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelCacheSetting::Disabled => write!(f, "Disabled"),
+            ModelCacheSetting::Enabled => write!(f, "Enabled"),
+            ModelCacheSetting::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

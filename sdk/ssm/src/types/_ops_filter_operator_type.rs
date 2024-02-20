@@ -116,3 +116,16 @@ impl OpsFilterOperatorType {
         }
     }
 }
+impl ::std::fmt::Display for OpsFilterOperatorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpsFilterOperatorType::BeginWith => write!(f, "BeginWith"),
+            OpsFilterOperatorType::Equal => write!(f, "Equal"),
+            OpsFilterOperatorType::Exists => write!(f, "Exists"),
+            OpsFilterOperatorType::GreaterThan => write!(f, "GreaterThan"),
+            OpsFilterOperatorType::LessThan => write!(f, "LessThan"),
+            OpsFilterOperatorType::NotEqual => write!(f, "NotEqual"),
+            OpsFilterOperatorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ImageSetState {
         }
     }
 }
+impl ::std::fmt::Display for ImageSetState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageSetState::Active => write!(f, "ACTIVE"),
+            ImageSetState::Deleted => write!(f, "DELETED"),
+            ImageSetState::Locked => write!(f, "LOCKED"),
+            ImageSetState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

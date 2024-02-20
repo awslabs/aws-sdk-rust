@@ -96,3 +96,12 @@ impl BillingGroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for BillingGroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BillingGroupStatus::Active => write!(f, "ACTIVE"),
+            BillingGroupStatus::PrimaryAccountMissing => write!(f, "PRIMARY_ACCOUNT_MISSING"),
+            BillingGroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

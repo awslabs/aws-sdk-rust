@@ -101,3 +101,13 @@ impl ThroughputMode {
         }
     }
 }
+impl ::std::fmt::Display for ThroughputMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThroughputMode::Bursting => write!(f, "bursting"),
+            ThroughputMode::Elastic => write!(f, "elastic"),
+            ThroughputMode::Provisioned => write!(f, "provisioned"),
+            ThroughputMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

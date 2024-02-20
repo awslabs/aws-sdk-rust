@@ -101,3 +101,13 @@ impl OpenSearchWarmPartitionInstanceType {
         }
     }
 }
+impl ::std::fmt::Display for OpenSearchWarmPartitionInstanceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpenSearchWarmPartitionInstanceType::Ultrawarm1LargeSearch => write!(f, "ultrawarm1.large.search"),
+            OpenSearchWarmPartitionInstanceType::Ultrawarm1MediumSearch => write!(f, "ultrawarm1.medium.search"),
+            OpenSearchWarmPartitionInstanceType::Ultrawarm1XlargeSearch => write!(f, "ultrawarm1.xlarge.search"),
+            OpenSearchWarmPartitionInstanceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

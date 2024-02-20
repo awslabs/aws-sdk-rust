@@ -315,3 +315,48 @@ impl ValidationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ValidationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationExceptionReason::AttachmentTypeNotSupported => write!(f, "ATTACHMENT_TYPE_NOT_SUPPORTED"),
+            ValidationExceptionReason::CannotAddOptedOutNumber => write!(f, "CANNOT_ADD_OPTED_OUT_NUMBER"),
+            ValidationExceptionReason::CannotParse => write!(f, "CANNOT_PARSE"),
+            ValidationExceptionReason::CountryCodeMismatch => write!(f, "COUNTRY_CODE_MISMATCH"),
+            ValidationExceptionReason::DestinationCountryBlocked => write!(f, "DESTINATION_COUNTRY_BLOCKED"),
+            ValidationExceptionReason::FieldValidationFailed => write!(f, "FIELD_VALIDATION_FAILED"),
+            ValidationExceptionReason::InvalidArn => write!(f, "INVALID_ARN"),
+            ValidationExceptionReason::InvalidFilterValues => write!(f, "INVALID_FILTER_VALUES"),
+            ValidationExceptionReason::InvalidIdentityForDestinationCountry => write!(f, "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY"),
+            ValidationExceptionReason::InvalidNextToken => write!(f, "INVALID_NEXT_TOKEN"),
+            ValidationExceptionReason::InvalidParameter => write!(f, "INVALID_PARAMETER"),
+            ValidationExceptionReason::InvalidRegistrationAssociation => write!(f, "INVALID_REGISTRATION_ASSOCIATION"),
+            ValidationExceptionReason::InvalidRequest => write!(f, "INVALID_REQUEST"),
+            ValidationExceptionReason::MaximumSizeExceeded => write!(f, "MAXIMUM_SIZE_EXCEEDED"),
+            ValidationExceptionReason::MissingParameter => write!(f, "MISSING_PARAMETER"),
+            ValidationExceptionReason::Other => write!(f, "OTHER"),
+            ValidationExceptionReason::ParametersCannotBeUsedTogether => write!(f, "PARAMETERS_CANNOT_BE_USED_TOGETHER"),
+            ValidationExceptionReason::PhoneNumberCannotBeOptedIn => write!(f, "PHONE_NUMBER_CANNOT_BE_OPTED_IN"),
+            ValidationExceptionReason::PhoneNumberCannotBeReleased => write!(f, "PHONE_NUMBER_CANNOT_BE_RELEASED"),
+            ValidationExceptionReason::PriceOverThreshold => write!(f, "PRICE_OVER_THRESHOLD"),
+            ValidationExceptionReason::RegistrationFieldCannotBeDeleted => write!(f, "REGISTRATION_FIELD_CANNOT_BE_DELETED"),
+            ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit => write!(f, "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT"),
+            ValidationExceptionReason::ResourceNotAccessible => write!(f, "RESOURCE_NOT_ACCESSIBLE"),
+            ValidationExceptionReason::SenderIdNotRegistered => write!(f, "SENDER_ID_NOT_REGISTERED"),
+            ValidationExceptionReason::SenderIdNotSupported => write!(f, "SENDER_ID_NOT_SUPPORTED"),
+            ValidationExceptionReason::SenderIdRequiresRegistration => write!(f, "SENDER_ID_REQUIRES_REGISTRATION"),
+            ValidationExceptionReason::TwoWayChannelNotPresent => write!(f, "TWO_WAY_CHANNEL_NOT_PRESENT"),
+            ValidationExceptionReason::TwoWayNotEnabled => write!(f, "TWO_WAY_NOT_ENABLED"),
+            ValidationExceptionReason::TwoWayNotSupportedInCountry => write!(f, "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY"),
+            ValidationExceptionReason::TwoWayNotSupportedInRegion => write!(f, "TWO_WAY_NOT_SUPPORTED_IN_REGION"),
+            ValidationExceptionReason::TwoWayTopicNotPresent => write!(f, "TWO_WAY_TOPIC_NOT_PRESENT"),
+            ValidationExceptionReason::UnknownOperation => write!(f, "UNKNOWN_OPERATION"),
+            ValidationExceptionReason::UnknownRegistrationField => write!(f, "UNKNOWN_REGISTRATION_FIELD"),
+            ValidationExceptionReason::UnknownRegistrationSection => write!(f, "UNKNOWN_REGISTRATION_SECTION"),
+            ValidationExceptionReason::UnknownRegistrationType => write!(f, "UNKNOWN_REGISTRATION_TYPE"),
+            ValidationExceptionReason::UnknownRegistrationVersion => write!(f, "UNKNOWN_REGISTRATION_VERSION"),
+            ValidationExceptionReason::VerificationCodeMismatch => write!(f, "VERIFICATION_CODE_MISMATCH"),
+            ValidationExceptionReason::VoiceCapabilityNotAvailable => write!(f, "VOICE_CAPABILITY_NOT_AVAILABLE"),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

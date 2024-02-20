@@ -141,3 +141,19 @@ impl BotRecommendationStatus {
         }
     }
 }
+impl ::std::fmt::Display for BotRecommendationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotRecommendationStatus::Available => write!(f, "Available"),
+            BotRecommendationStatus::Deleted => write!(f, "Deleted"),
+            BotRecommendationStatus::Deleting => write!(f, "Deleting"),
+            BotRecommendationStatus::Downloading => write!(f, "Downloading"),
+            BotRecommendationStatus::Failed => write!(f, "Failed"),
+            BotRecommendationStatus::Processing => write!(f, "Processing"),
+            BotRecommendationStatus::Stopped => write!(f, "Stopped"),
+            BotRecommendationStatus::Stopping => write!(f, "Stopping"),
+            BotRecommendationStatus::Updating => write!(f, "Updating"),
+            BotRecommendationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

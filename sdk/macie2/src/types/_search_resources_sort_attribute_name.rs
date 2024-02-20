@@ -111,3 +111,14 @@ impl SearchResourcesSortAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for SearchResourcesSortAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchResourcesSortAttributeName::AccountId => write!(f, "ACCOUNT_ID"),
+            SearchResourcesSortAttributeName::ResourceName => write!(f, "RESOURCE_NAME"),
+            SearchResourcesSortAttributeName::S3ClassifiableObjectCount => write!(f, "S3_CLASSIFIABLE_OBJECT_COUNT"),
+            SearchResourcesSortAttributeName::S3ClassifiableSizeInBytes => write!(f, "S3_CLASSIFIABLE_SIZE_IN_BYTES"),
+            SearchResourcesSortAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

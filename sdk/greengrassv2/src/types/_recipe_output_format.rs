@@ -96,3 +96,12 @@ impl RecipeOutputFormat {
         }
     }
 }
+impl ::std::fmt::Display for RecipeOutputFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecipeOutputFormat::Json => write!(f, "JSON"),
+            RecipeOutputFormat::Yaml => write!(f, "YAML"),
+            RecipeOutputFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

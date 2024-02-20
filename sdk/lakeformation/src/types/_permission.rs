@@ -165,3 +165,23 @@ impl Permission {
         }
     }
 }
+impl ::std::fmt::Display for Permission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Permission::All => write!(f, "ALL"),
+            Permission::Alter => write!(f, "ALTER"),
+            Permission::Associate => write!(f, "ASSOCIATE"),
+            Permission::CreateDatabase => write!(f, "CREATE_DATABASE"),
+            Permission::CreateLfTag => write!(f, "CREATE_LF_TAG"),
+            Permission::CreateTable => write!(f, "CREATE_TABLE"),
+            Permission::DataLocationAccess => write!(f, "DATA_LOCATION_ACCESS"),
+            Permission::Delete => write!(f, "DELETE"),
+            Permission::Describe => write!(f, "DESCRIBE"),
+            Permission::Drop => write!(f, "DROP"),
+            Permission::GrantWithLfTagExpression => write!(f, "GRANT_WITH_LF_TAG_EXPRESSION"),
+            Permission::Insert => write!(f, "INSERT"),
+            Permission::Select => write!(f, "SELECT"),
+            Permission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

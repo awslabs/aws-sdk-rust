@@ -159,3 +159,22 @@ impl PiiEntityType {
         }
     }
 }
+impl ::std::fmt::Display for PiiEntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PiiEntityType::Address => write!(f, "ADDRESS"),
+            PiiEntityType::All => write!(f, "ALL"),
+            PiiEntityType::BankAccountNumber => write!(f, "BANK_ACCOUNT_NUMBER"),
+            PiiEntityType::BankRouting => write!(f, "BANK_ROUTING"),
+            PiiEntityType::CreditDebitCvv => write!(f, "CREDIT_DEBIT_CVV"),
+            PiiEntityType::CreditDebitExpiry => write!(f, "CREDIT_DEBIT_EXPIRY"),
+            PiiEntityType::CreditDebitNumber => write!(f, "CREDIT_DEBIT_NUMBER"),
+            PiiEntityType::Email => write!(f, "EMAIL"),
+            PiiEntityType::Name => write!(f, "NAME"),
+            PiiEntityType::Phone => write!(f, "PHONE"),
+            PiiEntityType::Pin => write!(f, "PIN"),
+            PiiEntityType::Ssn => write!(f, "SSN"),
+            PiiEntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

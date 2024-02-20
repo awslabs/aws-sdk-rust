@@ -96,3 +96,12 @@ impl MpdCaptionContainerType {
         }
     }
 }
+impl ::std::fmt::Display for MpdCaptionContainerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MpdCaptionContainerType::FragmentedMp4 => write!(f, "FRAGMENTED_MP4"),
+            MpdCaptionContainerType::Raw => write!(f, "RAW"),
+            MpdCaptionContainerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

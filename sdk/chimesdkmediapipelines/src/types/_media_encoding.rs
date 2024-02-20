@@ -91,3 +91,11 @@ impl MediaEncoding {
         }
     }
 }
+impl ::std::fmt::Display for MediaEncoding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaEncoding::Pcm => write!(f, "pcm"),
+            MediaEncoding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

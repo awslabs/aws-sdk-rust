@@ -111,3 +111,15 @@ impl Event {
         }
     }
 }
+impl ::std::fmt::Display for Event {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Event::Ack => write!(f, "ack"),
+            Event::Discovered => write!(f, "discovered"),
+            Event::Lost => write!(f, "lost"),
+            Event::Nack => write!(f, "nack"),
+            Event::Passthrough => write!(f, "passthrough"),
+            Event::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

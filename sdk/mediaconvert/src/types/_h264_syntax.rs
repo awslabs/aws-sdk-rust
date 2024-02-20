@@ -96,3 +96,12 @@ impl H264Syntax {
         }
     }
 }
+impl ::std::fmt::Display for H264Syntax {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264Syntax::Default => write!(f, "DEFAULT"),
+            H264Syntax::Rp2027 => write!(f, "RP2027"),
+            H264Syntax::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl RetrievalMode {
         }
     }
 }
+impl ::std::fmt::Display for RetrievalMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetrievalMode::AssumeRole => write!(f, "ASSUME_ROLE"),
+            RetrievalMode::CallerCredentials => write!(f, "CALLER_CREDENTIALS"),
+            RetrievalMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

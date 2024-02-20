@@ -96,3 +96,12 @@ impl SettingType {
         }
     }
 }
+impl ::std::fmt::Display for SettingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SettingType::AwsManaged => write!(f, "aws_managed"),
+            SettingType::User => write!(f, "user"),
+            SettingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

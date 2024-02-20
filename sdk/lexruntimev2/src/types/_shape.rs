@@ -101,3 +101,13 @@ impl Shape {
         }
     }
 }
+impl ::std::fmt::Display for Shape {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Shape::Composite => write!(f, "Composite"),
+            Shape::List => write!(f, "List"),
+            Shape::Scalar => write!(f, "Scalar"),
+            Shape::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

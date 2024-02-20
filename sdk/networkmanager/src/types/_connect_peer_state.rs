@@ -106,3 +106,14 @@ impl ConnectPeerState {
         }
     }
 }
+impl ::std::fmt::Display for ConnectPeerState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectPeerState::Available => write!(f, "AVAILABLE"),
+            ConnectPeerState::Creating => write!(f, "CREATING"),
+            ConnectPeerState::Deleting => write!(f, "DELETING"),
+            ConnectPeerState::Failed => write!(f, "FAILED"),
+            ConnectPeerState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

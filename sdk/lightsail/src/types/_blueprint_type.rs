@@ -96,3 +96,12 @@ impl BlueprintType {
         }
     }
 }
+impl ::std::fmt::Display for BlueprintType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BlueprintType::App => write!(f, "app"),
+            BlueprintType::Os => write!(f, "os"),
+            BlueprintType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

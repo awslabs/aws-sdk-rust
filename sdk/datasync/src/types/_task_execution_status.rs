@@ -121,3 +121,17 @@ impl TaskExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for TaskExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskExecutionStatus::Error => write!(f, "ERROR"),
+            TaskExecutionStatus::Launching => write!(f, "LAUNCHING"),
+            TaskExecutionStatus::Preparing => write!(f, "PREPARING"),
+            TaskExecutionStatus::Queued => write!(f, "QUEUED"),
+            TaskExecutionStatus::Success => write!(f, "SUCCESS"),
+            TaskExecutionStatus::Transferring => write!(f, "TRANSFERRING"),
+            TaskExecutionStatus::Verifying => write!(f, "VERIFYING"),
+            TaskExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

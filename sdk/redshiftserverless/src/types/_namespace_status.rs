@@ -101,3 +101,13 @@ impl NamespaceStatus {
         }
     }
 }
+impl ::std::fmt::Display for NamespaceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NamespaceStatus::Available => write!(f, "AVAILABLE"),
+            NamespaceStatus::Deleting => write!(f, "DELETING"),
+            NamespaceStatus::Modifying => write!(f, "MODIFYING"),
+            NamespaceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

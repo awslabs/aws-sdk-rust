@@ -101,3 +101,13 @@ impl ChoiceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ChoiceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChoiceStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
+            ChoiceStatus::Selected => write!(f, "SELECTED"),
+            ChoiceStatus::Unselected => write!(f, "UNSELECTED"),
+            ChoiceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

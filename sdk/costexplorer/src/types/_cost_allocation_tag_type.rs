@@ -96,3 +96,12 @@ impl CostAllocationTagType {
         }
     }
 }
+impl ::std::fmt::Display for CostAllocationTagType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CostAllocationTagType::AwsGenerated => write!(f, "AWSGenerated"),
+            CostAllocationTagType::UserDefined => write!(f, "UserDefined"),
+            CostAllocationTagType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

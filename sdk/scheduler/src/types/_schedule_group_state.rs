@@ -96,3 +96,12 @@ impl ScheduleGroupState {
         }
     }
 }
+impl ::std::fmt::Display for ScheduleGroupState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduleGroupState::Active => write!(f, "ACTIVE"),
+            ScheduleGroupState::Deleting => write!(f, "DELETING"),
+            ScheduleGroupState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

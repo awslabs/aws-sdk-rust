@@ -91,3 +91,11 @@ impl RegistrationAttachmentFilterName {
         }
     }
 }
+impl ::std::fmt::Display for RegistrationAttachmentFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistrationAttachmentFilterName::AttachmentStatus => write!(f, "attachment-status"),
+            RegistrationAttachmentFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

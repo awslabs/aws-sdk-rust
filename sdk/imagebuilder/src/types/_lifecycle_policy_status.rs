@@ -96,3 +96,12 @@ impl LifecyclePolicyStatus {
         }
     }
 }
+impl ::std::fmt::Display for LifecyclePolicyStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecyclePolicyStatus::Disabled => write!(f, "DISABLED"),
+            LifecyclePolicyStatus::Enabled => write!(f, "ENABLED"),
+            LifecyclePolicyStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl EbsNvmeSupport {
         }
     }
 }
+impl ::std::fmt::Display for EbsNvmeSupport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EbsNvmeSupport::Required => write!(f, "required"),
+            EbsNvmeSupport::Supported => write!(f, "supported"),
+            EbsNvmeSupport::Unsupported => write!(f, "unsupported"),
+            EbsNvmeSupport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl BatchJobType {
         }
     }
 }
+impl ::std::fmt::Display for BatchJobType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchJobType::Jes2 => write!(f, "JES2"),
+            BatchJobType::Jes3 => write!(f, "JES3"),
+            BatchJobType::Vse => write!(f, "VSE"),
+            BatchJobType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl MsSmoothManifestEncoding {
         }
     }
 }
+impl ::std::fmt::Display for MsSmoothManifestEncoding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MsSmoothManifestEncoding::Utf16 => write!(f, "UTF16"),
+            MsSmoothManifestEncoding::Utf8 => write!(f, "UTF8"),
+            MsSmoothManifestEncoding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

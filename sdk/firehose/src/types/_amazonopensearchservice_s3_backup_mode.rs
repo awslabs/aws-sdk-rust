@@ -96,3 +96,12 @@ impl AmazonopensearchserviceS3BackupMode {
         }
     }
 }
+impl ::std::fmt::Display for AmazonopensearchserviceS3BackupMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AmazonopensearchserviceS3BackupMode::AllDocuments => write!(f, "AllDocuments"),
+            AmazonopensearchserviceS3BackupMode::FailedDocumentsOnly => write!(f, "FailedDocumentsOnly"),
+            AmazonopensearchserviceS3BackupMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

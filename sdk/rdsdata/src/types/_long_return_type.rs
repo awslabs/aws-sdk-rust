@@ -96,3 +96,12 @@ impl LongReturnType {
         }
     }
 }
+impl ::std::fmt::Display for LongReturnType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LongReturnType::Long => write!(f, "LONG"),
+            LongReturnType::String => write!(f, "STRING"),
+            LongReturnType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

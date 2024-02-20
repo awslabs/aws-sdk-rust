@@ -101,3 +101,13 @@ impl ResourceSubType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceSubType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceSubType::Database => write!(f, "Database"),
+            ResourceSubType::DatabaseProcess => write!(f, "DatabaseProcess"),
+            ResourceSubType::Process => write!(f, "Process"),
+            ResourceSubType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

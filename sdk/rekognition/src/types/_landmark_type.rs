@@ -267,3 +267,40 @@ impl LandmarkType {
         }
     }
 }
+impl ::std::fmt::Display for LandmarkType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LandmarkType::ChinBottom => write!(f, "chinBottom"),
+            LandmarkType::EyeLeft => write!(f, "eyeLeft"),
+            LandmarkType::EyeRight => write!(f, "eyeRight"),
+            LandmarkType::LeftEyeBrowLeft => write!(f, "leftEyeBrowLeft"),
+            LandmarkType::LeftEyeBrowRight => write!(f, "leftEyeBrowRight"),
+            LandmarkType::LeftEyeBrowUp => write!(f, "leftEyeBrowUp"),
+            LandmarkType::LeftEyeDown => write!(f, "leftEyeDown"),
+            LandmarkType::LeftEyeLeft => write!(f, "leftEyeLeft"),
+            LandmarkType::LeftEyeRight => write!(f, "leftEyeRight"),
+            LandmarkType::LeftEyeUp => write!(f, "leftEyeUp"),
+            LandmarkType::LeftPupil => write!(f, "leftPupil"),
+            LandmarkType::MidJawlineLeft => write!(f, "midJawlineLeft"),
+            LandmarkType::MidJawlineRight => write!(f, "midJawlineRight"),
+            LandmarkType::MouthDown => write!(f, "mouthDown"),
+            LandmarkType::MouthLeft => write!(f, "mouthLeft"),
+            LandmarkType::MouthRight => write!(f, "mouthRight"),
+            LandmarkType::MouthUp => write!(f, "mouthUp"),
+            LandmarkType::Nose => write!(f, "nose"),
+            LandmarkType::NoseLeft => write!(f, "noseLeft"),
+            LandmarkType::NoseRight => write!(f, "noseRight"),
+            LandmarkType::RightEyeBrowLeft => write!(f, "rightEyeBrowLeft"),
+            LandmarkType::RightEyeBrowRight => write!(f, "rightEyeBrowRight"),
+            LandmarkType::RightEyeBrowUp => write!(f, "rightEyeBrowUp"),
+            LandmarkType::RightEyeDown => write!(f, "rightEyeDown"),
+            LandmarkType::RightEyeLeft => write!(f, "rightEyeLeft"),
+            LandmarkType::RightEyeRight => write!(f, "rightEyeRight"),
+            LandmarkType::RightEyeUp => write!(f, "rightEyeUp"),
+            LandmarkType::RightPupil => write!(f, "rightPupil"),
+            LandmarkType::UpperJawlineLeft => write!(f, "upperJawlineLeft"),
+            LandmarkType::UpperJawlineRight => write!(f, "upperJawlineRight"),
+            LandmarkType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

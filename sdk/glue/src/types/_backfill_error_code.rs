@@ -117,3 +117,15 @@ impl BackfillErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for BackfillErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackfillErrorCode::EncryptedPartitionError => write!(f, "ENCRYPTED_PARTITION_ERROR"),
+            BackfillErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            BackfillErrorCode::InvalidPartitionTypeDataError => write!(f, "INVALID_PARTITION_TYPE_DATA_ERROR"),
+            BackfillErrorCode::MissingPartitionValueError => write!(f, "MISSING_PARTITION_VALUE_ERROR"),
+            BackfillErrorCode::UnsupportedPartitionCharacterError => write!(f, "UNSUPPORTED_PARTITION_CHARACTER_ERROR"),
+            BackfillErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl MapRunStatus {
         }
     }
 }
+impl ::std::fmt::Display for MapRunStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MapRunStatus::Aborted => write!(f, "ABORTED"),
+            MapRunStatus::Failed => write!(f, "FAILED"),
+            MapRunStatus::Running => write!(f, "RUNNING"),
+            MapRunStatus::Succeeded => write!(f, "SUCCEEDED"),
+            MapRunStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

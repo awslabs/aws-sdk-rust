@@ -91,3 +91,11 @@ impl SecurityConfigType {
         }
     }
 }
+impl ::std::fmt::Display for SecurityConfigType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SecurityConfigType::Saml => write!(f, "saml"),
+            SecurityConfigType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

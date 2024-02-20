@@ -101,3 +101,13 @@ impl TableStatus {
         }
     }
 }
+impl ::std::fmt::Display for TableStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableStatus::Active => write!(f, "ACTIVE"),
+            TableStatus::Deleting => write!(f, "DELETING"),
+            TableStatus::Restoring => write!(f, "RESTORING"),
+            TableStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

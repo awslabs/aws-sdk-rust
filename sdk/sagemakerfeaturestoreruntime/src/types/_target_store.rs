@@ -96,3 +96,12 @@ impl TargetStore {
         }
     }
 }
+impl ::std::fmt::Display for TargetStore {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetStore::OfflineStore => write!(f, "OfflineStore"),
+            TargetStore::OnlineStore => write!(f, "OnlineStore"),
+            TargetStore::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

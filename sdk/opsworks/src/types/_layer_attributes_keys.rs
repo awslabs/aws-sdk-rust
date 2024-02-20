@@ -237,3 +237,35 @@ impl LayerAttributesKeys {
         }
     }
 }
+impl ::std::fmt::Display for LayerAttributesKeys {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LayerAttributesKeys::BundlerVersion => write!(f, "BundlerVersion"),
+            LayerAttributesKeys::EcsClusterArn => write!(f, "EcsClusterArn"),
+            LayerAttributesKeys::EnableHaproxyStats => write!(f, "EnableHaproxyStats"),
+            LayerAttributesKeys::GangliaPassword => write!(f, "GangliaPassword"),
+            LayerAttributesKeys::GangliaUrl => write!(f, "GangliaUrl"),
+            LayerAttributesKeys::GangliaUser => write!(f, "GangliaUser"),
+            LayerAttributesKeys::HaproxyHealthCheckMethod => write!(f, "HaproxyHealthCheckMethod"),
+            LayerAttributesKeys::HaproxyHealthCheckUrl => write!(f, "HaproxyHealthCheckUrl"),
+            LayerAttributesKeys::HaproxyStatsPassword => write!(f, "HaproxyStatsPassword"),
+            LayerAttributesKeys::HaproxyStatsUrl => write!(f, "HaproxyStatsUrl"),
+            LayerAttributesKeys::HaproxyStatsUser => write!(f, "HaproxyStatsUser"),
+            LayerAttributesKeys::JavaAppServer => write!(f, "JavaAppServer"),
+            LayerAttributesKeys::JavaAppServerVersion => write!(f, "JavaAppServerVersion"),
+            LayerAttributesKeys::Jvm => write!(f, "Jvm"),
+            LayerAttributesKeys::JvmOptions => write!(f, "JvmOptions"),
+            LayerAttributesKeys::JvmVersion => write!(f, "JvmVersion"),
+            LayerAttributesKeys::ManageBundler => write!(f, "ManageBundler"),
+            LayerAttributesKeys::MemcachedMemory => write!(f, "MemcachedMemory"),
+            LayerAttributesKeys::MysqlRootPassword => write!(f, "MysqlRootPassword"),
+            LayerAttributesKeys::MysqlRootPasswordUbiquitous => write!(f, "MysqlRootPasswordUbiquitous"),
+            LayerAttributesKeys::NodejsVersion => write!(f, "NodejsVersion"),
+            LayerAttributesKeys::PassengerVersion => write!(f, "PassengerVersion"),
+            LayerAttributesKeys::RailsStack => write!(f, "RailsStack"),
+            LayerAttributesKeys::RubyVersion => write!(f, "RubyVersion"),
+            LayerAttributesKeys::RubygemsVersion => write!(f, "RubygemsVersion"),
+            LayerAttributesKeys::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -117,3 +117,15 @@ impl UpdateReason {
         }
     }
 }
+impl ::std::fmt::Display for UpdateReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateReason::Default => write!(f, "DEFAULT"),
+            UpdateReason::EntityCountUpdate => write!(f, "ENTITY_COUNT_UPDATE"),
+            UpdateReason::Overwritten => write!(f, "OVERWRITTEN"),
+            UpdateReason::PricingModeUpdate => write!(f, "PRICING_MODE_UPDATE"),
+            UpdateReason::PricingTierUpdate => write!(f, "PRICING_TIER_UPDATE"),
+            UpdateReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl AcceptHeader {
         }
     }
 }
+impl ::std::fmt::Display for AcceptHeader {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AcceptHeader::ImageJpeg => write!(f, "image/jpeg"),
+            AcceptHeader::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

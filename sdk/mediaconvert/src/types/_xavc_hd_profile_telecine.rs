@@ -96,3 +96,12 @@ impl XavcHdProfileTelecine {
         }
     }
 }
+impl ::std::fmt::Display for XavcHdProfileTelecine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcHdProfileTelecine::Hard => write!(f, "HARD"),
+            XavcHdProfileTelecine::None => write!(f, "NONE"),
+            XavcHdProfileTelecine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

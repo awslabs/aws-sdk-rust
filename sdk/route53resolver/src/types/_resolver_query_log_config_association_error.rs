@@ -106,3 +106,14 @@ impl ResolverQueryLogConfigAssociationError {
         }
     }
 }
+impl ::std::fmt::Display for ResolverQueryLogConfigAssociationError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverQueryLogConfigAssociationError::AccessDenied => write!(f, "ACCESS_DENIED"),
+            ResolverQueryLogConfigAssociationError::DestinationNotFound => write!(f, "DESTINATION_NOT_FOUND"),
+            ResolverQueryLogConfigAssociationError::InternalServiceError => write!(f, "INTERNAL_SERVICE_ERROR"),
+            ResolverQueryLogConfigAssociationError::None => write!(f, "NONE"),
+            ResolverQueryLogConfigAssociationError::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

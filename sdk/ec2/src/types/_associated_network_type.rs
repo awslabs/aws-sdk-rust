@@ -91,3 +91,11 @@ impl AssociatedNetworkType {
         }
     }
 }
+impl ::std::fmt::Display for AssociatedNetworkType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociatedNetworkType::Vpc => write!(f, "vpc"),
+            AssociatedNetworkType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

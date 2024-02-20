@@ -117,3 +117,15 @@ impl SenderIdFilterName {
         }
     }
 }
+impl ::std::fmt::Display for SenderIdFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SenderIdFilterName::DeletionProtectionEnabled => write!(f, "deletion-protection-enabled"),
+            SenderIdFilterName::IsoCountryCode => write!(f, "iso-country-code"),
+            SenderIdFilterName::MessageType => write!(f, "message-type"),
+            SenderIdFilterName::Registered => write!(f, "registered"),
+            SenderIdFilterName::SenderId => write!(f, "sender-id"),
+            SenderIdFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

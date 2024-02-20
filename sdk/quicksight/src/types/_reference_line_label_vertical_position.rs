@@ -96,3 +96,12 @@ impl ReferenceLineLabelVerticalPosition {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceLineLabelVerticalPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceLineLabelVerticalPosition::Above => write!(f, "ABOVE"),
+            ReferenceLineLabelVerticalPosition::Below => write!(f, "BELOW"),
+            ReferenceLineLabelVerticalPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

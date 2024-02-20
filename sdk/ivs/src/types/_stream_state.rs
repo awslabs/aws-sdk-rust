@@ -96,3 +96,12 @@ impl StreamState {
         }
     }
 }
+impl ::std::fmt::Display for StreamState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamState::StreamLive => write!(f, "LIVE"),
+            StreamState::StreamOffline => write!(f, "OFFLINE"),
+            StreamState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

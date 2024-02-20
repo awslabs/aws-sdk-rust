@@ -96,3 +96,12 @@ impl JoinOperator {
         }
     }
 }
+impl ::std::fmt::Display for JoinOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JoinOperator::And => write!(f, "AND"),
+            JoinOperator::Or => write!(f, "OR"),
+            JoinOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

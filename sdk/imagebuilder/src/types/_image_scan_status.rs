@@ -121,3 +121,17 @@ impl ImageScanStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImageScanStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageScanStatus::Abandoned => write!(f, "ABANDONED"),
+            ImageScanStatus::Collecting => write!(f, "COLLECTING"),
+            ImageScanStatus::Completed => write!(f, "COMPLETED"),
+            ImageScanStatus::Failed => write!(f, "FAILED"),
+            ImageScanStatus::Pending => write!(f, "PENDING"),
+            ImageScanStatus::Scanning => write!(f, "SCANNING"),
+            ImageScanStatus::TimedOut => write!(f, "TIMED_OUT"),
+            ImageScanStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

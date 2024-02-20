@@ -96,3 +96,12 @@ impl Ac3LfeFilter {
         }
     }
 }
+impl ::std::fmt::Display for Ac3LfeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ac3LfeFilter::Disabled => write!(f, "DISABLED"),
+            Ac3LfeFilter::Enabled => write!(f, "ENABLED"),
+            Ac3LfeFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

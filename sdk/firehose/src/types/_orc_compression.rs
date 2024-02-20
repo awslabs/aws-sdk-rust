@@ -101,3 +101,13 @@ impl OrcCompression {
         }
     }
 }
+impl ::std::fmt::Display for OrcCompression {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrcCompression::None => write!(f, "NONE"),
+            OrcCompression::Snappy => write!(f, "SNAPPY"),
+            OrcCompression::Zlib => write!(f, "ZLIB"),
+            OrcCompression::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

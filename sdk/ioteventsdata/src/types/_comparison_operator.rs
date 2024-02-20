@@ -116,3 +116,16 @@ impl ComparisonOperator {
         }
     }
 }
+impl ::std::fmt::Display for ComparisonOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComparisonOperator::Equal => write!(f, "EQUAL"),
+            ComparisonOperator::Greater => write!(f, "GREATER"),
+            ComparisonOperator::GreaterOrEqual => write!(f, "GREATER_OR_EQUAL"),
+            ComparisonOperator::Less => write!(f, "LESS"),
+            ComparisonOperator::LessOrEqual => write!(f, "LESS_OR_EQUAL"),
+            ComparisonOperator::NotEqual => write!(f, "NOT_EQUAL"),
+            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

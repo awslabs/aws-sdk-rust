@@ -91,3 +91,11 @@ impl PlatformDeviceType {
         }
     }
 }
+impl ::std::fmt::Display for PlatformDeviceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlatformDeviceType::Gpu => write!(f, "GPU"),
+            PlatformDeviceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

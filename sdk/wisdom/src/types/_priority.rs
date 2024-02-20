@@ -101,3 +101,13 @@ impl Priority {
         }
     }
 }
+impl ::std::fmt::Display for Priority {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Priority::High => write!(f, "HIGH"),
+            Priority::Low => write!(f, "LOW"),
+            Priority::Medium => write!(f, "MEDIUM"),
+            Priority::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

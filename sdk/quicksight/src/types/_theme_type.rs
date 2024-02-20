@@ -101,3 +101,13 @@ impl ThemeType {
         }
     }
 }
+impl ::std::fmt::Display for ThemeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThemeType::All => write!(f, "ALL"),
+            ThemeType::Custom => write!(f, "CUSTOM"),
+            ThemeType::Quicksight => write!(f, "QUICKSIGHT"),
+            ThemeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

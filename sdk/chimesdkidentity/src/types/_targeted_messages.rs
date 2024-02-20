@@ -96,3 +96,12 @@ impl TargetedMessages {
         }
     }
 }
+impl ::std::fmt::Display for TargetedMessages {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetedMessages::All => write!(f, "ALL"),
+            TargetedMessages::None => write!(f, "NONE"),
+            TargetedMessages::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

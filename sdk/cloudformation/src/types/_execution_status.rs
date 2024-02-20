@@ -123,3 +123,16 @@ impl ExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionStatus::Available => write!(f, "AVAILABLE"),
+            ExecutionStatus::ExecuteComplete => write!(f, "EXECUTE_COMPLETE"),
+            ExecutionStatus::ExecuteFailed => write!(f, "EXECUTE_FAILED"),
+            ExecutionStatus::ExecuteInProgress => write!(f, "EXECUTE_IN_PROGRESS"),
+            ExecutionStatus::Obsolete => write!(f, "OBSOLETE"),
+            ExecutionStatus::Unavailable => write!(f, "UNAVAILABLE"),
+            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

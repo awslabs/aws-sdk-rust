@@ -96,3 +96,12 @@ impl TargetType {
         }
     }
 }
+impl ::std::fmt::Display for TargetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetType::Recommendation => write!(f, "RECOMMENDATION"),
+            TargetType::Result => write!(f, "RESULT"),
+            TargetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

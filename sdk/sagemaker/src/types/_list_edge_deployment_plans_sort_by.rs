@@ -106,3 +106,14 @@ impl ListEdgeDeploymentPlansSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ListEdgeDeploymentPlansSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListEdgeDeploymentPlansSortBy::CreationTime => write!(f, "CREATION_TIME"),
+            ListEdgeDeploymentPlansSortBy::DeviceFleetName => write!(f, "DEVICE_FLEET_NAME"),
+            ListEdgeDeploymentPlansSortBy::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
+            ListEdgeDeploymentPlansSortBy::Name => write!(f, "NAME"),
+            ListEdgeDeploymentPlansSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

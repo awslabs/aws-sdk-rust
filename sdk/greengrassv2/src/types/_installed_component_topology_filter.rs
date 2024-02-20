@@ -96,3 +96,12 @@ impl InstalledComponentTopologyFilter {
         }
     }
 }
+impl ::std::fmt::Display for InstalledComponentTopologyFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstalledComponentTopologyFilter::All => write!(f, "ALL"),
+            InstalledComponentTopologyFilter::Root => write!(f, "ROOT"),
+            InstalledComponentTopologyFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

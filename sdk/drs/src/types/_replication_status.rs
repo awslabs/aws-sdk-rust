@@ -106,3 +106,14 @@ impl ReplicationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationStatus::Error => write!(f, "ERROR"),
+            ReplicationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ReplicationStatus::Protected => write!(f, "PROTECTED"),
+            ReplicationStatus::Stopped => write!(f, "STOPPED"),
+            ReplicationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl FindingsFound {
         }
     }
 }
+impl ::std::fmt::Display for FindingsFound {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingsFound::False => write!(f, "false"),
+            FindingsFound::True => write!(f, "true"),
+            FindingsFound::UnknownValue => write!(f, "unknown"),
+            FindingsFound::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

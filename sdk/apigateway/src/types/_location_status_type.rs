@@ -96,3 +96,12 @@ impl LocationStatusType {
         }
     }
 }
+impl ::std::fmt::Display for LocationStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocationStatusType::Documented => write!(f, "DOCUMENTED"),
+            LocationStatusType::Undocumented => write!(f, "UNDOCUMENTED"),
+            LocationStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

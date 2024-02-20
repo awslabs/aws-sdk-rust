@@ -106,3 +106,14 @@ impl AppBlockBuilderState {
         }
     }
 }
+impl ::std::fmt::Display for AppBlockBuilderState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppBlockBuilderState::Running => write!(f, "RUNNING"),
+            AppBlockBuilderState::Starting => write!(f, "STARTING"),
+            AppBlockBuilderState::Stopped => write!(f, "STOPPED"),
+            AppBlockBuilderState::Stopping => write!(f, "STOPPING"),
+            AppBlockBuilderState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -551,3 +551,146 @@ impl ExportableAutoScalingGroupField {
         }
     }
 }
+impl ::std::fmt::Display for ExportableAutoScalingGroupField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportableAutoScalingGroupField::AccountId => write!(f, "AccountId"),
+            ExportableAutoScalingGroupField::AutoScalingGroupArn => write!(f, "AutoScalingGroupArn"),
+            ExportableAutoScalingGroupField::AutoScalingGroupName => write!(f, "AutoScalingGroupName"),
+            ExportableAutoScalingGroupField::CurrentConfigurationDesiredCapacity => write!(f, "CurrentConfigurationDesiredCapacity"),
+            ExportableAutoScalingGroupField::CurrentConfigurationInstanceType => write!(f, "CurrentConfigurationInstanceType"),
+            ExportableAutoScalingGroupField::CurrentConfigurationMaxSize => write!(f, "CurrentConfigurationMaxSize"),
+            ExportableAutoScalingGroupField::CurrentConfigurationMinSize => write!(f, "CurrentConfigurationMinSize"),
+            ExportableAutoScalingGroupField::CurrentInstanceGpuInfo => write!(f, "CurrentInstanceGpuInfo"),
+            ExportableAutoScalingGroupField::CurrentMemory => write!(f, "CurrentMemory"),
+            ExportableAutoScalingGroupField::CurrentNetwork => write!(f, "CurrentNetwork"),
+            ExportableAutoScalingGroupField::CurrentOnDemandPrice => write!(f, "CurrentOnDemandPrice"),
+            ExportableAutoScalingGroupField::CurrentPerformanceRisk => write!(f, "CurrentPerformanceRisk"),
+            ExportableAutoScalingGroupField::CurrentStandardOneYearNoUpfrontReservedPrice => {
+                write!(f, "CurrentStandardOneYearNoUpfrontReservedPrice")
+            }
+            ExportableAutoScalingGroupField::CurrentStandardThreeYearNoUpfrontReservedPrice => {
+                write!(f, "CurrentStandardThreeYearNoUpfrontReservedPrice")
+            }
+            ExportableAutoScalingGroupField::CurrentStorage => write!(f, "CurrentStorage"),
+            ExportableAutoScalingGroupField::CurrentVcpus => write!(f, "CurrentVCpus"),
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures => {
+                write!(f, "EffectiveRecommendationPreferencesCpuVendorArchitectures")
+            }
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => {
+                write!(f, "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics")
+            }
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes => {
+                write!(f, "EffectiveRecommendationPreferencesInferredWorkloadTypes")
+            }
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesLookbackPeriod => {
+                write!(f, "EffectiveRecommendationPreferencesLookBackPeriod")
+            }
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesPreferredResources => {
+                write!(f, "EffectiveRecommendationPreferencesPreferredResources")
+            }
+            ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
+                write!(f, "EffectiveRecommendationPreferencesSavingsEstimationMode")
+            }
+            ExportableAutoScalingGroupField::Finding => write!(f, "Finding"),
+            ExportableAutoScalingGroupField::InferredWorkloadTypes => write!(f, "InferredWorkloadTypes"),
+            ExportableAutoScalingGroupField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
+            ExportableAutoScalingGroupField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationDesiredCapacity => {
+                write!(f, "RecommendationOptionsConfigurationDesiredCapacity")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationInstanceType => {
+                write!(f, "RecommendationOptionsConfigurationInstanceType")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMaxSize => write!(f, "RecommendationOptionsConfigurationMaxSize"),
+            ExportableAutoScalingGroupField::RecommendationOptionsConfigurationMinSize => write!(f, "RecommendationOptionsConfigurationMinSize"),
+            ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsInstanceGpuInfo => write!(f, "RecommendationOptionsInstanceGpuInfo"),
+            ExportableAutoScalingGroupField::RecommendationOptionsMemory => write!(f, "RecommendationOptionsMemory"),
+            ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort => write!(f, "RecommendationOptionsMigrationEffort"),
+            ExportableAutoScalingGroupField::RecommendationOptionsNetwork => write!(f, "RecommendationOptionsNetwork"),
+            ExportableAutoScalingGroupField::RecommendationOptionsOnDemandPrice => write!(f, "RecommendationOptionsOnDemandPrice"),
+            ExportableAutoScalingGroupField::RecommendationOptionsPerformanceRisk => write!(f, "RecommendationOptionsPerformanceRisk"),
+            ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsCpuMaximum => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMemoryMaximum => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsGpuMaximum => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
+                write!(f, "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage => {
+                write!(f, "RecommendationOptionsSavingsOpportunityPercentage")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsStandardOneYearNoUpfrontReservedPrice => {
+                write!(f, "RecommendationOptionsStandardOneYearNoUpfrontReservedPrice")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice => {
+                write!(f, "RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice")
+            }
+            ExportableAutoScalingGroupField::RecommendationOptionsStorage => write!(f, "RecommendationOptionsStorage"),
+            ExportableAutoScalingGroupField::RecommendationOptionsVcpus => write!(f, "RecommendationOptionsVcpus"),
+            ExportableAutoScalingGroupField::UtilizationMetricsCpuMaximum => write!(f, "UtilizationMetricsCpuMaximum"),
+            ExportableAutoScalingGroupField::UtilizationMetricsDiskReadBytesPerSecondMaximum => {
+                write!(f, "UtilizationMetricsDiskReadBytesPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsDiskReadOpsPerSecondMaximum => {
+                write!(f, "UtilizationMetricsDiskReadOpsPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteBytesPerSecondMaximum => {
+                write!(f, "UtilizationMetricsDiskWriteBytesPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteOpsPerSecondMaximum => {
+                write!(f, "UtilizationMetricsDiskWriteOpsPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsEbsReadBytesPerSecondMaximum => {
+                write!(f, "UtilizationMetricsEbsReadBytesPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsEbsReadOpsPerSecondMaximum => {
+                write!(f, "UtilizationMetricsEbsReadOpsPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum => {
+                write!(f, "UtilizationMetricsEbsWriteBytesPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteOpsPerSecondMaximum => {
+                write!(f, "UtilizationMetricsEbsWriteOpsPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsGpuMemoryPercentageMaximum => {
+                write!(f, "UtilizationMetricsGpuMemoryPercentageMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsGpuPercentageMaximum => write!(f, "UtilizationMetricsGpuPercentageMaximum"),
+            ExportableAutoScalingGroupField::UtilizationMetricsMemoryMaximum => write!(f, "UtilizationMetricsMemoryMaximum"),
+            ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum => {
+                write!(f, "UtilizationMetricsNetworkInBytesPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum => {
+                write!(f, "UtilizationMetricsNetworkOutBytesPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsInPerSecondMaximum => {
+                write!(f, "UtilizationMetricsNetworkPacketsInPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum => {
+                write!(f, "UtilizationMetricsNetworkPacketsOutPerSecondMaximum")
+            }
+            ExportableAutoScalingGroupField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

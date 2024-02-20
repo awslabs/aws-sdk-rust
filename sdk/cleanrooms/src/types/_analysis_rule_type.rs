@@ -101,3 +101,13 @@ impl AnalysisRuleType {
         }
     }
 }
+impl ::std::fmt::Display for AnalysisRuleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalysisRuleType::Aggregation => write!(f, "AGGREGATION"),
+            AnalysisRuleType::Custom => write!(f, "CUSTOM"),
+            AnalysisRuleType::List => write!(f, "LIST"),
+            AnalysisRuleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

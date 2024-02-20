@@ -106,3 +106,14 @@ impl PowerDrawKva {
         }
     }
 }
+impl ::std::fmt::Display for PowerDrawKva {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PowerDrawKva::Power10Kva => write!(f, "POWER_10_KVA"),
+            PowerDrawKva::Power15Kva => write!(f, "POWER_15_KVA"),
+            PowerDrawKva::Power30Kva => write!(f, "POWER_30_KVA"),
+            PowerDrawKva::Power5Kva => write!(f, "POWER_5_KVA"),
+            PowerDrawKva::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

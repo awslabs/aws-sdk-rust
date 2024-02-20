@@ -106,3 +106,14 @@ impl ModelCardStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelCardStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelCardStatus::Approved => write!(f, "Approved"),
+            ModelCardStatus::Archived => write!(f, "Archived"),
+            ModelCardStatus::Draft => write!(f, "Draft"),
+            ModelCardStatus::Pendingreview => write!(f, "PendingReview"),
+            ModelCardStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

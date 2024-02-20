@@ -96,3 +96,12 @@ impl CustomizationFeature {
         }
     }
 }
+impl ::std::fmt::Display for CustomizationFeature {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomizationFeature::ContentModeration => write!(f, "CONTENT_MODERATION"),
+            CustomizationFeature::CustomLabels => write!(f, "CUSTOM_LABELS"),
+            CustomizationFeature::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

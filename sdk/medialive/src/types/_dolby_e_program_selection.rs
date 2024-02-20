@@ -141,3 +141,19 @@ impl DolbyEProgramSelection {
         }
     }
 }
+impl ::std::fmt::Display for DolbyEProgramSelection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DolbyEProgramSelection::AllChannels => write!(f, "ALL_CHANNELS"),
+            DolbyEProgramSelection::Program1 => write!(f, "PROGRAM_1"),
+            DolbyEProgramSelection::Program2 => write!(f, "PROGRAM_2"),
+            DolbyEProgramSelection::Program3 => write!(f, "PROGRAM_3"),
+            DolbyEProgramSelection::Program4 => write!(f, "PROGRAM_4"),
+            DolbyEProgramSelection::Program5 => write!(f, "PROGRAM_5"),
+            DolbyEProgramSelection::Program6 => write!(f, "PROGRAM_6"),
+            DolbyEProgramSelection::Program7 => write!(f, "PROGRAM_7"),
+            DolbyEProgramSelection::Program8 => write!(f, "PROGRAM_8"),
+            DolbyEProgramSelection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl FileType {
         }
     }
 }
+impl ::std::fmt::Display for FileType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileType::Bam => write!(f, "BAM"),
+            FileType::Cram => write!(f, "CRAM"),
+            FileType::Fastq => write!(f, "FASTQ"),
+            FileType::Ubam => write!(f, "UBAM"),
+            FileType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

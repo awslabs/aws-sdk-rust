@@ -96,3 +96,12 @@ impl Protocol {
         }
     }
 }
+impl ::std::fmt::Display for Protocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Protocol::Http => write!(f, "HTTP"),
+            Protocol::Mqtt => write!(f, "MQTT"),
+            Protocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

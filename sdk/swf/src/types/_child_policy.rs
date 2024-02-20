@@ -101,3 +101,13 @@ impl ChildPolicy {
         }
     }
 }
+impl ::std::fmt::Display for ChildPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChildPolicy::Abandon => write!(f, "ABANDON"),
+            ChildPolicy::RequestCancel => write!(f, "REQUEST_CANCEL"),
+            ChildPolicy::Terminate => write!(f, "TERMINATE"),
+            ChildPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

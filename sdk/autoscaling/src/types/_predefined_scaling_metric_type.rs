@@ -111,3 +111,14 @@ impl PredefinedScalingMetricType {
         }
     }
 }
+impl ::std::fmt::Display for PredefinedScalingMetricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PredefinedScalingMetricType::AlbRequestCountPerTarget => write!(f, "ALBRequestCountPerTarget"),
+            PredefinedScalingMetricType::AsgAverageCpuUtilization => write!(f, "ASGAverageCPUUtilization"),
+            PredefinedScalingMetricType::AsgAverageNetworkIn => write!(f, "ASGAverageNetworkIn"),
+            PredefinedScalingMetricType::AsgAverageNetworkOut => write!(f, "ASGAverageNetworkOut"),
+            PredefinedScalingMetricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

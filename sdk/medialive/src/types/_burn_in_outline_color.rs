@@ -116,3 +116,16 @@ impl BurnInOutlineColor {
         }
     }
 }
+impl ::std::fmt::Display for BurnInOutlineColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurnInOutlineColor::Black => write!(f, "BLACK"),
+            BurnInOutlineColor::Blue => write!(f, "BLUE"),
+            BurnInOutlineColor::Green => write!(f, "GREEN"),
+            BurnInOutlineColor::Red => write!(f, "RED"),
+            BurnInOutlineColor::White => write!(f, "WHITE"),
+            BurnInOutlineColor::Yellow => write!(f, "YELLOW"),
+            BurnInOutlineColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

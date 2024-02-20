@@ -96,3 +96,12 @@ impl MemberType {
         }
     }
 }
+impl ::std::fmt::Display for MemberType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberType::Group => write!(f, "GROUP"),
+            MemberType::User => write!(f, "USER"),
+            MemberType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

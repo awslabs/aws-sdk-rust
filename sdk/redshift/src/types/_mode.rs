@@ -96,3 +96,12 @@ impl Mode {
         }
     }
 }
+impl ::std::fmt::Display for Mode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mode::HighPerformance => write!(f, "high-performance"),
+            Mode::Standard => write!(f, "standard"),
+            Mode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

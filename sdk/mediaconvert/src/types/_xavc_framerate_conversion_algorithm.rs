@@ -101,3 +101,13 @@ impl XavcFramerateConversionAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for XavcFramerateConversionAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcFramerateConversionAlgorithm::DuplicateDrop => write!(f, "DUPLICATE_DROP"),
+            XavcFramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
+            XavcFramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
+            XavcFramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

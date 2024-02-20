@@ -96,3 +96,12 @@ impl VideoSelectorColorSpaceUsage {
         }
     }
 }
+impl ::std::fmt::Display for VideoSelectorColorSpaceUsage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VideoSelectorColorSpaceUsage::Fallback => write!(f, "FALLBACK"),
+            VideoSelectorColorSpaceUsage::Force => write!(f, "FORCE"),
+            VideoSelectorColorSpaceUsage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

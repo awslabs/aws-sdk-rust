@@ -147,3 +147,20 @@ impl GlueRecordType {
         }
     }
 }
+impl ::std::fmt::Display for GlueRecordType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GlueRecordType::Bigdecimal => write!(f, "BIGDECIMAL"),
+            GlueRecordType::Byte => write!(f, "BYTE"),
+            GlueRecordType::Date => write!(f, "DATE"),
+            GlueRecordType::Double => write!(f, "DOUBLE"),
+            GlueRecordType::Float => write!(f, "FLOAT"),
+            GlueRecordType::Int => write!(f, "INT"),
+            GlueRecordType::Long => write!(f, "LONG"),
+            GlueRecordType::Short => write!(f, "SHORT"),
+            GlueRecordType::String => write!(f, "STRING"),
+            GlueRecordType::Timestamp => write!(f, "TIMESTAMP"),
+            GlueRecordType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

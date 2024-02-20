@@ -167,3 +167,18 @@ impl EvaluationFilterVariable {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationFilterVariable {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationFilterVariable::CreatedAt => write!(f, "CreatedAt"),
+            EvaluationFilterVariable::DatasourceId => write!(f, "DataSourceId"),
+            EvaluationFilterVariable::DataUri => write!(f, "DataURI"),
+            EvaluationFilterVariable::IamUser => write!(f, "IAMUser"),
+            EvaluationFilterVariable::LastUpdatedAt => write!(f, "LastUpdatedAt"),
+            EvaluationFilterVariable::MlModelId => write!(f, "MLModelId"),
+            EvaluationFilterVariable::Name => write!(f, "Name"),
+            EvaluationFilterVariable::Status => write!(f, "Status"),
+            EvaluationFilterVariable::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl DisruptionType {
         }
     }
 }
+impl ::std::fmt::Display for DisruptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DisruptionType::Az => write!(f, "AZ"),
+            DisruptionType::Hardware => write!(f, "Hardware"),
+            DisruptionType::Region => write!(f, "Region"),
+            DisruptionType::Software => write!(f, "Software"),
+            DisruptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl BareMetal {
         }
     }
 }
+impl ::std::fmt::Display for BareMetal {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BareMetal::Excluded => write!(f, "excluded"),
+            BareMetal::Included => write!(f, "included"),
+            BareMetal::Required => write!(f, "required"),
+            BareMetal::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

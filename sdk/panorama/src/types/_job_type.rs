@@ -96,3 +96,12 @@ impl JobType {
         }
     }
 }
+impl ::std::fmt::Display for JobType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobType::Ota => write!(f, "OTA"),
+            JobType::Reboot => write!(f, "REBOOT"),
+            JobType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

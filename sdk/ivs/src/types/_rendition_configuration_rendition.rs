@@ -106,3 +106,14 @@ impl RenditionConfigurationRendition {
         }
     }
 }
+impl ::std::fmt::Display for RenditionConfigurationRendition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RenditionConfigurationRendition::FullHd => write!(f, "FULL_HD"),
+            RenditionConfigurationRendition::Hd => write!(f, "HD"),
+            RenditionConfigurationRendition::LowestResolution => write!(f, "LOWEST_RESOLUTION"),
+            RenditionConfigurationRendition::Sd => write!(f, "SD"),
+            RenditionConfigurationRendition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

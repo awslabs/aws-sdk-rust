@@ -116,3 +116,16 @@ impl AssetModelState {
         }
     }
 }
+impl ::std::fmt::Display for AssetModelState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetModelState::Active => write!(f, "ACTIVE"),
+            AssetModelState::Creating => write!(f, "CREATING"),
+            AssetModelState::Deleting => write!(f, "DELETING"),
+            AssetModelState::Failed => write!(f, "FAILED"),
+            AssetModelState::Propagating => write!(f, "PROPAGATING"),
+            AssetModelState::Updating => write!(f, "UPDATING"),
+            AssetModelState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

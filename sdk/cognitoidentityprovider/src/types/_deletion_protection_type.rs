@@ -96,3 +96,12 @@ impl DeletionProtectionType {
         }
     }
 }
+impl ::std::fmt::Display for DeletionProtectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeletionProtectionType::Active => write!(f, "ACTIVE"),
+            DeletionProtectionType::Inactive => write!(f, "INACTIVE"),
+            DeletionProtectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

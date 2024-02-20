@@ -135,3 +135,18 @@ impl LoadBalancerTlsCertificateStatus {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerTlsCertificateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerTlsCertificateStatus::Expired => write!(f, "EXPIRED"),
+            LoadBalancerTlsCertificateStatus::Failed => write!(f, "FAILED"),
+            LoadBalancerTlsCertificateStatus::Inactive => write!(f, "INACTIVE"),
+            LoadBalancerTlsCertificateStatus::Issued => write!(f, "ISSUED"),
+            LoadBalancerTlsCertificateStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
+            LoadBalancerTlsCertificateStatus::Revoked => write!(f, "REVOKED"),
+            LoadBalancerTlsCertificateStatus::UnknownValue => write!(f, "UNKNOWN"),
+            LoadBalancerTlsCertificateStatus::ValidationTimedOut => write!(f, "VALIDATION_TIMED_OUT"),
+            LoadBalancerTlsCertificateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

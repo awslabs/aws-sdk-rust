@@ -101,3 +101,13 @@ impl SourceFrequency {
         }
     }
 }
+impl ::std::fmt::Display for SourceFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceFrequency::Daily => write!(f, "DAILY"),
+            SourceFrequency::Monthly => write!(f, "MONTHLY"),
+            SourceFrequency::Weekly => write!(f, "WEEKLY"),
+            SourceFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl DataSourceIntrospectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceIntrospectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceIntrospectionStatus::Failed => write!(f, "FAILED"),
+            DataSourceIntrospectionStatus::Processing => write!(f, "PROCESSING"),
+            DataSourceIntrospectionStatus::Success => write!(f, "SUCCESS"),
+            DataSourceIntrospectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

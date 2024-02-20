@@ -106,3 +106,14 @@ impl ChannelType {
         }
     }
 }
+impl ::std::fmt::Display for ChannelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelType::Facebook => write!(f, "Facebook"),
+            ChannelType::Kik => write!(f, "Kik"),
+            ChannelType::Slack => write!(f, "Slack"),
+            ChannelType::TwilioSms => write!(f, "Twilio-Sms"),
+            ChannelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

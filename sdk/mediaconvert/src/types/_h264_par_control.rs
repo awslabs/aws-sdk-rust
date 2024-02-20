@@ -96,3 +96,12 @@ impl H264ParControl {
         }
     }
 }
+impl ::std::fmt::Display for H264ParControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264ParControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            H264ParControl::Specified => write!(f, "SPECIFIED"),
+            H264ParControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

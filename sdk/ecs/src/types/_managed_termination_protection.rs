@@ -96,3 +96,12 @@ impl ManagedTerminationProtection {
         }
     }
 }
+impl ::std::fmt::Display for ManagedTerminationProtection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ManagedTerminationProtection::Disabled => write!(f, "DISABLED"),
+            ManagedTerminationProtection::Enabled => write!(f, "ENABLED"),
+            ManagedTerminationProtection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

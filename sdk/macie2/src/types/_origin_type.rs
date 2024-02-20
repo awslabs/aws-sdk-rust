@@ -96,3 +96,12 @@ impl OriginType {
         }
     }
 }
+impl ::std::fmt::Display for OriginType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginType::AutomatedSensitiveDataDiscovery => write!(f, "AUTOMATED_SENSITIVE_DATA_DISCOVERY"),
+            OriginType::SensitiveDataDiscoveryJob => write!(f, "SENSITIVE_DATA_DISCOVERY_JOB"),
+            OriginType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

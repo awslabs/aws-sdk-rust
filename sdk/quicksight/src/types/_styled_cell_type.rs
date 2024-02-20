@@ -101,3 +101,13 @@ impl StyledCellType {
         }
     }
 }
+impl ::std::fmt::Display for StyledCellType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StyledCellType::MetricHeader => write!(f, "METRIC_HEADER"),
+            StyledCellType::Total => write!(f, "TOTAL"),
+            StyledCellType::Value => write!(f, "VALUE"),
+            StyledCellType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

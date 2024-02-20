@@ -96,3 +96,12 @@ impl AdMarkupType {
         }
     }
 }
+impl ::std::fmt::Display for AdMarkupType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdMarkupType::Daterange => write!(f, "DATERANGE"),
+            AdMarkupType::Scte35Enhanced => write!(f, "SCTE35_ENHANCED"),
+            AdMarkupType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

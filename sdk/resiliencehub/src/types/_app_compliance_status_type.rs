@@ -106,3 +106,14 @@ impl AppComplianceStatusType {
         }
     }
 }
+impl ::std::fmt::Display for AppComplianceStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppComplianceStatusType::ChangesDetected => write!(f, "ChangesDetected"),
+            AppComplianceStatusType::NotAssessed => write!(f, "NotAssessed"),
+            AppComplianceStatusType::PolicyBreached => write!(f, "PolicyBreached"),
+            AppComplianceStatusType::PolicyMet => write!(f, "PolicyMet"),
+            AppComplianceStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

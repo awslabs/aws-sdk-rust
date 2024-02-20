@@ -101,3 +101,13 @@ impl ConversationEndState {
         }
     }
 }
+impl ::std::fmt::Display for ConversationEndState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConversationEndState::Dropped => write!(f, "Dropped"),
+            ConversationEndState::Failure => write!(f, "Failure"),
+            ConversationEndState::Success => write!(f, "Success"),
+            ConversationEndState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl IpamResourceType {
         }
     }
 }
+impl ::std::fmt::Display for IpamResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamResourceType::Eip => write!(f, "eip"),
+            IpamResourceType::Eni => write!(f, "eni"),
+            IpamResourceType::Ipv6Pool => write!(f, "ipv6-pool"),
+            IpamResourceType::PublicIpv4Pool => write!(f, "public-ipv4-pool"),
+            IpamResourceType::Subnet => write!(f, "subnet"),
+            IpamResourceType::Vpc => write!(f, "vpc"),
+            IpamResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

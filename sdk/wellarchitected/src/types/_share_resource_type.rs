@@ -106,3 +106,14 @@ impl ShareResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ShareResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareResourceType::Lens => write!(f, "LENS"),
+            ShareResourceType::Profile => write!(f, "PROFILE"),
+            ShareResourceType::Template => write!(f, "TEMPLATE"),
+            ShareResourceType::Workload => write!(f, "WORKLOAD"),
+            ShareResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

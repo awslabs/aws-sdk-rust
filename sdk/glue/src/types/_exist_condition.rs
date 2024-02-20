@@ -101,3 +101,13 @@ impl ExistCondition {
         }
     }
 }
+impl ::std::fmt::Display for ExistCondition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExistCondition::MustExist => write!(f, "MUST_EXIST"),
+            ExistCondition::None => write!(f, "NONE"),
+            ExistCondition::NotExist => write!(f, "NOT_EXIST"),
+            ExistCondition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

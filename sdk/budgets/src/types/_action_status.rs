@@ -147,3 +147,20 @@ impl ActionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ActionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionStatus::ExecutionFailure => write!(f, "EXECUTION_FAILURE"),
+            ActionStatus::ExecutionInProgress => write!(f, "EXECUTION_IN_PROGRESS"),
+            ActionStatus::ExecutionSuccess => write!(f, "EXECUTION_SUCCESS"),
+            ActionStatus::Pending => write!(f, "PENDING"),
+            ActionStatus::ResetFailure => write!(f, "RESET_FAILURE"),
+            ActionStatus::ResetInProgress => write!(f, "RESET_IN_PROGRESS"),
+            ActionStatus::ReverseFailure => write!(f, "REVERSE_FAILURE"),
+            ActionStatus::ReverseInProgress => write!(f, "REVERSE_IN_PROGRESS"),
+            ActionStatus::ReverseSuccess => write!(f, "REVERSE_SUCCESS"),
+            ActionStatus::Standby => write!(f, "STANDBY"),
+            ActionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

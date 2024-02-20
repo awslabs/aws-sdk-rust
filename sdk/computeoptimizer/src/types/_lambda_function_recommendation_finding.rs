@@ -101,3 +101,13 @@ impl LambdaFunctionRecommendationFinding {
         }
     }
 }
+impl ::std::fmt::Display for LambdaFunctionRecommendationFinding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaFunctionRecommendationFinding::NotOptimized => write!(f, "NotOptimized"),
+            LambdaFunctionRecommendationFinding::Optimized => write!(f, "Optimized"),
+            LambdaFunctionRecommendationFinding::Unavailable => write!(f, "Unavailable"),
+            LambdaFunctionRecommendationFinding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

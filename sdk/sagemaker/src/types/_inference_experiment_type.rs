@@ -91,3 +91,11 @@ impl InferenceExperimentType {
         }
     }
 }
+impl ::std::fmt::Display for InferenceExperimentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferenceExperimentType::ShadowMode => write!(f, "ShadowMode"),
+            InferenceExperimentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

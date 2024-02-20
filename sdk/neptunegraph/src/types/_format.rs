@@ -96,3 +96,12 @@ impl Format {
         }
     }
 }
+impl ::std::fmt::Display for Format {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Format::Csv => write!(f, "CSV"),
+            Format::OpenCypher => write!(f, "OPEN_CYPHER"),
+            Format::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

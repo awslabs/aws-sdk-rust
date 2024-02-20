@@ -91,3 +91,11 @@ impl CertificateProvider {
         }
     }
 }
+impl ::std::fmt::Display for CertificateProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateProvider::LetsEncrypt => write!(f, "LetsEncrypt"),
+            CertificateProvider::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

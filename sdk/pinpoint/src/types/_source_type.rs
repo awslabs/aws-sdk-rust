@@ -101,3 +101,13 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::All => write!(f, "ALL"),
+            SourceType::Any => write!(f, "ANY"),
+            SourceType::None => write!(f, "NONE"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

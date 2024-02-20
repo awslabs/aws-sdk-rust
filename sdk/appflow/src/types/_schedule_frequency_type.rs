@@ -116,3 +116,16 @@ impl ScheduleFrequencyType {
         }
     }
 }
+impl ::std::fmt::Display for ScheduleFrequencyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduleFrequencyType::Byminute => write!(f, "BYMINUTE"),
+            ScheduleFrequencyType::Daily => write!(f, "DAILY"),
+            ScheduleFrequencyType::Hourly => write!(f, "HOURLY"),
+            ScheduleFrequencyType::Monthly => write!(f, "MONTHLY"),
+            ScheduleFrequencyType::Once => write!(f, "ONCE"),
+            ScheduleFrequencyType::Weekly => write!(f, "WEEKLY"),
+            ScheduleFrequencyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

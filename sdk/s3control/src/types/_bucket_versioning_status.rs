@@ -96,3 +96,12 @@ impl BucketVersioningStatus {
         }
     }
 }
+impl ::std::fmt::Display for BucketVersioningStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BucketVersioningStatus::Enabled => write!(f, "Enabled"),
+            BucketVersioningStatus::Suspended => write!(f, "Suspended"),
+            BucketVersioningStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

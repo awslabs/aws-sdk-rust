@@ -96,3 +96,12 @@ impl RecommendationStatus {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationStatus::Fixed => write!(f, "FIXED"),
+            RecommendationStatus::Open => write!(f, "OPEN"),
+            RecommendationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl VpcCidrBlockStateCode {
         }
     }
 }
+impl ::std::fmt::Display for VpcCidrBlockStateCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcCidrBlockStateCode::Associated => write!(f, "associated"),
+            VpcCidrBlockStateCode::Associating => write!(f, "associating"),
+            VpcCidrBlockStateCode::Disassociated => write!(f, "disassociated"),
+            VpcCidrBlockStateCode::Disassociating => write!(f, "disassociating"),
+            VpcCidrBlockStateCode::Failed => write!(f, "failed"),
+            VpcCidrBlockStateCode::Failing => write!(f, "failing"),
+            VpcCidrBlockStateCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

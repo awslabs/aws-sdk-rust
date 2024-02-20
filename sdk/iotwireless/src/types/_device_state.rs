@@ -106,3 +106,14 @@ impl DeviceState {
         }
     }
 }
+impl ::std::fmt::Display for DeviceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceState::Provisioned => write!(f, "Provisioned"),
+            DeviceState::Registerednotseen => write!(f, "RegisteredNotSeen"),
+            DeviceState::Registeredreachable => write!(f, "RegisteredReachable"),
+            DeviceState::Registeredunreachable => write!(f, "RegisteredUnreachable"),
+            DeviceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

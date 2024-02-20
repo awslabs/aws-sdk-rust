@@ -96,3 +96,12 @@ impl ProcessingS3DataType {
         }
     }
 }
+impl ::std::fmt::Display for ProcessingS3DataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProcessingS3DataType::ManifestFile => write!(f, "ManifestFile"),
+            ProcessingS3DataType::S3Prefix => write!(f, "S3Prefix"),
+            ProcessingS3DataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

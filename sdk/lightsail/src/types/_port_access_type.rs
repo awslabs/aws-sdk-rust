@@ -96,3 +96,12 @@ impl PortAccessType {
         }
     }
 }
+impl ::std::fmt::Display for PortAccessType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PortAccessType::Private => write!(f, "Private"),
+            PortAccessType::Public => write!(f, "Public"),
+            PortAccessType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

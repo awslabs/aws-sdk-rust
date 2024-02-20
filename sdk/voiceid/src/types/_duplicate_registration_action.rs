@@ -96,3 +96,12 @@ impl DuplicateRegistrationAction {
         }
     }
 }
+impl ::std::fmt::Display for DuplicateRegistrationAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DuplicateRegistrationAction::RegisterAsNew => write!(f, "REGISTER_AS_NEW"),
+            DuplicateRegistrationAction::Skip => write!(f, "SKIP"),
+            DuplicateRegistrationAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

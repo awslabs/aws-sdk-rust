@@ -121,3 +121,17 @@ impl FilterNameStringType {
         }
     }
 }
+impl ::std::fmt::Display for FilterNameStringType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterNameStringType::All => write!(f, "all"),
+            FilterNameStringType::Description => write!(f, "description"),
+            FilterNameStringType::Name => write!(f, "name"),
+            FilterNameStringType::OwningService => write!(f, "owning-service"),
+            FilterNameStringType::PrimaryRegion => write!(f, "primary-region"),
+            FilterNameStringType::TagKey => write!(f, "tag-key"),
+            FilterNameStringType::TagValue => write!(f, "tag-value"),
+            FilterNameStringType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

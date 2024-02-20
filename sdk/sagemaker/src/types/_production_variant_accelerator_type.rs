@@ -123,3 +123,16 @@ impl ProductionVariantAcceleratorType {
         }
     }
 }
+impl ::std::fmt::Display for ProductionVariantAcceleratorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProductionVariantAcceleratorType::MlEia1Large => write!(f, "ml.eia1.large"),
+            ProductionVariantAcceleratorType::MlEia1Medium => write!(f, "ml.eia1.medium"),
+            ProductionVariantAcceleratorType::MlEia1Xlarge => write!(f, "ml.eia1.xlarge"),
+            ProductionVariantAcceleratorType::MlEia2Large => write!(f, "ml.eia2.large"),
+            ProductionVariantAcceleratorType::MlEia2Medium => write!(f, "ml.eia2.medium"),
+            ProductionVariantAcceleratorType::MlEia2Xlarge => write!(f, "ml.eia2.xlarge"),
+            ProductionVariantAcceleratorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

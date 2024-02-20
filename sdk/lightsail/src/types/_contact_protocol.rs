@@ -96,3 +96,12 @@ impl ContactProtocol {
         }
     }
 }
+impl ::std::fmt::Display for ContactProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContactProtocol::Email => write!(f, "Email"),
+            ContactProtocol::Sms => write!(f, "SMS"),
+            ContactProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

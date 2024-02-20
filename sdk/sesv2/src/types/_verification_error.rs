@@ -111,3 +111,15 @@ impl VerificationError {
         }
     }
 }
+impl ::std::fmt::Display for VerificationError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerificationError::DnsServerError => write!(f, "DNS_SERVER_ERROR"),
+            VerificationError::HostNotFound => write!(f, "HOST_NOT_FOUND"),
+            VerificationError::InvalidValue => write!(f, "INVALID_VALUE"),
+            VerificationError::ServiceError => write!(f, "SERVICE_ERROR"),
+            VerificationError::TypeNotFound => write!(f, "TYPE_NOT_FOUND"),
+            VerificationError::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

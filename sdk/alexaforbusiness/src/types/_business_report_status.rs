@@ -101,3 +101,13 @@ impl BusinessReportStatus {
         }
     }
 }
+impl ::std::fmt::Display for BusinessReportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BusinessReportStatus::Failed => write!(f, "FAILED"),
+            BusinessReportStatus::Running => write!(f, "RUNNING"),
+            BusinessReportStatus::Succeeded => write!(f, "SUCCEEDED"),
+            BusinessReportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

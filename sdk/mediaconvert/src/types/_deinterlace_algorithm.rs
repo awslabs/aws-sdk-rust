@@ -111,3 +111,15 @@ impl DeinterlaceAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for DeinterlaceAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeinterlaceAlgorithm::Blend => write!(f, "BLEND"),
+            DeinterlaceAlgorithm::BlendTicker => write!(f, "BLEND_TICKER"),
+            DeinterlaceAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
+            DeinterlaceAlgorithm::InterpolateTicker => write!(f, "INTERPOLATE_TICKER"),
+            DeinterlaceAlgorithm::LinearInterpolation => write!(f, "LINEAR_INTERPOLATION"),
+            DeinterlaceAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

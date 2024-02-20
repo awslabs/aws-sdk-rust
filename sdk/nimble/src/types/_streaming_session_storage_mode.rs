@@ -91,3 +91,11 @@ impl StreamingSessionStorageMode {
         }
     }
 }
+impl ::std::fmt::Display for StreamingSessionStorageMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamingSessionStorageMode::Upload => write!(f, "UPLOAD"),
+            StreamingSessionStorageMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

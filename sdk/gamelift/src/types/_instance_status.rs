@@ -101,3 +101,13 @@ impl InstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for InstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceStatus::Active => write!(f, "ACTIVE"),
+            InstanceStatus::Pending => write!(f, "PENDING"),
+            InstanceStatus::Terminating => write!(f, "TERMINATING"),
+            InstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

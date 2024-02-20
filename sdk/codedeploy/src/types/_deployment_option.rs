@@ -96,3 +96,12 @@ impl DeploymentOption {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentOption::WithoutTrafficControl => write!(f, "WITHOUT_TRAFFIC_CONTROL"),
+            DeploymentOption::WithTrafficControl => write!(f, "WITH_TRAFFIC_CONTROL"),
+            DeploymentOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Reaction {
         }
     }
 }
+impl ::std::fmt::Display for Reaction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Reaction::ThumbsDown => write!(f, "ThumbsDown"),
+            Reaction::ThumbsUp => write!(f, "ThumbsUp"),
+            Reaction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

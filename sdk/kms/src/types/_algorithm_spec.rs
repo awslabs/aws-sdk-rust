@@ -117,3 +117,15 @@ impl AlgorithmSpec {
         }
     }
 }
+impl ::std::fmt::Display for AlgorithmSpec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlgorithmSpec::RsaesOaepSha1 => write!(f, "RSAES_OAEP_SHA_1"),
+            AlgorithmSpec::RsaesOaepSha256 => write!(f, "RSAES_OAEP_SHA_256"),
+            AlgorithmSpec::RsaesPkcs1V15 => write!(f, "RSAES_PKCS1_V1_5"),
+            AlgorithmSpec::RsaAesKeyWrapSha1 => write!(f, "RSA_AES_KEY_WRAP_SHA_1"),
+            AlgorithmSpec::RsaAesKeyWrapSha256 => write!(f, "RSA_AES_KEY_WRAP_SHA_256"),
+            AlgorithmSpec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

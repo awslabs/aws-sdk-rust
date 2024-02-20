@@ -123,3 +123,16 @@ impl PlatformDifference {
         }
     }
 }
+impl ::std::fmt::Display for PlatformDifference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlatformDifference::Architecture => write!(f, "Architecture"),
+            PlatformDifference::Hypervisor => write!(f, "Hypervisor"),
+            PlatformDifference::InstanceStoreAvailability => write!(f, "InstanceStoreAvailability"),
+            PlatformDifference::NetworkInterface => write!(f, "NetworkInterface"),
+            PlatformDifference::StorageInterface => write!(f, "StorageInterface"),
+            PlatformDifference::VirtualizationType => write!(f, "VirtualizationType"),
+            PlatformDifference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

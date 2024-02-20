@@ -147,3 +147,20 @@ impl ValidationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ValidationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationExceptionReason::InvalidAlarmCondition => write!(f, "InvalidAlarmCondition"),
+            ValidationExceptionReason::InvalidAz => write!(f, "InvalidAz"),
+            ValidationExceptionReason::InvalidConditionType => write!(f, "InvalidConditionType"),
+            ValidationExceptionReason::InvalidExpiresIn => write!(f, "InvalidExpiresIn"),
+            ValidationExceptionReason::InvalidPracticeBlocker => write!(f, "InvalidPracticeBlocker"),
+            ValidationExceptionReason::InvalidResourceIdentifier => write!(f, "InvalidResourceIdentifier"),
+            ValidationExceptionReason::InvalidStatus => write!(f, "InvalidStatus"),
+            ValidationExceptionReason::InvalidToken => write!(f, "InvalidToken"),
+            ValidationExceptionReason::MissingValue => write!(f, "MissingValue"),
+            ValidationExceptionReason::UnsupportedAz => write!(f, "UnsupportedAz"),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

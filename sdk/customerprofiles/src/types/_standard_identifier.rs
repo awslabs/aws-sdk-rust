@@ -126,3 +126,18 @@ impl StandardIdentifier {
         }
     }
 }
+impl ::std::fmt::Display for StandardIdentifier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StandardIdentifier::Asset => write!(f, "ASSET"),
+            StandardIdentifier::Case => write!(f, "CASE"),
+            StandardIdentifier::LookupOnly => write!(f, "LOOKUP_ONLY"),
+            StandardIdentifier::NewOnly => write!(f, "NEW_ONLY"),
+            StandardIdentifier::Order => write!(f, "ORDER"),
+            StandardIdentifier::Profile => write!(f, "PROFILE"),
+            StandardIdentifier::Secondary => write!(f, "SECONDARY"),
+            StandardIdentifier::Unique => write!(f, "UNIQUE"),
+            StandardIdentifier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

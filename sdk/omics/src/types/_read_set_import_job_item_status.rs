@@ -106,3 +106,14 @@ impl ReadSetImportJobItemStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReadSetImportJobItemStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReadSetImportJobItemStatus::Failed => write!(f, "FAILED"),
+            ReadSetImportJobItemStatus::Finished => write!(f, "FINISHED"),
+            ReadSetImportJobItemStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ReadSetImportJobItemStatus::NotStarted => write!(f, "NOT_STARTED"),
+            ReadSetImportJobItemStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

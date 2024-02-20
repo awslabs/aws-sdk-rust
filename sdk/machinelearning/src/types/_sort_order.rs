@@ -106,3 +106,12 @@ impl SortOrder {
         }
     }
 }
+impl ::std::fmt::Display for SortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortOrder::Asc => write!(f, "asc"),
+            SortOrder::Dsc => write!(f, "dsc"),
+            SortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

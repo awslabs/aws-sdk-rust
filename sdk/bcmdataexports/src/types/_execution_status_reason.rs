@@ -101,3 +101,13 @@ impl ExecutionStatusReason {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionStatusReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionStatusReason::BillOwnerChanged => write!(f, "BILL_OWNER_CHANGED"),
+            ExecutionStatusReason::InsufficientPermission => write!(f, "INSUFFICIENT_PERMISSION"),
+            ExecutionStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            ExecutionStatusReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl DifferentialPrivacyAggregationType {
         }
     }
 }
+impl ::std::fmt::Display for DifferentialPrivacyAggregationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DifferentialPrivacyAggregationType::Avg => write!(f, "AVG"),
+            DifferentialPrivacyAggregationType::Count => write!(f, "COUNT"),
+            DifferentialPrivacyAggregationType::CountDistinct => write!(f, "COUNT_DISTINCT"),
+            DifferentialPrivacyAggregationType::Stddev => write!(f, "STDDEV"),
+            DifferentialPrivacyAggregationType::Sum => write!(f, "SUM"),
+            DifferentialPrivacyAggregationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

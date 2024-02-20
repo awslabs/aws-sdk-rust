@@ -96,3 +96,12 @@ impl CustomPluginContentType {
         }
     }
 }
+impl ::std::fmt::Display for CustomPluginContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomPluginContentType::Jar => write!(f, "JAR"),
+            CustomPluginContentType::Zip => write!(f, "ZIP"),
+            CustomPluginContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

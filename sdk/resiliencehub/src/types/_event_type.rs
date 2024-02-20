@@ -96,3 +96,12 @@ impl EventType {
         }
     }
 }
+impl ::std::fmt::Display for EventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventType::DriftDetected => write!(f, "DriftDetected"),
+            EventType::ScheduledAssessmentFailure => write!(f, "ScheduledAssessmentFailure"),
+            EventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

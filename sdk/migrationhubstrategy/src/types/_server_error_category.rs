@@ -117,3 +117,15 @@ impl ServerErrorCategory {
         }
     }
 }
+impl ::std::fmt::Display for ServerErrorCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServerErrorCategory::ArchitectureError => write!(f, "ARCHITECTURE_ERROR"),
+            ServerErrorCategory::ConnectivityError => write!(f, "CONNECTIVITY_ERROR"),
+            ServerErrorCategory::CredentialError => write!(f, "CREDENTIAL_ERROR"),
+            ServerErrorCategory::OtherError => write!(f, "OTHER_ERROR"),
+            ServerErrorCategory::PermissionError => write!(f, "PERMISSION_ERROR"),
+            ServerErrorCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

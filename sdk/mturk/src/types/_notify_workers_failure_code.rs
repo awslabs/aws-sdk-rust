@@ -96,3 +96,12 @@ impl NotifyWorkersFailureCode {
         }
     }
 }
+impl ::std::fmt::Display for NotifyWorkersFailureCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotifyWorkersFailureCode::HardFailure => write!(f, "HardFailure"),
+            NotifyWorkersFailureCode::SoftFailure => write!(f, "SoftFailure"),
+            NotifyWorkersFailureCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

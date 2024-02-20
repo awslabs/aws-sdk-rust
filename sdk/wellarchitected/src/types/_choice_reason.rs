@@ -111,3 +111,15 @@ impl ChoiceReason {
         }
     }
 }
+impl ::std::fmt::Display for ChoiceReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChoiceReason::ArchitectureConstraints => write!(f, "ARCHITECTURE_CONSTRAINTS"),
+            ChoiceReason::BusinessPriorities => write!(f, "BUSINESS_PRIORITIES"),
+            ChoiceReason::None => write!(f, "NONE"),
+            ChoiceReason::Other => write!(f, "OTHER"),
+            ChoiceReason::OutOfScope => write!(f, "OUT_OF_SCOPE"),
+            ChoiceReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

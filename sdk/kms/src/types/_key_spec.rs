@@ -165,3 +165,23 @@ impl KeySpec {
         }
     }
 }
+impl ::std::fmt::Display for KeySpec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeySpec::EccNistP256 => write!(f, "ECC_NIST_P256"),
+            KeySpec::EccNistP384 => write!(f, "ECC_NIST_P384"),
+            KeySpec::EccNistP521 => write!(f, "ECC_NIST_P521"),
+            KeySpec::EccSecgP256K1 => write!(f, "ECC_SECG_P256K1"),
+            KeySpec::Hmac224 => write!(f, "HMAC_224"),
+            KeySpec::Hmac256 => write!(f, "HMAC_256"),
+            KeySpec::Hmac384 => write!(f, "HMAC_384"),
+            KeySpec::Hmac512 => write!(f, "HMAC_512"),
+            KeySpec::Rsa2048 => write!(f, "RSA_2048"),
+            KeySpec::Rsa3072 => write!(f, "RSA_3072"),
+            KeySpec::Rsa4096 => write!(f, "RSA_4096"),
+            KeySpec::Sm2 => write!(f, "SM2"),
+            KeySpec::SymmetricDefault => write!(f, "SYMMETRIC_DEFAULT"),
+            KeySpec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

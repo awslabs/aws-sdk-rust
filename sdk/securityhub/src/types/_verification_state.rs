@@ -106,3 +106,14 @@ impl VerificationState {
         }
     }
 }
+impl ::std::fmt::Display for VerificationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerificationState::BenignPositive => write!(f, "BENIGN_POSITIVE"),
+            VerificationState::FalsePositive => write!(f, "FALSE_POSITIVE"),
+            VerificationState::TruePositive => write!(f, "TRUE_POSITIVE"),
+            VerificationState::UnknownValue => write!(f, "UNKNOWN"),
+            VerificationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

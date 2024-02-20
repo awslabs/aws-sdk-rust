@@ -101,3 +101,13 @@ impl OperationTargetType {
         }
     }
 }
+impl ::std::fmt::Display for OperationTargetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationTargetType::Instance => write!(f, "INSTANCE"),
+            OperationTargetType::Namespace => write!(f, "NAMESPACE"),
+            OperationTargetType::Service => write!(f, "SERVICE"),
+            OperationTargetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

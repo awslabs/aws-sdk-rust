@@ -91,3 +91,11 @@ impl PackageVersionSortType {
         }
     }
 }
+impl ::std::fmt::Display for PackageVersionSortType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageVersionSortType::PublishedTime => write!(f, "PUBLISHED_TIME"),
+            PackageVersionSortType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

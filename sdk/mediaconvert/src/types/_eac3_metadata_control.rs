@@ -96,3 +96,12 @@ impl Eac3MetadataControl {
         }
     }
 }
+impl ::std::fmt::Display for Eac3MetadataControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3MetadataControl::FollowInput => write!(f, "FOLLOW_INPUT"),
+            Eac3MetadataControl::UseConfigured => write!(f, "USE_CONFIGURED"),
+            Eac3MetadataControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

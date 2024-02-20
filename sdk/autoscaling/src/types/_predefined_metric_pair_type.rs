@@ -106,3 +106,14 @@ impl PredefinedMetricPairType {
         }
     }
 }
+impl ::std::fmt::Display for PredefinedMetricPairType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PredefinedMetricPairType::AlbRequestCount => write!(f, "ALBRequestCount"),
+            PredefinedMetricPairType::AsgcpuUtilization => write!(f, "ASGCPUUtilization"),
+            PredefinedMetricPairType::AsgNetworkIn => write!(f, "ASGNetworkIn"),
+            PredefinedMetricPairType::AsgNetworkOut => write!(f, "ASGNetworkOut"),
+            PredefinedMetricPairType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

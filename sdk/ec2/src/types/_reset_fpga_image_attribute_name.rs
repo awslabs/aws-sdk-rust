@@ -91,3 +91,11 @@ impl ResetFpgaImageAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for ResetFpgaImageAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResetFpgaImageAttributeName::LoadPermission => write!(f, "loadPermission"),
+            ResetFpgaImageAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

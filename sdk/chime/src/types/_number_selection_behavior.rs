@@ -96,3 +96,12 @@ impl NumberSelectionBehavior {
         }
     }
 }
+impl ::std::fmt::Display for NumberSelectionBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NumberSelectionBehavior::AvoidSticky => write!(f, "AvoidSticky"),
+            NumberSelectionBehavior::PreferSticky => write!(f, "PreferSticky"),
+            NumberSelectionBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl Direction {
         }
     }
 }
+impl ::std::fmt::Display for Direction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Direction::Ascendants => write!(f, "Ascendants"),
+            Direction::Both => write!(f, "Both"),
+            Direction::Descendants => write!(f, "Descendants"),
+            Direction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl AudioNormalizationAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for AudioNormalizationAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioNormalizationAlgorithm::ItuBs17701 => write!(f, "ITU_BS_1770_1"),
+            AudioNormalizationAlgorithm::ItuBs17702 => write!(f, "ITU_BS_1770_2"),
+            AudioNormalizationAlgorithm::ItuBs17703 => write!(f, "ITU_BS_1770_3"),
+            AudioNormalizationAlgorithm::ItuBs17704 => write!(f, "ITU_BS_1770_4"),
+            AudioNormalizationAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LicenseConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for LicenseConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LicenseConfigurationStatus::Available => write!(f, "AVAILABLE"),
+            LicenseConfigurationStatus::Disabled => write!(f, "DISABLED"),
+            LicenseConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

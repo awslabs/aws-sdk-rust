@@ -96,3 +96,12 @@ impl EbuTtDDestinationStyleControl {
         }
     }
 }
+impl ::std::fmt::Display for EbuTtDDestinationStyleControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EbuTtDDestinationStyleControl::Exclude => write!(f, "EXCLUDE"),
+            EbuTtDDestinationStyleControl::Include => write!(f, "INCLUDE"),
+            EbuTtDDestinationStyleControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

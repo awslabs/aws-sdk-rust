@@ -96,3 +96,12 @@ impl EventType {
         }
     }
 }
+impl ::std::fmt::Display for EventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventType::Custom => write!(f, "aws.evidently.custom"),
+            EventType::Evaluation => write!(f, "aws.evidently.evaluation"),
+            EventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

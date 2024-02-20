@@ -106,3 +106,14 @@ impl ConnectPeerAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for ConnectPeerAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectPeerAssociationState::Available => write!(f, "AVAILABLE"),
+            ConnectPeerAssociationState::Deleted => write!(f, "DELETED"),
+            ConnectPeerAssociationState::Deleting => write!(f, "DELETING"),
+            ConnectPeerAssociationState::Pending => write!(f, "PENDING"),
+            ConnectPeerAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

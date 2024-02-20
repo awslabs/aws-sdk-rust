@@ -147,3 +147,20 @@ impl TransformationToolName {
         }
     }
 }
+impl ::std::fmt::Display for TransformationToolName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransformationToolName::App2Container => write!(f, "App2Container"),
+            TransformationToolName::Mgn => write!(f, "Application Migration Service"),
+            TransformationToolName::Dms => write!(f, "Database Migration Service"),
+            TransformationToolName::Emp => write!(f, "End of Support Migration"),
+            TransformationToolName::InPlaceOsUpgrade => write!(f, "In Place Operating System Upgrade"),
+            TransformationToolName::NativeSql => write!(f, "Native SQL Server Backup/Restore"),
+            TransformationToolName::PortingAssistant => write!(f, "Porting Assistant For .NET"),
+            TransformationToolName::Sct => write!(f, "Schema Conversion Tool"),
+            TransformationToolName::StrategyRecommendationSupport => write!(f, "Strategy Recommendation Support"),
+            TransformationToolName::Wwama => write!(f, "Windows Web Application Migration Assistant"),
+            TransformationToolName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

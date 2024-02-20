@@ -101,3 +101,13 @@ impl PrivilegedDelete {
         }
     }
 }
+impl ::std::fmt::Display for PrivilegedDelete {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrivilegedDelete::Disabled => write!(f, "DISABLED"),
+            PrivilegedDelete::Enabled => write!(f, "ENABLED"),
+            PrivilegedDelete::PermanentlyDisabled => write!(f, "PERMANENTLY_DISABLED"),
+            PrivilegedDelete::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -98,3 +98,12 @@ impl DashIsoGroupAudioChannelConfigSchemeIdUri {
         }
     }
 }
+impl ::std::fmt::Display for DashIsoGroupAudioChannelConfigSchemeIdUri {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashIsoGroupAudioChannelConfigSchemeIdUri::DolbyChannelConfiguration => write!(f, "DOLBY_CHANNEL_CONFIGURATION"),
+            DashIsoGroupAudioChannelConfigSchemeIdUri::MpegChannelConfiguration => write!(f, "MPEG_CHANNEL_CONFIGURATION"),
+            DashIsoGroupAudioChannelConfigSchemeIdUri::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

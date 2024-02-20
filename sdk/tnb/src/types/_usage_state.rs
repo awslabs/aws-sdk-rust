@@ -96,3 +96,12 @@ impl UsageState {
         }
     }
 }
+impl ::std::fmt::Display for UsageState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageState::InUse => write!(f, "IN_USE"),
+            UsageState::NotInUse => write!(f, "NOT_IN_USE"),
+            UsageState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

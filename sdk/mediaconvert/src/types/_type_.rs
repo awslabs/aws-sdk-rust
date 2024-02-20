@@ -96,3 +96,12 @@ impl Type {
         }
     }
 }
+impl ::std::fmt::Display for Type {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Type::Custom => write!(f, "CUSTOM"),
+            Type::System => write!(f, "SYSTEM"),
+            Type::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl EntityStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for EntityStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EntityStatusCode::Impaired => write!(f, "IMPAIRED"),
+            EntityStatusCode::Pending => write!(f, "PENDING"),
+            EntityStatusCode::Resolved => write!(f, "RESOLVED"),
+            EntityStatusCode::Unimpaired => write!(f, "UNIMPAIRED"),
+            EntityStatusCode::UnknownValue => write!(f, "UNKNOWN"),
+            EntityStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

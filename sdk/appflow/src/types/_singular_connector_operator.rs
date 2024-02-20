@@ -171,3 +171,24 @@ impl SingularConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for SingularConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SingularConnectorOperator::Addition => write!(f, "ADDITION"),
+            SingularConnectorOperator::Division => write!(f, "DIVISION"),
+            SingularConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            SingularConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            SingularConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            SingularConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            SingularConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            SingularConnectorOperator::NoOp => write!(f, "NO_OP"),
+            SingularConnectorOperator::Projection => write!(f, "PROJECTION"),
+            SingularConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            SingularConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            SingularConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            SingularConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            SingularConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            SingularConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

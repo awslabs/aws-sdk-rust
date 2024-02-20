@@ -96,3 +96,12 @@ impl SortContextsBy {
         }
     }
 }
+impl ::std::fmt::Display for SortContextsBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortContextsBy::CreationTime => write!(f, "CreationTime"),
+            SortContextsBy::Name => write!(f, "Name"),
+            SortContextsBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

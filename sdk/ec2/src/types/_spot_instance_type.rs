@@ -96,3 +96,12 @@ impl SpotInstanceType {
         }
     }
 }
+impl ::std::fmt::Display for SpotInstanceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpotInstanceType::OneTime => write!(f, "one-time"),
+            SpotInstanceType::Persistent => write!(f, "persistent"),
+            SpotInstanceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

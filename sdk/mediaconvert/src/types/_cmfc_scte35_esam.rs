@@ -96,3 +96,12 @@ impl CmfcScte35Esam {
         }
     }
 }
+impl ::std::fmt::Display for CmfcScte35Esam {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmfcScte35Esam::Insert => write!(f, "INSERT"),
+            CmfcScte35Esam::None => write!(f, "NONE"),
+            CmfcScte35Esam::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

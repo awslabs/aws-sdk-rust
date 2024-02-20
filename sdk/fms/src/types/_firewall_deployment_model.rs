@@ -96,3 +96,12 @@ impl FirewallDeploymentModel {
         }
     }
 }
+impl ::std::fmt::Display for FirewallDeploymentModel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FirewallDeploymentModel::Centralized => write!(f, "CENTRALIZED"),
+            FirewallDeploymentModel::Distributed => write!(f, "DISTRIBUTED"),
+            FirewallDeploymentModel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

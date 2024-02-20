@@ -96,3 +96,12 @@ impl ModelOutputDataFormat {
         }
     }
 }
+impl ::std::fmt::Display for ModelOutputDataFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelOutputDataFormat::Jsonlines => write!(f, "APPLICATION_JSONLINES"),
+            ModelOutputDataFormat::Csv => write!(f, "TEXT_CSV"),
+            ModelOutputDataFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl AssociatedResourceType {
         }
     }
 }
+impl ::std::fmt::Display for AssociatedResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociatedResourceType::Cloudfront => write!(f, "CLOUDFRONT"),
+            AssociatedResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

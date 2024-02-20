@@ -96,3 +96,12 @@ impl FulfillmentActivityType {
         }
     }
 }
+impl ::std::fmt::Display for FulfillmentActivityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FulfillmentActivityType::CodeHook => write!(f, "CodeHook"),
+            FulfillmentActivityType::ReturnIntent => write!(f, "ReturnIntent"),
+            FulfillmentActivityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

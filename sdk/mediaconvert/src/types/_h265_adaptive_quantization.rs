@@ -121,3 +121,17 @@ impl H265AdaptiveQuantization {
         }
     }
 }
+impl ::std::fmt::Display for H265AdaptiveQuantization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265AdaptiveQuantization::Auto => write!(f, "AUTO"),
+            H265AdaptiveQuantization::High => write!(f, "HIGH"),
+            H265AdaptiveQuantization::Higher => write!(f, "HIGHER"),
+            H265AdaptiveQuantization::Low => write!(f, "LOW"),
+            H265AdaptiveQuantization::Max => write!(f, "MAX"),
+            H265AdaptiveQuantization::Medium => write!(f, "MEDIUM"),
+            H265AdaptiveQuantization::Off => write!(f, "OFF"),
+            H265AdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

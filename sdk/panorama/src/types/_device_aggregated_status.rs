@@ -147,3 +147,20 @@ impl DeviceAggregatedStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceAggregatedStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceAggregatedStatus::AwaitingProvisioning => write!(f, "AWAITING_PROVISIONING"),
+            DeviceAggregatedStatus::Deleting => write!(f, "DELETING"),
+            DeviceAggregatedStatus::Error => write!(f, "ERROR"),
+            DeviceAggregatedStatus::Failed => write!(f, "FAILED"),
+            DeviceAggregatedStatus::LeaseExpired => write!(f, "LEASE_EXPIRED"),
+            DeviceAggregatedStatus::Offline => write!(f, "OFFLINE"),
+            DeviceAggregatedStatus::Online => write!(f, "ONLINE"),
+            DeviceAggregatedStatus::Pending => write!(f, "PENDING"),
+            DeviceAggregatedStatus::Rebooting => write!(f, "REBOOTING"),
+            DeviceAggregatedStatus::UpdateNeeded => write!(f, "UPDATE_NEEDED"),
+            DeviceAggregatedStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

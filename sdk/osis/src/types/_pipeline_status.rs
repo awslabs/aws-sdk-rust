@@ -147,3 +147,20 @@ impl PipelineStatus {
         }
     }
 }
+impl ::std::fmt::Display for PipelineStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PipelineStatus::Active => write!(f, "ACTIVE"),
+            PipelineStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            PipelineStatus::Creating => write!(f, "CREATING"),
+            PipelineStatus::Deleting => write!(f, "DELETING"),
+            PipelineStatus::Starting => write!(f, "STARTING"),
+            PipelineStatus::StartFailed => write!(f, "START_FAILED"),
+            PipelineStatus::Stopped => write!(f, "STOPPED"),
+            PipelineStatus::Stopping => write!(f, "STOPPING"),
+            PipelineStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            PipelineStatus::Updating => write!(f, "UPDATING"),
+            PipelineStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

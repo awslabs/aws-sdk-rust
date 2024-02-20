@@ -91,3 +91,11 @@ impl ConflictExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ConflictExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConflictExceptionReason::InvalidRuleState => write!(f, "INVALID_RULE_STATE"),
+            ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

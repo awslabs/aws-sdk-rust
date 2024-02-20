@@ -141,3 +141,19 @@ impl OfferSortBy {
         }
     }
 }
+impl ::std::fmt::Display for OfferSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OfferSortBy::AvailabilityEndDate => write!(f, "AvailabilityEndDate"),
+            OfferSortBy::BuyerAccounts => write!(f, "BuyerAccounts"),
+            OfferSortBy::EntityId => write!(f, "EntityId"),
+            OfferSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
+            OfferSortBy::Name => write!(f, "Name"),
+            OfferSortBy::ProductId => write!(f, "ProductId"),
+            OfferSortBy::ReleaseDate => write!(f, "ReleaseDate"),
+            OfferSortBy::State => write!(f, "State"),
+            OfferSortBy::Targeting => write!(f, "Targeting"),
+            OfferSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

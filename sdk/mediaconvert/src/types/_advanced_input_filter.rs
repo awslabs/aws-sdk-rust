@@ -96,3 +96,12 @@ impl AdvancedInputFilter {
         }
     }
 }
+impl ::std::fmt::Display for AdvancedInputFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdvancedInputFilter::Disabled => write!(f, "DISABLED"),
+            AdvancedInputFilter::Enabled => write!(f, "ENABLED"),
+            AdvancedInputFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

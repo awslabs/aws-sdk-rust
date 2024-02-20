@@ -111,3 +111,15 @@ impl AthenaResultFormat {
         }
     }
 }
+impl ::std::fmt::Display for AthenaResultFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AthenaResultFormat::Avro => write!(f, "AVRO"),
+            AthenaResultFormat::Json => write!(f, "JSON"),
+            AthenaResultFormat::Orc => write!(f, "ORC"),
+            AthenaResultFormat::Parquet => write!(f, "PARQUET"),
+            AthenaResultFormat::Textfile => write!(f, "TEXTFILE"),
+            AthenaResultFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

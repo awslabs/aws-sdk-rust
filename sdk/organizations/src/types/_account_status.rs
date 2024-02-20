@@ -101,3 +101,13 @@ impl AccountStatus {
         }
     }
 }
+impl ::std::fmt::Display for AccountStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountStatus::Active => write!(f, "ACTIVE"),
+            AccountStatus::PendingClosure => write!(f, "PENDING_CLOSURE"),
+            AccountStatus::Suspended => write!(f, "SUSPENDED"),
+            AccountStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

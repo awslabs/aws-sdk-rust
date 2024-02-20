@@ -101,3 +101,13 @@ impl DiskImageFormat {
         }
     }
 }
+impl ::std::fmt::Display for DiskImageFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiskImageFormat::Raw => write!(f, "RAW"),
+            DiskImageFormat::Vhd => write!(f, "VHD"),
+            DiskImageFormat::Vmdk => write!(f, "VMDK"),
+            DiskImageFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

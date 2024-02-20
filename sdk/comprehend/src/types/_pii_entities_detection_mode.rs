@@ -96,3 +96,12 @@ impl PiiEntitiesDetectionMode {
         }
     }
 }
+impl ::std::fmt::Display for PiiEntitiesDetectionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PiiEntitiesDetectionMode::OnlyOffsets => write!(f, "ONLY_OFFSETS"),
+            PiiEntitiesDetectionMode::OnlyRedaction => write!(f, "ONLY_REDACTION"),
+            PiiEntitiesDetectionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

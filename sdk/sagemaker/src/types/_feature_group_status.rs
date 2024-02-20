@@ -111,3 +111,15 @@ impl FeatureGroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for FeatureGroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeatureGroupStatus::CreateFailed => write!(f, "CreateFailed"),
+            FeatureGroupStatus::Created => write!(f, "Created"),
+            FeatureGroupStatus::Creating => write!(f, "Creating"),
+            FeatureGroupStatus::DeleteFailed => write!(f, "DeleteFailed"),
+            FeatureGroupStatus::Deleting => write!(f, "Deleting"),
+            FeatureGroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

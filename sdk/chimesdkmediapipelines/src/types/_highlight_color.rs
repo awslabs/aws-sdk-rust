@@ -116,3 +116,16 @@ impl HighlightColor {
         }
     }
 }
+impl ::std::fmt::Display for HighlightColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HighlightColor::Black => write!(f, "Black"),
+            HighlightColor::Blue => write!(f, "Blue"),
+            HighlightColor::Green => write!(f, "Green"),
+            HighlightColor::Red => write!(f, "Red"),
+            HighlightColor::White => write!(f, "White"),
+            HighlightColor::Yellow => write!(f, "Yellow"),
+            HighlightColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

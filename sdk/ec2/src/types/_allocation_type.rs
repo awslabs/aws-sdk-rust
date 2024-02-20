@@ -91,3 +91,11 @@ impl AllocationType {
         }
     }
 }
+impl ::std::fmt::Display for AllocationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllocationType::Used => write!(f, "used"),
+            AllocationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

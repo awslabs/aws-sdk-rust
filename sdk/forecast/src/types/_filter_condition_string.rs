@@ -96,3 +96,12 @@ impl FilterConditionString {
         }
     }
 }
+impl ::std::fmt::Display for FilterConditionString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterConditionString::Is => write!(f, "IS"),
+            FilterConditionString::IsNot => write!(f, "IS_NOT"),
+            FilterConditionString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

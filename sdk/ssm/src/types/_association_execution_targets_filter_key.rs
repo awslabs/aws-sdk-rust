@@ -101,3 +101,13 @@ impl AssociationExecutionTargetsFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for AssociationExecutionTargetsFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationExecutionTargetsFilterKey::ResourceId => write!(f, "ResourceId"),
+            AssociationExecutionTargetsFilterKey::ResourceType => write!(f, "ResourceType"),
+            AssociationExecutionTargetsFilterKey::Status => write!(f, "Status"),
+            AssociationExecutionTargetsFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

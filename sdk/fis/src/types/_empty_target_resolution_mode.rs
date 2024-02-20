@@ -96,3 +96,12 @@ impl EmptyTargetResolutionMode {
         }
     }
 }
+impl ::std::fmt::Display for EmptyTargetResolutionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EmptyTargetResolutionMode::Fail => write!(f, "fail"),
+            EmptyTargetResolutionMode::Skip => write!(f, "skip"),
+            EmptyTargetResolutionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

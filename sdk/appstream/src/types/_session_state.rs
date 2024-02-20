@@ -101,3 +101,13 @@ impl SessionState {
         }
     }
 }
+impl ::std::fmt::Display for SessionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SessionState::Active => write!(f, "ACTIVE"),
+            SessionState::Expired => write!(f, "EXPIRED"),
+            SessionState::Pending => write!(f, "PENDING"),
+            SessionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

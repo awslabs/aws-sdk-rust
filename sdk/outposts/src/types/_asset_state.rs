@@ -101,3 +101,13 @@ impl AssetState {
         }
     }
 }
+impl ::std::fmt::Display for AssetState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetState::Active => write!(f, "ACTIVE"),
+            AssetState::Isolated => write!(f, "ISOLATED"),
+            AssetState::Retiring => write!(f, "RETIRING"),
+            AssetState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

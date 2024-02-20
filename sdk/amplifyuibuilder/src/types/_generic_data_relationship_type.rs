@@ -101,3 +101,13 @@ impl GenericDataRelationshipType {
         }
     }
 }
+impl ::std::fmt::Display for GenericDataRelationshipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GenericDataRelationshipType::BelongsTo => write!(f, "BELONGS_TO"),
+            GenericDataRelationshipType::HasMany => write!(f, "HAS_MANY"),
+            GenericDataRelationshipType::HasOne => write!(f, "HAS_ONE"),
+            GenericDataRelationshipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

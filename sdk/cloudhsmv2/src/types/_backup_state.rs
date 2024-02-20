@@ -106,3 +106,14 @@ impl BackupState {
         }
     }
 }
+impl ::std::fmt::Display for BackupState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackupState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            BackupState::Deleted => write!(f, "DELETED"),
+            BackupState::PendingDeletion => write!(f, "PENDING_DELETION"),
+            BackupState::Ready => write!(f, "READY"),
+            BackupState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

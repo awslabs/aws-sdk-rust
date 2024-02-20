@@ -106,3 +106,14 @@ impl LegalHoldStatus {
         }
     }
 }
+impl ::std::fmt::Display for LegalHoldStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LegalHoldStatus::Active => write!(f, "ACTIVE"),
+            LegalHoldStatus::Canceled => write!(f, "CANCELED"),
+            LegalHoldStatus::Canceling => write!(f, "CANCELING"),
+            LegalHoldStatus::Creating => write!(f, "CREATING"),
+            LegalHoldStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

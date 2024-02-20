@@ -96,3 +96,12 @@ impl PositioningConfigStatus {
         }
     }
 }
+impl ::std::fmt::Display for PositioningConfigStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PositioningConfigStatus::Disabled => write!(f, "Disabled"),
+            PositioningConfigStatus::Enabled => write!(f, "Enabled"),
+            PositioningConfigStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

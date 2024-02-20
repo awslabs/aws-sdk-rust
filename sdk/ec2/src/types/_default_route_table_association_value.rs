@@ -96,3 +96,12 @@ impl DefaultRouteTableAssociationValue {
         }
     }
 }
+impl ::std::fmt::Display for DefaultRouteTableAssociationValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DefaultRouteTableAssociationValue::Disable => write!(f, "disable"),
+            DefaultRouteTableAssociationValue::Enable => write!(f, "enable"),
+            DefaultRouteTableAssociationValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

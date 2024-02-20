@@ -106,3 +106,14 @@ impl ResponseItemType {
         }
     }
 }
+impl ::std::fmt::Display for ResponseItemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResponseItemType::Comment => write!(f, "COMMENT"),
+            ResponseItemType::Document => write!(f, "DOCUMENT"),
+            ResponseItemType::DocumentVersion => write!(f, "DOCUMENT_VERSION"),
+            ResponseItemType::Folder => write!(f, "FOLDER"),
+            ResponseItemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

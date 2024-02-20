@@ -108,3 +108,14 @@ impl Readiness {
         }
     }
 }
+impl ::std::fmt::Display for Readiness {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Readiness::NotAuthorized => write!(f, "NOT_AUTHORIZED"),
+            Readiness::NotReady => write!(f, "NOT_READY"),
+            Readiness::Ready => write!(f, "READY"),
+            Readiness::UnknownValue => write!(f, "UNKNOWN"),
+            Readiness::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

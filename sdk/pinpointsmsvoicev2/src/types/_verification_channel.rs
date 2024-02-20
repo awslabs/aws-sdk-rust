@@ -96,3 +96,12 @@ impl VerificationChannel {
         }
     }
 }
+impl ::std::fmt::Display for VerificationChannel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerificationChannel::Text => write!(f, "TEXT"),
+            VerificationChannel::Voice => write!(f, "VOICE"),
+            VerificationChannel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

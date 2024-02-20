@@ -111,3 +111,15 @@ impl LoadBalancerState {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerState::Active => write!(f, "active"),
+            LoadBalancerState::ActiveImpaired => write!(f, "active_impaired"),
+            LoadBalancerState::Failed => write!(f, "failed"),
+            LoadBalancerState::Provisioning => write!(f, "provisioning"),
+            LoadBalancerState::UnknownValue => write!(f, "unknown"),
+            LoadBalancerState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

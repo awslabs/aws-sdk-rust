@@ -96,3 +96,12 @@ impl VpcState {
         }
     }
 }
+impl ::std::fmt::Display for VpcState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcState::Available => write!(f, "available"),
+            VpcState::Pending => write!(f, "pending"),
+            VpcState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

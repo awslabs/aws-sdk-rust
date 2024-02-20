@@ -91,3 +91,11 @@ impl MediaPipelineSourceType {
         }
     }
 }
+impl ::std::fmt::Display for MediaPipelineSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaPipelineSourceType::ChimeSdkMeeting => write!(f, "ChimeSdkMeeting"),
+            MediaPipelineSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

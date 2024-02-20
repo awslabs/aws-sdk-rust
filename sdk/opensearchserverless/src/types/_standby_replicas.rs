@@ -96,3 +96,12 @@ impl StandbyReplicas {
         }
     }
 }
+impl ::std::fmt::Display for StandbyReplicas {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StandbyReplicas::Disabled => write!(f, "DISABLED"),
+            StandbyReplicas::Enabled => write!(f, "ENABLED"),
+            StandbyReplicas::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

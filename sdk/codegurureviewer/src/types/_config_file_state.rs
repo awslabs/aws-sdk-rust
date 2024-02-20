@@ -101,3 +101,13 @@ impl ConfigFileState {
         }
     }
 }
+impl ::std::fmt::Display for ConfigFileState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigFileState::Absent => write!(f, "Absent"),
+            ConfigFileState::Present => write!(f, "Present"),
+            ConfigFileState::PresentWithErrors => write!(f, "PresentWithErrors"),
+            ConfigFileState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

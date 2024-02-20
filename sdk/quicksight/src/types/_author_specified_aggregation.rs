@@ -159,3 +159,22 @@ impl AuthorSpecifiedAggregation {
         }
     }
 }
+impl ::std::fmt::Display for AuthorSpecifiedAggregation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthorSpecifiedAggregation::Average => write!(f, "AVERAGE"),
+            AuthorSpecifiedAggregation::Count => write!(f, "COUNT"),
+            AuthorSpecifiedAggregation::DistinctCount => write!(f, "DISTINCT_COUNT"),
+            AuthorSpecifiedAggregation::Max => write!(f, "MAX"),
+            AuthorSpecifiedAggregation::Median => write!(f, "MEDIAN"),
+            AuthorSpecifiedAggregation::Min => write!(f, "MIN"),
+            AuthorSpecifiedAggregation::Percentile => write!(f, "PERCENTILE"),
+            AuthorSpecifiedAggregation::Stdev => write!(f, "STDEV"),
+            AuthorSpecifiedAggregation::Stdevp => write!(f, "STDEVP"),
+            AuthorSpecifiedAggregation::Sum => write!(f, "SUM"),
+            AuthorSpecifiedAggregation::Var => write!(f, "VAR"),
+            AuthorSpecifiedAggregation::Varp => write!(f, "VARP"),
+            AuthorSpecifiedAggregation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

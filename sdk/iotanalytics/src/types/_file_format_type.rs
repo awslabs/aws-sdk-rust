@@ -96,3 +96,12 @@ impl FileFormatType {
         }
     }
 }
+impl ::std::fmt::Display for FileFormatType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileFormatType::Json => write!(f, "JSON"),
+            FileFormatType::Parquet => write!(f, "PARQUET"),
+            FileFormatType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

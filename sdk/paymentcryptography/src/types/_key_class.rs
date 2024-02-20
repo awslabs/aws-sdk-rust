@@ -106,3 +106,14 @@ impl KeyClass {
         }
     }
 }
+impl ::std::fmt::Display for KeyClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyClass::AsymmetricKeyPair => write!(f, "ASYMMETRIC_KEY_PAIR"),
+            KeyClass::PrivateKey => write!(f, "PRIVATE_KEY"),
+            KeyClass::PublicKey => write!(f, "PUBLIC_KEY"),
+            KeyClass::SymmetricKey => write!(f, "SYMMETRIC_KEY"),
+            KeyClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

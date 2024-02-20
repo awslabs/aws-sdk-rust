@@ -101,3 +101,13 @@ impl TaskState {
         }
     }
 }
+impl ::std::fmt::Display for TaskState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskState::Canceled => write!(f, "CANCELED"),
+            TaskState::Completed => write!(f, "COMPLETED"),
+            TaskState::InProgress => write!(f, "IN_PROGRESS"),
+            TaskState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

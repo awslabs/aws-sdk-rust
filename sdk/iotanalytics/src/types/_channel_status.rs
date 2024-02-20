@@ -101,3 +101,13 @@ impl ChannelStatus {
         }
     }
 }
+impl ::std::fmt::Display for ChannelStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelStatus::Active => write!(f, "ACTIVE"),
+            ChannelStatus::Creating => write!(f, "CREATING"),
+            ChannelStatus::Deleting => write!(f, "DELETING"),
+            ChannelStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

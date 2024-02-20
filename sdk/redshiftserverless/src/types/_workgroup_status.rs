@@ -106,3 +106,14 @@ impl WorkgroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorkgroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkgroupStatus::Available => write!(f, "AVAILABLE"),
+            WorkgroupStatus::Creating => write!(f, "CREATING"),
+            WorkgroupStatus::Deleting => write!(f, "DELETING"),
+            WorkgroupStatus::Modifying => write!(f, "MODIFYING"),
+            WorkgroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

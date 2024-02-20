@@ -96,3 +96,12 @@ impl ProductCodeValues {
         }
     }
 }
+impl ::std::fmt::Display for ProductCodeValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProductCodeValues::Devpay => write!(f, "devpay"),
+            ProductCodeValues::Marketplace => write!(f, "marketplace"),
+            ProductCodeValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

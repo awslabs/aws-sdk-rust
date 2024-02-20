@@ -101,3 +101,13 @@ impl ActionType {
         }
     }
 }
+impl ::std::fmt::Display for ActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionType::GetCertificate => write!(f, "GetCertificate"),
+            ActionType::IssueCertificate => write!(f, "IssueCertificate"),
+            ActionType::ListPermissions => write!(f, "ListPermissions"),
+            ActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

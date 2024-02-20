@@ -101,3 +101,13 @@ impl ModelTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for ModelTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelTypeEnum::AccountTakeoverInsights => write!(f, "ACCOUNT_TAKEOVER_INSIGHTS"),
+            ModelTypeEnum::OnlineFraudInsights => write!(f, "ONLINE_FRAUD_INSIGHTS"),
+            ModelTypeEnum::TransactionFraudInsights => write!(f, "TRANSACTION_FRAUD_INSIGHTS"),
+            ModelTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

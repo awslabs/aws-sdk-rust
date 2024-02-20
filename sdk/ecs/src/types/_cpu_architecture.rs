@@ -96,3 +96,12 @@ impl CpuArchitecture {
         }
     }
 }
+impl ::std::fmt::Display for CpuArchitecture {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CpuArchitecture::Arm64 => write!(f, "ARM64"),
+            CpuArchitecture::X8664 => write!(f, "X86_64"),
+            CpuArchitecture::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

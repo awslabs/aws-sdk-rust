@@ -96,3 +96,12 @@ impl TraversalDirection {
         }
     }
 }
+impl ::std::fmt::Display for TraversalDirection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TraversalDirection::Child => write!(f, "CHILD"),
+            TraversalDirection::Parent => write!(f, "PARENT"),
+            TraversalDirection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

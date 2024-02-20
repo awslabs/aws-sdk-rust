@@ -101,3 +101,13 @@ impl SchemaStatus {
         }
     }
 }
+impl ::std::fmt::Display for SchemaStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SchemaStatus::Available => write!(f, "AVAILABLE"),
+            SchemaStatus::Deleting => write!(f, "DELETING"),
+            SchemaStatus::Pending => write!(f, "PENDING"),
+            SchemaStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

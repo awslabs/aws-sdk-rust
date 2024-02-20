@@ -135,3 +135,18 @@ impl SourceApiAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for SourceApiAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceApiAssociationStatus::AutoMergeScheduleFailed => write!(f, "AUTO_MERGE_SCHEDULE_FAILED"),
+            SourceApiAssociationStatus::DeletionFailed => write!(f, "DELETION_FAILED"),
+            SourceApiAssociationStatus::DeletionInProgress => write!(f, "DELETION_IN_PROGRESS"),
+            SourceApiAssociationStatus::DeletionScheduled => write!(f, "DELETION_SCHEDULED"),
+            SourceApiAssociationStatus::MergeFailed => write!(f, "MERGE_FAILED"),
+            SourceApiAssociationStatus::MergeInProgress => write!(f, "MERGE_IN_PROGRESS"),
+            SourceApiAssociationStatus::MergeScheduled => write!(f, "MERGE_SCHEDULED"),
+            SourceApiAssociationStatus::MergeSuccess => write!(f, "MERGE_SUCCESS"),
+            SourceApiAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Intent {
         }
     }
 }
+impl ::std::fmt::Display for Intent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Intent::Apply => write!(f, "APPLY"),
+            Intent::Validate => write!(f, "VALIDATE"),
+            Intent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl BlockOverrideDnsType {
         }
     }
 }
+impl ::std::fmt::Display for BlockOverrideDnsType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BlockOverrideDnsType::Cname => write!(f, "CNAME"),
+            BlockOverrideDnsType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

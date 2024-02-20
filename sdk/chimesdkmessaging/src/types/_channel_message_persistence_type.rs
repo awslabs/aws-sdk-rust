@@ -96,3 +96,12 @@ impl ChannelMessagePersistenceType {
         }
     }
 }
+impl ::std::fmt::Display for ChannelMessagePersistenceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelMessagePersistenceType::NonPersistent => write!(f, "NON_PERSISTENT"),
+            ChannelMessagePersistenceType::Persistent => write!(f, "PERSISTENT"),
+            ChannelMessagePersistenceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

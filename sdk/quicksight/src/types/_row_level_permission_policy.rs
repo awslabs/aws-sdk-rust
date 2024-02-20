@@ -96,3 +96,12 @@ impl RowLevelPermissionPolicy {
         }
     }
 }
+impl ::std::fmt::Display for RowLevelPermissionPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RowLevelPermissionPolicy::DenyAccess => write!(f, "DENY_ACCESS"),
+            RowLevelPermissionPolicy::GrantAccess => write!(f, "GRANT_ACCESS"),
+            RowLevelPermissionPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

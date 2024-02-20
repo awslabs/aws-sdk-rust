@@ -96,3 +96,12 @@ impl StrategyOnFullSize {
         }
     }
 }
+impl ::std::fmt::Display for StrategyOnFullSize {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StrategyOnFullSize::DeleteOldestMedia => write!(f, "DELETE_OLDEST_MEDIA"),
+            StrategyOnFullSize::DenyNewMedia => write!(f, "DENY_NEW_MEDIA"),
+            StrategyOnFullSize::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

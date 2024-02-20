@@ -135,3 +135,18 @@ impl ImportFileTaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImportFileTaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportFileTaskStatus::DeleteFailed => write!(f, "DeleteFailed"),
+            ImportFileTaskStatus::DeleteInProgress => write!(f, "DeleteInProgress"),
+            ImportFileTaskStatus::DeletePartialSuccess => write!(f, "DeletePartialSuccess"),
+            ImportFileTaskStatus::DeleteSuccess => write!(f, "DeleteSuccess"),
+            ImportFileTaskStatus::ImportFailed => write!(f, "ImportFailed"),
+            ImportFileTaskStatus::ImportInProgress => write!(f, "ImportInProgress"),
+            ImportFileTaskStatus::ImportPartialSuccess => write!(f, "ImportPartialSuccess"),
+            ImportFileTaskStatus::ImportSuccess => write!(f, "ImportSuccess"),
+            ImportFileTaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

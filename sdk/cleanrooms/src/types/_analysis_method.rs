@@ -91,3 +91,11 @@ impl AnalysisMethod {
         }
     }
 }
+impl ::std::fmt::Display for AnalysisMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalysisMethod::DirectQuery => write!(f, "DIRECT_QUERY"),
+            AnalysisMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

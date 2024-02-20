@@ -101,3 +101,13 @@ impl ArtifactCategory {
         }
     }
 }
+impl ::std::fmt::Display for ArtifactCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArtifactCategory::File => write!(f, "FILE"),
+            ArtifactCategory::Log => write!(f, "LOG"),
+            ArtifactCategory::Screenshot => write!(f, "SCREENSHOT"),
+            ArtifactCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

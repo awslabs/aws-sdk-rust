@@ -111,3 +111,15 @@ impl ApplicationDiscoveryStatus {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationDiscoveryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationDiscoveryStatus::Deleting => write!(f, "DELETING"),
+            ApplicationDiscoveryStatus::RefreshFailed => write!(f, "REFRESH_FAILED"),
+            ApplicationDiscoveryStatus::Registering => write!(f, "REGISTERING"),
+            ApplicationDiscoveryStatus::RegistrationFailed => write!(f, "REGISTRATION_FAILED"),
+            ApplicationDiscoveryStatus::Success => write!(f, "SUCCESS"),
+            ApplicationDiscoveryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

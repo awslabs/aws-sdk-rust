@@ -91,3 +91,11 @@ impl QueryConditionFieldName {
         }
     }
 }
+impl ::std::fmt::Display for QueryConditionFieldName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryConditionFieldName::ResultType => write!(f, "RESULT_TYPE"),
+            QueryConditionFieldName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

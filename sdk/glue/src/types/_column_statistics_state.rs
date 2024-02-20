@@ -111,3 +111,15 @@ impl ColumnStatisticsState {
         }
     }
 }
+impl ::std::fmt::Display for ColumnStatisticsState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnStatisticsState::Failed => write!(f, "FAILED"),
+            ColumnStatisticsState::Running => write!(f, "RUNNING"),
+            ColumnStatisticsState::Starting => write!(f, "STARTING"),
+            ColumnStatisticsState::Stopped => write!(f, "STOPPED"),
+            ColumnStatisticsState::Succeeded => write!(f, "SUCCEEDED"),
+            ColumnStatisticsState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DomainType {
         }
     }
 }
+impl ::std::fmt::Display for DomainType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainType::Standard => write!(f, "standard"),
+            DomainType::Vpc => write!(f, "vpc"),
+            DomainType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

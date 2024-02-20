@@ -96,3 +96,12 @@ impl BooleanOperator {
         }
     }
 }
+impl ::std::fmt::Display for BooleanOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BooleanOperator::And => write!(f, "And"),
+            BooleanOperator::Or => write!(f, "Or"),
+            BooleanOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

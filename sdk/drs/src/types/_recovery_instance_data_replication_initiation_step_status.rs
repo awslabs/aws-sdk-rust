@@ -113,3 +113,15 @@ impl RecoveryInstanceDataReplicationInitiationStepStatus {
         }
     }
 }
+impl ::std::fmt::Display for RecoveryInstanceDataReplicationInitiationStepStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecoveryInstanceDataReplicationInitiationStepStatus::Failed => write!(f, "FAILED"),
+            RecoveryInstanceDataReplicationInitiationStepStatus::InProgress => write!(f, "IN_PROGRESS"),
+            RecoveryInstanceDataReplicationInitiationStepStatus::NotStarted => write!(f, "NOT_STARTED"),
+            RecoveryInstanceDataReplicationInitiationStepStatus::Skipped => write!(f, "SKIPPED"),
+            RecoveryInstanceDataReplicationInitiationStepStatus::Succeeded => write!(f, "SUCCEEDED"),
+            RecoveryInstanceDataReplicationInitiationStepStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

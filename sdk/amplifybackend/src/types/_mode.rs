@@ -106,3 +106,14 @@ impl Mode {
         }
     }
 }
+impl ::std::fmt::Display for Mode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mode::AmazonCognitoUserPools => write!(f, "AMAZON_COGNITO_USER_POOLS"),
+            Mode::ApiKey => write!(f, "API_KEY"),
+            Mode::AwsIam => write!(f, "AWS_IAM"),
+            Mode::OpenidConnect => write!(f, "OPENID_CONNECT"),
+            Mode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

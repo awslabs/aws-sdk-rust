@@ -96,3 +96,12 @@ impl StreamMode {
         }
     }
 }
+impl ::std::fmt::Display for StreamMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamMode::OnDemand => write!(f, "ON_DEMAND"),
+            StreamMode::Provisioned => write!(f, "PROVISIONED"),
+            StreamMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

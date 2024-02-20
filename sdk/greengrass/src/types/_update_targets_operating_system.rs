@@ -106,3 +106,14 @@ impl UpdateTargetsOperatingSystem {
         }
     }
 }
+impl ::std::fmt::Display for UpdateTargetsOperatingSystem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateTargetsOperatingSystem::AmazonLinux => write!(f, "amazon_linux"),
+            UpdateTargetsOperatingSystem::Openwrt => write!(f, "openwrt"),
+            UpdateTargetsOperatingSystem::Raspbian => write!(f, "raspbian"),
+            UpdateTargetsOperatingSystem::Ubuntu => write!(f, "ubuntu"),
+            UpdateTargetsOperatingSystem::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

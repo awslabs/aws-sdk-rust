@@ -100,6 +100,16 @@ impl Gender {
         }
     }
 }
+impl ::std::fmt::Display for Gender {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Gender::Female => write!(f, "FEMALE"),
+            Gender::Male => write!(f, "MALE"),
+            Gender::Unspecified => write!(f, "UNSPECIFIED"),
+            Gender::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}
 impl ::std::fmt::Debug for Gender {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         ::std::write!(f, "*** Sensitive Data Redacted ***")

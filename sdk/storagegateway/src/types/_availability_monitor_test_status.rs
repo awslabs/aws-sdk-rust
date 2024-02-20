@@ -101,3 +101,13 @@ impl AvailabilityMonitorTestStatus {
         }
     }
 }
+impl ::std::fmt::Display for AvailabilityMonitorTestStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AvailabilityMonitorTestStatus::Complete => write!(f, "COMPLETE"),
+            AvailabilityMonitorTestStatus::Failed => write!(f, "FAILED"),
+            AvailabilityMonitorTestStatus::Pending => write!(f, "PENDING"),
+            AvailabilityMonitorTestStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

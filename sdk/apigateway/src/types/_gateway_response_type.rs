@@ -213,3 +213,31 @@ impl GatewayResponseType {
         }
     }
 }
+impl ::std::fmt::Display for GatewayResponseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GatewayResponseType::AccessDenied => write!(f, "ACCESS_DENIED"),
+            GatewayResponseType::ApiConfigurationError => write!(f, "API_CONFIGURATION_ERROR"),
+            GatewayResponseType::AuthorizerConfigurationError => write!(f, "AUTHORIZER_CONFIGURATION_ERROR"),
+            GatewayResponseType::AuthorizerFailure => write!(f, "AUTHORIZER_FAILURE"),
+            GatewayResponseType::BadRequestBody => write!(f, "BAD_REQUEST_BODY"),
+            GatewayResponseType::BadRequestParameters => write!(f, "BAD_REQUEST_PARAMETERS"),
+            GatewayResponseType::Default4Xx => write!(f, "DEFAULT_4XX"),
+            GatewayResponseType::Default5Xx => write!(f, "DEFAULT_5XX"),
+            GatewayResponseType::ExpiredToken => write!(f, "EXPIRED_TOKEN"),
+            GatewayResponseType::IntegrationFailure => write!(f, "INTEGRATION_FAILURE"),
+            GatewayResponseType::IntegrationTimeout => write!(f, "INTEGRATION_TIMEOUT"),
+            GatewayResponseType::InvalidApiKey => write!(f, "INVALID_API_KEY"),
+            GatewayResponseType::InvalidSignature => write!(f, "INVALID_SIGNATURE"),
+            GatewayResponseType::MissingAuthenticationToken => write!(f, "MISSING_AUTHENTICATION_TOKEN"),
+            GatewayResponseType::QuotaExceeded => write!(f, "QUOTA_EXCEEDED"),
+            GatewayResponseType::RequestTooLarge => write!(f, "REQUEST_TOO_LARGE"),
+            GatewayResponseType::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
+            GatewayResponseType::Throttled => write!(f, "THROTTLED"),
+            GatewayResponseType::Unauthorized => write!(f, "UNAUTHORIZED"),
+            GatewayResponseType::UnsupportedMediaType => write!(f, "UNSUPPORTED_MEDIA_TYPE"),
+            GatewayResponseType::WafFiltered => write!(f, "WAF_FILTERED"),
+            GatewayResponseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

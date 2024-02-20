@@ -96,3 +96,12 @@ impl InstanceAutoRecoveryState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceAutoRecoveryState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceAutoRecoveryState::Default => write!(f, "default"),
+            InstanceAutoRecoveryState::Disabled => write!(f, "disabled"),
+            InstanceAutoRecoveryState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

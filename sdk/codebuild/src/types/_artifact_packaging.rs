@@ -96,3 +96,12 @@ impl ArtifactPackaging {
         }
     }
 }
+impl ::std::fmt::Display for ArtifactPackaging {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArtifactPackaging::None => write!(f, "NONE"),
+            ArtifactPackaging::Zip => write!(f, "ZIP"),
+            ArtifactPackaging::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

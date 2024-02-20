@@ -111,3 +111,14 @@ impl MetricType {
         }
     }
 }
+impl ::std::fmt::Display for MetricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricType::AlbRequestCountPerTarget => write!(f, "ALBRequestCountPerTarget"),
+            MetricType::AsgAverageCpuUtilization => write!(f, "ASGAverageCPUUtilization"),
+            MetricType::AsgAverageNetworkIn => write!(f, "ASGAverageNetworkIn"),
+            MetricType::AsgAverageNetworkOut => write!(f, "ASGAverageNetworkOut"),
+            MetricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

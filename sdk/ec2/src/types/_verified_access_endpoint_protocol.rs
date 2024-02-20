@@ -96,3 +96,12 @@ impl VerifiedAccessEndpointProtocol {
         }
     }
 }
+impl ::std::fmt::Display for VerifiedAccessEndpointProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerifiedAccessEndpointProtocol::Http => write!(f, "http"),
+            VerifiedAccessEndpointProtocol::Https => write!(f, "https"),
+            VerifiedAccessEndpointProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

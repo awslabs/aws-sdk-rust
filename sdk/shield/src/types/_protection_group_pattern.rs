@@ -101,3 +101,13 @@ impl ProtectionGroupPattern {
         }
     }
 }
+impl ::std::fmt::Display for ProtectionGroupPattern {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProtectionGroupPattern::All => write!(f, "ALL"),
+            ProtectionGroupPattern::Arbitrary => write!(f, "ARBITRARY"),
+            ProtectionGroupPattern::ByResourceType => write!(f, "BY_RESOURCE_TYPE"),
+            ProtectionGroupPattern::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

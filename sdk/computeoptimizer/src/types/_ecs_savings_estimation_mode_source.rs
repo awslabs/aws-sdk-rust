@@ -101,3 +101,13 @@ impl EcsSavingsEstimationModeSource {
         }
     }
 }
+impl ::std::fmt::Display for EcsSavingsEstimationModeSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcsSavingsEstimationModeSource::CostExplorerRightsizing => write!(f, "CostExplorerRightsizing"),
+            EcsSavingsEstimationModeSource::CostOptimizationHub => write!(f, "CostOptimizationHub"),
+            EcsSavingsEstimationModeSource::PublicPricing => write!(f, "PublicPricing"),
+            EcsSavingsEstimationModeSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

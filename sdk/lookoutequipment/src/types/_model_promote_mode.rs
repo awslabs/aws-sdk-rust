@@ -96,3 +96,12 @@ impl ModelPromoteMode {
         }
     }
 }
+impl ::std::fmt::Display for ModelPromoteMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelPromoteMode::Managed => write!(f, "MANAGED"),
+            ModelPromoteMode::Manual => write!(f, "MANUAL"),
+            ModelPromoteMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

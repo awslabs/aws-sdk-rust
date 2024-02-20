@@ -96,3 +96,12 @@ impl FilterInstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for FilterInstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterInstanceStatus::Active => write!(f, "ACTIVE"),
+            FilterInstanceStatus::Draining => write!(f, "DRAINING"),
+            FilterInstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

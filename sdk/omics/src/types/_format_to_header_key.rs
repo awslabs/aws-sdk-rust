@@ -116,3 +116,16 @@ impl FormatToHeaderKey {
         }
     }
 }
+impl ::std::fmt::Display for FormatToHeaderKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FormatToHeaderKey::Alt => write!(f, "ALT"),
+            FormatToHeaderKey::Chr => write!(f, "CHR"),
+            FormatToHeaderKey::End => write!(f, "END"),
+            FormatToHeaderKey::Pos => write!(f, "POS"),
+            FormatToHeaderKey::Ref => write!(f, "REF"),
+            FormatToHeaderKey::Start => write!(f, "START"),
+            FormatToHeaderKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

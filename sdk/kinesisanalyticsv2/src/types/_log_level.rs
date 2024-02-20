@@ -106,3 +106,14 @@ impl LogLevel {
         }
     }
 }
+impl ::std::fmt::Display for LogLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogLevel::Debug => write!(f, "DEBUG"),
+            LogLevel::Error => write!(f, "ERROR"),
+            LogLevel::Info => write!(f, "INFO"),
+            LogLevel::Warn => write!(f, "WARN"),
+            LogLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

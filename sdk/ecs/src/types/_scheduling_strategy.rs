@@ -96,3 +96,12 @@ impl SchedulingStrategy {
         }
     }
 }
+impl ::std::fmt::Display for SchedulingStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SchedulingStrategy::Daemon => write!(f, "DAEMON"),
+            SchedulingStrategy::Replica => write!(f, "REPLICA"),
+            SchedulingStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

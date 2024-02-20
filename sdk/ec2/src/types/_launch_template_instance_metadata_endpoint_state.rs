@@ -98,3 +98,12 @@ impl LaunchTemplateInstanceMetadataEndpointState {
         }
     }
 }
+impl ::std::fmt::Display for LaunchTemplateInstanceMetadataEndpointState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchTemplateInstanceMetadataEndpointState::Disabled => write!(f, "disabled"),
+            LaunchTemplateInstanceMetadataEndpointState::Enabled => write!(f, "enabled"),
+            LaunchTemplateInstanceMetadataEndpointState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

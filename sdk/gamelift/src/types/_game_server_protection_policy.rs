@@ -96,3 +96,12 @@ impl GameServerProtectionPolicy {
         }
     }
 }
+impl ::std::fmt::Display for GameServerProtectionPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GameServerProtectionPolicy::FullProtection => write!(f, "FULL_PROTECTION"),
+            GameServerProtectionPolicy::NoProtection => write!(f, "NO_PROTECTION"),
+            GameServerProtectionPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

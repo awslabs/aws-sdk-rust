@@ -96,3 +96,12 @@ impl MfaTypesElement {
         }
     }
 }
+impl ::std::fmt::Display for MfaTypesElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MfaTypesElement::Sms => write!(f, "SMS"),
+            MfaTypesElement::Totp => write!(f, "TOTP"),
+            MfaTypesElement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

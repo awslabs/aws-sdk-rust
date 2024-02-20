@@ -111,3 +111,15 @@ impl ServiceNetworkServiceAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServiceNetworkServiceAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceNetworkServiceAssociationStatus::Active => write!(f, "ACTIVE"),
+            ServiceNetworkServiceAssociationStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            ServiceNetworkServiceAssociationStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            ServiceNetworkServiceAssociationStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ServiceNetworkServiceAssociationStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ServiceNetworkServiceAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

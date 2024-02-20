@@ -116,3 +116,16 @@ impl WorldExportJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorldExportJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorldExportJobStatus::Canceled => write!(f, "Canceled"),
+            WorldExportJobStatus::Canceling => write!(f, "Canceling"),
+            WorldExportJobStatus::Completed => write!(f, "Completed"),
+            WorldExportJobStatus::Failed => write!(f, "Failed"),
+            WorldExportJobStatus::Pending => write!(f, "Pending"),
+            WorldExportJobStatus::Running => write!(f, "Running"),
+            WorldExportJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

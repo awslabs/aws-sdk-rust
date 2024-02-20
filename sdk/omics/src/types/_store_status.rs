@@ -111,3 +111,15 @@ impl StoreStatus {
         }
     }
 }
+impl ::std::fmt::Display for StoreStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StoreStatus::Active => write!(f, "ACTIVE"),
+            StoreStatus::Creating => write!(f, "CREATING"),
+            StoreStatus::Deleting => write!(f, "DELETING"),
+            StoreStatus::Failed => write!(f, "FAILED"),
+            StoreStatus::Updating => write!(f, "UPDATING"),
+            StoreStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

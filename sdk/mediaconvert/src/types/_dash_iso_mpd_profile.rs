@@ -96,3 +96,12 @@ impl DashIsoMpdProfile {
         }
     }
 }
+impl ::std::fmt::Display for DashIsoMpdProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashIsoMpdProfile::MainProfile => write!(f, "MAIN_PROFILE"),
+            DashIsoMpdProfile::OnDemandProfile => write!(f, "ON_DEMAND_PROFILE"),
+            DashIsoMpdProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

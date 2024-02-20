@@ -96,3 +96,12 @@ impl IpProtocol {
         }
     }
 }
+impl ::std::fmt::Display for IpProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpProtocol::Tcp => write!(f, "TCP"),
+            IpProtocol::Udp => write!(f, "UDP"),
+            IpProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

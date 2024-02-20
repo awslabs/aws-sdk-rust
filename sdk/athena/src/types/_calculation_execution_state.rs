@@ -126,3 +126,18 @@ impl CalculationExecutionState {
         }
     }
 }
+impl ::std::fmt::Display for CalculationExecutionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CalculationExecutionState::Canceled => write!(f, "CANCELED"),
+            CalculationExecutionState::Canceling => write!(f, "CANCELING"),
+            CalculationExecutionState::Completed => write!(f, "COMPLETED"),
+            CalculationExecutionState::Created => write!(f, "CREATED"),
+            CalculationExecutionState::Creating => write!(f, "CREATING"),
+            CalculationExecutionState::Failed => write!(f, "FAILED"),
+            CalculationExecutionState::Queued => write!(f, "QUEUED"),
+            CalculationExecutionState::Running => write!(f, "RUNNING"),
+            CalculationExecutionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DirectInternetAccess {
         }
     }
 }
+impl ::std::fmt::Display for DirectInternetAccess {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectInternetAccess::Disabled => write!(f, "Disabled"),
+            DirectInternetAccess::Enabled => write!(f, "Enabled"),
+            DirectInternetAccess::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

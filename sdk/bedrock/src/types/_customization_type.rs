@@ -96,3 +96,12 @@ impl CustomizationType {
         }
     }
 }
+impl ::std::fmt::Display for CustomizationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomizationType::ContinuedPreTraining => write!(f, "CONTINUED_PRE_TRAINING"),
+            CustomizationType::FineTuning => write!(f, "FINE_TUNING"),
+            CustomizationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

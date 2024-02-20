@@ -96,3 +96,12 @@ impl ActionAfterCompletion {
         }
     }
 }
+impl ::std::fmt::Display for ActionAfterCompletion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionAfterCompletion::Delete => write!(f, "DELETE"),
+            ActionAfterCompletion::None => write!(f, "NONE"),
+            ActionAfterCompletion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl FraudDetectionDecision {
         }
     }
 }
+impl ::std::fmt::Display for FraudDetectionDecision {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FraudDetectionDecision::HighRisk => write!(f, "HIGH_RISK"),
+            FraudDetectionDecision::LowRisk => write!(f, "LOW_RISK"),
+            FraudDetectionDecision::NotEnoughSpeech => write!(f, "NOT_ENOUGH_SPEECH"),
+            FraudDetectionDecision::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

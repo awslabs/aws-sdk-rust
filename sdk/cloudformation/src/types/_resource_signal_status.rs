@@ -96,3 +96,12 @@ impl ResourceSignalStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceSignalStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceSignalStatus::Failure => write!(f, "FAILURE"),
+            ResourceSignalStatus::Success => write!(f, "SUCCESS"),
+            ResourceSignalStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

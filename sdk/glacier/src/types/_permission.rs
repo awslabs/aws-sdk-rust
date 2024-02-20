@@ -111,3 +111,15 @@ impl Permission {
         }
     }
 }
+impl ::std::fmt::Display for Permission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Permission::FullControl => write!(f, "FULL_CONTROL"),
+            Permission::Read => write!(f, "READ"),
+            Permission::ReadAcp => write!(f, "READ_ACP"),
+            Permission::Write => write!(f, "WRITE"),
+            Permission::WriteAcp => write!(f, "WRITE_ACP"),
+            Permission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl RevealStatus {
         }
     }
 }
+impl ::std::fmt::Display for RevealStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RevealStatus::Disabled => write!(f, "DISABLED"),
+            RevealStatus::Enabled => write!(f, "ENABLED"),
+            RevealStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

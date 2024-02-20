@@ -96,3 +96,12 @@ impl ArtifactsConcatenationState {
         }
     }
 }
+impl ::std::fmt::Display for ArtifactsConcatenationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArtifactsConcatenationState::Disabled => write!(f, "Disabled"),
+            ArtifactsConcatenationState::Enabled => write!(f, "Enabled"),
+            ArtifactsConcatenationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

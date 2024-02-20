@@ -96,3 +96,12 @@ impl DefaultPolicyTypeValues {
         }
     }
 }
+impl ::std::fmt::Display for DefaultPolicyTypeValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DefaultPolicyTypeValues::Instance => write!(f, "INSTANCE"),
+            DefaultPolicyTypeValues::Volume => write!(f, "VOLUME"),
+            DefaultPolicyTypeValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

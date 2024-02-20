@@ -96,3 +96,12 @@ impl MaintenanceWindowTaskCutoffBehavior {
         }
     }
 }
+impl ::std::fmt::Display for MaintenanceWindowTaskCutoffBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MaintenanceWindowTaskCutoffBehavior::CancelTask => write!(f, "CANCEL_TASK"),
+            MaintenanceWindowTaskCutoffBehavior::ContinueTask => write!(f, "CONTINUE_TASK"),
+            MaintenanceWindowTaskCutoffBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

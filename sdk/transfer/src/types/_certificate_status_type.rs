@@ -101,3 +101,13 @@ impl CertificateStatusType {
         }
     }
 }
+impl ::std::fmt::Display for CertificateStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateStatusType::Active => write!(f, "ACTIVE"),
+            CertificateStatusType::Inactive => write!(f, "INACTIVE"),
+            CertificateStatusType::PendingRotation => write!(f, "PENDING_ROTATION"),
+            CertificateStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

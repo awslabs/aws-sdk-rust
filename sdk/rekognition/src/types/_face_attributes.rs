@@ -96,3 +96,12 @@ impl FaceAttributes {
         }
     }
 }
+impl ::std::fmt::Display for FaceAttributes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FaceAttributes::All => write!(f, "ALL"),
+            FaceAttributes::Default => write!(f, "DEFAULT"),
+            FaceAttributes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

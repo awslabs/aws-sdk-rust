@@ -101,3 +101,13 @@ impl TaskDefinitionStatus {
         }
     }
 }
+impl ::std::fmt::Display for TaskDefinitionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskDefinitionStatus::Active => write!(f, "ACTIVE"),
+            TaskDefinitionStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            TaskDefinitionStatus::Inactive => write!(f, "INACTIVE"),
+            TaskDefinitionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

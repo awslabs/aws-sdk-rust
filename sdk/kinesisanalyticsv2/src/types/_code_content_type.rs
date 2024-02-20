@@ -96,3 +96,12 @@ impl CodeContentType {
         }
     }
 }
+impl ::std::fmt::Display for CodeContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CodeContentType::Plaintext => write!(f, "PLAINTEXT"),
+            CodeContentType::Zipfile => write!(f, "ZIPFILE"),
+            CodeContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

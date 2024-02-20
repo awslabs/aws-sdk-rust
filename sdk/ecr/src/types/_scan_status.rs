@@ -135,3 +135,18 @@ impl ScanStatus {
         }
     }
 }
+impl ::std::fmt::Display for ScanStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScanStatus::Active => write!(f, "ACTIVE"),
+            ScanStatus::Complete => write!(f, "COMPLETE"),
+            ScanStatus::Failed => write!(f, "FAILED"),
+            ScanStatus::FindingsUnavailable => write!(f, "FINDINGS_UNAVAILABLE"),
+            ScanStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ScanStatus::Pending => write!(f, "PENDING"),
+            ScanStatus::ScanEligibilityExpired => write!(f, "SCAN_ELIGIBILITY_EXPIRED"),
+            ScanStatus::UnsupportedImage => write!(f, "UNSUPPORTED_IMAGE"),
+            ScanStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl BulkDeploymentStatus {
         }
     }
 }
+impl ::std::fmt::Display for BulkDeploymentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BulkDeploymentStatus::Completed => write!(f, "Completed"),
+            BulkDeploymentStatus::Failed => write!(f, "Failed"),
+            BulkDeploymentStatus::Initializing => write!(f, "Initializing"),
+            BulkDeploymentStatus::Running => write!(f, "Running"),
+            BulkDeploymentStatus::Stopped => write!(f, "Stopped"),
+            BulkDeploymentStatus::Stopping => write!(f, "Stopping"),
+            BulkDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

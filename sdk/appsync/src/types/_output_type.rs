@@ -96,3 +96,12 @@ impl OutputType {
         }
     }
 }
+impl ::std::fmt::Display for OutputType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputType::Json => write!(f, "JSON"),
+            OutputType::Sdl => write!(f, "SDL"),
+            OutputType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

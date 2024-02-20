@@ -96,3 +96,12 @@ impl CmfcDescriptiveVideoServiceFlag {
         }
     }
 }
+impl ::std::fmt::Display for CmfcDescriptiveVideoServiceFlag {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmfcDescriptiveVideoServiceFlag::DontFlag => write!(f, "DONT_FLAG"),
+            CmfcDescriptiveVideoServiceFlag::Flag => write!(f, "FLAG"),
+            CmfcDescriptiveVideoServiceFlag::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

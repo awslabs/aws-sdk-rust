@@ -106,3 +106,14 @@ impl UploadState {
         }
     }
 }
+impl ::std::fmt::Display for UploadState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UploadState::Complete => write!(f, "COMPLETE"),
+            UploadState::Failed => write!(f, "FAILED"),
+            UploadState::Fault => write!(f, "FAULT"),
+            UploadState::Processing => write!(f, "PROCESSING"),
+            UploadState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

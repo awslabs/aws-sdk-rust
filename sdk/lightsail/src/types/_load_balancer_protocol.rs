@@ -96,3 +96,12 @@ impl LoadBalancerProtocol {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerProtocol::Http => write!(f, "HTTP"),
+            LoadBalancerProtocol::HttpHttps => write!(f, "HTTP_HTTPS"),
+            LoadBalancerProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -135,3 +135,18 @@ impl PackageStatus {
         }
     }
 }
+impl ::std::fmt::Display for PackageStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageStatus::Available => write!(f, "AVAILABLE"),
+            PackageStatus::Copying => write!(f, "COPYING"),
+            PackageStatus::CopyFailed => write!(f, "COPY_FAILED"),
+            PackageStatus::Deleted => write!(f, "DELETED"),
+            PackageStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            PackageStatus::Deleting => write!(f, "DELETING"),
+            PackageStatus::Validating => write!(f, "VALIDATING"),
+            PackageStatus::ValidationFailed => write!(f, "VALIDATION_FAILED"),
+            PackageStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

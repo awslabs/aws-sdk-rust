@@ -111,3 +111,15 @@ impl ScoreConfidence {
         }
     }
 }
+impl ::std::fmt::Display for ScoreConfidence {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScoreConfidence::High => write!(f, "HIGH"),
+            ScoreConfidence::Low => write!(f, "LOW"),
+            ScoreConfidence::Medium => write!(f, "MEDIUM"),
+            ScoreConfidence::NotAvailable => write!(f, "NOT_AVAILABLE"),
+            ScoreConfidence::VeryHigh => write!(f, "VERY_HIGH"),
+            ScoreConfidence::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

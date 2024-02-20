@@ -96,3 +96,12 @@ impl SampleMode {
         }
     }
 }
+impl ::std::fmt::Display for SampleMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SampleMode::CustomRows => write!(f, "CUSTOM_ROWS"),
+            SampleMode::FullDataset => write!(f, "FULL_DATASET"),
+            SampleMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

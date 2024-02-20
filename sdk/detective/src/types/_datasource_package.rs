@@ -101,3 +101,13 @@ impl DatasourcePackage {
         }
     }
 }
+impl ::std::fmt::Display for DatasourcePackage {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasourcePackage::AsffSecurityhubFinding => write!(f, "ASFF_SECURITYHUB_FINDING"),
+            DatasourcePackage::DetectiveCore => write!(f, "DETECTIVE_CORE"),
+            DatasourcePackage::EksAudit => write!(f, "EKS_AUDIT"),
+            DatasourcePackage::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

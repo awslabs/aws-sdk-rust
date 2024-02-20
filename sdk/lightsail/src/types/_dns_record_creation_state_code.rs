@@ -101,3 +101,13 @@ impl DnsRecordCreationStateCode {
         }
     }
 }
+impl ::std::fmt::Display for DnsRecordCreationStateCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DnsRecordCreationStateCode::Failed => write!(f, "FAILED"),
+            DnsRecordCreationStateCode::Started => write!(f, "STARTED"),
+            DnsRecordCreationStateCode::Succeeded => write!(f, "SUCCEEDED"),
+            DnsRecordCreationStateCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl VpnEcmpSupportValue {
         }
     }
 }
+impl ::std::fmt::Display for VpnEcmpSupportValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpnEcmpSupportValue::Disable => write!(f, "disable"),
+            VpnEcmpSupportValue::Enable => write!(f, "enable"),
+            VpnEcmpSupportValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

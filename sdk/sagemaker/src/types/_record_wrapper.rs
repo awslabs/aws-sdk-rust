@@ -96,3 +96,12 @@ impl RecordWrapper {
         }
     }
 }
+impl ::std::fmt::Display for RecordWrapper {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordWrapper::None => write!(f, "None"),
+            RecordWrapper::Recordio => write!(f, "RecordIO"),
+            RecordWrapper::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

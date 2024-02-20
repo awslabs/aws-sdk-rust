@@ -101,3 +101,13 @@ impl FleetType {
         }
     }
 }
+impl ::std::fmt::Display for FleetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetType::Instant => write!(f, "instant"),
+            FleetType::Maintain => write!(f, "maintain"),
+            FleetType::Request => write!(f, "request"),
+            FleetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

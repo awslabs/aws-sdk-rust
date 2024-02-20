@@ -184,3 +184,29 @@ impl StatefulRuleProtocol {
         }
     }
 }
+impl ::std::fmt::Display for StatefulRuleProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatefulRuleProtocol::Dcerpc => write!(f, "DCERPC"),
+            StatefulRuleProtocol::Dhcp => write!(f, "DHCP"),
+            StatefulRuleProtocol::Dns => write!(f, "DNS"),
+            StatefulRuleProtocol::Ftp => write!(f, "FTP"),
+            StatefulRuleProtocol::Http => write!(f, "HTTP"),
+            StatefulRuleProtocol::Icmp => write!(f, "ICMP"),
+            StatefulRuleProtocol::Ikev2 => write!(f, "IKEV2"),
+            StatefulRuleProtocol::Imap => write!(f, "IMAP"),
+            StatefulRuleProtocol::Any => write!(f, "IP"),
+            StatefulRuleProtocol::Krb5 => write!(f, "KRB5"),
+            StatefulRuleProtocol::Msn => write!(f, "MSN"),
+            StatefulRuleProtocol::Ntp => write!(f, "NTP"),
+            StatefulRuleProtocol::Smb => write!(f, "SMB"),
+            StatefulRuleProtocol::Smtp => write!(f, "SMTP"),
+            StatefulRuleProtocol::Ssh => write!(f, "SSH"),
+            StatefulRuleProtocol::Tcp => write!(f, "TCP"),
+            StatefulRuleProtocol::Tftp => write!(f, "TFTP"),
+            StatefulRuleProtocol::Tls => write!(f, "TLS"),
+            StatefulRuleProtocol::Udp => write!(f, "UDP"),
+            StatefulRuleProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

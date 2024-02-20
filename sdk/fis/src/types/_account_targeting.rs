@@ -96,3 +96,12 @@ impl AccountTargeting {
         }
     }
 }
+impl ::std::fmt::Display for AccountTargeting {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountTargeting::MultiAccount => write!(f, "multi-account"),
+            AccountTargeting::SingleAccount => write!(f, "single-account"),
+            AccountTargeting::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

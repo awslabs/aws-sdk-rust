@@ -96,3 +96,12 @@ impl ChannelMode {
         }
     }
 }
+impl ::std::fmt::Display for ChannelMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelMode::Restricted => write!(f, "RESTRICTED"),
+            ChannelMode::Unrestricted => write!(f, "UNRESTRICTED"),
+            ChannelMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

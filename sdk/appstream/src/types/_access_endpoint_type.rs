@@ -91,3 +91,11 @@ impl AccessEndpointType {
         }
     }
 }
+impl ::std::fmt::Display for AccessEndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessEndpointType::Streaming => write!(f, "STREAMING"),
+            AccessEndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

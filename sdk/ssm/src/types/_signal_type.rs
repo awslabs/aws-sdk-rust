@@ -111,3 +111,15 @@ impl SignalType {
         }
     }
 }
+impl ::std::fmt::Display for SignalType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SignalType::Approve => write!(f, "Approve"),
+            SignalType::Reject => write!(f, "Reject"),
+            SignalType::Resume => write!(f, "Resume"),
+            SignalType::StartStep => write!(f, "StartStep"),
+            SignalType::StopStep => write!(f, "StopStep"),
+            SignalType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

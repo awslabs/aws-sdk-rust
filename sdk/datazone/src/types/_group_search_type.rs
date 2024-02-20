@@ -96,3 +96,12 @@ impl GroupSearchType {
         }
     }
 }
+impl ::std::fmt::Display for GroupSearchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupSearchType::DatazoneSsoGroup => write!(f, "DATAZONE_SSO_GROUP"),
+            GroupSearchType::SsoGroup => write!(f, "SSO_GROUP"),
+            GroupSearchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

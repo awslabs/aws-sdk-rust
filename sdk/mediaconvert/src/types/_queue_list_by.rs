@@ -96,3 +96,12 @@ impl QueueListBy {
         }
     }
 }
+impl ::std::fmt::Display for QueueListBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueueListBy::CreationDate => write!(f, "CREATION_DATE"),
+            QueueListBy::Name => write!(f, "NAME"),
+            QueueListBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LaunchActionParameterType {
         }
     }
 }
+impl ::std::fmt::Display for LaunchActionParameterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchActionParameterType::Dynamic => write!(f, "DYNAMIC"),
+            LaunchActionParameterType::SsmStore => write!(f, "SSM_STORE"),
+            LaunchActionParameterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

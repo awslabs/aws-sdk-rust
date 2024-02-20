@@ -99,3 +99,12 @@ impl DescribeEndpointsMode {
         }
     }
 }
+impl ::std::fmt::Display for DescribeEndpointsMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DescribeEndpointsMode::Default => write!(f, "DEFAULT"),
+            DescribeEndpointsMode::GetOnly => write!(f, "GET_ONLY"),
+            DescribeEndpointsMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

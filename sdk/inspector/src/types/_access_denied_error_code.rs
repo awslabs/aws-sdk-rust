@@ -135,3 +135,18 @@ impl AccessDeniedErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for AccessDeniedErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessDeniedErrorCode::AccessDeniedToAssessmentRun => write!(f, "ACCESS_DENIED_TO_ASSESSMENT_RUN"),
+            AccessDeniedErrorCode::AccessDeniedToAssessmentTarget => write!(f, "ACCESS_DENIED_TO_ASSESSMENT_TARGET"),
+            AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate => write!(f, "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE"),
+            AccessDeniedErrorCode::AccessDeniedToFinding => write!(f, "ACCESS_DENIED_TO_FINDING"),
+            AccessDeniedErrorCode::AccessDeniedToIamRole => write!(f, "ACCESS_DENIED_TO_IAM_ROLE"),
+            AccessDeniedErrorCode::AccessDeniedToResourceGroup => write!(f, "ACCESS_DENIED_TO_RESOURCE_GROUP"),
+            AccessDeniedErrorCode::AccessDeniedToRulesPackage => write!(f, "ACCESS_DENIED_TO_RULES_PACKAGE"),
+            AccessDeniedErrorCode::AccessDeniedToSnsTopic => write!(f, "ACCESS_DENIED_TO_SNS_TOPIC"),
+            AccessDeniedErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

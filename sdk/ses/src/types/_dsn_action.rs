@@ -111,3 +111,15 @@ impl DsnAction {
         }
     }
 }
+impl ::std::fmt::Display for DsnAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DsnAction::Delayed => write!(f, "delayed"),
+            DsnAction::Delivered => write!(f, "delivered"),
+            DsnAction::Expanded => write!(f, "expanded"),
+            DsnAction::Failed => write!(f, "failed"),
+            DsnAction::Relayed => write!(f, "relayed"),
+            DsnAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

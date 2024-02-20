@@ -189,3 +189,27 @@ impl FlowExecutionEventType {
         }
     }
 }
+impl ::std::fmt::Display for FlowExecutionEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlowExecutionEventType::AcknowledgeTaskMessage => write!(f, "ACKNOWLEDGE_TASK_MESSAGE"),
+            FlowExecutionEventType::ActivityFailed => write!(f, "ACTIVITY_FAILED"),
+            FlowExecutionEventType::ActivityScheduled => write!(f, "ACTIVITY_SCHEDULED"),
+            FlowExecutionEventType::ActivityStarted => write!(f, "ACTIVITY_STARTED"),
+            FlowExecutionEventType::ActivitySucceeded => write!(f, "ACTIVITY_SUCCEEDED"),
+            FlowExecutionEventType::ExecutionAborted => write!(f, "EXECUTION_ABORTED"),
+            FlowExecutionEventType::ExecutionFailed => write!(f, "EXECUTION_FAILED"),
+            FlowExecutionEventType::ExecutionStarted => write!(f, "EXECUTION_STARTED"),
+            FlowExecutionEventType::ExecutionSucceeded => write!(f, "EXECUTION_SUCCEEDED"),
+            FlowExecutionEventType::ScheduleNextReadyStepsTask => write!(f, "SCHEDULE_NEXT_READY_STEPS_TASK"),
+            FlowExecutionEventType::StartFlowExecutionTask => write!(f, "START_FLOW_EXECUTION_TASK"),
+            FlowExecutionEventType::StepFailed => write!(f, "STEP_FAILED"),
+            FlowExecutionEventType::StepStarted => write!(f, "STEP_STARTED"),
+            FlowExecutionEventType::StepSucceeded => write!(f, "STEP_SUCCEEDED"),
+            FlowExecutionEventType::ThingActionTask => write!(f, "THING_ACTION_TASK"),
+            FlowExecutionEventType::ThingActionTaskFailed => write!(f, "THING_ACTION_TASK_FAILED"),
+            FlowExecutionEventType::ThingActionTaskSucceeded => write!(f, "THING_ACTION_TASK_SUCCEEDED"),
+            FlowExecutionEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl VolumeState {
         }
     }
 }
+impl ::std::fmt::Display for VolumeState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeState::Available => write!(f, "available"),
+            VolumeState::Creating => write!(f, "creating"),
+            VolumeState::Deleted => write!(f, "deleted"),
+            VolumeState::Deleting => write!(f, "deleting"),
+            VolumeState::Error => write!(f, "error"),
+            VolumeState::InUse => write!(f, "in-use"),
+            VolumeState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

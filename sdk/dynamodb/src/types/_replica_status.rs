@@ -129,3 +129,17 @@ impl ReplicaStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReplicaStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicaStatus::Active => write!(f, "ACTIVE"),
+            ReplicaStatus::Creating => write!(f, "CREATING"),
+            ReplicaStatus::CreationFailed => write!(f, "CREATION_FAILED"),
+            ReplicaStatus::Deleting => write!(f, "DELETING"),
+            ReplicaStatus::InaccessibleEncryptionCredentials => write!(f, "INACCESSIBLE_ENCRYPTION_CREDENTIALS"),
+            ReplicaStatus::RegionDisabled => write!(f, "REGION_DISABLED"),
+            ReplicaStatus::Updating => write!(f, "UPDATING"),
+            ReplicaStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

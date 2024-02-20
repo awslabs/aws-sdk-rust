@@ -143,3 +143,21 @@ impl MediaInsightsPipelineConfigurationElementType {
         }
     }
 }
+impl ::std::fmt::Display for MediaInsightsPipelineConfigurationElementType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaInsightsPipelineConfigurationElementType::AmazonTranscribeCallAnalyticsProcessor => {
+                write!(f, "AmazonTranscribeCallAnalyticsProcessor")
+            }
+            MediaInsightsPipelineConfigurationElementType::AmazonTranscribeProcessor => write!(f, "AmazonTranscribeProcessor"),
+            MediaInsightsPipelineConfigurationElementType::KinesisDataStreamSink => write!(f, "KinesisDataStreamSink"),
+            MediaInsightsPipelineConfigurationElementType::LambdaFunctionSink => write!(f, "LambdaFunctionSink"),
+            MediaInsightsPipelineConfigurationElementType::S3RecordingSink => write!(f, "S3RecordingSink"),
+            MediaInsightsPipelineConfigurationElementType::SnsTopicSink => write!(f, "SnsTopicSink"),
+            MediaInsightsPipelineConfigurationElementType::SqsQueueSink => write!(f, "SqsQueueSink"),
+            MediaInsightsPipelineConfigurationElementType::VoiceAnalyticsProcessor => write!(f, "VoiceAnalyticsProcessor"),
+            MediaInsightsPipelineConfigurationElementType::VoiceEnhancementSink => write!(f, "VoiceEnhancementSink"),
+            MediaInsightsPipelineConfigurationElementType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

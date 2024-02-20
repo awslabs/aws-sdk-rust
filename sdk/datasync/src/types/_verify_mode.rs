@@ -101,3 +101,13 @@ impl VerifyMode {
         }
     }
 }
+impl ::std::fmt::Display for VerifyMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerifyMode::None => write!(f, "NONE"),
+            VerifyMode::OnlyFilesTransferred => write!(f, "ONLY_FILES_TRANSFERRED"),
+            VerifyMode::PointInTimeConsistent => write!(f, "POINT_IN_TIME_CONSISTENT"),
+            VerifyMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

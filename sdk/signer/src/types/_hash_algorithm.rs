@@ -96,3 +96,12 @@ impl HashAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for HashAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HashAlgorithm::Sha1 => write!(f, "SHA1"),
+            HashAlgorithm::Sha256 => write!(f, "SHA256"),
+            HashAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

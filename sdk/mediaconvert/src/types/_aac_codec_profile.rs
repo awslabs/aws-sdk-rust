@@ -101,3 +101,13 @@ impl AacCodecProfile {
         }
     }
 }
+impl ::std::fmt::Display for AacCodecProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AacCodecProfile::Hev1 => write!(f, "HEV1"),
+            AacCodecProfile::Hev2 => write!(f, "HEV2"),
+            AacCodecProfile::Lc => write!(f, "LC"),
+            AacCodecProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

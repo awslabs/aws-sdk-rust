@@ -96,3 +96,12 @@ impl SavingsEstimationMode {
         }
     }
 }
+impl ::std::fmt::Display for SavingsEstimationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SavingsEstimationMode::AfterDiscounts => write!(f, "AfterDiscounts"),
+            SavingsEstimationMode::BeforeDiscounts => write!(f, "BeforeDiscounts"),
+            SavingsEstimationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

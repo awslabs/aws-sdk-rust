@@ -91,3 +91,11 @@ impl TableOptimizerType {
         }
     }
 }
+impl ::std::fmt::Display for TableOptimizerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableOptimizerType::Compaction => write!(f, "compaction"),
+            TableOptimizerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

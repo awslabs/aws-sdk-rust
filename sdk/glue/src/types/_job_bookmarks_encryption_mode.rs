@@ -96,3 +96,12 @@ impl JobBookmarksEncryptionMode {
         }
     }
 }
+impl ::std::fmt::Display for JobBookmarksEncryptionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobBookmarksEncryptionMode::Csekms => write!(f, "CSE-KMS"),
+            JobBookmarksEncryptionMode::Disabled => write!(f, "DISABLED"),
+            JobBookmarksEncryptionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl DescribeActivationsFilterKeys {
         }
     }
 }
+impl ::std::fmt::Display for DescribeActivationsFilterKeys {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DescribeActivationsFilterKeys::ActivationIds => write!(f, "ActivationIds"),
+            DescribeActivationsFilterKeys::DefaultInstanceName => write!(f, "DefaultInstanceName"),
+            DescribeActivationsFilterKeys::IamRole => write!(f, "IamRole"),
+            DescribeActivationsFilterKeys::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

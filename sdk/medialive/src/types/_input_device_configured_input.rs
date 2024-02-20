@@ -101,3 +101,13 @@ impl InputDeviceConfiguredInput {
         }
     }
 }
+impl ::std::fmt::Display for InputDeviceConfiguredInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDeviceConfiguredInput::Auto => write!(f, "AUTO"),
+            InputDeviceConfiguredInput::Hdmi => write!(f, "HDMI"),
+            InputDeviceConfiguredInput::Sdi => write!(f, "SDI"),
+            InputDeviceConfiguredInput::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

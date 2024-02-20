@@ -101,3 +101,13 @@ impl RedisAuthTypeValue {
         }
     }
 }
+impl ::std::fmt::Display for RedisAuthTypeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RedisAuthTypeValue::AuthRole => write!(f, "auth-role"),
+            RedisAuthTypeValue::AuthToken => write!(f, "auth-token"),
+            RedisAuthTypeValue::None => write!(f, "none"),
+            RedisAuthTypeValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

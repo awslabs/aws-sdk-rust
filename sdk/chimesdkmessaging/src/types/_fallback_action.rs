@@ -96,3 +96,12 @@ impl FallbackAction {
         }
     }
 }
+impl ::std::fmt::Display for FallbackAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FallbackAction::Abort => write!(f, "ABORT"),
+            FallbackAction::Continue => write!(f, "CONTINUE"),
+            FallbackAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

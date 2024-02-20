@@ -96,3 +96,12 @@ impl Eac3PhaseControl {
         }
     }
 }
+impl ::std::fmt::Display for Eac3PhaseControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3PhaseControl::NoShift => write!(f, "NO_SHIFT"),
+            Eac3PhaseControl::Shift90Degrees => write!(f, "SHIFT_90_DEGREES"),
+            Eac3PhaseControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

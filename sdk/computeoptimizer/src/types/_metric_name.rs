@@ -183,3 +183,26 @@ impl MetricName {
         }
     }
 }
+impl ::std::fmt::Display for MetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricName::Cpu => write!(f, "Cpu"),
+            MetricName::DiskReadBytesPerSecond => write!(f, "DISK_READ_BYTES_PER_SECOND"),
+            MetricName::DiskReadOpsPerSecond => write!(f, "DISK_READ_OPS_PER_SECOND"),
+            MetricName::DiskWriteBytesPerSecond => write!(f, "DISK_WRITE_BYTES_PER_SECOND"),
+            MetricName::DiskWriteOpsPerSecond => write!(f, "DISK_WRITE_OPS_PER_SECOND"),
+            MetricName::EbsReadBytesPerSecond => write!(f, "EBS_READ_BYTES_PER_SECOND"),
+            MetricName::EbsReadOpsPerSecond => write!(f, "EBS_READ_OPS_PER_SECOND"),
+            MetricName::EbsWriteBytesPerSecond => write!(f, "EBS_WRITE_BYTES_PER_SECOND"),
+            MetricName::EbsWriteOpsPerSecond => write!(f, "EBS_WRITE_OPS_PER_SECOND"),
+            MetricName::GpuMemoryPercentage => write!(f, "GPU_MEMORY_PERCENTAGE"),
+            MetricName::GpuPercentage => write!(f, "GPU_PERCENTAGE"),
+            MetricName::Memory => write!(f, "Memory"),
+            MetricName::NetworkInBytesPerSecond => write!(f, "NETWORK_IN_BYTES_PER_SECOND"),
+            MetricName::NetworkOutBytesPerSecond => write!(f, "NETWORK_OUT_BYTES_PER_SECOND"),
+            MetricName::NetworkPacketsInPerSecond => write!(f, "NETWORK_PACKETS_IN_PER_SECOND"),
+            MetricName::NetworkPacketsOutPerSecond => write!(f, "NETWORK_PACKETS_OUT_PER_SECOND"),
+            MetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

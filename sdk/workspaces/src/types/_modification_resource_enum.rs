@@ -101,3 +101,13 @@ impl ModificationResourceEnum {
         }
     }
 }
+impl ::std::fmt::Display for ModificationResourceEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModificationResourceEnum::ComputeType => write!(f, "COMPUTE_TYPE"),
+            ModificationResourceEnum::RootVolume => write!(f, "ROOT_VOLUME"),
+            ModificationResourceEnum::UserVolume => write!(f, "USER_VOLUME"),
+            ModificationResourceEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl TagResourceType {
         }
     }
 }
+impl ::std::fmt::Display for TagResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TagResourceType::Healthcheck => write!(f, "healthcheck"),
+            TagResourceType::Hostedzone => write!(f, "hostedzone"),
+            TagResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

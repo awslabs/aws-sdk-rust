@@ -101,3 +101,13 @@ impl GranteeType {
         }
     }
 }
+impl ::std::fmt::Display for GranteeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GranteeType::DirectoryGroup => write!(f, "DIRECTORY_GROUP"),
+            GranteeType::DirectoryUser => write!(f, "DIRECTORY_USER"),
+            GranteeType::Iam => write!(f, "IAM"),
+            GranteeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

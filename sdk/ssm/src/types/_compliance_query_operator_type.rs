@@ -111,3 +111,15 @@ impl ComplianceQueryOperatorType {
         }
     }
 }
+impl ::std::fmt::Display for ComplianceQueryOperatorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComplianceQueryOperatorType::BeginWith => write!(f, "BEGIN_WITH"),
+            ComplianceQueryOperatorType::Equal => write!(f, "EQUAL"),
+            ComplianceQueryOperatorType::GreaterThan => write!(f, "GREATER_THAN"),
+            ComplianceQueryOperatorType::LessThan => write!(f, "LESS_THAN"),
+            ComplianceQueryOperatorType::NotEqual => write!(f, "NOT_EQUAL"),
+            ComplianceQueryOperatorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

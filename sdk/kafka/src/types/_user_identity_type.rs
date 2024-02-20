@@ -96,3 +96,12 @@ impl UserIdentityType {
         }
     }
 }
+impl ::std::fmt::Display for UserIdentityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserIdentityType::Awsaccount => write!(f, "AWSACCOUNT"),
+            UserIdentityType::Awsservice => write!(f, "AWSSERVICE"),
+            UserIdentityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

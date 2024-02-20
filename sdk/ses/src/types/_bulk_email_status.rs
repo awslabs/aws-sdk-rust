@@ -171,3 +171,24 @@ impl BulkEmailStatus {
         }
     }
 }
+impl ::std::fmt::Display for BulkEmailStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BulkEmailStatus::AccountDailyQuotaExceeded => write!(f, "AccountDailyQuotaExceeded"),
+            BulkEmailStatus::AccountSendingPaused => write!(f, "AccountSendingPaused"),
+            BulkEmailStatus::AccountSuspended => write!(f, "AccountSuspended"),
+            BulkEmailStatus::AccountThrottled => write!(f, "AccountThrottled"),
+            BulkEmailStatus::ConfigurationSetDoesNotExist => write!(f, "ConfigurationSetDoesNotExist"),
+            BulkEmailStatus::ConfigurationSetSendingPaused => write!(f, "ConfigurationSetSendingPaused"),
+            BulkEmailStatus::Failed => write!(f, "Failed"),
+            BulkEmailStatus::InvalidParameterValue => write!(f, "InvalidParameterValue"),
+            BulkEmailStatus::InvalidSendingPoolName => write!(f, "InvalidSendingPoolName"),
+            BulkEmailStatus::MailFromDomainNotVerified => write!(f, "MailFromDomainNotVerified"),
+            BulkEmailStatus::MessageRejected => write!(f, "MessageRejected"),
+            BulkEmailStatus::Success => write!(f, "Success"),
+            BulkEmailStatus::TemplateDoesNotExist => write!(f, "TemplateDoesNotExist"),
+            BulkEmailStatus::TransientFailure => write!(f, "TransientFailure"),
+            BulkEmailStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

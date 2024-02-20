@@ -91,3 +91,11 @@ impl CodegenJobGenericDataSourceType {
         }
     }
 }
+impl ::std::fmt::Display for CodegenJobGenericDataSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CodegenJobGenericDataSourceType::DataStore => write!(f, "DataStore"),
+            CodegenJobGenericDataSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl FraudDetectionAction {
         }
     }
 }
+impl ::std::fmt::Display for FraudDetectionAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FraudDetectionAction::Fail => write!(f, "FAIL"),
+            FraudDetectionAction::Ignore => write!(f, "IGNORE"),
+            FraudDetectionAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

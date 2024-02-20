@@ -111,3 +111,15 @@ impl CustomVocabularyStatus {
         }
     }
 }
+impl ::std::fmt::Display for CustomVocabularyStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomVocabularyStatus::Creating => write!(f, "Creating"),
+            CustomVocabularyStatus::Deleting => write!(f, "Deleting"),
+            CustomVocabularyStatus::Exporting => write!(f, "Exporting"),
+            CustomVocabularyStatus::Importing => write!(f, "Importing"),
+            CustomVocabularyStatus::Ready => write!(f, "Ready"),
+            CustomVocabularyStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

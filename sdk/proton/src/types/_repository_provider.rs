@@ -101,3 +101,13 @@ impl RepositoryProvider {
         }
     }
 }
+impl ::std::fmt::Display for RepositoryProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RepositoryProvider::Bitbucket => write!(f, "BITBUCKET"),
+            RepositoryProvider::Github => write!(f, "GITHUB"),
+            RepositoryProvider::GithubEnterprise => write!(f, "GITHUB_ENTERPRISE"),
+            RepositoryProvider::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AssociationOption {
         }
     }
 }
+impl ::std::fmt::Display for AssociationOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationOption::ApplyApplicationTag => write!(f, "APPLY_APPLICATION_TAG"),
+            AssociationOption::SkipApplicationTag => write!(f, "SKIP_APPLICATION_TAG"),
+            AssociationOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

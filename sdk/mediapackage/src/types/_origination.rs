@@ -96,3 +96,12 @@ impl Origination {
         }
     }
 }
+impl ::std::fmt::Display for Origination {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Origination::Allow => write!(f, "ALLOW"),
+            Origination::Deny => write!(f, "DENY"),
+            Origination::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

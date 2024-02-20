@@ -101,3 +101,13 @@ impl ResponseContentType {
         }
     }
 }
+impl ::std::fmt::Display for ResponseContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResponseContentType::ApplicationJson => write!(f, "APPLICATION_JSON"),
+            ResponseContentType::TextHtml => write!(f, "TEXT_HTML"),
+            ResponseContentType::TextPlain => write!(f, "TEXT_PLAIN"),
+            ResponseContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

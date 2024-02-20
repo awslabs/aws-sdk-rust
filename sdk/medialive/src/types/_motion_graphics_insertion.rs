@@ -96,3 +96,12 @@ impl MotionGraphicsInsertion {
         }
     }
 }
+impl ::std::fmt::Display for MotionGraphicsInsertion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MotionGraphicsInsertion::Disabled => write!(f, "DISABLED"),
+            MotionGraphicsInsertion::Enabled => write!(f, "ENABLED"),
+            MotionGraphicsInsertion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

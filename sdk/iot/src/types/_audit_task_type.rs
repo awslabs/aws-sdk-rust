@@ -96,3 +96,12 @@ impl AuditTaskType {
         }
     }
 }
+impl ::std::fmt::Display for AuditTaskType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditTaskType::OnDemandAuditTask => write!(f, "ON_DEMAND_AUDIT_TASK"),
+            AuditTaskType::ScheduledAuditTask => write!(f, "SCHEDULED_AUDIT_TASK"),
+            AuditTaskType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl EstimatedCostTier {
         }
     }
 }
+impl ::std::fmt::Display for EstimatedCostTier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EstimatedCostTier::L1 => write!(f, "L1"),
+            EstimatedCostTier::L2 => write!(f, "L2"),
+            EstimatedCostTier::L3 => write!(f, "L3"),
+            EstimatedCostTier::L4 => write!(f, "L4"),
+            EstimatedCostTier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

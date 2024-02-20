@@ -101,3 +101,13 @@ impl MetricAggregationType {
         }
     }
 }
+impl ::std::fmt::Display for MetricAggregationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricAggregationType::Average => write!(f, "Average"),
+            MetricAggregationType::Maximum => write!(f, "Maximum"),
+            MetricAggregationType::Minimum => write!(f, "Minimum"),
+            MetricAggregationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

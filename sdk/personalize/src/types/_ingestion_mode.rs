@@ -101,3 +101,13 @@ impl IngestionMode {
         }
     }
 }
+impl ::std::fmt::Display for IngestionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IngestionMode::All => write!(f, "ALL"),
+            IngestionMode::Bulk => write!(f, "BULK"),
+            IngestionMode::Put => write!(f, "PUT"),
+            IngestionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

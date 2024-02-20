@@ -121,3 +121,17 @@ impl MatchFieldType {
         }
     }
 }
+impl ::std::fmt::Display for MatchFieldType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MatchFieldType::AllQueryArgs => write!(f, "ALL_QUERY_ARGS"),
+            MatchFieldType::Body => write!(f, "BODY"),
+            MatchFieldType::Header => write!(f, "HEADER"),
+            MatchFieldType::Method => write!(f, "METHOD"),
+            MatchFieldType::QueryString => write!(f, "QUERY_STRING"),
+            MatchFieldType::SingleQueryArg => write!(f, "SINGLE_QUERY_ARG"),
+            MatchFieldType::Uri => write!(f, "URI"),
+            MatchFieldType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl RouteTableAssociationStateCode {
         }
     }
 }
+impl ::std::fmt::Display for RouteTableAssociationStateCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteTableAssociationStateCode::Associated => write!(f, "associated"),
+            RouteTableAssociationStateCode::Associating => write!(f, "associating"),
+            RouteTableAssociationStateCode::Disassociated => write!(f, "disassociated"),
+            RouteTableAssociationStateCode::Disassociating => write!(f, "disassociating"),
+            RouteTableAssociationStateCode::Failed => write!(f, "failed"),
+            RouteTableAssociationStateCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

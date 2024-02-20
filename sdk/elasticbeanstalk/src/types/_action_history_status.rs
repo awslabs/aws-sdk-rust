@@ -101,3 +101,13 @@ impl ActionHistoryStatus {
         }
     }
 }
+impl ::std::fmt::Display for ActionHistoryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionHistoryStatus::Completed => write!(f, "Completed"),
+            ActionHistoryStatus::Failed => write!(f, "Failed"),
+            ActionHistoryStatus::UnknownValue => write!(f, "Unknown"),
+            ActionHistoryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

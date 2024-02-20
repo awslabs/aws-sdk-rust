@@ -96,3 +96,12 @@ impl SoftwareSetUpdateMode {
         }
     }
 }
+impl ::std::fmt::Display for SoftwareSetUpdateMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SoftwareSetUpdateMode::UseDesired => write!(f, "USE_DESIRED"),
+            SoftwareSetUpdateMode::UseLatest => write!(f, "USE_LATEST"),
+            SoftwareSetUpdateMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

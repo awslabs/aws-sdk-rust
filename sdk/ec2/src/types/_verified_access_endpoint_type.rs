@@ -96,3 +96,12 @@ impl VerifiedAccessEndpointType {
         }
     }
 }
+impl ::std::fmt::Display for VerifiedAccessEndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerifiedAccessEndpointType::LoadBalancer => write!(f, "load-balancer"),
+            VerifiedAccessEndpointType::NetworkInterface => write!(f, "network-interface"),
+            VerifiedAccessEndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -153,3 +153,21 @@ impl ManagedCredentialsStatus {
         }
     }
 }
+impl ::std::fmt::Display for ManagedCredentialsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ManagedCredentialsStatus::DisabledByCollaborator => write!(f, "DISABLED_BY_COLLABORATOR"),
+            ManagedCredentialsStatus::DisabledByDefault => write!(f, "DISABLED_BY_DEFAULT"),
+            ManagedCredentialsStatus::DisabledByOwner => write!(f, "DISABLED_BY_OWNER"),
+            ManagedCredentialsStatus::EnabledByOwner => write!(f, "ENABLED_BY_OWNER"),
+            ManagedCredentialsStatus::EnabledOnCreate => write!(f, "ENABLED_ON_CREATE"),
+            ManagedCredentialsStatus::FailedRemovalByCollaborator => write!(f, "FAILED_REMOVAL_BY_COLLABORATOR"),
+            ManagedCredentialsStatus::FailedRemovalByOwner => write!(f, "FAILED_REMOVAL_BY_OWNER"),
+            ManagedCredentialsStatus::PendingRemovalByCollaborator => write!(f, "PENDING_REMOVAL_BY_COLLABORATOR"),
+            ManagedCredentialsStatus::PendingRemovalByOwner => write!(f, "PENDING_REMOVAL_BY_OWNER"),
+            ManagedCredentialsStatus::PendingStartRemovalByCollaborator => write!(f, "PENDING_START_REMOVAL_BY_COLLABORATOR"),
+            ManagedCredentialsStatus::PendingStartRemovalByOwner => write!(f, "PENDING_START_REMOVAL_BY_OWNER"),
+            ManagedCredentialsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

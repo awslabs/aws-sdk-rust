@@ -101,3 +101,13 @@ impl AccessLevelFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for AccessLevelFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessLevelFilterKey::Account => write!(f, "Account"),
+            AccessLevelFilterKey::Role => write!(f, "Role"),
+            AccessLevelFilterKey::User => write!(f, "User"),
+            AccessLevelFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

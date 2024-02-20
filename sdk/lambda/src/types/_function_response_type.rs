@@ -91,3 +91,11 @@ impl FunctionResponseType {
         }
     }
 }
+impl ::std::fmt::Display for FunctionResponseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FunctionResponseType::ReportBatchItemFailures => write!(f, "ReportBatchItemFailures"),
+            FunctionResponseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl BucketLogsPermission {
         }
     }
 }
+impl ::std::fmt::Display for BucketLogsPermission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BucketLogsPermission::FullControl => write!(f, "FULL_CONTROL"),
+            BucketLogsPermission::Read => write!(f, "READ"),
+            BucketLogsPermission::Write => write!(f, "WRITE"),
+            BucketLogsPermission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ReplicateTo {
         }
     }
 }
+impl ::std::fmt::Display for ReplicateTo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicateTo::None => write!(f, "NONE"),
+            ReplicateTo::SsmDocument => write!(f, "SSM_DOCUMENT"),
+            ReplicateTo::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

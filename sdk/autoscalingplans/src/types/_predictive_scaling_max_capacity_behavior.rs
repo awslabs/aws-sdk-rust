@@ -105,3 +105,13 @@ impl PredictiveScalingMaxCapacityBehavior {
         }
     }
 }
+impl ::std::fmt::Display for PredictiveScalingMaxCapacityBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity => write!(f, "SetForecastCapacityToMaxCapacity"),
+            PredictiveScalingMaxCapacityBehavior::SetMaxCapacityAboveForecastCapacity => write!(f, "SetMaxCapacityAboveForecastCapacity"),
+            PredictiveScalingMaxCapacityBehavior::SetMaxCapacityToForecastCapacity => write!(f, "SetMaxCapacityToForecastCapacity"),
+            PredictiveScalingMaxCapacityBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

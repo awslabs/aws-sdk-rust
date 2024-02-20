@@ -157,3 +157,25 @@ impl StartChildWorkflowExecutionFailedCause {
         }
     }
 }
+impl ::std::fmt::Display for StartChildWorkflowExecutionFailedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StartChildWorkflowExecutionFailedCause::ChildCreationRateExceeded => write!(f, "CHILD_CREATION_RATE_EXCEEDED"),
+            StartChildWorkflowExecutionFailedCause::DefaultChildPolicyUndefined => write!(f, "DEFAULT_CHILD_POLICY_UNDEFINED"),
+            StartChildWorkflowExecutionFailedCause::DefaultExecutionStartToCloseTimeoutUndefined => {
+                write!(f, "DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED")
+            }
+            StartChildWorkflowExecutionFailedCause::DefaultTaskListUndefined => write!(f, "DEFAULT_TASK_LIST_UNDEFINED"),
+            StartChildWorkflowExecutionFailedCause::DefaultTaskStartToCloseTimeoutUndefined => {
+                write!(f, "DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED")
+            }
+            StartChildWorkflowExecutionFailedCause::OpenChildrenLimitExceeded => write!(f, "OPEN_CHILDREN_LIMIT_EXCEEDED"),
+            StartChildWorkflowExecutionFailedCause::OpenWorkflowsLimitExceeded => write!(f, "OPEN_WORKFLOWS_LIMIT_EXCEEDED"),
+            StartChildWorkflowExecutionFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
+            StartChildWorkflowExecutionFailedCause::WorkflowAlreadyRunning => write!(f, "WORKFLOW_ALREADY_RUNNING"),
+            StartChildWorkflowExecutionFailedCause::WorkflowTypeDeprecated => write!(f, "WORKFLOW_TYPE_DEPRECATED"),
+            StartChildWorkflowExecutionFailedCause::WorkflowTypeDoesNotExist => write!(f, "WORKFLOW_TYPE_DOES_NOT_EXIST"),
+            StartChildWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

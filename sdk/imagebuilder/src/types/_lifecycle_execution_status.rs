@@ -111,3 +111,15 @@ impl LifecycleExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for LifecycleExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecycleExecutionStatus::Cancelled => write!(f, "CANCELLED"),
+            LifecycleExecutionStatus::Cancelling => write!(f, "CANCELLING"),
+            LifecycleExecutionStatus::Failed => write!(f, "FAILED"),
+            LifecycleExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            LifecycleExecutionStatus::Success => write!(f, "SUCCESS"),
+            LifecycleExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

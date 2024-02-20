@@ -111,3 +111,15 @@ impl ImportStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportStatus::Completed => write!(f, "COMPLETED"),
+            ImportStatus::Failed => write!(f, "FAILED"),
+            ImportStatus::Initializing => write!(f, "INITIALIZING"),
+            ImportStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ImportStatus::Stopped => write!(f, "STOPPED"),
+            ImportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

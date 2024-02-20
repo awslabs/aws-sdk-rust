@@ -116,3 +116,16 @@ impl ResiliencyPolicyTier {
         }
     }
 }
+impl ::std::fmt::Display for ResiliencyPolicyTier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResiliencyPolicyTier::CoreServices => write!(f, "CoreServices"),
+            ResiliencyPolicyTier::Critical => write!(f, "Critical"),
+            ResiliencyPolicyTier::Important => write!(f, "Important"),
+            ResiliencyPolicyTier::MissionCritical => write!(f, "MissionCritical"),
+            ResiliencyPolicyTier::NonCritical => write!(f, "NonCritical"),
+            ResiliencyPolicyTier::NotApplicable => write!(f, "NotApplicable"),
+            ResiliencyPolicyTier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

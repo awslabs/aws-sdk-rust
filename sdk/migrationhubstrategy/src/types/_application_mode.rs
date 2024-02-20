@@ -101,3 +101,13 @@ impl ApplicationMode {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationMode::All => write!(f, "ALL"),
+            ApplicationMode::Known => write!(f, "KNOWN"),
+            ApplicationMode::UnknownValue => write!(f, "UNKNOWN"),
+            ApplicationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

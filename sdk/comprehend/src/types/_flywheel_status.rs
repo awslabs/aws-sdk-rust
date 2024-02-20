@@ -111,3 +111,15 @@ impl FlywheelStatus {
         }
     }
 }
+impl ::std::fmt::Display for FlywheelStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlywheelStatus::Active => write!(f, "ACTIVE"),
+            FlywheelStatus::Creating => write!(f, "CREATING"),
+            FlywheelStatus::Deleting => write!(f, "DELETING"),
+            FlywheelStatus::Failed => write!(f, "FAILED"),
+            FlywheelStatus::Updating => write!(f, "UPDATING"),
+            FlywheelStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

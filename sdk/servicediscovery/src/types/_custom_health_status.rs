@@ -96,3 +96,12 @@ impl CustomHealthStatus {
         }
     }
 }
+impl ::std::fmt::Display for CustomHealthStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomHealthStatus::Healthy => write!(f, "HEALTHY"),
+            CustomHealthStatus::Unhealthy => write!(f, "UNHEALTHY"),
+            CustomHealthStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

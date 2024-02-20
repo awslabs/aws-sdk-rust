@@ -91,3 +91,11 @@ impl AssetRelationshipType {
         }
     }
 }
+impl ::std::fmt::Display for AssetRelationshipType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetRelationshipType::Hierarchy => write!(f, "HIERARCHY"),
+            AssetRelationshipType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

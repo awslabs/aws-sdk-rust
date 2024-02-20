@@ -255,3 +255,38 @@ impl InvalidInputExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for InvalidInputExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InvalidInputExceptionReason::DuplicateTagKey => write!(f, "DUPLICATE_TAG_KEY"),
+            InvalidInputExceptionReason::ImmutablePolicy => write!(f, "IMMUTABLE_POLICY"),
+            InvalidInputExceptionReason::InputRequired => write!(f, "INPUT_REQUIRED"),
+            InvalidInputExceptionReason::InvalidEmailAddressTarget => write!(f, "INVALID_EMAIL_ADDRESS_TARGET"),
+            InvalidInputExceptionReason::InvalidEnum => write!(f, "INVALID_ENUM"),
+            InvalidInputExceptionReason::InvalidEnumPolicyType => write!(f, "INVALID_ENUM_POLICY_TYPE"),
+            InvalidInputExceptionReason::InvalidFullNameTarget => write!(f, "INVALID_FULL_NAME_TARGET"),
+            InvalidInputExceptionReason::InvalidListMember => write!(f, "INVALID_LIST_MEMBER"),
+            InvalidInputExceptionReason::InvalidPaginationToken => write!(f, "INVALID_NEXT_TOKEN"),
+            InvalidInputExceptionReason::InvalidPartyTypeTarget => write!(f, "INVALID_PARTY_TYPE_TARGET"),
+            InvalidInputExceptionReason::InvalidPattern => write!(f, "INVALID_PATTERN"),
+            InvalidInputExceptionReason::InvalidPatternTargetId => write!(f, "INVALID_PATTERN_TARGET_ID"),
+            InvalidInputExceptionReason::InvalidResourcePolicyJson => write!(f, "INVALID_RESOURCE_POLICY_JSON"),
+            InvalidInputExceptionReason::InvalidRoleName => write!(f, "INVALID_ROLE_NAME"),
+            InvalidInputExceptionReason::InvalidSyntaxOrganization => write!(f, "INVALID_SYNTAX_ORGANIZATION_ARN"),
+            InvalidInputExceptionReason::InvalidSyntaxPolicy => write!(f, "INVALID_SYNTAX_POLICY_ID"),
+            InvalidInputExceptionReason::InvalidSystemTagsParameter => write!(f, "INVALID_SYSTEM_TAGS_PARAMETER"),
+            InvalidInputExceptionReason::MaxLengthExceeded => write!(f, "MAX_LENGTH_EXCEEDED"),
+            InvalidInputExceptionReason::MaxFilterLimitExceeded => write!(f, "MAX_LIMIT_EXCEEDED_FILTER"),
+            InvalidInputExceptionReason::MaxValueExceeded => write!(f, "MAX_VALUE_EXCEEDED"),
+            InvalidInputExceptionReason::MinLengthExceeded => write!(f, "MIN_LENGTH_EXCEEDED"),
+            InvalidInputExceptionReason::MinValueExceeded => write!(f, "MIN_VALUE_EXCEEDED"),
+            InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => write!(f, "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS"),
+            InvalidInputExceptionReason::TargetNotSupported => write!(f, "TARGET_NOT_SUPPORTED"),
+            InvalidInputExceptionReason::UnrecognizedServicePrincipal => write!(f, "UNRECOGNIZED_SERVICE_PRINCIPAL"),
+            InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => write!(f, "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY"),
+            InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => write!(f, "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY"),
+            InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => write!(f, "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY"),
+            InvalidInputExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

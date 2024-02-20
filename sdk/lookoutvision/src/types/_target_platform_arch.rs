@@ -96,3 +96,12 @@ impl TargetPlatformArch {
         }
     }
 }
+impl ::std::fmt::Display for TargetPlatformArch {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetPlatformArch::Arm64 => write!(f, "ARM64"),
+            TargetPlatformArch::X8664 => write!(f, "X86_64"),
+            TargetPlatformArch::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

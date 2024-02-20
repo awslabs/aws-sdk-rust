@@ -96,3 +96,12 @@ impl IntelligentTieringStatus {
         }
     }
 }
+impl ::std::fmt::Display for IntelligentTieringStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntelligentTieringStatus::Disabled => write!(f, "Disabled"),
+            IntelligentTieringStatus::Enabled => write!(f, "Enabled"),
+            IntelligentTieringStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

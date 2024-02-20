@@ -96,3 +96,12 @@ impl M2tsDataPtsControl {
         }
     }
 }
+impl ::std::fmt::Display for M2tsDataPtsControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsDataPtsControl::AlignToVideo => write!(f, "ALIGN_TO_VIDEO"),
+            M2tsDataPtsControl::Auto => write!(f, "AUTO"),
+            M2tsDataPtsControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

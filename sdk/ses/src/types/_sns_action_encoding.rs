@@ -96,3 +96,12 @@ impl SnsActionEncoding {
         }
     }
 }
+impl ::std::fmt::Display for SnsActionEncoding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnsActionEncoding::Base64 => write!(f, "Base64"),
+            SnsActionEncoding::Utf8 => write!(f, "UTF-8"),
+            SnsActionEncoding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

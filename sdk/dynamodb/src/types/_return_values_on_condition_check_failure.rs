@@ -96,3 +96,12 @@ impl ReturnValuesOnConditionCheckFailure {
         }
     }
 }
+impl ::std::fmt::Display for ReturnValuesOnConditionCheckFailure {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReturnValuesOnConditionCheckFailure::AllOld => write!(f, "ALL_OLD"),
+            ReturnValuesOnConditionCheckFailure::None => write!(f, "NONE"),
+            ReturnValuesOnConditionCheckFailure::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ServerType {
         }
     }
 }
+impl ::std::fmt::Display for ServerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServerType::Bitbucket => write!(f, "BITBUCKET"),
+            ServerType::Github => write!(f, "GITHUB"),
+            ServerType::GithubEnterprise => write!(f, "GITHUB_ENTERPRISE"),
+            ServerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl Domain {
         }
     }
 }
+impl ::std::fmt::Display for Domain {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Domain::Custom => write!(f, "CUSTOM"),
+            Domain::Ec2Capacity => write!(f, "EC2_CAPACITY"),
+            Domain::InventoryPlanning => write!(f, "INVENTORY_PLANNING"),
+            Domain::Metrics => write!(f, "METRICS"),
+            Domain::Retail => write!(f, "RETAIL"),
+            Domain::WebTraffic => write!(f, "WEB_TRAFFIC"),
+            Domain::WorkForce => write!(f, "WORK_FORCE"),
+            Domain::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DeviceFormFactor {
         }
     }
 }
+impl ::std::fmt::Display for DeviceFormFactor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceFormFactor::Phone => write!(f, "PHONE"),
+            DeviceFormFactor::Tablet => write!(f, "TABLET"),
+            DeviceFormFactor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

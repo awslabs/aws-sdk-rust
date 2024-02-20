@@ -141,3 +141,19 @@ impl JobStatus {
         }
     }
 }
+impl ::std::fmt::Display for JobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobStatus::CancelCompleted => write!(f, "CANCEL_COMPLETED"),
+            JobStatus::CancelFailed => write!(f, "CANCEL_FAILED"),
+            JobStatus::CancelInProgress => write!(f, "CANCEL_IN_PROGRESS"),
+            JobStatus::CancelSubmitted => write!(f, "CANCEL_SUBMITTED"),
+            JobStatus::Completed => write!(f, "COMPLETED"),
+            JobStatus::CompletedWithErrors => write!(f, "COMPLETED_WITH_ERRORS"),
+            JobStatus::Failed => write!(f, "FAILED"),
+            JobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            JobStatus::Submitted => write!(f, "SUBMITTED"),
+            JobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DatasetActionType {
         }
     }
 }
+impl ::std::fmt::Display for DatasetActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasetActionType::Container => write!(f, "CONTAINER"),
+            DatasetActionType::Query => write!(f, "QUERY"),
+            DatasetActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

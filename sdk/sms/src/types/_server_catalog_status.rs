@@ -111,3 +111,15 @@ impl ServerCatalogStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServerCatalogStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServerCatalogStatus::Available => write!(f, "AVAILABLE"),
+            ServerCatalogStatus::Deleted => write!(f, "DELETED"),
+            ServerCatalogStatus::Expired => write!(f, "EXPIRED"),
+            ServerCatalogStatus::Importing => write!(f, "IMPORTING"),
+            ServerCatalogStatus::NotImported => write!(f, "NOT_IMPORTED"),
+            ServerCatalogStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

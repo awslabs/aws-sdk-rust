@@ -96,3 +96,12 @@ impl HistogramBinType {
         }
     }
 }
+impl ::std::fmt::Display for HistogramBinType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HistogramBinType::BinCount => write!(f, "BIN_COUNT"),
+            HistogramBinType::BinWidth => write!(f, "BIN_WIDTH"),
+            HistogramBinType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

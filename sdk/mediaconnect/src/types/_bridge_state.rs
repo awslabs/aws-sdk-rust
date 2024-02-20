@@ -159,3 +159,22 @@ impl BridgeState {
         }
     }
 }
+impl ::std::fmt::Display for BridgeState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BridgeState::Active => write!(f, "ACTIVE"),
+            BridgeState::Creating => write!(f, "CREATING"),
+            BridgeState::Deleted => write!(f, "DELETED"),
+            BridgeState::Deleting => write!(f, "DELETING"),
+            BridgeState::Deploying => write!(f, "DEPLOYING"),
+            BridgeState::Standby => write!(f, "STANDBY"),
+            BridgeState::Starting => write!(f, "STARTING"),
+            BridgeState::StartFailed => write!(f, "START_FAILED"),
+            BridgeState::StartPending => write!(f, "START_PENDING"),
+            BridgeState::Stopping => write!(f, "STOPPING"),
+            BridgeState::StopFailed => write!(f, "STOP_FAILED"),
+            BridgeState::Updating => write!(f, "UPDATING"),
+            BridgeState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl TestType {
         }
     }
 }
+impl ::std::fmt::Display for TestType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestType::Az => write!(f, "AZ"),
+            TestType::Hardware => write!(f, "Hardware"),
+            TestType::Region => write!(f, "Region"),
+            TestType::Software => write!(f, "Software"),
+            TestType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

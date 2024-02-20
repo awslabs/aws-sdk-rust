@@ -147,3 +147,20 @@ impl DetectorFeatureResult {
         }
     }
 }
+impl ::std::fmt::Display for DetectorFeatureResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetectorFeatureResult::CloudTrail => write!(f, "CLOUD_TRAIL"),
+            DetectorFeatureResult::DnsLogs => write!(f, "DNS_LOGS"),
+            DetectorFeatureResult::EbsMalwareProtection => write!(f, "EBS_MALWARE_PROTECTION"),
+            DetectorFeatureResult::EksAuditLogs => write!(f, "EKS_AUDIT_LOGS"),
+            DetectorFeatureResult::EksRuntimeMonitoring => write!(f, "EKS_RUNTIME_MONITORING"),
+            DetectorFeatureResult::FlowLogs => write!(f, "FLOW_LOGS"),
+            DetectorFeatureResult::LambdaNetworkLogs => write!(f, "LAMBDA_NETWORK_LOGS"),
+            DetectorFeatureResult::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
+            DetectorFeatureResult::RuntimeMonitoring => write!(f, "RUNTIME_MONITORING"),
+            DetectorFeatureResult::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
+            DetectorFeatureResult::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

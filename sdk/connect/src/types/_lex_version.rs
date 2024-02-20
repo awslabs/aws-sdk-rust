@@ -96,3 +96,12 @@ impl LexVersion {
         }
     }
 }
+impl ::std::fmt::Display for LexVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LexVersion::V1 => write!(f, "V1"),
+            LexVersion::V2 => write!(f, "V2"),
+            LexVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl MpdTimedMetadata {
         }
     }
 }
+impl ::std::fmt::Display for MpdTimedMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MpdTimedMetadata::None => write!(f, "NONE"),
+            MpdTimedMetadata::Passthrough => write!(f, "PASSTHROUGH"),
+            MpdTimedMetadata::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

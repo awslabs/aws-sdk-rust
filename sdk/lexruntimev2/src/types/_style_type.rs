@@ -101,3 +101,13 @@ impl StyleType {
         }
     }
 }
+impl ::std::fmt::Display for StyleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StyleType::Default => write!(f, "Default"),
+            StyleType::SpellByLetter => write!(f, "SpellByLetter"),
+            StyleType::SpellByWord => write!(f, "SpellByWord"),
+            StyleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

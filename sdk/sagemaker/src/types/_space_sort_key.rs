@@ -96,3 +96,12 @@ impl SpaceSortKey {
         }
     }
 }
+impl ::std::fmt::Display for SpaceSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpaceSortKey::CreationTime => write!(f, "CreationTime"),
+            SpaceSortKey::LastModifiedTime => write!(f, "LastModifiedTime"),
+            SpaceSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl QueryIdentifiersEnclosingOption {
         }
     }
 }
+impl ::std::fmt::Display for QueryIdentifiersEnclosingOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryIdentifiersEnclosingOption::DoubleQuotes => write!(f, "DOUBLE_QUOTES"),
+            QueryIdentifiersEnclosingOption::None => write!(f, "NONE"),
+            QueryIdentifiersEnclosingOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

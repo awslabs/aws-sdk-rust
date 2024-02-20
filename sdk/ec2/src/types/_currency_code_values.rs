@@ -91,3 +91,11 @@ impl CurrencyCodeValues {
         }
     }
 }
+impl ::std::fmt::Display for CurrencyCodeValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CurrencyCodeValues::Usd => write!(f, "USD"),
+            CurrencyCodeValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

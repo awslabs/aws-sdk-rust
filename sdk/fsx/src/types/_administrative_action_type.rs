@@ -295,3 +295,24 @@ impl AdministrativeActionType {
         }
     }
 }
+impl ::std::fmt::Display for AdministrativeActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdministrativeActionType::FileSystemAliasAssociation => write!(f, "FILE_SYSTEM_ALIAS_ASSOCIATION"),
+            AdministrativeActionType::FileSystemAliasDisassociation => write!(f, "FILE_SYSTEM_ALIAS_DISASSOCIATION"),
+            AdministrativeActionType::FileSystemUpdate => write!(f, "FILE_SYSTEM_UPDATE"),
+            AdministrativeActionType::IopsOptimization => write!(f, "IOPS_OPTIMIZATION"),
+            AdministrativeActionType::MisconfiguredStateRecovery => write!(f, "MISCONFIGURED_STATE_RECOVERY"),
+            AdministrativeActionType::ReleaseNfsV3Locks => write!(f, "RELEASE_NFS_V3_LOCKS"),
+            AdministrativeActionType::SnapshotUpdate => write!(f, "SNAPSHOT_UPDATE"),
+            AdministrativeActionType::StorageOptimization => write!(f, "STORAGE_OPTIMIZATION"),
+            AdministrativeActionType::StorageTypeOptimization => write!(f, "STORAGE_TYPE_OPTIMIZATION"),
+            AdministrativeActionType::ThroughputOptimization => write!(f, "THROUGHPUT_OPTIMIZATION"),
+            AdministrativeActionType::VolumeInitializeWithSnapshot => write!(f, "VOLUME_INITIALIZE_WITH_SNAPSHOT"),
+            AdministrativeActionType::VolumeRestore => write!(f, "VOLUME_RESTORE"),
+            AdministrativeActionType::VolumeUpdate => write!(f, "VOLUME_UPDATE"),
+            AdministrativeActionType::VolumeUpdateWithSnapshot => write!(f, "VOLUME_UPDATE_WITH_SNAPSHOT"),
+            AdministrativeActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AppDriftStatusType {
         }
     }
 }
+impl ::std::fmt::Display for AppDriftStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppDriftStatusType::Detected => write!(f, "Detected"),
+            AppDriftStatusType::NotChecked => write!(f, "NotChecked"),
+            AppDriftStatusType::NotDetected => write!(f, "NotDetected"),
+            AppDriftStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

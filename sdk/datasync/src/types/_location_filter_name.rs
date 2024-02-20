@@ -101,3 +101,13 @@ impl LocationFilterName {
         }
     }
 }
+impl ::std::fmt::Display for LocationFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocationFilterName::CreationTime => write!(f, "CreationTime"),
+            LocationFilterName::LocationType => write!(f, "LocationType"),
+            LocationFilterName::LocationUri => write!(f, "LocationUri"),
+            LocationFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

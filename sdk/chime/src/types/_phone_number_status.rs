@@ -135,3 +135,18 @@ impl PhoneNumberStatus {
         }
     }
 }
+impl ::std::fmt::Display for PhoneNumberStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhoneNumberStatus::AcquireFailed => write!(f, "AcquireFailed"),
+            PhoneNumberStatus::AcquireInProgress => write!(f, "AcquireInProgress"),
+            PhoneNumberStatus::Assigned => write!(f, "Assigned"),
+            PhoneNumberStatus::DeleteFailed => write!(f, "DeleteFailed"),
+            PhoneNumberStatus::DeleteInProgress => write!(f, "DeleteInProgress"),
+            PhoneNumberStatus::ReleaseFailed => write!(f, "ReleaseFailed"),
+            PhoneNumberStatus::ReleaseInProgress => write!(f, "ReleaseInProgress"),
+            PhoneNumberStatus::Unassigned => write!(f, "Unassigned"),
+            PhoneNumberStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl H264RepeatPps {
         }
     }
 }
+impl ::std::fmt::Display for H264RepeatPps {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264RepeatPps::Disabled => write!(f, "DISABLED"),
+            H264RepeatPps::Enabled => write!(f, "ENABLED"),
+            H264RepeatPps::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

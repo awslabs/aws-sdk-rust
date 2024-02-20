@@ -111,3 +111,15 @@ impl ListEdgePackagingJobsSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ListEdgePackagingJobsSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListEdgePackagingJobsSortBy::CreationTime => write!(f, "CREATION_TIME"),
+            ListEdgePackagingJobsSortBy::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
+            ListEdgePackagingJobsSortBy::ModelName => write!(f, "MODEL_NAME"),
+            ListEdgePackagingJobsSortBy::Name => write!(f, "NAME"),
+            ListEdgePackagingJobsSortBy::EdgePackagingJobStatus => write!(f, "STATUS"),
+            ListEdgePackagingJobsSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl CloudWatchMetricDataStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for CloudWatchMetricDataStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CloudWatchMetricDataStatusCode::Complete => write!(f, "Complete"),
+            CloudWatchMetricDataStatusCode::InternalError => write!(f, "InternalError"),
+            CloudWatchMetricDataStatusCode::PartialData => write!(f, "PartialData"),
+            CloudWatchMetricDataStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

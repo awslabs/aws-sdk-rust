@@ -101,3 +101,13 @@ impl DnsRecordVerificationStatus {
         }
     }
 }
+impl ::std::fmt::Display for DnsRecordVerificationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DnsRecordVerificationStatus::Failed => write!(f, "FAILED"),
+            DnsRecordVerificationStatus::Pending => write!(f, "PENDING"),
+            DnsRecordVerificationStatus::Verified => write!(f, "VERIFIED"),
+            DnsRecordVerificationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

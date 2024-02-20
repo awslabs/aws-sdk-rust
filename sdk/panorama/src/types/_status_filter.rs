@@ -129,3 +129,17 @@ impl StatusFilter {
         }
     }
 }
+impl ::std::fmt::Display for StatusFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatusFilter::DeploymentError => write!(f, "DEPLOYMENT_ERROR"),
+            StatusFilter::DeploymentFailed => write!(f, "DEPLOYMENT_FAILED"),
+            StatusFilter::DeploymentSucceeded => write!(f, "DEPLOYMENT_SUCCEEDED"),
+            StatusFilter::ProcessingDeployment => write!(f, "PROCESSING_DEPLOYMENT"),
+            StatusFilter::ProcessingRemoval => write!(f, "PROCESSING_REMOVAL"),
+            StatusFilter::RemovalFailed => write!(f, "REMOVAL_FAILED"),
+            StatusFilter::RemovalSucceeded => write!(f, "REMOVAL_SUCCEEDED"),
+            StatusFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

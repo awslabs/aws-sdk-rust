@@ -96,3 +96,12 @@ impl Processor {
         }
     }
 }
+impl ::std::fmt::Display for Processor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Processor::Cpu => write!(f, "CPU"),
+            Processor::Gpu => write!(f, "GPU"),
+            Processor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

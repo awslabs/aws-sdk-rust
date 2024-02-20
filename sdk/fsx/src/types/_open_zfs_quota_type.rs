@@ -96,3 +96,12 @@ impl OpenZfsQuotaType {
         }
     }
 }
+impl ::std::fmt::Display for OpenZfsQuotaType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpenZfsQuotaType::Group => write!(f, "GROUP"),
+            OpenZfsQuotaType::User => write!(f, "USER"),
+            OpenZfsQuotaType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

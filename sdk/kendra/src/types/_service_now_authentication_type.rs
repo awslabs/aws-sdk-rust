@@ -96,3 +96,12 @@ impl ServiceNowAuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for ServiceNowAuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceNowAuthenticationType::HttpBasic => write!(f, "HTTP_BASIC"),
+            ServiceNowAuthenticationType::Oauth2 => write!(f, "OAUTH2"),
+            ServiceNowAuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

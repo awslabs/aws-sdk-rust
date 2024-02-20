@@ -101,3 +101,13 @@ impl AgentHealth {
         }
     }
 }
+impl ::std::fmt::Display for AgentHealth {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgentHealth::Healthy => write!(f, "HEALTHY"),
+            AgentHealth::Unhealthy => write!(f, "UNHEALTHY"),
+            AgentHealth::UnknownValue => write!(f, "UNKNOWN"),
+            AgentHealth::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

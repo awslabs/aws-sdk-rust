@@ -111,3 +111,15 @@ impl AlarmType {
         }
     }
 }
+impl ::std::fmt::Display for AlarmType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlarmType::Canary => write!(f, "Canary"),
+            AlarmType::Composite => write!(f, "Composite"),
+            AlarmType::Event => write!(f, "Event"),
+            AlarmType::Logs => write!(f, "Logs"),
+            AlarmType::Metric => write!(f, "Metric"),
+            AlarmType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

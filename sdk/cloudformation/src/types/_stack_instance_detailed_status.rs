@@ -129,3 +129,17 @@ impl StackInstanceDetailedStatus {
         }
     }
 }
+impl ::std::fmt::Display for StackInstanceDetailedStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackInstanceDetailedStatus::Cancelled => write!(f, "CANCELLED"),
+            StackInstanceDetailedStatus::Failed => write!(f, "FAILED"),
+            StackInstanceDetailedStatus::Inoperable => write!(f, "INOPERABLE"),
+            StackInstanceDetailedStatus::Pending => write!(f, "PENDING"),
+            StackInstanceDetailedStatus::Running => write!(f, "RUNNING"),
+            StackInstanceDetailedStatus::SkippedSuspendedAccount => write!(f, "SKIPPED_SUSPENDED_ACCOUNT"),
+            StackInstanceDetailedStatus::Succeeded => write!(f, "SUCCEEDED"),
+            StackInstanceDetailedStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AuthorizerType {
         }
     }
 }
+impl ::std::fmt::Display for AuthorizerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthorizerType::CognitoUserPools => write!(f, "COGNITO_USER_POOLS"),
+            AuthorizerType::Request => write!(f, "REQUEST"),
+            AuthorizerType::Token => write!(f, "TOKEN"),
+            AuthorizerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

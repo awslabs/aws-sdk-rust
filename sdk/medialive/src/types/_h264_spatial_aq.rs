@@ -96,3 +96,12 @@ impl H264SpatialAq {
         }
     }
 }
+impl ::std::fmt::Display for H264SpatialAq {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264SpatialAq::Disabled => write!(f, "DISABLED"),
+            H264SpatialAq::Enabled => write!(f, "ENABLED"),
+            H264SpatialAq::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

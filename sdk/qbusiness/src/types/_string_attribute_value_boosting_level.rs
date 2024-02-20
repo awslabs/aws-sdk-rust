@@ -106,3 +106,14 @@ impl StringAttributeValueBoostingLevel {
         }
     }
 }
+impl ::std::fmt::Display for StringAttributeValueBoostingLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StringAttributeValueBoostingLevel::High => write!(f, "HIGH"),
+            StringAttributeValueBoostingLevel::Low => write!(f, "LOW"),
+            StringAttributeValueBoostingLevel::Medium => write!(f, "MEDIUM"),
+            StringAttributeValueBoostingLevel::VeryHigh => write!(f, "VERY_HIGH"),
+            StringAttributeValueBoostingLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl TableRestoreStatusType {
         }
     }
 }
+impl ::std::fmt::Display for TableRestoreStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableRestoreStatusType::Canceled => write!(f, "CANCELED"),
+            TableRestoreStatusType::Failed => write!(f, "FAILED"),
+            TableRestoreStatusType::InProgress => write!(f, "IN_PROGRESS"),
+            TableRestoreStatusType::Pending => write!(f, "PENDING"),
+            TableRestoreStatusType::Succeeded => write!(f, "SUCCEEDED"),
+            TableRestoreStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

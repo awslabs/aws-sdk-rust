@@ -96,3 +96,12 @@ impl SseType {
         }
     }
 }
+impl ::std::fmt::Display for SseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SseType::Aes256 => write!(f, "AES256"),
+            SseType::Kms => write!(f, "KMS"),
+            SseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl DnsStatus {
         }
     }
 }
+impl ::std::fmt::Display for DnsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DnsStatus::FailedUpdate => write!(f, "FAILED_UPDATE"),
+            DnsStatus::None => write!(f, "NONE"),
+            DnsStatus::SuccessfullyUpdated => write!(f, "SUCCESSFULLY_UPDATED"),
+            DnsStatus::UpdateRequested => write!(f, "UPDATE_REQUESTED"),
+            DnsStatus::Updating => write!(f, "UPDATING"),
+            DnsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

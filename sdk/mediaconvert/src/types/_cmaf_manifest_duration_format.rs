@@ -96,3 +96,12 @@ impl CmafManifestDurationFormat {
         }
     }
 }
+impl ::std::fmt::Display for CmafManifestDurationFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafManifestDurationFormat::FloatingPoint => write!(f, "FLOATING_POINT"),
+            CmafManifestDurationFormat::Integer => write!(f, "INTEGER"),
+            CmafManifestDurationFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

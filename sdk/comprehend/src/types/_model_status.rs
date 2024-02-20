@@ -135,3 +135,18 @@ impl ModelStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelStatus::Deleting => write!(f, "DELETING"),
+            ModelStatus::InError => write!(f, "IN_ERROR"),
+            ModelStatus::Stopped => write!(f, "STOPPED"),
+            ModelStatus::StopRequested => write!(f, "STOP_REQUESTED"),
+            ModelStatus::Submitted => write!(f, "SUBMITTED"),
+            ModelStatus::Trained => write!(f, "TRAINED"),
+            ModelStatus::TrainedWithWarning => write!(f, "TRAINED_WITH_WARNING"),
+            ModelStatus::Training => write!(f, "TRAINING"),
+            ModelStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

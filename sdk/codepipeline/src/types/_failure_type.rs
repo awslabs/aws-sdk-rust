@@ -123,3 +123,16 @@ impl FailureType {
         }
     }
 }
+impl ::std::fmt::Display for FailureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailureType::ConfigurationError => write!(f, "ConfigurationError"),
+            FailureType::JobFailed => write!(f, "JobFailed"),
+            FailureType::PermissionError => write!(f, "PermissionError"),
+            FailureType::RevisionOutOfSync => write!(f, "RevisionOutOfSync"),
+            FailureType::RevisionUnavailable => write!(f, "RevisionUnavailable"),
+            FailureType::SystemUnavailable => write!(f, "SystemUnavailable"),
+            FailureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DataSourceLevelMetricsConfig {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceLevelMetricsConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceLevelMetricsConfig::Disabled => write!(f, "DISABLED"),
+            DataSourceLevelMetricsConfig::Enabled => write!(f, "ENABLED"),
+            DataSourceLevelMetricsConfig::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

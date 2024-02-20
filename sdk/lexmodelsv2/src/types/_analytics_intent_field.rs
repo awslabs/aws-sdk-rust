@@ -101,3 +101,13 @@ impl AnalyticsIntentField {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsIntentField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsIntentField::IntentEndState => write!(f, "IntentEndState"),
+            AnalyticsIntentField::IntentLevel => write!(f, "IntentLevel"),
+            AnalyticsIntentField::IntentName => write!(f, "IntentName"),
+            AnalyticsIntentField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

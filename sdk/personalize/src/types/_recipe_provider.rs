@@ -91,3 +91,11 @@ impl RecipeProvider {
         }
     }
 }
+impl ::std::fmt::Display for RecipeProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecipeProvider::Service => write!(f, "SERVICE"),
+            RecipeProvider::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

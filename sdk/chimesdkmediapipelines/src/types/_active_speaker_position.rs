@@ -106,3 +106,14 @@ impl ActiveSpeakerPosition {
         }
     }
 }
+impl ::std::fmt::Display for ActiveSpeakerPosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActiveSpeakerPosition::BottomLeft => write!(f, "BottomLeft"),
+            ActiveSpeakerPosition::BottomRight => write!(f, "BottomRight"),
+            ActiveSpeakerPosition::TopLeft => write!(f, "TopLeft"),
+            ActiveSpeakerPosition::TopRight => write!(f, "TopRight"),
+            ActiveSpeakerPosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

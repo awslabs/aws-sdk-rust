@@ -111,3 +111,15 @@ impl OperationStatus {
         }
     }
 }
+impl ::std::fmt::Display for OperationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationStatus::Error => write!(f, "ERROR"),
+            OperationStatus::Failed => write!(f, "FAILED"),
+            OperationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            OperationStatus::Submitted => write!(f, "SUBMITTED"),
+            OperationStatus::Successful => write!(f, "SUCCESSFUL"),
+            OperationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

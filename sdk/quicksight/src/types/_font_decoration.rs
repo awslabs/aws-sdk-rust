@@ -96,3 +96,12 @@ impl FontDecoration {
         }
     }
 }
+impl ::std::fmt::Display for FontDecoration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FontDecoration::None => write!(f, "NONE"),
+            FontDecoration::Underline => write!(f, "UNDERLINE"),
+            FontDecoration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

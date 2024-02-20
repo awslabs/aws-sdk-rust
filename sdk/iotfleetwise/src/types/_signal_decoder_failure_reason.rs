@@ -185,3 +185,29 @@ impl SignalDecoderFailureReason {
         }
     }
 }
+impl ::std::fmt::Display for SignalDecoderFailureReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SignalDecoderFailureReason::CanSignalInfoIsNull => write!(f, "CAN_SIGNAL_INFO_IS_NULL"),
+            SignalDecoderFailureReason::ConflictingSignal => write!(f, "CONFLICTING_SIGNAL"),
+            SignalDecoderFailureReason::DuplicateSignal => write!(f, "DUPLICATE_SIGNAL"),
+            SignalDecoderFailureReason::EmptyMessageSignal => write!(f, "EMPTY_MESSAGE_SIGNAL"),
+            SignalDecoderFailureReason::MessageSignalInfoIsNull => write!(f, "MESSAGE_SIGNAL_INFO_IS_NULL"),
+            SignalDecoderFailureReason::NetworkInterfaceTypeIncompatibleWithSignalDecoderType => {
+                write!(f, "NETWORK_INTERFACE_TYPE_INCOMPATIBLE_WITH_SIGNAL_DECODER_TYPE")
+            }
+            SignalDecoderFailureReason::NoDecoderInfoForSignalInModel => write!(f, "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL"),
+            SignalDecoderFailureReason::NoSignalInCatalogForDecoderSignal => write!(f, "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL"),
+            SignalDecoderFailureReason::ObdSignalInfoIsNull => write!(f, "OBD_SIGNAL_INFO_IS_NULL"),
+            SignalDecoderFailureReason::SignalDecoderIncompatibleWithSignalCatalog => write!(f, "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG"),
+            SignalDecoderFailureReason::SignalDecoderTypeIncompatibleWithMessageSignalType => {
+                write!(f, "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE")
+            }
+            SignalDecoderFailureReason::SignalNotAssociatedWithNetworkInterface => write!(f, "SIGNAL_NOT_ASSOCIATED_WITH_NETWORK_INTERFACE"),
+            SignalDecoderFailureReason::SignalNotInModel => write!(f, "SIGNAL_NOT_IN_MODEL"),
+            SignalDecoderFailureReason::SignalToAddAlreadyExists => write!(f, "SIGNAL_TO_ADD_ALREADY_EXISTS"),
+            SignalDecoderFailureReason::StructSizeMismatch => write!(f, "STRUCT_SIZE_MISMATCH"),
+            SignalDecoderFailureReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

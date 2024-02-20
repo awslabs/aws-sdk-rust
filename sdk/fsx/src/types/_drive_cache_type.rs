@@ -96,3 +96,12 @@ impl DriveCacheType {
         }
     }
 }
+impl ::std::fmt::Display for DriveCacheType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DriveCacheType::None => write!(f, "NONE"),
+            DriveCacheType::Read => write!(f, "READ"),
+            DriveCacheType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

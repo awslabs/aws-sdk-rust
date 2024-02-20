@@ -111,3 +111,15 @@ impl FaqStatus {
         }
     }
 }
+impl ::std::fmt::Display for FaqStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FaqStatus::Active => write!(f, "ACTIVE"),
+            FaqStatus::Creating => write!(f, "CREATING"),
+            FaqStatus::Deleting => write!(f, "DELETING"),
+            FaqStatus::Failed => write!(f, "FAILED"),
+            FaqStatus::Updating => write!(f, "UPDATING"),
+            FaqStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

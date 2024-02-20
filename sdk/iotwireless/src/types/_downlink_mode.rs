@@ -101,3 +101,13 @@ impl DownlinkMode {
         }
     }
 }
+impl ::std::fmt::Display for DownlinkMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DownlinkMode::Concurrent => write!(f, "CONCURRENT"),
+            DownlinkMode::Sequential => write!(f, "SEQUENTIAL"),
+            DownlinkMode::UsingUplinkGateway => write!(f, "USING_UPLINK_GATEWAY"),
+            DownlinkMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

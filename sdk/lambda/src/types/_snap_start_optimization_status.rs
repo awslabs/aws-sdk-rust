@@ -96,3 +96,12 @@ impl SnapStartOptimizationStatus {
         }
     }
 }
+impl ::std::fmt::Display for SnapStartOptimizationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapStartOptimizationStatus::Off => write!(f, "Off"),
+            SnapStartOptimizationStatus::On => write!(f, "On"),
+            SnapStartOptimizationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

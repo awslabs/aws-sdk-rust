@@ -116,3 +116,16 @@ impl DisplayFormat {
         }
     }
 }
+impl ::std::fmt::Display for DisplayFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DisplayFormat::Auto => write!(f, "AUTO"),
+            DisplayFormat::Currency => write!(f, "CURRENCY"),
+            DisplayFormat::Date => write!(f, "DATE"),
+            DisplayFormat::Number => write!(f, "NUMBER"),
+            DisplayFormat::Percent => write!(f, "PERCENT"),
+            DisplayFormat::String => write!(f, "STRING"),
+            DisplayFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

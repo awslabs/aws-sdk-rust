@@ -101,3 +101,13 @@ impl ZoneStatus {
         }
     }
 }
+impl ::std::fmt::Display for ZoneStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ZoneStatus::Active => write!(f, "Active"),
+            ZoneStatus::NotAvailable => write!(f, "NotAvailable"),
+            ZoneStatus::StandBy => write!(f, "StandBy"),
+            ZoneStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

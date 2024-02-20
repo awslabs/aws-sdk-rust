@@ -96,3 +96,12 @@ impl LoggerType {
         }
     }
 }
+impl ::std::fmt::Display for LoggerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoggerType::AwsCloudWatch => write!(f, "AWSCloudWatch"),
+            LoggerType::FileSystem => write!(f, "FileSystem"),
+            LoggerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ListStateFilterAction {
         }
     }
 }
+impl ::std::fmt::Display for ListStateFilterAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListStateFilterAction::Exclude => write!(f, "exclude"),
+            ListStateFilterAction::Ignore => write!(f, "ignore"),
+            ListStateFilterAction::Include => write!(f, "include"),
+            ListStateFilterAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

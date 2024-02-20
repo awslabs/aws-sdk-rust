@@ -96,3 +96,12 @@ impl ColumnRole {
         }
     }
 }
+impl ::std::fmt::Display for ColumnRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnRole::Dimension => write!(f, "DIMENSION"),
+            ColumnRole::Measure => write!(f, "MEASURE"),
+            ColumnRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

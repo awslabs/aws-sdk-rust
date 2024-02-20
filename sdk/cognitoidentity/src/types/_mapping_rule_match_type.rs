@@ -106,3 +106,14 @@ impl MappingRuleMatchType {
         }
     }
 }
+impl ::std::fmt::Display for MappingRuleMatchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MappingRuleMatchType::Contains => write!(f, "Contains"),
+            MappingRuleMatchType::Equals => write!(f, "Equals"),
+            MappingRuleMatchType::NotEqual => write!(f, "NotEqual"),
+            MappingRuleMatchType::StartsWith => write!(f, "StartsWith"),
+            MappingRuleMatchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

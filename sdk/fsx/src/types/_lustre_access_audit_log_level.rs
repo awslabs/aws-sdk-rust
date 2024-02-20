@@ -106,3 +106,14 @@ impl LustreAccessAuditLogLevel {
         }
     }
 }
+impl ::std::fmt::Display for LustreAccessAuditLogLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LustreAccessAuditLogLevel::Disabled => write!(f, "DISABLED"),
+            LustreAccessAuditLogLevel::ErrorOnly => write!(f, "ERROR_ONLY"),
+            LustreAccessAuditLogLevel::WarnError => write!(f, "WARN_ERROR"),
+            LustreAccessAuditLogLevel::WarnOnly => write!(f, "WARN_ONLY"),
+            LustreAccessAuditLogLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

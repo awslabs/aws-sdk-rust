@@ -111,3 +111,15 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Ec2Ami => write!(f, "EC2_AMI"),
+            ResourceType::Ec2Host => write!(f, "EC2_HOST"),
+            ResourceType::Ec2Instance => write!(f, "EC2_INSTANCE"),
+            ResourceType::Rds => write!(f, "RDS"),
+            ResourceType::SystemsManagerManagedInstance => write!(f, "SYSTEMS_MANAGER_MANAGED_INSTANCE"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

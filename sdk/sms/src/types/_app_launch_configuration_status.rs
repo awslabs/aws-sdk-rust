@@ -96,3 +96,12 @@ impl AppLaunchConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AppLaunchConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppLaunchConfigurationStatus::Configured => write!(f, "CONFIGURED"),
+            AppLaunchConfigurationStatus::NotConfigured => write!(f, "NOT_CONFIGURED"),
+            AppLaunchConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

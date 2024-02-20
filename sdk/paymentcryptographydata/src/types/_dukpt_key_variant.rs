@@ -101,3 +101,13 @@ impl DukptKeyVariant {
         }
     }
 }
+impl ::std::fmt::Display for DukptKeyVariant {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DukptKeyVariant::Bidirectional => write!(f, "BIDIRECTIONAL"),
+            DukptKeyVariant::Request => write!(f, "REQUEST"),
+            DukptKeyVariant::Response => write!(f, "RESPONSE"),
+            DukptKeyVariant::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -148,3 +148,22 @@ impl ColumnDataType {
         }
     }
 }
+impl ::std::fmt::Display for ColumnDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnDataType::Bigint => write!(f, "BIGINT"),
+            ColumnDataType::Binary => write!(f, "BINARY"),
+            ColumnDataType::Boolean => write!(f, "BOOLEAN"),
+            ColumnDataType::Char => write!(f, "CHAR"),
+            ColumnDataType::Date => write!(f, "DATE"),
+            ColumnDataType::Datetime => write!(f, "DATETIME"),
+            ColumnDataType::Double => write!(f, "DOUBLE"),
+            ColumnDataType::Float => write!(f, "FLOAT"),
+            ColumnDataType::Integer => write!(f, "INTEGER"),
+            ColumnDataType::Smallint => write!(f, "SMALLINT"),
+            ColumnDataType::String => write!(f, "STRING"),
+            ColumnDataType::Tinyint => write!(f, "TINYINT"),
+            ColumnDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

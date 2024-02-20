@@ -141,3 +141,19 @@ impl MediaAnalysisJobFailureCode {
         }
     }
 }
+impl ::std::fmt::Display for MediaAnalysisJobFailureCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaAnalysisJobFailureCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            MediaAnalysisJobFailureCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            MediaAnalysisJobFailureCode::InvalidKmsKey => write!(f, "INVALID_KMS_KEY"),
+            MediaAnalysisJobFailureCode::InvalidManifest => write!(f, "INVALID_MANIFEST"),
+            MediaAnalysisJobFailureCode::InvalidOutputConfig => write!(f, "INVALID_OUTPUT_CONFIG"),
+            MediaAnalysisJobFailureCode::InvalidS3Object => write!(f, "INVALID_S3_OBJECT"),
+            MediaAnalysisJobFailureCode::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
+            MediaAnalysisJobFailureCode::ResourceNotReady => write!(f, "RESOURCE_NOT_READY"),
+            MediaAnalysisJobFailureCode::Throttled => write!(f, "THROTTLED"),
+            MediaAnalysisJobFailureCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

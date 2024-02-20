@@ -106,3 +106,14 @@ impl DetailedModelPackageStatus {
         }
     }
 }
+impl ::std::fmt::Display for DetailedModelPackageStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetailedModelPackageStatus::Completed => write!(f, "Completed"),
+            DetailedModelPackageStatus::Failed => write!(f, "Failed"),
+            DetailedModelPackageStatus::InProgress => write!(f, "InProgress"),
+            DetailedModelPackageStatus::NotStarted => write!(f, "NotStarted"),
+            DetailedModelPackageStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

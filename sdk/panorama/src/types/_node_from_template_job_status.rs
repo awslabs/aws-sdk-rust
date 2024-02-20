@@ -101,3 +101,13 @@ impl NodeFromTemplateJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for NodeFromTemplateJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeFromTemplateJobStatus::Failed => write!(f, "FAILED"),
+            NodeFromTemplateJobStatus::Pending => write!(f, "PENDING"),
+            NodeFromTemplateJobStatus::Succeeded => write!(f, "SUCCEEDED"),
+            NodeFromTemplateJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

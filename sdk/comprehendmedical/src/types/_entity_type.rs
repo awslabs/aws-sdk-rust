@@ -129,3 +129,17 @@ impl EntityType {
         }
     }
 }
+impl ::std::fmt::Display for EntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EntityType::Anatomy => write!(f, "ANATOMY"),
+            EntityType::BehavioralEnvironmentalSocial => write!(f, "BEHAVIORAL_ENVIRONMENTAL_SOCIAL"),
+            EntityType::MedicalCondition => write!(f, "MEDICAL_CONDITION"),
+            EntityType::Medication => write!(f, "MEDICATION"),
+            EntityType::ProtectedHealthInformation => write!(f, "PROTECTED_HEALTH_INFORMATION"),
+            EntityType::TestTreatmentProcedure => write!(f, "TEST_TREATMENT_PROCEDURE"),
+            EntityType::TimeExpression => write!(f, "TIME_EXPRESSION"),
+            EntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

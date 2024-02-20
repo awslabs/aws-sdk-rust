@@ -96,3 +96,12 @@ impl ScheduledActionState {
         }
     }
 }
+impl ::std::fmt::Display for ScheduledActionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduledActionState::Active => write!(f, "ACTIVE"),
+            ScheduledActionState::Disabled => write!(f, "DISABLED"),
+            ScheduledActionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

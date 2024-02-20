@@ -153,3 +153,21 @@ impl PhoneNumberOrderStatus {
         }
     }
 }
+impl ::std::fmt::Display for PhoneNumberOrderStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhoneNumberOrderStatus::CancelRequested => write!(f, "CancelRequested"),
+            PhoneNumberOrderStatus::Cancelled => write!(f, "Cancelled"),
+            PhoneNumberOrderStatus::ChangeRequested => write!(f, "ChangeRequested"),
+            PhoneNumberOrderStatus::Exception => write!(f, "Exception"),
+            PhoneNumberOrderStatus::Foc => write!(f, "FOC"),
+            PhoneNumberOrderStatus::Failed => write!(f, "Failed"),
+            PhoneNumberOrderStatus::Partial => write!(f, "Partial"),
+            PhoneNumberOrderStatus::PendingDocuments => write!(f, "PendingDocuments"),
+            PhoneNumberOrderStatus::Processing => write!(f, "Processing"),
+            PhoneNumberOrderStatus::Submitted => write!(f, "Submitted"),
+            PhoneNumberOrderStatus::Successful => write!(f, "Successful"),
+            PhoneNumberOrderStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

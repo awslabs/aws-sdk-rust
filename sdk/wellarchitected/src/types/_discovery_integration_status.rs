@@ -96,3 +96,12 @@ impl DiscoveryIntegrationStatus {
         }
     }
 }
+impl ::std::fmt::Display for DiscoveryIntegrationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiscoveryIntegrationStatus::Disabled => write!(f, "DISABLED"),
+            DiscoveryIntegrationStatus::Enabled => write!(f, "ENABLED"),
+            DiscoveryIntegrationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Source {
         }
     }
 }
+impl ::std::fmt::Display for Source {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Source::ComputeOptimizer => write!(f, "ComputeOptimizer"),
+            Source::CostExplorer => write!(f, "CostExplorer"),
+            Source::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

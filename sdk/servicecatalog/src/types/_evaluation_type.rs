@@ -96,3 +96,12 @@ impl EvaluationType {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationType::Dynamic => write!(f, "DYNAMIC"),
+            EvaluationType::Static => write!(f, "STATIC"),
+            EvaluationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

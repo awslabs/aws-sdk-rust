@@ -101,3 +101,13 @@ impl RequestedPipeStateDescribeResponse {
         }
     }
 }
+impl ::std::fmt::Display for RequestedPipeStateDescribeResponse {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RequestedPipeStateDescribeResponse::Deleted => write!(f, "DELETED"),
+            RequestedPipeStateDescribeResponse::Running => write!(f, "RUNNING"),
+            RequestedPipeStateDescribeResponse::Stopped => write!(f, "STOPPED"),
+            RequestedPipeStateDescribeResponse::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

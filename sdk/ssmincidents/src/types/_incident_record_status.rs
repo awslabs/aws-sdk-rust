@@ -96,3 +96,12 @@ impl IncidentRecordStatus {
         }
     }
 }
+impl ::std::fmt::Display for IncidentRecordStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IncidentRecordStatus::Open => write!(f, "OPEN"),
+            IncidentRecordStatus::Resolved => write!(f, "RESOLVED"),
+            IncidentRecordStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

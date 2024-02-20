@@ -96,3 +96,12 @@ impl InstanceMetadataHttpTokensState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceMetadataHttpTokensState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceMetadataHttpTokensState::Optional => write!(f, "optional"),
+            InstanceMetadataHttpTokensState::Required => write!(f, "required"),
+            InstanceMetadataHttpTokensState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -321,3 +321,71 @@ impl ExportableVolumeField {
         }
     }
 }
+impl ::std::fmt::Display for ExportableVolumeField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportableVolumeField::AccountId => write!(f, "AccountId"),
+            ExportableVolumeField::CurrentConfigurationRootVolume => write!(f, "CurrentConfigurationRootVolume"),
+            ExportableVolumeField::CurrentConfigurationVolumeBaselineIops => write!(f, "CurrentConfigurationVolumeBaselineIOPS"),
+            ExportableVolumeField::CurrentConfigurationVolumeBaselineThroughput => write!(f, "CurrentConfigurationVolumeBaselineThroughput"),
+            ExportableVolumeField::CurrentConfigurationVolumeBurstIops => write!(f, "CurrentConfigurationVolumeBurstIOPS"),
+            ExportableVolumeField::CurrentConfigurationVolumeBurstThroughput => write!(f, "CurrentConfigurationVolumeBurstThroughput"),
+            ExportableVolumeField::CurrentConfigurationVolumeSize => write!(f, "CurrentConfigurationVolumeSize"),
+            ExportableVolumeField::CurrentConfigurationVolumeType => write!(f, "CurrentConfigurationVolumeType"),
+            ExportableVolumeField::CurrentMonthlyPrice => write!(f, "CurrentMonthlyPrice"),
+            ExportableVolumeField::CurrentPerformanceRisk => write!(f, "CurrentPerformanceRisk"),
+            ExportableVolumeField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
+                write!(f, "EffectiveRecommendationPreferencesSavingsEstimationMode")
+            }
+            ExportableVolumeField::Finding => write!(f, "Finding"),
+            ExportableVolumeField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
+            ExportableVolumeField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
+            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineIops => {
+                write!(f, "RecommendationOptionsConfigurationVolumeBaselineIOPS")
+            }
+            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBaselineThroughput => {
+                write!(f, "RecommendationOptionsConfigurationVolumeBaselineThroughput")
+            }
+            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstIops => {
+                write!(f, "RecommendationOptionsConfigurationVolumeBurstIOPS")
+            }
+            ExportableVolumeField::RecommendationOptionsConfigurationVolumeBurstThroughput => {
+                write!(f, "RecommendationOptionsConfigurationVolumeBurstThroughput")
+            }
+            ExportableVolumeField::RecommendationOptionsConfigurationVolumeSize => write!(f, "RecommendationOptionsConfigurationVolumeSize"),
+            ExportableVolumeField::RecommendationOptionsConfigurationVolumeType => write!(f, "RecommendationOptionsConfigurationVolumeType"),
+            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency")
+            }
+            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts")
+            }
+            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue")
+            }
+            ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts")
+            }
+            ExportableVolumeField::RecommendationOptionsMonthlyPrice => write!(f, "RecommendationOptionsMonthlyPrice"),
+            ExportableVolumeField::RecommendationOptionsPerformanceRisk => write!(f, "RecommendationOptionsPerformanceRisk"),
+            ExportableVolumeField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
+                write!(f, "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage")
+            }
+            ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => {
+                write!(f, "RecommendationOptionsSavingsOpportunityPercentage")
+            }
+            ExportableVolumeField::RootVolume => write!(f, "RootVolume"),
+            ExportableVolumeField::Tags => write!(f, "Tags"),
+            ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => {
+                write!(f, "UtilizationMetricsVolumeReadBytesPerSecondMaximum")
+            }
+            ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => write!(f, "UtilizationMetricsVolumeReadOpsPerSecondMaximum"),
+            ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum => {
+                write!(f, "UtilizationMetricsVolumeWriteBytesPerSecondMaximum")
+            }
+            ExportableVolumeField::UtilizationMetricsVolumeWriteOpsPerSecondMaximum => write!(f, "UtilizationMetricsVolumeWriteOpsPerSecondMaximum"),
+            ExportableVolumeField::VolumeArn => write!(f, "VolumeArn"),
+            ExportableVolumeField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

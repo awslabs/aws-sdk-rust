@@ -123,3 +123,16 @@ impl ProcessorType {
         }
     }
 }
+impl ::std::fmt::Display for ProcessorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProcessorType::AppendDelimiterToRecord => write!(f, "AppendDelimiterToRecord"),
+            ProcessorType::CloudWatchLogProcessing => write!(f, "CloudWatchLogProcessing"),
+            ProcessorType::Decompression => write!(f, "Decompression"),
+            ProcessorType::Lambda => write!(f, "Lambda"),
+            ProcessorType::MetadataExtraction => write!(f, "MetadataExtraction"),
+            ProcessorType::RecordDeAggregation => write!(f, "RecordDeAggregation"),
+            ProcessorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

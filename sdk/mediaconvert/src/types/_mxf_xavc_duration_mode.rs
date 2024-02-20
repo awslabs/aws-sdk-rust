@@ -96,3 +96,12 @@ impl MxfXavcDurationMode {
         }
     }
 }
+impl ::std::fmt::Display for MxfXavcDurationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MxfXavcDurationMode::AllowAnyDuration => write!(f, "ALLOW_ANY_DURATION"),
+            MxfXavcDurationMode::DropFramesForCompliance => write!(f, "DROP_FRAMES_FOR_COMPLIANCE"),
+            MxfXavcDurationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

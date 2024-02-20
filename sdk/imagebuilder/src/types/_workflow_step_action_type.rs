@@ -96,3 +96,12 @@ impl WorkflowStepActionType {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowStepActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowStepActionType::Resume => write!(f, "RESUME"),
+            WorkflowStepActionType::Stop => write!(f, "STOP"),
+            WorkflowStepActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

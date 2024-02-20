@@ -96,3 +96,12 @@ impl LogFormat {
         }
     }
 }
+impl ::std::fmt::Display for LogFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogFormat::Json => write!(f, "JSON"),
+            LogFormat::Text => write!(f, "Text"),
+            LogFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

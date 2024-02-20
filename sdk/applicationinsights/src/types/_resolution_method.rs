@@ -101,3 +101,13 @@ impl ResolutionMethod {
         }
     }
 }
+impl ::std::fmt::Display for ResolutionMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolutionMethod::Automatic => write!(f, "AUTOMATIC"),
+            ResolutionMethod::Manual => write!(f, "MANUAL"),
+            ResolutionMethod::Unresolved => write!(f, "UNRESOLVED"),
+            ResolutionMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

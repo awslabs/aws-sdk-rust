@@ -106,3 +106,14 @@ impl LockState {
         }
     }
 }
+impl ::std::fmt::Display for LockState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LockState::Compliance => write!(f, "compliance"),
+            LockState::ComplianceCooloff => write!(f, "compliance-cooloff"),
+            LockState::Expired => write!(f, "expired"),
+            LockState::Governance => write!(f, "governance"),
+            LockState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

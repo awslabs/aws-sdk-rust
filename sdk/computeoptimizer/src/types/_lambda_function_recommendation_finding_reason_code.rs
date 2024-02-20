@@ -108,3 +108,14 @@ impl LambdaFunctionRecommendationFindingReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for LambdaFunctionRecommendationFindingReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaFunctionRecommendationFindingReasonCode::Inconclusive => write!(f, "Inconclusive"),
+            LambdaFunctionRecommendationFindingReasonCode::InsufficientData => write!(f, "InsufficientData"),
+            LambdaFunctionRecommendationFindingReasonCode::MemoryOverProvisioned => write!(f, "MemoryOverprovisioned"),
+            LambdaFunctionRecommendationFindingReasonCode::MemoryUnderProvisioned => write!(f, "MemoryUnderprovisioned"),
+            LambdaFunctionRecommendationFindingReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

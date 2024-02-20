@@ -101,3 +101,13 @@ impl StackSetOperationType {
         }
     }
 }
+impl ::std::fmt::Display for StackSetOperationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackSetOperationType::Create => write!(f, "CREATE"),
+            StackSetOperationType::Delete => write!(f, "DELETE"),
+            StackSetOperationType::Update => write!(f, "UPDATE"),
+            StackSetOperationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

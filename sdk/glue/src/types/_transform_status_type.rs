@@ -101,3 +101,13 @@ impl TransformStatusType {
         }
     }
 }
+impl ::std::fmt::Display for TransformStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransformStatusType::Deleting => write!(f, "DELETING"),
+            TransformStatusType::NotReady => write!(f, "NOT_READY"),
+            TransformStatusType::Ready => write!(f, "READY"),
+            TransformStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

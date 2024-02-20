@@ -101,3 +101,13 @@ impl VectorEnrichmentJobExportStatus {
         }
     }
 }
+impl ::std::fmt::Display for VectorEnrichmentJobExportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VectorEnrichmentJobExportStatus::Failed => write!(f, "FAILED"),
+            VectorEnrichmentJobExportStatus::InProgress => write!(f, "IN_PROGRESS"),
+            VectorEnrichmentJobExportStatus::Succeeded => write!(f, "SUCCEEDED"),
+            VectorEnrichmentJobExportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

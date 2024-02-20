@@ -101,3 +101,13 @@ impl WirelessGatewayIdType {
         }
     }
 }
+impl ::std::fmt::Display for WirelessGatewayIdType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WirelessGatewayIdType::GatewayEui => write!(f, "GatewayEui"),
+            WirelessGatewayIdType::ThingName => write!(f, "ThingName"),
+            WirelessGatewayIdType::WirelessGatewayId => write!(f, "WirelessGatewayId"),
+            WirelessGatewayIdType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

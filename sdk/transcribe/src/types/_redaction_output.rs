@@ -96,3 +96,12 @@ impl RedactionOutput {
         }
     }
 }
+impl ::std::fmt::Display for RedactionOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RedactionOutput::Redacted => write!(f, "redacted"),
+            RedactionOutput::RedactedAndUnredacted => write!(f, "redacted_and_unredacted"),
+            RedactionOutput::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

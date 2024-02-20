@@ -141,3 +141,19 @@ impl InferredWorkloadType {
         }
     }
 }
+impl ::std::fmt::Display for InferredWorkloadType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferredWorkloadType::AmazonEmr => write!(f, "AmazonEmr"),
+            InferredWorkloadType::ApacheCassandra => write!(f, "ApacheCassandra"),
+            InferredWorkloadType::ApacheHadoop => write!(f, "ApacheHadoop"),
+            InferredWorkloadType::Kafka => write!(f, "Kafka"),
+            InferredWorkloadType::Memcached => write!(f, "Memcached"),
+            InferredWorkloadType::Nginx => write!(f, "Nginx"),
+            InferredWorkloadType::PostgreSql => write!(f, "PostgreSql"),
+            InferredWorkloadType::Redis => write!(f, "Redis"),
+            InferredWorkloadType::Sqlserver => write!(f, "SQLServer"),
+            InferredWorkloadType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

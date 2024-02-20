@@ -96,3 +96,12 @@ impl SharingType {
         }
     }
 }
+impl ::std::fmt::Display for SharingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SharingType::Private => write!(f, "Private"),
+            SharingType::Shared => write!(f, "Shared"),
+            SharingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

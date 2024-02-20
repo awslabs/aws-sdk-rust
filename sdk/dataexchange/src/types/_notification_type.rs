@@ -106,3 +106,14 @@ impl NotificationType {
         }
     }
 }
+impl ::std::fmt::Display for NotificationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationType::DataDelay => write!(f, "DATA_DELAY"),
+            NotificationType::DataUpdate => write!(f, "DATA_UPDATE"),
+            NotificationType::Deprecation => write!(f, "DEPRECATION"),
+            NotificationType::SchemaChange => write!(f, "SCHEMA_CHANGE"),
+            NotificationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

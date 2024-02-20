@@ -111,3 +111,15 @@ impl ExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionStatus::Cancelstarted => write!(f, "CancelStarted"),
+            ExecutionStatus::Canceled => write!(f, "Canceled"),
+            ExecutionStatus::Error => write!(f, "Error"),
+            ExecutionStatus::Inprogress => write!(f, "InProgress"),
+            ExecutionStatus::Successful => write!(f, "Successful"),
+            ExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

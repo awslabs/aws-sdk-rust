@@ -96,3 +96,12 @@ impl LogType {
         }
     }
 }
+impl ::std::fmt::Display for LogType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogType::Audio => write!(f, "AUDIO"),
+            LogType::Text => write!(f, "TEXT"),
+            LogType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

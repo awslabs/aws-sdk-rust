@@ -96,3 +96,12 @@ impl UndefinedSpecifiedValueType {
         }
     }
 }
+impl ::std::fmt::Display for UndefinedSpecifiedValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UndefinedSpecifiedValueType::Least => write!(f, "LEAST"),
+            UndefinedSpecifiedValueType::Most => write!(f, "MOST"),
+            UndefinedSpecifiedValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

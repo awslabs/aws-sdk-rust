@@ -111,3 +111,14 @@ impl PublishingStatus {
         }
     }
 }
+impl ::std::fmt::Display for PublishingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PublishingStatus::PendingVerification => write!(f, "PENDING_VERIFICATION"),
+            PublishingStatus::Publishing => write!(f, "PUBLISHING"),
+            PublishingStatus::Stopped => write!(f, "STOPPED"),
+            PublishingStatus::UnableToPublishFixDestinationProperty => write!(f, "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY"),
+            PublishingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

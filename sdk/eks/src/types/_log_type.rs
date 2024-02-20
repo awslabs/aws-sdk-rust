@@ -111,3 +111,15 @@ impl LogType {
         }
     }
 }
+impl ::std::fmt::Display for LogType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogType::Api => write!(f, "api"),
+            LogType::Audit => write!(f, "audit"),
+            LogType::Authenticator => write!(f, "authenticator"),
+            LogType::ControllerManager => write!(f, "controllerManager"),
+            LogType::Scheduler => write!(f, "scheduler"),
+            LogType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

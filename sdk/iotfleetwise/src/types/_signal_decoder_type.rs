@@ -101,3 +101,13 @@ impl SignalDecoderType {
         }
     }
 }
+impl ::std::fmt::Display for SignalDecoderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SignalDecoderType::CanSignal => write!(f, "CAN_SIGNAL"),
+            SignalDecoderType::MessageSignal => write!(f, "MESSAGE_SIGNAL"),
+            SignalDecoderType::ObdSignal => write!(f, "OBD_SIGNAL"),
+            SignalDecoderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

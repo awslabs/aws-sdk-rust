@@ -111,3 +111,15 @@ impl WriteForwardingStatus {
         }
     }
 }
+impl ::std::fmt::Display for WriteForwardingStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WriteForwardingStatus::Disabled => write!(f, "disabled"),
+            WriteForwardingStatus::Disabling => write!(f, "disabling"),
+            WriteForwardingStatus::Enabled => write!(f, "enabled"),
+            WriteForwardingStatus::Enabling => write!(f, "enabling"),
+            WriteForwardingStatus::UnknownValue => write!(f, "unknown"),
+            WriteForwardingStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

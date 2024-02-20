@@ -106,3 +106,14 @@ impl ColumnDataType {
         }
     }
 }
+impl ::std::fmt::Display for ColumnDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnDataType::Datetime => write!(f, "DATETIME"),
+            ColumnDataType::Decimal => write!(f, "DECIMAL"),
+            ColumnDataType::Integer => write!(f, "INTEGER"),
+            ColumnDataType::String => write!(f, "STRING"),
+            ColumnDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl PlayerSessionCreationPolicy {
         }
     }
 }
+impl ::std::fmt::Display for PlayerSessionCreationPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlayerSessionCreationPolicy::AcceptAll => write!(f, "ACCEPT_ALL"),
+            PlayerSessionCreationPolicy::DenyAll => write!(f, "DENY_ALL"),
+            PlayerSessionCreationPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl ServiceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServiceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceStatus::Active => write!(f, "ACTIVE"),
+            ServiceStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            ServiceStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            ServiceStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ServiceStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ServiceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

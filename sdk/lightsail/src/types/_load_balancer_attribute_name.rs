@@ -117,3 +117,15 @@ impl LoadBalancerAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerAttributeName::HealthCheckPath => write!(f, "HealthCheckPath"),
+            LoadBalancerAttributeName::HttpsRedirectionEnabled => write!(f, "HttpsRedirectionEnabled"),
+            LoadBalancerAttributeName::SessionStickinessEnabled => write!(f, "SessionStickinessEnabled"),
+            LoadBalancerAttributeName::SessionStickinessLbCookieDurationSeconds => write!(f, "SessionStickiness_LB_CookieDurationSeconds"),
+            LoadBalancerAttributeName::TlsPolicyName => write!(f, "TlsPolicyName"),
+            LoadBalancerAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

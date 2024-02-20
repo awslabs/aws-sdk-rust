@@ -101,3 +101,13 @@ impl IdentityType {
         }
     }
 }
+impl ::std::fmt::Display for IdentityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IdentityType::Domain => write!(f, "DOMAIN"),
+            IdentityType::EmailAddress => write!(f, "EMAIL_ADDRESS"),
+            IdentityType::ManagedDomain => write!(f, "MANAGED_DOMAIN"),
+            IdentityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

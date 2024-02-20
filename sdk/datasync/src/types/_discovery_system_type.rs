@@ -91,3 +91,11 @@ impl DiscoverySystemType {
         }
     }
 }
+impl ::std::fmt::Display for DiscoverySystemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiscoverySystemType::NetAppOntap => write!(f, "NetAppONTAP"),
+            DiscoverySystemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

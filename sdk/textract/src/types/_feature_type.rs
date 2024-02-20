@@ -111,3 +111,15 @@ impl FeatureType {
         }
     }
 }
+impl ::std::fmt::Display for FeatureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeatureType::Forms => write!(f, "FORMS"),
+            FeatureType::Layout => write!(f, "LAYOUT"),
+            FeatureType::Queries => write!(f, "QUERIES"),
+            FeatureType::Signatures => write!(f, "SIGNATURES"),
+            FeatureType::Tables => write!(f, "TABLES"),
+            FeatureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

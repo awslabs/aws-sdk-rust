@@ -96,3 +96,12 @@ impl ResourceShareAssociationType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceShareAssociationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceShareAssociationType::Principal => write!(f, "PRINCIPAL"),
+            ResourceShareAssociationType::Resource => write!(f, "RESOURCE"),
+            ResourceShareAssociationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

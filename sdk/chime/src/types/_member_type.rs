@@ -101,3 +101,13 @@ impl MemberType {
         }
     }
 }
+impl ::std::fmt::Display for MemberType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberType::Bot => write!(f, "Bot"),
+            MemberType::User => write!(f, "User"),
+            MemberType::Webhook => write!(f, "Webhook"),
+            MemberType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

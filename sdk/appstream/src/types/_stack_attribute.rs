@@ -159,3 +159,22 @@ impl StackAttribute {
         }
     }
 }
+impl ::std::fmt::Display for StackAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackAttribute::AccessEndpoints => write!(f, "ACCESS_ENDPOINTS"),
+            StackAttribute::EmbedHostDomains => write!(f, "EMBED_HOST_DOMAINS"),
+            StackAttribute::FeedbackUrl => write!(f, "FEEDBACK_URL"),
+            StackAttribute::IamRoleArn => write!(f, "IAM_ROLE_ARN"),
+            StackAttribute::RedirectUrl => write!(f, "REDIRECT_URL"),
+            StackAttribute::StorageConnectors => write!(f, "STORAGE_CONNECTORS"),
+            StackAttribute::StorageConnectorGoogleDrive => write!(f, "STORAGE_CONNECTOR_GOOGLE_DRIVE"),
+            StackAttribute::StorageConnectorHomefolders => write!(f, "STORAGE_CONNECTOR_HOMEFOLDERS"),
+            StackAttribute::StorageConnectorOneDrive => write!(f, "STORAGE_CONNECTOR_ONE_DRIVE"),
+            StackAttribute::StreamingExperienceSettings => write!(f, "STREAMING_EXPERIENCE_SETTINGS"),
+            StackAttribute::ThemeName => write!(f, "THEME_NAME"),
+            StackAttribute::UserSettings => write!(f, "USER_SETTINGS"),
+            StackAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl LineageType {
         }
     }
 }
+impl ::std::fmt::Display for LineageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LineageType::Action => write!(f, "Action"),
+            LineageType::Artifact => write!(f, "Artifact"),
+            LineageType::Context => write!(f, "Context"),
+            LineageType::TrialComponent => write!(f, "TrialComponent"),
+            LineageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl TableCellImageScalingConfiguration {
         }
     }
 }
+impl ::std::fmt::Display for TableCellImageScalingConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableCellImageScalingConfiguration::DoNotScale => write!(f, "DO_NOT_SCALE"),
+            TableCellImageScalingConfiguration::FitToCellHeight => write!(f, "FIT_TO_CELL_HEIGHT"),
+            TableCellImageScalingConfiguration::FitToCellWidth => write!(f, "FIT_TO_CELL_WIDTH"),
+            TableCellImageScalingConfiguration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

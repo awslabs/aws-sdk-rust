@@ -101,3 +101,13 @@ impl SmbSecurityStrategy {
         }
     }
 }
+impl ::std::fmt::Display for SmbSecurityStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SmbSecurityStrategy::ClientSpecified => write!(f, "ClientSpecified"),
+            SmbSecurityStrategy::MandatoryEncryption => write!(f, "MandatoryEncryption"),
+            SmbSecurityStrategy::MandatorySigning => write!(f, "MandatorySigning"),
+            SmbSecurityStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

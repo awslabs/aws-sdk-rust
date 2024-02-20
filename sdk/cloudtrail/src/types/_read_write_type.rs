@@ -101,3 +101,13 @@ impl ReadWriteType {
         }
     }
 }
+impl ::std::fmt::Display for ReadWriteType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReadWriteType::All => write!(f, "All"),
+            ReadWriteType::ReadOnly => write!(f, "ReadOnly"),
+            ReadWriteType::WriteOnly => write!(f, "WriteOnly"),
+            ReadWriteType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -183,3 +183,26 @@ impl FindingReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for FindingReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingReasonCode::CpuOverProvisioned => write!(f, "CPU_OVER_PROVISIONED"),
+            FindingReasonCode::CpuUnderProvisioned => write!(f, "CPU_UNDER_PROVISIONED"),
+            FindingReasonCode::DiskIopsOverProvisioned => write!(f, "DISK_IOPS_OVER_PROVISIONED"),
+            FindingReasonCode::DiskIopsUnderProvisioned => write!(f, "DISK_IOPS_UNDER_PROVISIONED"),
+            FindingReasonCode::DiskThroughputOverProvisioned => write!(f, "DISK_THROUGHPUT_OVER_PROVISIONED"),
+            FindingReasonCode::DiskThroughputUnderProvisioned => write!(f, "DISK_THROUGHPUT_UNDER_PROVISIONED"),
+            FindingReasonCode::EbsIopsOverProvisioned => write!(f, "EBS_IOPS_OVER_PROVISIONED"),
+            FindingReasonCode::EbsIopsUnderProvisioned => write!(f, "EBS_IOPS_UNDER_PROVISIONED"),
+            FindingReasonCode::EbsThroughputOverProvisioned => write!(f, "EBS_THROUGHPUT_OVER_PROVISIONED"),
+            FindingReasonCode::EbsThroughputUnderProvisioned => write!(f, "EBS_THROUGHPUT_UNDER_PROVISIONED"),
+            FindingReasonCode::MemoryOverProvisioned => write!(f, "MEMORY_OVER_PROVISIONED"),
+            FindingReasonCode::MemoryUnderProvisioned => write!(f, "MEMORY_UNDER_PROVISIONED"),
+            FindingReasonCode::NetworkBandwidthOverProvisioned => write!(f, "NETWORK_BANDWIDTH_OVER_PROVISIONED"),
+            FindingReasonCode::NetworkBandwidthUnderProvisioned => write!(f, "NETWORK_BANDWIDTH_UNDER_PROVISIONED"),
+            FindingReasonCode::NetworkPpsOverProvisioned => write!(f, "NETWORK_PPS_OVER_PROVISIONED"),
+            FindingReasonCode::NetworkPpsUnderProvisioned => write!(f, "NETWORK_PPS_UNDER_PROVISIONED"),
+            FindingReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

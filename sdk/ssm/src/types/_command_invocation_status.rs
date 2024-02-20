@@ -135,3 +135,18 @@ impl CommandInvocationStatus {
         }
     }
 }
+impl ::std::fmt::Display for CommandInvocationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CommandInvocationStatus::Cancelled => write!(f, "Cancelled"),
+            CommandInvocationStatus::Cancelling => write!(f, "Cancelling"),
+            CommandInvocationStatus::Delayed => write!(f, "Delayed"),
+            CommandInvocationStatus::Failed => write!(f, "Failed"),
+            CommandInvocationStatus::InProgress => write!(f, "InProgress"),
+            CommandInvocationStatus::Pending => write!(f, "Pending"),
+            CommandInvocationStatus::Success => write!(f, "Success"),
+            CommandInvocationStatus::TimedOut => write!(f, "TimedOut"),
+            CommandInvocationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

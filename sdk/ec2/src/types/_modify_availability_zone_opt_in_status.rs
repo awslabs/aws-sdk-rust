@@ -96,3 +96,12 @@ impl ModifyAvailabilityZoneOptInStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModifyAvailabilityZoneOptInStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModifyAvailabilityZoneOptInStatus::NotOptedIn => write!(f, "not-opted-in"),
+            ModifyAvailabilityZoneOptInStatus::OptedIn => write!(f, "opted-in"),
+            ModifyAvailabilityZoneOptInStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

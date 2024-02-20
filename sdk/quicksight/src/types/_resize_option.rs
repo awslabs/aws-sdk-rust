@@ -96,3 +96,12 @@ impl ResizeOption {
         }
     }
 }
+impl ::std::fmt::Display for ResizeOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResizeOption::Fixed => write!(f, "FIXED"),
+            ResizeOption::Responsive => write!(f, "RESPONSIVE"),
+            ResizeOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

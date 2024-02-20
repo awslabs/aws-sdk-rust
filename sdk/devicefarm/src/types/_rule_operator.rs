@@ -135,3 +135,18 @@ impl RuleOperator {
         }
     }
 }
+impl ::std::fmt::Display for RuleOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleOperator::Contains => write!(f, "CONTAINS"),
+            RuleOperator::Equals => write!(f, "EQUALS"),
+            RuleOperator::GreaterThan => write!(f, "GREATER_THAN"),
+            RuleOperator::GreaterThanOrEquals => write!(f, "GREATER_THAN_OR_EQUALS"),
+            RuleOperator::In => write!(f, "IN"),
+            RuleOperator::LessThan => write!(f, "LESS_THAN"),
+            RuleOperator::LessThanOrEquals => write!(f, "LESS_THAN_OR_EQUALS"),
+            RuleOperator::NotIn => write!(f, "NOT_IN"),
+            RuleOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

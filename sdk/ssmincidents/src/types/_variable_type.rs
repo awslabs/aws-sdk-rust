@@ -96,3 +96,12 @@ impl VariableType {
         }
     }
 }
+impl ::std::fmt::Display for VariableType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VariableType::IncidentRecordArn => write!(f, "INCIDENT_RECORD_ARN"),
+            VariableType::InvolvedResources => write!(f, "INVOLVED_RESOURCES"),
+            VariableType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,14 @@ impl LicenseFindingReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for LicenseFindingReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LicenseFindingReasonCode::CwAppInsightsError => write!(f, "CloudWatchApplicationInsightsError"),
+            LicenseFindingReasonCode::CwAppInsightsDisabled => write!(f, "InvalidCloudWatchApplicationInsightsSetup"),
+            LicenseFindingReasonCode::LicenseOverProvisioned => write!(f, "LicenseOverprovisioned"),
+            LicenseFindingReasonCode::Optimized => write!(f, "Optimized"),
+            LicenseFindingReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

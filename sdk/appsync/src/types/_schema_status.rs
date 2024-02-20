@@ -116,3 +116,16 @@ impl SchemaStatus {
         }
     }
 }
+impl ::std::fmt::Display for SchemaStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SchemaStatus::Active => write!(f, "ACTIVE"),
+            SchemaStatus::Deleting => write!(f, "DELETING"),
+            SchemaStatus::Failed => write!(f, "FAILED"),
+            SchemaStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
+            SchemaStatus::Processing => write!(f, "PROCESSING"),
+            SchemaStatus::Success => write!(f, "SUCCESS"),
+            SchemaStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

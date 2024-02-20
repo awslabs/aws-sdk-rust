@@ -96,3 +96,12 @@ impl H265ColorMetadata {
         }
     }
 }
+impl ::std::fmt::Display for H265ColorMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265ColorMetadata::Ignore => write!(f, "IGNORE"),
+            H265ColorMetadata::Insert => write!(f, "INSERT"),
+            H265ColorMetadata::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

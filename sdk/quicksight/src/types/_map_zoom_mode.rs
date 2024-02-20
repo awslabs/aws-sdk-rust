@@ -96,3 +96,12 @@ impl MapZoomMode {
         }
     }
 }
+impl ::std::fmt::Display for MapZoomMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MapZoomMode::Auto => write!(f, "AUTO"),
+            MapZoomMode::Manual => write!(f, "MANUAL"),
+            MapZoomMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

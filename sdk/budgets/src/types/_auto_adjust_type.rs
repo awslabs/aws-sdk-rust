@@ -96,3 +96,12 @@ impl AutoAdjustType {
         }
     }
 }
+impl ::std::fmt::Display for AutoAdjustType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoAdjustType::Forecast => write!(f, "FORECAST"),
+            AutoAdjustType::Historical => write!(f, "HISTORICAL"),
+            AutoAdjustType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

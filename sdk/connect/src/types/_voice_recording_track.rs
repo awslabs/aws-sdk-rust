@@ -101,3 +101,13 @@ impl VoiceRecordingTrack {
         }
     }
 }
+impl ::std::fmt::Display for VoiceRecordingTrack {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VoiceRecordingTrack::All => write!(f, "ALL"),
+            VoiceRecordingTrack::FromAgent => write!(f, "FROM_AGENT"),
+            VoiceRecordingTrack::ToAgent => write!(f, "TO_AGENT"),
+            VoiceRecordingTrack::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

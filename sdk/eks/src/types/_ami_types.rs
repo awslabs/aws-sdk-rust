@@ -159,3 +159,22 @@ impl AmiTypes {
         }
     }
 }
+impl ::std::fmt::Display for AmiTypes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AmiTypes::Al2Arm64 => write!(f, "AL2_ARM_64"),
+            AmiTypes::Al2X8664 => write!(f, "AL2_x86_64"),
+            AmiTypes::Al2X8664Gpu => write!(f, "AL2_x86_64_GPU"),
+            AmiTypes::BottlerocketArm64 => write!(f, "BOTTLEROCKET_ARM_64"),
+            AmiTypes::BottlerocketArm64Nvidia => write!(f, "BOTTLEROCKET_ARM_64_NVIDIA"),
+            AmiTypes::BottlerocketX8664 => write!(f, "BOTTLEROCKET_x86_64"),
+            AmiTypes::BottlerocketX8664Nvidia => write!(f, "BOTTLEROCKET_x86_64_NVIDIA"),
+            AmiTypes::Custom => write!(f, "CUSTOM"),
+            AmiTypes::WindowsCore2019X8664 => write!(f, "WINDOWS_CORE_2019_x86_64"),
+            AmiTypes::WindowsCore2022X8664 => write!(f, "WINDOWS_CORE_2022_x86_64"),
+            AmiTypes::WindowsFull2019X8664 => write!(f, "WINDOWS_FULL_2019_x86_64"),
+            AmiTypes::WindowsFull2022X8664 => write!(f, "WINDOWS_FULL_2022_x86_64"),
+            AmiTypes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

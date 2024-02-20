@@ -101,3 +101,13 @@ impl Granularity {
         }
     }
 }
+impl ::std::fmt::Display for Granularity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Granularity::Daily => write!(f, "DAILY"),
+            Granularity::Hourly => write!(f, "HOURLY"),
+            Granularity::Monthly => write!(f, "MONTHLY"),
+            Granularity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

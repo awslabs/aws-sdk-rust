@@ -96,3 +96,12 @@ impl ProtectionPolicy {
         }
     }
 }
+impl ::std::fmt::Display for ProtectionPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProtectionPolicy::FullProtection => write!(f, "FullProtection"),
+            ProtectionPolicy::NoProtection => write!(f, "NoProtection"),
+            ProtectionPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

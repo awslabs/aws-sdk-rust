@@ -111,3 +111,15 @@ impl FraudsterRegistrationJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for FraudsterRegistrationJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FraudsterRegistrationJobStatus::Completed => write!(f, "COMPLETED"),
+            FraudsterRegistrationJobStatus::CompletedWithErrors => write!(f, "COMPLETED_WITH_ERRORS"),
+            FraudsterRegistrationJobStatus::Failed => write!(f, "FAILED"),
+            FraudsterRegistrationJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            FraudsterRegistrationJobStatus::Submitted => write!(f, "SUBMITTED"),
+            FraudsterRegistrationJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

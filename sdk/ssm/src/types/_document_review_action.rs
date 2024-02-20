@@ -106,3 +106,14 @@ impl DocumentReviewAction {
         }
     }
 }
+impl ::std::fmt::Display for DocumentReviewAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentReviewAction::Approve => write!(f, "Approve"),
+            DocumentReviewAction::Reject => write!(f, "Reject"),
+            DocumentReviewAction::SendForReview => write!(f, "SendForReview"),
+            DocumentReviewAction::UpdateReview => write!(f, "UpdateReview"),
+            DocumentReviewAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

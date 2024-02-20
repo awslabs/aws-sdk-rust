@@ -123,3 +123,16 @@ impl WorldExportJobErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for WorldExportJobErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorldExportJobErrorCode::AccessDenied => write!(f, "AccessDenied"),
+            WorldExportJobErrorCode::InternalServiceError => write!(f, "InternalServiceError"),
+            WorldExportJobErrorCode::InvalidInput => write!(f, "InvalidInput"),
+            WorldExportJobErrorCode::LimitExceeded => write!(f, "LimitExceeded"),
+            WorldExportJobErrorCode::RequestThrottled => write!(f, "RequestThrottled"),
+            WorldExportJobErrorCode::ResourceNotFound => write!(f, "ResourceNotFound"),
+            WorldExportJobErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

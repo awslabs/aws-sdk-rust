@@ -159,3 +159,22 @@ impl TaskTemplateFieldType {
         }
     }
 }
+impl ::std::fmt::Display for TaskTemplateFieldType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskTemplateFieldType::Boolean => write!(f, "BOOLEAN"),
+            TaskTemplateFieldType::DateTime => write!(f, "DATE_TIME"),
+            TaskTemplateFieldType::Description => write!(f, "DESCRIPTION"),
+            TaskTemplateFieldType::Email => write!(f, "EMAIL"),
+            TaskTemplateFieldType::Name => write!(f, "NAME"),
+            TaskTemplateFieldType::Number => write!(f, "NUMBER"),
+            TaskTemplateFieldType::QuickConnect => write!(f, "QUICK_CONNECT"),
+            TaskTemplateFieldType::ScheduledTime => write!(f, "SCHEDULED_TIME"),
+            TaskTemplateFieldType::SingleSelect => write!(f, "SINGLE_SELECT"),
+            TaskTemplateFieldType::Text => write!(f, "TEXT"),
+            TaskTemplateFieldType::TextArea => write!(f, "TEXT_AREA"),
+            TaskTemplateFieldType::Url => write!(f, "URL"),
+            TaskTemplateFieldType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

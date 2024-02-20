@@ -96,3 +96,12 @@ impl PreferredProtocol {
         }
     }
 }
+impl ::std::fmt::Display for PreferredProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PreferredProtocol::Tcp => write!(f, "TCP"),
+            PreferredProtocol::Udp => write!(f, "UDP"),
+            PreferredProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

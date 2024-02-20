@@ -121,3 +121,17 @@ impl ListBulkImportJobsFilter {
         }
     }
 }
+impl ::std::fmt::Display for ListBulkImportJobsFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListBulkImportJobsFilter::All => write!(f, "ALL"),
+            ListBulkImportJobsFilter::Cancelled => write!(f, "CANCELLED"),
+            ListBulkImportJobsFilter::Completed => write!(f, "COMPLETED"),
+            ListBulkImportJobsFilter::CompletedWithFailures => write!(f, "COMPLETED_WITH_FAILURES"),
+            ListBulkImportJobsFilter::Failed => write!(f, "FAILED"),
+            ListBulkImportJobsFilter::Pending => write!(f, "PENDING"),
+            ListBulkImportJobsFilter::Running => write!(f, "RUNNING"),
+            ListBulkImportJobsFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

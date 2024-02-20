@@ -96,3 +96,12 @@ impl ApprovalStatus {
         }
     }
 }
+impl ::std::fmt::Display for ApprovalStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApprovalStatus::Approved => write!(f, "Approved"),
+            ApprovalStatus::Rejected => write!(f, "Rejected"),
+            ApprovalStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

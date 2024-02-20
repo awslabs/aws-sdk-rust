@@ -96,3 +96,12 @@ impl AudioNormalizationLoudnessLogging {
         }
     }
 }
+impl ::std::fmt::Display for AudioNormalizationLoudnessLogging {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioNormalizationLoudnessLogging::DontLog => write!(f, "DONT_LOG"),
+            AudioNormalizationLoudnessLogging::Log => write!(f, "LOG"),
+            AudioNormalizationLoudnessLogging::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

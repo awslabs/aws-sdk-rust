@@ -147,3 +147,20 @@ impl HeterogeneousTargetDatabaseEngine {
         }
     }
 }
+impl ::std::fmt::Display for HeterogeneousTargetDatabaseEngine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HeterogeneousTargetDatabaseEngine::AwsPostgresql => write!(f, "AWS PostgreSQL"),
+            HeterogeneousTargetDatabaseEngine::AmazonAurora => write!(f, "Amazon Aurora"),
+            HeterogeneousTargetDatabaseEngine::Db2Luw => write!(f, "Db2 LUW"),
+            HeterogeneousTargetDatabaseEngine::MariaDb => write!(f, "MariaDB"),
+            HeterogeneousTargetDatabaseEngine::MicrosoftSqlServer => write!(f, "Microsoft SQL Server"),
+            HeterogeneousTargetDatabaseEngine::MongoDb => write!(f, "MongoDB"),
+            HeterogeneousTargetDatabaseEngine::Mysql => write!(f, "MySQL"),
+            HeterogeneousTargetDatabaseEngine::NoneSpecified => write!(f, "None specified"),
+            HeterogeneousTargetDatabaseEngine::OracleDatabase => write!(f, "Oracle Database"),
+            HeterogeneousTargetDatabaseEngine::Sap => write!(f, "SAP"),
+            HeterogeneousTargetDatabaseEngine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

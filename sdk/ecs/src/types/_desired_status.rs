@@ -101,3 +101,13 @@ impl DesiredStatus {
         }
     }
 }
+impl ::std::fmt::Display for DesiredStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DesiredStatus::Pending => write!(f, "PENDING"),
+            DesiredStatus::Running => write!(f, "RUNNING"),
+            DesiredStatus::Stopped => write!(f, "STOPPED"),
+            DesiredStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

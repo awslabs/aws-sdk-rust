@@ -111,3 +111,15 @@ impl OAuthScopesElement {
         }
     }
 }
+impl ::std::fmt::Display for OAuthScopesElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OAuthScopesElement::AwsCognitoSigninUserAdmin => write!(f, "AWS_COGNITO_SIGNIN_USER_ADMIN"),
+            OAuthScopesElement::Email => write!(f, "EMAIL"),
+            OAuthScopesElement::Openid => write!(f, "OPENID"),
+            OAuthScopesElement::Phone => write!(f, "PHONE"),
+            OAuthScopesElement::Profile => write!(f, "PROFILE"),
+            OAuthScopesElement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

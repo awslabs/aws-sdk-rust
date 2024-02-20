@@ -101,3 +101,13 @@ impl ParameterType {
         }
     }
 }
+impl ::std::fmt::Display for ParameterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParameterType::SecureString => write!(f, "SecureString"),
+            ParameterType::String => write!(f, "String"),
+            ParameterType::StringList => write!(f, "StringList"),
+            ParameterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

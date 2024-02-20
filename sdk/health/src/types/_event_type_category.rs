@@ -106,3 +106,14 @@ impl EventTypeCategory {
         }
     }
 }
+impl ::std::fmt::Display for EventTypeCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventTypeCategory::AccountNotification => write!(f, "accountNotification"),
+            EventTypeCategory::Investigation => write!(f, "investigation"),
+            EventTypeCategory::Issue => write!(f, "issue"),
+            EventTypeCategory::ScheduledChange => write!(f, "scheduledChange"),
+            EventTypeCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

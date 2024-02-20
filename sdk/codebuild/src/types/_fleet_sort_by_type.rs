@@ -101,3 +101,13 @@ impl FleetSortByType {
         }
     }
 }
+impl ::std::fmt::Display for FleetSortByType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetSortByType::CreatedTime => write!(f, "CREATED_TIME"),
+            FleetSortByType::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
+            FleetSortByType::Name => write!(f, "NAME"),
+            FleetSortByType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

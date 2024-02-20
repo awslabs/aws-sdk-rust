@@ -101,3 +101,13 @@ impl JsScript {
         }
     }
 }
+impl ::std::fmt::Display for JsScript {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JsScript::Js => write!(f, "js"),
+            JsScript::Jsx => write!(f, "jsx"),
+            JsScript::Tsx => write!(f, "tsx"),
+            JsScript::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

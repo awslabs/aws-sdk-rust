@@ -96,3 +96,12 @@ impl StorageMode {
         }
     }
 }
+impl ::std::fmt::Display for StorageMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageMode::Local => write!(f, "LOCAL"),
+            StorageMode::Tiered => write!(f, "TIERED"),
+            StorageMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

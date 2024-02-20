@@ -123,3 +123,16 @@ impl OfferingTypeValues {
         }
     }
 }
+impl ::std::fmt::Display for OfferingTypeValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OfferingTypeValues::AllUpfront => write!(f, "All Upfront"),
+            OfferingTypeValues::HeavyUtilization => write!(f, "Heavy Utilization"),
+            OfferingTypeValues::LightUtilization => write!(f, "Light Utilization"),
+            OfferingTypeValues::MediumUtilization => write!(f, "Medium Utilization"),
+            OfferingTypeValues::NoUpfront => write!(f, "No Upfront"),
+            OfferingTypeValues::PartialUpfront => write!(f, "Partial Upfront"),
+            OfferingTypeValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

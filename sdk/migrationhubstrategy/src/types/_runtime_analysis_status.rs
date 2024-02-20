@@ -106,3 +106,14 @@ impl RuntimeAnalysisStatus {
         }
     }
 }
+impl ::std::fmt::Display for RuntimeAnalysisStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuntimeAnalysisStatus::AnalysisFailed => write!(f, "ANALYSIS_FAILED"),
+            RuntimeAnalysisStatus::AnalysisStarted => write!(f, "ANALYSIS_STARTED"),
+            RuntimeAnalysisStatus::AnalysisSuccess => write!(f, "ANALYSIS_SUCCESS"),
+            RuntimeAnalysisStatus::AnalysisToBeScheduled => write!(f, "ANALYSIS_TO_BE_SCHEDULED"),
+            RuntimeAnalysisStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

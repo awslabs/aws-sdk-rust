@@ -106,3 +106,14 @@ impl WordCloudWordPadding {
         }
     }
 }
+impl ::std::fmt::Display for WordCloudWordPadding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WordCloudWordPadding::Large => write!(f, "LARGE"),
+            WordCloudWordPadding::Medium => write!(f, "MEDIUM"),
+            WordCloudWordPadding::None => write!(f, "NONE"),
+            WordCloudWordPadding::Small => write!(f, "SMALL"),
+            WordCloudWordPadding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

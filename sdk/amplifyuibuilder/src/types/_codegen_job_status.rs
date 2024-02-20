@@ -101,3 +101,13 @@ impl CodegenJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for CodegenJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CodegenJobStatus::Failed => write!(f, "failed"),
+            CodegenJobStatus::InProgress => write!(f, "in_progress"),
+            CodegenJobStatus::Succeeded => write!(f, "succeeded"),
+            CodegenJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

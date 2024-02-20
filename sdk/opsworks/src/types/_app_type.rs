@@ -121,3 +121,17 @@ impl AppType {
         }
     }
 }
+impl ::std::fmt::Display for AppType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppType::AwsFlowRuby => write!(f, "aws-flow-ruby"),
+            AppType::Java => write!(f, "java"),
+            AppType::Nodejs => write!(f, "nodejs"),
+            AppType::Other => write!(f, "other"),
+            AppType::Php => write!(f, "php"),
+            AppType::Rails => write!(f, "rails"),
+            AppType::Static => write!(f, "static"),
+            AppType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

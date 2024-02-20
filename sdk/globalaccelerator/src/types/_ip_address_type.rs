@@ -96,3 +96,12 @@ impl IpAddressType {
         }
     }
 }
+impl ::std::fmt::Display for IpAddressType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpAddressType::DualStack => write!(f, "DUAL_STACK"),
+            IpAddressType::Ipv4 => write!(f, "IPV4"),
+            IpAddressType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

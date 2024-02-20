@@ -101,3 +101,13 @@ impl AuthType {
         }
     }
 }
+impl ::std::fmt::Display for AuthType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthType::BasicAuth => write!(f, "BASIC_AUTH"),
+            AuthType::Oauth => write!(f, "OAUTH"),
+            AuthType::PersonalAccessToken => write!(f, "PERSONAL_ACCESS_TOKEN"),
+            AuthType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

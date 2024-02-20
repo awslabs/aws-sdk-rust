@@ -219,3 +219,32 @@ impl ResourceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceStatus::CreateComplete => write!(f, "CREATE_COMPLETE"),
+            ResourceStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            ResourceStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            ResourceStatus::DeleteComplete => write!(f, "DELETE_COMPLETE"),
+            ResourceStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ResourceStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ResourceStatus::DeleteSkipped => write!(f, "DELETE_SKIPPED"),
+            ResourceStatus::ImportComplete => write!(f, "IMPORT_COMPLETE"),
+            ResourceStatus::ImportFailed => write!(f, "IMPORT_FAILED"),
+            ResourceStatus::ImportInProgress => write!(f, "IMPORT_IN_PROGRESS"),
+            ResourceStatus::ImportRollbackComplete => write!(f, "IMPORT_ROLLBACK_COMPLETE"),
+            ResourceStatus::ImportRollbackFailed => write!(f, "IMPORT_ROLLBACK_FAILED"),
+            ResourceStatus::ImportRollbackInProgress => write!(f, "IMPORT_ROLLBACK_IN_PROGRESS"),
+            ResourceStatus::RollbackComplete => write!(f, "ROLLBACK_COMPLETE"),
+            ResourceStatus::RollbackFailed => write!(f, "ROLLBACK_FAILED"),
+            ResourceStatus::RollbackInProgress => write!(f, "ROLLBACK_IN_PROGRESS"),
+            ResourceStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
+            ResourceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ResourceStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            ResourceStatus::UpdateRollbackComplete => write!(f, "UPDATE_ROLLBACK_COMPLETE"),
+            ResourceStatus::UpdateRollbackFailed => write!(f, "UPDATE_ROLLBACK_FAILED"),
+            ResourceStatus::UpdateRollbackInProgress => write!(f, "UPDATE_ROLLBACK_IN_PROGRESS"),
+            ResourceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

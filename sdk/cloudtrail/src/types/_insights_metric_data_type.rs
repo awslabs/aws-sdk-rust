@@ -96,3 +96,12 @@ impl InsightsMetricDataType {
         }
     }
 }
+impl ::std::fmt::Display for InsightsMetricDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InsightsMetricDataType::FillWithZeros => write!(f, "FillWithZeros"),
+            InsightsMetricDataType::NonZeroData => write!(f, "NonZeroData"),
+            InsightsMetricDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

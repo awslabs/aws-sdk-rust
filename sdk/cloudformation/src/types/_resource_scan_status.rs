@@ -106,3 +106,14 @@ impl ResourceScanStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceScanStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceScanStatus::Complete => write!(f, "COMPLETE"),
+            ResourceScanStatus::Expired => write!(f, "EXPIRED"),
+            ResourceScanStatus::Failed => write!(f, "FAILED"),
+            ResourceScanStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ResourceScanStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

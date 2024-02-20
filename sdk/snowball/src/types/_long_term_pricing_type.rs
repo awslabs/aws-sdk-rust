@@ -101,3 +101,13 @@ impl LongTermPricingType {
         }
     }
 }
+impl ::std::fmt::Display for LongTermPricingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LongTermPricingType::OneMonth => write!(f, "OneMonth"),
+            LongTermPricingType::OneYear => write!(f, "OneYear"),
+            LongTermPricingType::ThreeYear => write!(f, "ThreeYear"),
+            LongTermPricingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

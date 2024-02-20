@@ -106,3 +106,14 @@ impl PlacementGroupStrategy {
         }
     }
 }
+impl ::std::fmt::Display for PlacementGroupStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlacementGroupStrategy::Cluster => write!(f, "CLUSTER"),
+            PlacementGroupStrategy::None => write!(f, "NONE"),
+            PlacementGroupStrategy::Partition => write!(f, "PARTITION"),
+            PlacementGroupStrategy::Spread => write!(f, "SPREAD"),
+            PlacementGroupStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

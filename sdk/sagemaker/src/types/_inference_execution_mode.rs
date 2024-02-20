@@ -96,3 +96,12 @@ impl InferenceExecutionMode {
         }
     }
 }
+impl ::std::fmt::Display for InferenceExecutionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferenceExecutionMode::Direct => write!(f, "Direct"),
+            InferenceExecutionMode::Serial => write!(f, "Serial"),
+            InferenceExecutionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

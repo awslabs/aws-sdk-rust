@@ -96,3 +96,12 @@ impl MediaStorageConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for MediaStorageConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaStorageConfigurationStatus::Disabled => write!(f, "DISABLED"),
+            MediaStorageConfigurationStatus::Enabled => write!(f, "ENABLED"),
+            MediaStorageConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

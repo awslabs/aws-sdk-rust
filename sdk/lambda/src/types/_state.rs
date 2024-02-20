@@ -106,3 +106,14 @@ impl State {
         }
     }
 }
+impl ::std::fmt::Display for State {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            State::Active => write!(f, "Active"),
+            State::Failed => write!(f, "Failed"),
+            State::Inactive => write!(f, "Inactive"),
+            State::Pending => write!(f, "Pending"),
+            State::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -131,3 +131,17 @@ impl ObjectAcl {
         }
     }
 }
+impl ::std::fmt::Display for ObjectAcl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectAcl::AuthenticatedRead => write!(f, "authenticated-read"),
+            ObjectAcl::AwsExecRead => write!(f, "aws-exec-read"),
+            ObjectAcl::BucketOwnerFullControl => write!(f, "bucket-owner-full-control"),
+            ObjectAcl::BucketOwnerRead => write!(f, "bucket-owner-read"),
+            ObjectAcl::Private => write!(f, "private"),
+            ObjectAcl::PublicRead => write!(f, "public-read"),
+            ObjectAcl::PublicReadWrite => write!(f, "public-read-write"),
+            ObjectAcl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

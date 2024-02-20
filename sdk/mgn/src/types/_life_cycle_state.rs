@@ -147,3 +147,20 @@ impl LifeCycleState {
         }
     }
 }
+impl ::std::fmt::Display for LifeCycleState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifeCycleState::Cutover => write!(f, "CUTOVER"),
+            LifeCycleState::CuttingOver => write!(f, "CUTTING_OVER"),
+            LifeCycleState::Disconnected => write!(f, "DISCONNECTED"),
+            LifeCycleState::Discovered => write!(f, "DISCOVERED"),
+            LifeCycleState::NotReady => write!(f, "NOT_READY"),
+            LifeCycleState::PendingInstallation => write!(f, "PENDING_INSTALLATION"),
+            LifeCycleState::ReadyForCutover => write!(f, "READY_FOR_CUTOVER"),
+            LifeCycleState::ReadyForTest => write!(f, "READY_FOR_TEST"),
+            LifeCycleState::Stopped => write!(f, "STOPPED"),
+            LifeCycleState::Testing => write!(f, "TESTING"),
+            LifeCycleState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

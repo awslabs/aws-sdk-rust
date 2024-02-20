@@ -96,3 +96,12 @@ impl GraphQlApiIntrospectionConfig {
         }
     }
 }
+impl ::std::fmt::Display for GraphQlApiIntrospectionConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GraphQlApiIntrospectionConfig::Disabled => write!(f, "DISABLED"),
+            GraphQlApiIntrospectionConfig::Enabled => write!(f, "ENABLED"),
+            GraphQlApiIntrospectionConfig::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

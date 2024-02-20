@@ -96,3 +96,14 @@ impl OrganizationConfigRuleTriggerTypeNoSn {
         }
     }
 }
+impl ::std::fmt::Display for OrganizationConfigRuleTriggerTypeNoSn {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrganizationConfigRuleTriggerTypeNoSn::ConfigurationItemChangeNotification => write!(f, "ConfigurationItemChangeNotification"),
+            OrganizationConfigRuleTriggerTypeNoSn::OversizedConfigurationItemChangeNotifcation => {
+                write!(f, "OversizedConfigurationItemChangeNotification")
+            }
+            OrganizationConfigRuleTriggerTypeNoSn::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

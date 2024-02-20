@@ -126,3 +126,18 @@ impl InstalledComponentLifecycleState {
         }
     }
 }
+impl ::std::fmt::Display for InstalledComponentLifecycleState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstalledComponentLifecycleState::Broken => write!(f, "BROKEN"),
+            InstalledComponentLifecycleState::Errored => write!(f, "ERRORED"),
+            InstalledComponentLifecycleState::Finished => write!(f, "FINISHED"),
+            InstalledComponentLifecycleState::Installed => write!(f, "INSTALLED"),
+            InstalledComponentLifecycleState::New => write!(f, "NEW"),
+            InstalledComponentLifecycleState::Running => write!(f, "RUNNING"),
+            InstalledComponentLifecycleState::Starting => write!(f, "STARTING"),
+            InstalledComponentLifecycleState::Stopping => write!(f, "STOPPING"),
+            InstalledComponentLifecycleState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl LineInterpolation {
         }
     }
 }
+impl ::std::fmt::Display for LineInterpolation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LineInterpolation::Linear => write!(f, "LINEAR"),
+            LineInterpolation::Smooth => write!(f, "SMOOTH"),
+            LineInterpolation::Stepped => write!(f, "STEPPED"),
+            LineInterpolation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

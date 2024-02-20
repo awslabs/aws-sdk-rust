@@ -116,3 +116,16 @@ impl HandshakeState {
         }
     }
 }
+impl ::std::fmt::Display for HandshakeState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HandshakeState::Accepted => write!(f, "ACCEPTED"),
+            HandshakeState::Canceled => write!(f, "CANCELED"),
+            HandshakeState::Declined => write!(f, "DECLINED"),
+            HandshakeState::Expired => write!(f, "EXPIRED"),
+            HandshakeState::Open => write!(f, "OPEN"),
+            HandshakeState::Requested => write!(f, "REQUESTED"),
+            HandshakeState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

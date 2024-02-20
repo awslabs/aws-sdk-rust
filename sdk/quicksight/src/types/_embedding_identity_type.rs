@@ -101,3 +101,13 @@ impl EmbeddingIdentityType {
         }
     }
 }
+impl ::std::fmt::Display for EmbeddingIdentityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EmbeddingIdentityType::Anonymous => write!(f, "ANONYMOUS"),
+            EmbeddingIdentityType::Iam => write!(f, "IAM"),
+            EmbeddingIdentityType::Quicksight => write!(f, "QUICKSIGHT"),
+            EmbeddingIdentityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

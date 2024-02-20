@@ -96,3 +96,12 @@ impl IFrameOnlyPlaylistType {
         }
     }
 }
+impl ::std::fmt::Display for IFrameOnlyPlaylistType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IFrameOnlyPlaylistType::Disabled => write!(f, "DISABLED"),
+            IFrameOnlyPlaylistType::Standard => write!(f, "STANDARD"),
+            IFrameOnlyPlaylistType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

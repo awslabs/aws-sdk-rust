@@ -96,3 +96,12 @@ impl StorageType {
         }
     }
 }
+impl ::std::fmt::Display for StorageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageType::MultiLayerStorage => write!(f, "MULTI_LAYER_STORAGE"),
+            StorageType::SitewiseDefaultStorage => write!(f, "SITEWISE_DEFAULT_STORAGE"),
+            StorageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

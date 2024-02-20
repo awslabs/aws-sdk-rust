@@ -135,3 +135,18 @@ impl EarthObservationJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for EarthObservationJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EarthObservationJobStatus::Completed => write!(f, "COMPLETED"),
+            EarthObservationJobStatus::Deleted => write!(f, "DELETED"),
+            EarthObservationJobStatus::Deleting => write!(f, "DELETING"),
+            EarthObservationJobStatus::Failed => write!(f, "FAILED"),
+            EarthObservationJobStatus::Initializing => write!(f, "INITIALIZING"),
+            EarthObservationJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            EarthObservationJobStatus::Stopped => write!(f, "STOPPED"),
+            EarthObservationJobStatus::Stopping => write!(f, "STOPPING"),
+            EarthObservationJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

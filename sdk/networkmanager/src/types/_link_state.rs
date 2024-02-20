@@ -106,3 +106,14 @@ impl LinkState {
         }
     }
 }
+impl ::std::fmt::Display for LinkState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LinkState::Available => write!(f, "AVAILABLE"),
+            LinkState::Deleting => write!(f, "DELETING"),
+            LinkState::Pending => write!(f, "PENDING"),
+            LinkState::Updating => write!(f, "UPDATING"),
+            LinkState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

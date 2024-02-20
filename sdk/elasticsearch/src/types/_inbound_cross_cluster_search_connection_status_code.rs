@@ -118,3 +118,16 @@ impl InboundCrossClusterSearchConnectionStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for InboundCrossClusterSearchConnectionStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InboundCrossClusterSearchConnectionStatusCode::Approved => write!(f, "APPROVED"),
+            InboundCrossClusterSearchConnectionStatusCode::Deleted => write!(f, "DELETED"),
+            InboundCrossClusterSearchConnectionStatusCode::Deleting => write!(f, "DELETING"),
+            InboundCrossClusterSearchConnectionStatusCode::PendingAcceptance => write!(f, "PENDING_ACCEPTANCE"),
+            InboundCrossClusterSearchConnectionStatusCode::Rejected => write!(f, "REJECTED"),
+            InboundCrossClusterSearchConnectionStatusCode::Rejecting => write!(f, "REJECTING"),
+            InboundCrossClusterSearchConnectionStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

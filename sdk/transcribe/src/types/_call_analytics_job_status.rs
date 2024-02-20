@@ -106,3 +106,14 @@ impl CallAnalyticsJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for CallAnalyticsJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CallAnalyticsJobStatus::Completed => write!(f, "COMPLETED"),
+            CallAnalyticsJobStatus::Failed => write!(f, "FAILED"),
+            CallAnalyticsJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            CallAnalyticsJobStatus::Queued => write!(f, "QUEUED"),
+            CallAnalyticsJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

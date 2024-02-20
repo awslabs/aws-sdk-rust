@@ -101,3 +101,13 @@ impl QueryState {
         }
     }
 }
+impl ::std::fmt::Display for QueryState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryState::Cancelling => write!(f, "CANCELLING"),
+            QueryState::Running => write!(f, "RUNNING"),
+            QueryState::Waiting => write!(f, "WAITING"),
+            QueryState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

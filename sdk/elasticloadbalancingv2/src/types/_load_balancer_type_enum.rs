@@ -101,3 +101,13 @@ impl LoadBalancerTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerTypeEnum::Application => write!(f, "application"),
+            LoadBalancerTypeEnum::Gateway => write!(f, "gateway"),
+            LoadBalancerTypeEnum::Network => write!(f, "network"),
+            LoadBalancerTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AnalyticsBinByName {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsBinByName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsBinByName::ConversationStartTime => write!(f, "ConversationStartTime"),
+            AnalyticsBinByName::UtteranceTimestamp => write!(f, "UtteranceTimestamp"),
+            AnalyticsBinByName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

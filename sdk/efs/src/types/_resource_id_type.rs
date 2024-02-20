@@ -96,3 +96,12 @@ impl ResourceIdType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceIdType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceIdType::LongId => write!(f, "LONG_ID"),
+            ResourceIdType::ShortId => write!(f, "SHORT_ID"),
+            ResourceIdType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

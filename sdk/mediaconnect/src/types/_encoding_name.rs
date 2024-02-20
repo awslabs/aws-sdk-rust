@@ -106,3 +106,14 @@ impl EncodingName {
         }
     }
 }
+impl ::std::fmt::Display for EncodingName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncodingName::Jxsv => write!(f, "jxsv"),
+            EncodingName::Pcm => write!(f, "pcm"),
+            EncodingName::Raw => write!(f, "raw"),
+            EncodingName::Smpte291 => write!(f, "smpte291"),
+            EncodingName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

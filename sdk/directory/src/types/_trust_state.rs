@@ -153,3 +153,21 @@ impl TrustState {
         }
     }
 }
+impl ::std::fmt::Display for TrustState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrustState::Created => write!(f, "Created"),
+            TrustState::Creating => write!(f, "Creating"),
+            TrustState::Deleted => write!(f, "Deleted"),
+            TrustState::Deleting => write!(f, "Deleting"),
+            TrustState::Failed => write!(f, "Failed"),
+            TrustState::UpdateFailed => write!(f, "UpdateFailed"),
+            TrustState::Updated => write!(f, "Updated"),
+            TrustState::Updating => write!(f, "Updating"),
+            TrustState::Verified => write!(f, "Verified"),
+            TrustState::VerifyFailed => write!(f, "VerifyFailed"),
+            TrustState::Verifying => write!(f, "Verifying"),
+            TrustState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

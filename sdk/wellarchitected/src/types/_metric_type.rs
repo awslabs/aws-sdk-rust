@@ -91,3 +91,11 @@ impl MetricType {
         }
     }
 }
+impl ::std::fmt::Display for MetricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricType::Workload => write!(f, "WORKLOAD"),
+            MetricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

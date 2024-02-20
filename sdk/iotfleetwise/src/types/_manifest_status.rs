@@ -106,3 +106,14 @@ impl ManifestStatus {
         }
     }
 }
+impl ::std::fmt::Display for ManifestStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ManifestStatus::Active => write!(f, "ACTIVE"),
+            ManifestStatus::Draft => write!(f, "DRAFT"),
+            ManifestStatus::Invalid => write!(f, "INVALID"),
+            ManifestStatus::Validating => write!(f, "VALIDATING"),
+            ManifestStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

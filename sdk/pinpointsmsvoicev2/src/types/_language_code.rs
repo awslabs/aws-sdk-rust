@@ -153,3 +153,23 @@ impl LanguageCode {
         }
     }
 }
+impl ::std::fmt::Display for LanguageCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LanguageCode::DeDe => write!(f, "DE_DE"),
+            LanguageCode::EnGb => write!(f, "EN_GB"),
+            LanguageCode::EnUs => write!(f, "EN_US"),
+            LanguageCode::Es419 => write!(f, "ES_419"),
+            LanguageCode::EsEs => write!(f, "ES_ES"),
+            LanguageCode::FrCa => write!(f, "FR_CA"),
+            LanguageCode::FrFr => write!(f, "FR_FR"),
+            LanguageCode::ItIt => write!(f, "IT_IT"),
+            LanguageCode::JaJp => write!(f, "JA_JP"),
+            LanguageCode::KoKr => write!(f, "KO_KR"),
+            LanguageCode::PtBr => write!(f, "PT_BR"),
+            LanguageCode::ZhCn => write!(f, "ZH_CN"),
+            LanguageCode::ZhTw => write!(f, "ZH_TW"),
+            LanguageCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

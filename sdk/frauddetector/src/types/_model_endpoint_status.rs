@@ -96,3 +96,12 @@ impl ModelEndpointStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelEndpointStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelEndpointStatus::Associated => write!(f, "ASSOCIATED"),
+            ModelEndpointStatus::Dissociated => write!(f, "DISSOCIATED"),
+            ModelEndpointStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

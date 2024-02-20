@@ -116,3 +116,16 @@ impl AlarmStateName {
         }
     }
 }
+impl ::std::fmt::Display for AlarmStateName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlarmStateName::Acknowledged => write!(f, "ACKNOWLEDGED"),
+            AlarmStateName::Active => write!(f, "ACTIVE"),
+            AlarmStateName::Disabled => write!(f, "DISABLED"),
+            AlarmStateName::Latched => write!(f, "LATCHED"),
+            AlarmStateName::Normal => write!(f, "NORMAL"),
+            AlarmStateName::SnoozeDisabled => write!(f, "SNOOZE_DISABLED"),
+            AlarmStateName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

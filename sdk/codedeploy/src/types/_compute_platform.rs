@@ -101,3 +101,13 @@ impl ComputePlatform {
         }
     }
 }
+impl ::std::fmt::Display for ComputePlatform {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComputePlatform::Ecs => write!(f, "ECS"),
+            ComputePlatform::Lambda => write!(f, "Lambda"),
+            ComputePlatform::Server => write!(f, "Server"),
+            ComputePlatform::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

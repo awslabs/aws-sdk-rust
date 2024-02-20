@@ -96,3 +96,12 @@ impl ExecutionRedriveFilter {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionRedriveFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionRedriveFilter::NotRedriven => write!(f, "NOT_REDRIVEN"),
+            ExecutionRedriveFilter::Redriven => write!(f, "REDRIVEN"),
+            ExecutionRedriveFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

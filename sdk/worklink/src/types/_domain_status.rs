@@ -135,3 +135,18 @@ impl DomainStatus {
         }
     }
 }
+impl ::std::fmt::Display for DomainStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainStatus::Active => write!(f, "ACTIVE"),
+            DomainStatus::Associating => write!(f, "ASSOCIATING"),
+            DomainStatus::Disassociated => write!(f, "DISASSOCIATED"),
+            DomainStatus::Disassociating => write!(f, "DISASSOCIATING"),
+            DomainStatus::FailedToAssociate => write!(f, "FAILED_TO_ASSOCIATE"),
+            DomainStatus::FailedToDisassociate => write!(f, "FAILED_TO_DISASSOCIATE"),
+            DomainStatus::Inactive => write!(f, "INACTIVE"),
+            DomainStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
+            DomainStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

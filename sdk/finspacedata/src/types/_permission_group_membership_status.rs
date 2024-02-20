@@ -101,3 +101,13 @@ impl PermissionGroupMembershipStatus {
         }
     }
 }
+impl ::std::fmt::Display for PermissionGroupMembershipStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionGroupMembershipStatus::AdditionInProgress => write!(f, "ADDITION_IN_PROGRESS"),
+            PermissionGroupMembershipStatus::AdditionSuccess => write!(f, "ADDITION_SUCCESS"),
+            PermissionGroupMembershipStatus::RemovalInProgress => write!(f, "REMOVAL_IN_PROGRESS"),
+            PermissionGroupMembershipStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

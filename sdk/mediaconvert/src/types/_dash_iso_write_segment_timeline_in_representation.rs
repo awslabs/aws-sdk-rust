@@ -98,3 +98,12 @@ impl DashIsoWriteSegmentTimelineInRepresentation {
         }
     }
 }
+impl ::std::fmt::Display for DashIsoWriteSegmentTimelineInRepresentation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashIsoWriteSegmentTimelineInRepresentation::Disabled => write!(f, "DISABLED"),
+            DashIsoWriteSegmentTimelineInRepresentation::Enabled => write!(f, "ENABLED"),
+            DashIsoWriteSegmentTimelineInRepresentation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

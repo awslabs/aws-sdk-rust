@@ -91,3 +91,11 @@ impl OperationResultFilterName {
         }
     }
 }
+impl ::std::fmt::Display for OperationResultFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationResultFilterName::OperationResultStatus => write!(f, "OPERATION_RESULT_STATUS"),
+            OperationResultFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

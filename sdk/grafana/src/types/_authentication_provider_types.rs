@@ -96,3 +96,12 @@ impl AuthenticationProviderTypes {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationProviderTypes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationProviderTypes::AwsSso => write!(f, "AWS_SSO"),
+            AuthenticationProviderTypes::Saml => write!(f, "SAML"),
+            AuthenticationProviderTypes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

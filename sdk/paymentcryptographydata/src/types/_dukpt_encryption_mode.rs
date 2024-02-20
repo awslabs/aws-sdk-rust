@@ -96,3 +96,12 @@ impl DukptEncryptionMode {
         }
     }
 }
+impl ::std::fmt::Display for DukptEncryptionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DukptEncryptionMode::Cbc => write!(f, "CBC"),
+            DukptEncryptionMode::Ecb => write!(f, "ECB"),
+            DukptEncryptionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

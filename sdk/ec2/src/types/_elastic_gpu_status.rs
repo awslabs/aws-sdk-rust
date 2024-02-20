@@ -96,3 +96,12 @@ impl ElasticGpuStatus {
         }
     }
 }
+impl ::std::fmt::Display for ElasticGpuStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ElasticGpuStatus::Impaired => write!(f, "IMPAIRED"),
+            ElasticGpuStatus::Ok => write!(f, "OK"),
+            ElasticGpuStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

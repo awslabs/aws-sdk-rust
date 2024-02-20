@@ -96,3 +96,12 @@ impl CrossDatasetTypes {
         }
     }
 }
+impl ::std::fmt::Display for CrossDatasetTypes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CrossDatasetTypes::AllDatasets => write!(f, "ALL_DATASETS"),
+            CrossDatasetTypes::SingleDataset => write!(f, "SINGLE_DATASET"),
+            CrossDatasetTypes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

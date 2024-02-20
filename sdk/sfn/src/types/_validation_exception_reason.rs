@@ -111,3 +111,14 @@ impl ValidationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ValidationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationExceptionReason::ApiDoesNotSupportLabeledArns => write!(f, "API_DOES_NOT_SUPPORT_LABELED_ARNS"),
+            ValidationExceptionReason::CannotUpdateCompletedMapRun => write!(f, "CANNOT_UPDATE_COMPLETED_MAP_RUN"),
+            ValidationExceptionReason::InvalidRoutingConfiguration => write!(f, "INVALID_ROUTING_CONFIGURATION"),
+            ValidationExceptionReason::MissingRequiredParameter => write!(f, "MISSING_REQUIRED_PARAMETER"),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

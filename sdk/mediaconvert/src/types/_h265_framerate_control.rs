@@ -96,3 +96,12 @@ impl H265FramerateControl {
         }
     }
 }
+impl ::std::fmt::Display for H265FramerateControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265FramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            H265FramerateControl::Specified => write!(f, "SPECIFIED"),
+            H265FramerateControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

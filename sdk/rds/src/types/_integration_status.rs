@@ -121,3 +121,17 @@ impl IntegrationStatus {
         }
     }
 }
+impl ::std::fmt::Display for IntegrationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntegrationStatus::Active => write!(f, "active"),
+            IntegrationStatus::Creating => write!(f, "creating"),
+            IntegrationStatus::Deleting => write!(f, "deleting"),
+            IntegrationStatus::Failed => write!(f, "failed"),
+            IntegrationStatus::Modifying => write!(f, "modifying"),
+            IntegrationStatus::NeedsAttention => write!(f, "needs_attention"),
+            IntegrationStatus::Syncing => write!(f, "syncing"),
+            IntegrationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

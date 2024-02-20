@@ -165,3 +165,23 @@ impl EnvironmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentStatus::Created => write!(f, "CREATED"),
+            EnvironmentStatus::CreateRequested => write!(f, "CREATE_REQUESTED"),
+            EnvironmentStatus::Creating => write!(f, "CREATING"),
+            EnvironmentStatus::Deleted => write!(f, "DELETED"),
+            EnvironmentStatus::DeleteRequested => write!(f, "DELETE_REQUESTED"),
+            EnvironmentStatus::Deleting => write!(f, "DELETING"),
+            EnvironmentStatus::FailedCreation => write!(f, "FAILED_CREATION"),
+            EnvironmentStatus::FailedDeletion => write!(f, "FAILED_DELETION"),
+            EnvironmentStatus::FailedUpdatingNetwork => write!(f, "FAILED_UPDATING_NETWORK"),
+            EnvironmentStatus::RetryDeletion => write!(f, "RETRY_DELETION"),
+            EnvironmentStatus::Suspended => write!(f, "SUSPENDED"),
+            EnvironmentStatus::UpdateNetworkRequested => write!(f, "UPDATE_NETWORK_REQUESTED"),
+            EnvironmentStatus::UpdatingNetwork => write!(f, "UPDATING_NETWORK"),
+            EnvironmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

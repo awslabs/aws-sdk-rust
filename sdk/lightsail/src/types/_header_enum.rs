@@ -177,3 +177,25 @@ impl HeaderEnum {
         }
     }
 }
+impl ::std::fmt::Display for HeaderEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HeaderEnum::Accept => write!(f, "Accept"),
+            HeaderEnum::AcceptCharset => write!(f, "Accept-Charset"),
+            HeaderEnum::AcceptDatetime => write!(f, "Accept-Datetime"),
+            HeaderEnum::AcceptEncoding => write!(f, "Accept-Encoding"),
+            HeaderEnum::AcceptLanguage => write!(f, "Accept-Language"),
+            HeaderEnum::Authorization => write!(f, "Authorization"),
+            HeaderEnum::CloudFrontForwardedProto => write!(f, "CloudFront-Forwarded-Proto"),
+            HeaderEnum::CloudFrontIsDesktopViewer => write!(f, "CloudFront-Is-Desktop-Viewer"),
+            HeaderEnum::CloudFrontIsMobileViewer => write!(f, "CloudFront-Is-Mobile-Viewer"),
+            HeaderEnum::CloudFrontIsSmartTvViewer => write!(f, "CloudFront-Is-SmartTV-Viewer"),
+            HeaderEnum::CloudFrontIsTabletViewer => write!(f, "CloudFront-Is-Tablet-Viewer"),
+            HeaderEnum::CloudFrontViewerCountry => write!(f, "CloudFront-Viewer-Country"),
+            HeaderEnum::Host => write!(f, "Host"),
+            HeaderEnum::Origin => write!(f, "Origin"),
+            HeaderEnum::Referer => write!(f, "Referer"),
+            HeaderEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

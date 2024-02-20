@@ -101,3 +101,13 @@ impl EventResponseType {
         }
     }
 }
+impl ::std::fmt::Display for EventResponseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventResponseType::Fail => write!(f, "Fail"),
+            EventResponseType::InProgress => write!(f, "InProgress"),
+            EventResponseType::Pass => write!(f, "Pass"),
+            EventResponseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

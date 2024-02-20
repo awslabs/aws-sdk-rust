@@ -101,3 +101,13 @@ impl Eac3SurroundMode {
         }
     }
 }
+impl ::std::fmt::Display for Eac3SurroundMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3SurroundMode::Disabled => write!(f, "DISABLED"),
+            Eac3SurroundMode::Enabled => write!(f, "ENABLED"),
+            Eac3SurroundMode::NotIndicated => write!(f, "NOT_INDICATED"),
+            Eac3SurroundMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

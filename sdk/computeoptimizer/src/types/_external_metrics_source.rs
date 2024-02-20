@@ -106,3 +106,14 @@ impl ExternalMetricsSource {
         }
     }
 }
+impl ::std::fmt::Display for ExternalMetricsSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExternalMetricsSource::Datadog => write!(f, "Datadog"),
+            ExternalMetricsSource::Dynatrace => write!(f, "Dynatrace"),
+            ExternalMetricsSource::Instana => write!(f, "Instana"),
+            ExternalMetricsSource::Newrelic => write!(f, "NewRelic"),
+            ExternalMetricsSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

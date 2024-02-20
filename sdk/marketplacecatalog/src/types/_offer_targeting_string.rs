@@ -106,3 +106,14 @@ impl OfferTargetingString {
         }
     }
 }
+impl ::std::fmt::Display for OfferTargetingString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OfferTargetingString::BuyerAccounts => write!(f, "BuyerAccounts"),
+            OfferTargetingString::CountryCodes => write!(f, "CountryCodes"),
+            OfferTargetingString::None => write!(f, "None"),
+            OfferTargetingString::ParticipatingPrograms => write!(f, "ParticipatingPrograms"),
+            OfferTargetingString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

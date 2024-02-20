@@ -153,3 +153,21 @@ impl FreeTrialFeatureResult {
         }
     }
 }
+impl ::std::fmt::Display for FreeTrialFeatureResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FreeTrialFeatureResult::CloudTrail => write!(f, "CLOUD_TRAIL"),
+            FreeTrialFeatureResult::DnsLogs => write!(f, "DNS_LOGS"),
+            FreeTrialFeatureResult::EbsMalwareProtection => write!(f, "EBS_MALWARE_PROTECTION"),
+            FreeTrialFeatureResult::Ec2RuntimeMonitoring => write!(f, "EC2_RUNTIME_MONITORING"),
+            FreeTrialFeatureResult::EksAuditLogs => write!(f, "EKS_AUDIT_LOGS"),
+            FreeTrialFeatureResult::EksRuntimeMonitoring => write!(f, "EKS_RUNTIME_MONITORING"),
+            FreeTrialFeatureResult::FargateRuntimeMonitoring => write!(f, "FARGATE_RUNTIME_MONITORING"),
+            FreeTrialFeatureResult::FlowLogs => write!(f, "FLOW_LOGS"),
+            FreeTrialFeatureResult::LambdaNetworkLogs => write!(f, "LAMBDA_NETWORK_LOGS"),
+            FreeTrialFeatureResult::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
+            FreeTrialFeatureResult::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
+            FreeTrialFeatureResult::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

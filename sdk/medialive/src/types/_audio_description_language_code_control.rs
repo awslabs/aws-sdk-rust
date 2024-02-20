@@ -96,3 +96,12 @@ impl AudioDescriptionLanguageCodeControl {
         }
     }
 }
+impl ::std::fmt::Display for AudioDescriptionLanguageCodeControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioDescriptionLanguageCodeControl::FollowInput => write!(f, "FOLLOW_INPUT"),
+            AudioDescriptionLanguageCodeControl::UseConfigured => write!(f, "USE_CONFIGURED"),
+            AudioDescriptionLanguageCodeControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

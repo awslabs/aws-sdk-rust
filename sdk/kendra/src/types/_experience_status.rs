@@ -106,3 +106,14 @@ impl ExperienceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExperienceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExperienceStatus::Active => write!(f, "ACTIVE"),
+            ExperienceStatus::Creating => write!(f, "CREATING"),
+            ExperienceStatus::Deleting => write!(f, "DELETING"),
+            ExperienceStatus::Failed => write!(f, "FAILED"),
+            ExperienceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

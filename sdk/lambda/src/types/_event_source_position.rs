@@ -101,3 +101,13 @@ impl EventSourcePosition {
         }
     }
 }
+impl ::std::fmt::Display for EventSourcePosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventSourcePosition::AtTimestamp => write!(f, "AT_TIMESTAMP"),
+            EventSourcePosition::Latest => write!(f, "LATEST"),
+            EventSourcePosition::TrimHorizon => write!(f, "TRIM_HORIZON"),
+            EventSourcePosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

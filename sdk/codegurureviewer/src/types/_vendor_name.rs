@@ -101,3 +101,13 @@ impl VendorName {
         }
     }
 }
+impl ::std::fmt::Display for VendorName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VendorName::Github => write!(f, "GitHub"),
+            VendorName::Gitlab => write!(f, "GitLab"),
+            VendorName::NativeS3 => write!(f, "NativeS3"),
+            VendorName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

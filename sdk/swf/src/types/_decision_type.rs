@@ -165,3 +165,23 @@ impl DecisionType {
         }
     }
 }
+impl ::std::fmt::Display for DecisionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DecisionType::CancelTimer => write!(f, "CancelTimer"),
+            DecisionType::CancelWorkflowExecution => write!(f, "CancelWorkflowExecution"),
+            DecisionType::CompleteWorkflowExecution => write!(f, "CompleteWorkflowExecution"),
+            DecisionType::ContinueAsNewWorkflowExecution => write!(f, "ContinueAsNewWorkflowExecution"),
+            DecisionType::FailWorkflowExecution => write!(f, "FailWorkflowExecution"),
+            DecisionType::RecordMarker => write!(f, "RecordMarker"),
+            DecisionType::RequestCancelActivityTask => write!(f, "RequestCancelActivityTask"),
+            DecisionType::RequestCancelExternalWorkflowExecution => write!(f, "RequestCancelExternalWorkflowExecution"),
+            DecisionType::ScheduleActivityTask => write!(f, "ScheduleActivityTask"),
+            DecisionType::ScheduleLambdaFunction => write!(f, "ScheduleLambdaFunction"),
+            DecisionType::SignalExternalWorkflowExecution => write!(f, "SignalExternalWorkflowExecution"),
+            DecisionType::StartChildWorkflowExecution => write!(f, "StartChildWorkflowExecution"),
+            DecisionType::StartTimer => write!(f, "StartTimer"),
+            DecisionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

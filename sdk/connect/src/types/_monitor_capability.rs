@@ -96,3 +96,12 @@ impl MonitorCapability {
         }
     }
 }
+impl ::std::fmt::Display for MonitorCapability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitorCapability::Barge => write!(f, "BARGE"),
+            MonitorCapability::SilentMonitor => write!(f, "SILENT_MONITOR"),
+            MonitorCapability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

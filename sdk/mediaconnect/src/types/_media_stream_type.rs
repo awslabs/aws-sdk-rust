@@ -101,3 +101,13 @@ impl MediaStreamType {
         }
     }
 }
+impl ::std::fmt::Display for MediaStreamType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaStreamType::AncillaryData => write!(f, "ancillary-data"),
+            MediaStreamType::Audio => write!(f, "audio"),
+            MediaStreamType::Video => write!(f, "video"),
+            MediaStreamType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

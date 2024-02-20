@@ -96,3 +96,12 @@ impl AutoMlChannelType {
         }
     }
 }
+impl ::std::fmt::Display for AutoMlChannelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMlChannelType::Training => write!(f, "training"),
+            AutoMlChannelType::Validation => write!(f, "validation"),
+            AutoMlChannelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

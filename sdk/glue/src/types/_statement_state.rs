@@ -116,3 +116,16 @@ impl StatementState {
         }
     }
 }
+impl ::std::fmt::Display for StatementState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatementState::Available => write!(f, "AVAILABLE"),
+            StatementState::Cancelled => write!(f, "CANCELLED"),
+            StatementState::Cancelling => write!(f, "CANCELLING"),
+            StatementState::Error => write!(f, "ERROR"),
+            StatementState::Running => write!(f, "RUNNING"),
+            StatementState::Waiting => write!(f, "WAITING"),
+            StatementState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

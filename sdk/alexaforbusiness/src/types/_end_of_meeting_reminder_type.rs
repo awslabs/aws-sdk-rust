@@ -106,3 +106,14 @@ impl EndOfMeetingReminderType {
         }
     }
 }
+impl ::std::fmt::Display for EndOfMeetingReminderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndOfMeetingReminderType::AnnouncementTimeCheck => write!(f, "ANNOUNCEMENT_TIME_CHECK"),
+            EndOfMeetingReminderType::AnnouncementVariableTimeLeft => write!(f, "ANNOUNCEMENT_VARIABLE_TIME_LEFT"),
+            EndOfMeetingReminderType::Chime => write!(f, "CHIME"),
+            EndOfMeetingReminderType::Knock => write!(f, "KNOCK"),
+            EndOfMeetingReminderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

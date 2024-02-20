@@ -201,3 +201,29 @@ impl AutomationExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for AutomationExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutomationExecutionStatus::Approved => write!(f, "Approved"),
+            AutomationExecutionStatus::Cancelled => write!(f, "Cancelled"),
+            AutomationExecutionStatus::Cancelling => write!(f, "Cancelling"),
+            AutomationExecutionStatus::ChangeCalendarOverrideApproved => write!(f, "ChangeCalendarOverrideApproved"),
+            AutomationExecutionStatus::ChangeCalendarOverrideRejected => write!(f, "ChangeCalendarOverrideRejected"),
+            AutomationExecutionStatus::CompletedWithFailure => write!(f, "CompletedWithFailure"),
+            AutomationExecutionStatus::CompletedWithSuccess => write!(f, "CompletedWithSuccess"),
+            AutomationExecutionStatus::Exited => write!(f, "Exited"),
+            AutomationExecutionStatus::Failed => write!(f, "Failed"),
+            AutomationExecutionStatus::Inprogress => write!(f, "InProgress"),
+            AutomationExecutionStatus::Pending => write!(f, "Pending"),
+            AutomationExecutionStatus::PendingApproval => write!(f, "PendingApproval"),
+            AutomationExecutionStatus::PendingChangeCalendarOverride => write!(f, "PendingChangeCalendarOverride"),
+            AutomationExecutionStatus::Rejected => write!(f, "Rejected"),
+            AutomationExecutionStatus::RunbookInprogress => write!(f, "RunbookInProgress"),
+            AutomationExecutionStatus::Scheduled => write!(f, "Scheduled"),
+            AutomationExecutionStatus::Success => write!(f, "Success"),
+            AutomationExecutionStatus::Timedout => write!(f, "TimedOut"),
+            AutomationExecutionStatus::Waiting => write!(f, "Waiting"),
+            AutomationExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

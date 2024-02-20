@@ -101,3 +101,13 @@ impl PurchasingOption {
         }
     }
 }
+impl ::std::fmt::Display for PurchasingOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PurchasingOption::AllUpfront => write!(f, "ALL_UPFRONT"),
+            PurchasingOption::NoUpfront => write!(f, "NO_UPFRONT"),
+            PurchasingOption::PartialUpfront => write!(f, "PARTIAL_UPFRONT"),
+            PurchasingOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

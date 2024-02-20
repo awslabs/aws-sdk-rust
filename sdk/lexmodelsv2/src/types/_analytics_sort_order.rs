@@ -96,3 +96,12 @@ impl AnalyticsSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsSortOrder::Ascending => write!(f, "Ascending"),
+            AnalyticsSortOrder::Descending => write!(f, "Descending"),
+            AnalyticsSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

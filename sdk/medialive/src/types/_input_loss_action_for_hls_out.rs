@@ -96,3 +96,12 @@ impl InputLossActionForHlsOut {
         }
     }
 }
+impl ::std::fmt::Display for InputLossActionForHlsOut {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputLossActionForHlsOut::EmitOutput => write!(f, "EMIT_OUTPUT"),
+            InputLossActionForHlsOut::PauseOutput => write!(f, "PAUSE_OUTPUT"),
+            InputLossActionForHlsOut::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

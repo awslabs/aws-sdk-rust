@@ -101,3 +101,13 @@ impl ActionConfigurationPropertyType {
         }
     }
 }
+impl ::std::fmt::Display for ActionConfigurationPropertyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionConfigurationPropertyType::Boolean => write!(f, "Boolean"),
+            ActionConfigurationPropertyType::Number => write!(f, "Number"),
+            ActionConfigurationPropertyType::String => write!(f, "String"),
+            ActionConfigurationPropertyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

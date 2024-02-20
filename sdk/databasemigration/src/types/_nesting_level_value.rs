@@ -96,3 +96,12 @@ impl NestingLevelValue {
         }
     }
 }
+impl ::std::fmt::Display for NestingLevelValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NestingLevelValue::None => write!(f, "none"),
+            NestingLevelValue::One => write!(f, "one"),
+            NestingLevelValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl QueueName {
         }
     }
 }
+impl ::std::fmt::Display for QueueName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueueName::JobsQueue => write!(f, "JOBS_QUEUE"),
+            QueueName::QuantumTasksQueue => write!(f, "QUANTUM_TASKS_QUEUE"),
+            QueueName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

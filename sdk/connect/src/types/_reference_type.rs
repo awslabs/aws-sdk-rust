@@ -116,3 +116,16 @@ impl ReferenceType {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceType::Attachment => write!(f, "ATTACHMENT"),
+            ReferenceType::Date => write!(f, "DATE"),
+            ReferenceType::Email => write!(f, "EMAIL"),
+            ReferenceType::Number => write!(f, "NUMBER"),
+            ReferenceType::String => write!(f, "STRING"),
+            ReferenceType::Url => write!(f, "URL"),
+            ReferenceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

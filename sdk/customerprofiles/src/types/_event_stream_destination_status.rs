@@ -96,3 +96,12 @@ impl EventStreamDestinationStatus {
         }
     }
 }
+impl ::std::fmt::Display for EventStreamDestinationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventStreamDestinationStatus::Healthy => write!(f, "HEALTHY"),
+            EventStreamDestinationStatus::Unhealthy => write!(f, "UNHEALTHY"),
+            EventStreamDestinationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl HlsRedundantManifest {
         }
     }
 }
+impl ::std::fmt::Display for HlsRedundantManifest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsRedundantManifest::Disabled => write!(f, "DISABLED"),
+            HlsRedundantManifest::Enabled => write!(f, "ENABLED"),
+            HlsRedundantManifest::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

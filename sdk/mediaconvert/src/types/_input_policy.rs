@@ -96,3 +96,12 @@ impl InputPolicy {
         }
     }
 }
+impl ::std::fmt::Display for InputPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputPolicy::Allowed => write!(f, "ALLOWED"),
+            InputPolicy::Disallowed => write!(f, "DISALLOWED"),
+            InputPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

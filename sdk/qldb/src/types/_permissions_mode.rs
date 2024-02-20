@@ -96,3 +96,12 @@ impl PermissionsMode {
         }
     }
 }
+impl ::std::fmt::Display for PermissionsMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionsMode::AllowAll => write!(f, "ALLOW_ALL"),
+            PermissionsMode::Standard => write!(f, "STANDARD"),
+            PermissionsMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

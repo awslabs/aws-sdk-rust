@@ -96,3 +96,12 @@ impl FlexibleTimeWindowMode {
         }
     }
 }
+impl ::std::fmt::Display for FlexibleTimeWindowMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlexibleTimeWindowMode::Flexible => write!(f, "FLEXIBLE"),
+            FlexibleTimeWindowMode::Off => write!(f, "OFF"),
+            FlexibleTimeWindowMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

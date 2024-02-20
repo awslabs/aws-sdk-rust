@@ -96,3 +96,12 @@ impl HlsIvSource {
         }
     }
 }
+impl ::std::fmt::Display for HlsIvSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsIvSource::Explicit => write!(f, "EXPLICIT"),
+            HlsIvSource::FollowsSegmentNumber => write!(f, "FOLLOWS_SEGMENT_NUMBER"),
+            HlsIvSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

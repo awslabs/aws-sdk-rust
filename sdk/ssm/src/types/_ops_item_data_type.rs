@@ -96,3 +96,12 @@ impl OpsItemDataType {
         }
     }
 }
+impl ::std::fmt::Display for OpsItemDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpsItemDataType::SearchableString => write!(f, "SearchableString"),
+            OpsItemDataType::String => write!(f, "String"),
+            OpsItemDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

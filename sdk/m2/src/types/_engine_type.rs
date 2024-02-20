@@ -96,3 +96,12 @@ impl EngineType {
         }
     }
 }
+impl ::std::fmt::Display for EngineType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EngineType::Bluage => write!(f, "bluage"),
+            EngineType::Microfocus => write!(f, "microfocus"),
+            EngineType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

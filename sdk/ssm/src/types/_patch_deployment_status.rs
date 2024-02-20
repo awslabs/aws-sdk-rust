@@ -106,3 +106,14 @@ impl PatchDeploymentStatus {
         }
     }
 }
+impl ::std::fmt::Display for PatchDeploymentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PatchDeploymentStatus::Approved => write!(f, "APPROVED"),
+            PatchDeploymentStatus::ExplicitApproved => write!(f, "EXPLICIT_APPROVED"),
+            PatchDeploymentStatus::ExplicitRejected => write!(f, "EXPLICIT_REJECTED"),
+            PatchDeploymentStatus::PendingApproval => write!(f, "PENDING_APPROVAL"),
+            PatchDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

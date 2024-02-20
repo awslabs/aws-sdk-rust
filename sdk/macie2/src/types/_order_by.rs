@@ -96,3 +96,12 @@ impl OrderBy {
         }
     }
 }
+impl ::std::fmt::Display for OrderBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrderBy::Asc => write!(f, "ASC"),
+            OrderBy::Desc => write!(f, "DESC"),
+            OrderBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

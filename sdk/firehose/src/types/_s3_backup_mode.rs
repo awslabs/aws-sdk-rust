@@ -96,3 +96,12 @@ impl S3BackupMode {
         }
     }
 }
+impl ::std::fmt::Display for S3BackupMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3BackupMode::Disabled => write!(f, "Disabled"),
+            S3BackupMode::Enabled => write!(f, "Enabled"),
+            S3BackupMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AutoshiftExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for AutoshiftExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoshiftExecutionStatus::Active => write!(f, "ACTIVE"),
+            AutoshiftExecutionStatus::Completed => write!(f, "COMPLETED"),
+            AutoshiftExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

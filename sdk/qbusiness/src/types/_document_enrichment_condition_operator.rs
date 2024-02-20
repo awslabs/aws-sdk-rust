@@ -153,3 +153,21 @@ impl DocumentEnrichmentConditionOperator {
         }
     }
 }
+impl ::std::fmt::Display for DocumentEnrichmentConditionOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentEnrichmentConditionOperator::BeginsWith => write!(f, "BEGINS_WITH"),
+            DocumentEnrichmentConditionOperator::Contains => write!(f, "CONTAINS"),
+            DocumentEnrichmentConditionOperator::Equals => write!(f, "EQUALS"),
+            DocumentEnrichmentConditionOperator::Exists => write!(f, "EXISTS"),
+            DocumentEnrichmentConditionOperator::GreaterThan => write!(f, "GREATER_THAN"),
+            DocumentEnrichmentConditionOperator::GreaterThanOrEquals => write!(f, "GREATER_THAN_OR_EQUALS"),
+            DocumentEnrichmentConditionOperator::LessThan => write!(f, "LESS_THAN"),
+            DocumentEnrichmentConditionOperator::LessThanOrEquals => write!(f, "LESS_THAN_OR_EQUALS"),
+            DocumentEnrichmentConditionOperator::NotContains => write!(f, "NOT_CONTAINS"),
+            DocumentEnrichmentConditionOperator::NotEquals => write!(f, "NOT_EQUALS"),
+            DocumentEnrichmentConditionOperator::NotExists => write!(f, "NOT_EXISTS"),
+            DocumentEnrichmentConditionOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

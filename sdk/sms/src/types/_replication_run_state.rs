@@ -121,3 +121,17 @@ impl ReplicationRunState {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationRunState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationRunState::Active => write!(f, "ACTIVE"),
+            ReplicationRunState::Completed => write!(f, "COMPLETED"),
+            ReplicationRunState::Deleted => write!(f, "DELETED"),
+            ReplicationRunState::Deleting => write!(f, "DELETING"),
+            ReplicationRunState::Failed => write!(f, "FAILED"),
+            ReplicationRunState::Missed => write!(f, "MISSED"),
+            ReplicationRunState::Pending => write!(f, "PENDING"),
+            ReplicationRunState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

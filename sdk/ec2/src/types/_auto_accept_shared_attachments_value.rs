@@ -96,3 +96,12 @@ impl AutoAcceptSharedAttachmentsValue {
         }
     }
 }
+impl ::std::fmt::Display for AutoAcceptSharedAttachmentsValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoAcceptSharedAttachmentsValue::Disable => write!(f, "disable"),
+            AutoAcceptSharedAttachmentsValue::Enable => write!(f, "enable"),
+            AutoAcceptSharedAttachmentsValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

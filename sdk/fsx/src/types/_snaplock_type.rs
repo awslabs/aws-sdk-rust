@@ -96,3 +96,12 @@ impl SnaplockType {
         }
     }
 }
+impl ::std::fmt::Display for SnaplockType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnaplockType::Compliance => write!(f, "COMPLIANCE"),
+            SnaplockType::Enterprise => write!(f, "ENTERPRISE"),
+            SnaplockType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl CustomEngineVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for CustomEngineVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomEngineVersionStatus::Available => write!(f, "available"),
+            CustomEngineVersionStatus::Inactive => write!(f, "inactive"),
+            CustomEngineVersionStatus::InactiveExceptRestore => write!(f, "inactive-except-restore"),
+            CustomEngineVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

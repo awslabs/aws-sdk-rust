@@ -96,3 +96,12 @@ impl Scope {
         }
     }
 }
+impl ::std::fmt::Display for Scope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Scope::Entity => write!(f, "ENTITY"),
+            Scope::Workspace => write!(f, "WORKSPACE"),
+            Scope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

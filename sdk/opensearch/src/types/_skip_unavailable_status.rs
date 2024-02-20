@@ -108,3 +108,12 @@ impl SkipUnavailableStatus {
         }
     }
 }
+impl ::std::fmt::Display for SkipUnavailableStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SkipUnavailableStatus::Disabled => write!(f, "DISABLED"),
+            SkipUnavailableStatus::Enabled => write!(f, "ENABLED"),
+            SkipUnavailableStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

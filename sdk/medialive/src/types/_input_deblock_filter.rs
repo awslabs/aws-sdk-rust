@@ -96,3 +96,12 @@ impl InputDeblockFilter {
         }
     }
 }
+impl ::std::fmt::Display for InputDeblockFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDeblockFilter::Disabled => write!(f, "DISABLED"),
+            InputDeblockFilter::Enabled => write!(f, "ENABLED"),
+            InputDeblockFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

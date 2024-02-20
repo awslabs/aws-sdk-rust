@@ -106,3 +106,14 @@ impl FilterCondition {
         }
     }
 }
+impl ::std::fmt::Display for FilterCondition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterCondition::BeginsWith => write!(f, "BEGINS_WITH"),
+            FilterCondition::Between => write!(f, "BETWEEN"),
+            FilterCondition::Eq => write!(f, "EQ"),
+            FilterCondition::In => write!(f, "IN"),
+            FilterCondition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

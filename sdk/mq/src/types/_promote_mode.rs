@@ -96,3 +96,12 @@ impl PromoteMode {
         }
     }
 }
+impl ::std::fmt::Display for PromoteMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PromoteMode::Failover => write!(f, "FAILOVER"),
+            PromoteMode::Switchover => write!(f, "SWITCHOVER"),
+            PromoteMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

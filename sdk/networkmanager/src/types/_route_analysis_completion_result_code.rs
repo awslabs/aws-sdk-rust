@@ -96,3 +96,12 @@ impl RouteAnalysisCompletionResultCode {
         }
     }
 }
+impl ::std::fmt::Display for RouteAnalysisCompletionResultCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteAnalysisCompletionResultCode::Connected => write!(f, "CONNECTED"),
+            RouteAnalysisCompletionResultCode::NotConnected => write!(f, "NOT_CONNECTED"),
+            RouteAnalysisCompletionResultCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

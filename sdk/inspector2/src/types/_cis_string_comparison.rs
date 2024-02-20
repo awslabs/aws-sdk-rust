@@ -101,3 +101,13 @@ impl CisStringComparison {
         }
     }
 }
+impl ::std::fmt::Display for CisStringComparison {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisStringComparison::Equals => write!(f, "EQUALS"),
+            CisStringComparison::NotEquals => write!(f, "NOT_EQUALS"),
+            CisStringComparison::Prefix => write!(f, "PREFIX"),
+            CisStringComparison::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

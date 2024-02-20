@@ -91,3 +91,11 @@ impl CisTargetStatusComparison {
         }
     }
 }
+impl ::std::fmt::Display for CisTargetStatusComparison {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisTargetStatusComparison::Equals => write!(f, "EQUALS"),
+            CisTargetStatusComparison::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

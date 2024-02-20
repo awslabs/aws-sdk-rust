@@ -106,3 +106,14 @@ impl ModelPackagingJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelPackagingJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelPackagingJobStatus::Created => write!(f, "CREATED"),
+            ModelPackagingJobStatus::Failed => write!(f, "FAILED"),
+            ModelPackagingJobStatus::Running => write!(f, "RUNNING"),
+            ModelPackagingJobStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ModelPackagingJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

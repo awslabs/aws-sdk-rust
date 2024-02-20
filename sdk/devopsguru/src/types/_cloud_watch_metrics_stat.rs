@@ -126,3 +126,18 @@ impl CloudWatchMetricsStat {
         }
     }
 }
+impl ::std::fmt::Display for CloudWatchMetricsStat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CloudWatchMetricsStat::Average => write!(f, "Average"),
+            CloudWatchMetricsStat::Maximum => write!(f, "Maximum"),
+            CloudWatchMetricsStat::Minimum => write!(f, "Minimum"),
+            CloudWatchMetricsStat::SampleCount => write!(f, "SampleCount"),
+            CloudWatchMetricsStat::Sum => write!(f, "Sum"),
+            CloudWatchMetricsStat::P50 => write!(f, "p50"),
+            CloudWatchMetricsStat::P90 => write!(f, "p90"),
+            CloudWatchMetricsStat::P99 => write!(f, "p99"),
+            CloudWatchMetricsStat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

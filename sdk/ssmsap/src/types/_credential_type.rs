@@ -91,3 +91,11 @@ impl CredentialType {
         }
     }
 }
+impl ::std::fmt::Display for CredentialType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CredentialType::Admin => write!(f, "ADMIN"),
+            CredentialType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

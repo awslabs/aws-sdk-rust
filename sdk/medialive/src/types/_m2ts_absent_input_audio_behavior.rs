@@ -96,3 +96,12 @@ impl M2tsAbsentInputAudioBehavior {
         }
     }
 }
+impl ::std::fmt::Display for M2tsAbsentInputAudioBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsAbsentInputAudioBehavior::Drop => write!(f, "DROP"),
+            M2tsAbsentInputAudioBehavior::EncodeSilence => write!(f, "ENCODE_SILENCE"),
+            M2tsAbsentInputAudioBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

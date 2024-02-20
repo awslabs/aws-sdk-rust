@@ -291,3 +291,44 @@ impl Dimension {
         }
     }
 }
+impl ::std::fmt::Display for Dimension {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Dimension::AgreementEndDateTimeAfter => write!(f, "AGREEMENT_END_DATE_TIME_AFTER"),
+            Dimension::AgreementEndDateTimeBefore => write!(f, "AGREEMENT_END_DATE_TIME_BEFORE"),
+            Dimension::AnomalyTotalImpactAbsolute => write!(f, "ANOMALY_TOTAL_IMPACT_ABSOLUTE"),
+            Dimension::AnomalyTotalImpactPercentage => write!(f, "ANOMALY_TOTAL_IMPACT_PERCENTAGE"),
+            Dimension::Az => write!(f, "AZ"),
+            Dimension::BillingEntity => write!(f, "BILLING_ENTITY"),
+            Dimension::CacheEngine => write!(f, "CACHE_ENGINE"),
+            Dimension::DatabaseEngine => write!(f, "DATABASE_ENGINE"),
+            Dimension::DeploymentOption => write!(f, "DEPLOYMENT_OPTION"),
+            Dimension::InstanceType => write!(f, "INSTANCE_TYPE"),
+            Dimension::InstanceTypeFamily => write!(f, "INSTANCE_TYPE_FAMILY"),
+            Dimension::InvoicingEntity => write!(f, "INVOICING_ENTITY"),
+            Dimension::LegalEntityName => write!(f, "LEGAL_ENTITY_NAME"),
+            Dimension::LinkedAccount => write!(f, "LINKED_ACCOUNT"),
+            Dimension::LinkedAccountName => write!(f, "LINKED_ACCOUNT_NAME"),
+            Dimension::OperatingSystem => write!(f, "OPERATING_SYSTEM"),
+            Dimension::Operation => write!(f, "OPERATION"),
+            Dimension::PaymentOption => write!(f, "PAYMENT_OPTION"),
+            Dimension::Platform => write!(f, "PLATFORM"),
+            Dimension::PurchaseType => write!(f, "PURCHASE_TYPE"),
+            Dimension::RecordType => write!(f, "RECORD_TYPE"),
+            Dimension::Region => write!(f, "REGION"),
+            Dimension::ReservationId => write!(f, "RESERVATION_ID"),
+            Dimension::ResourceId => write!(f, "RESOURCE_ID"),
+            Dimension::RightsizingType => write!(f, "RIGHTSIZING_TYPE"),
+            Dimension::SavingsPlansType => write!(f, "SAVINGS_PLANS_TYPE"),
+            Dimension::SavingsPlanArn => write!(f, "SAVINGS_PLAN_ARN"),
+            Dimension::Scope => write!(f, "SCOPE"),
+            Dimension::Service => write!(f, "SERVICE"),
+            Dimension::ServiceCode => write!(f, "SERVICE_CODE"),
+            Dimension::SubscriptionId => write!(f, "SUBSCRIPTION_ID"),
+            Dimension::Tenancy => write!(f, "TENANCY"),
+            Dimension::UsageType => write!(f, "USAGE_TYPE"),
+            Dimension::UsageTypeGroup => write!(f, "USAGE_TYPE_GROUP"),
+            Dimension::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

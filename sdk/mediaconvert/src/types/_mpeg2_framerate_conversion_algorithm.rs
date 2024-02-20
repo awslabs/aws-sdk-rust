@@ -101,3 +101,13 @@ impl Mpeg2FramerateConversionAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2FramerateConversionAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2FramerateConversionAlgorithm::DuplicateDrop => write!(f, "DUPLICATE_DROP"),
+            Mpeg2FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
+            Mpeg2FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
+            Mpeg2FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

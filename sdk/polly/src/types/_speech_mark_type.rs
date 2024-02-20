@@ -106,3 +106,14 @@ impl SpeechMarkType {
         }
     }
 }
+impl ::std::fmt::Display for SpeechMarkType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpeechMarkType::Sentence => write!(f, "sentence"),
+            SpeechMarkType::Ssml => write!(f, "ssml"),
+            SpeechMarkType::Viseme => write!(f, "viseme"),
+            SpeechMarkType::Word => write!(f, "word"),
+            SpeechMarkType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

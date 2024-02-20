@@ -106,3 +106,14 @@ impl Scte35DeviceRestrictions {
         }
     }
 }
+impl ::std::fmt::Display for Scte35DeviceRestrictions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Scte35DeviceRestrictions::None => write!(f, "NONE"),
+            Scte35DeviceRestrictions::RestrictGroup0 => write!(f, "RESTRICT_GROUP0"),
+            Scte35DeviceRestrictions::RestrictGroup1 => write!(f, "RESTRICT_GROUP1"),
+            Scte35DeviceRestrictions::RestrictGroup2 => write!(f, "RESTRICT_GROUP2"),
+            Scte35DeviceRestrictions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ContentClassifier {
         }
     }
 }
+impl ::std::fmt::Display for ContentClassifier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContentClassifier::FreeOfAdultContent => write!(f, "FreeOfAdultContent"),
+            ContentClassifier::FreeOfPersonallyIdentifiableInformation => write!(f, "FreeOfPersonallyIdentifiableInformation"),
+            ContentClassifier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

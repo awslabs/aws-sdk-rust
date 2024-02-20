@@ -117,3 +117,15 @@ impl DomainNameStatus {
         }
     }
 }
+impl ::std::fmt::Display for DomainNameStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainNameStatus::Available => write!(f, "AVAILABLE"),
+            DomainNameStatus::Pending => write!(f, "PENDING"),
+            DomainNameStatus::PendingCertificateReimport => write!(f, "PENDING_CERTIFICATE_REIMPORT"),
+            DomainNameStatus::PendingOwnershipVerification => write!(f, "PENDING_OWNERSHIP_VERIFICATION"),
+            DomainNameStatus::Updating => write!(f, "UPDATING"),
+            DomainNameStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DirectoryEdition {
         }
     }
 }
+impl ::std::fmt::Display for DirectoryEdition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectoryEdition::Enterprise => write!(f, "Enterprise"),
+            DirectoryEdition::Standard => write!(f, "Standard"),
+            DirectoryEdition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

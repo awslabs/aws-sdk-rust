@@ -177,3 +177,25 @@ impl StatusUpdateInterval {
         }
     }
 }
+impl ::std::fmt::Display for StatusUpdateInterval {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatusUpdateInterval::Seconds10 => write!(f, "SECONDS_10"),
+            StatusUpdateInterval::Seconds12 => write!(f, "SECONDS_12"),
+            StatusUpdateInterval::Seconds120 => write!(f, "SECONDS_120"),
+            StatusUpdateInterval::Seconds15 => write!(f, "SECONDS_15"),
+            StatusUpdateInterval::Seconds180 => write!(f, "SECONDS_180"),
+            StatusUpdateInterval::Seconds20 => write!(f, "SECONDS_20"),
+            StatusUpdateInterval::Seconds240 => write!(f, "SECONDS_240"),
+            StatusUpdateInterval::Seconds30 => write!(f, "SECONDS_30"),
+            StatusUpdateInterval::Seconds300 => write!(f, "SECONDS_300"),
+            StatusUpdateInterval::Seconds360 => write!(f, "SECONDS_360"),
+            StatusUpdateInterval::Seconds420 => write!(f, "SECONDS_420"),
+            StatusUpdateInterval::Seconds480 => write!(f, "SECONDS_480"),
+            StatusUpdateInterval::Seconds540 => write!(f, "SECONDS_540"),
+            StatusUpdateInterval::Seconds60 => write!(f, "SECONDS_60"),
+            StatusUpdateInterval::Seconds600 => write!(f, "SECONDS_600"),
+            StatusUpdateInterval::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

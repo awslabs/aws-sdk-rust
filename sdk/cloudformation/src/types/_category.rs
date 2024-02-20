@@ -106,3 +106,14 @@ impl Category {
         }
     }
 }
+impl ::std::fmt::Display for Category {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Category::Activated => write!(f, "ACTIVATED"),
+            Category::AwsTypes => write!(f, "AWS_TYPES"),
+            Category::Registered => write!(f, "REGISTERED"),
+            Category::ThirdParty => write!(f, "THIRD_PARTY"),
+            Category::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

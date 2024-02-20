@@ -111,3 +111,15 @@ impl SignalExternalWorkflowExecutionFailedCause {
         }
     }
 }
+impl ::std::fmt::Display for SignalExternalWorkflowExecutionFailedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
+            SignalExternalWorkflowExecutionFailedCause::SignalExternalWorkflowExecutionRateExceeded => {
+                write!(f, "SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED")
+            }
+            SignalExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => write!(f, "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION"),
+            SignalExternalWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

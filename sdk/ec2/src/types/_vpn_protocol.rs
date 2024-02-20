@@ -91,3 +91,11 @@ impl VpnProtocol {
         }
     }
 }
+impl ::std::fmt::Display for VpnProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpnProtocol::Openvpn => write!(f, "openvpn"),
+            VpnProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

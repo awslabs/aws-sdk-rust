@@ -96,3 +96,12 @@ impl InclusionStatus {
         }
     }
 }
+impl ::std::fmt::Display for InclusionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InclusionStatus::ExcludeFromRecommendation => write!(f, "excludeFromAssessment"),
+            InclusionStatus::IncludeInRecommendation => write!(f, "includeInAssessment"),
+            InclusionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

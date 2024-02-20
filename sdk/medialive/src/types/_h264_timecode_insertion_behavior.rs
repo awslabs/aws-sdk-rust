@@ -96,3 +96,12 @@ impl H264TimecodeInsertionBehavior {
         }
     }
 }
+impl ::std::fmt::Display for H264TimecodeInsertionBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264TimecodeInsertionBehavior::Disabled => write!(f, "DISABLED"),
+            H264TimecodeInsertionBehavior::PicTimingSei => write!(f, "PIC_TIMING_SEI"),
+            H264TimecodeInsertionBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

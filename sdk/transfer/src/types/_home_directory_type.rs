@@ -96,3 +96,12 @@ impl HomeDirectoryType {
         }
     }
 }
+impl ::std::fmt::Display for HomeDirectoryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HomeDirectoryType::Logical => write!(f, "LOGICAL"),
+            HomeDirectoryType::Path => write!(f, "PATH"),
+            HomeDirectoryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

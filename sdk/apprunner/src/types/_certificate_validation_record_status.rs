@@ -101,3 +101,13 @@ impl CertificateValidationRecordStatus {
         }
     }
 }
+impl ::std::fmt::Display for CertificateValidationRecordStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateValidationRecordStatus::Failed => write!(f, "FAILED"),
+            CertificateValidationRecordStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
+            CertificateValidationRecordStatus::Success => write!(f, "SUCCESS"),
+            CertificateValidationRecordStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

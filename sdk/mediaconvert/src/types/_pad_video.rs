@@ -96,3 +96,12 @@ impl PadVideo {
         }
     }
 }
+impl ::std::fmt::Display for PadVideo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PadVideo::Black => write!(f, "BLACK"),
+            PadVideo::Disabled => write!(f, "DISABLED"),
+            PadVideo::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

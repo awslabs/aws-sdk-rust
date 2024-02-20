@@ -106,3 +106,14 @@ impl EnhancedMonitoring {
         }
     }
 }
+impl ::std::fmt::Display for EnhancedMonitoring {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnhancedMonitoring::Default => write!(f, "DEFAULT"),
+            EnhancedMonitoring::PerBroker => write!(f, "PER_BROKER"),
+            EnhancedMonitoring::PerTopicPerBroker => write!(f, "PER_TOPIC_PER_BROKER"),
+            EnhancedMonitoring::PerTopicPerPartition => write!(f, "PER_TOPIC_PER_PARTITION"),
+            EnhancedMonitoring::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

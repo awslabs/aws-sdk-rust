@@ -91,3 +91,11 @@ impl NotificationDeliveryType {
         }
     }
 }
+impl ::std::fmt::Display for NotificationDeliveryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationDeliveryType::Email => write!(f, "EMAIL"),
+            NotificationDeliveryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

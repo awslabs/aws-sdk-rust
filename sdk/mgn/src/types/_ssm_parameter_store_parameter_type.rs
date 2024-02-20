@@ -91,3 +91,11 @@ impl SsmParameterStoreParameterType {
         }
     }
 }
+impl ::std::fmt::Display for SsmParameterStoreParameterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SsmParameterStoreParameterType::String => write!(f, "STRING"),
+            SsmParameterStoreParameterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

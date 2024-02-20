@@ -96,3 +96,12 @@ impl HlsIncompleteSegmentBehavior {
         }
     }
 }
+impl ::std::fmt::Display for HlsIncompleteSegmentBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsIncompleteSegmentBehavior::Auto => write!(f, "AUTO"),
+            HlsIncompleteSegmentBehavior::Suppress => write!(f, "SUPPRESS"),
+            HlsIncompleteSegmentBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

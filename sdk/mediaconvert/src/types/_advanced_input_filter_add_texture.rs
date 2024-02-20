@@ -96,3 +96,12 @@ impl AdvancedInputFilterAddTexture {
         }
     }
 }
+impl ::std::fmt::Display for AdvancedInputFilterAddTexture {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdvancedInputFilterAddTexture::Disabled => write!(f, "DISABLED"),
+            AdvancedInputFilterAddTexture::Enabled => write!(f, "ENABLED"),
+            AdvancedInputFilterAddTexture::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl BotLocaleSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for BotLocaleSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BotLocaleSortAttribute::BotLocaleName => write!(f, "BotLocaleName"),
+            BotLocaleSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

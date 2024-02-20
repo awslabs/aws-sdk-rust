@@ -96,3 +96,12 @@ impl ChangeAction {
         }
     }
 }
+impl ::std::fmt::Display for ChangeAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeAction::Publish => write!(f, "PUBLISH"),
+            ChangeAction::Unpublish => write!(f, "UNPUBLISH"),
+            ChangeAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -129,3 +129,17 @@ impl ActionPoint {
         }
     }
 }
+impl ::std::fmt::Display for ActionPoint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionPoint::OnDeploymentBaking => write!(f, "ON_DEPLOYMENT_BAKING"),
+            ActionPoint::OnDeploymentComplete => write!(f, "ON_DEPLOYMENT_COMPLETE"),
+            ActionPoint::OnDeploymentRolledBack => write!(f, "ON_DEPLOYMENT_ROLLED_BACK"),
+            ActionPoint::OnDeploymentStart => write!(f, "ON_DEPLOYMENT_START"),
+            ActionPoint::OnDeploymentStep => write!(f, "ON_DEPLOYMENT_STEP"),
+            ActionPoint::PreCreateHostedConfigurationVersion => write!(f, "PRE_CREATE_HOSTED_CONFIGURATION_VERSION"),
+            ActionPoint::PreStartDeployment => write!(f, "PRE_START_DEPLOYMENT"),
+            ActionPoint::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

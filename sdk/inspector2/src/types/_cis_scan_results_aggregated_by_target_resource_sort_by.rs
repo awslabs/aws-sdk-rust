@@ -125,3 +125,16 @@ impl CisScanResultsAggregatedByTargetResourceSortBy {
         }
     }
 }
+impl ::std::fmt::Display for CisScanResultsAggregatedByTargetResourceSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisScanResultsAggregatedByTargetResourceSortBy::AccountId => write!(f, "ACCOUNT_ID"),
+            CisScanResultsAggregatedByTargetResourceSortBy::FailedCounts => write!(f, "FAILED_COUNTS"),
+            CisScanResultsAggregatedByTargetResourceSortBy::Platform => write!(f, "PLATFORM"),
+            CisScanResultsAggregatedByTargetResourceSortBy::ResourceId => write!(f, "RESOURCE_ID"),
+            CisScanResultsAggregatedByTargetResourceSortBy::TargetStatus => write!(f, "TARGET_STATUS"),
+            CisScanResultsAggregatedByTargetResourceSortBy::TargetStatusReason => write!(f, "TARGET_STATUS_REASON"),
+            CisScanResultsAggregatedByTargetResourceSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AllowPublish {
         }
     }
 }
+impl ::std::fmt::Display for AllowPublish {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllowPublish::Allow => write!(f, "ALLOW"),
+            AllowPublish::Block => write!(f, "BLOCK"),
+            AllowPublish::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

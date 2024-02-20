@@ -116,3 +116,16 @@ impl ServiceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServiceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            ServiceStatus::Deleted => write!(f, "DELETED"),
+            ServiceStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ServiceStatus::OperationInProgress => write!(f, "OPERATION_IN_PROGRESS"),
+            ServiceStatus::Paused => write!(f, "PAUSED"),
+            ServiceStatus::Running => write!(f, "RUNNING"),
+            ServiceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Rs {
         }
     }
 }
+impl ::std::fmt::Display for Rs {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Rs::MultiRegion => write!(f, "MULTI_REGION"),
+            Rs::SingleRegion => write!(f, "SINGLE_REGION"),
+            Rs::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

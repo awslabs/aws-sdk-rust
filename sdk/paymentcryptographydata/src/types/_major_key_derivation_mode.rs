@@ -96,3 +96,12 @@ impl MajorKeyDerivationMode {
         }
     }
 }
+impl ::std::fmt::Display for MajorKeyDerivationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MajorKeyDerivationMode::EmvOptionA => write!(f, "EMV_OPTION_A"),
+            MajorKeyDerivationMode::EmvOptionB => write!(f, "EMV_OPTION_B"),
+            MajorKeyDerivationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

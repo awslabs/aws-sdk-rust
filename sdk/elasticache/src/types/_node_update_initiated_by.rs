@@ -96,3 +96,12 @@ impl NodeUpdateInitiatedBy {
         }
     }
 }
+impl ::std::fmt::Display for NodeUpdateInitiatedBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeUpdateInitiatedBy::Customer => write!(f, "customer"),
+            NodeUpdateInitiatedBy::System => write!(f, "system"),
+            NodeUpdateInitiatedBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

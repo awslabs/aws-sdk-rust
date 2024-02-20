@@ -96,3 +96,12 @@ impl TunnelStatus {
         }
     }
 }
+impl ::std::fmt::Display for TunnelStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TunnelStatus::Closed => write!(f, "CLOSED"),
+            TunnelStatus::Open => write!(f, "OPEN"),
+            TunnelStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ChronologicalOrder {
         }
     }
 }
+impl ::std::fmt::Display for ChronologicalOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChronologicalOrder::Forward => write!(f, "Forward"),
+            ChronologicalOrder::Reverse => write!(f, "Reverse"),
+            ChronologicalOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

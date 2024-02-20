@@ -96,3 +96,12 @@ impl AvcIntraSlowPal {
         }
     }
 }
+impl ::std::fmt::Display for AvcIntraSlowPal {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AvcIntraSlowPal::Disabled => write!(f, "DISABLED"),
+            AvcIntraSlowPal::Enabled => write!(f, "ENABLED"),
+            AvcIntraSlowPal::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

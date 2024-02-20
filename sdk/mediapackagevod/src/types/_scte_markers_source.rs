@@ -96,3 +96,12 @@ impl ScteMarkersSource {
         }
     }
 }
+impl ::std::fmt::Display for ScteMarkersSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScteMarkersSource::Manifest => write!(f, "MANIFEST"),
+            ScteMarkersSource::Segments => write!(f, "SEGMENTS"),
+            ScteMarkersSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

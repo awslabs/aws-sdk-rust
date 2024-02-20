@@ -106,3 +106,14 @@ impl ChangeStatus {
         }
     }
 }
+impl ::std::fmt::Display for ChangeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeStatus::Complete => write!(f, "COMPLETE"),
+            ChangeStatus::Failed => write!(f, "FAILED"),
+            ChangeStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ChangeStatus::NotStarted => write!(f, "NOT_STARTED"),
+            ChangeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DqStopJobOnFailureTiming {
         }
     }
 }
+impl ::std::fmt::Display for DqStopJobOnFailureTiming {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DqStopJobOnFailureTiming::AfterDataLoad => write!(f, "AfterDataLoad"),
+            DqStopJobOnFailureTiming::Immediate => write!(f, "Immediate"),
+            DqStopJobOnFailureTiming::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

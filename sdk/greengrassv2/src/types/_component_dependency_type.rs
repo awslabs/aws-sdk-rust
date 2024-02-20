@@ -96,3 +96,12 @@ impl ComponentDependencyType {
         }
     }
 }
+impl ::std::fmt::Display for ComponentDependencyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComponentDependencyType::Hard => write!(f, "HARD"),
+            ComponentDependencyType::Soft => write!(f, "SOFT"),
+            ComponentDependencyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

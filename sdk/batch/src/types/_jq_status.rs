@@ -116,3 +116,16 @@ impl JqStatus {
         }
     }
 }
+impl ::std::fmt::Display for JqStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JqStatus::Creating => write!(f, "CREATING"),
+            JqStatus::Deleted => write!(f, "DELETED"),
+            JqStatus::Deleting => write!(f, "DELETING"),
+            JqStatus::Invalid => write!(f, "INVALID"),
+            JqStatus::Updating => write!(f, "UPDATING"),
+            JqStatus::Valid => write!(f, "VALID"),
+            JqStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

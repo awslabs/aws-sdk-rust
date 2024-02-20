@@ -96,3 +96,12 @@ impl StepActionType {
         }
     }
 }
+impl ::std::fmt::Display for StepActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StepActionType::Automated => write!(f, "AUTOMATED"),
+            StepActionType::Manual => write!(f, "MANUAL"),
+            StepActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

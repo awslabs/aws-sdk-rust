@@ -91,3 +91,11 @@ impl OwnerOverride {
         }
     }
 }
+impl ::std::fmt::Display for OwnerOverride {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OwnerOverride::Destination => write!(f, "Destination"),
+            OwnerOverride::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

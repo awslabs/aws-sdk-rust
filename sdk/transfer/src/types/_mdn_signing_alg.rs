@@ -116,3 +116,16 @@ impl MdnSigningAlg {
         }
     }
 }
+impl ::std::fmt::Display for MdnSigningAlg {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MdnSigningAlg::Default => write!(f, "DEFAULT"),
+            MdnSigningAlg::None => write!(f, "NONE"),
+            MdnSigningAlg::Sha1 => write!(f, "SHA1"),
+            MdnSigningAlg::Sha256 => write!(f, "SHA256"),
+            MdnSigningAlg::Sha384 => write!(f, "SHA384"),
+            MdnSigningAlg::Sha512 => write!(f, "SHA512"),
+            MdnSigningAlg::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

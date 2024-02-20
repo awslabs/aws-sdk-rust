@@ -111,3 +111,15 @@ impl VerifiedAccessEndpointStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for VerifiedAccessEndpointStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VerifiedAccessEndpointStatusCode::Active => write!(f, "active"),
+            VerifiedAccessEndpointStatusCode::Deleted => write!(f, "deleted"),
+            VerifiedAccessEndpointStatusCode::Deleting => write!(f, "deleting"),
+            VerifiedAccessEndpointStatusCode::Pending => write!(f, "pending"),
+            VerifiedAccessEndpointStatusCode::Updating => write!(f, "updating"),
+            VerifiedAccessEndpointStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

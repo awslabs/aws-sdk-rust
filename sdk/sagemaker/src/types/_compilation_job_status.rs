@@ -116,3 +116,16 @@ impl CompilationJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for CompilationJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CompilationJobStatus::Completed => write!(f, "COMPLETED"),
+            CompilationJobStatus::Failed => write!(f, "FAILED"),
+            CompilationJobStatus::Inprogress => write!(f, "INPROGRESS"),
+            CompilationJobStatus::Starting => write!(f, "STARTING"),
+            CompilationJobStatus::Stopped => write!(f, "STOPPED"),
+            CompilationJobStatus::Stopping => write!(f, "STOPPING"),
+            CompilationJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

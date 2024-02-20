@@ -129,3 +129,17 @@ impl OutpostResolverStatus {
         }
     }
 }
+impl ::std::fmt::Display for OutpostResolverStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutpostResolverStatus::ActionNeeded => write!(f, "ACTION_NEEDED"),
+            OutpostResolverStatus::Creating => write!(f, "CREATING"),
+            OutpostResolverStatus::Deleting => write!(f, "DELETING"),
+            OutpostResolverStatus::FailedCreation => write!(f, "FAILED_CREATION"),
+            OutpostResolverStatus::FailedDeletion => write!(f, "FAILED_DELETION"),
+            OutpostResolverStatus::Operational => write!(f, "OPERATIONAL"),
+            OutpostResolverStatus::Updating => write!(f, "UPDATING"),
+            OutpostResolverStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -153,3 +153,21 @@ impl BatchStatementErrorCodeEnum {
         }
     }
 }
+impl ::std::fmt::Display for BatchStatementErrorCodeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchStatementErrorCodeEnum::AccessDenied => write!(f, "AccessDenied"),
+            BatchStatementErrorCodeEnum::ConditionalCheckFailed => write!(f, "ConditionalCheckFailed"),
+            BatchStatementErrorCodeEnum::DuplicateItem => write!(f, "DuplicateItem"),
+            BatchStatementErrorCodeEnum::InternalServerError => write!(f, "InternalServerError"),
+            BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded => write!(f, "ItemCollectionSizeLimitExceeded"),
+            BatchStatementErrorCodeEnum::ProvisionedThroughputExceeded => write!(f, "ProvisionedThroughputExceeded"),
+            BatchStatementErrorCodeEnum::RequestLimitExceeded => write!(f, "RequestLimitExceeded"),
+            BatchStatementErrorCodeEnum::ResourceNotFound => write!(f, "ResourceNotFound"),
+            BatchStatementErrorCodeEnum::ThrottlingError => write!(f, "ThrottlingError"),
+            BatchStatementErrorCodeEnum::TransactionConflict => write!(f, "TransactionConflict"),
+            BatchStatementErrorCodeEnum::ValidationError => write!(f, "ValidationError"),
+            BatchStatementErrorCodeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

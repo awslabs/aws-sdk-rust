@@ -129,3 +129,17 @@ impl ConnectionState {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionState::Authorized => write!(f, "AUTHORIZED"),
+            ConnectionState::Authorizing => write!(f, "AUTHORIZING"),
+            ConnectionState::Creating => write!(f, "CREATING"),
+            ConnectionState::Deauthorized => write!(f, "DEAUTHORIZED"),
+            ConnectionState::Deauthorizing => write!(f, "DEAUTHORIZING"),
+            ConnectionState::Deleting => write!(f, "DELETING"),
+            ConnectionState::Updating => write!(f, "UPDATING"),
+            ConnectionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ConversationLogsInputModeFilter {
         }
     }
 }
+impl ::std::fmt::Display for ConversationLogsInputModeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConversationLogsInputModeFilter::Speech => write!(f, "Speech"),
+            ConversationLogsInputModeFilter::Text => write!(f, "Text"),
+            ConversationLogsInputModeFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

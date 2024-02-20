@@ -106,3 +106,14 @@ impl AlgorithmicStemming {
         }
     }
 }
+impl ::std::fmt::Display for AlgorithmicStemming {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlgorithmicStemming::Full => write!(f, "full"),
+            AlgorithmicStemming::Light => write!(f, "light"),
+            AlgorithmicStemming::Minimal => write!(f, "minimal"),
+            AlgorithmicStemming::None => write!(f, "none"),
+            AlgorithmicStemming::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

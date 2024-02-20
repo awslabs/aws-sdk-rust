@@ -129,3 +129,17 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::Bitbucket => write!(f, "BITBUCKET"),
+            SourceType::Codecommit => write!(f, "CODECOMMIT"),
+            SourceType::Codepipeline => write!(f, "CODEPIPELINE"),
+            SourceType::Github => write!(f, "GITHUB"),
+            SourceType::GithubEnterprise => write!(f, "GITHUB_ENTERPRISE"),
+            SourceType::NoSource => write!(f, "NO_SOURCE"),
+            SourceType::S3 => write!(f, "S3"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

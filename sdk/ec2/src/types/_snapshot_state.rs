@@ -111,3 +111,15 @@ impl SnapshotState {
         }
     }
 }
+impl ::std::fmt::Display for SnapshotState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapshotState::Completed => write!(f, "completed"),
+            SnapshotState::Error => write!(f, "error"),
+            SnapshotState::Pending => write!(f, "pending"),
+            SnapshotState::Recoverable => write!(f, "recoverable"),
+            SnapshotState::Recovering => write!(f, "recovering"),
+            SnapshotState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

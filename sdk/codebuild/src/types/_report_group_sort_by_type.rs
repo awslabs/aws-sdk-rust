@@ -101,3 +101,13 @@ impl ReportGroupSortByType {
         }
     }
 }
+impl ::std::fmt::Display for ReportGroupSortByType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportGroupSortByType::CreatedTime => write!(f, "CREATED_TIME"),
+            ReportGroupSortByType::LastModifiedTime => write!(f, "LAST_MODIFIED_TIME"),
+            ReportGroupSortByType::Name => write!(f, "NAME"),
+            ReportGroupSortByType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

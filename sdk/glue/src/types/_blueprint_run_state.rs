@@ -106,3 +106,14 @@ impl BlueprintRunState {
         }
     }
 }
+impl ::std::fmt::Display for BlueprintRunState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BlueprintRunState::Failed => write!(f, "FAILED"),
+            BlueprintRunState::RollingBack => write!(f, "ROLLING_BACK"),
+            BlueprintRunState::Running => write!(f, "RUNNING"),
+            BlueprintRunState::Succeeded => write!(f, "SUCCEEDED"),
+            BlueprintRunState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

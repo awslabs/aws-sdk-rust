@@ -96,3 +96,12 @@ impl XavcSlowPal {
         }
     }
 }
+impl ::std::fmt::Display for XavcSlowPal {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcSlowPal::Disabled => write!(f, "DISABLED"),
+            XavcSlowPal::Enabled => write!(f, "ENABLED"),
+            XavcSlowPal::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

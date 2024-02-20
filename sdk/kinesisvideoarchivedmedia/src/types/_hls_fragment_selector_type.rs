@@ -96,3 +96,12 @@ impl HlsFragmentSelectorType {
         }
     }
 }
+impl ::std::fmt::Display for HlsFragmentSelectorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsFragmentSelectorType::ProducerTimestamp => write!(f, "PRODUCER_TIMESTAMP"),
+            HlsFragmentSelectorType::ServerTimestamp => write!(f, "SERVER_TIMESTAMP"),
+            HlsFragmentSelectorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

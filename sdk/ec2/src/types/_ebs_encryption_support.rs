@@ -96,3 +96,12 @@ impl EbsEncryptionSupport {
         }
     }
 }
+impl ::std::fmt::Display for EbsEncryptionSupport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EbsEncryptionSupport::Supported => write!(f, "supported"),
+            EbsEncryptionSupport::Unsupported => write!(f, "unsupported"),
+            EbsEncryptionSupport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

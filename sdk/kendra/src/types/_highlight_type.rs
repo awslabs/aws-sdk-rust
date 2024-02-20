@@ -96,3 +96,12 @@ impl HighlightType {
         }
     }
 }
+impl ::std::fmt::Display for HighlightType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HighlightType::Standard => write!(f, "STANDARD"),
+            HighlightType::ThesaurusSynonym => write!(f, "THESAURUS_SYNONYM"),
+            HighlightType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

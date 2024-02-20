@@ -96,3 +96,12 @@ impl CallLegType {
         }
     }
 }
+impl ::std::fmt::Display for CallLegType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CallLegType::Callee => write!(f, "Callee"),
+            CallLegType::Caller => write!(f, "Caller"),
+            CallLegType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

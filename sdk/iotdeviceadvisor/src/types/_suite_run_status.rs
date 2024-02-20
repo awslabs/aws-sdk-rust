@@ -141,3 +141,19 @@ impl SuiteRunStatus {
         }
     }
 }
+impl ::std::fmt::Display for SuiteRunStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SuiteRunStatus::Canceled => write!(f, "CANCELED"),
+            SuiteRunStatus::Error => write!(f, "ERROR"),
+            SuiteRunStatus::Fail => write!(f, "FAIL"),
+            SuiteRunStatus::Pass => write!(f, "PASS"),
+            SuiteRunStatus::PassWithWarnings => write!(f, "PASS_WITH_WARNINGS"),
+            SuiteRunStatus::Pending => write!(f, "PENDING"),
+            SuiteRunStatus::Running => write!(f, "RUNNING"),
+            SuiteRunStatus::Stopped => write!(f, "STOPPED"),
+            SuiteRunStatus::Stopping => write!(f, "STOPPING"),
+            SuiteRunStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

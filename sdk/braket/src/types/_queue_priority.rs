@@ -96,3 +96,12 @@ impl QueuePriority {
         }
     }
 }
+impl ::std::fmt::Display for QueuePriority {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueuePriority::Normal => write!(f, "Normal"),
+            QueuePriority::Priority => write!(f, "Priority"),
+            QueuePriority::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

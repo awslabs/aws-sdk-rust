@@ -147,3 +147,20 @@ impl NielsenWatermarkTimezones {
         }
     }
 }
+impl ::std::fmt::Display for NielsenWatermarkTimezones {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NielsenWatermarkTimezones::AmericaPuertoRico => write!(f, "AMERICA_PUERTO_RICO"),
+            NielsenWatermarkTimezones::UsAlaska => write!(f, "US_ALASKA"),
+            NielsenWatermarkTimezones::UsArizona => write!(f, "US_ARIZONA"),
+            NielsenWatermarkTimezones::UsCentral => write!(f, "US_CENTRAL"),
+            NielsenWatermarkTimezones::UsEastern => write!(f, "US_EASTERN"),
+            NielsenWatermarkTimezones::UsHawaii => write!(f, "US_HAWAII"),
+            NielsenWatermarkTimezones::UsMountain => write!(f, "US_MOUNTAIN"),
+            NielsenWatermarkTimezones::UsPacific => write!(f, "US_PACIFIC"),
+            NielsenWatermarkTimezones::UsSamoa => write!(f, "US_SAMOA"),
+            NielsenWatermarkTimezones::Utc => write!(f, "UTC"),
+            NielsenWatermarkTimezones::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

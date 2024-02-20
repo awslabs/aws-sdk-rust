@@ -96,3 +96,12 @@ impl SourceRepository {
         }
     }
 }
+impl ::std::fmt::Display for SourceRepository {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceRepository::CodeCommit => write!(f, "CodeCommit"),
+            SourceRepository::S3 => write!(f, "S3"),
+            SourceRepository::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

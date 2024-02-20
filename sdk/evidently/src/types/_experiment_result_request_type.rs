@@ -106,3 +106,14 @@ impl ExperimentResultRequestType {
         }
     }
 }
+impl ::std::fmt::Display for ExperimentResultRequestType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExperimentResultRequestType::BaseStat => write!(f, "BaseStat"),
+            ExperimentResultRequestType::ConfidenceInterval => write!(f, "ConfidenceInterval"),
+            ExperimentResultRequestType::PValue => write!(f, "PValue"),
+            ExperimentResultRequestType::TreatmentEffect => write!(f, "TreatmentEffect"),
+            ExperimentResultRequestType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -126,3 +126,18 @@ impl EncryptionMode {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionMode::Cbc => write!(f, "CBC"),
+            EncryptionMode::Cfb => write!(f, "CFB"),
+            EncryptionMode::Cfb1 => write!(f, "CFB1"),
+            EncryptionMode::Cfb128 => write!(f, "CFB128"),
+            EncryptionMode::Cfb64 => write!(f, "CFB64"),
+            EncryptionMode::Cfb8 => write!(f, "CFB8"),
+            EncryptionMode::Ecb => write!(f, "ECB"),
+            EncryptionMode::Ofb => write!(f, "OFB"),
+            EncryptionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

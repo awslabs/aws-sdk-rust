@@ -305,3 +305,61 @@ impl ExportableLambdaFunctionField {
         }
     }
 }
+impl ::std::fmt::Display for ExportableLambdaFunctionField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportableLambdaFunctionField::AccountId => write!(f, "AccountId"),
+            ExportableLambdaFunctionField::CurrentConfigurationMemorySize => write!(f, "CurrentConfigurationMemorySize"),
+            ExportableLambdaFunctionField::CurrentConfigurationTimeout => write!(f, "CurrentConfigurationTimeout"),
+            ExportableLambdaFunctionField::CurrentCostAverage => write!(f, "CurrentCostAverage"),
+            ExportableLambdaFunctionField::CurrentCostTotal => write!(f, "CurrentCostTotal"),
+            ExportableLambdaFunctionField::CurrentPerformanceRisk => write!(f, "CurrentPerformanceRisk"),
+            ExportableLambdaFunctionField::EffectiveRecommendationPreferencesSavingsEstimationMode => {
+                write!(f, "EffectiveRecommendationPreferencesSavingsEstimationMode")
+            }
+            ExportableLambdaFunctionField::Finding => write!(f, "Finding"),
+            ExportableLambdaFunctionField::FindingReasonCodes => write!(f, "FindingReasonCodes"),
+            ExportableLambdaFunctionField::FunctionArn => write!(f, "FunctionArn"),
+            ExportableLambdaFunctionField::FunctionVersion => write!(f, "FunctionVersion"),
+            ExportableLambdaFunctionField::LastRefreshTimestamp => write!(f, "LastRefreshTimestamp"),
+            ExportableLambdaFunctionField::LookbackPeriodInDays => write!(f, "LookbackPeriodInDays"),
+            ExportableLambdaFunctionField::NumberOfInvocations => write!(f, "NumberOfInvocations"),
+            ExportableLambdaFunctionField::RecommendationOptionsConfigurationMemorySize => write!(f, "RecommendationOptionsConfigurationMemorySize"),
+            ExportableLambdaFunctionField::RecommendationOptionsCostHigh => write!(f, "RecommendationOptionsCostHigh"),
+            ExportableLambdaFunctionField::RecommendationOptionsCostLow => write!(f, "RecommendationOptionsCostLow"),
+            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrency => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrency")
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts")
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValue")
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts => {
+                write!(f, "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts")
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationExpected => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsDurationExpected")
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound")
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound => {
+                write!(f, "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound")
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage => {
+                write!(f, "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage")
+            }
+            ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage => {
+                write!(f, "RecommendationOptionsSavingsOpportunityPercentage")
+            }
+            ExportableLambdaFunctionField::Tags => write!(f, "Tags"),
+            ExportableLambdaFunctionField::UtilizationMetricsDurationAverage => write!(f, "UtilizationMetricsDurationAverage"),
+            ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum => write!(f, "UtilizationMetricsDurationMaximum"),
+            ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage => write!(f, "UtilizationMetricsMemoryAverage"),
+            ExportableLambdaFunctionField::UtilizationMetricsMemoryMaximum => write!(f, "UtilizationMetricsMemoryMaximum"),
+            ExportableLambdaFunctionField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

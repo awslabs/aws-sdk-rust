@@ -96,3 +96,12 @@ impl Igmpv2SupportValue {
         }
     }
 }
+impl ::std::fmt::Display for Igmpv2SupportValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Igmpv2SupportValue::Disable => write!(f, "disable"),
+            Igmpv2SupportValue::Enable => write!(f, "enable"),
+            Igmpv2SupportValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

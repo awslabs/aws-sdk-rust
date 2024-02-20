@@ -101,3 +101,13 @@ impl KeywordInputType {
         }
     }
 }
+impl ::std::fmt::Display for KeywordInputType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeywordInputType::InputText => write!(f, "INPUT_TEXT"),
+            KeywordInputType::SelectFromList => write!(f, "SELECT_FROM_LIST"),
+            KeywordInputType::UploadFile => write!(f, "UPLOAD_FILE"),
+            KeywordInputType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

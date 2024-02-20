@@ -96,3 +96,12 @@ impl AutomaticTerminationMode {
         }
     }
 }
+impl ::std::fmt::Display for AutomaticTerminationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutomaticTerminationMode::Activated => write!(f, "ACTIVATED"),
+            AutomaticTerminationMode::Deactivated => write!(f, "DEACTIVATED"),
+            AutomaticTerminationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

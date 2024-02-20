@@ -135,3 +135,18 @@ impl AgentStatus {
         }
     }
 }
+impl ::std::fmt::Display for AgentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgentStatus::Creating => write!(f, "CREATING"),
+            AgentStatus::Deleting => write!(f, "DELETING"),
+            AgentStatus::Failed => write!(f, "FAILED"),
+            AgentStatus::NotPrepared => write!(f, "NOT_PREPARED"),
+            AgentStatus::Prepared => write!(f, "PREPARED"),
+            AgentStatus::Preparing => write!(f, "PREPARING"),
+            AgentStatus::Updating => write!(f, "UPDATING"),
+            AgentStatus::Versioning => write!(f, "VERSIONING"),
+            AgentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

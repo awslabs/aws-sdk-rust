@@ -101,3 +101,13 @@ impl SnapshotStatus {
         }
     }
 }
+impl ::std::fmt::Display for SnapshotStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapshotStatus::Completed => write!(f, "Completed"),
+            SnapshotStatus::Creating => write!(f, "Creating"),
+            SnapshotStatus::Failed => write!(f, "Failed"),
+            SnapshotStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

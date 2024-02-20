@@ -101,3 +101,13 @@ impl ActionType {
         }
     }
 }
+impl ::std::fmt::Display for ActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionType::RecommendNodeConfig => write!(f, "recommend-node-config"),
+            ActionType::ResizeCluster => write!(f, "resize-cluster"),
+            ActionType::RestoreCluster => write!(f, "restore-cluster"),
+            ActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

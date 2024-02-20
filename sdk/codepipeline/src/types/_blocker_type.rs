@@ -91,3 +91,11 @@ impl BlockerType {
         }
     }
 }
+impl ::std::fmt::Display for BlockerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BlockerType::Schedule => write!(f, "Schedule"),
+            BlockerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

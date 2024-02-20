@@ -96,3 +96,12 @@ impl ClientVpnEndpointAttributeStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ClientVpnEndpointAttributeStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientVpnEndpointAttributeStatusCode::Applied => write!(f, "applied"),
+            ClientVpnEndpointAttributeStatusCode::Applying => write!(f, "applying"),
+            ClientVpnEndpointAttributeStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

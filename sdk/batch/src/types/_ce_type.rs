@@ -96,3 +96,12 @@ impl CeType {
         }
     }
 }
+impl ::std::fmt::Display for CeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CeType::Managed => write!(f, "MANAGED"),
+            CeType::Unmanaged => write!(f, "UNMANAGED"),
+            CeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

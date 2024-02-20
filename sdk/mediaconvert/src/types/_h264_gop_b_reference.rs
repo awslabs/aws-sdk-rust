@@ -96,3 +96,12 @@ impl H264GopBReference {
         }
     }
 }
+impl ::std::fmt::Display for H264GopBReference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264GopBReference::Disabled => write!(f, "DISABLED"),
+            H264GopBReference::Enabled => write!(f, "ENABLED"),
+            H264GopBReference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::AwsEc2Instance => write!(f, "AWS_EC2_INSTANCE"),
+            ResourceType::AwsEcrContainerImage => write!(f, "AWS_ECR_CONTAINER_IMAGE"),
+            ResourceType::AwsEcrRepository => write!(f, "AWS_ECR_REPOSITORY"),
+            ResourceType::AwsLambdaFunction => write!(f, "AWS_LAMBDA_FUNCTION"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

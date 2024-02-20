@@ -96,3 +96,12 @@ impl OriginEnvironment {
         }
     }
 }
+impl ::std::fmt::Display for OriginEnvironment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginEnvironment::Aws => write!(f, "AWS"),
+            OriginEnvironment::OnPremises => write!(f, "ON_PREMISES"),
+            OriginEnvironment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

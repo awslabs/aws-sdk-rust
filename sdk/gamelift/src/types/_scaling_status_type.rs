@@ -129,3 +129,17 @@ impl ScalingStatusType {
         }
     }
 }
+impl ::std::fmt::Display for ScalingStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalingStatusType::Active => write!(f, "ACTIVE"),
+            ScalingStatusType::Deleted => write!(f, "DELETED"),
+            ScalingStatusType::DeleteRequested => write!(f, "DELETE_REQUESTED"),
+            ScalingStatusType::Deleting => write!(f, "DELETING"),
+            ScalingStatusType::Error => write!(f, "ERROR"),
+            ScalingStatusType::UpdateRequested => write!(f, "UPDATE_REQUESTED"),
+            ScalingStatusType::Updating => write!(f, "UPDATING"),
+            ScalingStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CatalogItemClass {
         }
     }
 }
+impl ::std::fmt::Display for CatalogItemClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CatalogItemClass::Rack => write!(f, "RACK"),
+            CatalogItemClass::Server => write!(f, "SERVER"),
+            CatalogItemClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

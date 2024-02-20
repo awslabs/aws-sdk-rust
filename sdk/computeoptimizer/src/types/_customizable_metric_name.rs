@@ -91,3 +91,11 @@ impl CustomizableMetricName {
         }
     }
 }
+impl ::std::fmt::Display for CustomizableMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomizableMetricName::CpuUtilization => write!(f, "CpuUtilization"),
+            CustomizableMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl ImageAssociatedResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ImageAssociatedResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageAssociatedResourceType::Application => write!(f, "APPLICATION"),
+            ImageAssociatedResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

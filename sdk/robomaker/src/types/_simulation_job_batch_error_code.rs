@@ -91,3 +91,11 @@ impl SimulationJobBatchErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for SimulationJobBatchErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SimulationJobBatchErrorCode::InternalServiceError => write!(f, "InternalServiceError"),
+            SimulationJobBatchErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

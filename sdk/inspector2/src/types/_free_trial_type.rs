@@ -106,3 +106,14 @@ impl FreeTrialType {
         }
     }
 }
+impl ::std::fmt::Display for FreeTrialType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FreeTrialType::Ec2 => write!(f, "EC2"),
+            FreeTrialType::Ecr => write!(f, "ECR"),
+            FreeTrialType::Lambda => write!(f, "LAMBDA"),
+            FreeTrialType::LambdaCode => write!(f, "LAMBDA_CODE"),
+            FreeTrialType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

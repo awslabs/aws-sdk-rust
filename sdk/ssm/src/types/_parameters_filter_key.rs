@@ -101,3 +101,13 @@ impl ParametersFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for ParametersFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParametersFilterKey::KeyId => write!(f, "KeyId"),
+            ParametersFilterKey::Name => write!(f, "Name"),
+            ParametersFilterKey::Type => write!(f, "Type"),
+            ParametersFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

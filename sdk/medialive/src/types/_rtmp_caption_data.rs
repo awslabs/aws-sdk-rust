@@ -101,3 +101,13 @@ impl RtmpCaptionData {
         }
     }
 }
+impl ::std::fmt::Display for RtmpCaptionData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RtmpCaptionData::All => write!(f, "ALL"),
+            RtmpCaptionData::Field1608 => write!(f, "FIELD1_608"),
+            RtmpCaptionData::Field1AndField2608 => write!(f, "FIELD1_AND_FIELD2_608"),
+            RtmpCaptionData::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

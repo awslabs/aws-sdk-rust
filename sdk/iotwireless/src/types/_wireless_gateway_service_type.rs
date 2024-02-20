@@ -96,3 +96,12 @@ impl WirelessGatewayServiceType {
         }
     }
 }
+impl ::std::fmt::Display for WirelessGatewayServiceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WirelessGatewayServiceType::Cups => write!(f, "CUPS"),
+            WirelessGatewayServiceType::Lns => write!(f, "LNS"),
+            WirelessGatewayServiceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

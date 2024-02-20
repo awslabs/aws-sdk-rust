@@ -101,3 +101,13 @@ impl StringComparison {
         }
     }
 }
+impl ::std::fmt::Display for StringComparison {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StringComparison::Equals => write!(f, "EQUALS"),
+            StringComparison::NotEquals => write!(f, "NOT_EQUALS"),
+            StringComparison::Prefix => write!(f, "PREFIX"),
+            StringComparison::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

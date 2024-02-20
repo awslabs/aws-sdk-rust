@@ -96,3 +96,12 @@ impl WorkspaceDirectoryType {
         }
     }
 }
+impl ::std::fmt::Display for WorkspaceDirectoryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkspaceDirectoryType::AdConnector => write!(f, "AD_CONNECTOR"),
+            WorkspaceDirectoryType::SimpleAd => write!(f, "SIMPLE_AD"),
+            WorkspaceDirectoryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

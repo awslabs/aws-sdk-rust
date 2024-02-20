@@ -101,3 +101,13 @@ impl IsMonitoredByJob {
         }
     }
 }
+impl ::std::fmt::Display for IsMonitoredByJob {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IsMonitoredByJob::False => write!(f, "FALSE"),
+            IsMonitoredByJob::True => write!(f, "TRUE"),
+            IsMonitoredByJob::UnknownValue => write!(f, "UNKNOWN"),
+            IsMonitoredByJob::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

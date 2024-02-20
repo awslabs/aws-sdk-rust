@@ -96,3 +96,12 @@ impl HlsSegmentControl {
         }
     }
 }
+impl ::std::fmt::Display for HlsSegmentControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsSegmentControl::SegmentedFiles => write!(f, "SEGMENTED_FILES"),
+            HlsSegmentControl::SingleFile => write!(f, "SINGLE_FILE"),
+            HlsSegmentControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

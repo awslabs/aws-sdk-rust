@@ -101,3 +101,13 @@ impl InferenceDataImportStrategy {
         }
     }
 }
+impl ::std::fmt::Display for InferenceDataImportStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferenceDataImportStrategy::AddWhenEmpty => write!(f, "ADD_WHEN_EMPTY"),
+            InferenceDataImportStrategy::NoImport => write!(f, "NO_IMPORT"),
+            InferenceDataImportStrategy::Overwrite => write!(f, "OVERWRITE"),
+            InferenceDataImportStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

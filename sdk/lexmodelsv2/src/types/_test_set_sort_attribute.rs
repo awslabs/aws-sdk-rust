@@ -96,3 +96,12 @@ impl TestSetSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for TestSetSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestSetSortAttribute::LastUpdatedDateTime => write!(f, "LastUpdatedDateTime"),
+            TestSetSortAttribute::TestSetName => write!(f, "TestSetName"),
+            TestSetSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

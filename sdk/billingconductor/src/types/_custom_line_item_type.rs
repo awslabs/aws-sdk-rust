@@ -96,3 +96,12 @@ impl CustomLineItemType {
         }
     }
 }
+impl ::std::fmt::Display for CustomLineItemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomLineItemType::Credit => write!(f, "CREDIT"),
+            CustomLineItemType::Fee => write!(f, "FEE"),
+            CustomLineItemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

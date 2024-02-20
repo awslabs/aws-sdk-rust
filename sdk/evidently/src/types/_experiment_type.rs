@@ -91,3 +91,11 @@ impl ExperimentType {
         }
     }
 }
+impl ::std::fmt::Display for ExperimentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExperimentType::OnlineAbExperiment => write!(f, "aws.evidently.onlineab"),
+            ExperimentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

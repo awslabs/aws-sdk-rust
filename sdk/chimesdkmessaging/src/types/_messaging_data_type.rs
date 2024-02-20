@@ -96,3 +96,12 @@ impl MessagingDataType {
         }
     }
 }
+impl ::std::fmt::Display for MessagingDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessagingDataType::Channel => write!(f, "Channel"),
+            MessagingDataType::ChannelMessage => write!(f, "ChannelMessage"),
+            MessagingDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -249,3 +249,37 @@ impl UpdateParamType {
         }
     }
 }
+impl ::std::fmt::Display for UpdateParamType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateParamType::AddonVersion => write!(f, "AddonVersion"),
+            UpdateParamType::AuthenticationMode => write!(f, "AuthenticationMode"),
+            UpdateParamType::ClusterLogging => write!(f, "ClusterLogging"),
+            UpdateParamType::ConfigurationValues => write!(f, "ConfigurationValues"),
+            UpdateParamType::DesiredSize => write!(f, "DesiredSize"),
+            UpdateParamType::EncryptionConfig => write!(f, "EncryptionConfig"),
+            UpdateParamType::EndpointPrivateAccess => write!(f, "EndpointPrivateAccess"),
+            UpdateParamType::EndpointPublicAccess => write!(f, "EndpointPublicAccess"),
+            UpdateParamType::IdentityProviderConfig => write!(f, "IdentityProviderConfig"),
+            UpdateParamType::LabelsToAdd => write!(f, "LabelsToAdd"),
+            UpdateParamType::LabelsToRemove => write!(f, "LabelsToRemove"),
+            UpdateParamType::LaunchTemplateName => write!(f, "LaunchTemplateName"),
+            UpdateParamType::LaunchTemplateVersion => write!(f, "LaunchTemplateVersion"),
+            UpdateParamType::MaxSize => write!(f, "MaxSize"),
+            UpdateParamType::MaxUnavailable => write!(f, "MaxUnavailable"),
+            UpdateParamType::MaxUnavailablePercentage => write!(f, "MaxUnavailablePercentage"),
+            UpdateParamType::MinSize => write!(f, "MinSize"),
+            UpdateParamType::PlatformVersion => write!(f, "PlatformVersion"),
+            UpdateParamType::PublicAccessCidrs => write!(f, "PublicAccessCidrs"),
+            UpdateParamType::ReleaseVersion => write!(f, "ReleaseVersion"),
+            UpdateParamType::ResolveConflicts => write!(f, "ResolveConflicts"),
+            UpdateParamType::SecurityGroups => write!(f, "SecurityGroups"),
+            UpdateParamType::ServiceAccountRoleArn => write!(f, "ServiceAccountRoleArn"),
+            UpdateParamType::Subnets => write!(f, "Subnets"),
+            UpdateParamType::TaintsToAdd => write!(f, "TaintsToAdd"),
+            UpdateParamType::TaintsToRemove => write!(f, "TaintsToRemove"),
+            UpdateParamType::Version => write!(f, "Version"),
+            UpdateParamType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

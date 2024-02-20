@@ -111,3 +111,15 @@ impl Mpeg2InterlaceMode {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2InterlaceMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2InterlaceMode::BottomField => write!(f, "BOTTOM_FIELD"),
+            Mpeg2InterlaceMode::FollowBottomField => write!(f, "FOLLOW_BOTTOM_FIELD"),
+            Mpeg2InterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
+            Mpeg2InterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
+            Mpeg2InterlaceMode::TopField => write!(f, "TOP_FIELD"),
+            Mpeg2InterlaceMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

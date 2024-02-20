@@ -96,3 +96,12 @@ impl DnsSupportValue {
         }
     }
 }
+impl ::std::fmt::Display for DnsSupportValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DnsSupportValue::Disable => write!(f, "disable"),
+            DnsSupportValue::Enable => write!(f, "enable"),
+            DnsSupportValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

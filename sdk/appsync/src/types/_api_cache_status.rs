@@ -111,3 +111,15 @@ impl ApiCacheStatus {
         }
     }
 }
+impl ::std::fmt::Display for ApiCacheStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApiCacheStatus::Available => write!(f, "AVAILABLE"),
+            ApiCacheStatus::Creating => write!(f, "CREATING"),
+            ApiCacheStatus::Deleting => write!(f, "DELETING"),
+            ApiCacheStatus::Failed => write!(f, "FAILED"),
+            ApiCacheStatus::Modifying => write!(f, "MODIFYING"),
+            ApiCacheStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

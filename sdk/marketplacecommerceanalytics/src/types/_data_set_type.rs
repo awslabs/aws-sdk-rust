@@ -237,3 +237,35 @@ impl DataSetType {
         }
     }
 }
+impl ::std::fmt::Display for DataSetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSetType::CustomerProfileByGeography => write!(f, "customer_profile_by_geography"),
+            DataSetType::CustomerProfileByIndustry => write!(f, "customer_profile_by_industry"),
+            DataSetType::CustomerProfileByRevenue => write!(f, "customer_profile_by_revenue"),
+            DataSetType::CustomerSubscriberAnnualSubscriptions => write!(f, "customer_subscriber_annual_subscriptions"),
+            DataSetType::CustomerSubscriberHourlyMonthlySubscriptions => write!(f, "customer_subscriber_hourly_monthly_subscriptions"),
+            DataSetType::DailyBusinessCanceledProductSubscribers => write!(f, "daily_business_canceled_product_subscribers"),
+            DataSetType::DailyBusinessFees => write!(f, "daily_business_fees"),
+            DataSetType::DailyBusinessFreeTrialConversions => write!(f, "daily_business_free_trial_conversions"),
+            DataSetType::DailyBusinessNewInstances => write!(f, "daily_business_new_instances"),
+            DataSetType::DailyBusinessNewProductSubscribers => write!(f, "daily_business_new_product_subscribers"),
+            DataSetType::DailyBusinessUsageByInstanceType => write!(f, "daily_business_usage_by_instance_type"),
+            DataSetType::DisbursedAmountByAgeOfDisbursedFunds => write!(f, "disbursed_amount_by_age_of_disbursed_funds"),
+            DataSetType::DisbursedAmountByAgeOfPastDueFunds => write!(f, "disbursed_amount_by_age_of_past_due_funds"),
+            DataSetType::DisbursedAmountByAgeOfUncollectedFunds => write!(f, "disbursed_amount_by_age_of_uncollected_funds"),
+            DataSetType::DisbursedAmountByCustomerGeo => write!(f, "disbursed_amount_by_customer_geo"),
+            DataSetType::DisbursedAmountByInstanceHours => write!(f, "disbursed_amount_by_instance_hours"),
+            DataSetType::DisbursedAmountByProduct => write!(f, "disbursed_amount_by_product"),
+            DataSetType::DisbursedAmountByProductWithUncollectedFunds => write!(f, "disbursed_amount_by_product_with_uncollected_funds"),
+            DataSetType::DisbursedAmountByUncollectedFundsBreakdown => write!(f, "disbursed_amount_by_uncollected_funds_breakdown"),
+            DataSetType::MonthlyRevenueAnnualSubscriptions => write!(f, "monthly_revenue_annual_subscriptions"),
+            DataSetType::MonthlyRevenueBillingAndRevenueData => write!(f, "monthly_revenue_billing_and_revenue_data"),
+            DataSetType::MonthlyRevenueFieldDemonstrationUsage => write!(f, "monthly_revenue_field_demonstration_usage"),
+            DataSetType::MonthlyRevenueFlexiblePaymentSchedule => write!(f, "monthly_revenue_flexible_payment_schedule"),
+            DataSetType::SalesCompensationBilledRevenue => write!(f, "sales_compensation_billed_revenue"),
+            DataSetType::UsSalesAndUseTaxRecords => write!(f, "us_sales_and_use_tax_records"),
+            DataSetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

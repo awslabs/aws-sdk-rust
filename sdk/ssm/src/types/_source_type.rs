@@ -101,3 +101,13 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::AwsEc2Instance => write!(f, "AWS::EC2::Instance"),
+            SourceType::AwsIotThing => write!(f, "AWS::IoT::Thing"),
+            SourceType::AwsSsmManagedinstance => write!(f, "AWS::SSM::ManagedInstance"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

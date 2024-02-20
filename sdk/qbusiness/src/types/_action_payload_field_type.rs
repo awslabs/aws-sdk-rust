@@ -106,3 +106,14 @@ impl ActionPayloadFieldType {
         }
     }
 }
+impl ::std::fmt::Display for ActionPayloadFieldType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionPayloadFieldType::Array => write!(f, "ARRAY"),
+            ActionPayloadFieldType::Boolean => write!(f, "BOOLEAN"),
+            ActionPayloadFieldType::Number => write!(f, "NUMBER"),
+            ActionPayloadFieldType::String => write!(f, "STRING"),
+            ActionPayloadFieldType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

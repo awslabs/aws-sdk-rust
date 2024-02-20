@@ -117,3 +117,15 @@ impl TestResultTypeFilter {
         }
     }
 }
+impl ::std::fmt::Display for TestResultTypeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestResultTypeFilter::ConversationLevelTestResults => write!(f, "ConversationLevelTestResults"),
+            TestResultTypeFilter::IntentClassificationTestResults => write!(f, "IntentClassificationTestResults"),
+            TestResultTypeFilter::OverallTestResults => write!(f, "OverallTestResults"),
+            TestResultTypeFilter::SlotResolutionTestResults => write!(f, "SlotResolutionTestResults"),
+            TestResultTypeFilter::UtteranceLevelResults => write!(f, "UtteranceLevelResults"),
+            TestResultTypeFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

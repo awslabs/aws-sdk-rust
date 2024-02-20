@@ -116,3 +116,16 @@ impl LifeCycleState {
         }
     }
 }
+impl ::std::fmt::Display for LifeCycleState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifeCycleState::Available => write!(f, "available"),
+            LifeCycleState::Creating => write!(f, "creating"),
+            LifeCycleState::Deleted => write!(f, "deleted"),
+            LifeCycleState::Deleting => write!(f, "deleting"),
+            LifeCycleState::Error => write!(f, "error"),
+            LifeCycleState::Updating => write!(f, "updating"),
+            LifeCycleState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

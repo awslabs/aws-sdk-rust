@@ -101,3 +101,13 @@ impl ConfidenceLevel {
         }
     }
 }
+impl ::std::fmt::Display for ConfidenceLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfidenceLevel::High => write!(f, "HIGH"),
+            ConfidenceLevel::Low => write!(f, "LOW"),
+            ConfidenceLevel::Medium => write!(f, "MEDIUM"),
+            ConfidenceLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

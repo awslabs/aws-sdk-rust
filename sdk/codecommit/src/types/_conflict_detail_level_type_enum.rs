@@ -96,3 +96,12 @@ impl ConflictDetailLevelTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for ConflictDetailLevelTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConflictDetailLevelTypeEnum::FileLevel => write!(f, "FILE_LEVEL"),
+            ConflictDetailLevelTypeEnum::LineLevel => write!(f, "LINE_LEVEL"),
+            ConflictDetailLevelTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

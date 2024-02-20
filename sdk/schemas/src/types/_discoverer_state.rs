@@ -96,3 +96,12 @@ impl DiscovererState {
         }
     }
 }
+impl ::std::fmt::Display for DiscovererState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiscovererState::Started => write!(f, "STARTED"),
+            DiscovererState::Stopped => write!(f, "STOPPED"),
+            DiscovererState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

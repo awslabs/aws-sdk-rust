@@ -96,3 +96,12 @@ impl RelativePosition {
         }
     }
 }
+impl ::std::fmt::Display for RelativePosition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelativePosition::AfterProgram => write!(f, "AFTER_PROGRAM"),
+            RelativePosition::BeforeProgram => write!(f, "BEFORE_PROGRAM"),
+            RelativePosition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

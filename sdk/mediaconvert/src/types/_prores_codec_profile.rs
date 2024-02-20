@@ -123,3 +123,16 @@ impl ProresCodecProfile {
         }
     }
 }
+impl ::std::fmt::Display for ProresCodecProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProresCodecProfile::AppleProres422 => write!(f, "APPLE_PRORES_422"),
+            ProresCodecProfile::AppleProres422Hq => write!(f, "APPLE_PRORES_422_HQ"),
+            ProresCodecProfile::AppleProres422Lt => write!(f, "APPLE_PRORES_422_LT"),
+            ProresCodecProfile::AppleProres422Proxy => write!(f, "APPLE_PRORES_422_PROXY"),
+            ProresCodecProfile::AppleProres4444 => write!(f, "APPLE_PRORES_4444"),
+            ProresCodecProfile::AppleProres4444Xq => write!(f, "APPLE_PRORES_4444_XQ"),
+            ProresCodecProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

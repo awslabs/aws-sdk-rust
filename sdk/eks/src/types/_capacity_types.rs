@@ -96,3 +96,12 @@ impl CapacityTypes {
         }
     }
 }
+impl ::std::fmt::Display for CapacityTypes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapacityTypes::OnDemand => write!(f, "ON_DEMAND"),
+            CapacityTypes::Spot => write!(f, "SPOT"),
+            CapacityTypes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

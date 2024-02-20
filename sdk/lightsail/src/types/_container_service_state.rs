@@ -121,3 +121,17 @@ impl ContainerServiceState {
         }
     }
 }
+impl ::std::fmt::Display for ContainerServiceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerServiceState::Deleting => write!(f, "DELETING"),
+            ContainerServiceState::Deploying => write!(f, "DEPLOYING"),
+            ContainerServiceState::Disabled => write!(f, "DISABLED"),
+            ContainerServiceState::Pending => write!(f, "PENDING"),
+            ContainerServiceState::Ready => write!(f, "READY"),
+            ContainerServiceState::Running => write!(f, "RUNNING"),
+            ContainerServiceState::Updating => write!(f, "UPDATING"),
+            ContainerServiceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

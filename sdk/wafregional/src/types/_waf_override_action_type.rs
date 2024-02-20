@@ -96,3 +96,12 @@ impl WafOverrideActionType {
         }
     }
 }
+impl ::std::fmt::Display for WafOverrideActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WafOverrideActionType::Count => write!(f, "COUNT"),
+            WafOverrideActionType::None => write!(f, "NONE"),
+            WafOverrideActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

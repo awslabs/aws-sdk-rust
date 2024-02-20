@@ -106,3 +106,14 @@ impl AudienceModelMetricType {
         }
     }
 }
+impl ::std::fmt::Display for AudienceModelMetricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudienceModelMetricType::MeanReciprocalRank => write!(f, "MEAN_RECIPROCAL_RANK"),
+            AudienceModelMetricType::NormalizedDiscountedCumulativeGain => write!(f, "NORMALIZED_DISCOUNTED_CUMULATIVE_GAIN"),
+            AudienceModelMetricType::Precision => write!(f, "PRECISION"),
+            AudienceModelMetricType::Recall => write!(f, "RECALL"),
+            AudienceModelMetricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl RenewalStatus {
         }
     }
 }
+impl ::std::fmt::Display for RenewalStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RenewalStatus::Failed => write!(f, "FAILED"),
+            RenewalStatus::PendingAutoRenewal => write!(f, "PENDING_AUTO_RENEWAL"),
+            RenewalStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
+            RenewalStatus::Success => write!(f, "SUCCESS"),
+            RenewalStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

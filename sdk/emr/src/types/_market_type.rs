@@ -96,3 +96,12 @@ impl MarketType {
         }
     }
 }
+impl ::std::fmt::Display for MarketType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MarketType::OnDemand => write!(f, "ON_DEMAND"),
+            MarketType::Spot => write!(f, "SPOT"),
+            MarketType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

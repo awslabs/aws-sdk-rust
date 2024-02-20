@@ -96,3 +96,12 @@ impl TaskTemplateStatus {
         }
     }
 }
+impl ::std::fmt::Display for TaskTemplateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskTemplateStatus::Active => write!(f, "ACTIVE"),
+            TaskTemplateStatus::Inactive => write!(f, "INACTIVE"),
+            TaskTemplateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

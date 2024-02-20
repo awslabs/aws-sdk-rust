@@ -141,3 +141,19 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::CacheCluster => write!(f, "cache-cluster"),
+            SourceType::CacheParameterGroup => write!(f, "cache-parameter-group"),
+            SourceType::CacheSecurityGroup => write!(f, "cache-security-group"),
+            SourceType::CacheSubnetGroup => write!(f, "cache-subnet-group"),
+            SourceType::ReplicationGroup => write!(f, "replication-group"),
+            SourceType::ServerlessCache => write!(f, "serverless-cache"),
+            SourceType::ServerlessCacheSnapshot => write!(f, "serverless-cache-snapshot"),
+            SourceType::User => write!(f, "user"),
+            SourceType::UserGroup => write!(f, "user-group"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

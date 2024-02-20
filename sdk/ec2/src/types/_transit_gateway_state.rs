@@ -111,3 +111,15 @@ impl TransitGatewayState {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayState::Available => write!(f, "available"),
+            TransitGatewayState::Deleted => write!(f, "deleted"),
+            TransitGatewayState::Deleting => write!(f, "deleting"),
+            TransitGatewayState::Modifying => write!(f, "modifying"),
+            TransitGatewayState::Pending => write!(f, "pending"),
+            TransitGatewayState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

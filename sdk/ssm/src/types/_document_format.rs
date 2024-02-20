@@ -101,3 +101,13 @@ impl DocumentFormat {
         }
     }
 }
+impl ::std::fmt::Display for DocumentFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentFormat::Json => write!(f, "JSON"),
+            DocumentFormat::Text => write!(f, "TEXT"),
+            DocumentFormat::Yaml => write!(f, "YAML"),
+            DocumentFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl StorageConnectorType {
         }
     }
 }
+impl ::std::fmt::Display for StorageConnectorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageConnectorType::GoogleDrive => write!(f, "GOOGLE_DRIVE"),
+            StorageConnectorType::Homefolders => write!(f, "HOMEFOLDERS"),
+            StorageConnectorType::OneDrive => write!(f, "ONE_DRIVE"),
+            StorageConnectorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

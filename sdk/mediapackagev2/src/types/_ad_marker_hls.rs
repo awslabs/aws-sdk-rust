@@ -91,3 +91,11 @@ impl AdMarkerHls {
         }
     }
 }
+impl ::std::fmt::Display for AdMarkerHls {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdMarkerHls::Daterange => write!(f, "DATERANGE"),
+            AdMarkerHls::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

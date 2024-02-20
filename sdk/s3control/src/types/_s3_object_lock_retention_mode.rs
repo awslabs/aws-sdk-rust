@@ -96,3 +96,12 @@ impl S3ObjectLockRetentionMode {
         }
     }
 }
+impl ::std::fmt::Display for S3ObjectLockRetentionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3ObjectLockRetentionMode::Compliance => write!(f, "COMPLIANCE"),
+            S3ObjectLockRetentionMode::Governance => write!(f, "GOVERNANCE"),
+            S3ObjectLockRetentionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

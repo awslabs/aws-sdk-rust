@@ -96,3 +96,12 @@ impl PlaybackMode {
         }
     }
 }
+impl ::std::fmt::Display for PlaybackMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlaybackMode::Linear => write!(f, "LINEAR"),
+            PlaybackMode::Loop => write!(f, "LOOP"),
+            PlaybackMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

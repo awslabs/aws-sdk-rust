@@ -129,3 +129,17 @@ impl HubStatus {
         }
     }
 }
+impl ::std::fmt::Display for HubStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HubStatus::CreateFailed => write!(f, "CreateFailed"),
+            HubStatus::Creating => write!(f, "Creating"),
+            HubStatus::DeleteFailed => write!(f, "DeleteFailed"),
+            HubStatus::Deleting => write!(f, "Deleting"),
+            HubStatus::InService => write!(f, "InService"),
+            HubStatus::UpdateFailed => write!(f, "UpdateFailed"),
+            HubStatus::Updating => write!(f, "Updating"),
+            HubStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,14 @@ impl InstanceType {
         }
     }
 }
+impl ::std::fmt::Display for InstanceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceType::DevStandard1Large => write!(f, "dev.standard1.large"),
+            InstanceType::DevStandard1Medium => write!(f, "dev.standard1.medium"),
+            InstanceType::DevStandard1Small => write!(f, "dev.standard1.small"),
+            InstanceType::DevStandard1Xlarge => write!(f, "dev.standard1.xlarge"),
+            InstanceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

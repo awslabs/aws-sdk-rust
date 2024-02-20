@@ -96,3 +96,12 @@ impl DynamicRoutingValue {
         }
     }
 }
+impl ::std::fmt::Display for DynamicRoutingValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DynamicRoutingValue::Disable => write!(f, "disable"),
+            DynamicRoutingValue::Enable => write!(f, "enable"),
+            DynamicRoutingValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

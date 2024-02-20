@@ -96,3 +96,12 @@ impl MsSmoothFragmentLengthControl {
         }
     }
 }
+impl ::std::fmt::Display for MsSmoothFragmentLengthControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MsSmoothFragmentLengthControl::Exact => write!(f, "EXACT"),
+            MsSmoothFragmentLengthControl::GopMultiple => write!(f, "GOP_MULTIPLE"),
+            MsSmoothFragmentLengthControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

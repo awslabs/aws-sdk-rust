@@ -106,3 +106,14 @@ impl DataSetTaskLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for DataSetTaskLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSetTaskLifecycle::Completed => write!(f, "Completed"),
+            DataSetTaskLifecycle::Creating => write!(f, "Creating"),
+            DataSetTaskLifecycle::Failed => write!(f, "Failed"),
+            DataSetTaskLifecycle::Running => write!(f, "Running"),
+            DataSetTaskLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

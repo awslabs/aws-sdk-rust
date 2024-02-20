@@ -135,3 +135,18 @@ impl DataSourceErrorInfoType {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceErrorInfoType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceErrorInfoType::AccessDenied => write!(f, "ACCESS_DENIED"),
+            DataSourceErrorInfoType::Conflict => write!(f, "CONFLICT"),
+            DataSourceErrorInfoType::CopySourceNotFound => write!(f, "COPY_SOURCE_NOT_FOUND"),
+            DataSourceErrorInfoType::EngineVersionNotSupported => write!(f, "ENGINE_VERSION_NOT_SUPPORTED"),
+            DataSourceErrorInfoType::GenericSqlFailure => write!(f, "GENERIC_SQL_FAILURE"),
+            DataSourceErrorInfoType::Timeout => write!(f, "TIMEOUT"),
+            DataSourceErrorInfoType::UnknownValue => write!(f, "UNKNOWN"),
+            DataSourceErrorInfoType::UnknownHost => write!(f, "UNKNOWN_HOST"),
+            DataSourceErrorInfoType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -105,3 +105,13 @@ impl SanitizationWarningReason {
         }
     }
 }
+impl ::std::fmt::Display for SanitizationWarningReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SanitizationWarningReason::DisallowedAttributeRemoved => write!(f, "DISALLOWED_ATTRIBUTE_REMOVED"),
+            SanitizationWarningReason::DisallowedElementRemoved => write!(f, "DISALLOWED_ELEMENT_REMOVED"),
+            SanitizationWarningReason::InvalidAttributeValueRemoved => write!(f, "INVALID_ATTRIBUTE_VALUE_REMOVED"),
+            SanitizationWarningReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

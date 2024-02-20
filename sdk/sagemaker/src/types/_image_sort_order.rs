@@ -96,3 +96,12 @@ impl ImageSortOrder {
         }
     }
 }
+impl ::std::fmt::Display for ImageSortOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageSortOrder::Ascending => write!(f, "ASCENDING"),
+            ImageSortOrder::Descending => write!(f, "DESCENDING"),
+            ImageSortOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

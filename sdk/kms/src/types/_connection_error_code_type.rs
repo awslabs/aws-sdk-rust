@@ -195,3 +195,28 @@ impl ConnectionErrorCodeType {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionErrorCodeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionErrorCodeType::ClusterNotFound => write!(f, "CLUSTER_NOT_FOUND"),
+            ConnectionErrorCodeType::InsufficientCloudhsmHsms => write!(f, "INSUFFICIENT_CLOUDHSM_HSMS"),
+            ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet => write!(f, "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET"),
+            ConnectionErrorCodeType::InternalError => write!(f, "INTERNAL_ERROR"),
+            ConnectionErrorCodeType::InvalidCredentials => write!(f, "INVALID_CREDENTIALS"),
+            ConnectionErrorCodeType::NetworkErrors => write!(f, "NETWORK_ERRORS"),
+            ConnectionErrorCodeType::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),
+            ConnectionErrorCodeType::UserLockedOut => write!(f, "USER_LOCKED_OUT"),
+            ConnectionErrorCodeType::UserLoggedIn => write!(f, "USER_LOGGED_IN"),
+            ConnectionErrorCodeType::UserNotFound => write!(f, "USER_NOT_FOUND"),
+            ConnectionErrorCodeType::XksProxyAccessDenied => write!(f, "XKS_PROXY_ACCESS_DENIED"),
+            ConnectionErrorCodeType::XksProxyInvalidConfiguration => write!(f, "XKS_PROXY_INVALID_CONFIGURATION"),
+            ConnectionErrorCodeType::XksProxyInvalidResponse => write!(f, "XKS_PROXY_INVALID_RESPONSE"),
+            ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration => write!(f, "XKS_PROXY_INVALID_TLS_CONFIGURATION"),
+            ConnectionErrorCodeType::XksProxyNotReachable => write!(f, "XKS_PROXY_NOT_REACHABLE"),
+            ConnectionErrorCodeType::XksProxyTimedOut => write!(f, "XKS_PROXY_TIMED_OUT"),
+            ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration => write!(f, "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION"),
+            ConnectionErrorCodeType::XksVpcEndpointServiceNotFound => write!(f, "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND"),
+            ConnectionErrorCodeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

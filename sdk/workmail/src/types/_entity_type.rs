@@ -101,3 +101,13 @@ impl EntityType {
         }
     }
 }
+impl ::std::fmt::Display for EntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EntityType::Group => write!(f, "GROUP"),
+            EntityType::Resource => write!(f, "RESOURCE"),
+            EntityType::User => write!(f, "USER"),
+            EntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

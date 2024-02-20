@@ -189,3 +189,27 @@ impl SampleType {
         }
     }
 }
+impl ::std::fmt::Display for SampleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SampleType::Cpu => write!(f, "CPU"),
+            SampleType::Memory => write!(f, "MEMORY"),
+            SampleType::NativeAvgDrawtime => write!(f, "NATIVE_AVG_DRAWTIME"),
+            SampleType::NativeFps => write!(f, "NATIVE_FPS"),
+            SampleType::NativeFrames => write!(f, "NATIVE_FRAMES"),
+            SampleType::NativeMaxDrawtime => write!(f, "NATIVE_MAX_DRAWTIME"),
+            SampleType::NativeMinDrawtime => write!(f, "NATIVE_MIN_DRAWTIME"),
+            SampleType::OpenglAvgDrawtime => write!(f, "OPENGL_AVG_DRAWTIME"),
+            SampleType::OpenglFps => write!(f, "OPENGL_FPS"),
+            SampleType::OpenglFrames => write!(f, "OPENGL_FRAMES"),
+            SampleType::OpenglMaxDrawtime => write!(f, "OPENGL_MAX_DRAWTIME"),
+            SampleType::OpenglMinDrawtime => write!(f, "OPENGL_MIN_DRAWTIME"),
+            SampleType::Rx => write!(f, "RX"),
+            SampleType::RxRate => write!(f, "RX_RATE"),
+            SampleType::Threads => write!(f, "THREADS"),
+            SampleType::Tx => write!(f, "TX"),
+            SampleType::TxRate => write!(f, "TX_RATE"),
+            SampleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

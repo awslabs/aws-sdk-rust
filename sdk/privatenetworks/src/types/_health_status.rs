@@ -101,3 +101,13 @@ impl HealthStatus {
         }
     }
 }
+impl ::std::fmt::Display for HealthStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HealthStatus::Healthy => write!(f, "HEALTHY"),
+            HealthStatus::Initial => write!(f, "INITIAL"),
+            HealthStatus::Unhealthy => write!(f, "UNHEALTHY"),
+            HealthStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

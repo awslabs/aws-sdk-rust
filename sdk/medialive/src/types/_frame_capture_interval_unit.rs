@@ -96,3 +96,12 @@ impl FrameCaptureIntervalUnit {
         }
     }
 }
+impl ::std::fmt::Display for FrameCaptureIntervalUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FrameCaptureIntervalUnit::Milliseconds => write!(f, "MILLISECONDS"),
+            FrameCaptureIntervalUnit::Seconds => write!(f, "SECONDS"),
+            FrameCaptureIntervalUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

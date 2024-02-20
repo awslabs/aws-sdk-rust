@@ -116,3 +116,16 @@ impl ResourceMappingType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceMappingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceMappingType::AppRegistryApp => write!(f, "AppRegistryApp"),
+            ResourceMappingType::CfnStack => write!(f, "CfnStack"),
+            ResourceMappingType::Eks => write!(f, "EKS"),
+            ResourceMappingType::Resource => write!(f, "Resource"),
+            ResourceMappingType::ResourceGroup => write!(f, "ResourceGroup"),
+            ResourceMappingType::Terraform => write!(f, "Terraform"),
+            ResourceMappingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

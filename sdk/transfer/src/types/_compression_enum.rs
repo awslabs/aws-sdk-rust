@@ -96,3 +96,12 @@ impl CompressionEnum {
         }
     }
 }
+impl ::std::fmt::Display for CompressionEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CompressionEnum::Disabled => write!(f, "DISABLED"),
+            CompressionEnum::Zlib => write!(f, "ZLIB"),
+            CompressionEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

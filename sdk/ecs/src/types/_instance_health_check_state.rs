@@ -106,3 +106,14 @@ impl InstanceHealthCheckState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceHealthCheckState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceHealthCheckState::Impaired => write!(f, "IMPAIRED"),
+            InstanceHealthCheckState::Initializing => write!(f, "INITIALIZING"),
+            InstanceHealthCheckState::InsufficientData => write!(f, "INSUFFICIENT_DATA"),
+            InstanceHealthCheckState::Ok => write!(f, "OK"),
+            InstanceHealthCheckState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Mp3RateControlMode {
         }
     }
 }
+impl ::std::fmt::Display for Mp3RateControlMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mp3RateControlMode::Cbr => write!(f, "CBR"),
+            Mp3RateControlMode::Vbr => write!(f, "VBR"),
+            Mp3RateControlMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

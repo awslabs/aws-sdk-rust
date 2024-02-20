@@ -111,3 +111,15 @@ impl DataShareStatusForProducer {
         }
     }
 }
+impl ::std::fmt::Display for DataShareStatusForProducer {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataShareStatusForProducer::Active => write!(f, "ACTIVE"),
+            DataShareStatusForProducer::Authorized => write!(f, "AUTHORIZED"),
+            DataShareStatusForProducer::Deauthorized => write!(f, "DEAUTHORIZED"),
+            DataShareStatusForProducer::PendingAuthorization => write!(f, "PENDING_AUTHORIZATION"),
+            DataShareStatusForProducer::Rejected => write!(f, "REJECTED"),
+            DataShareStatusForProducer::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

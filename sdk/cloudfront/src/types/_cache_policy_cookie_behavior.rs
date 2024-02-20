@@ -106,3 +106,14 @@ impl CachePolicyCookieBehavior {
         }
     }
 }
+impl ::std::fmt::Display for CachePolicyCookieBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CachePolicyCookieBehavior::All => write!(f, "all"),
+            CachePolicyCookieBehavior::AllExcept => write!(f, "allExcept"),
+            CachePolicyCookieBehavior::None => write!(f, "none"),
+            CachePolicyCookieBehavior::Whitelist => write!(f, "whitelist"),
+            CachePolicyCookieBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl Compatibility {
         }
     }
 }
+impl ::std::fmt::Display for Compatibility {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Compatibility::Ec2 => write!(f, "EC2"),
+            Compatibility::External => write!(f, "EXTERNAL"),
+            Compatibility::Fargate => write!(f, "FARGATE"),
+            Compatibility::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

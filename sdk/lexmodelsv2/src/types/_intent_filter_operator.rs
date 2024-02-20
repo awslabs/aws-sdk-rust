@@ -96,3 +96,12 @@ impl IntentFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for IntentFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntentFilterOperator::Contains => write!(f, "CO"),
+            IntentFilterOperator::Equals => write!(f, "EQ"),
+            IntentFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

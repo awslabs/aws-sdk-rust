@@ -96,3 +96,12 @@ impl FailureBehavior {
         }
     }
 }
+impl ::std::fmt::Display for FailureBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailureBehavior::Continue => write!(f, "Continue"),
+            FailureBehavior::Fail => write!(f, "Fail"),
+            FailureBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

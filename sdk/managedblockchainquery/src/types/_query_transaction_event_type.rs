@@ -153,3 +153,21 @@ impl QueryTransactionEventType {
         }
     }
 }
+impl ::std::fmt::Display for QueryTransactionEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryTransactionEventType::BitcoinVin => write!(f, "BITCOIN_VIN"),
+            QueryTransactionEventType::BitcoinVout => write!(f, "BITCOIN_VOUT"),
+            QueryTransactionEventType::Erc1155Transfer => write!(f, "ERC1155_TRANSFER"),
+            QueryTransactionEventType::Erc20Burn => write!(f, "ERC20_BURN"),
+            QueryTransactionEventType::Erc20Deposit => write!(f, "ERC20_DEPOSIT"),
+            QueryTransactionEventType::Erc20Mint => write!(f, "ERC20_MINT"),
+            QueryTransactionEventType::Erc20Transfer => write!(f, "ERC20_TRANSFER"),
+            QueryTransactionEventType::Erc20Withdrawal => write!(f, "ERC20_WITHDRAWAL"),
+            QueryTransactionEventType::Erc721Transfer => write!(f, "ERC721_TRANSFER"),
+            QueryTransactionEventType::EthTransfer => write!(f, "ETH_TRANSFER"),
+            QueryTransactionEventType::InternalEthTransfer => write!(f, "INTERNAL_ETH_TRANSFER"),
+            QueryTransactionEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl ModelStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelStatus::Deleting => write!(f, "DELETING"),
+            ModelStatus::Hosted => write!(f, "HOSTED"),
+            ModelStatus::HostingFailed => write!(f, "HOSTING_FAILED"),
+            ModelStatus::StartingHosting => write!(f, "STARTING_HOSTING"),
+            ModelStatus::StoppingHosting => write!(f, "STOPPING_HOSTING"),
+            ModelStatus::SystemUpdating => write!(f, "SYSTEM_UPDATING"),
+            ModelStatus::Trained => write!(f, "TRAINED"),
+            ModelStatus::Training => write!(f, "TRAINING"),
+            ModelStatus::TrainingFailed => write!(f, "TRAINING_FAILED"),
+            ModelStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AllowNotifications {
         }
     }
 }
+impl ::std::fmt::Display for AllowNotifications {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllowNotifications::All => write!(f, "ALL"),
+            AllowNotifications::Filtered => write!(f, "FILTERED"),
+            AllowNotifications::None => write!(f, "NONE"),
+            AllowNotifications::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

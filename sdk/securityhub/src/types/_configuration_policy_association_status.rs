@@ -101,3 +101,13 @@ impl ConfigurationPolicyAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationPolicyAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationPolicyAssociationStatus::Failed => write!(f, "FAILED"),
+            ConfigurationPolicyAssociationStatus::Pending => write!(f, "PENDING"),
+            ConfigurationPolicyAssociationStatus::Success => write!(f, "SUCCESS"),
+            ConfigurationPolicyAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

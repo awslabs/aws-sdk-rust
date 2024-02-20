@@ -116,3 +116,16 @@ impl CustomPluginState {
         }
     }
 }
+impl ::std::fmt::Display for CustomPluginState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomPluginState::Active => write!(f, "ACTIVE"),
+            CustomPluginState::CreateFailed => write!(f, "CREATE_FAILED"),
+            CustomPluginState::Creating => write!(f, "CREATING"),
+            CustomPluginState::Deleting => write!(f, "DELETING"),
+            CustomPluginState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            CustomPluginState::Updating => write!(f, "UPDATING"),
+            CustomPluginState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,14 @@ impl LaunchProfileValidationType {
         }
     }
 }
+impl ::std::fmt::Display for LaunchProfileValidationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchProfileValidationType::ValidateActiveDirectoryStudioComponent => write!(f, "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT"),
+            LaunchProfileValidationType::ValidateNetworkAclAssociation => write!(f, "VALIDATE_NETWORK_ACL_ASSOCIATION"),
+            LaunchProfileValidationType::ValidateSecurityGroupAssociation => write!(f, "VALIDATE_SECURITY_GROUP_ASSOCIATION"),
+            LaunchProfileValidationType::ValidateSubnetAssociation => write!(f, "VALIDATE_SUBNET_ASSOCIATION"),
+            LaunchProfileValidationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl WorkspaceImageRequiredTenancy {
         }
     }
 }
+impl ::std::fmt::Display for WorkspaceImageRequiredTenancy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkspaceImageRequiredTenancy::Dedicated => write!(f, "DEDICATED"),
+            WorkspaceImageRequiredTenancy::Default => write!(f, "DEFAULT"),
+            WorkspaceImageRequiredTenancy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

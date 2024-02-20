@@ -96,3 +96,12 @@ impl HlsDescriptiveVideoServiceFlag {
         }
     }
 }
+impl ::std::fmt::Display for HlsDescriptiveVideoServiceFlag {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsDescriptiveVideoServiceFlag::DontFlag => write!(f, "DONT_FLAG"),
+            HlsDescriptiveVideoServiceFlag::Flag => write!(f, "FLAG"),
+            HlsDescriptiveVideoServiceFlag::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

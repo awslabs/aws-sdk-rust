@@ -159,3 +159,22 @@ impl ExtendedKeyUsageName {
         }
     }
 }
+impl ::std::fmt::Display for ExtendedKeyUsageName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExtendedKeyUsageName::Any => write!(f, "ANY"),
+            ExtendedKeyUsageName::CodeSigning => write!(f, "CODE_SIGNING"),
+            ExtendedKeyUsageName::Custom => write!(f, "CUSTOM"),
+            ExtendedKeyUsageName::EmailProtection => write!(f, "EMAIL_PROTECTION"),
+            ExtendedKeyUsageName::IpsecEndSystem => write!(f, "IPSEC_END_SYSTEM"),
+            ExtendedKeyUsageName::IpsecTunnel => write!(f, "IPSEC_TUNNEL"),
+            ExtendedKeyUsageName::IpsecUser => write!(f, "IPSEC_USER"),
+            ExtendedKeyUsageName::None => write!(f, "NONE"),
+            ExtendedKeyUsageName::OcspSigning => write!(f, "OCSP_SIGNING"),
+            ExtendedKeyUsageName::TimeStamping => write!(f, "TIME_STAMPING"),
+            ExtendedKeyUsageName::TlsWebClientAuthentication => write!(f, "TLS_WEB_CLIENT_AUTHENTICATION"),
+            ExtendedKeyUsageName::TlsWebServerAuthentication => write!(f, "TLS_WEB_SERVER_AUTHENTICATION"),
+            ExtendedKeyUsageName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

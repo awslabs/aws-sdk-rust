@@ -101,3 +101,13 @@ impl RetentionAction {
         }
     }
 }
+impl ::std::fmt::Display for RetentionAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetentionAction::Delete => write!(f, "DELETE"),
+            RetentionAction::None => write!(f, "NONE"),
+            RetentionAction::PermanentlyDelete => write!(f, "PERMANENTLY_DELETE"),
+            RetentionAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

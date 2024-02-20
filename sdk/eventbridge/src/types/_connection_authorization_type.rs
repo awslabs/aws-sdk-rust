@@ -101,3 +101,13 @@ impl ConnectionAuthorizationType {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionAuthorizationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionAuthorizationType::ApiKey => write!(f, "API_KEY"),
+            ConnectionAuthorizationType::Basic => write!(f, "BASIC"),
+            ConnectionAuthorizationType::OauthClientCredentials => write!(f, "OAUTH_CLIENT_CREDENTIALS"),
+            ConnectionAuthorizationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

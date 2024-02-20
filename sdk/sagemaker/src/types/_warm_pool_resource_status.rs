@@ -106,3 +106,14 @@ impl WarmPoolResourceStatus {
         }
     }
 }
+impl ::std::fmt::Display for WarmPoolResourceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WarmPoolResourceStatus::Available => write!(f, "Available"),
+            WarmPoolResourceStatus::Inuse => write!(f, "InUse"),
+            WarmPoolResourceStatus::Reused => write!(f, "Reused"),
+            WarmPoolResourceStatus::Terminated => write!(f, "Terminated"),
+            WarmPoolResourceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

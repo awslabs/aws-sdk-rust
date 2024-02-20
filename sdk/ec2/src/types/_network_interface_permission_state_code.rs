@@ -106,3 +106,14 @@ impl NetworkInterfacePermissionStateCode {
         }
     }
 }
+impl ::std::fmt::Display for NetworkInterfacePermissionStateCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkInterfacePermissionStateCode::Granted => write!(f, "granted"),
+            NetworkInterfacePermissionStateCode::Pending => write!(f, "pending"),
+            NetworkInterfacePermissionStateCode::Revoked => write!(f, "revoked"),
+            NetworkInterfacePermissionStateCode::Revoking => write!(f, "revoking"),
+            NetworkInterfacePermissionStateCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

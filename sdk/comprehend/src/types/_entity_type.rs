@@ -141,3 +141,19 @@ impl EntityType {
         }
     }
 }
+impl ::std::fmt::Display for EntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EntityType::CommercialItem => write!(f, "COMMERCIAL_ITEM"),
+            EntityType::Date => write!(f, "DATE"),
+            EntityType::Event => write!(f, "EVENT"),
+            EntityType::Location => write!(f, "LOCATION"),
+            EntityType::Organization => write!(f, "ORGANIZATION"),
+            EntityType::Other => write!(f, "OTHER"),
+            EntityType::Person => write!(f, "PERSON"),
+            EntityType::Quantity => write!(f, "QUANTITY"),
+            EntityType::Title => write!(f, "TITLE"),
+            EntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

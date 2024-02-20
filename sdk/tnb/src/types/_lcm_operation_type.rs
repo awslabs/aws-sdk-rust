@@ -101,3 +101,13 @@ impl LcmOperationType {
         }
     }
 }
+impl ::std::fmt::Display for LcmOperationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LcmOperationType::Instantiate => write!(f, "INSTANTIATE"),
+            LcmOperationType::Terminate => write!(f, "TERMINATE"),
+            LcmOperationType::Update => write!(f, "UPDATE"),
+            LcmOperationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

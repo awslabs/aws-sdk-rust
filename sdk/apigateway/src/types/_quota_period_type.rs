@@ -101,3 +101,13 @@ impl QuotaPeriodType {
         }
     }
 }
+impl ::std::fmt::Display for QuotaPeriodType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuotaPeriodType::Day => write!(f, "DAY"),
+            QuotaPeriodType::Month => write!(f, "MONTH"),
+            QuotaPeriodType::Week => write!(f, "WEEK"),
+            QuotaPeriodType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

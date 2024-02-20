@@ -106,3 +106,14 @@ impl AutoSnapshotStatus {
         }
     }
 }
+impl ::std::fmt::Display for AutoSnapshotStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoSnapshotStatus::Failed => write!(f, "Failed"),
+            AutoSnapshotStatus::InProgress => write!(f, "InProgress"),
+            AutoSnapshotStatus::NotFound => write!(f, "NotFound"),
+            AutoSnapshotStatus::Success => write!(f, "Success"),
+            AutoSnapshotStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

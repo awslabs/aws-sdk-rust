@@ -91,3 +91,11 @@ impl NetworkEapMethod {
         }
     }
 }
+impl ::std::fmt::Display for NetworkEapMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkEapMethod::EapTls => write!(f, "EAP_TLS"),
+            NetworkEapMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

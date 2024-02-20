@@ -96,3 +96,12 @@ impl ChangeStatus {
         }
     }
 }
+impl ::std::fmt::Display for ChangeStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeStatus::Insync => write!(f, "INSYNC"),
+            ChangeStatus::Pending => write!(f, "PENDING"),
+            ChangeStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

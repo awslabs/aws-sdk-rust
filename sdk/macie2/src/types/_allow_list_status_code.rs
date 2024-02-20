@@ -135,3 +135,18 @@ impl AllowListStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for AllowListStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllowListStatusCode::Ok => write!(f, "OK"),
+            AllowListStatusCode::S3ObjectAccessDenied => write!(f, "S3_OBJECT_ACCESS_DENIED"),
+            AllowListStatusCode::S3ObjectEmpty => write!(f, "S3_OBJECT_EMPTY"),
+            AllowListStatusCode::S3ObjectNotFound => write!(f, "S3_OBJECT_NOT_FOUND"),
+            AllowListStatusCode::S3ObjectOversize => write!(f, "S3_OBJECT_OVERSIZE"),
+            AllowListStatusCode::S3Throttled => write!(f, "S3_THROTTLED"),
+            AllowListStatusCode::S3UserAccessDenied => write!(f, "S3_USER_ACCESS_DENIED"),
+            AllowListStatusCode::UnknownError => write!(f, "UNKNOWN_ERROR"),
+            AllowListStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

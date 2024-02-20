@@ -96,3 +96,12 @@ impl StatisticalIssueStatus {
         }
     }
 }
+impl ::std::fmt::Display for StatisticalIssueStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatisticalIssueStatus::NoIssueDetected => write!(f, "NO_ISSUE_DETECTED"),
+            StatisticalIssueStatus::PotentialIssueDetected => write!(f, "POTENTIAL_ISSUE_DETECTED"),
+            StatisticalIssueStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

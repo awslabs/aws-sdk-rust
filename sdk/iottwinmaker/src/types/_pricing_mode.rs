@@ -101,3 +101,13 @@ impl PricingMode {
         }
     }
 }
+impl ::std::fmt::Display for PricingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PricingMode::Basic => write!(f, "BASIC"),
+            PricingMode::Standard => write!(f, "STANDARD"),
+            PricingMode::TieredBundle => write!(f, "TIERED_BUNDLE"),
+            PricingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

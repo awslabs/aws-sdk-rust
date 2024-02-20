@@ -106,3 +106,14 @@ impl Unit {
         }
     }
 }
+impl ::std::fmt::Display for Unit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Unit::Bits => write!(f, "BITS"),
+            Unit::Bytes => write!(f, "BYTES"),
+            Unit::Packets => write!(f, "PACKETS"),
+            Unit::Requests => write!(f, "REQUESTS"),
+            Unit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

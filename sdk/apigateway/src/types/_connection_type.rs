@@ -96,3 +96,12 @@ impl ConnectionType {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionType::Internet => write!(f, "INTERNET"),
+            ConnectionType::VpcLink => write!(f, "VPC_LINK"),
+            ConnectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl AttachmentState {
         }
     }
 }
+impl ::std::fmt::Display for AttachmentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttachmentState::Available => write!(f, "AVAILABLE"),
+            AttachmentState::Creating => write!(f, "CREATING"),
+            AttachmentState::Deleting => write!(f, "DELETING"),
+            AttachmentState::Failed => write!(f, "FAILED"),
+            AttachmentState::PendingAttachmentAcceptance => write!(f, "PENDING_ATTACHMENT_ACCEPTANCE"),
+            AttachmentState::PendingNetworkUpdate => write!(f, "PENDING_NETWORK_UPDATE"),
+            AttachmentState::PendingTagAcceptance => write!(f, "PENDING_TAG_ACCEPTANCE"),
+            AttachmentState::Rejected => write!(f, "REJECTED"),
+            AttachmentState::Updating => write!(f, "UPDATING"),
+            AttachmentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

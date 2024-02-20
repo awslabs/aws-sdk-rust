@@ -101,3 +101,13 @@ impl ComparisonOperator {
         }
     }
 }
+impl ::std::fmt::Display for ComparisonOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComparisonOperator::Equals => write!(f, "EQUALS"),
+            ComparisonOperator::NotEquals => write!(f, "NOT_EQUALS"),
+            ComparisonOperator::StartsWith => write!(f, "STARTS_WITH"),
+            ComparisonOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

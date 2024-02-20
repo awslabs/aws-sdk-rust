@@ -96,3 +96,12 @@ impl TextType {
         }
     }
 }
+impl ::std::fmt::Display for TextType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TextType::Ssml => write!(f, "ssml"),
+            TextType::Text => write!(f, "text"),
+            TextType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

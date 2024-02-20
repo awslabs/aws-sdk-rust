@@ -106,3 +106,14 @@ impl Ec2InstanceSortBy {
         }
     }
 }
+impl ::std::fmt::Display for Ec2InstanceSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ec2InstanceSortBy::All => write!(f, "ALL"),
+            Ec2InstanceSortBy::Critical => write!(f, "CRITICAL"),
+            Ec2InstanceSortBy::High => write!(f, "HIGH"),
+            Ec2InstanceSortBy::NetworkFindings => write!(f, "NETWORK_FINDINGS"),
+            Ec2InstanceSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

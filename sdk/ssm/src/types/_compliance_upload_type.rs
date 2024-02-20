@@ -96,3 +96,12 @@ impl ComplianceUploadType {
         }
     }
 }
+impl ::std::fmt::Display for ComplianceUploadType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComplianceUploadType::Complete => write!(f, "COMPLETE"),
+            ComplianceUploadType::Partial => write!(f, "PARTIAL"),
+            ComplianceUploadType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl PackageImportJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for PackageImportJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageImportJobStatus::Failed => write!(f, "FAILED"),
+            PackageImportJobStatus::Pending => write!(f, "PENDING"),
+            PackageImportJobStatus::Succeeded => write!(f, "SUCCEEDED"),
+            PackageImportJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

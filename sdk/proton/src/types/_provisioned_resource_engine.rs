@@ -96,3 +96,12 @@ impl ProvisionedResourceEngine {
         }
     }
 }
+impl ::std::fmt::Display for ProvisionedResourceEngine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProvisionedResourceEngine::Cloudformation => write!(f, "CLOUDFORMATION"),
+            ProvisionedResourceEngine::Terraform => write!(f, "TERRAFORM"),
+            ProvisionedResourceEngine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

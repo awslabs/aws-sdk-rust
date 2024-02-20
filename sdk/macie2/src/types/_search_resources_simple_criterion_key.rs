@@ -111,3 +111,14 @@ impl SearchResourcesSimpleCriterionKey {
         }
     }
 }
+impl ::std::fmt::Display for SearchResourcesSimpleCriterionKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchResourcesSimpleCriterionKey::AccountId => write!(f, "ACCOUNT_ID"),
+            SearchResourcesSimpleCriterionKey::S3BucketEffectivePermission => write!(f, "S3_BUCKET_EFFECTIVE_PERMISSION"),
+            SearchResourcesSimpleCriterionKey::S3BucketName => write!(f, "S3_BUCKET_NAME"),
+            SearchResourcesSimpleCriterionKey::S3BucketSharedAccess => write!(f, "S3_BUCKET_SHARED_ACCESS"),
+            SearchResourcesSimpleCriterionKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -117,3 +117,15 @@ impl AacCodingMode {
         }
     }
 }
+impl ::std::fmt::Display for AacCodingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AacCodingMode::AdReceiverMix => write!(f, "AD_RECEIVER_MIX"),
+            AacCodingMode::CodingMode10 => write!(f, "CODING_MODE_1_0"),
+            AacCodingMode::CodingMode11 => write!(f, "CODING_MODE_1_1"),
+            AacCodingMode::CodingMode20 => write!(f, "CODING_MODE_2_0"),
+            AacCodingMode::CodingMode51 => write!(f, "CODING_MODE_5_1"),
+            AacCodingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

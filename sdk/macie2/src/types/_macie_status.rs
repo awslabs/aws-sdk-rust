@@ -96,3 +96,12 @@ impl MacieStatus {
         }
     }
 }
+impl ::std::fmt::Display for MacieStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MacieStatus::Enabled => write!(f, "ENABLED"),
+            MacieStatus::Paused => write!(f, "PAUSED"),
+            MacieStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

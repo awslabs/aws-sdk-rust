@@ -106,3 +106,14 @@ impl ActivityStreamStatus {
         }
     }
 }
+impl ::std::fmt::Display for ActivityStreamStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActivityStreamStatus::Started => write!(f, "started"),
+            ActivityStreamStatus::Starting => write!(f, "starting"),
+            ActivityStreamStatus::Stopped => write!(f, "stopped"),
+            ActivityStreamStatus::Stopping => write!(f, "stopping"),
+            ActivityStreamStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

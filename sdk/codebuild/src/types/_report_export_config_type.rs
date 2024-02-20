@@ -96,3 +96,12 @@ impl ReportExportConfigType {
         }
     }
 }
+impl ::std::fmt::Display for ReportExportConfigType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportExportConfigType::NoExport => write!(f, "NO_EXPORT"),
+            ReportExportConfigType::S3 => write!(f, "S3"),
+            ReportExportConfigType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl InstanceOnboardingJobStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for InstanceOnboardingJobStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceOnboardingJobStatusCode::Failed => write!(f, "FAILED"),
+            InstanceOnboardingJobStatusCode::InProgress => write!(f, "IN_PROGRESS"),
+            InstanceOnboardingJobStatusCode::Succeeded => write!(f, "SUCCEEDED"),
+            InstanceOnboardingJobStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

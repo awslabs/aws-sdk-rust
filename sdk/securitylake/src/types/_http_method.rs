@@ -96,3 +96,12 @@ impl HttpMethod {
         }
     }
 }
+impl ::std::fmt::Display for HttpMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HttpMethod::Post => write!(f, "POST"),
+            HttpMethod::Put => write!(f, "PUT"),
+            HttpMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

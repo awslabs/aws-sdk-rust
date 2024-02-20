@@ -111,3 +111,15 @@ impl TrialComponentPrimaryStatus {
         }
     }
 }
+impl ::std::fmt::Display for TrialComponentPrimaryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrialComponentPrimaryStatus::Completed => write!(f, "Completed"),
+            TrialComponentPrimaryStatus::Failed => write!(f, "Failed"),
+            TrialComponentPrimaryStatus::InProgress => write!(f, "InProgress"),
+            TrialComponentPrimaryStatus::Stopped => write!(f, "Stopped"),
+            TrialComponentPrimaryStatus::Stopping => write!(f, "Stopping"),
+            TrialComponentPrimaryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

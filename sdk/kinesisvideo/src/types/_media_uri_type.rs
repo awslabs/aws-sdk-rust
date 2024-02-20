@@ -96,3 +96,12 @@ impl MediaUriType {
         }
     }
 }
+impl ::std::fmt::Display for MediaUriType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaUriType::FileUri => write!(f, "FILE_URI"),
+            MediaUriType::RtspUri => write!(f, "RTSP_URI"),
+            MediaUriType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

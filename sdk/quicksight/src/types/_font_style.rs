@@ -96,3 +96,12 @@ impl FontStyle {
         }
     }
 }
+impl ::std::fmt::Display for FontStyle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FontStyle::Italic => write!(f, "ITALIC"),
+            FontStyle::Normal => write!(f, "NORMAL"),
+            FontStyle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

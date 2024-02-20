@@ -96,3 +96,12 @@ impl CopyProtectionAction {
         }
     }
 }
+impl ::std::fmt::Display for CopyProtectionAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CopyProtectionAction::Passthrough => write!(f, "PASSTHROUGH"),
+            CopyProtectionAction::Strip => write!(f, "STRIP"),
+            CopyProtectionAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

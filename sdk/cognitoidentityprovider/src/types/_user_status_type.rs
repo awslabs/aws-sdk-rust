@@ -129,3 +129,17 @@ impl UserStatusType {
         }
     }
 }
+impl ::std::fmt::Display for UserStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserStatusType::Archived => write!(f, "ARCHIVED"),
+            UserStatusType::Compromised => write!(f, "COMPROMISED"),
+            UserStatusType::Confirmed => write!(f, "CONFIRMED"),
+            UserStatusType::ForceChangePassword => write!(f, "FORCE_CHANGE_PASSWORD"),
+            UserStatusType::ResetRequired => write!(f, "RESET_REQUIRED"),
+            UserStatusType::Unconfirmed => write!(f, "UNCONFIRMED"),
+            UserStatusType::UnknownValue => write!(f, "UNKNOWN"),
+            UserStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

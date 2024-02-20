@@ -96,3 +96,12 @@ impl VolumeType {
         }
     }
 }
+impl ::std::fmt::Display for VolumeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeType::Ontap => write!(f, "ONTAP"),
+            VolumeType::Openzfs => write!(f, "OPENZFS"),
+            VolumeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

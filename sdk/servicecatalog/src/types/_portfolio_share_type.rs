@@ -101,3 +101,13 @@ impl PortfolioShareType {
         }
     }
 }
+impl ::std::fmt::Display for PortfolioShareType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PortfolioShareType::AwsOrganizations => write!(f, "AWS_ORGANIZATIONS"),
+            PortfolioShareType::AwsServicecatalog => write!(f, "AWS_SERVICECATALOG"),
+            PortfolioShareType::Imported => write!(f, "IMPORTED"),
+            PortfolioShareType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl NsdOnboardingState {
         }
     }
 }
+impl ::std::fmt::Display for NsdOnboardingState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NsdOnboardingState::Created => write!(f, "CREATED"),
+            NsdOnboardingState::Error => write!(f, "ERROR"),
+            NsdOnboardingState::Onboarded => write!(f, "ONBOARDED"),
+            NsdOnboardingState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

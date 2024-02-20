@@ -129,3 +129,17 @@ impl EnvironmentType {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentType::ArmContainer => write!(f, "ARM_CONTAINER"),
+            EnvironmentType::ArmLambdaContainer => write!(f, "ARM_LAMBDA_CONTAINER"),
+            EnvironmentType::LinuxContainer => write!(f, "LINUX_CONTAINER"),
+            EnvironmentType::LinuxGpuContainer => write!(f, "LINUX_GPU_CONTAINER"),
+            EnvironmentType::LinuxLambdaContainer => write!(f, "LINUX_LAMBDA_CONTAINER"),
+            EnvironmentType::WindowsContainer => write!(f, "WINDOWS_CONTAINER"),
+            EnvironmentType::WindowsServer2019Container => write!(f, "WINDOWS_SERVER_2019_CONTAINER"),
+            EnvironmentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

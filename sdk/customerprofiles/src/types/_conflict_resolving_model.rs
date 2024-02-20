@@ -96,3 +96,12 @@ impl ConflictResolvingModel {
         }
     }
 }
+impl ::std::fmt::Display for ConflictResolvingModel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConflictResolvingModel::Recency => write!(f, "RECENCY"),
+            ConflictResolvingModel::Source => write!(f, "SOURCE"),
+            ConflictResolvingModel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl NotificationType {
         }
     }
 }
+impl ::std::fmt::Display for NotificationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationType::LensVersionDeprecated => write!(f, "LENS_VERSION_DEPRECATED"),
+            NotificationType::LensVersionUpgraded => write!(f, "LENS_VERSION_UPGRADED"),
+            NotificationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

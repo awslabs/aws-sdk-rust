@@ -101,3 +101,13 @@ impl LandingZoneOperationStatus {
         }
     }
 }
+impl ::std::fmt::Display for LandingZoneOperationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LandingZoneOperationStatus::Failed => write!(f, "FAILED"),
+            LandingZoneOperationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            LandingZoneOperationStatus::Succeeded => write!(f, "SUCCEEDED"),
+            LandingZoneOperationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl FileFormat {
         }
     }
 }
+impl ::std::fmt::Display for FileFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileFormat::Clf => write!(f, "CLF"),
+            FileFormat::Csv => write!(f, "CSV"),
+            FileFormat::Elf => write!(f, "ELF"),
+            FileFormat::Json => write!(f, "JSON"),
+            FileFormat::Tsv => write!(f, "TSV"),
+            FileFormat::Xlsx => write!(f, "XLSX"),
+            FileFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

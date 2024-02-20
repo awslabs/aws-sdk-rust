@@ -96,3 +96,12 @@ impl InvokeMode {
         }
     }
 }
+impl ::std::fmt::Display for InvokeMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InvokeMode::Buffered => write!(f, "BUFFERED"),
+            InvokeMode::ResponseStream => write!(f, "RESPONSE_STREAM"),
+            InvokeMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

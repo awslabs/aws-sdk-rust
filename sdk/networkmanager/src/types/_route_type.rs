@@ -96,3 +96,12 @@ impl RouteType {
         }
     }
 }
+impl ::std::fmt::Display for RouteType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteType::Propagated => write!(f, "PROPAGATED"),
+            RouteType::Static => write!(f, "STATIC"),
+            RouteType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

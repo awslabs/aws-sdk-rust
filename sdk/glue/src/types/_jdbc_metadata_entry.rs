@@ -96,3 +96,12 @@ impl JdbcMetadataEntry {
         }
     }
 }
+impl ::std::fmt::Display for JdbcMetadataEntry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JdbcMetadataEntry::Comments => write!(f, "COMMENTS"),
+            JdbcMetadataEntry::Rawtypes => write!(f, "RAWTYPES"),
+            JdbcMetadataEntry::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

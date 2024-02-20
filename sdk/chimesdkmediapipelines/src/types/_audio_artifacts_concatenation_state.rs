@@ -91,3 +91,11 @@ impl AudioArtifactsConcatenationState {
         }
     }
 }
+impl ::std::fmt::Display for AudioArtifactsConcatenationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioArtifactsConcatenationState::Enabled => write!(f, "Enabled"),
+            AudioArtifactsConcatenationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

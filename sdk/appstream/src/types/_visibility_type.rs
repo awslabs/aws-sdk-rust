@@ -101,3 +101,13 @@ impl VisibilityType {
         }
     }
 }
+impl ::std::fmt::Display for VisibilityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VisibilityType::Private => write!(f, "PRIVATE"),
+            VisibilityType::Public => write!(f, "PUBLIC"),
+            VisibilityType::Shared => write!(f, "SHARED"),
+            VisibilityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

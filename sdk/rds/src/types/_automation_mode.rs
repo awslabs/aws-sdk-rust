@@ -96,3 +96,12 @@ impl AutomationMode {
         }
     }
 }
+impl ::std::fmt::Display for AutomationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutomationMode::AllPaused => write!(f, "all-paused"),
+            AutomationMode::Full => write!(f, "full"),
+            AutomationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

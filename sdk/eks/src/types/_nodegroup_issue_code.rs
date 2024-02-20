@@ -285,3 +285,43 @@ impl NodegroupIssueCode {
         }
     }
 }
+impl ::std::fmt::Display for NodegroupIssueCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodegroupIssueCode::AccessDenied => write!(f, "AccessDenied"),
+            NodegroupIssueCode::AmiIdNotFound => write!(f, "AmiIdNotFound"),
+            NodegroupIssueCode::AsgInstanceLaunchFailures => write!(f, "AsgInstanceLaunchFailures"),
+            NodegroupIssueCode::AutoScalingGroupInstanceRefreshActive => write!(f, "AutoScalingGroupInstanceRefreshActive"),
+            NodegroupIssueCode::AutoScalingGroupInvalidConfiguration => write!(f, "AutoScalingGroupInvalidConfiguration"),
+            NodegroupIssueCode::AutoScalingGroupNotFound => write!(f, "AutoScalingGroupNotFound"),
+            NodegroupIssueCode::AutoScalingGroupOptInRequired => write!(f, "AutoScalingGroupOptInRequired"),
+            NodegroupIssueCode::AutoScalingGroupRateLimitExceeded => write!(f, "AutoScalingGroupRateLimitExceeded"),
+            NodegroupIssueCode::ClusterUnreachable => write!(f, "ClusterUnreachable"),
+            NodegroupIssueCode::Ec2LaunchTemplateDeletionFailure => write!(f, "Ec2LaunchTemplateDeletionFailure"),
+            NodegroupIssueCode::Ec2LaunchTemplateInvalidConfiguration => write!(f, "Ec2LaunchTemplateInvalidConfiguration"),
+            NodegroupIssueCode::Ec2LaunchTemplateMaxLimitExceeded => write!(f, "Ec2LaunchTemplateMaxLimitExceeded"),
+            NodegroupIssueCode::Ec2LaunchTemplateNotFound => write!(f, "Ec2LaunchTemplateNotFound"),
+            NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => write!(f, "Ec2LaunchTemplateVersionMismatch"),
+            NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => write!(f, "Ec2SecurityGroupDeletionFailure"),
+            NodegroupIssueCode::Ec2SecurityGroupNotFound => write!(f, "Ec2SecurityGroupNotFound"),
+            NodegroupIssueCode::Ec2SubnetInvalidConfiguration => write!(f, "Ec2SubnetInvalidConfiguration"),
+            NodegroupIssueCode::Ec2SubnetListTooLong => write!(f, "Ec2SubnetListTooLong"),
+            NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment => write!(f, "Ec2SubnetMissingIpv6Assignment"),
+            NodegroupIssueCode::Ec2SubnetNotFound => write!(f, "Ec2SubnetNotFound"),
+            NodegroupIssueCode::IamInstanceProfileNotFound => write!(f, "IamInstanceProfileNotFound"),
+            NodegroupIssueCode::IamLimitExceeded => write!(f, "IamLimitExceeded"),
+            NodegroupIssueCode::IamNodeRoleNotFound => write!(f, "IamNodeRoleNotFound"),
+            NodegroupIssueCode::IamThrottling => write!(f, "IamThrottling"),
+            NodegroupIssueCode::InstanceLimitExceeded => write!(f, "InstanceLimitExceeded"),
+            NodegroupIssueCode::InsufficientFreeAddresses => write!(f, "InsufficientFreeAddresses"),
+            NodegroupIssueCode::InternalFailure => write!(f, "InternalFailure"),
+            NodegroupIssueCode::LimitExceeded => write!(f, "LimitExceeded"),
+            NodegroupIssueCode::NodeCreationFailure => write!(f, "NodeCreationFailure"),
+            NodegroupIssueCode::NodeTerminationFailure => write!(f, "NodeTerminationFailure"),
+            NodegroupIssueCode::PodEvictionFailure => write!(f, "PodEvictionFailure"),
+            NodegroupIssueCode::SourceEc2LaunchTemplateNotFound => write!(f, "SourceEc2LaunchTemplateNotFound"),
+            NodegroupIssueCode::UnknownValue => write!(f, "Unknown"),
+            NodegroupIssueCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

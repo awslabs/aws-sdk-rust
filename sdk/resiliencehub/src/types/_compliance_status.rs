@@ -96,3 +96,12 @@ impl ComplianceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ComplianceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComplianceStatus::PolicyBreached => write!(f, "PolicyBreached"),
+            ComplianceStatus::PolicyMet => write!(f, "PolicyMet"),
+            ComplianceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ServiceName {
         }
     }
 }
+impl ::std::fmt::Display for ServiceName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceName::EksAnywhere => write!(f, "EKS_ANYWHERE"),
+            ServiceName::Kubernetes => write!(f, "KUBERNETES"),
+            ServiceName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -157,3 +157,25 @@ impl RouteAnalysisCompletionReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for RouteAnalysisCompletionReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteAnalysisCompletionReasonCode::BlackholeRouteForDestinationFound => write!(f, "BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND"),
+            RouteAnalysisCompletionReasonCode::CyclicPathDetected => write!(f, "CYCLIC_PATH_DETECTED"),
+            RouteAnalysisCompletionReasonCode::InactiveRouteForDestinationFound => write!(f, "INACTIVE_ROUTE_FOR_DESTINATION_FOUND"),
+            RouteAnalysisCompletionReasonCode::MaxHopsExceeded => write!(f, "MAX_HOPS_EXCEEDED"),
+            RouteAnalysisCompletionReasonCode::NoDestinationArnProvided => write!(f, "NO_DESTINATION_ARN_PROVIDED"),
+            RouteAnalysisCompletionReasonCode::PossibleMiddlebox => write!(f, "POSSIBLE_MIDDLEBOX"),
+            RouteAnalysisCompletionReasonCode::RouteNotFound => write!(f, "ROUTE_NOT_FOUND"),
+            RouteAnalysisCompletionReasonCode::TransitGatewayAttachment => write!(f, "TRANSIT_GATEWAY_ATTACHMENT_ATTACH_ARN_NO_MATCH"),
+            RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotFound => write!(f, "TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND"),
+            RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentNotInTransitGateway => {
+                write!(f, "TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY")
+            }
+            RouteAnalysisCompletionReasonCode::TransitGatewayAttachmentStableRouteTableNotFound => {
+                write!(f, "TRANSIT_GATEWAY_ATTACHMENT_STABLE_ROUTE_TABLE_NOT_FOUND")
+            }
+            RouteAnalysisCompletionReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

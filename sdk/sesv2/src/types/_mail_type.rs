@@ -96,3 +96,12 @@ impl MailType {
         }
     }
 }
+impl ::std::fmt::Display for MailType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MailType::Marketing => write!(f, "MARKETING"),
+            MailType::Transactional => write!(f, "TRANSACTIONAL"),
+            MailType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

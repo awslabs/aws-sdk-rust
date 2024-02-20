@@ -91,3 +91,11 @@ impl Format {
         }
     }
 }
+impl ::std::fmt::Display for Format {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Format::UrlEncoded => write!(f, "URLEncoded"),
+            Format::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

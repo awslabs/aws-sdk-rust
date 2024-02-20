@@ -165,3 +165,23 @@ impl ScalingActivityStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ScalingActivityStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalingActivityStatusCode::Cancelled => write!(f, "Cancelled"),
+            ScalingActivityStatusCode::Failed => write!(f, "Failed"),
+            ScalingActivityStatusCode::InProgress => write!(f, "InProgress"),
+            ScalingActivityStatusCode::MidLifecycleAction => write!(f, "MidLifecycleAction"),
+            ScalingActivityStatusCode::PendingSpotBidPlacement => write!(f, "PendingSpotBidPlacement"),
+            ScalingActivityStatusCode::PreInService => write!(f, "PreInService"),
+            ScalingActivityStatusCode::Successful => write!(f, "Successful"),
+            ScalingActivityStatusCode::WaitingForConnectionDraining => write!(f, "WaitingForConnectionDraining"),
+            ScalingActivityStatusCode::WaitingForElbConnectionDraining => write!(f, "WaitingForELBConnectionDraining"),
+            ScalingActivityStatusCode::WaitingForInstanceId => write!(f, "WaitingForInstanceId"),
+            ScalingActivityStatusCode::WaitingForInstanceWarmup => write!(f, "WaitingForInstanceWarmup"),
+            ScalingActivityStatusCode::WaitingForSpotInstanceId => write!(f, "WaitingForSpotInstanceId"),
+            ScalingActivityStatusCode::WaitingForSpotInstanceRequestId => write!(f, "WaitingForSpotInstanceRequestId"),
+            ScalingActivityStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

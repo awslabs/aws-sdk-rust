@@ -129,3 +129,17 @@ impl TechnicalCueType {
         }
     }
 }
+impl ::std::fmt::Display for TechnicalCueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TechnicalCueType::BlackFrames => write!(f, "BlackFrames"),
+            TechnicalCueType::ColorBars => write!(f, "ColorBars"),
+            TechnicalCueType::Content => write!(f, "Content"),
+            TechnicalCueType::EndCredits => write!(f, "EndCredits"),
+            TechnicalCueType::OpeningCredits => write!(f, "OpeningCredits"),
+            TechnicalCueType::Slate => write!(f, "Slate"),
+            TechnicalCueType::StudioLogo => write!(f, "StudioLogo"),
+            TechnicalCueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

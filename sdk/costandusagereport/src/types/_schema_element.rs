@@ -101,3 +101,13 @@ impl SchemaElement {
         }
     }
 }
+impl ::std::fmt::Display for SchemaElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SchemaElement::ManualDiscountCompatibility => write!(f, "MANUAL_DISCOUNT_COMPATIBILITY"),
+            SchemaElement::Resources => write!(f, "RESOURCES"),
+            SchemaElement::SplitCostAllocationData => write!(f, "SPLIT_COST_ALLOCATION_DATA"),
+            SchemaElement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

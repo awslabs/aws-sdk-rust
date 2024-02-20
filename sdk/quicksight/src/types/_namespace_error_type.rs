@@ -96,3 +96,12 @@ impl NamespaceErrorType {
         }
     }
 }
+impl ::std::fmt::Display for NamespaceErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NamespaceErrorType::InternalServiceError => write!(f, "INTERNAL_SERVICE_ERROR"),
+            NamespaceErrorType::PermissionDenied => write!(f, "PERMISSION_DENIED"),
+            NamespaceErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

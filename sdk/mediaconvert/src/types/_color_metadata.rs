@@ -96,3 +96,12 @@ impl ColorMetadata {
         }
     }
 }
+impl ::std::fmt::Display for ColorMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColorMetadata::Ignore => write!(f, "IGNORE"),
+            ColorMetadata::Insert => write!(f, "INSERT"),
+            ColorMetadata::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

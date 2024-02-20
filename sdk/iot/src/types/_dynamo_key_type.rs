@@ -96,3 +96,12 @@ impl DynamoKeyType {
         }
     }
 }
+impl ::std::fmt::Display for DynamoKeyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DynamoKeyType::Number => write!(f, "NUMBER"),
+            DynamoKeyType::String => write!(f, "STRING"),
+            DynamoKeyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

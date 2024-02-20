@@ -101,3 +101,13 @@ impl TlsSessionResumptionMode {
         }
     }
 }
+impl ::std::fmt::Display for TlsSessionResumptionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TlsSessionResumptionMode::Disabled => write!(f, "DISABLED"),
+            TlsSessionResumptionMode::Enabled => write!(f, "ENABLED"),
+            TlsSessionResumptionMode::Enforced => write!(f, "ENFORCED"),
+            TlsSessionResumptionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

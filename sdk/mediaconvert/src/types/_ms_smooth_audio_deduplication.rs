@@ -96,3 +96,12 @@ impl MsSmoothAudioDeduplication {
         }
     }
 }
+impl ::std::fmt::Display for MsSmoothAudioDeduplication {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MsSmoothAudioDeduplication::CombineDuplicateStreams => write!(f, "COMBINE_DUPLICATE_STREAMS"),
+            MsSmoothAudioDeduplication::None => write!(f, "NONE"),
+            MsSmoothAudioDeduplication::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ModelVersionSourceType {
         }
     }
 }
+impl ::std::fmt::Display for ModelVersionSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelVersionSourceType::Import => write!(f, "IMPORT"),
+            ModelVersionSourceType::Retraining => write!(f, "RETRAINING"),
+            ModelVersionSourceType::Training => write!(f, "TRAINING"),
+            ModelVersionSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

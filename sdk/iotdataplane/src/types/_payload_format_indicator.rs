@@ -96,3 +96,12 @@ impl PayloadFormatIndicator {
         }
     }
 }
+impl ::std::fmt::Display for PayloadFormatIndicator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PayloadFormatIndicator::UnspecifiedBytes => write!(f, "UNSPECIFIED_BYTES"),
+            PayloadFormatIndicator::Utf8Data => write!(f, "UTF8_DATA"),
+            PayloadFormatIndicator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

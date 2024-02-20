@@ -116,3 +116,16 @@ impl ActionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ActionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionStatus::Completed => write!(f, "Completed"),
+            ActionStatus::Failed => write!(f, "Failed"),
+            ActionStatus::InProgress => write!(f, "InProgress"),
+            ActionStatus::Stopped => write!(f, "Stopped"),
+            ActionStatus::Stopping => write!(f, "Stopping"),
+            ActionStatus::UnknownValue => write!(f, "Unknown"),
+            ActionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

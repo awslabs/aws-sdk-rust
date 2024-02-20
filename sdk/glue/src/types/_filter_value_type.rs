@@ -96,3 +96,12 @@ impl FilterValueType {
         }
     }
 }
+impl ::std::fmt::Display for FilterValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterValueType::Columnextracted => write!(f, "COLUMNEXTRACTED"),
+            FilterValueType::Constant => write!(f, "CONSTANT"),
+            FilterValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

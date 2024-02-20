@@ -96,3 +96,12 @@ impl SlotTypeFilterName {
         }
     }
 }
+impl ::std::fmt::Display for SlotTypeFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlotTypeFilterName::ExternalSourceType => write!(f, "ExternalSourceType"),
+            SlotTypeFilterName::SlotTypeName => write!(f, "SlotTypeName"),
+            SlotTypeFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

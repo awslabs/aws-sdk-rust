@@ -96,3 +96,12 @@ impl MpdManifestMetadataSignaling {
         }
     }
 }
+impl ::std::fmt::Display for MpdManifestMetadataSignaling {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MpdManifestMetadataSignaling::Disabled => write!(f, "DISABLED"),
+            MpdManifestMetadataSignaling::Enabled => write!(f, "ENABLED"),
+            MpdManifestMetadataSignaling::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

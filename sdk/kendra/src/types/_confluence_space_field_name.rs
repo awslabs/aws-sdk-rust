@@ -106,3 +106,14 @@ impl ConfluenceSpaceFieldName {
         }
     }
 }
+impl ::std::fmt::Display for ConfluenceSpaceFieldName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfluenceSpaceFieldName::DisplayUrl => write!(f, "DISPLAY_URL"),
+            ConfluenceSpaceFieldName::ItemType => write!(f, "ITEM_TYPE"),
+            ConfluenceSpaceFieldName::SpaceKey => write!(f, "SPACE_KEY"),
+            ConfluenceSpaceFieldName::Url => write!(f, "URL"),
+            ConfluenceSpaceFieldName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

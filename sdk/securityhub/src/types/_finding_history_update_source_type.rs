@@ -96,3 +96,12 @@ impl FindingHistoryUpdateSourceType {
         }
     }
 }
+impl ::std::fmt::Display for FindingHistoryUpdateSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingHistoryUpdateSourceType::BatchImportFindings => write!(f, "BATCH_IMPORT_FINDINGS"),
+            FindingHistoryUpdateSourceType::BatchUpdateFindings => write!(f, "BATCH_UPDATE_FINDINGS"),
+            FindingHistoryUpdateSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

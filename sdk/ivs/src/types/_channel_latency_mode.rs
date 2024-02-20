@@ -96,3 +96,12 @@ impl ChannelLatencyMode {
         }
     }
 }
+impl ::std::fmt::Display for ChannelLatencyMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelLatencyMode::LowLatency => write!(f, "LOW"),
+            ChannelLatencyMode::NormalLatency => write!(f, "NORMAL"),
+            ChannelLatencyMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

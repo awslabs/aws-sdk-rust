@@ -96,3 +96,12 @@ impl SortPipelineExecutionsBy {
         }
     }
 }
+impl ::std::fmt::Display for SortPipelineExecutionsBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortPipelineExecutionsBy::CreationTime => write!(f, "CreationTime"),
+            SortPipelineExecutionsBy::PipelineExecutionArn => write!(f, "PipelineExecutionArn"),
+            SortPipelineExecutionsBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

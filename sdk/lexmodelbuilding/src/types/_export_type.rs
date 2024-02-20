@@ -96,3 +96,12 @@ impl ExportType {
         }
     }
 }
+impl ::std::fmt::Display for ExportType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportType::AlexaSkillsKit => write!(f, "ALEXA_SKILLS_KIT"),
+            ExportType::Lex => write!(f, "LEX"),
+            ExportType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

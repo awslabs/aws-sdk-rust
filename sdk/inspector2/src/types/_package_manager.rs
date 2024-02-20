@@ -189,3 +189,27 @@ impl PackageManager {
         }
     }
 }
+impl ::std::fmt::Display for PackageManager {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageManager::Bundler => write!(f, "BUNDLER"),
+            PackageManager::Cargo => write!(f, "CARGO"),
+            PackageManager::Composer => write!(f, "COMPOSER"),
+            PackageManager::Gemspec => write!(f, "GEMSPEC"),
+            PackageManager::Gobinary => write!(f, "GOBINARY"),
+            PackageManager::Gomod => write!(f, "GOMOD"),
+            PackageManager::Jar => write!(f, "JAR"),
+            PackageManager::Nodepkg => write!(f, "NODEPKG"),
+            PackageManager::Npm => write!(f, "NPM"),
+            PackageManager::Nuget => write!(f, "NUGET"),
+            PackageManager::Os => write!(f, "OS"),
+            PackageManager::Pip => write!(f, "PIP"),
+            PackageManager::Pipenv => write!(f, "PIPENV"),
+            PackageManager::Poetry => write!(f, "POETRY"),
+            PackageManager::Pom => write!(f, "POM"),
+            PackageManager::Pythonpkg => write!(f, "PYTHONPKG"),
+            PackageManager::Yarn => write!(f, "YARN"),
+            PackageManager::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

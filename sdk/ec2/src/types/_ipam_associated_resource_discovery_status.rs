@@ -96,3 +96,12 @@ impl IpamAssociatedResourceDiscoveryStatus {
         }
     }
 }
+impl ::std::fmt::Display for IpamAssociatedResourceDiscoveryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamAssociatedResourceDiscoveryStatus::Active => write!(f, "active"),
+            IpamAssociatedResourceDiscoveryStatus::NotFound => write!(f, "not-found"),
+            IpamAssociatedResourceDiscoveryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

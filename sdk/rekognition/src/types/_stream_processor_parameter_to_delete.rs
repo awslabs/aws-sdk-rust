@@ -96,3 +96,12 @@ impl StreamProcessorParameterToDelete {
         }
     }
 }
+impl ::std::fmt::Display for StreamProcessorParameterToDelete {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamProcessorParameterToDelete::ConnectedHomeMinConfidence => write!(f, "ConnectedHomeMinConfidence"),
+            StreamProcessorParameterToDelete::RegionsOfInterest => write!(f, "RegionsOfInterest"),
+            StreamProcessorParameterToDelete::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

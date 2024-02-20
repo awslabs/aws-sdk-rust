@@ -101,3 +101,13 @@ impl IssueSubEntity {
         }
     }
 }
+impl ::std::fmt::Display for IssueSubEntity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IssueSubEntity::Attachments => write!(f, "ATTACHMENTS"),
+            IssueSubEntity::Comments => write!(f, "COMMENTS"),
+            IssueSubEntity::Worklogs => write!(f, "WORKLOGS"),
+            IssueSubEntity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

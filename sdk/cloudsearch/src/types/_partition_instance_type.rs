@@ -189,3 +189,27 @@ impl PartitionInstanceType {
         }
     }
 }
+impl ::std::fmt::Display for PartitionInstanceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PartitionInstanceType::Search2xlarge => write!(f, "search.2xlarge"),
+            PartitionInstanceType::SearchLarge => write!(f, "search.large"),
+            PartitionInstanceType::SearchM1Large => write!(f, "search.m1.large"),
+            PartitionInstanceType::SearchM1Small => write!(f, "search.m1.small"),
+            PartitionInstanceType::SearchM22xlarge => write!(f, "search.m2.2xlarge"),
+            PartitionInstanceType::SearchM2Xlarge => write!(f, "search.m2.xlarge"),
+            PartitionInstanceType::SearchM32xlarge => write!(f, "search.m3.2xlarge"),
+            PartitionInstanceType::SearchM3Large => write!(f, "search.m3.large"),
+            PartitionInstanceType::SearchM3Medium => write!(f, "search.m3.medium"),
+            PartitionInstanceType::SearchM3Xlarge => write!(f, "search.m3.xlarge"),
+            PartitionInstanceType::SearchMedium => write!(f, "search.medium"),
+            PartitionInstanceType::SearchPreviousgeneration2xlarge => write!(f, "search.previousgeneration.2xlarge"),
+            PartitionInstanceType::SearchPreviousgenerationLarge => write!(f, "search.previousgeneration.large"),
+            PartitionInstanceType::SearchPreviousgenerationSmall => write!(f, "search.previousgeneration.small"),
+            PartitionInstanceType::SearchPreviousgenerationXlarge => write!(f, "search.previousgeneration.xlarge"),
+            PartitionInstanceType::SearchSmall => write!(f, "search.small"),
+            PartitionInstanceType::SearchXlarge => write!(f, "search.xlarge"),
+            PartitionInstanceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

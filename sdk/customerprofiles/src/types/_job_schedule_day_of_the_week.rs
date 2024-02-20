@@ -121,3 +121,17 @@ impl JobScheduleDayOfTheWeek {
         }
     }
 }
+impl ::std::fmt::Display for JobScheduleDayOfTheWeek {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobScheduleDayOfTheWeek::Friday => write!(f, "FRIDAY"),
+            JobScheduleDayOfTheWeek::Monday => write!(f, "MONDAY"),
+            JobScheduleDayOfTheWeek::Saturday => write!(f, "SATURDAY"),
+            JobScheduleDayOfTheWeek::Sunday => write!(f, "SUNDAY"),
+            JobScheduleDayOfTheWeek::Thursday => write!(f, "THURSDAY"),
+            JobScheduleDayOfTheWeek::Tuesday => write!(f, "TUESDAY"),
+            JobScheduleDayOfTheWeek::Wednesday => write!(f, "WEDNESDAY"),
+            JobScheduleDayOfTheWeek::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl HsmState {
         }
     }
 }
+impl ::std::fmt::Display for HsmState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HsmState::Active => write!(f, "ACTIVE"),
+            HsmState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            HsmState::Degraded => write!(f, "DEGRADED"),
+            HsmState::Deleted => write!(f, "DELETED"),
+            HsmState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            HsmState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

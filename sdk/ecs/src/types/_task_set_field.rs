@@ -91,3 +91,11 @@ impl TaskSetField {
         }
     }
 }
+impl ::std::fmt::Display for TaskSetField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskSetField::Tags => write!(f, "TAGS"),
+            TaskSetField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

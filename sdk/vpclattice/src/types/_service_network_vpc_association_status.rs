@@ -129,3 +129,17 @@ impl ServiceNetworkVpcAssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServiceNetworkVpcAssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceNetworkVpcAssociationStatus::Active => write!(f, "ACTIVE"),
+            ServiceNetworkVpcAssociationStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            ServiceNetworkVpcAssociationStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            ServiceNetworkVpcAssociationStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ServiceNetworkVpcAssociationStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ServiceNetworkVpcAssociationStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ServiceNetworkVpcAssociationStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            ServiceNetworkVpcAssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

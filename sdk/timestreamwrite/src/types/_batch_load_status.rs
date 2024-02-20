@@ -116,3 +116,16 @@ impl BatchLoadStatus {
         }
     }
 }
+impl ::std::fmt::Display for BatchLoadStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchLoadStatus::Created => write!(f, "CREATED"),
+            BatchLoadStatus::Failed => write!(f, "FAILED"),
+            BatchLoadStatus::InProgress => write!(f, "IN_PROGRESS"),
+            BatchLoadStatus::PendingResume => write!(f, "PENDING_RESUME"),
+            BatchLoadStatus::ProgressStopped => write!(f, "PROGRESS_STOPPED"),
+            BatchLoadStatus::Succeeded => write!(f, "SUCCEEDED"),
+            BatchLoadStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

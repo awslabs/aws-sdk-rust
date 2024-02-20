@@ -91,3 +91,11 @@ impl ExecutionEngineType {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionEngineType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionEngineType::Emr => write!(f, "EMR"),
+            ExecutionEngineType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

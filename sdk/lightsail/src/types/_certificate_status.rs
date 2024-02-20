@@ -129,3 +129,17 @@ impl CertificateStatus {
         }
     }
 }
+impl ::std::fmt::Display for CertificateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateStatus::Expired => write!(f, "EXPIRED"),
+            CertificateStatus::Failed => write!(f, "FAILED"),
+            CertificateStatus::Inactive => write!(f, "INACTIVE"),
+            CertificateStatus::Issued => write!(f, "ISSUED"),
+            CertificateStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
+            CertificateStatus::Revoked => write!(f, "REVOKED"),
+            CertificateStatus::ValidationTimedOut => write!(f, "VALIDATION_TIMED_OUT"),
+            CertificateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

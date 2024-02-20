@@ -117,3 +117,15 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::DuplicateIdentifier => write!(f, "DUPLICATE_IDENTIFIER"),
+            ErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            ErrorCode::InvalidFindingId => write!(f, "INVALID_FINDING_ID"),
+            ErrorCode::InvalidScanName => write!(f, "INVALID_SCAN_NAME"),
+            ErrorCode::ItemDoesNotExist => write!(f, "ITEM_DOES_NOT_EXIST"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

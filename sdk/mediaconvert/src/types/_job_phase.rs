@@ -101,3 +101,13 @@ impl JobPhase {
         }
     }
 }
+impl ::std::fmt::Display for JobPhase {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobPhase::Probing => write!(f, "PROBING"),
+            JobPhase::Transcoding => write!(f, "TRANSCODING"),
+            JobPhase::Uploading => write!(f, "UPLOADING"),
+            JobPhase::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

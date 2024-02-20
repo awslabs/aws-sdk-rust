@@ -101,3 +101,13 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            ErrorCode::InvalidGraphArn => write!(f, "INVALID_GRAPH_ARN"),
+            ErrorCode::InvalidRequestBody => write!(f, "INVALID_REQUEST_BODY"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

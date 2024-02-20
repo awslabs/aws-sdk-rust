@@ -96,3 +96,12 @@ impl InstanceMetadataEndpointState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceMetadataEndpointState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceMetadataEndpointState::Disabled => write!(f, "disabled"),
+            InstanceMetadataEndpointState::Enabled => write!(f, "enabled"),
+            InstanceMetadataEndpointState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

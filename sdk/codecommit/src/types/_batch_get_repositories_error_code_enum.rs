@@ -123,3 +123,16 @@ impl BatchGetRepositoriesErrorCodeEnum {
         }
     }
 }
+impl ::std::fmt::Display for BatchGetRepositoriesErrorCodeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchGetRepositoriesErrorCodeEnum::EncryptionIntegrityChecksFailedException => write!(f, "EncryptionIntegrityChecksFailedException"),
+            BatchGetRepositoriesErrorCodeEnum::EncryptionKeyAccessDeniedException => write!(f, "EncryptionKeyAccessDeniedException"),
+            BatchGetRepositoriesErrorCodeEnum::EncryptionKeyDisabledException => write!(f, "EncryptionKeyDisabledException"),
+            BatchGetRepositoriesErrorCodeEnum::EncryptionKeyNotFoundException => write!(f, "EncryptionKeyNotFoundException"),
+            BatchGetRepositoriesErrorCodeEnum::EncryptionKeyUnavailableException => write!(f, "EncryptionKeyUnavailableException"),
+            BatchGetRepositoriesErrorCodeEnum::RepositoryDoesNotExistException => write!(f, "RepositoryDoesNotExistException"),
+            BatchGetRepositoriesErrorCodeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

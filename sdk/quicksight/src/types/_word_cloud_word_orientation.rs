@@ -96,3 +96,12 @@ impl WordCloudWordOrientation {
         }
     }
 }
+impl ::std::fmt::Display for WordCloudWordOrientation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WordCloudWordOrientation::Horizontal => write!(f, "HORIZONTAL"),
+            WordCloudWordOrientation::HorizontalAndVertical => write!(f, "HORIZONTAL_AND_VERTICAL"),
+            WordCloudWordOrientation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

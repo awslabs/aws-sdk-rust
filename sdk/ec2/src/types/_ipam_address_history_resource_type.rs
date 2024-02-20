@@ -111,3 +111,15 @@ impl IpamAddressHistoryResourceType {
         }
     }
 }
+impl ::std::fmt::Display for IpamAddressHistoryResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamAddressHistoryResourceType::Eip => write!(f, "eip"),
+            IpamAddressHistoryResourceType::Instance => write!(f, "instance"),
+            IpamAddressHistoryResourceType::NetworkInterface => write!(f, "network-interface"),
+            IpamAddressHistoryResourceType::Subnet => write!(f, "subnet"),
+            IpamAddressHistoryResourceType::Vpc => write!(f, "vpc"),
+            IpamAddressHistoryResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

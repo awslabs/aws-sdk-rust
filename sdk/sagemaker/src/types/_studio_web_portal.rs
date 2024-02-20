@@ -96,3 +96,12 @@ impl StudioWebPortal {
         }
     }
 }
+impl ::std::fmt::Display for StudioWebPortal {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StudioWebPortal::Disabled => write!(f, "DISABLED"),
+            StudioWebPortal::Enabled => write!(f, "ENABLED"),
+            StudioWebPortal::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

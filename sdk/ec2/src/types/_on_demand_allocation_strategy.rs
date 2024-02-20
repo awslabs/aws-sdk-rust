@@ -96,3 +96,12 @@ impl OnDemandAllocationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for OnDemandAllocationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OnDemandAllocationStrategy::LowestPrice => write!(f, "lowestPrice"),
+            OnDemandAllocationStrategy::Prioritized => write!(f, "prioritized"),
+            OnDemandAllocationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

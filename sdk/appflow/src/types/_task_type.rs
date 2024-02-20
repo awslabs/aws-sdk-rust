@@ -147,3 +147,20 @@ impl TaskType {
         }
     }
 }
+impl ::std::fmt::Display for TaskType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskType::Arithmetic => write!(f, "Arithmetic"),
+            TaskType::Filter => write!(f, "Filter"),
+            TaskType::Map => write!(f, "Map"),
+            TaskType::MapAll => write!(f, "Map_all"),
+            TaskType::Mask => write!(f, "Mask"),
+            TaskType::Merge => write!(f, "Merge"),
+            TaskType::Partition => write!(f, "Partition"),
+            TaskType::Passthrough => write!(f, "Passthrough"),
+            TaskType::Truncate => write!(f, "Truncate"),
+            TaskType::Validate => write!(f, "Validate"),
+            TaskType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ResiliencyScoreType {
         }
     }
 }
+impl ::std::fmt::Display for ResiliencyScoreType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResiliencyScoreType::Alarm => write!(f, "Alarm"),
+            ResiliencyScoreType::Compliance => write!(f, "Compliance"),
+            ResiliencyScoreType::Sop => write!(f, "Sop"),
+            ResiliencyScoreType::Test => write!(f, "Test"),
+            ResiliencyScoreType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

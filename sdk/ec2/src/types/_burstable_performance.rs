@@ -101,3 +101,13 @@ impl BurstablePerformance {
         }
     }
 }
+impl ::std::fmt::Display for BurstablePerformance {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurstablePerformance::Excluded => write!(f, "excluded"),
+            BurstablePerformance::Included => write!(f, "included"),
+            BurstablePerformance::Required => write!(f, "required"),
+            BurstablePerformance::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

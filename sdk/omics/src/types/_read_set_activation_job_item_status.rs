@@ -106,3 +106,14 @@ impl ReadSetActivationJobItemStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReadSetActivationJobItemStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReadSetActivationJobItemStatus::Failed => write!(f, "FAILED"),
+            ReadSetActivationJobItemStatus::Finished => write!(f, "FINISHED"),
+            ReadSetActivationJobItemStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ReadSetActivationJobItemStatus::NotStarted => write!(f, "NOT_STARTED"),
+            ReadSetActivationJobItemStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

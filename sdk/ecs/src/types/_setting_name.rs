@@ -141,3 +141,19 @@ impl SettingName {
         }
     }
 }
+impl ::std::fmt::Display for SettingName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SettingName::AwsvpcTrunking => write!(f, "awsvpcTrunking"),
+            SettingName::ContainerInsights => write!(f, "containerInsights"),
+            SettingName::ContainerInstanceLongArnFormat => write!(f, "containerInstanceLongArnFormat"),
+            SettingName::FargateFipsMode => write!(f, "fargateFIPSMode"),
+            SettingName::FargateTaskRetirementWaitPeriod => write!(f, "fargateTaskRetirementWaitPeriod"),
+            SettingName::GuardDutyActivate => write!(f, "guardDutyActivate"),
+            SettingName::ServiceLongArnFormat => write!(f, "serviceLongArnFormat"),
+            SettingName::TagResourceAuthorization => write!(f, "tagResourceAuthorization"),
+            SettingName::TaskLongArnFormat => write!(f, "taskLongArnFormat"),
+            SettingName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

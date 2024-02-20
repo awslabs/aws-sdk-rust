@@ -106,3 +106,14 @@ impl MedicalScribeJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for MedicalScribeJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MedicalScribeJobStatus::Completed => write!(f, "COMPLETED"),
+            MedicalScribeJobStatus::Failed => write!(f, "FAILED"),
+            MedicalScribeJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            MedicalScribeJobStatus::Queued => write!(f, "QUEUED"),
+            MedicalScribeJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

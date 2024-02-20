@@ -101,3 +101,13 @@ impl TranscribePartialResultsStability {
         }
     }
 }
+impl ::std::fmt::Display for TranscribePartialResultsStability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TranscribePartialResultsStability::High => write!(f, "high"),
+            TranscribePartialResultsStability::Low => write!(f, "low"),
+            TranscribePartialResultsStability::Medium => write!(f, "medium"),
+            TranscribePartialResultsStability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

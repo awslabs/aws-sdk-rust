@@ -231,3 +231,34 @@ impl StateReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for StateReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StateReasonCode::Creating => write!(f, "Creating"),
+            StateReasonCode::DisabledKmsKey => write!(f, "DisabledKMSKey"),
+            StateReasonCode::EfsioError => write!(f, "EFSIOError"),
+            StateReasonCode::EfsMountConnectivityError => write!(f, "EFSMountConnectivityError"),
+            StateReasonCode::EfsMountFailure => write!(f, "EFSMountFailure"),
+            StateReasonCode::EfsMountTimeout => write!(f, "EFSMountTimeout"),
+            StateReasonCode::EniLimitExceeded => write!(f, "EniLimitExceeded"),
+            StateReasonCode::FunctionError => write!(f, "FunctionError"),
+            StateReasonCode::Idle => write!(f, "Idle"),
+            StateReasonCode::ImageAccessDenied => write!(f, "ImageAccessDenied"),
+            StateReasonCode::ImageDeleted => write!(f, "ImageDeleted"),
+            StateReasonCode::InsufficientRolePermissions => write!(f, "InsufficientRolePermissions"),
+            StateReasonCode::InternalError => write!(f, "InternalError"),
+            StateReasonCode::InvalidConfiguration => write!(f, "InvalidConfiguration"),
+            StateReasonCode::InvalidImage => write!(f, "InvalidImage"),
+            StateReasonCode::InvalidRuntime => write!(f, "InvalidRuntime"),
+            StateReasonCode::InvalidSecurityGroup => write!(f, "InvalidSecurityGroup"),
+            StateReasonCode::InvalidStateKmsKey => write!(f, "InvalidStateKMSKey"),
+            StateReasonCode::InvalidSubnet => write!(f, "InvalidSubnet"),
+            StateReasonCode::InvalidZipFileException => write!(f, "InvalidZipFileException"),
+            StateReasonCode::KmsKeyAccessDenied => write!(f, "KMSKeyAccessDenied"),
+            StateReasonCode::KmsKeyNotFound => write!(f, "KMSKeyNotFound"),
+            StateReasonCode::Restoring => write!(f, "Restoring"),
+            StateReasonCode::SubnetOutOfIpAddresses => write!(f, "SubnetOutOfIPAddresses"),
+            StateReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

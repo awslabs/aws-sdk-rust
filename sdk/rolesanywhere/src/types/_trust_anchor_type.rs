@@ -101,3 +101,13 @@ impl TrustAnchorType {
         }
     }
 }
+impl ::std::fmt::Display for TrustAnchorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrustAnchorType::AwsAcmPca => write!(f, "AWS_ACM_PCA"),
+            TrustAnchorType::CertificateBundle => write!(f, "CERTIFICATE_BUNDLE"),
+            TrustAnchorType::SelfSignedRepository => write!(f, "SELF_SIGNED_REPOSITORY"),
+            TrustAnchorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ResourceSortType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceSortType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceSortType::Date => write!(f, "DATE"),
+            ResourceSortType::Name => write!(f, "NAME"),
+            ResourceSortType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

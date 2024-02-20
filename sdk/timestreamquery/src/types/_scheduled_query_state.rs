@@ -96,3 +96,12 @@ impl ScheduledQueryState {
         }
     }
 }
+impl ::std::fmt::Display for ScheduledQueryState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduledQueryState::Disabled => write!(f, "DISABLED"),
+            ScheduledQueryState::Enabled => write!(f, "ENABLED"),
+            ScheduledQueryState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

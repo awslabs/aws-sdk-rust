@@ -116,3 +116,16 @@ impl TransitGatewayAttachmentResourceType {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayAttachmentResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayAttachmentResourceType::Connect => write!(f, "connect"),
+            TransitGatewayAttachmentResourceType::DirectConnectGateway => write!(f, "direct-connect-gateway"),
+            TransitGatewayAttachmentResourceType::Peering => write!(f, "peering"),
+            TransitGatewayAttachmentResourceType::TgwPeering => write!(f, "tgw-peering"),
+            TransitGatewayAttachmentResourceType::Vpc => write!(f, "vpc"),
+            TransitGatewayAttachmentResourceType::Vpn => write!(f, "vpn"),
+            TransitGatewayAttachmentResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

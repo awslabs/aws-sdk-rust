@@ -106,3 +106,14 @@ impl LoadBalancerTlsCertificateRenewalStatus {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerTlsCertificateRenewalStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerTlsCertificateRenewalStatus::Failed => write!(f, "FAILED"),
+            LoadBalancerTlsCertificateRenewalStatus::PendingAutoRenewal => write!(f, "PENDING_AUTO_RENEWAL"),
+            LoadBalancerTlsCertificateRenewalStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
+            LoadBalancerTlsCertificateRenewalStatus::Success => write!(f, "SUCCESS"),
+            LoadBalancerTlsCertificateRenewalStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

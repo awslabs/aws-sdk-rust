@@ -101,3 +101,13 @@ impl InsufficientDataHealthStatus {
         }
     }
 }
+impl ::std::fmt::Display for InsufficientDataHealthStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InsufficientDataHealthStatus::Healthy => write!(f, "Healthy"),
+            InsufficientDataHealthStatus::LastKnownStatus => write!(f, "LastKnownStatus"),
+            InsufficientDataHealthStatus::Unhealthy => write!(f, "Unhealthy"),
+            InsufficientDataHealthStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

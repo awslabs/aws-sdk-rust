@@ -96,3 +96,12 @@ impl MovCslgAtom {
         }
     }
 }
+impl ::std::fmt::Display for MovCslgAtom {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MovCslgAtom::Exclude => write!(f, "EXCLUDE"),
+            MovCslgAtom::Include => write!(f, "INCLUDE"),
+            MovCslgAtom::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

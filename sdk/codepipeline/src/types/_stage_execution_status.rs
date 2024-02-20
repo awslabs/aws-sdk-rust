@@ -116,3 +116,16 @@ impl StageExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for StageExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StageExecutionStatus::Cancelled => write!(f, "Cancelled"),
+            StageExecutionStatus::Failed => write!(f, "Failed"),
+            StageExecutionStatus::InProgress => write!(f, "InProgress"),
+            StageExecutionStatus::Stopped => write!(f, "Stopped"),
+            StageExecutionStatus::Stopping => write!(f, "Stopping"),
+            StageExecutionStatus::Succeeded => write!(f, "Succeeded"),
+            StageExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

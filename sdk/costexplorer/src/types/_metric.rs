@@ -129,3 +129,17 @@ impl Metric {
         }
     }
 }
+impl ::std::fmt::Display for Metric {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Metric::AmortizedCost => write!(f, "AMORTIZED_COST"),
+            Metric::BlendedCost => write!(f, "BLENDED_COST"),
+            Metric::NetAmortizedCost => write!(f, "NET_AMORTIZED_COST"),
+            Metric::NetUnblendedCost => write!(f, "NET_UNBLENDED_COST"),
+            Metric::NormalizedUsageAmount => write!(f, "NORMALIZED_USAGE_AMOUNT"),
+            Metric::UnblendedCost => write!(f, "UNBLENDED_COST"),
+            Metric::UsageQuantity => write!(f, "USAGE_QUANTITY"),
+            Metric::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

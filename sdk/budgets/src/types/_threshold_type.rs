@@ -96,3 +96,12 @@ impl ThresholdType {
         }
     }
 }
+impl ::std::fmt::Display for ThresholdType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThresholdType::AbsoluteValue => write!(f, "ABSOLUTE_VALUE"),
+            ThresholdType::Percentage => write!(f, "PERCENTAGE"),
+            ThresholdType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

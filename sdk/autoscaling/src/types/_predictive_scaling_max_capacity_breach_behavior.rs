@@ -98,3 +98,12 @@ impl PredictiveScalingMaxCapacityBreachBehavior {
         }
     }
 }
+impl ::std::fmt::Display for PredictiveScalingMaxCapacityBreachBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PredictiveScalingMaxCapacityBreachBehavior::HonorMaxCapacity => write!(f, "HonorMaxCapacity"),
+            PredictiveScalingMaxCapacityBreachBehavior::IncreaseMaxCapacity => write!(f, "IncreaseMaxCapacity"),
+            PredictiveScalingMaxCapacityBreachBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

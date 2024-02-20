@@ -91,3 +91,11 @@ impl SchemaType {
         }
     }
 }
+impl ::std::fmt::Display for SchemaType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SchemaType::Table => write!(f, "TABLE"),
+            SchemaType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

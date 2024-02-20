@@ -135,3 +135,18 @@ impl PoolFilterName {
         }
     }
 }
+impl ::std::fmt::Display for PoolFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PoolFilterName::DeletionProtectionEnabled => write!(f, "deletion-protection-enabled"),
+            PoolFilterName::MessageType => write!(f, "message-type"),
+            PoolFilterName::OptOutListName => write!(f, "opt-out-list-name"),
+            PoolFilterName::SelfManagedOptOutsEnabled => write!(f, "self-managed-opt-outs-enabled"),
+            PoolFilterName::SharedRoutesEnabled => write!(f, "shared-routes-enabled"),
+            PoolFilterName::Status => write!(f, "status"),
+            PoolFilterName::TwoWayChannelArn => write!(f, "two-way-channel-arn"),
+            PoolFilterName::TwoWayEnabled => write!(f, "two-way-enabled"),
+            PoolFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

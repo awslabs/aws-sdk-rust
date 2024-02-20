@@ -111,3 +111,15 @@ impl FlowLogsResourceType {
         }
     }
 }
+impl ::std::fmt::Display for FlowLogsResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlowLogsResourceType::NetworkInterface => write!(f, "NetworkInterface"),
+            FlowLogsResourceType::Subnet => write!(f, "Subnet"),
+            FlowLogsResourceType::TransitGateway => write!(f, "TransitGateway"),
+            FlowLogsResourceType::TransitGatewayAttachment => write!(f, "TransitGatewayAttachment"),
+            FlowLogsResourceType::Vpc => write!(f, "VPC"),
+            FlowLogsResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

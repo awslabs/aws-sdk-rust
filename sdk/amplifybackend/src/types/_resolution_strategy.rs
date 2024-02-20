@@ -106,3 +106,14 @@ impl ResolutionStrategy {
         }
     }
 }
+impl ::std::fmt::Display for ResolutionStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolutionStrategy::Automerge => write!(f, "AUTOMERGE"),
+            ResolutionStrategy::Lambda => write!(f, "LAMBDA"),
+            ResolutionStrategy::None => write!(f, "NONE"),
+            ResolutionStrategy::OptimisticConcurrency => write!(f, "OPTIMISTIC_CONCURRENCY"),
+            ResolutionStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

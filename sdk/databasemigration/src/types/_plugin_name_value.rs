@@ -101,3 +101,13 @@ impl PluginNameValue {
         }
     }
 }
+impl ::std::fmt::Display for PluginNameValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PluginNameValue::NoPreference => write!(f, "no-preference"),
+            PluginNameValue::Pglogical => write!(f, "pglogical"),
+            PluginNameValue::TestDecoding => write!(f, "test-decoding"),
+            PluginNameValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

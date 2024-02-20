@@ -141,3 +141,19 @@ impl AnalyticsUtteranceFilterName {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsUtteranceFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsUtteranceFilterName::BotAliasId => write!(f, "BotAliasId"),
+            AnalyticsUtteranceFilterName::BotVersion => write!(f, "BotVersion"),
+            AnalyticsUtteranceFilterName::Channel => write!(f, "Channel"),
+            AnalyticsUtteranceFilterName::LocaleId => write!(f, "LocaleId"),
+            AnalyticsUtteranceFilterName::Modality => write!(f, "Modality"),
+            AnalyticsUtteranceFilterName::OriginatingRequestId => write!(f, "OriginatingRequestId"),
+            AnalyticsUtteranceFilterName::SessionId => write!(f, "SessionId"),
+            AnalyticsUtteranceFilterName::UtteranceState => write!(f, "UtteranceState"),
+            AnalyticsUtteranceFilterName::UtteranceText => write!(f, "UtteranceText"),
+            AnalyticsUtteranceFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

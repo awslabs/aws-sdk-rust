@@ -96,3 +96,12 @@ impl StreamView {
         }
     }
 }
+impl ::std::fmt::Display for StreamView {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamView::App => write!(f, "APP"),
+            StreamView::Desktop => write!(f, "DESKTOP"),
+            StreamView::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

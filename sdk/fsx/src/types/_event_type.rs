@@ -101,3 +101,13 @@ impl EventType {
         }
     }
 }
+impl ::std::fmt::Display for EventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventType::Changed => write!(f, "CHANGED"),
+            EventType::Deleted => write!(f, "DELETED"),
+            EventType::New => write!(f, "NEW"),
+            EventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

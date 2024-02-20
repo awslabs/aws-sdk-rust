@@ -159,3 +159,22 @@ impl AutomationExecutionFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for AutomationExecutionFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutomationExecutionFilterKey::AutomationSubtype => write!(f, "AutomationSubtype"),
+            AutomationExecutionFilterKey::AutomationType => write!(f, "AutomationType"),
+            AutomationExecutionFilterKey::CurrentAction => write!(f, "CurrentAction"),
+            AutomationExecutionFilterKey::DocumentNamePrefix => write!(f, "DocumentNamePrefix"),
+            AutomationExecutionFilterKey::ExecutionId => write!(f, "ExecutionId"),
+            AutomationExecutionFilterKey::ExecutionStatus => write!(f, "ExecutionStatus"),
+            AutomationExecutionFilterKey::OpsItemId => write!(f, "OpsItemId"),
+            AutomationExecutionFilterKey::ParentExecutionId => write!(f, "ParentExecutionId"),
+            AutomationExecutionFilterKey::StartTimeAfter => write!(f, "StartTimeAfter"),
+            AutomationExecutionFilterKey::StartTimeBefore => write!(f, "StartTimeBefore"),
+            AutomationExecutionFilterKey::TagKey => write!(f, "TagKey"),
+            AutomationExecutionFilterKey::TargetResourceGroup => write!(f, "TargetResourceGroup"),
+            AutomationExecutionFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl CurrentPerformanceRisk {
         }
     }
 }
+impl ::std::fmt::Display for CurrentPerformanceRisk {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CurrentPerformanceRisk::High => write!(f, "High"),
+            CurrentPerformanceRisk::Low => write!(f, "Low"),
+            CurrentPerformanceRisk::Medium => write!(f, "Medium"),
+            CurrentPerformanceRisk::VeryLow => write!(f, "VeryLow"),
+            CurrentPerformanceRisk::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

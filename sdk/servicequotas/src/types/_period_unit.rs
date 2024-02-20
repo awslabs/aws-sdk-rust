@@ -121,3 +121,17 @@ impl PeriodUnit {
         }
     }
 }
+impl ::std::fmt::Display for PeriodUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PeriodUnit::Day => write!(f, "DAY"),
+            PeriodUnit::Hour => write!(f, "HOUR"),
+            PeriodUnit::Microsecond => write!(f, "MICROSECOND"),
+            PeriodUnit::Millisecond => write!(f, "MILLISECOND"),
+            PeriodUnit::Minute => write!(f, "MINUTE"),
+            PeriodUnit::Second => write!(f, "SECOND"),
+            PeriodUnit::Week => write!(f, "WEEK"),
+            PeriodUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

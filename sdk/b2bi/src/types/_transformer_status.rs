@@ -96,3 +96,12 @@ impl TransformerStatus {
         }
     }
 }
+impl ::std::fmt::Display for TransformerStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransformerStatus::Active => write!(f, "active"),
+            TransformerStatus::Inactive => write!(f, "inactive"),
+            TransformerStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

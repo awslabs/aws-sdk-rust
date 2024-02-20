@@ -101,3 +101,13 @@ impl CollectionType {
         }
     }
 }
+impl ::std::fmt::Display for CollectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CollectionType::Search => write!(f, "SEARCH"),
+            CollectionType::Timeseries => write!(f, "TIMESERIES"),
+            CollectionType::Vectorsearch => write!(f, "VECTORSEARCH"),
+            CollectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

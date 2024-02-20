@@ -96,3 +96,12 @@ impl UserDesignation {
         }
     }
 }
+impl ::std::fmt::Display for UserDesignation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserDesignation::ProjectContributor => write!(f, "PROJECT_CONTRIBUTOR"),
+            UserDesignation::ProjectOwner => write!(f, "PROJECT_OWNER"),
+            UserDesignation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

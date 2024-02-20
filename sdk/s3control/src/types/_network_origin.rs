@@ -96,3 +96,12 @@ impl NetworkOrigin {
         }
     }
 }
+impl ::std::fmt::Display for NetworkOrigin {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkOrigin::Internet => write!(f, "Internet"),
+            NetworkOrigin::Vpc => write!(f, "VPC"),
+            NetworkOrigin::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

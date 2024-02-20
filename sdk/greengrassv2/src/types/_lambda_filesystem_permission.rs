@@ -96,3 +96,12 @@ impl LambdaFilesystemPermission {
         }
     }
 }
+impl ::std::fmt::Display for LambdaFilesystemPermission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaFilesystemPermission::Ro => write!(f, "ro"),
+            LambdaFilesystemPermission::Rw => write!(f, "rw"),
+            LambdaFilesystemPermission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

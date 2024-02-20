@@ -111,3 +111,14 @@ impl PredefinedLoadMetricType {
         }
     }
 }
+impl ::std::fmt::Display for PredefinedLoadMetricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PredefinedLoadMetricType::AlbTargetGroupRequestCount => write!(f, "ALBTargetGroupRequestCount"),
+            PredefinedLoadMetricType::AsgTotalCpuUtilization => write!(f, "ASGTotalCPUUtilization"),
+            PredefinedLoadMetricType::AsgTotalNetworkIn => write!(f, "ASGTotalNetworkIn"),
+            PredefinedLoadMetricType::AsgTotalNetworkOut => write!(f, "ASGTotalNetworkOut"),
+            PredefinedLoadMetricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

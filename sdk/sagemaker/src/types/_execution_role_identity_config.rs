@@ -96,3 +96,12 @@ impl ExecutionRoleIdentityConfig {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionRoleIdentityConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionRoleIdentityConfig::Disabled => write!(f, "DISABLED"),
+            ExecutionRoleIdentityConfig::UserProfileName => write!(f, "USER_PROFILE_NAME"),
+            ExecutionRoleIdentityConfig::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

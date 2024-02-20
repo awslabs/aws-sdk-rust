@@ -111,3 +111,15 @@ impl ReturnValue {
         }
     }
 }
+impl ::std::fmt::Display for ReturnValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReturnValue::AllNew => write!(f, "ALL_NEW"),
+            ReturnValue::AllOld => write!(f, "ALL_OLD"),
+            ReturnValue::None => write!(f, "NONE"),
+            ReturnValue::UpdatedNew => write!(f, "UPDATED_NEW"),
+            ReturnValue::UpdatedOld => write!(f, "UPDATED_OLD"),
+            ReturnValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

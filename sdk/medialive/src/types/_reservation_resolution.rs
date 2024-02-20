@@ -106,3 +106,14 @@ impl ReservationResolution {
         }
     }
 }
+impl ::std::fmt::Display for ReservationResolution {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservationResolution::Fhd => write!(f, "FHD"),
+            ReservationResolution::Hd => write!(f, "HD"),
+            ReservationResolution::Sd => write!(f, "SD"),
+            ReservationResolution::Uhd => write!(f, "UHD"),
+            ReservationResolution::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

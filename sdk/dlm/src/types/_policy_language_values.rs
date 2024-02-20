@@ -96,3 +96,12 @@ impl PolicyLanguageValues {
         }
     }
 }
+impl ::std::fmt::Display for PolicyLanguageValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyLanguageValues::Simplified => write!(f, "SIMPLIFIED"),
+            PolicyLanguageValues::Standard => write!(f, "STANDARD"),
+            PolicyLanguageValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

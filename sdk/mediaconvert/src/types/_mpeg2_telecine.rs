@@ -101,3 +101,13 @@ impl Mpeg2Telecine {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2Telecine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2Telecine::Hard => write!(f, "HARD"),
+            Mpeg2Telecine::None => write!(f, "NONE"),
+            Mpeg2Telecine::Soft => write!(f, "SOFT"),
+            Mpeg2Telecine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

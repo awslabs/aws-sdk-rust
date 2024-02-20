@@ -96,3 +96,12 @@ impl AacRateControlMode {
         }
     }
 }
+impl ::std::fmt::Display for AacRateControlMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AacRateControlMode::Cbr => write!(f, "CBR"),
+            AacRateControlMode::Vbr => write!(f, "VBR"),
+            AacRateControlMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl KafkaClusterClientAuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for KafkaClusterClientAuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KafkaClusterClientAuthenticationType::Iam => write!(f, "IAM"),
+            KafkaClusterClientAuthenticationType::None => write!(f, "NONE"),
+            KafkaClusterClientAuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

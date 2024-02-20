@@ -101,3 +101,13 @@ impl BounceType {
         }
     }
 }
+impl ::std::fmt::Display for BounceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BounceType::Permanent => write!(f, "PERMANENT"),
+            BounceType::Transient => write!(f, "TRANSIENT"),
+            BounceType::Undetermined => write!(f, "UNDETERMINED"),
+            BounceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

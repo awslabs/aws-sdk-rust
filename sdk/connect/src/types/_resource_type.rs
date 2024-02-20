@@ -135,3 +135,18 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Contact => write!(f, "CONTACT"),
+            ResourceType::ContactFlow => write!(f, "CONTACT_FLOW"),
+            ResourceType::HierarchyGroup => write!(f, "HIERARCHY_GROUP"),
+            ResourceType::HierarchyLevel => write!(f, "HIERARCHY_LEVEL"),
+            ResourceType::Instance => write!(f, "INSTANCE"),
+            ResourceType::Participant => write!(f, "PARTICIPANT"),
+            ResourceType::PhoneNumber => write!(f, "PHONE_NUMBER"),
+            ResourceType::User => write!(f, "USER"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

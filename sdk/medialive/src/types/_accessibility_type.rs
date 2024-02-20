@@ -96,3 +96,12 @@ impl AccessibilityType {
         }
     }
 }
+impl ::std::fmt::Display for AccessibilityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessibilityType::DoesNotImplementAccessibilityFeatures => write!(f, "DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES"),
+            AccessibilityType::ImplementsAccessibilityFeatures => write!(f, "IMPLEMENTS_ACCESSIBILITY_FEATURES"),
+            AccessibilityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

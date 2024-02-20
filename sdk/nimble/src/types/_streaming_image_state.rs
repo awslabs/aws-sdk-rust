@@ -135,3 +135,18 @@ impl StreamingImageState {
         }
     }
 }
+impl ::std::fmt::Display for StreamingImageState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StreamingImageState::CreateFailed => write!(f, "CREATE_FAILED"),
+            StreamingImageState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            StreamingImageState::Deleted => write!(f, "DELETED"),
+            StreamingImageState::DeleteFailed => write!(f, "DELETE_FAILED"),
+            StreamingImageState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            StreamingImageState::Ready => write!(f, "READY"),
+            StreamingImageState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            StreamingImageState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            StreamingImageState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

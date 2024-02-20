@@ -126,3 +126,18 @@ impl NoiseReducerFilter {
         }
     }
 }
+impl ::std::fmt::Display for NoiseReducerFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NoiseReducerFilter::Bilateral => write!(f, "BILATERAL"),
+            NoiseReducerFilter::Conserve => write!(f, "CONSERVE"),
+            NoiseReducerFilter::Gaussian => write!(f, "GAUSSIAN"),
+            NoiseReducerFilter::Lanczos => write!(f, "LANCZOS"),
+            NoiseReducerFilter::Mean => write!(f, "MEAN"),
+            NoiseReducerFilter::Sharpen => write!(f, "SHARPEN"),
+            NoiseReducerFilter::Spatial => write!(f, "SPATIAL"),
+            NoiseReducerFilter::Temporal => write!(f, "TEMPORAL"),
+            NoiseReducerFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

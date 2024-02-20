@@ -91,3 +91,11 @@ impl OfferingDurationUnits {
         }
     }
 }
+impl ::std::fmt::Display for OfferingDurationUnits {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OfferingDurationUnits::Months => write!(f, "MONTHS"),
+            OfferingDurationUnits::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

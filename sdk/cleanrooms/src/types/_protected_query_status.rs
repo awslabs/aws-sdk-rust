@@ -121,3 +121,17 @@ impl ProtectedQueryStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProtectedQueryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProtectedQueryStatus::Cancelled => write!(f, "CANCELLED"),
+            ProtectedQueryStatus::Cancelling => write!(f, "CANCELLING"),
+            ProtectedQueryStatus::Failed => write!(f, "FAILED"),
+            ProtectedQueryStatus::Started => write!(f, "STARTED"),
+            ProtectedQueryStatus::Submitted => write!(f, "SUBMITTED"),
+            ProtectedQueryStatus::Success => write!(f, "SUCCESS"),
+            ProtectedQueryStatus::TimedOut => write!(f, "TIMED_OUT"),
+            ProtectedQueryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

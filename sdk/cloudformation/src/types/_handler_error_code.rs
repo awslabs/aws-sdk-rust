@@ -201,3 +201,29 @@ impl HandlerErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for HandlerErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HandlerErrorCode::AccessDenied => write!(f, "AccessDenied"),
+            HandlerErrorCode::AlreadyExists => write!(f, "AlreadyExists"),
+            HandlerErrorCode::GeneralServiceException => write!(f, "GeneralServiceException"),
+            HandlerErrorCode::HandlerInternalFailure => write!(f, "HandlerInternalFailure"),
+            HandlerErrorCode::InternalFailure => write!(f, "InternalFailure"),
+            HandlerErrorCode::InvalidCredentials => write!(f, "InvalidCredentials"),
+            HandlerErrorCode::InvalidRequest => write!(f, "InvalidRequest"),
+            HandlerErrorCode::InvalidTypeConfiguration => write!(f, "InvalidTypeConfiguration"),
+            HandlerErrorCode::NetworkFailure => write!(f, "NetworkFailure"),
+            HandlerErrorCode::NonCompliant => write!(f, "NonCompliant"),
+            HandlerErrorCode::NotFound => write!(f, "NotFound"),
+            HandlerErrorCode::ServiceTimeout => write!(f, "NotStabilized"),
+            HandlerErrorCode::NotUpdatable => write!(f, "NotUpdatable"),
+            HandlerErrorCode::ResourceConflict => write!(f, "ResourceConflict"),
+            HandlerErrorCode::ServiceInternalError => write!(f, "ServiceInternalError"),
+            HandlerErrorCode::ServiceLimitExceeded => write!(f, "ServiceLimitExceeded"),
+            HandlerErrorCode::Throttling => write!(f, "Throttling"),
+            HandlerErrorCode::UnknownValue => write!(f, "Unknown"),
+            HandlerErrorCode::UnsupportedTarget => write!(f, "UnsupportedTarget"),
+            HandlerErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

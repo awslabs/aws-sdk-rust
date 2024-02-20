@@ -96,3 +96,12 @@ impl ProresSlowPal {
         }
     }
 }
+impl ::std::fmt::Display for ProresSlowPal {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProresSlowPal::Disabled => write!(f, "DISABLED"),
+            ProresSlowPal::Enabled => write!(f, "ENABLED"),
+            ProresSlowPal::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

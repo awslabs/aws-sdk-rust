@@ -96,3 +96,12 @@ impl LayerFailureCode {
         }
     }
 }
+impl ::std::fmt::Display for LayerFailureCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LayerFailureCode::InvalidLayerDigest => write!(f, "InvalidLayerDigest"),
+            LayerFailureCode::MissingLayerDigest => write!(f, "MissingLayerDigest"),
+            LayerFailureCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

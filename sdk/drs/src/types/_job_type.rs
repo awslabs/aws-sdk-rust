@@ -101,3 +101,13 @@ impl JobType {
         }
     }
 }
+impl ::std::fmt::Display for JobType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobType::CreateConvertedSnapshot => write!(f, "CREATE_CONVERTED_SNAPSHOT"),
+            JobType::Launch => write!(f, "LAUNCH"),
+            JobType::Terminate => write!(f, "TERMINATE"),
+            JobType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

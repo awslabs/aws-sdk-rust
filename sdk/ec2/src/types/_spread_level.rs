@@ -96,3 +96,12 @@ impl SpreadLevel {
         }
     }
 }
+impl ::std::fmt::Display for SpreadLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpreadLevel::Host => write!(f, "host"),
+            SpreadLevel::Rack => write!(f, "rack"),
+            SpreadLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

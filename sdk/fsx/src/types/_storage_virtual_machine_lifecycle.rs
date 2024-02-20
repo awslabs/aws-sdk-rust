@@ -116,3 +116,16 @@ impl StorageVirtualMachineLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for StorageVirtualMachineLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageVirtualMachineLifecycle::Created => write!(f, "CREATED"),
+            StorageVirtualMachineLifecycle::Creating => write!(f, "CREATING"),
+            StorageVirtualMachineLifecycle::Deleting => write!(f, "DELETING"),
+            StorageVirtualMachineLifecycle::Failed => write!(f, "FAILED"),
+            StorageVirtualMachineLifecycle::Misconfigured => write!(f, "MISCONFIGURED"),
+            StorageVirtualMachineLifecycle::Pending => write!(f, "PENDING"),
+            StorageVirtualMachineLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

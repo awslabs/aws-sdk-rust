@@ -106,3 +106,14 @@ impl StatefulAction {
         }
     }
 }
+impl ::std::fmt::Display for StatefulAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatefulAction::Alert => write!(f, "ALERT"),
+            StatefulAction::Drop => write!(f, "DROP"),
+            StatefulAction::Pass => write!(f, "PASS"),
+            StatefulAction::Reject => write!(f, "REJECT"),
+            StatefulAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,14 @@ impl ScheduleLambdaFunctionFailedCause {
         }
     }
 }
+impl ::std::fmt::Display for ScheduleLambdaFunctionFailedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduleLambdaFunctionFailedCause::IdAlreadyInUse => write!(f, "ID_ALREADY_IN_USE"),
+            ScheduleLambdaFunctionFailedCause::LambdaFunctionCreationRateExceeded => write!(f, "LAMBDA_FUNCTION_CREATION_RATE_EXCEEDED"),
+            ScheduleLambdaFunctionFailedCause::LambdaServiceNotAvailableInRegion => write!(f, "LAMBDA_SERVICE_NOT_AVAILABLE_IN_REGION"),
+            ScheduleLambdaFunctionFailedCause::OpenLambdaFunctionsLimitExceeded => write!(f, "OPEN_LAMBDA_FUNCTIONS_LIMIT_EXCEEDED"),
+            ScheduleLambdaFunctionFailedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

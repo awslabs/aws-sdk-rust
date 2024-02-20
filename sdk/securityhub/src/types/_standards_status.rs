@@ -111,3 +111,15 @@ impl StandardsStatus {
         }
     }
 }
+impl ::std::fmt::Display for StandardsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StandardsStatus::Deleting => write!(f, "DELETING"),
+            StandardsStatus::Failed => write!(f, "FAILED"),
+            StandardsStatus::Incomplete => write!(f, "INCOMPLETE"),
+            StandardsStatus::Pending => write!(f, "PENDING"),
+            StandardsStatus::Ready => write!(f, "READY"),
+            StandardsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

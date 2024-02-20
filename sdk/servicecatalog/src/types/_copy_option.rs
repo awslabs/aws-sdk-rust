@@ -91,3 +91,11 @@ impl CopyOption {
         }
     }
 }
+impl ::std::fmt::Display for CopyOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CopyOption::CopyTags => write!(f, "CopyTags"),
+            CopyOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LaunchActionType {
         }
     }
 }
+impl ::std::fmt::Display for LaunchActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchActionType::SsmAutomation => write!(f, "SSM_AUTOMATION"),
+            LaunchActionType::SsmCommand => write!(f, "SSM_COMMAND"),
+            LaunchActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

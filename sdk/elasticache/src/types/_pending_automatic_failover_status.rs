@@ -96,3 +96,12 @@ impl PendingAutomaticFailoverStatus {
         }
     }
 }
+impl ::std::fmt::Display for PendingAutomaticFailoverStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PendingAutomaticFailoverStatus::Disabled => write!(f, "disabled"),
+            PendingAutomaticFailoverStatus::Enabled => write!(f, "enabled"),
+            PendingAutomaticFailoverStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

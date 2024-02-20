@@ -96,3 +96,12 @@ impl InputDeviceConnectionState {
         }
     }
 }
+impl ::std::fmt::Display for InputDeviceConnectionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDeviceConnectionState::Connected => write!(f, "CONNECTED"),
+            InputDeviceConnectionState::Disconnected => write!(f, "DISCONNECTED"),
+            InputDeviceConnectionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

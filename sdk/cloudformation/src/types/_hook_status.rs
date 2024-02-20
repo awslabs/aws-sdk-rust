@@ -106,3 +106,14 @@ impl HookStatus {
         }
     }
 }
+impl ::std::fmt::Display for HookStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HookStatus::HookCompleteFailed => write!(f, "HOOK_COMPLETE_FAILED"),
+            HookStatus::HookCompleteSucceeded => write!(f, "HOOK_COMPLETE_SUCCEEDED"),
+            HookStatus::HookFailed => write!(f, "HOOK_FAILED"),
+            HookStatus::HookInProgress => write!(f, "HOOK_IN_PROGRESS"),
+            HookStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

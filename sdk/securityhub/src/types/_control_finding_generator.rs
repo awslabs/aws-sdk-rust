@@ -96,3 +96,12 @@ impl ControlFindingGenerator {
         }
     }
 }
+impl ::std::fmt::Display for ControlFindingGenerator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ControlFindingGenerator::SecurityControl => write!(f, "SECURITY_CONTROL"),
+            ControlFindingGenerator::StandardControl => write!(f, "STANDARD_CONTROL"),
+            ControlFindingGenerator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

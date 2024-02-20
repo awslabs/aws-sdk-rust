@@ -129,3 +129,17 @@ impl ListServiceInstancesSortBy {
         }
     }
 }
+impl ::std::fmt::Display for ListServiceInstancesSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ListServiceInstancesSortBy::CreatedAt => write!(f, "createdAt"),
+            ListServiceInstancesSortBy::DeploymentStatus => write!(f, "deploymentStatus"),
+            ListServiceInstancesSortBy::EnvironmentName => write!(f, "environmentName"),
+            ListServiceInstancesSortBy::LastDeploymentAttemptedAt => write!(f, "lastDeploymentAttemptedAt"),
+            ListServiceInstancesSortBy::Name => write!(f, "name"),
+            ListServiceInstancesSortBy::ServiceName => write!(f, "serviceName"),
+            ListServiceInstancesSortBy::TemplateName => write!(f, "templateName"),
+            ListServiceInstancesSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

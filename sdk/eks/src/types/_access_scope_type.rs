@@ -96,3 +96,12 @@ impl AccessScopeType {
         }
     }
 }
+impl ::std::fmt::Display for AccessScopeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessScopeType::Cluster => write!(f, "cluster"),
+            AccessScopeType::Namespace => write!(f, "namespace"),
+            AccessScopeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

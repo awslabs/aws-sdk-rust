@@ -101,3 +101,13 @@ impl TrafficRoutingType {
         }
     }
 }
+impl ::std::fmt::Display for TrafficRoutingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrafficRoutingType::AllAtOnce => write!(f, "AllAtOnce"),
+            TrafficRoutingType::TimeBasedCanary => write!(f, "TimeBasedCanary"),
+            TrafficRoutingType::TimeBasedLinear => write!(f, "TimeBasedLinear"),
+            TrafficRoutingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

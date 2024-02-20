@@ -141,3 +141,19 @@ impl ContainerServiceStateDetailCode {
         }
     }
 }
+impl ::std::fmt::Display for ContainerServiceStateDetailCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerServiceStateDetailCode::ActivatingDeployment => write!(f, "ACTIVATING_DEPLOYMENT"),
+            ContainerServiceStateDetailCode::CertificateLimitExceeded => write!(f, "CERTIFICATE_LIMIT_EXCEEDED"),
+            ContainerServiceStateDetailCode::CreatingDeployment => write!(f, "CREATING_DEPLOYMENT"),
+            ContainerServiceStateDetailCode::CreatingNetworkInfrastructure => write!(f, "CREATING_NETWORK_INFRASTRUCTURE"),
+            ContainerServiceStateDetailCode::CreatingSystemResources => write!(f, "CREATING_SYSTEM_RESOURCES"),
+            ContainerServiceStateDetailCode::EvaluatingHealthCheck => write!(f, "EVALUATING_HEALTH_CHECK"),
+            ContainerServiceStateDetailCode::ProvisioningCertificate => write!(f, "PROVISIONING_CERTIFICATE"),
+            ContainerServiceStateDetailCode::ProvisioningService => write!(f, "PROVISIONING_SERVICE"),
+            ContainerServiceStateDetailCode::UnknownError => write!(f, "UNKNOWN_ERROR"),
+            ContainerServiceStateDetailCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

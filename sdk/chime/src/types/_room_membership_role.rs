@@ -96,3 +96,12 @@ impl RoomMembershipRole {
         }
     }
 }
+impl ::std::fmt::Display for RoomMembershipRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RoomMembershipRole::Administrator => write!(f, "Administrator"),
+            RoomMembershipRole::Member => write!(f, "Member"),
+            RoomMembershipRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

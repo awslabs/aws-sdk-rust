@@ -96,3 +96,12 @@ impl AdditionalResourceType {
         }
     }
 }
+impl ::std::fmt::Display for AdditionalResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdditionalResourceType::HelpfulResource => write!(f, "HELPFUL_RESOURCE"),
+            AdditionalResourceType::ImprovementPlan => write!(f, "IMPROVEMENT_PLAN"),
+            AdditionalResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

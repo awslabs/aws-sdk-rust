@@ -121,3 +121,17 @@ impl Colorimetry {
         }
     }
 }
+impl ::std::fmt::Display for Colorimetry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Colorimetry::Bt2020 => write!(f, "BT2020"),
+            Colorimetry::Bt2100 => write!(f, "BT2100"),
+            Colorimetry::Bt601 => write!(f, "BT601"),
+            Colorimetry::Bt709 => write!(f, "BT709"),
+            Colorimetry::St20651 => write!(f, "ST2065-1"),
+            Colorimetry::St20653 => write!(f, "ST2065-3"),
+            Colorimetry::Xyz => write!(f, "XYZ"),
+            Colorimetry::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

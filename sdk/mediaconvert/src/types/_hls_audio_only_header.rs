@@ -96,3 +96,12 @@ impl HlsAudioOnlyHeader {
         }
     }
 }
+impl ::std::fmt::Display for HlsAudioOnlyHeader {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsAudioOnlyHeader::Exclude => write!(f, "EXCLUDE"),
+            HlsAudioOnlyHeader::Include => write!(f, "INCLUDE"),
+            HlsAudioOnlyHeader::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

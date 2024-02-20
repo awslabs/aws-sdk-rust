@@ -116,3 +116,16 @@ impl Eac3AtmosDrcLine {
         }
     }
 }
+impl ::std::fmt::Display for Eac3AtmosDrcLine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3AtmosDrcLine::FilmLight => write!(f, "FILM_LIGHT"),
+            Eac3AtmosDrcLine::FilmStandard => write!(f, "FILM_STANDARD"),
+            Eac3AtmosDrcLine::MusicLight => write!(f, "MUSIC_LIGHT"),
+            Eac3AtmosDrcLine::MusicStandard => write!(f, "MUSIC_STANDARD"),
+            Eac3AtmosDrcLine::None => write!(f, "NONE"),
+            Eac3AtmosDrcLine::Speech => write!(f, "SPEECH"),
+            Eac3AtmosDrcLine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

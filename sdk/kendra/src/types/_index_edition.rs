@@ -96,3 +96,12 @@ impl IndexEdition {
         }
     }
 }
+impl ::std::fmt::Display for IndexEdition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IndexEdition::DeveloperEdition => write!(f, "DEVELOPER_EDITION"),
+            IndexEdition::EnterpriseEdition => write!(f, "ENTERPRISE_EDITION"),
+            IndexEdition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

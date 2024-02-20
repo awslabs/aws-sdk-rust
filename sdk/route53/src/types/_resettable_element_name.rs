@@ -106,3 +106,14 @@ impl ResettableElementName {
         }
     }
 }
+impl ::std::fmt::Display for ResettableElementName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResettableElementName::ChildHealthChecks => write!(f, "ChildHealthChecks"),
+            ResettableElementName::FullyQualifiedDomainName => write!(f, "FullyQualifiedDomainName"),
+            ResettableElementName::Regions => write!(f, "Regions"),
+            ResettableElementName::ResourcePath => write!(f, "ResourcePath"),
+            ResettableElementName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

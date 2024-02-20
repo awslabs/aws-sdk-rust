@@ -129,3 +129,17 @@ impl FleetAttribute {
         }
     }
 }
+impl ::std::fmt::Display for FleetAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetAttribute::DomainJoinInfo => write!(f, "DOMAIN_JOIN_INFO"),
+            FleetAttribute::IamRoleArn => write!(f, "IAM_ROLE_ARN"),
+            FleetAttribute::MaxSessionsPerInstance => write!(f, "MAX_SESSIONS_PER_INSTANCE"),
+            FleetAttribute::SessionScriptS3Location => write!(f, "SESSION_SCRIPT_S3_LOCATION"),
+            FleetAttribute::UsbDeviceFilterStrings => write!(f, "USB_DEVICE_FILTER_STRINGS"),
+            FleetAttribute::VpcConfiguration => write!(f, "VPC_CONFIGURATION"),
+            FleetAttribute::VpcConfigurationSecurityGroupIds => write!(f, "VPC_CONFIGURATION_SECURITY_GROUP_IDS"),
+            FleetAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

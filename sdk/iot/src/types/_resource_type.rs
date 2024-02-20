@@ -141,3 +141,19 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::AccountSettings => write!(f, "ACCOUNT_SETTINGS"),
+            ResourceType::CaCertificate => write!(f, "CA_CERTIFICATE"),
+            ResourceType::ClientId => write!(f, "CLIENT_ID"),
+            ResourceType::CognitoIdentityPool => write!(f, "COGNITO_IDENTITY_POOL"),
+            ResourceType::DeviceCertificate => write!(f, "DEVICE_CERTIFICATE"),
+            ResourceType::IamRole => write!(f, "IAM_ROLE"),
+            ResourceType::IotPolicy => write!(f, "IOT_POLICY"),
+            ResourceType::IssuerCertificate => write!(f, "ISSUER_CERTIFICATE"),
+            ResourceType::RoleAlias => write!(f, "ROLE_ALIAS"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

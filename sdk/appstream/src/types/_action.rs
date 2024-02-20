@@ -129,3 +129,17 @@ impl Action {
         }
     }
 }
+impl ::std::fmt::Display for Action {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Action::ClipboardCopyFromLocalDevice => write!(f, "CLIPBOARD_COPY_FROM_LOCAL_DEVICE"),
+            Action::ClipboardCopyToLocalDevice => write!(f, "CLIPBOARD_COPY_TO_LOCAL_DEVICE"),
+            Action::DomainPasswordSignin => write!(f, "DOMAIN_PASSWORD_SIGNIN"),
+            Action::DomainSmartCardSignin => write!(f, "DOMAIN_SMART_CARD_SIGNIN"),
+            Action::FileDownload => write!(f, "FILE_DOWNLOAD"),
+            Action::FileUpload => write!(f, "FILE_UPLOAD"),
+            Action::PrintingToLocalDevice => write!(f, "PRINTING_TO_LOCAL_DEVICE"),
+            Action::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

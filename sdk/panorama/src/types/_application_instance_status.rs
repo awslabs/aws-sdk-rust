@@ -153,3 +153,21 @@ impl ApplicationInstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationInstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationInstanceStatus::DeploymentError => write!(f, "DEPLOYMENT_ERROR"),
+            ApplicationInstanceStatus::DeploymentFailed => write!(f, "DEPLOYMENT_FAILED"),
+            ApplicationInstanceStatus::DeploymentInProgress => write!(f, "DEPLOYMENT_IN_PROGRESS"),
+            ApplicationInstanceStatus::DeploymentPending => write!(f, "DEPLOYMENT_PENDING"),
+            ApplicationInstanceStatus::DeploymentRequested => write!(f, "DEPLOYMENT_REQUESTED"),
+            ApplicationInstanceStatus::DeploymentSucceeded => write!(f, "DEPLOYMENT_SUCCEEDED"),
+            ApplicationInstanceStatus::RemovalFailed => write!(f, "REMOVAL_FAILED"),
+            ApplicationInstanceStatus::RemovalInProgress => write!(f, "REMOVAL_IN_PROGRESS"),
+            ApplicationInstanceStatus::RemovalPending => write!(f, "REMOVAL_PENDING"),
+            ApplicationInstanceStatus::RemovalRequested => write!(f, "REMOVAL_REQUESTED"),
+            ApplicationInstanceStatus::RemovalSucceeded => write!(f, "REMOVAL_SUCCEEDED"),
+            ApplicationInstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

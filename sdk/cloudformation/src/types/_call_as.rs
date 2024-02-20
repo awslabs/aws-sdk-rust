@@ -96,3 +96,12 @@ impl CallAs {
         }
     }
 }
+impl ::std::fmt::Display for CallAs {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CallAs::DelegatedAdmin => write!(f, "DELEGATED_ADMIN"),
+            CallAs::SelfValue => write!(f, "SELF"),
+            CallAs::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

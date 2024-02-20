@@ -91,3 +91,11 @@ impl PropagateTags {
         }
     }
 }
+impl ::std::fmt::Display for PropagateTags {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PropagateTags::TaskDefinition => write!(f, "TASK_DEFINITION"),
+            PropagateTags::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

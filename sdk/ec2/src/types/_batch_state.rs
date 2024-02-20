@@ -129,3 +129,17 @@ impl BatchState {
         }
     }
 }
+impl ::std::fmt::Display for BatchState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchState::Active => write!(f, "active"),
+            BatchState::Cancelled => write!(f, "cancelled"),
+            BatchState::CancelledRunning => write!(f, "cancelled_running"),
+            BatchState::CancelledTerminatingInstances => write!(f, "cancelled_terminating"),
+            BatchState::Failed => write!(f, "failed"),
+            BatchState::Modifying => write!(f, "modifying"),
+            BatchState::Submitted => write!(f, "submitted"),
+            BatchState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

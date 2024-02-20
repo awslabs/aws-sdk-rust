@@ -116,3 +116,16 @@ impl CategoryFilterMatchOperator {
         }
     }
 }
+impl ::std::fmt::Display for CategoryFilterMatchOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CategoryFilterMatchOperator::Contains => write!(f, "CONTAINS"),
+            CategoryFilterMatchOperator::DoesNotContain => write!(f, "DOES_NOT_CONTAIN"),
+            CategoryFilterMatchOperator::DoesNotEqual => write!(f, "DOES_NOT_EQUAL"),
+            CategoryFilterMatchOperator::EndsWith => write!(f, "ENDS_WITH"),
+            CategoryFilterMatchOperator::Equals => write!(f, "EQUALS"),
+            CategoryFilterMatchOperator::StartsWith => write!(f, "STARTS_WITH"),
+            CategoryFilterMatchOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl WavFormat {
         }
     }
 }
+impl ::std::fmt::Display for WavFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WavFormat::Rf64 => write!(f, "RF64"),
+            WavFormat::Riff => write!(f, "RIFF"),
+            WavFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

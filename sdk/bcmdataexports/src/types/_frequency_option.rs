@@ -91,3 +91,11 @@ impl FrequencyOption {
         }
     }
 }
+impl ::std::fmt::Display for FrequencyOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FrequencyOption::Synchronous => write!(f, "SYNCHRONOUS"),
+            FrequencyOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

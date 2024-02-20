@@ -106,3 +106,14 @@ impl IamInstanceProfileAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for IamInstanceProfileAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IamInstanceProfileAssociationState::Associated => write!(f, "associated"),
+            IamInstanceProfileAssociationState::Associating => write!(f, "associating"),
+            IamInstanceProfileAssociationState::Disassociated => write!(f, "disassociated"),
+            IamInstanceProfileAssociationState::Disassociating => write!(f, "disassociating"),
+            IamInstanceProfileAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

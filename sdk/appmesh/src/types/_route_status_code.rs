@@ -101,3 +101,13 @@ impl RouteStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for RouteStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteStatusCode::Active => write!(f, "ACTIVE"),
+            RouteStatusCode::Deleted => write!(f, "DELETED"),
+            RouteStatusCode::Inactive => write!(f, "INACTIVE"),
+            RouteStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

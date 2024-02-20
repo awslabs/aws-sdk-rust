@@ -92,3 +92,11 @@ impl ThrottleReason {
         }
     }
 }
+impl ::std::fmt::Display for ThrottleReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThrottleReason::ConcurrentQueryLimitExceeded => write!(f, "CONCURRENT_QUERY_LIMIT_EXCEEDED"),
+            ThrottleReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

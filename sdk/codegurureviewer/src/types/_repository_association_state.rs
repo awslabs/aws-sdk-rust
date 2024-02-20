@@ -111,3 +111,15 @@ impl RepositoryAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for RepositoryAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RepositoryAssociationState::Associated => write!(f, "Associated"),
+            RepositoryAssociationState::Associating => write!(f, "Associating"),
+            RepositoryAssociationState::Disassociated => write!(f, "Disassociated"),
+            RepositoryAssociationState::Disassociating => write!(f, "Disassociating"),
+            RepositoryAssociationState::Failed => write!(f, "Failed"),
+            RepositoryAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

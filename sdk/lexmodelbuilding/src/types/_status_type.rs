@@ -96,3 +96,12 @@ impl StatusType {
         }
     }
 }
+impl ::std::fmt::Display for StatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatusType::Detected => write!(f, "Detected"),
+            StatusType::Missed => write!(f, "Missed"),
+            StatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

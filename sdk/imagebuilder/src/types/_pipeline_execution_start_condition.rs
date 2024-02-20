@@ -96,3 +96,14 @@ impl PipelineExecutionStartCondition {
         }
     }
 }
+impl ::std::fmt::Display for PipelineExecutionStartCondition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable => {
+                write!(f, "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE")
+            }
+            PipelineExecutionStartCondition::ExpressionMatchOnly => write!(f, "EXPRESSION_MATCH_ONLY"),
+            PipelineExecutionStartCondition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

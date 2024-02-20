@@ -201,3 +201,29 @@ impl PatchFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for PatchFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PatchFilterKey::AdvisoryId => write!(f, "ADVISORY_ID"),
+            PatchFilterKey::Arch => write!(f, "ARCH"),
+            PatchFilterKey::BugzillaId => write!(f, "BUGZILLA_ID"),
+            PatchFilterKey::Classification => write!(f, "CLASSIFICATION"),
+            PatchFilterKey::CveId => write!(f, "CVE_ID"),
+            PatchFilterKey::Epoch => write!(f, "EPOCH"),
+            PatchFilterKey::MsrcSeverity => write!(f, "MSRC_SEVERITY"),
+            PatchFilterKey::Name => write!(f, "NAME"),
+            PatchFilterKey::PatchId => write!(f, "PATCH_ID"),
+            PatchFilterKey::PatchSet => write!(f, "PATCH_SET"),
+            PatchFilterKey::Priority => write!(f, "PRIORITY"),
+            PatchFilterKey::Product => write!(f, "PRODUCT"),
+            PatchFilterKey::ProductFamily => write!(f, "PRODUCT_FAMILY"),
+            PatchFilterKey::Release => write!(f, "RELEASE"),
+            PatchFilterKey::Repository => write!(f, "REPOSITORY"),
+            PatchFilterKey::Section => write!(f, "SECTION"),
+            PatchFilterKey::Security => write!(f, "SECURITY"),
+            PatchFilterKey::Severity => write!(f, "SEVERITY"),
+            PatchFilterKey::Version => write!(f, "VERSION"),
+            PatchFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

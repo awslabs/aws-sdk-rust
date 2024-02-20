@@ -96,3 +96,12 @@ impl DeinterlacerControl {
         }
     }
 }
+impl ::std::fmt::Display for DeinterlacerControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeinterlacerControl::ForceAllFrames => write!(f, "FORCE_ALL_FRAMES"),
+            DeinterlacerControl::Normal => write!(f, "NORMAL"),
+            DeinterlacerControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

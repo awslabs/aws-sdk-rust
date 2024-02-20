@@ -237,3 +237,35 @@ impl MetricName {
         }
     }
 }
+impl ::std::fmt::Display for MetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricName::BurstCapacityPercentage => write!(f, "BurstCapacityPercentage"),
+            MetricName::BurstCapacityTime => write!(f, "BurstCapacityTime"),
+            MetricName::CpuUtilization => write!(f, "CPUUtilization"),
+            MetricName::ClientTlsNegotiationErrorCount => write!(f, "ClientTLSNegotiationErrorCount"),
+            MetricName::DatabaseConnections => write!(f, "DatabaseConnections"),
+            MetricName::DiskQueueDepth => write!(f, "DiskQueueDepth"),
+            MetricName::FreeStorageSpace => write!(f, "FreeStorageSpace"),
+            MetricName::HttpCodeInstance2XxCount => write!(f, "HTTPCode_Instance_2XX_Count"),
+            MetricName::HttpCodeInstance3XxCount => write!(f, "HTTPCode_Instance_3XX_Count"),
+            MetricName::HttpCodeInstance4XxCount => write!(f, "HTTPCode_Instance_4XX_Count"),
+            MetricName::HttpCodeInstance5XxCount => write!(f, "HTTPCode_Instance_5XX_Count"),
+            MetricName::HttpCodeLb4XxCount => write!(f, "HTTPCode_LB_4XX_Count"),
+            MetricName::HttpCodeLb5XxCount => write!(f, "HTTPCode_LB_5XX_Count"),
+            MetricName::HealthyHostCount => write!(f, "HealthyHostCount"),
+            MetricName::InstanceResponseTime => write!(f, "InstanceResponseTime"),
+            MetricName::NetworkIn => write!(f, "NetworkIn"),
+            MetricName::NetworkOut => write!(f, "NetworkOut"),
+            MetricName::NetworkReceiveThroughput => write!(f, "NetworkReceiveThroughput"),
+            MetricName::NetworkTransmitThroughput => write!(f, "NetworkTransmitThroughput"),
+            MetricName::RejectedConnectionCount => write!(f, "RejectedConnectionCount"),
+            MetricName::RequestCount => write!(f, "RequestCount"),
+            MetricName::StatusCheckFailed => write!(f, "StatusCheckFailed"),
+            MetricName::StatusCheckFailedInstance => write!(f, "StatusCheckFailed_Instance"),
+            MetricName::StatusCheckFailedSystem => write!(f, "StatusCheckFailed_System"),
+            MetricName::UnhealthyHostCount => write!(f, "UnhealthyHostCount"),
+            MetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

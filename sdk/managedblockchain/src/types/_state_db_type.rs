@@ -96,3 +96,12 @@ impl StateDbType {
         }
     }
 }
+impl ::std::fmt::Display for StateDbType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StateDbType::CouchDb => write!(f, "CouchDB"),
+            StateDbType::LevelDb => write!(f, "LevelDB"),
+            StateDbType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

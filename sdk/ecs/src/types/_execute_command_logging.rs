@@ -101,3 +101,13 @@ impl ExecuteCommandLogging {
         }
     }
 }
+impl ::std::fmt::Display for ExecuteCommandLogging {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecuteCommandLogging::Default => write!(f, "DEFAULT"),
+            ExecuteCommandLogging::None => write!(f, "NONE"),
+            ExecuteCommandLogging::Override => write!(f, "OVERRIDE"),
+            ExecuteCommandLogging::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

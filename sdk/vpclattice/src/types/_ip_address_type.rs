@@ -96,3 +96,12 @@ impl IpAddressType {
         }
     }
 }
+impl ::std::fmt::Display for IpAddressType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpAddressType::Ipv4 => write!(f, "IPV4"),
+            IpAddressType::Ipv6 => write!(f, "IPV6"),
+            IpAddressType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl DeviceCgroupPermission {
         }
     }
 }
+impl ::std::fmt::Display for DeviceCgroupPermission {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceCgroupPermission::Mknod => write!(f, "MKNOD"),
+            DeviceCgroupPermission::Read => write!(f, "READ"),
+            DeviceCgroupPermission::Write => write!(f, "WRITE"),
+            DeviceCgroupPermission::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

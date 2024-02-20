@@ -96,3 +96,12 @@ impl Relevance {
         }
     }
 }
+impl ::std::fmt::Display for Relevance {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Relevance::Helpful => write!(f, "HELPFUL"),
+            Relevance::NotHelpful => write!(f, "NOT_HELPFUL"),
+            Relevance::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

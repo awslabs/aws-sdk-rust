@@ -101,3 +101,13 @@ impl InstanceGroupType {
         }
     }
 }
+impl ::std::fmt::Display for InstanceGroupType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceGroupType::Core => write!(f, "CORE"),
+            InstanceGroupType::Master => write!(f, "MASTER"),
+            InstanceGroupType::Task => write!(f, "TASK"),
+            InstanceGroupType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

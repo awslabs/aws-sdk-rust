@@ -189,3 +189,27 @@ impl RequiredSignUpAttributesElement {
         }
     }
 }
+impl ::std::fmt::Display for RequiredSignUpAttributesElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RequiredSignUpAttributesElement::Address => write!(f, "ADDRESS"),
+            RequiredSignUpAttributesElement::Birthdate => write!(f, "BIRTHDATE"),
+            RequiredSignUpAttributesElement::Email => write!(f, "EMAIL"),
+            RequiredSignUpAttributesElement::FamilyName => write!(f, "FAMILY_NAME"),
+            RequiredSignUpAttributesElement::Gender => write!(f, "GENDER"),
+            RequiredSignUpAttributesElement::GivenName => write!(f, "GIVEN_NAME"),
+            RequiredSignUpAttributesElement::Locale => write!(f, "LOCALE"),
+            RequiredSignUpAttributesElement::MiddleName => write!(f, "MIDDLE_NAME"),
+            RequiredSignUpAttributesElement::Name => write!(f, "NAME"),
+            RequiredSignUpAttributesElement::Nickname => write!(f, "NICKNAME"),
+            RequiredSignUpAttributesElement::PhoneNumber => write!(f, "PHONE_NUMBER"),
+            RequiredSignUpAttributesElement::Picture => write!(f, "PICTURE"),
+            RequiredSignUpAttributesElement::PreferredUsername => write!(f, "PREFERRED_USERNAME"),
+            RequiredSignUpAttributesElement::Profile => write!(f, "PROFILE"),
+            RequiredSignUpAttributesElement::UpdatedAt => write!(f, "UPDATED_AT"),
+            RequiredSignUpAttributesElement::Website => write!(f, "WEBSITE"),
+            RequiredSignUpAttributesElement::ZoneInfo => write!(f, "ZONE_INFO"),
+            RequiredSignUpAttributesElement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

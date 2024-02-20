@@ -106,3 +106,14 @@ impl ChannelMessageStatus {
         }
     }
 }
+impl ::std::fmt::Display for ChannelMessageStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelMessageStatus::Denied => write!(f, "DENIED"),
+            ChannelMessageStatus::Failed => write!(f, "FAILED"),
+            ChannelMessageStatus::Pending => write!(f, "PENDING"),
+            ChannelMessageStatus::Sent => write!(f, "SENT"),
+            ChannelMessageStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

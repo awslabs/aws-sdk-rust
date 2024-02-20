@@ -96,3 +96,12 @@ impl SsmTargetAccount {
         }
     }
 }
+impl ::std::fmt::Display for SsmTargetAccount {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SsmTargetAccount::ImpactedAccount => write!(f, "IMPACTED_ACCOUNT"),
+            SsmTargetAccount::ResponsePlanOwnerAccount => write!(f, "RESPONSE_PLAN_OWNER_ACCOUNT"),
+            SsmTargetAccount::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

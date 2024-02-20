@@ -96,3 +96,12 @@ impl TargetType {
         }
     }
 }
+impl ::std::fmt::Display for TargetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetType::HttpHost => write!(f, "HTTP_HOST"),
+            TargetType::TlsSni => write!(f, "TLS_SNI"),
+            TargetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

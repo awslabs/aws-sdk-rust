@@ -105,3 +105,13 @@ impl RegistrationDisassociationBehavior {
         }
     }
 }
+impl ::std::fmt::Display for RegistrationDisassociationBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistrationDisassociationBehavior::DeleteRegistrationDisassociates => write!(f, "DELETE_REGISTRATION_DISASSOCIATES"),
+            RegistrationDisassociationBehavior::DisassociateAllAllowsDeleteRegistration => write!(f, "DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION"),
+            RegistrationDisassociationBehavior::DisassociateAllClosesRegistration => write!(f, "DISASSOCIATE_ALL_CLOSES_REGISTRATION"),
+            RegistrationDisassociationBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

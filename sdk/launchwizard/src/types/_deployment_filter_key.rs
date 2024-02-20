@@ -96,3 +96,12 @@ impl DeploymentFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentFilterKey::DeploymentStatus => write!(f, "DEPLOYMENT_STATUS"),
+            DeploymentFilterKey::WorkloadName => write!(f, "WORKLOAD_NAME"),
+            DeploymentFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

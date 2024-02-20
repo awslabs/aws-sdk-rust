@@ -96,3 +96,12 @@ impl Mpeg2RateControlMode {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2RateControlMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2RateControlMode::Cbr => write!(f, "CBR"),
+            Mpeg2RateControlMode::Vbr => write!(f, "VBR"),
+            Mpeg2RateControlMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

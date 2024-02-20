@@ -96,3 +96,12 @@ impl PolicyType {
         }
     }
 }
+impl ::std::fmt::Display for PolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyType::RuleBased => write!(f, "RuleBased"),
+            PolicyType::TargetBased => write!(f, "TargetBased"),
+            PolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

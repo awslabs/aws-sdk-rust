@@ -133,3 +133,13 @@ impl TrainingInputMode {
         }
     }
 }
+impl ::std::fmt::Display for TrainingInputMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrainingInputMode::Fastfile => write!(f, "FastFile"),
+            TrainingInputMode::File => write!(f, "File"),
+            TrainingInputMode::Pipe => write!(f, "Pipe"),
+            TrainingInputMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

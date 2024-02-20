@@ -111,3 +111,15 @@ impl GrpcRetryPolicyEvent {
         }
     }
 }
+impl ::std::fmt::Display for GrpcRetryPolicyEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GrpcRetryPolicyEvent::Cancelled => write!(f, "cancelled"),
+            GrpcRetryPolicyEvent::DeadlineExceeded => write!(f, "deadline-exceeded"),
+            GrpcRetryPolicyEvent::Internal => write!(f, "internal"),
+            GrpcRetryPolicyEvent::ResourceExhausted => write!(f, "resource-exhausted"),
+            GrpcRetryPolicyEvent::Unavailable => write!(f, "unavailable"),
+            GrpcRetryPolicyEvent::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

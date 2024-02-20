@@ -91,3 +91,11 @@ impl FilterField {
         }
     }
 }
+impl ::std::fmt::Display for FilterField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterField::Name => write!(f, "NAME"),
+            FilterField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DashboardBehavior {
         }
     }
 }
+impl ::std::fmt::Display for DashboardBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashboardBehavior::Disabled => write!(f, "DISABLED"),
+            DashboardBehavior::Enabled => write!(f, "ENABLED"),
+            DashboardBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

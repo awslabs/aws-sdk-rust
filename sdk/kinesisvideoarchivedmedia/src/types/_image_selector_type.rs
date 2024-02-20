@@ -96,3 +96,12 @@ impl ImageSelectorType {
         }
     }
 }
+impl ::std::fmt::Display for ImageSelectorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageSelectorType::ProducerTimestamp => write!(f, "PRODUCER_TIMESTAMP"),
+            ImageSelectorType::ServerTimestamp => write!(f, "SERVER_TIMESTAMP"),
+            ImageSelectorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -231,3 +231,34 @@ impl ConnectorType {
         }
     }
 }
+impl ::std::fmt::Display for ConnectorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectorType::Amplitude => write!(f, "Amplitude"),
+            ConnectorType::Customconnector => write!(f, "CustomConnector"),
+            ConnectorType::Customerprofiles => write!(f, "CustomerProfiles"),
+            ConnectorType::Datadog => write!(f, "Datadog"),
+            ConnectorType::Dynatrace => write!(f, "Dynatrace"),
+            ConnectorType::Eventbridge => write!(f, "EventBridge"),
+            ConnectorType::Googleanalytics => write!(f, "Googleanalytics"),
+            ConnectorType::Honeycode => write!(f, "Honeycode"),
+            ConnectorType::Infornexus => write!(f, "Infornexus"),
+            ConnectorType::Lookoutmetrics => write!(f, "LookoutMetrics"),
+            ConnectorType::Marketo => write!(f, "Marketo"),
+            ConnectorType::Pardot => write!(f, "Pardot"),
+            ConnectorType::Redshift => write!(f, "Redshift"),
+            ConnectorType::S3 => write!(f, "S3"),
+            ConnectorType::Sapodata => write!(f, "SAPOData"),
+            ConnectorType::Salesforce => write!(f, "Salesforce"),
+            ConnectorType::Servicenow => write!(f, "Servicenow"),
+            ConnectorType::Singular => write!(f, "Singular"),
+            ConnectorType::Slack => write!(f, "Slack"),
+            ConnectorType::Snowflake => write!(f, "Snowflake"),
+            ConnectorType::Trendmicro => write!(f, "Trendmicro"),
+            ConnectorType::Upsolver => write!(f, "Upsolver"),
+            ConnectorType::Veeva => write!(f, "Veeva"),
+            ConnectorType::Zendesk => write!(f, "Zendesk"),
+            ConnectorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

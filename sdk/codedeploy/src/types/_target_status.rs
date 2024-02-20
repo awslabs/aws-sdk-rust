@@ -121,3 +121,17 @@ impl TargetStatus {
         }
     }
 }
+impl ::std::fmt::Display for TargetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetStatus::Failed => write!(f, "Failed"),
+            TargetStatus::InProgress => write!(f, "InProgress"),
+            TargetStatus::Pending => write!(f, "Pending"),
+            TargetStatus::Ready => write!(f, "Ready"),
+            TargetStatus::Skipped => write!(f, "Skipped"),
+            TargetStatus::Succeeded => write!(f, "Succeeded"),
+            TargetStatus::UnknownValue => write!(f, "Unknown"),
+            TargetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

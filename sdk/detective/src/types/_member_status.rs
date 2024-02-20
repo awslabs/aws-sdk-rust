@@ -117,3 +117,15 @@ impl MemberStatus {
         }
     }
 }
+impl ::std::fmt::Display for MemberStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberStatus::AcceptedButDisabled => write!(f, "ACCEPTED_BUT_DISABLED"),
+            MemberStatus::Enabled => write!(f, "ENABLED"),
+            MemberStatus::Invited => write!(f, "INVITED"),
+            MemberStatus::VerificationFailed => write!(f, "VERIFICATION_FAILED"),
+            MemberStatus::VerificationInProgress => write!(f, "VERIFICATION_IN_PROGRESS"),
+            MemberStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

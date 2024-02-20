@@ -113,3 +113,14 @@ impl EcsServiceRecommendationFindingReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for EcsServiceRecommendationFindingReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcsServiceRecommendationFindingReasonCode::CpuOverProvisioned => write!(f, "CPUOverprovisioned"),
+            EcsServiceRecommendationFindingReasonCode::CpuUnderProvisioned => write!(f, "CPUUnderprovisioned"),
+            EcsServiceRecommendationFindingReasonCode::MemoryOverProvisioned => write!(f, "MemoryOverprovisioned"),
+            EcsServiceRecommendationFindingReasonCode::MemoryUnderProvisioned => write!(f, "MemoryUnderprovisioned"),
+            EcsServiceRecommendationFindingReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

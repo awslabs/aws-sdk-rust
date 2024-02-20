@@ -106,3 +106,14 @@ impl ConfigurationItemType {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationItemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationItemType::Application => write!(f, "APPLICATION"),
+            ConfigurationItemType::Connections => write!(f, "CONNECTION"),
+            ConfigurationItemType::Process => write!(f, "PROCESS"),
+            ConfigurationItemType::Server => write!(f, "SERVER"),
+            ConfigurationItemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

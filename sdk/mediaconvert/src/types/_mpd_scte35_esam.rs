@@ -96,3 +96,12 @@ impl MpdScte35Esam {
         }
     }
 }
+impl ::std::fmt::Display for MpdScte35Esam {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MpdScte35Esam::Insert => write!(f, "INSERT"),
+            MpdScte35Esam::None => write!(f, "NONE"),
+            MpdScte35Esam::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

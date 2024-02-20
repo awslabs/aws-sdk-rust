@@ -111,3 +111,15 @@ impl LocalGatewayRouteState {
         }
     }
 }
+impl ::std::fmt::Display for LocalGatewayRouteState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocalGatewayRouteState::Active => write!(f, "active"),
+            LocalGatewayRouteState::Blackhole => write!(f, "blackhole"),
+            LocalGatewayRouteState::Deleted => write!(f, "deleted"),
+            LocalGatewayRouteState::Deleting => write!(f, "deleting"),
+            LocalGatewayRouteState::Pending => write!(f, "pending"),
+            LocalGatewayRouteState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

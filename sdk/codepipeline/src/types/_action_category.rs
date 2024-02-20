@@ -116,3 +116,16 @@ impl ActionCategory {
         }
     }
 }
+impl ::std::fmt::Display for ActionCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionCategory::Approval => write!(f, "Approval"),
+            ActionCategory::Build => write!(f, "Build"),
+            ActionCategory::Deploy => write!(f, "Deploy"),
+            ActionCategory::Invoke => write!(f, "Invoke"),
+            ActionCategory::Source => write!(f, "Source"),
+            ActionCategory::Test => write!(f, "Test"),
+            ActionCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

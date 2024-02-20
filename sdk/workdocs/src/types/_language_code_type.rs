@@ -244,3 +244,41 @@ impl LanguageCodeType {
         }
     }
 }
+impl ::std::fmt::Display for LanguageCodeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LanguageCodeType::Ar => write!(f, "AR"),
+            LanguageCodeType::Bg => write!(f, "BG"),
+            LanguageCodeType::Bn => write!(f, "BN"),
+            LanguageCodeType::Cs => write!(f, "CS"),
+            LanguageCodeType::Da => write!(f, "DA"),
+            LanguageCodeType::De => write!(f, "DE"),
+            LanguageCodeType::Default => write!(f, "DEFAULT"),
+            LanguageCodeType::El => write!(f, "EL"),
+            LanguageCodeType::En => write!(f, "EN"),
+            LanguageCodeType::Es => write!(f, "ES"),
+            LanguageCodeType::Fa => write!(f, "FA"),
+            LanguageCodeType::Fi => write!(f, "FI"),
+            LanguageCodeType::Fr => write!(f, "FR"),
+            LanguageCodeType::Hi => write!(f, "HI"),
+            LanguageCodeType::Hu => write!(f, "HU"),
+            LanguageCodeType::Id => write!(f, "ID"),
+            LanguageCodeType::It => write!(f, "IT"),
+            LanguageCodeType::Ja => write!(f, "JA"),
+            LanguageCodeType::Ko => write!(f, "KO"),
+            LanguageCodeType::Lt => write!(f, "LT"),
+            LanguageCodeType::Lv => write!(f, "LV"),
+            LanguageCodeType::Nl => write!(f, "NL"),
+            LanguageCodeType::No => write!(f, "NO"),
+            LanguageCodeType::Pt => write!(f, "PT"),
+            LanguageCodeType::Ro => write!(f, "RO"),
+            LanguageCodeType::Ru => write!(f, "RU"),
+            LanguageCodeType::Sv => write!(f, "SV"),
+            LanguageCodeType::Sw => write!(f, "SW"),
+            LanguageCodeType::Th => write!(f, "TH"),
+            LanguageCodeType::Tr => write!(f, "TR"),
+            LanguageCodeType::Zh => write!(f, "ZH"),
+            LanguageCodeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

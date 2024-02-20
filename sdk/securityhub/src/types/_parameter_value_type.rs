@@ -96,3 +96,12 @@ impl ParameterValueType {
         }
     }
 }
+impl ::std::fmt::Display for ParameterValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParameterValueType::Custom => write!(f, "CUSTOM"),
+            ParameterValueType::Default => write!(f, "DEFAULT"),
+            ParameterValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

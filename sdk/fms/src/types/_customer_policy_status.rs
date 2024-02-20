@@ -96,3 +96,12 @@ impl CustomerPolicyStatus {
         }
     }
 }
+impl ::std::fmt::Display for CustomerPolicyStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomerPolicyStatus::Active => write!(f, "ACTIVE"),
+            CustomerPolicyStatus::OutOfAdminScope => write!(f, "OUT_OF_ADMIN_SCOPE"),
+            CustomerPolicyStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

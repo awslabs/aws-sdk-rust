@@ -96,3 +96,12 @@ impl ApplyTimeOf {
         }
     }
 }
+impl ::std::fmt::Display for ApplyTimeOf {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplyTimeOf::Device => write!(f, "DEVICE"),
+            ApplyTimeOf::Utc => write!(f, "UTC"),
+            ApplyTimeOf::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl Status {
         }
     }
 }
+impl ::std::fmt::Display for Status {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Status::Active => write!(f, "ACTIVE"),
+            Status::Creating => write!(f, "CREATING"),
+            Status::Deleting => write!(f, "DELETING"),
+            Status::InaccessibleEncryptionCreds => write!(f, "INACCESSIBLE_ENCRYPTION_CREDS"),
+            Status::InvalidSecurityGroupId => write!(f, "INVALID_SECURITY_GROUP_ID"),
+            Status::InvalidSubnetId => write!(f, "INVALID_SUBNET_ID"),
+            Status::IpAddressLimitExceeded => write!(f, "IP_ADDRESS_LIMIT_EXCEEDED"),
+            Status::Updating => write!(f, "UPDATING"),
+            Status::VpcEndpointLimitExceeded => write!(f, "VPC_ENDPOINT_LIMIT_EXCEEDED"),
+            Status::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

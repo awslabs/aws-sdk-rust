@@ -96,3 +96,12 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::CfnStack => write!(f, "CFN_STACK"),
+            ResourceType::ResourceTagValue => write!(f, "RESOURCE_TAG_VALUE"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

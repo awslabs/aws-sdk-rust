@@ -153,3 +153,21 @@ impl ThreatIntelIndicatorType {
         }
     }
 }
+impl ::std::fmt::Display for ThreatIntelIndicatorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThreatIntelIndicatorType::Domain => write!(f, "DOMAIN"),
+            ThreatIntelIndicatorType::EmailAddress => write!(f, "EMAIL_ADDRESS"),
+            ThreatIntelIndicatorType::HashMd5 => write!(f, "HASH_MD5"),
+            ThreatIntelIndicatorType::HashSha1 => write!(f, "HASH_SHA1"),
+            ThreatIntelIndicatorType::HashSha256 => write!(f, "HASH_SHA256"),
+            ThreatIntelIndicatorType::HashSha512 => write!(f, "HASH_SHA512"),
+            ThreatIntelIndicatorType::Ipv4Address => write!(f, "IPV4_ADDRESS"),
+            ThreatIntelIndicatorType::Ipv6Address => write!(f, "IPV6_ADDRESS"),
+            ThreatIntelIndicatorType::Mutex => write!(f, "MUTEX"),
+            ThreatIntelIndicatorType::Process => write!(f, "PROCESS"),
+            ThreatIntelIndicatorType::Url => write!(f, "URL"),
+            ThreatIntelIndicatorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

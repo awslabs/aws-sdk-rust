@@ -111,3 +111,15 @@ impl FileCacheLifecycle {
         }
     }
 }
+impl ::std::fmt::Display for FileCacheLifecycle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileCacheLifecycle::Available => write!(f, "AVAILABLE"),
+            FileCacheLifecycle::Creating => write!(f, "CREATING"),
+            FileCacheLifecycle::Deleting => write!(f, "DELETING"),
+            FileCacheLifecycle::Failed => write!(f, "FAILED"),
+            FileCacheLifecycle::Updating => write!(f, "UPDATING"),
+            FileCacheLifecycle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl SecurityStyle {
         }
     }
 }
+impl ::std::fmt::Display for SecurityStyle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SecurityStyle::Mixed => write!(f, "MIXED"),
+            SecurityStyle::Ntfs => write!(f, "NTFS"),
+            SecurityStyle::Unix => write!(f, "UNIX"),
+            SecurityStyle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

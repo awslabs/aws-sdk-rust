@@ -96,3 +96,12 @@ impl TrafficType {
         }
     }
 }
+impl ::std::fmt::Display for TrafficType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrafficType::Campaign => write!(f, "CAMPAIGN"),
+            TrafficType::General => write!(f, "GENERAL"),
+            TrafficType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

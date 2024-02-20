@@ -153,3 +153,21 @@ impl SimpleNumericalAggregationFunction {
         }
     }
 }
+impl ::std::fmt::Display for SimpleNumericalAggregationFunction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SimpleNumericalAggregationFunction::Average => write!(f, "AVERAGE"),
+            SimpleNumericalAggregationFunction::Count => write!(f, "COUNT"),
+            SimpleNumericalAggregationFunction::DistinctCount => write!(f, "DISTINCT_COUNT"),
+            SimpleNumericalAggregationFunction::Max => write!(f, "MAX"),
+            SimpleNumericalAggregationFunction::Median => write!(f, "MEDIAN"),
+            SimpleNumericalAggregationFunction::Min => write!(f, "MIN"),
+            SimpleNumericalAggregationFunction::Stdev => write!(f, "STDEV"),
+            SimpleNumericalAggregationFunction::Stdevp => write!(f, "STDEVP"),
+            SimpleNumericalAggregationFunction::Sum => write!(f, "SUM"),
+            SimpleNumericalAggregationFunction::Var => write!(f, "VAR"),
+            SimpleNumericalAggregationFunction::Varp => write!(f, "VARP"),
+            SimpleNumericalAggregationFunction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

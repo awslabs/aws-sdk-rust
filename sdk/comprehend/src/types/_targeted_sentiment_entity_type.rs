@@ -189,3 +189,27 @@ impl TargetedSentimentEntityType {
         }
     }
 }
+impl ::std::fmt::Display for TargetedSentimentEntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetedSentimentEntityType::Attribute => write!(f, "ATTRIBUTE"),
+            TargetedSentimentEntityType::Book => write!(f, "BOOK"),
+            TargetedSentimentEntityType::Brand => write!(f, "BRAND"),
+            TargetedSentimentEntityType::CommercialItem => write!(f, "COMMERCIAL_ITEM"),
+            TargetedSentimentEntityType::Date => write!(f, "DATE"),
+            TargetedSentimentEntityType::Event => write!(f, "EVENT"),
+            TargetedSentimentEntityType::Facility => write!(f, "FACILITY"),
+            TargetedSentimentEntityType::Game => write!(f, "GAME"),
+            TargetedSentimentEntityType::Location => write!(f, "LOCATION"),
+            TargetedSentimentEntityType::Movie => write!(f, "MOVIE"),
+            TargetedSentimentEntityType::Music => write!(f, "MUSIC"),
+            TargetedSentimentEntityType::Organization => write!(f, "ORGANIZATION"),
+            TargetedSentimentEntityType::Other => write!(f, "OTHER"),
+            TargetedSentimentEntityType::Person => write!(f, "PERSON"),
+            TargetedSentimentEntityType::PersonalTitle => write!(f, "PERSONAL_TITLE"),
+            TargetedSentimentEntityType::Quantity => write!(f, "QUANTITY"),
+            TargetedSentimentEntityType::Software => write!(f, "SOFTWARE"),
+            TargetedSentimentEntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

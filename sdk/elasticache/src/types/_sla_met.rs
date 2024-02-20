@@ -101,3 +101,13 @@ impl SlaMet {
         }
     }
 }
+impl ::std::fmt::Display for SlaMet {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlaMet::Na => write!(f, "n/a"),
+            SlaMet::No => write!(f, "no"),
+            SlaMet::Yes => write!(f, "yes"),
+            SlaMet::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

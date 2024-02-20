@@ -117,3 +117,15 @@ impl OutputGroupType {
         }
     }
 }
+impl ::std::fmt::Display for OutputGroupType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputGroupType::CmafGroupSettings => write!(f, "CMAF_GROUP_SETTINGS"),
+            OutputGroupType::DashIsoGroupSettings => write!(f, "DASH_ISO_GROUP_SETTINGS"),
+            OutputGroupType::FileGroupSettings => write!(f, "FILE_GROUP_SETTINGS"),
+            OutputGroupType::HlsGroupSettings => write!(f, "HLS_GROUP_SETTINGS"),
+            OutputGroupType::MsSmoothGroupSettings => write!(f, "MS_SMOOTH_GROUP_SETTINGS"),
+            OutputGroupType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

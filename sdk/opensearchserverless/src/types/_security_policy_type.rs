@@ -96,3 +96,12 @@ impl SecurityPolicyType {
         }
     }
 }
+impl ::std::fmt::Display for SecurityPolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SecurityPolicyType::Encryption => write!(f, "encryption"),
+            SecurityPolicyType::Network => write!(f, "network"),
+            SecurityPolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl EksAnywhereSubscriptionStatus {
         }
     }
 }
+impl ::std::fmt::Display for EksAnywhereSubscriptionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EksAnywhereSubscriptionStatus::Active => write!(f, "ACTIVE"),
+            EksAnywhereSubscriptionStatus::Creating => write!(f, "CREATING"),
+            EksAnywhereSubscriptionStatus::Deleting => write!(f, "DELETING"),
+            EksAnywhereSubscriptionStatus::Expired => write!(f, "EXPIRED"),
+            EksAnywhereSubscriptionStatus::Expiring => write!(f, "EXPIRING"),
+            EksAnywhereSubscriptionStatus::Updating => write!(f, "UPDATING"),
+            EksAnywhereSubscriptionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

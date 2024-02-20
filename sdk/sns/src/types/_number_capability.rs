@@ -101,3 +101,13 @@ impl NumberCapability {
         }
     }
 }
+impl ::std::fmt::Display for NumberCapability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NumberCapability::Mms => write!(f, "MMS"),
+            NumberCapability::Sms => write!(f, "SMS"),
+            NumberCapability::Voice => write!(f, "VOICE"),
+            NumberCapability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

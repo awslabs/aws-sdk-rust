@@ -96,3 +96,12 @@ impl IntentSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for IntentSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntentSortAttribute::IntentName => write!(f, "IntentName"),
+            IntentSortAttribute::LastUpdatedDateTime => write!(f, "LastUpdatedDateTime"),
+            IntentSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

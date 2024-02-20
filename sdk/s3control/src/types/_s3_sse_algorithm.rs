@@ -96,3 +96,12 @@ impl S3SseAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for S3SseAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3SseAlgorithm::Aes256 => write!(f, "AES256"),
+            S3SseAlgorithm::Kms => write!(f, "KMS"),
+            S3SseAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

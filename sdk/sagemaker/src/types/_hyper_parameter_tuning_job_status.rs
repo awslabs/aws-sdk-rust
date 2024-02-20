@@ -121,3 +121,17 @@ impl HyperParameterTuningJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for HyperParameterTuningJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HyperParameterTuningJobStatus::Completed => write!(f, "Completed"),
+            HyperParameterTuningJobStatus::DeleteFailed => write!(f, "DeleteFailed"),
+            HyperParameterTuningJobStatus::Deleting => write!(f, "Deleting"),
+            HyperParameterTuningJobStatus::Failed => write!(f, "Failed"),
+            HyperParameterTuningJobStatus::InProgress => write!(f, "InProgress"),
+            HyperParameterTuningJobStatus::Stopped => write!(f, "Stopped"),
+            HyperParameterTuningJobStatus::Stopping => write!(f, "Stopping"),
+            HyperParameterTuningJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ConversionTaskState {
         }
     }
 }
+impl ::std::fmt::Display for ConversionTaskState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConversionTaskState::Active => write!(f, "active"),
+            ConversionTaskState::Cancelled => write!(f, "cancelled"),
+            ConversionTaskState::Cancelling => write!(f, "cancelling"),
+            ConversionTaskState::Completed => write!(f, "completed"),
+            ConversionTaskState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

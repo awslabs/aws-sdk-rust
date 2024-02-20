@@ -106,3 +106,14 @@ impl IngestionRequestType {
         }
     }
 }
+impl ::std::fmt::Display for IngestionRequestType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IngestionRequestType::Edit => write!(f, "EDIT"),
+            IngestionRequestType::FullRefresh => write!(f, "FULL_REFRESH"),
+            IngestionRequestType::IncrementalRefresh => write!(f, "INCREMENTAL_REFRESH"),
+            IngestionRequestType::InitialIngestion => write!(f, "INITIAL_INGESTION"),
+            IngestionRequestType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

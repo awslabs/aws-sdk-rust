@@ -96,3 +96,12 @@ impl CacheHealthMetricsConfig {
         }
     }
 }
+impl ::std::fmt::Display for CacheHealthMetricsConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CacheHealthMetricsConfig::Disabled => write!(f, "DISABLED"),
+            CacheHealthMetricsConfig::Enabled => write!(f, "ENABLED"),
+            CacheHealthMetricsConfig::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

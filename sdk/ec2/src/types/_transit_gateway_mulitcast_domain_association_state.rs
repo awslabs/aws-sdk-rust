@@ -131,3 +131,17 @@ impl TransitGatewayMulitcastDomainAssociationState {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayMulitcastDomainAssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayMulitcastDomainAssociationState::Associated => write!(f, "associated"),
+            TransitGatewayMulitcastDomainAssociationState::Associating => write!(f, "associating"),
+            TransitGatewayMulitcastDomainAssociationState::Disassociated => write!(f, "disassociated"),
+            TransitGatewayMulitcastDomainAssociationState::Disassociating => write!(f, "disassociating"),
+            TransitGatewayMulitcastDomainAssociationState::Failed => write!(f, "failed"),
+            TransitGatewayMulitcastDomainAssociationState::PendingAcceptance => write!(f, "pendingAcceptance"),
+            TransitGatewayMulitcastDomainAssociationState::Rejected => write!(f, "rejected"),
+            TransitGatewayMulitcastDomainAssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

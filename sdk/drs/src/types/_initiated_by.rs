@@ -141,3 +141,19 @@ impl InitiatedBy {
         }
     }
 }
+impl ::std::fmt::Display for InitiatedBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InitiatedBy::AssociateNetworkRecovery => write!(f, "ASSOCIATE_NETWORK_RECOVERY"),
+            InitiatedBy::CreateNetworkRecovery => write!(f, "CREATE_NETWORK_RECOVERY"),
+            InitiatedBy::Diagnostic => write!(f, "DIAGNOSTIC"),
+            InitiatedBy::Failback => write!(f, "FAILBACK"),
+            InitiatedBy::StartDrill => write!(f, "START_DRILL"),
+            InitiatedBy::StartRecovery => write!(f, "START_RECOVERY"),
+            InitiatedBy::TargetAccount => write!(f, "TARGET_ACCOUNT"),
+            InitiatedBy::TerminateRecoveryInstances => write!(f, "TERMINATE_RECOVERY_INSTANCES"),
+            InitiatedBy::UpdateNetworkRecovery => write!(f, "UPDATE_NETWORK_RECOVERY"),
+            InitiatedBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

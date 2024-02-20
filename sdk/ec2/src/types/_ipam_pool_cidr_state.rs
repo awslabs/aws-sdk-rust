@@ -135,3 +135,18 @@ impl IpamPoolCidrState {
         }
     }
 }
+impl ::std::fmt::Display for IpamPoolCidrState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamPoolCidrState::Deprovisioned => write!(f, "deprovisioned"),
+            IpamPoolCidrState::FailedDeprovision => write!(f, "failed-deprovision"),
+            IpamPoolCidrState::FailedImport => write!(f, "failed-import"),
+            IpamPoolCidrState::FailedProvision => write!(f, "failed-provision"),
+            IpamPoolCidrState::PendingDeprovision => write!(f, "pending-deprovision"),
+            IpamPoolCidrState::PendingImport => write!(f, "pending-import"),
+            IpamPoolCidrState::PendingProvision => write!(f, "pending-provision"),
+            IpamPoolCidrState::Provisioned => write!(f, "provisioned"),
+            IpamPoolCidrState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

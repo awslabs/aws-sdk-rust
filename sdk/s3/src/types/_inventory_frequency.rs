@@ -96,3 +96,12 @@ impl InventoryFrequency {
         }
     }
 }
+impl ::std::fmt::Display for InventoryFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InventoryFrequency::Daily => write!(f, "Daily"),
+            InventoryFrequency::Weekly => write!(f, "Weekly"),
+            InventoryFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

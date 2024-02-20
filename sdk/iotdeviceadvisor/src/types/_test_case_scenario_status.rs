@@ -141,3 +141,19 @@ impl TestCaseScenarioStatus {
         }
     }
 }
+impl ::std::fmt::Display for TestCaseScenarioStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestCaseScenarioStatus::Canceled => write!(f, "CANCELED"),
+            TestCaseScenarioStatus::Error => write!(f, "ERROR"),
+            TestCaseScenarioStatus::Fail => write!(f, "FAIL"),
+            TestCaseScenarioStatus::Pass => write!(f, "PASS"),
+            TestCaseScenarioStatus::PassWithWarnings => write!(f, "PASS_WITH_WARNINGS"),
+            TestCaseScenarioStatus::Pending => write!(f, "PENDING"),
+            TestCaseScenarioStatus::Running => write!(f, "RUNNING"),
+            TestCaseScenarioStatus::Stopped => write!(f, "STOPPED"),
+            TestCaseScenarioStatus::Stopping => write!(f, "STOPPING"),
+            TestCaseScenarioStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

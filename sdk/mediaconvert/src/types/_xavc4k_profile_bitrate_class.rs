@@ -101,3 +101,13 @@ impl Xavc4kProfileBitrateClass {
         }
     }
 }
+impl ::std::fmt::Display for Xavc4kProfileBitrateClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Xavc4kProfileBitrateClass::BitrateClass100 => write!(f, "BITRATE_CLASS_100"),
+            Xavc4kProfileBitrateClass::BitrateClass140 => write!(f, "BITRATE_CLASS_140"),
+            Xavc4kProfileBitrateClass::BitrateClass200 => write!(f, "BITRATE_CLASS_200"),
+            Xavc4kProfileBitrateClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

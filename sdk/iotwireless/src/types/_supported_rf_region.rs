@@ -153,3 +153,23 @@ impl SupportedRfRegion {
         }
     }
 }
+impl ::std::fmt::Display for SupportedRfRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SupportedRfRegion::As9231 => write!(f, "AS923-1"),
+            SupportedRfRegion::As9232 => write!(f, "AS923-2"),
+            SupportedRfRegion::As9233 => write!(f, "AS923-3"),
+            SupportedRfRegion::As9234 => write!(f, "AS923-4"),
+            SupportedRfRegion::Au915 => write!(f, "AU915"),
+            SupportedRfRegion::Cn470 => write!(f, "CN470"),
+            SupportedRfRegion::Cn779 => write!(f, "CN779"),
+            SupportedRfRegion::Eu433 => write!(f, "EU433"),
+            SupportedRfRegion::Eu868 => write!(f, "EU868"),
+            SupportedRfRegion::In865 => write!(f, "IN865"),
+            SupportedRfRegion::Kr920 => write!(f, "KR920"),
+            SupportedRfRegion::Ru864 => write!(f, "RU864"),
+            SupportedRfRegion::Us915 => write!(f, "US915"),
+            SupportedRfRegion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

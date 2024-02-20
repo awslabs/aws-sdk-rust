@@ -96,3 +96,12 @@ impl FindingStatisticsSortAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for FindingStatisticsSortAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingStatisticsSortAttributeName::Count => write!(f, "count"),
+            FindingStatisticsSortAttributeName::GroupKey => write!(f, "groupKey"),
+            FindingStatisticsSortAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

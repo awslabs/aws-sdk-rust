@@ -96,3 +96,12 @@ impl BooleanEnumType {
         }
     }
 }
+impl ::std::fmt::Display for BooleanEnumType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BooleanEnumType::False => write!(f, "FALSE"),
+            BooleanEnumType::True => write!(f, "TRUE"),
+            BooleanEnumType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

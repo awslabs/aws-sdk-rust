@@ -96,3 +96,12 @@ impl ImpersonationRoleType {
         }
     }
 }
+impl ::std::fmt::Display for ImpersonationRoleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImpersonationRoleType::FullAccess => write!(f, "FULL_ACCESS"),
+            ImpersonationRoleType::ReadOnly => write!(f, "READ_ONLY"),
+            ImpersonationRoleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

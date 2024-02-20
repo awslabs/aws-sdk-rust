@@ -101,3 +101,13 @@ impl ExcludeRecommendationReason {
         }
     }
 }
+impl ::std::fmt::Display for ExcludeRecommendationReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExcludeRecommendationReason::AlreadyImplemented => write!(f, "AlreadyImplemented"),
+            ExcludeRecommendationReason::ComplexityOfImplementation => write!(f, "ComplexityOfImplementation"),
+            ExcludeRecommendationReason::NotRelevant => write!(f, "NotRelevant"),
+            ExcludeRecommendationReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

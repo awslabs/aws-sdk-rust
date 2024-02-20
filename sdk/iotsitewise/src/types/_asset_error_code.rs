@@ -91,3 +91,11 @@ impl AssetErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for AssetErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetErrorCode::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            AssetErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

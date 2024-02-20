@@ -96,3 +96,12 @@ impl MergeType {
         }
     }
 }
+impl ::std::fmt::Display for MergeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MergeType::AutoMerge => write!(f, "AUTO_MERGE"),
+            MergeType::ManualMerge => write!(f, "MANUAL_MERGE"),
+            MergeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

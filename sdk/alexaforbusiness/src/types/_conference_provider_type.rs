@@ -147,3 +147,20 @@ impl ConferenceProviderType {
         }
     }
 }
+impl ::std::fmt::Display for ConferenceProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConferenceProviderType::Bluejeans => write!(f, "BLUEJEANS"),
+            ConferenceProviderType::Chime => write!(f, "CHIME"),
+            ConferenceProviderType::Custom => write!(f, "CUSTOM"),
+            ConferenceProviderType::Fuze => write!(f, "FUZE"),
+            ConferenceProviderType::GoogleHangouts => write!(f, "GOOGLE_HANGOUTS"),
+            ConferenceProviderType::Polycom => write!(f, "POLYCOM"),
+            ConferenceProviderType::Ringcentral => write!(f, "RINGCENTRAL"),
+            ConferenceProviderType::SkypeForBusiness => write!(f, "SKYPE_FOR_BUSINESS"),
+            ConferenceProviderType::Webex => write!(f, "WEBEX"),
+            ConferenceProviderType::Zoom => write!(f, "ZOOM"),
+            ConferenceProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

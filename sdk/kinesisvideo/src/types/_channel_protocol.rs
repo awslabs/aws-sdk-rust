@@ -101,3 +101,13 @@ impl ChannelProtocol {
         }
     }
 }
+impl ::std::fmt::Display for ChannelProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelProtocol::Https => write!(f, "HTTPS"),
+            ChannelProtocol::Webrtc => write!(f, "WEBRTC"),
+            ChannelProtocol::Wss => write!(f, "WSS"),
+            ChannelProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

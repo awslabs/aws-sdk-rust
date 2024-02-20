@@ -123,3 +123,16 @@ impl PackageVersionErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for PackageVersionErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageVersionErrorCode::AlreadyExists => write!(f, "ALREADY_EXISTS"),
+            PackageVersionErrorCode::MismatchedRevision => write!(f, "MISMATCHED_REVISION"),
+            PackageVersionErrorCode::MismatchedStatus => write!(f, "MISMATCHED_STATUS"),
+            PackageVersionErrorCode::NotAllowed => write!(f, "NOT_ALLOWED"),
+            PackageVersionErrorCode::NotFound => write!(f, "NOT_FOUND"),
+            PackageVersionErrorCode::Skipped => write!(f, "SKIPPED"),
+            PackageVersionErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

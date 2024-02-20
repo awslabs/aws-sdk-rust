@@ -153,3 +153,21 @@ impl UnavailabilityReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for UnavailabilityReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnavailabilityReasonCode::AccountNotInOrganization => write!(f, "ACCOUNT_NOT_IN_ORGANIZATION"),
+            UnavailabilityReasonCode::InvalidClassificationResult => write!(f, "INVALID_CLASSIFICATION_RESULT"),
+            UnavailabilityReasonCode::InvalidResultSignature => write!(f, "INVALID_RESULT_SIGNATURE"),
+            UnavailabilityReasonCode::MemberRoleTooPermissive => write!(f, "MEMBER_ROLE_TOO_PERMISSIVE"),
+            UnavailabilityReasonCode::MissingGetMemberPermission => write!(f, "MISSING_GET_MEMBER_PERMISSION"),
+            UnavailabilityReasonCode::ObjectExceedsSizeQuota => write!(f, "OBJECT_EXCEEDS_SIZE_QUOTA"),
+            UnavailabilityReasonCode::ObjectUnavailable => write!(f, "OBJECT_UNAVAILABLE"),
+            UnavailabilityReasonCode::ResultNotSigned => write!(f, "RESULT_NOT_SIGNED"),
+            UnavailabilityReasonCode::RoleTooPermissive => write!(f, "ROLE_TOO_PERMISSIVE"),
+            UnavailabilityReasonCode::UnsupportedFindingType => write!(f, "UNSUPPORTED_FINDING_TYPE"),
+            UnavailabilityReasonCode::UnsupportedObjectType => write!(f, "UNSUPPORTED_OBJECT_TYPE"),
+            UnavailabilityReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

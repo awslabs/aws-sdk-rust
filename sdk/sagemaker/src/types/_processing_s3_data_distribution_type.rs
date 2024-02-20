@@ -96,3 +96,12 @@ impl ProcessingS3DataDistributionType {
         }
     }
 }
+impl ::std::fmt::Display for ProcessingS3DataDistributionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProcessingS3DataDistributionType::Fullyreplicated => write!(f, "FullyReplicated"),
+            ProcessingS3DataDistributionType::Shardedbys3Key => write!(f, "ShardedByS3Key"),
+            ProcessingS3DataDistributionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

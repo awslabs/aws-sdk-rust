@@ -135,3 +135,18 @@ impl DataLakeResourceType {
         }
     }
 }
+impl ::std::fmt::Display for DataLakeResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataLakeResourceType::Catalog => write!(f, "CATALOG"),
+            DataLakeResourceType::Database => write!(f, "DATABASE"),
+            DataLakeResourceType::DataLocation => write!(f, "DATA_LOCATION"),
+            DataLakeResourceType::LfTag => write!(f, "LF_TAG"),
+            DataLakeResourceType::LfTagPolicy => write!(f, "LF_TAG_POLICY"),
+            DataLakeResourceType::LfTagPolicyDatabase => write!(f, "LF_TAG_POLICY_DATABASE"),
+            DataLakeResourceType::LfTagPolicyTable => write!(f, "LF_TAG_POLICY_TABLE"),
+            DataLakeResourceType::Table => write!(f, "TABLE"),
+            DataLakeResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

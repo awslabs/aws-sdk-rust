@@ -123,3 +123,16 @@ impl WorldGenerationJobErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for WorldGenerationJobErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorldGenerationJobErrorCode::AllWorldGenerationFailed => write!(f, "AllWorldGenerationFailed"),
+            WorldGenerationJobErrorCode::InternalServiceError => write!(f, "InternalServiceError"),
+            WorldGenerationJobErrorCode::InvalidInput => write!(f, "InvalidInput"),
+            WorldGenerationJobErrorCode::LimitExceeded => write!(f, "LimitExceeded"),
+            WorldGenerationJobErrorCode::RequestThrottled => write!(f, "RequestThrottled"),
+            WorldGenerationJobErrorCode::ResourceNotFound => write!(f, "ResourceNotFound"),
+            WorldGenerationJobErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

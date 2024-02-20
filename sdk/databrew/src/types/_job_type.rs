@@ -96,3 +96,12 @@ impl JobType {
         }
     }
 }
+impl ::std::fmt::Display for JobType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobType::Profile => write!(f, "PROFILE"),
+            JobType::Recipe => write!(f, "RECIPE"),
+            JobType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

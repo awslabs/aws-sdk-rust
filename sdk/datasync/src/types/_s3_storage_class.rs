@@ -135,3 +135,18 @@ impl S3StorageClass {
         }
     }
 }
+impl ::std::fmt::Display for S3StorageClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3StorageClass::DeepArchive => write!(f, "DEEP_ARCHIVE"),
+            S3StorageClass::Glacier => write!(f, "GLACIER"),
+            S3StorageClass::GlacierInstantRetrieval => write!(f, "GLACIER_INSTANT_RETRIEVAL"),
+            S3StorageClass::IntelligentTiering => write!(f, "INTELLIGENT_TIERING"),
+            S3StorageClass::OnezoneIa => write!(f, "ONEZONE_IA"),
+            S3StorageClass::Outposts => write!(f, "OUTPOSTS"),
+            S3StorageClass::Standard => write!(f, "STANDARD"),
+            S3StorageClass::StandardIa => write!(f, "STANDARD_IA"),
+            S3StorageClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl FullDocument {
         }
     }
 }
+impl ::std::fmt::Display for FullDocument {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FullDocument::Default => write!(f, "Default"),
+            FullDocument::UpdateLookup => write!(f, "UpdateLookup"),
+            FullDocument::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

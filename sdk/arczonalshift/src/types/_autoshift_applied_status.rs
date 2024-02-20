@@ -96,3 +96,12 @@ impl AutoshiftAppliedStatus {
         }
     }
 }
+impl ::std::fmt::Display for AutoshiftAppliedStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoshiftAppliedStatus::Applied => write!(f, "APPLIED"),
+            AutoshiftAppliedStatus::NotApplied => write!(f, "NOT_APPLIED"),
+            AutoshiftAppliedStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

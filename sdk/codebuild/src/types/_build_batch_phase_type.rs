@@ -129,3 +129,17 @@ impl BuildBatchPhaseType {
         }
     }
 }
+impl ::std::fmt::Display for BuildBatchPhaseType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BuildBatchPhaseType::CombineArtifacts => write!(f, "COMBINE_ARTIFACTS"),
+            BuildBatchPhaseType::DownloadBatchspec => write!(f, "DOWNLOAD_BATCHSPEC"),
+            BuildBatchPhaseType::Failed => write!(f, "FAILED"),
+            BuildBatchPhaseType::InProgress => write!(f, "IN_PROGRESS"),
+            BuildBatchPhaseType::Stopped => write!(f, "STOPPED"),
+            BuildBatchPhaseType::Submitted => write!(f, "SUBMITTED"),
+            BuildBatchPhaseType::Succeeded => write!(f, "SUCCEEDED"),
+            BuildBatchPhaseType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

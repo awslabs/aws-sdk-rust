@@ -99,3 +99,12 @@ impl MpdTimedMetadataBoxVersion {
         }
     }
 }
+impl ::std::fmt::Display for MpdTimedMetadataBoxVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MpdTimedMetadataBoxVersion::Version0 => write!(f, "VERSION_0"),
+            MpdTimedMetadataBoxVersion::Version1 => write!(f, "VERSION_1"),
+            MpdTimedMetadataBoxVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

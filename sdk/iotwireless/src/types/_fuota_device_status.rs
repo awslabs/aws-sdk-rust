@@ -153,3 +153,21 @@ impl FuotaDeviceStatus {
         }
     }
 }
+impl ::std::fmt::Display for FuotaDeviceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FuotaDeviceStatus::FragAlgoUnsupported => write!(f, "FragAlgo_unsupported"),
+            FuotaDeviceStatus::FragIndexUnsupported => write!(f, "FragIndex_unsupported"),
+            FuotaDeviceStatus::Initial => write!(f, "Initial"),
+            FuotaDeviceStatus::MicError => write!(f, "MICError"),
+            FuotaDeviceStatus::MemoryError => write!(f, "MemoryError"),
+            FuotaDeviceStatus::MissingFrag => write!(f, "MissingFrag"),
+            FuotaDeviceStatus::NotEnoughMemory => write!(f, "Not_enough_memory"),
+            FuotaDeviceStatus::PackageNotSupported => write!(f, "Package_Not_Supported"),
+            FuotaDeviceStatus::SessionCntReplay => write!(f, "SessionCnt_replay"),
+            FuotaDeviceStatus::Successful => write!(f, "Successful"),
+            FuotaDeviceStatus::WrongDescriptor => write!(f, "Wrong_descriptor"),
+            FuotaDeviceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -141,3 +141,19 @@ impl AssociationState {
         }
     }
 }
+impl ::std::fmt::Display for AssociationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationState::Completed => write!(f, "COMPLETED"),
+            AssociationState::Error => write!(f, "ERROR"),
+            AssociationState::Installing => write!(f, "INSTALLING"),
+            AssociationState::PendingInstall => write!(f, "PENDING_INSTALL"),
+            AssociationState::PendingInstallDeployment => write!(f, "PENDING_INSTALL_DEPLOYMENT"),
+            AssociationState::PendingUninstall => write!(f, "PENDING_UNINSTALL"),
+            AssociationState::PendingUninstallDeployment => write!(f, "PENDING_UNINSTALL_DEPLOYMENT"),
+            AssociationState::Removed => write!(f, "REMOVED"),
+            AssociationState::Uninstalling => write!(f, "UNINSTALLING"),
+            AssociationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

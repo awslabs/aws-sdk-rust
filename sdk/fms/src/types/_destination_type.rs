@@ -101,3 +101,13 @@ impl DestinationType {
         }
     }
 }
+impl ::std::fmt::Display for DestinationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DestinationType::Ipv4 => write!(f, "IPV4"),
+            DestinationType::Ipv6 => write!(f, "IPV6"),
+            DestinationType::PrefixList => write!(f, "PREFIX_LIST"),
+            DestinationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

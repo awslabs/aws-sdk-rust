@@ -141,3 +141,19 @@ impl StepExecutionFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for StepExecutionFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StepExecutionFilterKey::Action => write!(f, "Action"),
+            StepExecutionFilterKey::ParentStepExecutionId => write!(f, "ParentStepExecutionId"),
+            StepExecutionFilterKey::ParentStepIteration => write!(f, "ParentStepIteration"),
+            StepExecutionFilterKey::ParentStepIteratorValue => write!(f, "ParentStepIteratorValue"),
+            StepExecutionFilterKey::StartTimeAfter => write!(f, "StartTimeAfter"),
+            StepExecutionFilterKey::StartTimeBefore => write!(f, "StartTimeBefore"),
+            StepExecutionFilterKey::StepExecutionId => write!(f, "StepExecutionId"),
+            StepExecutionFilterKey::StepExecutionStatus => write!(f, "StepExecutionStatus"),
+            StepExecutionFilterKey::StepName => write!(f, "StepName"),
+            StepExecutionFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -135,3 +135,18 @@ impl SettingAttribute {
         }
     }
 }
+impl ::std::fmt::Display for SettingAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SettingAttribute::All => write!(f, "ALL"),
+            SettingAttribute::DefaultAssessmentReportsDestination => write!(f, "DEFAULT_ASSESSMENT_REPORTS_DESTINATION"),
+            SettingAttribute::DefaultExportDestination => write!(f, "DEFAULT_EXPORT_DESTINATION"),
+            SettingAttribute::DefaultProcessOwners => write!(f, "DEFAULT_PROCESS_OWNERS"),
+            SettingAttribute::DeregistrationPolicy => write!(f, "DEREGISTRATION_POLICY"),
+            SettingAttribute::EvidenceFinderEnablement => write!(f, "EVIDENCE_FINDER_ENABLEMENT"),
+            SettingAttribute::IsAwsOrgEnabled => write!(f, "IS_AWS_ORG_ENABLED"),
+            SettingAttribute::SnsTopic => write!(f, "SNS_TOPIC"),
+            SettingAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

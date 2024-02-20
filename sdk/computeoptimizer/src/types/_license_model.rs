@@ -96,3 +96,12 @@ impl LicenseModel {
         }
     }
 }
+impl ::std::fmt::Display for LicenseModel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LicenseModel::BringYourOwnLicense => write!(f, "BringYourOwnLicense"),
+            LicenseModel::LicenseIncluded => write!(f, "LicenseIncluded"),
+            LicenseModel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

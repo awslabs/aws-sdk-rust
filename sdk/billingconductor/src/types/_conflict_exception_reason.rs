@@ -117,3 +117,19 @@ impl ConflictExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ConflictExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict => {
+                write!(f, "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT")
+            }
+            ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict => {
+                write!(f, "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT")
+            }
+            ConflictExceptionReason::PricingRuleInPricingPlanConflict => write!(f, "PRICING_RULE_IN_PRICING_PLAN_CONFLICT"),
+            ConflictExceptionReason::ResourceNameConflict => write!(f, "RESOURCE_NAME_CONFLICT"),
+            ConflictExceptionReason::WriteConflictRetry => write!(f, "WRITE_CONFLICT_RETRY"),
+            ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

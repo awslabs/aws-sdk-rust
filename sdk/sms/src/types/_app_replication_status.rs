@@ -183,3 +183,26 @@ impl AppReplicationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AppReplicationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppReplicationStatus::ConfigurationInvalid => write!(f, "CONFIGURATION_INVALID"),
+            AppReplicationStatus::ConfigurationInProgress => write!(f, "CONFIGURATION_IN_PROGRESS"),
+            AppReplicationStatus::DeltaReplicated => write!(f, "DELTA_REPLICATED"),
+            AppReplicationStatus::DeltaReplicationFailed => write!(f, "DELTA_REPLICATION_FAILED"),
+            AppReplicationStatus::DeltaReplicationInProgress => write!(f, "DELTA_REPLICATION_IN_PROGRESS"),
+            AppReplicationStatus::PartiallyReplicated => write!(f, "PARTIALLY_REPLICATED"),
+            AppReplicationStatus::ReadyForConfiguration => write!(f, "READY_FOR_CONFIGURATION"),
+            AppReplicationStatus::ReadyForReplication => write!(f, "READY_FOR_REPLICATION"),
+            AppReplicationStatus::Replicated => write!(f, "REPLICATED"),
+            AppReplicationStatus::ReplicationFailed => write!(f, "REPLICATION_FAILED"),
+            AppReplicationStatus::ReplicationInProgress => write!(f, "REPLICATION_IN_PROGRESS"),
+            AppReplicationStatus::ReplicationPending => write!(f, "REPLICATION_PENDING"),
+            AppReplicationStatus::ReplicationStopped => write!(f, "REPLICATION_STOPPED"),
+            AppReplicationStatus::ReplicationStopping => write!(f, "REPLICATION_STOPPING"),
+            AppReplicationStatus::ReplicationStopFailed => write!(f, "REPLICATION_STOP_FAILED"),
+            AppReplicationStatus::ValidationInProgress => write!(f, "VALIDATION_IN_PROGRESS"),
+            AppReplicationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl AccessPolicyType {
         }
     }
 }
+impl ::std::fmt::Display for AccessPolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessPolicyType::Data => write!(f, "data"),
+            AccessPolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

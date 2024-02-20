@@ -101,3 +101,13 @@ impl DataSource {
         }
     }
 }
+impl ::std::fmt::Display for DataSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSource::Event => write!(f, "EVENT"),
+            DataSource::ExternalModelScore => write!(f, "EXTERNAL_MODEL_SCORE"),
+            DataSource::ModelScore => write!(f, "MODEL_SCORE"),
+            DataSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

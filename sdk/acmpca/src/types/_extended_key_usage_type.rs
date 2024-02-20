@@ -141,3 +141,19 @@ impl ExtendedKeyUsageType {
         }
     }
 }
+impl ::std::fmt::Display for ExtendedKeyUsageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExtendedKeyUsageType::CertificateTransparency => write!(f, "CERTIFICATE_TRANSPARENCY"),
+            ExtendedKeyUsageType::ClientAuth => write!(f, "CLIENT_AUTH"),
+            ExtendedKeyUsageType::CodeSigning => write!(f, "CODE_SIGNING"),
+            ExtendedKeyUsageType::DocumentSigning => write!(f, "DOCUMENT_SIGNING"),
+            ExtendedKeyUsageType::EmailProtection => write!(f, "EMAIL_PROTECTION"),
+            ExtendedKeyUsageType::OcspSigning => write!(f, "OCSP_SIGNING"),
+            ExtendedKeyUsageType::ServerAuth => write!(f, "SERVER_AUTH"),
+            ExtendedKeyUsageType::SmartCardLogin => write!(f, "SMART_CARD_LOGIN"),
+            ExtendedKeyUsageType::TimeStamping => write!(f, "TIME_STAMPING"),
+            ExtendedKeyUsageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

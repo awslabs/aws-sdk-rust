@@ -101,3 +101,13 @@ impl VirtualNodeStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for VirtualNodeStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VirtualNodeStatusCode::Active => write!(f, "ACTIVE"),
+            VirtualNodeStatusCode::Deleted => write!(f, "DELETED"),
+            VirtualNodeStatusCode::Inactive => write!(f, "INACTIVE"),
+            VirtualNodeStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

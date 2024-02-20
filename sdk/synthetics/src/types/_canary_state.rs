@@ -133,3 +133,19 @@ impl CanaryState {
         }
     }
 }
+impl ::std::fmt::Display for CanaryState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CanaryState::Creating => write!(f, "CREATING"),
+            CanaryState::Deleting => write!(f, "DELETING"),
+            CanaryState::Error => write!(f, "ERROR"),
+            CanaryState::Ready => write!(f, "READY"),
+            CanaryState::Running => write!(f, "RUNNING"),
+            CanaryState::Starting => write!(f, "STARTING"),
+            CanaryState::Stopped => write!(f, "STOPPED"),
+            CanaryState::Stopping => write!(f, "STOPPING"),
+            CanaryState::Updating => write!(f, "UPDATING"),
+            CanaryState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl ProductSource {
         }
     }
 }
+impl ::std::fmt::Display for ProductSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProductSource::Account => write!(f, "ACCOUNT"),
+            ProductSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

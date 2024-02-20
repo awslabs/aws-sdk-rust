@@ -96,3 +96,12 @@ impl ApplicationVisibility {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationVisibility {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationVisibility::Disabled => write!(f, "DISABLED"),
+            ApplicationVisibility::Enabled => write!(f, "ENABLED"),
+            ApplicationVisibility::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

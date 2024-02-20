@@ -91,3 +91,11 @@ impl LineItemFilterValue {
         }
     }
 }
+impl ::std::fmt::Display for LineItemFilterValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LineItemFilterValue::SavingsPlanNegation => write!(f, "SAVINGS_PLAN_NEGATION"),
+            LineItemFilterValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

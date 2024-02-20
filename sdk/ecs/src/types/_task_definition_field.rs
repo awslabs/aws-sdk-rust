@@ -91,3 +91,11 @@ impl TaskDefinitionField {
         }
     }
 }
+impl ::std::fmt::Display for TaskDefinitionField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskDefinitionField::Tags => write!(f, "TAGS"),
+            TaskDefinitionField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

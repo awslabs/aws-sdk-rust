@@ -111,3 +111,15 @@ impl EnvironmentLifecycleStatus {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentLifecycleStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentLifecycleStatus::Created => write!(f, "CREATED"),
+            EnvironmentLifecycleStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            EnvironmentLifecycleStatus::Creating => write!(f, "CREATING"),
+            EnvironmentLifecycleStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            EnvironmentLifecycleStatus::Deleting => write!(f, "DELETING"),
+            EnvironmentLifecycleStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

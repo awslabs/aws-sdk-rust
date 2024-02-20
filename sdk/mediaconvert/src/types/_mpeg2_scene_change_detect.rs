@@ -96,3 +96,12 @@ impl Mpeg2SceneChangeDetect {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2SceneChangeDetect {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2SceneChangeDetect::Disabled => write!(f, "DISABLED"),
+            Mpeg2SceneChangeDetect::Enabled => write!(f, "ENABLED"),
+            Mpeg2SceneChangeDetect::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

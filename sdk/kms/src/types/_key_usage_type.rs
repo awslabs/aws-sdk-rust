@@ -101,3 +101,13 @@ impl KeyUsageType {
         }
     }
 }
+impl ::std::fmt::Display for KeyUsageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyUsageType::EncryptDecrypt => write!(f, "ENCRYPT_DECRYPT"),
+            KeyUsageType::GenerateVerifyMac => write!(f, "GENERATE_VERIFY_MAC"),
+            KeyUsageType::SignVerify => write!(f, "SIGN_VERIFY"),
+            KeyUsageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -105,3 +105,13 @@ impl PreferredChannelPipeline {
         }
     }
 }
+impl ::std::fmt::Display for PreferredChannelPipeline {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PreferredChannelPipeline::CurrentlyActive => write!(f, "CURRENTLY_ACTIVE"),
+            PreferredChannelPipeline::Pipeline0 => write!(f, "PIPELINE_0"),
+            PreferredChannelPipeline::Pipeline1 => write!(f, "PIPELINE_1"),
+            PreferredChannelPipeline::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

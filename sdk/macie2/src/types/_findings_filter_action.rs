@@ -96,3 +96,12 @@ impl FindingsFilterAction {
         }
     }
 }
+impl ::std::fmt::Display for FindingsFilterAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingsFilterAction::Archive => write!(f, "ARCHIVE"),
+            FindingsFilterAction::Noop => write!(f, "NOOP"),
+            FindingsFilterAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

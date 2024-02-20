@@ -96,3 +96,12 @@ impl FailbackLaunchType {
         }
     }
 }
+impl ::std::fmt::Display for FailbackLaunchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailbackLaunchType::Drill => write!(f, "DRILL"),
+            FailbackLaunchType::Recovery => write!(f, "RECOVERY"),
+            FailbackLaunchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

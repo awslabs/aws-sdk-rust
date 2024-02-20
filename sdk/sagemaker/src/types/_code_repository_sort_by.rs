@@ -101,3 +101,13 @@ impl CodeRepositorySortBy {
         }
     }
 }
+impl ::std::fmt::Display for CodeRepositorySortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CodeRepositorySortBy::CreationTime => write!(f, "CreationTime"),
+            CodeRepositorySortBy::LastModifiedTime => write!(f, "LastModifiedTime"),
+            CodeRepositorySortBy::Name => write!(f, "Name"),
+            CodeRepositorySortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl QueryParser {
         }
     }
 }
+impl ::std::fmt::Display for QueryParser {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryParser::Dismax => write!(f, "dismax"),
+            QueryParser::Lucene => write!(f, "lucene"),
+            QueryParser::Simple => write!(f, "simple"),
+            QueryParser::Structured => write!(f, "structured"),
+            QueryParser::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

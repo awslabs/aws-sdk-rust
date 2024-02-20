@@ -101,3 +101,13 @@ impl ComparisonMethod {
         }
     }
 }
+impl ::std::fmt::Display for ComparisonMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComparisonMethod::Difference => write!(f, "DIFFERENCE"),
+            ComparisonMethod::Percent => write!(f, "PERCENT"),
+            ComparisonMethod::PercentDifference => write!(f, "PERCENT_DIFFERENCE"),
+            ComparisonMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

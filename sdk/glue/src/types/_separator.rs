@@ -111,3 +111,15 @@ impl Separator {
         }
     }
 }
+impl ::std::fmt::Display for Separator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Separator::Comma => write!(f, "comma"),
+            Separator::Ctrla => write!(f, "ctrla"),
+            Separator::Pipe => write!(f, "pipe"),
+            Separator::Semicolon => write!(f, "semicolon"),
+            Separator::Tab => write!(f, "tab"),
+            Separator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

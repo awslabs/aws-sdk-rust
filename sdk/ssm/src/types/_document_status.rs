@@ -111,3 +111,15 @@ impl DocumentStatus {
         }
     }
 }
+impl ::std::fmt::Display for DocumentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentStatus::Active => write!(f, "Active"),
+            DocumentStatus::Creating => write!(f, "Creating"),
+            DocumentStatus::Deleting => write!(f, "Deleting"),
+            DocumentStatus::Failed => write!(f, "Failed"),
+            DocumentStatus::Updating => write!(f, "Updating"),
+            DocumentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

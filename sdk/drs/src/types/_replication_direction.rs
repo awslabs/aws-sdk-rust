@@ -96,3 +96,12 @@ impl ReplicationDirection {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationDirection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationDirection::Failback => write!(f, "FAILBACK"),
+            ReplicationDirection::Failover => write!(f, "FAILOVER"),
+            ReplicationDirection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

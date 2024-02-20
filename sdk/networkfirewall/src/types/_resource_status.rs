@@ -101,3 +101,13 @@ impl ResourceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceStatus::Active => write!(f, "ACTIVE"),
+            ResourceStatus::Deleting => write!(f, "DELETING"),
+            ResourceStatus::Error => write!(f, "ERROR"),
+            ResourceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

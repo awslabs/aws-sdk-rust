@@ -101,3 +101,13 @@ impl ClockTargetStatus {
         }
     }
 }
+impl ::std::fmt::Display for ClockTargetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClockTargetStatus::Started => write!(f, "STARTED"),
+            ClockTargetStatus::Stopped => write!(f, "STOPPED"),
+            ClockTargetStatus::UnknownValue => write!(f, "UNKNOWN"),
+            ClockTargetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

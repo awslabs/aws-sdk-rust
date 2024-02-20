@@ -101,3 +101,13 @@ impl NoiseFilterPostTemporalSharpening {
         }
     }
 }
+impl ::std::fmt::Display for NoiseFilterPostTemporalSharpening {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NoiseFilterPostTemporalSharpening::Auto => write!(f, "AUTO"),
+            NoiseFilterPostTemporalSharpening::Disabled => write!(f, "DISABLED"),
+            NoiseFilterPostTemporalSharpening::Enabled => write!(f, "ENABLED"),
+            NoiseFilterPostTemporalSharpening::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl InventorySearchScope {
         }
     }
 }
+impl ::std::fmt::Display for InventorySearchScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InventorySearchScope::Asset => write!(f, "ASSET"),
+            InventorySearchScope::Glossary => write!(f, "GLOSSARY"),
+            InventorySearchScope::GlossaryTerm => write!(f, "GLOSSARY_TERM"),
+            InventorySearchScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

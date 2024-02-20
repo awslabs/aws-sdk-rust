@@ -96,3 +96,12 @@ impl ProresScanTypeConversionMode {
         }
     }
 }
+impl ::std::fmt::Display for ProresScanTypeConversionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProresScanTypeConversionMode::Interlaced => write!(f, "INTERLACED"),
+            ProresScanTypeConversionMode::InterlacedOptimize => write!(f, "INTERLACED_OPTIMIZE"),
+            ProresScanTypeConversionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl WaveHealthStatus {
         }
     }
 }
+impl ::std::fmt::Display for WaveHealthStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WaveHealthStatus::Error => write!(f, "ERROR"),
+            WaveHealthStatus::Healthy => write!(f, "HEALTHY"),
+            WaveHealthStatus::Lagging => write!(f, "LAGGING"),
+            WaveHealthStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

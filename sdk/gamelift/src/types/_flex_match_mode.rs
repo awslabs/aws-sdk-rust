@@ -96,3 +96,12 @@ impl FlexMatchMode {
         }
     }
 }
+impl ::std::fmt::Display for FlexMatchMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlexMatchMode::Standalone => write!(f, "STANDALONE"),
+            FlexMatchMode::WithQueue => write!(f, "WITH_QUEUE"),
+            FlexMatchMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

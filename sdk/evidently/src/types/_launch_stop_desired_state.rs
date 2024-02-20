@@ -96,3 +96,12 @@ impl LaunchStopDesiredState {
         }
     }
 }
+impl ::std::fmt::Display for LaunchStopDesiredState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchStopDesiredState::Cancelled => write!(f, "CANCELLED"),
+            LaunchStopDesiredState::Completed => write!(f, "COMPLETED"),
+            LaunchStopDesiredState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

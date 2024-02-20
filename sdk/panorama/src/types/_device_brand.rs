@@ -96,3 +96,12 @@ impl DeviceBrand {
         }
     }
 }
+impl ::std::fmt::Display for DeviceBrand {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceBrand::AwsPanorama => write!(f, "AWS_PANORAMA"),
+            DeviceBrand::Lenovo => write!(f, "LENOVO"),
+            DeviceBrand::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

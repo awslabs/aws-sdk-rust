@@ -96,3 +96,12 @@ impl AudioOnlyHlsSegmentType {
         }
     }
 }
+impl ::std::fmt::Display for AudioOnlyHlsSegmentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioOnlyHlsSegmentType::Aac => write!(f, "AAC"),
+            AudioOnlyHlsSegmentType::Fmp4 => write!(f, "FMP4"),
+            AudioOnlyHlsSegmentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

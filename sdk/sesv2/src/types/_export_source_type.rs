@@ -106,3 +106,12 @@ impl ExportSourceType {
         }
     }
 }
+impl ::std::fmt::Display for ExportSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportSourceType::MessageInsights => write!(f, "MESSAGE_INSIGHTS"),
+            ExportSourceType::MetricsData => write!(f, "METRICS_DATA"),
+            ExportSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

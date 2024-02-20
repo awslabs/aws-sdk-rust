@@ -96,3 +96,12 @@ impl Architecture {
         }
     }
 }
+impl ::std::fmt::Display for Architecture {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Architecture::Arm64 => write!(f, "arm64"),
+            Architecture::X8664 => write!(f, "x86_64"),
+            Architecture::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

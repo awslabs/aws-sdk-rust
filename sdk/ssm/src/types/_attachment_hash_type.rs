@@ -91,3 +91,11 @@ impl AttachmentHashType {
         }
     }
 }
+impl ::std::fmt::Display for AttachmentHashType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttachmentHashType::Sha256 => write!(f, "Sha256"),
+            AttachmentHashType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

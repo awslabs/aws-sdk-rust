@@ -111,3 +111,15 @@ impl Eac3BitstreamMode {
         }
     }
 }
+impl ::std::fmt::Display for Eac3BitstreamMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3BitstreamMode::Commentary => write!(f, "COMMENTARY"),
+            Eac3BitstreamMode::CompleteMain => write!(f, "COMPLETE_MAIN"),
+            Eac3BitstreamMode::Emergency => write!(f, "EMERGENCY"),
+            Eac3BitstreamMode::HearingImpaired => write!(f, "HEARING_IMPAIRED"),
+            Eac3BitstreamMode::VisuallyImpaired => write!(f, "VISUALLY_IMPAIRED"),
+            Eac3BitstreamMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

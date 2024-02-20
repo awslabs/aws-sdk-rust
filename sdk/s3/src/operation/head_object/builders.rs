@@ -603,3 +603,15 @@ impl HeadObjectFluentBuilder {
         self.inner.get_checksum_mode()
     }
 }
+
+impl crate::client::customize::internal::CustomizablePresigned<crate::operation::head_object::HeadObjectError> for HeadObjectFluentBuilder {
+    fn presign(
+        self,
+        config_override: crate::config::Builder,
+        presigning_config: crate::presigning::PresigningConfig,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<crate::presigning::PresignedRequest, crate::operation::head_object::HeadObjectError>,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).presigned(presigning_config).await })
+    }
+}

@@ -159,3 +159,22 @@ impl MetricName {
         }
     }
 }
+impl ::std::fmt::Display for MetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MetricName::ActivatingGameSessions => write!(f, "ActivatingGameSessions"),
+            MetricName::ActiveGameSessions => write!(f, "ActiveGameSessions"),
+            MetricName::ActiveInstances => write!(f, "ActiveInstances"),
+            MetricName::AvailableGameSessions => write!(f, "AvailableGameSessions"),
+            MetricName::AvailablePlayerSessions => write!(f, "AvailablePlayerSessions"),
+            MetricName::ConcurrentActivatableGameSessions => write!(f, "ConcurrentActivatableGameSessions"),
+            MetricName::CurrentPlayerSessions => write!(f, "CurrentPlayerSessions"),
+            MetricName::IdleInstances => write!(f, "IdleInstances"),
+            MetricName::PercentAvailableGameSessions => write!(f, "PercentAvailableGameSessions"),
+            MetricName::PercentIdleInstances => write!(f, "PercentIdleInstances"),
+            MetricName::QueueDepth => write!(f, "QueueDepth"),
+            MetricName::WaitTime => write!(f, "WaitTime"),
+            MetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

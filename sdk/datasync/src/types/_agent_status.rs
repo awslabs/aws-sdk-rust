@@ -96,3 +96,12 @@ impl AgentStatus {
         }
     }
 }
+impl ::std::fmt::Display for AgentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgentStatus::Offline => write!(f, "OFFLINE"),
+            AgentStatus::Online => write!(f, "ONLINE"),
+            AgentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

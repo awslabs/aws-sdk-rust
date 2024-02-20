@@ -96,3 +96,12 @@ impl InstanceAccessProtocol {
         }
     }
 }
+impl ::std::fmt::Display for InstanceAccessProtocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceAccessProtocol::Rdp => write!(f, "rdp"),
+            InstanceAccessProtocol::Ssh => write!(f, "ssh"),
+            InstanceAccessProtocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

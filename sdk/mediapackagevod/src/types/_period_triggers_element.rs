@@ -91,3 +91,11 @@ impl PeriodTriggersElement {
         }
     }
 }
+impl ::std::fmt::Display for PeriodTriggersElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PeriodTriggersElement::Ads => write!(f, "ADS"),
+            PeriodTriggersElement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

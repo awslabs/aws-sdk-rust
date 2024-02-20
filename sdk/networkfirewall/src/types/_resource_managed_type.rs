@@ -96,3 +96,12 @@ impl ResourceManagedType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceManagedType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceManagedType::AwsManagedDomainLists => write!(f, "AWS_MANAGED_DOMAIN_LISTS"),
+            ResourceManagedType::AwsManagedThreatSignatures => write!(f, "AWS_MANAGED_THREAT_SIGNATURES"),
+            ResourceManagedType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

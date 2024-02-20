@@ -96,3 +96,12 @@ impl DvbSubtitleStylePassthrough {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubtitleStylePassthrough {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubtitleStylePassthrough::Disabled => write!(f, "DISABLED"),
+            DvbSubtitleStylePassthrough::Enabled => write!(f, "ENABLED"),
+            DvbSubtitleStylePassthrough::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

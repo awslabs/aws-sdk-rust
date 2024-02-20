@@ -96,3 +96,12 @@ impl RootDeviceType {
         }
     }
 }
+impl ::std::fmt::Display for RootDeviceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RootDeviceType::Ebs => write!(f, "ebs"),
+            RootDeviceType::InstanceStore => write!(f, "instance-store"),
+            RootDeviceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

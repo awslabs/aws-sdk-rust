@@ -101,3 +101,13 @@ impl DeviceSubsetType {
         }
     }
 }
+impl ::std::fmt::Display for DeviceSubsetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceSubsetType::NameContains => write!(f, "NAMECONTAINS"),
+            DeviceSubsetType::Percentage => write!(f, "PERCENTAGE"),
+            DeviceSubsetType::Selection => write!(f, "SELECTION"),
+            DeviceSubsetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

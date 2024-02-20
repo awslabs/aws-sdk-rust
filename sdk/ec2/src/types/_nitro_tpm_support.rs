@@ -96,3 +96,12 @@ impl NitroTpmSupport {
         }
     }
 }
+impl ::std::fmt::Display for NitroTpmSupport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NitroTpmSupport::Supported => write!(f, "supported"),
+            NitroTpmSupport::Unsupported => write!(f, "unsupported"),
+            NitroTpmSupport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

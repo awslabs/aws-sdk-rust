@@ -116,3 +116,16 @@ impl NatGatewayAddressStatus {
         }
     }
 }
+impl ::std::fmt::Display for NatGatewayAddressStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NatGatewayAddressStatus::Assigning => write!(f, "assigning"),
+            NatGatewayAddressStatus::Associating => write!(f, "associating"),
+            NatGatewayAddressStatus::Disassociating => write!(f, "disassociating"),
+            NatGatewayAddressStatus::Failed => write!(f, "failed"),
+            NatGatewayAddressStatus::Succeeded => write!(f, "succeeded"),
+            NatGatewayAddressStatus::Unassigning => write!(f, "unassigning"),
+            NatGatewayAddressStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SubscriptionState {
         }
     }
 }
+impl ::std::fmt::Display for SubscriptionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubscriptionState::Active => write!(f, "ACTIVE"),
+            SubscriptionState::Inactive => write!(f, "INACTIVE"),
+            SubscriptionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

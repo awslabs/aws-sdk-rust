@@ -101,3 +101,13 @@ impl ModelApprovalStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelApprovalStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelApprovalStatus::Approved => write!(f, "Approved"),
+            ModelApprovalStatus::PendingManualApproval => write!(f, "PendingManualApproval"),
+            ModelApprovalStatus::Rejected => write!(f, "Rejected"),
+            ModelApprovalStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

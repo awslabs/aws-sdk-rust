@@ -159,3 +159,22 @@ impl ImageAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for ImageAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageAttributeName::BlockDeviceMapping => write!(f, "blockDeviceMapping"),
+            ImageAttributeName::BootMode => write!(f, "bootMode"),
+            ImageAttributeName::Description => write!(f, "description"),
+            ImageAttributeName::ImdsSupport => write!(f, "imdsSupport"),
+            ImageAttributeName::Kernel => write!(f, "kernel"),
+            ImageAttributeName::LastLaunchedTime => write!(f, "lastLaunchedTime"),
+            ImageAttributeName::LaunchPermission => write!(f, "launchPermission"),
+            ImageAttributeName::ProductCodes => write!(f, "productCodes"),
+            ImageAttributeName::Ramdisk => write!(f, "ramdisk"),
+            ImageAttributeName::SriovNetSupport => write!(f, "sriovNetSupport"),
+            ImageAttributeName::TpmSupport => write!(f, "tpmSupport"),
+            ImageAttributeName::UefiData => write!(f, "uefiData"),
+            ImageAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

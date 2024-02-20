@@ -111,3 +111,15 @@ impl UserType {
         }
     }
 }
+impl ::std::fmt::Display for UserType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserType::Admin => write!(f, "ADMIN"),
+            UserType::Minimaluser => write!(f, "MINIMALUSER"),
+            UserType::Poweruser => write!(f, "POWERUSER"),
+            UserType::User => write!(f, "USER"),
+            UserType::Workspacesuser => write!(f, "WORKSPACESUSER"),
+            UserType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

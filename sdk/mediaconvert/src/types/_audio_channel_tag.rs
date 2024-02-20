@@ -229,3 +229,38 @@ impl AudioChannelTag {
         }
     }
 }
+impl ::std::fmt::Display for AudioChannelTag {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioChannelTag::C => write!(f, "C"),
+            AudioChannelTag::Cs => write!(f, "CS"),
+            AudioChannelTag::Hi => write!(f, "HI"),
+            AudioChannelTag::L => write!(f, "L"),
+            AudioChannelTag::Lc => write!(f, "LC"),
+            AudioChannelTag::Lfe => write!(f, "LFE"),
+            AudioChannelTag::Lfe2 => write!(f, "LFE2"),
+            AudioChannelTag::Ls => write!(f, "LS"),
+            AudioChannelTag::Lsd => write!(f, "LSD"),
+            AudioChannelTag::Lt => write!(f, "LT"),
+            AudioChannelTag::Lw => write!(f, "LW"),
+            AudioChannelTag::M => write!(f, "M"),
+            AudioChannelTag::Nar => write!(f, "NAR"),
+            AudioChannelTag::R => write!(f, "R"),
+            AudioChannelTag::Rc => write!(f, "RC"),
+            AudioChannelTag::Rs => write!(f, "RS"),
+            AudioChannelTag::Rsd => write!(f, "RSD"),
+            AudioChannelTag::Rsl => write!(f, "RSL"),
+            AudioChannelTag::Rsr => write!(f, "RSR"),
+            AudioChannelTag::Rt => write!(f, "RT"),
+            AudioChannelTag::Rw => write!(f, "RW"),
+            AudioChannelTag::Tbc => write!(f, "TBC"),
+            AudioChannelTag::Tbl => write!(f, "TBL"),
+            AudioChannelTag::Tbr => write!(f, "TBR"),
+            AudioChannelTag::Tcs => write!(f, "TCS"),
+            AudioChannelTag::Vhc => write!(f, "VHC"),
+            AudioChannelTag::Vhl => write!(f, "VHL"),
+            AudioChannelTag::Vhr => write!(f, "VHR"),
+            AudioChannelTag::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

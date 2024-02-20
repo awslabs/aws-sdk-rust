@@ -117,3 +117,15 @@ impl SccDestinationFramerate {
         }
     }
 }
+impl ::std::fmt::Display for SccDestinationFramerate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SccDestinationFramerate::Framerate2397 => write!(f, "FRAMERATE_23_97"),
+            SccDestinationFramerate::Framerate24 => write!(f, "FRAMERATE_24"),
+            SccDestinationFramerate::Framerate25 => write!(f, "FRAMERATE_25"),
+            SccDestinationFramerate::Framerate2997Dropframe => write!(f, "FRAMERATE_29_97_DROPFRAME"),
+            SccDestinationFramerate::Framerate2997NonDropframe => write!(f, "FRAMERATE_29_97_NON_DROPFRAME"),
+            SccDestinationFramerate::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

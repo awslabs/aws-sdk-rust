@@ -96,3 +96,12 @@ impl SpendLimitName {
         }
     }
 }
+impl ::std::fmt::Display for SpendLimitName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpendLimitName::TextMessageMonthlySpendLimit => write!(f, "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT"),
+            SpendLimitName::VoiceMessageMonthlySpendLimit => write!(f, "VOICE_MESSAGE_MONTHLY_SPEND_LIMIT"),
+            SpendLimitName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

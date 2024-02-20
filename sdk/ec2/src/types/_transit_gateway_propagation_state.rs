@@ -106,3 +106,14 @@ impl TransitGatewayPropagationState {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayPropagationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayPropagationState::Disabled => write!(f, "disabled"),
+            TransitGatewayPropagationState::Disabling => write!(f, "disabling"),
+            TransitGatewayPropagationState::Enabled => write!(f, "enabled"),
+            TransitGatewayPropagationState::Enabling => write!(f, "enabling"),
+            TransitGatewayPropagationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

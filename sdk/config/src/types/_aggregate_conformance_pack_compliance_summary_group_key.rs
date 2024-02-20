@@ -98,3 +98,12 @@ impl AggregateConformancePackComplianceSummaryGroupKey {
         }
     }
 }
+impl ::std::fmt::Display for AggregateConformancePackComplianceSummaryGroupKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregateConformancePackComplianceSummaryGroupKey::AccountId => write!(f, "ACCOUNT_ID"),
+            AggregateConformancePackComplianceSummaryGroupKey::AwsRegion => write!(f, "AWS_REGION"),
+            AggregateConformancePackComplianceSummaryGroupKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl InstanceAction {
         }
     }
 }
+impl ::std::fmt::Display for InstanceAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceAction::KeepAlive => write!(f, "KEEP_ALIVE"),
+            InstanceAction::Terminate => write!(f, "TERMINATE"),
+            InstanceAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

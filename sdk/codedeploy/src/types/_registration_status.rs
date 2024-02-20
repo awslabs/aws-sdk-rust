@@ -96,3 +96,12 @@ impl RegistrationStatus {
         }
     }
 }
+impl ::std::fmt::Display for RegistrationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistrationStatus::Deregistered => write!(f, "Deregistered"),
+            RegistrationStatus::Registered => write!(f, "Registered"),
+            RegistrationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

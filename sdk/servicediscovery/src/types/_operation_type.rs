@@ -123,3 +123,16 @@ impl OperationType {
         }
     }
 }
+impl ::std::fmt::Display for OperationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationType::CreateNamespace => write!(f, "CREATE_NAMESPACE"),
+            OperationType::DeleteNamespace => write!(f, "DELETE_NAMESPACE"),
+            OperationType::DeregisterInstance => write!(f, "DEREGISTER_INSTANCE"),
+            OperationType::RegisterInstance => write!(f, "REGISTER_INSTANCE"),
+            OperationType::UpdateNamespace => write!(f, "UPDATE_NAMESPACE"),
+            OperationType::UpdateService => write!(f, "UPDATE_SERVICE"),
+            OperationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl DimensionValueType {
         }
     }
 }
+impl ::std::fmt::Display for DimensionValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DimensionValueType::Varchar => write!(f, "VARCHAR"),
+            DimensionValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

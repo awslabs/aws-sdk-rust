@@ -99,3 +99,12 @@ impl CmfcTimedMetadataBoxVersion {
         }
     }
 }
+impl ::std::fmt::Display for CmfcTimedMetadataBoxVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmfcTimedMetadataBoxVersion::Version0 => write!(f, "VERSION_0"),
+            CmfcTimedMetadataBoxVersion::Version1 => write!(f, "VERSION_1"),
+            CmfcTimedMetadataBoxVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LogDestinationType {
         }
     }
 }
+impl ::std::fmt::Display for LogDestinationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LogDestinationType::Cloudwatch => write!(f, "cloudwatch"),
+            LogDestinationType::S3 => write!(f, "s3"),
+            LogDestinationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

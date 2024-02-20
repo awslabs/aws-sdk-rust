@@ -96,3 +96,12 @@ impl ParameterApplyType {
         }
     }
 }
+impl ::std::fmt::Display for ParameterApplyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParameterApplyType::Dynamic => write!(f, "dynamic"),
+            ParameterApplyType::Static => write!(f, "static"),
+            ParameterApplyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

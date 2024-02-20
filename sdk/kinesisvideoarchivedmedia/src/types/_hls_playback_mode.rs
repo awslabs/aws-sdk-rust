@@ -101,3 +101,13 @@ impl HlsPlaybackMode {
         }
     }
 }
+impl ::std::fmt::Display for HlsPlaybackMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsPlaybackMode::Live => write!(f, "LIVE"),
+            HlsPlaybackMode::LiveReplay => write!(f, "LIVE_REPLAY"),
+            HlsPlaybackMode::OnDemand => write!(f, "ON_DEMAND"),
+            HlsPlaybackMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

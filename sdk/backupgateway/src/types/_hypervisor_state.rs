@@ -106,3 +106,14 @@ impl HypervisorState {
         }
     }
 }
+impl ::std::fmt::Display for HypervisorState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HypervisorState::Error => write!(f, "ERROR"),
+            HypervisorState::Offline => write!(f, "OFFLINE"),
+            HypervisorState::Online => write!(f, "ONLINE"),
+            HypervisorState::Pending => write!(f, "PENDING"),
+            HypervisorState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

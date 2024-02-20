@@ -91,3 +91,11 @@ impl ExpirationCriterion {
         }
     }
 }
+impl ::std::fmt::Display for ExpirationCriterion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExpirationCriterion::CreatedTimestamp => write!(f, "CREATED_TIMESTAMP"),
+            ExpirationCriterion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

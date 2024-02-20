@@ -147,3 +147,20 @@ impl UplinkCount {
         }
     }
 }
+impl ::std::fmt::Display for UplinkCount {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UplinkCount::UplinkCount1 => write!(f, "UPLINK_COUNT_1"),
+            UplinkCount::UplinkCount12 => write!(f, "UPLINK_COUNT_12"),
+            UplinkCount::UplinkCount16 => write!(f, "UPLINK_COUNT_16"),
+            UplinkCount::UplinkCount2 => write!(f, "UPLINK_COUNT_2"),
+            UplinkCount::UplinkCount3 => write!(f, "UPLINK_COUNT_3"),
+            UplinkCount::UplinkCount4 => write!(f, "UPLINK_COUNT_4"),
+            UplinkCount::UplinkCount5 => write!(f, "UPLINK_COUNT_5"),
+            UplinkCount::UplinkCount6 => write!(f, "UPLINK_COUNT_6"),
+            UplinkCount::UplinkCount7 => write!(f, "UPLINK_COUNT_7"),
+            UplinkCount::UplinkCount8 => write!(f, "UPLINK_COUNT_8"),
+            UplinkCount::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl StorageSystemConnectivityStatus {
         }
     }
 }
+impl ::std::fmt::Display for StorageSystemConnectivityStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageSystemConnectivityStatus::Fail => write!(f, "FAIL"),
+            StorageSystemConnectivityStatus::Pass => write!(f, "PASS"),
+            StorageSystemConnectivityStatus::UnknownValue => write!(f, "UNKNOWN"),
+            StorageSystemConnectivityStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

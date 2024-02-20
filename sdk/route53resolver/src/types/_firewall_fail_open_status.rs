@@ -101,3 +101,13 @@ impl FirewallFailOpenStatus {
         }
     }
 }
+impl ::std::fmt::Display for FirewallFailOpenStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FirewallFailOpenStatus::Disabled => write!(f, "DISABLED"),
+            FirewallFailOpenStatus::Enabled => write!(f, "ENABLED"),
+            FirewallFailOpenStatus::UseLocalResourceSetting => write!(f, "USE_LOCAL_RESOURCE_SETTING"),
+            FirewallFailOpenStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

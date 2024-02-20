@@ -96,3 +96,12 @@ impl ChallengeName {
         }
     }
 }
+impl ::std::fmt::Display for ChallengeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChallengeName::Mfa => write!(f, "Mfa"),
+            ChallengeName::Password => write!(f, "Password"),
+            ChallengeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

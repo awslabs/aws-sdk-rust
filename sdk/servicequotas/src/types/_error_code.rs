@@ -111,3 +111,14 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::DependencyAccessDeniedError => write!(f, "DEPENDENCY_ACCESS_DENIED_ERROR"),
+            ErrorCode::DependencyServiceError => write!(f, "DEPENDENCY_SERVICE_ERROR"),
+            ErrorCode::DependencyThrottlingError => write!(f, "DEPENDENCY_THROTTLING_ERROR"),
+            ErrorCode::ServiceQuotaNotAvailableError => write!(f, "SERVICE_QUOTA_NOT_AVAILABLE_ERROR"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

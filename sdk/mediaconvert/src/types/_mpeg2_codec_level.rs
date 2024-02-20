@@ -111,3 +111,15 @@ impl Mpeg2CodecLevel {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2CodecLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2CodecLevel::Auto => write!(f, "AUTO"),
+            Mpeg2CodecLevel::High => write!(f, "HIGH"),
+            Mpeg2CodecLevel::High1440 => write!(f, "HIGH1440"),
+            Mpeg2CodecLevel::Low => write!(f, "LOW"),
+            Mpeg2CodecLevel::Main => write!(f, "MAIN"),
+            Mpeg2CodecLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

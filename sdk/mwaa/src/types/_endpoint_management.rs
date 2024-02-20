@@ -96,3 +96,12 @@ impl EndpointManagement {
         }
     }
 }
+impl ::std::fmt::Display for EndpointManagement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointManagement::Customer => write!(f, "CUSTOMER"),
+            EndpointManagement::Service => write!(f, "SERVICE"),
+            EndpointManagement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

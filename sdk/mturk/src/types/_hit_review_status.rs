@@ -106,3 +106,14 @@ impl HitReviewStatus {
         }
     }
 }
+impl ::std::fmt::Display for HitReviewStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HitReviewStatus::MarkedForReview => write!(f, "MarkedForReview"),
+            HitReviewStatus::NotReviewed => write!(f, "NotReviewed"),
+            HitReviewStatus::ReviewedAppropriate => write!(f, "ReviewedAppropriate"),
+            HitReviewStatus::ReviewedInappropriate => write!(f, "ReviewedInappropriate"),
+            HitReviewStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

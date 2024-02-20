@@ -96,3 +96,12 @@ impl AggregatedUtterancesSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for AggregatedUtterancesSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregatedUtterancesSortAttribute::HitCount => write!(f, "HitCount"),
+            AggregatedUtterancesSortAttribute::MissedCount => write!(f, "MissedCount"),
+            AggregatedUtterancesSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

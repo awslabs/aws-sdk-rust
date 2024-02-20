@@ -96,3 +96,12 @@ impl RulePublishStatus {
         }
     }
 }
+impl ::std::fmt::Display for RulePublishStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RulePublishStatus::Draft => write!(f, "DRAFT"),
+            RulePublishStatus::Published => write!(f, "PUBLISHED"),
+            RulePublishStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

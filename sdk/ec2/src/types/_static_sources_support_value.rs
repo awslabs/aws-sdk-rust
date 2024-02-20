@@ -96,3 +96,12 @@ impl StaticSourcesSupportValue {
         }
     }
 }
+impl ::std::fmt::Display for StaticSourcesSupportValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StaticSourcesSupportValue::Disable => write!(f, "disable"),
+            StaticSourcesSupportValue::Enable => write!(f, "enable"),
+            StaticSourcesSupportValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

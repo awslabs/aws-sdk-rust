@@ -96,3 +96,12 @@ impl LocationType {
         }
     }
 }
+impl ::std::fmt::Display for LocationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocationType::Ingestion => write!(f, "INGESTION"),
+            LocationType::Sagemaker => write!(f, "SAGEMAKER"),
+            LocationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

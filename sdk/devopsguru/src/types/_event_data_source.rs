@@ -96,3 +96,12 @@ impl EventDataSource {
         }
     }
 }
+impl ::std::fmt::Display for EventDataSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventDataSource::AwsCloudTrail => write!(f, "AWS_CLOUD_TRAIL"),
+            EventDataSource::AwsCodeDeploy => write!(f, "AWS_CODE_DEPLOY"),
+            EventDataSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

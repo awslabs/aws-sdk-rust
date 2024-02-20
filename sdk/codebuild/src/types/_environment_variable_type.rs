@@ -101,3 +101,13 @@ impl EnvironmentVariableType {
         }
     }
 }
+impl ::std::fmt::Display for EnvironmentVariableType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnvironmentVariableType::ParameterStore => write!(f, "PARAMETER_STORE"),
+            EnvironmentVariableType::Plaintext => write!(f, "PLAINTEXT"),
+            EnvironmentVariableType::SecretsManager => write!(f, "SECRETS_MANAGER"),
+            EnvironmentVariableType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

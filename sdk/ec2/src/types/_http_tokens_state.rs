@@ -96,3 +96,12 @@ impl HttpTokensState {
         }
     }
 }
+impl ::std::fmt::Display for HttpTokensState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HttpTokensState::Optional => write!(f, "optional"),
+            HttpTokensState::Required => write!(f, "required"),
+            HttpTokensState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

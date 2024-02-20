@@ -101,3 +101,13 @@ impl Action {
         }
     }
 }
+impl ::std::fmt::Display for Action {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Action::DeepLink => write!(f, "DEEP_LINK"),
+            Action::OpenApp => write!(f, "OPEN_APP"),
+            Action::Url => write!(f, "URL"),
+            Action::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

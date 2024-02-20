@@ -111,3 +111,15 @@ impl OriginRequestPolicyHeaderBehavior {
         }
     }
 }
+impl ::std::fmt::Display for OriginRequestPolicyHeaderBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginRequestPolicyHeaderBehavior::AllExcept => write!(f, "allExcept"),
+            OriginRequestPolicyHeaderBehavior::AllViewer => write!(f, "allViewer"),
+            OriginRequestPolicyHeaderBehavior::AllViewerAndWhitelistCloudFront => write!(f, "allViewerAndWhitelistCloudFront"),
+            OriginRequestPolicyHeaderBehavior::None => write!(f, "none"),
+            OriginRequestPolicyHeaderBehavior::Whitelist => write!(f, "whitelist"),
+            OriginRequestPolicyHeaderBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

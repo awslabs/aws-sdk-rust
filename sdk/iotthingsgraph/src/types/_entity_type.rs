@@ -147,3 +147,20 @@ impl EntityType {
         }
     }
 }
+impl ::std::fmt::Display for EntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EntityType::Action => write!(f, "ACTION"),
+            EntityType::Capability => write!(f, "CAPABILITY"),
+            EntityType::Device => write!(f, "DEVICE"),
+            EntityType::DeviceModel => write!(f, "DEVICE_MODEL"),
+            EntityType::Enum => write!(f, "ENUM"),
+            EntityType::Event => write!(f, "EVENT"),
+            EntityType::Mapping => write!(f, "MAPPING"),
+            EntityType::Property => write!(f, "PROPERTY"),
+            EntityType::Service => write!(f, "SERVICE"),
+            EntityType::State => write!(f, "STATE"),
+            EntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

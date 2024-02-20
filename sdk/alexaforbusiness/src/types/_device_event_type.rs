@@ -96,3 +96,12 @@ impl DeviceEventType {
         }
     }
 }
+impl ::std::fmt::Display for DeviceEventType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceEventType::ConnectionStatus => write!(f, "CONNECTION_STATUS"),
+            DeviceEventType::DeviceStatus => write!(f, "DEVICE_STATUS"),
+            DeviceEventType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

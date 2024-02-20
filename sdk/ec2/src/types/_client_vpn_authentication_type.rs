@@ -105,3 +105,13 @@ impl ClientVpnAuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for ClientVpnAuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientVpnAuthenticationType::CertificateAuthentication => write!(f, "certificate-authentication"),
+            ClientVpnAuthenticationType::DirectoryServiceAuthentication => write!(f, "directory-service-authentication"),
+            ClientVpnAuthenticationType::FederatedAuthentication => write!(f, "federated-authentication"),
+            ClientVpnAuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

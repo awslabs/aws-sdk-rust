@@ -106,3 +106,14 @@ impl NetworkInterfaceAttribute {
         }
     }
 }
+impl ::std::fmt::Display for NetworkInterfaceAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkInterfaceAttribute::Attachment => write!(f, "attachment"),
+            NetworkInterfaceAttribute::Description => write!(f, "description"),
+            NetworkInterfaceAttribute::GroupSet => write!(f, "groupSet"),
+            NetworkInterfaceAttribute::SourceDestCheck => write!(f, "sourceDestCheck"),
+            NetworkInterfaceAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

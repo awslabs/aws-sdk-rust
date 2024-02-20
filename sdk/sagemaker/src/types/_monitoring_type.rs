@@ -106,3 +106,14 @@ impl MonitoringType {
         }
     }
 }
+impl ::std::fmt::Display for MonitoringType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitoringType::DataQuality => write!(f, "DataQuality"),
+            MonitoringType::ModelBias => write!(f, "ModelBias"),
+            MonitoringType::ModelExplainability => write!(f, "ModelExplainability"),
+            MonitoringType::ModelQuality => write!(f, "ModelQuality"),
+            MonitoringType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

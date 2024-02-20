@@ -111,3 +111,15 @@ impl CandidateStatus {
         }
     }
 }
+impl ::std::fmt::Display for CandidateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CandidateStatus::Completed => write!(f, "Completed"),
+            CandidateStatus::Failed => write!(f, "Failed"),
+            CandidateStatus::InProgress => write!(f, "InProgress"),
+            CandidateStatus::Stopped => write!(f, "Stopped"),
+            CandidateStatus::Stopping => write!(f, "Stopping"),
+            CandidateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl ColumnType {
         }
     }
 }
+impl ::std::fmt::Display for ColumnType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnType::CategoricalFeature => write!(f, "CATEGORICAL_FEATURE"),
+            ColumnType::ItemId => write!(f, "ITEM_ID"),
+            ColumnType::NumericalFeature => write!(f, "NUMERICAL_FEATURE"),
+            ColumnType::Timestamp => write!(f, "TIMESTAMP"),
+            ColumnType::UserId => write!(f, "USER_ID"),
+            ColumnType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

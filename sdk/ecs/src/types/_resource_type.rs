@@ -96,3 +96,12 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Gpu => write!(f, "GPU"),
+            ResourceType::InferenceAccelerator => write!(f, "InferenceAccelerator"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

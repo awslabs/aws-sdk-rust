@@ -101,3 +101,13 @@ impl VirtualGatewayListenerTlsMode {
         }
     }
 }
+impl ::std::fmt::Display for VirtualGatewayListenerTlsMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VirtualGatewayListenerTlsMode::Disabled => write!(f, "DISABLED"),
+            VirtualGatewayListenerTlsMode::Permissive => write!(f, "PERMISSIVE"),
+            VirtualGatewayListenerTlsMode::Strict => write!(f, "STRICT"),
+            VirtualGatewayListenerTlsMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

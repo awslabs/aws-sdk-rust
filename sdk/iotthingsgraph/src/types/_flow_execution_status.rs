@@ -106,3 +106,14 @@ impl FlowExecutionStatus {
         }
     }
 }
+impl ::std::fmt::Display for FlowExecutionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlowExecutionStatus::Aborted => write!(f, "ABORTED"),
+            FlowExecutionStatus::Failed => write!(f, "FAILED"),
+            FlowExecutionStatus::Running => write!(f, "RUNNING"),
+            FlowExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),
+            FlowExecutionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

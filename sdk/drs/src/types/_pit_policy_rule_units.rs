@@ -101,3 +101,13 @@ impl PitPolicyRuleUnits {
         }
     }
 }
+impl ::std::fmt::Display for PitPolicyRuleUnits {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PitPolicyRuleUnits::Day => write!(f, "DAY"),
+            PitPolicyRuleUnits::Hour => write!(f, "HOUR"),
+            PitPolicyRuleUnits::Minute => write!(f, "MINUTE"),
+            PitPolicyRuleUnits::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

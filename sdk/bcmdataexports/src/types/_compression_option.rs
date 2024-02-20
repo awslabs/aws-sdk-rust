@@ -96,3 +96,12 @@ impl CompressionOption {
         }
     }
 }
+impl ::std::fmt::Display for CompressionOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CompressionOption::Gzip => write!(f, "GZIP"),
+            CompressionOption::Parquet => write!(f, "PARQUET"),
+            CompressionOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

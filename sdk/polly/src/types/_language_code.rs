@@ -321,3 +321,49 @@ impl LanguageCode {
         }
     }
 }
+impl ::std::fmt::Display for LanguageCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LanguageCode::ArAe => write!(f, "ar-AE"),
+            LanguageCode::Arb => write!(f, "arb"),
+            LanguageCode::CaEs => write!(f, "ca-ES"),
+            LanguageCode::CmnCn => write!(f, "cmn-CN"),
+            LanguageCode::CyGb => write!(f, "cy-GB"),
+            LanguageCode::DaDk => write!(f, "da-DK"),
+            LanguageCode::DeAt => write!(f, "de-AT"),
+            LanguageCode::DeDe => write!(f, "de-DE"),
+            LanguageCode::EnAu => write!(f, "en-AU"),
+            LanguageCode::EnGb => write!(f, "en-GB"),
+            LanguageCode::EnGbWls => write!(f, "en-GB-WLS"),
+            LanguageCode::EnIe => write!(f, "en-IE"),
+            LanguageCode::EnIn => write!(f, "en-IN"),
+            LanguageCode::EnNz => write!(f, "en-NZ"),
+            LanguageCode::EnUs => write!(f, "en-US"),
+            LanguageCode::EnZa => write!(f, "en-ZA"),
+            LanguageCode::EsEs => write!(f, "es-ES"),
+            LanguageCode::EsMx => write!(f, "es-MX"),
+            LanguageCode::EsUs => write!(f, "es-US"),
+            LanguageCode::FiFi => write!(f, "fi-FI"),
+            LanguageCode::FrBe => write!(f, "fr-BE"),
+            LanguageCode::FrCa => write!(f, "fr-CA"),
+            LanguageCode::FrFr => write!(f, "fr-FR"),
+            LanguageCode::HiIn => write!(f, "hi-IN"),
+            LanguageCode::IsIs => write!(f, "is-IS"),
+            LanguageCode::ItIt => write!(f, "it-IT"),
+            LanguageCode::JaJp => write!(f, "ja-JP"),
+            LanguageCode::KoKr => write!(f, "ko-KR"),
+            LanguageCode::NbNo => write!(f, "nb-NO"),
+            LanguageCode::NlBe => write!(f, "nl-BE"),
+            LanguageCode::NlNl => write!(f, "nl-NL"),
+            LanguageCode::PlPl => write!(f, "pl-PL"),
+            LanguageCode::PtBr => write!(f, "pt-BR"),
+            LanguageCode::PtPt => write!(f, "pt-PT"),
+            LanguageCode::RoRo => write!(f, "ro-RO"),
+            LanguageCode::RuRu => write!(f, "ru-RU"),
+            LanguageCode::SvSe => write!(f, "sv-SE"),
+            LanguageCode::TrTr => write!(f, "tr-TR"),
+            LanguageCode::YueCn => write!(f, "yue-CN"),
+            LanguageCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

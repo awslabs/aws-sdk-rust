@@ -106,3 +106,14 @@ impl BaseMapStyleType {
         }
     }
 }
+impl ::std::fmt::Display for BaseMapStyleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BaseMapStyleType::DarkGray => write!(f, "DARK_GRAY"),
+            BaseMapStyleType::Imagery => write!(f, "IMAGERY"),
+            BaseMapStyleType::LightGray => write!(f, "LIGHT_GRAY"),
+            BaseMapStyleType::Street => write!(f, "STREET"),
+            BaseMapStyleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

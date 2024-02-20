@@ -177,3 +177,25 @@ impl DocumentType {
         }
     }
 }
+impl ::std::fmt::Display for DocumentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentType::ApplicationConfiguration => write!(f, "ApplicationConfiguration"),
+            DocumentType::ApplicationConfigurationSchema => write!(f, "ApplicationConfigurationSchema"),
+            DocumentType::Automation => write!(f, "Automation"),
+            DocumentType::ChangeTemplate => write!(f, "Automation.ChangeTemplate"),
+            DocumentType::ChangeCalendar => write!(f, "ChangeCalendar"),
+            DocumentType::CloudFormation => write!(f, "CloudFormation"),
+            DocumentType::Command => write!(f, "Command"),
+            DocumentType::ConformancePackTemplate => write!(f, "ConformancePackTemplate"),
+            DocumentType::DeploymentStrategy => write!(f, "DeploymentStrategy"),
+            DocumentType::Package => write!(f, "Package"),
+            DocumentType::Policy => write!(f, "Policy"),
+            DocumentType::ProblemAnalysis => write!(f, "ProblemAnalysis"),
+            DocumentType::ProblemAnalysisTemplate => write!(f, "ProblemAnalysisTemplate"),
+            DocumentType::QuickSetup => write!(f, "QuickSetup"),
+            DocumentType::Session => write!(f, "Session"),
+            DocumentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Owner {
         }
     }
 }
+impl ::std::fmt::Display for Owner {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Owner::AwsManaged => write!(f, "AWS_MANAGED"),
+            Owner::Custom => write!(f, "CUSTOM"),
+            Owner::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

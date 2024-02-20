@@ -96,3 +96,12 @@ impl AlertType {
         }
     }
 }
+impl ::std::fmt::Display for AlertType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlertType::Lambda => write!(f, "LAMBDA"),
+            AlertType::Sns => write!(f, "SNS"),
+            AlertType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

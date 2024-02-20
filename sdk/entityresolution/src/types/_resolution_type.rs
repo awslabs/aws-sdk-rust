@@ -101,3 +101,13 @@ impl ResolutionType {
         }
     }
 }
+impl ::std::fmt::Display for ResolutionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolutionType::MlMatching => write!(f, "ML_MATCHING"),
+            ResolutionType::Provider => write!(f, "PROVIDER"),
+            ResolutionType::RuleMatching => write!(f, "RULE_MATCHING"),
+            ResolutionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

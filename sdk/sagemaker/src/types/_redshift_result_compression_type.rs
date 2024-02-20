@@ -111,3 +111,15 @@ impl RedshiftResultCompressionType {
         }
     }
 }
+impl ::std::fmt::Display for RedshiftResultCompressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RedshiftResultCompressionType::Bzip2 => write!(f, "BZIP2"),
+            RedshiftResultCompressionType::Gzip => write!(f, "GZIP"),
+            RedshiftResultCompressionType::None => write!(f, "None"),
+            RedshiftResultCompressionType::Snappy => write!(f, "SNAPPY"),
+            RedshiftResultCompressionType::Zstd => write!(f, "ZSTD"),
+            RedshiftResultCompressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

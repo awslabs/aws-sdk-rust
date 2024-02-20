@@ -123,3 +123,16 @@ impl NotebookInstanceAcceleratorType {
         }
     }
 }
+impl ::std::fmt::Display for NotebookInstanceAcceleratorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotebookInstanceAcceleratorType::MlEia1Large => write!(f, "ml.eia1.large"),
+            NotebookInstanceAcceleratorType::MlEia1Medium => write!(f, "ml.eia1.medium"),
+            NotebookInstanceAcceleratorType::MlEia1Xlarge => write!(f, "ml.eia1.xlarge"),
+            NotebookInstanceAcceleratorType::MlEia2Large => write!(f, "ml.eia2.large"),
+            NotebookInstanceAcceleratorType::MlEia2Medium => write!(f, "ml.eia2.medium"),
+            NotebookInstanceAcceleratorType::MlEia2Xlarge => write!(f, "ml.eia2.xlarge"),
+            NotebookInstanceAcceleratorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

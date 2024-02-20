@@ -96,3 +96,12 @@ impl TargetFieldOrder {
         }
     }
 }
+impl ::std::fmt::Display for TargetFieldOrder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetFieldOrder::LatLon => write!(f, "LatLon"),
+            TargetFieldOrder::LonLat => write!(f, "LonLat"),
+            TargetFieldOrder::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

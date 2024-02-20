@@ -129,3 +129,17 @@ impl SrcCodeOrDbAnalysisStatus {
         }
     }
 }
+impl ::std::fmt::Display for SrcCodeOrDbAnalysisStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SrcCodeOrDbAnalysisStatus::AnalysisFailed => write!(f, "ANALYSIS_FAILED"),
+            SrcCodeOrDbAnalysisStatus::AnalysisPartialSuccess => write!(f, "ANALYSIS_PARTIAL_SUCCESS"),
+            SrcCodeOrDbAnalysisStatus::AnalysisStarted => write!(f, "ANALYSIS_STARTED"),
+            SrcCodeOrDbAnalysisStatus::AnalysisSuccess => write!(f, "ANALYSIS_SUCCESS"),
+            SrcCodeOrDbAnalysisStatus::AnalysisToBeScheduled => write!(f, "ANALYSIS_TO_BE_SCHEDULED"),
+            SrcCodeOrDbAnalysisStatus::Configured => write!(f, "CONFIGURED"),
+            SrcCodeOrDbAnalysisStatus::Unconfigured => write!(f, "UNCONFIGURED"),
+            SrcCodeOrDbAnalysisStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

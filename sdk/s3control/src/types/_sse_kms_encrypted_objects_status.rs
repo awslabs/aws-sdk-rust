@@ -96,3 +96,12 @@ impl SseKmsEncryptedObjectsStatus {
         }
     }
 }
+impl ::std::fmt::Display for SseKmsEncryptedObjectsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SseKmsEncryptedObjectsStatus::Disabled => write!(f, "Disabled"),
+            SseKmsEncryptedObjectsStatus::Enabled => write!(f, "Enabled"),
+            SseKmsEncryptedObjectsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

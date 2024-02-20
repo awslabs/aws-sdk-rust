@@ -106,3 +106,14 @@ impl ObjectTypeEnum {
         }
     }
 }
+impl ::std::fmt::Display for ObjectTypeEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectTypeEnum::Directory => write!(f, "DIRECTORY"),
+            ObjectTypeEnum::File => write!(f, "FILE"),
+            ObjectTypeEnum::GitLink => write!(f, "GIT_LINK"),
+            ObjectTypeEnum::SymbolicLink => write!(f, "SYMBOLIC_LINK"),
+            ObjectTypeEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

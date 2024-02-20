@@ -96,3 +96,12 @@ impl OutputFormat {
         }
     }
 }
+impl ::std::fmt::Display for OutputFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputFormat::Json => write!(f, "JSON"),
+            OutputFormat::Yaml => write!(f, "YAML"),
+            OutputFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

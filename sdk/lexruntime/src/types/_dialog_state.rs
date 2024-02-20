@@ -123,3 +123,16 @@ impl DialogState {
         }
     }
 }
+impl ::std::fmt::Display for DialogState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DialogState::ConfirmIntent => write!(f, "ConfirmIntent"),
+            DialogState::ElicitIntent => write!(f, "ElicitIntent"),
+            DialogState::ElicitSlot => write!(f, "ElicitSlot"),
+            DialogState::Failed => write!(f, "Failed"),
+            DialogState::Fulfilled => write!(f, "Fulfilled"),
+            DialogState::ReadyForFulfillment => write!(f, "ReadyForFulfillment"),
+            DialogState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

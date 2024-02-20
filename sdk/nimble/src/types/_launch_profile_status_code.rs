@@ -177,3 +177,25 @@ impl LaunchProfileStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for LaunchProfileStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LaunchProfileStatusCode::EncryptionKeyAccessDenied => write!(f, "ENCRYPTION_KEY_ACCESS_DENIED"),
+            LaunchProfileStatusCode::EncryptionKeyNotFound => write!(f, "ENCRYPTION_KEY_NOT_FOUND"),
+            LaunchProfileStatusCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            LaunchProfileStatusCode::InvalidInstanceTypesProvided => write!(f, "INVALID_INSTANCE_TYPES_PROVIDED"),
+            LaunchProfileStatusCode::InvalidSubnetsCombination => write!(f, "INVALID_SUBNETS_COMBINATION"),
+            LaunchProfileStatusCode::InvalidSubnetsProvided => write!(f, "INVALID_SUBNETS_PROVIDED"),
+            LaunchProfileStatusCode::LaunchProfileCreated => write!(f, "LAUNCH_PROFILE_CREATED"),
+            LaunchProfileStatusCode::LaunchProfileCreateInProgress => write!(f, "LAUNCH_PROFILE_CREATE_IN_PROGRESS"),
+            LaunchProfileStatusCode::LaunchProfileDeleted => write!(f, "LAUNCH_PROFILE_DELETED"),
+            LaunchProfileStatusCode::LaunchProfileDeleteInProgress => write!(f, "LAUNCH_PROFILE_DELETE_IN_PROGRESS"),
+            LaunchProfileStatusCode::LaunchProfileUpdated => write!(f, "LAUNCH_PROFILE_UPDATED"),
+            LaunchProfileStatusCode::LaunchProfileUpdateInProgress => write!(f, "LAUNCH_PROFILE_UPDATE_IN_PROGRESS"),
+            LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted => write!(f, "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED"),
+            LaunchProfileStatusCode::StreamingImageNotFound => write!(f, "STREAMING_IMAGE_NOT_FOUND"),
+            LaunchProfileStatusCode::StreamingImageNotReady => write!(f, "STREAMING_IMAGE_NOT_READY"),
+            LaunchProfileStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

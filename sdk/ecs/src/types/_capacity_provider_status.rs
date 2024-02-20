@@ -96,3 +96,12 @@ impl CapacityProviderStatus {
         }
     }
 }
+impl ::std::fmt::Display for CapacityProviderStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapacityProviderStatus::Active => write!(f, "ACTIVE"),
+            CapacityProviderStatus::Inactive => write!(f, "INACTIVE"),
+            CapacityProviderStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

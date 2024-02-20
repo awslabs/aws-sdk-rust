@@ -100,7 +100,7 @@ where
     }
 
     fn priority(&self) -> RetryClassifierPriority {
-        RetryClassifierPriority::with_lower_priority_than(
+        RetryClassifierPriority::run_before(
             RetryClassifierPriority::modeled_as_retryable_classifier(),
         )
     }

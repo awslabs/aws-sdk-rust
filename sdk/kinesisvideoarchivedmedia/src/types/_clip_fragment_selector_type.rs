@@ -96,3 +96,12 @@ impl ClipFragmentSelectorType {
         }
     }
 }
+impl ::std::fmt::Display for ClipFragmentSelectorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClipFragmentSelectorType::ProducerTimestamp => write!(f, "PRODUCER_TIMESTAMP"),
+            ClipFragmentSelectorType::ServerTimestamp => write!(f, "SERVER_TIMESTAMP"),
+            ClipFragmentSelectorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl TieringPolicyName {
         }
     }
 }
+impl ::std::fmt::Display for TieringPolicyName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TieringPolicyName::All => write!(f, "ALL"),
+            TieringPolicyName::Auto => write!(f, "AUTO"),
+            TieringPolicyName::None => write!(f, "NONE"),
+            TieringPolicyName::SnapshotOnly => write!(f, "SNAPSHOT_ONLY"),
+            TieringPolicyName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl CertificateSource {
         }
     }
 }
+impl ::std::fmt::Display for CertificateSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateSource::Acm => write!(f, "acm"),
+            CertificateSource::Cloudfront => write!(f, "cloudfront"),
+            CertificateSource::Iam => write!(f, "iam"),
+            CertificateSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

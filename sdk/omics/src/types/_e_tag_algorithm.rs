@@ -101,3 +101,13 @@ impl ETagAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for ETagAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ETagAlgorithm::BamMd5Up => write!(f, "BAM_MD5up"),
+            ETagAlgorithm::CramMd5Up => write!(f, "CRAM_MD5up"),
+            ETagAlgorithm::FastqMd5Up => write!(f, "FASTQ_MD5up"),
+            ETagAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

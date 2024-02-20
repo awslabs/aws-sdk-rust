@@ -111,3 +111,15 @@ impl OperationFilterName {
         }
     }
 }
+impl ::std::fmt::Display for OperationFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationFilterName::NamespaceId => write!(f, "NAMESPACE_ID"),
+            OperationFilterName::ServiceId => write!(f, "SERVICE_ID"),
+            OperationFilterName::Status => write!(f, "STATUS"),
+            OperationFilterName::Type => write!(f, "TYPE"),
+            OperationFilterName::UpdateDate => write!(f, "UPDATE_DATE"),
+            OperationFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

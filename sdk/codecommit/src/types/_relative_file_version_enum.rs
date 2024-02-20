@@ -96,3 +96,12 @@ impl RelativeFileVersionEnum {
         }
     }
 }
+impl ::std::fmt::Display for RelativeFileVersionEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelativeFileVersionEnum::After => write!(f, "AFTER"),
+            RelativeFileVersionEnum::Before => write!(f, "BEFORE"),
+            RelativeFileVersionEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

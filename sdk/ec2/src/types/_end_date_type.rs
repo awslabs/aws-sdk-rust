@@ -96,3 +96,12 @@ impl EndDateType {
         }
     }
 }
+impl ::std::fmt::Display for EndDateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndDateType::Limited => write!(f, "limited"),
+            EndDateType::Unlimited => write!(f, "unlimited"),
+            EndDateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

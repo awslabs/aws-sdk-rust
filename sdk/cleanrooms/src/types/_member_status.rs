@@ -106,3 +106,14 @@ impl MemberStatus {
         }
     }
 }
+impl ::std::fmt::Display for MemberStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberStatus::Active => write!(f, "ACTIVE"),
+            MemberStatus::Invited => write!(f, "INVITED"),
+            MemberStatus::Left => write!(f, "LEFT"),
+            MemberStatus::Removed => write!(f, "REMOVED"),
+            MemberStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl EphemeralNvmeSupport {
         }
     }
 }
+impl ::std::fmt::Display for EphemeralNvmeSupport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EphemeralNvmeSupport::Required => write!(f, "required"),
+            EphemeralNvmeSupport::Supported => write!(f, "supported"),
+            EphemeralNvmeSupport::Unsupported => write!(f, "unsupported"),
+            EphemeralNvmeSupport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

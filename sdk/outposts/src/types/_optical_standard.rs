@@ -165,3 +165,23 @@ impl OpticalStandard {
         }
     }
 }
+impl ::std::fmt::Display for OpticalStandard {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpticalStandard::Optic1000BaseLx => write!(f, "OPTIC_1000BASE_LX"),
+            OpticalStandard::Optic1000BaseSx => write!(f, "OPTIC_1000BASE_SX"),
+            OpticalStandard::Optic100GbaseCwdm4 => write!(f, "OPTIC_100GBASE_CWDM4"),
+            OpticalStandard::Optic100GbaseLr4 => write!(f, "OPTIC_100GBASE_LR4"),
+            OpticalStandard::Optic100GbaseSr4 => write!(f, "OPTIC_100GBASE_SR4"),
+            OpticalStandard::Optic100GPsm4Msa => write!(f, "OPTIC_100G_PSM4_MSA"),
+            OpticalStandard::Optic10GbaseIr => write!(f, "OPTIC_10GBASE_IR"),
+            OpticalStandard::Optic10GbaseLr => write!(f, "OPTIC_10GBASE_LR"),
+            OpticalStandard::Optic10GbaseSr => write!(f, "OPTIC_10GBASE_SR"),
+            OpticalStandard::Optic40GbaseEsr => write!(f, "OPTIC_40GBASE_ESR"),
+            OpticalStandard::Optic40GbaseIr4Lr4L => write!(f, "OPTIC_40GBASE_IR4_LR4L"),
+            OpticalStandard::Optic40GbaseLr4 => write!(f, "OPTIC_40GBASE_LR4"),
+            OpticalStandard::Optic40GbaseSr => write!(f, "OPTIC_40GBASE_SR"),
+            OpticalStandard::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

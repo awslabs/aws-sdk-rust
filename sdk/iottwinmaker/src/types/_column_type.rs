@@ -101,3 +101,13 @@ impl ColumnType {
         }
     }
 }
+impl ::std::fmt::Display for ColumnType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnType::Edge => write!(f, "EDGE"),
+            ColumnType::Node => write!(f, "NODE"),
+            ColumnType::Value => write!(f, "VALUE"),
+            ColumnType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

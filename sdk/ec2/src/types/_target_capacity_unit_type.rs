@@ -101,3 +101,13 @@ impl TargetCapacityUnitType {
         }
     }
 }
+impl ::std::fmt::Display for TargetCapacityUnitType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetCapacityUnitType::MemoryMib => write!(f, "memory-mib"),
+            TargetCapacityUnitType::Units => write!(f, "units"),
+            TargetCapacityUnitType::Vcpu => write!(f, "vcpu"),
+            TargetCapacityUnitType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

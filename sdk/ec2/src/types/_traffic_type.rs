@@ -101,3 +101,13 @@ impl TrafficType {
         }
     }
 }
+impl ::std::fmt::Display for TrafficType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrafficType::Accept => write!(f, "ACCEPT"),
+            TrafficType::All => write!(f, "ALL"),
+            TrafficType::Reject => write!(f, "REJECT"),
+            TrafficType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

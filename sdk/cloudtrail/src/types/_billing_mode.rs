@@ -96,3 +96,12 @@ impl BillingMode {
         }
     }
 }
+impl ::std::fmt::Display for BillingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BillingMode::ExtendableRetentionPricing => write!(f, "EXTENDABLE_RETENTION_PRICING"),
+            BillingMode::FixedRetentionPricing => write!(f, "FIXED_RETENTION_PRICING"),
+            BillingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ConnectionType {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionType::ConnectSsh => write!(f, "CONNECT_SSH"),
+            ConnectionType::ConnectSsm => write!(f, "CONNECT_SSM"),
+            ConnectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

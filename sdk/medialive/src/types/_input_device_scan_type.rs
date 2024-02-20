@@ -96,3 +96,12 @@ impl InputDeviceScanType {
         }
     }
 }
+impl ::std::fmt::Display for InputDeviceScanType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDeviceScanType::Interlaced => write!(f, "INTERLACED"),
+            InputDeviceScanType::Progressive => write!(f, "PROGRESSIVE"),
+            InputDeviceScanType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

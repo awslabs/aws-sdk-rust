@@ -96,3 +96,12 @@ impl Operator {
         }
     }
 }
+impl ::std::fmt::Display for Operator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Operator::All => write!(f, "ALL"),
+            Operator::Any => write!(f, "ANY"),
+            Operator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

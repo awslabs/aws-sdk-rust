@@ -96,3 +96,12 @@ impl SignInOrigin {
         }
     }
 }
+impl ::std::fmt::Display for SignInOrigin {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SignInOrigin::Application => write!(f, "APPLICATION"),
+            SignInOrigin::IdentityCenter => write!(f, "IDENTITY_CENTER"),
+            SignInOrigin::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

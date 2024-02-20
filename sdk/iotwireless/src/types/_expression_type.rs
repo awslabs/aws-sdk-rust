@@ -96,3 +96,12 @@ impl ExpressionType {
         }
     }
 }
+impl ::std::fmt::Display for ExpressionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExpressionType::MqttTopic => write!(f, "MqttTopic"),
+            ExpressionType::RuleName => write!(f, "RuleName"),
+            ExpressionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

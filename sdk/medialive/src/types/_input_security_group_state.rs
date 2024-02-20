@@ -106,3 +106,14 @@ impl InputSecurityGroupState {
         }
     }
 }
+impl ::std::fmt::Display for InputSecurityGroupState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputSecurityGroupState::Deleted => write!(f, "DELETED"),
+            InputSecurityGroupState::Idle => write!(f, "IDLE"),
+            InputSecurityGroupState::InUse => write!(f, "IN_USE"),
+            InputSecurityGroupState::Updating => write!(f, "UPDATING"),
+            InputSecurityGroupState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

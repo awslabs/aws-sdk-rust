@@ -96,3 +96,12 @@ impl Mpeg2FramerateControl {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2FramerateControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2FramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            Mpeg2FramerateControl::Specified => write!(f, "SPECIFIED"),
+            Mpeg2FramerateControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

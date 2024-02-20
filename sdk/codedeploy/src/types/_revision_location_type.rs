@@ -106,3 +106,14 @@ impl RevisionLocationType {
         }
     }
 }
+impl ::std::fmt::Display for RevisionLocationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RevisionLocationType::AppSpecContent => write!(f, "AppSpecContent"),
+            RevisionLocationType::GitHub => write!(f, "GitHub"),
+            RevisionLocationType::S3 => write!(f, "S3"),
+            RevisionLocationType::String => write!(f, "String"),
+            RevisionLocationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

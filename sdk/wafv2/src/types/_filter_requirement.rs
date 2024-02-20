@@ -96,3 +96,12 @@ impl FilterRequirement {
         }
     }
 }
+impl ::std::fmt::Display for FilterRequirement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterRequirement::MeetsAll => write!(f, "MEETS_ALL"),
+            FilterRequirement::MeetsAny => write!(f, "MEETS_ANY"),
+            FilterRequirement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl ClientVpnConnectionStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ClientVpnConnectionStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientVpnConnectionStatusCode::Active => write!(f, "active"),
+            ClientVpnConnectionStatusCode::FailedToTerminate => write!(f, "failed-to-terminate"),
+            ClientVpnConnectionStatusCode::Terminated => write!(f, "terminated"),
+            ClientVpnConnectionStatusCode::Terminating => write!(f, "terminating"),
+            ClientVpnConnectionStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

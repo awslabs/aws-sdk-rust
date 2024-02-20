@@ -123,3 +123,16 @@ impl UsageStatisticType {
         }
     }
 }
+impl ::std::fmt::Display for UsageStatisticType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageStatisticType::SumByAccount => write!(f, "SUM_BY_ACCOUNT"),
+            UsageStatisticType::SumByDataSource => write!(f, "SUM_BY_DATA_SOURCE"),
+            UsageStatisticType::SumByFeatures => write!(f, "SUM_BY_FEATURES"),
+            UsageStatisticType::SumByResource => write!(f, "SUM_BY_RESOURCE"),
+            UsageStatisticType::TopAccountsByFeature => write!(f, "TOP_ACCOUNTS_BY_FEATURE"),
+            UsageStatisticType::TopResources => write!(f, "TOP_RESOURCES"),
+            UsageStatisticType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

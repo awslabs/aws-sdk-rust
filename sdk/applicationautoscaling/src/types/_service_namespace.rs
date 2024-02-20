@@ -171,3 +171,24 @@ impl ServiceNamespace {
         }
     }
 }
+impl ::std::fmt::Display for ServiceNamespace {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceNamespace::Appstream => write!(f, "appstream"),
+            ServiceNamespace::Cassandra => write!(f, "cassandra"),
+            ServiceNamespace::Comprehend => write!(f, "comprehend"),
+            ServiceNamespace::CustomResource => write!(f, "custom-resource"),
+            ServiceNamespace::Dynamodb => write!(f, "dynamodb"),
+            ServiceNamespace::Ec2 => write!(f, "ec2"),
+            ServiceNamespace::Ecs => write!(f, "ecs"),
+            ServiceNamespace::Elasticache => write!(f, "elasticache"),
+            ServiceNamespace::Emr => write!(f, "elasticmapreduce"),
+            ServiceNamespace::Kafka => write!(f, "kafka"),
+            ServiceNamespace::Lambda => write!(f, "lambda"),
+            ServiceNamespace::Neptune => write!(f, "neptune"),
+            ServiceNamespace::Rds => write!(f, "rds"),
+            ServiceNamespace::Sagemaker => write!(f, "sagemaker"),
+            ServiceNamespace::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

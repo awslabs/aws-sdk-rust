@@ -111,3 +111,15 @@ impl KinesisVideoStreamPoolStatus {
         }
     }
 }
+impl ::std::fmt::Display for KinesisVideoStreamPoolStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KinesisVideoStreamPoolStatus::Active => write!(f, "ACTIVE"),
+            KinesisVideoStreamPoolStatus::Creating => write!(f, "CREATING"),
+            KinesisVideoStreamPoolStatus::Deleting => write!(f, "DELETING"),
+            KinesisVideoStreamPoolStatus::Failed => write!(f, "FAILED"),
+            KinesisVideoStreamPoolStatus::Updating => write!(f, "UPDATING"),
+            KinesisVideoStreamPoolStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

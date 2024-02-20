@@ -96,3 +96,12 @@ impl FunctionIsolationMode {
         }
     }
 }
+impl ::std::fmt::Display for FunctionIsolationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FunctionIsolationMode::GreengrassContainer => write!(f, "GreengrassContainer"),
+            FunctionIsolationMode::NoContainer => write!(f, "NoContainer"),
+            FunctionIsolationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

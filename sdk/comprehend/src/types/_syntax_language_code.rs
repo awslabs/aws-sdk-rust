@@ -116,3 +116,16 @@ impl SyntaxLanguageCode {
         }
     }
 }
+impl ::std::fmt::Display for SyntaxLanguageCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SyntaxLanguageCode::De => write!(f, "de"),
+            SyntaxLanguageCode::En => write!(f, "en"),
+            SyntaxLanguageCode::Es => write!(f, "es"),
+            SyntaxLanguageCode::Fr => write!(f, "fr"),
+            SyntaxLanguageCode::It => write!(f, "it"),
+            SyntaxLanguageCode::Pt => write!(f, "pt"),
+            SyntaxLanguageCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

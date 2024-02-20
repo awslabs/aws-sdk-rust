@@ -121,3 +121,17 @@ impl AttributeType {
         }
     }
 }
+impl ::std::fmt::Display for AttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttributeType::After => write!(f, "AFTER"),
+            AttributeType::Before => write!(f, "BEFORE"),
+            AttributeType::Between => write!(f, "BETWEEN"),
+            AttributeType::Contains => write!(f, "CONTAINS"),
+            AttributeType::Exclusive => write!(f, "EXCLUSIVE"),
+            AttributeType::Inclusive => write!(f, "INCLUSIVE"),
+            AttributeType::On => write!(f, "ON"),
+            AttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

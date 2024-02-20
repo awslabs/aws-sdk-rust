@@ -106,3 +106,14 @@ impl CustomContentImageScalingConfiguration {
         }
     }
 }
+impl ::std::fmt::Display for CustomContentImageScalingConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomContentImageScalingConfiguration::DoNotScale => write!(f, "DO_NOT_SCALE"),
+            CustomContentImageScalingConfiguration::FitToHeight => write!(f, "FIT_TO_HEIGHT"),
+            CustomContentImageScalingConfiguration::FitToWidth => write!(f, "FIT_TO_WIDTH"),
+            CustomContentImageScalingConfiguration::ScaleToVisual => write!(f, "SCALE_TO_VISUAL"),
+            CustomContentImageScalingConfiguration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

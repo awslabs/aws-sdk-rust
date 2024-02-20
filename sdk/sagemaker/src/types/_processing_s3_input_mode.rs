@@ -96,3 +96,12 @@ impl ProcessingS3InputMode {
         }
     }
 }
+impl ::std::fmt::Display for ProcessingS3InputMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProcessingS3InputMode::File => write!(f, "File"),
+            ProcessingS3InputMode::Pipe => write!(f, "Pipe"),
+            ProcessingS3InputMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

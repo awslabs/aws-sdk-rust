@@ -101,3 +101,13 @@ impl LabelDecorator {
         }
     }
 }
+impl ::std::fmt::Display for LabelDecorator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LabelDecorator::None => write!(f, "none"),
+            LabelDecorator::Optional => write!(f, "optional"),
+            LabelDecorator::Required => write!(f, "required"),
+            LabelDecorator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

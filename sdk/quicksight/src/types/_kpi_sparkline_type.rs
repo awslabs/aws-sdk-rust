@@ -96,3 +96,12 @@ impl KpiSparklineType {
         }
     }
 }
+impl ::std::fmt::Display for KpiSparklineType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KpiSparklineType::Area => write!(f, "AREA"),
+            KpiSparklineType::Line => write!(f, "LINE"),
+            KpiSparklineType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

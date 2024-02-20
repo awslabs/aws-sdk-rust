@@ -121,3 +121,17 @@ impl MediaPipelineStatus {
         }
     }
 }
+impl ::std::fmt::Display for MediaPipelineStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaPipelineStatus::Failed => write!(f, "Failed"),
+            MediaPipelineStatus::InProgress => write!(f, "InProgress"),
+            MediaPipelineStatus::Initializing => write!(f, "Initializing"),
+            MediaPipelineStatus::NotStarted => write!(f, "NotStarted"),
+            MediaPipelineStatus::Paused => write!(f, "Paused"),
+            MediaPipelineStatus::Stopped => write!(f, "Stopped"),
+            MediaPipelineStatus::Stopping => write!(f, "Stopping"),
+            MediaPipelineStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

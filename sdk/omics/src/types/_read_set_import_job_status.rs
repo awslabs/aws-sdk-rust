@@ -129,3 +129,17 @@ impl ReadSetImportJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReadSetImportJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReadSetImportJobStatus::Cancelled => write!(f, "CANCELLED"),
+            ReadSetImportJobStatus::Cancelling => write!(f, "CANCELLING"),
+            ReadSetImportJobStatus::Completed => write!(f, "COMPLETED"),
+            ReadSetImportJobStatus::CompletedWithFailures => write!(f, "COMPLETED_WITH_FAILURES"),
+            ReadSetImportJobStatus::Failed => write!(f, "FAILED"),
+            ReadSetImportJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ReadSetImportJobStatus::Submitted => write!(f, "SUBMITTED"),
+            ReadSetImportJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

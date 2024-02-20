@@ -96,3 +96,12 @@ impl ValidationMethod {
         }
     }
 }
+impl ::std::fmt::Display for ValidationMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationMethod::Dns => write!(f, "DNS"),
+            ValidationMethod::Email => write!(f, "EMAIL"),
+            ValidationMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

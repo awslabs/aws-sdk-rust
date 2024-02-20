@@ -96,3 +96,12 @@ impl StorageType {
         }
     }
 }
+impl ::std::fmt::Display for StorageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StorageType::InMemory => write!(f, "InMemory"),
+            StorageType::Standard => write!(f, "Standard"),
+            StorageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

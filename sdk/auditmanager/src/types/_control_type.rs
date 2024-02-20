@@ -96,3 +96,12 @@ impl ControlType {
         }
     }
 }
+impl ::std::fmt::Display for ControlType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ControlType::Custom => write!(f, "Custom"),
+            ControlType::Standard => write!(f, "Standard"),
+            ControlType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

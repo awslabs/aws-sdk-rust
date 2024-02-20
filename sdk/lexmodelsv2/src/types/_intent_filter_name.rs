@@ -91,3 +91,11 @@ impl IntentFilterName {
         }
     }
 }
+impl ::std::fmt::Display for IntentFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntentFilterName::IntentName => write!(f, "IntentName"),
+            IntentFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

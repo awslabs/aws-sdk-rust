@@ -96,3 +96,12 @@ impl SlotShape {
         }
     }
 }
+impl ::std::fmt::Display for SlotShape {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlotShape::List => write!(f, "List"),
+            SlotShape::Scalar => write!(f, "Scalar"),
+            SlotShape::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

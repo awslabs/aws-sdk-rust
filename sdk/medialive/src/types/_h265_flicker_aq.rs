@@ -96,3 +96,12 @@ impl H265FlickerAq {
         }
     }
 }
+impl ::std::fmt::Display for H265FlickerAq {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265FlickerAq::Disabled => write!(f, "DISABLED"),
+            H265FlickerAq::Enabled => write!(f, "ENABLED"),
+            H265FlickerAq::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl WarmupStatus {
         }
     }
 }
+impl ::std::fmt::Display for WarmupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WarmupStatus::Done => write!(f, "DONE"),
+            WarmupStatus::InProgress => write!(f, "IN_PROGRESS"),
+            WarmupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

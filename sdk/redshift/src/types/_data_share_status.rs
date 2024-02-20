@@ -116,3 +116,16 @@ impl DataShareStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataShareStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataShareStatus::Active => write!(f, "ACTIVE"),
+            DataShareStatus::Authorized => write!(f, "AUTHORIZED"),
+            DataShareStatus::Available => write!(f, "AVAILABLE"),
+            DataShareStatus::Deauthorized => write!(f, "DEAUTHORIZED"),
+            DataShareStatus::PendingAuthorization => write!(f, "PENDING_AUTHORIZATION"),
+            DataShareStatus::Rejected => write!(f, "REJECTED"),
+            DataShareStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

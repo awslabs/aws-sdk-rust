@@ -106,3 +106,14 @@ impl DriftStatus {
         }
     }
 }
+impl ::std::fmt::Display for DriftStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DriftStatus::Drifted => write!(f, "DRIFTED"),
+            DriftStatus::InSync => write!(f, "IN_SYNC"),
+            DriftStatus::NotChecking => write!(f, "NOT_CHECKING"),
+            DriftStatus::UnknownValue => write!(f, "UNKNOWN"),
+            DriftStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

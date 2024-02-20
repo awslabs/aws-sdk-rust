@@ -106,3 +106,14 @@ impl EncryptionAlgorithmSpec {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionAlgorithmSpec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionAlgorithmSpec::RsaesOaepSha1 => write!(f, "RSAES_OAEP_SHA_1"),
+            EncryptionAlgorithmSpec::RsaesOaepSha256 => write!(f, "RSAES_OAEP_SHA_256"),
+            EncryptionAlgorithmSpec::Sm2Pke => write!(f, "SM2PKE"),
+            EncryptionAlgorithmSpec::SymmetricDefault => write!(f, "SYMMETRIC_DEFAULT"),
+            EncryptionAlgorithmSpec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

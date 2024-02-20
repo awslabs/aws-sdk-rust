@@ -101,3 +101,13 @@ impl ReportStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReportStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportStatus::Completed => write!(f, "COMPLETED"),
+            ReportStatus::Failed => write!(f, "FAILED"),
+            ReportStatus::WorkInProgress => write!(f, "WORK_IN_PROGRESS"),
+            ReportStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl Operator {
         }
     }
 }
+impl ::std::fmt::Display for Operator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Operator::Equals => write!(f, "EQUALS"),
+            Operator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

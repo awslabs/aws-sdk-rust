@@ -116,3 +116,16 @@ impl AgentStatus {
         }
     }
 }
+impl ::std::fmt::Display for AgentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgentStatus::Blacklisted => write!(f, "BLACKLISTED"),
+            AgentStatus::Healthy => write!(f, "HEALTHY"),
+            AgentStatus::Running => write!(f, "RUNNING"),
+            AgentStatus::Shutdown => write!(f, "SHUTDOWN"),
+            AgentStatus::Unhealthy => write!(f, "UNHEALTHY"),
+            AgentStatus::UnknownValue => write!(f, "UNKNOWN"),
+            AgentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

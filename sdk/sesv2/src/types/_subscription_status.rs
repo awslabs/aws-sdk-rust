@@ -96,3 +96,12 @@ impl SubscriptionStatus {
         }
     }
 }
+impl ::std::fmt::Display for SubscriptionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SubscriptionStatus::OptIn => write!(f, "OPT_IN"),
+            SubscriptionStatus::OptOut => write!(f, "OPT_OUT"),
+            SubscriptionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

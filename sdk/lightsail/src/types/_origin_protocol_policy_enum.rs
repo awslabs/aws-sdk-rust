@@ -96,3 +96,12 @@ impl OriginProtocolPolicyEnum {
         }
     }
 }
+impl ::std::fmt::Display for OriginProtocolPolicyEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OriginProtocolPolicyEnum::HttpOnly => write!(f, "http-only"),
+            OriginProtocolPolicyEnum::HttpsOnly => write!(f, "https-only"),
+            OriginProtocolPolicyEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

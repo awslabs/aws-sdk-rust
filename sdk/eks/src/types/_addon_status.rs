@@ -135,3 +135,18 @@ impl AddonStatus {
         }
     }
 }
+impl ::std::fmt::Display for AddonStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AddonStatus::Active => write!(f, "ACTIVE"),
+            AddonStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            AddonStatus::Creating => write!(f, "CREATING"),
+            AddonStatus::Degraded => write!(f, "DEGRADED"),
+            AddonStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            AddonStatus::Deleting => write!(f, "DELETING"),
+            AddonStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            AddonStatus::Updating => write!(f, "UPDATING"),
+            AddonStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

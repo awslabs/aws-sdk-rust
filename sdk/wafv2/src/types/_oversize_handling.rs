@@ -101,3 +101,13 @@ impl OversizeHandling {
         }
     }
 }
+impl ::std::fmt::Display for OversizeHandling {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OversizeHandling::Continue => write!(f, "CONTINUE"),
+            OversizeHandling::Match => write!(f, "MATCH"),
+            OversizeHandling::NoMatch => write!(f, "NO_MATCH"),
+            OversizeHandling::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl JoinSource {
         }
     }
 }
+impl ::std::fmt::Display for JoinSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JoinSource::Input => write!(f, "Input"),
+            JoinSource::None => write!(f, "None"),
+            JoinSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

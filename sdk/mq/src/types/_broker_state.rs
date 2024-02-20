@@ -129,3 +129,17 @@ impl BrokerState {
         }
     }
 }
+impl ::std::fmt::Display for BrokerState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BrokerState::CreationFailed => write!(f, "CREATION_FAILED"),
+            BrokerState::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
+            BrokerState::CriticalActionRequired => write!(f, "CRITICAL_ACTION_REQUIRED"),
+            BrokerState::DeletionInProgress => write!(f, "DELETION_IN_PROGRESS"),
+            BrokerState::RebootInProgress => write!(f, "REBOOT_IN_PROGRESS"),
+            BrokerState::Replica => write!(f, "REPLICA"),
+            BrokerState::Running => write!(f, "RUNNING"),
+            BrokerState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

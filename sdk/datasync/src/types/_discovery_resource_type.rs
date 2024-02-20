@@ -101,3 +101,13 @@ impl DiscoveryResourceType {
         }
     }
 }
+impl ::std::fmt::Display for DiscoveryResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DiscoveryResourceType::Cluster => write!(f, "CLUSTER"),
+            DiscoveryResourceType::Svm => write!(f, "SVM"),
+            DiscoveryResourceType::Volume => write!(f, "VOLUME"),
+            DiscoveryResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

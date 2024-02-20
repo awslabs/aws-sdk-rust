@@ -116,3 +116,16 @@ impl FlywheelIterationStatus {
         }
     }
 }
+impl ::std::fmt::Display for FlywheelIterationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlywheelIterationStatus::Completed => write!(f, "COMPLETED"),
+            FlywheelIterationStatus::Evaluating => write!(f, "EVALUATING"),
+            FlywheelIterationStatus::Failed => write!(f, "FAILED"),
+            FlywheelIterationStatus::Stopped => write!(f, "STOPPED"),
+            FlywheelIterationStatus::StopRequested => write!(f, "STOP_REQUESTED"),
+            FlywheelIterationStatus::Training => write!(f, "TRAINING"),
+            FlywheelIterationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -171,3 +171,24 @@ impl OperatorPropertiesKeys {
         }
     }
 }
+impl ::std::fmt::Display for OperatorPropertiesKeys {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperatorPropertiesKeys::ConcatFormat => write!(f, "CONCAT_FORMAT"),
+            OperatorPropertiesKeys::DataType => write!(f, "DATA_TYPE"),
+            OperatorPropertiesKeys::DestinationDataType => write!(f, "DESTINATION_DATA_TYPE"),
+            OperatorPropertiesKeys::LowerBound => write!(f, "LOWER_BOUND"),
+            OperatorPropertiesKeys::MaskLength => write!(f, "MASK_LENGTH"),
+            OperatorPropertiesKeys::MaskValue => write!(f, "MASK_VALUE"),
+            OperatorPropertiesKeys::MathOperationFieldsOrder => write!(f, "MATH_OPERATION_FIELDS_ORDER"),
+            OperatorPropertiesKeys::SourceDataType => write!(f, "SOURCE_DATA_TYPE"),
+            OperatorPropertiesKeys::SubfieldCategoryMap => write!(f, "SUBFIELD_CATEGORY_MAP"),
+            OperatorPropertiesKeys::TruncateLength => write!(f, "TRUNCATE_LENGTH"),
+            OperatorPropertiesKeys::UpperBound => write!(f, "UPPER_BOUND"),
+            OperatorPropertiesKeys::ValidationAction => write!(f, "VALIDATION_ACTION"),
+            OperatorPropertiesKeys::Value => write!(f, "VALUE"),
+            OperatorPropertiesKeys::Values => write!(f, "VALUES"),
+            OperatorPropertiesKeys::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

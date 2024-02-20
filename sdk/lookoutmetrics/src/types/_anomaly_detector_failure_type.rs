@@ -111,3 +111,14 @@ impl AnomalyDetectorFailureType {
         }
     }
 }
+impl ::std::fmt::Display for AnomalyDetectorFailureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnomalyDetectorFailureType::ActivationFailure => write!(f, "ACTIVATION_FAILURE"),
+            AnomalyDetectorFailureType::BackTestActivationFailure => write!(f, "BACK_TEST_ACTIVATION_FAILURE"),
+            AnomalyDetectorFailureType::DeactivationFailure => write!(f, "DEACTIVATION_FAILURE"),
+            AnomalyDetectorFailureType::DeletionFailure => write!(f, "DELETION_FAILURE"),
+            AnomalyDetectorFailureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

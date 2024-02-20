@@ -106,3 +106,14 @@ impl Protocol {
         }
     }
 }
+impl ::std::fmt::Display for Protocol {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Protocol::MqttV311 => write!(f, "MqttV3_1_1"),
+            Protocol::MqttV311OverWebSocket => write!(f, "MqttV3_1_1_OverWebSocket"),
+            Protocol::MqttV5 => write!(f, "MqttV5"),
+            Protocol::MqttV5OverWebSocket => write!(f, "MqttV5_OverWebSocket"),
+            Protocol::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

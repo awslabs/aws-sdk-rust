@@ -96,3 +96,12 @@ impl BurninSubtitleApplyFontColor {
         }
     }
 }
+impl ::std::fmt::Display for BurninSubtitleApplyFontColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurninSubtitleApplyFontColor::AllText => write!(f, "ALL_TEXT"),
+            BurninSubtitleApplyFontColor::WhiteTextOnly => write!(f, "WHITE_TEXT_ONLY"),
+            BurninSubtitleApplyFontColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

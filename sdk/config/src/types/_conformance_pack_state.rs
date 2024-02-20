@@ -117,3 +117,15 @@ impl ConformancePackState {
         }
     }
 }
+impl ::std::fmt::Display for ConformancePackState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConformancePackState::CreateComplete => write!(f, "CREATE_COMPLETE"),
+            ConformancePackState::CreateFailed => write!(f, "CREATE_FAILED"),
+            ConformancePackState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            ConformancePackState::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ConformancePackState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ConformancePackState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

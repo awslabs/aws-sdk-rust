@@ -101,3 +101,13 @@ impl SampleRangeConversion {
         }
     }
 }
+impl ::std::fmt::Display for SampleRangeConversion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SampleRangeConversion::LimitedRangeClip => write!(f, "LIMITED_RANGE_CLIP"),
+            SampleRangeConversion::LimitedRangeSqueeze => write!(f, "LIMITED_RANGE_SQUEEZE"),
+            SampleRangeConversion::None => write!(f, "NONE"),
+            SampleRangeConversion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

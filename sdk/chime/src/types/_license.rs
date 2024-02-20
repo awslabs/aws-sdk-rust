@@ -106,3 +106,14 @@ impl License {
         }
     }
 }
+impl ::std::fmt::Display for License {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            License::Basic => write!(f, "Basic"),
+            License::Plus => write!(f, "Plus"),
+            License::Pro => write!(f, "Pro"),
+            License::ProTrial => write!(f, "ProTrial"),
+            License::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

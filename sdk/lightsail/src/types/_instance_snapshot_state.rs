@@ -101,3 +101,13 @@ impl InstanceSnapshotState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceSnapshotState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceSnapshotState::Available => write!(f, "available"),
+            InstanceSnapshotState::Error => write!(f, "error"),
+            InstanceSnapshotState::Pending => write!(f, "pending"),
+            InstanceSnapshotState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

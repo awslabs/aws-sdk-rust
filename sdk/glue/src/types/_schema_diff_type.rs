@@ -91,3 +91,11 @@ impl SchemaDiffType {
         }
     }
 }
+impl ::std::fmt::Display for SchemaDiffType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SchemaDiffType::SyntaxDiff => write!(f, "SYNTAX_DIFF"),
+            SchemaDiffType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

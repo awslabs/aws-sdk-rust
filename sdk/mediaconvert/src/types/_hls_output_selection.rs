@@ -96,3 +96,12 @@ impl HlsOutputSelection {
         }
     }
 }
+impl ::std::fmt::Display for HlsOutputSelection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsOutputSelection::ManifestsAndSegments => write!(f, "MANIFESTS_AND_SEGMENTS"),
+            HlsOutputSelection::SegmentsOnly => write!(f, "SEGMENTS_ONLY"),
+            HlsOutputSelection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

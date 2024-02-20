@@ -103,3 +103,13 @@ impl BatchGetAssetPropertyValueHistoryErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for BatchGetAssetPropertyValueHistoryErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BatchGetAssetPropertyValueHistoryErrorCode::AccessDeniedException => write!(f, "AccessDeniedException"),
+            BatchGetAssetPropertyValueHistoryErrorCode::InvalidRequestException => write!(f, "InvalidRequestException"),
+            BatchGetAssetPropertyValueHistoryErrorCode::ResourceNotFoundException => write!(f, "ResourceNotFoundException"),
+            BatchGetAssetPropertyValueHistoryErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

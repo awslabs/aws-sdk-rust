@@ -135,3 +135,18 @@ impl ConnectorStatusReason {
         }
     }
 }
+impl ::std::fmt::Display for ConnectorStatusReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectorStatusReason::DirectoryAccessDenied => write!(f, "DIRECTORY_ACCESS_DENIED"),
+            ConnectorStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            ConnectorStatusReason::PrivatecaAccessDenied => write!(f, "PRIVATECA_ACCESS_DENIED"),
+            ConnectorStatusReason::PrivatecaResourceNotFound => write!(f, "PRIVATECA_RESOURCE_NOT_FOUND"),
+            ConnectorStatusReason::SecurityGroupNotInVpc => write!(f, "SECURITY_GROUP_NOT_IN_VPC"),
+            ConnectorStatusReason::VpcAccessDenied => write!(f, "VPC_ACCESS_DENIED"),
+            ConnectorStatusReason::VpcEndpointLimitExceeded => write!(f, "VPC_ENDPOINT_LIMIT_EXCEEDED"),
+            ConnectorStatusReason::VpcResourceNotFound => write!(f, "VPC_RESOURCE_NOT_FOUND"),
+            ConnectorStatusReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

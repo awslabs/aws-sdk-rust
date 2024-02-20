@@ -243,3 +243,36 @@ impl WorkspaceImageErrorDetailCode {
         }
     }
 }
+impl ::std::fmt::Display for WorkspaceImageErrorDetailCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkspaceImageErrorDetailCode::AdditionalDrivesAttached => write!(f, "AdditionalDrivesAttached"),
+            WorkspaceImageErrorDetailCode::AntiVirusInstalled => write!(f, "AntiVirusInstalled"),
+            WorkspaceImageErrorDetailCode::AutoLogonEnabled => write!(f, "AutoLogonEnabled"),
+            WorkspaceImageErrorDetailCode::AutoMountDisabled => write!(f, "AutoMountDisabled"),
+            WorkspaceImageErrorDetailCode::AzureDomainJoined => write!(f, "AzureDomainJoined"),
+            WorkspaceImageErrorDetailCode::DhcpDisabled => write!(f, "DHCPDisabled"),
+            WorkspaceImageErrorDetailCode::DiskFreeSpace => write!(f, "DiskFreeSpace"),
+            WorkspaceImageErrorDetailCode::DiskSizeExceeded => write!(f, "DiskSizeExceeded"),
+            WorkspaceImageErrorDetailCode::DomainJoined => write!(f, "DomainJoined"),
+            WorkspaceImageErrorDetailCode::FirewallEnabled => write!(f, "FirewallEnabled"),
+            WorkspaceImageErrorDetailCode::InPlaceUpgrade => write!(f, "InPlaceUpgrade"),
+            WorkspaceImageErrorDetailCode::IncompatiblePartitioning => write!(f, "IncompatiblePartitioning"),
+            WorkspaceImageErrorDetailCode::MultipleBootPartition => write!(f, "MultipleBootPartition"),
+            WorkspaceImageErrorDetailCode::OsNotSupported => write!(f, "OSNotSupported"),
+            WorkspaceImageErrorDetailCode::OfficeInstalled => write!(f, "OfficeInstalled"),
+            WorkspaceImageErrorDetailCode::OutdatedPowershellVersion => write!(f, "OutdatedPowershellVersion"),
+            WorkspaceImageErrorDetailCode::PcoipAgentInstalled => write!(f, "PCoIPAgentInstalled"),
+            WorkspaceImageErrorDetailCode::PendingReboot => write!(f, "PendingReboot"),
+            WorkspaceImageErrorDetailCode::RealtimeUniversalDisabled => write!(f, "RealTimeUniversalDisabled"),
+            WorkspaceImageErrorDetailCode::SixtyFourBitOs => write!(f, "Requires64BitOS"),
+            WorkspaceImageErrorDetailCode::UefiNotSupported => write!(f, "UEFINotSupported"),
+            WorkspaceImageErrorDetailCode::VmwareToolsInstalled => write!(f, "VMWareToolsInstalled"),
+            WorkspaceImageErrorDetailCode::WindowsUpdatesEnabled => write!(f, "WindowsUpdatesEnabled"),
+            WorkspaceImageErrorDetailCode::WorkspacesByolAccountDisabled => write!(f, "WorkspacesBYOLAccountDisabled"),
+            WorkspaceImageErrorDetailCode::WorkspacesByolAccountNotFound => write!(f, "WorkspacesBYOLAccountNotFound"),
+            WorkspaceImageErrorDetailCode::ZeroRearmCount => write!(f, "ZeroRearmCount"),
+            WorkspaceImageErrorDetailCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl ActionValue {
         }
     }
 }
+impl ::std::fmt::Display for ActionValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionValue::Allow => write!(f, "ALLOW"),
+            ActionValue::Block => write!(f, "BLOCK"),
+            ActionValue::Captcha => write!(f, "CAPTCHA"),
+            ActionValue::Challenge => write!(f, "CHALLENGE"),
+            ActionValue::Count => write!(f, "COUNT"),
+            ActionValue::ExcludedAsCount => write!(f, "EXCLUDED_AS_COUNT"),
+            ActionValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl WorkflowType {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowType::Build => write!(f, "BUILD"),
+            WorkflowType::Distribution => write!(f, "DISTRIBUTION"),
+            WorkflowType::Test => write!(f, "TEST"),
+            WorkflowType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

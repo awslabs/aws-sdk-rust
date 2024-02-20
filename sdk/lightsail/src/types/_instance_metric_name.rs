@@ -141,3 +141,19 @@ impl InstanceMetricName {
         }
     }
 }
+impl ::std::fmt::Display for InstanceMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceMetricName::BurstCapacityPercentage => write!(f, "BurstCapacityPercentage"),
+            InstanceMetricName::BurstCapacityTime => write!(f, "BurstCapacityTime"),
+            InstanceMetricName::CpuUtilization => write!(f, "CPUUtilization"),
+            InstanceMetricName::MetadataNoToken => write!(f, "MetadataNoToken"),
+            InstanceMetricName::NetworkIn => write!(f, "NetworkIn"),
+            InstanceMetricName::NetworkOut => write!(f, "NetworkOut"),
+            InstanceMetricName::StatusCheckFailed => write!(f, "StatusCheckFailed"),
+            InstanceMetricName::StatusCheckFailedInstance => write!(f, "StatusCheckFailed_Instance"),
+            InstanceMetricName::StatusCheckFailedSystem => write!(f, "StatusCheckFailed_System"),
+            InstanceMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ExportFormat {
         }
     }
 }
+impl ::std::fmt::Display for ExportFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportFormat::DynamodbJson => write!(f, "DYNAMODB_JSON"),
+            ExportFormat::Ion => write!(f, "ION"),
+            ExportFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

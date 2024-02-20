@@ -96,3 +96,12 @@ impl AlgorithmSortBy {
         }
     }
 }
+impl ::std::fmt::Display for AlgorithmSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlgorithmSortBy::CreationTime => write!(f, "CreationTime"),
+            AlgorithmSortBy::Name => write!(f, "Name"),
+            AlgorithmSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

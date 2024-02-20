@@ -96,3 +96,12 @@ impl TrustedAdvisorIntegrationStatus {
         }
     }
 }
+impl ::std::fmt::Display for TrustedAdvisorIntegrationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrustedAdvisorIntegrationStatus::Disabled => write!(f, "DISABLED"),
+            TrustedAdvisorIntegrationStatus::Enabled => write!(f, "ENABLED"),
+            TrustedAdvisorIntegrationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

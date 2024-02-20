@@ -111,3 +111,15 @@ impl MonitorState {
         }
     }
 }
+impl ::std::fmt::Display for MonitorState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitorState::Active => write!(f, "ACTIVE"),
+            MonitorState::Deleting => write!(f, "DELETING"),
+            MonitorState::Error => write!(f, "ERROR"),
+            MonitorState::Inactive => write!(f, "INACTIVE"),
+            MonitorState::Pending => write!(f, "PENDING"),
+            MonitorState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

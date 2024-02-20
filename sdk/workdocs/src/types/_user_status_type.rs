@@ -101,3 +101,13 @@ impl UserStatusType {
         }
     }
 }
+impl ::std::fmt::Display for UserStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserStatusType::Active => write!(f, "ACTIVE"),
+            UserStatusType::Inactive => write!(f, "INACTIVE"),
+            UserStatusType::Pending => write!(f, "PENDING"),
+            UserStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

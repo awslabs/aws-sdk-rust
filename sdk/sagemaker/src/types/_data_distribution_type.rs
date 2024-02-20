@@ -96,3 +96,12 @@ impl DataDistributionType {
         }
     }
 }
+impl ::std::fmt::Display for DataDistributionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataDistributionType::Fullyreplicated => write!(f, "FullyReplicated"),
+            DataDistributionType::Shardedbys3Key => write!(f, "ShardedByS3Key"),
+            DataDistributionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

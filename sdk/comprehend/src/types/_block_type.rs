@@ -96,3 +96,12 @@ impl BlockType {
         }
     }
 }
+impl ::std::fmt::Display for BlockType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BlockType::Line => write!(f, "LINE"),
+            BlockType::Word => write!(f, "WORD"),
+            BlockType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

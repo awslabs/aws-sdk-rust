@@ -96,3 +96,12 @@ impl AppSecurityGroupManagement {
         }
     }
 }
+impl ::std::fmt::Display for AppSecurityGroupManagement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppSecurityGroupManagement::Customer => write!(f, "Customer"),
+            AppSecurityGroupManagement::Service => write!(f, "Service"),
+            AppSecurityGroupManagement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

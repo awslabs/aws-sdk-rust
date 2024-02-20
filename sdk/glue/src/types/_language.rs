@@ -96,3 +96,12 @@ impl Language {
         }
     }
 }
+impl ::std::fmt::Display for Language {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Language::Python => write!(f, "PYTHON"),
+            Language::Scala => write!(f, "SCALA"),
+            Language::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

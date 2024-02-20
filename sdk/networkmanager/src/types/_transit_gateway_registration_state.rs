@@ -111,3 +111,15 @@ impl TransitGatewayRegistrationState {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayRegistrationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayRegistrationState::Available => write!(f, "AVAILABLE"),
+            TransitGatewayRegistrationState::Deleted => write!(f, "DELETED"),
+            TransitGatewayRegistrationState::Deleting => write!(f, "DELETING"),
+            TransitGatewayRegistrationState::Failed => write!(f, "FAILED"),
+            TransitGatewayRegistrationState::Pending => write!(f, "PENDING"),
+            TransitGatewayRegistrationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

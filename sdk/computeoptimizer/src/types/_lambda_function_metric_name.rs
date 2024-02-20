@@ -96,3 +96,12 @@ impl LambdaFunctionMetricName {
         }
     }
 }
+impl ::std::fmt::Display for LambdaFunctionMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaFunctionMetricName::Duration => write!(f, "Duration"),
+            LambdaFunctionMetricName::Memory => write!(f, "Memory"),
+            LambdaFunctionMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl InputCodec {
         }
     }
 }
+impl ::std::fmt::Display for InputCodec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputCodec::Avc => write!(f, "AVC"),
+            InputCodec::Hevc => write!(f, "HEVC"),
+            InputCodec::Mpeg2 => write!(f, "MPEG2"),
+            InputCodec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

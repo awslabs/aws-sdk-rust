@@ -96,3 +96,12 @@ impl RuleAction {
         }
     }
 }
+impl ::std::fmt::Display for RuleAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RuleAction::Allow => write!(f, "allow"),
+            RuleAction::Deny => write!(f, "deny"),
+            RuleAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

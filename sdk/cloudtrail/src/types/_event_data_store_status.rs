@@ -123,3 +123,16 @@ impl EventDataStoreStatus {
         }
     }
 }
+impl ::std::fmt::Display for EventDataStoreStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventDataStoreStatus::Created => write!(f, "CREATED"),
+            EventDataStoreStatus::Enabled => write!(f, "ENABLED"),
+            EventDataStoreStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
+            EventDataStoreStatus::StartingIngestion => write!(f, "STARTING_INGESTION"),
+            EventDataStoreStatus::StoppedIngestion => write!(f, "STOPPED_INGESTION"),
+            EventDataStoreStatus::StoppingIngestion => write!(f, "STOPPING_INGESTION"),
+            EventDataStoreStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

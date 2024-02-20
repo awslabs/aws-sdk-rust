@@ -96,3 +96,12 @@ impl DataReplication {
         }
     }
 }
+impl ::std::fmt::Display for DataReplication {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataReplication::NoReplication => write!(f, "NO_REPLICATION"),
+            DataReplication::PrimaryAsSource => write!(f, "PRIMARY_AS_SOURCE"),
+            DataReplication::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

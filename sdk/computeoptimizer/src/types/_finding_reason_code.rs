@@ -96,3 +96,12 @@ impl FindingReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for FindingReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingReasonCode::MemoryOverProvisioned => write!(f, "MemoryOverprovisioned"),
+            FindingReasonCode::MemoryUnderProvisioned => write!(f, "MemoryUnderprovisioned"),
+            FindingReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

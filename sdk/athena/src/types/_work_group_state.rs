@@ -96,3 +96,12 @@ impl WorkGroupState {
         }
     }
 }
+impl ::std::fmt::Display for WorkGroupState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkGroupState::Disabled => write!(f, "DISABLED"),
+            WorkGroupState::Enabled => write!(f, "ENABLED"),
+            WorkGroupState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

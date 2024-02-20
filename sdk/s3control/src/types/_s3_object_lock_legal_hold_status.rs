@@ -96,3 +96,12 @@ impl S3ObjectLockLegalHoldStatus {
         }
     }
 }
+impl ::std::fmt::Display for S3ObjectLockLegalHoldStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3ObjectLockLegalHoldStatus::Off => write!(f, "OFF"),
+            S3ObjectLockLegalHoldStatus::On => write!(f, "ON"),
+            S3ObjectLockLegalHoldStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

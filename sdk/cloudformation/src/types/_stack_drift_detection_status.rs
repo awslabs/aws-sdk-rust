@@ -101,3 +101,13 @@ impl StackDriftDetectionStatus {
         }
     }
 }
+impl ::std::fmt::Display for StackDriftDetectionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackDriftDetectionStatus::DetectionComplete => write!(f, "DETECTION_COMPLETE"),
+            StackDriftDetectionStatus::DetectionFailed => write!(f, "DETECTION_FAILED"),
+            StackDriftDetectionStatus::DetectionInProgress => write!(f, "DETECTION_IN_PROGRESS"),
+            StackDriftDetectionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

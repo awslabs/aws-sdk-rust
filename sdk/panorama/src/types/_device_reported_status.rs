@@ -153,3 +153,21 @@ impl DeviceReportedStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceReportedStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceReportedStatus::InstallError => write!(f, "INSTALL_ERROR"),
+            DeviceReportedStatus::InstallInProgress => write!(f, "INSTALL_IN_PROGRESS"),
+            DeviceReportedStatus::Launched => write!(f, "LAUNCHED"),
+            DeviceReportedStatus::LaunchError => write!(f, "LAUNCH_ERROR"),
+            DeviceReportedStatus::RemovalFailed => write!(f, "REMOVAL_FAILED"),
+            DeviceReportedStatus::RemovalInProgress => write!(f, "REMOVAL_IN_PROGRESS"),
+            DeviceReportedStatus::Running => write!(f, "RUNNING"),
+            DeviceReportedStatus::Starting => write!(f, "STARTING"),
+            DeviceReportedStatus::Stopped => write!(f, "STOPPED"),
+            DeviceReportedStatus::Stopping => write!(f, "STOPPING"),
+            DeviceReportedStatus::StopError => write!(f, "STOP_ERROR"),
+            DeviceReportedStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ItemType {
         }
     }
 }
+impl ::std::fmt::Display for ItemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ItemType::Pronunciation => write!(f, "pronunciation"),
+            ItemType::Punctuation => write!(f, "punctuation"),
+            ItemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

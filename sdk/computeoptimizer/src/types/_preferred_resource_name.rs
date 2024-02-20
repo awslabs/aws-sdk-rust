@@ -91,3 +91,11 @@ impl PreferredResourceName {
         }
     }
 }
+impl ::std::fmt::Display for PreferredResourceName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PreferredResourceName::Ec2InstanceTypes => write!(f, "Ec2InstanceTypes"),
+            PreferredResourceName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

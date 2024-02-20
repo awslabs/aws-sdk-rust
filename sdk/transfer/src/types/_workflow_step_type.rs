@@ -111,3 +111,15 @@ impl WorkflowStepType {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowStepType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowStepType::Copy => write!(f, "COPY"),
+            WorkflowStepType::Custom => write!(f, "CUSTOM"),
+            WorkflowStepType::Decrypt => write!(f, "DECRYPT"),
+            WorkflowStepType::Delete => write!(f, "DELETE"),
+            WorkflowStepType::Tag => write!(f, "TAG"),
+            WorkflowStepType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

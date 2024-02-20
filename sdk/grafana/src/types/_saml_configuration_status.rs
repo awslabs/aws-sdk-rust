@@ -96,3 +96,12 @@ impl SamlConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for SamlConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SamlConfigurationStatus::Configured => write!(f, "CONFIGURED"),
+            SamlConfigurationStatus::NotConfigured => write!(f, "NOT_CONFIGURED"),
+            SamlConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

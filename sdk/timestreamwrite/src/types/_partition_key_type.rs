@@ -96,3 +96,12 @@ impl PartitionKeyType {
         }
     }
 }
+impl ::std::fmt::Display for PartitionKeyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PartitionKeyType::Dimension => write!(f, "DIMENSION"),
+            PartitionKeyType::Measure => write!(f, "MEASURE"),
+            PartitionKeyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

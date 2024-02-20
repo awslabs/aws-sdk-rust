@@ -101,3 +101,13 @@ impl ItemSelection {
         }
     }
 }
+impl ::std::fmt::Display for ItemSelection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ItemSelection::All => write!(f, "all"),
+            ItemSelection::None => write!(f, "none"),
+            ItemSelection::Whitelist => write!(f, "whitelist"),
+            ItemSelection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

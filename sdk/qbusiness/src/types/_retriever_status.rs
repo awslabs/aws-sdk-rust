@@ -101,3 +101,13 @@ impl RetrieverStatus {
         }
     }
 }
+impl ::std::fmt::Display for RetrieverStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetrieverStatus::Active => write!(f, "ACTIVE"),
+            RetrieverStatus::Creating => write!(f, "CREATING"),
+            RetrieverStatus::Failed => write!(f, "FAILED"),
+            RetrieverStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

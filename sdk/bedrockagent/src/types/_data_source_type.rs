@@ -91,3 +91,11 @@ impl DataSourceType {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceType::S3 => write!(f, "S3"),
+            DataSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl BuildStatus {
         }
     }
 }
+impl ::std::fmt::Display for BuildStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BuildStatus::Failed => write!(f, "FAILED"),
+            BuildStatus::Initialized => write!(f, "INITIALIZED"),
+            BuildStatus::Ready => write!(f, "READY"),
+            BuildStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

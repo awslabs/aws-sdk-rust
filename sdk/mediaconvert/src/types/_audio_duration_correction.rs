@@ -106,3 +106,14 @@ impl AudioDurationCorrection {
         }
     }
 }
+impl ::std::fmt::Display for AudioDurationCorrection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioDurationCorrection::Auto => write!(f, "AUTO"),
+            AudioDurationCorrection::Disabled => write!(f, "DISABLED"),
+            AudioDurationCorrection::Frame => write!(f, "FRAME"),
+            AudioDurationCorrection::Track => write!(f, "TRACK"),
+            AudioDurationCorrection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

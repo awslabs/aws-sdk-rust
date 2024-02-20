@@ -129,3 +129,17 @@ impl ResourceAttribute {
         }
     }
 }
+impl ::std::fmt::Display for ResourceAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceAttribute::CreationPolicy => write!(f, "CreationPolicy"),
+            ResourceAttribute::DeletionPolicy => write!(f, "DeletionPolicy"),
+            ResourceAttribute::Metadata => write!(f, "Metadata"),
+            ResourceAttribute::Properties => write!(f, "Properties"),
+            ResourceAttribute::Tags => write!(f, "Tags"),
+            ResourceAttribute::UpdatePolicy => write!(f, "UpdatePolicy"),
+            ResourceAttribute::UpdateReplacePolicy => write!(f, "UpdateReplacePolicy"),
+            ResourceAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Vp9ParControl {
         }
     }
 }
+impl ::std::fmt::Display for Vp9ParControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Vp9ParControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            Vp9ParControl::Specified => write!(f, "SPECIFIED"),
+            Vp9ParControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

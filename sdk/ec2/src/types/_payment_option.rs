@@ -101,3 +101,13 @@ impl PaymentOption {
         }
     }
 }
+impl ::std::fmt::Display for PaymentOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PaymentOption::AllUpfront => write!(f, "AllUpfront"),
+            PaymentOption::NoUpfront => write!(f, "NoUpfront"),
+            PaymentOption::PartialUpfront => write!(f, "PartialUpfront"),
+            PaymentOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

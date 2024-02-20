@@ -106,3 +106,14 @@ impl SnomedctEntityType {
         }
     }
 }
+impl ::std::fmt::Display for SnomedctEntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnomedctEntityType::DxName => write!(f, "DX_NAME"),
+            SnomedctEntityType::ProcedureName => write!(f, "PROCEDURE_NAME"),
+            SnomedctEntityType::TestName => write!(f, "TEST_NAME"),
+            SnomedctEntityType::TreatmentName => write!(f, "TREATMENT_NAME"),
+            SnomedctEntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

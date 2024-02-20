@@ -111,3 +111,15 @@ impl ProresInterlaceMode {
         }
     }
 }
+impl ::std::fmt::Display for ProresInterlaceMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProresInterlaceMode::BottomField => write!(f, "BOTTOM_FIELD"),
+            ProresInterlaceMode::FollowBottomField => write!(f, "FOLLOW_BOTTOM_FIELD"),
+            ProresInterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
+            ProresInterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
+            ProresInterlaceMode::TopField => write!(f, "TOP_FIELD"),
+            ProresInterlaceMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

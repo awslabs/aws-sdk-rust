@@ -139,3 +139,17 @@ impl VpcEndpointStatus {
         }
     }
 }
+impl ::std::fmt::Display for VpcEndpointStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcEndpointStatus::Active => write!(f, "ACTIVE"),
+            VpcEndpointStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            VpcEndpointStatus::Creating => write!(f, "CREATING"),
+            VpcEndpointStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            VpcEndpointStatus::Deleting => write!(f, "DELETING"),
+            VpcEndpointStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            VpcEndpointStatus::Updating => write!(f, "UPDATING"),
+            VpcEndpointStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

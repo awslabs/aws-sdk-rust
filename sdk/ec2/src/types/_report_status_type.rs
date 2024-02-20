@@ -96,3 +96,12 @@ impl ReportStatusType {
         }
     }
 }
+impl ::std::fmt::Display for ReportStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportStatusType::Impaired => write!(f, "impaired"),
+            ReportStatusType::Ok => write!(f, "ok"),
+            ReportStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

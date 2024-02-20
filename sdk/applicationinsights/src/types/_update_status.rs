@@ -91,3 +91,11 @@ impl UpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for UpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateStatus::Resolved => write!(f, "RESOLVED"),
+            UpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

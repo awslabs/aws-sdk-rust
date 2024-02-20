@@ -96,3 +96,12 @@ impl FeaturedResultsSetStatus {
         }
     }
 }
+impl ::std::fmt::Display for FeaturedResultsSetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeaturedResultsSetStatus::Active => write!(f, "ACTIVE"),
+            FeaturedResultsSetStatus::Inactive => write!(f, "INACTIVE"),
+            FeaturedResultsSetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

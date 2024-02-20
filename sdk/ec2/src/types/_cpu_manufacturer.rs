@@ -101,3 +101,13 @@ impl CpuManufacturer {
         }
     }
 }
+impl ::std::fmt::Display for CpuManufacturer {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CpuManufacturer::AmazonWebServices => write!(f, "amazon-web-services"),
+            CpuManufacturer::Amd => write!(f, "amd"),
+            CpuManufacturer::Intel => write!(f, "intel"),
+            CpuManufacturer::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

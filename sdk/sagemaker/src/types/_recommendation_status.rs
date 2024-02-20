@@ -106,3 +106,14 @@ impl RecommendationStatus {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationStatus::Completed => write!(f, "COMPLETED"),
+            RecommendationStatus::Failed => write!(f, "FAILED"),
+            RecommendationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            RecommendationStatus::NotApplicable => write!(f, "NOT_APPLICABLE"),
+            RecommendationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

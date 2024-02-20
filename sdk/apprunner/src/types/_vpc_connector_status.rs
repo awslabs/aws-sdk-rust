@@ -96,3 +96,12 @@ impl VpcConnectorStatus {
         }
     }
 }
+impl ::std::fmt::Display for VpcConnectorStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcConnectorStatus::Active => write!(f, "ACTIVE"),
+            VpcConnectorStatus::Inactive => write!(f, "INACTIVE"),
+            VpcConnectorStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

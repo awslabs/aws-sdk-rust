@@ -106,3 +106,14 @@ impl AutoMountStatus {
         }
     }
 }
+impl ::std::fmt::Display for AutoMountStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMountStatus::Failed => write!(f, "Failed"),
+            AutoMountStatus::Mounted => write!(f, "Mounted"),
+            AutoMountStatus::NotMounted => write!(f, "NotMounted"),
+            AutoMountStatus::Pending => write!(f, "Pending"),
+            AutoMountStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

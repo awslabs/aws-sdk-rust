@@ -96,3 +96,12 @@ impl VaultType {
         }
     }
 }
+impl ::std::fmt::Display for VaultType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VaultType::BackupVault => write!(f, "BACKUP_VAULT"),
+            VaultType::LogicallyAirGappedBackupVault => write!(f, "LOGICALLY_AIR_GAPPED_BACKUP_VAULT"),
+            VaultType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

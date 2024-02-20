@@ -106,3 +106,14 @@ impl UnlabeledEventsTreatment {
         }
     }
 }
+impl ::std::fmt::Display for UnlabeledEventsTreatment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnlabeledEventsTreatment::Auto => write!(f, "AUTO"),
+            UnlabeledEventsTreatment::Fraud => write!(f, "FRAUD"),
+            UnlabeledEventsTreatment::Ignore => write!(f, "IGNORE"),
+            UnlabeledEventsTreatment::Legit => write!(f, "LEGIT"),
+            UnlabeledEventsTreatment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

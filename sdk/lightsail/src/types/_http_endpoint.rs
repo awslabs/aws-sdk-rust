@@ -96,3 +96,12 @@ impl HttpEndpoint {
         }
     }
 }
+impl ::std::fmt::Display for HttpEndpoint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HttpEndpoint::Disabled => write!(f, "disabled"),
+            HttpEndpoint::Enabled => write!(f, "enabled"),
+            HttpEndpoint::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

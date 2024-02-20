@@ -101,3 +101,13 @@ impl UnsuccessfulFaceAssociationReason {
         }
     }
 }
+impl ::std::fmt::Display for UnsuccessfulFaceAssociationReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnsuccessfulFaceAssociationReason::AssociatedToADifferentUser => write!(f, "ASSOCIATED_TO_A_DIFFERENT_USER"),
+            UnsuccessfulFaceAssociationReason::FaceNotFound => write!(f, "FACE_NOT_FOUND"),
+            UnsuccessfulFaceAssociationReason::LowMatchConfidence => write!(f, "LOW_MATCH_CONFIDENCE"),
+            UnsuccessfulFaceAssociationReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

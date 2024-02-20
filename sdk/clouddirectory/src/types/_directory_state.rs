@@ -101,3 +101,13 @@ impl DirectoryState {
         }
     }
 }
+impl ::std::fmt::Display for DirectoryState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectoryState::Deleted => write!(f, "DELETED"),
+            DirectoryState::Disabled => write!(f, "DISABLED"),
+            DirectoryState::Enabled => write!(f, "ENABLED"),
+            DirectoryState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

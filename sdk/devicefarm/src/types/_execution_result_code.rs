@@ -96,3 +96,12 @@ impl ExecutionResultCode {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionResultCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionResultCode::ParsingFailed => write!(f, "PARSING_FAILED"),
+            ExecutionResultCode::VpcEndpointSetupFailed => write!(f, "VPC_ENDPOINT_SETUP_FAILED"),
+            ExecutionResultCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

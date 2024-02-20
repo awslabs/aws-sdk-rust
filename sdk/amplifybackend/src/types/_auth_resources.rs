@@ -96,3 +96,12 @@ impl AuthResources {
         }
     }
 }
+impl ::std::fmt::Display for AuthResources {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthResources::IdentityPoolAndUserPool => write!(f, "IDENTITY_POOL_AND_USER_POOL"),
+            AuthResources::UserPoolOnly => write!(f, "USER_POOL_ONLY"),
+            AuthResources::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

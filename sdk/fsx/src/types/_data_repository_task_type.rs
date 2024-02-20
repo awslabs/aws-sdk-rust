@@ -111,3 +111,14 @@ impl DataRepositoryTaskType {
         }
     }
 }
+impl ::std::fmt::Display for DataRepositoryTaskType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataRepositoryTaskType::AutoTriggeredEviction => write!(f, "AUTO_RELEASE_DATA"),
+            DataRepositoryTaskType::Export => write!(f, "EXPORT_TO_REPOSITORY"),
+            DataRepositoryTaskType::Import => write!(f, "IMPORT_METADATA_FROM_REPOSITORY"),
+            DataRepositoryTaskType::Eviction => write!(f, "RELEASE_DATA_FROM_FILESYSTEM"),
+            DataRepositoryTaskType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

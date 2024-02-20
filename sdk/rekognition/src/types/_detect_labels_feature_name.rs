@@ -96,3 +96,12 @@ impl DetectLabelsFeatureName {
         }
     }
 }
+impl ::std::fmt::Display for DetectLabelsFeatureName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetectLabelsFeatureName::GeneralLabels => write!(f, "GENERAL_LABELS"),
+            DetectLabelsFeatureName::ImageProperties => write!(f, "IMAGE_PROPERTIES"),
+            DetectLabelsFeatureName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

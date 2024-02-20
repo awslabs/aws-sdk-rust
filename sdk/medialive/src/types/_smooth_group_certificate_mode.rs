@@ -96,3 +96,12 @@ impl SmoothGroupCertificateMode {
         }
     }
 }
+impl ::std::fmt::Display for SmoothGroupCertificateMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SmoothGroupCertificateMode::SelfSigned => write!(f, "SELF_SIGNED"),
+            SmoothGroupCertificateMode::VerifyAuthenticity => write!(f, "VERIFY_AUTHENTICITY"),
+            SmoothGroupCertificateMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

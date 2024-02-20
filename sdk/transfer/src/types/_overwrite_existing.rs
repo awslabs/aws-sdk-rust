@@ -96,3 +96,12 @@ impl OverwriteExisting {
         }
     }
 }
+impl ::std::fmt::Display for OverwriteExisting {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OverwriteExisting::False => write!(f, "FALSE"),
+            OverwriteExisting::True => write!(f, "TRUE"),
+            OverwriteExisting::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

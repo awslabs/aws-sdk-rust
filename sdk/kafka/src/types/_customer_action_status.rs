@@ -101,3 +101,13 @@ impl CustomerActionStatus {
         }
     }
 }
+impl ::std::fmt::Display for CustomerActionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomerActionStatus::ActionRecommended => write!(f, "ACTION_RECOMMENDED"),
+            CustomerActionStatus::CriticalActionRequired => write!(f, "CRITICAL_ACTION_REQUIRED"),
+            CustomerActionStatus::None => write!(f, "NONE"),
+            CustomerActionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

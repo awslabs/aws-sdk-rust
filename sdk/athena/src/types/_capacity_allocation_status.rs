@@ -101,3 +101,13 @@ impl CapacityAllocationStatus {
         }
     }
 }
+impl ::std::fmt::Display for CapacityAllocationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CapacityAllocationStatus::Failed => write!(f, "FAILED"),
+            CapacityAllocationStatus::Pending => write!(f, "PENDING"),
+            CapacityAllocationStatus::Succeeded => write!(f, "SUCCEEDED"),
+            CapacityAllocationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

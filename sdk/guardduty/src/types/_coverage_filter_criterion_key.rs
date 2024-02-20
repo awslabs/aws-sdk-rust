@@ -153,3 +153,21 @@ impl CoverageFilterCriterionKey {
         }
     }
 }
+impl ::std::fmt::Display for CoverageFilterCriterionKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CoverageFilterCriterionKey::AccountId => write!(f, "ACCOUNT_ID"),
+            CoverageFilterCriterionKey::AddonVersion => write!(f, "ADDON_VERSION"),
+            CoverageFilterCriterionKey::AgentVersion => write!(f, "AGENT_VERSION"),
+            CoverageFilterCriterionKey::ClusterArn => write!(f, "CLUSTER_ARN"),
+            CoverageFilterCriterionKey::ClusterName => write!(f, "CLUSTER_NAME"),
+            CoverageFilterCriterionKey::CoverageStatus => write!(f, "COVERAGE_STATUS"),
+            CoverageFilterCriterionKey::EcsClusterName => write!(f, "ECS_CLUSTER_NAME"),
+            CoverageFilterCriterionKey::EksClusterName => write!(f, "EKS_CLUSTER_NAME"),
+            CoverageFilterCriterionKey::InstanceId => write!(f, "INSTANCE_ID"),
+            CoverageFilterCriterionKey::ManagementType => write!(f, "MANAGEMENT_TYPE"),
+            CoverageFilterCriterionKey::ResourceType => write!(f, "RESOURCE_TYPE"),
+            CoverageFilterCriterionKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

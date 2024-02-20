@@ -101,3 +101,13 @@ impl ProjectStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProjectStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProjectStatus::Active => write!(f, "ACTIVE"),
+            ProjectStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            ProjectStatus::Deleting => write!(f, "DELETING"),
+            ProjectStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

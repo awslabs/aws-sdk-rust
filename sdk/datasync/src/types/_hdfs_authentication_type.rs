@@ -96,3 +96,12 @@ impl HdfsAuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for HdfsAuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HdfsAuthenticationType::Kerberos => write!(f, "KERBEROS"),
+            HdfsAuthenticationType::Simple => write!(f, "SIMPLE"),
+            HdfsAuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

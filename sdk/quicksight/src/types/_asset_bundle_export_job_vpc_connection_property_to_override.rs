@@ -103,3 +103,13 @@ impl AssetBundleExportJobVpcConnectionPropertyToOverride {
         }
     }
 }
+impl ::std::fmt::Display for AssetBundleExportJobVpcConnectionPropertyToOverride {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssetBundleExportJobVpcConnectionPropertyToOverride::DnsResolvers => write!(f, "DnsResolvers"),
+            AssetBundleExportJobVpcConnectionPropertyToOverride::Name => write!(f, "Name"),
+            AssetBundleExportJobVpcConnectionPropertyToOverride::RoleArn => write!(f, "RoleArn"),
+            AssetBundleExportJobVpcConnectionPropertyToOverride::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl MemberPermissions {
         }
     }
 }
+impl ::std::fmt::Display for MemberPermissions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MemberPermissions::ReadOnly => write!(f, "read-only"),
+            MemberPermissions::ReadWrite => write!(f, "read-write"),
+            MemberPermissions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

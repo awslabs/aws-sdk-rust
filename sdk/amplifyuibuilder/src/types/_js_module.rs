@@ -96,3 +96,12 @@ impl JsModule {
         }
     }
 }
+impl ::std::fmt::Display for JsModule {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JsModule::Es2020 => write!(f, "es2020"),
+            JsModule::Esnext => write!(f, "esnext"),
+            JsModule::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

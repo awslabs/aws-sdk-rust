@@ -101,3 +101,13 @@ impl SourceRevisionType {
         }
     }
 }
+impl ::std::fmt::Display for SourceRevisionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceRevisionType::CommitId => write!(f, "COMMIT_ID"),
+            SourceRevisionType::ImageDigest => write!(f, "IMAGE_DIGEST"),
+            SourceRevisionType::S3ObjectVersionId => write!(f, "S3_OBJECT_VERSION_ID"),
+            SourceRevisionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

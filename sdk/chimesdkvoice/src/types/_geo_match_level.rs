@@ -96,3 +96,12 @@ impl GeoMatchLevel {
         }
     }
 }
+impl ::std::fmt::Display for GeoMatchLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GeoMatchLevel::AreaCode => write!(f, "AreaCode"),
+            GeoMatchLevel::Country => write!(f, "Country"),
+            GeoMatchLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

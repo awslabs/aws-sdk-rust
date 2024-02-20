@@ -101,3 +101,13 @@ impl DeploymentMode {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentMode::ActiveStandbyMultiAz => write!(f, "ACTIVE_STANDBY_MULTI_AZ"),
+            DeploymentMode::ClusterMultiAz => write!(f, "CLUSTER_MULTI_AZ"),
+            DeploymentMode::SingleInstance => write!(f, "SINGLE_INSTANCE"),
+            DeploymentMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

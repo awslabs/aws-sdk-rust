@@ -116,3 +116,16 @@ impl LabelingJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for LabelingJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LabelingJobStatus::Completed => write!(f, "Completed"),
+            LabelingJobStatus::Failed => write!(f, "Failed"),
+            LabelingJobStatus::InProgress => write!(f, "InProgress"),
+            LabelingJobStatus::Initializing => write!(f, "Initializing"),
+            LabelingJobStatus::Stopped => write!(f, "Stopped"),
+            LabelingJobStatus::Stopping => write!(f, "Stopping"),
+            LabelingJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

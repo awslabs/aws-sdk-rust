@@ -91,3 +91,11 @@ impl PartnerType {
         }
     }
 }
+impl ::std::fmt::Display for PartnerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PartnerType::Sidewalk => write!(f, "Sidewalk"),
+            PartnerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl M2tsRateMode {
         }
     }
 }
+impl ::std::fmt::Display for M2tsRateMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsRateMode::Cbr => write!(f, "CBR"),
+            M2tsRateMode::Vbr => write!(f, "VBR"),
+            M2tsRateMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

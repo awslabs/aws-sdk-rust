@@ -96,3 +96,12 @@ impl GlobalClusterMemberSynchronizationStatus {
         }
     }
 }
+impl ::std::fmt::Display for GlobalClusterMemberSynchronizationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GlobalClusterMemberSynchronizationStatus::Connected => write!(f, "connected"),
+            GlobalClusterMemberSynchronizationStatus::PendingResync => write!(f, "pending-resync"),
+            GlobalClusterMemberSynchronizationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LocationValues {
         }
     }
 }
+impl ::std::fmt::Display for LocationValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LocationValues::Cloud => write!(f, "CLOUD"),
+            LocationValues::OutpostLocal => write!(f, "OUTPOST_LOCAL"),
+            LocationValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

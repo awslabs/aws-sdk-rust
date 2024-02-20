@@ -101,3 +101,13 @@ impl SuppressionUnit {
         }
     }
 }
+impl ::std::fmt::Display for SuppressionUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SuppressionUnit::Hours => write!(f, "HOURS"),
+            SuppressionUnit::Minutes => write!(f, "MINUTES"),
+            SuppressionUnit::Seconds => write!(f, "SECONDS"),
+            SuppressionUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

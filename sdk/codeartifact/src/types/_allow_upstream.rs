@@ -96,3 +96,12 @@ impl AllowUpstream {
         }
     }
 }
+impl ::std::fmt::Display for AllowUpstream {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AllowUpstream::Allow => write!(f, "ALLOW"),
+            AllowUpstream::Block => write!(f, "BLOCK"),
+            AllowUpstream::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

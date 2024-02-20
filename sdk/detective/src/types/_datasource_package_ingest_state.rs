@@ -101,3 +101,13 @@ impl DatasourcePackageIngestState {
         }
     }
 }
+impl ::std::fmt::Display for DatasourcePackageIngestState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DatasourcePackageIngestState::Disabled => write!(f, "DISABLED"),
+            DatasourcePackageIngestState::Started => write!(f, "STARTED"),
+            DatasourcePackageIngestState::Stopped => write!(f, "STOPPED"),
+            DatasourcePackageIngestState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

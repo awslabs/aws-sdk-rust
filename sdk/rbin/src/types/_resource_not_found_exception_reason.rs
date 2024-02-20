@@ -91,3 +91,11 @@ impl ResourceNotFoundExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ResourceNotFoundExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceNotFoundExceptionReason::RuleNotFound => write!(f, "RULE_NOT_FOUND"),
+            ResourceNotFoundExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl ShareStatus {
         }
     }
 }
+impl ::std::fmt::Display for ShareStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareStatus::Completed => write!(f, "COMPLETED"),
+            ShareStatus::CompletedWithErrors => write!(f, "COMPLETED_WITH_ERRORS"),
+            ShareStatus::Error => write!(f, "ERROR"),
+            ShareStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ShareStatus::NotStarted => write!(f, "NOT_STARTED"),
+            ShareStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

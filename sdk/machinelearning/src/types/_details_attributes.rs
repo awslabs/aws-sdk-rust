@@ -106,3 +106,12 @@ impl DetailsAttributes {
         }
     }
 }
+impl ::std::fmt::Display for DetailsAttributes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DetailsAttributes::Algorithm => write!(f, "Algorithm"),
+            DetailsAttributes::PredictiveModelType => write!(f, "PredictiveModelType"),
+            DetailsAttributes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

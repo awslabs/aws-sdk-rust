@@ -96,3 +96,12 @@ impl ScaleDownBehavior {
         }
     }
 }
+impl ::std::fmt::Display for ScaleDownBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScaleDownBehavior::TerminateAtInstanceHour => write!(f, "TERMINATE_AT_INSTANCE_HOUR"),
+            ScaleDownBehavior::TerminateAtTaskCompletion => write!(f, "TERMINATE_AT_TASK_COMPLETION"),
+            ScaleDownBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

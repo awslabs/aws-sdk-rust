@@ -96,3 +96,12 @@ impl KeyCheckValueAlgorithm {
         }
     }
 }
+impl ::std::fmt::Display for KeyCheckValueAlgorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyCheckValueAlgorithm::AnsiX924 => write!(f, "ANSI_X9_24"),
+            KeyCheckValueAlgorithm::Cmac => write!(f, "CMAC"),
+            KeyCheckValueAlgorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

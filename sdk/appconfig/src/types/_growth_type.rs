@@ -96,3 +96,12 @@ impl GrowthType {
         }
     }
 }
+impl ::std::fmt::Display for GrowthType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GrowthType::Exponential => write!(f, "EXPONENTIAL"),
+            GrowthType::Linear => write!(f, "LINEAR"),
+            GrowthType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

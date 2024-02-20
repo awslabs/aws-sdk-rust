@@ -96,3 +96,12 @@ impl OrgFeatureAdditionalConfiguration {
         }
     }
 }
+impl ::std::fmt::Display for OrgFeatureAdditionalConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrgFeatureAdditionalConfiguration::EcsFargateAgentManagement => write!(f, "ECS_FARGATE_AGENT_MANAGEMENT"),
+            OrgFeatureAdditionalConfiguration::EksAddonManagement => write!(f, "EKS_ADDON_MANAGEMENT"),
+            OrgFeatureAdditionalConfiguration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl MonitoringState {
         }
     }
 }
+impl ::std::fmt::Display for MonitoringState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MonitoringState::Disabled => write!(f, "disabled"),
+            MonitoringState::Disabling => write!(f, "disabling"),
+            MonitoringState::Enabled => write!(f, "enabled"),
+            MonitoringState::Pending => write!(f, "pending"),
+            MonitoringState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

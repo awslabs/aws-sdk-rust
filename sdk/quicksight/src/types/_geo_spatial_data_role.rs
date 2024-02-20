@@ -121,3 +121,17 @@ impl GeoSpatialDataRole {
         }
     }
 }
+impl ::std::fmt::Display for GeoSpatialDataRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GeoSpatialDataRole::City => write!(f, "CITY"),
+            GeoSpatialDataRole::Country => write!(f, "COUNTRY"),
+            GeoSpatialDataRole::County => write!(f, "COUNTY"),
+            GeoSpatialDataRole::Latitude => write!(f, "LATITUDE"),
+            GeoSpatialDataRole::Longitude => write!(f, "LONGITUDE"),
+            GeoSpatialDataRole::Postcode => write!(f, "POSTCODE"),
+            GeoSpatialDataRole::State => write!(f, "STATE"),
+            GeoSpatialDataRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

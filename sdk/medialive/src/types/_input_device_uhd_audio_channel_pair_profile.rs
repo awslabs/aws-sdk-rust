@@ -135,3 +135,18 @@ impl InputDeviceUhdAudioChannelPairProfile {
         }
     }
 }
+impl ::std::fmt::Display for InputDeviceUhdAudioChannelPairProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputDeviceUhdAudioChannelPairProfile::CbrAacHq192000 => write!(f, "CBR-AAC_HQ-192000"),
+            InputDeviceUhdAudioChannelPairProfile::CbrAacHq256000 => write!(f, "CBR-AAC_HQ-256000"),
+            InputDeviceUhdAudioChannelPairProfile::CbrAacHq384000 => write!(f, "CBR-AAC_HQ-384000"),
+            InputDeviceUhdAudioChannelPairProfile::CbrAacHq512000 => write!(f, "CBR-AAC_HQ-512000"),
+            InputDeviceUhdAudioChannelPairProfile::Disabled => write!(f, "DISABLED"),
+            InputDeviceUhdAudioChannelPairProfile::VbrAacHe64000 => write!(f, "VBR-AAC_HE-64000"),
+            InputDeviceUhdAudioChannelPairProfile::VbrAacHhe16000 => write!(f, "VBR-AAC_HHE-16000"),
+            InputDeviceUhdAudioChannelPairProfile::VbrAacLc128000 => write!(f, "VBR-AAC_LC-128000"),
+            InputDeviceUhdAudioChannelPairProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

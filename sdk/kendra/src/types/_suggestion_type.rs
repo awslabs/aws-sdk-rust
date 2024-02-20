@@ -96,3 +96,12 @@ impl SuggestionType {
         }
     }
 }
+impl ::std::fmt::Display for SuggestionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SuggestionType::DocumentAttributes => write!(f, "DOCUMENT_ATTRIBUTES"),
+            SuggestionType::Query => write!(f, "QUERY"),
+            SuggestionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl H265AlternativeTransferFunction {
         }
     }
 }
+impl ::std::fmt::Display for H265AlternativeTransferFunction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265AlternativeTransferFunction::Insert => write!(f, "INSERT"),
+            H265AlternativeTransferFunction::Omit => write!(f, "OMIT"),
+            H265AlternativeTransferFunction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

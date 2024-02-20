@@ -106,3 +106,14 @@ impl WavCodingMode {
         }
     }
 }
+impl ::std::fmt::Display for WavCodingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WavCodingMode::CodingMode10 => write!(f, "CODING_MODE_1_0"),
+            WavCodingMode::CodingMode20 => write!(f, "CODING_MODE_2_0"),
+            WavCodingMode::CodingMode40 => write!(f, "CODING_MODE_4_0"),
+            WavCodingMode::CodingMode80 => write!(f, "CODING_MODE_8_0"),
+            WavCodingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

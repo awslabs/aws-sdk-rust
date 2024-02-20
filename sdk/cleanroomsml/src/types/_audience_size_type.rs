@@ -96,3 +96,12 @@ impl AudienceSizeType {
         }
     }
 }
+impl ::std::fmt::Display for AudienceSizeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudienceSizeType::Absolute => write!(f, "ABSOLUTE"),
+            AudienceSizeType::Percentage => write!(f, "PERCENTAGE"),
+            AudienceSizeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

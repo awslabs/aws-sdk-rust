@@ -720,3 +720,15 @@ impl GetObjectFluentBuilder {
         self.inner.get_checksum_mode()
     }
 }
+
+impl crate::client::customize::internal::CustomizablePresigned<crate::operation::get_object::GetObjectError> for GetObjectFluentBuilder {
+    fn presign(
+        self,
+        config_override: crate::config::Builder,
+        presigning_config: crate::presigning::PresigningConfig,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<crate::presigning::PresignedRequest, crate::operation::get_object::GetObjectError>,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).presigned(presigning_config).await })
+    }
+}

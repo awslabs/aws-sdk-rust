@@ -96,3 +96,12 @@ impl BehaviorEnum {
         }
     }
 }
+impl ::std::fmt::Display for BehaviorEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BehaviorEnum::CacheSetting => write!(f, "cache"),
+            BehaviorEnum::DontCacheSetting => write!(f, "dont-cache"),
+            BehaviorEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

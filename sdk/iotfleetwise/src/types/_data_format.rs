@@ -96,3 +96,12 @@ impl DataFormat {
         }
     }
 }
+impl ::std::fmt::Display for DataFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataFormat::Json => write!(f, "JSON"),
+            DataFormat::Parquet => write!(f, "PARQUET"),
+            DataFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

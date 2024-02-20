@@ -96,3 +96,12 @@ impl IndexType {
         }
     }
 }
+impl ::std::fmt::Display for IndexType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IndexType::Aggregator => write!(f, "AGGREGATOR"),
+            IndexType::Local => write!(f, "LOCAL"),
+            IndexType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

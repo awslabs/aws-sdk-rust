@@ -111,3 +111,15 @@ impl WorkspaceStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for WorkspaceStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkspaceStatusCode::Active => write!(f, "ACTIVE"),
+            WorkspaceStatusCode::Creating => write!(f, "CREATING"),
+            WorkspaceStatusCode::CreationFailed => write!(f, "CREATION_FAILED"),
+            WorkspaceStatusCode::Deleting => write!(f, "DELETING"),
+            WorkspaceStatusCode::Updating => write!(f, "UPDATING"),
+            WorkspaceStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

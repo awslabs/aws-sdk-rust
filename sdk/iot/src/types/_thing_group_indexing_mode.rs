@@ -96,3 +96,12 @@ impl ThingGroupIndexingMode {
         }
     }
 }
+impl ::std::fmt::Display for ThingGroupIndexingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThingGroupIndexingMode::Off => write!(f, "OFF"),
+            ThingGroupIndexingMode::On => write!(f, "ON"),
+            ThingGroupIndexingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

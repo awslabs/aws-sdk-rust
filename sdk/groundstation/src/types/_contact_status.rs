@@ -165,3 +165,23 @@ impl ContactStatus {
         }
     }
 }
+impl ::std::fmt::Display for ContactStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContactStatus::Available => write!(f, "AVAILABLE"),
+            ContactStatus::AwsCancelled => write!(f, "AWS_CANCELLED"),
+            ContactStatus::AwsFailed => write!(f, "AWS_FAILED"),
+            ContactStatus::Cancelled => write!(f, "CANCELLED"),
+            ContactStatus::Cancelling => write!(f, "CANCELLING"),
+            ContactStatus::Completed => write!(f, "COMPLETED"),
+            ContactStatus::Failed => write!(f, "FAILED"),
+            ContactStatus::FailedToSchedule => write!(f, "FAILED_TO_SCHEDULE"),
+            ContactStatus::Pass => write!(f, "PASS"),
+            ContactStatus::Postpass => write!(f, "POSTPASS"),
+            ContactStatus::Prepass => write!(f, "PREPASS"),
+            ContactStatus::Scheduled => write!(f, "SCHEDULED"),
+            ContactStatus::Scheduling => write!(f, "SCHEDULING"),
+            ContactStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

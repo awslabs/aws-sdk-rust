@@ -91,3 +91,11 @@ impl TpmSupportValues {
         }
     }
 }
+impl ::std::fmt::Display for TpmSupportValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TpmSupportValues::V20 => write!(f, "v2.0"),
+            TpmSupportValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

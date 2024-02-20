@@ -159,3 +159,22 @@ impl TargetHealthReasonEnum {
         }
     }
 }
+impl ::std::fmt::Display for TargetHealthReasonEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetHealthReasonEnum::InitialHealthChecking => write!(f, "Elb.InitialHealthChecking"),
+            TargetHealthReasonEnum::InternalError => write!(f, "Elb.InternalError"),
+            TargetHealthReasonEnum::RegistrationInProgress => write!(f, "Elb.RegistrationInProgress"),
+            TargetHealthReasonEnum::DeregistrationInProgress => write!(f, "Target.DeregistrationInProgress"),
+            TargetHealthReasonEnum::FailedHealthChecks => write!(f, "Target.FailedHealthChecks"),
+            TargetHealthReasonEnum::HealthCheckDisabled => write!(f, "Target.HealthCheckDisabled"),
+            TargetHealthReasonEnum::InvalidState => write!(f, "Target.InvalidState"),
+            TargetHealthReasonEnum::IpUnusable => write!(f, "Target.IpUnusable"),
+            TargetHealthReasonEnum::NotInUse => write!(f, "Target.NotInUse"),
+            TargetHealthReasonEnum::NotRegistered => write!(f, "Target.NotRegistered"),
+            TargetHealthReasonEnum::ResponseCodeMismatch => write!(f, "Target.ResponseCodeMismatch"),
+            TargetHealthReasonEnum::Timeout => write!(f, "Target.Timeout"),
+            TargetHealthReasonEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

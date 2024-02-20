@@ -101,3 +101,13 @@ impl HandshakePartyType {
         }
     }
 }
+impl ::std::fmt::Display for HandshakePartyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HandshakePartyType::Account => write!(f, "ACCOUNT"),
+            HandshakePartyType::Email => write!(f, "EMAIL"),
+            HandshakePartyType::Organization => write!(f, "ORGANIZATION"),
+            HandshakePartyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

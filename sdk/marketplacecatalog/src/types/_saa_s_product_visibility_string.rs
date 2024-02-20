@@ -106,3 +106,14 @@ impl SaaSProductVisibilityString {
         }
     }
 }
+impl ::std::fmt::Display for SaaSProductVisibilityString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SaaSProductVisibilityString::Draft => write!(f, "Draft"),
+            SaaSProductVisibilityString::Limited => write!(f, "Limited"),
+            SaaSProductVisibilityString::Public => write!(f, "Public"),
+            SaaSProductVisibilityString::Restricted => write!(f, "Restricted"),
+            SaaSProductVisibilityString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

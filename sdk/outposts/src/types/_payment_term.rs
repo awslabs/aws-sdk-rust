@@ -96,3 +96,12 @@ impl PaymentTerm {
         }
     }
 }
+impl ::std::fmt::Display for PaymentTerm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PaymentTerm::OneYear => write!(f, "ONE_YEAR"),
+            PaymentTerm::ThreeYears => write!(f, "THREE_YEARS"),
+            PaymentTerm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

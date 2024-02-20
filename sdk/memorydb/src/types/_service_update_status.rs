@@ -106,3 +106,14 @@ impl ServiceUpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for ServiceUpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceUpdateStatus::NotApplied => write!(f, "available"),
+            ServiceUpdateStatus::Complete => write!(f, "complete"),
+            ServiceUpdateStatus::InProgress => write!(f, "in-progress"),
+            ServiceUpdateStatus::Scheduled => write!(f, "scheduled"),
+            ServiceUpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

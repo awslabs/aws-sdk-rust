@@ -106,3 +106,14 @@ impl MediaCapabilities {
         }
     }
 }
+impl ::std::fmt::Display for MediaCapabilities {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MediaCapabilities::None => write!(f, "None"),
+            MediaCapabilities::Receive => write!(f, "Receive"),
+            MediaCapabilities::Send => write!(f, "Send"),
+            MediaCapabilities::SendReceive => write!(f, "SendReceive"),
+            MediaCapabilities::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

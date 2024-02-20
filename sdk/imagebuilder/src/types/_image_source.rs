@@ -106,3 +106,14 @@ impl ImageSource {
         }
     }
 }
+impl ::std::fmt::Display for ImageSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageSource::AmazonManaged => write!(f, "AMAZON_MANAGED"),
+            ImageSource::AwsMarketplace => write!(f, "AWS_MARKETPLACE"),
+            ImageSource::Custom => write!(f, "CUSTOM"),
+            ImageSource::Imported => write!(f, "IMPORTED"),
+            ImageSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

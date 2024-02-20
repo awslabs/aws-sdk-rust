@@ -117,3 +117,15 @@ impl IpamPublicAddressType {
         }
     }
 }
+impl ::std::fmt::Display for IpamPublicAddressType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpamPublicAddressType::AmazonOwnedEip => write!(f, "amazon-owned-eip"),
+            IpamPublicAddressType::Byoip => write!(f, "byoip"),
+            IpamPublicAddressType::Ec2PublicIp => write!(f, "ec2-public-ip"),
+            IpamPublicAddressType::ServiceManagedByoip => write!(f, "service-managed-byoip"),
+            IpamPublicAddressType::ServiceManagedIp => write!(f, "service-managed-ip"),
+            IpamPublicAddressType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

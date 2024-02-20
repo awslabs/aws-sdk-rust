@@ -117,3 +117,15 @@ impl PlatformType {
         }
     }
 }
+impl ::std::fmt::Display for PlatformType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PlatformType::AmazonLinux2 => write!(f, "AMAZON_LINUX2"),
+            PlatformType::Windows => write!(f, "WINDOWS"),
+            PlatformType::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
+            PlatformType::WindowsServer2019 => write!(f, "WINDOWS_SERVER_2019"),
+            PlatformType::WindowsServer2022 => write!(f, "WINDOWS_SERVER_2022"),
+            PlatformType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

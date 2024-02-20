@@ -96,3 +96,12 @@ impl PowerPhase {
         }
     }
 }
+impl ::std::fmt::Display for PowerPhase {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PowerPhase::SinglePhase => write!(f, "SINGLE_PHASE"),
+            PowerPhase::ThreePhase => write!(f, "THREE_PHASE"),
+            PowerPhase::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

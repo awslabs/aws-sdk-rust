@@ -123,3 +123,16 @@ impl ClientDeviceType {
         }
     }
 }
+impl ::std::fmt::Display for ClientDeviceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientDeviceType::DeviceTypeAndroid => write!(f, "DeviceTypeAndroid"),
+            ClientDeviceType::DeviceTypeIos => write!(f, "DeviceTypeIos"),
+            ClientDeviceType::DeviceTypeLinux => write!(f, "DeviceTypeLinux"),
+            ClientDeviceType::DeviceTypeOsx => write!(f, "DeviceTypeOsx"),
+            ClientDeviceType::DeviceTypeWeb => write!(f, "DeviceTypeWeb"),
+            ClientDeviceType::DeviceTypeWindows => write!(f, "DeviceTypeWindows"),
+            ClientDeviceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CoreNetworkPolicyAlias {
         }
     }
 }
+impl ::std::fmt::Display for CoreNetworkPolicyAlias {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CoreNetworkPolicyAlias::Latest => write!(f, "LATEST"),
+            CoreNetworkPolicyAlias::Live => write!(f, "LIVE"),
+            CoreNetworkPolicyAlias::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

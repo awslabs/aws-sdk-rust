@@ -96,3 +96,12 @@ impl Icd10CmEntityType {
         }
     }
 }
+impl ::std::fmt::Display for Icd10CmEntityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Icd10CmEntityType::DxName => write!(f, "DX_NAME"),
+            Icd10CmEntityType::TimeExpression => write!(f, "TIME_EXPRESSION"),
+            Icd10CmEntityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

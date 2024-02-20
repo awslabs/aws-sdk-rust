@@ -106,3 +106,14 @@ impl CustomMetricType {
         }
     }
 }
+impl ::std::fmt::Display for CustomMetricType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomMetricType::IpAddressList => write!(f, "ip-address-list"),
+            CustomMetricType::Number => write!(f, "number"),
+            CustomMetricType::NumberList => write!(f, "number-list"),
+            CustomMetricType::StringList => write!(f, "string-list"),
+            CustomMetricType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl DynamicGroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for DynamicGroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DynamicGroupStatus::Active => write!(f, "ACTIVE"),
+            DynamicGroupStatus::Building => write!(f, "BUILDING"),
+            DynamicGroupStatus::Rebuilding => write!(f, "REBUILDING"),
+            DynamicGroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

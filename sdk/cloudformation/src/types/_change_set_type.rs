@@ -101,3 +101,13 @@ impl ChangeSetType {
         }
     }
 }
+impl ::std::fmt::Display for ChangeSetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChangeSetType::Create => write!(f, "CREATE"),
+            ChangeSetType::Import => write!(f, "IMPORT"),
+            ChangeSetType::Update => write!(f, "UPDATE"),
+            ChangeSetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl TriggeredBy {
         }
     }
 }
+impl ::std::fmt::Display for TriggeredBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TriggeredBy::Appconfig => write!(f, "APPCONFIG"),
+            TriggeredBy::CloudwatchAlarm => write!(f, "CLOUDWATCH_ALARM"),
+            TriggeredBy::InternalError => write!(f, "INTERNAL_ERROR"),
+            TriggeredBy::User => write!(f, "USER"),
+            TriggeredBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

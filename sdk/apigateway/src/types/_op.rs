@@ -116,3 +116,16 @@ impl Op {
         }
     }
 }
+impl ::std::fmt::Display for Op {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Op::Add => write!(f, "add"),
+            Op::Copy => write!(f, "copy"),
+            Op::Move => write!(f, "move"),
+            Op::Remove => write!(f, "remove"),
+            Op::Replace => write!(f, "replace"),
+            Op::Test => write!(f, "test"),
+            Op::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

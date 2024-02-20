@@ -111,3 +111,15 @@ impl DataProductVisibilityString {
         }
     }
 }
+impl ::std::fmt::Display for DataProductVisibilityString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataProductVisibilityString::Draft => write!(f, "Draft"),
+            DataProductVisibilityString::Limited => write!(f, "Limited"),
+            DataProductVisibilityString::Public => write!(f, "Public"),
+            DataProductVisibilityString::Restricted => write!(f, "Restricted"),
+            DataProductVisibilityString::Unavailable => write!(f, "Unavailable"),
+            DataProductVisibilityString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

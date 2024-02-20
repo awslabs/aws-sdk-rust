@@ -121,3 +121,17 @@ impl Method {
         }
     }
 }
+impl ::std::fmt::Display for Method {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Method::Delete => write!(f, "DELETE"),
+            Method::Get => write!(f, "GET"),
+            Method::Head => write!(f, "HEAD"),
+            Method::Options => write!(f, "OPTIONS"),
+            Method::Patch => write!(f, "PATCH"),
+            Method::Post => write!(f, "POST"),
+            Method::Put => write!(f, "PUT"),
+            Method::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

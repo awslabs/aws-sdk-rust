@@ -111,3 +111,15 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::IdentitySource => write!(f, "IDENTITY_SOURCE"),
+            ResourceType::Policy => write!(f, "POLICY"),
+            ResourceType::PolicyStore => write!(f, "POLICY_STORE"),
+            ResourceType::PolicyTemplate => write!(f, "POLICY_TEMPLATE"),
+            ResourceType::Schema => write!(f, "SCHEMA"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

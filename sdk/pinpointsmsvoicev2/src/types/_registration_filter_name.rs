@@ -96,3 +96,12 @@ impl RegistrationFilterName {
         }
     }
 }
+impl ::std::fmt::Display for RegistrationFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RegistrationFilterName::RegistrationStatus => write!(f, "registration-status"),
+            RegistrationFilterName::RegistrationType => write!(f, "registration-type"),
+            RegistrationFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

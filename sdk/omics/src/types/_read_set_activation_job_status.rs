@@ -129,3 +129,17 @@ impl ReadSetActivationJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReadSetActivationJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReadSetActivationJobStatus::Cancelled => write!(f, "CANCELLED"),
+            ReadSetActivationJobStatus::Cancelling => write!(f, "CANCELLING"),
+            ReadSetActivationJobStatus::Completed => write!(f, "COMPLETED"),
+            ReadSetActivationJobStatus::CompletedWithFailures => write!(f, "COMPLETED_WITH_FAILURES"),
+            ReadSetActivationJobStatus::Failed => write!(f, "FAILED"),
+            ReadSetActivationJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ReadSetActivationJobStatus::Submitted => write!(f, "SUBMITTED"),
+            ReadSetActivationJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

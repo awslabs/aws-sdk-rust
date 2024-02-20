@@ -96,3 +96,12 @@ impl ScheduledActionFilterName {
         }
     }
 }
+impl ::std::fmt::Display for ScheduledActionFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScheduledActionFilterName::ClusterIdentifier => write!(f, "cluster-identifier"),
+            ScheduledActionFilterName::IamRole => write!(f, "iam-role"),
+            ScheduledActionFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

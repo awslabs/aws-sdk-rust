@@ -106,3 +106,14 @@ impl DeviceStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceStatus::Archived => write!(f, "ARCHIVED"),
+            DeviceStatus::Deregistered => write!(f, "DEREGISTERED"),
+            DeviceStatus::Deregistering => write!(f, "DEREGISTERING"),
+            DeviceStatus::Registered => write!(f, "REGISTERED"),
+            DeviceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

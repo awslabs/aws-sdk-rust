@@ -106,3 +106,14 @@ impl PromptType {
         }
     }
 }
+impl ::std::fmt::Display for PromptType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PromptType::KnowledgeBaseResponseGeneration => write!(f, "KNOWLEDGE_BASE_RESPONSE_GENERATION"),
+            PromptType::Orchestration => write!(f, "ORCHESTRATION"),
+            PromptType::PostProcessing => write!(f, "POST_PROCESSING"),
+            PromptType::PreProcessing => write!(f, "PRE_PROCESSING"),
+            PromptType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl ImportTaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImportTaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportTaskStatus::Complete => write!(f, "COMPLETE"),
+            ImportTaskStatus::Deleting => write!(f, "DELETING"),
+            ImportTaskStatus::Failed => write!(f, "FAILED"),
+            ImportTaskStatus::Initialized => write!(f, "INITIALIZED"),
+            ImportTaskStatus::Initializing => write!(f, "INITIALIZING"),
+            ImportTaskStatus::Pending => write!(f, "PENDING"),
+            ImportTaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

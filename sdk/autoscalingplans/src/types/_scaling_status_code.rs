@@ -101,3 +101,13 @@ impl ScalingStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ScalingStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalingStatusCode::Active => write!(f, "Active"),
+            ScalingStatusCode::Inactive => write!(f, "Inactive"),
+            ScalingStatusCode::PartiallyActive => write!(f, "PartiallyActive"),
+            ScalingStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

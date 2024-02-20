@@ -96,3 +96,12 @@ impl AssessmentReportType {
         }
     }
 }
+impl ::std::fmt::Display for AssessmentReportType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssessmentReportType::Csv => write!(f, "csv"),
+            AssessmentReportType::Pdf => write!(f, "pdf"),
+            AssessmentReportType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

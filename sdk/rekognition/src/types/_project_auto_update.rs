@@ -96,3 +96,12 @@ impl ProjectAutoUpdate {
         }
     }
 }
+impl ::std::fmt::Display for ProjectAutoUpdate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProjectAutoUpdate::Disabled => write!(f, "DISABLED"),
+            ProjectAutoUpdate::Enabled => write!(f, "ENABLED"),
+            ProjectAutoUpdate::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

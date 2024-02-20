@@ -101,3 +101,13 @@ impl UpdateType {
         }
     }
 }
+impl ::std::fmt::Display for UpdateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateType::Commitment => write!(f, "COMMITMENT"),
+            UpdateType::Replace => write!(f, "REPLACE"),
+            UpdateType::Return => write!(f, "RETURN"),
+            UpdateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

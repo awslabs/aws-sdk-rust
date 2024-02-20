@@ -101,3 +101,13 @@ impl SegmentTemplateFormat {
         }
     }
 }
+impl ::std::fmt::Display for SegmentTemplateFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SegmentTemplateFormat::NumberWithDuration => write!(f, "NUMBER_WITH_DURATION"),
+            SegmentTemplateFormat::NumberWithTimeline => write!(f, "NUMBER_WITH_TIMELINE"),
+            SegmentTemplateFormat::TimeWithTimeline => write!(f, "TIME_WITH_TIMELINE"),
+            SegmentTemplateFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

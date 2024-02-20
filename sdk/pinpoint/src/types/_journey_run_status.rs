@@ -106,3 +106,14 @@ impl JourneyRunStatus {
         }
     }
 }
+impl ::std::fmt::Display for JourneyRunStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JourneyRunStatus::Cancelled => write!(f, "CANCELLED"),
+            JourneyRunStatus::Completed => write!(f, "COMPLETED"),
+            JourneyRunStatus::Running => write!(f, "RUNNING"),
+            JourneyRunStatus::Scheduled => write!(f, "SCHEDULED"),
+            JourneyRunStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl MdnResponse {
         }
     }
 }
+impl ::std::fmt::Display for MdnResponse {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MdnResponse::None => write!(f, "NONE"),
+            MdnResponse::Sync => write!(f, "SYNC"),
+            MdnResponse::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

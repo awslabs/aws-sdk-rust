@@ -147,3 +147,20 @@ impl TargetType {
         }
     }
 }
+impl ::std::fmt::Display for TargetType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetType::CarrierGateway => write!(f, "CARRIER_GATEWAY"),
+            TargetType::EgressOnlyInternetGateway => write!(f, "EGRESS_ONLY_INTERNET_GATEWAY"),
+            TargetType::Gateway => write!(f, "GATEWAY"),
+            TargetType::Instance => write!(f, "INSTANCE"),
+            TargetType::LocalGateway => write!(f, "LOCAL_GATEWAY"),
+            TargetType::NatGateway => write!(f, "NAT_GATEWAY"),
+            TargetType::NetworkInterface => write!(f, "NETWORK_INTERFACE"),
+            TargetType::TransitGateway => write!(f, "TRANSIT_GATEWAY"),
+            TargetType::VpcEndpoint => write!(f, "VPC_ENDPOINT"),
+            TargetType::VpcPeeringConnection => write!(f, "VPC_PEERING_CONNECTION"),
+            TargetType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

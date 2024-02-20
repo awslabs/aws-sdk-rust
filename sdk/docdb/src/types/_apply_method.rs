@@ -96,3 +96,12 @@ impl ApplyMethod {
         }
     }
 }
+impl ::std::fmt::Display for ApplyMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplyMethod::Immediate => write!(f, "immediate"),
+            ApplyMethod::PendingReboot => write!(f, "pending-reboot"),
+            ApplyMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

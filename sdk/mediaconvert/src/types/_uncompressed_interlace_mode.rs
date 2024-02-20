@@ -96,3 +96,12 @@ impl UncompressedInterlaceMode {
         }
     }
 }
+impl ::std::fmt::Display for UncompressedInterlaceMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UncompressedInterlaceMode::Interlaced => write!(f, "INTERLACED"),
+            UncompressedInterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
+            UncompressedInterlaceMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl OperatorType {
         }
     }
 }
+impl ::std::fmt::Display for OperatorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperatorType::Between => write!(f, "BETWEEN"),
+            OperatorType::Equal => write!(f, "EQ"),
+            OperatorType::GreaterThanOrEqual => write!(f, "GE"),
+            OperatorType::LessThanOrEqual => write!(f, "LE"),
+            OperatorType::ReferenceEqual => write!(f, "REF_EQ"),
+            OperatorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

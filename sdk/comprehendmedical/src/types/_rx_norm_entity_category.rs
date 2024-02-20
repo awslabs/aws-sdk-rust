@@ -91,3 +91,11 @@ impl RxNormEntityCategory {
         }
     }
 }
+impl ::std::fmt::Display for RxNormEntityCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RxNormEntityCategory::Medication => write!(f, "MEDICATION"),
+            RxNormEntityCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

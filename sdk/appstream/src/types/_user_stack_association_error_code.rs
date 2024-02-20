@@ -106,3 +106,14 @@ impl UserStackAssociationErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for UserStackAssociationErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserStackAssociationErrorCode::DirectoryNotFound => write!(f, "DIRECTORY_NOT_FOUND"),
+            UserStackAssociationErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            UserStackAssociationErrorCode::StackNotFound => write!(f, "STACK_NOT_FOUND"),
+            UserStackAssociationErrorCode::UserNameNotFound => write!(f, "USER_NAME_NOT_FOUND"),
+            UserStackAssociationErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

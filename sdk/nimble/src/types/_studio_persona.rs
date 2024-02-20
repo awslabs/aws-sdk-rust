@@ -91,3 +91,11 @@ impl StudioPersona {
         }
     }
 }
+impl ::std::fmt::Display for StudioPersona {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StudioPersona::Administrator => write!(f, "ADMINISTRATOR"),
+            StudioPersona::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

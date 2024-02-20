@@ -96,3 +96,12 @@ impl CmafCodecSpecification {
         }
     }
 }
+impl ::std::fmt::Display for CmafCodecSpecification {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafCodecSpecification::Rfc4281 => write!(f, "RFC_4281"),
+            CmafCodecSpecification::Rfc6381 => write!(f, "RFC_6381"),
+            CmafCodecSpecification::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

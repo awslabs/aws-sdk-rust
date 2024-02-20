@@ -96,3 +96,12 @@ impl TtmlStylePassthrough {
         }
     }
 }
+impl ::std::fmt::Display for TtmlStylePassthrough {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TtmlStylePassthrough::Disabled => write!(f, "DISABLED"),
+            TtmlStylePassthrough::Enabled => write!(f, "ENABLED"),
+            TtmlStylePassthrough::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

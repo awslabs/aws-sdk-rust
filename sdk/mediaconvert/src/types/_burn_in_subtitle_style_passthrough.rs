@@ -96,3 +96,12 @@ impl BurnInSubtitleStylePassthrough {
         }
     }
 }
+impl ::std::fmt::Display for BurnInSubtitleStylePassthrough {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurnInSubtitleStylePassthrough::Disabled => write!(f, "DISABLED"),
+            BurnInSubtitleStylePassthrough::Enabled => write!(f, "ENABLED"),
+            BurnInSubtitleStylePassthrough::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

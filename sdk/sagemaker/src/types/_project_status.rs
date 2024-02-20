@@ -147,3 +147,20 @@ impl ProjectStatus {
         }
     }
 }
+impl ::std::fmt::Display for ProjectStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProjectStatus::CreateCompleted => write!(f, "CreateCompleted"),
+            ProjectStatus::CreateFailed => write!(f, "CreateFailed"),
+            ProjectStatus::CreateInProgress => write!(f, "CreateInProgress"),
+            ProjectStatus::DeleteCompleted => write!(f, "DeleteCompleted"),
+            ProjectStatus::DeleteFailed => write!(f, "DeleteFailed"),
+            ProjectStatus::DeleteInProgress => write!(f, "DeleteInProgress"),
+            ProjectStatus::Pending => write!(f, "Pending"),
+            ProjectStatus::UpdateCompleted => write!(f, "UpdateCompleted"),
+            ProjectStatus::UpdateFailed => write!(f, "UpdateFailed"),
+            ProjectStatus::UpdateInProgress => write!(f, "UpdateInProgress"),
+            ProjectStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

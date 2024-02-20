@@ -96,3 +96,12 @@ impl CmafWriteDashManifest {
         }
     }
 }
+impl ::std::fmt::Display for CmafWriteDashManifest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafWriteDashManifest::Disabled => write!(f, "DISABLED"),
+            CmafWriteDashManifest::Enabled => write!(f, "ENABLED"),
+            CmafWriteDashManifest::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

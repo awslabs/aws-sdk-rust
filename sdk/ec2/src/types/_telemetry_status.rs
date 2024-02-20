@@ -96,3 +96,12 @@ impl TelemetryStatus {
         }
     }
 }
+impl ::std::fmt::Display for TelemetryStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TelemetryStatus::Down => write!(f, "DOWN"),
+            TelemetryStatus::Up => write!(f, "UP"),
+            TelemetryStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

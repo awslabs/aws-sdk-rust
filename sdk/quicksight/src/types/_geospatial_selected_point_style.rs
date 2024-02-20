@@ -101,3 +101,13 @@ impl GeospatialSelectedPointStyle {
         }
     }
 }
+impl ::std::fmt::Display for GeospatialSelectedPointStyle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GeospatialSelectedPointStyle::Cluster => write!(f, "CLUSTER"),
+            GeospatialSelectedPointStyle::Heatmap => write!(f, "HEATMAP"),
+            GeospatialSelectedPointStyle::Point => write!(f, "POINT"),
+            GeospatialSelectedPointStyle::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

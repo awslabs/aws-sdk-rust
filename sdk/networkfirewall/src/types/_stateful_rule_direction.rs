@@ -96,3 +96,12 @@ impl StatefulRuleDirection {
         }
     }
 }
+impl ::std::fmt::Display for StatefulRuleDirection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatefulRuleDirection::Any => write!(f, "ANY"),
+            StatefulRuleDirection::Forward => write!(f, "FORWARD"),
+            StatefulRuleDirection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

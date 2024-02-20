@@ -101,3 +101,13 @@ impl SuggesterFuzzyMatching {
         }
     }
 }
+impl ::std::fmt::Display for SuggesterFuzzyMatching {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SuggesterFuzzyMatching::High => write!(f, "high"),
+            SuggesterFuzzyMatching::Low => write!(f, "low"),
+            SuggesterFuzzyMatching::None => write!(f, "none"),
+            SuggesterFuzzyMatching::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

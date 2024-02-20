@@ -96,3 +96,12 @@ impl EngineWorkflowStatus {
         }
     }
 }
+impl ::std::fmt::Display for EngineWorkflowStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EngineWorkflowStatus::Failed => write!(f, "FAILED"),
+            EngineWorkflowStatus::Succeeded => write!(f, "SUCCEEDED"),
+            EngineWorkflowStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CmfcScte35Source {
         }
     }
 }
+impl ::std::fmt::Display for CmfcScte35Source {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmfcScte35Source::None => write!(f, "NONE"),
+            CmfcScte35Source::Passthrough => write!(f, "PASSTHROUGH"),
+            CmfcScte35Source::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

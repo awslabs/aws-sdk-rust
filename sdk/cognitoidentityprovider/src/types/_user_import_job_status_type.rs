@@ -135,3 +135,18 @@ impl UserImportJobStatusType {
         }
     }
 }
+impl ::std::fmt::Display for UserImportJobStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserImportJobStatusType::Created => write!(f, "Created"),
+            UserImportJobStatusType::Expired => write!(f, "Expired"),
+            UserImportJobStatusType::Failed => write!(f, "Failed"),
+            UserImportJobStatusType::InProgress => write!(f, "InProgress"),
+            UserImportJobStatusType::Pending => write!(f, "Pending"),
+            UserImportJobStatusType::Stopped => write!(f, "Stopped"),
+            UserImportJobStatusType::Stopping => write!(f, "Stopping"),
+            UserImportJobStatusType::Succeeded => write!(f, "Succeeded"),
+            UserImportJobStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

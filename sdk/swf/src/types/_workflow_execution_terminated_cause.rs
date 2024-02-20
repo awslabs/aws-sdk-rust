@@ -101,3 +101,13 @@ impl WorkflowExecutionTerminatedCause {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowExecutionTerminatedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowExecutionTerminatedCause::ChildPolicyApplied => write!(f, "CHILD_POLICY_APPLIED"),
+            WorkflowExecutionTerminatedCause::EventLimitExceeded => write!(f, "EVENT_LIMIT_EXCEEDED"),
+            WorkflowExecutionTerminatedCause::OperatorInitiated => write!(f, "OPERATOR_INITIATED"),
+            WorkflowExecutionTerminatedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

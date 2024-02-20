@@ -101,3 +101,13 @@ impl PassthroughBehavior {
         }
     }
 }
+impl ::std::fmt::Display for PassthroughBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PassthroughBehavior::Never => write!(f, "NEVER"),
+            PassthroughBehavior::WhenNoMatch => write!(f, "WHEN_NO_MATCH"),
+            PassthroughBehavior::WhenNoTemplates => write!(f, "WHEN_NO_TEMPLATES"),
+            PassthroughBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

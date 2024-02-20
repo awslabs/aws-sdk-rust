@@ -101,3 +101,13 @@ impl DomainStatus {
         }
     }
 }
+impl ::std::fmt::Display for DomainStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DomainStatus::Failed => write!(f, "FAILED"),
+            DomainStatus::PendingValidation => write!(f, "PENDING_VALIDATION"),
+            DomainStatus::Success => write!(f, "SUCCESS"),
+            DomainStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

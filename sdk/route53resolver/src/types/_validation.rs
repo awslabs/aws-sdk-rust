@@ -101,3 +101,13 @@ impl Validation {
         }
     }
 }
+impl ::std::fmt::Display for Validation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Validation::Disable => write!(f, "DISABLE"),
+            Validation::Enable => write!(f, "ENABLE"),
+            Validation::UseLocalResourceSetting => write!(f, "USE_LOCAL_RESOURCE_SETTING"),
+            Validation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

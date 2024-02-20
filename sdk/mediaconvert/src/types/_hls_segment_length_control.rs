@@ -96,3 +96,12 @@ impl HlsSegmentLengthControl {
         }
     }
 }
+impl ::std::fmt::Display for HlsSegmentLengthControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsSegmentLengthControl::Exact => write!(f, "EXACT"),
+            HlsSegmentLengthControl::GopMultiple => write!(f, "GOP_MULTIPLE"),
+            HlsSegmentLengthControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

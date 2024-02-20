@@ -98,3 +98,12 @@ impl StudioComponentInitializationScriptRunContext {
         }
     }
 }
+impl ::std::fmt::Display for StudioComponentInitializationScriptRunContext {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StudioComponentInitializationScriptRunContext::SystemInitialization => write!(f, "SYSTEM_INITIALIZATION"),
+            StudioComponentInitializationScriptRunContext::UserInitialization => write!(f, "USER_INITIALIZATION"),
+            StudioComponentInitializationScriptRunContext::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ForecastComputationSeasonality {
         }
     }
 }
+impl ::std::fmt::Display for ForecastComputationSeasonality {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ForecastComputationSeasonality::Automatic => write!(f, "AUTOMATIC"),
+            ForecastComputationSeasonality::Custom => write!(f, "CUSTOM"),
+            ForecastComputationSeasonality::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

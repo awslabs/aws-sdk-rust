@@ -96,3 +96,12 @@ impl Mp4FreeSpaceBox {
         }
     }
 }
+impl ::std::fmt::Display for Mp4FreeSpaceBox {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mp4FreeSpaceBox::Exclude => write!(f, "EXCLUDE"),
+            Mp4FreeSpaceBox::Include => write!(f, "INCLUDE"),
+            Mp4FreeSpaceBox::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl FindingPublishingFrequency {
         }
     }
 }
+impl ::std::fmt::Display for FindingPublishingFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingPublishingFrequency::FifteenMinutes => write!(f, "FIFTEEN_MINUTES"),
+            FindingPublishingFrequency::OneHour => write!(f, "ONE_HOUR"),
+            FindingPublishingFrequency::SixHours => write!(f, "SIX_HOURS"),
+            FindingPublishingFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

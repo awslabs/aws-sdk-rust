@@ -101,3 +101,13 @@ impl NetworkInterfaceType {
         }
     }
 }
+impl ::std::fmt::Display for NetworkInterfaceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkInterfaceType::CanInterface => write!(f, "CAN_INTERFACE"),
+            NetworkInterfaceType::ObdInterface => write!(f, "OBD_INTERFACE"),
+            NetworkInterfaceType::VehicleMiddleware => write!(f, "VEHICLE_MIDDLEWARE"),
+            NetworkInterfaceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

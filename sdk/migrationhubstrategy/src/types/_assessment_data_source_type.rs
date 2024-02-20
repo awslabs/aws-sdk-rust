@@ -105,3 +105,13 @@ impl AssessmentDataSourceType {
         }
     }
 }
+impl ::std::fmt::Display for AssessmentDataSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssessmentDataSourceType::Ads => write!(f, "ApplicationDiscoveryService"),
+            AssessmentDataSourceType::ManualImport => write!(f, "ManualImport"),
+            AssessmentDataSourceType::SrCollector => write!(f, "StrategyRecommendationsApplicationDataCollector"),
+            AssessmentDataSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

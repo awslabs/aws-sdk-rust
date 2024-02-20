@@ -96,3 +96,12 @@ impl TrustProviderType {
         }
     }
 }
+impl ::std::fmt::Display for TrustProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TrustProviderType::Device => write!(f, "device"),
+            TrustProviderType::User => write!(f, "user"),
+            TrustProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

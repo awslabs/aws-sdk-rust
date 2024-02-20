@@ -123,3 +123,16 @@ impl StartSelectorType {
         }
     }
 }
+impl ::std::fmt::Display for StartSelectorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StartSelectorType::ContinuationToken => write!(f, "CONTINUATION_TOKEN"),
+            StartSelectorType::Earliest => write!(f, "EARLIEST"),
+            StartSelectorType::FragmentNumber => write!(f, "FRAGMENT_NUMBER"),
+            StartSelectorType::Now => write!(f, "NOW"),
+            StartSelectorType::ProducerTimestamp => write!(f, "PRODUCER_TIMESTAMP"),
+            StartSelectorType::ServerTimestamp => write!(f, "SERVER_TIMESTAMP"),
+            StartSelectorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

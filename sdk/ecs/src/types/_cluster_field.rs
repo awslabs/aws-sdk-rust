@@ -111,3 +111,15 @@ impl ClusterField {
         }
     }
 }
+impl ::std::fmt::Display for ClusterField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterField::Attachments => write!(f, "ATTACHMENTS"),
+            ClusterField::Configurations => write!(f, "CONFIGURATIONS"),
+            ClusterField::Settings => write!(f, "SETTINGS"),
+            ClusterField::Statistics => write!(f, "STATISTICS"),
+            ClusterField::Tags => write!(f, "TAGS"),
+            ClusterField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

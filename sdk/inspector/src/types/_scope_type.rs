@@ -96,3 +96,12 @@ impl ScopeType {
         }
     }
 }
+impl ::std::fmt::Display for ScopeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScopeType::InstanceId => write!(f, "INSTANCE_ID"),
+            ScopeType::RulesPackageArn => write!(f, "RULES_PACKAGE_ARN"),
+            ScopeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

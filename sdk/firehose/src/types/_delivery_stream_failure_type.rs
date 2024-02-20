@@ -177,3 +177,25 @@ impl DeliveryStreamFailureType {
         }
     }
 }
+impl ::std::fmt::Display for DeliveryStreamFailureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeliveryStreamFailureType::CreateEniFailed => write!(f, "CREATE_ENI_FAILED"),
+            DeliveryStreamFailureType::CreateKmsGrantFailed => write!(f, "CREATE_KMS_GRANT_FAILED"),
+            DeliveryStreamFailureType::DeleteEniFailed => write!(f, "DELETE_ENI_FAILED"),
+            DeliveryStreamFailureType::DisabledKmsKey => write!(f, "DISABLED_KMS_KEY"),
+            DeliveryStreamFailureType::EniAccessDenied => write!(f, "ENI_ACCESS_DENIED"),
+            DeliveryStreamFailureType::InvalidKmsKey => write!(f, "INVALID_KMS_KEY"),
+            DeliveryStreamFailureType::KmsAccessDenied => write!(f, "KMS_ACCESS_DENIED"),
+            DeliveryStreamFailureType::KmsKeyNotFound => write!(f, "KMS_KEY_NOT_FOUND"),
+            DeliveryStreamFailureType::KmsOptInRequired => write!(f, "KMS_OPT_IN_REQUIRED"),
+            DeliveryStreamFailureType::RetireKmsGrantFailed => write!(f, "RETIRE_KMS_GRANT_FAILED"),
+            DeliveryStreamFailureType::SecurityGroupAccessDenied => write!(f, "SECURITY_GROUP_ACCESS_DENIED"),
+            DeliveryStreamFailureType::SecurityGroupNotFound => write!(f, "SECURITY_GROUP_NOT_FOUND"),
+            DeliveryStreamFailureType::SubnetAccessDenied => write!(f, "SUBNET_ACCESS_DENIED"),
+            DeliveryStreamFailureType::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),
+            DeliveryStreamFailureType::UnknownError => write!(f, "UNKNOWN_ERROR"),
+            DeliveryStreamFailureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

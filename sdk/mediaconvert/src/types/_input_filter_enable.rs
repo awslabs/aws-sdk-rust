@@ -101,3 +101,13 @@ impl InputFilterEnable {
         }
     }
 }
+impl ::std::fmt::Display for InputFilterEnable {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputFilterEnable::Auto => write!(f, "AUTO"),
+            InputFilterEnable::Disable => write!(f, "DISABLE"),
+            InputFilterEnable::Force => write!(f, "FORCE"),
+            InputFilterEnable::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

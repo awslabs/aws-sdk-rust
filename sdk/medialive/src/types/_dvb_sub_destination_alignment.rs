@@ -101,3 +101,13 @@ impl DvbSubDestinationAlignment {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubDestinationAlignment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubDestinationAlignment::Centered => write!(f, "CENTERED"),
+            DvbSubDestinationAlignment::Left => write!(f, "LEFT"),
+            DvbSubDestinationAlignment::Smart => write!(f, "SMART"),
+            DvbSubDestinationAlignment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

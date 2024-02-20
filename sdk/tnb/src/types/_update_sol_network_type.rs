@@ -91,3 +91,11 @@ impl UpdateSolNetworkType {
         }
     }
 }
+impl ::std::fmt::Display for UpdateSolNetworkType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateSolNetworkType::ModifyVnfInformation => write!(f, "MODIFY_VNF_INFORMATION"),
+            UpdateSolNetworkType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

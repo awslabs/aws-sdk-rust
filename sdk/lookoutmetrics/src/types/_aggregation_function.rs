@@ -96,3 +96,12 @@ impl AggregationFunction {
         }
     }
 }
+impl ::std::fmt::Display for AggregationFunction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AggregationFunction::Avg => write!(f, "AVG"),
+            AggregationFunction::Sum => write!(f, "SUM"),
+            AggregationFunction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

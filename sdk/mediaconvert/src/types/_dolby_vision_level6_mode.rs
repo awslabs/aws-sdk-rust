@@ -101,3 +101,13 @@ impl DolbyVisionLevel6Mode {
         }
     }
 }
+impl ::std::fmt::Display for DolbyVisionLevel6Mode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DolbyVisionLevel6Mode::Passthrough => write!(f, "PASSTHROUGH"),
+            DolbyVisionLevel6Mode::Recalculate => write!(f, "RECALCULATE"),
+            DolbyVisionLevel6Mode::Specify => write!(f, "SPECIFY"),
+            DolbyVisionLevel6Mode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -146,3 +146,22 @@ impl ContainerType {
         }
     }
 }
+impl ::std::fmt::Display for ContainerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerType::Cmfc => write!(f, "CMFC"),
+            ContainerType::F4V => write!(f, "F4V"),
+            ContainerType::Ismv => write!(f, "ISMV"),
+            ContainerType::M2Ts => write!(f, "M2TS"),
+            ContainerType::M3U8 => write!(f, "M3U8"),
+            ContainerType::Mov => write!(f, "MOV"),
+            ContainerType::Mp4 => write!(f, "MP4"),
+            ContainerType::Mpd => write!(f, "MPD"),
+            ContainerType::Mxf => write!(f, "MXF"),
+            ContainerType::Raw => write!(f, "RAW"),
+            ContainerType::Webm => write!(f, "WEBM"),
+            ContainerType::Y4M => write!(f, "Y4M"),
+            ContainerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

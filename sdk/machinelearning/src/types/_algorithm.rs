@@ -101,3 +101,11 @@ impl Algorithm {
         }
     }
 }
+impl ::std::fmt::Display for Algorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Algorithm::Sgd => write!(f, "sgd"),
+            Algorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

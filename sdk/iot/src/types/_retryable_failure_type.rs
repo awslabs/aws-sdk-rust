@@ -101,3 +101,13 @@ impl RetryableFailureType {
         }
     }
 }
+impl ::std::fmt::Display for RetryableFailureType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RetryableFailureType::All => write!(f, "ALL"),
+            RetryableFailureType::Failed => write!(f, "FAILED"),
+            RetryableFailureType::TimedOut => write!(f, "TIMED_OUT"),
+            RetryableFailureType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

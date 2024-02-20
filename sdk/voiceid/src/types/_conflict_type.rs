@@ -147,3 +147,20 @@ impl ConflictType {
         }
     }
 }
+impl ::std::fmt::Display for ConflictType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConflictType::AnotherActiveStream => write!(f, "ANOTHER_ACTIVE_STREAM"),
+            ConflictType::CannotChangeSpeakerAfterEnrollment => write!(f, "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT"),
+            ConflictType::CannotDeleteNonEmptyWatchlist => write!(f, "CANNOT_DELETE_NON_EMPTY_WATCHLIST"),
+            ConflictType::ConcurrentChanges => write!(f, "CONCURRENT_CHANGES"),
+            ConflictType::DomainLockedFromEncryptionUpdates => write!(f, "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES"),
+            ConflictType::DomainNotActive => write!(f, "DOMAIN_NOT_ACTIVE"),
+            ConflictType::EnrollmentAlreadyExists => write!(f, "ENROLLMENT_ALREADY_EXISTS"),
+            ConflictType::FraudsterMustBelongToAtLeastOneWatchlist => write!(f, "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST"),
+            ConflictType::SpeakerNotSet => write!(f, "SPEAKER_NOT_SET"),
+            ConflictType::SpeakerOptedOut => write!(f, "SPEAKER_OPTED_OUT"),
+            ConflictType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

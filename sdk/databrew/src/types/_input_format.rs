@@ -111,3 +111,15 @@ impl InputFormat {
         }
     }
 }
+impl ::std::fmt::Display for InputFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputFormat::Csv => write!(f, "CSV"),
+            InputFormat::Excel => write!(f, "EXCEL"),
+            InputFormat::Json => write!(f, "JSON"),
+            InputFormat::Orc => write!(f, "ORC"),
+            InputFormat::Parquet => write!(f, "PARQUET"),
+            InputFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl PerObjectSyncStatus {
         }
     }
 }
+impl ::std::fmt::Display for PerObjectSyncStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PerObjectSyncStatus::CapacityConstrained => write!(f, "CAPACITY_CONSTRAINED"),
+            PerObjectSyncStatus::InSync => write!(f, "IN_SYNC"),
+            PerObjectSyncStatus::Pending => write!(f, "PENDING"),
+            PerObjectSyncStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

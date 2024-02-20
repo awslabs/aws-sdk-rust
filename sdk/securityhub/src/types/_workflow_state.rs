@@ -112,3 +112,15 @@ impl WorkflowState {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowState::Assigned => write!(f, "ASSIGNED"),
+            WorkflowState::Deferred => write!(f, "DEFERRED"),
+            WorkflowState::InProgress => write!(f, "IN_PROGRESS"),
+            WorkflowState::New => write!(f, "NEW"),
+            WorkflowState::Resolved => write!(f, "RESOLVED"),
+            WorkflowState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

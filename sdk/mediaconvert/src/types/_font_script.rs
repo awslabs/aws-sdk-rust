@@ -101,3 +101,13 @@ impl FontScript {
         }
     }
 }
+impl ::std::fmt::Display for FontScript {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FontScript::Automatic => write!(f, "AUTOMATIC"),
+            FontScript::Hans => write!(f, "HANS"),
+            FontScript::Hant => write!(f, "HANT"),
+            FontScript::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

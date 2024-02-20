@@ -96,3 +96,12 @@ impl TranscribeMedicalType {
         }
     }
 }
+impl ::std::fmt::Display for TranscribeMedicalType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TranscribeMedicalType::Conversation => write!(f, "CONVERSATION"),
+            TranscribeMedicalType::Dictation => write!(f, "DICTATION"),
+            TranscribeMedicalType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

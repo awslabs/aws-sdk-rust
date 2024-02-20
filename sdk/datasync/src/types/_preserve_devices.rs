@@ -96,3 +96,12 @@ impl PreserveDevices {
         }
     }
 }
+impl ::std::fmt::Display for PreserveDevices {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PreserveDevices::None => write!(f, "NONE"),
+            PreserveDevices::Preserve => write!(f, "PRESERVE"),
+            PreserveDevices::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

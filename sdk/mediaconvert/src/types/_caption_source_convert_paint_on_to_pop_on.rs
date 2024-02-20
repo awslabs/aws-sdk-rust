@@ -96,3 +96,12 @@ impl CaptionSourceConvertPaintOnToPopOn {
         }
     }
 }
+impl ::std::fmt::Display for CaptionSourceConvertPaintOnToPopOn {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CaptionSourceConvertPaintOnToPopOn::Disabled => write!(f, "DISABLED"),
+            CaptionSourceConvertPaintOnToPopOn::Enabled => write!(f, "ENABLED"),
+            CaptionSourceConvertPaintOnToPopOn::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

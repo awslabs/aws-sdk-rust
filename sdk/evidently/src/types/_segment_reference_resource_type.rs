@@ -96,3 +96,12 @@ impl SegmentReferenceResourceType {
         }
     }
 }
+impl ::std::fmt::Display for SegmentReferenceResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SegmentReferenceResourceType::Experiment => write!(f, "EXPERIMENT"),
+            SegmentReferenceResourceType::Launch => write!(f, "LAUNCH"),
+            SegmentReferenceResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

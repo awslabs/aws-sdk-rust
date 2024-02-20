@@ -111,3 +111,15 @@ impl PositionalConstraint {
         }
     }
 }
+impl ::std::fmt::Display for PositionalConstraint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PositionalConstraint::Contains => write!(f, "CONTAINS"),
+            PositionalConstraint::ContainsWord => write!(f, "CONTAINS_WORD"),
+            PositionalConstraint::EndsWith => write!(f, "ENDS_WITH"),
+            PositionalConstraint::Exactly => write!(f, "EXACTLY"),
+            PositionalConstraint::StartsWith => write!(f, "STARTS_WITH"),
+            PositionalConstraint::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

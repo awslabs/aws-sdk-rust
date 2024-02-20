@@ -96,3 +96,12 @@ impl ArtifactsState {
         }
     }
 }
+impl ::std::fmt::Display for ArtifactsState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArtifactsState::Disabled => write!(f, "Disabled"),
+            ArtifactsState::Enabled => write!(f, "Enabled"),
+            ArtifactsState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl TranscriptionJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for TranscriptionJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TranscriptionJobStatus::Completed => write!(f, "COMPLETED"),
+            TranscriptionJobStatus::Failed => write!(f, "FAILED"),
+            TranscriptionJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            TranscriptionJobStatus::Queued => write!(f, "QUEUED"),
+            TranscriptionJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

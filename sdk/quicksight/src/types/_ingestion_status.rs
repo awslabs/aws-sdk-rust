@@ -116,3 +116,16 @@ impl IngestionStatus {
         }
     }
 }
+impl ::std::fmt::Display for IngestionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IngestionStatus::Cancelled => write!(f, "CANCELLED"),
+            IngestionStatus::Completed => write!(f, "COMPLETED"),
+            IngestionStatus::Failed => write!(f, "FAILED"),
+            IngestionStatus::Initialized => write!(f, "INITIALIZED"),
+            IngestionStatus::Queued => write!(f, "QUEUED"),
+            IngestionStatus::Running => write!(f, "RUNNING"),
+            IngestionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -165,3 +165,23 @@ impl CurrentMetricName {
         }
     }
 }
+impl ::std::fmt::Display for CurrentMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CurrentMetricName::AgentsAfterContactWork => write!(f, "AGENTS_AFTER_CONTACT_WORK"),
+            CurrentMetricName::AgentsAvailable => write!(f, "AGENTS_AVAILABLE"),
+            CurrentMetricName::AgentsError => write!(f, "AGENTS_ERROR"),
+            CurrentMetricName::AgentsNonProductive => write!(f, "AGENTS_NON_PRODUCTIVE"),
+            CurrentMetricName::AgentsOnline => write!(f, "AGENTS_ONLINE"),
+            CurrentMetricName::AgentsOnCall => write!(f, "AGENTS_ON_CALL"),
+            CurrentMetricName::AgentsOnContact => write!(f, "AGENTS_ON_CONTACT"),
+            CurrentMetricName::AgentsStaffed => write!(f, "AGENTS_STAFFED"),
+            CurrentMetricName::ContactsInQueue => write!(f, "CONTACTS_IN_QUEUE"),
+            CurrentMetricName::ContactsScheduled => write!(f, "CONTACTS_SCHEDULED"),
+            CurrentMetricName::OldestContactAge => write!(f, "OLDEST_CONTACT_AGE"),
+            CurrentMetricName::SlotsActive => write!(f, "SLOTS_ACTIVE"),
+            CurrentMetricName::SlotsAvailable => write!(f, "SLOTS_AVAILABLE"),
+            CurrentMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

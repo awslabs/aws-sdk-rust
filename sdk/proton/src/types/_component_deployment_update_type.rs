@@ -96,3 +96,12 @@ impl ComponentDeploymentUpdateType {
         }
     }
 }
+impl ::std::fmt::Display for ComponentDeploymentUpdateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComponentDeploymentUpdateType::CurrentVersion => write!(f, "CURRENT_VERSION"),
+            ComponentDeploymentUpdateType::None => write!(f, "NONE"),
+            ComponentDeploymentUpdateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

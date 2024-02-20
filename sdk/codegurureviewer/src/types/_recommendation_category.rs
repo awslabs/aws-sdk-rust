@@ -153,3 +153,21 @@ impl RecommendationCategory {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationCategory {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationCategory::AwsBestPractices => write!(f, "AWSBestPractices"),
+            RecommendationCategory::AwsCloudformationIssues => write!(f, "AWSCloudFormationIssues"),
+            RecommendationCategory::CodeInconsistencies => write!(f, "CodeInconsistencies"),
+            RecommendationCategory::CodeMaintenanceIssues => write!(f, "CodeMaintenanceIssues"),
+            RecommendationCategory::ConcurrencyIssues => write!(f, "ConcurrencyIssues"),
+            RecommendationCategory::DuplicateCode => write!(f, "DuplicateCode"),
+            RecommendationCategory::InputValidations => write!(f, "InputValidations"),
+            RecommendationCategory::JavaBestPractices => write!(f, "JavaBestPractices"),
+            RecommendationCategory::PythonBestPractices => write!(f, "PythonBestPractices"),
+            RecommendationCategory::ResourceLeaks => write!(f, "ResourceLeaks"),
+            RecommendationCategory::SecurityIssues => write!(f, "SecurityIssues"),
+            RecommendationCategory::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

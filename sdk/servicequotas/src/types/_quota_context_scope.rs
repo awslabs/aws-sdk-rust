@@ -96,3 +96,12 @@ impl QuotaContextScope {
         }
     }
 }
+impl ::std::fmt::Display for QuotaContextScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuotaContextScope::Account => write!(f, "ACCOUNT"),
+            QuotaContextScope::Resource => write!(f, "RESOURCE"),
+            QuotaContextScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl InspectionLevel {
         }
     }
 }
+impl ::std::fmt::Display for InspectionLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InspectionLevel::Debug => write!(f, "DEBUG"),
+            InspectionLevel::Info => write!(f, "INFO"),
+            InspectionLevel::Trace => write!(f, "TRACE"),
+            InspectionLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

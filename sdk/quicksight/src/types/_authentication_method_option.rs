@@ -106,3 +106,14 @@ impl AuthenticationMethodOption {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationMethodOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationMethodOption::ActiveDirectory => write!(f, "ACTIVE_DIRECTORY"),
+            AuthenticationMethodOption::IamAndQuicksight => write!(f, "IAM_AND_QUICKSIGHT"),
+            AuthenticationMethodOption::IamIdentityCenter => write!(f, "IAM_IDENTITY_CENTER"),
+            AuthenticationMethodOption::IamOnly => write!(f, "IAM_ONLY"),
+            AuthenticationMethodOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

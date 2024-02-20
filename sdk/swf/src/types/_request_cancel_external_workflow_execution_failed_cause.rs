@@ -111,3 +111,15 @@ impl RequestCancelExternalWorkflowExecutionFailedCause {
         }
     }
 }
+impl ::std::fmt::Display for RequestCancelExternalWorkflowExecutionFailedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
+            RequestCancelExternalWorkflowExecutionFailedCause::RequestCancelExternalWorkflowExecutionRateExceeded => {
+                write!(f, "REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED")
+            }
+            RequestCancelExternalWorkflowExecutionFailedCause::UnknownExternalWorkflowExecution => write!(f, "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION"),
+            RequestCancelExternalWorkflowExecutionFailedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl FilterNullOption {
         }
     }
 }
+impl ::std::fmt::Display for FilterNullOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterNullOption::AllValues => write!(f, "ALL_VALUES"),
+            FilterNullOption::NonNullsOnly => write!(f, "NON_NULLS_ONLY"),
+            FilterNullOption::NullsOnly => write!(f, "NULLS_ONLY"),
+            FilterNullOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

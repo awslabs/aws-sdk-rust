@@ -96,3 +96,12 @@ impl InferredWorkloadTypesPreference {
         }
     }
 }
+impl ::std::fmt::Display for InferredWorkloadTypesPreference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InferredWorkloadTypesPreference::Active => write!(f, "Active"),
+            InferredWorkloadTypesPreference::Inactive => write!(f, "Inactive"),
+            InferredWorkloadTypesPreference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -123,3 +123,16 @@ impl PropertyValidationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for PropertyValidationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PropertyValidationExceptionReason::InvalidFormat => write!(f, "INVALID_FORMAT"),
+            PropertyValidationExceptionReason::NotSupported => write!(f, "NOT_SUPPORTED"),
+            PropertyValidationExceptionReason::ReferencedResourceNotFound => write!(f, "REFERENCED_RESOURCE_NOT_FOUND"),
+            PropertyValidationExceptionReason::RequiredPropertyMissing => write!(f, "REQUIRED_PROPERTY_MISSING"),
+            PropertyValidationExceptionReason::ResourceNameAlreadyExists => write!(f, "RESOURCE_NAME_ALREADY_EXISTS"),
+            PropertyValidationExceptionReason::UniqueConstraintViolated => write!(f, "UNIQUE_CONSTRAINT_VIOLATED"),
+            PropertyValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

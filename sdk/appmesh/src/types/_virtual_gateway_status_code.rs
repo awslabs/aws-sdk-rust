@@ -101,3 +101,13 @@ impl VirtualGatewayStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for VirtualGatewayStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VirtualGatewayStatusCode::Active => write!(f, "ACTIVE"),
+            VirtualGatewayStatusCode::Deleted => write!(f, "DELETED"),
+            VirtualGatewayStatusCode::Inactive => write!(f, "INACTIVE"),
+            VirtualGatewayStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

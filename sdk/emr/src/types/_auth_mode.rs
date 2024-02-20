@@ -96,3 +96,12 @@ impl AuthMode {
         }
     }
 }
+impl ::std::fmt::Display for AuthMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthMode::Iam => write!(f, "IAM"),
+            AuthMode::Sso => write!(f, "SSO"),
+            AuthMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

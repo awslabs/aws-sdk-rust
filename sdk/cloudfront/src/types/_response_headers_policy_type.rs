@@ -96,3 +96,12 @@ impl ResponseHeadersPolicyType {
         }
     }
 }
+impl ::std::fmt::Display for ResponseHeadersPolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResponseHeadersPolicyType::Custom => write!(f, "custom"),
+            ResponseHeadersPolicyType::Managed => write!(f, "managed"),
+            ResponseHeadersPolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

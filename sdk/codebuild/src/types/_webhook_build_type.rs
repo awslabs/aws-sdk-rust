@@ -96,3 +96,12 @@ impl WebhookBuildType {
         }
     }
 }
+impl ::std::fmt::Display for WebhookBuildType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WebhookBuildType::Build => write!(f, "BUILD"),
+            WebhookBuildType::BuildBatch => write!(f, "BUILD_BATCH"),
+            WebhookBuildType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

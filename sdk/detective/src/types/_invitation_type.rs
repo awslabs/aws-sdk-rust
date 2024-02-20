@@ -96,3 +96,12 @@ impl InvitationType {
         }
     }
 }
+impl ::std::fmt::Display for InvitationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InvitationType::Invitation => write!(f, "INVITATION"),
+            InvitationType::Organization => write!(f, "ORGANIZATION"),
+            InvitationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

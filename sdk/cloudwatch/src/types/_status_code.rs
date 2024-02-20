@@ -106,3 +106,14 @@ impl StatusCode {
         }
     }
 }
+impl ::std::fmt::Display for StatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatusCode::Complete => write!(f, "Complete"),
+            StatusCode::Forbidden => write!(f, "Forbidden"),
+            StatusCode::InternalError => write!(f, "InternalError"),
+            StatusCode::PartialData => write!(f, "PartialData"),
+            StatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

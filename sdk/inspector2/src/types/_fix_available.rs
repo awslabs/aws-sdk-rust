@@ -101,3 +101,13 @@ impl FixAvailable {
         }
     }
 }
+impl ::std::fmt::Display for FixAvailable {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FixAvailable::No => write!(f, "NO"),
+            FixAvailable::Partial => write!(f, "PARTIAL"),
+            FixAvailable::Yes => write!(f, "YES"),
+            FixAvailable::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

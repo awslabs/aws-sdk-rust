@@ -96,3 +96,12 @@ impl KeyType {
         }
     }
 }
+impl ::std::fmt::Display for KeyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyType::AwsOwnedCmk => write!(f, "AWS_OWNED_CMK"),
+            KeyType::CustomerManagedCmk => write!(f, "CUSTOMER_MANAGED_CMK"),
+            KeyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

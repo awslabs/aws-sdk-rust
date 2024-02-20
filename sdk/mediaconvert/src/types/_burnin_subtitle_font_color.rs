@@ -126,3 +126,18 @@ impl BurninSubtitleFontColor {
         }
     }
 }
+impl ::std::fmt::Display for BurninSubtitleFontColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurninSubtitleFontColor::Auto => write!(f, "AUTO"),
+            BurninSubtitleFontColor::Black => write!(f, "BLACK"),
+            BurninSubtitleFontColor::Blue => write!(f, "BLUE"),
+            BurninSubtitleFontColor::Green => write!(f, "GREEN"),
+            BurninSubtitleFontColor::Hex => write!(f, "HEX"),
+            BurninSubtitleFontColor::Red => write!(f, "RED"),
+            BurninSubtitleFontColor::White => write!(f, "WHITE"),
+            BurninSubtitleFontColor::Yellow => write!(f, "YELLOW"),
+            BurninSubtitleFontColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

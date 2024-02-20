@@ -96,3 +96,12 @@ impl H265WriteMp4PackagingType {
         }
     }
 }
+impl ::std::fmt::Display for H265WriteMp4PackagingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265WriteMp4PackagingType::Hev1 => write!(f, "HEV1"),
+            H265WriteMp4PackagingType::Hvc1 => write!(f, "HVC1"),
+            H265WriteMp4PackagingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

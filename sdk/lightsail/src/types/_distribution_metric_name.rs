@@ -123,3 +123,16 @@ impl DistributionMetricName {
         }
     }
 }
+impl ::std::fmt::Display for DistributionMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DistributionMetricName::BytesDownloaded => write!(f, "BytesDownloaded"),
+            DistributionMetricName::BytesUploaded => write!(f, "BytesUploaded"),
+            DistributionMetricName::Http4xxErrorRate => write!(f, "Http4xxErrorRate"),
+            DistributionMetricName::Http5xxErrorRate => write!(f, "Http5xxErrorRate"),
+            DistributionMetricName::Requests => write!(f, "Requests"),
+            DistributionMetricName::TotalErrorRate => write!(f, "TotalErrorRate"),
+            DistributionMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

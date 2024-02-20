@@ -96,3 +96,12 @@ impl ReplicaModificationsStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReplicaModificationsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicaModificationsStatus::Disabled => write!(f, "Disabled"),
+            ReplicaModificationsStatus::Enabled => write!(f, "Enabled"),
+            ReplicaModificationsStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

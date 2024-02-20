@@ -96,3 +96,12 @@ impl ComputeType {
         }
     }
 }
+impl ::std::fmt::Display for ComputeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComputeType::Anywhere => write!(f, "ANYWHERE"),
+            ComputeType::Ec2 => write!(f, "EC2"),
+            ComputeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

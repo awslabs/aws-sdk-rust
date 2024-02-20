@@ -96,3 +96,12 @@ impl VoiceMessageBodyTextType {
         }
     }
 }
+impl ::std::fmt::Display for VoiceMessageBodyTextType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VoiceMessageBodyTextType::Ssml => write!(f, "SSML"),
+            VoiceMessageBodyTextType::Text => write!(f, "TEXT"),
+            VoiceMessageBodyTextType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

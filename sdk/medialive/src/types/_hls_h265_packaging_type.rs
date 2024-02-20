@@ -96,3 +96,12 @@ impl HlsH265PackagingType {
         }
     }
 }
+impl ::std::fmt::Display for HlsH265PackagingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsH265PackagingType::Hev1 => write!(f, "HEV1"),
+            HlsH265PackagingType::Hvc1 => write!(f, "HVC1"),
+            HlsH265PackagingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

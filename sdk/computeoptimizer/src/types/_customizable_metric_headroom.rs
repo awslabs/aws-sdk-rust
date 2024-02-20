@@ -101,3 +101,13 @@ impl CustomizableMetricHeadroom {
         }
     }
 }
+impl ::std::fmt::Display for CustomizableMetricHeadroom {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomizableMetricHeadroom::Percent0 => write!(f, "PERCENT_0"),
+            CustomizableMetricHeadroom::Percent20 => write!(f, "PERCENT_20"),
+            CustomizableMetricHeadroom::Percent30 => write!(f, "PERCENT_30"),
+            CustomizableMetricHeadroom::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

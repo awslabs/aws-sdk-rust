@@ -106,3 +106,14 @@ impl TransitGatewayMulticastDomainState {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayMulticastDomainState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayMulticastDomainState::Available => write!(f, "available"),
+            TransitGatewayMulticastDomainState::Deleted => write!(f, "deleted"),
+            TransitGatewayMulticastDomainState::Deleting => write!(f, "deleting"),
+            TransitGatewayMulticastDomainState::Pending => write!(f, "pending"),
+            TransitGatewayMulticastDomainState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

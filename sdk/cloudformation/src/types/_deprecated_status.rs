@@ -96,3 +96,12 @@ impl DeprecatedStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeprecatedStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeprecatedStatus::Deprecated => write!(f, "DEPRECATED"),
+            DeprecatedStatus::Live => write!(f, "LIVE"),
+            DeprecatedStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

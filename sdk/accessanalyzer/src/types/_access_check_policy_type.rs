@@ -96,3 +96,12 @@ impl AccessCheckPolicyType {
         }
     }
 }
+impl ::std::fmt::Display for AccessCheckPolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessCheckPolicyType::IdentityPolicy => write!(f, "IDENTITY_POLICY"),
+            AccessCheckPolicyType::ResourcePolicy => write!(f, "RESOURCE_POLICY"),
+            AccessCheckPolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl FraudDetectionReason {
         }
     }
 }
+impl ::std::fmt::Display for FraudDetectionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FraudDetectionReason::KnownFraudster => write!(f, "KNOWN_FRAUDSTER"),
+            FraudDetectionReason::VoiceSpoofing => write!(f, "VOICE_SPOOFING"),
+            FraudDetectionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

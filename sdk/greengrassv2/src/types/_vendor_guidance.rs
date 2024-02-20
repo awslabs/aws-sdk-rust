@@ -101,3 +101,13 @@ impl VendorGuidance {
         }
     }
 }
+impl ::std::fmt::Display for VendorGuidance {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VendorGuidance::Active => write!(f, "ACTIVE"),
+            VendorGuidance::Deleted => write!(f, "DELETED"),
+            VendorGuidance::Discontinued => write!(f, "DISCONTINUED"),
+            VendorGuidance::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

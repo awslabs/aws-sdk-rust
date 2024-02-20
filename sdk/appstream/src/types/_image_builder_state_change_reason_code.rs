@@ -96,3 +96,12 @@ impl ImageBuilderStateChangeReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for ImageBuilderStateChangeReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImageBuilderStateChangeReasonCode::ImageUnavailable => write!(f, "IMAGE_UNAVAILABLE"),
+            ImageBuilderStateChangeReasonCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            ImageBuilderStateChangeReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

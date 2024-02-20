@@ -96,3 +96,12 @@ impl QuestionPriority {
         }
     }
 }
+impl ::std::fmt::Display for QuestionPriority {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuestionPriority::None => write!(f, "NONE"),
+            QuestionPriority::Prioritized => write!(f, "PRIORITIZED"),
+            QuestionPriority::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

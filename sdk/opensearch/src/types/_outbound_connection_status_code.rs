@@ -147,3 +147,20 @@ impl OutboundConnectionStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for OutboundConnectionStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutboundConnectionStatusCode::Active => write!(f, "ACTIVE"),
+            OutboundConnectionStatusCode::Approved => write!(f, "APPROVED"),
+            OutboundConnectionStatusCode::Deleted => write!(f, "DELETED"),
+            OutboundConnectionStatusCode::Deleting => write!(f, "DELETING"),
+            OutboundConnectionStatusCode::PendingAcceptance => write!(f, "PENDING_ACCEPTANCE"),
+            OutboundConnectionStatusCode::Provisioning => write!(f, "PROVISIONING"),
+            OutboundConnectionStatusCode::Rejected => write!(f, "REJECTED"),
+            OutboundConnectionStatusCode::Rejecting => write!(f, "REJECTING"),
+            OutboundConnectionStatusCode::Validating => write!(f, "VALIDATING"),
+            OutboundConnectionStatusCode::ValidationFailed => write!(f, "VALIDATION_FAILED"),
+            OutboundConnectionStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl HostnameType {
         }
     }
 }
+impl ::std::fmt::Display for HostnameType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HostnameType::IpName => write!(f, "ip-name"),
+            HostnameType::ResourceName => write!(f, "resource-name"),
+            HostnameType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl TagFilterType {
         }
     }
 }
+impl ::std::fmt::Display for TagFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TagFilterType::KeyAndValue => write!(f, "KEY_AND_VALUE"),
+            TagFilterType::KeyOnly => write!(f, "KEY_ONLY"),
+            TagFilterType::ValueOnly => write!(f, "VALUE_ONLY"),
+            TagFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

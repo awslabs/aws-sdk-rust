@@ -96,3 +96,12 @@ impl FormDataSourceType {
         }
     }
 }
+impl ::std::fmt::Display for FormDataSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FormDataSourceType::Custom => write!(f, "Custom"),
+            FormDataSourceType::Datastore => write!(f, "DataStore"),
+            FormDataSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

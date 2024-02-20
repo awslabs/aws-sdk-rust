@@ -249,3 +249,37 @@ impl Unit {
         }
     }
 }
+impl ::std::fmt::Display for Unit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Unit::Bits => write!(f, "BITS"),
+            Unit::BitsPerSecond => write!(f, "BITS_PER_SECOND"),
+            Unit::Bytes => write!(f, "BYTES"),
+            Unit::BytesPerSecond => write!(f, "BYTES_PER_SECOND"),
+            Unit::Count => write!(f, "COUNT"),
+            Unit::CountPerSecond => write!(f, "COUNT_PER_SECOND"),
+            Unit::GigaBits => write!(f, "GIGA_BITS"),
+            Unit::GigaBitsPerSecond => write!(f, "GIGA_BITS_PER_SECOND"),
+            Unit::GigaBytes => write!(f, "GIGA_BYTES"),
+            Unit::GigaBytesPerSecond => write!(f, "GIGA_BYTES_PER_SECOND"),
+            Unit::KiloBits => write!(f, "KILO_BITS"),
+            Unit::KiloBitsPerSecond => write!(f, "KILO_BITS_PER_SECOND"),
+            Unit::KiloBytes => write!(f, "KILO_BYTES"),
+            Unit::KiloBytesPerSecond => write!(f, "KILO_BYTES_PER_SECOND"),
+            Unit::MegaBits => write!(f, "MEGA_BITS"),
+            Unit::MegaBitsPerSecond => write!(f, "MEGA_BITS_PER_SECOND"),
+            Unit::MegaBytes => write!(f, "MEGA_BYTES"),
+            Unit::MegaBytesPerSecond => write!(f, "MEGA_BYTES_PER_SECOND"),
+            Unit::MicroSeconds => write!(f, "MICRO_SECONDS"),
+            Unit::MilliSeconds => write!(f, "MILLI_SECONDS"),
+            Unit::None => write!(f, "NONE"),
+            Unit::Percent => write!(f, "PERCENT"),
+            Unit::Seconds => write!(f, "SECONDS"),
+            Unit::TeraBits => write!(f, "TERA_BITS"),
+            Unit::TeraBitsPerSecond => write!(f, "TERA_BITS_PER_SECOND"),
+            Unit::TeraBytes => write!(f, "TERA_BYTES"),
+            Unit::TeraBytesPerSecond => write!(f, "TERA_BYTES_PER_SECOND"),
+            Unit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

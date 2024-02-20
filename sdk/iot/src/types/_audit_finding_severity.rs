@@ -106,3 +106,14 @@ impl AuditFindingSeverity {
         }
     }
 }
+impl ::std::fmt::Display for AuditFindingSeverity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditFindingSeverity::Critical => write!(f, "CRITICAL"),
+            AuditFindingSeverity::High => write!(f, "HIGH"),
+            AuditFindingSeverity::Low => write!(f, "LOW"),
+            AuditFindingSeverity::Medium => write!(f, "MEDIUM"),
+            AuditFindingSeverity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

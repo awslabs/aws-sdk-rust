@@ -116,3 +116,16 @@ impl ExecutorState {
         }
     }
 }
+impl ::std::fmt::Display for ExecutorState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutorState::Created => write!(f, "CREATED"),
+            ExecutorState::Creating => write!(f, "CREATING"),
+            ExecutorState::Failed => write!(f, "FAILED"),
+            ExecutorState::Registered => write!(f, "REGISTERED"),
+            ExecutorState::Terminated => write!(f, "TERMINATED"),
+            ExecutorState::Terminating => write!(f, "TERMINATING"),
+            ExecutorState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

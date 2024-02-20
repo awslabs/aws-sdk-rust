@@ -96,3 +96,12 @@ impl VideoColorRange {
         }
     }
 }
+impl ::std::fmt::Display for VideoColorRange {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VideoColorRange::Full => write!(f, "FULL"),
+            VideoColorRange::Limited => write!(f, "LIMITED"),
+            VideoColorRange::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

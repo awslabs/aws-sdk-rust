@@ -91,3 +91,11 @@ impl OnPartialBatchItemFailureStreams {
         }
     }
 }
+impl ::std::fmt::Display for OnPartialBatchItemFailureStreams {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OnPartialBatchItemFailureStreams::AutomaticBisect => write!(f, "AUTOMATIC_BISECT"),
+            OnPartialBatchItemFailureStreams::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

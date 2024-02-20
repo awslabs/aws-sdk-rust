@@ -177,3 +177,25 @@ impl DynatraceConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for DynatraceConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DynatraceConnectorOperator::Addition => write!(f, "ADDITION"),
+            DynatraceConnectorOperator::Between => write!(f, "BETWEEN"),
+            DynatraceConnectorOperator::Division => write!(f, "DIVISION"),
+            DynatraceConnectorOperator::EqualTo => write!(f, "EQUAL_TO"),
+            DynatraceConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            DynatraceConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            DynatraceConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            DynatraceConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            DynatraceConnectorOperator::NoOp => write!(f, "NO_OP"),
+            DynatraceConnectorOperator::Projection => write!(f, "PROJECTION"),
+            DynatraceConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            DynatraceConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            DynatraceConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            DynatraceConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            DynatraceConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            DynatraceConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

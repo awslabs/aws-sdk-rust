@@ -96,3 +96,12 @@ impl DeviceSettingsSyncState {
         }
     }
 }
+impl ::std::fmt::Display for DeviceSettingsSyncState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceSettingsSyncState::Synced => write!(f, "SYNCED"),
+            DeviceSettingsSyncState::Syncing => write!(f, "SYNCING"),
+            DeviceSettingsSyncState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

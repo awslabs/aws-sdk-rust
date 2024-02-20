@@ -101,3 +101,13 @@ impl IsDefinedInJob {
         }
     }
 }
+impl ::std::fmt::Display for IsDefinedInJob {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IsDefinedInJob::False => write!(f, "FALSE"),
+            IsDefinedInJob::True => write!(f, "TRUE"),
+            IsDefinedInJob::UnknownValue => write!(f, "UNKNOWN"),
+            IsDefinedInJob::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

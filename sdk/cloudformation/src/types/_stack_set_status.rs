@@ -96,3 +96,12 @@ impl StackSetStatus {
         }
     }
 }
+impl ::std::fmt::Display for StackSetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackSetStatus::Active => write!(f, "ACTIVE"),
+            StackSetStatus::Deleted => write!(f, "DELETED"),
+            StackSetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

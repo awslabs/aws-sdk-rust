@@ -101,3 +101,13 @@ impl UsageReportExecutionErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for UsageReportExecutionErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageReportExecutionErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            UsageReportExecutionErrorCode::InternalServiceError => write!(f, "INTERNAL_SERVICE_ERROR"),
+            UsageReportExecutionErrorCode::ResourceNotFound => write!(f, "RESOURCE_NOT_FOUND"),
+            UsageReportExecutionErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

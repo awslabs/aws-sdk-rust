@@ -153,3 +153,21 @@ impl PaperSize {
         }
     }
 }
+impl ::std::fmt::Display for PaperSize {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PaperSize::A0 => write!(f, "A0"),
+            PaperSize::A1 => write!(f, "A1"),
+            PaperSize::A2 => write!(f, "A2"),
+            PaperSize::A3 => write!(f, "A3"),
+            PaperSize::A4 => write!(f, "A4"),
+            PaperSize::A5 => write!(f, "A5"),
+            PaperSize::JisB4 => write!(f, "JIS_B4"),
+            PaperSize::JisB5 => write!(f, "JIS_B5"),
+            PaperSize::UsLegal => write!(f, "US_LEGAL"),
+            PaperSize::UsLetter => write!(f, "US_LETTER"),
+            PaperSize::UsTabloidLedger => write!(f, "US_TABLOID_LEDGER"),
+            PaperSize::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

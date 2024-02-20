@@ -147,3 +147,20 @@ impl InstanceStorageResourceType {
         }
     }
 }
+impl ::std::fmt::Display for InstanceStorageResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceStorageResourceType::AgentEvents => write!(f, "AGENT_EVENTS"),
+            InstanceStorageResourceType::Attachments => write!(f, "ATTACHMENTS"),
+            InstanceStorageResourceType::CallRecordings => write!(f, "CALL_RECORDINGS"),
+            InstanceStorageResourceType::ChatTranscripts => write!(f, "CHAT_TRANSCRIPTS"),
+            InstanceStorageResourceType::ContactEvaluations => write!(f, "CONTACT_EVALUATIONS"),
+            InstanceStorageResourceType::ContactTraceRecords => write!(f, "CONTACT_TRACE_RECORDS"),
+            InstanceStorageResourceType::MediaStreams => write!(f, "MEDIA_STREAMS"),
+            InstanceStorageResourceType::RealTimeContactAnalysisSegments => write!(f, "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS"),
+            InstanceStorageResourceType::ScheduledReports => write!(f, "SCHEDULED_REPORTS"),
+            InstanceStorageResourceType::ScreenRecordings => write!(f, "SCREEN_RECORDINGS"),
+            InstanceStorageResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

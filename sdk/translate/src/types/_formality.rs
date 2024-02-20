@@ -96,3 +96,12 @@ impl Formality {
         }
     }
 }
+impl ::std::fmt::Display for Formality {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Formality::Formal => write!(f, "FORMAL"),
+            Formality::Informal => write!(f, "INFORMAL"),
+            Formality::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

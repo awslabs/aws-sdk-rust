@@ -96,3 +96,12 @@ impl ObjectLockMode {
         }
     }
 }
+impl ::std::fmt::Display for ObjectLockMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectLockMode::Compliance => write!(f, "COMPLIANCE"),
+            ObjectLockMode::Governance => write!(f, "GOVERNANCE"),
+            ObjectLockMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl LambdaFunctionRecommendationFilterName {
         }
     }
 }
+impl ::std::fmt::Display for LambdaFunctionRecommendationFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaFunctionRecommendationFilterName::Finding => write!(f, "Finding"),
+            LambdaFunctionRecommendationFilterName::FindingReasonCode => write!(f, "FindingReasonCode"),
+            LambdaFunctionRecommendationFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

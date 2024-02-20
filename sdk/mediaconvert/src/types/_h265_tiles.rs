@@ -96,3 +96,12 @@ impl H265Tiles {
         }
     }
 }
+impl ::std::fmt::Display for H265Tiles {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265Tiles::Disabled => write!(f, "DISABLED"),
+            H265Tiles::Enabled => write!(f, "ENABLED"),
+            H265Tiles::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl DocumentStatus {
         }
     }
 }
+impl ::std::fmt::Display for DocumentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentStatus::Failed => write!(f, "FAILED"),
+            DocumentStatus::Indexed => write!(f, "INDEXED"),
+            DocumentStatus::NotFound => write!(f, "NOT_FOUND"),
+            DocumentStatus::Processing => write!(f, "PROCESSING"),
+            DocumentStatus::Updated => write!(f, "UPDATED"),
+            DocumentStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            DocumentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

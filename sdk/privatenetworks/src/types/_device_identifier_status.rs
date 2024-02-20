@@ -96,3 +96,12 @@ impl DeviceIdentifierStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeviceIdentifierStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceIdentifierStatus::Active => write!(f, "ACTIVE"),
+            DeviceIdentifierStatus::Inactive => write!(f, "INACTIVE"),
+            DeviceIdentifierStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

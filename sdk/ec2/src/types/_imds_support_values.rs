@@ -91,3 +91,11 @@ impl ImdsSupportValues {
         }
     }
 }
+impl ::std::fmt::Display for ImdsSupportValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImdsSupportValues::V20 => write!(f, "v2.0"),
+            ImdsSupportValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

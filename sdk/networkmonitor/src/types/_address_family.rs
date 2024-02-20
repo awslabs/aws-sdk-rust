@@ -96,3 +96,12 @@ impl AddressFamily {
         }
     }
 }
+impl ::std::fmt::Display for AddressFamily {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AddressFamily::Ipv4 => write!(f, "IPV4"),
+            AddressFamily::Ipv6 => write!(f, "IPV6"),
+            AddressFamily::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -125,3 +125,13 @@ impl ReturnConsumedCapacity {
         }
     }
 }
+impl ::std::fmt::Display for ReturnConsumedCapacity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReturnConsumedCapacity::Indexes => write!(f, "INDEXES"),
+            ReturnConsumedCapacity::None => write!(f, "NONE"),
+            ReturnConsumedCapacity::Total => write!(f, "TOTAL"),
+            ReturnConsumedCapacity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl GlobalNetworkState {
         }
     }
 }
+impl ::std::fmt::Display for GlobalNetworkState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GlobalNetworkState::Available => write!(f, "AVAILABLE"),
+            GlobalNetworkState::Deleting => write!(f, "DELETING"),
+            GlobalNetworkState::Pending => write!(f, "PENDING"),
+            GlobalNetworkState::Updating => write!(f, "UPDATING"),
+            GlobalNetworkState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

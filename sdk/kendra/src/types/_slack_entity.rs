@@ -106,3 +106,14 @@ impl SlackEntity {
         }
     }
 }
+impl ::std::fmt::Display for SlackEntity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SlackEntity::DirectMessage => write!(f, "DIRECT_MESSAGE"),
+            SlackEntity::GroupMessage => write!(f, "GROUP_MESSAGE"),
+            SlackEntity::PrivateChannel => write!(f, "PRIVATE_CHANNEL"),
+            SlackEntity::PublicChannel => write!(f, "PUBLIC_CHANNEL"),
+            SlackEntity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl CustomerPolicyScopeIdType {
         }
     }
 }
+impl ::std::fmt::Display for CustomerPolicyScopeIdType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CustomerPolicyScopeIdType::Account => write!(f, "ACCOUNT"),
+            CustomerPolicyScopeIdType::OrgUnit => write!(f, "ORG_UNIT"),
+            CustomerPolicyScopeIdType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

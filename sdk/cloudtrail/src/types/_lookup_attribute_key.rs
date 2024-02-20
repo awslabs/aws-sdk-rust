@@ -135,3 +135,18 @@ impl LookupAttributeKey {
         }
     }
 }
+impl ::std::fmt::Display for LookupAttributeKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LookupAttributeKey::AccessKeyId => write!(f, "AccessKeyId"),
+            LookupAttributeKey::EventId => write!(f, "EventId"),
+            LookupAttributeKey::EventName => write!(f, "EventName"),
+            LookupAttributeKey::EventSource => write!(f, "EventSource"),
+            LookupAttributeKey::ReadOnly => write!(f, "ReadOnly"),
+            LookupAttributeKey::ResourceName => write!(f, "ResourceName"),
+            LookupAttributeKey::ResourceType => write!(f, "ResourceType"),
+            LookupAttributeKey::Username => write!(f, "Username"),
+            LookupAttributeKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

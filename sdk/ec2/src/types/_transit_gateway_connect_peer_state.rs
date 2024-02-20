@@ -106,3 +106,14 @@ impl TransitGatewayConnectPeerState {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayConnectPeerState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayConnectPeerState::Available => write!(f, "available"),
+            TransitGatewayConnectPeerState::Deleted => write!(f, "deleted"),
+            TransitGatewayConnectPeerState::Deleting => write!(f, "deleting"),
+            TransitGatewayConnectPeerState::Pending => write!(f, "pending"),
+            TransitGatewayConnectPeerState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

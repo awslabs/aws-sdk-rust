@@ -123,3 +123,16 @@ impl OperationType {
         }
     }
 }
+impl ::std::fmt::Display for OperationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationType::CreateService => write!(f, "CREATE_SERVICE"),
+            OperationType::DeleteService => write!(f, "DELETE_SERVICE"),
+            OperationType::PauseService => write!(f, "PAUSE_SERVICE"),
+            OperationType::ResumeService => write!(f, "RESUME_SERVICE"),
+            OperationType::StartDeployment => write!(f, "START_DEPLOYMENT"),
+            OperationType::UpdateService => write!(f, "UPDATE_SERVICE"),
+            OperationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl AudienceExportJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for AudienceExportJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudienceExportJobStatus::Active => write!(f, "ACTIVE"),
+            AudienceExportJobStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            AudienceExportJobStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            AudienceExportJobStatus::CreatePending => write!(f, "CREATE_PENDING"),
+            AudienceExportJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

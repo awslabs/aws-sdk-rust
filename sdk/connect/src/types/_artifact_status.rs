@@ -101,3 +101,13 @@ impl ArtifactStatus {
         }
     }
 }
+impl ::std::fmt::Display for ArtifactStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ArtifactStatus::Approved => write!(f, "APPROVED"),
+            ArtifactStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ArtifactStatus::Rejected => write!(f, "REJECTED"),
+            ArtifactStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

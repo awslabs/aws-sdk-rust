@@ -116,3 +116,16 @@ impl ComplianceSeverity {
         }
     }
 }
+impl ::std::fmt::Display for ComplianceSeverity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ComplianceSeverity::Critical => write!(f, "CRITICAL"),
+            ComplianceSeverity::High => write!(f, "HIGH"),
+            ComplianceSeverity::Informational => write!(f, "INFORMATIONAL"),
+            ComplianceSeverity::Low => write!(f, "LOW"),
+            ComplianceSeverity::Medium => write!(f, "MEDIUM"),
+            ComplianceSeverity::Unspecified => write!(f, "UNSPECIFIED"),
+            ComplianceSeverity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

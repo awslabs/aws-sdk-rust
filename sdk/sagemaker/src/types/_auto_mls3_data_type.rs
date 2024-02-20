@@ -101,3 +101,13 @@ impl AutoMls3DataType {
         }
     }
 }
+impl ::std::fmt::Display for AutoMls3DataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoMls3DataType::AugmentedManifestFile => write!(f, "AugmentedManifestFile"),
+            AutoMls3DataType::ManifestFile => write!(f, "ManifestFile"),
+            AutoMls3DataType::S3Prefix => write!(f, "S3Prefix"),
+            AutoMls3DataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

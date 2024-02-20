@@ -111,3 +111,15 @@ impl Eac3AtmosMeteringMode {
         }
     }
 }
+impl ::std::fmt::Display for Eac3AtmosMeteringMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3AtmosMeteringMode::ItuBs17701 => write!(f, "ITU_BS_1770_1"),
+            Eac3AtmosMeteringMode::ItuBs17702 => write!(f, "ITU_BS_1770_2"),
+            Eac3AtmosMeteringMode::ItuBs17703 => write!(f, "ITU_BS_1770_3"),
+            Eac3AtmosMeteringMode::ItuBs17704 => write!(f, "ITU_BS_1770_4"),
+            Eac3AtmosMeteringMode::LeqA => write!(f, "LEQ_A"),
+            Eac3AtmosMeteringMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

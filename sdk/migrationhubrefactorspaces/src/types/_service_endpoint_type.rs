@@ -96,3 +96,12 @@ impl ServiceEndpointType {
         }
     }
 }
+impl ::std::fmt::Display for ServiceEndpointType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceEndpointType::Lambda => write!(f, "LAMBDA"),
+            ServiceEndpointType::Url => write!(f, "URL"),
+            ServiceEndpointType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

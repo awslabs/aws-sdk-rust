@@ -91,3 +91,11 @@ impl AutomationSubtype {
         }
     }
 }
+impl ::std::fmt::Display for AutomationSubtype {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutomationSubtype::ChangeRequest => write!(f, "ChangeRequest"),
+            AutomationSubtype::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

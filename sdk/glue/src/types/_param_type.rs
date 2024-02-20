@@ -121,3 +121,17 @@ impl ParamType {
         }
     }
 }
+impl ::std::fmt::Display for ParamType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParamType::Bool => write!(f, "bool"),
+            ParamType::Complex => write!(f, "complex"),
+            ParamType::Float => write!(f, "float"),
+            ParamType::Int => write!(f, "int"),
+            ParamType::List => write!(f, "list"),
+            ParamType::Null => write!(f, "null"),
+            ParamType::Str => write!(f, "str"),
+            ParamType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

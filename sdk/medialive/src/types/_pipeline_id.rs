@@ -96,3 +96,12 @@ impl PipelineId {
         }
     }
 }
+impl ::std::fmt::Display for PipelineId {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PipelineId::Pipeline0 => write!(f, "PIPELINE_0"),
+            PipelineId::Pipeline1 => write!(f, "PIPELINE_1"),
+            PipelineId::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

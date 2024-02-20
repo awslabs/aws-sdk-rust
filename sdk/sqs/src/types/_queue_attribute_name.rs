@@ -219,3 +219,32 @@ impl QueueAttributeName {
         }
     }
 }
+impl ::std::fmt::Display for QueueAttributeName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueueAttributeName::All => write!(f, "All"),
+            QueueAttributeName::ApproximateNumberOfMessages => write!(f, "ApproximateNumberOfMessages"),
+            QueueAttributeName::ApproximateNumberOfMessagesDelayed => write!(f, "ApproximateNumberOfMessagesDelayed"),
+            QueueAttributeName::ApproximateNumberOfMessagesNotVisible => write!(f, "ApproximateNumberOfMessagesNotVisible"),
+            QueueAttributeName::ContentBasedDeduplication => write!(f, "ContentBasedDeduplication"),
+            QueueAttributeName::CreatedTimestamp => write!(f, "CreatedTimestamp"),
+            QueueAttributeName::DeduplicationScope => write!(f, "DeduplicationScope"),
+            QueueAttributeName::DelaySeconds => write!(f, "DelaySeconds"),
+            QueueAttributeName::FifoQueue => write!(f, "FifoQueue"),
+            QueueAttributeName::FifoThroughputLimit => write!(f, "FifoThroughputLimit"),
+            QueueAttributeName::KmsDataKeyReusePeriodSeconds => write!(f, "KmsDataKeyReusePeriodSeconds"),
+            QueueAttributeName::KmsMasterKeyId => write!(f, "KmsMasterKeyId"),
+            QueueAttributeName::LastModifiedTimestamp => write!(f, "LastModifiedTimestamp"),
+            QueueAttributeName::MaximumMessageSize => write!(f, "MaximumMessageSize"),
+            QueueAttributeName::MessageRetentionPeriod => write!(f, "MessageRetentionPeriod"),
+            QueueAttributeName::Policy => write!(f, "Policy"),
+            QueueAttributeName::QueueArn => write!(f, "QueueArn"),
+            QueueAttributeName::ReceiveMessageWaitTimeSeconds => write!(f, "ReceiveMessageWaitTimeSeconds"),
+            QueueAttributeName::RedriveAllowPolicy => write!(f, "RedriveAllowPolicy"),
+            QueueAttributeName::RedrivePolicy => write!(f, "RedrivePolicy"),
+            QueueAttributeName::SqsManagedSseEnabled => write!(f, "SqsManagedSseEnabled"),
+            QueueAttributeName::VisibilityTimeout => write!(f, "VisibilityTimeout"),
+            QueueAttributeName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

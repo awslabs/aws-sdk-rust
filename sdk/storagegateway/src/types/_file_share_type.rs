@@ -96,3 +96,12 @@ impl FileShareType {
         }
     }
 }
+impl ::std::fmt::Display for FileShareType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileShareType::Nfs => write!(f, "NFS"),
+            FileShareType::Smb => write!(f, "SMB"),
+            FileShareType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

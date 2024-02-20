@@ -96,3 +96,12 @@ impl ParameterValueType {
         }
     }
 }
+impl ::std::fmt::Display for ParameterValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParameterValueType::MultiValued => write!(f, "MULTI_VALUED"),
+            ParameterValueType::SingleValued => write!(f, "SINGLE_VALUED"),
+            ParameterValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

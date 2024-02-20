@@ -201,3 +201,29 @@ impl ClusterIssueCode {
         }
     }
 }
+impl ::std::fmt::Display for ClusterIssueCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClusterIssueCode::AccessDenied => write!(f, "AccessDenied"),
+            ClusterIssueCode::ClusterUnreachable => write!(f, "ClusterUnreachable"),
+            ClusterIssueCode::ConfigurationConflict => write!(f, "ConfigurationConflict"),
+            ClusterIssueCode::Ec2SecurityGroupNotFound => write!(f, "Ec2SecurityGroupNotFound"),
+            ClusterIssueCode::Ec2ServiceNotSubscribed => write!(f, "Ec2ServiceNotSubscribed"),
+            ClusterIssueCode::Ec2SubnetNotFound => write!(f, "Ec2SubnetNotFound"),
+            ClusterIssueCode::IamRoleNotFound => write!(f, "IamRoleNotFound"),
+            ClusterIssueCode::InsufficientFreeAddresses => write!(f, "InsufficientFreeAddresses"),
+            ClusterIssueCode::InternalFailure => write!(f, "InternalFailure"),
+            ClusterIssueCode::KmsGrantRevoked => write!(f, "KmsGrantRevoked"),
+            ClusterIssueCode::KmsKeyDisabled => write!(f, "KmsKeyDisabled"),
+            ClusterIssueCode::KmsKeyMarkedForDeletion => write!(f, "KmsKeyMarkedForDeletion"),
+            ClusterIssueCode::KmsKeyNotFound => write!(f, "KmsKeyNotFound"),
+            ClusterIssueCode::Other => write!(f, "Other"),
+            ClusterIssueCode::ResourceLimitExceeded => write!(f, "ResourceLimitExceeded"),
+            ClusterIssueCode::ResourceNotFound => write!(f, "ResourceNotFound"),
+            ClusterIssueCode::StsRegionalEndpointDisabled => write!(f, "StsRegionalEndpointDisabled"),
+            ClusterIssueCode::UnsupportedVersion => write!(f, "UnsupportedVersion"),
+            ClusterIssueCode::VpcNotFound => write!(f, "VpcNotFound"),
+            ClusterIssueCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

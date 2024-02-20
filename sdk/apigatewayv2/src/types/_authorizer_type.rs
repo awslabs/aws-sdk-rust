@@ -96,3 +96,12 @@ impl AuthorizerType {
         }
     }
 }
+impl ::std::fmt::Display for AuthorizerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthorizerType::Jwt => write!(f, "JWT"),
+            AuthorizerType::Request => write!(f, "REQUEST"),
+            AuthorizerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

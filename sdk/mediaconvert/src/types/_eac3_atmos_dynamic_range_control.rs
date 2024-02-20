@@ -96,3 +96,12 @@ impl Eac3AtmosDynamicRangeControl {
         }
     }
 }
+impl ::std::fmt::Display for Eac3AtmosDynamicRangeControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3AtmosDynamicRangeControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            Eac3AtmosDynamicRangeControl::Specified => write!(f, "SPECIFIED"),
+            Eac3AtmosDynamicRangeControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

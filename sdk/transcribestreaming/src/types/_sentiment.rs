@@ -106,3 +106,14 @@ impl Sentiment {
         }
     }
 }
+impl ::std::fmt::Display for Sentiment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Sentiment::Mixed => write!(f, "MIXED"),
+            Sentiment::Negative => write!(f, "NEGATIVE"),
+            Sentiment::Neutral => write!(f, "NEUTRAL"),
+            Sentiment::Positive => write!(f, "POSITIVE"),
+            Sentiment::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

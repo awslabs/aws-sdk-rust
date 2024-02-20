@@ -98,3 +98,12 @@ impl SingleSelectQuestionRuleCategoryAutomationCondition {
         }
     }
 }
+impl ::std::fmt::Display for SingleSelectQuestionRuleCategoryAutomationCondition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SingleSelectQuestionRuleCategoryAutomationCondition::NotPresent => write!(f, "NOT_PRESENT"),
+            SingleSelectQuestionRuleCategoryAutomationCondition::Present => write!(f, "PRESENT"),
+            SingleSelectQuestionRuleCategoryAutomationCondition::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

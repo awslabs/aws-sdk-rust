@@ -147,3 +147,20 @@ impl Comparator {
         }
     }
 }
+impl ::std::fmt::Display for Comparator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Comparator::DoesNotExist => write!(f, "DoesNotExist"),
+            Comparator::EqualTo => write!(f, "EqualTo"),
+            Comparator::Exists => write!(f, "Exists"),
+            Comparator::GreaterThan => write!(f, "GreaterThan"),
+            Comparator::GreaterThanOrEqualTo => write!(f, "GreaterThanOrEqualTo"),
+            Comparator::In => write!(f, "In"),
+            Comparator::LessThan => write!(f, "LessThan"),
+            Comparator::LessThanOrEqualTo => write!(f, "LessThanOrEqualTo"),
+            Comparator::NotEqualTo => write!(f, "NotEqualTo"),
+            Comparator::NotIn => write!(f, "NotIn"),
+            Comparator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ThresholdComparator {
         }
     }
 }
+impl ::std::fmt::Display for ThresholdComparator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThresholdComparator::GreaterThan => write!(f, "GREATER_THAN"),
+            ThresholdComparator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
+            ThresholdComparator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

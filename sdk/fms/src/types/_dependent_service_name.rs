@@ -106,3 +106,14 @@ impl DependentServiceName {
         }
     }
 }
+impl ::std::fmt::Display for DependentServiceName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DependentServiceName::AwsConfig => write!(f, "AWSCONFIG"),
+            DependentServiceName::AwsShieldAdvanced => write!(f, "AWSSHIELD_ADVANCED"),
+            DependentServiceName::AwsVirtualPrivateCloud => write!(f, "AWSVPC"),
+            DependentServiceName::Awswaf => write!(f, "AWSWAF"),
+            DependentServiceName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

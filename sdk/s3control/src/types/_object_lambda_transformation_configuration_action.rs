@@ -108,3 +108,14 @@ impl ObjectLambdaTransformationConfigurationAction {
         }
     }
 }
+impl ::std::fmt::Display for ObjectLambdaTransformationConfigurationAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectLambdaTransformationConfigurationAction::GetObject => write!(f, "GetObject"),
+            ObjectLambdaTransformationConfigurationAction::HeadObject => write!(f, "HeadObject"),
+            ObjectLambdaTransformationConfigurationAction::ListObjects => write!(f, "ListObjects"),
+            ObjectLambdaTransformationConfigurationAction::ListObjectsV2 => write!(f, "ListObjectsV2"),
+            ObjectLambdaTransformationConfigurationAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

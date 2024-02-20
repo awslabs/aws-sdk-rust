@@ -96,3 +96,12 @@ impl SortDirectionType {
         }
     }
 }
+impl ::std::fmt::Display for SortDirectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SortDirectionType::Ascending => write!(f, "ASCENDING"),
+            SortDirectionType::Descending => write!(f, "DESCENDING"),
+            SortDirectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

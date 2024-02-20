@@ -96,3 +96,12 @@ impl TestCaseScenarioType {
         }
     }
 }
+impl ::std::fmt::Display for TestCaseScenarioType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestCaseScenarioType::Advanced => write!(f, "Advanced"),
+            TestCaseScenarioType::Basic => write!(f, "Basic"),
+            TestCaseScenarioType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl ExportSortAttribute {
         }
     }
 }
+impl ::std::fmt::Display for ExportSortAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportSortAttribute::LastUpdatedDateTime => write!(f, "LastUpdatedDateTime"),
+            ExportSortAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ColumnNullable {
         }
     }
 }
+impl ::std::fmt::Display for ColumnNullable {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnNullable::NotNull => write!(f, "NOT_NULL"),
+            ColumnNullable::Nullable => write!(f, "NULLABLE"),
+            ColumnNullable::UnknownValue => write!(f, "UNKNOWN"),
+            ColumnNullable::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -100,6 +100,16 @@ impl PartyType {
         }
     }
 }
+impl ::std::fmt::Display for PartyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PartyType::Business => write!(f, "BUSINESS"),
+            PartyType::Individual => write!(f, "INDIVIDUAL"),
+            PartyType::Other => write!(f, "OTHER"),
+            PartyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}
 impl ::std::fmt::Debug for PartyType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         ::std::write!(f, "*** Sensitive Data Redacted ***")

@@ -116,3 +116,16 @@ impl M2tsSegmentationMarkers {
         }
     }
 }
+impl ::std::fmt::Display for M2tsSegmentationMarkers {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsSegmentationMarkers::Ebp => write!(f, "EBP"),
+            M2tsSegmentationMarkers::EbpLegacy => write!(f, "EBP_LEGACY"),
+            M2tsSegmentationMarkers::None => write!(f, "NONE"),
+            M2tsSegmentationMarkers::PsiSegstart => write!(f, "PSI_SEGSTART"),
+            M2tsSegmentationMarkers::RaiAdapt => write!(f, "RAI_ADAPT"),
+            M2tsSegmentationMarkers::RaiSegstart => write!(f, "RAI_SEGSTART"),
+            M2tsSegmentationMarkers::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

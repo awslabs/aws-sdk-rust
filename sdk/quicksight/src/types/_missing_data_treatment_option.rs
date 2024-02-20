@@ -101,3 +101,13 @@ impl MissingDataTreatmentOption {
         }
     }
 }
+impl ::std::fmt::Display for MissingDataTreatmentOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MissingDataTreatmentOption::Interpolate => write!(f, "INTERPOLATE"),
+            MissingDataTreatmentOption::ShowAsBlank => write!(f, "SHOW_AS_BLANK"),
+            MissingDataTreatmentOption::ShowAsZero => write!(f, "SHOW_AS_ZERO"),
+            MissingDataTreatmentOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

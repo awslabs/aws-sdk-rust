@@ -96,3 +96,12 @@ impl CertificateTransparencyLoggingPreference {
         }
     }
 }
+impl ::std::fmt::Display for CertificateTransparencyLoggingPreference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateTransparencyLoggingPreference::Disabled => write!(f, "DISABLED"),
+            CertificateTransparencyLoggingPreference::Enabled => write!(f, "ENABLED"),
+            CertificateTransparencyLoggingPreference::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl RequestCancelActivityTaskFailedCause {
         }
     }
 }
+impl ::std::fmt::Display for RequestCancelActivityTaskFailedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RequestCancelActivityTaskFailedCause::ActivityIdUnknown => write!(f, "ACTIVITY_ID_UNKNOWN"),
+            RequestCancelActivityTaskFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
+            RequestCancelActivityTaskFailedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

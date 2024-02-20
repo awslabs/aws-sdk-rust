@@ -101,3 +101,13 @@ impl DocumentThumbnailType {
         }
     }
 }
+impl ::std::fmt::Display for DocumentThumbnailType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentThumbnailType::Large => write!(f, "LARGE"),
+            DocumentThumbnailType::Small => write!(f, "SMALL"),
+            DocumentThumbnailType::SmallHq => write!(f, "SMALL_HQ"),
+            DocumentThumbnailType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

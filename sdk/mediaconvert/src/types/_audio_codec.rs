@@ -159,3 +159,22 @@ impl AudioCodec {
         }
     }
 }
+impl ::std::fmt::Display for AudioCodec {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioCodec::Aac => write!(f, "AAC"),
+            AudioCodec::Ac3 => write!(f, "AC3"),
+            AudioCodec::Aiff => write!(f, "AIFF"),
+            AudioCodec::Eac3 => write!(f, "EAC3"),
+            AudioCodec::Eac3Atmos => write!(f, "EAC3_ATMOS"),
+            AudioCodec::Flac => write!(f, "FLAC"),
+            AudioCodec::Mp2 => write!(f, "MP2"),
+            AudioCodec::Mp3 => write!(f, "MP3"),
+            AudioCodec::Opus => write!(f, "OPUS"),
+            AudioCodec::Passthrough => write!(f, "PASSTHROUGH"),
+            AudioCodec::Vorbis => write!(f, "VORBIS"),
+            AudioCodec::Wav => write!(f, "WAV"),
+            AudioCodec::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

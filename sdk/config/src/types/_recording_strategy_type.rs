@@ -105,3 +105,13 @@ impl RecordingStrategyType {
         }
     }
 }
+impl ::std::fmt::Display for RecordingStrategyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecordingStrategyType::AllSupportedResourceTypes => write!(f, "ALL_SUPPORTED_RESOURCE_TYPES"),
+            RecordingStrategyType::ExclusionByResourceTypes => write!(f, "EXCLUSION_BY_RESOURCE_TYPES"),
+            RecordingStrategyType::InclusionByResourceTypes => write!(f, "INCLUSION_BY_RESOURCE_TYPES"),
+            RecordingStrategyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

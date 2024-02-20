@@ -121,3 +121,17 @@ impl GraphStatus {
         }
     }
 }
+impl ::std::fmt::Display for GraphStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GraphStatus::Available => write!(f, "AVAILABLE"),
+            GraphStatus::Creating => write!(f, "CREATING"),
+            GraphStatus::Deleting => write!(f, "DELETING"),
+            GraphStatus::Failed => write!(f, "FAILED"),
+            GraphStatus::Resetting => write!(f, "RESETTING"),
+            GraphStatus::Snapshotting => write!(f, "SNAPSHOTTING"),
+            GraphStatus::Updating => write!(f, "UPDATING"),
+            GraphStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

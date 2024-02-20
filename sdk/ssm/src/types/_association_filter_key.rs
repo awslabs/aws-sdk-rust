@@ -135,3 +135,18 @@ impl AssociationFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for AssociationFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationFilterKey::AssociationId => write!(f, "AssociationId"),
+            AssociationFilterKey::AssociationName => write!(f, "AssociationName"),
+            AssociationFilterKey::Status => write!(f, "AssociationStatusName"),
+            AssociationFilterKey::InstanceId => write!(f, "InstanceId"),
+            AssociationFilterKey::LastExecutedAfter => write!(f, "LastExecutedAfter"),
+            AssociationFilterKey::LastExecutedBefore => write!(f, "LastExecutedBefore"),
+            AssociationFilterKey::Name => write!(f, "Name"),
+            AssociationFilterKey::ResourceGroupName => write!(f, "ResourceGroupName"),
+            AssociationFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

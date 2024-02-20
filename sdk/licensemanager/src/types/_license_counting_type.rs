@@ -106,3 +106,14 @@ impl LicenseCountingType {
         }
     }
 }
+impl ::std::fmt::Display for LicenseCountingType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LicenseCountingType::Core => write!(f, "Core"),
+            LicenseCountingType::Instance => write!(f, "Instance"),
+            LicenseCountingType::Socket => write!(f, "Socket"),
+            LicenseCountingType::Vcpu => write!(f, "vCPU"),
+            LicenseCountingType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

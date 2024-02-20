@@ -135,3 +135,18 @@ impl DataViewStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataViewStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataViewStatus::Cancelled => write!(f, "CANCELLED"),
+            DataViewStatus::Failed => write!(f, "FAILED"),
+            DataViewStatus::FailedCleanupFailed => write!(f, "FAILED_CLEANUP_FAILED"),
+            DataViewStatus::Pending => write!(f, "PENDING"),
+            DataViewStatus::Running => write!(f, "RUNNING"),
+            DataViewStatus::Starting => write!(f, "STARTING"),
+            DataViewStatus::Success => write!(f, "SUCCESS"),
+            DataViewStatus::Timeout => write!(f, "TIMEOUT"),
+            DataViewStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

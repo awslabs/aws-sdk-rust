@@ -96,3 +96,12 @@ impl CoreDeviceStatus {
         }
     }
 }
+impl ::std::fmt::Display for CoreDeviceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CoreDeviceStatus::Healthy => write!(f, "HEALTHY"),
+            CoreDeviceStatus::Unhealthy => write!(f, "UNHEALTHY"),
+            CoreDeviceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl HlsIvInManifest {
         }
     }
 }
+impl ::std::fmt::Display for HlsIvInManifest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsIvInManifest::Exclude => write!(f, "EXCLUDE"),
+            HlsIvInManifest::Include => write!(f, "INCLUDE"),
+            HlsIvInManifest::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

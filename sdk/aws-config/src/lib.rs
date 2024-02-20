@@ -314,6 +314,12 @@ mod loader {
 
         /// Override the timeout config used to build [`SdkConfig`].
         ///
+        /// This will be merged with timeouts coming from the timeout information provider, which
+        /// currently includes a default `CONNECT` timeout of `3.1s`.
+        ///
+        /// If you want to disable timeouts, use [`TimeoutConfig::disabled`]. If you want to disable
+        /// a specific timeout, use `TimeoutConfig::set_<type>(None)`.
+        ///
         /// **Note: This only sets timeouts for calls to AWS services.** Timeouts for the credentials
         /// provider chain are configured separately.
         ///
@@ -728,14 +734,14 @@ mod loader {
                     .await
             };
 
-            let timeout_config = if let Some(timeout_config) = self.timeout_config {
-                timeout_config
-            } else {
-                timeout_config::default_provider()
-                    .configure(&conf)
-                    .timeout_config()
-                    .await
-            };
+            let base_config = timeout_config::default_provider()
+                .configure(&conf)
+                .timeout_config()
+                .await;
+            let mut timeout_config = self
+                .timeout_config
+                .unwrap_or_else(|| TimeoutConfig::builder().build());
+            timeout_config.take_defaults_from(&base_config);
 
             let credentials_provider = match self.credentials_provider {
                 CredentialsProviderOption::Set(provider) => Some(provider),

@@ -91,3 +91,11 @@ impl NamespaceDeletionStatusErrorCodes {
         }
     }
 }
+impl ::std::fmt::Display for NamespaceDeletionStatusErrorCodes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NamespaceDeletionStatusErrorCodes::ValidationFailed => write!(f, "VALIDATION_FAILED"),
+            NamespaceDeletionStatusErrorCodes::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

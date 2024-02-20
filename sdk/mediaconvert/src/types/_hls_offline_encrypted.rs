@@ -96,3 +96,12 @@ impl HlsOfflineEncrypted {
         }
     }
 }
+impl ::std::fmt::Display for HlsOfflineEncrypted {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsOfflineEncrypted::Disabled => write!(f, "DISABLED"),
+            HlsOfflineEncrypted::Enabled => write!(f, "ENABLED"),
+            HlsOfflineEncrypted::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

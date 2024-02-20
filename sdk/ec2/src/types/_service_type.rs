@@ -101,3 +101,13 @@ impl ServiceType {
         }
     }
 }
+impl ::std::fmt::Display for ServiceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceType::Gateway => write!(f, "Gateway"),
+            ServiceType::GatewayLoadBalancer => write!(f, "GatewayLoadBalancer"),
+            ServiceType::Interface => write!(f, "Interface"),
+            ServiceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

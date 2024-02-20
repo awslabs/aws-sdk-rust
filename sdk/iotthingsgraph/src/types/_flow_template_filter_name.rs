@@ -91,3 +91,11 @@ impl FlowTemplateFilterName {
         }
     }
 }
+impl ::std::fmt::Display for FlowTemplateFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FlowTemplateFilterName::DeviceModelId => write!(f, "DEVICE_MODEL_ID"),
+            FlowTemplateFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

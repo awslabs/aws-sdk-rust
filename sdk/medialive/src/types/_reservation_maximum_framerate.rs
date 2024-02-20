@@ -96,3 +96,12 @@ impl ReservationMaximumFramerate {
         }
     }
 }
+impl ::std::fmt::Display for ReservationMaximumFramerate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservationMaximumFramerate::Max30Fps => write!(f, "MAX_30_FPS"),
+            ReservationMaximumFramerate::Max60Fps => write!(f, "MAX_60_FPS"),
+            ReservationMaximumFramerate::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl TermLength {
         }
     }
 }
+impl ::std::fmt::Display for TermLength {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TermLength::OneYear => write!(f, "ONE_YEAR"),
+            TermLength::ThreeYear => write!(f, "THREE_YEAR"),
+            TermLength::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

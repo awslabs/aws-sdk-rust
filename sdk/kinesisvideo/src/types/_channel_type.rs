@@ -96,3 +96,12 @@ impl ChannelType {
         }
     }
 }
+impl ::std::fmt::Display for ChannelType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelType::FullMesh => write!(f, "FULL_MESH"),
+            ChannelType::SingleMaster => write!(f, "SINGLE_MASTER"),
+            ChannelType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

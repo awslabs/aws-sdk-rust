@@ -96,3 +96,12 @@ impl AnalyticsIntentStageField {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsIntentStageField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsIntentStageField::IntentStageName => write!(f, "IntentStageName"),
+            AnalyticsIntentStageField::SwitchedToIntent => write!(f, "SwitchedToIntent"),
+            AnalyticsIntentStageField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl DataSourceRunStatus {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceRunStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceRunStatus::Failed => write!(f, "FAILED"),
+            DataSourceRunStatus::PartiallySucceeded => write!(f, "PARTIALLY_SUCCEEDED"),
+            DataSourceRunStatus::Requested => write!(f, "REQUESTED"),
+            DataSourceRunStatus::Running => write!(f, "RUNNING"),
+            DataSourceRunStatus::Success => write!(f, "SUCCESS"),
+            DataSourceRunStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

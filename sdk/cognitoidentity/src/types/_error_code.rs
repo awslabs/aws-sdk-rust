@@ -96,3 +96,12 @@ impl ErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ErrorCode::AccessDenied => write!(f, "AccessDenied"),
+            ErrorCode::InternalServerError => write!(f, "InternalServerError"),
+            ErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

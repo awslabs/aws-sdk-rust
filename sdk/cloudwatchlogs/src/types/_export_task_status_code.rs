@@ -116,3 +116,16 @@ impl ExportTaskStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ExportTaskStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportTaskStatusCode::Cancelled => write!(f, "CANCELLED"),
+            ExportTaskStatusCode::Completed => write!(f, "COMPLETED"),
+            ExportTaskStatusCode::Failed => write!(f, "FAILED"),
+            ExportTaskStatusCode::Pending => write!(f, "PENDING"),
+            ExportTaskStatusCode::PendingCancel => write!(f, "PENDING_CANCEL"),
+            ExportTaskStatusCode::Running => write!(f, "RUNNING"),
+            ExportTaskStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

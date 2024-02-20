@@ -96,3 +96,12 @@ impl GroupBy {
         }
     }
 }
+impl ::std::fmt::Display for GroupBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupBy::All => write!(f, "ALL"),
+            GroupBy::Yearly => write!(f, "YEARLY"),
+            GroupBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

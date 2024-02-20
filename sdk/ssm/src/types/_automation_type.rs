@@ -96,3 +96,12 @@ impl AutomationType {
         }
     }
 }
+impl ::std::fmt::Display for AutomationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutomationType::CrossAccount => write!(f, "CrossAccount"),
+            AutomationType::Local => write!(f, "Local"),
+            AutomationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

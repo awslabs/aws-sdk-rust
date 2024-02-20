@@ -106,3 +106,14 @@ impl TransitGatewayPrefixListReferenceState {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayPrefixListReferenceState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayPrefixListReferenceState::Available => write!(f, "available"),
+            TransitGatewayPrefixListReferenceState::Deleting => write!(f, "deleting"),
+            TransitGatewayPrefixListReferenceState::Modifying => write!(f, "modifying"),
+            TransitGatewayPrefixListReferenceState::Pending => write!(f, "pending"),
+            TransitGatewayPrefixListReferenceState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ExportViewType {
         }
     }
 }
+impl ::std::fmt::Display for ExportViewType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExportViewType::NewAndOldImages => write!(f, "NEW_AND_OLD_IMAGES"),
+            ExportViewType::NewImage => write!(f, "NEW_IMAGE"),
+            ExportViewType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

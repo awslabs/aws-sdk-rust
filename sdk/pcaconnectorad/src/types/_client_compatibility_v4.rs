@@ -101,3 +101,13 @@ impl ClientCompatibilityV4 {
         }
     }
 }
+impl ::std::fmt::Display for ClientCompatibilityV4 {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientCompatibilityV4::WindowsServer2012 => write!(f, "WINDOWS_SERVER_2012"),
+            ClientCompatibilityV4::WindowsServer2012R2 => write!(f, "WINDOWS_SERVER_2012_R2"),
+            ClientCompatibilityV4::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
+            ClientCompatibilityV4::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

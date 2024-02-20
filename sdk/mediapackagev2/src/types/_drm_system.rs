@@ -106,3 +106,14 @@ impl DrmSystem {
         }
     }
 }
+impl ::std::fmt::Display for DrmSystem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DrmSystem::ClearKeyAes128 => write!(f, "CLEAR_KEY_AES_128"),
+            DrmSystem::Fairplay => write!(f, "FAIRPLAY"),
+            DrmSystem::Playready => write!(f, "PLAYREADY"),
+            DrmSystem::Widevine => write!(f, "WIDEVINE"),
+            DrmSystem::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

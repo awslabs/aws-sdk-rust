@@ -96,3 +96,12 @@ impl NetworkProfileType {
         }
     }
 }
+impl ::std::fmt::Display for NetworkProfileType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkProfileType::Curated => write!(f, "CURATED"),
+            NetworkProfileType::Private => write!(f, "PRIVATE"),
+            NetworkProfileType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

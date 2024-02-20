@@ -111,3 +111,15 @@ impl ProviderType {
         }
     }
 }
+impl ::std::fmt::Display for ProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProviderType::Bitbucket => write!(f, "Bitbucket"),
+            ProviderType::Github => write!(f, "GitHub"),
+            ProviderType::GithubEnterpriseServer => write!(f, "GitHubEnterpriseServer"),
+            ProviderType::Gitlab => write!(f, "GitLab"),
+            ProviderType::GitlabSelfManaged => write!(f, "GitLabSelfManaged"),
+            ProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

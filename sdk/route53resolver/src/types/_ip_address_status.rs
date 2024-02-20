@@ -159,3 +159,22 @@ impl IpAddressStatus {
         }
     }
 }
+impl ::std::fmt::Display for IpAddressStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IpAddressStatus::Attached => write!(f, "ATTACHED"),
+            IpAddressStatus::Attaching => write!(f, "ATTACHING"),
+            IpAddressStatus::Creating => write!(f, "CREATING"),
+            IpAddressStatus::DeleteFailedFasExpired => write!(f, "DELETE_FAILED_FAS_EXPIRED"),
+            IpAddressStatus::Deleting => write!(f, "DELETING"),
+            IpAddressStatus::Detaching => write!(f, "DETACHING"),
+            IpAddressStatus::FailedCreation => write!(f, "FAILED_CREATION"),
+            IpAddressStatus::FailedResourceGone => write!(f, "FAILED_RESOURCE_GONE"),
+            IpAddressStatus::RemapAttaching => write!(f, "REMAP_ATTACHING"),
+            IpAddressStatus::RemapDetaching => write!(f, "REMAP_DETACHING"),
+            IpAddressStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            IpAddressStatus::Updating => write!(f, "UPDATING"),
+            IpAddressStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

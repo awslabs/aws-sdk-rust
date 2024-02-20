@@ -111,3 +111,15 @@ impl ScalingBehavior {
         }
     }
 }
+impl ::std::fmt::Display for ScalingBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScalingBehavior::Default => write!(f, "DEFAULT"),
+            ScalingBehavior::Fill => write!(f, "FILL"),
+            ScalingBehavior::Fit => write!(f, "FIT"),
+            ScalingBehavior::FitNoUpscale => write!(f, "FIT_NO_UPSCALE"),
+            ScalingBehavior::StretchToOutput => write!(f, "STRETCH_TO_OUTPUT"),
+            ScalingBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

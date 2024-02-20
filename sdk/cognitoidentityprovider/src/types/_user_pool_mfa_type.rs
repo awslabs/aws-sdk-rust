@@ -101,3 +101,13 @@ impl UserPoolMfaType {
         }
     }
 }
+impl ::std::fmt::Display for UserPoolMfaType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserPoolMfaType::Off => write!(f, "OFF"),
+            UserPoolMfaType::On => write!(f, "ON"),
+            UserPoolMfaType::Optional => write!(f, "OPTIONAL"),
+            UserPoolMfaType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl NamespaceType {
         }
     }
 }
+impl ::std::fmt::Display for NamespaceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NamespaceType::DnsPrivate => write!(f, "DNS_PRIVATE"),
+            NamespaceType::DnsPublic => write!(f, "DNS_PUBLIC"),
+            NamespaceType::Http => write!(f, "HTTP"),
+            NamespaceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

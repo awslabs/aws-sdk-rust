@@ -96,3 +96,12 @@ impl Eac3AtmosDownmixControl {
         }
     }
 }
+impl ::std::fmt::Display for Eac3AtmosDownmixControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Eac3AtmosDownmixControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            Eac3AtmosDownmixControl::Specified => write!(f, "SPECIFIED"),
+            Eac3AtmosDownmixControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

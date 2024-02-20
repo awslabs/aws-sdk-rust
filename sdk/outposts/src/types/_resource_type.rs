@@ -96,3 +96,12 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Order => write!(f, "ORDER"),
+            ResourceType::Outpost => write!(f, "OUTPOST"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

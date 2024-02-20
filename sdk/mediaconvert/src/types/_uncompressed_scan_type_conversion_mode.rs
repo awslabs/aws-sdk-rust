@@ -96,3 +96,12 @@ impl UncompressedScanTypeConversionMode {
         }
     }
 }
+impl ::std::fmt::Display for UncompressedScanTypeConversionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UncompressedScanTypeConversionMode::Interlaced => write!(f, "INTERLACED"),
+            UncompressedScanTypeConversionMode::InterlacedOptimize => write!(f, "INTERLACED_OPTIMIZE"),
+            UncompressedScanTypeConversionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

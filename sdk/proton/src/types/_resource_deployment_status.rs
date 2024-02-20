@@ -101,3 +101,13 @@ impl ResourceDeploymentStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceDeploymentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceDeploymentStatus::Failed => write!(f, "FAILED"),
+            ResourceDeploymentStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ResourceDeploymentStatus::Succeeded => write!(f, "SUCCEEDED"),
+            ResourceDeploymentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

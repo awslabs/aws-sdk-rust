@@ -91,3 +91,11 @@ impl DocumentMetadataEnum {
         }
     }
 }
+impl ::std::fmt::Display for DocumentMetadataEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentMetadataEnum::DocumentReviews => write!(f, "DocumentReviews"),
+            DocumentMetadataEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

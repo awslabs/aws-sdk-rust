@@ -101,3 +101,13 @@ impl EntityState {
         }
     }
 }
+impl ::std::fmt::Display for EntityState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EntityState::Deleted => write!(f, "DELETED"),
+            EntityState::Disabled => write!(f, "DISABLED"),
+            EntityState::Enabled => write!(f, "ENABLED"),
+            EntityState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

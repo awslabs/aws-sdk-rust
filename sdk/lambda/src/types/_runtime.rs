@@ -303,3 +303,46 @@ impl Runtime {
         }
     }
 }
+impl ::std::fmt::Display for Runtime {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Runtime::Dotnet6 => write!(f, "dotnet6"),
+            Runtime::Dotnetcore10 => write!(f, "dotnetcore1.0"),
+            Runtime::Dotnetcore20 => write!(f, "dotnetcore2.0"),
+            Runtime::Dotnetcore21 => write!(f, "dotnetcore2.1"),
+            Runtime::Dotnetcore31 => write!(f, "dotnetcore3.1"),
+            Runtime::Go1x => write!(f, "go1.x"),
+            Runtime::Java11 => write!(f, "java11"),
+            Runtime::Java17 => write!(f, "java17"),
+            Runtime::Java21 => write!(f, "java21"),
+            Runtime::Java8 => write!(f, "java8"),
+            Runtime::Java8al2 => write!(f, "java8.al2"),
+            Runtime::Nodejs => write!(f, "nodejs"),
+            Runtime::Nodejs10x => write!(f, "nodejs10.x"),
+            Runtime::Nodejs12x => write!(f, "nodejs12.x"),
+            Runtime::Nodejs14x => write!(f, "nodejs14.x"),
+            Runtime::Nodejs16x => write!(f, "nodejs16.x"),
+            Runtime::Nodejs18x => write!(f, "nodejs18.x"),
+            Runtime::Nodejs20x => write!(f, "nodejs20.x"),
+            Runtime::Nodejs43 => write!(f, "nodejs4.3"),
+            Runtime::Nodejs43edge => write!(f, "nodejs4.3-edge"),
+            Runtime::Nodejs610 => write!(f, "nodejs6.10"),
+            Runtime::Nodejs810 => write!(f, "nodejs8.10"),
+            Runtime::Provided => write!(f, "provided"),
+            Runtime::Providedal2 => write!(f, "provided.al2"),
+            Runtime::Providedal2023 => write!(f, "provided.al2023"),
+            Runtime::Python27 => write!(f, "python2.7"),
+            Runtime::Python310 => write!(f, "python3.10"),
+            Runtime::Python311 => write!(f, "python3.11"),
+            Runtime::Python312 => write!(f, "python3.12"),
+            Runtime::Python36 => write!(f, "python3.6"),
+            Runtime::Python37 => write!(f, "python3.7"),
+            Runtime::Python38 => write!(f, "python3.8"),
+            Runtime::Python39 => write!(f, "python3.9"),
+            Runtime::Ruby25 => write!(f, "ruby2.5"),
+            Runtime::Ruby27 => write!(f, "ruby2.7"),
+            Runtime::Ruby32 => write!(f, "ruby3.2"),
+            Runtime::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

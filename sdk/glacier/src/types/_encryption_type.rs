@@ -96,3 +96,12 @@ impl EncryptionType {
         }
     }
 }
+impl ::std::fmt::Display for EncryptionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EncryptionType::S3 => write!(f, "AES256"),
+            EncryptionType::Kms => write!(f, "aws:kms"),
+            EncryptionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

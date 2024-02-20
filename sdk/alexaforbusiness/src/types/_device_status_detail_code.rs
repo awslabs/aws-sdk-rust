@@ -189,3 +189,27 @@ impl DeviceStatusDetailCode {
         }
     }
 }
+impl ::std::fmt::Display for DeviceStatusDetailCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceStatusDetailCode::AssociationRejection => write!(f, "ASSOCIATION_REJECTION"),
+            DeviceStatusDetailCode::AuthenticationFailure => write!(f, "AUTHENTICATION_FAILURE"),
+            DeviceStatusDetailCode::CertificateAuthorityAccessDenied => write!(f, "CERTIFICATE_AUTHORITY_ACCESS_DENIED"),
+            DeviceStatusDetailCode::CertificateIssuingLimitExceeded => write!(f, "CERTIFICATE_ISSUING_LIMIT_EXCEEDED"),
+            DeviceStatusDetailCode::CredentialsAccessFailure => write!(f, "CREDENTIALS_ACCESS_FAILURE"),
+            DeviceStatusDetailCode::DeviceSoftwareUpdateNeeded => write!(f, "DEVICE_SOFTWARE_UPDATE_NEEDED"),
+            DeviceStatusDetailCode::DeviceWasOffline => write!(f, "DEVICE_WAS_OFFLINE"),
+            DeviceStatusDetailCode::DhcpFailure => write!(f, "DHCP_FAILURE"),
+            DeviceStatusDetailCode::DnsFailure => write!(f, "DNS_FAILURE"),
+            DeviceStatusDetailCode::InternetUnavailable => write!(f, "INTERNET_UNAVAILABLE"),
+            DeviceStatusDetailCode::InvalidCertificateAuthority => write!(f, "INVALID_CERTIFICATE_AUTHORITY"),
+            DeviceStatusDetailCode::InvalidPasswordState => write!(f, "INVALID_PASSWORD_STATE"),
+            DeviceStatusDetailCode::NetworkProfileNotFound => write!(f, "NETWORK_PROFILE_NOT_FOUND"),
+            DeviceStatusDetailCode::PasswordManagerAccessDenied => write!(f, "PASSWORD_MANAGER_ACCESS_DENIED"),
+            DeviceStatusDetailCode::PasswordNotFound => write!(f, "PASSWORD_NOT_FOUND"),
+            DeviceStatusDetailCode::TlsVersionMismatch => write!(f, "TLS_VERSION_MISMATCH"),
+            DeviceStatusDetailCode::UnknownFailure => write!(f, "UNKNOWN_FAILURE"),
+            DeviceStatusDetailCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

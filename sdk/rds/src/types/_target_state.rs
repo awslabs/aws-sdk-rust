@@ -101,3 +101,13 @@ impl TargetState {
         }
     }
 }
+impl ::std::fmt::Display for TargetState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetState::Available => write!(f, "AVAILABLE"),
+            TargetState::Registering => write!(f, "REGISTERING"),
+            TargetState::Unavailable => write!(f, "UNAVAILABLE"),
+            TargetState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl H265QualityTuningLevel {
         }
     }
 }
+impl ::std::fmt::Display for H265QualityTuningLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265QualityTuningLevel::MultiPassHq => write!(f, "MULTI_PASS_HQ"),
+            H265QualityTuningLevel::SinglePass => write!(f, "SINGLE_PASS"),
+            H265QualityTuningLevel::SinglePassHq => write!(f, "SINGLE_PASS_HQ"),
+            H265QualityTuningLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

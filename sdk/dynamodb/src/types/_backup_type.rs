@@ -101,3 +101,13 @@ impl BackupType {
         }
     }
 }
+impl ::std::fmt::Display for BackupType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackupType::AwsBackup => write!(f, "AWS_BACKUP"),
+            BackupType::System => write!(f, "SYSTEM"),
+            BackupType::User => write!(f, "USER"),
+            BackupType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -123,3 +123,16 @@ impl RelationalDatabaseMetricName {
         }
     }
 }
+impl ::std::fmt::Display for RelationalDatabaseMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelationalDatabaseMetricName::CpuUtilization => write!(f, "CPUUtilization"),
+            RelationalDatabaseMetricName::DatabaseConnections => write!(f, "DatabaseConnections"),
+            RelationalDatabaseMetricName::DiskQueueDepth => write!(f, "DiskQueueDepth"),
+            RelationalDatabaseMetricName::FreeStorageSpace => write!(f, "FreeStorageSpace"),
+            RelationalDatabaseMetricName::NetworkReceiveThroughput => write!(f, "NetworkReceiveThroughput"),
+            RelationalDatabaseMetricName::NetworkTransmitThroughput => write!(f, "NetworkTransmitThroughput"),
+            RelationalDatabaseMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

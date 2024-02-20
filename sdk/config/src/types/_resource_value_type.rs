@@ -91,3 +91,11 @@ impl ResourceValueType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceValueType::ResourceId => write!(f, "RESOURCE_ID"),
+            ResourceValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

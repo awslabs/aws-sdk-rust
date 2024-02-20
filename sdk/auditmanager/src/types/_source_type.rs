@@ -111,3 +111,15 @@ impl SourceType {
         }
     }
 }
+impl ::std::fmt::Display for SourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SourceType::AwsApiCall => write!(f, "AWS_API_Call"),
+            SourceType::AwsCloudtrail => write!(f, "AWS_Cloudtrail"),
+            SourceType::AwsConfig => write!(f, "AWS_Config"),
+            SourceType::AwsSecurityHub => write!(f, "AWS_Security_Hub"),
+            SourceType::Manual => write!(f, "MANUAL"),
+            SourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

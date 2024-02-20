@@ -141,3 +141,19 @@ impl SchemaExtensionStatus {
         }
     }
 }
+impl ::std::fmt::Display for SchemaExtensionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SchemaExtensionStatus::CancelInProgress => write!(f, "CancelInProgress"),
+            SchemaExtensionStatus::Cancelled => write!(f, "Cancelled"),
+            SchemaExtensionStatus::Completed => write!(f, "Completed"),
+            SchemaExtensionStatus::CreatingSnapshot => write!(f, "CreatingSnapshot"),
+            SchemaExtensionStatus::Failed => write!(f, "Failed"),
+            SchemaExtensionStatus::Initializing => write!(f, "Initializing"),
+            SchemaExtensionStatus::Replicating => write!(f, "Replicating"),
+            SchemaExtensionStatus::RollbackInProgress => write!(f, "RollbackInProgress"),
+            SchemaExtensionStatus::UpdatingSchema => write!(f, "UpdatingSchema"),
+            SchemaExtensionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

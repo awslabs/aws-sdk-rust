@@ -96,3 +96,12 @@ impl MapType {
         }
     }
 }
+impl ::std::fmt::Display for MapType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MapType::Directory => write!(f, "DIRECTORY"),
+            MapType::File => write!(f, "FILE"),
+            MapType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

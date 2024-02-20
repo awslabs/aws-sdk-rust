@@ -177,3 +177,25 @@ impl AppLaunchStatus {
         }
     }
 }
+impl ::std::fmt::Display for AppLaunchStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppLaunchStatus::ConfigurationInvalid => write!(f, "CONFIGURATION_INVALID"),
+            AppLaunchStatus::ConfigurationInProgress => write!(f, "CONFIGURATION_IN_PROGRESS"),
+            AppLaunchStatus::DeltaLaunchFailed => write!(f, "DELTA_LAUNCH_FAILED"),
+            AppLaunchStatus::DeltaLaunchInProgress => write!(f, "DELTA_LAUNCH_IN_PROGRESS"),
+            AppLaunchStatus::Launched => write!(f, "LAUNCHED"),
+            AppLaunchStatus::LaunchFailed => write!(f, "LAUNCH_FAILED"),
+            AppLaunchStatus::LaunchInProgress => write!(f, "LAUNCH_IN_PROGRESS"),
+            AppLaunchStatus::LaunchPending => write!(f, "LAUNCH_PENDING"),
+            AppLaunchStatus::PartiallyLaunched => write!(f, "PARTIALLY_LAUNCHED"),
+            AppLaunchStatus::ReadyForConfiguration => write!(f, "READY_FOR_CONFIGURATION"),
+            AppLaunchStatus::ReadyForLaunch => write!(f, "READY_FOR_LAUNCH"),
+            AppLaunchStatus::Terminated => write!(f, "TERMINATED"),
+            AppLaunchStatus::TerminateFailed => write!(f, "TERMINATE_FAILED"),
+            AppLaunchStatus::TerminateInProgress => write!(f, "TERMINATE_IN_PROGRESS"),
+            AppLaunchStatus::ValidationInProgress => write!(f, "VALIDATION_IN_PROGRESS"),
+            AppLaunchStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

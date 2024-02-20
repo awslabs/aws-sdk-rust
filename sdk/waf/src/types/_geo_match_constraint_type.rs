@@ -91,3 +91,11 @@ impl GeoMatchConstraintType {
         }
     }
 }
+impl ::std::fmt::Display for GeoMatchConstraintType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GeoMatchConstraintType::Country => write!(f, "Country"),
+            GeoMatchConstraintType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

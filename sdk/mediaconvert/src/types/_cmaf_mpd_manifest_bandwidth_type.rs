@@ -96,3 +96,12 @@ impl CmafMpdManifestBandwidthType {
         }
     }
 }
+impl ::std::fmt::Display for CmafMpdManifestBandwidthType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafMpdManifestBandwidthType::Average => write!(f, "AVERAGE"),
+            CmafMpdManifestBandwidthType::Max => write!(f, "MAX"),
+            CmafMpdManifestBandwidthType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

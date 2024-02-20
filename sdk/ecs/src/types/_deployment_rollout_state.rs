@@ -101,3 +101,13 @@ impl DeploymentRolloutState {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentRolloutState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentRolloutState::Completed => write!(f, "COMPLETED"),
+            DeploymentRolloutState::Failed => write!(f, "FAILED"),
+            DeploymentRolloutState::InProgress => write!(f, "IN_PROGRESS"),
+            DeploymentRolloutState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

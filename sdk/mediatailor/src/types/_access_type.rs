@@ -101,3 +101,13 @@ impl AccessType {
         }
     }
 }
+impl ::std::fmt::Display for AccessType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccessType::AutodetectSigv4 => write!(f, "AUTODETECT_SIGV4"),
+            AccessType::S3Sigv4 => write!(f, "S3_SIGV4"),
+            AccessType::SecretsManagerAccessToken => write!(f, "SECRETS_MANAGER_ACCESS_TOKEN"),
+            AccessType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

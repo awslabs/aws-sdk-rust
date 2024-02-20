@@ -129,3 +129,17 @@ impl ResourceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResourceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceStatus::CreationFailed => write!(f, "CREATION_FAILED"),
+            ResourceStatus::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
+            ResourceStatus::CreationSuccessful => write!(f, "CREATION_SUCCESSFUL"),
+            ResourceStatus::Deleted => write!(f, "DELETED"),
+            ResourceStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ResourceStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            ResourceStatus::UpdateSuccessful => write!(f, "UPDATE_SUCCESSFUL"),
+            ResourceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

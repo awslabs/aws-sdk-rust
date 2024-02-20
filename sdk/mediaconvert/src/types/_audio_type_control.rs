@@ -96,3 +96,12 @@ impl AudioTypeControl {
         }
     }
 }
+impl ::std::fmt::Display for AudioTypeControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioTypeControl::FollowInput => write!(f, "FOLLOW_INPUT"),
+            AudioTypeControl::UseConfigured => write!(f, "USE_CONFIGURED"),
+            AudioTypeControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

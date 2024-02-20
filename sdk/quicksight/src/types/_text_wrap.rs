@@ -96,3 +96,12 @@ impl TextWrap {
         }
     }
 }
+impl ::std::fmt::Display for TextWrap {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TextWrap::None => write!(f, "NONE"),
+            TextWrap::Wrap => write!(f, "WRAP"),
+            TextWrap::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

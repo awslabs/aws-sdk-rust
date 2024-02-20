@@ -96,3 +96,12 @@ impl AcceptType {
         }
     }
 }
+impl ::std::fmt::Display for AcceptType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AcceptType::Delivered => write!(f, "DELIVERED"),
+            AcceptType::Read => write!(f, "READ"),
+            AcceptType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

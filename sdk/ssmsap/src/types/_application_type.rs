@@ -96,3 +96,12 @@ impl ApplicationType {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationType::Hana => write!(f, "HANA"),
+            ApplicationType::SapAbap => write!(f, "SAP_ABAP"),
+            ApplicationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

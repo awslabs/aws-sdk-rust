@@ -106,3 +106,14 @@ impl MigrationEffort {
         }
     }
 }
+impl ::std::fmt::Display for MigrationEffort {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MigrationEffort::High => write!(f, "High"),
+            MigrationEffort::Low => write!(f, "Low"),
+            MigrationEffort::Medium => write!(f, "Medium"),
+            MigrationEffort::VeryLow => write!(f, "VeryLow"),
+            MigrationEffort::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

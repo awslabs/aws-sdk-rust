@@ -96,3 +96,12 @@ impl AppliedStatus {
         }
     }
 }
+impl ::std::fmt::Display for AppliedStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppliedStatus::Applied => write!(f, "APPLIED"),
+            AppliedStatus::NotApplied => write!(f, "NOT_APPLIED"),
+            AppliedStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

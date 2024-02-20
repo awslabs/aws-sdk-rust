@@ -111,3 +111,15 @@ impl BgpPeerState {
         }
     }
 }
+impl ::std::fmt::Display for BgpPeerState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BgpPeerState::Available => write!(f, "available"),
+            BgpPeerState::Deleted => write!(f, "deleted"),
+            BgpPeerState::Deleting => write!(f, "deleting"),
+            BgpPeerState::Pending => write!(f, "pending"),
+            BgpPeerState::Verifying => write!(f, "verifying"),
+            BgpPeerState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

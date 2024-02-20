@@ -101,3 +101,13 @@ impl PermissionTypeFilter {
         }
     }
 }
+impl ::std::fmt::Display for PermissionTypeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PermissionTypeFilter::All => write!(f, "ALL"),
+            PermissionTypeFilter::AwsManaged => write!(f, "AWS_MANAGED"),
+            PermissionTypeFilter::CustomerManaged => write!(f, "CUSTOMER_MANAGED"),
+            PermissionTypeFilter::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl WorkflowStatus {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowStatus::Deprecated => write!(f, "DEPRECATED"),
+            WorkflowStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

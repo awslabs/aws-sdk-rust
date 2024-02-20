@@ -106,3 +106,14 @@ impl Select {
         }
     }
 }
+impl ::std::fmt::Display for Select {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Select::AllAttributes => write!(f, "ALL_ATTRIBUTES"),
+            Select::AllProjectedAttributes => write!(f, "ALL_PROJECTED_ATTRIBUTES"),
+            Select::Count => write!(f, "COUNT"),
+            Select::SpecificAttributes => write!(f, "SPECIFIC_ATTRIBUTES"),
+            Select::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl TaintEffect {
         }
     }
 }
+impl ::std::fmt::Display for TaintEffect {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaintEffect::NoExecute => write!(f, "NO_EXECUTE"),
+            TaintEffect::NoSchedule => write!(f, "NO_SCHEDULE"),
+            TaintEffect::PreferNoSchedule => write!(f, "PREFER_NO_SCHEDULE"),
+            TaintEffect::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

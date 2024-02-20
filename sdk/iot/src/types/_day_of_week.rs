@@ -121,3 +121,17 @@ impl DayOfWeek {
         }
     }
 }
+impl ::std::fmt::Display for DayOfWeek {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DayOfWeek::Fri => write!(f, "FRI"),
+            DayOfWeek::Mon => write!(f, "MON"),
+            DayOfWeek::Sat => write!(f, "SAT"),
+            DayOfWeek::Sun => write!(f, "SUN"),
+            DayOfWeek::Thu => write!(f, "THU"),
+            DayOfWeek::Tue => write!(f, "TUE"),
+            DayOfWeek::Wed => write!(f, "WED"),
+            DayOfWeek::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

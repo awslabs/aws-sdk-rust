@@ -101,3 +101,13 @@ impl ResourceTypeNotFound {
         }
     }
 }
+impl ::std::fmt::Display for ResourceTypeNotFound {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceTypeNotFound::Channel => write!(f, "CHANNEL"),
+            ResourceTypeNotFound::ChannelGroup => write!(f, "CHANNEL_GROUP"),
+            ResourceTypeNotFound::OriginEndpoint => write!(f, "ORIGIN_ENDPOINT"),
+            ResourceTypeNotFound::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

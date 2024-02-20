@@ -111,3 +111,15 @@ impl CisScanResultsAggregatedByChecksSortBy {
         }
     }
 }
+impl ::std::fmt::Display for CisScanResultsAggregatedByChecksSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CisScanResultsAggregatedByChecksSortBy::CheckId => write!(f, "CHECK_ID"),
+            CisScanResultsAggregatedByChecksSortBy::FailedCounts => write!(f, "FAILED_COUNTS"),
+            CisScanResultsAggregatedByChecksSortBy::Platform => write!(f, "PLATFORM"),
+            CisScanResultsAggregatedByChecksSortBy::SecurityLevel => write!(f, "SECURITY_LEVEL"),
+            CisScanResultsAggregatedByChecksSortBy::Title => write!(f, "TITLE"),
+            CisScanResultsAggregatedByChecksSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AutoScalingConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AutoScalingConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoScalingConfigurationStatus::Active => write!(f, "ACTIVE"),
+            AutoScalingConfigurationStatus::Inactive => write!(f, "INACTIVE"),
+            AutoScalingConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

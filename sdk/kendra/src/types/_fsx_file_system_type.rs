@@ -91,3 +91,11 @@ impl FsxFileSystemType {
         }
     }
 }
+impl ::std::fmt::Display for FsxFileSystemType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FsxFileSystemType::Windows => write!(f, "WINDOWS"),
+            FsxFileSystemType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

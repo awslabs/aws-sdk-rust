@@ -111,3 +111,15 @@ impl OrderByFieldType {
         }
     }
 }
+impl ::std::fmt::Display for OrderByFieldType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OrderByFieldType::CreatedTimestamp => write!(f, "CREATED_TIMESTAMP"),
+            OrderByFieldType::ModifiedTimestamp => write!(f, "MODIFIED_TIMESTAMP"),
+            OrderByFieldType::Name => write!(f, "NAME"),
+            OrderByFieldType::Relevance => write!(f, "RELEVANCE"),
+            OrderByFieldType::Size => write!(f, "SIZE"),
+            OrderByFieldType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

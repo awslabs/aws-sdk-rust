@@ -96,3 +96,12 @@ impl H264EntropyEncoding {
         }
     }
 }
+impl ::std::fmt::Display for H264EntropyEncoding {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264EntropyEncoding::Cabac => write!(f, "CABAC"),
+            H264EntropyEncoding::Cavlc => write!(f, "CAVLC"),
+            H264EntropyEncoding::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

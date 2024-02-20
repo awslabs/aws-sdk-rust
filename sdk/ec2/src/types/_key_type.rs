@@ -96,3 +96,12 @@ impl KeyType {
         }
     }
 }
+impl ::std::fmt::Display for KeyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KeyType::Ed25519 => write!(f, "ed25519"),
+            KeyType::Rsa => write!(f, "rsa"),
+            KeyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

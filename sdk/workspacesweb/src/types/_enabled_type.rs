@@ -96,3 +96,12 @@ impl EnabledType {
         }
     }
 }
+impl ::std::fmt::Display for EnabledType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EnabledType::Disabled => write!(f, "Disabled"),
+            EnabledType::Enabled => write!(f, "Enabled"),
+            EnabledType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

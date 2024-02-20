@@ -96,3 +96,12 @@ impl VideoDescriptionScalingBehavior {
         }
     }
 }
+impl ::std::fmt::Display for VideoDescriptionScalingBehavior {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VideoDescriptionScalingBehavior::Default => write!(f, "DEFAULT"),
+            VideoDescriptionScalingBehavior::StretchToOutput => write!(f, "STRETCH_TO_OUTPUT"),
+            VideoDescriptionScalingBehavior::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

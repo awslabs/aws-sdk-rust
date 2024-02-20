@@ -96,3 +96,12 @@ impl AncillaryConvert608To708 {
         }
     }
 }
+impl ::std::fmt::Display for AncillaryConvert608To708 {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AncillaryConvert608To708::Disabled => write!(f, "DISABLED"),
+            AncillaryConvert608To708::Upconvert => write!(f, "UPCONVERT"),
+            AncillaryConvert608To708::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

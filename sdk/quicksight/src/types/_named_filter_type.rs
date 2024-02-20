@@ -117,3 +117,15 @@ impl NamedFilterType {
         }
     }
 }
+impl ::std::fmt::Display for NamedFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NamedFilterType::CategoryFilter => write!(f, "CATEGORY_FILTER"),
+            NamedFilterType::DateRangeFilter => write!(f, "DATE_RANGE_FILTER"),
+            NamedFilterType::NumericEqualityFilter => write!(f, "NUMERIC_EQUALITY_FILTER"),
+            NamedFilterType::NumericRangeFilter => write!(f, "NUMERIC_RANGE_FILTER"),
+            NamedFilterType::RelativeDateFilter => write!(f, "RELATIVE_DATE_FILTER"),
+            NamedFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

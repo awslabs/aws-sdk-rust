@@ -96,3 +96,12 @@ impl HypervisorType {
         }
     }
 }
+impl ::std::fmt::Display for HypervisorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HypervisorType::Ovm => write!(f, "ovm"),
+            HypervisorType::Xen => write!(f, "xen"),
+            HypervisorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

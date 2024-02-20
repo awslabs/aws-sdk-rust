@@ -101,3 +101,13 @@ impl StackInstanceStatus {
         }
     }
 }
+impl ::std::fmt::Display for StackInstanceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StackInstanceStatus::Current => write!(f, "CURRENT"),
+            StackInstanceStatus::Inoperable => write!(f, "INOPERABLE"),
+            StackInstanceStatus::Outdated => write!(f, "OUTDATED"),
+            StackInstanceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

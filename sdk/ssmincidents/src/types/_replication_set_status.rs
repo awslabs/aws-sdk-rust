@@ -111,3 +111,15 @@ impl ReplicationSetStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReplicationSetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReplicationSetStatus::Active => write!(f, "ACTIVE"),
+            ReplicationSetStatus::Creating => write!(f, "CREATING"),
+            ReplicationSetStatus::Deleting => write!(f, "DELETING"),
+            ReplicationSetStatus::Failed => write!(f, "FAILED"),
+            ReplicationSetStatus::Updating => write!(f, "UPDATING"),
+            ReplicationSetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

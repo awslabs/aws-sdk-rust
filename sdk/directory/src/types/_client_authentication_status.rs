@@ -96,3 +96,12 @@ impl ClientAuthenticationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ClientAuthenticationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientAuthenticationStatus::Disabled => write!(f, "Disabled"),
+            ClientAuthenticationStatus::Enabled => write!(f, "Enabled"),
+            ClientAuthenticationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

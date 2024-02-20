@@ -101,3 +101,13 @@ impl PropertyGroupUpdateType {
         }
     }
 }
+impl ::std::fmt::Display for PropertyGroupUpdateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PropertyGroupUpdateType::Create => write!(f, "CREATE"),
+            PropertyGroupUpdateType::Delete => write!(f, "DELETE"),
+            PropertyGroupUpdateType::Update => write!(f, "UPDATE"),
+            PropertyGroupUpdateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

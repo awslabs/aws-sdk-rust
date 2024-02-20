@@ -101,3 +101,13 @@ impl PolicyType {
         }
     }
 }
+impl ::std::fmt::Display for PolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyType::IdentityPolicy => write!(f, "IDENTITY_POLICY"),
+            PolicyType::ResourcePolicy => write!(f, "RESOURCE_POLICY"),
+            PolicyType::ServiceControlPolicy => write!(f, "SERVICE_CONTROL_POLICY"),
+            PolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

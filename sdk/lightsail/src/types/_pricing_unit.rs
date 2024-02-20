@@ -111,3 +111,15 @@ impl PricingUnit {
         }
     }
 }
+impl ::std::fmt::Display for PricingUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PricingUnit::Bundles => write!(f, "Bundles"),
+            PricingUnit::Gb => write!(f, "GB"),
+            PricingUnit::GbMo => write!(f, "GB-Mo"),
+            PricingUnit::Hrs => write!(f, "Hrs"),
+            PricingUnit::Queries => write!(f, "Queries"),
+            PricingUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

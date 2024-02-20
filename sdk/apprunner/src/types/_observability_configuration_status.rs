@@ -96,3 +96,12 @@ impl ObservabilityConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ObservabilityConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObservabilityConfigurationStatus::Active => write!(f, "ACTIVE"),
+            ObservabilityConfigurationStatus::Inactive => write!(f, "INACTIVE"),
+            ObservabilityConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

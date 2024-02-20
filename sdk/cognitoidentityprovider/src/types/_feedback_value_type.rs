@@ -96,3 +96,12 @@ impl FeedbackValueType {
         }
     }
 }
+impl ::std::fmt::Display for FeedbackValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeedbackValueType::Invalid => write!(f, "Invalid"),
+            FeedbackValueType::Valid => write!(f, "Valid"),
+            FeedbackValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

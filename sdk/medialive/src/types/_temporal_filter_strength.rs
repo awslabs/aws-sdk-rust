@@ -189,3 +189,27 @@ impl TemporalFilterStrength {
         }
     }
 }
+impl ::std::fmt::Display for TemporalFilterStrength {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemporalFilterStrength::Auto => write!(f, "AUTO"),
+            TemporalFilterStrength::Strength1 => write!(f, "STRENGTH_1"),
+            TemporalFilterStrength::Strength10 => write!(f, "STRENGTH_10"),
+            TemporalFilterStrength::Strength11 => write!(f, "STRENGTH_11"),
+            TemporalFilterStrength::Strength12 => write!(f, "STRENGTH_12"),
+            TemporalFilterStrength::Strength13 => write!(f, "STRENGTH_13"),
+            TemporalFilterStrength::Strength14 => write!(f, "STRENGTH_14"),
+            TemporalFilterStrength::Strength15 => write!(f, "STRENGTH_15"),
+            TemporalFilterStrength::Strength16 => write!(f, "STRENGTH_16"),
+            TemporalFilterStrength::Strength2 => write!(f, "STRENGTH_2"),
+            TemporalFilterStrength::Strength3 => write!(f, "STRENGTH_3"),
+            TemporalFilterStrength::Strength4 => write!(f, "STRENGTH_4"),
+            TemporalFilterStrength::Strength5 => write!(f, "STRENGTH_5"),
+            TemporalFilterStrength::Strength6 => write!(f, "STRENGTH_6"),
+            TemporalFilterStrength::Strength7 => write!(f, "STRENGTH_7"),
+            TemporalFilterStrength::Strength8 => write!(f, "STRENGTH_8"),
+            TemporalFilterStrength::Strength9 => write!(f, "STRENGTH_9"),
+            TemporalFilterStrength::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

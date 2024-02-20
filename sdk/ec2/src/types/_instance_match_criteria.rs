@@ -96,3 +96,12 @@ impl InstanceMatchCriteria {
         }
     }
 }
+impl ::std::fmt::Display for InstanceMatchCriteria {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceMatchCriteria::Open => write!(f, "open"),
+            InstanceMatchCriteria::Targeted => write!(f, "targeted"),
+            InstanceMatchCriteria::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

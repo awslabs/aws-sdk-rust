@@ -91,3 +91,11 @@ impl WarmPoolStatus {
         }
     }
 }
+impl ::std::fmt::Display for WarmPoolStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WarmPoolStatus::PendingDelete => write!(f, "PendingDelete"),
+            WarmPoolStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

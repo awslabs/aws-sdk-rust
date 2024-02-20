@@ -106,3 +106,14 @@ impl PluginType {
         }
     }
 }
+impl ::std::fmt::Display for PluginType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PluginType::Jira => write!(f, "JIRA"),
+            PluginType::Salesforce => write!(f, "SALESFORCE"),
+            PluginType::ServiceNow => write!(f, "SERVICE_NOW"),
+            PluginType::Zendesk => write!(f, "ZENDESK"),
+            PluginType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

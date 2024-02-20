@@ -98,3 +98,12 @@ impl TransitGatewayRouteTableAnnouncementDirection {
         }
     }
 }
+impl ::std::fmt::Display for TransitGatewayRouteTableAnnouncementDirection {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitGatewayRouteTableAnnouncementDirection::Incoming => write!(f, "incoming"),
+            TransitGatewayRouteTableAnnouncementDirection::Outgoing => write!(f, "outgoing"),
+            TransitGatewayRouteTableAnnouncementDirection::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

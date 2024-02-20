@@ -111,3 +111,15 @@ impl AccountRoleStatus {
         }
     }
 }
+impl ::std::fmt::Display for AccountRoleStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountRoleStatus::Creating => write!(f, "CREATING"),
+            AccountRoleStatus::Deleted => write!(f, "DELETED"),
+            AccountRoleStatus::Deleting => write!(f, "DELETING"),
+            AccountRoleStatus::PendingDeletion => write!(f, "PENDING_DELETION"),
+            AccountRoleStatus::Ready => write!(f, "READY"),
+            AccountRoleStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -91,3 +91,11 @@ impl FileCacheType {
         }
     }
 }
+impl ::std::fmt::Display for FileCacheType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FileCacheType::Lustre => write!(f, "LUSTRE"),
+            FileCacheType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

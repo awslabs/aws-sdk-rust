@@ -106,3 +106,14 @@ impl UnlimitedSupportedInstanceFamily {
         }
     }
 }
+impl ::std::fmt::Display for UnlimitedSupportedInstanceFamily {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnlimitedSupportedInstanceFamily::T2 => write!(f, "t2"),
+            UnlimitedSupportedInstanceFamily::T3 => write!(f, "t3"),
+            UnlimitedSupportedInstanceFamily::T3a => write!(f, "t3a"),
+            UnlimitedSupportedInstanceFamily::T4g => write!(f, "t4g"),
+            UnlimitedSupportedInstanceFamily::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

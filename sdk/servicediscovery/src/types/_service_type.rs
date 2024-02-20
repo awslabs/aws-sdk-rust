@@ -101,3 +101,13 @@ impl ServiceType {
         }
     }
 }
+impl ::std::fmt::Display for ServiceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceType::Dns => write!(f, "DNS"),
+            ServiceType::DnsHttp => write!(f, "DNS_HTTP"),
+            ServiceType::Http => write!(f, "HTTP"),
+            ServiceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

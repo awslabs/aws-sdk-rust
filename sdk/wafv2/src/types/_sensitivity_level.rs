@@ -96,3 +96,12 @@ impl SensitivityLevel {
         }
     }
 }
+impl ::std::fmt::Display for SensitivityLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SensitivityLevel::High => write!(f, "HIGH"),
+            SensitivityLevel::Low => write!(f, "LOW"),
+            SensitivityLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

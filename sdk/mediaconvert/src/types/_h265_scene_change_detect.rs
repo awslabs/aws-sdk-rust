@@ -101,3 +101,13 @@ impl H265SceneChangeDetect {
         }
     }
 }
+impl ::std::fmt::Display for H265SceneChangeDetect {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265SceneChangeDetect::Disabled => write!(f, "DISABLED"),
+            H265SceneChangeDetect::Enabled => write!(f, "ENABLED"),
+            H265SceneChangeDetect::TransitionDetection => write!(f, "TRANSITION_DETECTION"),
+            H265SceneChangeDetect::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

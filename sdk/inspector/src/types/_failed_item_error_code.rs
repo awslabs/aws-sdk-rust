@@ -123,3 +123,16 @@ impl FailedItemErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for FailedItemErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FailedItemErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            FailedItemErrorCode::DuplicateArn => write!(f, "DUPLICATE_ARN"),
+            FailedItemErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            FailedItemErrorCode::InvalidArn => write!(f, "INVALID_ARN"),
+            FailedItemErrorCode::ItemDoesNotExist => write!(f, "ITEM_DOES_NOT_EXIST"),
+            FailedItemErrorCode::LimitExceeded => write!(f, "LIMIT_EXCEEDED"),
+            FailedItemErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

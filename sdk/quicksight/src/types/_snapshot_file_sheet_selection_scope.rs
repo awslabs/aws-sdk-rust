@@ -96,3 +96,12 @@ impl SnapshotFileSheetSelectionScope {
         }
     }
 }
+impl ::std::fmt::Display for SnapshotFileSheetSelectionScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapshotFileSheetSelectionScope::AllVisuals => write!(f, "ALL_VISUALS"),
+            SnapshotFileSheetSelectionScope::SelectedVisuals => write!(f, "SELECTED_VISUALS"),
+            SnapshotFileSheetSelectionScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl GameServerUtilizationStatus {
         }
     }
 }
+impl ::std::fmt::Display for GameServerUtilizationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GameServerUtilizationStatus::Available => write!(f, "AVAILABLE"),
+            GameServerUtilizationStatus::Utilized => write!(f, "UTILIZED"),
+            GameServerUtilizationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

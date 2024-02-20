@@ -96,3 +96,12 @@ impl EmailSendingAccountType {
         }
     }
 }
+impl ::std::fmt::Display for EmailSendingAccountType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EmailSendingAccountType::CognitoDefault => write!(f, "COGNITO_DEFAULT"),
+            EmailSendingAccountType::Developer => write!(f, "DEVELOPER"),
+            EmailSendingAccountType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

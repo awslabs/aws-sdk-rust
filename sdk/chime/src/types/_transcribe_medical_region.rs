@@ -129,3 +129,17 @@ impl TranscribeMedicalRegion {
         }
     }
 }
+impl ::std::fmt::Display for TranscribeMedicalRegion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TranscribeMedicalRegion::ApSoutheast2 => write!(f, "ap-southeast-2"),
+            TranscribeMedicalRegion::Auto => write!(f, "auto"),
+            TranscribeMedicalRegion::CaCentral1 => write!(f, "ca-central-1"),
+            TranscribeMedicalRegion::EuWest1 => write!(f, "eu-west-1"),
+            TranscribeMedicalRegion::UsEast1 => write!(f, "us-east-1"),
+            TranscribeMedicalRegion::UsEast2 => write!(f, "us-east-2"),
+            TranscribeMedicalRegion::UsWest2 => write!(f, "us-west-2"),
+            TranscribeMedicalRegion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

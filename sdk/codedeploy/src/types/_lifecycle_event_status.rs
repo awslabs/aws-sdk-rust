@@ -116,3 +116,16 @@ impl LifecycleEventStatus {
         }
     }
 }
+impl ::std::fmt::Display for LifecycleEventStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LifecycleEventStatus::Failed => write!(f, "Failed"),
+            LifecycleEventStatus::InProgress => write!(f, "InProgress"),
+            LifecycleEventStatus::Pending => write!(f, "Pending"),
+            LifecycleEventStatus::Skipped => write!(f, "Skipped"),
+            LifecycleEventStatus::Succeeded => write!(f, "Succeeded"),
+            LifecycleEventStatus::UnknownValue => write!(f, "Unknown"),
+            LifecycleEventStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl SkipModelValidation {
         }
     }
 }
+impl ::std::fmt::Display for SkipModelValidation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SkipModelValidation::All => write!(f, "All"),
+            SkipModelValidation::None => write!(f, "None"),
+            SkipModelValidation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

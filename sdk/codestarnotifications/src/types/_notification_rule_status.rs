@@ -96,3 +96,12 @@ impl NotificationRuleStatus {
         }
     }
 }
+impl ::std::fmt::Display for NotificationRuleStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NotificationRuleStatus::Disabled => write!(f, "DISABLED"),
+            NotificationRuleStatus::Enabled => write!(f, "ENABLED"),
+            NotificationRuleStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl S3DataType {
         }
     }
 }
+impl ::std::fmt::Display for S3DataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3DataType::AugmentedManifestFile => write!(f, "AugmentedManifestFile"),
+            S3DataType::ManifestFile => write!(f, "ManifestFile"),
+            S3DataType::S3Prefix => write!(f, "S3Prefix"),
+            S3DataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

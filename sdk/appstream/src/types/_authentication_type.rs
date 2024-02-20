@@ -106,3 +106,14 @@ impl AuthenticationType {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationType::Api => write!(f, "API"),
+            AuthenticationType::AwsAd => write!(f, "AWS_AD"),
+            AuthenticationType::Saml => write!(f, "SAML"),
+            AuthenticationType::Userpool => write!(f, "USERPOOL"),
+            AuthenticationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

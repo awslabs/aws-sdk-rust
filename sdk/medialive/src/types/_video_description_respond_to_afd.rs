@@ -101,3 +101,13 @@ impl VideoDescriptionRespondToAfd {
         }
     }
 }
+impl ::std::fmt::Display for VideoDescriptionRespondToAfd {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VideoDescriptionRespondToAfd::None => write!(f, "NONE"),
+            VideoDescriptionRespondToAfd::Passthrough => write!(f, "PASSTHROUGH"),
+            VideoDescriptionRespondToAfd::Respond => write!(f, "RESPOND"),
+            VideoDescriptionRespondToAfd::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

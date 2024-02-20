@@ -96,3 +96,12 @@ impl AssociationStatus {
         }
     }
 }
+impl ::std::fmt::Display for AssociationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationStatus::Disabled => write!(f, "DISABLED"),
+            AssociationStatus::Enabled => write!(f, "ENABLED"),
+            AssociationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

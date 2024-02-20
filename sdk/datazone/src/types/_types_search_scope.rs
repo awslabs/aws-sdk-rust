@@ -96,3 +96,12 @@ impl TypesSearchScope {
         }
     }
 }
+impl ::std::fmt::Display for TypesSearchScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TypesSearchScope::AssetType => write!(f, "ASSET_TYPE"),
+            TypesSearchScope::FormType => write!(f, "FORM_TYPE"),
+            TypesSearchScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

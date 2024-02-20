@@ -96,3 +96,12 @@ impl PaperOrientation {
         }
     }
 }
+impl ::std::fmt::Display for PaperOrientation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PaperOrientation::Landscape => write!(f, "LANDSCAPE"),
+            PaperOrientation::Portrait => write!(f, "PORTRAIT"),
+            PaperOrientation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

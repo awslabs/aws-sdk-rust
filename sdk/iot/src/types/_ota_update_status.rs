@@ -123,3 +123,16 @@ impl OtaUpdateStatus {
         }
     }
 }
+impl ::std::fmt::Display for OtaUpdateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OtaUpdateStatus::CreateComplete => write!(f, "CREATE_COMPLETE"),
+            OtaUpdateStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            OtaUpdateStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            OtaUpdateStatus::CreatePending => write!(f, "CREATE_PENDING"),
+            OtaUpdateStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            OtaUpdateStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            OtaUpdateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

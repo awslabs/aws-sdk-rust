@@ -106,3 +106,14 @@ impl AuditMitigationActionsTaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for AuditMitigationActionsTaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuditMitigationActionsTaskStatus::Canceled => write!(f, "CANCELED"),
+            AuditMitigationActionsTaskStatus::Completed => write!(f, "COMPLETED"),
+            AuditMitigationActionsTaskStatus::Failed => write!(f, "FAILED"),
+            AuditMitigationActionsTaskStatus::InProgress => write!(f, "IN_PROGRESS"),
+            AuditMitigationActionsTaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

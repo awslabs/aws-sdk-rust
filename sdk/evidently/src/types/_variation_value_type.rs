@@ -106,3 +106,14 @@ impl VariationValueType {
         }
     }
 }
+impl ::std::fmt::Display for VariationValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VariationValueType::Boolean => write!(f, "BOOLEAN"),
+            VariationValueType::Double => write!(f, "DOUBLE"),
+            VariationValueType::Long => write!(f, "LONG"),
+            VariationValueType::String => write!(f, "STRING"),
+            VariationValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

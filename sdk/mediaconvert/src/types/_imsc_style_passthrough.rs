@@ -96,3 +96,12 @@ impl ImscStylePassthrough {
         }
     }
 }
+impl ::std::fmt::Display for ImscStylePassthrough {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImscStylePassthrough::Disabled => write!(f, "DISABLED"),
+            ImscStylePassthrough::Enabled => write!(f, "ENABLED"),
+            ImscStylePassthrough::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

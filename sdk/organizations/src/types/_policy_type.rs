@@ -106,3 +106,14 @@ impl PolicyType {
         }
     }
 }
+impl ::std::fmt::Display for PolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyType::AiservicesOptOutPolicy => write!(f, "AISERVICES_OPT_OUT_POLICY"),
+            PolicyType::BackupPolicy => write!(f, "BACKUP_POLICY"),
+            PolicyType::ServiceControlPolicy => write!(f, "SERVICE_CONTROL_POLICY"),
+            PolicyType::TagPolicy => write!(f, "TAG_POLICY"),
+            PolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl LoggingConfigurationStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for LoggingConfigurationStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoggingConfigurationStatusCode::Active => write!(f, "ACTIVE"),
+            LoggingConfigurationStatusCode::Creating => write!(f, "CREATING"),
+            LoggingConfigurationStatusCode::CreationFailed => write!(f, "CREATION_FAILED"),
+            LoggingConfigurationStatusCode::Deleting => write!(f, "DELETING"),
+            LoggingConfigurationStatusCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            LoggingConfigurationStatusCode::Updating => write!(f, "UPDATING"),
+            LoggingConfigurationStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

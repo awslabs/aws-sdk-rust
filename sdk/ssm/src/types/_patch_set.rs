@@ -96,3 +96,12 @@ impl PatchSet {
         }
     }
 }
+impl ::std::fmt::Display for PatchSet {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PatchSet::Application => write!(f, "APPLICATION"),
+            PatchSet::Os => write!(f, "OS"),
+            PatchSet::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

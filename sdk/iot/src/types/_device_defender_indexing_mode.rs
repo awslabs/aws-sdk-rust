@@ -96,3 +96,12 @@ impl DeviceDefenderIndexingMode {
         }
     }
 }
+impl ::std::fmt::Display for DeviceDefenderIndexingMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceDefenderIndexingMode::Off => write!(f, "OFF"),
+            DeviceDefenderIndexingMode::Violations => write!(f, "VIOLATIONS"),
+            DeviceDefenderIndexingMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

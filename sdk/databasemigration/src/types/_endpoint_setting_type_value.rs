@@ -106,3 +106,14 @@ impl EndpointSettingTypeValue {
         }
     }
 }
+impl ::std::fmt::Display for EndpointSettingTypeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointSettingTypeValue::Boolean => write!(f, "boolean"),
+            EndpointSettingTypeValue::Enum => write!(f, "enum"),
+            EndpointSettingTypeValue::Integer => write!(f, "integer"),
+            EndpointSettingTypeValue::String => write!(f, "string"),
+            EndpointSettingTypeValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl GettablePolicyStateValues {
         }
     }
 }
+impl ::std::fmt::Display for GettablePolicyStateValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GettablePolicyStateValues::Disabled => write!(f, "DISABLED"),
+            GettablePolicyStateValues::Enabled => write!(f, "ENABLED"),
+            GettablePolicyStateValues::Error => write!(f, "ERROR"),
+            GettablePolicyStateValues::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

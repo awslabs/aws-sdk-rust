@@ -96,3 +96,12 @@ impl ChannelRole {
         }
     }
 }
+impl ::std::fmt::Display for ChannelRole {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ChannelRole::Master => write!(f, "MASTER"),
+            ChannelRole::Viewer => write!(f, "VIEWER"),
+            ChannelRole::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

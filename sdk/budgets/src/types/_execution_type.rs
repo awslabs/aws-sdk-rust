@@ -111,3 +111,14 @@ impl ExecutionType {
         }
     }
 }
+impl ::std::fmt::Display for ExecutionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExecutionType::ApproveBudgetAction => write!(f, "APPROVE_BUDGET_ACTION"),
+            ExecutionType::ResetBudgetAction => write!(f, "RESET_BUDGET_ACTION"),
+            ExecutionType::RetryBudgetAction => write!(f, "RETRY_BUDGET_ACTION"),
+            ExecutionType::ReverseBudgetAction => write!(f, "REVERSE_BUDGET_ACTION"),
+            ExecutionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

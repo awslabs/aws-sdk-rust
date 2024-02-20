@@ -117,3 +117,15 @@ impl AssociationErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for AssociationErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssociationErrorCode::InternalServerError => write!(f, "DeploymentError.InternalServerError"),
+            AssociationErrorCode::WorkspaceUnreachable => write!(f, "DeploymentError.WorkspaceUnreachable"),
+            AssociationErrorCode::InsufficientDiskspace => write!(f, "ValidationError.InsufficientDiskSpace"),
+            AssociationErrorCode::InsufficientMemory => write!(f, "ValidationError.InsufficientMemory"),
+            AssociationErrorCode::UnsupportedOperatingSystem => write!(f, "ValidationError.UnsupportedOperatingSystem"),
+            AssociationErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

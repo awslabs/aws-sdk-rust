@@ -147,3 +147,20 @@ impl FleetStatus {
         }
     }
 }
+impl ::std::fmt::Display for FleetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetStatus::Activating => write!(f, "ACTIVATING"),
+            FleetStatus::Active => write!(f, "ACTIVE"),
+            FleetStatus::Building => write!(f, "BUILDING"),
+            FleetStatus::Deleting => write!(f, "DELETING"),
+            FleetStatus::Downloading => write!(f, "DOWNLOADING"),
+            FleetStatus::Error => write!(f, "ERROR"),
+            FleetStatus::New => write!(f, "NEW"),
+            FleetStatus::NotFound => write!(f, "NOT_FOUND"),
+            FleetStatus::Terminated => write!(f, "TERMINATED"),
+            FleetStatus::Validating => write!(f, "VALIDATING"),
+            FleetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl ConfluenceVersion {
         }
     }
 }
+impl ::std::fmt::Display for ConfluenceVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfluenceVersion::Cloud => write!(f, "CLOUD"),
+            ConfluenceVersion::Server => write!(f, "SERVER"),
+            ConfluenceVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

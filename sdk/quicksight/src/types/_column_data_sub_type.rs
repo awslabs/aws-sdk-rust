@@ -96,3 +96,12 @@ impl ColumnDataSubType {
         }
     }
 }
+impl ::std::fmt::Display for ColumnDataSubType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColumnDataSubType::Fixed => write!(f, "FIXED"),
+            ColumnDataSubType::Float => write!(f, "FLOAT"),
+            ColumnDataSubType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl InstanceEventWindowState {
         }
     }
 }
+impl ::std::fmt::Display for InstanceEventWindowState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceEventWindowState::Active => write!(f, "active"),
+            InstanceEventWindowState::Creating => write!(f, "creating"),
+            InstanceEventWindowState::Deleted => write!(f, "deleted"),
+            InstanceEventWindowState::Deleting => write!(f, "deleting"),
+            InstanceEventWindowState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

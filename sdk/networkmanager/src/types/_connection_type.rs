@@ -96,3 +96,12 @@ impl ConnectionType {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionType::Bgp => write!(f, "BGP"),
+            ConnectionType::Ipsec => write!(f, "IPSEC"),
+            ConnectionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

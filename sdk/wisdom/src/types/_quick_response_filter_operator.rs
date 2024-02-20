@@ -96,3 +96,12 @@ impl QuickResponseFilterOperator {
         }
     }
 }
+impl ::std::fmt::Display for QuickResponseFilterOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuickResponseFilterOperator::Equals => write!(f, "EQUALS"),
+            QuickResponseFilterOperator::Prefix => write!(f, "PREFIX"),
+            QuickResponseFilterOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

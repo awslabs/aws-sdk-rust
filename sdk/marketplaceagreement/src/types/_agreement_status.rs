@@ -141,3 +141,19 @@ impl AgreementStatus {
         }
     }
 }
+impl ::std::fmt::Display for AgreementStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgreementStatus::Active => write!(f, "ACTIVE"),
+            AgreementStatus::Archived => write!(f, "ARCHIVED"),
+            AgreementStatus::Cancelled => write!(f, "CANCELLED"),
+            AgreementStatus::Expired => write!(f, "EXPIRED"),
+            AgreementStatus::Renewed => write!(f, "RENEWED"),
+            AgreementStatus::Replaced => write!(f, "REPLACED"),
+            AgreementStatus::RolledBack => write!(f, "ROLLED_BACK"),
+            AgreementStatus::Superseded => write!(f, "SUPERSEDED"),
+            AgreementStatus::Terminated => write!(f, "TERMINATED"),
+            AgreementStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

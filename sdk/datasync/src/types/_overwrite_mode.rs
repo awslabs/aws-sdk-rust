@@ -96,3 +96,12 @@ impl OverwriteMode {
         }
     }
 }
+impl ::std::fmt::Display for OverwriteMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OverwriteMode::Always => write!(f, "ALWAYS"),
+            OverwriteMode::Never => write!(f, "NEVER"),
+            OverwriteMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

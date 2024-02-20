@@ -96,3 +96,12 @@ impl IamUserAccessToBilling {
         }
     }
 }
+impl ::std::fmt::Display for IamUserAccessToBilling {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IamUserAccessToBilling::Allow => write!(f, "ALLOW"),
+            IamUserAccessToBilling::Deny => write!(f, "DENY"),
+            IamUserAccessToBilling::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

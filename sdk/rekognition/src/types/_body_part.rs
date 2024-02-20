@@ -106,3 +106,14 @@ impl BodyPart {
         }
     }
 }
+impl ::std::fmt::Display for BodyPart {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BodyPart::Face => write!(f, "FACE"),
+            BodyPart::Head => write!(f, "HEAD"),
+            BodyPart::LeftHand => write!(f, "LEFT_HAND"),
+            BodyPart::RightHand => write!(f, "RIGHT_HAND"),
+            BodyPart::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

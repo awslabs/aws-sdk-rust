@@ -121,3 +121,17 @@ impl XavcAdaptiveQuantization {
         }
     }
 }
+impl ::std::fmt::Display for XavcAdaptiveQuantization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcAdaptiveQuantization::Auto => write!(f, "AUTO"),
+            XavcAdaptiveQuantization::High => write!(f, "HIGH"),
+            XavcAdaptiveQuantization::Higher => write!(f, "HIGHER"),
+            XavcAdaptiveQuantization::Low => write!(f, "LOW"),
+            XavcAdaptiveQuantization::Max => write!(f, "MAX"),
+            XavcAdaptiveQuantization::Medium => write!(f, "MEDIUM"),
+            XavcAdaptiveQuantization::Off => write!(f, "OFF"),
+            XavcAdaptiveQuantization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

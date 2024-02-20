@@ -129,3 +129,17 @@ impl PredicateType {
         }
     }
 }
+impl ::std::fmt::Display for PredicateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PredicateType::ByteMatch => write!(f, "ByteMatch"),
+            PredicateType::GeoMatch => write!(f, "GeoMatch"),
+            PredicateType::IpMatch => write!(f, "IPMatch"),
+            PredicateType::RegexMatch => write!(f, "RegexMatch"),
+            PredicateType::SizeConstraint => write!(f, "SizeConstraint"),
+            PredicateType::SqlInjectionMatch => write!(f, "SqlInjectionMatch"),
+            PredicateType::XssMatch => write!(f, "XssMatch"),
+            PredicateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

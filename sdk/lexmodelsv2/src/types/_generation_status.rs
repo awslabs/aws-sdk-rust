@@ -101,3 +101,13 @@ impl GenerationStatus {
         }
     }
 }
+impl ::std::fmt::Display for GenerationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GenerationStatus::Complete => write!(f, "Complete"),
+            GenerationStatus::Failed => write!(f, "Failed"),
+            GenerationStatus::InProgress => write!(f, "InProgress"),
+            GenerationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

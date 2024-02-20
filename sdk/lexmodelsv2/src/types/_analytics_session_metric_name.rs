@@ -129,3 +129,17 @@ impl AnalyticsSessionMetricName {
         }
     }
 }
+impl ::std::fmt::Display for AnalyticsSessionMetricName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnalyticsSessionMetricName::Concurrency => write!(f, "Concurrency"),
+            AnalyticsSessionMetricName::Count => write!(f, "Count"),
+            AnalyticsSessionMetricName::Dropped => write!(f, "Dropped"),
+            AnalyticsSessionMetricName::Duration => write!(f, "Duration"),
+            AnalyticsSessionMetricName::Failure => write!(f, "Failure"),
+            AnalyticsSessionMetricName::Success => write!(f, "Success"),
+            AnalyticsSessionMetricName::TurnsPerConversation => write!(f, "TurnsPerConversation"),
+            AnalyticsSessionMetricName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

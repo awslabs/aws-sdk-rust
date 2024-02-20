@@ -348,3 +348,15 @@ impl DeleteObjectFluentBuilder {
         self.inner.get_expected_bucket_owner()
     }
 }
+
+impl crate::client::customize::internal::CustomizablePresigned<crate::operation::delete_object::DeleteObjectError> for DeleteObjectFluentBuilder {
+    fn presign(
+        self,
+        config_override: crate::config::Builder,
+        presigning_config: crate::presigning::PresigningConfig,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<crate::presigning::PresignedRequest, crate::operation::delete_object::DeleteObjectError>,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).presigned(presigning_config).await })
+    }
+}

@@ -101,3 +101,13 @@ impl RefreshSchemasStatusTypeValue {
         }
     }
 }
+impl ::std::fmt::Display for RefreshSchemasStatusTypeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RefreshSchemasStatusTypeValue::Failed => write!(f, "failed"),
+            RefreshSchemasStatusTypeValue::Refreshing => write!(f, "refreshing"),
+            RefreshSchemasStatusTypeValue::Successful => write!(f, "successful"),
+            RefreshSchemasStatusTypeValue::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

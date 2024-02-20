@@ -96,3 +96,12 @@ impl FragmentSelectorType {
         }
     }
 }
+impl ::std::fmt::Display for FragmentSelectorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FragmentSelectorType::ProducerTimestamp => write!(f, "ProducerTimestamp"),
+            FragmentSelectorType::ServerTimestamp => write!(f, "ServerTimestamp"),
+            FragmentSelectorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

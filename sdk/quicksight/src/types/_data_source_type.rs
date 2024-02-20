@@ -261,3 +261,39 @@ impl DataSourceType {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceType::AdobeAnalytics => write!(f, "ADOBE_ANALYTICS"),
+            DataSourceType::AmazonElasticsearch => write!(f, "AMAZON_ELASTICSEARCH"),
+            DataSourceType::AmazonOpensearch => write!(f, "AMAZON_OPENSEARCH"),
+            DataSourceType::Athena => write!(f, "ATHENA"),
+            DataSourceType::Aurora => write!(f, "AURORA"),
+            DataSourceType::AuroraPostgresql => write!(f, "AURORA_POSTGRESQL"),
+            DataSourceType::AwsIotAnalytics => write!(f, "AWS_IOT_ANALYTICS"),
+            DataSourceType::Bigquery => write!(f, "BIGQUERY"),
+            DataSourceType::Databricks => write!(f, "DATABRICKS"),
+            DataSourceType::Exasol => write!(f, "EXASOL"),
+            DataSourceType::Github => write!(f, "GITHUB"),
+            DataSourceType::Jira => write!(f, "JIRA"),
+            DataSourceType::Mariadb => write!(f, "MARIADB"),
+            DataSourceType::Mysql => write!(f, "MYSQL"),
+            DataSourceType::Oracle => write!(f, "ORACLE"),
+            DataSourceType::Postgresql => write!(f, "POSTGRESQL"),
+            DataSourceType::Presto => write!(f, "PRESTO"),
+            DataSourceType::Redshift => write!(f, "REDSHIFT"),
+            DataSourceType::S3 => write!(f, "S3"),
+            DataSourceType::Salesforce => write!(f, "SALESFORCE"),
+            DataSourceType::Servicenow => write!(f, "SERVICENOW"),
+            DataSourceType::Snowflake => write!(f, "SNOWFLAKE"),
+            DataSourceType::Spark => write!(f, "SPARK"),
+            DataSourceType::Sqlserver => write!(f, "SQLSERVER"),
+            DataSourceType::Starburst => write!(f, "STARBURST"),
+            DataSourceType::Teradata => write!(f, "TERADATA"),
+            DataSourceType::Timestream => write!(f, "TIMESTREAM"),
+            DataSourceType::Trino => write!(f, "TRINO"),
+            DataSourceType::Twitter => write!(f, "TWITTER"),
+            DataSourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

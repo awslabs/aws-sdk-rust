@@ -96,3 +96,12 @@ impl ProresFramerateControl {
         }
     }
 }
+impl ::std::fmt::Display for ProresFramerateControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProresFramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            ProresFramerateControl::Specified => write!(f, "SPECIFIED"),
+            ProresFramerateControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

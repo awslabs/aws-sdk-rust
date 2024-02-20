@@ -96,3 +96,12 @@ impl M2tsAudioInterval {
         }
     }
 }
+impl ::std::fmt::Display for M2tsAudioInterval {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsAudioInterval::VideoAndFixedIntervals => write!(f, "VIDEO_AND_FIXED_INTERVALS"),
+            M2tsAudioInterval::VideoInterval => write!(f, "VIDEO_INTERVAL"),
+            M2tsAudioInterval::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

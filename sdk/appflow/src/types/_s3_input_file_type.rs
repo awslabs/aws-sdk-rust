@@ -96,3 +96,12 @@ impl S3InputFileType {
         }
     }
 }
+impl ::std::fmt::Display for S3InputFileType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3InputFileType::Csv => write!(f, "CSV"),
+            S3InputFileType::Json => write!(f, "JSON"),
+            S3InputFileType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

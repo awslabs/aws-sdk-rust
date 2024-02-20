@@ -96,3 +96,12 @@ impl CollectorHealth {
         }
     }
 }
+impl ::std::fmt::Display for CollectorHealth {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CollectorHealth::CollectorHealthy => write!(f, "COLLECTOR_HEALTHY"),
+            CollectorHealth::CollectorUnhealthy => write!(f, "COLLECTOR_UNHEALTHY"),
+            CollectorHealth::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

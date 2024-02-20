@@ -96,3 +96,12 @@ impl RecommendedActionType {
         }
     }
 }
+impl ::std::fmt::Display for RecommendedActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendedActionType::Cli => write!(f, "CLI"),
+            RecommendedActionType::Sql => write!(f, "SQL"),
+            RecommendedActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

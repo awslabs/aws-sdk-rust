@@ -116,3 +116,16 @@ impl KxScalingGroupStatus {
         }
     }
 }
+impl ::std::fmt::Display for KxScalingGroupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            KxScalingGroupStatus::Active => write!(f, "ACTIVE"),
+            KxScalingGroupStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            KxScalingGroupStatus::Creating => write!(f, "CREATING"),
+            KxScalingGroupStatus::Deleted => write!(f, "DELETED"),
+            KxScalingGroupStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            KxScalingGroupStatus::Deleting => write!(f, "DELETING"),
+            KxScalingGroupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

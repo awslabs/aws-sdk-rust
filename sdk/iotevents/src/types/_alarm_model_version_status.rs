@@ -106,3 +106,14 @@ impl AlarmModelVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for AlarmModelVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AlarmModelVersionStatus::Activating => write!(f, "ACTIVATING"),
+            AlarmModelVersionStatus::Active => write!(f, "ACTIVE"),
+            AlarmModelVersionStatus::Failed => write!(f, "FAILED"),
+            AlarmModelVersionStatus::Inactive => write!(f, "INACTIVE"),
+            AlarmModelVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

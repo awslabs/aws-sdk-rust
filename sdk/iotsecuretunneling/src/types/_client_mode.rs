@@ -101,3 +101,13 @@ impl ClientMode {
         }
     }
 }
+impl ::std::fmt::Display for ClientMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientMode::All => write!(f, "ALL"),
+            ClientMode::Destination => write!(f, "DESTINATION"),
+            ClientMode::Source => write!(f, "SOURCE"),
+            ClientMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

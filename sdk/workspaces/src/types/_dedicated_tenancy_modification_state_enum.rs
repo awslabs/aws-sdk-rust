@@ -101,3 +101,13 @@ impl DedicatedTenancyModificationStateEnum {
         }
     }
 }
+impl ::std::fmt::Display for DedicatedTenancyModificationStateEnum {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DedicatedTenancyModificationStateEnum::Completed => write!(f, "COMPLETED"),
+            DedicatedTenancyModificationStateEnum::Failed => write!(f, "FAILED"),
+            DedicatedTenancyModificationStateEnum::Pending => write!(f, "PENDING"),
+            DedicatedTenancyModificationStateEnum::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

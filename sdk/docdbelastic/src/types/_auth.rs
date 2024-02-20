@@ -96,3 +96,12 @@ impl Auth {
         }
     }
 }
+impl ::std::fmt::Display for Auth {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Auth::PlainText => write!(f, "PLAIN_TEXT"),
+            Auth::SecretArn => write!(f, "SECRET_ARN"),
+            Auth::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

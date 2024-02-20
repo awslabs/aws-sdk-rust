@@ -96,3 +96,12 @@ impl Format {
         }
     }
 }
+impl ::std::fmt::Display for Format {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Format::Csv => write!(f, "CSV"),
+            Format::Json => write!(f, "JSON"),
+            Format::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

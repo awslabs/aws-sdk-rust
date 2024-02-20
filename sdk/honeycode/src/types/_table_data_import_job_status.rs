@@ -106,3 +106,14 @@ impl TableDataImportJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for TableDataImportJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TableDataImportJobStatus::Completed => write!(f, "COMPLETED"),
+            TableDataImportJobStatus::Failed => write!(f, "FAILED"),
+            TableDataImportJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            TableDataImportJobStatus::Submitted => write!(f, "SUBMITTED"),
+            TableDataImportJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

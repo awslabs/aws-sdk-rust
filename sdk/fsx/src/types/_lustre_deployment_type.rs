@@ -106,3 +106,14 @@ impl LustreDeploymentType {
         }
     }
 }
+impl ::std::fmt::Display for LustreDeploymentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LustreDeploymentType::Persistent1 => write!(f, "PERSISTENT_1"),
+            LustreDeploymentType::Persistent2 => write!(f, "PERSISTENT_2"),
+            LustreDeploymentType::Scratch1 => write!(f, "SCRATCH_1"),
+            LustreDeploymentType::Scratch2 => write!(f, "SCRATCH_2"),
+            LustreDeploymentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

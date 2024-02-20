@@ -96,3 +96,12 @@ impl TierLevel {
         }
     }
 }
+impl ::std::fmt::Display for TierLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TierLevel::Basic => write!(f, "BASIC"),
+            TierLevel::Standard => write!(f, "STANDARD"),
+            TierLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

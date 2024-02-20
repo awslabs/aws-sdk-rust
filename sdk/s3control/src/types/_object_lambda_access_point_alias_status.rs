@@ -96,3 +96,12 @@ impl ObjectLambdaAccessPointAliasStatus {
         }
     }
 }
+impl ::std::fmt::Display for ObjectLambdaAccessPointAliasStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ObjectLambdaAccessPointAliasStatus::Provisioning => write!(f, "PROVISIONING"),
+            ObjectLambdaAccessPointAliasStatus::Ready => write!(f, "READY"),
+            ObjectLambdaAccessPointAliasStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

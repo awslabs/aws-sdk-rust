@@ -101,3 +101,13 @@ impl VaultState {
         }
     }
 }
+impl ::std::fmt::Display for VaultState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VaultState::Available => write!(f, "AVAILABLE"),
+            VaultState::Creating => write!(f, "CREATING"),
+            VaultState::Failed => write!(f, "FAILED"),
+            VaultState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

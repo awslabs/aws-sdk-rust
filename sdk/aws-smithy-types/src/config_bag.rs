@@ -264,9 +264,10 @@ impl CloneableLayer {
     where
         T::StoredType: Clone,
     {
-        self.0
-            .props
-            .insert(TypeId::of::<T>(), TypeErasedBox::new_with_clone(value));
+        self.0.props.insert(
+            TypeId::of::<T::StoredType>(),
+            TypeErasedBox::new_with_clone(value),
+        );
         self
     }
 
@@ -320,7 +321,7 @@ impl CloneableLayer {
     {
         self.0
             .props
-            .entry(TypeId::of::<T>())
+            .entry(TypeId::of::<T::StoredType>())
             .or_insert_with(|| TypeErasedBox::new_with_clone(T::StoredType::default()))
             .downcast_mut()
             .expect("typechecked")
@@ -371,7 +372,7 @@ impl Layer {
     /// Inserts `value` into the layer directly
     fn put_directly<T: Store>(&mut self, value: T::StoredType) -> &mut Self {
         self.props
-            .insert(TypeId::of::<T>(), TypeErasedBox::new(value));
+            .insert(TypeId::of::<T::StoredType>(), TypeErasedBox::new(value));
         self
     }
 
@@ -490,14 +491,14 @@ impl Layer {
     /// Retrieves the value of type `T` from this layer if exists
     fn get<T: Send + Sync + Store + 'static>(&self) -> Option<&T::StoredType> {
         self.props
-            .get(&TypeId::of::<T>())
+            .get(&TypeId::of::<T::StoredType>())
             .map(|t| t.downcast_ref().expect("typechecked"))
     }
 
     /// Returns a mutable reference to `T` if it is stored in this layer
     fn get_mut<T: Send + Sync + Store + 'static>(&mut self) -> Option<&mut T::StoredType> {
         self.props
-            .get_mut(&TypeId::of::<T>())
+            .get_mut(&TypeId::of::<T::StoredType>())
             .map(|t| t.downcast_mut().expect("typechecked"))
     }
 
@@ -508,7 +509,7 @@ impl Layer {
         T::StoredType: Default,
     {
         self.props
-            .entry(TypeId::of::<T>())
+            .entry(TypeId::of::<T::StoredType>())
             .or_insert_with(|| TypeErasedBox::new(T::StoredType::default()))
             .downcast_mut()
             .expect("typechecked")

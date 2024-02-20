@@ -111,3 +111,15 @@ impl SpeakerEnrollmentJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for SpeakerEnrollmentJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SpeakerEnrollmentJobStatus::Completed => write!(f, "COMPLETED"),
+            SpeakerEnrollmentJobStatus::CompletedWithErrors => write!(f, "COMPLETED_WITH_ERRORS"),
+            SpeakerEnrollmentJobStatus::Failed => write!(f, "FAILED"),
+            SpeakerEnrollmentJobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            SpeakerEnrollmentJobStatus::Submitted => write!(f, "SUBMITTED"),
+            SpeakerEnrollmentJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

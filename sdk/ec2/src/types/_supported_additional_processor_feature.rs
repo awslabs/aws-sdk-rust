@@ -91,3 +91,11 @@ impl SupportedAdditionalProcessorFeature {
         }
     }
 }
+impl ::std::fmt::Display for SupportedAdditionalProcessorFeature {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SupportedAdditionalProcessorFeature::AmdSevSnp => write!(f, "amd-sev-snp"),
+            SupportedAdditionalProcessorFeature::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

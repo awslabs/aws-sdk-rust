@@ -91,3 +91,11 @@ impl ApplicationConfigType {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationConfigType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationConfigType::SemtechGeoLocation => write!(f, "SemtechGeolocation"),
+            ApplicationConfigType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

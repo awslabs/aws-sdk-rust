@@ -96,3 +96,12 @@ impl InterfaceProtocolType {
         }
     }
 }
+impl ::std::fmt::Display for InterfaceProtocolType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InterfaceProtocolType::Gre => write!(f, "GRE"),
+            InterfaceProtocolType::Vlan => write!(f, "VLAN"),
+            InterfaceProtocolType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

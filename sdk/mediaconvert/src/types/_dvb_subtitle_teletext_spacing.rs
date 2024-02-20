@@ -101,3 +101,13 @@ impl DvbSubtitleTeletextSpacing {
         }
     }
 }
+impl ::std::fmt::Display for DvbSubtitleTeletextSpacing {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DvbSubtitleTeletextSpacing::Auto => write!(f, "AUTO"),
+            DvbSubtitleTeletextSpacing::FixedGrid => write!(f, "FIXED_GRID"),
+            DvbSubtitleTeletextSpacing::Proportional => write!(f, "PROPORTIONAL"),
+            DvbSubtitleTeletextSpacing::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -159,3 +159,22 @@ impl DeploymentCommandName {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentCommandName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentCommandName::Configure => write!(f, "configure"),
+            DeploymentCommandName::Deploy => write!(f, "deploy"),
+            DeploymentCommandName::ExecuteRecipes => write!(f, "execute_recipes"),
+            DeploymentCommandName::InstallDependencies => write!(f, "install_dependencies"),
+            DeploymentCommandName::Restart => write!(f, "restart"),
+            DeploymentCommandName::Rollback => write!(f, "rollback"),
+            DeploymentCommandName::Setup => write!(f, "setup"),
+            DeploymentCommandName::Start => write!(f, "start"),
+            DeploymentCommandName::Stop => write!(f, "stop"),
+            DeploymentCommandName::Undeploy => write!(f, "undeploy"),
+            DeploymentCommandName::UpdateCustomCookbooks => write!(f, "update_custom_cookbooks"),
+            DeploymentCommandName::UpdateDependencies => write!(f, "update_dependencies"),
+            DeploymentCommandName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

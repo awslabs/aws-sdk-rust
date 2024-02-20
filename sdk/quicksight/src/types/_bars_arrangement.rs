@@ -101,3 +101,13 @@ impl BarsArrangement {
         }
     }
 }
+impl ::std::fmt::Display for BarsArrangement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BarsArrangement::Clustered => write!(f, "CLUSTERED"),
+            BarsArrangement::Stacked => write!(f, "STACKED"),
+            BarsArrangement::StackedPercent => write!(f, "STACKED_PERCENT"),
+            BarsArrangement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

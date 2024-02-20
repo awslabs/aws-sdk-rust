@@ -111,3 +111,15 @@ impl H264InterlaceMode {
         }
     }
 }
+impl ::std::fmt::Display for H264InterlaceMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H264InterlaceMode::BottomField => write!(f, "BOTTOM_FIELD"),
+            H264InterlaceMode::FollowBottomField => write!(f, "FOLLOW_BOTTOM_FIELD"),
+            H264InterlaceMode::FollowTopField => write!(f, "FOLLOW_TOP_FIELD"),
+            H264InterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
+            H264InterlaceMode::TopField => write!(f, "TOP_FIELD"),
+            H264InterlaceMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

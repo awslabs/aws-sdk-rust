@@ -96,3 +96,12 @@ impl HlsIntervalCadence {
         }
     }
 }
+impl ::std::fmt::Display for HlsIntervalCadence {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsIntervalCadence::FollowCustom => write!(f, "FOLLOW_CUSTOM"),
+            HlsIntervalCadence::FollowIframe => write!(f, "FOLLOW_IFRAME"),
+            HlsIntervalCadence::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl M2tsCcDescriptor {
         }
     }
 }
+impl ::std::fmt::Display for M2tsCcDescriptor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            M2tsCcDescriptor::Disabled => write!(f, "DISABLED"),
+            M2tsCcDescriptor::Enabled => write!(f, "ENABLED"),
+            M2tsCcDescriptor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

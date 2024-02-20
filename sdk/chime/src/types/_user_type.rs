@@ -96,3 +96,12 @@ impl UserType {
         }
     }
 }
+impl ::std::fmt::Display for UserType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UserType::PrivateUser => write!(f, "PrivateUser"),
+            UserType::SharedDevice => write!(f, "SharedDevice"),
+            UserType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

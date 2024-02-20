@@ -106,3 +106,14 @@ impl RecommendationTemplateStatus {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationTemplateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationTemplateStatus::Failed => write!(f, "Failed"),
+            RecommendationTemplateStatus::InProgress => write!(f, "InProgress"),
+            RecommendationTemplateStatus::Pending => write!(f, "Pending"),
+            RecommendationTemplateStatus::Success => write!(f, "Success"),
+            RecommendationTemplateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

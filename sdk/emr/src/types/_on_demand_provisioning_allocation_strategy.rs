@@ -91,3 +91,11 @@ impl OnDemandProvisioningAllocationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for OnDemandProvisioningAllocationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OnDemandProvisioningAllocationStrategy::LowestPrice => write!(f, "lowest-price"),
+            OnDemandProvisioningAllocationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ScanMode {
         }
     }
 }
+impl ::std::fmt::Display for ScanMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScanMode::Interlace => write!(f, "interlace"),
+            ScanMode::Progressive => write!(f, "progressive"),
+            ScanMode::ProgressiveSegmentedFrame => write!(f, "progressive-segmented-frame"),
+            ScanMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

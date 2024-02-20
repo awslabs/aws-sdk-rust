@@ -121,3 +121,17 @@ impl BurninSubtitleOutlineColor {
         }
     }
 }
+impl ::std::fmt::Display for BurninSubtitleOutlineColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurninSubtitleOutlineColor::Auto => write!(f, "AUTO"),
+            BurninSubtitleOutlineColor::Black => write!(f, "BLACK"),
+            BurninSubtitleOutlineColor::Blue => write!(f, "BLUE"),
+            BurninSubtitleOutlineColor::Green => write!(f, "GREEN"),
+            BurninSubtitleOutlineColor::Red => write!(f, "RED"),
+            BurninSubtitleOutlineColor::White => write!(f, "WHITE"),
+            BurninSubtitleOutlineColor::Yellow => write!(f, "YELLOW"),
+            BurninSubtitleOutlineColor::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

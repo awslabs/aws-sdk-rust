@@ -101,3 +101,13 @@ impl InventoryFormat {
         }
     }
 }
+impl ::std::fmt::Display for InventoryFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InventoryFormat::Csv => write!(f, "CSV"),
+            InventoryFormat::Orc => write!(f, "ORC"),
+            InventoryFormat::Parquet => write!(f, "Parquet"),
+            InventoryFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

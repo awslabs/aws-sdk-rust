@@ -116,3 +116,16 @@ impl AwsLogSourceName {
         }
     }
 }
+impl ::std::fmt::Display for AwsLogSourceName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AwsLogSourceName::CloudTrailMgmt => write!(f, "CLOUD_TRAIL_MGMT"),
+            AwsLogSourceName::LambdaExecution => write!(f, "LAMBDA_EXECUTION"),
+            AwsLogSourceName::Route53 => write!(f, "ROUTE53"),
+            AwsLogSourceName::S3Data => write!(f, "S3_DATA"),
+            AwsLogSourceName::ShFindings => write!(f, "SH_FINDINGS"),
+            AwsLogSourceName::VpcFlow => write!(f, "VPC_FLOW"),
+            AwsLogSourceName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

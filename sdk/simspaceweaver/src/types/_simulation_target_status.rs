@@ -106,3 +106,14 @@ impl SimulationTargetStatus {
         }
     }
 }
+impl ::std::fmt::Display for SimulationTargetStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SimulationTargetStatus::Deleted => write!(f, "DELETED"),
+            SimulationTargetStatus::Started => write!(f, "STARTED"),
+            SimulationTargetStatus::Stopped => write!(f, "STOPPED"),
+            SimulationTargetStatus::UnknownValue => write!(f, "UNKNOWN"),
+            SimulationTargetStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

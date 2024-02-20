@@ -96,3 +96,12 @@ impl StopType {
         }
     }
 }
+impl ::std::fmt::Display for StopType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StopType::Cancel => write!(f, "Cancel"),
+            StopType::Complete => write!(f, "Complete"),
+            StopType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

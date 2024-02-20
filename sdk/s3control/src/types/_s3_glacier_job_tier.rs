@@ -96,3 +96,12 @@ impl S3GlacierJobTier {
         }
     }
 }
+impl ::std::fmt::Display for S3GlacierJobTier {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3GlacierJobTier::Bulk => write!(f, "BULK"),
+            S3GlacierJobTier::Standard => write!(f, "STANDARD"),
+            S3GlacierJobTier::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

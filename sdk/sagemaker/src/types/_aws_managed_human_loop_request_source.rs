@@ -117,3 +117,17 @@ impl AwsManagedHumanLoopRequestSource {
         }
     }
 }
+impl ::std::fmt::Display for AwsManagedHumanLoopRequestSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AwsManagedHumanLoopRequestSource::BedrockModelEvaluation => write!(f, "AWS/Bedrock/ModelEvaluation"),
+            AwsManagedHumanLoopRequestSource::HandshakeVerifyIdentity => write!(f, "AWS/Handshake/VerifyIdentity"),
+            AwsManagedHumanLoopRequestSource::RekognitionDetectModerationLabelsImageV3 => {
+                write!(f, "AWS/Rekognition/DetectModerationLabels/Image/V3")
+            }
+            AwsManagedHumanLoopRequestSource::TextractAnalyzeDocumentFormsV1 => write!(f, "AWS/Textract/AnalyzeDocument/Forms/V1"),
+            AwsManagedHumanLoopRequestSource::TextractAnalyzeExpense => write!(f, "AWS/Textract/AnalyzeExpense"),
+            AwsManagedHumanLoopRequestSource::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

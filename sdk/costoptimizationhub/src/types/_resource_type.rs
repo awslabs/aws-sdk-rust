@@ -165,3 +165,23 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::ComputeSavingsPlans => write!(f, "ComputeSavingsPlans"),
+            ResourceType::EbsVolume => write!(f, "EbsVolume"),
+            ResourceType::Ec2AutoScalingGroup => write!(f, "Ec2AutoScalingGroup"),
+            ResourceType::Ec2Instance => write!(f, "Ec2Instance"),
+            ResourceType::Ec2InstanceSavingsPlans => write!(f, "Ec2InstanceSavingsPlans"),
+            ResourceType::Ec2ReservedInstances => write!(f, "Ec2ReservedInstances"),
+            ResourceType::EcsService => write!(f, "EcsService"),
+            ResourceType::ElastiCacheReservedInstances => write!(f, "ElastiCacheReservedInstances"),
+            ResourceType::LambdaFunction => write!(f, "LambdaFunction"),
+            ResourceType::OpenSearchReservedInstances => write!(f, "OpenSearchReservedInstances"),
+            ResourceType::RdsReservedInstances => write!(f, "RdsReservedInstances"),
+            ResourceType::RedshiftReservedInstances => write!(f, "RedshiftReservedInstances"),
+            ResourceType::SageMakerSavingsPlans => write!(f, "SageMakerSavingsPlans"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl ReferenceStatus {
         }
     }
 }
+impl ::std::fmt::Display for ReferenceStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReferenceStatus::Active => write!(f, "ACTIVE"),
+            ReferenceStatus::Deleted => write!(f, "DELETED"),
+            ReferenceStatus::Deleting => write!(f, "DELETING"),
+            ReferenceStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

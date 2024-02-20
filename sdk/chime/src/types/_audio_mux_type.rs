@@ -96,3 +96,12 @@ impl AudioMuxType {
         }
     }
 }
+impl ::std::fmt::Display for AudioMuxType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioMuxType::AudioOnly => write!(f, "AudioOnly"),
+            AudioMuxType::AudioWithActiveSpeakerVideo => write!(f, "AudioWithActiveSpeakerVideo"),
+            AudioMuxType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

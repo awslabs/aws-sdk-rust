@@ -101,3 +101,13 @@ impl UnAuthenticatedElement {
         }
     }
 }
+impl ::std::fmt::Display for UnAuthenticatedElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UnAuthenticatedElement::CreateAndUpdate => write!(f, "CREATE_AND_UPDATE"),
+            UnAuthenticatedElement::Delete => write!(f, "DELETE"),
+            UnAuthenticatedElement::Read => write!(f, "READ"),
+            UnAuthenticatedElement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

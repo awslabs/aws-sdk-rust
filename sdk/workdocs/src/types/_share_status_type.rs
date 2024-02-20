@@ -96,3 +96,12 @@ impl ShareStatusType {
         }
     }
 }
+impl ::std::fmt::Display for ShareStatusType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ShareStatusType::Failure => write!(f, "FAILURE"),
+            ShareStatusType::Success => write!(f, "SUCCESS"),
+            ShareStatusType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

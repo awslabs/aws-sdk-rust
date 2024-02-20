@@ -116,3 +116,16 @@ impl DestinationStatus {
         }
     }
 }
+impl ::std::fmt::Display for DestinationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DestinationStatus::Active => write!(f, "ACTIVE"),
+            DestinationStatus::Disabled => write!(f, "DISABLED"),
+            DestinationStatus::Disabling => write!(f, "DISABLING"),
+            DestinationStatus::EnableFailed => write!(f, "ENABLE_FAILED"),
+            DestinationStatus::Enabling => write!(f, "ENABLING"),
+            DestinationStatus::Updating => write!(f, "UPDATING"),
+            DestinationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

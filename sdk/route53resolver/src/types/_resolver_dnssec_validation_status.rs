@@ -123,3 +123,16 @@ impl ResolverDnssecValidationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResolverDnssecValidationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverDnssecValidationStatus::Disabled => write!(f, "DISABLED"),
+            ResolverDnssecValidationStatus::Disabling => write!(f, "DISABLING"),
+            ResolverDnssecValidationStatus::Enabled => write!(f, "ENABLED"),
+            ResolverDnssecValidationStatus::Enabling => write!(f, "ENABLING"),
+            ResolverDnssecValidationStatus::UpdateToUseLocalResourceSetting => write!(f, "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING"),
+            ResolverDnssecValidationStatus::UseLocalResourceSetting => write!(f, "USE_LOCAL_RESOURCE_SETTING"),
+            ResolverDnssecValidationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

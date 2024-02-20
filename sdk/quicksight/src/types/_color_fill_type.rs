@@ -96,3 +96,12 @@ impl ColorFillType {
         }
     }
 }
+impl ::std::fmt::Display for ColorFillType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ColorFillType::Discrete => write!(f, "DISCRETE"),
+            ColorFillType::Gradient => write!(f, "GRADIENT"),
+            ColorFillType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

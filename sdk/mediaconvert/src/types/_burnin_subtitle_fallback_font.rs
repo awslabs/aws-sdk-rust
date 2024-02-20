@@ -117,3 +117,15 @@ impl BurninSubtitleFallbackFont {
         }
     }
 }
+impl ::std::fmt::Display for BurninSubtitleFallbackFont {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BurninSubtitleFallbackFont::BestMatch => write!(f, "BEST_MATCH"),
+            BurninSubtitleFallbackFont::MonospacedSansserif => write!(f, "MONOSPACED_SANSSERIF"),
+            BurninSubtitleFallbackFont::MonospacedSerif => write!(f, "MONOSPACED_SERIF"),
+            BurninSubtitleFallbackFont::ProportionalSansserif => write!(f, "PROPORTIONAL_SANSSERIF"),
+            BurninSubtitleFallbackFont::ProportionalSerif => write!(f, "PROPORTIONAL_SERIF"),
+            BurninSubtitleFallbackFont::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

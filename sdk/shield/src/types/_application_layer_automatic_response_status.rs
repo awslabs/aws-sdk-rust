@@ -96,3 +96,12 @@ impl ApplicationLayerAutomaticResponseStatus {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationLayerAutomaticResponseStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationLayerAutomaticResponseStatus::Disabled => write!(f, "DISABLED"),
+            ApplicationLayerAutomaticResponseStatus::Enabled => write!(f, "ENABLED"),
+            ApplicationLayerAutomaticResponseStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

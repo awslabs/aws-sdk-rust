@@ -106,3 +106,14 @@ impl ProfileSubtype {
         }
     }
 }
+impl ::std::fmt::Display for ProfileSubtype {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProfileSubtype::Frequent => write!(f, "FREQUENT"),
+            ProfileSubtype::Infrequent => write!(f, "INFREQUENT"),
+            ProfileSubtype::Rare => write!(f, "RARE"),
+            ProfileSubtype::Unseen => write!(f, "UNSEEN"),
+            ProfileSubtype::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

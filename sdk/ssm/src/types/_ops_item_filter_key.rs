@@ -255,3 +255,38 @@ impl OpsItemFilterKey {
         }
     }
 }
+impl ::std::fmt::Display for OpsItemFilterKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OpsItemFilterKey::AccountId => write!(f, "AccountId"),
+            OpsItemFilterKey::ActualEndTime => write!(f, "ActualEndTime"),
+            OpsItemFilterKey::ActualStartTime => write!(f, "ActualStartTime"),
+            OpsItemFilterKey::AutomationId => write!(f, "AutomationId"),
+            OpsItemFilterKey::Category => write!(f, "Category"),
+            OpsItemFilterKey::ChangeRequestApproverArn => write!(f, "ChangeRequestByApproverArn"),
+            OpsItemFilterKey::ChangeRequestApproverName => write!(f, "ChangeRequestByApproverName"),
+            OpsItemFilterKey::ChangeRequestRequesterArn => write!(f, "ChangeRequestByRequesterArn"),
+            OpsItemFilterKey::ChangeRequestRequesterName => write!(f, "ChangeRequestByRequesterName"),
+            OpsItemFilterKey::ChangeRequestTargetsResourceGroup => write!(f, "ChangeRequestByTargetsResourceGroup"),
+            OpsItemFilterKey::ChangeRequestTemplate => write!(f, "ChangeRequestByTemplate"),
+            OpsItemFilterKey::CreatedBy => write!(f, "CreatedBy"),
+            OpsItemFilterKey::CreatedTime => write!(f, "CreatedTime"),
+            OpsItemFilterKey::InsightType => write!(f, "InsightByType"),
+            OpsItemFilterKey::LastModifiedTime => write!(f, "LastModifiedTime"),
+            OpsItemFilterKey::OperationalData => write!(f, "OperationalData"),
+            OpsItemFilterKey::OperationalDataKey => write!(f, "OperationalDataKey"),
+            OpsItemFilterKey::OperationalDataValue => write!(f, "OperationalDataValue"),
+            OpsItemFilterKey::OpsitemId => write!(f, "OpsItemId"),
+            OpsItemFilterKey::OpsitemType => write!(f, "OpsItemType"),
+            OpsItemFilterKey::PlannedEndTime => write!(f, "PlannedEndTime"),
+            OpsItemFilterKey::PlannedStartTime => write!(f, "PlannedStartTime"),
+            OpsItemFilterKey::Priority => write!(f, "Priority"),
+            OpsItemFilterKey::ResourceId => write!(f, "ResourceId"),
+            OpsItemFilterKey::Severity => write!(f, "Severity"),
+            OpsItemFilterKey::Source => write!(f, "Source"),
+            OpsItemFilterKey::Status => write!(f, "Status"),
+            OpsItemFilterKey::Title => write!(f, "Title"),
+            OpsItemFilterKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

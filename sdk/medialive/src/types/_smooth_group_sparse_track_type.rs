@@ -101,3 +101,13 @@ impl SmoothGroupSparseTrackType {
         }
     }
 }
+impl ::std::fmt::Display for SmoothGroupSparseTrackType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SmoothGroupSparseTrackType::None => write!(f, "NONE"),
+            SmoothGroupSparseTrackType::Scte35 => write!(f, "SCTE_35"),
+            SmoothGroupSparseTrackType::Scte35WithoutSegmentation => write!(f, "SCTE_35_WITHOUT_SEGMENTATION"),
+            SmoothGroupSparseTrackType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

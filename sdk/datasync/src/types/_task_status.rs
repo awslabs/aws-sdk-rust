@@ -111,3 +111,15 @@ impl TaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for TaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskStatus::Available => write!(f, "AVAILABLE"),
+            TaskStatus::Creating => write!(f, "CREATING"),
+            TaskStatus::Queued => write!(f, "QUEUED"),
+            TaskStatus::Running => write!(f, "RUNNING"),
+            TaskStatus::Unavailable => write!(f, "UNAVAILABLE"),
+            TaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

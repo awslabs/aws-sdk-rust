@@ -91,3 +91,11 @@ impl TargetPlatformAccelerator {
         }
     }
 }
+impl ::std::fmt::Display for TargetPlatformAccelerator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TargetPlatformAccelerator::Nvidia => write!(f, "NVIDIA"),
+            TargetPlatformAccelerator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

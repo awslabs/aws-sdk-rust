@@ -101,3 +101,13 @@ impl PhoneNumberWorkflowStatus {
         }
     }
 }
+impl ::std::fmt::Display for PhoneNumberWorkflowStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhoneNumberWorkflowStatus::Claimed => write!(f, "CLAIMED"),
+            PhoneNumberWorkflowStatus::Failed => write!(f, "FAILED"),
+            PhoneNumberWorkflowStatus::InProgress => write!(f, "IN_PROGRESS"),
+            PhoneNumberWorkflowStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

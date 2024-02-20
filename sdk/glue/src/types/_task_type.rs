@@ -111,3 +111,15 @@ impl TaskType {
         }
     }
 }
+impl ::std::fmt::Display for TaskType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TaskType::Evaluation => write!(f, "EVALUATION"),
+            TaskType::ExportLabels => write!(f, "EXPORT_LABELS"),
+            TaskType::FindMatches => write!(f, "FIND_MATCHES"),
+            TaskType::ImportLabels => write!(f, "IMPORT_LABELS"),
+            TaskType::LabelingSetGeneration => write!(f, "LABELING_SET_GENERATION"),
+            TaskType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

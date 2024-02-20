@@ -101,3 +101,13 @@ impl Ec2TagFilterType {
         }
     }
 }
+impl ::std::fmt::Display for Ec2TagFilterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Ec2TagFilterType::KeyAndValue => write!(f, "KEY_AND_VALUE"),
+            Ec2TagFilterType::KeyOnly => write!(f, "KEY_ONLY"),
+            Ec2TagFilterType::ValueOnly => write!(f, "VALUE_ONLY"),
+            Ec2TagFilterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

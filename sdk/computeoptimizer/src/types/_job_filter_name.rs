@@ -96,3 +96,12 @@ impl JobFilterName {
         }
     }
 }
+impl ::std::fmt::Display for JobFilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            JobFilterName::JobStatus => write!(f, "JobStatus"),
+            JobFilterName::ResourceType => write!(f, "ResourceType"),
+            JobFilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

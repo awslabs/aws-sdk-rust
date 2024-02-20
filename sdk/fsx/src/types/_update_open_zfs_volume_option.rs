@@ -101,3 +101,13 @@ impl UpdateOpenZfsVolumeOption {
         }
     }
 }
+impl ::std::fmt::Display for UpdateOpenZfsVolumeOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateOpenZfsVolumeOption::DeleteClonedVolumes => write!(f, "DELETE_CLONED_VOLUMES"),
+            UpdateOpenZfsVolumeOption::DeleteIntermediateData => write!(f, "DELETE_INTERMEDIATE_DATA"),
+            UpdateOpenZfsVolumeOption::DeleteIntermediateSnapshots => write!(f, "DELETE_INTERMEDIATE_SNAPSHOTS"),
+            UpdateOpenZfsVolumeOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

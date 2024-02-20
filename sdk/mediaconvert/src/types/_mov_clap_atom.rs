@@ -96,3 +96,12 @@ impl MovClapAtom {
         }
     }
 }
+impl ::std::fmt::Display for MovClapAtom {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MovClapAtom::Exclude => write!(f, "EXCLUDE"),
+            MovClapAtom::Include => write!(f, "INCLUDE"),
+            MovClapAtom::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

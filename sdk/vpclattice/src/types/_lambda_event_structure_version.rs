@@ -96,3 +96,12 @@ impl LambdaEventStructureVersion {
         }
     }
 }
+impl ::std::fmt::Display for LambdaEventStructureVersion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LambdaEventStructureVersion::V1 => write!(f, "V1"),
+            LambdaEventStructureVersion::V2 => write!(f, "V2"),
+            LambdaEventStructureVersion::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

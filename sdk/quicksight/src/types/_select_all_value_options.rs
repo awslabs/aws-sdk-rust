@@ -91,3 +91,11 @@ impl SelectAllValueOptions {
         }
     }
 }
+impl ::std::fmt::Display for SelectAllValueOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SelectAllValueOptions::AllValues => write!(f, "ALL_VALUES"),
+            SelectAllValueOptions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

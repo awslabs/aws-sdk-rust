@@ -91,3 +91,11 @@ impl BucketMetadataErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for BucketMetadataErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BucketMetadataErrorCode::AccessDenied => write!(f, "ACCESS_DENIED"),
+            BucketMetadataErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl GroupConfigurationStatus {
         }
     }
 }
+impl ::std::fmt::Display for GroupConfigurationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupConfigurationStatus::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
+            GroupConfigurationStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            GroupConfigurationStatus::Updating => write!(f, "UPDATING"),
+            GroupConfigurationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

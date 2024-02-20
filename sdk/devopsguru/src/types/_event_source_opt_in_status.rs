@@ -96,3 +96,12 @@ impl EventSourceOptInStatus {
         }
     }
 }
+impl ::std::fmt::Display for EventSourceOptInStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventSourceOptInStatus::Disabled => write!(f, "DISABLED"),
+            EventSourceOptInStatus::Enabled => write!(f, "ENABLED"),
+            EventSourceOptInStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

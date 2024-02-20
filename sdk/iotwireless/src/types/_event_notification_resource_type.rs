@@ -101,3 +101,13 @@ impl EventNotificationResourceType {
         }
     }
 }
+impl ::std::fmt::Display for EventNotificationResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EventNotificationResourceType::SidewalkAccount => write!(f, "SidewalkAccount"),
+            EventNotificationResourceType::WirelessDevice => write!(f, "WirelessDevice"),
+            EventNotificationResourceType::WirelessGateway => write!(f, "WirelessGateway"),
+            EventNotificationResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

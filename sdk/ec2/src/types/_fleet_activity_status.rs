@@ -106,3 +106,14 @@ impl FleetActivityStatus {
         }
     }
 }
+impl ::std::fmt::Display for FleetActivityStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FleetActivityStatus::Error => write!(f, "error"),
+            FleetActivityStatus::Fulfilled => write!(f, "fulfilled"),
+            FleetActivityStatus::PendingFulfillment => write!(f, "pending_fulfillment"),
+            FleetActivityStatus::PendingTermination => write!(f, "pending_termination"),
+            FleetActivityStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

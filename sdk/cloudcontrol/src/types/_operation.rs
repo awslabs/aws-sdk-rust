@@ -101,3 +101,13 @@ impl Operation {
         }
     }
 }
+impl ::std::fmt::Display for Operation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Operation::Create => write!(f, "CREATE"),
+            Operation::Delete => write!(f, "DELETE"),
+            Operation::Update => write!(f, "UPDATE"),
+            Operation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl PropertyDataType {
         }
     }
 }
+impl ::std::fmt::Display for PropertyDataType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PropertyDataType::Boolean => write!(f, "BOOLEAN"),
+            PropertyDataType::Double => write!(f, "DOUBLE"),
+            PropertyDataType::Integer => write!(f, "INTEGER"),
+            PropertyDataType::String => write!(f, "STRING"),
+            PropertyDataType::Struct => write!(f, "STRUCT"),
+            PropertyDataType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -126,3 +126,18 @@ impl RestoreJobState {
         }
     }
 }
+impl ::std::fmt::Display for RestoreJobState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RestoreJobState::Aborted => write!(f, "ABORTED"),
+            RestoreJobState::AggregateAll => write!(f, "AGGREGATE_ALL"),
+            RestoreJobState::Any => write!(f, "ANY"),
+            RestoreJobState::Completed => write!(f, "COMPLETED"),
+            RestoreJobState::Created => write!(f, "CREATED"),
+            RestoreJobState::Failed => write!(f, "FAILED"),
+            RestoreJobState::Pending => write!(f, "PENDING"),
+            RestoreJobState::Running => write!(f, "RUNNING"),
+            RestoreJobState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

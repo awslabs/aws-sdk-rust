@@ -101,3 +101,13 @@ impl ProvisioningType {
         }
     }
 }
+impl ::std::fmt::Display for ProvisioningType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProvisioningType::FullyMutable => write!(f, "FULLY_MUTABLE"),
+            ProvisioningType::Immutable => write!(f, "IMMUTABLE"),
+            ProvisioningType::NonProvisionable => write!(f, "NON_PROVISIONABLE"),
+            ProvisioningType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

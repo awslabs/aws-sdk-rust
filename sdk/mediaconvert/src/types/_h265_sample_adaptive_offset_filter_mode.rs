@@ -101,3 +101,13 @@ impl H265SampleAdaptiveOffsetFilterMode {
         }
     }
 }
+impl ::std::fmt::Display for H265SampleAdaptiveOffsetFilterMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265SampleAdaptiveOffsetFilterMode::Adaptive => write!(f, "ADAPTIVE"),
+            H265SampleAdaptiveOffsetFilterMode::Default => write!(f, "DEFAULT"),
+            H265SampleAdaptiveOffsetFilterMode::Off => write!(f, "OFF"),
+            H265SampleAdaptiveOffsetFilterMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

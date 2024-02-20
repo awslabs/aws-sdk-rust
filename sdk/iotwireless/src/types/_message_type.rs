@@ -112,3 +112,14 @@ impl MessageType {
         }
     }
 }
+impl ::std::fmt::Display for MessageType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MessageType::CustomCommandIdGet => write!(f, "CUSTOM_COMMAND_ID_GET"),
+            MessageType::CustomCommandIdNotify => write!(f, "CUSTOM_COMMAND_ID_NOTIFY"),
+            MessageType::CustomCommandIdResp => write!(f, "CUSTOM_COMMAND_ID_RESP"),
+            MessageType::CustomCommandIdSet => write!(f, "CUSTOM_COMMAND_ID_SET"),
+            MessageType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

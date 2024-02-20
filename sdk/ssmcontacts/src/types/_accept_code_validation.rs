@@ -96,3 +96,12 @@ impl AcceptCodeValidation {
         }
     }
 }
+impl ::std::fmt::Display for AcceptCodeValidation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AcceptCodeValidation::Enforce => write!(f, "ENFORCE"),
+            AcceptCodeValidation::Ignore => write!(f, "IGNORE"),
+            AcceptCodeValidation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

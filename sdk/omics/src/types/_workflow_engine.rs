@@ -101,3 +101,13 @@ impl WorkflowEngine {
         }
     }
 }
+impl ::std::fmt::Display for WorkflowEngine {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WorkflowEngine::Cwl => write!(f, "CWL"),
+            WorkflowEngine::Nextflow => write!(f, "NEXTFLOW"),
+            WorkflowEngine::Wdl => write!(f, "WDL"),
+            WorkflowEngine::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

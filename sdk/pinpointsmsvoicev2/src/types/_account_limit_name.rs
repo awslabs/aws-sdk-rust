@@ -135,3 +135,18 @@ impl AccountLimitName {
         }
     }
 }
+impl ::std::fmt::Display for AccountLimitName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AccountLimitName::ConfigurationSets => write!(f, "CONFIGURATION_SETS"),
+            AccountLimitName::OptOutLists => write!(f, "OPT_OUT_LISTS"),
+            AccountLimitName::PhoneNumbers => write!(f, "PHONE_NUMBERS"),
+            AccountLimitName::Pools => write!(f, "POOLS"),
+            AccountLimitName::Registrations => write!(f, "REGISTRATIONS"),
+            AccountLimitName::RegistrationAttachments => write!(f, "REGISTRATION_ATTACHMENTS"),
+            AccountLimitName::SenderIds => write!(f, "SENDER_IDS"),
+            AccountLimitName::VerifiedDestinationNumbers => write!(f, "VERIFIED_DESTINATION_NUMBERS"),
+            AccountLimitName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

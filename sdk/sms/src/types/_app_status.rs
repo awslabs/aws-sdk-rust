@@ -116,3 +116,16 @@ impl AppStatus {
         }
     }
 }
+impl ::std::fmt::Display for AppStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppStatus::Active => write!(f, "ACTIVE"),
+            AppStatus::Creating => write!(f, "CREATING"),
+            AppStatus::Deleted => write!(f, "DELETED"),
+            AppStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            AppStatus::Deleting => write!(f, "DELETING"),
+            AppStatus::Updating => write!(f, "UPDATING"),
+            AppStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

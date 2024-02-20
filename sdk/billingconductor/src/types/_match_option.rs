@@ -91,3 +91,11 @@ impl MatchOption {
         }
     }
 }
+impl ::std::fmt::Display for MatchOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MatchOption::NotEqual => write!(f, "NOT_EQUAL"),
+            MatchOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

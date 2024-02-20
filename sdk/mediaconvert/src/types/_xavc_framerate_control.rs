@@ -96,3 +96,12 @@ impl XavcFramerateControl {
         }
     }
 }
+impl ::std::fmt::Display for XavcFramerateControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            XavcFramerateControl::InitializeFromSource => write!(f, "INITIALIZE_FROM_SOURCE"),
+            XavcFramerateControl::Specified => write!(f, "SPECIFIED"),
+            XavcFramerateControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

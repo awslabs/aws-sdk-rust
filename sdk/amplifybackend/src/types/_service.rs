@@ -91,3 +91,11 @@ impl Service {
         }
     }
 }
+impl ::std::fmt::Display for Service {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Service::Cognito => write!(f, "COGNITO"),
+            Service::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

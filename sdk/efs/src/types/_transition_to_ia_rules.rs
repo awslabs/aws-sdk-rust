@@ -141,3 +141,19 @@ impl TransitionToIaRules {
         }
     }
 }
+impl ::std::fmt::Display for TransitionToIaRules {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransitionToIaRules::After14Days => write!(f, "AFTER_14_DAYS"),
+            TransitionToIaRules::After180Days => write!(f, "AFTER_180_DAYS"),
+            TransitionToIaRules::After1Day => write!(f, "AFTER_1_DAY"),
+            TransitionToIaRules::After270Days => write!(f, "AFTER_270_DAYS"),
+            TransitionToIaRules::After30Days => write!(f, "AFTER_30_DAYS"),
+            TransitionToIaRules::After365Days => write!(f, "AFTER_365_DAYS"),
+            TransitionToIaRules::After60Days => write!(f, "AFTER_60_DAYS"),
+            TransitionToIaRules::After7Days => write!(f, "AFTER_7_DAYS"),
+            TransitionToIaRules::After90Days => write!(f, "AFTER_90_DAYS"),
+            TransitionToIaRules::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

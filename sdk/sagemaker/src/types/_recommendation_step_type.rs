@@ -91,3 +91,11 @@ impl RecommendationStepType {
         }
     }
 }
+impl ::std::fmt::Display for RecommendationStepType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RecommendationStepType::Benchmark => write!(f, "BENCHMARK"),
+            RecommendationStepType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

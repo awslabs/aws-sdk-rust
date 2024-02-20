@@ -117,3 +117,15 @@ impl AgentParameterField {
         }
     }
 }
+impl ::std::fmt::Display for AgentParameterField {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AgentParameterField::MaxStackDepth => write!(f, "MaxStackDepth"),
+            AgentParameterField::MemoryUsageLimitPercent => write!(f, "MemoryUsageLimitPercent"),
+            AgentParameterField::MinimumTimeForReportingInMilliseconds => write!(f, "MinimumTimeForReportingInMilliseconds"),
+            AgentParameterField::ReportingIntervalInMilliseconds => write!(f, "ReportingIntervalInMilliseconds"),
+            AgentParameterField::SamplingIntervalInMilliseconds => write!(f, "SamplingIntervalInMilliseconds"),
+            AgentParameterField::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

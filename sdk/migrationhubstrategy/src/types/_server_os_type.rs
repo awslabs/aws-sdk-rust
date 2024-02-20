@@ -111,3 +111,15 @@ impl ServerOsType {
         }
     }
 }
+impl ::std::fmt::Display for ServerOsType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServerOsType::AmazonLinux => write!(f, "AmazonLinux"),
+            ServerOsType::EndOfSupportWindowsServer => write!(f, "EndOfSupportWindowsServer"),
+            ServerOsType::Other => write!(f, "Other"),
+            ServerOsType::Redhat => write!(f, "Redhat"),
+            ServerOsType::WindowsServer => write!(f, "WindowsServer"),
+            ServerOsType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

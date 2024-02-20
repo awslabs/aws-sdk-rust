@@ -96,3 +96,12 @@ impl CodeSigningPolicy {
         }
     }
 }
+impl ::std::fmt::Display for CodeSigningPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CodeSigningPolicy::Enforce => write!(f, "Enforce"),
+            CodeSigningPolicy::Warn => write!(f, "Warn"),
+            CodeSigningPolicy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

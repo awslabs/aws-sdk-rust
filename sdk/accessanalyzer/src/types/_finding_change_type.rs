@@ -101,3 +101,13 @@ impl FindingChangeType {
         }
     }
 }
+impl ::std::fmt::Display for FindingChangeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FindingChangeType::Changed => write!(f, "CHANGED"),
+            FindingChangeType::New => write!(f, "NEW"),
+            FindingChangeType::Unchanged => write!(f, "UNCHANGED"),
+            FindingChangeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

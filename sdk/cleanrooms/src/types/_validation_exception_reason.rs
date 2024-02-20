@@ -111,3 +111,14 @@ impl ValidationExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ValidationExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ValidationExceptionReason::FieldValidationFailed => write!(f, "FIELD_VALIDATION_FAILED"),
+            ValidationExceptionReason::IamSynchronizationDelay => write!(f, "IAM_SYNCHRONIZATION_DELAY"),
+            ValidationExceptionReason::InvalidConfiguration => write!(f, "INVALID_CONFIGURATION"),
+            ValidationExceptionReason::InvalidQuery => write!(f, "INVALID_QUERY"),
+            ValidationExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

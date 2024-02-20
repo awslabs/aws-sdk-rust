@@ -135,3 +135,18 @@ impl GeneratedTemplateStatus {
         }
     }
 }
+impl ::std::fmt::Display for GeneratedTemplateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GeneratedTemplateStatus::Complete => write!(f, "COMPLETE"),
+            GeneratedTemplateStatus::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
+            GeneratedTemplateStatus::CreatePending => write!(f, "CREATE_PENDING"),
+            GeneratedTemplateStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            GeneratedTemplateStatus::DeletePending => write!(f, "DELETE_PENDING"),
+            GeneratedTemplateStatus::Failed => write!(f, "FAILED"),
+            GeneratedTemplateStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
+            GeneratedTemplateStatus::UpdatePending => write!(f, "UPDATE_PENDING"),
+            GeneratedTemplateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

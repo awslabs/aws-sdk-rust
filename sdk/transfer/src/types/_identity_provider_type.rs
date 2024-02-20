@@ -118,3 +118,14 @@ impl IdentityProviderType {
         }
     }
 }
+impl ::std::fmt::Display for IdentityProviderType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IdentityProviderType::ApiGateway => write!(f, "API_GATEWAY"),
+            IdentityProviderType::AwsDirectoryService => write!(f, "AWS_DIRECTORY_SERVICE"),
+            IdentityProviderType::AwsLambda => write!(f, "AWS_LAMBDA"),
+            IdentityProviderType::ServiceManaged => write!(f, "SERVICE_MANAGED"),
+            IdentityProviderType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

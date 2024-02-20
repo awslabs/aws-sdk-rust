@@ -101,3 +101,13 @@ impl Polarization {
         }
     }
 }
+impl ::std::fmt::Display for Polarization {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Polarization::LeftHand => write!(f, "LEFT_HAND"),
+            Polarization::None => write!(f, "NONE"),
+            Polarization::RightHand => write!(f, "RIGHT_HAND"),
+            Polarization::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

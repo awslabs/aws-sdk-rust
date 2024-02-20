@@ -177,3 +177,25 @@ impl ParameterType {
         }
     }
 }
+impl ::std::fmt::Display for ParameterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParameterType::Bigint => write!(f, "BIGINT"),
+            ParameterType::Boolean => write!(f, "BOOLEAN"),
+            ParameterType::Char => write!(f, "CHAR"),
+            ParameterType::Date => write!(f, "DATE"),
+            ParameterType::Decimal => write!(f, "DECIMAL"),
+            ParameterType::DoublePrecision => write!(f, "DOUBLE_PRECISION"),
+            ParameterType::Integer => write!(f, "INTEGER"),
+            ParameterType::Real => write!(f, "REAL"),
+            ParameterType::Smallint => write!(f, "SMALLINT"),
+            ParameterType::Time => write!(f, "TIME"),
+            ParameterType::Timestamp => write!(f, "TIMESTAMP"),
+            ParameterType::Timestamptz => write!(f, "TIMESTAMPTZ"),
+            ParameterType::Timetz => write!(f, "TIMETZ"),
+            ParameterType::Varbyte => write!(f, "VARBYTE"),
+            ParameterType::Varchar => write!(f, "VARCHAR"),
+            ParameterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

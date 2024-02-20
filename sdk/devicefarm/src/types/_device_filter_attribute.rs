@@ -159,3 +159,22 @@ impl DeviceFilterAttribute {
         }
     }
 }
+impl ::std::fmt::Display for DeviceFilterAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeviceFilterAttribute::Arn => write!(f, "ARN"),
+            DeviceFilterAttribute::Availability => write!(f, "AVAILABILITY"),
+            DeviceFilterAttribute::FleetType => write!(f, "FLEET_TYPE"),
+            DeviceFilterAttribute::FormFactor => write!(f, "FORM_FACTOR"),
+            DeviceFilterAttribute::InstanceArn => write!(f, "INSTANCE_ARN"),
+            DeviceFilterAttribute::InstanceLabels => write!(f, "INSTANCE_LABELS"),
+            DeviceFilterAttribute::Manufacturer => write!(f, "MANUFACTURER"),
+            DeviceFilterAttribute::Model => write!(f, "MODEL"),
+            DeviceFilterAttribute::OsVersion => write!(f, "OS_VERSION"),
+            DeviceFilterAttribute::Platform => write!(f, "PLATFORM"),
+            DeviceFilterAttribute::RemoteAccessEnabled => write!(f, "REMOTE_ACCESS_ENABLED"),
+            DeviceFilterAttribute::RemoteDebugEnabled => write!(f, "REMOTE_DEBUG_ENABLED"),
+            DeviceFilterAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

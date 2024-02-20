@@ -96,3 +96,12 @@ impl ProfileOwnerType {
         }
     }
 }
+impl ::std::fmt::Display for ProfileOwnerType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProfileOwnerType::SelfValue => write!(f, "SELF"),
+            ProfileOwnerType::Shared => write!(f, "SHARED"),
+            ProfileOwnerType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

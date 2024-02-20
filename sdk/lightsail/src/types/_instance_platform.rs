@@ -96,3 +96,12 @@ impl InstancePlatform {
         }
     }
 }
+impl ::std::fmt::Display for InstancePlatform {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstancePlatform::LinuxUnix => write!(f, "LINUX_UNIX"),
+            InstancePlatform::Windows => write!(f, "WINDOWS"),
+            InstancePlatform::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

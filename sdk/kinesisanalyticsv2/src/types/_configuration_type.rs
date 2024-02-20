@@ -96,3 +96,12 @@ impl ConfigurationType {
         }
     }
 }
+impl ::std::fmt::Display for ConfigurationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConfigurationType::Custom => write!(f, "CUSTOM"),
+            ConfigurationType::Default => write!(f, "DEFAULT"),
+            ConfigurationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

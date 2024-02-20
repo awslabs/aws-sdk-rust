@@ -96,3 +96,12 @@ impl TemplateStatus {
         }
     }
 }
+impl ::std::fmt::Display for TemplateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TemplateStatus::Active => write!(f, "Active"),
+            TemplateStatus::Inactive => write!(f, "Inactive"),
+            TemplateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

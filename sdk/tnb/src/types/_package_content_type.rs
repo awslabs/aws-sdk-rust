@@ -91,3 +91,11 @@ impl PackageContentType {
         }
     }
 }
+impl ::std::fmt::Display for PackageContentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PackageContentType::ApplicationZip => write!(f, "application/zip"),
+            PackageContentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

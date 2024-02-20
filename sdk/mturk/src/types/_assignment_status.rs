@@ -101,3 +101,13 @@ impl AssignmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for AssignmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AssignmentStatus::Approved => write!(f, "Approved"),
+            AssignmentStatus::Rejected => write!(f, "Rejected"),
+            AssignmentStatus::Submitted => write!(f, "Submitted"),
+            AssignmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

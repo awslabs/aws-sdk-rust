@@ -101,3 +101,13 @@ impl HasLogicalRedundancy {
         }
     }
 }
+impl ::std::fmt::Display for HasLogicalRedundancy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HasLogicalRedundancy::No => write!(f, "no"),
+            HasLogicalRedundancy::UnknownValue => write!(f, "unknown"),
+            HasLogicalRedundancy::Yes => write!(f, "yes"),
+            HasLogicalRedundancy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

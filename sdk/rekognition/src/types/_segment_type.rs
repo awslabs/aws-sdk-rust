@@ -96,3 +96,12 @@ impl SegmentType {
         }
     }
 }
+impl ::std::fmt::Display for SegmentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SegmentType::Shot => write!(f, "SHOT"),
+            SegmentType::TechnicalCue => write!(f, "TECHNICAL_CUE"),
+            SegmentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

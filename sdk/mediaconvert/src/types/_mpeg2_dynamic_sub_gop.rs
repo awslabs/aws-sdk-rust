@@ -96,3 +96,12 @@ impl Mpeg2DynamicSubGop {
         }
     }
 }
+impl ::std::fmt::Display for Mpeg2DynamicSubGop {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Mpeg2DynamicSubGop::Adaptive => write!(f, "ADAPTIVE"),
+            Mpeg2DynamicSubGop::Static => write!(f, "STATIC"),
+            Mpeg2DynamicSubGop::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

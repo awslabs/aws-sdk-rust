@@ -111,3 +111,15 @@ impl FastSnapshotRestoreStateCode {
         }
     }
 }
+impl ::std::fmt::Display for FastSnapshotRestoreStateCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FastSnapshotRestoreStateCode::Disabled => write!(f, "disabled"),
+            FastSnapshotRestoreStateCode::Disabling => write!(f, "disabling"),
+            FastSnapshotRestoreStateCode::Enabled => write!(f, "enabled"),
+            FastSnapshotRestoreStateCode::Enabling => write!(f, "enabling"),
+            FastSnapshotRestoreStateCode::Optimizing => write!(f, "optimizing"),
+            FastSnapshotRestoreStateCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

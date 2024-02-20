@@ -96,3 +96,12 @@ impl RouteTableType {
         }
     }
 }
+impl ::std::fmt::Display for RouteTableType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteTableType::CoreNetworkSegment => write!(f, "CORE_NETWORK_SEGMENT"),
+            RouteTableType::TransitGatewayRouteTable => write!(f, "TRANSIT_GATEWAY_ROUTE_TABLE"),
+            RouteTableType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -111,3 +111,15 @@ impl ImpactLevel {
         }
     }
 }
+impl ::std::fmt::Display for ImpactLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImpactLevel::Il2 => write!(f, "IL2"),
+            ImpactLevel::Il4 => write!(f, "IL4"),
+            ImpactLevel::Il5 => write!(f, "IL5"),
+            ImpactLevel::Il6 => write!(f, "IL6"),
+            ImpactLevel::Il99 => write!(f, "IL99"),
+            ImpactLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

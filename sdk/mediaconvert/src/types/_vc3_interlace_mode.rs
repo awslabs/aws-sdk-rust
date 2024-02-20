@@ -96,3 +96,12 @@ impl Vc3InterlaceMode {
         }
     }
 }
+impl ::std::fmt::Display for Vc3InterlaceMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Vc3InterlaceMode::Interlaced => write!(f, "INTERLACED"),
+            Vc3InterlaceMode::Progressive => write!(f, "PROGRESSIVE"),
+            Vc3InterlaceMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

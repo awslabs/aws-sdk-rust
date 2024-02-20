@@ -96,3 +96,12 @@ impl LandingZoneDriftStatus {
         }
     }
 }
+impl ::std::fmt::Display for LandingZoneDriftStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LandingZoneDriftStatus::Drifted => write!(f, "DRIFTED"),
+            LandingZoneDriftStatus::InSync => write!(f, "IN_SYNC"),
+            LandingZoneDriftStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

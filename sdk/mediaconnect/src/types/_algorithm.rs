@@ -101,3 +101,13 @@ impl Algorithm {
         }
     }
 }
+impl ::std::fmt::Display for Algorithm {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Algorithm::Aes128 => write!(f, "aes128"),
+            Algorithm::Aes192 => write!(f, "aes192"),
+            Algorithm::Aes256 => write!(f, "aes256"),
+            Algorithm::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

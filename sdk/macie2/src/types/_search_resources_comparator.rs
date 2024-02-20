@@ -96,3 +96,12 @@ impl SearchResourcesComparator {
         }
     }
 }
+impl ::std::fmt::Display for SearchResourcesComparator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SearchResourcesComparator::Eq => write!(f, "EQ"),
+            SearchResourcesComparator::Ne => write!(f, "NE"),
+            SearchResourcesComparator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

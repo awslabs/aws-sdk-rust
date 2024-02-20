@@ -111,3 +111,15 @@ impl AttributeType {
         }
     }
 }
+impl ::std::fmt::Display for AttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttributeType::Float => write!(f, "float"),
+            AttributeType::Geolocation => write!(f, "geolocation"),
+            AttributeType::Integer => write!(f, "integer"),
+            AttributeType::String => write!(f, "string"),
+            AttributeType::Timestamp => write!(f, "timestamp"),
+            AttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

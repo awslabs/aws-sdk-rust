@@ -101,3 +101,13 @@ impl AuthenticationMode {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticationMode::Api => write!(f, "API"),
+            AuthenticationMode::ApiAndConfigMap => write!(f, "API_AND_CONFIG_MAP"),
+            AuthenticationMode::ConfigMap => write!(f, "CONFIG_MAP"),
+            AuthenticationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

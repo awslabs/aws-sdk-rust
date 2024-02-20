@@ -101,3 +101,13 @@ impl ActionType {
         }
     }
 }
+impl ::std::fmt::Display for ActionType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ActionType::JvmHeapSizeTuning => write!(f, "JVM_HEAP_SIZE_TUNING"),
+            ActionType::JvmYoungGenTuning => write!(f, "JVM_YOUNG_GEN_TUNING"),
+            ActionType::ServiceSoftwareUpdate => write!(f, "SERVICE_SOFTWARE_UPDATE"),
+            ActionType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

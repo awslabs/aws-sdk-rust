@@ -96,3 +96,12 @@ impl EvaluationFormScoringStatus {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationFormScoringStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationFormScoringStatus::Disabled => write!(f, "DISABLED"),
+            EvaluationFormScoringStatus::Enabled => write!(f, "ENABLED"),
+            EvaluationFormScoringStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

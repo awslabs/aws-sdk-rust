@@ -106,3 +106,14 @@ impl UpdateCampaignAction {
         }
     }
 }
+impl ::std::fmt::Display for UpdateCampaignAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UpdateCampaignAction::Approve => write!(f, "APPROVE"),
+            UpdateCampaignAction::Resume => write!(f, "RESUME"),
+            UpdateCampaignAction::Suspend => write!(f, "SUSPEND"),
+            UpdateCampaignAction::Update => write!(f, "UPDATE"),
+            UpdateCampaignAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

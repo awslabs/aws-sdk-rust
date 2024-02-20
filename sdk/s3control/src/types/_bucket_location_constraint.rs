@@ -153,3 +153,21 @@ impl BucketLocationConstraint {
         }
     }
 }
+impl ::std::fmt::Display for BucketLocationConstraint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BucketLocationConstraint::Eu => write!(f, "EU"),
+            BucketLocationConstraint::ApNortheast1 => write!(f, "ap-northeast-1"),
+            BucketLocationConstraint::ApSouth1 => write!(f, "ap-south-1"),
+            BucketLocationConstraint::ApSoutheast1 => write!(f, "ap-southeast-1"),
+            BucketLocationConstraint::ApSoutheast2 => write!(f, "ap-southeast-2"),
+            BucketLocationConstraint::CnNorth1 => write!(f, "cn-north-1"),
+            BucketLocationConstraint::EuCentral1 => write!(f, "eu-central-1"),
+            BucketLocationConstraint::EuWest1 => write!(f, "eu-west-1"),
+            BucketLocationConstraint::SaEast1 => write!(f, "sa-east-1"),
+            BucketLocationConstraint::UsWest1 => write!(f, "us-west-1"),
+            BucketLocationConstraint::UsWest2 => write!(f, "us-west-2"),
+            BucketLocationConstraint::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

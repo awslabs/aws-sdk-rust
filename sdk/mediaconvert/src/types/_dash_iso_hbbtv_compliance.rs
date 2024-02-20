@@ -96,3 +96,12 @@ impl DashIsoHbbtvCompliance {
         }
     }
 }
+impl ::std::fmt::Display for DashIsoHbbtvCompliance {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashIsoHbbtvCompliance::Hbbtv15 => write!(f, "HBBTV_1_5"),
+            DashIsoHbbtvCompliance::None => write!(f, "NONE"),
+            DashIsoHbbtvCompliance::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

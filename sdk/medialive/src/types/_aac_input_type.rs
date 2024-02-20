@@ -96,3 +96,12 @@ impl AacInputType {
         }
     }
 }
+impl ::std::fmt::Display for AacInputType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AacInputType::BroadcasterMixedAd => write!(f, "BROADCASTER_MIXED_AD"),
+            AacInputType::Normal => write!(f, "NORMAL"),
+            AacInputType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

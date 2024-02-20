@@ -96,3 +96,12 @@ impl PolicyType {
         }
     }
 }
+impl ::std::fmt::Display for PolicyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PolicyType::DataProtectionPolicy => write!(f, "DATA_PROTECTION_POLICY"),
+            PolicyType::SubscriptionFilterPolicy => write!(f, "SUBSCRIPTION_FILTER_POLICY"),
+            PolicyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl EvaluationMethod {
         }
     }
 }
+impl ::std::fmt::Display for EvaluationMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EvaluationMethod::Batch => write!(f, "BATCH"),
+            EvaluationMethod::Serial => write!(f, "SERIAL"),
+            EvaluationMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

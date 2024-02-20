@@ -96,3 +96,12 @@ impl CancelTimerFailedCause {
         }
     }
 }
+impl ::std::fmt::Display for CancelTimerFailedCause {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CancelTimerFailedCause::OperationNotPermitted => write!(f, "OPERATION_NOT_PERMITTED"),
+            CancelTimerFailedCause::TimerIdUnknown => write!(f, "TIMER_ID_UNKNOWN"),
+            CancelTimerFailedCause::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

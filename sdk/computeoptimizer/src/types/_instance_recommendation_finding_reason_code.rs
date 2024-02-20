@@ -207,3 +207,30 @@ impl InstanceRecommendationFindingReasonCode {
         }
     }
 }
+impl ::std::fmt::Display for InstanceRecommendationFindingReasonCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceRecommendationFindingReasonCode::CpuOverProvisioned => write!(f, "CPUOverprovisioned"),
+            InstanceRecommendationFindingReasonCode::CpuUnderProvisioned => write!(f, "CPUUnderprovisioned"),
+            InstanceRecommendationFindingReasonCode::DiskIopsOverProvisioned => write!(f, "DiskIOPSOverprovisioned"),
+            InstanceRecommendationFindingReasonCode::DiskIopsUnderProvisioned => write!(f, "DiskIOPSUnderprovisioned"),
+            InstanceRecommendationFindingReasonCode::DiskThroughputOverProvisioned => write!(f, "DiskThroughputOverprovisioned"),
+            InstanceRecommendationFindingReasonCode::DiskThroughputUnderProvisioned => write!(f, "DiskThroughputUnderprovisioned"),
+            InstanceRecommendationFindingReasonCode::EbsIopsOverProvisioned => write!(f, "EBSIOPSOverprovisioned"),
+            InstanceRecommendationFindingReasonCode::EbsIopsUnderProvisioned => write!(f, "EBSIOPSUnderprovisioned"),
+            InstanceRecommendationFindingReasonCode::EbsThroughputOverProvisioned => write!(f, "EBSThroughputOverprovisioned"),
+            InstanceRecommendationFindingReasonCode::EbsThroughputUnderProvisioned => write!(f, "EBSThroughputUnderprovisioned"),
+            InstanceRecommendationFindingReasonCode::GpuMemoryOverProvisioned => write!(f, "GPUMemoryOverprovisioned"),
+            InstanceRecommendationFindingReasonCode::GpuMemoryUnderProvisioned => write!(f, "GPUMemoryUnderprovisioned"),
+            InstanceRecommendationFindingReasonCode::GpuOverProvisioned => write!(f, "GPUOverprovisioned"),
+            InstanceRecommendationFindingReasonCode::GpuUnderProvisioned => write!(f, "GPUUnderprovisioned"),
+            InstanceRecommendationFindingReasonCode::MemoryOverProvisioned => write!(f, "MemoryOverprovisioned"),
+            InstanceRecommendationFindingReasonCode::MemoryUnderProvisioned => write!(f, "MemoryUnderprovisioned"),
+            InstanceRecommendationFindingReasonCode::NetworkBandwidthOverProvisioned => write!(f, "NetworkBandwidthOverprovisioned"),
+            InstanceRecommendationFindingReasonCode::NetworkBandwidthUnderProvisioned => write!(f, "NetworkBandwidthUnderprovisioned"),
+            InstanceRecommendationFindingReasonCode::NetworkPpsOverProvisioned => write!(f, "NetworkPPSOverprovisioned"),
+            InstanceRecommendationFindingReasonCode::NetworkPpsUnderProvisioned => write!(f, "NetworkPPSUnderprovisioned"),
+            InstanceRecommendationFindingReasonCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

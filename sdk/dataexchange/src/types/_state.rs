@@ -116,3 +116,16 @@ impl State {
         }
     }
 }
+impl ::std::fmt::Display for State {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            State::Cancelled => write!(f, "CANCELLED"),
+            State::Completed => write!(f, "COMPLETED"),
+            State::Error => write!(f, "ERROR"),
+            State::InProgress => write!(f, "IN_PROGRESS"),
+            State::TimedOut => write!(f, "TIMED_OUT"),
+            State::Waiting => write!(f, "WAITING"),
+            State::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

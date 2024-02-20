@@ -135,3 +135,18 @@ impl AdTriggersElement {
         }
     }
 }
+impl ::std::fmt::Display for AdTriggersElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AdTriggersElement::Break => write!(f, "BREAK"),
+            AdTriggersElement::DistributorAdvertisement => write!(f, "DISTRIBUTOR_ADVERTISEMENT"),
+            AdTriggersElement::DistributorOverlayPlacementOpportunity => write!(f, "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY"),
+            AdTriggersElement::DistributorPlacementOpportunity => write!(f, "DISTRIBUTOR_PLACEMENT_OPPORTUNITY"),
+            AdTriggersElement::ProviderAdvertisement => write!(f, "PROVIDER_ADVERTISEMENT"),
+            AdTriggersElement::ProviderOverlayPlacementOpportunity => write!(f, "PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY"),
+            AdTriggersElement::ProviderPlacementOpportunity => write!(f, "PROVIDER_PLACEMENT_OPPORTUNITY"),
+            AdTriggersElement::SpliceInsert => write!(f, "SPLICE_INSERT"),
+            AdTriggersElement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

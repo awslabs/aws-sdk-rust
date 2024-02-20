@@ -106,3 +106,14 @@ impl ReservationSpecialFeature {
         }
     }
 }
+impl ::std::fmt::Display for ReservationSpecialFeature {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservationSpecialFeature::AdvancedAudio => write!(f, "ADVANCED_AUDIO"),
+            ReservationSpecialFeature::AudioNormalization => write!(f, "AUDIO_NORMALIZATION"),
+            ReservationSpecialFeature::Mghd => write!(f, "MGHD"),
+            ReservationSpecialFeature::Mguhd => write!(f, "MGUHD"),
+            ReservationSpecialFeature::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

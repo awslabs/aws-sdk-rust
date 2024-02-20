@@ -101,3 +101,13 @@ impl UsageRecordResultStatus {
         }
     }
 }
+impl ::std::fmt::Display for UsageRecordResultStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UsageRecordResultStatus::CustomerNotSubscribed => write!(f, "CustomerNotSubscribed"),
+            UsageRecordResultStatus::DuplicateRecord => write!(f, "DuplicateRecord"),
+            UsageRecordResultStatus::Success => write!(f, "Success"),
+            UsageRecordResultStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

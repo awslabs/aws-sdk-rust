@@ -96,3 +96,12 @@ impl FilterVisualScope {
         }
     }
 }
+impl ::std::fmt::Display for FilterVisualScope {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterVisualScope::AllVisuals => write!(f, "ALL_VISUALS"),
+            FilterVisualScope::SelectedVisuals => write!(f, "SELECTED_VISUALS"),
+            FilterVisualScope::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

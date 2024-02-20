@@ -111,3 +111,15 @@ impl IngestionStatus {
         }
     }
 }
+impl ::std::fmt::Display for IngestionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IngestionStatus::Failed => write!(f, "FAILED"),
+            IngestionStatus::Pending => write!(f, "PENDING"),
+            IngestionStatus::Running => write!(f, "RUNNING"),
+            IngestionStatus::StopRequested => write!(f, "STOP_REQUESTED"),
+            IngestionStatus::Success => write!(f, "SUCCESS"),
+            IngestionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

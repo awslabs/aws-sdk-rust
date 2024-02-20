@@ -207,3 +207,30 @@ impl OperationType {
         }
     }
 }
+impl ::std::fmt::Display for OperationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OperationType::AddDnssec => write!(f, "ADD_DNSSEC"),
+            OperationType::ChangeDomainOwner => write!(f, "CHANGE_DOMAIN_OWNER"),
+            OperationType::ChangePrivacyProtection => write!(f, "CHANGE_PRIVACY_PROTECTION"),
+            OperationType::DeleteDomain => write!(f, "DELETE_DOMAIN"),
+            OperationType::DisableAutorenew => write!(f, "DISABLE_AUTORENEW"),
+            OperationType::DomainLock => write!(f, "DOMAIN_LOCK"),
+            OperationType::EnableAutorenew => write!(f, "ENABLE_AUTORENEW"),
+            OperationType::ExpireDomain => write!(f, "EXPIRE_DOMAIN"),
+            OperationType::InternalTransferInDomain => write!(f, "INTERNAL_TRANSFER_IN_DOMAIN"),
+            OperationType::InternalTransferOutDomain => write!(f, "INTERNAL_TRANSFER_OUT_DOMAIN"),
+            OperationType::PushDomain => write!(f, "PUSH_DOMAIN"),
+            OperationType::RegisterDomain => write!(f, "REGISTER_DOMAIN"),
+            OperationType::ReleaseToGandi => write!(f, "RELEASE_TO_GANDI"),
+            OperationType::RemoveDnssec => write!(f, "REMOVE_DNSSEC"),
+            OperationType::RenewDomain => write!(f, "RENEW_DOMAIN"),
+            OperationType::TransferInDomain => write!(f, "TRANSFER_IN_DOMAIN"),
+            OperationType::TransferOnRenew => write!(f, "TRANSFER_ON_RENEW"),
+            OperationType::TransferOutDomain => write!(f, "TRANSFER_OUT_DOMAIN"),
+            OperationType::UpdateDomainContact => write!(f, "UPDATE_DOMAIN_CONTACT"),
+            OperationType::UpdateNameserver => write!(f, "UPDATE_NAMESERVER"),
+            OperationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

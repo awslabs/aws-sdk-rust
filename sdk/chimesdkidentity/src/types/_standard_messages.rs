@@ -106,3 +106,14 @@ impl StandardMessages {
         }
     }
 }
+impl ::std::fmt::Display for StandardMessages {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StandardMessages::All => write!(f, "ALL"),
+            StandardMessages::Auto => write!(f, "AUTO"),
+            StandardMessages::Mentions => write!(f, "MENTIONS"),
+            StandardMessages::None => write!(f, "NONE"),
+            StandardMessages::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

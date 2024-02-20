@@ -91,3 +91,11 @@ impl S3PrefixType {
         }
     }
 }
+impl ::std::fmt::Display for S3PrefixType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            S3PrefixType::Object => write!(f, "Object"),
+            S3PrefixType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

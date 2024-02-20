@@ -135,3 +135,18 @@ impl VpcConnectionState {
         }
     }
 }
+impl ::std::fmt::Display for VpcConnectionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcConnectionState::Available => write!(f, "AVAILABLE"),
+            VpcConnectionState::Creating => write!(f, "CREATING"),
+            VpcConnectionState::Deactivating => write!(f, "DEACTIVATING"),
+            VpcConnectionState::Deleting => write!(f, "DELETING"),
+            VpcConnectionState::Failed => write!(f, "FAILED"),
+            VpcConnectionState::Inactive => write!(f, "INACTIVE"),
+            VpcConnectionState::Rejected => write!(f, "REJECTED"),
+            VpcConnectionState::Rejecting => write!(f, "REJECTING"),
+            VpcConnectionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl Decision {
         }
     }
 }
+impl ::std::fmt::Display for Decision {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Decision::Allow => write!(f, "ALLOW"),
+            Decision::Deny => write!(f, "DENY"),
+            Decision::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

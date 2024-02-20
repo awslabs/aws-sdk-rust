@@ -96,3 +96,12 @@ impl StudioEncryptionConfigurationKeyType {
         }
     }
 }
+impl ::std::fmt::Display for StudioEncryptionConfigurationKeyType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StudioEncryptionConfigurationKeyType::AwsOwnedKey => write!(f, "AWS_OWNED_KEY"),
+            StudioEncryptionConfigurationKeyType::CustomerManagedKey => write!(f, "CUSTOMER_MANAGED_KEY"),
+            StudioEncryptionConfigurationKeyType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

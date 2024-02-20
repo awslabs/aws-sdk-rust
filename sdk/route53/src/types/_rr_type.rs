@@ -151,3 +151,23 @@ impl RrType {
         }
     }
 }
+impl ::std::fmt::Display for RrType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RrType::A => write!(f, "A"),
+            RrType::Aaaa => write!(f, "AAAA"),
+            RrType::Caa => write!(f, "CAA"),
+            RrType::Cname => write!(f, "CNAME"),
+            RrType::Ds => write!(f, "DS"),
+            RrType::Mx => write!(f, "MX"),
+            RrType::Naptr => write!(f, "NAPTR"),
+            RrType::Ns => write!(f, "NS"),
+            RrType::Ptr => write!(f, "PTR"),
+            RrType::Soa => write!(f, "SOA"),
+            RrType::Spf => write!(f, "SPF"),
+            RrType::Srv => write!(f, "SRV"),
+            RrType::Txt => write!(f, "TXT"),
+            RrType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

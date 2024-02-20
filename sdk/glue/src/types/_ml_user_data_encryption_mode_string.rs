@@ -96,3 +96,12 @@ impl MlUserDataEncryptionModeString {
         }
     }
 }
+impl ::std::fmt::Display for MlUserDataEncryptionModeString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            MlUserDataEncryptionModeString::Disabled => write!(f, "DISABLED"),
+            MlUserDataEncryptionModeString::Ssekms => write!(f, "SSE-KMS"),
+            MlUserDataEncryptionModeString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

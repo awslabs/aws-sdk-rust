@@ -141,3 +141,19 @@ impl IntegrationType {
         }
     }
 }
+impl ::std::fmt::Display for IntegrationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            IntegrationType::Application => write!(f, "APPLICATION"),
+            IntegrationType::CasesDomain => write!(f, "CASES_DOMAIN"),
+            IntegrationType::Event => write!(f, "EVENT"),
+            IntegrationType::FileScanner => write!(f, "FILE_SCANNER"),
+            IntegrationType::PinpointApp => write!(f, "PINPOINT_APP"),
+            IntegrationType::VoiceId => write!(f, "VOICE_ID"),
+            IntegrationType::WisdomAssistant => write!(f, "WISDOM_ASSISTANT"),
+            IntegrationType::WisdomKnowledgeBase => write!(f, "WISDOM_KNOWLEDGE_BASE"),
+            IntegrationType::WisdomQuickResponses => write!(f, "WISDOM_QUICK_RESPONSES"),
+            IntegrationType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

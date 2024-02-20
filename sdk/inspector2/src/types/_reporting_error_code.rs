@@ -123,3 +123,16 @@ impl ReportingErrorCode {
         }
     }
 }
+impl ::std::fmt::Display for ReportingErrorCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportingErrorCode::BucketNotFound => write!(f, "BUCKET_NOT_FOUND"),
+            ReportingErrorCode::IncompatibleBucketRegion => write!(f, "INCOMPATIBLE_BUCKET_REGION"),
+            ReportingErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            ReportingErrorCode::InvalidPermissions => write!(f, "INVALID_PERMISSIONS"),
+            ReportingErrorCode::MalformedKmsKey => write!(f, "MALFORMED_KMS_KEY"),
+            ReportingErrorCode::NoFindingsFound => write!(f, "NO_FINDINGS_FOUND"),
+            ReportingErrorCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

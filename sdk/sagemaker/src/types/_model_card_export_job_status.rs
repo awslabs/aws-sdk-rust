@@ -101,3 +101,13 @@ impl ModelCardExportJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelCardExportJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelCardExportJobStatus::Completed => write!(f, "Completed"),
+            ModelCardExportJobStatus::Failed => write!(f, "Failed"),
+            ModelCardExportJobStatus::InProgress => write!(f, "InProgress"),
+            ModelCardExportJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

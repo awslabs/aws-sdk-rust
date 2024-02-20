@@ -129,3 +129,17 @@ impl DataSourceErrorType {
         }
     }
 }
+impl ::std::fmt::Display for DataSourceErrorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSourceErrorType::AccessDeniedException => write!(f, "ACCESS_DENIED_EXCEPTION"),
+            DataSourceErrorType::ConflictException => write!(f, "CONFLICT_EXCEPTION"),
+            DataSourceErrorType::InternalServerException => write!(f, "INTERNAL_SERVER_EXCEPTION"),
+            DataSourceErrorType::ResourceNotFoundException => write!(f, "RESOURCE_NOT_FOUND_EXCEPTION"),
+            DataSourceErrorType::ServiceQuotaExceededException => write!(f, "SERVICE_QUOTA_EXCEEDED_EXCEPTION"),
+            DataSourceErrorType::ThrottlingException => write!(f, "THROTTLING_EXCEPTION"),
+            DataSourceErrorType::ValidationException => write!(f, "VALIDATION_EXCEPTION"),
+            DataSourceErrorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl HookFailureMode {
         }
     }
 }
+impl ::std::fmt::Display for HookFailureMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HookFailureMode::Fail => write!(f, "FAIL"),
+            HookFailureMode::Warn => write!(f, "WARN"),
+            HookFailureMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl VpcLinkStatus {
         }
     }
 }
+impl ::std::fmt::Display for VpcLinkStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VpcLinkStatus::Available => write!(f, "AVAILABLE"),
+            VpcLinkStatus::Deleting => write!(f, "DELETING"),
+            VpcLinkStatus::Failed => write!(f, "FAILED"),
+            VpcLinkStatus::Pending => write!(f, "PENDING"),
+            VpcLinkStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

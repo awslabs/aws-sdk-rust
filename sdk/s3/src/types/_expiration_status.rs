@@ -96,3 +96,12 @@ impl ExpirationStatus {
         }
     }
 }
+impl ::std::fmt::Display for ExpirationStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExpirationStatus::Disabled => write!(f, "Disabled"),
+            ExpirationStatus::Enabled => write!(f, "Enabled"),
+            ExpirationStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

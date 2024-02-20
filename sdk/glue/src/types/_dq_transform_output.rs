@@ -96,3 +96,12 @@ impl DqTransformOutput {
         }
     }
 }
+impl ::std::fmt::Display for DqTransformOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DqTransformOutput::EvaluationResults => write!(f, "EvaluationResults"),
+            DqTransformOutput::PrimaryInput => write!(f, "PrimaryInput"),
+            DqTransformOutput::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

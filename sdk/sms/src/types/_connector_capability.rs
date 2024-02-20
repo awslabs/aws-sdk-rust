@@ -111,3 +111,15 @@ impl ConnectorCapability {
         }
     }
 }
+impl ::std::fmt::Display for ConnectorCapability {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectorCapability::HyperVManager => write!(f, "HYPERV-MANAGER"),
+            ConnectorCapability::Scvmm => write!(f, "SCVMM"),
+            ConnectorCapability::SmsOptimized => write!(f, "SMS_OPTIMIZED"),
+            ConnectorCapability::SnapshotBatching => write!(f, "SNAPSHOT_BATCHING"),
+            ConnectorCapability::VSphere => write!(f, "VSPHERE"),
+            ConnectorCapability::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

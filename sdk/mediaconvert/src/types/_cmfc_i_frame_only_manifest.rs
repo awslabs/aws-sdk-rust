@@ -96,3 +96,12 @@ impl CmfcIFrameOnlyManifest {
         }
     }
 }
+impl ::std::fmt::Display for CmfcIFrameOnlyManifest {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmfcIFrameOnlyManifest::Exclude => write!(f, "EXCLUDE"),
+            CmfcIFrameOnlyManifest::Include => write!(f, "INCLUDE"),
+            CmfcIFrameOnlyManifest::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

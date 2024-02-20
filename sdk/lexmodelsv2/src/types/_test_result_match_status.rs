@@ -101,3 +101,13 @@ impl TestResultMatchStatus {
         }
     }
 }
+impl ::std::fmt::Display for TestResultMatchStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TestResultMatchStatus::ExecutionError => write!(f, "ExecutionError"),
+            TestResultMatchStatus::Matched => write!(f, "Matched"),
+            TestResultMatchStatus::Mismatched => write!(f, "Mismatched"),
+            TestResultMatchStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

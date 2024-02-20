@@ -129,3 +129,17 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::BatchJob => write!(f, "BATCH_JOB"),
+            ResourceType::ComplianceConsent => write!(f, "COMPLIANCE_CONSENT"),
+            ResourceType::Domain => write!(f, "DOMAIN"),
+            ResourceType::Fraudster => write!(f, "FRAUDSTER"),
+            ResourceType::Session => write!(f, "SESSION"),
+            ResourceType::Speaker => write!(f, "SPEAKER"),
+            ResourceType::Watchlist => write!(f, "WATCHLIST"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

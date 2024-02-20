@@ -106,3 +106,14 @@ impl AppAttributesKeys {
         }
     }
 }
+impl ::std::fmt::Display for AppAttributesKeys {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AppAttributesKeys::AutoBundleOnDeploy => write!(f, "AutoBundleOnDeploy"),
+            AppAttributesKeys::AwsFlowRubySettings => write!(f, "AwsFlowRubySettings"),
+            AppAttributesKeys::DocumentRoot => write!(f, "DocumentRoot"),
+            AppAttributesKeys::RailsEnv => write!(f, "RailsEnv"),
+            AppAttributesKeys::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

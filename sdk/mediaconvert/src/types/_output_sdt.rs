@@ -106,3 +106,14 @@ impl OutputSdt {
         }
     }
 }
+impl ::std::fmt::Display for OutputSdt {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OutputSdt::SdtFollow => write!(f, "SDT_FOLLOW"),
+            OutputSdt::SdtFollowIfPresent => write!(f, "SDT_FOLLOW_IF_PRESENT"),
+            OutputSdt::SdtManual => write!(f, "SDT_MANUAL"),
+            OutputSdt::SdtNone => write!(f, "SDT_NONE"),
+            OutputSdt::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl QuickConnectType {
         }
     }
 }
+impl ::std::fmt::Display for QuickConnectType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QuickConnectType::PhoneNumber => write!(f, "PHONE_NUMBER"),
+            QuickConnectType::Queue => write!(f, "QUEUE"),
+            QuickConnectType::User => write!(f, "USER"),
+            QuickConnectType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

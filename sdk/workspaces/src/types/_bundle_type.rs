@@ -96,3 +96,12 @@ impl BundleType {
         }
     }
 }
+impl ::std::fmt::Display for BundleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BundleType::Regular => write!(f, "REGULAR"),
+            BundleType::Standby => write!(f, "STANDBY"),
+            BundleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

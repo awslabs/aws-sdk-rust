@@ -101,3 +101,13 @@ impl EbsOptimizedSupport {
         }
     }
 }
+impl ::std::fmt::Display for EbsOptimizedSupport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EbsOptimizedSupport::Default => write!(f, "default"),
+            EbsOptimizedSupport::Supported => write!(f, "supported"),
+            EbsOptimizedSupport::Unsupported => write!(f, "unsupported"),
+            EbsOptimizedSupport::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

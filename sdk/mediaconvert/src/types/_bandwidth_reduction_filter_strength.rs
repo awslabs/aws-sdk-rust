@@ -111,3 +111,15 @@ impl BandwidthReductionFilterStrength {
         }
     }
 }
+impl ::std::fmt::Display for BandwidthReductionFilterStrength {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BandwidthReductionFilterStrength::Auto => write!(f, "AUTO"),
+            BandwidthReductionFilterStrength::High => write!(f, "HIGH"),
+            BandwidthReductionFilterStrength::Low => write!(f, "LOW"),
+            BandwidthReductionFilterStrength::Medium => write!(f, "MEDIUM"),
+            BandwidthReductionFilterStrength::Off => write!(f, "OFF"),
+            BandwidthReductionFilterStrength::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

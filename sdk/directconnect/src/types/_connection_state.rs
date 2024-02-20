@@ -141,3 +141,19 @@ impl ConnectionState {
         }
     }
 }
+impl ::std::fmt::Display for ConnectionState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ConnectionState::Available => write!(f, "available"),
+            ConnectionState::Deleted => write!(f, "deleted"),
+            ConnectionState::Deleting => write!(f, "deleting"),
+            ConnectionState::Down => write!(f, "down"),
+            ConnectionState::Ordering => write!(f, "ordering"),
+            ConnectionState::Pending => write!(f, "pending"),
+            ConnectionState::Rejected => write!(f, "rejected"),
+            ConnectionState::Requested => write!(f, "requested"),
+            ConnectionState::UnknownValue => write!(f, "unknown"),
+            ConnectionState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

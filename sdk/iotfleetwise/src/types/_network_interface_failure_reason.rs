@@ -129,3 +129,21 @@ impl NetworkInterfaceFailureReason {
         }
     }
 }
+impl ::std::fmt::Display for NetworkInterfaceFailureReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => write!(f, "CAN_NETWORK_INTERFACE_INFO_IS_NULL"),
+            NetworkInterfaceFailureReason::ConflictingNetworkInterface => write!(f, "CONFLICTING_NETWORK_INTERFACE"),
+            NetworkInterfaceFailureReason::DuplicateInterface => write!(f, "DUPLICATE_NETWORK_INTERFACE"),
+            NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => write!(f, "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS"),
+            NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => {
+                write!(f, "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS")
+            }
+            NetworkInterfaceFailureReason::ObdNetworkInterfaceInfoIsNull => write!(f, "OBD_NETWORK_INTERFACE_INFO_IS_NULL"),
+            NetworkInterfaceFailureReason::VehicleMiddlewareNetworkInterfaceInfoIsNull => {
+                write!(f, "VEHICLE_MIDDLEWARE_NETWORK_INTERFACE_INFO_IS_NULL")
+            }
+            NetworkInterfaceFailureReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

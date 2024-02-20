@@ -96,3 +96,12 @@ impl ReportFormat {
         }
     }
 }
+impl ::std::fmt::Display for ReportFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReportFormat::Parquet => write!(f, "Parquet"),
+            ReportFormat::Csv => write!(f, "textORcsv"),
+            ReportFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

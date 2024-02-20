@@ -135,3 +135,18 @@ impl ExplicitAuthFlowsType {
         }
     }
 }
+impl ::std::fmt::Display for ExplicitAuthFlowsType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ExplicitAuthFlowsType::AdminNoSrpAuth => write!(f, "ADMIN_NO_SRP_AUTH"),
+            ExplicitAuthFlowsType::AllowAdminUserPasswordAuth => write!(f, "ALLOW_ADMIN_USER_PASSWORD_AUTH"),
+            ExplicitAuthFlowsType::AllowCustomAuth => write!(f, "ALLOW_CUSTOM_AUTH"),
+            ExplicitAuthFlowsType::AllowRefreshTokenAuth => write!(f, "ALLOW_REFRESH_TOKEN_AUTH"),
+            ExplicitAuthFlowsType::AllowUserPasswordAuth => write!(f, "ALLOW_USER_PASSWORD_AUTH"),
+            ExplicitAuthFlowsType::AllowUserSrpAuth => write!(f, "ALLOW_USER_SRP_AUTH"),
+            ExplicitAuthFlowsType::CustomAuthFlowOnly => write!(f, "CUSTOM_AUTH_FLOW_ONLY"),
+            ExplicitAuthFlowsType::UserPasswordAuth => write!(f, "USER_PASSWORD_AUTH"),
+            ExplicitAuthFlowsType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl AudioNormalizationAlgorithmControl {
         }
     }
 }
+impl ::std::fmt::Display for AudioNormalizationAlgorithmControl {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AudioNormalizationAlgorithmControl::CorrectAudio => write!(f, "CORRECT_AUDIO"),
+            AudioNormalizationAlgorithmControl::MeasureOnly => write!(f, "MEASURE_ONLY"),
+            AudioNormalizationAlgorithmControl::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

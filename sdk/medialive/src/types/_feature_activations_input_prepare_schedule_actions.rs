@@ -98,3 +98,12 @@ impl FeatureActivationsInputPrepareScheduleActions {
         }
     }
 }
+impl ::std::fmt::Display for FeatureActivationsInputPrepareScheduleActions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeatureActivationsInputPrepareScheduleActions::Disabled => write!(f, "DISABLED"),
+            FeatureActivationsInputPrepareScheduleActions::Enabled => write!(f, "ENABLED"),
+            FeatureActivationsInputPrepareScheduleActions::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

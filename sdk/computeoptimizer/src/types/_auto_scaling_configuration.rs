@@ -96,3 +96,12 @@ impl AutoScalingConfiguration {
         }
     }
 }
+impl ::std::fmt::Display for AutoScalingConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoScalingConfiguration::TargetTrackingScalingCpu => write!(f, "TargetTrackingScalingCpu"),
+            AutoScalingConfiguration::TargetTrackingScalingMemory => write!(f, "TargetTrackingScalingMemory"),
+            AutoScalingConfiguration::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

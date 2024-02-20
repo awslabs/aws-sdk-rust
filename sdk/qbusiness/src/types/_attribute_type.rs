@@ -106,3 +106,14 @@ impl AttributeType {
         }
     }
 }
+impl ::std::fmt::Display for AttributeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AttributeType::Date => write!(f, "DATE"),
+            AttributeType::Number => write!(f, "NUMBER"),
+            AttributeType::String => write!(f, "STRING"),
+            AttributeType::StringList => write!(f, "STRING_LIST"),
+            AttributeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -106,3 +106,14 @@ impl DashIsoImageBasedTrickPlay {
         }
     }
 }
+impl ::std::fmt::Display for DashIsoImageBasedTrickPlay {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashIsoImageBasedTrickPlay::Advanced => write!(f, "ADVANCED"),
+            DashIsoImageBasedTrickPlay::None => write!(f, "NONE"),
+            DashIsoImageBasedTrickPlay::Thumbnail => write!(f, "THUMBNAIL"),
+            DashIsoImageBasedTrickPlay::ThumbnailAndFullframe => write!(f, "THUMBNAIL_AND_FULLFRAME"),
+            DashIsoImageBasedTrickPlay::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

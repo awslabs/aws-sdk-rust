@@ -113,3 +113,15 @@ impl AmazonopensearchserviceIndexRotationPeriod {
         }
     }
 }
+impl ::std::fmt::Display for AmazonopensearchserviceIndexRotationPeriod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AmazonopensearchserviceIndexRotationPeriod::NoRotation => write!(f, "NoRotation"),
+            AmazonopensearchserviceIndexRotationPeriod::OneDay => write!(f, "OneDay"),
+            AmazonopensearchserviceIndexRotationPeriod::OneHour => write!(f, "OneHour"),
+            AmazonopensearchserviceIndexRotationPeriod::OneMonth => write!(f, "OneMonth"),
+            AmazonopensearchserviceIndexRotationPeriod::OneWeek => write!(f, "OneWeek"),
+            AmazonopensearchserviceIndexRotationPeriod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

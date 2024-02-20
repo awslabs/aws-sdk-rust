@@ -101,3 +101,13 @@ impl CatalogEncryptionMode {
         }
     }
 }
+impl ::std::fmt::Display for CatalogEncryptionMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CatalogEncryptionMode::Disabled => write!(f, "DISABLED"),
+            CatalogEncryptionMode::Ssekms => write!(f, "SSE-KMS"),
+            CatalogEncryptionMode::Ssekmswithservicerole => write!(f, "SSE-KMS-WITH-SERVICE-ROLE"),
+            CatalogEncryptionMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

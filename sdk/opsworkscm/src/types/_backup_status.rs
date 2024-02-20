@@ -106,3 +106,14 @@ impl BackupStatus {
         }
     }
 }
+impl ::std::fmt::Display for BackupStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BackupStatus::Deleting => write!(f, "DELETING"),
+            BackupStatus::Failed => write!(f, "FAILED"),
+            BackupStatus::InProgress => write!(f, "IN_PROGRESS"),
+            BackupStatus::Ok => write!(f, "OK"),
+            BackupStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

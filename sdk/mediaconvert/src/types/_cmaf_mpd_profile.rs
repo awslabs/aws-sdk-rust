@@ -96,3 +96,12 @@ impl CmafMpdProfile {
         }
     }
 }
+impl ::std::fmt::Display for CmafMpdProfile {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CmafMpdProfile::MainProfile => write!(f, "MAIN_PROFILE"),
+            CmafMpdProfile::OnDemandProfile => write!(f, "ON_DEMAND_PROFILE"),
+            CmafMpdProfile::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

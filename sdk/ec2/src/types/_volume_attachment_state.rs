@@ -111,3 +111,15 @@ impl VolumeAttachmentState {
         }
     }
 }
+impl ::std::fmt::Display for VolumeAttachmentState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VolumeAttachmentState::Attached => write!(f, "attached"),
+            VolumeAttachmentState::Attaching => write!(f, "attaching"),
+            VolumeAttachmentState::Busy => write!(f, "busy"),
+            VolumeAttachmentState::Detached => write!(f, "detached"),
+            VolumeAttachmentState::Detaching => write!(f, "detaching"),
+            VolumeAttachmentState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

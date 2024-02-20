@@ -106,3 +106,14 @@ impl CostFrequency {
         }
     }
 }
+impl ::std::fmt::Display for CostFrequency {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CostFrequency::Daily => write!(f, "Daily"),
+            CostFrequency::Hourly => write!(f, "Hourly"),
+            CostFrequency::Monthly => write!(f, "Monthly"),
+            CostFrequency::Yearly => write!(f, "Yearly"),
+            CostFrequency::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

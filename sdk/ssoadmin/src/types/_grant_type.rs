@@ -111,3 +111,14 @@ impl GrantType {
         }
     }
 }
+impl ::std::fmt::Display for GrantType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GrantType::AuthorizationCode => write!(f, "authorization_code"),
+            GrantType::RefreshToken => write!(f, "refresh_token"),
+            GrantType::JwtBearer => write!(f, "urn:ietf:params:oauth:grant-type:jwt-bearer"),
+            GrantType::TokenExchange => write!(f, "urn:ietf:params:oauth:grant-type:token-exchange"),
+            GrantType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

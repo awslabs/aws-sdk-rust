@@ -116,3 +116,16 @@ impl ThreatIntelSetFormat {
         }
     }
 }
+impl ::std::fmt::Display for ThreatIntelSetFormat {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ThreatIntelSetFormat::AlienVault => write!(f, "ALIEN_VAULT"),
+            ThreatIntelSetFormat::FireEye => write!(f, "FIRE_EYE"),
+            ThreatIntelSetFormat::OtxCsv => write!(f, "OTX_CSV"),
+            ThreatIntelSetFormat::ProofPoint => write!(f, "PROOF_POINT"),
+            ThreatIntelSetFormat::Stix => write!(f, "STIX"),
+            ThreatIntelSetFormat::Txt => write!(f, "TXT"),
+            ThreatIntelSetFormat::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

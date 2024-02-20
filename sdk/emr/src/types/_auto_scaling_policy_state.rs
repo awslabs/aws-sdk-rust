@@ -116,3 +116,16 @@ impl AutoScalingPolicyState {
         }
     }
 }
+impl ::std::fmt::Display for AutoScalingPolicyState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AutoScalingPolicyState::Attached => write!(f, "ATTACHED"),
+            AutoScalingPolicyState::Attaching => write!(f, "ATTACHING"),
+            AutoScalingPolicyState::Detached => write!(f, "DETACHED"),
+            AutoScalingPolicyState::Detaching => write!(f, "DETACHING"),
+            AutoScalingPolicyState::Failed => write!(f, "FAILED"),
+            AutoScalingPolicyState::Pending => write!(f, "PENDING"),
+            AutoScalingPolicyState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

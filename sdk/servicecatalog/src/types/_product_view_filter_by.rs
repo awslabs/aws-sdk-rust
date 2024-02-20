@@ -106,3 +106,14 @@ impl ProductViewFilterBy {
         }
     }
 }
+impl ::std::fmt::Display for ProductViewFilterBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ProductViewFilterBy::FullTextSearch => write!(f, "FullTextSearch"),
+            ProductViewFilterBy::Owner => write!(f, "Owner"),
+            ProductViewFilterBy::ProductType => write!(f, "ProductType"),
+            ProductViewFilterBy::SourceProductId => write!(f, "SourceProductId"),
+            ProductViewFilterBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

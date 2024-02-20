@@ -101,3 +101,13 @@ impl CertificateType {
         }
     }
 }
+impl ::std::fmt::Display for CertificateType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CertificateType::AmazonIssued => write!(f, "AMAZON_ISSUED"),
+            CertificateType::Imported => write!(f, "IMPORTED"),
+            CertificateType::Private => write!(f, "PRIVATE"),
+            CertificateType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

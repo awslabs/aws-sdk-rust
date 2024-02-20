@@ -153,3 +153,21 @@ impl AnomalyDetectorStatus {
         }
     }
 }
+impl ::std::fmt::Display for AnomalyDetectorStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnomalyDetectorStatus::Activating => write!(f, "ACTIVATING"),
+            AnomalyDetectorStatus::Active => write!(f, "ACTIVE"),
+            AnomalyDetectorStatus::BackTestActivating => write!(f, "BACK_TEST_ACTIVATING"),
+            AnomalyDetectorStatus::BackTestActive => write!(f, "BACK_TEST_ACTIVE"),
+            AnomalyDetectorStatus::BackTestComplete => write!(f, "BACK_TEST_COMPLETE"),
+            AnomalyDetectorStatus::Deactivated => write!(f, "DEACTIVATED"),
+            AnomalyDetectorStatus::Deactivating => write!(f, "DEACTIVATING"),
+            AnomalyDetectorStatus::Deleting => write!(f, "DELETING"),
+            AnomalyDetectorStatus::Failed => write!(f, "FAILED"),
+            AnomalyDetectorStatus::Inactive => write!(f, "INACTIVE"),
+            AnomalyDetectorStatus::Learning => write!(f, "LEARNING"),
+            AnomalyDetectorStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

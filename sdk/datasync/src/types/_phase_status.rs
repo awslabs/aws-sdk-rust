@@ -101,3 +101,13 @@ impl PhaseStatus {
         }
     }
 }
+impl ::std::fmt::Display for PhaseStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PhaseStatus::Error => write!(f, "ERROR"),
+            PhaseStatus::Pending => write!(f, "PENDING"),
+            PhaseStatus::Success => write!(f, "SUCCESS"),
+            PhaseStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

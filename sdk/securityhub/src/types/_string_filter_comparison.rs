@@ -116,3 +116,16 @@ impl StringFilterComparison {
         }
     }
 }
+impl ::std::fmt::Display for StringFilterComparison {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StringFilterComparison::Contains => write!(f, "CONTAINS"),
+            StringFilterComparison::Equals => write!(f, "EQUALS"),
+            StringFilterComparison::NotContains => write!(f, "NOT_CONTAINS"),
+            StringFilterComparison::NotEquals => write!(f, "NOT_EQUALS"),
+            StringFilterComparison::Prefix => write!(f, "PREFIX"),
+            StringFilterComparison::PrefixNotEquals => write!(f, "PREFIX_NOT_EQUALS"),
+            StringFilterComparison::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

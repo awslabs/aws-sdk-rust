@@ -96,3 +96,12 @@ impl DirectConnectGatewayAttachmentType {
         }
     }
 }
+impl ::std::fmt::Display for DirectConnectGatewayAttachmentType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DirectConnectGatewayAttachmentType::PrivateVirtualInterface => write!(f, "PrivateVirtualInterface"),
+            DirectConnectGatewayAttachmentType::TransitVirtualInterface => write!(f, "TransitVirtualInterface"),
+            DirectConnectGatewayAttachmentType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

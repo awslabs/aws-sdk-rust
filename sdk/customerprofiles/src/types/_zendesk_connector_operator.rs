@@ -171,3 +171,24 @@ impl ZendeskConnectorOperator {
         }
     }
 }
+impl ::std::fmt::Display for ZendeskConnectorOperator {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ZendeskConnectorOperator::Addition => write!(f, "ADDITION"),
+            ZendeskConnectorOperator::Division => write!(f, "DIVISION"),
+            ZendeskConnectorOperator::GreaterThan => write!(f, "GREATER_THAN"),
+            ZendeskConnectorOperator::MaskAll => write!(f, "MASK_ALL"),
+            ZendeskConnectorOperator::MaskFirstN => write!(f, "MASK_FIRST_N"),
+            ZendeskConnectorOperator::MaskLastN => write!(f, "MASK_LAST_N"),
+            ZendeskConnectorOperator::Multiplication => write!(f, "MULTIPLICATION"),
+            ZendeskConnectorOperator::NoOp => write!(f, "NO_OP"),
+            ZendeskConnectorOperator::Projection => write!(f, "PROJECTION"),
+            ZendeskConnectorOperator::Subtraction => write!(f, "SUBTRACTION"),
+            ZendeskConnectorOperator::ValidateNonNegative => write!(f, "VALIDATE_NON_NEGATIVE"),
+            ZendeskConnectorOperator::ValidateNonNull => write!(f, "VALIDATE_NON_NULL"),
+            ZendeskConnectorOperator::ValidateNonZero => write!(f, "VALIDATE_NON_ZERO"),
+            ZendeskConnectorOperator::ValidateNumeric => write!(f, "VALIDATE_NUMERIC"),
+            ZendeskConnectorOperator::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl AuthenticatedElement {
         }
     }
 }
+impl ::std::fmt::Display for AuthenticatedElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AuthenticatedElement::CreateAndUpdate => write!(f, "CREATE_AND_UPDATE"),
+            AuthenticatedElement::Delete => write!(f, "DELETE"),
+            AuthenticatedElement::Read => write!(f, "READ"),
+            AuthenticatedElement::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

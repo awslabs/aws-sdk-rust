@@ -103,3 +103,13 @@ impl ReservedElasticsearchInstancePaymentOption {
         }
     }
 }
+impl ::std::fmt::Display for ReservedElasticsearchInstancePaymentOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ReservedElasticsearchInstancePaymentOption::AllUpfront => write!(f, "ALL_UPFRONT"),
+            ReservedElasticsearchInstancePaymentOption::NoUpfront => write!(f, "NO_UPFRONT"),
+            ReservedElasticsearchInstancePaymentOption::PartialUpfront => write!(f, "PARTIAL_UPFRONT"),
+            ReservedElasticsearchInstancePaymentOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

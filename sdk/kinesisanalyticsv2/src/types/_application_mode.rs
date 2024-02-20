@@ -96,3 +96,12 @@ impl ApplicationMode {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationMode::Interactive => write!(f, "INTERACTIVE"),
+            ApplicationMode::Streaming => write!(f, "STREAMING"),
+            ApplicationMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

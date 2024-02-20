@@ -96,3 +96,12 @@ impl Privilege {
         }
     }
 }
+impl ::std::fmt::Display for Privilege {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Privilege::Default => write!(f, "Default"),
+            Privilege::Minimal => write!(f, "Minimal"),
+            Privilege::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

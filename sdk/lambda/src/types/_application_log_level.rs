@@ -116,3 +116,16 @@ impl ApplicationLogLevel {
         }
     }
 }
+impl ::std::fmt::Display for ApplicationLogLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApplicationLogLevel::Debug => write!(f, "DEBUG"),
+            ApplicationLogLevel::Error => write!(f, "ERROR"),
+            ApplicationLogLevel::Fatal => write!(f, "FATAL"),
+            ApplicationLogLevel::Info => write!(f, "INFO"),
+            ApplicationLogLevel::Trace => write!(f, "TRACE"),
+            ApplicationLogLevel::Warn => write!(f, "WARN"),
+            ApplicationLogLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

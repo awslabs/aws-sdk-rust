@@ -121,3 +121,17 @@ impl ApiDestinationHttpMethod {
         }
     }
 }
+impl ::std::fmt::Display for ApiDestinationHttpMethod {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApiDestinationHttpMethod::Delete => write!(f, "DELETE"),
+            ApiDestinationHttpMethod::Get => write!(f, "GET"),
+            ApiDestinationHttpMethod::Head => write!(f, "HEAD"),
+            ApiDestinationHttpMethod::Options => write!(f, "OPTIONS"),
+            ApiDestinationHttpMethod::Patch => write!(f, "PATCH"),
+            ApiDestinationHttpMethod::Post => write!(f, "POST"),
+            ApiDestinationHttpMethod::Put => write!(f, "PUT"),
+            ApiDestinationHttpMethod::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -116,3 +116,16 @@ impl SchemaValueType {
         }
     }
 }
+impl ::std::fmt::Display for SchemaValueType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SchemaValueType::Boolean => write!(f, "BOOLEAN"),
+            SchemaValueType::Double => write!(f, "DOUBLE"),
+            SchemaValueType::Float => write!(f, "FLOAT"),
+            SchemaValueType::Int => write!(f, "INT"),
+            SchemaValueType::Long => write!(f, "LONG"),
+            SchemaValueType::String => write!(f, "STRING"),
+            SchemaValueType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

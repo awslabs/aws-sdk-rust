@@ -96,3 +96,12 @@ impl HlsProgramDateTime {
         }
     }
 }
+impl ::std::fmt::Display for HlsProgramDateTime {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            HlsProgramDateTime::Exclude => write!(f, "EXCLUDE"),
+            HlsProgramDateTime::Include => write!(f, "INCLUDE"),
+            HlsProgramDateTime::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

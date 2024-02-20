@@ -111,3 +111,15 @@ impl FuotaTaskStatus {
         }
     }
 }
+impl ::std::fmt::Display for FuotaTaskStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FuotaTaskStatus::DeleteWaiting => write!(f, "Delete_Waiting"),
+            FuotaTaskStatus::FuotaDone => write!(f, "FuotaDone"),
+            FuotaTaskStatus::FuotaSessionWaiting => write!(f, "FuotaSession_Waiting"),
+            FuotaTaskStatus::InFuotaSession => write!(f, "In_FuotaSession"),
+            FuotaTaskStatus::Pending => write!(f, "Pending"),
+            FuotaTaskStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

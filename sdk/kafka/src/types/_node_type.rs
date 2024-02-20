@@ -91,3 +91,11 @@ impl NodeType {
         }
     }
 }
+impl ::std::fmt::Display for NodeType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NodeType::Broker => write!(f, "BROKER"),
+            NodeType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

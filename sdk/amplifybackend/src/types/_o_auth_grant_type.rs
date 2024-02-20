@@ -96,3 +96,12 @@ impl OAuthGrantType {
         }
     }
 }
+impl ::std::fmt::Display for OAuthGrantType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            OAuthGrantType::Code => write!(f, "CODE"),
+            OAuthGrantType::Implicit => write!(f, "IMPLICIT"),
+            OAuthGrantType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

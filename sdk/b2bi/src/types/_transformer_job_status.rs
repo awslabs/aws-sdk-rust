@@ -101,3 +101,13 @@ impl TransformerJobStatus {
         }
     }
 }
+impl ::std::fmt::Display for TransformerJobStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            TransformerJobStatus::Failed => write!(f, "failed"),
+            TransformerJobStatus::Running => write!(f, "running"),
+            TransformerJobStatus::Succeeded => write!(f, "succeeded"),
+            TransformerJobStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

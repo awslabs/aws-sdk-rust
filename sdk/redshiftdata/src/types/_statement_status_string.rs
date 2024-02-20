@@ -116,3 +116,16 @@ impl StatementStatusString {
         }
     }
 }
+impl ::std::fmt::Display for StatementStatusString {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StatementStatusString::Aborted => write!(f, "ABORTED"),
+            StatementStatusString::Failed => write!(f, "FAILED"),
+            StatementStatusString::Finished => write!(f, "FINISHED"),
+            StatementStatusString::Picked => write!(f, "PICKED"),
+            StatementStatusString::Started => write!(f, "STARTED"),
+            StatementStatusString::Submitted => write!(f, "SUBMITTED"),
+            StatementStatusString::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

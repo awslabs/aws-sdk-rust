@@ -96,3 +96,12 @@ impl RouteType {
         }
     }
 }
+impl ::std::fmt::Display for RouteType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RouteType::Default => write!(f, "DEFAULT"),
+            RouteType::UriPath => write!(f, "URI_PATH"),
+            RouteType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl QueryType {
         }
     }
 }
+impl ::std::fmt::Display for QueryType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            QueryType::CloudformationStack10 => write!(f, "CLOUDFORMATION_STACK_1_0"),
+            QueryType::TagFilters10 => write!(f, "TAG_FILTERS_1_0"),
+            QueryType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

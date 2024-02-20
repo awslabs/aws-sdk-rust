@@ -123,3 +123,16 @@ impl DataSetFilterAttribute {
         }
     }
 }
+impl ::std::fmt::Display for DataSetFilterAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSetFilterAttribute::DatasetName => write!(f, "DATASET_NAME"),
+            DataSetFilterAttribute::DirectQuicksightOwner => write!(f, "DIRECT_QUICKSIGHT_OWNER"),
+            DataSetFilterAttribute::DirectQuicksightSoleOwner => write!(f, "DIRECT_QUICKSIGHT_SOLE_OWNER"),
+            DataSetFilterAttribute::DirectQuicksightViewerOrOwner => write!(f, "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER"),
+            DataSetFilterAttribute::QuicksightOwner => write!(f, "QUICKSIGHT_OWNER"),
+            DataSetFilterAttribute::QuicksightViewerOrOwner => write!(f, "QUICKSIGHT_VIEWER_OR_OWNER"),
+            DataSetFilterAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl RevocationCheckAction {
         }
     }
 }
+impl ::std::fmt::Display for RevocationCheckAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RevocationCheckAction::Drop => write!(f, "DROP"),
+            RevocationCheckAction::Pass => write!(f, "PASS"),
+            RevocationCheckAction::Reject => write!(f, "REJECT"),
+            RevocationCheckAction::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

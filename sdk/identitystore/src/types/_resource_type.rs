@@ -106,3 +106,14 @@ impl ResourceType {
         }
     }
 }
+impl ::std::fmt::Display for ResourceType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResourceType::Group => write!(f, "GROUP"),
+            ResourceType::GroupMembership => write!(f, "GROUP_MEMBERSHIP"),
+            ResourceType::IdentityStore => write!(f, "IDENTITY_STORE"),
+            ResourceType::User => write!(f, "USER"),
+            ResourceType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

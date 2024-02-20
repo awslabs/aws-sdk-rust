@@ -141,3 +141,19 @@ impl InstanceRefreshStatus {
         }
     }
 }
+impl ::std::fmt::Display for InstanceRefreshStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InstanceRefreshStatus::Cancelled => write!(f, "Cancelled"),
+            InstanceRefreshStatus::Cancelling => write!(f, "Cancelling"),
+            InstanceRefreshStatus::Failed => write!(f, "Failed"),
+            InstanceRefreshStatus::InProgress => write!(f, "InProgress"),
+            InstanceRefreshStatus::Pending => write!(f, "Pending"),
+            InstanceRefreshStatus::RollbackFailed => write!(f, "RollbackFailed"),
+            InstanceRefreshStatus::RollbackInProgress => write!(f, "RollbackInProgress"),
+            InstanceRefreshStatus::RollbackSuccessful => write!(f, "RollbackSuccessful"),
+            InstanceRefreshStatus::Successful => write!(f, "Successful"),
+            InstanceRefreshStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

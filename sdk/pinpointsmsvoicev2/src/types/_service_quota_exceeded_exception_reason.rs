@@ -213,3 +213,31 @@ impl ServiceQuotaExceededExceptionReason {
         }
     }
 }
+impl ::std::fmt::Display for ServiceQuotaExceededExceptionReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ServiceQuotaExceededExceptionReason::AssociationsPerRegistration => write!(f, "ASSOCIATIONS_PER_REGISTRATION"),
+            ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount => write!(f, "CONFIGURATION_SETS_PER_ACCOUNT"),
+            ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit => write!(f, "DAILY_DESTINATION_CALL_LIMIT"),
+            ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => write!(f, "EVENT_DESTINATIONS_PER_CONFIGURATION_SET"),
+            ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber => write!(f, "KEYWORDS_PER_PHONE_NUMBER"),
+            ServiceQuotaExceededExceptionReason::KeywordsPerPool => write!(f, "KEYWORDS_PER_POOL"),
+            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => write!(f, "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT"),
+            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => write!(f, "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE"),
+            ServiceQuotaExceededExceptionReason::OptOutListsPerAccount => write!(f, "OPT_OUT_LISTS_PER_ACCOUNT"),
+            ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool => write!(f, "ORIGINATION_IDENTITIES_PER_POOL"),
+            ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => write!(f, "PHONE_NUMBERS_PER_ACCOUNT"),
+            ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => write!(f, "PHONE_NUMBERS_PER_REGISTRATION"),
+            ServiceQuotaExceededExceptionReason::PoolsPerAccount => write!(f, "POOLS_PER_ACCOUNT"),
+            ServiceQuotaExceededExceptionReason::RegistrationsPerAccount => write!(f, "REGISTRATIONS_PER_ACCOUNT"),
+            ServiceQuotaExceededExceptionReason::RegistrationAttachmentsCreatedPerDay => write!(f, "REGISTRATION_ATTACHMENTS_CREATED_PER_DAY"),
+            ServiceQuotaExceededExceptionReason::RegistrationAttachmentsPerAccount => write!(f, "REGISTRATION_ATTACHMENTS_PER_ACCOUNT"),
+            ServiceQuotaExceededExceptionReason::RegistrationVersionsCreatedPerDay => write!(f, "REGISTRATION_VERSIONS_CREATED_PER_DAY"),
+            ServiceQuotaExceededExceptionReason::SenderIdsPerAccount => write!(f, "SENDER_IDS_PER_ACCOUNT"),
+            ServiceQuotaExceededExceptionReason::TagsPerResource => write!(f, "TAGS_PER_RESOURCE"),
+            ServiceQuotaExceededExceptionReason::VerificationAttemptsPerDay => write!(f, "VERIFICATION_ATTEMPTS_PER_DAY"),
+            ServiceQuotaExceededExceptionReason::VerifiedDestinationNumbersPerAccount => write!(f, "VERIFIED_DESTINATION_NUMBERS_PER_ACCOUNT"),
+            ServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

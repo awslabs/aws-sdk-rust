@@ -106,3 +106,14 @@ impl PiiType {
         }
     }
 }
+impl ::std::fmt::Display for PiiType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PiiType::ColumnAudit => write!(f, "ColumnAudit"),
+            PiiType::ColumnMasking => write!(f, "ColumnMasking"),
+            PiiType::RowAudit => write!(f, "RowAudit"),
+            PiiType::RowMasking => write!(f, "RowMasking"),
+            PiiType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

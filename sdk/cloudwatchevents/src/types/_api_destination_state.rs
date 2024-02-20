@@ -96,3 +96,12 @@ impl ApiDestinationState {
         }
     }
 }
+impl ::std::fmt::Display for ApiDestinationState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ApiDestinationState::Active => write!(f, "ACTIVE"),
+            ApiDestinationState::Inactive => write!(f, "INACTIVE"),
+            ApiDestinationState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

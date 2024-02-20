@@ -101,3 +101,13 @@ impl SavingsPlanRateUnit {
         }
     }
 }
+impl ::std::fmt::Display for SavingsPlanRateUnit {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SavingsPlanRateUnit::Hours => write!(f, "Hrs"),
+            SavingsPlanRateUnit::LambdaGbSecond => write!(f, "Lambda-GB-Second"),
+            SavingsPlanRateUnit::Request => write!(f, "Request"),
+            SavingsPlanRateUnit::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

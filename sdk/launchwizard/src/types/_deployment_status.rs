@@ -141,3 +141,19 @@ impl DeploymentStatus {
         }
     }
 }
+impl ::std::fmt::Display for DeploymentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DeploymentStatus::Completed => write!(f, "COMPLETED"),
+            DeploymentStatus::Creating => write!(f, "CREATING"),
+            DeploymentStatus::Deleted => write!(f, "DELETED"),
+            DeploymentStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            DeploymentStatus::DeleteInitiating => write!(f, "DELETE_INITIATING"),
+            DeploymentStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            DeploymentStatus::Failed => write!(f, "FAILED"),
+            DeploymentStatus::InProgress => write!(f, "IN_PROGRESS"),
+            DeploymentStatus::Validating => write!(f, "VALIDATING"),
+            DeploymentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -101,3 +101,13 @@ impl GroupByAttribute {
         }
     }
 }
+impl ::std::fmt::Display for GroupByAttribute {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GroupByAttribute::Region => write!(f, "REGION"),
+            GroupByAttribute::ResourceType => write!(f, "RESOURCE_TYPE"),
+            GroupByAttribute::TargetId => write!(f, "TARGET_ID"),
+            GroupByAttribute::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

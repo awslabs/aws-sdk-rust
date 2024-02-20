@@ -131,3 +131,19 @@ impl CallAnalyticsLanguageCode {
         }
     }
 }
+impl ::std::fmt::Display for CallAnalyticsLanguageCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            CallAnalyticsLanguageCode::DeDe => write!(f, "de-DE"),
+            CallAnalyticsLanguageCode::EnAu => write!(f, "en-AU"),
+            CallAnalyticsLanguageCode::EnGb => write!(f, "en-GB"),
+            CallAnalyticsLanguageCode::EnUs => write!(f, "en-US"),
+            CallAnalyticsLanguageCode::EsUs => write!(f, "es-US"),
+            CallAnalyticsLanguageCode::FrCa => write!(f, "fr-CA"),
+            CallAnalyticsLanguageCode::FrFr => write!(f, "fr-FR"),
+            CallAnalyticsLanguageCode::ItIt => write!(f, "it-IT"),
+            CallAnalyticsLanguageCode::PtBr => write!(f, "pt-BR"),
+            CallAnalyticsLanguageCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

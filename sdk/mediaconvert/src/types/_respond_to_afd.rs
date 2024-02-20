@@ -101,3 +101,13 @@ impl RespondToAfd {
         }
     }
 }
+impl ::std::fmt::Display for RespondToAfd {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RespondToAfd::None => write!(f, "NONE"),
+            RespondToAfd::Passthrough => write!(f, "PASSTHROUGH"),
+            RespondToAfd::Respond => write!(f, "RESPOND"),
+            RespondToAfd::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

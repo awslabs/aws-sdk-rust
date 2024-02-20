@@ -111,3 +111,15 @@ impl EndpointStatus {
         }
     }
 }
+impl ::std::fmt::Display for EndpointStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EndpointStatus::Available => write!(f, "Available"),
+            EndpointStatus::CreateFailed => write!(f, "Create_Failed"),
+            EndpointStatus::DeleteFailed => write!(f, "Delete_Failed"),
+            EndpointStatus::Deleting => write!(f, "Deleting"),
+            EndpointStatus::Pending => write!(f, "Pending"),
+            EndpointStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl FeatureEvaluationStrategy {
         }
     }
 }
+impl ::std::fmt::Display for FeatureEvaluationStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FeatureEvaluationStrategy::AllRules => write!(f, "ALL_RULES"),
+            FeatureEvaluationStrategy::DefaultVariation => write!(f, "DEFAULT_VARIATION"),
+            FeatureEvaluationStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -147,3 +147,20 @@ impl RevocationReason {
         }
     }
 }
+impl ::std::fmt::Display for RevocationReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RevocationReason::AffiliationChanged => write!(f, "AFFILIATION_CHANGED"),
+            RevocationReason::AaCompromise => write!(f, "A_A_COMPROMISE"),
+            RevocationReason::CaCompromise => write!(f, "CA_COMPROMISE"),
+            RevocationReason::CertificateHold => write!(f, "CERTIFICATE_HOLD"),
+            RevocationReason::CessationOfOperation => write!(f, "CESSATION_OF_OPERATION"),
+            RevocationReason::KeyCompromise => write!(f, "KEY_COMPROMISE"),
+            RevocationReason::PrivilegeWithdrawn => write!(f, "PRIVILEGE_WITHDRAWN"),
+            RevocationReason::RemoveFromCrl => write!(f, "REMOVE_FROM_CRL"),
+            RevocationReason::Superceded => write!(f, "SUPERCEDED"),
+            RevocationReason::Unspecified => write!(f, "UNSPECIFIED"),
+            RevocationReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

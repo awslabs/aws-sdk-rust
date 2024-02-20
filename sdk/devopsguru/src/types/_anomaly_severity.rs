@@ -101,3 +101,13 @@ impl AnomalySeverity {
         }
     }
 }
+impl ::std::fmt::Display for AnomalySeverity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AnomalySeverity::High => write!(f, "HIGH"),
+            AnomalySeverity::Low => write!(f, "LOW"),
+            AnomalySeverity::Medium => write!(f, "MEDIUM"),
+            AnomalySeverity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

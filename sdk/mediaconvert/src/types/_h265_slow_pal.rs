@@ -96,3 +96,12 @@ impl H265SlowPal {
         }
     }
 }
+impl ::std::fmt::Display for H265SlowPal {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265SlowPal::Disabled => write!(f, "DISABLED"),
+            H265SlowPal::Enabled => write!(f, "ENABLED"),
+            H265SlowPal::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

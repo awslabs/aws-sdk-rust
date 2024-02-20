@@ -111,3 +111,15 @@ impl ScraperStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ScraperStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScraperStatusCode::Active => write!(f, "ACTIVE"),
+            ScraperStatusCode::Creating => write!(f, "CREATING"),
+            ScraperStatusCode::CreationFailed => write!(f, "CREATION_FAILED"),
+            ScraperStatusCode::Deleting => write!(f, "DELETING"),
+            ScraperStatusCode::DeletionFailed => write!(f, "DELETION_FAILED"),
+            ScraperStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

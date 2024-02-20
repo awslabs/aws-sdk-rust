@@ -101,3 +101,13 @@ impl InputMaximumBitrate {
         }
     }
 }
+impl ::std::fmt::Display for InputMaximumBitrate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputMaximumBitrate::Max10Mbps => write!(f, "MAX_10_MBPS"),
+            InputMaximumBitrate::Max20Mbps => write!(f, "MAX_20_MBPS"),
+            InputMaximumBitrate::Max50Mbps => write!(f, "MAX_50_MBPS"),
+            InputMaximumBitrate::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

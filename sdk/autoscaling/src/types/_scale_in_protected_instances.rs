@@ -101,3 +101,13 @@ impl ScaleInProtectedInstances {
         }
     }
 }
+impl ::std::fmt::Display for ScaleInProtectedInstances {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ScaleInProtectedInstances::Ignore => write!(f, "Ignore"),
+            ScaleInProtectedInstances::Refresh => write!(f, "Refresh"),
+            ScaleInProtectedInstances::Wait => write!(f, "Wait"),
+            ScaleInProtectedInstances::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

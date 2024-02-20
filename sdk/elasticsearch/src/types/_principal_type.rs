@@ -101,3 +101,12 @@ impl PrincipalType {
         }
     }
 }
+impl ::std::fmt::Display for PrincipalType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            PrincipalType::AwsAccount => write!(f, "AWS_ACCOUNT"),
+            PrincipalType::AwsService => write!(f, "AWS_SERVICE"),
+            PrincipalType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

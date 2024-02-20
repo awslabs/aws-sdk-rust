@@ -96,3 +96,12 @@ impl InputClass {
         }
     }
 }
+impl ::std::fmt::Display for InputClass {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputClass::SinglePipeline => write!(f, "SINGLE_PIPELINE"),
+            InputClass::Standard => write!(f, "STANDARD"),
+            InputClass::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

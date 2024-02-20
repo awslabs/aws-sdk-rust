@@ -96,3 +96,12 @@ impl BucketAccelerateStatus {
         }
     }
 }
+impl ::std::fmt::Display for BucketAccelerateStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BucketAccelerateStatus::Enabled => write!(f, "Enabled"),
+            BucketAccelerateStatus::Suspended => write!(f, "Suspended"),
+            BucketAccelerateStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

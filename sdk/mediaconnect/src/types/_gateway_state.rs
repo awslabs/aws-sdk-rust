@@ -116,3 +116,16 @@ impl GatewayState {
         }
     }
 }
+impl ::std::fmt::Display for GatewayState {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            GatewayState::Active => write!(f, "ACTIVE"),
+            GatewayState::Creating => write!(f, "CREATING"),
+            GatewayState::Deleted => write!(f, "DELETED"),
+            GatewayState::Deleting => write!(f, "DELETING"),
+            GatewayState::Error => write!(f, "ERROR"),
+            GatewayState::Updating => write!(f, "UPDATING"),
+            GatewayState::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

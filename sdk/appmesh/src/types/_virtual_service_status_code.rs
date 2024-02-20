@@ -101,3 +101,13 @@ impl VirtualServiceStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for VirtualServiceStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            VirtualServiceStatusCode::Active => write!(f, "ACTIVE"),
+            VirtualServiceStatusCode::Deleted => write!(f, "DELETED"),
+            VirtualServiceStatusCode::Inactive => write!(f, "INACTIVE"),
+            VirtualServiceStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

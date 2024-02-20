@@ -96,3 +96,12 @@ impl InputMode {
         }
     }
 }
+impl ::std::fmt::Display for InputMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InputMode::File => write!(f, "File"),
+            InputMode::Pipe => write!(f, "Pipe"),
+            InputMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

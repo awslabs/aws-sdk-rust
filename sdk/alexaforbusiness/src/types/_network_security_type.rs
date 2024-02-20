@@ -111,3 +111,15 @@ impl NetworkSecurityType {
         }
     }
 }
+impl ::std::fmt::Display for NetworkSecurityType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            NetworkSecurityType::Open => write!(f, "OPEN"),
+            NetworkSecurityType::Wep => write!(f, "WEP"),
+            NetworkSecurityType::Wpa2Enterprise => write!(f, "WPA2_ENTERPRISE"),
+            NetworkSecurityType::Wpa2Psk => write!(f, "WPA2_PSK"),
+            NetworkSecurityType::WpaPsk => write!(f, "WPA_PSK"),
+            NetworkSecurityType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

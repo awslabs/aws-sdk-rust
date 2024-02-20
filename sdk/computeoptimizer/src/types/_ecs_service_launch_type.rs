@@ -96,3 +96,12 @@ impl EcsServiceLaunchType {
         }
     }
 }
+impl ::std::fmt::Display for EcsServiceLaunchType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            EcsServiceLaunchType::Ec2 => write!(f, "EC2"),
+            EcsServiceLaunchType::Fargate => write!(f, "Fargate"),
+            EcsServiceLaunchType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl DashFragmentSelectorType {
         }
     }
 }
+impl ::std::fmt::Display for DashFragmentSelectorType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DashFragmentSelectorType::ProducerTimestamp => write!(f, "PRODUCER_TIMESTAMP"),
+            DashFragmentSelectorType::ServerTimestamp => write!(f, "SERVER_TIMESTAMP"),
+            DashFragmentSelectorType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

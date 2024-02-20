@@ -123,3 +123,16 @@ impl ResolverAutodefinedReverseStatus {
         }
     }
 }
+impl ::std::fmt::Display for ResolverAutodefinedReverseStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ResolverAutodefinedReverseStatus::Disabled => write!(f, "DISABLED"),
+            ResolverAutodefinedReverseStatus::Disabling => write!(f, "DISABLING"),
+            ResolverAutodefinedReverseStatus::Enabled => write!(f, "ENABLED"),
+            ResolverAutodefinedReverseStatus::Enabling => write!(f, "ENABLING"),
+            ResolverAutodefinedReverseStatus::UpdatingToUseLocalResourceSetting => write!(f, "UPDATING_TO_USE_LOCAL_RESOURCE_SETTING"),
+            ResolverAutodefinedReverseStatus::UseLocalResourceSetting => write!(f, "USE_LOCAL_RESOURCE_SETTING"),
+            ResolverAutodefinedReverseStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

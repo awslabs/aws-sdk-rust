@@ -91,3 +91,11 @@ impl ContainerRepositoryService {
         }
     }
 }
+impl ::std::fmt::Display for ContainerRepositoryService {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ContainerRepositoryService::Ecr => write!(f, "ECR"),
+            ContainerRepositoryService::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

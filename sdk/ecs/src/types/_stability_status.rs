@@ -96,3 +96,12 @@ impl StabilityStatus {
         }
     }
 }
+impl ::std::fmt::Display for StabilityStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            StabilityStatus::Stabilizing => write!(f, "STABILIZING"),
+            StabilityStatus::SteadyState => write!(f, "STEADY_STATE"),
+            StabilityStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

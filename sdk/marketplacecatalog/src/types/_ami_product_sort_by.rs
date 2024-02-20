@@ -106,3 +106,14 @@ impl AmiProductSortBy {
         }
     }
 }
+impl ::std::fmt::Display for AmiProductSortBy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AmiProductSortBy::EntityId => write!(f, "EntityId"),
+            AmiProductSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
+            AmiProductSortBy::ProductTitle => write!(f, "ProductTitle"),
+            AmiProductSortBy::Visibility => write!(f, "Visibility"),
+            AmiProductSortBy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

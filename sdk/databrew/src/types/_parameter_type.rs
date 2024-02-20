@@ -101,3 +101,13 @@ impl ParameterType {
         }
     }
 }
+impl ::std::fmt::Display for ParameterType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ParameterType::Datetime => write!(f, "Datetime"),
+            ParameterType::Number => write!(f, "Number"),
+            ParameterType::String => write!(f, "String"),
+            ParameterType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

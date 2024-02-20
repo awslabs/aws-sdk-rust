@@ -106,3 +106,14 @@ impl ClientVpnRouteStatusCode {
         }
     }
 }
+impl ::std::fmt::Display for ClientVpnRouteStatusCode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ClientVpnRouteStatusCode::Active => write!(f, "active"),
+            ClientVpnRouteStatusCode::Creating => write!(f, "creating"),
+            ClientVpnRouteStatusCode::Deleting => write!(f, "deleting"),
+            ClientVpnRouteStatusCode::Failed => write!(f, "failed"),
+            ClientVpnRouteStatusCode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

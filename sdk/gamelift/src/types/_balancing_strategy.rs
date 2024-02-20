@@ -101,3 +101,13 @@ impl BalancingStrategy {
         }
     }
 }
+impl ::std::fmt::Display for BalancingStrategy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            BalancingStrategy::OnDemandOnly => write!(f, "ON_DEMAND_ONLY"),
+            BalancingStrategy::SpotOnly => write!(f, "SPOT_ONLY"),
+            BalancingStrategy::SpotPreferred => write!(f, "SPOT_PREFERRED"),
+            BalancingStrategy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

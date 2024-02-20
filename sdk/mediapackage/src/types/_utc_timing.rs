@@ -106,3 +106,14 @@ impl UtcTiming {
         }
     }
 }
+impl ::std::fmt::Display for UtcTiming {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            UtcTiming::HttpHead => write!(f, "HTTP-HEAD"),
+            UtcTiming::HttpIso => write!(f, "HTTP-ISO"),
+            UtcTiming::HttpXsdate => write!(f, "HTTP-XSDATE"),
+            UtcTiming::None => write!(f, "NONE"),
+            UtcTiming::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

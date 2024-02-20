@@ -101,3 +101,13 @@ impl RelevanceLevel {
         }
     }
 }
+impl ::std::fmt::Display for RelevanceLevel {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RelevanceLevel::High => write!(f, "HIGH"),
+            RelevanceLevel::Low => write!(f, "LOW"),
+            RelevanceLevel::Medium => write!(f, "MEDIUM"),
+            RelevanceLevel::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

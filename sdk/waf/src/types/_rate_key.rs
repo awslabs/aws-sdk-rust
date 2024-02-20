@@ -91,3 +91,11 @@ impl RateKey {
         }
     }
 }
+impl ::std::fmt::Display for RateKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            RateKey::Ip => write!(f, "IP"),
+            RateKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

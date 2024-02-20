@@ -101,3 +101,13 @@ impl AcknowledgmentStatus {
         }
     }
 }
+impl ::std::fmt::Display for AcknowledgmentStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AcknowledgmentStatus::Acknowledged => write!(f, "ACKNOWLEDGED"),
+            AcknowledgmentStatus::Acknowledging => write!(f, "ACKNOWLEDGING"),
+            AcknowledgmentStatus::Unacknowledged => write!(f, "UNACKNOWLEDGED"),
+            AcknowledgmentStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -149,3 +149,20 @@ impl LoadBalancerTlsCertificateRevocationReason {
         }
     }
 }
+impl ::std::fmt::Display for LoadBalancerTlsCertificateRevocationReason {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            LoadBalancerTlsCertificateRevocationReason::AffiliationChanged => write!(f, "AFFILIATION_CHANGED"),
+            LoadBalancerTlsCertificateRevocationReason::AaCompromise => write!(f, "A_A_COMPROMISE"),
+            LoadBalancerTlsCertificateRevocationReason::CaCompromise => write!(f, "CA_COMPROMISE"),
+            LoadBalancerTlsCertificateRevocationReason::CertificateHold => write!(f, "CERTIFICATE_HOLD"),
+            LoadBalancerTlsCertificateRevocationReason::CessationOfOperation => write!(f, "CESSATION_OF_OPERATION"),
+            LoadBalancerTlsCertificateRevocationReason::KeyCompromise => write!(f, "KEY_COMPROMISE"),
+            LoadBalancerTlsCertificateRevocationReason::PrivilegeWithdrawn => write!(f, "PRIVILEGE_WITHDRAWN"),
+            LoadBalancerTlsCertificateRevocationReason::RemoveFromCrl => write!(f, "REMOVE_FROM_CRL"),
+            LoadBalancerTlsCertificateRevocationReason::Superceded => write!(f, "SUPERCEDED"),
+            LoadBalancerTlsCertificateRevocationReason::Unspecified => write!(f, "UNSPECIFIED"),
+            LoadBalancerTlsCertificateRevocationReason::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

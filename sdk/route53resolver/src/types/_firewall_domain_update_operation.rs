@@ -101,3 +101,13 @@ impl FirewallDomainUpdateOperation {
         }
     }
 }
+impl ::std::fmt::Display for FirewallDomainUpdateOperation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FirewallDomainUpdateOperation::Add => write!(f, "ADD"),
+            FirewallDomainUpdateOperation::Remove => write!(f, "REMOVE"),
+            FirewallDomainUpdateOperation::Replace => write!(f, "REPLACE"),
+            FirewallDomainUpdateOperation::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

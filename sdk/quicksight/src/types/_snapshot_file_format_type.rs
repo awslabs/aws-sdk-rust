@@ -101,3 +101,13 @@ impl SnapshotFileFormatType {
         }
     }
 }
+impl ::std::fmt::Display for SnapshotFileFormatType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SnapshotFileFormatType::Csv => write!(f, "CSV"),
+            SnapshotFileFormatType::Excel => write!(f, "EXCEL"),
+            SnapshotFileFormatType::Pdf => write!(f, "PDF"),
+            SnapshotFileFormatType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

@@ -96,3 +96,12 @@ impl H265TemporalIds {
         }
     }
 }
+impl ::std::fmt::Display for H265TemporalIds {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            H265TemporalIds::Disabled => write!(f, "DISABLED"),
+            H265TemporalIds::Enabled => write!(f, "ENABLED"),
+            H265TemporalIds::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

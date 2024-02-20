@@ -96,3 +96,12 @@ impl InventorySchemaDeleteOption {
         }
     }
 }
+impl ::std::fmt::Display for InventorySchemaDeleteOption {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            InventorySchemaDeleteOption::DeleteSchema => write!(f, "DeleteSchema"),
+            InventorySchemaDeleteOption::DisableSchema => write!(f, "DisableSchema"),
+            InventorySchemaDeleteOption::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

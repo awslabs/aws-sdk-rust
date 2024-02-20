@@ -91,3 +91,11 @@ impl Profanity {
         }
     }
 }
+impl ::std::fmt::Display for Profanity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Profanity::Mask => write!(f, "MASK"),
+            Profanity::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

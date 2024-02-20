@@ -96,3 +96,12 @@ impl SessionPersistenceMode {
         }
     }
 }
+impl ::std::fmt::Display for SessionPersistenceMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            SessionPersistenceMode::Activated => write!(f, "ACTIVATED"),
+            SessionPersistenceMode::Deactivated => write!(f, "DEACTIVATED"),
+            SessionPersistenceMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

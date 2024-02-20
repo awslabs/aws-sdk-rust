@@ -106,3 +106,14 @@ impl FilterName {
         }
     }
 }
+impl ::std::fmt::Display for FilterName {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            FilterName::Finding => write!(f, "Finding"),
+            FilterName::FindingReasonCodes => write!(f, "FindingReasonCodes"),
+            FilterName::InferredWorkloadTypes => write!(f, "InferredWorkloadTypes"),
+            FilterName::RecommendationSourceType => write!(f, "RecommendationSourceType"),
+            FilterName::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

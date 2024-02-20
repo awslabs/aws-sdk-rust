@@ -96,3 +96,12 @@ impl DataSetImportMode {
         }
     }
 }
+impl ::std::fmt::Display for DataSetImportMode {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DataSetImportMode::DirectQuery => write!(f, "DIRECT_QUERY"),
+            DataSetImportMode::Spice => write!(f, "SPICE"),
+            DataSetImportMode::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

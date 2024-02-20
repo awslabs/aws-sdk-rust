@@ -96,3 +96,12 @@ impl AwsServiceAccessStatus {
         }
     }
 }
+impl ::std::fmt::Display for AwsServiceAccessStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            AwsServiceAccessStatus::Disabled => write!(f, "DISABLED"),
+            AwsServiceAccessStatus::Enabled => write!(f, "ENABLED"),
+            AwsServiceAccessStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

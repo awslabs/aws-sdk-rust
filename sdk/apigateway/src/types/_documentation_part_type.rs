@@ -159,3 +159,22 @@ impl DocumentationPartType {
         }
     }
 }
+impl ::std::fmt::Display for DocumentationPartType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            DocumentationPartType::Api => write!(f, "API"),
+            DocumentationPartType::Authorizer => write!(f, "AUTHORIZER"),
+            DocumentationPartType::Method => write!(f, "METHOD"),
+            DocumentationPartType::Model => write!(f, "MODEL"),
+            DocumentationPartType::PathParameter => write!(f, "PATH_PARAMETER"),
+            DocumentationPartType::QueryParameter => write!(f, "QUERY_PARAMETER"),
+            DocumentationPartType::RequestBody => write!(f, "REQUEST_BODY"),
+            DocumentationPartType::RequestHeader => write!(f, "REQUEST_HEADER"),
+            DocumentationPartType::Resource => write!(f, "RESOURCE"),
+            DocumentationPartType::Response => write!(f, "RESPONSE"),
+            DocumentationPartType::ResponseBody => write!(f, "RESPONSE_BODY"),
+            DocumentationPartType::ResponseHeader => write!(f, "RESPONSE_HEADER"),
+            DocumentationPartType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

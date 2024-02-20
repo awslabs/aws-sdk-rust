@@ -101,3 +101,13 @@ impl WafRuleType {
         }
     }
 }
+impl ::std::fmt::Display for WafRuleType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            WafRuleType::Group => write!(f, "GROUP"),
+            WafRuleType::RateBased => write!(f, "RATE_BASED"),
+            WafRuleType::Regular => write!(f, "REGULAR"),
+            WafRuleType::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

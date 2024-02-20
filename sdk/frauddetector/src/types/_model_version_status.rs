@@ -101,3 +101,13 @@ impl ModelVersionStatus {
         }
     }
 }
+impl ::std::fmt::Display for ModelVersionStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelVersionStatus::Active => write!(f, "ACTIVE"),
+            ModelVersionStatus::Inactive => write!(f, "INACTIVE"),
+            ModelVersionStatus::TrainingCancelled => write!(f, "TRAINING_CANCELLED"),
+            ModelVersionStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

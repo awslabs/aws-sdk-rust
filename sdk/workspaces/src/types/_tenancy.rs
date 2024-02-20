@@ -96,3 +96,12 @@ impl Tenancy {
         }
     }
 }
+impl ::std::fmt::Display for Tenancy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            Tenancy::Dedicated => write!(f, "DEDICATED"),
+            Tenancy::Shared => write!(f, "SHARED"),
+            Tenancy::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

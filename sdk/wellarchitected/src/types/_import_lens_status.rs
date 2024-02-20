@@ -101,3 +101,13 @@ impl ImportLensStatus {
         }
     }
 }
+impl ::std::fmt::Display for ImportLensStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ImportLensStatus::Complete => write!(f, "COMPLETE"),
+            ImportLensStatus::Error => write!(f, "ERROR"),
+            ImportLensStatus::InProgress => write!(f, "IN_PROGRESS"),
+            ImportLensStatus::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}

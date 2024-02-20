@@ -96,3 +96,12 @@ impl ModelSortKey {
         }
     }
 }
+impl ::std::fmt::Display for ModelSortKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+        match self {
+            ModelSortKey::CreationTime => write!(f, "CreationTime"),
+            ModelSortKey::Name => write!(f, "Name"),
+            ModelSortKey::Unknown(value) => write!(f, "{}", value),
+        }
+    }
+}
