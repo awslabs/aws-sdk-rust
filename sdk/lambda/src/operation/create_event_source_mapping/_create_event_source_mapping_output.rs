@@ -34,7 +34,7 @@ pub struct CreateEventSourceMappingOutput {
     pub state: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
     pub state_transition_reason: ::std::option::Option<::std::string::String>,
-    /// <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event sources only) A configuration object that specifies the destination of an event after Lambda processes it.</p>
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
     /// <p>The name of the Kafka topic.</p>
     pub topics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -123,7 +123,7 @@ impl CreateEventSourceMappingOutput {
     pub fn state_transition_reason(&self) -> ::std::option::Option<&str> {
         self.state_transition_reason.as_deref()
     }
-    /// <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event sources only) A configuration object that specifies the destination of an event after Lambda processes it.</p>
     pub fn destination_config(&self) -> ::std::option::Option<&crate::types::DestinationConfig> {
         self.destination_config.as_ref()
     }
@@ -430,17 +430,17 @@ impl CreateEventSourceMappingOutputBuilder {
     pub fn get_state_transition_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_transition_reason
     }
-    /// <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event sources only) A configuration object that specifies the destination of an event after Lambda processes it.</p>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.destination_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event sources only) A configuration object that specifies the destination of an event after Lambda processes it.</p>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.destination_config = input;
         self
     }
-    /// <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event sources only) A configuration object that specifies the destination of an event after Lambda processes it.</p>
     pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         &self.destination_config
     }

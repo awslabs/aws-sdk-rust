@@ -719,8 +719,8 @@ model_hash = '016331b51529fc02cb80236a44611a732704ff9ff339c71295cad69e140713bf'
 [crates.aws-sdk-dynamodb]
 category = 'AwsSdk'
 version = '1.15.0'
-source_hash = 'f996dcd83385a8c68e6ce73ce70daf28194aaec7642800d7a5673d396c76cde1'
-model_hash = 'bf3853a8247264186eb4421b0bc2bd3dce99a10ed6e890dfe7e0e84ebfcb400e'
+source_hash = '52f34cb64612fd00255d9b8e14d979a6fe2b84e71bc5a8f12cb5dfe0f1395adf'
+model_hash = '29d96a442e743ee08d1dd7b2b827a7f92bbf4e0b9748e5c21deaf576bad68db9'
 
 [crates.aws-sdk-dynamodbstreams]
 category = 'AwsSdk'
@@ -1247,8 +1247,8 @@ model_hash = 'c369605e133bfed7dcbd77a341abf08bd5a8b86573d2b7dacf6bc27cb475a9bb'
 [crates.aws-sdk-lambda]
 category = 'AwsSdk'
 version = '1.14.0'
-source_hash = 'e439ae94f4b8960ea1ff2c23b929535914bf09d811abafc147959394a594a7cf'
-model_hash = '7805eabe4989b13d3d9a84c835a4540febb14412400ed99ebd29c5a61877d4f4'
+source_hash = 'cb72c5d2a78875560955ad6db90bdf6d4a3b3cfb6e90a41363c573f27c08733f'
+model_hash = '3393df9d51f20abdee8f8abddf4b8cb3591c6a5a3fbc35e15c2e2d01d61d34a3'
 
 [crates.aws-sdk-launchwizard]
 category = 'AwsSdk'

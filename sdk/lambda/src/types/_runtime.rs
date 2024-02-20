@@ -13,6 +13,7 @@
 /// # let runtime = unimplemented!();
 /// match runtime {
 ///     Runtime::Dotnet6 => { /* ... */ },
+///     Runtime::Dotnet8 => { /* ... */ },
 ///     Runtime::Dotnetcore10 => { /* ... */ },
 ///     Runtime::Dotnetcore20 => { /* ... */ },
 ///     Runtime::Dotnetcore21 => { /* ... */ },
@@ -77,6 +78,8 @@
 pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Dotnet6,
+    #[allow(missing_docs)] // documentation missing in model
+    Dotnet8,
     #[allow(missing_docs)] // documentation missing in model
     Dotnetcore10,
     #[allow(missing_docs)] // documentation missing in model
@@ -155,6 +158,7 @@ impl ::std::convert::From<&str> for Runtime {
     fn from(s: &str) -> Self {
         match s {
             "dotnet6" => Runtime::Dotnet6,
+            "dotnet8" => Runtime::Dotnet8,
             "dotnetcore1.0" => Runtime::Dotnetcore10,
             "dotnetcore2.0" => Runtime::Dotnetcore20,
             "dotnetcore2.1" => Runtime::Dotnetcore21,
@@ -206,6 +210,7 @@ impl Runtime {
     pub fn as_str(&self) -> &str {
         match self {
             Runtime::Dotnet6 => "dotnet6",
+            Runtime::Dotnet8 => "dotnet8",
             Runtime::Dotnetcore10 => "dotnetcore1.0",
             Runtime::Dotnetcore20 => "dotnetcore2.0",
             Runtime::Dotnetcore21 => "dotnetcore2.1",
@@ -248,6 +253,7 @@ impl Runtime {
     pub const fn values() -> &'static [&'static str] {
         &[
             "dotnet6",
+            "dotnet8",
             "dotnetcore1.0",
             "dotnetcore2.0",
             "dotnetcore2.1",
@@ -307,6 +313,7 @@ impl ::std::fmt::Display for Runtime {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Runtime::Dotnet6 => write!(f, "dotnet6"),
+            Runtime::Dotnet8 => write!(f, "dotnet8"),
             Runtime::Dotnetcore10 => write!(f, "dotnetcore1.0"),
             Runtime::Dotnetcore20 => write!(f, "dotnetcore2.0"),
             Runtime::Dotnetcore21 => write!(f, "dotnetcore2.1"),
