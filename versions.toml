@@ -2425,6 +2425,10 @@ source_hash = '1e22a67609e8b51eeffec6c13d4e21a11f31eac6382bbaf11253ae2ed8d2997c'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '9f9b854b976ebed8c207f078c79801f07c6243191c60b84d2e4e37fa25a553bd'
+
+[release]
+tag = 'release-2024-02-20'
+
 [release.crates]
 aws-config = '1.1.6'
 aws-credential-types = '1.1.6'
