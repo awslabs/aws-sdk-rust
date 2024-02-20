@@ -27,8 +27,8 @@ your project, add the following to your **Cargo.toml** file:
 
 ```toml
 [dependencies]
-aws-config = { version = "1.1.5", features = ["behavior-version-latest"] }
-aws-sdk-rds = "1.16.1"
+aws-config = { version = "1.1.4", features = ["behavior-version-latest"] }
+aws-sdk-rds = "1.17.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

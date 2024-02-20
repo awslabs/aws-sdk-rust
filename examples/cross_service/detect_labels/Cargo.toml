@@ -7,12 +7,12 @@ publish = false
 
 [dependencies]
 kamadak-exif = "0.5.4"
-aws-config= { version = "1.1.5", path = "../../../sdk/aws-config" }
-aws-sdk-dynamodb= { version = "1.14.0", path = "../../../sdk/dynamodb" }
-aws-sdk-rekognition= { version = "1.14.0", path = "../../../sdk/rekognition" }
-aws-sdk-s3= { version = "1.15.0", path = "../../../sdk/s3" }
-aws-smithy-types= { version = "1.1.5", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }
-aws-types= { version = "1.1.5", path = "../../../sdk/aws-types" }
+aws-config= { version = "1.1.4", path = "../../../sdk/aws-config" }
+aws-sdk-dynamodb= { version = "1.15.0", path = "../../../sdk/dynamodb" }
+aws-sdk-rekognition= { version = "1.15.0", path = "../../../sdk/rekognition" }
+aws-sdk-s3= { version = "1.16.0", path = "../../../sdk/s3" }
+aws-smithy-types= { version = "1.1.4", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }
+aws-types= { version = "1.1.4", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]
 version = "1.20.1"
