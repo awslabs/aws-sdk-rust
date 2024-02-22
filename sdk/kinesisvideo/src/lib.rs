@@ -27,7 +27,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.6", features = ["behavior-version-latest"] }
-//! aws-sdk-kinesisvideo = "1.14.0"
+//! aws-sdk-kinesisvideo = "1.15.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

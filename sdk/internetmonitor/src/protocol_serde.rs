@@ -125,6 +125,8 @@ pub(crate) mod shape_s3_config;
 
 pub(crate) mod shape_internet_health;
 
+pub(crate) mod shape_ipv4_prefix_list;
+
 pub(crate) mod shape_network_impairment;
 
 pub(crate) mod shape_availability_measurement;

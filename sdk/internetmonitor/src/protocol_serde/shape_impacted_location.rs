@@ -99,6 +99,9 @@ where
                         "InternetHealth" => {
                             builder = builder.set_internet_health(crate::protocol_serde::shape_internet_health::de_internet_health(tokens)?);
                         }
+                        "Ipv4Prefixes" => {
+                            builder = builder.set_ipv4_prefixes(crate::protocol_serde::shape_ipv4_prefix_list::de_ipv4_prefix_list(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

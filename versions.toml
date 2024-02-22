@@ -1030,9 +1030,9 @@ model_hash = '2caa013a9be3248e6f9d486f9c939588dbd041fb54938465981cded9a212bb24'
 
 [crates.aws-sdk-internetmonitor]
 category = 'AwsSdk'
-version = '1.14.0'
-source_hash = '789c5a9febf4d01529d0ef0d4953f5e0fef357d4b4bbb6c76640e80fa5610502'
-model_hash = '1fdeb9e6721b966fac19c54348ee65ebd25b303d5f1ee498a3e5241c653f9fdf'
+version = '1.15.0'
+source_hash = '019d2961519c918f21c5a2cc51abb4e9cd3fe5df5276928c65dfabfd7ef232b3'
+model_hash = 'e2ac1073737df577be6bf4653c32d5dac24ba02daf3faf4238cb073d3c736b52'
 
 [crates.aws-sdk-iot]
 category = 'AwsSdk'
@@ -1204,9 +1204,9 @@ model_hash = '3d1480832a515174e1180e1f7c6a270f72bce093b3327d77bb980ba8cfa34813'
 
 [crates.aws-sdk-kinesisvideo]
 category = 'AwsSdk'
-version = '1.14.0'
-source_hash = '6e478c9a2b50fd86acf6ce4a5f18c12ecaf59a9ce20b783304021bb8d8f08d52'
-model_hash = '84b3c7dea5190cdbc3f8a8eeb8129b90be7b508b83676fa2c3889ee7a8b59112'
+version = '1.15.0'
+source_hash = '125d881fe711071bfaa4f90b43f78a80ba181cb2c64eed74cb0c8851eeaf2743'
+model_hash = '2737109e2095ba3e0257b5540756b05b5f49369abcb0d8a724b37a0dfe9c350e'
 
 [crates.aws-sdk-kinesisvideoarchivedmedia]
 category = 'AwsSdk'
@@ -2425,12 +2425,6 @@ source_hash = '1e22a67609e8b51eeffec6c13d4e21a11f31eac6382bbaf11253ae2ed8d2997c'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '9f9b854b976ebed8c207f078c79801f07c6243191c60b84d2e4e37fa25a553bd'
-
-[release]
-tag = 'release-2024-02-22'
-
 [release.crates]
-aws-sdk-iotevents = '1.15.0'
-aws-sdk-lookoutequipment = '1.16.0'
-aws-sdk-medialive = '1.16.0'
-aws-sdk-ssm = '1.16.0'
+aws-sdk-internetmonitor = '1.15.0'
+aws-sdk-kinesisvideo = '1.15.0'

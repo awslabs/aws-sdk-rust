@@ -34,6 +34,8 @@ pub struct ImpactedLocation {
     pub caused_by: ::std::option::Option<crate::types::NetworkImpairment>,
     /// <p>The calculated health at a specific location.</p>
     pub internet_health: ::std::option::Option<crate::types::InternetHealth>,
+    /// <p>The IPv4 prefixes at the client location that was impacted by the health event.</p>
+    pub ipv4_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImpactedLocation {
     /// <p>The name of the network at an impacted location.</p>
@@ -95,6 +97,12 @@ impl ImpactedLocation {
     pub fn internet_health(&self) -> ::std::option::Option<&crate::types::InternetHealth> {
         self.internet_health.as_ref()
     }
+    /// <p>The IPv4 prefixes at the client location that was impacted by the health event.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_prefixes.is_none()`.
+    pub fn ipv4_prefixes(&self) -> &[::std::string::String] {
+        self.ipv4_prefixes.as_deref().unwrap_or_default()
+    }
 }
 impl ImpactedLocation {
     /// Creates a new builder-style object to manufacture [`ImpactedLocation`](crate::types::ImpactedLocation).
@@ -121,6 +129,7 @@ pub struct ImpactedLocationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::HealthEventStatus>,
     pub(crate) caused_by: ::std::option::Option<crate::types::NetworkImpairment>,
     pub(crate) internet_health: ::std::option::Option<crate::types::InternetHealth>,
+    pub(crate) ipv4_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImpactedLocationBuilder {
     /// <p>The name of the network at an impacted location.</p>
@@ -326,6 +335,26 @@ impl ImpactedLocationBuilder {
     pub fn get_internet_health(&self) -> &::std::option::Option<crate::types::InternetHealth> {
         &self.internet_health
     }
+    /// Appends an item to `ipv4_prefixes`.
+    ///
+    /// To override the contents of this collection use [`set_ipv4_prefixes`](Self::set_ipv4_prefixes).
+    ///
+    /// <p>The IPv4 prefixes at the client location that was impacted by the health event.</p>
+    pub fn ipv4_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ipv4_prefixes.unwrap_or_default();
+        v.push(input.into());
+        self.ipv4_prefixes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv4 prefixes at the client location that was impacted by the health event.</p>
+    pub fn set_ipv4_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ipv4_prefixes = input;
+        self
+    }
+    /// <p>The IPv4 prefixes at the client location that was impacted by the health event.</p>
+    pub fn get_ipv4_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv4_prefixes
+    }
     /// Consumes the builder and constructs a [`ImpactedLocation`](crate::types::ImpactedLocation).
     /// This method will fail if any of the following fields are not set:
     /// - [`as_name`](crate::types::builders::ImpactedLocationBuilder::as_name)
@@ -368,6 +397,7 @@ impl ImpactedLocationBuilder {
             })?,
             caused_by: self.caused_by,
             internet_health: self.internet_health,
+            ipv4_prefixes: self.ipv4_prefixes,
         })
     }
 }
