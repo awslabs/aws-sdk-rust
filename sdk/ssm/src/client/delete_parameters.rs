@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteParameters`](crate::operation::delete_parameters::builders::DeleteParametersFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`names(impl Into<String>)`](crate::operation::delete_parameters::builders::DeleteParametersFluentBuilder::names) / [`set_names(Option<Vec::<String>>)`](crate::operation::delete_parameters::builders::DeleteParametersFluentBuilder::set_names):<br>required: **true**<br><p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p><br>
+    ///   - [`names(impl Into<String>)`](crate::operation::delete_parameters::builders::DeleteParametersFluentBuilder::names) / [`set_names(Option<Vec::<String>>)`](crate::operation::delete_parameters::builders::DeleteParametersFluentBuilder::set_names):<br>required: **true**<br><p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p><note>  <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p> </note><br>
     /// - On success, responds with [`DeleteParametersOutput`](crate::operation::delete_parameters::DeleteParametersOutput) with field(s):
     ///   - [`deleted_parameters(Option<Vec::<String>>)`](crate::operation::delete_parameters::DeleteParametersOutput::deleted_parameters): <p>The names of the deleted parameters.</p>
     ///   - [`invalid_parameters(Option<Vec::<String>>)`](crate::operation::delete_parameters::DeleteParametersOutput::invalid_parameters): <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>

@@ -121,11 +121,17 @@ pub use crate::types::error::_feature_not_available_exception::FeatureNotAvailab
 
 pub use crate::types::error::_already_exists_exception::AlreadyExistsException;
 
+pub use crate::types::error::_resource_policy_not_found_exception::ResourcePolicyNotFoundException;
+
 pub use crate::types::error::_resource_policy_limit_exceeded_exception::ResourcePolicyLimitExceededException;
 
 pub use crate::types::error::_resource_policy_invalid_parameter_exception::ResourcePolicyInvalidParameterException;
 
 pub use crate::types::error::_resource_policy_conflict_exception::ResourcePolicyConflictException;
+
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
+pub use crate::types::error::_malformed_resource_policy_document_exception::MalformedResourcePolicyDocumentException;
 
 pub use crate::types::error::_unsupported_parameter_type::UnsupportedParameterType;
 
@@ -419,6 +425,8 @@ mod _item_content_mismatch_exception;
 
 mod _item_size_limit_exceeded_exception;
 
+mod _malformed_resource_policy_document_exception;
+
 mod _max_document_size_exceeded;
 
 mod _ops_item_access_denied_exception;
@@ -479,11 +487,15 @@ mod _resource_in_use_exception;
 
 mod _resource_limit_exceeded_exception;
 
+mod _resource_not_found_exception;
+
 mod _resource_policy_conflict_exception;
 
 mod _resource_policy_invalid_parameter_exception;
 
 mod _resource_policy_limit_exceeded_exception;
+
+mod _resource_policy_not_found_exception;
 
 mod _service_setting_not_found;
 

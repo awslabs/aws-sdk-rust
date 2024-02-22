@@ -1669,6 +1669,48 @@ impl From<crate::operation::reject_input_device_transfer::RejectInputDeviceTrans
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restart_channel_pipelines::RestartChannelPipelinesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restart_channel_pipelines::RestartChannelPipelinesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::restart_channel_pipelines::RestartChannelPipelinesError> for Error {
+    fn from(err: crate::operation::restart_channel_pipelines::RestartChannelPipelinesError) -> Self {
+        match err {
+            crate::operation::restart_channel_pipelines::RestartChannelPipelinesError::BadGatewayException(inner) => {
+                Error::BadGatewayException(inner)
+            }
+            crate::operation::restart_channel_pipelines::RestartChannelPipelinesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::restart_channel_pipelines::RestartChannelPipelinesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::restart_channel_pipelines::RestartChannelPipelinesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::restart_channel_pipelines::RestartChannelPipelinesError::GatewayTimeoutException(inner) => {
+                Error::GatewayTimeoutException(inner)
+            }
+            crate::operation::restart_channel_pipelines::RestartChannelPipelinesError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::restart_channel_pipelines::RestartChannelPipelinesError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::restart_channel_pipelines::RestartChannelPipelinesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::restart_channel_pipelines::RestartChannelPipelinesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_channel::StartChannelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

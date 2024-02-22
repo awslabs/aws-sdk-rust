@@ -116,17 +116,17 @@ impl GetParameterHistoryFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::get_parameter_history::paginator::GetParameterHistoryPaginator {
         crate::operation::get_parameter_history::paginator::GetParameterHistoryPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of the parameter for which you want to review history.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For parameters shared with you from another account, you must use the full ARN.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the parameter for which you want to review history.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For parameters shared with you from another account, you must use the full ARN.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the parameter for which you want to review history.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For parameters shared with you from another account, you must use the full ARN.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

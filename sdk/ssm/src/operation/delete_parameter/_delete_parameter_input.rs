@@ -3,11 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteParameterInput {
-    /// <p>The name of the parameter to delete.</p>
+    /// <p>The name of the parameter to delete.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteParameterInput {
-    /// <p>The name of the parameter to delete.</p>
+    /// <p>The name of the parameter to delete.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -26,18 +30,24 @@ pub struct DeleteParameterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteParameterInputBuilder {
-    /// <p>The name of the parameter to delete.</p>
+    /// <p>The name of the parameter to delete.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the parameter to delete.</p>
+    /// <p>The name of the parameter to delete.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the parameter to delete.</p>
+    /// <p>The name of the parameter to delete.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

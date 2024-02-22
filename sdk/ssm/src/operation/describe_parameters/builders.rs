@@ -22,7 +22,7 @@ impl DescribeParametersInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeParameters`.
 ///
-/// <p>Get information about a parameter.</p>
+/// <p>Lists the parameters in your Amazon Web Services account or the parameters shared with you when you enable the <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html#systemsmanager-DescribeParameters-request-Shared">Shared</a> option.</p>
 /// <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p><important>
 /// <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must also update the key alias the parameter uses to reference KMS. Otherwise, <code>DescribeParameters</code> retrieves whatever the original key alias was referencing.</p>
 /// </important>
@@ -180,5 +180,28 @@ impl DescribeParametersFluentBuilder {
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
+    }
+    /// <p>Lists parameters that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns parameters that have been shared using a standard Resource Access Manager Resource Share. In order for a parameter that was shared using the <code>PutResourcePolicy</code> command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share using the RAM <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> API operation.</p>
+    /// <p>For more information about sharing parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// </note>
+    pub fn shared(mut self, input: bool) -> Self {
+        self.inner = self.inner.shared(input);
+        self
+    }
+    /// <p>Lists parameters that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns parameters that have been shared using a standard Resource Access Manager Resource Share. In order for a parameter that was shared using the <code>PutResourcePolicy</code> command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share using the RAM <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> API operation.</p>
+    /// <p>For more information about sharing parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// </note>
+    pub fn set_shared(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_shared(input);
+        self
+    }
+    /// <p>Lists parameters that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns parameters that have been shared using a standard Resource Access Manager Resource Share. In order for a parameter that was shared using the <code>PutResourcePolicy</code> command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share using the RAM <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> API operation.</p>
+    /// <p>For more information about sharing parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// </note>
+    pub fn get_shared(&self) -> &::std::option::Option<bool> {
+        self.inner.get_shared()
     }
 }

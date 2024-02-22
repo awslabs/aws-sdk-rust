@@ -3,7 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutParameterInput {
-    /// <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
+    /// <p>The fully qualified name of the parameter that you want to add to the system.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
+    /// <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
     /// <p>Naming Constraints:</p>
     /// <ul>
     /// <li>
@@ -111,7 +114,10 @@ pub struct PutParameterInput {
     pub data_type: ::std::option::Option<::std::string::String>,
 }
 impl PutParameterInput {
-    /// <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
+    /// <p>The fully qualified name of the parameter that you want to add to the system.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
+    /// <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
     /// <p>Naming Constraints:</p>
     /// <ul>
     /// <li>
@@ -283,7 +289,10 @@ pub struct PutParameterInputBuilder {
     pub(crate) data_type: ::std::option::Option<::std::string::String>,
 }
 impl PutParameterInputBuilder {
-    /// <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
+    /// <p>The fully qualified name of the parameter that you want to add to the system.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
+    /// <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
     /// <p>Naming Constraints:</p>
     /// <ul>
     /// <li>
@@ -308,7 +317,10 @@ impl PutParameterInputBuilder {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
+    /// <p>The fully qualified name of the parameter that you want to add to the system.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
+    /// <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
     /// <p>Naming Constraints:</p>
     /// <ul>
     /// <li>
@@ -332,7 +344,10 @@ impl PutParameterInputBuilder {
         self.name = input;
         self
     }
-    /// <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
+    /// <p>The fully qualified name of the parameter that you want to add to the system.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
+    /// <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
     /// <p>Naming Constraints:</p>
     /// <ul>
     /// <li>

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionDescription {
-    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
+    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
     pub accessibility: ::std::option::Option<crate::types::AccessibilityType>,
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
     pub caption_selector_name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct CaptionDescription {
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl CaptionDescription {
-    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
+    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
     pub fn accessibility(&self) -> ::std::option::Option<&crate::types::AccessibilityType> {
         self.accessibility.as_ref()
     }
@@ -62,17 +62,17 @@ pub struct CaptionDescriptionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl CaptionDescriptionBuilder {
-    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
+    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
     pub fn accessibility(mut self, input: crate::types::AccessibilityType) -> Self {
         self.accessibility = ::std::option::Option::Some(input);
         self
     }
-    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
+    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
     pub fn set_accessibility(mut self, input: ::std::option::Option<crate::types::AccessibilityType>) -> Self {
         self.accessibility = input;
         self
     }
-    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
+    /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
     pub fn get_accessibility(&self) -> &::std::option::Option<crate::types::AccessibilityType> {
         &self.accessibility
     }

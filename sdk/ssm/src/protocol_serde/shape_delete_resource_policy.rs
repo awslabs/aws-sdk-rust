@@ -35,6 +35,37 @@ pub fn de_delete_resource_policy_http_error(
             }
             tmp
         }),
+        "MalformedResourcePolicyDocumentException" => {
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::MalformedResourcePolicyDocumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::MalformedResourcePolicyDocumentExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_malformed_resource_policy_document_exception::de_malformed_resource_policy_document_exception_json_err(_response_body, output).map_err(crate::operation::delete_resource_policy::DeleteResourcePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_resource_policy::DeleteResourcePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourcePolicyConflictException" => crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourcePolicyConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -69,6 +100,24 @@ pub fn de_delete_resource_policy_http_error(
                 tmp
             })
         }
+        "ResourcePolicyNotFoundException" => crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourcePolicyNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourcePolicyNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_policy_not_found_exception::de_resource_policy_not_found_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::delete_resource_policy::DeleteResourcePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::delete_resource_policy::DeleteResourcePolicyError::generic(generic),
     })
 }

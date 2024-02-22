@@ -112,17 +112,23 @@ impl DeleteParametersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
     ///
-    /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
+    /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.names(input.into());
         self
     }
-    /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
+    /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_names(input);
         self
     }
-    /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
+    /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_names()
     }

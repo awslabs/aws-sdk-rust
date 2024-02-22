@@ -36,5 +36,8 @@ pub fn ser_describe_parameters_input_input(
     if let Some(var_10) = &input.next_token {
         object.key("NextToken").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.shared {
+        object.key("Shared").boolean(*var_11);
+    }
     Ok(())
 }

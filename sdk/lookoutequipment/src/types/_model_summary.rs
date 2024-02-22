@@ -32,6 +32,11 @@ pub struct ModelSummary {
     pub retraining_scheduler_status: ::std::option::Option<crate::types::RetrainingSchedulerStatus>,
     /// <p>Output configuration information for the pointwise model diagnostics for an Amazon Lookout for Equipment model.</p>
     pub model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub model_quality: ::std::option::Option<crate::types::ModelQuality>,
 }
 impl ModelSummary {
     /// <p>The name of the machine learning model.</p>
@@ -90,6 +95,13 @@ impl ModelSummary {
     pub fn model_diagnostics_output_configuration(&self) -> ::std::option::Option<&crate::types::ModelDiagnosticsOutputConfiguration> {
         self.model_diagnostics_output_configuration.as_ref()
     }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn model_quality(&self) -> ::std::option::Option<&crate::types::ModelQuality> {
+        self.model_quality.as_ref()
+    }
 }
 impl ModelSummary {
     /// Creates a new builder-style object to manufacture [`ModelSummary`](crate::types::ModelSummary).
@@ -116,6 +128,7 @@ pub struct ModelSummaryBuilder {
     pub(crate) next_scheduled_retraining_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) retraining_scheduler_status: ::std::option::Option<crate::types::RetrainingSchedulerStatus>,
     pub(crate) model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
+    pub(crate) model_quality: ::std::option::Option<crate::types::ModelQuality>,
 }
 impl ModelSummaryBuilder {
     /// <p>The name of the machine learning model.</p>
@@ -317,6 +330,29 @@ impl ModelSummaryBuilder {
     pub fn get_model_diagnostics_output_configuration(&self) -> &::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration> {
         &self.model_diagnostics_output_configuration
     }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn model_quality(mut self, input: crate::types::ModelQuality) -> Self {
+        self.model_quality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn set_model_quality(mut self, input: ::std::option::Option<crate::types::ModelQuality>) -> Self {
+        self.model_quality = input;
+        self
+    }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn get_model_quality(&self) -> &::std::option::Option<crate::types::ModelQuality> {
+        &self.model_quality
+    }
     /// Consumes the builder and constructs a [`ModelSummary`](crate::types::ModelSummary).
     pub fn build(self) -> crate::types::ModelSummary {
         crate::types::ModelSummary {
@@ -334,6 +370,7 @@ impl ModelSummaryBuilder {
             next_scheduled_retraining_start_date: self.next_scheduled_retraining_start_date,
             retraining_scheduler_status: self.retraining_scheduler_status,
             model_diagnostics_output_configuration: self.model_diagnostics_output_configuration,
+            model_quality: self.model_quality,
         }
     }
 }

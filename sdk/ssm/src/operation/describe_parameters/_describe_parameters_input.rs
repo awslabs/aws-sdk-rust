@@ -11,6 +11,11 @@ pub struct DescribeParametersInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Lists parameters that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns parameters that have been shared using a standard Resource Access Manager Resource Share. In order for a parameter that was shared using the <code>PutResourcePolicy</code> command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share using the RAM <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> API operation.</p>
+    /// <p>For more information about sharing parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// </note>
+    pub shared: ::std::option::Option<bool>,
 }
 impl DescribeParametersInput {
     /// <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
@@ -33,6 +38,13 @@ impl DescribeParametersInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Lists parameters that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns parameters that have been shared using a standard Resource Access Manager Resource Share. In order for a parameter that was shared using the <code>PutResourcePolicy</code> command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share using the RAM <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> API operation.</p>
+    /// <p>For more information about sharing parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// </note>
+    pub fn shared(&self) -> ::std::option::Option<bool> {
+        self.shared
+    }
 }
 impl DescribeParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeParametersInput`](crate::operation::describe_parameters::DescribeParametersInput).
@@ -49,6 +61,7 @@ pub struct DescribeParametersInputBuilder {
     pub(crate) parameter_filters: ::std::option::Option<::std::vec::Vec<crate::types::ParameterStringFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) shared: ::std::option::Option<bool>,
 }
 impl DescribeParametersInputBuilder {
     /// Appends an item to `filters`.
@@ -119,6 +132,29 @@ impl DescribeParametersInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Lists parameters that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns parameters that have been shared using a standard Resource Access Manager Resource Share. In order for a parameter that was shared using the <code>PutResourcePolicy</code> command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share using the RAM <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> API operation.</p>
+    /// <p>For more information about sharing parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// </note>
+    pub fn shared(mut self, input: bool) -> Self {
+        self.shared = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Lists parameters that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns parameters that have been shared using a standard Resource Access Manager Resource Share. In order for a parameter that was shared using the <code>PutResourcePolicy</code> command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share using the RAM <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> API operation.</p>
+    /// <p>For more information about sharing parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// </note>
+    pub fn set_shared(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.shared = input;
+        self
+    }
+    /// <p>Lists parameters that are shared with you.</p><note>
+    /// <p>By default when using this option, the command returns parameters that have been shared using a standard Resource Access Manager Resource Share. In order for a parameter that was shared using the <code>PutResourcePolicy</code> command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share using the RAM <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> API operation.</p>
+    /// <p>For more information about sharing parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// </note>
+    pub fn get_shared(&self) -> &::std::option::Option<bool> {
+        &self.shared
+    }
     /// Consumes the builder and constructs a [`DescribeParametersInput`](crate::operation::describe_parameters::DescribeParametersInput).
     pub fn build(
         self,
@@ -128,6 +164,7 @@ impl DescribeParametersInputBuilder {
             parameter_filters: self.parameter_filters,
             max_results: self.max_results,
             next_token: self.next_token,
+            shared: self.shared,
         })
     }
 }

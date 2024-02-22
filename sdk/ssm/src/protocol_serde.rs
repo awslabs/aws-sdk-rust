@@ -679,6 +679,8 @@ pub(crate) mod shape_list_resource_data_sync_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
+pub(crate) mod shape_malformed_resource_policy_document_exception;
+
 pub(crate) mod shape_max_document_size_exceeded;
 
 pub(crate) mod shape_modify_document_permission_input;
@@ -761,11 +763,15 @@ pub(crate) mod shape_resource_in_use_exception;
 
 pub(crate) mod shape_resource_limit_exceeded_exception;
 
+pub(crate) mod shape_resource_not_found_exception;
+
 pub(crate) mod shape_resource_policy_conflict_exception;
 
 pub(crate) mod shape_resource_policy_invalid_parameter_exception;
 
 pub(crate) mod shape_resource_policy_limit_exceeded_exception;
+
+pub(crate) mod shape_resource_policy_not_found_exception;
 
 pub(crate) mod shape_resume_session_input;
 

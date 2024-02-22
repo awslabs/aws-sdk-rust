@@ -142,6 +142,9 @@ pub mod reboot_input_device;
 /// Types for the `RejectInputDeviceTransfer` operation.
 pub mod reject_input_device_transfer;
 
+/// Types for the `RestartChannelPipelines` operation.
+pub mod restart_channel_pipelines;
+
 /// Types for the `StartChannel` operation.
 pub mod start_channel;
 

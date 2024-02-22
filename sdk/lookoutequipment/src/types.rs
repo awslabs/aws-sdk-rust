@@ -53,6 +53,8 @@ pub use crate::types::_retraining_scheduler_summary::RetrainingSchedulerSummary;
 
 pub use crate::types::_model_version_summary::ModelVersionSummary;
 
+pub use crate::types::_model_quality::ModelQuality;
+
 pub use crate::types::_model_version_source_type::ModelVersionSourceType;
 
 pub use crate::types::_model_version_status::ModelVersionStatus;
@@ -192,6 +194,8 @@ mod _model_diagnostics_output_configuration;
 mod _model_diagnostics_s3_output_configuration;
 
 mod _model_promote_mode;
+
+mod _model_quality;
 
 mod _model_status;
 

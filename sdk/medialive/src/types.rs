@@ -927,6 +927,8 @@ pub use crate::types::_maintenance_update_settings::MaintenanceUpdateSettings;
 
 pub use crate::types::_account_configuration::AccountConfiguration;
 
+pub use crate::types::_channel_pipeline_id_to_restart::ChannelPipelineIdToRestart;
+
 pub use crate::types::_reboot_input_device_force::RebootInputDeviceForce;
 
 pub use crate::types::_offering::Offering;
@@ -1216,6 +1218,8 @@ mod _channel;
 mod _channel_class;
 
 mod _channel_egress_endpoint;
+
+mod _channel_pipeline_id_to_restart;
 
 mod _channel_state;
 

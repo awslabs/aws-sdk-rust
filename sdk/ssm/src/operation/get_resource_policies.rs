@@ -252,6 +252,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetResourcePo
 pub enum GetResourcePoliciesError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
+    /// <p>The specified parameter to be shared could not be found.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>One or more parameters specified for the call aren't valid. Verify the parameters and their values and try again.</p>
     ResourcePolicyInvalidParameterException(crate::types::error::ResourcePolicyInvalidParameterException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -288,6 +290,7 @@ impl GetResourcePoliciesError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourcePolicyInvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -295,6 +298,10 @@ impl GetResourcePoliciesError {
     /// Returns `true` if the error kind is `GetResourcePoliciesError::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(self, Self::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `GetResourcePoliciesError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetResourcePoliciesError::ResourcePolicyInvalidParameterException`.
     pub fn is_resource_policy_invalid_parameter_exception(&self) -> bool {
@@ -305,6 +312,7 @@ impl ::std::error::Error for GetResourcePoliciesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourcePolicyInvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -314,6 +322,7 @@ impl ::std::fmt::Display for GetResourcePoliciesError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InternalServerError(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ResourcePolicyInvalidParameterException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -337,6 +346,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetResourcePo
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourcePolicyInvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

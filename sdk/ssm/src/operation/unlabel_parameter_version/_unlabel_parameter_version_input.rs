@@ -3,7 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnlabelParameterVersionInput {
-    /// <p>The name of the parameter from which you want to delete one or more labels.</p>
+    /// <p>The name of the parameter from which you want to delete one or more labels.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
     pub parameter_version: ::std::option::Option<i64>,
@@ -11,7 +13,9 @@ pub struct UnlabelParameterVersionInput {
     pub labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UnlabelParameterVersionInput {
-    /// <p>The name of the parameter from which you want to delete one or more labels.</p>
+    /// <p>The name of the parameter from which you want to delete one or more labels.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -42,18 +46,24 @@ pub struct UnlabelParameterVersionInputBuilder {
     pub(crate) labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UnlabelParameterVersionInputBuilder {
-    /// <p>The name of the parameter from which you want to delete one or more labels.</p>
+    /// <p>The name of the parameter from which you want to delete one or more labels.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the parameter from which you want to delete one or more labels.</p>
+    /// <p>The name of the parameter from which you want to delete one or more labels.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the parameter from which you want to delete one or more labels.</p>
+    /// <p>The name of the parameter from which you want to delete one or more labels.</p><note>
+    /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
+    /// </note>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

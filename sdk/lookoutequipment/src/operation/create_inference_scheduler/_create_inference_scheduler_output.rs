@@ -9,6 +9,11 @@ pub struct CreateInferenceSchedulerOutput {
     pub inference_scheduler_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation.</p>
     pub status: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub model_quality: ::std::option::Option<crate::types::ModelQuality>,
     _request_id: Option<String>,
 }
 impl CreateInferenceSchedulerOutput {
@@ -23,6 +28,13 @@ impl CreateInferenceSchedulerOutput {
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::InferenceSchedulerStatus> {
         self.status.as_ref()
+    }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn model_quality(&self) -> ::std::option::Option<&crate::types::ModelQuality> {
+        self.model_quality.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateInferenceSchedulerOutput {
@@ -44,6 +56,7 @@ pub struct CreateInferenceSchedulerOutputBuilder {
     pub(crate) inference_scheduler_arn: ::std::option::Option<::std::string::String>,
     pub(crate) inference_scheduler_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::InferenceSchedulerStatus>,
+    pub(crate) model_quality: ::std::option::Option<crate::types::ModelQuality>,
     _request_id: Option<String>,
 }
 impl CreateInferenceSchedulerOutputBuilder {
@@ -89,6 +102,29 @@ impl CreateInferenceSchedulerOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceSchedulerStatus> {
         &self.status
     }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn model_quality(mut self, input: crate::types::ModelQuality) -> Self {
+        self.model_quality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn set_model_quality(mut self, input: ::std::option::Option<crate::types::ModelQuality>) -> Self {
+        self.model_quality = input;
+        self
+    }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about using labels with your models, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding labeling</a>.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn get_model_quality(&self) -> &::std::option::Option<crate::types::ModelQuality> {
+        &self.model_quality
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -104,6 +140,7 @@ impl CreateInferenceSchedulerOutputBuilder {
             inference_scheduler_arn: self.inference_scheduler_arn,
             inference_scheduler_name: self.inference_scheduler_name,
             status: self.status,
+            model_quality: self.model_quality,
             _request_id: self._request_id,
         }
     }

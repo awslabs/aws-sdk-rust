@@ -117,6 +117,8 @@ pub(crate) mod shape_reboot_input_device;
 
 pub(crate) mod shape_reject_input_device_transfer;
 
+pub(crate) mod shape_restart_channel_pipelines;
+
 pub(crate) mod shape_start_channel;
 
 pub(crate) mod shape_start_input_device;
@@ -202,6 +204,8 @@ pub(crate) mod shape_not_found_exception;
 pub(crate) mod shape_purchase_offering_input;
 
 pub(crate) mod shape_reboot_input_device_input;
+
+pub(crate) mod shape_restart_channel_pipelines_input;
 
 pub(crate) mod shape_too_many_requests_exception;
 

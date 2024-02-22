@@ -393,6 +393,13 @@ pub(crate) fn de_describe_model(
                         crate::protocol_serde::shape_model_diagnostics_output_configuration::de_model_diagnostics_output_configuration(tokens)?,
                     );
                 }
+                "ModelQuality" => {
+                    builder = builder.set_model_quality(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ModelQuality::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

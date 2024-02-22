@@ -18,6 +18,10 @@ pub struct ModelVersionSummary {
     pub status: ::std::option::Option<crate::types::ModelVersionStatus>,
     /// <p>Indicates how this model version was generated.</p>
     pub source_type: ::std::option::Option<crate::types::ModelVersionSourceType>,
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub model_quality: ::std::option::Option<crate::types::ModelQuality>,
 }
 impl ModelVersionSummary {
     /// <p>The name of the model that this model version is a version of.</p>
@@ -48,6 +52,12 @@ impl ModelVersionSummary {
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::ModelVersionSourceType> {
         self.source_type.as_ref()
     }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn model_quality(&self) -> ::std::option::Option<&crate::types::ModelQuality> {
+        self.model_quality.as_ref()
+    }
 }
 impl ModelVersionSummary {
     /// Creates a new builder-style object to manufacture [`ModelVersionSummary`](crate::types::ModelVersionSummary).
@@ -67,6 +77,7 @@ pub struct ModelVersionSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ModelVersionStatus>,
     pub(crate) source_type: ::std::option::Option<crate::types::ModelVersionSourceType>,
+    pub(crate) model_quality: ::std::option::Option<crate::types::ModelQuality>,
 }
 impl ModelVersionSummaryBuilder {
     /// <p>The name of the model that this model version is a version of.</p>
@@ -167,6 +178,26 @@ impl ModelVersionSummaryBuilder {
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::ModelVersionSourceType> {
         &self.source_type
     }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn model_quality(mut self, input: crate::types::ModelQuality) -> Self {
+        self.model_quality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn set_model_quality(mut self, input: ::std::option::Option<crate::types::ModelQuality>) -> Self {
+        self.model_quality = input;
+        self
+    }
+    /// <p>Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>.</p>
+    /// <p>If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels to the input dataset and retraining the model.</p>
+    /// <p>For information about improving the quality of a model, see <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon Lookout for Equipment</a>.</p>
+    pub fn get_model_quality(&self) -> &::std::option::Option<crate::types::ModelQuality> {
+        &self.model_quality
+    }
     /// Consumes the builder and constructs a [`ModelVersionSummary`](crate::types::ModelVersionSummary).
     pub fn build(self) -> crate::types::ModelVersionSummary {
         crate::types::ModelVersionSummary {
@@ -177,6 +208,7 @@ impl ModelVersionSummaryBuilder {
             created_at: self.created_at,
             status: self.status,
             source_type: self.source_type,
+            model_quality: self.model_quality,
         }
     }
 }

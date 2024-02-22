@@ -121,11 +121,17 @@ pub use crate::types::error::_feature_not_available_exception::FeatureNotAvailab
 
 pub use crate::types::error::_already_exists_exception::AlreadyExistsExceptionBuilder;
 
+pub use crate::types::error::_resource_policy_not_found_exception::ResourcePolicyNotFoundExceptionBuilder;
+
 pub use crate::types::error::_resource_policy_limit_exceeded_exception::ResourcePolicyLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_resource_policy_invalid_parameter_exception::ResourcePolicyInvalidParameterExceptionBuilder;
 
 pub use crate::types::error::_resource_policy_conflict_exception::ResourcePolicyConflictExceptionBuilder;
+
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
+
+pub use crate::types::error::_malformed_resource_policy_document_exception::MalformedResourcePolicyDocumentExceptionBuilder;
 
 pub use crate::types::error::_unsupported_parameter_type::UnsupportedParameterTypeBuilder;
 

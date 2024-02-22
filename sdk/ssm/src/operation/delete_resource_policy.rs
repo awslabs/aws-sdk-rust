@@ -252,10 +252,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteResourc
 pub enum DeleteResourcePolicyError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
+    /// <p>The specified policy document is malformed or invalid, or excessive <code>PutResourcePolicy</code> or <code>DeleteResourcePolicy</code> calls have been made.</p>
+    MalformedResourcePolicyDocumentException(crate::types::error::MalformedResourcePolicyDocumentException),
+    /// <p>The specified parameter to be shared could not be found.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The hash provided in the call doesn't match the stored hash. This exception is thrown when trying to update an obsolete policy version or when multiple requests to update a policy are sent.</p>
     ResourcePolicyConflictException(crate::types::error::ResourcePolicyConflictException),
     /// <p>One or more parameters specified for the call aren't valid. Verify the parameters and their values and try again.</p>
     ResourcePolicyInvalidParameterException(crate::types::error::ResourcePolicyInvalidParameterException),
+    /// <p>No policies with the specified policy ID and hash could be found.</p>
+    ResourcePolicyNotFoundException(crate::types::error::ResourcePolicyNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -290,14 +296,25 @@ impl DeleteResourcePolicyError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::MalformedResourcePolicyDocumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourcePolicyConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourcePolicyInvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourcePolicyNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
     /// Returns `true` if the error kind is `DeleteResourcePolicyError::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(self, Self::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyError::MalformedResourcePolicyDocumentException`.
+    pub fn is_malformed_resource_policy_document_exception(&self) -> bool {
+        matches!(self, Self::MalformedResourcePolicyDocumentException(_))
+    }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourcePolicyError::ResourcePolicyConflictException`.
     pub fn is_resource_policy_conflict_exception(&self) -> bool {
@@ -307,13 +324,20 @@ impl DeleteResourcePolicyError {
     pub fn is_resource_policy_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::ResourcePolicyInvalidParameterException(_))
     }
+    /// Returns `true` if the error kind is `DeleteResourcePolicyError::ResourcePolicyNotFoundException`.
+    pub fn is_resource_policy_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourcePolicyNotFoundException(_))
+    }
 }
 impl ::std::error::Error for DeleteResourcePolicyError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
+            Self::MalformedResourcePolicyDocumentException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourcePolicyConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourcePolicyInvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourcePolicyNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -322,8 +346,11 @@ impl ::std::fmt::Display for DeleteResourcePolicyError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InternalServerError(_inner) => _inner.fmt(f),
+            Self::MalformedResourcePolicyDocumentException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ResourcePolicyConflictException(_inner) => _inner.fmt(f),
             Self::ResourcePolicyInvalidParameterException(_inner) => _inner.fmt(f),
+            Self::ResourcePolicyNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -346,8 +373,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteResourc
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MalformedResourcePolicyDocumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourcePolicyConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourcePolicyInvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourcePolicyNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

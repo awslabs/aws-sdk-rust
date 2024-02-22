@@ -178,6 +178,8 @@ pub enum Error {
     ItemContentMismatchException(crate::types::error::ItemContentMismatchException),
     /// <p>The inventory item size has exceeded the size limit.</p>
     ItemSizeLimitExceededException(crate::types::error::ItemSizeLimitExceededException),
+    /// <p>The specified policy document is malformed or invalid, or excessive <code>PutResourcePolicy</code> or <code>DeleteResourcePolicy</code> calls have been made.</p>
+    MalformedResourcePolicyDocumentException(crate::types::error::MalformedResourcePolicyDocumentException),
     /// <p>The size limit of a document is 64 KB.</p>
     MaxDocumentSizeExceeded(crate::types::error::MaxDocumentSizeExceeded),
     /// <p>You don't have permission to view OpsItems in the specified account. Verify that your account is configured either as a Systems Manager delegated administrator or that you are logged into the Organizations management account.</p>
@@ -241,12 +243,16 @@ pub enum Error {
     /// <p>Error returned when the caller has exceeded the default resource quotas. For example, too many maintenance windows or patch baselines have been created.</p>
     /// <p>For information about resource quotas in Systems Manager, see <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ResourceLimitExceededException(crate::types::error::ResourceLimitExceededException),
+    /// <p>The specified parameter to be shared could not be found.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The hash provided in the call doesn't match the stored hash. This exception is thrown when trying to update an obsolete policy version or when multiple requests to update a policy are sent.</p>
     ResourcePolicyConflictException(crate::types::error::ResourcePolicyConflictException),
     /// <p>One or more parameters specified for the call aren't valid. Verify the parameters and their values and try again.</p>
     ResourcePolicyInvalidParameterException(crate::types::error::ResourcePolicyInvalidParameterException),
     /// <p>The <code>PutResourcePolicy</code> API action enforces two limits. A policy can't be greater than 1024 bytes in size. And only one policy can be attached to <code>OpsItemGroup</code>. Verify these limits and try again.</p>
     ResourcePolicyLimitExceededException(crate::types::error::ResourcePolicyLimitExceededException),
+    /// <p>No policies with the specified policy ID and hash could be found.</p>
+    ResourcePolicyNotFoundException(crate::types::error::ResourcePolicyNotFoundException),
     /// <p>The specified service setting wasn't found. Either the service name or the setting hasn't been provisioned by the Amazon Web Services service team.</p>
     ServiceSettingNotFound(crate::types::error::ServiceSettingNotFound),
     /// <p>The updated status is the same as the current status.</p>
@@ -370,6 +376,7 @@ impl ::std::fmt::Display for Error {
             Error::InvocationDoesNotExist(inner) => inner.fmt(f),
             Error::ItemContentMismatchException(inner) => inner.fmt(f),
             Error::ItemSizeLimitExceededException(inner) => inner.fmt(f),
+            Error::MalformedResourcePolicyDocumentException(inner) => inner.fmt(f),
             Error::MaxDocumentSizeExceeded(inner) => inner.fmt(f),
             Error::OpsItemAccessDeniedException(inner) => inner.fmt(f),
             Error::OpsItemAlreadyExistsException(inner) => inner.fmt(f),
@@ -400,9 +407,11 @@ impl ::std::fmt::Display for Error {
             Error::ResourceDataSyncNotFoundException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceLimitExceededException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ResourcePolicyConflictException(inner) => inner.fmt(f),
             Error::ResourcePolicyInvalidParameterException(inner) => inner.fmt(f),
             Error::ResourcePolicyLimitExceededException(inner) => inner.fmt(f),
+            Error::ResourcePolicyNotFoundException(inner) => inner.fmt(f),
             Error::ServiceSettingNotFound(inner) => inner.fmt(f),
             Error::StatusUnchanged(inner) => inner.fmt(f),
             Error::SubTypeCountLimitExceededException(inner) => inner.fmt(f),
@@ -520,6 +529,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvocationDoesNotExist(inner) => inner.meta(),
             Self::ItemContentMismatchException(inner) => inner.meta(),
             Self::ItemSizeLimitExceededException(inner) => inner.meta(),
+            Self::MalformedResourcePolicyDocumentException(inner) => inner.meta(),
             Self::MaxDocumentSizeExceeded(inner) => inner.meta(),
             Self::OpsItemAccessDeniedException(inner) => inner.meta(),
             Self::OpsItemAlreadyExistsException(inner) => inner.meta(),
@@ -550,9 +560,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceDataSyncNotFoundException(inner) => inner.meta(),
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceLimitExceededException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ResourcePolicyConflictException(inner) => inner.meta(),
             Self::ResourcePolicyInvalidParameterException(inner) => inner.meta(),
             Self::ResourcePolicyLimitExceededException(inner) => inner.meta(),
+            Self::ResourcePolicyNotFoundException(inner) => inner.meta(),
             Self::ServiceSettingNotFound(inner) => inner.meta(),
             Self::StatusUnchanged(inner) => inner.meta(),
             Self::SubTypeCountLimitExceededException(inner) => inner.meta(),
@@ -1298,11 +1310,20 @@ impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> f
     fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
         match err {
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::MalformedResourcePolicyDocumentException(inner) => {
+                Error::MalformedResourcePolicyDocumentException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourcePolicyConflictException(inner) => {
                 Error::ResourcePolicyConflictException(inner)
             }
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourcePolicyInvalidParameterException(inner) => {
                 Error::ResourcePolicyInvalidParameterException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourcePolicyNotFoundException(inner) => {
+                Error::ResourcePolicyNotFoundException(inner)
             }
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -3243,6 +3264,9 @@ impl From<crate::operation::get_resource_policies::GetResourcePoliciesError> for
     fn from(err: crate::operation::get_resource_policies::GetResourcePoliciesError) -> Self {
         match err {
             crate::operation::get_resource_policies::GetResourcePoliciesError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_resource_policies::GetResourcePoliciesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_resource_policies::GetResourcePoliciesError::ResourcePolicyInvalidParameterException(inner) => {
                 Error::ResourcePolicyInvalidParameterException(inner)
             }
@@ -3941,6 +3965,12 @@ impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Err
     fn from(err: crate::operation::put_resource_policy::PutResourcePolicyError) -> Self {
         match err {
             crate::operation::put_resource_policy::PutResourcePolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::put_resource_policy::PutResourcePolicyError::MalformedResourcePolicyDocumentException(inner) => {
+                Error::MalformedResourcePolicyDocumentException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::put_resource_policy::PutResourcePolicyError::ResourcePolicyConflictException(inner) => {
                 Error::ResourcePolicyConflictException(inner)
             }
@@ -3949,6 +3979,9 @@ impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Err
             }
             crate::operation::put_resource_policy::PutResourcePolicyError::ResourcePolicyLimitExceededException(inner) => {
                 Error::ResourcePolicyLimitExceededException(inner)
+            }
+            crate::operation::put_resource_policy::PutResourcePolicyError::ResourcePolicyNotFoundException(inner) => {
+                Error::ResourcePolicyNotFoundException(inner)
             }
             crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -5039,6 +5072,7 @@ impl ::std::error::Error for Error {
             Error::InvocationDoesNotExist(inner) => inner.source(),
             Error::ItemContentMismatchException(inner) => inner.source(),
             Error::ItemSizeLimitExceededException(inner) => inner.source(),
+            Error::MalformedResourcePolicyDocumentException(inner) => inner.source(),
             Error::MaxDocumentSizeExceeded(inner) => inner.source(),
             Error::OpsItemAccessDeniedException(inner) => inner.source(),
             Error::OpsItemAlreadyExistsException(inner) => inner.source(),
@@ -5069,9 +5103,11 @@ impl ::std::error::Error for Error {
             Error::ResourceDataSyncNotFoundException(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceLimitExceededException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ResourcePolicyConflictException(inner) => inner.source(),
             Error::ResourcePolicyInvalidParameterException(inner) => inner.source(),
             Error::ResourcePolicyLimitExceededException(inner) => inner.source(),
+            Error::ResourcePolicyNotFoundException(inner) => inner.source(),
             Error::ServiceSettingNotFound(inner) => inner.source(),
             Error::StatusUnchanged(inner) => inner.source(),
             Error::SubTypeCountLimitExceededException(inner) => inner.source(),
@@ -5175,6 +5211,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvocationDoesNotExist(e) => e.request_id(),
             Self::ItemContentMismatchException(e) => e.request_id(),
             Self::ItemSizeLimitExceededException(e) => e.request_id(),
+            Self::MalformedResourcePolicyDocumentException(e) => e.request_id(),
             Self::MaxDocumentSizeExceeded(e) => e.request_id(),
             Self::OpsItemAccessDeniedException(e) => e.request_id(),
             Self::OpsItemAlreadyExistsException(e) => e.request_id(),
@@ -5205,9 +5242,11 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceDataSyncNotFoundException(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceLimitExceededException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ResourcePolicyConflictException(e) => e.request_id(),
             Self::ResourcePolicyInvalidParameterException(e) => e.request_id(),
             Self::ResourcePolicyLimitExceededException(e) => e.request_id(),
+            Self::ResourcePolicyNotFoundException(e) => e.request_id(),
             Self::ServiceSettingNotFound(e) => e.request_id(),
             Self::StatusUnchanged(e) => e.request_id(),
             Self::SubTypeCountLimitExceededException(e) => e.request_id(),

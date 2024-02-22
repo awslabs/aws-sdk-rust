@@ -257,6 +257,8 @@ mod reboot_input_device;
 
 mod reject_input_device_transfer;
 
+mod restart_channel_pipelines;
+
 mod start_channel;
 
 mod start_input_device;
