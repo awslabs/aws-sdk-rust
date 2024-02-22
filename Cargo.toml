@@ -4,7 +4,6 @@ exclude = [
     "examples/test-utils",
     "examples/examples",
     "examples/cross_service",
-    "examples/webassembly",
     "tests/no-default-features",
     "tests/webassembly"
 ]

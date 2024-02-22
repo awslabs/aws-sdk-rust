@@ -32,4 +32,4 @@ path = "../../test-utils"
 version = "0.1.0"
 
 [dev-dependencies]
-aws-smithy-mocks-experimental= { version = "0.1.0", path = "../../../sdk/aws-smithy-mocks-experimental" }
+aws-smithy-mocks-experimental = { version = "0.1.0", path = "../../../sdk/aws-smithy-mocks-experimental" }
