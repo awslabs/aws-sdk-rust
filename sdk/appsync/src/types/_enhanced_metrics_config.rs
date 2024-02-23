@@ -22,7 +22,7 @@
 /// <li>
 /// <p><code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for all resolvers in the request.</p></li>
 /// <li>
-/// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+/// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
 /// </ul></li>
 /// <li>
 /// <p><code>dataSourceLevelMetricsBehavior</code>: Controls how data source metrics will be emitted to CloudWatch. Data source metrics include:</p>
@@ -39,7 +39,7 @@
 /// <li>
 /// <p><code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records and emits metric data for all data sources in the request.</p></li>
 /// <li>
-/// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+/// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
 /// </ul></li>
 /// <li>
 /// <p><code>operationLevelMetricsConfig</code>: Controls how operation metrics will be emitted to CloudWatch. Operation metrics include:</p>
@@ -72,7 +72,7 @@ pub struct EnhancedMetricsConfig {
     /// <li>
     /// <p><code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for all resolvers in the request.</p></li>
     /// <li>
-    /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+    /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     pub resolver_level_metrics_behavior: crate::types::ResolverLevelMetricsBehavior,
     /// <p>Controls how data source metrics will be emitted to CloudWatch. Data source metrics include:</p>
@@ -89,7 +89,7 @@ pub struct EnhancedMetricsConfig {
     /// <li>
     /// <p><code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records and emits metric data for all data sources in the request.</p></li>
     /// <li>
-    /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+    /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     pub data_source_level_metrics_behavior: crate::types::DataSourceLevelMetricsBehavior,
     /// <p>Controls how operation metrics will be emitted to CloudWatch. Operation metrics include:</p>
@@ -121,7 +121,7 @@ impl EnhancedMetricsConfig {
     /// <li>
     /// <p><code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for all resolvers in the request.</p></li>
     /// <li>
-    /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+    /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn resolver_level_metrics_behavior(&self) -> &crate::types::ResolverLevelMetricsBehavior {
         &self.resolver_level_metrics_behavior
@@ -140,7 +140,7 @@ impl EnhancedMetricsConfig {
     /// <li>
     /// <p><code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records and emits metric data for all data sources in the request.</p></li>
     /// <li>
-    /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+    /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn data_source_level_metrics_behavior(&self) -> &crate::types::DataSourceLevelMetricsBehavior {
         &self.data_source_level_metrics_behavior
@@ -191,7 +191,7 @@ impl EnhancedMetricsConfigBuilder {
     /// <li>
     /// <p><code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for all resolvers in the request.</p></li>
     /// <li>
-    /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+    /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn resolver_level_metrics_behavior(mut self, input: crate::types::ResolverLevelMetricsBehavior) -> Self {
@@ -216,7 +216,7 @@ impl EnhancedMetricsConfigBuilder {
     /// <li>
     /// <p><code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for all resolvers in the request.</p></li>
     /// <li>
-    /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+    /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn set_resolver_level_metrics_behavior(mut self, input: ::std::option::Option<crate::types::ResolverLevelMetricsBehavior>) -> Self {
         self.resolver_level_metrics_behavior = input;
@@ -240,7 +240,7 @@ impl EnhancedMetricsConfigBuilder {
     /// <li>
     /// <p><code>FULL_REQUEST_RESOLVER_METRICS</code>: Records and emits metric data for all resolvers in the request.</p></li>
     /// <li>
-    /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+    /// <p><code>PER_RESOLVER_METRICS</code>: Records and emits metric data for resolvers that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn get_resolver_level_metrics_behavior(&self) -> &::std::option::Option<crate::types::ResolverLevelMetricsBehavior> {
         &self.resolver_level_metrics_behavior
@@ -259,7 +259,7 @@ impl EnhancedMetricsConfigBuilder {
     /// <li>
     /// <p><code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records and emits metric data for all data sources in the request.</p></li>
     /// <li>
-    /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+    /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn data_source_level_metrics_behavior(mut self, input: crate::types::DataSourceLevelMetricsBehavior) -> Self {
@@ -280,7 +280,7 @@ impl EnhancedMetricsConfigBuilder {
     /// <li>
     /// <p><code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records and emits metric data for all data sources in the request.</p></li>
     /// <li>
-    /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+    /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn set_data_source_level_metrics_behavior(mut self, input: ::std::option::Option<crate::types::DataSourceLevelMetricsBehavior>) -> Self {
         self.data_source_level_metrics_behavior = input;
@@ -300,7 +300,7 @@ impl EnhancedMetricsConfigBuilder {
     /// <li>
     /// <p><code>FULL_REQUEST_DATA_SOURCE_METRICS</code>: Records and emits metric data for all data sources in the request.</p></li>
     /// <li>
-    /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricConfig</code> value set to <code>ENABLED</code>.</p></li>
+    /// <p><code>PER_DATA_SOURCE_METRICS</code>: Records and emits metric data for data sources that have the <code>metricsConfig</code> value set to <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn get_data_source_level_metrics_behavior(&self) -> &::std::option::Option<crate::types::DataSourceLevelMetricsBehavior> {
         &self.data_source_level_metrics_behavior

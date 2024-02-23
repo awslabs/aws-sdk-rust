@@ -16,7 +16,7 @@ pub struct DescribeLedgerOutput {
     /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     pub deletion_protection: ::std::option::Option<bool>,
-    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error). If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub encryption_description: ::std::option::Option<crate::types::LedgerEncryptionDescription>,
     _request_id: Option<String>,
 }
@@ -46,7 +46,7 @@ impl DescribeLedgerOutput {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error). If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub fn encryption_description(&self) -> ::std::option::Option<&crate::types::LedgerEncryptionDescription> {
         self.encryption_description.as_ref()
     }
@@ -164,17 +164,17 @@ impl DescribeLedgerOutputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
-    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error). If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub fn encryption_description(mut self, input: crate::types::LedgerEncryptionDescription) -> Self {
         self.encryption_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error). If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub fn set_encryption_description(mut self, input: ::std::option::Option<crate::types::LedgerEncryptionDescription>) -> Self {
         self.encryption_description = input;
         self
     }
-    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error). If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub fn get_encryption_description(&self) -> &::std::option::Option<crate::types::LedgerEncryptionDescription> {
         &self.encryption_description
     }

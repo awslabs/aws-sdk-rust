@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.6", features = ["behavior-version-latest"] }
-//! aws-sdk-rum = "1.14.0"
+//! aws-sdk-rum = "1.14.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
