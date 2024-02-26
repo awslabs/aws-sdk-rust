@@ -202,6 +202,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListWorkerCo
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
+                if let ::std::option::Option::Some(inner_3) = &_input.name_prefix {
+                    {
+                        query.push_kv("namePrefix", &::aws_smithy_http::query::fmt_string(&inner_3));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

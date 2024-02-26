@@ -11,6 +11,8 @@ pub struct CreateWorkerConfigurationOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the worker configuration.</p>
     pub worker_configuration_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The state of the worker configuration.</p>
+    pub worker_configuration_state: ::std::option::Option<crate::types::WorkerConfigurationState>,
     _request_id: Option<String>,
 }
 impl CreateWorkerConfigurationOutput {
@@ -29,6 +31,10 @@ impl CreateWorkerConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the worker configuration.</p>
     pub fn worker_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.worker_configuration_arn.as_deref()
+    }
+    /// <p>The state of the worker configuration.</p>
+    pub fn worker_configuration_state(&self) -> ::std::option::Option<&crate::types::WorkerConfigurationState> {
+        self.worker_configuration_state.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateWorkerConfigurationOutput {
@@ -51,6 +57,7 @@ pub struct CreateWorkerConfigurationOutputBuilder {
     pub(crate) latest_revision: ::std::option::Option<crate::types::WorkerConfigurationRevisionSummary>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) worker_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) worker_configuration_state: ::std::option::Option<crate::types::WorkerConfigurationState>,
     _request_id: Option<String>,
 }
 impl CreateWorkerConfigurationOutputBuilder {
@@ -110,6 +117,20 @@ impl CreateWorkerConfigurationOutputBuilder {
     pub fn get_worker_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_configuration_arn
     }
+    /// <p>The state of the worker configuration.</p>
+    pub fn worker_configuration_state(mut self, input: crate::types::WorkerConfigurationState) -> Self {
+        self.worker_configuration_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the worker configuration.</p>
+    pub fn set_worker_configuration_state(mut self, input: ::std::option::Option<crate::types::WorkerConfigurationState>) -> Self {
+        self.worker_configuration_state = input;
+        self
+    }
+    /// <p>The state of the worker configuration.</p>
+    pub fn get_worker_configuration_state(&self) -> &::std::option::Option<crate::types::WorkerConfigurationState> {
+        &self.worker_configuration_state
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -126,6 +147,7 @@ impl CreateWorkerConfigurationOutputBuilder {
             latest_revision: self.latest_revision,
             name: self.name,
             worker_configuration_arn: self.worker_configuration_arn,
+            worker_configuration_state: self.worker_configuration_state,
             _request_id: self._request_id,
         }
     }

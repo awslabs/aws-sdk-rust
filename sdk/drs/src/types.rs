@@ -107,6 +107,8 @@ pub use crate::types::_data_replication_state::DataReplicationState;
 
 pub use crate::types::_data_replication_info_replicated_disk::DataReplicationInfoReplicatedDisk;
 
+pub use crate::types::_volume_status::VolumeStatus;
+
 pub use crate::types::_last_launch_result::LastLaunchResult;
 
 pub use crate::types::_recovery_snapshot::RecoverySnapshot;
@@ -178,6 +180,10 @@ pub use crate::types::_event_resource_data::EventResourceData;
 pub use crate::types::_source_network_data::SourceNetworkData;
 
 pub use crate::types::_conversion_properties::ConversionProperties;
+
+pub use crate::types::_product_code::ProductCode;
+
+pub use crate::types::_product_code_mode::ProductCodeMode;
 
 pub use crate::types::_job_log_event::JobLogEvent;
 
@@ -307,6 +313,10 @@ mod _pit_policy_rule;
 
 mod _pit_policy_rule_units;
 
+mod _product_code;
+
+mod _product_code_mode;
+
 mod _recovery_instance;
 
 mod _recovery_instance_data_replication_error;
@@ -378,6 +388,8 @@ mod _target_instance_type_right_sizing_method;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _volume_status;
 
 /// Builders
 pub mod builders;

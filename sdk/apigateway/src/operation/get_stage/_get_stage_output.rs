@@ -12,7 +12,7 @@ pub struct GetStageOutput {
     pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The stage's description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
+    /// <p>Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set <code>CachingEnabled</code> to <code>true</code> for a method.</p>
     pub cache_cluster_enabled: bool,
     /// <p>The stage's cache capacity in GB. For more information about choosing a cache size, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching to enhance responsiveness</a>.</p>
     pub cache_cluster_size: ::std::option::Option<crate::types::CacheClusterSize>,
@@ -57,7 +57,7 @@ impl GetStageOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
+    /// <p>Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set <code>CachingEnabled</code> to <code>true</code> for a method.</p>
     pub fn cache_cluster_enabled(&self) -> bool {
         self.cache_cluster_enabled
     }
@@ -202,17 +202,17 @@ impl GetStageOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
+    /// <p>Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set <code>CachingEnabled</code> to <code>true</code> for a method.</p>
     pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
         self.cache_cluster_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
+    /// <p>Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set <code>CachingEnabled</code> to <code>true</code> for a method.</p>
     pub fn set_cache_cluster_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cache_cluster_enabled = input;
         self
     }
-    /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
+    /// <p>Specifies whether a cache cluster is enabled for the stage. To activate a method-level cache, set <code>CachingEnabled</code> to <code>true</code> for a method.</p>
     pub fn get_cache_cluster_enabled(&self) -> &::std::option::Option<bool> {
         &self.cache_cluster_enabled
     }

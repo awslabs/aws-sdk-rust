@@ -14,6 +14,8 @@ pub struct WorkerConfigurationSummary {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the worker configuration.</p>
     pub worker_configuration_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The state of the worker configuration.</p>
+    pub worker_configuration_state: ::std::option::Option<crate::types::WorkerConfigurationState>,
 }
 impl WorkerConfigurationSummary {
     /// <p>The time that a worker configuration was created.</p>
@@ -36,6 +38,10 @@ impl WorkerConfigurationSummary {
     pub fn worker_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.worker_configuration_arn.as_deref()
     }
+    /// <p>The state of the worker configuration.</p>
+    pub fn worker_configuration_state(&self) -> ::std::option::Option<&crate::types::WorkerConfigurationState> {
+        self.worker_configuration_state.as_ref()
+    }
 }
 impl WorkerConfigurationSummary {
     /// Creates a new builder-style object to manufacture [`WorkerConfigurationSummary`](crate::types::WorkerConfigurationSummary).
@@ -53,6 +59,7 @@ pub struct WorkerConfigurationSummaryBuilder {
     pub(crate) latest_revision: ::std::option::Option<crate::types::WorkerConfigurationRevisionSummary>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) worker_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) worker_configuration_state: ::std::option::Option<crate::types::WorkerConfigurationState>,
 }
 impl WorkerConfigurationSummaryBuilder {
     /// <p>The time that a worker configuration was created.</p>
@@ -125,6 +132,20 @@ impl WorkerConfigurationSummaryBuilder {
     pub fn get_worker_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.worker_configuration_arn
     }
+    /// <p>The state of the worker configuration.</p>
+    pub fn worker_configuration_state(mut self, input: crate::types::WorkerConfigurationState) -> Self {
+        self.worker_configuration_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the worker configuration.</p>
+    pub fn set_worker_configuration_state(mut self, input: ::std::option::Option<crate::types::WorkerConfigurationState>) -> Self {
+        self.worker_configuration_state = input;
+        self
+    }
+    /// <p>The state of the worker configuration.</p>
+    pub fn get_worker_configuration_state(&self) -> &::std::option::Option<crate::types::WorkerConfigurationState> {
+        &self.worker_configuration_state
+    }
     /// Consumes the builder and constructs a [`WorkerConfigurationSummary`](crate::types::WorkerConfigurationSummary).
     pub fn build(self) -> crate::types::WorkerConfigurationSummary {
         crate::types::WorkerConfigurationSummary {
@@ -133,6 +154,7 @@ impl WorkerConfigurationSummaryBuilder {
             latest_revision: self.latest_revision,
             name: self.name,
             worker_configuration_arn: self.worker_configuration_arn,
+            worker_configuration_state: self.worker_configuration_state,
         }
     }
 }

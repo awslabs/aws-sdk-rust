@@ -415,10 +415,16 @@ pub(crate) mod shape_source_network_data;
 
 pub(crate) mod shape_volume_to_conversion_map;
 
+pub(crate) mod shape_volume_to_product_codes;
+
 pub(crate) mod shape_volume_to_size_map;
 
 pub(crate) mod shape_conversion_map;
 
 pub(crate) mod shape_launch_action_run;
 
+pub(crate) mod shape_product_codes;
+
 pub(crate) mod shape_recovery_instance_data_replication_initiation_step;
+
+pub(crate) mod shape_product_code;

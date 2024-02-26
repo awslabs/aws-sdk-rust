@@ -173,6 +173,8 @@ mod delete_connector;
 
 mod delete_custom_plugin;
 
+mod delete_worker_configuration;
+
 mod describe_connector;
 
 mod describe_custom_plugin;
@@ -183,6 +185,12 @@ mod list_connectors;
 
 mod list_custom_plugins;
 
+mod list_tags_for_resource;
+
 mod list_worker_configurations;
+
+mod tag_resource;
+
+mod untag_resource;
 
 mod update_connector;

@@ -238,7 +238,7 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>Specifies the storage throughput value for the DB instance.</p>
     /// <p>This setting doesn't apply to RDS Custom or Amazon Aurora.</p>
     pub storage_throughput: ::std::option::Option<i32>,
-    /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+    /// <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -252,8 +252,6 @@ pub struct RestoreDbInstanceFromDbSnapshotInput {
     /// <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p></li>
     /// <li>
     /// <p>Can't be the identifier of an Aurora DB cluster snapshot.</p></li>
-    /// <li>
-    /// <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p></li>
     /// </ul>
     pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in CreateDBInstance.</p><note>
@@ -582,7 +580,7 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
         self.storage_throughput
     }
-    /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+    /// <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -596,8 +594,6 @@ impl RestoreDbInstanceFromDbSnapshotInput {
     /// <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p></li>
     /// <li>
     /// <p>Can't be the identifier of an Aurora DB cluster snapshot.</p></li>
-    /// <li>
-    /// <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p></li>
     /// </ul>
     pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_snapshot_identifier.as_deref()
@@ -1695,7 +1691,7 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
         &self.storage_throughput
     }
-    /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+    /// <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -1709,14 +1705,12 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p></li>
     /// <li>
     /// <p>Can't be the identifier of an Aurora DB cluster snapshot.</p></li>
-    /// <li>
-    /// <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p></li>
     /// </ul>
     pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+    /// <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -1730,14 +1724,12 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p></li>
     /// <li>
     /// <p>Can't be the identifier of an Aurora DB cluster snapshot.</p></li>
-    /// <li>
-    /// <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p></li>
     /// </ul>
     pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = input;
         self
     }
-    /// <p>The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+    /// <p>The identifier for the Multi-AZ DB cluster snapshot to restore from.</p>
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -1751,8 +1743,6 @@ impl RestoreDbInstanceFromDbSnapshotInputBuilder {
     /// <p>If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.</p></li>
     /// <li>
     /// <p>Can't be the identifier of an Aurora DB cluster snapshot.</p></li>
-    /// <li>
-    /// <p>Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.</p></li>
     /// </ul>
     pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_snapshot_identifier

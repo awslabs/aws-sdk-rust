@@ -142,4 +142,18 @@ impl ListWorkerConfigurationsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>Lists worker configuration names that start with the specified text string.</p>
+    pub fn name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.name_prefix(input.into());
+        self
+    }
+    /// <p>Lists worker configuration names that start with the specified text string.</p>
+    pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_name_prefix(input);
+        self
+    }
+    /// <p>Lists worker configuration names that start with the specified text string.</p>
+    pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name_prefix()
+    }
 }

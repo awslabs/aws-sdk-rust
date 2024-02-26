@@ -13,6 +13,8 @@ pub use crate::types::_scale_in_policy_update::ScaleInPolicyUpdate;
 
 pub use crate::types::_worker_configuration_summary::WorkerConfigurationSummary;
 
+pub use crate::types::_worker_configuration_state::WorkerConfigurationState;
+
 pub use crate::types::_worker_configuration_revision_summary::WorkerConfigurationRevisionSummary;
 
 pub use crate::types::_custom_plugin_summary::CustomPluginSummary;
@@ -224,6 +226,8 @@ mod _worker_configuration_description;
 mod _worker_configuration_revision_description;
 
 mod _worker_configuration_revision_summary;
+
+mod _worker_configuration_state;
 
 mod _worker_configuration_summary;
 

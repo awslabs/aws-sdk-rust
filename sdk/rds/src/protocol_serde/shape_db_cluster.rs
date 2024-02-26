@@ -1007,6 +1007,21 @@ pub fn de_db_cluster(
                 builder = builder.set_limitless_database(var_77);
             }
             ,
+            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#DBCluster$StorageThroughput */ =>  {
+                let var_78 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_throughput(var_78);
+            }
+            ,
             _ => {}
         }
     }

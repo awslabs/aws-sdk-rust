@@ -11,6 +11,8 @@ pub struct CreateCustomPluginInput {
     pub location: ::std::option::Option<crate::types::CustomPluginLocation>,
     /// <p>The name of the custom plugin.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The tags you want to attach to the custom plugin.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCustomPluginInput {
     /// <p>The type of the plugin file.</p>
@@ -29,6 +31,10 @@ impl CreateCustomPluginInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The tags you want to attach to the custom plugin.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl CreateCustomPluginInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomPluginInput`](crate::operation::create_custom_plugin::CreateCustomPluginInput).
@@ -45,6 +51,7 @@ pub struct CreateCustomPluginInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<crate::types::CustomPluginLocation>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCustomPluginInputBuilder {
     /// <p>The type of the plugin file.</p>
@@ -106,6 +113,26 @@ impl CreateCustomPluginInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags you want to attach to the custom plugin.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags you want to attach to the custom plugin.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags you want to attach to the custom plugin.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateCustomPluginInput`](crate::operation::create_custom_plugin::CreateCustomPluginInput).
     pub fn build(
         self,
@@ -116,6 +143,7 @@ impl CreateCustomPluginInputBuilder {
             description: self.description,
             location: self.location,
             name: self.name,
+            tags: self.tags,
         })
     }
 }

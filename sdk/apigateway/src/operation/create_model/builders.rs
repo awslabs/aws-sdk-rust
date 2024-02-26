@@ -150,17 +150,17 @@ impl CreateModelFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
+    /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model. The maximum size of the model is 400 KB.</p>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema(input.into());
         self
     }
-    /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
+    /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model. The maximum size of the model is 400 KB.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema(input);
         self
     }
-    /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
+    /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model. The maximum size of the model is 400 KB.</p>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_schema()
     }

@@ -40,6 +40,11 @@ where
                             builder =
                                 builder.set_volume_to_volume_size(crate::protocol_serde::shape_volume_to_size_map::de_volume_to_size_map(tokens)?);
                         }
+                        "volumeToProductCodes" => {
+                            builder = builder.set_volume_to_product_codes(
+                                crate::protocol_serde::shape_volume_to_product_codes::de_volume_to_product_codes(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

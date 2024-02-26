@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`latest_revision(Option<WorkerConfigurationRevisionDescription>)`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput::latest_revision): <p>The latest revision of the custom configuration.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput::name): <p>The name of the worker configuration.</p>
     ///   - [`worker_configuration_arn(Option<String>)`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput::worker_configuration_arn): <p>The Amazon Resource Name (ARN) of the custom configuration.</p>
+    ///   - [`worker_configuration_state(Option<WorkerConfigurationState>)`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationOutput::worker_configuration_state): <p>The state of the worker configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkerConfigurationError>`](crate::operation::describe_worker_configuration::DescribeWorkerConfigurationError)
     pub fn describe_worker_configuration(
         &self,

@@ -65,6 +65,9 @@ pub struct DbClusterSnapshot {
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the DB cluster that this DB cluster snapshot was created from.</p>
     pub db_cluster_resource_id: ::std::option::Option<::std::string::String>,
+    /// <p>The storage throughput for the DB cluster snapshot. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub storage_throughput: ::std::option::Option<i32>,
 }
 impl DbClusterSnapshot {
     /// <p>The list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.</p>
@@ -181,6 +184,11 @@ impl DbClusterSnapshot {
     pub fn db_cluster_resource_id(&self) -> ::std::option::Option<&str> {
         self.db_cluster_resource_id.as_deref()
     }
+    /// <p>The storage throughput for the DB cluster snapshot. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
+        self.storage_throughput
+    }
 }
 impl DbClusterSnapshot {
     /// Creates a new builder-style object to manufacture [`DbClusterSnapshot`](crate::types::DbClusterSnapshot).
@@ -218,6 +226,7 @@ pub struct DbClusterSnapshotBuilder {
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_throughput: ::std::option::Option<i32>,
 }
 impl DbClusterSnapshotBuilder {
     /// Appends an item to `availability_zones`.
@@ -612,6 +621,23 @@ impl DbClusterSnapshotBuilder {
     pub fn get_db_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_resource_id
     }
+    /// <p>The storage throughput for the DB cluster snapshot. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.storage_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage throughput for the DB cluster snapshot. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_throughput = input;
+        self
+    }
+    /// <p>The storage throughput for the DB cluster snapshot. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
+    }
     /// Consumes the builder and constructs a [`DbClusterSnapshot`](crate::types::DbClusterSnapshot).
     pub fn build(self) -> crate::types::DbClusterSnapshot {
         crate::types::DbClusterSnapshot {
@@ -640,6 +666,7 @@ impl DbClusterSnapshotBuilder {
             db_system_id: self.db_system_id,
             storage_type: self.storage_type,
             db_cluster_resource_id: self.db_cluster_resource_id,
+            storage_throughput: self.storage_throughput,
         }
     }
 }

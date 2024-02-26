@@ -201,6 +201,9 @@ pub struct DbCluster {
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The details for Aurora Limitless Database.</p>
     pub limitless_database: ::std::option::Option<crate::types::LimitlessDatabase>,
+    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub storage_throughput: ::std::option::Option<i32>,
 }
 impl DbCluster {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -572,6 +575,11 @@ impl DbCluster {
     pub fn limitless_database(&self) -> ::std::option::Option<&crate::types::LimitlessDatabase> {
         self.limitless_database.as_ref()
     }
+    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
+        self.storage_throughput
+    }
 }
 impl DbCluster {
     /// Creates a new builder-style object to manufacture [`DbCluster`](crate::types::DbCluster).
@@ -661,6 +669,7 @@ pub struct DbClusterBuilder {
     pub(crate) local_write_forwarding_status: ::std::option::Option<crate::types::LocalWriteForwardingStatus>,
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) limitless_database: ::std::option::Option<crate::types::LimitlessDatabase>,
+    pub(crate) storage_throughput: ::std::option::Option<i32>,
 }
 impl DbClusterBuilder {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -1930,6 +1939,23 @@ impl DbClusterBuilder {
     pub fn get_limitless_database(&self) -> &::std::option::Option<crate::types::LimitlessDatabase> {
         &self.limitless_database
     }
+    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn storage_throughput(mut self, input: i32) -> Self {
+        self.storage_throughput = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_throughput = input;
+        self
+    }
+    /// <p>The storage throughput for the DB cluster. The throughput is automatically set based on the IOPS that you provision, and is not configurable.</p>
+    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+    pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {
+        &self.storage_throughput
+    }
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
@@ -2010,6 +2036,7 @@ impl DbClusterBuilder {
             local_write_forwarding_status: self.local_write_forwarding_status,
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
             limitless_database: self.limitless_database,
+            storage_throughput: self.storage_throughput,
         }
     }
 }

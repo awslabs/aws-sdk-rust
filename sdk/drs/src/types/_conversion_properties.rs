@@ -16,6 +16,9 @@ pub struct ConversionProperties {
     pub data_timestamp: ::std::option::Option<::std::string::String>,
     /// <p>A mapping between the volumes and their sizes</p>
     pub volume_to_volume_size: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    /// <p>A mapping between the volumes being converted and the product codes associated with them</p>
+    pub volume_to_product_codes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductCode>>>,
 }
 impl ConversionProperties {
     /// <p>A mapping between the volumes being converted and the converted snapshot ids</p>
@@ -42,6 +45,12 @@ impl ConversionProperties {
     pub fn volume_to_volume_size(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
         self.volume_to_volume_size.as_ref()
     }
+    /// <p>A mapping between the volumes being converted and the product codes associated with them</p>
+    pub fn volume_to_product_codes(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductCode>>> {
+        self.volume_to_product_codes.as_ref()
+    }
 }
 impl ConversionProperties {
     /// Creates a new builder-style object to manufacture [`ConversionProperties`](crate::types::ConversionProperties).
@@ -61,6 +70,8 @@ pub struct ConversionPropertiesBuilder {
     pub(crate) force_uefi: ::std::option::Option<bool>,
     pub(crate) data_timestamp: ::std::option::Option<::std::string::String>,
     pub(crate) volume_to_volume_size: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
+    pub(crate) volume_to_product_codes:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductCode>>>,
 }
 impl ConversionPropertiesBuilder {
     /// Adds a key-value pair to `volume_to_conversion_map`.
@@ -158,6 +169,35 @@ impl ConversionPropertiesBuilder {
     pub fn get_volume_to_volume_size(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i64>> {
         &self.volume_to_volume_size
     }
+    /// Adds a key-value pair to `volume_to_product_codes`.
+    ///
+    /// To override the contents of this collection use [`set_volume_to_product_codes`](Self::set_volume_to_product_codes).
+    ///
+    /// <p>A mapping between the volumes being converted and the product codes associated with them</p>
+    pub fn volume_to_product_codes(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<crate::types::ProductCode>,
+    ) -> Self {
+        let mut hash_map = self.volume_to_product_codes.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.volume_to_product_codes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A mapping between the volumes being converted and the product codes associated with them</p>
+    pub fn set_volume_to_product_codes(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductCode>>>,
+    ) -> Self {
+        self.volume_to_product_codes = input;
+        self
+    }
+    /// <p>A mapping between the volumes being converted and the product codes associated with them</p>
+    pub fn get_volume_to_product_codes(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ProductCode>>> {
+        &self.volume_to_product_codes
+    }
     /// Consumes the builder and constructs a [`ConversionProperties`](crate::types::ConversionProperties).
     pub fn build(self) -> crate::types::ConversionProperties {
         crate::types::ConversionProperties {
@@ -166,6 +206,7 @@ impl ConversionPropertiesBuilder {
             force_uefi: self.force_uefi,
             data_timestamp: self.data_timestamp,
             volume_to_volume_size: self.volume_to_volume_size,
+            volume_to_product_codes: self.volume_to_product_codes,
         }
     }
 }

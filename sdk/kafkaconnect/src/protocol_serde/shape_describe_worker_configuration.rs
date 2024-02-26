@@ -202,6 +202,13 @@ pub(crate) fn de_describe_worker_configuration(
                             .transpose()?,
                     );
                 }
+                "workerConfigurationState" => {
+                    builder = builder.set_worker_configuration_state(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::WorkerConfigurationState::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

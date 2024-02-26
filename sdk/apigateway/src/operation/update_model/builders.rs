@@ -22,7 +22,7 @@ impl UpdateModelInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateModel`.
 ///
-/// <p>Changes information about a model.</p>
+/// <p>Changes information about a model. The maximum size of the model is 400 KB.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateModelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

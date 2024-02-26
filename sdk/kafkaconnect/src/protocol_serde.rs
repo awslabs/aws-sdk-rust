@@ -33,6 +33,8 @@ pub(crate) mod shape_delete_connector;
 
 pub(crate) mod shape_delete_custom_plugin;
 
+pub(crate) mod shape_delete_worker_configuration;
+
 pub(crate) mod shape_describe_connector;
 
 pub(crate) mod shape_describe_custom_plugin;
@@ -43,7 +45,13 @@ pub(crate) mod shape_list_connectors;
 
 pub(crate) mod shape_list_custom_plugins;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_list_worker_configurations;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_connector;
 
@@ -72,6 +80,8 @@ pub(crate) mod shape_internal_server_error_exception;
 pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_service_unavailable_exception;
+
+pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_requests_exception;
 
@@ -118,6 +128,8 @@ pub(crate) mod shape_plugin;
 pub(crate) mod shape_sensitive_map_of_string;
 
 pub(crate) mod shape_state_description;
+
+pub(crate) mod shape_tags;
 
 pub(crate) mod shape_worker_configuration;
 

@@ -326,6 +326,21 @@ pub fn de_db_cluster_automated_backup(
                 builder = builder.set_aws_backup_recovery_point_arn(var_24);
             }
             ,
+            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#DBClusterAutomatedBackup$StorageThroughput */ =>  {
+                let var_25 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_throughput(var_25);
+            }
+            ,
             _ => {}
         }
     }

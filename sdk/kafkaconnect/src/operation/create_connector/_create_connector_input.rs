@@ -21,12 +21,17 @@ pub struct CreateConnectorInput {
     pub kafka_connect_version: ::std::option::Option<::std::string::String>,
     /// <p>Details about log delivery.</p>
     pub log_delivery: ::std::option::Option<crate::types::LogDelivery>,
-    /// <p>Specifies which plugins to use for the connector.</p>
+    /// <important>
+    /// <p>Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins together.</p>
+    /// </important>
+    /// <p>Specifies which plugin to use for the connector. You must specify a single-element list containing one <code>customPlugin</code> object.</p>
     pub plugins: ::std::option::Option<::std::vec::Vec<crate::types::Plugin>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
     pub service_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which worker configuration to use with the connector.</p>
     pub worker_configuration: ::std::option::Option<crate::types::WorkerConfiguration>,
+    /// <p>The tags you want to attach to the connector.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConnectorInput {
     /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
@@ -65,7 +70,10 @@ impl CreateConnectorInput {
     pub fn log_delivery(&self) -> ::std::option::Option<&crate::types::LogDelivery> {
         self.log_delivery.as_ref()
     }
-    /// <p>Specifies which plugins to use for the connector.</p>
+    /// <important>
+    /// <p>Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins together.</p>
+    /// </important>
+    /// <p>Specifies which plugin to use for the connector. You must specify a single-element list containing one <code>customPlugin</code> object.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.plugins.is_none()`.
     pub fn plugins(&self) -> &[crate::types::Plugin] {
@@ -78,6 +86,10 @@ impl CreateConnectorInput {
     /// <p>Specifies which worker configuration to use with the connector.</p>
     pub fn worker_configuration(&self) -> ::std::option::Option<&crate::types::WorkerConfiguration> {
         self.worker_configuration.as_ref()
+    }
+    /// <p>The tags you want to attach to the connector.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl ::std::fmt::Debug for CreateConnectorInput {
@@ -95,6 +107,7 @@ impl ::std::fmt::Debug for CreateConnectorInput {
         formatter.field("plugins", &self.plugins);
         formatter.field("service_execution_role_arn", &self.service_execution_role_arn);
         formatter.field("worker_configuration", &self.worker_configuration);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -121,6 +134,7 @@ pub struct CreateConnectorInputBuilder {
     pub(crate) plugins: ::std::option::Option<::std::vec::Vec<crate::types::Plugin>>,
     pub(crate) service_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) worker_configuration: ::std::option::Option<crate::types::WorkerConfiguration>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConnectorInputBuilder {
     /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
@@ -272,19 +286,28 @@ impl CreateConnectorInputBuilder {
     ///
     /// To override the contents of this collection use [`set_plugins`](Self::set_plugins).
     ///
-    /// <p>Specifies which plugins to use for the connector.</p>
+    /// <important>
+    /// <p>Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins together.</p>
+    /// </important>
+    /// <p>Specifies which plugin to use for the connector. You must specify a single-element list containing one <code>customPlugin</code> object.</p>
     pub fn plugins(mut self, input: crate::types::Plugin) -> Self {
         let mut v = self.plugins.unwrap_or_default();
         v.push(input);
         self.plugins = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies which plugins to use for the connector.</p>
+    /// <important>
+    /// <p>Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins together.</p>
+    /// </important>
+    /// <p>Specifies which plugin to use for the connector. You must specify a single-element list containing one <code>customPlugin</code> object.</p>
     pub fn set_plugins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Plugin>>) -> Self {
         self.plugins = input;
         self
     }
-    /// <p>Specifies which plugins to use for the connector.</p>
+    /// <important>
+    /// <p>Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins together.</p>
+    /// </important>
+    /// <p>Specifies which plugin to use for the connector. You must specify a single-element list containing one <code>customPlugin</code> object.</p>
     pub fn get_plugins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Plugin>> {
         &self.plugins
     }
@@ -317,6 +340,26 @@ impl CreateConnectorInputBuilder {
     pub fn get_worker_configuration(&self) -> &::std::option::Option<crate::types::WorkerConfiguration> {
         &self.worker_configuration
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags you want to attach to the connector.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags you want to attach to the connector.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags you want to attach to the connector.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
     pub fn build(
         self,
@@ -334,6 +377,7 @@ impl CreateConnectorInputBuilder {
             plugins: self.plugins,
             service_execution_role_arn: self.service_execution_role_arn,
             worker_configuration: self.worker_configuration,
+            tags: self.tags,
         })
     }
 }
@@ -352,6 +396,7 @@ impl ::std::fmt::Debug for CreateConnectorInputBuilder {
         formatter.field("plugins", &self.plugins);
         formatter.field("service_execution_role_arn", &self.service_execution_role_arn);
         formatter.field("worker_configuration", &self.worker_configuration);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

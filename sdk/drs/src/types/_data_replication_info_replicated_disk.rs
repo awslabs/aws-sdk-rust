@@ -14,6 +14,8 @@ pub struct DataReplicationInfoReplicatedDisk {
     pub rescanned_storage_bytes: i64,
     /// <p>The size of the replication backlog in bytes.</p>
     pub backlogged_storage_bytes: i64,
+    /// <p>The status of the volume.</p>
+    pub volume_status: ::std::option::Option<crate::types::VolumeStatus>,
 }
 impl DataReplicationInfoReplicatedDisk {
     /// <p>The name of the device.</p>
@@ -36,6 +38,10 @@ impl DataReplicationInfoReplicatedDisk {
     pub fn backlogged_storage_bytes(&self) -> i64 {
         self.backlogged_storage_bytes
     }
+    /// <p>The status of the volume.</p>
+    pub fn volume_status(&self) -> ::std::option::Option<&crate::types::VolumeStatus> {
+        self.volume_status.as_ref()
+    }
 }
 impl DataReplicationInfoReplicatedDisk {
     /// Creates a new builder-style object to manufacture [`DataReplicationInfoReplicatedDisk`](crate::types::DataReplicationInfoReplicatedDisk).
@@ -53,6 +59,7 @@ pub struct DataReplicationInfoReplicatedDiskBuilder {
     pub(crate) replicated_storage_bytes: ::std::option::Option<i64>,
     pub(crate) rescanned_storage_bytes: ::std::option::Option<i64>,
     pub(crate) backlogged_storage_bytes: ::std::option::Option<i64>,
+    pub(crate) volume_status: ::std::option::Option<crate::types::VolumeStatus>,
 }
 impl DataReplicationInfoReplicatedDiskBuilder {
     /// <p>The name of the device.</p>
@@ -125,6 +132,20 @@ impl DataReplicationInfoReplicatedDiskBuilder {
     pub fn get_backlogged_storage_bytes(&self) -> &::std::option::Option<i64> {
         &self.backlogged_storage_bytes
     }
+    /// <p>The status of the volume.</p>
+    pub fn volume_status(mut self, input: crate::types::VolumeStatus) -> Self {
+        self.volume_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the volume.</p>
+    pub fn set_volume_status(mut self, input: ::std::option::Option<crate::types::VolumeStatus>) -> Self {
+        self.volume_status = input;
+        self
+    }
+    /// <p>The status of the volume.</p>
+    pub fn get_volume_status(&self) -> &::std::option::Option<crate::types::VolumeStatus> {
+        &self.volume_status
+    }
     /// Consumes the builder and constructs a [`DataReplicationInfoReplicatedDisk`](crate::types::DataReplicationInfoReplicatedDisk).
     pub fn build(self) -> crate::types::DataReplicationInfoReplicatedDisk {
         crate::types::DataReplicationInfoReplicatedDisk {
@@ -133,6 +154,7 @@ impl DataReplicationInfoReplicatedDiskBuilder {
             replicated_storage_bytes: self.replicated_storage_bytes.unwrap_or_default(),
             rescanned_storage_bytes: self.rescanned_storage_bytes.unwrap_or_default(),
             backlogged_storage_bytes: self.backlogged_storage_bytes.unwrap_or_default(),
+            volume_status: self.volume_status,
         }
     }
 }

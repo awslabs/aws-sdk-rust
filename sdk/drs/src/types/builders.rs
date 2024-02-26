@@ -105,6 +105,8 @@ pub use crate::types::_source_network_data::SourceNetworkDataBuilder;
 
 pub use crate::types::_conversion_properties::ConversionPropertiesBuilder;
 
+pub use crate::types::_product_code::ProductCodeBuilder;
+
 pub use crate::types::_describe_jobs_request_filters::DescribeJobsRequestFiltersBuilder;
 
 pub use crate::types::_account::AccountBuilder;

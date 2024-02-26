@@ -67,11 +67,21 @@ pub fn ser_create_connector_input_input(
     if let Some(var_22) = &input.service_execution_role_arn {
         object.key("serviceExecutionRoleArn").string(var_22.as_str());
     }
-    if let Some(var_23) = &input.worker_configuration {
+    if let Some(var_23) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("workerConfiguration").start_object();
-        crate::protocol_serde::shape_worker_configuration::ser_worker_configuration(&mut object_24, var_23)?;
+        let mut object_24 = object.key("tags").start_object();
+        for (key_25, value_26) in var_23 {
+            {
+                object_24.key(key_25.as_str()).string(value_26.as_str());
+            }
+        }
         object_24.finish();
+    }
+    if let Some(var_27) = &input.worker_configuration {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("workerConfiguration").start_object();
+        crate::protocol_serde::shape_worker_configuration::ser_worker_configuration(&mut object_28, var_27)?;
+        object_28.finish();
     }
     Ok(())
 }

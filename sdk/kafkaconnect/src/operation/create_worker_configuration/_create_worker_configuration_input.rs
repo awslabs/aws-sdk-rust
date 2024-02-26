@@ -9,6 +9,8 @@ pub struct CreateWorkerConfigurationInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
     pub properties_file_content: ::std::option::Option<::std::string::String>,
+    /// <p>The tags you want to attach to the worker configuration.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkerConfigurationInput {
     /// <p>A summary description of the worker configuration.</p>
@@ -23,6 +25,10 @@ impl CreateWorkerConfigurationInput {
     pub fn properties_file_content(&self) -> ::std::option::Option<&str> {
         self.properties_file_content.as_deref()
     }
+    /// <p>The tags you want to attach to the worker configuration.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateWorkerConfigurationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -30,6 +36,7 @@ impl ::std::fmt::Debug for CreateWorkerConfigurationInput {
         formatter.field("description", &self.description);
         formatter.field("name", &self.name);
         formatter.field("properties_file_content", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -47,6 +54,7 @@ pub struct CreateWorkerConfigurationInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) properties_file_content: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkerConfigurationInputBuilder {
     /// <p>A summary description of the worker configuration.</p>
@@ -93,6 +101,26 @@ impl CreateWorkerConfigurationInputBuilder {
     pub fn get_properties_file_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.properties_file_content
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags you want to attach to the worker configuration.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags you want to attach to the worker configuration.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags you want to attach to the worker configuration.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateWorkerConfigurationInput`](crate::operation::create_worker_configuration::CreateWorkerConfigurationInput).
     pub fn build(
         self,
@@ -104,6 +132,7 @@ impl CreateWorkerConfigurationInputBuilder {
             description: self.description,
             name: self.name,
             properties_file_content: self.properties_file_content,
+            tags: self.tags,
         })
     }
 }
@@ -113,6 +142,7 @@ impl ::std::fmt::Debug for CreateWorkerConfigurationInputBuilder {
         formatter.field("description", &self.description);
         formatter.field("name", &self.name);
         formatter.field("properties_file_content", &"*** Sensitive Data Redacted ***");
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
