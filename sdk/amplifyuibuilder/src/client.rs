@@ -199,6 +199,8 @@ mod list_components;
 
 mod list_forms;
 
+mod list_tags_for_resource;
+
 mod list_themes;
 
 mod put_metadata_flag;
@@ -206,6 +208,10 @@ mod put_metadata_flag;
 mod refresh_token;
 
 mod start_codegen_job;
+
+mod tag_resource;
+
+mod untag_resource;
 
 mod update_component;
 

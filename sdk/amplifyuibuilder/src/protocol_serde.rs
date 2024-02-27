@@ -71,6 +71,8 @@ pub(crate) mod shape_list_components;
 
 pub(crate) mod shape_list_forms;
 
+pub(crate) mod shape_list_tags_for_resource;
+
 pub(crate) mod shape_list_themes;
 
 pub(crate) mod shape_put_metadata_flag;
@@ -84,6 +86,10 @@ pub(crate) mod shape_refresh_token_input;
 pub(crate) mod shape_start_codegen_job;
 
 pub(crate) mod shape_start_codegen_job_input;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_component;
 
@@ -131,6 +137,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_codegen_job_output;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_unauthorized_exception;
@@ -172,6 +180,8 @@ pub(crate) mod shape_put_metadata_flag_body;
 pub(crate) mod shape_refresh_token_request_body;
 
 pub(crate) mod shape_start_codegen_job_data;
+
+pub(crate) mod shape_tags;
 
 pub(crate) mod shape_theme;
 
@@ -276,8 +286,6 @@ pub(crate) mod shape_react_start_codegen_job_data;
 pub(crate) mod shape_sectional_element_map;
 
 pub(crate) mod shape_sort_property;
-
-pub(crate) mod shape_tags;
 
 pub(crate) mod shape_theme_value;
 

@@ -89,8 +89,8 @@ model_hash = '55ebcb28813fcd6e41309a5113a3ea35ffec5306a194a215a22bc796cd6d4729'
 [crates.aws-sdk-amplifyuibuilder]
 category = 'AwsSdk'
 version = '1.15.0'
-source_hash = 'ac81177a4eae299473a0179cf25f43ff8c0fa43fa0e096f4e9c19da2086285d0'
-model_hash = '8135f704673dbcc6d8493c8e80ee1934ddabaf7ceff9a96fb37bd9c6230901f9'
+source_hash = '22ed6b3de5724dbf312c65ed06b7a380783934905a674de940228b9caef96fbb'
+model_hash = '711a8d250ce7cfe2729c4838b919afef6eab9efc92d8655f2ebf50b50240db0d'
 
 [crates.aws-sdk-apigateway]
 category = 'AwsSdk'

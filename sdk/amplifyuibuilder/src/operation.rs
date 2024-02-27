@@ -55,6 +55,9 @@ pub mod list_components;
 /// Types for the `ListForms` operation.
 pub mod list_forms;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
 /// Types for the `ListThemes` operation.
 pub mod list_themes;
 
@@ -66,6 +69,12 @@ pub mod refresh_token;
 
 /// Types for the `StartCodegenJob` operation.
 pub mod start_codegen_job;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
 
 /// Types for the `UpdateComponent` operation.
 pub mod update_component;
