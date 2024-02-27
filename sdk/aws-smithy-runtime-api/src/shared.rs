@@ -202,7 +202,7 @@ mod tests {
     impl Thing for Thingamajig {}
 
     #[derive(Debug)]
-    struct SharedThing(Arc<dyn Thing>);
+    struct SharedThing(#[allow(dead_code)] Arc<dyn Thing>);
     impl Thing for SharedThing {}
     impl SharedThing {
         fn new(thing: impl Thing + 'static) -> Self {

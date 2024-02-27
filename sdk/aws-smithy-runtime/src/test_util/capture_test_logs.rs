@@ -12,7 +12,7 @@ use tracing_subscriber::fmt::TestWriter;
 
 /// A guard that resets log capturing upon being dropped.
 #[derive(Debug)]
-pub struct LogCaptureGuard(DefaultGuard);
+pub struct LogCaptureGuard(#[allow(dead_code)] DefaultGuard);
 
 /// Capture logs from this test.
 ///

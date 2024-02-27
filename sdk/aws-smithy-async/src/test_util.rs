@@ -189,6 +189,7 @@ impl InstantSleep {
 /// task.await.expect("successful completion");
 /// # };
 /// ```
+#[allow(dead_code)] // unused fields retained for their `Drop` impls
 pub struct CapturedSleep<'a>(oneshot::Sender<()>, &'a SleepGate, Duration);
 impl CapturedSleep<'_> {
     /// Allow the calling code to advance past the call to [`AsyncSleep::sleep`]
