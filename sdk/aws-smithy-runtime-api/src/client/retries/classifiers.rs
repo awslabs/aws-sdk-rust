@@ -279,14 +279,14 @@ impl ClassifyRetry for SharedRetryClassifier {
 impl ValidateConfig for SharedRetryClassifier {
     fn validate_final_config(
         &self,
-        runtime_components: &RuntimeComponents,
+        _runtime_components: &RuntimeComponents,
         _cfg: &ConfigBag,
     ) -> Result<(), BoxError> {
         #[cfg(debug_assertions)]
         {
             // Because this is validating that the implementation is correct rather
             // than validating user input, we only want to run this in debug builds.
-            let retry_classifiers = runtime_components.retry_classifiers_slice();
+            let retry_classifiers = _runtime_components.retry_classifiers_slice();
             let out_of_order: Vec<_> = retry_classifiers
                 .windows(2)
                 .filter(|&w| w[0].value().priority() > w[1].value().priority())
