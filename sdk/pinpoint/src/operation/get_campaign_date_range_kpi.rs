@@ -236,12 +236,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetCampaignD
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
-                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.page_size {
                     {
-                        query.push_kv("page-size", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("page-size", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.start_time {

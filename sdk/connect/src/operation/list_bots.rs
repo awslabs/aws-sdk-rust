@@ -189,7 +189,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBotsRequ
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
@@ -201,7 +201,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBotsRequ
                 let inner_4 = inner_4
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("lex_version", "cannot be empty or unset"))?;
-                query.push_kv("lexVersion", &::aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("lexVersion", &::aws_smithy_http::query::fmt_string(inner_4));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

@@ -188,29 +188,29 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAppAsses
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.app_arn {
                     {
-                        query.push_kv("appArn", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("appArn", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.assessment_name {
                     {
-                        query.push_kv("assessmentName", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("assessmentName", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.assessment_status {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("assessmentStatus", &::aws_smithy_http::query::fmt_string(&inner_4));
+                            query.push_kv("assessmentStatus", &::aws_smithy_http::query::fmt_string(inner_4));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.compliance_status {
                     {
-                        query.push_kv("complianceStatus", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("complianceStatus", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.invoker {
                     {
-                        query.push_kv("invoker", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("invoker", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.reverse_order {
@@ -220,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAppAsses
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.max_results {

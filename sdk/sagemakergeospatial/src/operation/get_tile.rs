@@ -232,13 +232,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTileReque
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("image_assets", "cannot be empty or unset"))?;
                 for inner_5 in inner_4 {
-                    query.push_kv("ImageAssets", &::aws_smithy_http::query::fmt_string(&inner_5));
+                    query.push_kv("ImageAssets", &::aws_smithy_http::query::fmt_string(inner_5));
                 }
                 let inner_6 = &_input.target;
                 let inner_6 = inner_6
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("target", "cannot be empty or unset"))?;
-                query.push_kv("Target", &::aws_smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("Target", &::aws_smithy_http::query::fmt_string(inner_6));
                 let inner_7 = &_input.arn;
                 let inner_7 = inner_7
                     .as_ref()
@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTileReque
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("Arn", &::aws_smithy_http::query::fmt_string(&inner_7));
+                query.push_kv("Arn", &::aws_smithy_http::query::fmt_string(inner_7));
                 if let ::std::option::Option::Some(inner_8) = &_input.image_mask {
                     {
                         query.push_kv("ImageMask", ::aws_smithy_types::primitive::Encoder::from(*inner_8).encode());
@@ -257,27 +257,27 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTileReque
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.output_format {
                     {
-                        query.push_kv("OutputFormat", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("OutputFormat", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.time_range_filter {
                     {
-                        query.push_kv("TimeRangeFilter", &::aws_smithy_http::query::fmt_string(&inner_10));
+                        query.push_kv("TimeRangeFilter", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
                 if let ::std::option::Option::Some(inner_11) = &_input.property_filters {
                     {
-                        query.push_kv("PropertyFilters", &::aws_smithy_http::query::fmt_string(&inner_11));
+                        query.push_kv("PropertyFilters", &::aws_smithy_http::query::fmt_string(inner_11));
                     }
                 }
                 if let ::std::option::Option::Some(inner_12) = &_input.output_data_type {
                     {
-                        query.push_kv("OutputDataType", &::aws_smithy_http::query::fmt_string(&inner_12));
+                        query.push_kv("OutputDataType", &::aws_smithy_http::query::fmt_string(inner_12));
                     }
                 }
                 if let ::std::option::Option::Some(inner_13) = &_input.execution_role_arn {
                     {
-                        query.push_kv("ExecutionRoleArn", &::aws_smithy_http::query::fmt_string(&inner_13));
+                        query.push_kv("ExecutionRoleArn", &::aws_smithy_http::query::fmt_string(inner_13));
                     }
                 }
                 ::std::result::Result::Ok(())

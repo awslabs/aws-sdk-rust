@@ -195,7 +195,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTermForRe
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("reportId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("reportId", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.report_version {
                     {
                         query.push_kv("reportVersion", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());

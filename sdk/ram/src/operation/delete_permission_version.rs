@@ -195,7 +195,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeletePermis
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("permissionArn", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("permissionArn", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.permission_version;
                 let inner_2 = inner_2.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("permission_version", "cannot be empty or unset")
@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeletePermis
                 query.push_kv("permissionVersion", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                 if let ::std::option::Option::Some(inner_3) = &_input.client_token {
                     {
-                        query.push_kv("clientToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("clientToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

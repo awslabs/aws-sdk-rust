@@ -174,7 +174,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccountR
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.next_token {
                     {
-                        query.push_kv("next_token", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("next_token", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
@@ -192,7 +192,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccountR
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("account_id", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("account_id", &::aws_smithy_http::query::fmt_string(inner_3));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

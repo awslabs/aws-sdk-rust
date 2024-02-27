@@ -216,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for Disassociate
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("alias", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("alias", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.asset_id;
                 let inner_2 = inner_2
                     .as_ref()
@@ -227,7 +227,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for Disassociate
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("assetId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("assetId", &::aws_smithy_http::query::fmt_string(inner_2));
                 let inner_3 = &_input.property_id;
                 let inner_3 = inner_3
                     .as_ref()
@@ -238,7 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for Disassociate
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("propertyId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("propertyId", &::aws_smithy_http::query::fmt_string(inner_3));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

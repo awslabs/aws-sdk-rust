@@ -203,12 +203,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListWireless
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.task_definition_type {
                     {
-                        query.push_kv("taskDefinitionType", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("taskDefinitionType", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

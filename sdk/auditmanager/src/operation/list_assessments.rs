@@ -189,12 +189,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssessme
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {

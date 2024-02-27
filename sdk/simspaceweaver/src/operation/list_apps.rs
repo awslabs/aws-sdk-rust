@@ -189,10 +189,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAppsRequ
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("simulation", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("simulation", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.domain {
                     {
-                        query.push_kv("domain", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("domain", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
@@ -202,7 +202,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAppsRequ
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

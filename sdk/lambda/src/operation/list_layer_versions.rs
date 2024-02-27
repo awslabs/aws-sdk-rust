@@ -198,12 +198,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLayerVer
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.compatible_runtime {
                     {
-                        query.push_kv("CompatibleRuntime", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("CompatibleRuntime", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.marker {
                     {
-                        query.push_kv("Marker", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("Marker", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_items {
@@ -213,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLayerVer
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.compatible_architecture {
                     {
-                        query.push_kv("CompatibleArchitecture", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("CompatibleArchitecture", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

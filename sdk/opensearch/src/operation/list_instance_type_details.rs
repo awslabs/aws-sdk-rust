@@ -210,7 +210,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListInstance
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.domain_name {
                     {
-                        query.push_kv("domainName", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("domainName", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
@@ -220,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListInstance
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.retrieve_azs {
@@ -230,7 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListInstance
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.instance_type {
                     {
-                        query.push_kv("instanceType", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("instanceType", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

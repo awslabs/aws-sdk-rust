@@ -194,7 +194,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSignalCa
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
@@ -204,7 +204,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSignalCa
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.signal_node_type {
                     {
-                        query.push_kv("signalNodeType", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("signalNodeType", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

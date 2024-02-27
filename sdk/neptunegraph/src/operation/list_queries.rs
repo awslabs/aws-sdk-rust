@@ -192,7 +192,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListQueriesR
                 query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
                 if let ::std::option::Option::Some(inner_2) = &_input.state {
                     {
-                        query.push_kv("state", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("state", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 ::std::result::Result::Ok(())

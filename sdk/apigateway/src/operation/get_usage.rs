@@ -189,7 +189,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetUsageRequ
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.key_id {
                     {
-                        query.push_kv("keyId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("keyId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 let inner_3 = &_input.start_date;
@@ -202,7 +202,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetUsageRequ
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("startDate", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("startDate", &::aws_smithy_http::query::fmt_string(inner_3));
                 let inner_4 = &_input.end_date;
                 let inner_4 = inner_4
                     .as_ref()
@@ -213,10 +213,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetUsageRequ
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("endDate", &::aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("endDate", &::aws_smithy_http::query::fmt_string(inner_4));
                 if let ::std::option::Option::Some(inner_5) = &_input.position {
                     {
-                        query.push_kv("position", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("position", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.limit {

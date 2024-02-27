@@ -222,10 +222,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListProfileT
                 let inner_4 = inner_4
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("period", "cannot be empty or unset"))?;
-                query.push_kv("period", &::aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("period", &::aws_smithy_http::query::fmt_string(inner_4));
                 if let ::std::option::Option::Some(inner_5) = &_input.order_by {
                     {
-                        query.push_kv("orderBy", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("orderBy", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.max_results {
@@ -235,7 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListProfileT
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 ::std::result::Result::Ok(())

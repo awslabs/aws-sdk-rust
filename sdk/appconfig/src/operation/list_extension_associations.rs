@@ -194,12 +194,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListExtensio
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.resource_identifier {
                     {
-                        query.push_kv("resource_identifier", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("resource_identifier", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.extension_identifier {
                     {
-                        query.push_kv("extension_identifier", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("extension_identifier", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.extension_version_number {
@@ -217,7 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListExtensio
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
-                        query.push_kv("next_token", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("next_token", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

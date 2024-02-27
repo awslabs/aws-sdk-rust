@@ -198,7 +198,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRestoreTe
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.backup_vault_account_id {
                     {
-                        query.push_kv("BackupVaultAccountId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("BackupVaultAccountId", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 let inner_2 = &_input.backup_vault_name;
@@ -211,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRestoreTe
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("BackupVaultName", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("BackupVaultName", &::aws_smithy_http::query::fmt_string(inner_2));
                 let inner_3 = &_input.recovery_point_arn;
                 let inner_3 = inner_3.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("recovery_point_arn", "cannot be empty or unset")
@@ -222,7 +222,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRestoreTe
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("RecoveryPointArn", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("RecoveryPointArn", &::aws_smithy_http::query::fmt_string(inner_3));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

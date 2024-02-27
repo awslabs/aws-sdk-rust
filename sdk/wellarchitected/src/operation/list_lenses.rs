@@ -185,7 +185,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLensesRe
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
@@ -195,17 +195,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLensesRe
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.lens_type {
                     {
-                        query.push_kv("LensType", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("LensType", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.lens_status {
                     {
-                        query.push_kv("LensStatus", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("LensStatus", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.lens_name {
                     {
-                        query.push_kv("LensName", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("LensName", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

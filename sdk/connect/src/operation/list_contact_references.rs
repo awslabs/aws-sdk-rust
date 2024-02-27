@@ -219,11 +219,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListContactR
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("reference_types", "cannot be empty or unset"))?;
                 for inner_4 in inner_3 {
-                    query.push_kv("referenceTypes", &::aws_smithy_http::query::fmt_string(&inner_4));
+                    query.push_kv("referenceTypes", &::aws_smithy_http::query::fmt_string(inner_4));
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

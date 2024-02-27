@@ -197,7 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTagsForR
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("arn", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("arn", &::aws_smithy_http::query::fmt_string(inner_1));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

@@ -194,12 +194,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListObjectsV
                 query.push_kv("list-type", "2");
                 if let ::std::option::Option::Some(inner_1) = &_input.delimiter {
                     {
-                        query.push_kv("delimiter", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("delimiter", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.encoding_type {
                     {
-                        query.push_kv("encoding-type", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("encoding-type", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_keys {
@@ -209,12 +209,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListObjectsV
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.prefix {
                     {
-                        query.push_kv("prefix", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("prefix", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.continuation_token {
                     {
-                        query.push_kv("continuation-token", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("continuation-token", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.fetch_owner {
@@ -224,7 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListObjectsV
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.start_after {
                     {
-                        query.push_kv("start-after", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("start-after", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 ::std::result::Result::Ok(())

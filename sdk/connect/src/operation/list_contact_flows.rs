@@ -199,13 +199,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListContactF
                 if let ::std::option::Option::Some(inner_2) = &_input.contact_flow_types {
                     {
                         for inner_3 in inner_2 {
-                            query.push_kv("contactFlowTypes", &::aws_smithy_http::query::fmt_string(&inner_3));
+                            query.push_kv("contactFlowTypes", &::aws_smithy_http::query::fmt_string(inner_3));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {

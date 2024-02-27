@@ -198,12 +198,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDataAcces
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("target", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("target", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.permission;
                 let inner_2 = inner_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("permission", "cannot be empty or unset"))?;
-                query.push_kv("permission", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("permission", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.duration_seconds {
                     {
                         query.push_kv("durationSeconds", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
@@ -211,12 +211,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDataAcces
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.privilege {
                     {
-                        query.push_kv("privilege", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("privilege", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.target_type {
                     {
-                        query.push_kv("targetType", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("targetType", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -211,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetConnectPe
                 if let ::std::option::Option::Some(inner_2) = &_input.connect_peer_ids {
                     {
                         for inner_3 in inner_2 {
-                            query.push_kv("connectPeerIds", &::aws_smithy_http::query::fmt_string(&inner_3));
+                            query.push_kv("connectPeerIds", &::aws_smithy_http::query::fmt_string(inner_3));
                         }
                     }
                 }
@@ -222,7 +222,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetConnectPe
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

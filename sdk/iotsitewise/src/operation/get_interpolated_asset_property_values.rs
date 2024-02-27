@@ -198,17 +198,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.asset_id {
                     {
-                        query.push_kv("assetId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("assetId", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.property_id {
                     {
-                        query.push_kv("propertyId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("propertyId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.property_alias {
                     {
-                        query.push_kv("propertyAlias", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("propertyAlias", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 let inner_4 = &_input.start_time_in_seconds;
@@ -235,7 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                 let inner_8 = inner_8
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("quality", "cannot be empty or unset"))?;
-                query.push_kv("quality", &::aws_smithy_http::query::fmt_string(&inner_8));
+                query.push_kv("quality", &::aws_smithy_http::query::fmt_string(inner_8));
                 let inner_9 = &_input.interval_in_seconds;
                 let inner_9 = inner_9.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("interval_in_seconds", "cannot be empty or unset")
@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                 query.push_kv("intervalInSeconds", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
                 if let ::std::option::Option::Some(inner_10) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_10));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
                 if let ::std::option::Option::Some(inner_11) = &_input.max_results {
@@ -261,7 +261,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("type", &::aws_smithy_http::query::fmt_string(&inner_12));
+                query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_12));
                 if let ::std::option::Option::Some(inner_13) = &_input.interval_window_in_seconds {
                     {
                         query.push_kv(

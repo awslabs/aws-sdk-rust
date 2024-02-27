@@ -187,7 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeAddo
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.kubernetes_version {
                     {
-                        query.push_kv("kubernetesVersion", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("kubernetesVersion", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
@@ -197,32 +197,32 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeAddo
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.addon_name {
                     {
-                        query.push_kv("addonName", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("addonName", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.types {
                     {
                         for inner_6 in inner_5 {
-                            query.push_kv("types", &::aws_smithy_http::query::fmt_string(&inner_6));
+                            query.push_kv("types", &::aws_smithy_http::query::fmt_string(inner_6));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.publishers {
                     {
                         for inner_8 in inner_7 {
-                            query.push_kv("publishers", &::aws_smithy_http::query::fmt_string(&inner_8));
+                            query.push_kv("publishers", &::aws_smithy_http::query::fmt_string(inner_8));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.owners {
                     {
                         for inner_10 in inner_9 {
-                            query.push_kv("owners", &::aws_smithy_http::query::fmt_string(&inner_10));
+                            query.push_kv("owners", &::aws_smithy_http::query::fmt_string(inner_10));
                         }
                     }
                 }

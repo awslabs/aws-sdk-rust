@@ -221,7 +221,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDatasetE
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.anomaly_class {
                     {
-                        query.push_kv("anomalyClass", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("anomalyClass", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.before_creation_date {
@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDatasetE
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.max_results {
@@ -252,7 +252,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDatasetE
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.source_ref_contains {
                     {
-                        query.push_kv("sourceRefContains", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("sourceRefContains", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 ::std::result::Result::Ok(())

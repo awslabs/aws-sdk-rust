@@ -199,13 +199,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDevicesRe
                 if let ::std::option::Option::Some(inner_2) = &_input.device_ids {
                     {
                         for inner_3 in inner_2 {
-                            query.push_kv("deviceIds", &::aws_smithy_http::query::fmt_string(&inner_3));
+                            query.push_kv("deviceIds", &::aws_smithy_http::query::fmt_string(inner_3));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.site_id {
                     {
-                        query.push_kv("siteId", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("siteId", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
@@ -215,7 +215,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDevicesRe
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

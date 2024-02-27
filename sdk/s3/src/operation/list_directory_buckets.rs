@@ -197,7 +197,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDirector
                 query.push_kv("x-id", "ListDirectoryBuckets");
                 if let ::std::option::Option::Some(inner_1) = &_input.continuation_token {
                     {
-                        query.push_kv("continuation-token", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("continuation-token", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_directory_buckets {

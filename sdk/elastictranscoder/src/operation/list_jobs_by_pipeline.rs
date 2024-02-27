@@ -205,12 +205,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListJobsByPi
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.ascending {
                     {
-                        query.push_kv("Ascending", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("Ascending", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.page_token {
                     {
-                        query.push_kv("PageToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("PageToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -226,7 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRecommend
                 );
                 if let ::std::option::Option::Some(inner_4) = &_input.locale {
                     {
-                        query.push_kv("locale", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("locale", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

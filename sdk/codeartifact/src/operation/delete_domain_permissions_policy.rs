@@ -202,15 +202,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteDomain
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.domain_owner {
                     {
-                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.policy_revision {
                     {
-                        query.push_kv("policy-revision", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("policy-revision", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

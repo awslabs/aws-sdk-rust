@@ -147,7 +147,7 @@ fn sign_payload<'a>(
 
     // Generate the signed wrapper event frame
     Ok(SigningOutput::new(
-        Message::new(message_payload.map(Bytes::from).unwrap_or_else(Bytes::new))
+        Message::new(message_payload.map(Bytes::from).unwrap_or_default())
             .add_header(Header::new(
                 ":chunk-signature",
                 HeaderValue::ByteArray(hex::decode(&signature).unwrap().into()),

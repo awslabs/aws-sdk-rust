@@ -206,7 +206,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSuiteDefi
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.suite_definition_version {
                     {
-                        query.push_kv("suiteDefinitionVersion", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("suiteDefinitionVersion", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 ::std::result::Result::Ok(())

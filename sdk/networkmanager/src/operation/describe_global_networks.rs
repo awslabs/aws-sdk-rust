@@ -195,7 +195,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeGlob
                 if let ::std::option::Option::Some(inner_1) = &_input.global_network_ids {
                     {
                         for inner_2 in inner_1 {
-                            query.push_kv("globalNetworkIds", &::aws_smithy_http::query::fmt_string(&inner_2));
+                            query.push_kv("globalNetworkIds", &::aws_smithy_http::query::fmt_string(inner_2));
                         }
                     }
                 }
@@ -206,7 +206,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeGlob
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

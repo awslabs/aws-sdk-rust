@@ -191,7 +191,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SuggestReque
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("q", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("q", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.suggester;
                 let inner_2 = inner_2
                     .as_ref()
@@ -202,7 +202,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SuggestReque
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("suggester", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("suggester", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.size {
                     {
                         query.push_kv("size", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());

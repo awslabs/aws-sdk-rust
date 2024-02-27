@@ -196,10 +196,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackageV
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.domain_owner {
                     {
-                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 let inner_3 = &_input.repository;
@@ -212,15 +212,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackageV
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("repository", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("repository", &::aws_smithy_http::query::fmt_string(inner_3));
                 let inner_4 = &_input.format;
                 let inner_4 = inner_4
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("format", "cannot be empty or unset"))?;
-                query.push_kv("format", &::aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_4));
                 if let ::std::option::Option::Some(inner_5) = &_input.namespace {
                     {
-                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 let inner_6 = &_input.package;
@@ -233,15 +233,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackageV
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("package", &::aws_smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("package", &::aws_smithy_http::query::fmt_string(inner_6));
                 if let ::std::option::Option::Some(inner_7) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.sort_by {
                     {
-                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.max_results {
@@ -251,12 +251,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackageV
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.next_token {
                     {
-                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_10));
+                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
                 if let ::std::option::Option::Some(inner_11) = &_input.origin_type {
                     {
-                        query.push_kv("originType", &::aws_smithy_http::query::fmt_string(&inner_11));
+                        query.push_kv("originType", &::aws_smithy_http::query::fmt_string(inner_11));
                     }
                 }
                 ::std::result::Result::Ok(())

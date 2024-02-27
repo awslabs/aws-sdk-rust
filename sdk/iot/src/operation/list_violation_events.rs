@@ -203,17 +203,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListViolatio
                 );
                 if let ::std::option::Option::Some(inner_3) = &_input.thing_name {
                     {
-                        query.push_kv("thingName", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("thingName", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.security_profile_name {
                     {
-                        query.push_kv("securityProfileName", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("securityProfileName", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.behavior_criteria_type {
                     {
-                        query.push_kv("behaviorCriteriaType", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("behaviorCriteriaType", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.list_suppressed_alerts {
@@ -223,12 +223,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListViolatio
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.verification_state {
                     {
-                        query.push_kv("verificationState", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("verificationState", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.max_results {

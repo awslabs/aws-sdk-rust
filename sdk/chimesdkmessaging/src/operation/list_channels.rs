@@ -197,10 +197,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChannels
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("app-instance-arn", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("app-instance-arn", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.privacy {
                     {
-                        query.push_kv("privacy", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("privacy", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
@@ -210,7 +210,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChannels
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -195,7 +195,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDataSets
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
@@ -205,12 +205,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDataSets
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.prefix {
                     {
-                        query.push_kv("prefix", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("prefix", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.name_filter {
                     {
-                        query.push_kv("nameFilter", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("nameFilter", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

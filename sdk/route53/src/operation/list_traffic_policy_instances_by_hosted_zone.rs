@@ -206,15 +206,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTrafficP
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("id", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("id", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.traffic_policy_instance_name_marker {
                     {
-                        query.push_kv("trafficpolicyinstancename", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("trafficpolicyinstancename", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.traffic_policy_instance_type_marker {
                     {
-                        query.push_kv("trafficpolicyinstancetype", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("trafficpolicyinstancetype", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_items {

@@ -196,7 +196,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTimelineE
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("incidentRecordArn", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("incidentRecordArn", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.event_id;
                 let inner_2 = inner_2
                     .as_ref()
@@ -207,7 +207,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTimelineE
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("eventId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("eventId", &::aws_smithy_http::query::fmt_string(inner_2));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

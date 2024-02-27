@@ -189,22 +189,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPhoneNum
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.product_type {
                     {
-                        query.push_kv("product-type", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("product-type", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.filter_name {
                     {
-                        query.push_kv("filter-name", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("filter-name", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.filter_value {
                     {
-                        query.push_kv("filter-value", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("filter-value", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
@@ -214,7 +214,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPhoneNum
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.next_token {
                     {
-                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

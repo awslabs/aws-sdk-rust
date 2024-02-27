@@ -223,7 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for Disassociate
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("UserId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("UserId", &::aws_smithy_http::query::fmt_string(inner_2));
                 let inner_3 = &_input.instance_id;
                 let inner_3 = inner_3
                     .as_ref()
@@ -234,7 +234,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for Disassociate
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("InstanceId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("InstanceId", &::aws_smithy_http::query::fmt_string(inner_3));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

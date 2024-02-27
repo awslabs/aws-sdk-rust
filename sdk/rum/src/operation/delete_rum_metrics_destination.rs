@@ -206,10 +206,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteRumMet
                 let inner_2 = inner_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("destination", "cannot be empty or unset"))?;
-                query.push_kv("destination", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("destination", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.destination_arn {
                     {
-                        query.push_kv("destinationArn", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("destinationArn", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

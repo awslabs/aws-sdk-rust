@@ -210,12 +210,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListModelCus
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.status_equals {
                     {
-                        query.push_kv("statusEquals", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("statusEquals", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.name_contains {
                     {
-                        query.push_kv("nameContains", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("nameContains", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
@@ -225,17 +225,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListModelCus
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.sort_by {
                     {
-                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("sortBy", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.sort_order {
                     {
-                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("sortOrder", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 ::std::result::Result::Ok(())

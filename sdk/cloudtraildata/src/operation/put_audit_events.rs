@@ -196,10 +196,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutAuditEven
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("channelArn", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("channelArn", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.external_id {
                     {
-                        query.push_kv("externalId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("externalId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 ::std::result::Result::Ok(())

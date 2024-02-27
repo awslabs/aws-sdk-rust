@@ -188,7 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDomainCo
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.marker {
                     {
-                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.page_size {
@@ -198,7 +198,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDomainCo
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.service_type {
                     {
-                        query.push_kv("serviceType", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("serviceType", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

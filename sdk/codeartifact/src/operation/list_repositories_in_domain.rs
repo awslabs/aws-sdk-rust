@@ -202,20 +202,20 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListReposito
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.domain_owner {
                     {
-                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.administrator_account {
                     {
-                        query.push_kv("administrator-account", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("administrator-account", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.repository_prefix {
                     {
-                        query.push_kv("repository-prefix", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("repository-prefix", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
@@ -225,7 +225,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListReposito
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.next_token {
                     {
-                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

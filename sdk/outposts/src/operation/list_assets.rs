@@ -195,7 +195,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetsRe
                 if let ::std::option::Option::Some(inner_2) = &_input.host_id_filter {
                     {
                         for inner_3 in inner_2 {
-                            query.push_kv("HostIdFilter", &::aws_smithy_http::query::fmt_string(&inner_3));
+                            query.push_kv("HostIdFilter", &::aws_smithy_http::query::fmt_string(inner_3));
                         }
                     }
                 }
@@ -206,13 +206,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetsRe
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.status_filter {
                     {
                         for inner_7 in inner_6 {
-                            query.push_kv("StatusFilter", &::aws_smithy_http::query::fmt_string(&inner_7));
+                            query.push_kv("StatusFilter", &::aws_smithy_http::query::fmt_string(inner_7));
                         }
                     }
                 }

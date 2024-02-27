@@ -232,7 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecordsR
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.max_results {
@@ -242,7 +242,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecordsR
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.sync_session_token {
                     {
-                        query.push_kv("syncSessionToken", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("syncSessionToken", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 ::std::result::Result::Ok(())

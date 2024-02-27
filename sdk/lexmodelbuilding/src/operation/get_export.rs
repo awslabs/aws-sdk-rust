@@ -194,7 +194,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetExportReq
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("name", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("name", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.version;
                 let inner_2 = inner_2
                     .as_ref()
@@ -205,17 +205,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetExportReq
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("version", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("version", &::aws_smithy_http::query::fmt_string(inner_2));
                 let inner_3 = &_input.resource_type;
                 let inner_3 = inner_3
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "cannot be empty or unset"))?;
-                query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(inner_3));
                 let inner_4 = &_input.export_type;
                 let inner_4 = inner_4
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("export_type", "cannot be empty or unset"))?;
-                query.push_kv("exportType", &::aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("exportType", &::aws_smithy_http::query::fmt_string(inner_4));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

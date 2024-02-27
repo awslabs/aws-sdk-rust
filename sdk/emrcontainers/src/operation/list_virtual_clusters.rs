@@ -188,12 +188,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListVirtualC
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.container_provider_id {
                     {
-                        query.push_kv("containerProviderId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("containerProviderId", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.container_provider_type {
                     {
-                        query.push_kv("containerProviderType", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("containerProviderType", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.created_after {
@@ -215,7 +215,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListVirtualC
                 if let ::std::option::Option::Some(inner_5) = &_input.states {
                     {
                         for inner_6 in inner_5 {
-                            query.push_kv("states", &::aws_smithy_http::query::fmt_string(&inner_6));
+                            query.push_kv("states", &::aws_smithy_http::query::fmt_string(inner_6));
                         }
                     }
                 }
@@ -226,7 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListVirtualC
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 ::std::result::Result::Ok(())

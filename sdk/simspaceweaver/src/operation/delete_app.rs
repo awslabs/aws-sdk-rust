@@ -193,7 +193,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAppReq
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("simulation", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("simulation", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.domain;
                 let inner_2 = inner_2
                     .as_ref()
@@ -204,7 +204,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAppReq
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(inner_2));
                 let inner_3 = &_input.app;
                 let inner_3 = inner_3
                     .as_ref()
@@ -215,7 +215,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAppReq
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("app", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("app", &::aws_smithy_http::query::fmt_string(inner_3));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

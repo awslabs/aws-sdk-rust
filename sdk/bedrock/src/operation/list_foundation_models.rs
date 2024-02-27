@@ -188,22 +188,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListFoundati
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.by_provider {
                     {
-                        query.push_kv("byProvider", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("byProvider", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.by_customization_type {
                     {
-                        query.push_kv("byCustomizationType", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("byCustomizationType", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.by_output_modality {
                     {
-                        query.push_kv("byOutputModality", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("byOutputModality", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.by_inference_type {
                     {
-                        query.push_kv("byInferenceType", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("byInferenceType", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

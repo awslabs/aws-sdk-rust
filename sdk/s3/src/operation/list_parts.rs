@@ -208,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPartsReq
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.part_number_marker {
                     {
-                        query.push_kv("part-number-marker", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("part-number-marker", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 let inner_4 = &_input.upload_id;
@@ -221,7 +221,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPartsReq
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("uploadId", &::aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("uploadId", &::aws_smithy_http::query::fmt_string(inner_4));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

@@ -206,10 +206,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAuditMit
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("taskId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("taskId", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.action_status {
                     {
-                        query.push_kv("actionStatus", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("actionStatus", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 let inner_3 = &_input.finding_id;
@@ -222,7 +222,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAuditMit
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("findingId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("findingId", &::aws_smithy_http::query::fmt_string(inner_3));
                 if let ::std::option::Option::Some(inner_4) = &_input.max_results {
                     {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
@@ -230,7 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAuditMit
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

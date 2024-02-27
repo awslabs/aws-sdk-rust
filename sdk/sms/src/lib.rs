@@ -11,6 +11,7 @@
 #![allow(clippy::needless_return)]
 #![allow(clippy::derive_partial_eq_without_eq)]
 #![allow(clippy::result_large_err)]
+#![allow(clippy::unnecessary_map_on_constructor)]
 #![allow(rustdoc::bare_urls)]
 #![allow(rustdoc::redundant_explicit_links)]
 #![warn(missing_docs)]
@@ -35,7 +36,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.6", features = ["behavior-version-latest"] }
-//! aws-sdk-sms = "1.14.0"
+//! aws-sdk-sms = "1.15.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

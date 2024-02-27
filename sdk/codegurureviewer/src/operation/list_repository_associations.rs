@@ -195,28 +195,28 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListReposito
                 if let ::std::option::Option::Some(inner_1) = &_input.provider_types {
                     {
                         for inner_2 in inner_1 {
-                            query.push_kv("ProviderType", &::aws_smithy_http::query::fmt_string(&inner_2));
+                            query.push_kv("ProviderType", &::aws_smithy_http::query::fmt_string(inner_2));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.states {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("State", &::aws_smithy_http::query::fmt_string(&inner_4));
+                            query.push_kv("State", &::aws_smithy_http::query::fmt_string(inner_4));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.names {
                     {
                         for inner_6 in inner_5 {
-                            query.push_kv("Name", &::aws_smithy_http::query::fmt_string(&inner_6));
+                            query.push_kv("Name", &::aws_smithy_http::query::fmt_string(inner_6));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.owners {
                     {
                         for inner_8 in inner_7 {
-                            query.push_kv("Owner", &::aws_smithy_http::query::fmt_string(&inner_8));
+                            query.push_kv("Owner", &::aws_smithy_http::query::fmt_string(inner_8));
                         }
                     }
                 }
@@ -227,7 +227,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListReposito
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_10));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
                 ::std::result::Result::Ok(())

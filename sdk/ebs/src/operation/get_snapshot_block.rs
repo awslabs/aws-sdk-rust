@@ -234,7 +234,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSnapshotB
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("blockToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("blockToken", &::aws_smithy_http::query::fmt_string(inner_3));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

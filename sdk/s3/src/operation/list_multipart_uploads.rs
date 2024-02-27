@@ -197,17 +197,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMultipar
                 query.push_v("uploads");
                 if let ::std::option::Option::Some(inner_1) = &_input.delimiter {
                     {
-                        query.push_kv("delimiter", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("delimiter", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.encoding_type {
                     {
-                        query.push_kv("encoding-type", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("encoding-type", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.key_marker {
                     {
-                        query.push_kv("key-marker", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("key-marker", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_uploads {
@@ -217,12 +217,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMultipar
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.prefix {
                     {
-                        query.push_kv("prefix", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("prefix", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.upload_id_marker {
                     {
-                        query.push_kv("upload-id-marker", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("upload-id-marker", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

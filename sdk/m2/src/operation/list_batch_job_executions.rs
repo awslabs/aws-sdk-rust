@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBatchJob
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
@@ -214,18 +214,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBatchJob
                 if let ::std::option::Option::Some(inner_4) = &_input.execution_ids {
                     {
                         for inner_5 in inner_4 {
-                            query.push_kv("executionIds", &::aws_smithy_http::query::fmt_string(&inner_5));
+                            query.push_kv("executionIds", &::aws_smithy_http::query::fmt_string(inner_5));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.job_name {
                     {
-                        query.push_kv("jobName", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("jobName", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.started_after {

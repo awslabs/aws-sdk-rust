@@ -220,13 +220,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListJobRunsR
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.name {
                     {
-                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.states {
                     {
                         for inner_6 in inner_5 {
-                            query.push_kv("states", &::aws_smithy_http::query::fmt_string(&inner_6));
+                            query.push_kv("states", &::aws_smithy_http::query::fmt_string(inner_6));
                         }
                     }
                 }
@@ -237,7 +237,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListJobRunsR
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 ::std::result::Result::Ok(())

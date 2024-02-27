@@ -193,37 +193,37 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListWireless
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.destination_name {
                     {
-                        query.push_kv("destinationName", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("destinationName", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.device_profile_id {
                     {
-                        query.push_kv("deviceProfileId", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("deviceProfileId", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.service_profile_id {
                     {
-                        query.push_kv("serviceProfileId", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("serviceProfileId", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.wireless_device_type {
                     {
-                        query.push_kv("wirelessDeviceType", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("wirelessDeviceType", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.fuota_task_id {
                     {
-                        query.push_kv("fuotaTaskId", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("fuotaTaskId", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.multicast_group_id {
                     {
-                        query.push_kv("multicastGroupId", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("multicastGroupId", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -184,17 +184,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateProjec
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.name {
                     {
-                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.region {
                     {
-                        query.push_kv("region", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("region", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.snapshot_id {
                     {
-                        query.push_kv("snapshotId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("snapshotId", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -194,17 +194,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.asset_id {
                     {
-                        query.push_kv("assetId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("assetId", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.property_id {
                     {
-                        query.push_kv("propertyId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("propertyId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.property_alias {
                     {
-                        query.push_kv("propertyAlias", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("propertyAlias", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 let inner_4 = &_input.aggregate_types;
@@ -212,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("aggregate_types", "cannot be empty or unset"))?;
                 for inner_5 in inner_4 {
-                    query.push_kv("aggregateTypes", &::aws_smithy_http::query::fmt_string(&inner_5));
+                    query.push_kv("aggregateTypes", &::aws_smithy_http::query::fmt_string(inner_5));
                 }
                 let inner_6 = &_input.resolution;
                 let inner_6 = inner_6
@@ -224,11 +224,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("resolution", &::aws_smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("resolution", &::aws_smithy_http::query::fmt_string(inner_6));
                 if let ::std::option::Option::Some(inner_7) = &_input.qualities {
                     {
                         for inner_8 in inner_7 {
-                            query.push_kv("qualities", &::aws_smithy_http::query::fmt_string(&inner_8));
+                            query.push_kv("qualities", &::aws_smithy_http::query::fmt_string(inner_8));
                         }
                     }
                 }
@@ -250,12 +250,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                 );
                 if let ::std::option::Option::Some(inner_11) = &_input.time_ordering {
                     {
-                        query.push_kv("timeOrdering", &::aws_smithy_http::query::fmt_string(&inner_11));
+                        query.push_kv("timeOrdering", &::aws_smithy_http::query::fmt_string(inner_11));
                     }
                 }
                 if let ::std::option::Option::Some(inner_12) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_12));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_12));
                     }
                 }
                 if let ::std::option::Option::Some(inner_13) = &_input.max_results {

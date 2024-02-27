@@ -196,10 +196,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateReposi
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.domain_owner {
                     {
-                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 let inner_3 = &_input.repository;
@@ -212,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateReposi
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("repository", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("repository", &::aws_smithy_http::query::fmt_string(inner_3));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

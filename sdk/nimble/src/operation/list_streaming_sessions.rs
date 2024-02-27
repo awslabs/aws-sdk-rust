@@ -199,22 +199,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListStreamin
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.created_by {
                     {
-                        query.push_kv("createdBy", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("createdBy", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.owned_by {
                     {
-                        query.push_kv("ownedBy", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("ownedBy", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.session_ids {
                     {
-                        query.push_kv("sessionIds", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("sessionIds", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

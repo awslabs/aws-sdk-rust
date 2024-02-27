@@ -203,22 +203,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPermissi
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.user_type {
                     {
-                        query.push_kv("userType", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("userType", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.user_id {
                     {
-                        query.push_kv("userId", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("userId", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.group_id {
                     {
-                        query.push_kv("groupId", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("groupId", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

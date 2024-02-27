@@ -189,7 +189,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccessGr
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
@@ -199,27 +199,27 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccessGr
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.grantee_type {
                     {
-                        query.push_kv("granteetype", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("granteetype", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.grantee_identifier {
                     {
-                        query.push_kv("granteeidentifier", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("granteeidentifier", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.permission {
                     {
-                        query.push_kv("permission", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("permission", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.grant_scope {
                     {
-                        query.push_kv("grantscope", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("grantscope", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.application_arn {
                     {
-                        query.push_kv("application_arn", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("application_arn", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 ::std::result::Result::Ok(())

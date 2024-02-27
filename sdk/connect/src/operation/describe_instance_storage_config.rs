@@ -224,7 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeInst
                 let inner_3 = inner_3
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "cannot be empty or unset"))?;
-                query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(inner_3));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

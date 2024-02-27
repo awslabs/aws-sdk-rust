@@ -209,7 +209,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetProfileRe
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.period {
                     {
-                        query.push_kv("period", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("period", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.end_time {

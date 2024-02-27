@@ -190,7 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetBlacklist
                     ::aws_smithy_types::error::operation::BuildError::missing_field("blacklist_item_names", "cannot be empty or unset")
                 })?;
                 for inner_2 in inner_1 {
-                    query.push_kv("BlacklistItemNames", &::aws_smithy_http::query::fmt_string(&inner_2));
+                    query.push_kv("BlacklistItemNames", &::aws_smithy_http::query::fmt_string(inner_2));
                 }
                 ::std::result::Result::Ok(())
             }

@@ -219,7 +219,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDashboard
                 let inner_3 = inner_3
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("identity_type", "cannot be empty or unset"))?;
-                query.push_kv("creds-type", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("creds-type", &::aws_smithy_http::query::fmt_string(inner_3));
                 if let ::std::option::Option::Some(inner_4) = &_input.session_lifetime_in_minutes {
                     {
                         query.push_kv("session-lifetime", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
@@ -245,18 +245,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDashboard
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.user_arn {
                     {
-                        query.push_kv("user-arn", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("user-arn", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.namespace {
                     {
-                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.additional_dashboard_ids {
                     {
                         for inner_11 in inner_10 {
-                            query.push_kv("additional-dashboard-ids", &::aws_smithy_http::query::fmt_string(&inner_11));
+                            query.push_kv("additional-dashboard-ids", &::aws_smithy_http::query::fmt_string(inner_11));
                         }
                     }
                 }

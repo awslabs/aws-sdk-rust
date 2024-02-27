@@ -194,7 +194,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListResource
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 let inner_2 = &_input.resource_arn;
@@ -207,7 +207,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListResource
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("resourceArn", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("resourceArn", &::aws_smithy_http::query::fmt_string(inner_2));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

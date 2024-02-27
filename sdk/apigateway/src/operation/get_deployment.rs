@@ -216,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDeploymen
                 if let ::std::option::Option::Some(inner_3) = &_input.embed {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("embed", &::aws_smithy_http::query::fmt_string(&inner_4));
+                            query.push_kv("embed", &::aws_smithy_http::query::fmt_string(inner_4));
                         }
                     }
                 }

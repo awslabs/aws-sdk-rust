@@ -195,17 +195,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListUpdatesR
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.nodegroup_name {
                     {
-                        query.push_kv("nodegroupName", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nodegroupName", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.addon_name {
                     {
-                        query.push_kv("addonName", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("addonName", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {

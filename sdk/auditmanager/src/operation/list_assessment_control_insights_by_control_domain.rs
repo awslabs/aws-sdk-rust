@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssessme
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("controlDomainId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("controlDomainId", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.assessment_id;
                 let inner_2 = inner_2
                     .as_ref()
@@ -214,10 +214,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssessme
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("assessmentId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("assessmentId", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_results {

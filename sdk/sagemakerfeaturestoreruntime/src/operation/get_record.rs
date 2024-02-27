@@ -211,17 +211,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRecordReq
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("RecordIdentifierValueAsString", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("RecordIdentifierValueAsString", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.feature_names {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("FeatureName", &::aws_smithy_http::query::fmt_string(&inner_4));
+                            query.push_kv("FeatureName", &::aws_smithy_http::query::fmt_string(inner_4));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.expiration_time_response {
                     {
-                        query.push_kv("ExpirationTimeResponse", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("ExpirationTimeResponse", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

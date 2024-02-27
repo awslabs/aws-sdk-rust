@@ -182,7 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetApiKeysRe
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.position {
                     {
-                        query.push_kv("position", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("position", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.limit {
@@ -192,12 +192,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetApiKeysRe
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.name_query {
                     {
-                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.customer_id {
                     {
-                        query.push_kv("customerId", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("customerId", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.include_values {

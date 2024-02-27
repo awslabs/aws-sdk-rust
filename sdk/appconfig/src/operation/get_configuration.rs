@@ -236,10 +236,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetConfigura
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("client_id", &::aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("client_id", &::aws_smithy_http::query::fmt_string(inner_4));
                 if let ::std::option::Option::Some(inner_5) = &_input.client_configuration_version {
                     {
-                        query.push_kv("client_configuration_version", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("client_configuration_version", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

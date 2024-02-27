@@ -195,15 +195,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeGrou
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("searchQuery", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("searchQuery", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.organization_id {
                     {
-                        query.push_kv("organizationId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("organizationId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.marker {
                     {
-                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.limit {

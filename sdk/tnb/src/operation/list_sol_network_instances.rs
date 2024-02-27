@@ -192,7 +192,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSolNetwo
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextpage_opaque_marker", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nextpage_opaque_marker", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 ::std::result::Result::Ok(())

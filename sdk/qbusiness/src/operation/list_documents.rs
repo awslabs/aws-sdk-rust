@@ -216,13 +216,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDocument
                 if let ::std::option::Option::Some(inner_3) = &_input.data_source_ids {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("dataSourceIds", &::aws_smithy_http::query::fmt_string(&inner_4));
+                            query.push_kv("dataSourceIds", &::aws_smithy_http::query::fmt_string(inner_4));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.max_results {

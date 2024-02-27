@@ -199,7 +199,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTemplate
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 let inner_3 = &_input.template_id;
@@ -212,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTemplate
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("templateId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("templateId", &::aws_smithy_http::query::fmt_string(inner_3));
                 let inner_4 = &_input.step_group_id;
                 let inner_4 = inner_4
                     .as_ref()
@@ -223,7 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTemplate
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("stepGroupId", &::aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("stepGroupId", &::aws_smithy_http::query::fmt_string(inner_4));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

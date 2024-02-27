@@ -211,10 +211,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListThingReg
                 let inner_2 = inner_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("report_type", "cannot be empty or unset"))?;
-                query.push_kv("reportType", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("reportType", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_results {

@@ -228,14 +228,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListManagedE
                 if let ::std::option::Option::Some(inner_4) = &_input.types {
                     {
                         for inner_5 in inner_4 {
-                            query.push_kv("types", &::aws_smithy_http::query::fmt_string(&inner_5));
+                            query.push_kv("types", &::aws_smithy_http::query::fmt_string(inner_5));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.states {
                     {
                         for inner_7 in inner_6 {
-                            query.push_kv("states", &::aws_smithy_http::query::fmt_string(&inner_7));
+                            query.push_kv("states", &::aws_smithy_http::query::fmt_string(inner_7));
                         }
                     }
                 }
@@ -246,7 +246,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListManagedE
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 ::std::result::Result::Ok(())

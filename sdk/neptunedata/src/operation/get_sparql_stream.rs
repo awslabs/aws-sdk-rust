@@ -192,7 +192,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSparqlStr
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.iterator_type {
                     {
-                        query.push_kv("iteratorType", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("iteratorType", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.commit_num {

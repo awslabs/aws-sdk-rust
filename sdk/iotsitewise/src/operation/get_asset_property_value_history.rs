@@ -194,17 +194,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.asset_id {
                     {
-                        query.push_kv("assetId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("assetId", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.property_id {
                     {
-                        query.push_kv("propertyId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("propertyId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.property_alias {
                     {
-                        query.push_kv("propertyAlias", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("propertyAlias", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.start_date {
@@ -226,18 +226,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                 if let ::std::option::Option::Some(inner_6) = &_input.qualities {
                     {
                         for inner_7 in inner_6 {
-                            query.push_kv("qualities", &::aws_smithy_http::query::fmt_string(&inner_7));
+                            query.push_kv("qualities", &::aws_smithy_http::query::fmt_string(inner_7));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.time_ordering {
                     {
-                        query.push_kv("timeOrdering", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("timeOrdering", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.max_results {

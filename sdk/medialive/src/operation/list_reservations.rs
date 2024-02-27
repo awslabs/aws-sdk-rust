@@ -187,12 +187,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListReservat
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.channel_class {
                     {
-                        query.push_kv("channelClass", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("channelClass", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.codec {
                     {
-                        query.push_kv("codec", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("codec", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
@@ -202,37 +202,37 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListReservat
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.maximum_bitrate {
                     {
-                        query.push_kv("maximumBitrate", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("maximumBitrate", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.maximum_framerate {
                     {
-                        query.push_kv("maximumFramerate", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("maximumFramerate", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.resolution {
                     {
-                        query.push_kv("resolution", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("resolution", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.resource_type {
                     {
-                        query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.special_feature {
                     {
-                        query.push_kv("specialFeature", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("specialFeature", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.video_quality {
                     {
-                        query.push_kv("videoQuality", &::aws_smithy_http::query::fmt_string(&inner_10));
+                        query.push_kv("videoQuality", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -192,13 +192,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UntagResourc
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("ResourceArn", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("ResourceArn", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.tag_keys;
                 let inner_2 = inner_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("tag_keys", "cannot be empty or unset"))?;
                 for inner_3 in inner_2 {
-                    query.push_kv("TagKeys", &::aws_smithy_http::query::fmt_string(&inner_3));
+                    query.push_kv("TagKeys", &::aws_smithy_http::query::fmt_string(inner_3));
                 }
                 ::std::result::Result::Ok(())
             }

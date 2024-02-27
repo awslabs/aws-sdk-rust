@@ -192,17 +192,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTargetGr
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.vpc_identifier {
                     {
-                        query.push_kv("vpcIdentifier", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("vpcIdentifier", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.target_group_type {
                     {
-                        query.push_kv("targetGroupType", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("targetGroupType", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

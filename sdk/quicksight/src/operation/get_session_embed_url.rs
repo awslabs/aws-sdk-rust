@@ -201,7 +201,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSessionEm
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.entry_point {
                     {
-                        query.push_kv("entry-point", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("entry-point", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.session_lifetime_in_minutes {
@@ -211,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSessionEm
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.user_arn {
                     {
-                        query.push_kv("user-arn", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("user-arn", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

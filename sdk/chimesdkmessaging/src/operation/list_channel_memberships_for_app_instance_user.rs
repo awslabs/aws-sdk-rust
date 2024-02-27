@@ -198,7 +198,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChannelM
                 query.push_kv("scope", "app-instance-user-memberships");
                 if let ::std::option::Option::Some(inner_1) = &_input.app_instance_user_arn {
                     {
-                        query.push_kv("app-instance-user-arn", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("app-instance-user-arn", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
@@ -208,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChannelM
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

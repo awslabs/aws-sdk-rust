@@ -215,7 +215,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetCoreNetwo
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.alias {
                     {
-                        query.push_kv("alias", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("alias", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

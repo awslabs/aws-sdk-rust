@@ -203,12 +203,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetContainer
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.filter_pattern {
                     {
-                        query.push_kv("filterPattern", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("filterPattern", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.page_token {
                     {
-                        query.push_kv("pageToken", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("pageToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

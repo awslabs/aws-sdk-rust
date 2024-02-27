@@ -234,13 +234,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssociate
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.resource_tag_status {
                     {
                         for inner_6 in inner_5 {
-                            query.push_kv("resourceTagStatus", &::aws_smithy_http::query::fmt_string(&inner_6));
+                            query.push_kv("resourceTagStatus", &::aws_smithy_http::query::fmt_string(inner_6));
                         }
                     }
                 }

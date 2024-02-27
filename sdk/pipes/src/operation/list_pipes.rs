@@ -183,32 +183,32 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPipesReq
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.name_prefix {
                     {
-                        query.push_kv("NamePrefix", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("NamePrefix", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.desired_state {
                     {
-                        query.push_kv("DesiredState", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("DesiredState", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.current_state {
                     {
-                        query.push_kv("CurrentState", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("CurrentState", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.source_prefix {
                     {
-                        query.push_kv("SourcePrefix", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("SourcePrefix", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.target_prefix {
                     {
-                        query.push_kv("TargetPrefix", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("TargetPrefix", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.limit {

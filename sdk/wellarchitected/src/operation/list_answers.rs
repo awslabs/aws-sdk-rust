@@ -215,7 +215,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAnswersR
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_3) = &_input.pillar_id {
                     {
-                        query.push_kv("PillarId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("PillarId", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.milestone_number {
@@ -225,7 +225,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAnswersR
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.max_results {
@@ -235,7 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAnswersR
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.question_priority {
                     {
-                        query.push_kv("QuestionPriority", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("QuestionPriority", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 ::std::result::Result::Ok(())

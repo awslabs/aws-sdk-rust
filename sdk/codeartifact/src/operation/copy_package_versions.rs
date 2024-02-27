@@ -196,10 +196,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CopyPackageV
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.domain_owner {
                     {
-                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 let inner_3 = &_input.source_repository;
@@ -212,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CopyPackageV
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("source-repository", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("source-repository", &::aws_smithy_http::query::fmt_string(inner_3));
                 let inner_4 = &_input.destination_repository;
                 let inner_4 = inner_4.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("destination_repository", "cannot be empty or unset")
@@ -223,15 +223,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CopyPackageV
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("destination-repository", &::aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("destination-repository", &::aws_smithy_http::query::fmt_string(inner_4));
                 let inner_5 = &_input.format;
                 let inner_5 = inner_5
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("format", "cannot be empty or unset"))?;
-                query.push_kv("format", &::aws_smithy_http::query::fmt_string(&inner_5));
+                query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_5));
                 if let ::std::option::Option::Some(inner_6) = &_input.namespace {
                     {
-                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 let inner_7 = &_input.package;
@@ -244,7 +244,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CopyPackageV
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("package", &::aws_smithy_http::query::fmt_string(&inner_7));
+                query.push_kv("package", &::aws_smithy_http::query::fmt_string(inner_7));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

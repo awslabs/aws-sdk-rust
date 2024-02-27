@@ -196,7 +196,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetContainer
                 let inner_1 = inner_1
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("metric_name", "cannot be empty or unset"))?;
-                query.push_kv("metricName", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("metricName", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.start_time;
                 let inner_2 = inner_2
                     .as_ref()
@@ -223,7 +223,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetContainer
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("statistics", "cannot be empty or unset"))?;
                 for inner_6 in inner_5 {
-                    query.push_kv("statistics", &::aws_smithy_http::query::fmt_string(&inner_6));
+                    query.push_kv("statistics", &::aws_smithy_http::query::fmt_string(inner_6));
                 }
                 ::std::result::Result::Ok(())
             }

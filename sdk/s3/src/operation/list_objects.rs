@@ -193,17 +193,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListObjectsR
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.delimiter {
                     {
-                        query.push_kv("delimiter", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("delimiter", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.encoding_type {
                     {
-                        query.push_kv("encoding-type", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("encoding-type", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.marker {
                     {
-                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_keys {
@@ -213,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListObjectsR
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.prefix {
                     {
-                        query.push_kv("prefix", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("prefix", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

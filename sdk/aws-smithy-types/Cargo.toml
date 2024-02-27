@@ -68,10 +68,6 @@ tokio = { version = "1.23.1", features = [
 tokio-stream = "0.1.5"
 tempfile = "3.2.0"
 
-# TODO(https://github.com/smithy-lang/smithy-rs/issues/3398): Remove clap dependency once the SDK MSRV is 1.74.
-# Clap was added and pinned to 4.4.x because it is pulled in by criterion, and 4.5.x requires an MSRV of Rust 1.74.
-# Since the SDK MSRV is 1.72, this causes it to fail to compile.
-clap = "~4.4"
 criterion = "0.5"
 
 [package.metadata.docs.rs]

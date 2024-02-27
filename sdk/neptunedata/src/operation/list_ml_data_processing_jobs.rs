@@ -199,7 +199,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMLDataPr
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.neptune_iam_role_arn {
                     {
-                        query.push_kv("neptuneIamRoleArn", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("neptuneIamRoleArn", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 ::std::result::Result::Ok(())

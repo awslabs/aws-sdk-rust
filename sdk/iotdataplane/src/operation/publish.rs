@@ -199,12 +199,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PublishReque
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.content_type {
                     {
-                        query.push_kv("contentType", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("contentType", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.response_topic {
                     {
-                        query.push_kv("responseTopic", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("responseTopic", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.message_expiry {

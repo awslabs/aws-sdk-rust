@@ -184,7 +184,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDevicesR
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
@@ -194,22 +194,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDevicesR
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.sort_by {
                     {
-                        query.push_kv("SortBy", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("SortBy", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.sort_order {
                     {
-                        query.push_kv("SortOrder", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("SortOrder", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.name_filter {
                     {
-                        query.push_kv("NameFilter", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("NameFilter", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.device_aggregated_status_filter {
                     {
-                        query.push_kv("DeviceAggregatedStatusFilter", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("DeviceAggregatedStatusFilter", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

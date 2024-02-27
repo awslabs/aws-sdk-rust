@@ -207,7 +207,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeThum
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("pipelineId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("pipelineId", &::aws_smithy_http::query::fmt_string(inner_2));
                 let inner_3 = &_input.thumbnail_type;
                 let inner_3 = inner_3
                     .as_ref()
@@ -218,7 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeThum
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("thumbnailType", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("thumbnailType", &::aws_smithy_http::query::fmt_string(inner_3));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

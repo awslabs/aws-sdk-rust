@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CancelLegalH
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("cancelDescription", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("cancelDescription", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.retain_record_in_days {
                     {
                         query.push_kv("retainRecordInDays", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());

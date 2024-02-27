@@ -230,15 +230,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for NotifyObject
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("checksum", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("checksum", &::aws_smithy_http::query::fmt_string(inner_3));
                 let inner_4 = &_input.object_checksum_algorithm;
                 let inner_4 = inner_4.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("object_checksum_algorithm", "cannot be empty or unset")
                 })?;
-                query.push_kv("checksum-algorithm", &::aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("checksum-algorithm", &::aws_smithy_http::query::fmt_string(inner_4));
                 if let ::std::option::Option::Some(inner_5) = &_input.metadata_string {
                     {
-                        query.push_kv("metadata-string", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("metadata-string", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.metadata_blob_length {
@@ -248,12 +248,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for NotifyObject
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.metadata_blob_checksum {
                     {
-                        query.push_kv("metadata-checksum", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("metadata-checksum", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.metadata_blob_checksum_algorithm {
                     {
-                        query.push_kv("metadata-checksum-algorithm", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("metadata-checksum-algorithm", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 ::std::result::Result::Ok(())

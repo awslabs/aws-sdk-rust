@@ -187,17 +187,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListGeoLocat
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.start_continent_code {
                     {
-                        query.push_kv("startcontinentcode", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("startcontinentcode", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.start_country_code {
                     {
-                        query.push_kv("startcountrycode", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("startcountrycode", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.start_subdivision_code {
                     {
-                        query.push_kv("startsubdivisioncode", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("startsubdivisioncode", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_items {

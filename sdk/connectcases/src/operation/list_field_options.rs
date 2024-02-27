@@ -221,13 +221,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListFieldOpt
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.values {
                     {
                         for inner_6 in inner_5 {
-                            query.push_kv("values", &::aws_smithy_http::query::fmt_string(&inner_6));
+                            query.push_kv("values", &::aws_smithy_http::query::fmt_string(inner_6));
                         }
                     }
                 }

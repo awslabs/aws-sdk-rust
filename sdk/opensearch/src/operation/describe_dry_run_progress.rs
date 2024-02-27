@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeDryR
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.dry_run_id {
                     {
-                        query.push_kv("dryRunId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("dryRunId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.load_dry_run_config {

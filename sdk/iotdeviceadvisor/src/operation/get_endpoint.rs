@@ -188,22 +188,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetEndpointR
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.thing_arn {
                     {
-                        query.push_kv("thingArn", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("thingArn", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.certificate_arn {
                     {
-                        query.push_kv("certificateArn", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("certificateArn", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.device_role_arn {
                     {
-                        query.push_kv("deviceRoleArn", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("deviceRoleArn", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.authentication_method {
                     {
-                        query.push_kv("authenticationMethod", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("authenticationMethod", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

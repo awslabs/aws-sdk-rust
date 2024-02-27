@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("assessmentArn", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("assessmentArn", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.reverse_order {
                     {
                         query.push_kv("reverseOrder", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
@@ -212,23 +212,23 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
                 if let ::std::option::Option::Some(inner_3) = &_input.status {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_4));
+                            query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_4));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.recommendation_template_arn {
                     {
-                        query.push_kv("recommendationTemplateArn", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("recommendationTemplateArn", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.name {
                     {
-                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.max_results {

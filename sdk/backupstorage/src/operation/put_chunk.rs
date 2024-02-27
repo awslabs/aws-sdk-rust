@@ -232,12 +232,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutChunkRequ
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("checksum", &::aws_smithy_http::query::fmt_string(&inner_5));
+                query.push_kv("checksum", &::aws_smithy_http::query::fmt_string(inner_5));
                 let inner_6 = &_input.checksum_algorithm;
                 let inner_6 = inner_6.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("checksum_algorithm", "cannot be empty or unset")
                 })?;
-                query.push_kv("checksum-algorithm", &::aws_smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("checksum-algorithm", &::aws_smithy_http::query::fmt_string(inner_6));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

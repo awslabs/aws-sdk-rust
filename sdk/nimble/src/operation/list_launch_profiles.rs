@@ -204,18 +204,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListLaunchPr
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.principal_id {
                     {
-                        query.push_kv("principalId", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("principalId", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.states {
                     {
                         for inner_6 in inner_5 {
-                            query.push_kv("states", &::aws_smithy_http::query::fmt_string(&inner_6));
+                            query.push_kv("states", &::aws_smithy_http::query::fmt_string(inner_6));
                         }
                     }
                 }

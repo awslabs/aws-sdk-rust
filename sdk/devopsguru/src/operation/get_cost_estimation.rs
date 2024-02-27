@@ -188,7 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetCostEstim
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -182,7 +182,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetsRe
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
@@ -192,12 +192,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetsRe
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.asset_model_id {
                     {
-                        query.push_kv("assetModelId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("assetModelId", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.filter {
                     {
-                        query.push_kv("filter", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("filter", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

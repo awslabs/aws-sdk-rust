@@ -189,7 +189,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteV2Logg
                 let inner_1 = inner_1
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("target_type", "cannot be empty or unset"))?;
-                query.push_kv("targetType", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("targetType", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.target_name;
                 let inner_2 = inner_2
                     .as_ref()
@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteV2Logg
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("targetName", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("targetName", &::aws_smithy_http::query::fmt_string(inner_2));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

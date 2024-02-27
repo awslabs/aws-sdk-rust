@@ -214,7 +214,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCollabor
                 let inner_2 = inner_2.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("privacy_budget_type", "cannot be empty or unset")
                 })?;
-                query.push_kv("privacyBudgetType", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("privacyBudgetType", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
                     {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
@@ -222,7 +222,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCollabor
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

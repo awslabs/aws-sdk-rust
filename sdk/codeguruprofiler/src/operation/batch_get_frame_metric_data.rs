@@ -226,12 +226,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for BatchGetFram
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.period {
                     {
-                        query.push_kv("period", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("period", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.target_resolution {
                     {
-                        query.push_kv("targetResolution", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("targetResolution", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

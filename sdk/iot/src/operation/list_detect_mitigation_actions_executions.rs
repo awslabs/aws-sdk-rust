@@ -198,17 +198,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDetectMi
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.task_id {
                     {
-                        query.push_kv("taskId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("taskId", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.violation_id {
                     {
-                        query.push_kv("violationId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("violationId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.thing_name {
                     {
-                        query.push_kv("thingName", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("thingName", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.start_time {
@@ -234,7 +234,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDetectMi
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 ::std::result::Result::Ok(())

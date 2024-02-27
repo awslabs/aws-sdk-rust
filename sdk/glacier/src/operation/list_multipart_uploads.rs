@@ -224,7 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMultipar
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.marker {
                     {
-                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

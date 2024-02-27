@@ -184,7 +184,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListOutposts
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
@@ -195,21 +195,21 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListOutposts
                 if let ::std::option::Option::Some(inner_3) = &_input.life_cycle_status_filter {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("LifeCycleStatusFilter", &::aws_smithy_http::query::fmt_string(&inner_4));
+                            query.push_kv("LifeCycleStatusFilter", &::aws_smithy_http::query::fmt_string(inner_4));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.availability_zone_filter {
                     {
                         for inner_6 in inner_5 {
-                            query.push_kv("AvailabilityZoneFilter", &::aws_smithy_http::query::fmt_string(&inner_6));
+                            query.push_kv("AvailabilityZoneFilter", &::aws_smithy_http::query::fmt_string(inner_6));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.availability_zone_id_filter {
                     {
                         for inner_8 in inner_7 {
-                            query.push_kv("AvailabilityZoneIdFilter", &::aws_smithy_http::query::fmt_string(&inner_8));
+                            query.push_kv("AvailabilityZoneIdFilter", &::aws_smithy_http::query::fmt_string(inner_8));
                         }
                     }
                 }

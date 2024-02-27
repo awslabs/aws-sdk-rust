@@ -218,15 +218,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListHumanLoo
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("FlowDefinitionArn", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("FlowDefinitionArn", &::aws_smithy_http::query::fmt_string(inner_3));
                 if let ::std::option::Option::Some(inner_4) = &_input.sort_order {
                     {
-                        query.push_kv("SortOrder", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("SortOrder", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.max_results {

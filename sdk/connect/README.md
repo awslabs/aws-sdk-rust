@@ -20,7 +20,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.6", features = ["behavior-version-latest"] }
-aws-sdk-connect = "1.22.0"
+aws-sdk-connect = "1.23.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

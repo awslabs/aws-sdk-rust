@@ -215,12 +215,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListConfigur
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("next_token", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("next_token", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.r#type {
                     {
-                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

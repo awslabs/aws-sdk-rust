@@ -207,10 +207,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListContactE
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("contactId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("contactId", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

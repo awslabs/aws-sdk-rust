@@ -189,21 +189,21 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
                 if let ::std::option::Option::Some(inner_1) = &_input.provider_types {
                     {
                         for inner_2 in inner_1 {
-                            query.push_kv("ProviderTypes", &::aws_smithy_http::query::fmt_string(&inner_2));
+                            query.push_kv("ProviderTypes", &::aws_smithy_http::query::fmt_string(inner_2));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.states {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("States", &::aws_smithy_http::query::fmt_string(&inner_4));
+                            query.push_kv("States", &::aws_smithy_http::query::fmt_string(inner_4));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.repository_names {
                     {
                         for inner_6 in inner_5 {
-                            query.push_kv("RepositoryNames", &::aws_smithy_http::query::fmt_string(&inner_6));
+                            query.push_kv("RepositoryNames", &::aws_smithy_http::query::fmt_string(inner_6));
                         }
                     }
                 }
@@ -211,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
                 let inner_7 = inner_7
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
-                query.push_kv("Type", &::aws_smithy_http::query::fmt_string(&inner_7));
+                query.push_kv("Type", &::aws_smithy_http::query::fmt_string(inner_7));
                 if let ::std::option::Option::Some(inner_8) = &_input.max_results {
                     {
                         query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_8).encode());
@@ -219,7 +219,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 ::std::result::Result::Ok(())

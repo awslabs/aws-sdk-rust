@@ -215,12 +215,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemovePermis
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_3) = &_input.qualifier {
                     {
-                        query.push_kv("Qualifier", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("Qualifier", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.revision_id {
                     {
-                        query.push_kv("RevisionId", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("RevisionId", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

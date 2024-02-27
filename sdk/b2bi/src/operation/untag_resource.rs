@@ -187,7 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UntagResourc
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("tag_keys", "cannot be empty or unset"))?;
                 for inner_2 in inner_1 {
-                    query.push_kv("TagKeys", &::aws_smithy_http::query::fmt_string(&inner_2));
+                    query.push_kv("TagKeys", &::aws_smithy_http::query::fmt_string(inner_2));
                 }
                 ::std::result::Result::Ok(())
             }

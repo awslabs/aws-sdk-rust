@@ -196,7 +196,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteLabels
                 if let ::std::option::Option::Some(inner_2) = &_input.labels {
                     {
                         for inner_3 in inner_2 {
-                            query.push_kv("labels", &::aws_smithy_http::query::fmt_string(&inner_3));
+                            query.push_kv("labels", &::aws_smithy_http::query::fmt_string(inner_3));
                         }
                     }
                 }

@@ -188,12 +188,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSchedule
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.name_prefix {
                     {
-                        query.push_kv("NamePrefix", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("NamePrefix", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {

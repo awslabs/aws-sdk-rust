@@ -194,17 +194,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMedicalT
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.status {
                     {
-                        query.push_kv("Status", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("Status", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.job_name_contains {
                     {
-                        query.push_kv("JobNameContains", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("JobNameContains", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_results {

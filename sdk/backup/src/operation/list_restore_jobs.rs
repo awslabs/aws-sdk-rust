@@ -184,7 +184,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreJ
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
@@ -194,12 +194,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreJ
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.by_account_id {
                     {
-                        query.push_kv("accountId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("accountId", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.by_resource_type {
                     {
-                        query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.by_created_before {
@@ -220,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreJ
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.by_status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.by_complete_before {
@@ -241,7 +241,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRestoreJ
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.by_restore_testing_plan_arn {
                     {
-                        query.push_kv("restoreTestingPlanArn", &::aws_smithy_http::query::fmt_string(&inner_10));
+                        query.push_kv("restoreTestingPlanArn", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
                 ::std::result::Result::Ok(())

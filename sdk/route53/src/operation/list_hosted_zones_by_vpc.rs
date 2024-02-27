@@ -196,12 +196,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListHostedZo
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("vpcid", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("vpcid", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.vpc_region;
                 let inner_2 = inner_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("vpc_region", "cannot be empty or unset"))?;
-                query.push_kv("vpcregion", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("vpcregion", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.max_items {
                     {
                         query.push_kv("maxitems", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
@@ -209,7 +209,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListHostedZo
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("nexttoken", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("nexttoken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

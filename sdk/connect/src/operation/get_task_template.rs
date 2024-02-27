@@ -215,7 +215,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTaskTempl
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_3) = &_input.snapshot_version {
                     {
-                        query.push_kv("snapshotVersion", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("snapshotVersion", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

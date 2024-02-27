@@ -193,13 +193,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEksAnywh
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.include_status {
                     {
                         for inner_4 in inner_3 {
-                            query.push_kv("includeStatus", &::aws_smithy_http::query::fmt_string(&inner_4));
+                            query.push_kv("includeStatus", &::aws_smithy_http::query::fmt_string(inner_4));
                         }
                     }
                 }

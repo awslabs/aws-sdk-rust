@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRevocatio
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("platformId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("platformId", &::aws_smithy_http::query::fmt_string(inner_2));
                 let inner_3 = &_input.profile_version_arn;
                 let inner_3 = inner_3.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("profile_version_arn", "cannot be empty or unset")
@@ -214,7 +214,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRevocatio
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("profileVersionArn", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("profileVersionArn", &::aws_smithy_http::query::fmt_string(inner_3));
                 let inner_4 = &_input.job_arn;
                 let inner_4 = inner_4
                     .as_ref()
@@ -225,13 +225,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRevocatio
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("jobArn", &::aws_smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("jobArn", &::aws_smithy_http::query::fmt_string(inner_4));
                 let inner_5 = &_input.certificate_hashes;
                 let inner_5 = inner_5.as_ref().ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field("certificate_hashes", "cannot be empty or unset")
                 })?;
                 for inner_6 in inner_5 {
-                    query.push_kv("certificateHashes", &::aws_smithy_http::query::fmt_string(&inner_6));
+                    query.push_kv("certificateHashes", &::aws_smithy_http::query::fmt_string(inner_6));
                 }
                 ::std::result::Result::Ok(())
             }

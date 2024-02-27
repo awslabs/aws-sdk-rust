@@ -190,32 +190,32 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchAvaila
                 query.push_kv("type", "phone-numbers");
                 if let ::std::option::Option::Some(inner_1) = &_input.area_code {
                     {
-                        query.push_kv("area-code", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("area-code", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.city {
                     {
-                        query.push_kv("city", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("city", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.country {
                     {
-                        query.push_kv("country", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("country", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.state {
                     {
-                        query.push_kv("state", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("state", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.toll_free_prefix {
                     {
-                        query.push_kv("toll-free-prefix", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("toll-free-prefix", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.phone_number_type {
                     {
-                        query.push_kv("phone-number-type", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("phone-number-type", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.max_results {
@@ -225,7 +225,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchAvaila
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.next_token {
                     {
-                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 ::std::result::Result::Ok(())

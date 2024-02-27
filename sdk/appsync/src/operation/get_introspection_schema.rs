@@ -201,7 +201,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetIntrospec
                 let inner_2 = inner_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("format", "cannot be empty or unset"))?;
-                query.push_kv("format", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.include_directives {
                     {
                         query.push_kv("includeDirectives", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());

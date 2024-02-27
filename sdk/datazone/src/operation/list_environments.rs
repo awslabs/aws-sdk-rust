@@ -204,17 +204,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEnvironm
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.aws_account_id {
                     {
-                        query.push_kv("awsAccountId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("awsAccountId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.aws_account_region {
                     {
-                        query.push_kv("awsAccountRegion", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("awsAccountRegion", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 let inner_5 = &_input.project_identifier;
@@ -227,25 +227,25 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEnvironm
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("projectIdentifier", &::aws_smithy_http::query::fmt_string(&inner_5));
+                query.push_kv("projectIdentifier", &::aws_smithy_http::query::fmt_string(inner_5));
                 if let ::std::option::Option::Some(inner_6) = &_input.environment_profile_identifier {
                     {
-                        query.push_kv("environmentProfileIdentifier", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("environmentProfileIdentifier", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.environment_blueprint_identifier {
                     {
-                        query.push_kv("environmentBlueprintIdentifier", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("environmentBlueprintIdentifier", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.provider {
                     {
-                        query.push_kv("provider", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("provider", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.name {
                     {
-                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.max_results {
@@ -255,7 +255,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEnvironm
                 }
                 if let ::std::option::Option::Some(inner_11) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_11));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_11));
                     }
                 }
                 ::std::result::Result::Ok(())

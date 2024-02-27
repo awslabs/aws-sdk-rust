@@ -192,22 +192,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeMoun
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.marker {
                     {
-                        query.push_kv("Marker", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("Marker", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.file_system_id {
                     {
-                        query.push_kv("FileSystemId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("FileSystemId", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.mount_target_id {
                     {
-                        query.push_kv("MountTargetId", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("MountTargetId", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.access_point_id {
                     {
-                        query.push_kv("AccessPointId", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("AccessPointId", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

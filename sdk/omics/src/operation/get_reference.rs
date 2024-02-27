@@ -229,7 +229,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetReference
                 query.push_kv("partNumber", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                 if let ::std::option::Option::Some(inner_4) = &_input.file {
                     {
-                        query.push_kv("file", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("file", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -185,37 +185,37 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeUser
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.organization_id {
                     {
-                        query.push_kv("organizationId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("organizationId", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.user_ids {
                     {
-                        query.push_kv("userIds", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("userIds", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.query {
                     {
-                        query.push_kv("query", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("query", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.include {
                     {
-                        query.push_kv("include", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("include", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.order {
                     {
-                        query.push_kv("order", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("order", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.sort {
                     {
-                        query.push_kv("sort", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("sort", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.marker {
                     {
-                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.limit {
@@ -225,7 +225,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeUser
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.fields {
                     {
-                        query.push_kv("fields", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("fields", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 ::std::result::Result::Ok(())

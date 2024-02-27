@@ -213,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTemplateS
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("templateId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("templateId", &::aws_smithy_http::query::fmt_string(inner_2));
                 let inner_3 = &_input.step_group_id;
                 let inner_3 = inner_3
                     .as_ref()
@@ -224,7 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTemplateS
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("stepGroupId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("stepGroupId", &::aws_smithy_http::query::fmt_string(inner_3));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

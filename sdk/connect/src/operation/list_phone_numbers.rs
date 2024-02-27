@@ -199,20 +199,20 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPhoneNum
                 if let ::std::option::Option::Some(inner_2) = &_input.phone_number_types {
                     {
                         for inner_3 in inner_2 {
-                            query.push_kv("phoneNumberTypes", &::aws_smithy_http::query::fmt_string(&inner_3));
+                            query.push_kv("phoneNumberTypes", &::aws_smithy_http::query::fmt_string(inner_3));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.phone_number_country_codes {
                     {
                         for inner_5 in inner_4 {
-                            query.push_kv("phoneNumberCountryCodes", &::aws_smithy_http::query::fmt_string(&inner_5));
+                            query.push_kv("phoneNumberCountryCodes", &::aws_smithy_http::query::fmt_string(inner_5));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.max_results {

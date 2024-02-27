@@ -185,12 +185,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetResources
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.user_id {
                     {
-                        query.push_kv("userId", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("userId", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.collection_type {
                     {
-                        query.push_kv("collectionType", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("collectionType", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.limit {
@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetResources
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.marker {
                     {
-                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

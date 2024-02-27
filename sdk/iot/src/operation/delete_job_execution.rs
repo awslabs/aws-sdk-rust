@@ -230,7 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteJobExe
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.namespace_id {
                     {
-                        query.push_kv("namespaceId", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("namespaceId", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

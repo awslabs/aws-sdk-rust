@@ -229,12 +229,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListHostedCo
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("next_token", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("next_token", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.version_label {
                     {
-                        query.push_kv("version_label", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("version_label", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

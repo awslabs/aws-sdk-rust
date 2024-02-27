@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutRestApiRe
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.mode {
                     {
-                        query.push_kv("mode", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("mode", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.fail_on_warnings {

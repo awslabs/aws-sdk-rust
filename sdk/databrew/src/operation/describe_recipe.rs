@@ -198,7 +198,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeReci
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.recipe_version {
                     {
-                        query.push_kv("recipeVersion", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("recipeVersion", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 ::std::result::Result::Ok(())

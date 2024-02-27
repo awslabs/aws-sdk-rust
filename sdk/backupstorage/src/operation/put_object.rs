@@ -213,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutObjectReq
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_3) = &_input.metadata_string {
                     {
-                        query.push_kv("metadata-string", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("metadata-string", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.inline_chunk_length {
@@ -223,22 +223,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutObjectReq
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.inline_chunk_checksum {
                     {
-                        query.push_kv("checksum", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("checksum", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.inline_chunk_checksum_algorithm {
                     {
-                        query.push_kv("checksum-algorithm", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("checksum-algorithm", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.object_checksum {
                     {
-                        query.push_kv("object-checksum", &::aws_smithy_http::query::fmt_string(&inner_7));
+                        query.push_kv("object-checksum", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.object_checksum_algorithm {
                     {
-                        query.push_kv("object-checksum-algorithm", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("object-checksum-algorithm", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.throw_on_duplicate {

@@ -199,27 +199,27 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListWorkflow
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.template_id {
                     {
-                        query.push_kv("templateId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("templateId", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.ads_application_configuration_name {
                     {
-                        query.push_kv("adsApplicationConfigurationName", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("adsApplicationConfigurationName", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.status {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.name {
                     {
-                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("name", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

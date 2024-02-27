@@ -205,12 +205,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLensVersi
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.base_lens_version {
                     {
-                        query.push_kv("BaseLensVersion", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("BaseLensVersion", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.target_lens_version {
                     {
-                        query.push_kv("TargetLensVersion", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("TargetLensVersion", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -201,12 +201,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetFolderPat
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.fields {
                     {
-                        query.push_kv("fields", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("fields", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.marker {
                     {
-                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 ::std::result::Result::Ok(())

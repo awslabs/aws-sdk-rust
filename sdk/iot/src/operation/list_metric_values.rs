@@ -192,7 +192,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("thingName", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("thingName", &::aws_smithy_http::query::fmt_string(inner_1));
                 let inner_2 = &_input.metric_name;
                 let inner_2 = inner_2
                     .as_ref()
@@ -203,15 +203,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("metricName", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("metricName", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.dimension_name {
                     {
-                        query.push_kv("dimensionName", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("dimensionName", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.dimension_value_operator {
                     {
-                        query.push_kv("dimensionValueOperator", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("dimensionValueOperator", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 let inner_5 = &_input.start_time;
@@ -237,7 +237,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMetricVa
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 ::std::result::Result::Ok(())

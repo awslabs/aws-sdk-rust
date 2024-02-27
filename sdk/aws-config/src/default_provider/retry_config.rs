@@ -133,9 +133,7 @@ impl Builder {
 
 fn validate_max_attempts(max_attempts: &str) -> Result<u32, RetryConfigError> {
     match max_attempts.parse::<u32>() {
-        Ok(max_attempts) if max_attempts == 0 => {
-            Err(RetryConfigErrorKind::MaxAttemptsMustNotBeZero.into())
-        }
+        Ok(0) => Err(RetryConfigErrorKind::MaxAttemptsMustNotBeZero.into()),
         Ok(max_attempts) => Ok(max_attempts),
         Err(source) => Err(RetryConfigErrorKind::FailedToParseMaxAttempts { source }.into()),
     }

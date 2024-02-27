@@ -201,7 +201,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetWirelessG
                 let inner_2 = inner_2
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("identifier_type", "cannot be empty or unset"))?;
-                query.push_kv("identifierType", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("identifierType", &::aws_smithy_http::query::fmt_string(inner_2));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

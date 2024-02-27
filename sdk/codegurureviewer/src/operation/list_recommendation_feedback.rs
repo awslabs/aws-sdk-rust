@@ -210,7 +210,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
@@ -221,14 +221,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
                 if let ::std::option::Option::Some(inner_4) = &_input.user_ids {
                     {
                         for inner_5 in inner_4 {
-                            query.push_kv("UserIds", &::aws_smithy_http::query::fmt_string(&inner_5));
+                            query.push_kv("UserIds", &::aws_smithy_http::query::fmt_string(inner_5));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.recommendation_ids {
                     {
                         for inner_7 in inner_6 {
-                            query.push_kv("RecommendationIds", &::aws_smithy_http::query::fmt_string(&inner_7));
+                            query.push_kv("RecommendationIds", &::aws_smithy_http::query::fmt_string(inner_7));
                         }
                     }
                 }

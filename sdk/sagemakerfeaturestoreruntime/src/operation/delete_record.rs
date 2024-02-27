@@ -213,7 +213,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteRecord
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("RecordIdentifierValueAsString", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("RecordIdentifierValueAsString", &::aws_smithy_http::query::fmt_string(inner_2));
                 let inner_3 = &_input.event_time;
                 let inner_3 = inner_3
                     .as_ref()
@@ -224,17 +224,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteRecord
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("EventTime", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("EventTime", &::aws_smithy_http::query::fmt_string(inner_3));
                 if let ::std::option::Option::Some(inner_4) = &_input.target_stores {
                     {
                         for inner_5 in inner_4 {
-                            query.push_kv("TargetStores", &::aws_smithy_http::query::fmt_string(&inner_5));
+                            query.push_kv("TargetStores", &::aws_smithy_http::query::fmt_string(inner_5));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.deletion_mode {
                     {
-                        query.push_kv("DeletionMode", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("DeletionMode", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

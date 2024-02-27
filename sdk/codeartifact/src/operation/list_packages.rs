@@ -195,10 +195,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackages
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("domain", &::aws_smithy_http::query::fmt_string(inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.domain_owner {
                     {
-                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("domain-owner", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 let inner_3 = &_input.repository;
@@ -211,20 +211,20 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackages
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("repository", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("repository", &::aws_smithy_http::query::fmt_string(inner_3));
                 if let ::std::option::Option::Some(inner_4) = &_input.format {
                     {
-                        query.push_kv("format", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("format", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.namespace {
                     {
-                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.package_prefix {
                     {
-                        query.push_kv("package-prefix", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("package-prefix", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.max_results {
@@ -234,17 +234,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackages
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.next_token {
                     {
-                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("next-token", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.publish {
                     {
-                        query.push_kv("publish", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("publish", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.upstream {
                     {
-                        query.push_kv("upstream", &::aws_smithy_http::query::fmt_string(&inner_10));
+                        query.push_kv("upstream", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
                 ::std::result::Result::Ok(())

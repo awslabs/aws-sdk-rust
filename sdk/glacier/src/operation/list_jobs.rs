@@ -214,17 +214,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListJobsRequ
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.marker {
                     {
-                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.statuscode {
                     {
-                        query.push_kv("statuscode", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("statuscode", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.completed {
                     {
-                        query.push_kv("completed", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("completed", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

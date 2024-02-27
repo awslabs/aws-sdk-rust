@@ -226,7 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLaunchPro
                     ::aws_smithy_types::error::operation::BuildError::missing_field("launch_profile_protocol_versions", "cannot be empty or unset")
                 })?;
                 for inner_4 in inner_3 {
-                    query.push_kv("launchProfileProtocolVersions", &::aws_smithy_http::query::fmt_string(&inner_4));
+                    query.push_kv("launchProfileProtocolVersions", &::aws_smithy_http::query::fmt_string(inner_4));
                 }
                 let inner_5 = &_input.launch_purpose;
                 let inner_5 = inner_5
@@ -238,7 +238,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLaunchPro
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("launchPurpose", &::aws_smithy_http::query::fmt_string(&inner_5));
+                query.push_kv("launchPurpose", &::aws_smithy_http::query::fmt_string(inner_5));
                 let inner_6 = &_input.platform;
                 let inner_6 = inner_6
                     .as_ref()
@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLaunchPro
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("platform", &::aws_smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("platform", &::aws_smithy_http::query::fmt_string(inner_6));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

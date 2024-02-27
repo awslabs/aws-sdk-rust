@@ -234,7 +234,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMapTileRe
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_5) = &_input.key {
                     {
-                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -188,39 +188,39 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLifecycle
                 if let ::std::option::Option::Some(inner_1) = &_input.policy_ids {
                     {
                         for inner_2 in inner_1 {
-                            query.push_kv("policyIds", &::aws_smithy_http::query::fmt_string(&inner_2));
+                            query.push_kv("policyIds", &::aws_smithy_http::query::fmt_string(inner_2));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.state {
                     {
-                        query.push_kv("state", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("state", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.resource_types {
                     {
                         for inner_5 in inner_4 {
-                            query.push_kv("resourceTypes", &::aws_smithy_http::query::fmt_string(&inner_5));
+                            query.push_kv("resourceTypes", &::aws_smithy_http::query::fmt_string(inner_5));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.target_tags {
                     {
                         for inner_7 in inner_6 {
-                            query.push_kv("targetTags", &::aws_smithy_http::query::fmt_string(&inner_7));
+                            query.push_kv("targetTags", &::aws_smithy_http::query::fmt_string(inner_7));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.tags_to_add {
                     {
                         for inner_9 in inner_8 {
-                            query.push_kv("tagsToAdd", &::aws_smithy_http::query::fmt_string(&inner_9));
+                            query.push_kv("tagsToAdd", &::aws_smithy_http::query::fmt_string(inner_9));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_10) = &_input.default_policy_type {
                     {
-                        query.push_kv("defaultPolicyType", &::aws_smithy_http::query::fmt_string(&inner_10));
+                        query.push_kv("defaultPolicyType", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
                 ::std::result::Result::Ok(())

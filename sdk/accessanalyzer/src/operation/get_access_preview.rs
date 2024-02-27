@@ -207,7 +207,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAccessPre
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("analyzerArn", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("analyzerArn", &::aws_smithy_http::query::fmt_string(inner_2));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

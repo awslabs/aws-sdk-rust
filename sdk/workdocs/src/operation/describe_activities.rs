@@ -204,22 +204,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeActi
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.organization_id {
                     {
-                        query.push_kv("organizationId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("organizationId", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.activity_types {
                     {
-                        query.push_kv("activityTypes", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("activityTypes", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.resource_id {
                     {
-                        query.push_kv("resourceId", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("resourceId", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.user_id {
                     {
-                        query.push_kv("userId", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("userId", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.include_indirect_activities {
@@ -237,7 +237,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeActi
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.marker {
                     {
-                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(&inner_9));
+                        query.push_kv("marker", &::aws_smithy_http::query::fmt_string(inner_9));
                     }
                 }
                 ::std::result::Result::Ok(())

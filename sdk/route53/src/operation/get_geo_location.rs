@@ -184,17 +184,17 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetGeoLocati
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.continent_code {
                     {
-                        query.push_kv("continentcode", &::aws_smithy_http::query::fmt_string(&inner_1));
+                        query.push_kv("continentcode", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.country_code {
                     {
-                        query.push_kv("countrycode", &::aws_smithy_http::query::fmt_string(&inner_2));
+                        query.push_kv("countrycode", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.subdivision_code {
                     {
-                        query.push_kv("subdivisioncode", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("subdivisioncode", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

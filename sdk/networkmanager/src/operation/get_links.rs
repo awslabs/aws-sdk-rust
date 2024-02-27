@@ -194,23 +194,23 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLinksRequ
                 if let ::std::option::Option::Some(inner_2) = &_input.link_ids {
                     {
                         for inner_3 in inner_2 {
-                            query.push_kv("linkIds", &::aws_smithy_http::query::fmt_string(&inner_3));
+                            query.push_kv("linkIds", &::aws_smithy_http::query::fmt_string(inner_3));
                         }
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.site_id {
                     {
-                        query.push_kv("siteId", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("siteId", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.r#type {
                     {
-                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.provider {
                     {
-                        query.push_kv("provider", &::aws_smithy_http::query::fmt_string(&inner_6));
+                        query.push_kv("provider", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.max_results {
@@ -220,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLinksRequ
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_8));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 ::std::result::Result::Ok(())
