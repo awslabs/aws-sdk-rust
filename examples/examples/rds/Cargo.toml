@@ -14,8 +14,8 @@ inquire = "0.6.2"
 mockall = "0.11.4"
 secrecy = "0.8.0"
 tracing = "0.1.37"
-aws-config= { version = "1.1.6", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-smithy-runtime-api= { version = "1.1.6", path = "../../../sdk/aws-smithy-runtime-api" }
+aws-config= { version = "1.1.7", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-smithy-runtime-api= { version = "1.1.7", path = "../../../sdk/aws-smithy-runtime-api" }
 aws-sdk-rds= { version = "1.20.0", path = "../../../sdk/rds" }
 
 [dependencies.clap]

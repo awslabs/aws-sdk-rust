@@ -26,11 +26,11 @@ libfuzzer-sys = "0.4"
 
 [dependencies.aws-smithy-json]
 path = ".."
-version = "0.60.5"
+version = "0.60.6"
 
 [dependencies.aws-smithy-types]
 path = "../../aws-smithy-types"
-version = "1.1.6"
+version = "1.1.7"
 
 [dependencies.serde_json]
 version = "1"
