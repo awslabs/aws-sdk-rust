@@ -80,6 +80,8 @@ where
         if let Some((value, expiry)) = self.value.read().await.get() {
             if !expired(*expiry, self.buffer_time, now) {
                 return Some(value.clone());
+            } else {
+                tracing::debug!(expiry = ?expiry, delta= ?now.duration_since(*expiry), "An item existed but it expired.")
             }
         }
 

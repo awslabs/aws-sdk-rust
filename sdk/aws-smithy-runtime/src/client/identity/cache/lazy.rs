@@ -15,6 +15,7 @@ use aws_smithy_runtime_api::client::identity::{
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::config_bag::ConfigBag;
+use aws_smithy_types::DateTime;
 use std::collections::HashMap;
 use std::fmt;
 use std::sync::RwLock;
@@ -303,7 +304,8 @@ impl ResolveCachedIdentity for LazyCache {
         let now = time_source.now();
         let timeout_future = sleep_impl.sleep(self.load_timeout);
         let load_timeout = self.load_timeout;
-        let cache = self.partitions.partition(resolver.cache_partition());
+        let partition = resolver.cache_partition();
+        let cache = self.partitions.partition(partition);
         let default_expiration = self.default_expiration;
 
         IdentityFuture::new(async move {
@@ -351,9 +353,13 @@ impl ResolveCachedIdentity for LazyCache {
                             // `cache.get_or_load` above. In the case of multiple threads concurrently executing
                             // `cache.get_or_load`, logging inside `cache.get_or_load` ensures that it is emitted
                             // only once for the first thread that succeeds in populating a cache value.
+                            let printable = DateTime::from(expiration);
                             tracing::info!(
+                                new_expiration=%printable,
+                                valid_for=?expiration.duration_since(time_source.now()).unwrap_or_default(),
+                                partition=?partition,
                                 "identity cache miss occurred; added new identity (took {:?})",
-                                time_source.now().duration_since(start_time)
+                                time_source.now().duration_since(start_time).unwrap_or_default()
                             );
 
                             Ok((identity, expiration + jitter))
