@@ -6,6 +6,8 @@
 pub struct EksAttemptDetail {
     /// <p>The details for the final status of the containers for this job attempt.</p>
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
+    /// <p>The details for the init containers.</p>
+    pub init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
     /// <p>The name of the pod for this job attempt.</p>
     pub pod_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the node for this job attempt.</p>
@@ -23,6 +25,12 @@ impl EksAttemptDetail {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
     pub fn containers(&self) -> &[crate::types::EksAttemptContainerDetail] {
         self.containers.as_deref().unwrap_or_default()
+    }
+    /// <p>The details for the init containers.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.init_containers.is_none()`.
+    pub fn init_containers(&self) -> &[crate::types::EksAttemptContainerDetail] {
+        self.init_containers.as_deref().unwrap_or_default()
     }
     /// <p>The name of the pod for this job attempt.</p>
     pub fn pod_name(&self) -> ::std::option::Option<&str> {
@@ -57,6 +65,7 @@ impl EksAttemptDetail {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksAttemptDetailBuilder {
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
+    pub(crate) init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>,
     pub(crate) pod_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_name: ::std::option::Option<::std::string::String>,
     pub(crate) started_at: ::std::option::Option<i64>,
@@ -83,6 +92,26 @@ impl EksAttemptDetailBuilder {
     /// <p>The details for the final status of the containers for this job attempt.</p>
     pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>> {
         &self.containers
+    }
+    /// Appends an item to `init_containers`.
+    ///
+    /// To override the contents of this collection use [`set_init_containers`](Self::set_init_containers).
+    ///
+    /// <p>The details for the init containers.</p>
+    pub fn init_containers(mut self, input: crate::types::EksAttemptContainerDetail) -> Self {
+        let mut v = self.init_containers.unwrap_or_default();
+        v.push(input);
+        self.init_containers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The details for the init containers.</p>
+    pub fn set_init_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>>) -> Self {
+        self.init_containers = input;
+        self
+    }
+    /// <p>The details for the init containers.</p>
+    pub fn get_init_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAttemptContainerDetail>> {
+        &self.init_containers
     }
     /// <p>The name of the pod for this job attempt.</p>
     pub fn pod_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +187,7 @@ impl EksAttemptDetailBuilder {
     pub fn build(self) -> crate::types::EksAttemptDetail {
         crate::types::EksAttemptDetail {
             containers: self.containers,
+            init_containers: self.init_containers,
             pod_name: self.pod_name,
             node_name: self.node_name,
             started_at: self.started_at,

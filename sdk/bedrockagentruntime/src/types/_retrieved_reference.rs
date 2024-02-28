@@ -2,7 +2,7 @@
 
 /// Retrieved reference
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RetrievedReference {
     /// Content of a retrieval result.
     pub content: ::std::option::Option<crate::types::RetrievalResultContent>,
@@ -19,6 +19,14 @@ impl RetrievedReference {
         self.location.as_ref()
     }
 }
+impl ::std::fmt::Debug for RetrievedReference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RetrievedReference");
+        formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("location", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RetrievedReference {
     /// Creates a new builder-style object to manufacture [`RetrievedReference`](crate::types::RetrievedReference).
     pub fn builder() -> crate::types::builders::RetrievedReferenceBuilder {
@@ -28,7 +36,7 @@ impl RetrievedReference {
 
 /// A builder for [`RetrievedReference`](crate::types::RetrievedReference).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RetrievedReferenceBuilder {
     pub(crate) content: ::std::option::Option<crate::types::RetrievalResultContent>,
     pub(crate) location: ::std::option::Option<crate::types::RetrievalResultLocation>,
@@ -68,5 +76,13 @@ impl RetrievedReferenceBuilder {
             content: self.content,
             location: self.location,
         }
+    }
+}
+impl ::std::fmt::Debug for RetrievedReferenceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RetrievedReferenceBuilder");
+        formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("location", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

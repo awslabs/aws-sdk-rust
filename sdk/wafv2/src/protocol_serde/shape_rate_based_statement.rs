@@ -9,6 +9,12 @@ pub fn ser_rate_based_statement(
             ::aws_smithy_types::Number::NegInt((input.limit).into()),
         );
     }
+    if input.evaluation_window_sec != 0 {
+        object.key("EvaluationWindowSec").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.evaluation_window_sec).into()),
+        );
+    }
     {
         object.key("AggregateKeyType").string(input.aggregate_key_type.as_str());
     }
@@ -56,6 +62,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Limit" => {
                             builder = builder.set_limit(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "EvaluationWindowSec" => {
+                            builder = builder.set_evaluation_window_sec(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
                                     .transpose()?,

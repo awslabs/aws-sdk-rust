@@ -235,17 +235,17 @@ impl SubmitJobFluentBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_parameters()
     }
-    /// <p>An object with various properties that override the defaults for the job definition that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
+    /// <p>An object with properties that override the defaults for the job definition that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
     pub fn container_overrides(mut self, input: crate::types::ContainerOverrides) -> Self {
         self.inner = self.inner.container_overrides(input);
         self
     }
-    /// <p>An object with various properties that override the defaults for the job definition that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
+    /// <p>An object with properties that override the defaults for the job definition that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
     pub fn set_container_overrides(mut self, input: ::std::option::Option<crate::types::ContainerOverrides>) -> Self {
         self.inner = self.inner.set_container_overrides(input);
         self
     }
-    /// <p>An object with various properties that override the defaults for the job definition that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
+    /// <p>An object with properties that override the defaults for the job definition that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
     pub fn get_container_overrides(&self) -> &::std::option::Option<crate::types::ContainerOverrides> {
         self.inner.get_container_overrides()
     }
@@ -329,18 +329,32 @@ impl SubmitJobFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>An object that can only be specified for jobs that are run on Amazon EKS resources with various properties that override defaults for the job definition.</p>
+    /// <p>An object, with properties that override defaults for the job definition, can only be specified for jobs that are run on Amazon EKS resources.</p>
     pub fn eks_properties_override(mut self, input: crate::types::EksPropertiesOverride) -> Self {
         self.inner = self.inner.eks_properties_override(input);
         self
     }
-    /// <p>An object that can only be specified for jobs that are run on Amazon EKS resources with various properties that override defaults for the job definition.</p>
+    /// <p>An object, with properties that override defaults for the job definition, can only be specified for jobs that are run on Amazon EKS resources.</p>
     pub fn set_eks_properties_override(mut self, input: ::std::option::Option<crate::types::EksPropertiesOverride>) -> Self {
         self.inner = self.inner.set_eks_properties_override(input);
         self
     }
-    /// <p>An object that can only be specified for jobs that are run on Amazon EKS resources with various properties that override defaults for the job definition.</p>
+    /// <p>An object, with properties that override defaults for the job definition, can only be specified for jobs that are run on Amazon EKS resources.</p>
     pub fn get_eks_properties_override(&self) -> &::std::option::Option<crate::types::EksPropertiesOverride> {
         self.inner.get_eks_properties_override()
+    }
+    /// <p>An object, with properties that override defaults for the job definition, can only be specified for jobs that are run on Amazon ECS resources.</p>
+    pub fn ecs_properties_override(mut self, input: crate::types::EcsPropertiesOverride) -> Self {
+        self.inner = self.inner.ecs_properties_override(input);
+        self
+    }
+    /// <p>An object, with properties that override defaults for the job definition, can only be specified for jobs that are run on Amazon ECS resources.</p>
+    pub fn set_ecs_properties_override(mut self, input: ::std::option::Option<crate::types::EcsPropertiesOverride>) -> Self {
+        self.inner = self.inner.set_ecs_properties_override(input);
+        self
+    }
+    /// <p>An object, with properties that override defaults for the job definition, can only be specified for jobs that are run on Amazon ECS resources.</p>
+    pub fn get_ecs_properties_override(&self) -> &::std::option::Option<crate::types::EcsPropertiesOverride> {
+        self.inner.get_ecs_properties_override()
     }
 }

@@ -24,23 +24,38 @@ pub fn ser_eks_pod_properties(
         }
         array_5.finish();
     }
-    if let Some(var_8) = &input.volumes {
-        let mut array_9 = object.key("volumes").start_array();
+    if let Some(var_8) = &input.init_containers {
+        let mut array_9 = object.key("initContainers").start_array();
         for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_eks_volume::ser_eks_volume(&mut object_11, item_10)?;
+                crate::protocol_serde::shape_eks_container::ser_eks_container(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }
         array_9.finish();
     }
-    if let Some(var_12) = &input.metadata {
+    if let Some(var_12) = &input.volumes {
+        let mut array_13 = object.key("volumes").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_eks_volume::ser_eks_volume(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_16) = &input.metadata {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("metadata").start_object();
-        crate::protocol_serde::shape_eks_metadata::ser_eks_metadata(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_17 = object.key("metadata").start_object();
+        crate::protocol_serde::shape_eks_metadata::ser_eks_metadata(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.share_process_namespace {
+        object.key("shareProcessNamespace").boolean(*var_18);
     }
     Ok(())
 }
@@ -80,11 +95,17 @@ where
                         "containers" => {
                             builder = builder.set_containers(crate::protocol_serde::shape_eks_containers::de_eks_containers(tokens)?);
                         }
+                        "initContainers" => {
+                            builder = builder.set_init_containers(crate::protocol_serde::shape_eks_containers::de_eks_containers(tokens)?);
+                        }
                         "volumes" => {
                             builder = builder.set_volumes(crate::protocol_serde::shape_eks_volumes::de_eks_volumes(tokens)?);
                         }
                         "metadata" => {
                             builder = builder.set_metadata(crate::protocol_serde::shape_eks_metadata::de_eks_metadata(tokens)?);
+                        }
+                        "shareProcessNamespace" => {
+                            builder = builder.set_share_process_namespace(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

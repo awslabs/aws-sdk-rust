@@ -13,6 +13,8 @@ pub use crate::types::_knowledge_base_retrieval_configuration::KnowledgeBaseRetr
 
 pub use crate::types::_knowledge_base_vector_search_configuration::KnowledgeBaseVectorSearchConfiguration;
 
+pub use crate::types::_search_type::SearchType;
+
 pub use crate::types::_knowledge_base_query::KnowledgeBaseQuery;
 
 pub use crate::types::_citation::Citation;
@@ -70,6 +72,8 @@ mod _retrieve_and_generate_session_configuration;
 mod _retrieve_and_generate_type;
 
 mod _retrieved_reference;
+
+mod _search_type;
 
 mod _span;
 

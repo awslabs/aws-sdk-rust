@@ -31,6 +31,9 @@ pub mod get_anomaly_monitors;
 /// Types for the `GetAnomalySubscriptions` operation.
 pub mod get_anomaly_subscriptions;
 
+/// Types for the `GetApproximateUsageRecords` operation.
+pub mod get_approximate_usage_records;
+
 /// Types for the `GetCostAndUsage` operation.
 pub mod get_cost_and_usage;
 

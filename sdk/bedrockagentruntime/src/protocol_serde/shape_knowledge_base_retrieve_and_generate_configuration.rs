@@ -9,5 +9,11 @@ pub fn ser_knowledge_base_retrieve_and_generate_configuration(
     {
         object.key("modelArn").string(input.model_arn.as_str());
     }
+    if let Some(var_1) = &input.retrieval_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("retrievalConfiguration").start_object();
+        crate::protocol_serde::shape_knowledge_base_retrieval_configuration::ser_knowledge_base_retrieval_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }

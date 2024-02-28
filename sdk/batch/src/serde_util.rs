@@ -178,6 +178,15 @@ pub(crate) fn compute_resource_correct_errors(
     builder
 }
 
+pub(crate) fn ecs_properties_correct_errors(
+    mut builder: crate::types::builders::EcsPropertiesBuilder,
+) -> crate::types::builders::EcsPropertiesBuilder {
+    if builder.task_properties.is_none() {
+        builder.task_properties = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn eks_configuration_correct_errors(
     mut builder: crate::types::builders::EksConfigurationBuilder,
 ) -> crate::types::builders::EksConfigurationBuilder {
@@ -249,6 +258,15 @@ pub(crate) fn ec2_configuration_correct_errors(
 ) -> crate::types::builders::Ec2ConfigurationBuilder {
     if builder.image_type.is_none() {
         builder.image_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ecs_task_properties_correct_errors(
+    mut builder: crate::types::builders::EcsTaskPropertiesBuilder,
+) -> crate::types::builders::EcsTaskPropertiesBuilder {
+    if builder.containers.is_none() {
+        builder.containers = Some(Default::default())
     }
     builder
 }
@@ -358,6 +376,15 @@ pub(crate) fn tmpfs_correct_errors(mut builder: crate::types::builders::TmpfsBui
 pub(crate) fn eks_secret_correct_errors(mut builder: crate::types::builders::EksSecretBuilder) -> crate::types::builders::EksSecretBuilder {
     if builder.secret_name.is_none() {
         builder.secret_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn task_container_properties_correct_errors(
+    mut builder: crate::types::builders::TaskContainerPropertiesBuilder,
+) -> crate::types::builders::TaskContainerPropertiesBuilder {
+    if builder.image.is_none() {
+        builder.image = Some(Default::default())
     }
     builder
 }

@@ -183,6 +183,8 @@ mod get_anomaly_monitors;
 
 mod get_anomaly_subscriptions;
 
+mod get_approximate_usage_records;
+
 mod get_cost_and_usage;
 
 mod get_cost_and_usage_with_resources;

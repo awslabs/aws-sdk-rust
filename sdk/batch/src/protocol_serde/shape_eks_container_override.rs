@@ -3,44 +3,47 @@ pub fn ser_eks_container_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EksContainerOverride,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.image {
-        object.key("image").string(var_1.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.command {
-        let mut array_3 = object.key("command").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.image {
+        object.key("image").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.command {
+        let mut array_4 = object.key("command").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.args {
-        let mut array_6 = object.key("args").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.args {
+        let mut array_7 = object.key("args").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().string(item_7.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.env {
-        let mut array_9 = object.key("env").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.env {
+        let mut array_10 = object.key("env").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_eks_container_environment_variable::ser_eks_container_environment_variable(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_eks_container_environment_variable::ser_eks_container_environment_variable(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.resources {
+    if let Some(var_13) = &input.resources {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("resources").start_object();
-        crate::protocol_serde::shape_eks_container_resource_requirements::ser_eks_container_resource_requirements(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_14 = object.key("resources").start_object();
+        crate::protocol_serde::shape_eks_container_resource_requirements::ser_eks_container_resource_requirements(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }

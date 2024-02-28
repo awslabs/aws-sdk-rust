@@ -15,11 +15,23 @@ pub fn ser_eks_pod_properties_override(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.metadata {
+    if let Some(var_5) = &input.init_containers {
+        let mut array_6 = object.key("initContainers").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_eks_container_override::ser_eks_container_override(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.metadata {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("metadata").start_object();
-        crate::protocol_serde::shape_eks_metadata::ser_eks_metadata(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_10 = object.key("metadata").start_object();
+        crate::protocol_serde::shape_eks_metadata::ser_eks_metadata(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

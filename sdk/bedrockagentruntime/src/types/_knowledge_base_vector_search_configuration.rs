@@ -6,11 +6,17 @@
 pub struct KnowledgeBaseVectorSearchConfiguration {
     /// Top-K results to retrieve from knowledge base.
     pub number_of_results: i32,
+    /// Override the type of query to be performed on data store
+    pub override_search_type: ::std::option::Option<crate::types::SearchType>,
 }
 impl KnowledgeBaseVectorSearchConfiguration {
     /// Top-K results to retrieve from knowledge base.
     pub fn number_of_results(&self) -> i32 {
         self.number_of_results
+    }
+    /// Override the type of query to be performed on data store
+    pub fn override_search_type(&self) -> ::std::option::Option<&crate::types::SearchType> {
+        self.override_search_type.as_ref()
     }
 }
 impl KnowledgeBaseVectorSearchConfiguration {
@@ -25,10 +31,10 @@ impl KnowledgeBaseVectorSearchConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct KnowledgeBaseVectorSearchConfigurationBuilder {
     pub(crate) number_of_results: ::std::option::Option<i32>,
+    pub(crate) override_search_type: ::std::option::Option<crate::types::SearchType>,
 }
 impl KnowledgeBaseVectorSearchConfigurationBuilder {
     /// Top-K results to retrieve from knowledge base.
-    /// This field is required.
     pub fn number_of_results(mut self, input: i32) -> Self {
         self.number_of_results = ::std::option::Option::Some(input);
         self
@@ -42,19 +48,25 @@ impl KnowledgeBaseVectorSearchConfigurationBuilder {
     pub fn get_number_of_results(&self) -> &::std::option::Option<i32> {
         &self.number_of_results
     }
+    /// Override the type of query to be performed on data store
+    pub fn override_search_type(mut self, input: crate::types::SearchType) -> Self {
+        self.override_search_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// Override the type of query to be performed on data store
+    pub fn set_override_search_type(mut self, input: ::std::option::Option<crate::types::SearchType>) -> Self {
+        self.override_search_type = input;
+        self
+    }
+    /// Override the type of query to be performed on data store
+    pub fn get_override_search_type(&self) -> &::std::option::Option<crate::types::SearchType> {
+        &self.override_search_type
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseVectorSearchConfiguration`](crate::types::KnowledgeBaseVectorSearchConfiguration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`number_of_results`](crate::types::builders::KnowledgeBaseVectorSearchConfigurationBuilder::number_of_results)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::KnowledgeBaseVectorSearchConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::KnowledgeBaseVectorSearchConfiguration {
-            number_of_results: self.number_of_results.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "number_of_results",
-                    "number_of_results was not specified but it is required when building KnowledgeBaseVectorSearchConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::KnowledgeBaseVectorSearchConfiguration {
+        crate::types::KnowledgeBaseVectorSearchConfiguration {
+            number_of_results: self.number_of_results.unwrap_or(5),
+            override_search_type: self.override_search_type,
+        }
     }
 }

@@ -141,6 +141,10 @@ pub(crate) mod shape_container_overrides;
 
 pub(crate) mod shape_container_properties;
 
+pub(crate) mod shape_ecs_properties;
+
+pub(crate) mod shape_ecs_properties_override;
+
 pub(crate) mod shape_eks_configuration;
 
 pub(crate) mod shape_eks_properties;
@@ -180,6 +184,8 @@ pub(crate) mod shape_update_policy;
 pub(crate) mod shape_compute_environment_detail;
 
 pub(crate) mod shape_ec2_configuration;
+
+pub(crate) mod shape_ecs_task_properties;
 
 pub(crate) mod shape_eks_pod_properties;
 
@@ -229,6 +235,8 @@ pub(crate) mod shape_secret;
 
 pub(crate) mod shape_share_attributes;
 
+pub(crate) mod shape_task_properties_override;
+
 pub(crate) mod shape_ulimit;
 
 pub(crate) mod shape_volume;
@@ -246,6 +254,8 @@ pub(crate) mod shape_container_detail;
 pub(crate) mod shape_container_summary;
 
 pub(crate) mod shape_device;
+
+pub(crate) mod shape_ecs_properties_detail;
 
 pub(crate) mod shape_efs_volume_configuration;
 
@@ -272,6 +282,10 @@ pub(crate) mod shape_node_properties_summary;
 pub(crate) mod shape_parameters_map;
 
 pub(crate) mod shape_platform_capability_list;
+
+pub(crate) mod shape_task_container_overrides;
+
+pub(crate) mod shape_task_container_properties;
 
 pub(crate) mod shape_tmpfs;
 
@@ -305,6 +319,10 @@ pub(crate) mod shape_environment_variables;
 
 pub(crate) mod shape_evaluate_on_exit_list;
 
+pub(crate) mod shape_list_ecs_task_details;
+
+pub(crate) mod shape_list_ecs_task_properties;
+
 pub(crate) mod shape_mount_points;
 
 pub(crate) mod shape_network_interface_list;
@@ -321,6 +339,8 @@ pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_tags_map;
 
+pub(crate) mod shape_task_container_dependency;
+
 pub(crate) mod shape_ulimits;
 
 pub(crate) mod shape_volumes;
@@ -328,6 +348,8 @@ pub(crate) mod shape_volumes;
 pub(crate) mod shape_attempt_container_detail;
 
 pub(crate) mod shape_devices_list;
+
+pub(crate) mod shape_ecs_task_details;
 
 pub(crate) mod shape_eks_attempt_container_details;
 
@@ -349,12 +371,20 @@ pub(crate) mod shape_eks_container_detail;
 
 pub(crate) mod shape_eks_labels_map;
 
+pub(crate) mod shape_list_task_container_details;
+
+pub(crate) mod shape_list_task_container_properties;
+
 pub(crate) mod shape_device_cgroup_permissions;
 
 pub(crate) mod shape_eks_container_environment_variables;
 
 pub(crate) mod shape_eks_container_volume_mounts;
 
+pub(crate) mod shape_task_container_details;
+
 pub(crate) mod shape_eks_limits;
 
 pub(crate) mod shape_eks_requests;
+
+pub(crate) mod shape_task_container_dependency_list;

@@ -2,7 +2,7 @@
 
 /// Generate response part
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GeneratedResponsePart {
     /// Text response part
     pub text_response_part: ::std::option::Option<crate::types::TextResponsePart>,
@@ -11,6 +11,13 @@ impl GeneratedResponsePart {
     /// Text response part
     pub fn text_response_part(&self) -> ::std::option::Option<&crate::types::TextResponsePart> {
         self.text_response_part.as_ref()
+    }
+}
+impl ::std::fmt::Debug for GeneratedResponsePart {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GeneratedResponsePart");
+        formatter.field("text_response_part", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }
 impl GeneratedResponsePart {
@@ -22,7 +29,7 @@ impl GeneratedResponsePart {
 
 /// A builder for [`GeneratedResponsePart`](crate::types::GeneratedResponsePart).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GeneratedResponsePartBuilder {
     pub(crate) text_response_part: ::std::option::Option<crate::types::TextResponsePart>,
 }
@@ -46,5 +53,12 @@ impl GeneratedResponsePartBuilder {
         crate::types::GeneratedResponsePart {
             text_response_part: self.text_response_part,
         }
+    }
+}
+impl ::std::fmt::Debug for GeneratedResponsePartBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GeneratedResponsePartBuilder");
+        formatter.field("text_response_part", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

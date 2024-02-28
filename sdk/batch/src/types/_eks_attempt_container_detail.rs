@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksAttemptContainerDetail {
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub exit_code: ::std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl EksAttemptContainerDetail {
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn exit_code(&self) -> ::std::option::Option<i32> {
         self.exit_code
     }
@@ -34,17 +34,17 @@ pub struct EksAttemptContainerDetailBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl EksAttemptContainerDetailBuilder {
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
         self.exit_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn set_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.exit_code = input;
         self
     }
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
         &self.exit_code
     }

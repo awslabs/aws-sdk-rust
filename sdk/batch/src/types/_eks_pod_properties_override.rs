@@ -6,6 +6,10 @@
 pub struct EksPodPropertiesOverride {
     /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,
+    /// <p>The overrides for the conatainers defined in the Amazon EKS pod. These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
+    /// <p>This object is limited to 10 elements</p>
+    /// </note>
+    pub init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,
     /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>
     pub metadata: ::std::option::Option<crate::types::EksMetadata>,
 }
@@ -15,6 +19,14 @@ impl EksPodPropertiesOverride {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
     pub fn containers(&self) -> &[crate::types::EksContainerOverride] {
         self.containers.as_deref().unwrap_or_default()
+    }
+    /// <p>The overrides for the conatainers defined in the Amazon EKS pod. These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
+    /// <p>This object is limited to 10 elements</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.init_containers.is_none()`.
+    pub fn init_containers(&self) -> &[crate::types::EksContainerOverride] {
+        self.init_containers.as_deref().unwrap_or_default()
     }
     /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::EksMetadata> {
@@ -33,6 +45,7 @@ impl EksPodPropertiesOverride {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EksPodPropertiesOverrideBuilder {
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,
+    pub(crate) init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,
     pub(crate) metadata: ::std::option::Option<crate::types::EksMetadata>,
 }
 impl EksPodPropertiesOverrideBuilder {
@@ -56,6 +69,32 @@ impl EksPodPropertiesOverrideBuilder {
     pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>> {
         &self.containers
     }
+    /// Appends an item to `init_containers`.
+    ///
+    /// To override the contents of this collection use [`set_init_containers`](Self::set_init_containers).
+    ///
+    /// <p>The overrides for the conatainers defined in the Amazon EKS pod. These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
+    /// <p>This object is limited to 10 elements</p>
+    /// </note>
+    pub fn init_containers(mut self, input: crate::types::EksContainerOverride) -> Self {
+        let mut v = self.init_containers.unwrap_or_default();
+        v.push(input);
+        self.init_containers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The overrides for the conatainers defined in the Amazon EKS pod. These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
+    /// <p>This object is limited to 10 elements</p>
+    /// </note>
+    pub fn set_init_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>) -> Self {
+        self.init_containers = input;
+        self
+    }
+    /// <p>The overrides for the conatainers defined in the Amazon EKS pod. These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
+    /// <p>This object is limited to 10 elements</p>
+    /// </note>
+    pub fn get_init_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>> {
+        &self.init_containers
+    }
     /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>
     pub fn metadata(mut self, input: crate::types::EksMetadata) -> Self {
         self.metadata = ::std::option::Option::Some(input);
@@ -74,6 +113,7 @@ impl EksPodPropertiesOverrideBuilder {
     pub fn build(self) -> crate::types::EksPodPropertiesOverride {
         crate::types::EksPodPropertiesOverride {
             containers: self.containers,
+            init_containers: self.init_containers,
             metadata: self.metadata,
         }
     }

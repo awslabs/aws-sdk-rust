@@ -2,7 +2,7 @@
 
 /// Result item returned from a knowledge base retrieval.
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KnowledgeBaseRetrievalResult {
     /// Content of a retrieval result.
     pub content: ::std::option::Option<crate::types::RetrievalResultContent>,
@@ -25,6 +25,15 @@ impl KnowledgeBaseRetrievalResult {
         self.score
     }
 }
+impl ::std::fmt::Debug for KnowledgeBaseRetrievalResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("KnowledgeBaseRetrievalResult");
+        formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("location", &"*** Sensitive Data Redacted ***");
+        formatter.field("score", &self.score);
+        formatter.finish()
+    }
+}
 impl KnowledgeBaseRetrievalResult {
     /// Creates a new builder-style object to manufacture [`KnowledgeBaseRetrievalResult`](crate::types::KnowledgeBaseRetrievalResult).
     pub fn builder() -> crate::types::builders::KnowledgeBaseRetrievalResultBuilder {
@@ -34,7 +43,7 @@ impl KnowledgeBaseRetrievalResult {
 
 /// A builder for [`KnowledgeBaseRetrievalResult`](crate::types::KnowledgeBaseRetrievalResult).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct KnowledgeBaseRetrievalResultBuilder {
     pub(crate) content: ::std::option::Option<crate::types::RetrievalResultContent>,
     pub(crate) location: ::std::option::Option<crate::types::RetrievalResultLocation>,
@@ -91,5 +100,14 @@ impl KnowledgeBaseRetrievalResultBuilder {
             location: self.location,
             score: self.score,
         }
+    }
+}
+impl ::std::fmt::Debug for KnowledgeBaseRetrievalResultBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("KnowledgeBaseRetrievalResultBuilder");
+        formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.field("location", &"*** Sensitive Data Redacted ***");
+        formatter.field("score", &self.score);
+        formatter.finish()
     }
 }

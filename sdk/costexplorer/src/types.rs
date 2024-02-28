@@ -215,6 +215,8 @@ pub use crate::types::_result_by_time::ResultByTime;
 
 pub use crate::types::_group::Group;
 
+pub use crate::types::_approximation_dimension::ApproximationDimension;
+
 pub use crate::types::_anomaly_subscription::AnomalySubscription;
 
 pub use crate::types::_anomaly_monitor::AnomalyMonitor;
@@ -254,6 +256,8 @@ mod _anomaly_score;
 mod _anomaly_subscription;
 
 mod _anomaly_subscription_frequency;
+
+mod _approximation_dimension;
 
 mod _context;
 

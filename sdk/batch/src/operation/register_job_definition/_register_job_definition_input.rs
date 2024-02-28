@@ -6,7 +6,13 @@
 pub struct RegisterJobDefinitionInput {
     /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub job_definition_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>container</code>, then one of the following is required: <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p></li>
+    /// <li>
+    /// <p>If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.</p></li>
+    /// </ul><note>
     /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
     /// </note>
     pub r#type: ::std::option::Option<crate::types::JobDefinitionType>,
@@ -15,11 +21,11 @@ pub struct RegisterJobDefinitionInput {
     /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub scheduling_priority: ::std::option::Option<i32>,
-    /// <p>An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based job definitions.</p><note>
+    /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
     /// </note>
     pub container_properties: ::std::option::Option<crate::types::ContainerProperties>,
-    /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p><note>
+    /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
     /// </note> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
@@ -39,15 +45,23 @@ pub struct RegisterJobDefinitionInput {
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.</p>
     /// </note>
     pub platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for Amazon ECS based job definitions.</p>
+    /// <p>An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS based job definitions.</p>
     pub eks_properties: ::std::option::Option<crate::types::EksProperties>,
+    /// <p>An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon EKS-based job definitions.</p>
+    pub ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
 }
 impl RegisterJobDefinitionInput {
     /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn job_definition_name(&self) -> ::std::option::Option<&str> {
         self.job_definition_name.as_deref()
     }
-    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>container</code>, then one of the following is required: <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p></li>
+    /// <li>
+    /// <p>If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.</p></li>
+    /// </ul><note>
     /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
     /// </note>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::JobDefinitionType> {
@@ -62,13 +76,13 @@ impl RegisterJobDefinitionInput {
     pub fn scheduling_priority(&self) -> ::std::option::Option<i32> {
         self.scheduling_priority
     }
-    /// <p>An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based job definitions.</p><note>
+    /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
     /// </note>
     pub fn container_properties(&self) -> ::std::option::Option<&crate::types::ContainerProperties> {
         self.container_properties.as_ref()
     }
-    /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p><note>
+    /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
     /// </note> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
@@ -102,9 +116,13 @@ impl RegisterJobDefinitionInput {
     pub fn platform_capabilities(&self) -> &[crate::types::PlatformCapability] {
         self.platform_capabilities.as_deref().unwrap_or_default()
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for Amazon ECS based job definitions.</p>
+    /// <p>An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS based job definitions.</p>
     pub fn eks_properties(&self) -> ::std::option::Option<&crate::types::EksProperties> {
         self.eks_properties.as_ref()
+    }
+    /// <p>An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon EKS-based job definitions.</p>
+    pub fn ecs_properties(&self) -> ::std::option::Option<&crate::types::EcsProperties> {
+        self.ecs_properties.as_ref()
     }
 }
 impl RegisterJobDefinitionInput {
@@ -130,6 +148,7 @@ pub struct RegisterJobDefinitionInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
     pub(crate) eks_properties: ::std::option::Option<crate::types::EksProperties>,
+    pub(crate) ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
 }
 impl RegisterJobDefinitionInputBuilder {
     /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -147,7 +166,13 @@ impl RegisterJobDefinitionInputBuilder {
     pub fn get_job_definition_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_definition_name
     }
-    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>container</code>, then one of the following is required: <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p></li>
+    /// <li>
+    /// <p>If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.</p></li>
+    /// </ul><note>
     /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
     /// </note>
     /// This field is required.
@@ -155,14 +180,26 @@ impl RegisterJobDefinitionInputBuilder {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>container</code>, then one of the following is required: <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p></li>
+    /// <li>
+    /// <p>If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.</p></li>
+    /// </ul><note>
     /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::JobDefinitionType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the value is <code>container</code>, then one of the following is required: <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p></li>
+    /// <li>
+    /// <p>If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.</p></li>
+    /// </ul><note>
     /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
     /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::JobDefinitionType> {
@@ -205,27 +242,27 @@ impl RegisterJobDefinitionInputBuilder {
     pub fn get_scheduling_priority(&self) -> &::std::option::Option<i32> {
         &self.scheduling_priority
     }
-    /// <p>An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based job definitions.</p><note>
+    /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
     /// </note>
     pub fn container_properties(mut self, input: crate::types::ContainerProperties) -> Self {
         self.container_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based job definitions.</p><note>
+    /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
     /// </note>
     pub fn set_container_properties(mut self, input: ::std::option::Option<crate::types::ContainerProperties>) -> Self {
         self.container_properties = input;
         self
     }
-    /// <p>An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based job definitions.</p><note>
+    /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
     /// </note>
     pub fn get_container_properties(&self) -> &::std::option::Option<crate::types::ContainerProperties> {
         &self.container_properties
     }
-    /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p><note>
+    /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
     /// </note> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
@@ -234,7 +271,7 @@ impl RegisterJobDefinitionInputBuilder {
         self.node_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p><note>
+    /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
     /// </note> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
@@ -243,7 +280,7 @@ impl RegisterJobDefinitionInputBuilder {
         self.node_properties = input;
         self
     }
-    /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p><note>
+    /// <p>An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
     /// </note> <note>
     /// <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>
@@ -345,19 +382,33 @@ impl RegisterJobDefinitionInputBuilder {
     pub fn get_platform_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>> {
         &self.platform_capabilities
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for Amazon ECS based job definitions.</p>
+    /// <p>An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS based job definitions.</p>
     pub fn eks_properties(mut self, input: crate::types::EksProperties) -> Self {
         self.eks_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for Amazon ECS based job definitions.</p>
+    /// <p>An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS based job definitions.</p>
     pub fn set_eks_properties(mut self, input: ::std::option::Option<crate::types::EksProperties>) -> Self {
         self.eks_properties = input;
         self
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for Amazon ECS based job definitions.</p>
+    /// <p>An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS based job definitions.</p>
     pub fn get_eks_properties(&self) -> &::std::option::Option<crate::types::EksProperties> {
         &self.eks_properties
+    }
+    /// <p>An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon EKS-based job definitions.</p>
+    pub fn ecs_properties(mut self, input: crate::types::EcsProperties) -> Self {
+        self.ecs_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon EKS-based job definitions.</p>
+    pub fn set_ecs_properties(mut self, input: ::std::option::Option<crate::types::EcsProperties>) -> Self {
+        self.ecs_properties = input;
+        self
+    }
+    /// <p>An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon EKS-based job definitions.</p>
+    pub fn get_ecs_properties(&self) -> &::std::option::Option<crate::types::EcsProperties> {
+        &self.ecs_properties
     }
     /// Consumes the builder and constructs a [`RegisterJobDefinitionInput`](crate::operation::register_job_definition::RegisterJobDefinitionInput).
     pub fn build(
@@ -377,6 +428,7 @@ impl RegisterJobDefinitionInputBuilder {
             tags: self.tags,
             platform_capabilities: self.platform_capabilities,
             eks_properties: self.eks_properties,
+            ecs_properties: self.ecs_properties,
         })
     }
 }

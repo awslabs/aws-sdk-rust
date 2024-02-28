@@ -32,7 +32,7 @@ pub struct CreateJobInput {
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core devices.</a></p>
     /// </note>
     pub namespace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the job template used to create the job.</p>
@@ -105,7 +105,7 @@ impl CreateJobInput {
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core devices.</a></p>
     /// </note>
     pub fn namespace_id(&self) -> ::std::option::Option<&str> {
         self.namespace_id.as_deref()
@@ -348,7 +348,7 @@ impl CreateJobInputBuilder {
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core devices.</a></p>
     /// </note>
     pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace_id = ::std::option::Option::Some(input.into());
@@ -357,7 +357,7 @@ impl CreateJobInputBuilder {
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core devices.</a></p>
     /// </note>
     pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace_id = input;
@@ -366,7 +366,7 @@ impl CreateJobInputBuilder {
     /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
     /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
     /// <p><code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code></p><note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core devices.</a></p>
     /// </note>
     pub fn get_namespace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace_id

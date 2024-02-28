@@ -2,7 +2,7 @@
 
 /// Content of a retrieval result.
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RetrievalResultContent {
     /// Content of a retrieval result in text
     pub text: ::std::string::String,
@@ -14,6 +14,13 @@ impl RetrievalResultContent {
         self.text.deref()
     }
 }
+impl ::std::fmt::Debug for RetrievalResultContent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RetrievalResultContent");
+        formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RetrievalResultContent {
     /// Creates a new builder-style object to manufacture [`RetrievalResultContent`](crate::types::RetrievalResultContent).
     pub fn builder() -> crate::types::builders::RetrievalResultContentBuilder {
@@ -23,7 +30,7 @@ impl RetrievalResultContent {
 
 /// A builder for [`RetrievalResultContent`](crate::types::RetrievalResultContent).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RetrievalResultContentBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
 }
@@ -55,5 +62,12 @@ impl RetrievalResultContentBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RetrievalResultContentBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RetrievalResultContentBuilder");
+        formatter.field("text", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

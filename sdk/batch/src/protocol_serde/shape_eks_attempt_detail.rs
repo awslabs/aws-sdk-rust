@@ -19,6 +19,11 @@ where
                                 crate::protocol_serde::shape_eks_attempt_container_details::de_eks_attempt_container_details(tokens)?,
                             );
                         }
+                        "initContainers" => {
+                            builder = builder.set_init_containers(
+                                crate::protocol_serde::shape_eks_attempt_container_details::de_eks_attempt_container_details(tokens)?,
+                            );
+                        }
                         "podName" => {
                             builder = builder.set_pod_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

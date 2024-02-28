@@ -80,7 +80,7 @@ pub struct ComputeResource {
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub instance_role: ::std::option::Option<::std::string::String>,
-    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p><note>
+    /// <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -98,11 +98,11 @@ pub struct ComputeResource {
     /// <p>To tag your Spot Instances on creation, the Spot Fleet IAM role specified here must use the newer <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously recommended <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required permissions to tag Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot instances not tagged on creation</a> in the <i>Batch User Guide</i>.</p>
     /// </important>
     pub spot_iam_fleet_role: ::std::option::Option<::std::string::String>,
-    /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <code>CreateComputeEnvironment</code> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
-    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
     /// <p>One or two values can be provided.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
@@ -213,7 +213,7 @@ impl ComputeResource {
     pub fn instance_role(&self) -> ::std::option::Option<&str> {
         self.instance_role.as_deref()
     }
-    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p><note>
+    /// <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -239,13 +239,13 @@ impl ComputeResource {
     pub fn spot_iam_fleet_role(&self) -> ::std::option::Option<&str> {
         self.spot_iam_fleet_role.as_deref()
     }
-    /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <code>CreateComputeEnvironment</code> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn launch_template(&self) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
-    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
     /// <p>One or two values can be provided.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
@@ -625,7 +625,7 @@ impl ComputeResourceBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p><note>
+    /// <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -634,14 +634,14 @@ impl ComputeResourceBuilder {
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p><note>
+    /// <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p><note>
+    /// <p>Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when using the Batch <code>ListTagsForResource</code> API operation.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -713,21 +713,21 @@ impl ComputeResourceBuilder {
     pub fn get_spot_iam_fleet_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.spot_iam_fleet_role
     }
-    /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <code>CreateComputeEnvironment</code> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn launch_template(mut self, input: crate::types::LaunchTemplateSpecification) -> Self {
         self.launch_template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <code>CreateComputeEnvironment</code> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplateSpecification>) -> Self {
         self.launch_template = input;
         self
     }
-    /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <code>CreateComputeEnvironment</code> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>The launch template to use for your compute resources. Any other compute resource parameters that you specify in a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify either the launch template ID or launch template name in the request, but not both. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Batch User Guide</i>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
@@ -737,7 +737,7 @@ impl ComputeResourceBuilder {
     ///
     /// To override the contents of this collection use [`set_ec2_configuration`](Self::set_ec2_configuration).
     ///
-    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
     /// <p>One or two values can be provided.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
@@ -747,7 +747,7 @@ impl ComputeResourceBuilder {
         self.ec2_configuration = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
     /// <p>One or two values can be provided.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
@@ -755,7 +755,7 @@ impl ComputeResourceBuilder {
         self.ec2_configuration = input;
         self
     }
-    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+    /// <p>Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
     /// <p>One or two values can be provided.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>

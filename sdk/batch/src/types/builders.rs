@@ -13,6 +13,16 @@ pub use crate::types::_ec2_configuration::Ec2ConfigurationBuilder;
 
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecificationBuilder;
 
+pub use crate::types::_ecs_properties_override::EcsPropertiesOverrideBuilder;
+
+pub use crate::types::_task_properties_override::TaskPropertiesOverrideBuilder;
+
+pub use crate::types::_task_container_overrides::TaskContainerOverridesBuilder;
+
+pub use crate::types::_resource_requirement::ResourceRequirementBuilder;
+
+pub use crate::types::_key_value_pair::KeyValuePairBuilder;
+
 pub use crate::types::_eks_properties_override::EksPropertiesOverrideBuilder;
 
 pub use crate::types::_eks_pod_properties_override::EksPodPropertiesOverrideBuilder;
@@ -37,13 +47,47 @@ pub use crate::types::_node_property_override::NodePropertyOverrideBuilder;
 
 pub use crate::types::_container_overrides::ContainerOverridesBuilder;
 
-pub use crate::types::_resource_requirement::ResourceRequirementBuilder;
-
-pub use crate::types::_key_value_pair::KeyValuePairBuilder;
-
 pub use crate::types::_job_dependency::JobDependencyBuilder;
 
 pub use crate::types::_array_properties::ArrayPropertiesBuilder;
+
+pub use crate::types::_ecs_properties::EcsPropertiesBuilder;
+
+pub use crate::types::_ecs_task_properties::EcsTaskPropertiesBuilder;
+
+pub use crate::types::_volume::VolumeBuilder;
+
+pub use crate::types::_efs_volume_configuration::EfsVolumeConfigurationBuilder;
+
+pub use crate::types::_efs_authorization_config::EfsAuthorizationConfigBuilder;
+
+pub use crate::types::_host::HostBuilder;
+
+pub use crate::types::_runtime_platform::RuntimePlatformBuilder;
+
+pub use crate::types::_network_configuration::NetworkConfigurationBuilder;
+
+pub use crate::types::_ephemeral_storage::EphemeralStorageBuilder;
+
+pub use crate::types::_task_container_properties::TaskContainerPropertiesBuilder;
+
+pub use crate::types::_ulimit::UlimitBuilder;
+
+pub use crate::types::_secret::SecretBuilder;
+
+pub use crate::types::_repository_credentials::RepositoryCredentialsBuilder;
+
+pub use crate::types::_mount_point::MountPointBuilder;
+
+pub use crate::types::_log_configuration::LogConfigurationBuilder;
+
+pub use crate::types::_linux_parameters::LinuxParametersBuilder;
+
+pub use crate::types::_tmpfs::TmpfsBuilder;
+
+pub use crate::types::_device::DeviceBuilder;
+
+pub use crate::types::_task_container_dependency::TaskContainerDependencyBuilder;
 
 pub use crate::types::_eks_properties::EksPropertiesBuilder;
 
@@ -69,37 +113,7 @@ pub use crate::types::_node_range_property::NodeRangePropertyBuilder;
 
 pub use crate::types::_container_properties::ContainerPropertiesBuilder;
 
-pub use crate::types::_repository_credentials::RepositoryCredentialsBuilder;
-
-pub use crate::types::_runtime_platform::RuntimePlatformBuilder;
-
-pub use crate::types::_ephemeral_storage::EphemeralStorageBuilder;
-
 pub use crate::types::_fargate_platform_configuration::FargatePlatformConfigurationBuilder;
-
-pub use crate::types::_network_configuration::NetworkConfigurationBuilder;
-
-pub use crate::types::_secret::SecretBuilder;
-
-pub use crate::types::_log_configuration::LogConfigurationBuilder;
-
-pub use crate::types::_linux_parameters::LinuxParametersBuilder;
-
-pub use crate::types::_tmpfs::TmpfsBuilder;
-
-pub use crate::types::_device::DeviceBuilder;
-
-pub use crate::types::_ulimit::UlimitBuilder;
-
-pub use crate::types::_mount_point::MountPointBuilder;
-
-pub use crate::types::_volume::VolumeBuilder;
-
-pub use crate::types::_efs_volume_configuration::EfsVolumeConfigurationBuilder;
-
-pub use crate::types::_efs_authorization_config::EfsAuthorizationConfigBuilder;
-
-pub use crate::types::_host::HostBuilder;
 
 pub use crate::types::_scheduling_policy_listing_detail::SchedulingPolicyListingDetailBuilder;
 
@@ -117,6 +131,14 @@ pub use crate::types::_scheduling_policy_detail::SchedulingPolicyDetailBuilder;
 
 pub use crate::types::_job_detail::JobDetailBuilder;
 
+pub use crate::types::_ecs_properties_detail::EcsPropertiesDetailBuilder;
+
+pub use crate::types::_ecs_task_details::EcsTaskDetailsBuilder;
+
+pub use crate::types::_task_container_details::TaskContainerDetailsBuilder;
+
+pub use crate::types::_network_interface::NetworkInterfaceBuilder;
+
 pub use crate::types::_eks_attempt_detail::EksAttemptDetailBuilder;
 
 pub use crate::types::_eks_attempt_container_detail::EksAttemptContainerDetailBuilder;
@@ -132,8 +154,6 @@ pub use crate::types::_array_properties_detail::ArrayPropertiesDetailBuilder;
 pub use crate::types::_node_details::NodeDetailsBuilder;
 
 pub use crate::types::_container_detail::ContainerDetailBuilder;
-
-pub use crate::types::_network_interface::NetworkInterfaceBuilder;
 
 pub use crate::types::_attempt_detail::AttemptDetailBuilder;
 

@@ -6,11 +6,11 @@
 pub struct ContainerDetail {
     /// <p>The image used to start the container.</p>
     pub image: ::std::option::Option<::std::string::String>,
-    /// <p>The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p><note>
+    /// <p>The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p><note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.</p>
     /// </note>
     pub vcpus: ::std::option::Option<i32>,
-    /// <p>For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
+    /// <p>For jobs running on Amazon EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
     pub memory: ::std::option::Option<i32>,
     /// <p>The command that's passed to the container.</p>
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -38,7 +38,7 @@ pub struct ContainerDetail {
     pub privileged: ::std::option::Option<bool>,
     /// <p>The user name to use inside the container. This parameter maps to <code>User</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
     pub user: ::std::option::Option<::std::string::String>,
-    /// <p>The exit code to return upon completion.</p>
+    /// <p>The exit code returned upon completion.</p>
     pub exit_code: ::std::option::Option<i32>,
     /// <p>A short (255 max characters) human-readable string to provide additional details for a running or stopped container.</p>
     pub reason: ::std::option::Option<::std::string::String>,
@@ -60,7 +60,7 @@ pub struct ContainerDetail {
     pub linux_parameters: ::std::option::Option<crate::types::LinuxParameters>,
     /// <p>The log configuration specification for the container.</p>
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance. Or, alternatively, it must be configured on a different log server for remote logging options. For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p><note>
-    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
+    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
     /// </note>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code></p><note>
     /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -68,9 +68,9 @@ pub struct ContainerDetail {
     pub log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying sensitive data</a> in the <i>Batch User Guide</i>.</p>
     pub secrets: ::std::option::Option<::std::vec::Vec<crate::types::Secret>>,
-    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
-    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fargate_platform_configuration: ::std::option::Option<crate::types::FargatePlatformConfiguration>,
     /// <p>The amount of ephemeral storage allocated for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
@@ -84,13 +84,13 @@ impl ContainerDetail {
     pub fn image(&self) -> ::std::option::Option<&str> {
         self.image.as_deref()
     }
-    /// <p>The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p><note>
+    /// <p>The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p><note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.</p>
     /// </note>
     pub fn vcpus(&self) -> ::std::option::Option<i32> {
         self.vcpus
     }
-    /// <p>For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
+    /// <p>For jobs running on Amazon EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
     pub fn memory(&self) -> ::std::option::Option<i32> {
         self.memory
     }
@@ -150,7 +150,7 @@ impl ContainerDetail {
     pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
     }
-    /// <p>The exit code to return upon completion.</p>
+    /// <p>The exit code returned upon completion.</p>
     pub fn exit_code(&self) -> ::std::option::Option<i32> {
         self.exit_code
     }
@@ -194,7 +194,7 @@ impl ContainerDetail {
     }
     /// <p>The log configuration specification for the container.</p>
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance. Or, alternatively, it must be configured on a different log server for remote logging options. For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p><note>
-    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
+    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
     /// </note>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code></p><note>
     /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -208,11 +208,11 @@ impl ContainerDetail {
     pub fn secrets(&self) -> &[crate::types::Secret] {
         self.secrets.as_deref().unwrap_or_default()
     }
-    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
-    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fn fargate_platform_configuration(&self) -> ::std::option::Option<&crate::types::FargatePlatformConfiguration> {
         self.fargate_platform_configuration.as_ref()
     }
@@ -285,37 +285,37 @@ impl ContainerDetailBuilder {
     pub fn get_image(&self) -> &::std::option::Option<::std::string::String> {
         &self.image
     }
-    /// <p>The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p><note>
+    /// <p>The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p><note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.</p>
     /// </note>
     pub fn vcpus(mut self, input: i32) -> Self {
         self.vcpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p><note>
+    /// <p>The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p><note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.</p>
     /// </note>
     pub fn set_vcpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.vcpus = input;
         self
     }
-    /// <p>The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p><note>
+    /// <p>The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources, you can specify the vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code> object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be specified for each node at least once.</p><note>
     /// <p>This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.</p>
     /// </note>
     pub fn get_vcpus(&self) -> &::std::option::Option<i32> {
         &self.vcpus
     }
-    /// <p>For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
+    /// <p>For jobs running on Amazon EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
     pub fn memory(mut self, input: i32) -> Self {
         self.memory = ::std::option::Option::Some(input);
         self
     }
-    /// <p>For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
+    /// <p>For jobs running on Amazon EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
     pub fn set_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory = input;
         self
     }
-    /// <p>For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
+    /// <p>For jobs running on Amazon EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>, the number of MiB of memory reserved for the job. For other jobs, including all run on Fargate resources, see <code>resourceRequirements</code>.</p>
     pub fn get_memory(&self) -> &::std::option::Option<i32> {
         &self.memory
     }
@@ -507,17 +507,17 @@ impl ContainerDetailBuilder {
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.user
     }
-    /// <p>The exit code to return upon completion.</p>
+    /// <p>The exit code returned upon completion.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
         self.exit_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The exit code to return upon completion.</p>
+    /// <p>The exit code returned upon completion.</p>
     pub fn set_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.exit_code = input;
         self
     }
-    /// <p>The exit code to return upon completion.</p>
+    /// <p>The exit code returned upon completion.</p>
     pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
         &self.exit_code
     }
@@ -653,7 +653,7 @@ impl ContainerDetailBuilder {
     }
     /// <p>The log configuration specification for the container.</p>
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance. Or, alternatively, it must be configured on a different log server for remote logging options. For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p><note>
-    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
+    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
     /// </note>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code></p><note>
     /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -664,7 +664,7 @@ impl ContainerDetailBuilder {
     }
     /// <p>The log configuration specification for the container.</p>
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance. Or, alternatively, it must be configured on a different log server for remote logging options. For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p><note>
-    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
+    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
     /// </note>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code></p><note>
     /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -675,7 +675,7 @@ impl ContainerDetailBuilder {
     }
     /// <p>The log configuration specification for the container.</p>
     /// <p>This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver with this parameter in the container definition. To use a different logging driver for a container, the log system must be configured properly on the container instance. Or, alternatively, it must be configured on a different log server for remote logging options. For more information on the options for different supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker documentation.</p><note>
-    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <code>LogConfiguration</code> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
+    /// <p>Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a> data type). Additional log drivers might be available in future releases of the Amazon ECS container agent.</p>
     /// </note>
     /// <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: <code>sudo docker version | grep "Server API version"</code></p><note>
     /// <p>The Amazon ECS container agent running on a container instance must register the logging drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -703,31 +703,31 @@ impl ContainerDetailBuilder {
     pub fn get_secrets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Secret>> {
         &self.secrets
     }
-    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.network_configuration = input;
         self
     }
-    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
-    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fn fargate_platform_configuration(mut self, input: crate::types::FargatePlatformConfiguration) -> Self {
         self.fargate_platform_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fn set_fargate_platform_configuration(mut self, input: ::std::option::Option<crate::types::FargatePlatformConfiguration>) -> Self {
         self.fargate_platform_configuration = input;
         self
     }
-    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.</p>
+    /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fn get_fargate_platform_configuration(&self) -> &::std::option::Option<crate::types::FargatePlatformConfiguration> {
         &self.fargate_platform_configuration
     }

@@ -20,11 +20,11 @@ pub struct JobDefinition {
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The retry strategy to use for failed jobs that are submitted with this job definition.</p>
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
-    /// <p>An object with various properties specific to Amazon ECS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    /// <p>An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is used in the job definition, it can't be used in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or <code>nodeProperties</code>.</p>
     pub container_properties: ::std::option::Option<crate::types::ContainerProperties>,
     /// <p>The timeout time for jobs that are submitted with this job definition. After the amount of time you specify passes, Batch terminates your jobs if they aren't finished.</p>
     pub timeout: ::std::option::Option<crate::types::JobTimeout>,
-    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p><note>
+    /// <p>An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p><note>
     /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     pub node_properties: ::std::option::Option<crate::types::NodeProperties>,
@@ -34,7 +34,9 @@ pub struct JobDefinition {
     pub propagate_tags: ::std::option::Option<bool>,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
     pub platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    /// <p>An object that contains the properties for the Amazon ECS resources of a job.When <code>ecsProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
+    pub ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
+    /// <p>An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>nodeProperties</code>.</p>
     pub eks_properties: ::std::option::Option<crate::types::EksProperties>,
     /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
     pub container_orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
@@ -72,7 +74,7 @@ impl JobDefinition {
     pub fn retry_strategy(&self) -> ::std::option::Option<&crate::types::RetryStrategy> {
         self.retry_strategy.as_ref()
     }
-    /// <p>An object with various properties specific to Amazon ECS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    /// <p>An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is used in the job definition, it can't be used in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or <code>nodeProperties</code>.</p>
     pub fn container_properties(&self) -> ::std::option::Option<&crate::types::ContainerProperties> {
         self.container_properties.as_ref()
     }
@@ -80,7 +82,7 @@ impl JobDefinition {
     pub fn timeout(&self) -> ::std::option::Option<&crate::types::JobTimeout> {
         self.timeout.as_ref()
     }
-    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p><note>
+    /// <p>An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p><note>
     /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     pub fn node_properties(&self) -> ::std::option::Option<&crate::types::NodeProperties> {
@@ -100,7 +102,11 @@ impl JobDefinition {
     pub fn platform_capabilities(&self) -> &[crate::types::PlatformCapability] {
         self.platform_capabilities.as_deref().unwrap_or_default()
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    /// <p>An object that contains the properties for the Amazon ECS resources of a job.When <code>ecsProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
+    pub fn ecs_properties(&self) -> ::std::option::Option<&crate::types::EcsProperties> {
+        self.ecs_properties.as_ref()
+    }
+    /// <p>An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>nodeProperties</code>.</p>
     pub fn eks_properties(&self) -> ::std::option::Option<&crate::types::EksProperties> {
         self.eks_properties.as_ref()
     }
@@ -134,6 +140,7 @@ pub struct JobDefinitionBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) propagate_tags: ::std::option::Option<bool>,
     pub(crate) platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
+    pub(crate) ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
     pub(crate) eks_properties: ::std::option::Option<crate::types::EksProperties>,
     pub(crate) container_orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
 }
@@ -260,17 +267,17 @@ impl JobDefinitionBuilder {
     pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
         &self.retry_strategy
     }
-    /// <p>An object with various properties specific to Amazon ECS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    /// <p>An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is used in the job definition, it can't be used in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or <code>nodeProperties</code>.</p>
     pub fn container_properties(mut self, input: crate::types::ContainerProperties) -> Self {
         self.container_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object with various properties specific to Amazon ECS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    /// <p>An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is used in the job definition, it can't be used in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or <code>nodeProperties</code>.</p>
     pub fn set_container_properties(mut self, input: ::std::option::Option<crate::types::ContainerProperties>) -> Self {
         self.container_properties = input;
         self
     }
-    /// <p>An object with various properties specific to Amazon ECS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    /// <p>An object with properties specific to Amazon ECS-based jobs. When <code>containerProperties</code> is used in the job definition, it can't be used in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or <code>nodeProperties</code>.</p>
     pub fn get_container_properties(&self) -> &::std::option::Option<crate::types::ContainerProperties> {
         &self.container_properties
     }
@@ -288,21 +295,21 @@ impl JobDefinitionBuilder {
     pub fn get_timeout(&self) -> &::std::option::Option<crate::types::JobTimeout> {
         &self.timeout
     }
-    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p><note>
+    /// <p>An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p><note>
     /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     pub fn node_properties(mut self, input: crate::types::NodeProperties) -> Self {
         self.node_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p><note>
+    /// <p>An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p><note>
     /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     pub fn set_node_properties(mut self, input: ::std::option::Option<crate::types::NodeProperties>) -> Self {
         self.node_properties = input;
         self
     }
-    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p><note>
+    /// <p>An object with properties that are specific to multi-node parallel jobs. When <code>nodeProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.</p><note>
     /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     pub fn get_node_properties(&self) -> &::std::option::Option<crate::types::NodeProperties> {
@@ -362,17 +369,31 @@ impl JobDefinitionBuilder {
     pub fn get_platform_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>> {
         &self.platform_capabilities
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    /// <p>An object that contains the properties for the Amazon ECS resources of a job.When <code>ecsProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
+    pub fn ecs_properties(mut self, input: crate::types::EcsProperties) -> Self {
+        self.ecs_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains the properties for the Amazon ECS resources of a job.When <code>ecsProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
+    pub fn set_ecs_properties(mut self, input: ::std::option::Option<crate::types::EcsProperties>) -> Self {
+        self.ecs_properties = input;
+        self
+    }
+    /// <p>An object that contains the properties for the Amazon ECS resources of a job.When <code>ecsProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
+    pub fn get_ecs_properties(&self) -> &::std::option::Option<crate::types::EcsProperties> {
+        &self.ecs_properties
+    }
+    /// <p>An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>nodeProperties</code>.</p>
     pub fn eks_properties(mut self, input: crate::types::EksProperties) -> Self {
         self.eks_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    /// <p>An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>nodeProperties</code>.</p>
     pub fn set_eks_properties(mut self, input: ::std::option::Option<crate::types::EksProperties>) -> Self {
         self.eks_properties = input;
         self
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p>
+    /// <p>An object with properties that are specific to Amazon EKS-based jobs. When <code>eksProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>ecsProperties</code>, or <code>nodeProperties</code>.</p>
     pub fn get_eks_properties(&self) -> &::std::option::Option<crate::types::EksProperties> {
         &self.eks_properties
     }
@@ -407,6 +428,7 @@ impl JobDefinitionBuilder {
             tags: self.tags,
             propagate_tags: self.propagate_tags,
             platform_capabilities: self.platform_capabilities,
+            ecs_properties: self.ecs_properties,
             eks_properties: self.eks_properties,
             container_orchestration_type: self.container_orchestration_type,
         }

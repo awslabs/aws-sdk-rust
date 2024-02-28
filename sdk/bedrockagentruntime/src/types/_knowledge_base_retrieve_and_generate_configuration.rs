@@ -8,6 +8,8 @@ pub struct KnowledgeBaseRetrieveAndGenerateConfiguration {
     pub knowledge_base_id: ::std::string::String,
     /// Arn of a Bedrock model.
     pub model_arn: ::std::string::String,
+    /// Search parameters for retrieving from knowledge base.
+    pub retrieval_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>,
 }
 impl KnowledgeBaseRetrieveAndGenerateConfiguration {
     /// Identifier of the KnowledgeBase
@@ -19,6 +21,10 @@ impl KnowledgeBaseRetrieveAndGenerateConfiguration {
     pub fn model_arn(&self) -> &str {
         use std::ops::Deref;
         self.model_arn.deref()
+    }
+    /// Search parameters for retrieving from knowledge base.
+    pub fn retrieval_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseRetrievalConfiguration> {
+        self.retrieval_configuration.as_ref()
     }
 }
 impl KnowledgeBaseRetrieveAndGenerateConfiguration {
@@ -34,6 +40,7 @@ impl KnowledgeBaseRetrieveAndGenerateConfiguration {
 pub struct KnowledgeBaseRetrieveAndGenerateConfigurationBuilder {
     pub(crate) knowledge_base_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) retrieval_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>,
 }
 impl KnowledgeBaseRetrieveAndGenerateConfigurationBuilder {
     /// Identifier of the KnowledgeBase
@@ -66,6 +73,20 @@ impl KnowledgeBaseRetrieveAndGenerateConfigurationBuilder {
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }
+    /// Search parameters for retrieving from knowledge base.
+    pub fn retrieval_configuration(mut self, input: crate::types::KnowledgeBaseRetrievalConfiguration) -> Self {
+        self.retrieval_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Search parameters for retrieving from knowledge base.
+    pub fn set_retrieval_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>) -> Self {
+        self.retrieval_configuration = input;
+        self
+    }
+    /// Search parameters for retrieving from knowledge base.
+    pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration> {
+        &self.retrieval_configuration
+    }
     /// Consumes the builder and constructs a [`KnowledgeBaseRetrieveAndGenerateConfiguration`](crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`knowledge_base_id`](crate::types::builders::KnowledgeBaseRetrieveAndGenerateConfigurationBuilder::knowledge_base_id)
@@ -86,6 +107,7 @@ impl KnowledgeBaseRetrieveAndGenerateConfigurationBuilder {
                     "model_arn was not specified but it is required when building KnowledgeBaseRetrieveAndGenerateConfiguration",
                 )
             })?,
+            retrieval_configuration: self.retrieval_configuration,
         })
     }
 }

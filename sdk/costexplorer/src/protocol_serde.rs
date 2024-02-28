@@ -43,6 +43,8 @@ pub(crate) mod shape_get_anomaly_monitors;
 
 pub(crate) mod shape_get_anomaly_subscriptions;
 
+pub(crate) mod shape_get_approximate_usage_records;
+
 pub(crate) mod shape_get_cost_and_usage;
 
 pub(crate) mod shape_get_cost_and_usage_with_resources;
@@ -133,6 +135,8 @@ pub(crate) mod shape_get_anomaly_monitors_input;
 
 pub(crate) mod shape_get_anomaly_subscriptions_input;
 
+pub(crate) mod shape_get_approximate_usage_records_input;
+
 pub(crate) mod shape_get_cost_and_usage_input;
 
 pub(crate) mod shape_get_cost_and_usage_with_resources_input;
@@ -216,6 +220,8 @@ pub(crate) mod shape_anomaly_monitors;
 pub(crate) mod shape_anomaly_subscription;
 
 pub(crate) mod shape_anomaly_subscriptions;
+
+pub(crate) mod shape_approximate_usage_records_per_service;
 
 pub(crate) mod shape_cost_allocation_tag_list;
 

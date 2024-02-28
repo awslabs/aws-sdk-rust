@@ -21,6 +21,18 @@ pub use crate::types::_cr_update_allocation_strategy::CrUpdateAllocationStrategy
 
 pub use crate::types::_ce_state::CeState;
 
+pub use crate::types::_ecs_properties_override::EcsPropertiesOverride;
+
+pub use crate::types::_task_properties_override::TaskPropertiesOverride;
+
+pub use crate::types::_task_container_overrides::TaskContainerOverrides;
+
+pub use crate::types::_resource_requirement::ResourceRequirement;
+
+pub use crate::types::_resource_type::ResourceType;
+
+pub use crate::types::_key_value_pair::KeyValuePair;
+
 pub use crate::types::_eks_properties_override::EksPropertiesOverride;
 
 pub use crate::types::_eks_pod_properties_override::EksPodPropertiesOverride;
@@ -47,17 +59,59 @@ pub use crate::types::_node_property_override::NodePropertyOverride;
 
 pub use crate::types::_container_overrides::ContainerOverrides;
 
-pub use crate::types::_resource_requirement::ResourceRequirement;
-
-pub use crate::types::_resource_type::ResourceType;
-
-pub use crate::types::_key_value_pair::KeyValuePair;
-
 pub use crate::types::_job_dependency::JobDependency;
 
 pub use crate::types::_array_job_dependency::ArrayJobDependency;
 
 pub use crate::types::_array_properties::ArrayProperties;
+
+pub use crate::types::_ecs_properties::EcsProperties;
+
+pub use crate::types::_ecs_task_properties::EcsTaskProperties;
+
+pub use crate::types::_volume::Volume;
+
+pub use crate::types::_efs_volume_configuration::EfsVolumeConfiguration;
+
+pub use crate::types::_efs_authorization_config::EfsAuthorizationConfig;
+
+pub use crate::types::_efs_authorization_config_iam::EfsAuthorizationConfigIam;
+
+pub use crate::types::_efs_transit_encryption::EfsTransitEncryption;
+
+pub use crate::types::_host::Host;
+
+pub use crate::types::_runtime_platform::RuntimePlatform;
+
+pub use crate::types::_network_configuration::NetworkConfiguration;
+
+pub use crate::types::_assign_public_ip::AssignPublicIp;
+
+pub use crate::types::_ephemeral_storage::EphemeralStorage;
+
+pub use crate::types::_task_container_properties::TaskContainerProperties;
+
+pub use crate::types::_ulimit::Ulimit;
+
+pub use crate::types::_secret::Secret;
+
+pub use crate::types::_repository_credentials::RepositoryCredentials;
+
+pub use crate::types::_mount_point::MountPoint;
+
+pub use crate::types::_log_configuration::LogConfiguration;
+
+pub use crate::types::_log_driver::LogDriver;
+
+pub use crate::types::_linux_parameters::LinuxParameters;
+
+pub use crate::types::_tmpfs::Tmpfs;
+
+pub use crate::types::_device::Device;
+
+pub use crate::types::_device_cgroup_permission::DeviceCgroupPermission;
+
+pub use crate::types::_task_container_dependency::TaskContainerDependency;
 
 pub use crate::types::_eks_properties::EksProperties;
 
@@ -85,47 +139,7 @@ pub use crate::types::_node_range_property::NodeRangeProperty;
 
 pub use crate::types::_container_properties::ContainerProperties;
 
-pub use crate::types::_repository_credentials::RepositoryCredentials;
-
-pub use crate::types::_runtime_platform::RuntimePlatform;
-
-pub use crate::types::_ephemeral_storage::EphemeralStorage;
-
 pub use crate::types::_fargate_platform_configuration::FargatePlatformConfiguration;
-
-pub use crate::types::_network_configuration::NetworkConfiguration;
-
-pub use crate::types::_assign_public_ip::AssignPublicIp;
-
-pub use crate::types::_secret::Secret;
-
-pub use crate::types::_log_configuration::LogConfiguration;
-
-pub use crate::types::_log_driver::LogDriver;
-
-pub use crate::types::_linux_parameters::LinuxParameters;
-
-pub use crate::types::_tmpfs::Tmpfs;
-
-pub use crate::types::_device::Device;
-
-pub use crate::types::_device_cgroup_permission::DeviceCgroupPermission;
-
-pub use crate::types::_ulimit::Ulimit;
-
-pub use crate::types::_mount_point::MountPoint;
-
-pub use crate::types::_volume::Volume;
-
-pub use crate::types::_efs_volume_configuration::EfsVolumeConfiguration;
-
-pub use crate::types::_efs_authorization_config::EfsAuthorizationConfig;
-
-pub use crate::types::_efs_authorization_config_iam::EfsAuthorizationConfigIam;
-
-pub use crate::types::_efs_transit_encryption::EfsTransitEncryption;
-
-pub use crate::types::_host::Host;
 
 pub use crate::types::_job_definition_type::JobDefinitionType;
 
@@ -147,6 +161,14 @@ pub use crate::types::_scheduling_policy_detail::SchedulingPolicyDetail;
 
 pub use crate::types::_job_detail::JobDetail;
 
+pub use crate::types::_ecs_properties_detail::EcsPropertiesDetail;
+
+pub use crate::types::_ecs_task_details::EcsTaskDetails;
+
+pub use crate::types::_task_container_details::TaskContainerDetails;
+
+pub use crate::types::_network_interface::NetworkInterface;
+
 pub use crate::types::_eks_attempt_detail::EksAttemptDetail;
 
 pub use crate::types::_eks_attempt_container_detail::EksAttemptContainerDetail;
@@ -162,8 +184,6 @@ pub use crate::types::_array_properties_detail::ArrayPropertiesDetail;
 pub use crate::types::_node_details::NodeDetails;
 
 pub use crate::types::_container_detail::ContainerDetail;
-
-pub use crate::types::_network_interface::NetworkInterface;
 
 pub use crate::types::_attempt_detail::AttemptDetail;
 
@@ -236,6 +256,16 @@ mod _device;
 mod _device_cgroup_permission;
 
 mod _ec2_configuration;
+
+mod _ecs_properties;
+
+mod _ecs_properties_detail;
+
+mod _ecs_properties_override;
+
+mod _ecs_task_details;
+
+mod _ecs_task_properties;
 
 mod _efs_authorization_config;
 
@@ -370,6 +400,16 @@ mod _scheduling_policy_listing_detail;
 mod _secret;
 
 mod _share_attributes;
+
+mod _task_container_dependency;
+
+mod _task_container_details;
+
+mod _task_container_overrides;
+
+mod _task_container_properties;
+
+mod _task_properties_override;
 
 mod _tmpfs;
 

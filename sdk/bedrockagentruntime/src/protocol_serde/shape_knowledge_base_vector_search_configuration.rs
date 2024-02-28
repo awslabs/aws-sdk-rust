@@ -3,11 +3,14 @@ pub fn ser_knowledge_base_vector_search_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KnowledgeBaseVectorSearchConfiguration,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
+    if input.number_of_results != 5 {
         object.key("numberOfResults").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.number_of_results).into()),
         );
+    }
+    if let Some(var_1) = &input.override_search_type {
+        object.key("overrideSearchType").string(var_1.as_str());
     }
     Ok(())
 }

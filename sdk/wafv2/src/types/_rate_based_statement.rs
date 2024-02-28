@@ -61,6 +61,10 @@ pub struct RateBasedStatement {
     /// <p>If you aggregate on the HTTP method and the query argument name "city", then this is the limit on requests for any single method, city pair.</p></li>
     /// </ul>
     pub limit: i64,
+    /// <p>The amount of time, in seconds, that WAF should include in its request counts, looking back from the current time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the 2 minutes immediately preceding the current time. Valid settings are 60, 120, 300, and 600.</p>
+    /// <p>This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it checks. WAF checks the rate about every 10 seconds.</p>
+    /// <p>Default: <code>300</code> (5 minutes)</p>
+    pub evaluation_window_sec: i64,
     /// <p>Setting that indicates how to aggregate the request counts.</p><note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling.</p>
     /// </note>
@@ -102,6 +106,12 @@ impl RateBasedStatement {
     /// </ul>
     pub fn limit(&self) -> i64 {
         self.limit
+    }
+    /// <p>The amount of time, in seconds, that WAF should include in its request counts, looking back from the current time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the 2 minutes immediately preceding the current time. Valid settings are 60, 120, 300, and 600.</p>
+    /// <p>This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it checks. WAF checks the rate about every 10 seconds.</p>
+    /// <p>Default: <code>300</code> (5 minutes)</p>
+    pub fn evaluation_window_sec(&self) -> i64 {
+        self.evaluation_window_sec
     }
     /// <p>Setting that indicates how to aggregate the request counts.</p><note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling.</p>
@@ -155,6 +165,7 @@ impl RateBasedStatement {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RateBasedStatementBuilder {
     pub(crate) limit: ::std::option::Option<i64>,
+    pub(crate) evaluation_window_sec: ::std::option::Option<i64>,
     pub(crate) aggregate_key_type: ::std::option::Option<crate::types::RateBasedStatementAggregateKeyType>,
     pub(crate) scope_down_statement: ::std::option::Option<::std::boxed::Box<crate::types::Statement>>,
     pub(crate) forwarded_ip_config: ::std::option::Option<crate::types::ForwardedIpConfig>,
@@ -196,6 +207,26 @@ impl RateBasedStatementBuilder {
     /// </ul>
     pub fn get_limit(&self) -> &::std::option::Option<i64> {
         &self.limit
+    }
+    /// <p>The amount of time, in seconds, that WAF should include in its request counts, looking back from the current time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the 2 minutes immediately preceding the current time. Valid settings are 60, 120, 300, and 600.</p>
+    /// <p>This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it checks. WAF checks the rate about every 10 seconds.</p>
+    /// <p>Default: <code>300</code> (5 minutes)</p>
+    pub fn evaluation_window_sec(mut self, input: i64) -> Self {
+        self.evaluation_window_sec = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The amount of time, in seconds, that WAF should include in its request counts, looking back from the current time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the 2 minutes immediately preceding the current time. Valid settings are 60, 120, 300, and 600.</p>
+    /// <p>This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it checks. WAF checks the rate about every 10 seconds.</p>
+    /// <p>Default: <code>300</code> (5 minutes)</p>
+    pub fn set_evaluation_window_sec(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.evaluation_window_sec = input;
+        self
+    }
+    /// <p>The amount of time, in seconds, that WAF should include in its request counts, looking back from the current time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the 2 minutes immediately preceding the current time. Valid settings are 60, 120, 300, and 600.</p>
+    /// <p>This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it checks. WAF checks the rate about every 10 seconds.</p>
+    /// <p>Default: <code>300</code> (5 minutes)</p>
+    pub fn get_evaluation_window_sec(&self) -> &::std::option::Option<i64> {
+        &self.evaluation_window_sec
     }
     /// <p>Setting that indicates how to aggregate the request counts.</p><note>
     /// <p>Web requests that are missing any of the components specified in the aggregation keys are omitted from the rate-based rule evaluation and handling.</p>
@@ -335,6 +366,7 @@ impl RateBasedStatementBuilder {
                     "limit was not specified but it is required when building RateBasedStatement",
                 )
             })?,
+            evaluation_window_sec: self.evaluation_window_sec.unwrap_or_default(),
             aggregate_key_type: self.aggregate_key_type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "aggregate_key_type",

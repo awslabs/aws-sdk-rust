@@ -24,7 +24,7 @@ pub struct JobDetail {
     pub attempts: ::std::option::Option<::std::vec::Vec<crate::types::AttemptDetail>>,
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub created_at: ::std::option::Option<i64>,
     /// <p>The retry strategy to use for this job if an attempt fails.</p>
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
@@ -38,7 +38,7 @@ pub struct JobDetail {
     pub job_definition: ::std::option::Option<::std::string::String>,
     /// <p>Additional parameters that are passed to the job that replace parameter substitution placeholders or override any corresponding parameter defaults from the job definition.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>An object that represents the details for the container that's associated with the job.</p>
+    /// <p>An object that represents the details for the container that's associated with the job. If the details are for a multiple-container job, this object will be empty.</p>
     pub container: ::std::option::Option<crate::types::ContainerDetail>,
     /// <p>An object that represents the details of a node that's associated with a multi-node parallel job.</p>
     pub node_details: ::std::option::Option<crate::types::NodeDetails>,
@@ -56,10 +56,12 @@ pub struct JobDetail {
     pub propagate_tags: ::std::option::Option<bool>,
     /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
     pub platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
+    /// <p>An object with various properties that are specific to Amazon EKS based jobs.</p>
     pub eks_properties: ::std::option::Option<crate::types::EksPropertiesDetail>,
     /// <p>A list of job attempts that are associated with this job.</p>
     pub eks_attempts: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptDetail>>,
+    /// <p>An object with properties that are specific to Amazon ECS-based jobs.</p>
+    pub ecs_properties: ::std::option::Option<crate::types::EcsPropertiesDetail>,
     /// <p>Indicates whether the job is canceled.</p>
     pub is_cancelled: ::std::option::Option<bool>,
     /// <p>Indicates whether the job is terminated.</p>
@@ -106,7 +108,7 @@ impl JobDetail {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub fn created_at(&self) -> ::std::option::Option<i64> {
         self.created_at
     }
@@ -136,7 +138,7 @@ impl JobDetail {
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
-    /// <p>An object that represents the details for the container that's associated with the job.</p>
+    /// <p>An object that represents the details for the container that's associated with the job. If the details are for a multiple-container job, this object will be empty.</p>
     pub fn container(&self) -> ::std::option::Option<&crate::types::ContainerDetail> {
         self.container.as_ref()
     }
@@ -172,7 +174,7 @@ impl JobDetail {
     pub fn platform_capabilities(&self) -> &[crate::types::PlatformCapability] {
         self.platform_capabilities.as_deref().unwrap_or_default()
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
+    /// <p>An object with various properties that are specific to Amazon EKS based jobs.</p>
     pub fn eks_properties(&self) -> ::std::option::Option<&crate::types::EksPropertiesDetail> {
         self.eks_properties.as_ref()
     }
@@ -181,6 +183,10 @@ impl JobDetail {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.eks_attempts.is_none()`.
     pub fn eks_attempts(&self) -> &[crate::types::EksAttemptDetail] {
         self.eks_attempts.as_deref().unwrap_or_default()
+    }
+    /// <p>An object with properties that are specific to Amazon ECS-based jobs.</p>
+    pub fn ecs_properties(&self) -> ::std::option::Option<&crate::types::EcsPropertiesDetail> {
+        self.ecs_properties.as_ref()
     }
     /// <p>Indicates whether the job is canceled.</p>
     pub fn is_cancelled(&self) -> ::std::option::Option<bool> {
@@ -228,6 +234,7 @@ pub struct JobDetailBuilder {
     pub(crate) platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
     pub(crate) eks_properties: ::std::option::Option<crate::types::EksPropertiesDetail>,
     pub(crate) eks_attempts: ::std::option::Option<::std::vec::Vec<crate::types::EksAttemptDetail>>,
+    pub(crate) ecs_properties: ::std::option::Option<crate::types::EcsPropertiesDetail>,
     pub(crate) is_cancelled: ::std::option::Option<bool>,
     pub(crate) is_terminated: ::std::option::Option<bool>,
 }
@@ -374,17 +381,17 @@ impl JobDetailBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
-    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub fn created_at(mut self, input: i64) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <code>SubmitJob</code> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<i64> {
         &self.created_at
     }
@@ -486,17 +493,17 @@ impl JobDetailBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
-    /// <p>An object that represents the details for the container that's associated with the job.</p>
+    /// <p>An object that represents the details for the container that's associated with the job. If the details are for a multiple-container job, this object will be empty.</p>
     pub fn container(mut self, input: crate::types::ContainerDetail) -> Self {
         self.container = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that represents the details for the container that's associated with the job.</p>
+    /// <p>An object that represents the details for the container that's associated with the job. If the details are for a multiple-container job, this object will be empty.</p>
     pub fn set_container(mut self, input: ::std::option::Option<crate::types::ContainerDetail>) -> Self {
         self.container = input;
         self
     }
-    /// <p>An object that represents the details for the container that's associated with the job.</p>
+    /// <p>An object that represents the details for the container that's associated with the job. If the details are for a multiple-container job, this object will be empty.</p>
     pub fn get_container(&self) -> &::std::option::Option<crate::types::ContainerDetail> {
         &self.container
     }
@@ -616,17 +623,17 @@ impl JobDetailBuilder {
     pub fn get_platform_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>> {
         &self.platform_capabilities
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
+    /// <p>An object with various properties that are specific to Amazon EKS based jobs.</p>
     pub fn eks_properties(mut self, input: crate::types::EksPropertiesDetail) -> Self {
         self.eks_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
+    /// <p>An object with various properties that are specific to Amazon EKS based jobs.</p>
     pub fn set_eks_properties(mut self, input: ::std::option::Option<crate::types::EksPropertiesDetail>) -> Self {
         self.eks_properties = input;
         self
     }
-    /// <p>An object with various properties that are specific to Amazon EKS based jobs. Only one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code> is specified.</p>
+    /// <p>An object with various properties that are specific to Amazon EKS based jobs.</p>
     pub fn get_eks_properties(&self) -> &::std::option::Option<crate::types::EksPropertiesDetail> {
         &self.eks_properties
     }
@@ -649,6 +656,20 @@ impl JobDetailBuilder {
     /// <p>A list of job attempts that are associated with this job.</p>
     pub fn get_eks_attempts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksAttemptDetail>> {
         &self.eks_attempts
+    }
+    /// <p>An object with properties that are specific to Amazon ECS-based jobs.</p>
+    pub fn ecs_properties(mut self, input: crate::types::EcsPropertiesDetail) -> Self {
+        self.ecs_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object with properties that are specific to Amazon ECS-based jobs.</p>
+    pub fn set_ecs_properties(mut self, input: ::std::option::Option<crate::types::EcsPropertiesDetail>) -> Self {
+        self.ecs_properties = input;
+        self
+    }
+    /// <p>An object with properties that are specific to Amazon ECS-based jobs.</p>
+    pub fn get_ecs_properties(&self) -> &::std::option::Option<crate::types::EcsPropertiesDetail> {
+        &self.ecs_properties
     }
     /// <p>Indicates whether the job is canceled.</p>
     pub fn is_cancelled(mut self, input: bool) -> Self {
@@ -707,6 +728,7 @@ impl JobDetailBuilder {
             platform_capabilities: self.platform_capabilities,
             eks_properties: self.eks_properties,
             eks_attempts: self.eks_attempts,
+            ecs_properties: self.ecs_properties,
             is_cancelled: self.is_cancelled,
             is_terminated: self.is_terminated,
         }

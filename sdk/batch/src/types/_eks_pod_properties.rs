@@ -13,10 +13,16 @@ pub struct EksPodProperties {
     pub dns_policy: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the container that's used on the Amazon EKS pod.</p>
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>,
+    /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
+    /// <p>This object is limited to 10 elements</p>
+    /// </note>
+    pub init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>,
     /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::EksVolume>>,
     /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
     pub metadata: ::std::option::Option<crate::types::EksMetadata>,
+    /// <p>Indicates if the processes in a container are shared, or visible, to other containers in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share Process Namespace between Containers in a Pod</a>.</p>
+    pub share_process_namespace: ::std::option::Option<bool>,
 }
 impl EksPodProperties {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
@@ -38,6 +44,14 @@ impl EksPodProperties {
     pub fn containers(&self) -> &[crate::types::EksContainer] {
         self.containers.as_deref().unwrap_or_default()
     }
+    /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
+    /// <p>This object is limited to 10 elements</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.init_containers.is_none()`.
+    pub fn init_containers(&self) -> &[crate::types::EksContainer] {
+        self.init_containers.as_deref().unwrap_or_default()
+    }
     /// <p>Specifies the volumes for a job definition that uses Amazon EKS resources.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
@@ -47,6 +61,10 @@ impl EksPodProperties {
     /// <p>Metadata about the Kubernetes pod. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::EksMetadata> {
         self.metadata.as_ref()
+    }
+    /// <p>Indicates if the processes in a container are shared, or visible, to other containers in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share Process Namespace between Containers in a Pod</a>.</p>
+    pub fn share_process_namespace(&self) -> ::std::option::Option<bool> {
+        self.share_process_namespace
     }
 }
 impl EksPodProperties {
@@ -64,8 +82,10 @@ pub struct EksPodPropertiesBuilder {
     pub(crate) host_network: ::std::option::Option<bool>,
     pub(crate) dns_policy: ::std::option::Option<::std::string::String>,
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>,
+    pub(crate) init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>,
     pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::EksVolume>>,
     pub(crate) metadata: ::std::option::Option<crate::types::EksMetadata>,
+    pub(crate) share_process_namespace: ::std::option::Option<bool>,
 }
 impl EksPodPropertiesBuilder {
     /// <p>The name of the service account that's used to run the pod. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i> and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure service accounts for pods</a> in the <i>Kubernetes documentation</i>.</p>
@@ -133,6 +153,32 @@ impl EksPodPropertiesBuilder {
     pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainer>> {
         &self.containers
     }
+    /// Appends an item to `init_containers`.
+    ///
+    /// To override the contents of this collection use [`set_init_containers`](Self::set_init_containers).
+    ///
+    /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
+    /// <p>This object is limited to 10 elements</p>
+    /// </note>
+    pub fn init_containers(mut self, input: crate::types::EksContainer) -> Self {
+        let mut v = self.init_containers.unwrap_or_default();
+        v.push(input);
+        self.init_containers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
+    /// <p>This object is limited to 10 elements</p>
+    /// </note>
+    pub fn set_init_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainer>>) -> Self {
+        self.init_containers = input;
+        self
+    }
+    /// <p>These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p><note>
+    /// <p>This object is limited to 10 elements</p>
+    /// </note>
+    pub fn get_init_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainer>> {
+        &self.init_containers
+    }
     /// Appends an item to `volumes`.
     ///
     /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
@@ -167,6 +213,20 @@ impl EksPodPropertiesBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::EksMetadata> {
         &self.metadata
     }
+    /// <p>Indicates if the processes in a container are shared, or visible, to other containers in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share Process Namespace between Containers in a Pod</a>.</p>
+    pub fn share_process_namespace(mut self, input: bool) -> Self {
+        self.share_process_namespace = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if the processes in a container are shared, or visible, to other containers in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share Process Namespace between Containers in a Pod</a>.</p>
+    pub fn set_share_process_namespace(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.share_process_namespace = input;
+        self
+    }
+    /// <p>Indicates if the processes in a container are shared, or visible, to other containers in the same pod. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">Share Process Namespace between Containers in a Pod</a>.</p>
+    pub fn get_share_process_namespace(&self) -> &::std::option::Option<bool> {
+        &self.share_process_namespace
+    }
     /// Consumes the builder and constructs a [`EksPodProperties`](crate::types::EksPodProperties).
     pub fn build(self) -> crate::types::EksPodProperties {
         crate::types::EksPodProperties {
@@ -174,8 +234,10 @@ impl EksPodPropertiesBuilder {
             host_network: self.host_network,
             dns_policy: self.dns_policy,
             containers: self.containers,
+            init_containers: self.init_containers,
             volumes: self.volumes,
             metadata: self.metadata,
+            share_process_namespace: self.share_process_namespace,
         }
     }
 }

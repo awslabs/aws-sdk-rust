@@ -83,6 +83,9 @@ where
                                 crate::protocol_serde::shape_platform_capability_list::de_platform_capability_list(tokens)?,
                             );
                         }
+                        "ecsProperties" => {
+                            builder = builder.set_ecs_properties(crate::protocol_serde::shape_ecs_properties::de_ecs_properties(tokens)?);
+                        }
                         "eksProperties" => {
                             builder = builder.set_eks_properties(crate::protocol_serde::shape_eks_properties::de_eks_properties(tokens)?);
                         }

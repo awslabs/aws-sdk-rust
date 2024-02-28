@@ -12,5 +12,20 @@ pub fn ser_node_property_override(
         crate::protocol_serde::shape_container_overrides::ser_container_overrides(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.ecs_properties_override {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ecsPropertiesOverride").start_object();
+        crate::protocol_serde::shape_ecs_properties_override::ser_ecs_properties_override(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.instance_types {
+        let mut array_7 = object.key("instanceTypes").start_array();
+        for item_8 in var_6 {
+            {
+                array_7.value().string(item_8.as_str());
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }

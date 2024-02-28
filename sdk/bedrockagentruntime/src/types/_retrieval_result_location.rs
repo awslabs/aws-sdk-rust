@@ -2,7 +2,7 @@
 
 /// The source location of a retrieval result.
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RetrievalResultLocation {
     /// The location type of a retrieval result.
     pub r#type: crate::types::RetrievalResultLocationType,
@@ -19,6 +19,14 @@ impl RetrievalResultLocation {
         self.s3_location.as_ref()
     }
 }
+impl ::std::fmt::Debug for RetrievalResultLocation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RetrievalResultLocation");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.field("s3_location", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RetrievalResultLocation {
     /// Creates a new builder-style object to manufacture [`RetrievalResultLocation`](crate::types::RetrievalResultLocation).
     pub fn builder() -> crate::types::builders::RetrievalResultLocationBuilder {
@@ -28,7 +36,7 @@ impl RetrievalResultLocation {
 
 /// A builder for [`RetrievalResultLocation`](crate::types::RetrievalResultLocation).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RetrievalResultLocationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::RetrievalResultLocationType>,
     pub(crate) s3_location: ::std::option::Option<crate::types::RetrievalResultS3Location>,
@@ -76,5 +84,13 @@ impl RetrievalResultLocationBuilder {
             })?,
             s3_location: self.s3_location,
         })
+    }
+}
+impl ::std::fmt::Debug for RetrievalResultLocationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RetrievalResultLocationBuilder");
+        formatter.field("r#type", &"*** Sensitive Data Redacted ***");
+        formatter.field("s3_location", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -34,6 +34,10 @@ where
                         "containers" => {
                             builder = builder.set_containers(crate::protocol_serde::shape_eks_container_details::de_eks_container_details(tokens)?);
                         }
+                        "initContainers" => {
+                            builder =
+                                builder.set_init_containers(crate::protocol_serde::shape_eks_container_details::de_eks_container_details(tokens)?);
+                        }
                         "volumes" => {
                             builder = builder.set_volumes(crate::protocol_serde::shape_eks_volumes::de_eks_volumes(tokens)?);
                         }
@@ -53,6 +57,9 @@ where
                         }
                         "metadata" => {
                             builder = builder.set_metadata(crate::protocol_serde::shape_eks_metadata::de_eks_metadata(tokens)?);
+                        }
+                        "shareProcessNamespace" => {
+                            builder = builder.set_share_process_namespace(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

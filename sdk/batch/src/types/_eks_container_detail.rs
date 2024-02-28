@@ -13,7 +13,7 @@ pub struct EksContainerDetail {
     /// <p>The entrypoint for the container. For more information, see <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
-    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
     pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The environment variables to pass to a container.</p><note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
@@ -21,7 +21,7 @@ pub struct EksContainerDetail {
     pub env: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub resources: ::std::option::Option<crate::types::EksContainerResourceRequirements>,
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub exit_code: ::std::option::Option<i32>,
     /// <p>A short human-readable string to provide additional details for a running or stopped container. It can be up to 255 characters long.</p>
     pub reason: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ impl EksContainerDetail {
         self.command.as_deref().unwrap_or_default()
     }
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
-    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.args.is_none()`.
     pub fn args(&self) -> &[::std::string::String] {
@@ -68,7 +68,7 @@ impl EksContainerDetail {
     pub fn resources(&self) -> ::std::option::Option<&crate::types::EksContainerResourceRequirements> {
         self.resources.as_ref()
     }
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn exit_code(&self) -> ::std::option::Option<i32> {
         self.exit_code
     }
@@ -178,7 +178,7 @@ impl EksContainerDetailBuilder {
     /// To override the contents of this collection use [`set_args`](Self::set_args).
     ///
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
-    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn args(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.args.unwrap_or_default();
         v.push(input.into());
@@ -186,13 +186,13 @@ impl EksContainerDetailBuilder {
         self
     }
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
-    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_args(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.args = input;
         self
     }
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
-    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn get_args(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.args
     }
@@ -236,17 +236,17 @@ impl EksContainerDetailBuilder {
     pub fn get_resources(&self) -> &::std::option::Option<crate::types::EksContainerResourceRequirements> {
         &self.resources
     }
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
         self.exit_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn set_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.exit_code = input;
         self
     }
-    /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
+    /// <p>The exit code returned for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn get_exit_code(&self) -> &::std::option::Option<i32> {
         &self.exit_code
     }

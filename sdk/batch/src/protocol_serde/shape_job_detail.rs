@@ -144,6 +144,10 @@ where
                         "eksAttempts" => {
                             builder = builder.set_eks_attempts(crate::protocol_serde::shape_eks_attempt_details::de_eks_attempt_details(tokens)?);
                         }
+                        "ecsProperties" => {
+                            builder =
+                                builder.set_ecs_properties(crate::protocol_serde::shape_ecs_properties_detail::de_ecs_properties_detail(tokens)?);
+                        }
                         "isCancelled" => {
                             builder = builder.set_is_cancelled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
