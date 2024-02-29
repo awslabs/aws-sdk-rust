@@ -146,6 +146,13 @@ where
                                 crate::protocol_serde::shape_additional_inference_specifications::de_additional_inference_specifications(tokens)?,
                             );
                         }
+                        "SourceUri" => {
+                            builder = builder.set_source_uri(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }

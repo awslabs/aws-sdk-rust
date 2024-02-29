@@ -106,5 +106,8 @@ pub fn ser_create_model_package_input_input(
     if let Some(var_34) = &input.skip_model_validation {
         object.key("SkipModelValidation").string(var_34.as_str());
     }
+    if let Some(var_35) = &input.source_uri {
+        object.key("SourceUri").string(var_35.as_str());
+    }
     Ok(())
 }

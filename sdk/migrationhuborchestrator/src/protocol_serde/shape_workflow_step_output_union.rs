@@ -72,7 +72,7 @@ where
                                 })?,
                         )),
                         "listOfStringValue" => Some(crate::types::WorkflowStepOutputUnion::ListOfStringValue(
-                            crate::protocol_serde::shape_string_list::de_string_list(tokens)?.ok_or_else(|| {
+                            crate::protocol_serde::shape_max_string_list::de_max_string_list(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'listOfStringValue' cannot be null")
                             })?,
                         )),

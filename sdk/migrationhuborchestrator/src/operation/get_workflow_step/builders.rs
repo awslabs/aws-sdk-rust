@@ -122,17 +122,17 @@ impl GetWorkflowStepFluentBuilder {
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_id()
     }
-    /// <p>desThe ID of the step group.</p>
+    /// <p>The ID of the step group.</p>
     pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.step_group_id(input.into());
         self
     }
-    /// <p>desThe ID of the step group.</p>
+    /// <p>The ID of the step group.</p>
     pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_step_group_id(input);
         self
     }
-    /// <p>desThe ID of the step group.</p>
+    /// <p>The ID of the step group.</p>
     pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_step_group_id()
     }

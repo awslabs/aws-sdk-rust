@@ -101,6 +101,20 @@ pub use crate::types::_conditional_branch::ConditionalBranchBuilder;
 
 pub use crate::types::_condition::ConditionBuilder;
 
+pub use crate::types::_qn_a_intent_configuration::QnAIntentConfigurationBuilder;
+
+pub use crate::types::_bedrock_model_specification::BedrockModelSpecificationBuilder;
+
+pub use crate::types::_data_source_configuration::DataSourceConfigurationBuilder;
+
+pub use crate::types::_bedrock_knowledge_store_configuration::BedrockKnowledgeStoreConfigurationBuilder;
+
+pub use crate::types::_qn_a_kendra_configuration::QnAKendraConfigurationBuilder;
+
+pub use crate::types::_opensearch_configuration::OpensearchConfigurationBuilder;
+
+pub use crate::types::_exact_response_fields::ExactResponseFieldsBuilder;
+
 pub use crate::types::_initial_response_setting::InitialResponseSettingBuilder;
 
 pub use crate::types::_kendra_configuration::KendraConfigurationBuilder;
@@ -156,8 +170,6 @@ pub use crate::types::_generative_ai_settings::GenerativeAiSettingsBuilder;
 pub use crate::types::_buildtime_settings::BuildtimeSettingsBuilder;
 
 pub use crate::types::_sample_utterance_generation_specification::SampleUtteranceGenerationSpecificationBuilder;
-
-pub use crate::types::_bedrock_model_specification::BedrockModelSpecificationBuilder;
 
 pub use crate::types::_descriptive_bot_builder_specification::DescriptiveBotBuilderSpecificationBuilder;
 

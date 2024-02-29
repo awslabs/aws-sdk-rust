@@ -12,6 +12,8 @@ pub struct ColumnTooltipItem {
     pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The aggregation function of the column tooltip item.</p>
     pub aggregation: ::std::option::Option<crate::types::AggregationFunction>,
+    /// <p>Determines the target of the column tooltip item in a combo chart visual.</p>
+    pub tooltip_target: ::std::option::Option<crate::types::TooltipTarget>,
 }
 impl ColumnTooltipItem {
     /// <p>The target column of the tooltip item.</p>
@@ -30,6 +32,10 @@ impl ColumnTooltipItem {
     pub fn aggregation(&self) -> ::std::option::Option<&crate::types::AggregationFunction> {
         self.aggregation.as_ref()
     }
+    /// <p>Determines the target of the column tooltip item in a combo chart visual.</p>
+    pub fn tooltip_target(&self) -> ::std::option::Option<&crate::types::TooltipTarget> {
+        self.tooltip_target.as_ref()
+    }
 }
 impl ColumnTooltipItem {
     /// Creates a new builder-style object to manufacture [`ColumnTooltipItem`](crate::types::ColumnTooltipItem).
@@ -46,6 +52,7 @@ pub struct ColumnTooltipItemBuilder {
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) aggregation: ::std::option::Option<crate::types::AggregationFunction>,
+    pub(crate) tooltip_target: ::std::option::Option<crate::types::TooltipTarget>,
 }
 impl ColumnTooltipItemBuilder {
     /// <p>The target column of the tooltip item.</p>
@@ -105,6 +112,20 @@ impl ColumnTooltipItemBuilder {
     pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::AggregationFunction> {
         &self.aggregation
     }
+    /// <p>Determines the target of the column tooltip item in a combo chart visual.</p>
+    pub fn tooltip_target(mut self, input: crate::types::TooltipTarget) -> Self {
+        self.tooltip_target = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines the target of the column tooltip item in a combo chart visual.</p>
+    pub fn set_tooltip_target(mut self, input: ::std::option::Option<crate::types::TooltipTarget>) -> Self {
+        self.tooltip_target = input;
+        self
+    }
+    /// <p>Determines the target of the column tooltip item in a combo chart visual.</p>
+    pub fn get_tooltip_target(&self) -> &::std::option::Option<crate::types::TooltipTarget> {
+        &self.tooltip_target
+    }
     /// Consumes the builder and constructs a [`ColumnTooltipItem`](crate::types::ColumnTooltipItem).
     pub fn build(self) -> crate::types::ColumnTooltipItem {
         crate::types::ColumnTooltipItem {
@@ -112,6 +133,7 @@ impl ColumnTooltipItemBuilder {
             label: self.label,
             visibility: self.visibility,
             aggregation: self.aggregation,
+            tooltip_target: self.tooltip_target,
         }
     }
 }

@@ -15,39 +15,45 @@ pub fn ser_model_package_container_definition(
     if let Some(var_4) = &input.model_data_url {
         object.key("ModelDataUrl").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.product_id {
-        object.key("ProductId").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.environment {
+    if let Some(var_5) = &input.model_data_source {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Environment").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_6 = object.key("ModelDataSource").start_object();
+        crate::protocol_serde::shape_model_data_source::ser_model_data_source(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.product_id {
+        object.key("ProductId").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.environment {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("Environment").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_7.finish();
+        object_9.finish();
     }
-    if let Some(var_10) = &input.model_input {
+    if let Some(var_12) = &input.model_input {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("ModelInput").start_object();
-        crate::protocol_serde::shape_model_input::ser_model_input(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_13 = object.key("ModelInput").start_object();
+        crate::protocol_serde::shape_model_input::ser_model_input(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_12) = &input.framework {
-        object.key("Framework").string(var_12.as_str());
+    if let Some(var_14) = &input.framework {
+        object.key("Framework").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.framework_version {
-        object.key("FrameworkVersion").string(var_13.as_str());
+    if let Some(var_15) = &input.framework_version {
+        object.key("FrameworkVersion").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.nearest_model_name {
-        object.key("NearestModelName").string(var_14.as_str());
+    if let Some(var_16) = &input.nearest_model_name {
+        object.key("NearestModelName").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.additional_s3_data_source {
+    if let Some(var_17) = &input.additional_s3_data_source {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("AdditionalS3DataSource").start_object();
-        crate::protocol_serde::shape_additional_s3_data_source::ser_additional_s3_data_source(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_18 = object.key("AdditionalS3DataSource").start_object();
+        crate::protocol_serde::shape_additional_s3_data_source::ser_additional_s3_data_source(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }
@@ -94,6 +100,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "ModelDataSource" => {
+                            builder = builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens)?);
                         }
                         "ProductId" => {
                             builder = builder.set_product_id(

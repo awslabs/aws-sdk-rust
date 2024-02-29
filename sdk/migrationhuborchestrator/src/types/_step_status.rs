@@ -18,6 +18,7 @@
 ///     StepStatus::InProgress => { /* ... */ },
 ///     StepStatus::Paused => { /* ... */ },
 ///     StepStatus::Ready => { /* ... */ },
+///     StepStatus::Skipped => { /* ... */ },
 ///     StepStatus::UserAttentionRequired => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum StepStatus {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     #[allow(missing_docs)] // documentation missing in model
+    Skipped,
+    #[allow(missing_docs)] // documentation missing in model
     UserAttentionRequired,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for StepStatus {
             "IN_PROGRESS" => StepStatus::InProgress,
             "PAUSED" => StepStatus::Paused,
             "READY" => StepStatus::Ready,
+            "SKIPPED" => StepStatus::Skipped,
             "USER_ATTENTION_REQUIRED" => StepStatus::UserAttentionRequired,
             other => StepStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -95,6 +99,7 @@ impl StepStatus {
             StepStatus::InProgress => "IN_PROGRESS",
             StepStatus::Paused => "PAUSED",
             StepStatus::Ready => "READY",
+            StepStatus::Skipped => "SKIPPED",
             StepStatus::UserAttentionRequired => "USER_ATTENTION_REQUIRED",
             StepStatus::Unknown(value) => value.as_str(),
         }
@@ -108,6 +113,7 @@ impl StepStatus {
             "IN_PROGRESS",
             "PAUSED",
             "READY",
+            "SKIPPED",
             "USER_ATTENTION_REQUIRED",
         ]
     }
@@ -138,6 +144,7 @@ impl ::std::fmt::Display for StepStatus {
             StepStatus::InProgress => write!(f, "IN_PROGRESS"),
             StepStatus::Paused => write!(f, "PAUSED"),
             StepStatus::Ready => write!(f, "READY"),
+            StepStatus::Skipped => write!(f, "SKIPPED"),
             StepStatus::UserAttentionRequired => write!(f, "USER_ATTENTION_REQUIRED"),
             StepStatus::Unknown(value) => write!(f, "{}", value),
         }

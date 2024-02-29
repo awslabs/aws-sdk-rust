@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod create_template;
+
 mod create_workflow;
 
 mod create_workflow_step;
@@ -168,6 +170,8 @@ mod create_workflow_step_group;
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_template;
 
 mod delete_workflow;
 
@@ -212,6 +216,8 @@ mod stop_workflow;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_template;
 
 mod update_workflow;
 

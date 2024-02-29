@@ -46,5 +46,14 @@ pub fn ser_update_model_package_input_input(
         }
         array_12.finish();
     }
+    if let Some(var_15) = &input.inference_specification {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("InferenceSpecification").start_object();
+        crate::protocol_serde::shape_inference_specification::ser_inference_specification(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.source_uri {
+        object.key("SourceUri").string(var_17.as_str());
+    }
     Ok(())
 }

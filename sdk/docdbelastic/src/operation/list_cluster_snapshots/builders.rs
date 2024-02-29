@@ -22,7 +22,7 @@ impl ListClusterSnapshotsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListClusterSnapshots`.
 ///
-/// <p>Returns information about Elastic DocumentDB snapshots for a specified cluster.</p>
+/// <p>Returns information about snapshots for a specified elastic cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListClusterSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,46 +114,81 @@ impl ListClusterSnapshotsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_cluster_snapshots::paginator::ListClusterSnapshotsPaginator {
         crate::operation::list_cluster_snapshots::paginator::ListClusterSnapshotsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// <p>The ARN identifier of the elastic cluster.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_arn(input.into());
         self
     }
-    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// <p>The ARN identifier of the elastic cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
-    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// <p>The ARN identifier of the elastic cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_arn()
     }
-    /// <p>The nextToken which is used the get the next page of data.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The nextToken which is used the get the next page of data.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The nextToken which is used the get the next page of data.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of entries to recieve in the response.</p>
+    /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of entries to recieve in the response.</p>
+    /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of entries to recieve in the response.</p>
+    /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li>
+    /// </ul>
+    pub fn snapshot_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.snapshot_type(input.into());
+        self
+    }
+    /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li>
+    /// </ul>
+    pub fn set_snapshot_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_snapshot_type(input);
+        self
+    }
+    /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li>
+    /// </ul>
+    pub fn get_snapshot_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_snapshot_type()
     }
 }

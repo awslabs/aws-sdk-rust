@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClusterSnapshotOutput {
-    /// <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
+    /// <p>Returns information about a specific elastic cluster snapshot.</p>
     pub snapshot: ::std::option::Option<crate::types::ClusterSnapshot>,
     _request_id: Option<String>,
 }
 impl GetClusterSnapshotOutput {
-    /// <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
+    /// <p>Returns information about a specific elastic cluster snapshot.</p>
     pub fn snapshot(&self) -> ::std::option::Option<&crate::types::ClusterSnapshot> {
         self.snapshot.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetClusterSnapshotOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetClusterSnapshotOutputBuilder {
-    /// <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
+    /// <p>Returns information about a specific elastic cluster snapshot.</p>
     /// This field is required.
     pub fn snapshot(mut self, input: crate::types::ClusterSnapshot) -> Self {
         self.snapshot = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
+    /// <p>Returns information about a specific elastic cluster snapshot.</p>
     pub fn set_snapshot(mut self, input: ::std::option::Option<crate::types::ClusterSnapshot>) -> Self {
         self.snapshot = input;
         self
     }
-    /// <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
+    /// <p>Returns information about a specific elastic cluster snapshot.</p>
     pub fn get_snapshot(&self) -> &::std::option::Option<crate::types::ClusterSnapshot> {
         &self.snapshot
     }

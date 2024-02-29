@@ -15,6 +15,18 @@ pub struct UpdateModelPackageInput {
     pub customer_metadata_properties_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     pub additional_inference_specifications_to_add: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
+    /// </ul>
+    pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
+    /// <p>The URI of the source for the model package.</p>
+    pub source_uri: ::std::option::Option<::std::string::String>,
 }
 impl UpdateModelPackageInput {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
@@ -45,6 +57,22 @@ impl UpdateModelPackageInput {
     pub fn additional_inference_specifications_to_add(&self) -> &[crate::types::AdditionalInferenceSpecificationDefinition] {
         self.additional_inference_specifications_to_add.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
+    /// </ul>
+    pub fn inference_specification(&self) -> ::std::option::Option<&crate::types::InferenceSpecification> {
+        self.inference_specification.as_ref()
+    }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn source_uri(&self) -> ::std::option::Option<&str> {
+        self.source_uri.as_deref()
+    }
 }
 impl UpdateModelPackageInput {
     /// Creates a new builder-style object to manufacture [`UpdateModelPackageInput`](crate::operation::update_model_package::UpdateModelPackageInput).
@@ -64,6 +92,8 @@ pub struct UpdateModelPackageInputBuilder {
     pub(crate) customer_metadata_properties_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) additional_inference_specifications_to_add:
         ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
+    pub(crate) inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
+    pub(crate) source_uri: ::std::option::Option<::std::string::String>,
 }
 impl UpdateModelPackageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
@@ -183,6 +213,58 @@ impl UpdateModelPackageInputBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>> {
         &self.additional_inference_specifications_to_add
     }
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
+    /// </ul>
+    pub fn inference_specification(mut self, input: crate::types::InferenceSpecification) -> Self {
+        self.inference_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
+    /// </ul>
+    pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
+        self.inference_specification = input;
+        self
+    }
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
+    /// </ul>
+    pub fn get_inference_specification(&self) -> &::std::option::Option<crate::types::InferenceSpecification> {
+        &self.inference_specification
+    }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_uri = input;
+        self
+    }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_uri
+    }
     /// Consumes the builder and constructs a [`UpdateModelPackageInput`](crate::operation::update_model_package::UpdateModelPackageInput).
     pub fn build(
         self,
@@ -195,6 +277,8 @@ impl UpdateModelPackageInputBuilder {
             customer_metadata_properties: self.customer_metadata_properties,
             customer_metadata_properties_to_remove: self.customer_metadata_properties_to_remove,
             additional_inference_specifications_to_add: self.additional_inference_specifications_to_add,
+            inference_specification: self.inference_specification,
+            source_uri: self.source_uri,
         })
     }
 }

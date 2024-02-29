@@ -45,6 +45,8 @@ pub use crate::types::_template_status::TemplateStatus;
 
 pub use crate::types::_template_input::TemplateInput;
 
+pub use crate::types::_template_source::TemplateSource;
+
 pub use crate::types::_template_summary::TemplateSummary;
 
 pub use crate::types::_migration_workflow_status_enum::MigrationWorkflowStatusEnum;
@@ -86,6 +88,8 @@ mod _step_status;
 mod _target_type;
 
 mod _template_input;
+
+mod _template_source;
 
 mod _template_status;
 

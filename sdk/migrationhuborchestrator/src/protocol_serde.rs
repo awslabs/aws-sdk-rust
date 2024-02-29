@@ -23,11 +23,15 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_template;
+
 pub(crate) mod shape_create_workflow;
 
 pub(crate) mod shape_create_workflow_step;
 
 pub(crate) mod shape_create_workflow_step_group;
+
+pub(crate) mod shape_delete_template;
 
 pub(crate) mod shape_delete_workflow;
 
@@ -73,6 +77,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_template;
+
 pub(crate) mod shape_update_workflow;
 
 pub(crate) mod shape_update_workflow_step;
@@ -89,6 +95,10 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_template_input;
+
 pub(crate) mod shape_create_workflow_input;
 
 pub(crate) mod shape_create_workflow_step_group_input;
@@ -102,6 +112,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_update_template_input;
 
 pub(crate) mod shape_update_workflow_input;
 
@@ -130,6 +142,8 @@ pub(crate) mod shape_string_map;
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_template_input_list;
+
+pub(crate) mod shape_template_source;
 
 pub(crate) mod shape_template_step_group_summary_list;
 
@@ -174,3 +188,5 @@ pub(crate) mod shape_workflow_step_group_summary;
 pub(crate) mod shape_workflow_step_output_union;
 
 pub(crate) mod shape_workflow_step_summary;
+
+pub(crate) mod shape_max_string_list;

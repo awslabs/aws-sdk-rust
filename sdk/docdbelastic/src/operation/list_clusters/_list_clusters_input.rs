@@ -3,17 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClustersInput {
-    /// <p>The nextToken which is used the get the next page of data.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of entries to recieve in the response.</p>
+    /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListClustersInput {
-    /// <p>The nextToken which is used the get the next page of data.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of entries to recieve in the response.</p>
+    /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -33,31 +35,34 @@ pub struct ListClustersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListClustersInputBuilder {
-    /// <p>The nextToken which is used the get the next page of data.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The nextToken which is used the get the next page of data.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The nextToken which is used the get the next page of data.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of entries to recieve in the response.</p>
+    /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of entries to recieve in the response.</p>
+    /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of entries to recieve in the response.</p>
+    /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

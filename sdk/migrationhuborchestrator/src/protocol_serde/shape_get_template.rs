@@ -134,10 +134,41 @@ pub(crate) fn de_get_template(
                             .transpose()?,
                     );
                 }
+                "owner" => {
+                    builder = builder.set_owner(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::TemplateStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "statusMessage" => {
+                    builder = builder.set_status_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_string_map::de_string_map(tokens)?);
+                }
+                "templateArn" => {
+                    builder = builder.set_template_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "templateClass" => {
+                    builder = builder.set_template_class(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

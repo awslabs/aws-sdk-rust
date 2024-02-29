@@ -14,11 +14,11 @@ pub struct AutoMlJobObjective {
     /// <p>List of available metrics:</p>
     /// <ul>
     /// <li>
-    /// <p>Regression: <code>InferenceLatency</code>, <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code></p></li>
+    /// <p>Regression: <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code></p></li>
     /// <li>
-    /// <p>Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>, <code>F1</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>Precision</code>, <code>Recall</code></p></li>
+    /// <p>Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>, <code>F1</code>, <code>Precision</code>, <code>Recall</code></p></li>
     /// <li>
-    /// <p>Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>, <code>F1macro</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code></p></li>
+    /// <p>Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>, <code>F1macro</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code></p></li>
     /// </ul>
     /// <p>For a description of each metric, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot metrics for classification and regression</a>.</p></li>
     /// <li>
@@ -66,11 +66,11 @@ impl AutoMlJobObjective {
     /// <p>List of available metrics:</p>
     /// <ul>
     /// <li>
-    /// <p>Regression: <code>InferenceLatency</code>, <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code></p></li>
+    /// <p>Regression: <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code></p></li>
     /// <li>
-    /// <p>Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>, <code>F1</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>Precision</code>, <code>Recall</code></p></li>
+    /// <p>Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>, <code>F1</code>, <code>Precision</code>, <code>Recall</code></p></li>
     /// <li>
-    /// <p>Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>, <code>F1macro</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code></p></li>
+    /// <p>Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>, <code>F1macro</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code></p></li>
     /// </ul>
     /// <p>For a description of each metric, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot metrics for classification and regression</a>.</p></li>
     /// <li>
@@ -133,11 +133,11 @@ impl AutoMlJobObjectiveBuilder {
     /// <p>List of available metrics:</p>
     /// <ul>
     /// <li>
-    /// <p>Regression: <code>InferenceLatency</code>, <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code></p></li>
+    /// <p>Regression: <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code></p></li>
     /// <li>
-    /// <p>Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>, <code>F1</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>Precision</code>, <code>Recall</code></p></li>
+    /// <p>Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>, <code>F1</code>, <code>Precision</code>, <code>Recall</code></p></li>
     /// <li>
-    /// <p>Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>, <code>F1macro</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code></p></li>
+    /// <p>Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>, <code>F1macro</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code></p></li>
     /// </ul>
     /// <p>For a description of each metric, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot metrics for classification and regression</a>.</p></li>
     /// <li>
@@ -187,11 +187,11 @@ impl AutoMlJobObjectiveBuilder {
     /// <p>List of available metrics:</p>
     /// <ul>
     /// <li>
-    /// <p>Regression: <code>InferenceLatency</code>, <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code></p></li>
+    /// <p>Regression: <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code></p></li>
     /// <li>
-    /// <p>Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>, <code>F1</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>Precision</code>, <code>Recall</code></p></li>
+    /// <p>Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>, <code>F1</code>, <code>Precision</code>, <code>Recall</code></p></li>
     /// <li>
-    /// <p>Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>, <code>F1macro</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code></p></li>
+    /// <p>Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>, <code>F1macro</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code></p></li>
     /// </ul>
     /// <p>For a description of each metric, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot metrics for classification and regression</a>.</p></li>
     /// <li>
@@ -240,11 +240,11 @@ impl AutoMlJobObjectiveBuilder {
     /// <p>List of available metrics:</p>
     /// <ul>
     /// <li>
-    /// <p>Regression: <code>InferenceLatency</code>, <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code></p></li>
+    /// <p>Regression: <code>MAE</code>, <code>MSE</code>, <code>R2</code>, <code>RMSE</code></p></li>
     /// <li>
-    /// <p>Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>, <code>F1</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>Precision</code>, <code>Recall</code></p></li>
+    /// <p>Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>, <code>F1</code>, <code>Precision</code>, <code>Recall</code></p></li>
     /// <li>
-    /// <p>Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>, <code>F1macro</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code></p></li>
+    /// <p>Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>, <code>F1macro</code>, <code>PrecisionMacro</code>, <code>RecallMacro</code></p></li>
     /// </ul>
     /// <p>For a description of each metric, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot metrics for classification and regression</a>.</p></li>
     /// <li>

@@ -1,6 +1,11 @@
 # aws-sdk-docdbelastic
 
-The new Amazon Elastic DocumentDB service endpoint.
+Amazon DocumentDB elastic-clusters support workloads with millions of reads/writes per second and petabytes of storage capacity. Amazon DocumentDB elastic clusters also simplify how developers interact with Amazon DocumentDB elastic-clusters by eliminating the need to choose, manage or upgrade instances.
+
+Amazon DocumentDB elastic-clusters were created to:
+  - provide a solution for customers looking for a database that provides virtually limitless scale with rich query capabilities and MongoDB API compatibility.
+  - give customers higher connection limits, and to reduce downtime from patching.
+  - continue investing in a cloud-native, elastic, and class leading architecture for JSON workloads.
 
 ## Getting Started
 
@@ -14,7 +19,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-docdbelastic = "1.15.0"
+aws-sdk-docdbelastic = "1.16.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

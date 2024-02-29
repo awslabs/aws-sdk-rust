@@ -15,5 +15,8 @@ pub fn ser_update_data_lake_input_input(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.meta_store_manager_role_arn {
+        object.key("metaStoreManagerRoleArn").string(var_5.as_str());
+    }
     Ok(())
 }

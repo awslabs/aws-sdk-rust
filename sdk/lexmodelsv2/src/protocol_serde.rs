@@ -555,6 +555,8 @@ pub(crate) mod shape_parent_bot_networks;
 
 pub(crate) mod shape_principal;
 
+pub(crate) mod shape_qn_a_intent_configuration;
+
 pub(crate) mod shape_recommended_actions;
 
 pub(crate) mod shape_recommended_intent_summary_list;
@@ -651,6 +653,8 @@ pub(crate) mod shape_audio_log_setting;
 
 pub(crate) mod shape_audio_log_settings_list;
 
+pub(crate) mod shape_bedrock_model_specification;
+
 pub(crate) mod shape_bot_alias_history_event;
 
 pub(crate) mod shape_bot_alias_replica_summary;
@@ -702,6 +706,8 @@ pub(crate) mod shape_conversation_logs_data_source;
 pub(crate) mod shape_custom_vocabulary_export_specification;
 
 pub(crate) mod shape_custom_vocabulary_import_specification;
+
+pub(crate) mod shape_data_source_configuration;
 
 pub(crate) mod shape_dialog_code_hook_invocation_setting;
 
@@ -817,6 +823,8 @@ pub(crate) mod shape_analytics_utterance_metric_results;
 
 pub(crate) mod shape_audio_log_destination;
 
+pub(crate) mod shape_bedrock_knowledge_store_configuration;
+
 pub(crate) mod shape_conditional_branch;
 
 pub(crate) mod shape_conditional_branches;
@@ -853,6 +861,8 @@ pub(crate) mod shape_message_group;
 
 pub(crate) mod shape_message_groups_list;
 
+pub(crate) mod shape_opensearch_configuration;
+
 pub(crate) mod shape_overall_test_result_item_list;
 
 pub(crate) mod shape_path_format;
@@ -862,6 +872,8 @@ pub(crate) mod shape_post_dialog_code_hook_invocation_specification;
 pub(crate) mod shape_prompt_attempt_specification;
 
 pub(crate) mod shape_prompt_attempts_specification_map;
+
+pub(crate) mod shape_qn_a_kendra_configuration;
 
 pub(crate) mod shape_sample_utterance_generation_specification;
 
@@ -923,13 +935,13 @@ pub(crate) mod shape_analytics_utterance_metric_result;
 
 pub(crate) mod shape_audio_and_dtmf_input_specification;
 
-pub(crate) mod shape_bedrock_model_specification;
-
 pub(crate) mod shape_cloud_watch_log_group_log_destination;
 
 pub(crate) mod shape_condition;
 
 pub(crate) mod shape_conversation_level_test_result_item;
+
+pub(crate) mod shape_exact_response_fields;
 
 pub(crate) mod shape_intent_classification_test_result_item;
 
@@ -942,6 +954,8 @@ pub(crate) mod shape_lex_transcript_filter;
 pub(crate) mod shape_message;
 
 pub(crate) mod shape_object_prefixes;
+
+pub(crate) mod shape_os_include_fields;
 
 pub(crate) mod shape_overall_test_result_item;
 

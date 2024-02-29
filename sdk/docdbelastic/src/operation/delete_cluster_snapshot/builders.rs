@@ -22,7 +22,7 @@ impl DeleteClusterSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteClusterSnapshot`.
 ///
-/// <p>Delete a Elastic DocumentDB snapshot.</p>
+/// <p>Delete an elastic cluster snapshot.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteClusterSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteClusterSnapshotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
+    /// <p>The ARN identifier of the elastic cluster snapshot that is to be deleted.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_arn(input.into());
         self
     }
-    /// <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
+    /// <p>The ARN identifier of the elastic cluster snapshot that is to be deleted.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_arn(input);
         self
     }
-    /// <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
+    /// <p>The ARN identifier of the elastic cluster snapshot that is to be deleted.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_arn()
     }

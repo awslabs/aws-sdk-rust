@@ -245,6 +245,11 @@ pub(crate) fn de_create_intent(
                             .transpose()?,
                     );
                 }
+                "qnAIntentConfiguration" => {
+                    builder = builder.set_qn_a_intent_configuration(
+                        crate::protocol_serde::shape_qn_a_intent_configuration::de_qn_a_intent_configuration(tokens)?,
+                    );
+                }
                 "sampleUtterances" => {
                     builder = builder.set_sample_utterances(crate::protocol_serde::shape_sample_utterances_list::de_sample_utterances_list(tokens)?);
                 }

@@ -22,7 +22,7 @@ impl DeleteClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCluster`.
 ///
-/// <p>Delete a Elastic DocumentDB cluster.</p>
+/// <p>Delete an elastic cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteClusterFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
+    /// <p>The ARN identifier of the elastic cluster that is to be deleted.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_arn(input.into());
         self
     }
-    /// <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
+    /// <p>The ARN identifier of the elastic cluster that is to be deleted.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
-    /// <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
+    /// <p>The ARN identifier of the elastic cluster that is to be deleted.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_arn()
     }

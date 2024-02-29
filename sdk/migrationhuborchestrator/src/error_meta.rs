@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>This exception is thrown when an attempt to update or delete a resource would cause an inconsistent state.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>An internal error has occurred.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The resource is not available.</p>
@@ -26,6 +28,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
@@ -52,11 +55,38 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_template::CreateTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_template::CreateTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_template::CreateTemplateError> for Error {
+    fn from(err: crate::operation::create_template::CreateTemplateError) -> Self {
+        match err {
+            crate::operation::create_template::CreateTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_template::CreateTemplateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_template::CreateTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_template::CreateTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_template::CreateTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_template::CreateTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -143,6 +173,32 @@ impl From<crate::operation::create_workflow_step_group::CreateWorkflowStepGroupE
                 Error::ValidationException(inner)
             }
             crate::operation::create_workflow_step_group::CreateWorkflowStepGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_template::DeleteTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_template::DeleteTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_template::DeleteTemplateError> for Error {
+    fn from(err: crate::operation::delete_template::DeleteTemplateError) -> Self {
+        match err {
+            crate::operation::delete_template::DeleteTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_template::DeleteTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_template::DeleteTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_template::DeleteTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_template::DeleteTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_template::DeleteTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -751,6 +807,32 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_template::UpdateTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_template::UpdateTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_template::UpdateTemplateError> for Error {
+    fn from(err: crate::operation::update_template::UpdateTemplateError) -> Self {
+        match err {
+            crate::operation::update_template::UpdateTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_template::UpdateTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_template::UpdateTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_template::UpdateTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_template::UpdateTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_template::UpdateTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_workflow::UpdateWorkflowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -845,6 +927,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
@@ -857,6 +940,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),

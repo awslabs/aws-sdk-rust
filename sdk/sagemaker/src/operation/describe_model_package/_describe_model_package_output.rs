@@ -15,7 +15,7 @@ pub struct DescribeModelPackageOutput {
     pub model_package_description: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp specifying when the model package was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Details about inference jobs that can be run with models based on this model package.</p>
+    /// <p>Details about inference jobs that you can run with models based on this model package.</p>
     pub inference_specification: ::std::option::Option<crate::types::InferenceSpecification>,
     /// <p>Details about the algorithm that was used to create the model package.</p>
     pub source_algorithm_specification: ::std::option::Option<crate::types::SourceAlgorithmSpecification>,
@@ -55,6 +55,8 @@ pub struct DescribeModelPackageOutput {
     pub additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     /// <p>Indicates if you want to skip model validation.</p>
     pub skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
+    /// <p>The URI of the source for the model package.</p>
+    pub source_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageOutput {
@@ -82,7 +84,7 @@ impl DescribeModelPackageOutput {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Details about inference jobs that can be run with models based on this model package.</p>
+    /// <p>Details about inference jobs that you can run with models based on this model package.</p>
     pub fn inference_specification(&self) -> ::std::option::Option<&crate::types::InferenceSpecification> {
         self.inference_specification.as_ref()
     }
@@ -164,6 +166,10 @@ impl DescribeModelPackageOutput {
     pub fn skip_model_validation(&self) -> ::std::option::Option<&crate::types::SkipModelValidation> {
         self.skip_model_validation.as_ref()
     }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn source_uri(&self) -> ::std::option::Option<&str> {
+        self.source_uri.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeModelPackageOutput {
     fn request_id(&self) -> Option<&str> {
@@ -207,6 +213,7 @@ pub struct DescribeModelPackageOutputBuilder {
     pub(crate) drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
     pub(crate) additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     pub(crate) skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
+    pub(crate) source_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageOutputBuilder {
@@ -297,17 +304,17 @@ impl DescribeModelPackageOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>Details about inference jobs that can be run with models based on this model package.</p>
+    /// <p>Details about inference jobs that you can run with models based on this model package.</p>
     pub fn inference_specification(mut self, input: crate::types::InferenceSpecification) -> Self {
         self.inference_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about inference jobs that can be run with models based on this model package.</p>
+    /// <p>Details about inference jobs that you can run with models based on this model package.</p>
     pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
         self.inference_specification = input;
         self
     }
-    /// <p>Details about inference jobs that can be run with models based on this model package.</p>
+    /// <p>Details about inference jobs that you can run with models based on this model package.</p>
     pub fn get_inference_specification(&self) -> &::std::option::Option<crate::types::InferenceSpecification> {
         &self.inference_specification
     }
@@ -605,6 +612,20 @@ impl DescribeModelPackageOutputBuilder {
     pub fn get_skip_model_validation(&self) -> &::std::option::Option<crate::types::SkipModelValidation> {
         &self.skip_model_validation
     }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_uri = input;
+        self
+    }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_uri
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -643,6 +664,7 @@ impl DescribeModelPackageOutputBuilder {
             drift_check_baselines: self.drift_check_baselines,
             additional_inference_specifications: self.additional_inference_specifications,
             skip_model_validation: self.skip_model_validation,
+            source_uri: self.source_uri,
             _request_id: self._request_id,
         }
     }

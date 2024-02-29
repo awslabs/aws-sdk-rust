@@ -97,6 +97,30 @@ where
                                     .transpose()?,
                             );
                         }
+                        "shards" => {
+                            builder = builder.set_shards(crate::protocol_serde::shape_shard_list::de_shard_list(tokens)?);
+                        }
+                        "backupRetentionPeriod" => {
+                            builder = builder.set_backup_retention_period(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "preferredBackupWindow" => {
+                            builder = builder.set_preferred_backup_window(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "shardInstanceCount" => {
+                            builder = builder.set_shard_instance_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

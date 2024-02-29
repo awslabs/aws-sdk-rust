@@ -12,7 +12,9 @@ pub struct GenerateEmbedUrlForAnonymousUserInput {
     /// <p>The session tags used for row-level security. Before you use this parameter, make sure that you have configured the relevant datasets using the <code>DataSet$RowLevelPermissionTagConfiguration</code> parameter so that session tags can be used to provide row-level security.</p>
     /// <p>These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.</p>
     pub session_tags: ::std::option::Option<::std::vec::Vec<crate::types::SessionTag>>,
-    /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session.</p>
+    /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+    /// <p>Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
     pub authorized_resource_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration of the experience that you are embedding.</p>
     pub experience_configuration: ::std::option::Option<crate::types::AnonymousUserEmbeddingExperienceConfiguration>,
@@ -40,7 +42,9 @@ impl GenerateEmbedUrlForAnonymousUserInput {
     pub fn session_tags(&self) -> &[crate::types::SessionTag] {
         self.session_tags.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session.</p>
+    /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+    /// <p>Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authorized_resource_arns.is_none()`.
     pub fn authorized_resource_arns(&self) -> &[::std::string::String] {
@@ -149,19 +153,25 @@ impl GenerateEmbedUrlForAnonymousUserInputBuilder {
     ///
     /// To override the contents of this collection use [`set_authorized_resource_arns`](Self::set_authorized_resource_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session.</p>
+    /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+    /// <p>Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
     pub fn authorized_resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.authorized_resource_arns.unwrap_or_default();
         v.push(input.into());
         self.authorized_resource_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session.</p>
+    /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+    /// <p>Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
     pub fn set_authorized_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.authorized_resource_arns = input;
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during the lifetime of the session.</p>
+    /// <p>If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that you want the user to be able to view.</p>
+    /// <p>Currently, you can pass up to 25 dashboard ARNs in each API call.</p>
     pub fn get_authorized_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.authorized_resource_arns
     }

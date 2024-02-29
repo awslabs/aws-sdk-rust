@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClusterSnapshotInput {
-    /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    /// <p>The ARN identifier of the elastic cluster snapshot.</p>
     pub snapshot_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterSnapshotInput {
-    /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    /// <p>The ARN identifier of the elastic cluster snapshot.</p>
     pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
         self.snapshot_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetClusterSnapshotInputBuilder {
     pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterSnapshotInputBuilder {
-    /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    /// <p>The ARN identifier of the elastic cluster snapshot.</p>
     /// This field is required.
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    /// <p>The ARN identifier of the elastic cluster snapshot.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_arn = input;
         self
     }
-    /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    /// <p>The ARN identifier of the elastic cluster snapshot.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_arn
     }

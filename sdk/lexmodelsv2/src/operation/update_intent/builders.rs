@@ -362,4 +362,18 @@ impl UpdateIntentFluentBuilder {
     pub fn get_initial_response_setting(&self) -> &::std::option::Option<crate::types::InitialResponseSetting> {
         self.inner.get_initial_response_setting()
     }
+    /// <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>. The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't determine another intent to invoke. If you specify this field, you can't specify the <code>kendraConfiguration</code> field.</p>
+    pub fn qn_a_intent_configuration(mut self, input: crate::types::QnAIntentConfiguration) -> Self {
+        self.inner = self.inner.qn_a_intent_configuration(input);
+        self
+    }
+    /// <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>. The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't determine another intent to invoke. If you specify this field, you can't specify the <code>kendraConfiguration</code> field.</p>
+    pub fn set_qn_a_intent_configuration(mut self, input: ::std::option::Option<crate::types::QnAIntentConfiguration>) -> Self {
+        self.inner = self.inner.set_qn_a_intent_configuration(input);
+        self
+    }
+    /// <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>. The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't determine another intent to invoke. If you specify this field, you can't specify the <code>kendraConfiguration</code> field.</p>
+    pub fn get_qn_a_intent_configuration(&self) -> &::std::option::Option<crate::types::QnAIntentConfiguration> {
+        self.inner.get_qn_a_intent_configuration()
+    }
 }

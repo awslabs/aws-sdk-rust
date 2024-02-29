@@ -195,7 +195,7 @@ pub use crate::types::_monitoring_constraints_resource::MonitoringConstraintsRes
 
 pub use crate::types::_schedule_config::ScheduleConfig;
 
-pub use crate::types::_additional_inference_specification_definition::AdditionalInferenceSpecificationDefinition;
+pub use crate::types::_inference_specification::InferenceSpecification;
 
 pub use crate::types::_production_variant_instance_type::ProductionVariantInstanceType;
 
@@ -210,6 +210,18 @@ pub use crate::types::_compression_type::CompressionType;
 pub use crate::types::_additional_s3_data_source_data_type::AdditionalS3DataSourceDataType;
 
 pub use crate::types::_model_input::ModelInput;
+
+pub use crate::types::_model_data_source::ModelDataSource;
+
+pub use crate::types::_s3_model_data_source::S3ModelDataSource;
+
+pub use crate::types::_model_access_config::ModelAccessConfig;
+
+pub use crate::types::_model_compression_type::ModelCompressionType;
+
+pub use crate::types::_s3_model_data_type::S3ModelDataType;
+
+pub use crate::types::_additional_inference_specification_definition::AdditionalInferenceSpecificationDefinition;
 
 pub use crate::types::_model_approval_status::ModelApprovalStatus;
 
@@ -431,16 +443,6 @@ pub use crate::types::_multi_model_config::MultiModelConfig;
 
 pub use crate::types::_model_cache_setting::ModelCacheSetting;
 
-pub use crate::types::_model_data_source::ModelDataSource;
-
-pub use crate::types::_s3_model_data_source::S3ModelDataSource;
-
-pub use crate::types::_model_access_config::ModelAccessConfig;
-
-pub use crate::types::_model_compression_type::ModelCompressionType;
-
-pub use crate::types::_s3_model_data_type::S3ModelDataType;
-
 pub use crate::types::_container_mode::ContainerMode;
 
 pub use crate::types::_image_config::ImageConfig;
@@ -658,8 +660,6 @@ pub use crate::types::_transform_job_definition::TransformJobDefinition;
 pub use crate::types::_source_algorithm_specification::SourceAlgorithmSpecification;
 
 pub use crate::types::_source_algorithm::SourceAlgorithm;
-
-pub use crate::types::_inference_specification::InferenceSpecification;
 
 pub use crate::types::_endpoint::Endpoint;
 

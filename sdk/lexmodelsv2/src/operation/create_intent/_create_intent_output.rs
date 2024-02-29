@@ -37,6 +37,8 @@ pub struct CreateIntentOutput {
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
     pub initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
+    /// <p>Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.</p>
+    pub qn_a_intent_configuration: ::std::option::Option<crate::types::QnAIntentConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateIntentOutput {
@@ -114,6 +116,10 @@ impl CreateIntentOutput {
     pub fn initial_response_setting(&self) -> ::std::option::Option<&crate::types::InitialResponseSetting> {
         self.initial_response_setting.as_ref()
     }
+    /// <p>Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.</p>
+    pub fn qn_a_intent_configuration(&self) -> ::std::option::Option<&crate::types::QnAIntentConfiguration> {
+        self.qn_a_intent_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateIntentOutput {
     fn request_id(&self) -> Option<&str> {
@@ -148,6 +154,7 @@ pub struct CreateIntentOutputBuilder {
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
+    pub(crate) qn_a_intent_configuration: ::std::option::Option<crate::types::QnAIntentConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateIntentOutputBuilder {
@@ -407,6 +414,20 @@ impl CreateIntentOutputBuilder {
     pub fn get_initial_response_setting(&self) -> &::std::option::Option<crate::types::InitialResponseSetting> {
         &self.initial_response_setting
     }
+    /// <p>Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.</p>
+    pub fn qn_a_intent_configuration(mut self, input: crate::types::QnAIntentConfiguration) -> Self {
+        self.qn_a_intent_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.</p>
+    pub fn set_qn_a_intent_configuration(mut self, input: ::std::option::Option<crate::types::QnAIntentConfiguration>) -> Self {
+        self.qn_a_intent_configuration = input;
+        self
+    }
+    /// <p>Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.</p>
+    pub fn get_qn_a_intent_configuration(&self) -> &::std::option::Option<crate::types::QnAIntentConfiguration> {
+        &self.qn_a_intent_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -436,6 +457,7 @@ impl CreateIntentOutputBuilder {
             locale_id: self.locale_id,
             creation_date_time: self.creation_date_time,
             initial_response_setting: self.initial_response_setting,
+            qn_a_intent_configuration: self.qn_a_intent_configuration,
             _request_id: self._request_id,
         }
     }

@@ -72,17 +72,23 @@ pub fn ser_create_intent_input_input(
     if let Some(var_23) = &input.parent_intent_signature {
         object.key("parentIntentSignature").string(var_23.as_str());
     }
-    if let Some(var_24) = &input.sample_utterances {
-        let mut array_25 = object.key("sampleUtterances").start_array();
-        for item_26 in var_24 {
+    if let Some(var_24) = &input.qn_a_intent_configuration {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("qnAIntentConfiguration").start_object();
+        crate::protocol_serde::shape_qn_a_intent_configuration::ser_qn_a_intent_configuration(&mut object_25, var_24)?;
+        object_25.finish();
+    }
+    if let Some(var_26) = &input.sample_utterances {
+        let mut array_27 = object.key("sampleUtterances").start_array();
+        for item_28 in var_26 {
             {
                 #[allow(unused_mut)]
-                let mut object_27 = array_25.value().start_object();
-                crate::protocol_serde::shape_sample_utterance::ser_sample_utterance(&mut object_27, item_26)?;
-                object_27.finish();
+                let mut object_29 = array_27.value().start_object();
+                crate::protocol_serde::shape_sample_utterance::ser_sample_utterance(&mut object_29, item_28)?;
+                object_29.finish();
             }
         }
-        array_25.finish();
+        array_27.finish();
     }
     Ok(())
 }

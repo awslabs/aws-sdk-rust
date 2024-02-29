@@ -21,6 +21,9 @@ pub fn ser_column_tooltip_item(
         crate::protocol_serde::shape_aggregation_function::ser_aggregation_function(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.tooltip_target {
+        object.key("TooltipTarget").string(var_7.as_str());
+    }
     Ok(())
 }
 
@@ -58,6 +61,13 @@ where
                         }
                         "Aggregation" => {
                             builder = builder.set_aggregation(crate::protocol_serde::shape_aggregation_function::de_aggregation_function(tokens)?);
+                        }
+                        "TooltipTarget" => {
+                            builder = builder.set_tooltip_target(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TooltipTarget::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -128,7 +128,6 @@ impl CreateWorkflowInputBuilder {
         &self.template_id
     }
     /// <p>The configuration ID of the application configured in Application Discovery Service.</p>
-    /// This field is required.
     pub fn application_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_configuration_id = ::std::option::Option::Some(input.into());
         self

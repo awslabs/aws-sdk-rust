@@ -32,6 +32,21 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_quota_exceeded_exception_correct_errors(
     mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
 ) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
@@ -62,6 +77,18 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn copy_cluster_snapshot_output_output_correct_errors(
+    mut builder: crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotOutputBuilder,
+) -> crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotOutputBuilder {
+    if builder.snapshot.is_none() {
+        builder.snapshot = {
+            let builder = crate::types::builders::ClusterSnapshotBuilder::default();
+            crate::serde_util::cluster_snapshot_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_cluster_output_output_correct_errors(
     mut builder: crate::operation::create_cluster::builders::CreateClusterOutputBuilder,
 ) -> crate::operation::create_cluster::builders::CreateClusterOutputBuilder {
@@ -70,21 +97,6 @@ pub(crate) fn create_cluster_output_output_correct_errors(
             let builder = crate::types::builders::ClusterBuilder::default();
             crate::serde_util::cluster_correct_errors(builder).build().ok()
         }
-    }
-    builder
-}
-
-pub(crate) fn resource_not_found_exception_correct_errors(
-    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
-) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.resource_id.is_none() {
-        builder.resource_id = Some(Default::default())
-    }
-    if builder.resource_type.is_none() {
-        builder.resource_type = Some(Default::default())
     }
     builder
 }
@@ -161,6 +173,30 @@ pub(crate) fn restore_cluster_from_snapshot_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_cluster_output_output_correct_errors(
+    mut builder: crate::operation::start_cluster::builders::StartClusterOutputBuilder,
+) -> crate::operation::start_cluster::builders::StartClusterOutputBuilder {
+    if builder.cluster.is_none() {
+        builder.cluster = {
+            let builder = crate::types::builders::ClusterBuilder::default();
+            crate::serde_util::cluster_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn stop_cluster_output_output_correct_errors(
+    mut builder: crate::operation::stop_cluster::builders::StopClusterOutputBuilder,
+) -> crate::operation::stop_cluster::builders::StopClusterOutputBuilder {
+    if builder.cluster.is_none() {
+        builder.cluster = {
+            let builder = crate::types::builders::ClusterBuilder::default();
+            crate::serde_util::cluster_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_cluster_output_output_correct_errors(
     mut builder: crate::operation::update_cluster::builders::UpdateClusterOutputBuilder,
 ) -> crate::operation::update_cluster::builders::UpdateClusterOutputBuilder {
@@ -169,6 +205,42 @@ pub(crate) fn update_cluster_output_output_correct_errors(
             let builder = crate::types::builders::ClusterBuilder::default();
             crate::serde_util::cluster_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn cluster_snapshot_correct_errors(
+    mut builder: crate::types::builders::ClusterSnapshotBuilder,
+) -> crate::types::builders::ClusterSnapshotBuilder {
+    if builder.subnet_ids.is_none() {
+        builder.subnet_ids = Some(Default::default())
+    }
+    if builder.snapshot_name.is_none() {
+        builder.snapshot_name = Some(Default::default())
+    }
+    if builder.snapshot_arn.is_none() {
+        builder.snapshot_arn = Some(Default::default())
+    }
+    if builder.snapshot_creation_time.is_none() {
+        builder.snapshot_creation_time = Some(Default::default())
+    }
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    if builder.cluster_creation_time.is_none() {
+        builder.cluster_creation_time = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::Status>().ok()
+    }
+    if builder.vpc_security_group_ids.is_none() {
+        builder.vpc_security_group_ids = Some(Default::default())
+    }
+    if builder.admin_user_name.is_none() {
+        builder.admin_user_name = Some(Default::default())
+    }
+    if builder.kms_key_id.is_none() {
+        builder.kms_key_id = Some(Default::default())
     }
     builder
 }
@@ -209,42 +281,6 @@ pub(crate) fn cluster_correct_errors(mut builder: crate::types::builders::Cluste
     }
     if builder.preferred_maintenance_window.is_none() {
         builder.preferred_maintenance_window = Some(Default::default())
-    }
-    if builder.kms_key_id.is_none() {
-        builder.kms_key_id = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn cluster_snapshot_correct_errors(
-    mut builder: crate::types::builders::ClusterSnapshotBuilder,
-) -> crate::types::builders::ClusterSnapshotBuilder {
-    if builder.subnet_ids.is_none() {
-        builder.subnet_ids = Some(Default::default())
-    }
-    if builder.snapshot_name.is_none() {
-        builder.snapshot_name = Some(Default::default())
-    }
-    if builder.snapshot_arn.is_none() {
-        builder.snapshot_arn = Some(Default::default())
-    }
-    if builder.snapshot_creation_time.is_none() {
-        builder.snapshot_creation_time = Some(Default::default())
-    }
-    if builder.cluster_arn.is_none() {
-        builder.cluster_arn = Some(Default::default())
-    }
-    if builder.cluster_creation_time.is_none() {
-        builder.cluster_creation_time = Some(Default::default())
-    }
-    if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::Status>().ok()
-    }
-    if builder.vpc_security_group_ids.is_none() {
-        builder.vpc_security_group_ids = Some(Default::default())
-    }
-    if builder.admin_user_name.is_none() {
-        builder.admin_user_name = Some(Default::default())
     }
     if builder.kms_key_id.is_none() {
         builder.kms_key_id = Some(Default::default())
@@ -296,6 +332,19 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn shard_correct_errors(mut builder: crate::types::builders::ShardBuilder) -> crate::types::builders::ShardBuilder {
+    if builder.shard_id.is_none() {
+        builder.shard_id = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::Status>().ok()
     }
     builder
 }

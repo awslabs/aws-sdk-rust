@@ -22,7 +22,7 @@ impl ListClustersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListClusters`.
 ///
-/// <p>Returns information about provisioned Elastic DocumentDB clusters.</p>
+/// <p>Returns information about provisioned Amazon DocumentDB elastic clusters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListClustersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,31 +114,34 @@ impl ListClustersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_clusters::paginator::ListClustersPaginator {
         crate::operation::list_clusters::paginator::ListClustersPaginator::new(self.handle, self.inner)
     }
-    /// <p>The nextToken which is used the get the next page of data.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>The nextToken which is used the get the next page of data.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The nextToken which is used the get the next page of data.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of entries to recieve in the response.</p>
+    /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of entries to recieve in the response.</p>
+    /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of entries to recieve in the response.</p>
+    /// <p>The maximum number of elastic cluster snapshot results to receive in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

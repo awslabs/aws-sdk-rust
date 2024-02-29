@@ -9,7 +9,11 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 mod _access_denied_exception;
+
+mod _conflict_exception;
 
 mod _internal_server_exception;
 

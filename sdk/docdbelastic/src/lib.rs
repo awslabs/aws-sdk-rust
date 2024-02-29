@@ -16,7 +16,12 @@
 #![allow(rustdoc::redundant_explicit_links)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! The new Amazon Elastic DocumentDB service endpoint.
+//! Amazon DocumentDB elastic-clusters support workloads with millions of reads/writes per second and petabytes of storage capacity. Amazon DocumentDB elastic clusters also simplify how developers interact with Amazon DocumentDB elastic-clusters by eliminating the need to choose, manage or upgrade instances.
+//!
+//! Amazon DocumentDB elastic-clusters were created to:
+//!   - provide a solution for customers looking for a database that provides virtually limitless scale with rich query capabilities and MongoDB API compatibility.
+//!   - give customers higher connection limits, and to reduce downtime from patching.
+//!   - continue investing in a cloud-native, elastic, and class leading architecture for JSON workloads.
 //!
 //! ## Getting Started
 //!
@@ -30,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-docdbelastic = "1.15.0"
+//! aws-sdk-docdbelastic = "1.16.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -147,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateCluster`](crate::operation::create_cluster) operation has
-/// a [`Client::create_cluster`], function which returns a builder for that operation.
+/// For example, the [`CopyClusterSnapshot`](crate::operation::copy_cluster_snapshot) operation has
+/// a [`Client::copy_cluster_snapshot`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_cluster()
-///     .cluster_name("example")
+/// let result = client.copy_cluster_snapshot()
+///     .snapshot_arn("example")
 ///     .send()
 ///     .await;
 /// ```

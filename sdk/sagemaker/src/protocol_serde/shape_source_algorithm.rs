@@ -6,8 +6,14 @@ pub fn ser_source_algorithm(
     if let Some(var_1) = &input.model_data_url {
         object.key("ModelDataUrl").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.algorithm_name {
-        object.key("AlgorithmName").string(var_2.as_str());
+    if let Some(var_2) = &input.model_data_source {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("ModelDataSource").start_object();
+        crate::protocol_serde::shape_model_data_source::ser_model_data_source(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.algorithm_name {
+        object.key("AlgorithmName").string(var_4.as_str());
     }
     Ok(())
 }
@@ -33,6 +39,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "ModelDataSource" => {
+                            builder = builder.set_model_data_source(crate::protocol_serde::shape_model_data_source::de_model_data_source(tokens)?);
                         }
                         "AlgorithmName" => {
                             builder = builder.set_algorithm_name(

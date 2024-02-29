@@ -22,7 +22,7 @@ impl CreateClusterSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateClusterSnapshot`.
 ///
-/// <p>Creates a snapshot of a cluster.</p>
+/// <p>Creates a snapshot of an elastic cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateClusterSnapshotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
+    /// <p>The ARN identifier of the elastic cluster of which you want to create a snapshot.</p>
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_arn(input.into());
         self
     }
-    /// <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
+    /// <p>The ARN identifier of the elastic cluster of which you want to create a snapshot.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_arn(input);
         self
     }
-    /// <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
+    /// <p>The ARN identifier of the elastic cluster of which you want to create a snapshot.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_arn()
     }
-    /// <p>The name of the Elastic DocumentDB snapshot.</p>
+    /// <p>The name of the new elastic cluster snapshot.</p>
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_name(input.into());
         self
     }
-    /// <p>The name of the Elastic DocumentDB snapshot.</p>
+    /// <p>The name of the new elastic cluster snapshot.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
-    /// <p>The name of the Elastic DocumentDB snapshot.</p>
+    /// <p>The name of the new elastic cluster snapshot.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_name()
     }
@@ -140,17 +140,17 @@ impl CreateClusterSnapshotFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to be assigned to the new Elastic DocumentDB snapshot.</p>
+    /// <p>The tags to be assigned to the new elastic cluster snapshot.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The tags to be assigned to the new Elastic DocumentDB snapshot.</p>
+    /// <p>The tags to be assigned to the new elastic cluster snapshot.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tags to be assigned to the new Elastic DocumentDB snapshot.</p>
+    /// <p>The tags to be assigned to the new elastic cluster snapshot.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

@@ -153,13 +153,21 @@ pub use crate::types::_monitoring_constraints_resource::MonitoringConstraintsRes
 
 pub use crate::types::_schedule_config::ScheduleConfigBuilder;
 
-pub use crate::types::_additional_inference_specification_definition::AdditionalInferenceSpecificationDefinitionBuilder;
+pub use crate::types::_inference_specification::InferenceSpecificationBuilder;
 
 pub use crate::types::_model_package_container_definition::ModelPackageContainerDefinitionBuilder;
 
 pub use crate::types::_additional_s3_data_source::AdditionalS3DataSourceBuilder;
 
 pub use crate::types::_model_input::ModelInputBuilder;
+
+pub use crate::types::_model_data_source::ModelDataSourceBuilder;
+
+pub use crate::types::_s3_model_data_source::S3ModelDataSourceBuilder;
+
+pub use crate::types::_model_access_config::ModelAccessConfigBuilder;
+
+pub use crate::types::_additional_inference_specification_definition::AdditionalInferenceSpecificationDefinitionBuilder;
 
 pub use crate::types::_shadow_mode_config::ShadowModeConfigBuilder;
 
@@ -310,12 +318,6 @@ pub use crate::types::_inference_execution_config::InferenceExecutionConfigBuild
 pub use crate::types::_container_definition::ContainerDefinitionBuilder;
 
 pub use crate::types::_multi_model_config::MultiModelConfigBuilder;
-
-pub use crate::types::_model_data_source::ModelDataSourceBuilder;
-
-pub use crate::types::_s3_model_data_source::S3ModelDataSourceBuilder;
-
-pub use crate::types::_model_access_config::ModelAccessConfigBuilder;
 
 pub use crate::types::_image_config::ImageConfigBuilder;
 
@@ -472,8 +474,6 @@ pub use crate::types::_transform_job_definition::TransformJobDefinitionBuilder;
 pub use crate::types::_source_algorithm_specification::SourceAlgorithmSpecificationBuilder;
 
 pub use crate::types::_source_algorithm::SourceAlgorithmBuilder;
-
-pub use crate::types::_inference_specification::InferenceSpecificationBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
 

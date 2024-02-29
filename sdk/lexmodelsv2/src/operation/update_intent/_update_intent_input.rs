@@ -37,6 +37,8 @@ pub struct UpdateIntentInput {
     pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.</p>
     pub initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
+    /// <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>. The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't determine another intent to invoke. If you specify this field, you can't specify the <code>kendraConfiguration</code> field.</p>
+    pub qn_a_intent_configuration: ::std::option::Option<crate::types::QnAIntentConfiguration>,
 }
 impl UpdateIntentInput {
     /// <p>The unique identifier of the intent to update.</p>
@@ -115,6 +117,10 @@ impl UpdateIntentInput {
     pub fn initial_response_setting(&self) -> ::std::option::Option<&crate::types::InitialResponseSetting> {
         self.initial_response_setting.as_ref()
     }
+    /// <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>. The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't determine another intent to invoke. If you specify this field, you can't specify the <code>kendraConfiguration</code> field.</p>
+    pub fn qn_a_intent_configuration(&self) -> ::std::option::Option<&crate::types::QnAIntentConfiguration> {
+        self.qn_a_intent_configuration.as_ref()
+    }
 }
 impl UpdateIntentInput {
     /// Creates a new builder-style object to manufacture [`UpdateIntentInput`](crate::operation::update_intent::UpdateIntentInput).
@@ -144,6 +150,7 @@ pub struct UpdateIntentInputBuilder {
     pub(crate) bot_version: ::std::option::Option<::std::string::String>,
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
+    pub(crate) qn_a_intent_configuration: ::std::option::Option<crate::types::QnAIntentConfiguration>,
 }
 impl UpdateIntentInputBuilder {
     /// <p>The unique identifier of the intent to update.</p>
@@ -413,6 +420,20 @@ impl UpdateIntentInputBuilder {
     pub fn get_initial_response_setting(&self) -> &::std::option::Option<crate::types::InitialResponseSetting> {
         &self.initial_response_setting
     }
+    /// <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>. The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't determine another intent to invoke. If you specify this field, you can't specify the <code>kendraConfiguration</code> field.</p>
+    pub fn qn_a_intent_configuration(mut self, input: crate::types::QnAIntentConfiguration) -> Self {
+        self.qn_a_intent_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>. The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't determine another intent to invoke. If you specify this field, you can't specify the <code>kendraConfiguration</code> field.</p>
+    pub fn set_qn_a_intent_configuration(mut self, input: ::std::option::Option<crate::types::QnAIntentConfiguration>) -> Self {
+        self.qn_a_intent_configuration = input;
+        self
+    }
+    /// <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>. The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't determine another intent to invoke. If you specify this field, you can't specify the <code>kendraConfiguration</code> field.</p>
+    pub fn get_qn_a_intent_configuration(&self) -> &::std::option::Option<crate::types::QnAIntentConfiguration> {
+        &self.qn_a_intent_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateIntentInput`](crate::operation::update_intent::UpdateIntentInput).
     pub fn build(
         self,
@@ -435,6 +456,7 @@ impl UpdateIntentInputBuilder {
             bot_version: self.bot_version,
             locale_id: self.locale_id,
             initial_response_setting: self.initial_response_setting,
+            qn_a_intent_configuration: self.qn_a_intent_configuration,
         })
     }
 }

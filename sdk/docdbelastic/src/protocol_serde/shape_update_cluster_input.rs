@@ -9,41 +9,56 @@ pub fn ser_update_cluster_input_input(
     if let Some(var_2) = &input.auth_type {
         object.key("authType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.client_token {
-        object.key("clientToken").string(var_3.as_str());
+    if let Some(var_3) = &input.backup_retention_period {
+        object.key("backupRetentionPeriod").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
     }
-    if let Some(var_4) = &input.preferred_maintenance_window {
-        object.key("preferredMaintenanceWindow").string(var_4.as_str());
+    if let Some(var_4) = &input.client_token {
+        object.key("clientToken").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.shard_capacity {
+    if let Some(var_5) = &input.preferred_backup_window {
+        object.key("preferredBackupWindow").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.preferred_maintenance_window {
+        object.key("preferredMaintenanceWindow").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.shard_capacity {
         object.key("shardCapacity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_6) = &input.shard_count {
+    if let Some(var_8) = &input.shard_count {
         object.key("shardCount").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_7) = &input.subnet_ids {
-        let mut array_8 = object.key("subnetIds").start_array();
-        for item_9 in var_7 {
-            {
-                array_8.value().string(item_9.as_str());
-            }
-        }
-        array_8.finish();
+    if let Some(var_9) = &input.shard_instance_count {
+        object.key("shardInstanceCount").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+        );
     }
-    if let Some(var_10) = &input.vpc_security_group_ids {
-        let mut array_11 = object.key("vpcSecurityGroupIds").start_array();
+    if let Some(var_10) = &input.subnet_ids {
+        let mut array_11 = object.key("subnetIds").start_array();
         for item_12 in var_10 {
             {
                 array_11.value().string(item_12.as_str());
             }
         }
         array_11.finish();
+    }
+    if let Some(var_13) = &input.vpc_security_group_ids {
+        let mut array_14 = object.key("vpcSecurityGroupIds").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().string(item_15.as_str());
+            }
+        }
+        array_14.finish();
     }
     Ok(())
 }

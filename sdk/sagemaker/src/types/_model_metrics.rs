@@ -8,7 +8,7 @@ pub struct ModelMetrics {
     pub model_quality: ::std::option::Option<crate::types::ModelQuality>,
     /// <p>Metrics that measure the quality of the input data for a model.</p>
     pub model_data_quality: ::std::option::Option<crate::types::ModelDataQuality>,
-    /// <p>Metrics that measure bais in a model.</p>
+    /// <p>Metrics that measure bias in a model.</p>
     pub bias: ::std::option::Option<crate::types::Bias>,
     /// <p>Metrics that help explain a model.</p>
     pub explainability: ::std::option::Option<crate::types::Explainability>,
@@ -22,7 +22,7 @@ impl ModelMetrics {
     pub fn model_data_quality(&self) -> ::std::option::Option<&crate::types::ModelDataQuality> {
         self.model_data_quality.as_ref()
     }
-    /// <p>Metrics that measure bais in a model.</p>
+    /// <p>Metrics that measure bias in a model.</p>
     pub fn bias(&self) -> ::std::option::Option<&crate::types::Bias> {
         self.bias.as_ref()
     }
@@ -76,17 +76,17 @@ impl ModelMetricsBuilder {
     pub fn get_model_data_quality(&self) -> &::std::option::Option<crate::types::ModelDataQuality> {
         &self.model_data_quality
     }
-    /// <p>Metrics that measure bais in a model.</p>
+    /// <p>Metrics that measure bias in a model.</p>
     pub fn bias(mut self, input: crate::types::Bias) -> Self {
         self.bias = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Metrics that measure bais in a model.</p>
+    /// <p>Metrics that measure bias in a model.</p>
     pub fn set_bias(mut self, input: ::std::option::Option<crate::types::Bias>) -> Self {
         self.bias = input;
         self
     }
-    /// <p>Metrics that measure bais in a model.</p>
+    /// <p>Metrics that measure bias in a model.</p>
     pub fn get_bias(&self) -> &::std::option::Option<crate::types::Bias> {
         &self.bias
     }

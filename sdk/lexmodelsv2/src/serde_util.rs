@@ -126,6 +126,15 @@ pub(crate) fn voice_settings_correct_errors(
     builder
 }
 
+pub(crate) fn bedrock_model_specification_correct_errors(
+    mut builder: crate::types::builders::BedrockModelSpecificationBuilder,
+) -> crate::types::builders::BedrockModelSpecificationBuilder {
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn bot_alias_locale_settings_correct_errors(
     mut builder: crate::types::builders::BotAliasLocaleSettingsBuilder,
 ) -> crate::types::builders::BotAliasLocaleSettingsBuilder {
@@ -650,6 +659,15 @@ pub(crate) fn audio_log_setting_correct_errors(
     builder
 }
 
+pub(crate) fn bedrock_knowledge_store_configuration_correct_errors(
+    mut builder: crate::types::builders::BedrockKnowledgeStoreConfigurationBuilder,
+) -> crate::types::builders::BedrockKnowledgeStoreConfigurationBuilder {
+    if builder.bedrock_knowledge_base_arn.is_none() {
+        builder.bedrock_knowledge_base_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn code_hook_specification_correct_errors(
     mut builder: crate::types::builders::CodeHookSpecificationBuilder,
 ) -> crate::types::builders::CodeHookSpecificationBuilder {
@@ -725,6 +743,27 @@ pub(crate) fn grammar_slot_type_source_correct_errors(
     }
     if builder.s3_object_key.is_none() {
         builder.s3_object_key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn opensearch_configuration_correct_errors(
+    mut builder: crate::types::builders::OpensearchConfigurationBuilder,
+) -> crate::types::builders::OpensearchConfigurationBuilder {
+    if builder.domain_endpoint.is_none() {
+        builder.domain_endpoint = Some(Default::default())
+    }
+    if builder.index_name.is_none() {
+        builder.index_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn qn_a_kendra_configuration_correct_errors(
+    mut builder: crate::types::builders::QnAKendraConfigurationBuilder,
+) -> crate::types::builders::QnAKendraConfigurationBuilder {
+    if builder.kendra_index.is_none() {
+        builder.kendra_index = Some(Default::default())
     }
     builder
 }
@@ -871,15 +910,6 @@ pub(crate) fn audio_log_destination_correct_errors(
     builder
 }
 
-pub(crate) fn bedrock_model_specification_correct_errors(
-    mut builder: crate::types::builders::BedrockModelSpecificationBuilder,
-) -> crate::types::builders::BedrockModelSpecificationBuilder {
-    if builder.model_arn.is_none() {
-        builder.model_arn = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn conditional_branch_correct_errors(
     mut builder: crate::types::builders::ConditionalBranchBuilder,
 ) -> crate::types::builders::ConditionalBranchBuilder {
@@ -915,6 +945,18 @@ pub(crate) fn conversation_level_test_result_item_correct_errors(
     }
     if builder.slot_resolution_results.is_none() {
         builder.slot_resolution_results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn exact_response_fields_correct_errors(
+    mut builder: crate::types::builders::ExactResponseFieldsBuilder,
+) -> crate::types::builders::ExactResponseFieldsBuilder {
+    if builder.question_field.is_none() {
+        builder.question_field = Some(Default::default())
+    }
+    if builder.answer_field.is_none() {
+        builder.answer_field = Some(Default::default())
     }
     builder
 }

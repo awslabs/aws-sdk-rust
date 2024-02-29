@@ -13,11 +13,13 @@
 /// # let awslogsourcename = unimplemented!();
 /// match awslogsourcename {
 ///     AwsLogSourceName::CloudTrailMgmt => { /* ... */ },
+///     AwsLogSourceName::EksAudit => { /* ... */ },
 ///     AwsLogSourceName::LambdaExecution => { /* ... */ },
 ///     AwsLogSourceName::Route53 => { /* ... */ },
 ///     AwsLogSourceName::S3Data => { /* ... */ },
 ///     AwsLogSourceName::ShFindings => { /* ... */ },
 ///     AwsLogSourceName::VpcFlow => { /* ... */ },
+///     AwsLogSourceName::Waf => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +50,8 @@ pub enum AwsLogSourceName {
     #[allow(missing_docs)] // documentation missing in model
     CloudTrailMgmt,
     #[allow(missing_docs)] // documentation missing in model
+    EksAudit,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaExecution,
     #[allow(missing_docs)] // documentation missing in model
     Route53,
@@ -57,6 +61,8 @@ pub enum AwsLogSourceName {
     ShFindings,
     #[allow(missing_docs)] // documentation missing in model
     VpcFlow,
+    #[allow(missing_docs)] // documentation missing in model
+    Waf,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -65,11 +71,13 @@ impl ::std::convert::From<&str> for AwsLogSourceName {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD_TRAIL_MGMT" => AwsLogSourceName::CloudTrailMgmt,
+            "EKS_AUDIT" => AwsLogSourceName::EksAudit,
             "LAMBDA_EXECUTION" => AwsLogSourceName::LambdaExecution,
             "ROUTE53" => AwsLogSourceName::Route53,
             "S3_DATA" => AwsLogSourceName::S3Data,
             "SH_FINDINGS" => AwsLogSourceName::ShFindings,
             "VPC_FLOW" => AwsLogSourceName::VpcFlow,
+            "WAF" => AwsLogSourceName::Waf,
             other => AwsLogSourceName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -86,17 +94,28 @@ impl AwsLogSourceName {
     pub fn as_str(&self) -> &str {
         match self {
             AwsLogSourceName::CloudTrailMgmt => "CLOUD_TRAIL_MGMT",
+            AwsLogSourceName::EksAudit => "EKS_AUDIT",
             AwsLogSourceName::LambdaExecution => "LAMBDA_EXECUTION",
             AwsLogSourceName::Route53 => "ROUTE53",
             AwsLogSourceName::S3Data => "S3_DATA",
             AwsLogSourceName::ShFindings => "SH_FINDINGS",
             AwsLogSourceName::VpcFlow => "VPC_FLOW",
+            AwsLogSourceName::Waf => "WAF",
             AwsLogSourceName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD_TRAIL_MGMT", "LAMBDA_EXECUTION", "ROUTE53", "S3_DATA", "SH_FINDINGS", "VPC_FLOW"]
+        &[
+            "CLOUD_TRAIL_MGMT",
+            "EKS_AUDIT",
+            "LAMBDA_EXECUTION",
+            "ROUTE53",
+            "S3_DATA",
+            "SH_FINDINGS",
+            "VPC_FLOW",
+            "WAF",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AwsLogSourceName {
@@ -120,11 +139,13 @@ impl ::std::fmt::Display for AwsLogSourceName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AwsLogSourceName::CloudTrailMgmt => write!(f, "CLOUD_TRAIL_MGMT"),
+            AwsLogSourceName::EksAudit => write!(f, "EKS_AUDIT"),
             AwsLogSourceName::LambdaExecution => write!(f, "LAMBDA_EXECUTION"),
             AwsLogSourceName::Route53 => write!(f, "ROUTE53"),
             AwsLogSourceName::S3Data => write!(f, "S3_DATA"),
             AwsLogSourceName::ShFindings => write!(f, "SH_FINDINGS"),
             AwsLogSourceName::VpcFlow => write!(f, "VPC_FLOW"),
+            AwsLogSourceName::Waf => write!(f, "WAF"),
             AwsLogSourceName::Unknown(value) => write!(f, "{}", value),
         }
     }

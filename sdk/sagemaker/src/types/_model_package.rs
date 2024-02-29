@@ -70,6 +70,8 @@ pub struct ModelPackage {
     pub sample_payload_url: ::std::option::Option<::std::string::String>,
     /// <p>An array of additional Inference Specification objects.</p>
     pub additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
+    /// <p>The URI of the source for the model package.</p>
+    pub source_uri: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The metadata properties for the model package.</p>
@@ -194,6 +196,10 @@ impl ModelPackage {
     pub fn additional_inference_specifications(&self) -> &[crate::types::AdditionalInferenceSpecificationDefinition] {
         self.additional_inference_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn source_uri(&self) -> ::std::option::Option<&str> {
+        self.source_uri.as_deref()
+    }
     /// <p>A list of the tags associated with the model package. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -247,6 +253,7 @@ pub struct ModelPackageBuilder {
     pub(crate) task: ::std::option::Option<::std::string::String>,
     pub(crate) sample_payload_url: ::std::option::Option<::std::string::String>,
     pub(crate) additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
+    pub(crate) source_uri: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
@@ -646,6 +653,20 @@ impl ModelPackageBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>> {
         &self.additional_inference_specifications
     }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_uri = input;
+        self
+    }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_uri
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -749,6 +770,7 @@ impl ModelPackageBuilder {
             task: self.task,
             sample_payload_url: self.sample_payload_url,
             additional_inference_specifications: self.additional_inference_specifications,
+            source_uri: self.source_uri,
             tags: self.tags,
             customer_metadata_properties: self.customer_metadata_properties,
             drift_check_baselines: self.drift_check_baselines,

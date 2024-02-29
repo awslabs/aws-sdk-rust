@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteClusterOutput {
-    /// <p>Returns information about the newly deleted Elastic DocumentDB cluster.</p>
+    /// <p>Returns information about the newly deleted elastic cluster.</p>
     pub cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }
 impl DeleteClusterOutput {
-    /// <p>Returns information about the newly deleted Elastic DocumentDB cluster.</p>
+    /// <p>Returns information about the newly deleted elastic cluster.</p>
     pub fn cluster(&self) -> ::std::option::Option<&crate::types::Cluster> {
         self.cluster.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteClusterOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteClusterOutputBuilder {
-    /// <p>Returns information about the newly deleted Elastic DocumentDB cluster.</p>
+    /// <p>Returns information about the newly deleted elastic cluster.</p>
     /// This field is required.
     pub fn cluster(mut self, input: crate::types::Cluster) -> Self {
         self.cluster = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns information about the newly deleted Elastic DocumentDB cluster.</p>
+    /// <p>Returns information about the newly deleted elastic cluster.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<crate::types::Cluster>) -> Self {
         self.cluster = input;
         self
     }
-    /// <p>Returns information about the newly deleted Elastic DocumentDB cluster.</p>
+    /// <p>Returns information about the newly deleted elastic cluster.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<crate::types::Cluster> {
         &self.cluster
     }

@@ -10,6 +10,8 @@ pub struct FieldTooltipItem {
     pub label: ::std::option::Option<::std::string::String>,
     /// <p>The visibility of the tooltip item.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
+    /// <p>Determines the target of the field tooltip item in a combo chart visual.</p>
+    pub tooltip_target: ::std::option::Option<crate::types::TooltipTarget>,
 }
 impl FieldTooltipItem {
     /// <p>The unique ID of the field that is targeted by the tooltip.</p>
@@ -24,6 +26,10 @@ impl FieldTooltipItem {
     /// <p>The visibility of the tooltip item.</p>
     pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
+    }
+    /// <p>Determines the target of the field tooltip item in a combo chart visual.</p>
+    pub fn tooltip_target(&self) -> ::std::option::Option<&crate::types::TooltipTarget> {
+        self.tooltip_target.as_ref()
     }
 }
 impl FieldTooltipItem {
@@ -40,6 +46,7 @@ pub struct FieldTooltipItemBuilder {
     pub(crate) field_id: ::std::option::Option<::std::string::String>,
     pub(crate) label: ::std::option::Option<::std::string::String>,
     pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
+    pub(crate) tooltip_target: ::std::option::Option<crate::types::TooltipTarget>,
 }
 impl FieldTooltipItemBuilder {
     /// <p>The unique ID of the field that is targeted by the tooltip.</p>
@@ -85,6 +92,20 @@ impl FieldTooltipItemBuilder {
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         &self.visibility
     }
+    /// <p>Determines the target of the field tooltip item in a combo chart visual.</p>
+    pub fn tooltip_target(mut self, input: crate::types::TooltipTarget) -> Self {
+        self.tooltip_target = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines the target of the field tooltip item in a combo chart visual.</p>
+    pub fn set_tooltip_target(mut self, input: ::std::option::Option<crate::types::TooltipTarget>) -> Self {
+        self.tooltip_target = input;
+        self
+    }
+    /// <p>Determines the target of the field tooltip item in a combo chart visual.</p>
+    pub fn get_tooltip_target(&self) -> &::std::option::Option<crate::types::TooltipTarget> {
+        &self.tooltip_target
+    }
     /// Consumes the builder and constructs a [`FieldTooltipItem`](crate::types::FieldTooltipItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`field_id`](crate::types::builders::FieldTooltipItemBuilder::field_id)
@@ -98,6 +119,7 @@ impl FieldTooltipItemBuilder {
             })?,
             label: self.label,
             visibility: self.visibility,
+            tooltip_target: self.tooltip_target,
         })
     }
 }

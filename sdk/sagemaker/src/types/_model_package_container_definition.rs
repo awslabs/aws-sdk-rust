@@ -15,6 +15,8 @@ pub struct ModelPackageContainerDefinition {
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model package.</p>
     /// </note>
     pub model_data_url: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
+    pub model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
     /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
@@ -49,6 +51,10 @@ impl ModelPackageContainerDefinition {
     /// </note>
     pub fn model_data_url(&self) -> ::std::option::Option<&str> {
         self.model_data_url.as_deref()
+    }
+    /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
+    pub fn model_data_source(&self) -> ::std::option::Option<&crate::types::ModelDataSource> {
+        self.model_data_source.as_ref()
     }
     /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
     pub fn product_id(&self) -> ::std::option::Option<&str> {
@@ -94,6 +100,7 @@ pub struct ModelPackageContainerDefinitionBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) image_digest: ::std::option::Option<::std::string::String>,
     pub(crate) model_data_url: ::std::option::Option<::std::string::String>,
+    pub(crate) model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) model_input: ::std::option::Option<crate::types::ModelInput>,
@@ -168,6 +175,20 @@ impl ModelPackageContainerDefinitionBuilder {
     /// </note>
     pub fn get_model_data_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_data_url
+    }
+    /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
+    pub fn model_data_source(mut self, input: crate::types::ModelDataSource) -> Self {
+        self.model_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
+    pub fn set_model_data_source(mut self, input: ::std::option::Option<crate::types::ModelDataSource>) -> Self {
+        self.model_data_source = input;
+        self
+    }
+    /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
+    pub fn get_model_data_source(&self) -> &::std::option::Option<crate::types::ModelDataSource> {
+        &self.model_data_source
     }
     /// <p>The Amazon Web Services Marketplace product ID of the model package.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -283,6 +304,7 @@ impl ModelPackageContainerDefinitionBuilder {
             image: self.image,
             image_digest: self.image_digest,
             model_data_url: self.model_data_url,
+            model_data_source: self.model_data_source,
             product_id: self.product_id,
             environment: self.environment,
             model_input: self.model_input,

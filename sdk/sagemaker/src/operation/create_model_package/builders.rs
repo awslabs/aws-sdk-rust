@@ -165,7 +165,7 @@ impl CreateModelPackageFluentBuilder {
     pub fn get_model_package_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_package_description()
     }
-    /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
     /// <li>
     /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
@@ -178,7 +178,7 @@ impl CreateModelPackageFluentBuilder {
         self.inner = self.inner.inference_specification(input);
         self
     }
-    /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
     /// <li>
     /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
@@ -191,7 +191,7 @@ impl CreateModelPackageFluentBuilder {
         self.inner = self.inner.set_inference_specification(input);
         self
     }
-    /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
     /// <li>
     /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
@@ -453,5 +453,19 @@ impl CreateModelPackageFluentBuilder {
     /// <p>Indicates if you want to skip model validation.</p>
     pub fn get_skip_model_validation(&self) -> &::std::option::Option<crate::types::SkipModelValidation> {
         self.inner.get_skip_model_validation()
+    }
+    /// <p>The URI of the source for the model package. If you want to clone a model package, set it to the model package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.</p>
+    pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_uri(input.into());
+        self
+    }
+    /// <p>The URI of the source for the model package. If you want to clone a model package, set it to the model package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.</p>
+    pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_source_uri(input);
+        self
+    }
+    /// <p>The URI of the source for the model package. If you want to clone a model package, set it to the model package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_uri()
     }
 }

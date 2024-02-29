@@ -399,6 +399,7 @@ impl CreateCustomLogSourceInputBuilder {
         &self.event_classes
     }
     /// <p>The configuration for the third-party custom source.</p>
+    /// This field is required.
     pub fn configuration(mut self, input: crate::types::CustomLogSourceConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self

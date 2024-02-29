@@ -13,6 +13,10 @@
 /// # let templatestatus = unimplemented!();
 /// match templatestatus {
 ///     TemplateStatus::Created => { /* ... */ },
+///     TemplateStatus::Creating => { /* ... */ },
+///     TemplateStatus::CreationFailed => { /* ... */ },
+///     TemplateStatus::PendingCreation => { /* ... */ },
+///     TemplateStatus::Ready => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +46,14 @@
 pub enum TemplateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    CreationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingCreation,
+    #[allow(missing_docs)] // documentation missing in model
+    Ready,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +62,10 @@ impl ::std::convert::From<&str> for TemplateStatus {
     fn from(s: &str) -> Self {
         match s {
             "CREATED" => TemplateStatus::Created,
+            "CREATING" => TemplateStatus::Creating,
+            "CREATION_FAILED" => TemplateStatus::CreationFailed,
+            "PENDING_CREATION" => TemplateStatus::PendingCreation,
+            "READY" => TemplateStatus::Ready,
             other => TemplateStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +82,16 @@ impl TemplateStatus {
     pub fn as_str(&self) -> &str {
         match self {
             TemplateStatus::Created => "CREATED",
+            TemplateStatus::Creating => "CREATING",
+            TemplateStatus::CreationFailed => "CREATION_FAILED",
+            TemplateStatus::PendingCreation => "PENDING_CREATION",
+            TemplateStatus::Ready => "READY",
             TemplateStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATED"]
+        &["CREATED", "CREATING", "CREATION_FAILED", "PENDING_CREATION", "READY"]
     }
 }
 impl ::std::convert::AsRef<str> for TemplateStatus {
@@ -95,6 +115,10 @@ impl ::std::fmt::Display for TemplateStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TemplateStatus::Created => write!(f, "CREATED"),
+            TemplateStatus::Creating => write!(f, "CREATING"),
+            TemplateStatus::CreationFailed => write!(f, "CREATION_FAILED"),
+            TemplateStatus::PendingCreation => write!(f, "PENDING_CREATION"),
+            TemplateStatus::Ready => write!(f, "READY"),
             TemplateStatus::Unknown(value) => write!(f, "{}", value),
         }
     }

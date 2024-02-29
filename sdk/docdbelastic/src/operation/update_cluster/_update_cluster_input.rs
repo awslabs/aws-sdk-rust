@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateClusterInput {
-    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// <p>The ARN identifier of the elastic cluster.</p>
     pub cluster_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
+    /// <p>The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are <code>PLAIN_TEXT</code> or <code>SECRET_ARN</code>.</p>
     pub auth_type: ::std::option::Option<crate::types::Auth>,
-    /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
+    /// <p>The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.</p>
     pub shard_capacity: ::std::option::Option<i32>,
-    /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
+    /// <p>The number of shards assigned to the elastic cluster. Maximum is 32.</p>
     pub shard_count: ::std::option::Option<i32>,
-    /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
+    /// <p>A list of EC2 VPC security groups to associate with the elastic cluster.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
+    /// <p>The Amazon EC2 subnet IDs for the elastic cluster.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
+    /// <p>The password associated with the elastic cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p><i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     pub admin_user_password: ::std::option::Option<::std::string::String>,
-    /// <p>The client token for the Elastic DocumentDB cluster.</p>
+    /// <p>The client token for the elastic cluster.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     /// <p><i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code></p>
@@ -26,42 +26,48 @@ pub struct UpdateClusterInput {
     /// <p><i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
+    /// <p>The number of days for which automatic snapshots are retained.</p>
+    pub backup_retention_period: ::std::option::Option<i32>,
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>backupRetentionPeriod</code>.</p>
+    pub preferred_backup_window: ::std::option::Option<::std::string::String>,
+    /// <p>The number of replica instances applying to all shards in the elastic cluster. A <code>shardInstanceCount</code> value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.</p>
+    pub shard_instance_count: ::std::option::Option<i32>,
 }
 impl UpdateClusterInput {
-    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// <p>The ARN identifier of the elastic cluster.</p>
     pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
-    /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
+    /// <p>The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are <code>PLAIN_TEXT</code> or <code>SECRET_ARN</code>.</p>
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::Auth> {
         self.auth_type.as_ref()
     }
-    /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
+    /// <p>The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.</p>
     pub fn shard_capacity(&self) -> ::std::option::Option<i32> {
         self.shard_capacity
     }
-    /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
+    /// <p>The number of shards assigned to the elastic cluster. Maximum is 32.</p>
     pub fn shard_count(&self) -> ::std::option::Option<i32> {
         self.shard_count
     }
-    /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
+    /// <p>A list of EC2 VPC security groups to associate with the elastic cluster.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
     pub fn vpc_security_group_ids(&self) -> &[::std::string::String] {
         self.vpc_security_group_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
+    /// <p>The Amazon EC2 subnet IDs for the elastic cluster.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
+    /// <p>The password associated with the elastic cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p><i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     pub fn admin_user_password(&self) -> ::std::option::Option<&str> {
         self.admin_user_password.as_deref()
     }
-    /// <p>The client token for the Elastic DocumentDB cluster.</p>
+    /// <p>The client token for the elastic cluster.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -72,6 +78,18 @@ impl UpdateClusterInput {
     /// <p><i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
+    }
+    /// <p>The number of days for which automatic snapshots are retained.</p>
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
+        self.backup_retention_period
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>backupRetentionPeriod</code>.</p>
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
+        self.preferred_backup_window.as_deref()
+    }
+    /// <p>The number of replica instances applying to all shards in the elastic cluster. A <code>shardInstanceCount</code> value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.</p>
+    pub fn shard_instance_count(&self) -> ::std::option::Option<i32> {
+        self.shard_instance_count
     }
 }
 impl ::std::fmt::Debug for UpdateClusterInput {
@@ -86,6 +104,9 @@ impl ::std::fmt::Debug for UpdateClusterInput {
         formatter.field("admin_user_password", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("preferred_backup_window", &self.preferred_backup_window);
+        formatter.field("shard_instance_count", &self.shard_instance_count);
         formatter.finish()
     }
 }
@@ -109,62 +130,65 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) admin_user_password: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
+    pub(crate) backup_retention_period: ::std::option::Option<i32>,
+    pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
+    pub(crate) shard_instance_count: ::std::option::Option<i32>,
 }
 impl UpdateClusterInputBuilder {
-    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// <p>The ARN identifier of the elastic cluster.</p>
     /// This field is required.
     pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// <p>The ARN identifier of the elastic cluster.</p>
     pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }
-    /// <p>The arn of the Elastic DocumentDB cluster.</p>
+    /// <p>The ARN identifier of the elastic cluster.</p>
     pub fn get_cluster_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_arn
     }
-    /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
+    /// <p>The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are <code>PLAIN_TEXT</code> or <code>SECRET_ARN</code>.</p>
     pub fn auth_type(mut self, input: crate::types::Auth) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
+    /// <p>The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are <code>PLAIN_TEXT</code> or <code>SECRET_ARN</code>.</p>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::Auth>) -> Self {
         self.auth_type = input;
         self
     }
-    /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
+    /// <p>The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are <code>PLAIN_TEXT</code> or <code>SECRET_ARN</code>.</p>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::Auth> {
         &self.auth_type
     }
-    /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
+    /// <p>The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.</p>
     pub fn shard_capacity(mut self, input: i32) -> Self {
         self.shard_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
+    /// <p>The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.</p>
     pub fn set_shard_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shard_capacity = input;
         self
     }
-    /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
+    /// <p>The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.</p>
     pub fn get_shard_capacity(&self) -> &::std::option::Option<i32> {
         &self.shard_capacity
     }
-    /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
+    /// <p>The number of shards assigned to the elastic cluster. Maximum is 32.</p>
     pub fn shard_count(mut self, input: i32) -> Self {
         self.shard_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
+    /// <p>The number of shards assigned to the elastic cluster. Maximum is 32.</p>
     pub fn set_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shard_count = input;
         self
     }
-    /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
+    /// <p>The number of shards assigned to the elastic cluster. Maximum is 32.</p>
     pub fn get_shard_count(&self) -> &::std::option::Option<i32> {
         &self.shard_count
     }
@@ -172,19 +196,19 @@ impl UpdateClusterInputBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
-    /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
+    /// <p>A list of EC2 VPC security groups to associate with the elastic cluster.</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.vpc_security_group_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
+    /// <p>A list of EC2 VPC security groups to associate with the elastic cluster.</p>
     pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
         self
     }
-    /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
+    /// <p>A list of EC2 VPC security groups to associate with the elastic cluster.</p>
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
     }
@@ -192,50 +216,50 @@ impl UpdateClusterInputBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
+    /// <p>The Amazon EC2 subnet IDs for the elastic cluster.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
+    /// <p>The Amazon EC2 subnet IDs for the elastic cluster.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
-    /// <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
+    /// <p>The Amazon EC2 subnet IDs for the elastic cluster.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
-    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
+    /// <p>The password associated with the elastic cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p><i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
+    /// <p>The password associated with the elastic cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p><i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_user_password = input;
         self
     }
-    /// <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
+    /// <p>The password associated with the elastic cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
     /// <p><i>Constraints</i>: Must contain from 8 to 100 characters.</p>
     pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_user_password
     }
-    /// <p>The client token for the Elastic DocumentDB cluster.</p>
+    /// <p>The client token for the elastic cluster.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The client token for the Elastic DocumentDB cluster.</p>
+    /// <p>The client token for the elastic cluster.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>The client token for the Elastic DocumentDB cluster.</p>
+    /// <p>The client token for the elastic cluster.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -265,6 +289,48 @@ impl UpdateClusterInputBuilder {
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
     }
+    /// <p>The number of days for which automatic snapshots are retained.</p>
+    pub fn backup_retention_period(mut self, input: i32) -> Self {
+        self.backup_retention_period = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of days for which automatic snapshots are retained.</p>
+    pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.backup_retention_period = input;
+        self
+    }
+    /// <p>The number of days for which automatic snapshots are retained.</p>
+    pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
+        &self.backup_retention_period
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>backupRetentionPeriod</code>.</p>
+    pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.preferred_backup_window = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>backupRetentionPeriod</code>.</p>
+    pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.preferred_backup_window = input;
+        self
+    }
+    /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>backupRetentionPeriod</code>.</p>
+    pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
+        &self.preferred_backup_window
+    }
+    /// <p>The number of replica instances applying to all shards in the elastic cluster. A <code>shardInstanceCount</code> value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.</p>
+    pub fn shard_instance_count(mut self, input: i32) -> Self {
+        self.shard_instance_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of replica instances applying to all shards in the elastic cluster. A <code>shardInstanceCount</code> value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.</p>
+    pub fn set_shard_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.shard_instance_count = input;
+        self
+    }
+    /// <p>The number of replica instances applying to all shards in the elastic cluster. A <code>shardInstanceCount</code> value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.</p>
+    pub fn get_shard_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.shard_instance_count
+    }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
@@ -279,6 +345,9 @@ impl UpdateClusterInputBuilder {
             admin_user_password: self.admin_user_password,
             client_token: self.client_token,
             preferred_maintenance_window: self.preferred_maintenance_window,
+            backup_retention_period: self.backup_retention_period,
+            preferred_backup_window: self.preferred_backup_window,
+            shard_instance_count: self.shard_instance_count,
         })
     }
 }
@@ -294,6 +363,9 @@ impl ::std::fmt::Debug for UpdateClusterInputBuilder {
         formatter.field("admin_user_password", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.field("preferred_maintenance_window", &self.preferred_maintenance_window);
+        formatter.field("backup_retention_period", &self.backup_retention_period);
+        formatter.field("preferred_backup_window", &self.preferred_backup_window);
+        formatter.field("shard_instance_count", &self.shard_instance_count);
         formatter.finish()
     }
 }

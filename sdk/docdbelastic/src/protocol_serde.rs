@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_copy_cluster_snapshot;
+
 pub(crate) mod shape_create_cluster;
 
 pub(crate) mod shape_create_cluster_snapshot;
@@ -43,6 +45,10 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_restore_cluster_from_snapshot;
 
+pub(crate) mod shape_start_cluster;
+
+pub(crate) mod shape_stop_cluster;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -60,6 +66,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_copy_cluster_snapshot_input;
 
 pub(crate) mod shape_create_cluster_input;
 
@@ -97,6 +105,10 @@ pub(crate) mod shape_cluster_in_list;
 
 pub(crate) mod shape_cluster_snapshot_in_list;
 
+pub(crate) mod shape_shard_list;
+
 pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_shard;

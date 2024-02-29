@@ -123,6 +123,20 @@ pub use crate::types::_condition::Condition;
 
 pub use crate::types::_slot_constraint::SlotConstraint;
 
+pub use crate::types::_qn_a_intent_configuration::QnAIntentConfiguration;
+
+pub use crate::types::_bedrock_model_specification::BedrockModelSpecification;
+
+pub use crate::types::_data_source_configuration::DataSourceConfiguration;
+
+pub use crate::types::_bedrock_knowledge_store_configuration::BedrockKnowledgeStoreConfiguration;
+
+pub use crate::types::_qn_a_kendra_configuration::QnAKendraConfiguration;
+
+pub use crate::types::_opensearch_configuration::OpensearchConfiguration;
+
+pub use crate::types::_exact_response_fields::ExactResponseFields;
+
 pub use crate::types::_initial_response_setting::InitialResponseSetting;
 
 pub use crate::types::_kendra_configuration::KendraConfiguration;
@@ -186,8 +200,6 @@ pub use crate::types::_generative_ai_settings::GenerativeAiSettings;
 pub use crate::types::_buildtime_settings::BuildtimeSettings;
 
 pub use crate::types::_sample_utterance_generation_specification::SampleUtteranceGenerationSpecification;
-
-pub use crate::types::_bedrock_model_specification::BedrockModelSpecification;
 
 pub use crate::types::_descriptive_bot_builder_specification::DescriptiveBotBuilderSpecification;
 
@@ -837,6 +849,8 @@ mod _audio_recognition_strategy;
 
 mod _audio_specification;
 
+mod _bedrock_knowledge_store_configuration;
+
 mod _bedrock_model_specification;
 
 mod _bot_alias_history_event;
@@ -987,6 +1001,8 @@ mod _custom_vocabulary_status;
 
 mod _data_privacy;
 
+mod _data_source_configuration;
+
 mod _date_range_filter;
 
 mod _default_conditional_branch;
@@ -1012,6 +1028,8 @@ mod _elicitation_code_hook_invocation_setting;
 mod _encryption_setting;
 
 mod _error_code;
+
+mod _exact_response_fields;
 
 mod _execution_error_details;
 
@@ -1141,6 +1159,8 @@ mod _obfuscation_setting;
 
 mod _obfuscation_setting_type;
 
+mod _opensearch_configuration;
+
 mod _output_context;
 
 mod _overall_test_result_item;
@@ -1164,6 +1184,10 @@ mod _prompt_attempt;
 mod _prompt_attempt_specification;
 
 mod _prompt_specification;
+
+mod _qn_a_intent_configuration;
+
+mod _qn_a_kendra_configuration;
 
 mod _recommended_intent_summary;
 

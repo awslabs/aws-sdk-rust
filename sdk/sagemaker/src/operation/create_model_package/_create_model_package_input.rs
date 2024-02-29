@@ -11,7 +11,7 @@ pub struct CreateModelPackageInput {
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the model package.</p>
     pub model_package_description: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
     /// <li>
     /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
@@ -56,6 +56,8 @@ pub struct CreateModelPackageInput {
     pub additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     /// <p>Indicates if you want to skip model validation.</p>
     pub skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
+    /// <p>The URI of the source for the model package. If you want to clone a model package, set it to the model package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.</p>
+    pub source_uri: ::std::option::Option<::std::string::String>,
 }
 impl CreateModelPackageInput {
     /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
@@ -72,7 +74,7 @@ impl CreateModelPackageInput {
     pub fn model_package_description(&self) -> ::std::option::Option<&str> {
         self.model_package_description.as_deref()
     }
-    /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
     /// <li>
     /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
@@ -153,6 +155,10 @@ impl CreateModelPackageInput {
     pub fn skip_model_validation(&self) -> ::std::option::Option<&crate::types::SkipModelValidation> {
         self.skip_model_validation.as_ref()
     }
+    /// <p>The URI of the source for the model package. If you want to clone a model package, set it to the model package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.</p>
+    pub fn source_uri(&self) -> ::std::option::Option<&str> {
+        self.source_uri.as_deref()
+    }
 }
 impl CreateModelPackageInput {
     /// Creates a new builder-style object to manufacture [`CreateModelPackageInput`](crate::operation::create_model_package::CreateModelPackageInput).
@@ -184,6 +190,7 @@ pub struct CreateModelPackageInputBuilder {
     pub(crate) drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
     pub(crate) additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     pub(crate) skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
+    pub(crate) source_uri: ::std::option::Option<::std::string::String>,
 }
 impl CreateModelPackageInputBuilder {
     /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
@@ -234,7 +241,7 @@ impl CreateModelPackageInputBuilder {
     pub fn get_model_package_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_description
     }
-    /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
     /// <li>
     /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
@@ -247,7 +254,7 @@ impl CreateModelPackageInputBuilder {
         self.inference_specification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
     /// <li>
     /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
@@ -260,7 +267,7 @@ impl CreateModelPackageInputBuilder {
         self.inference_specification = input;
         self
     }
-    /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
     /// <ul>
     /// <li>
     /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
@@ -529,6 +536,20 @@ impl CreateModelPackageInputBuilder {
     pub fn get_skip_model_validation(&self) -> &::std::option::Option<crate::types::SkipModelValidation> {
         &self.skip_model_validation
     }
+    /// <p>The URI of the source for the model package. If you want to clone a model package, set it to the model package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.</p>
+    pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URI of the source for the model package. If you want to clone a model package, set it to the model package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.</p>
+    pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_uri = input;
+        self
+    }
+    /// <p>The URI of the source for the model package. If you want to clone a model package, set it to the model package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_uri
+    }
     /// Consumes the builder and constructs a [`CreateModelPackageInput`](crate::operation::create_model_package::CreateModelPackageInput).
     pub fn build(
         self,
@@ -554,6 +575,7 @@ impl CreateModelPackageInputBuilder {
             drift_check_baselines: self.drift_check_baselines,
             additional_inference_specifications: self.additional_inference_specifications,
             skip_model_validation: self.skip_model_validation,
+            source_uri: self.source_uri,
         })
     }
 }

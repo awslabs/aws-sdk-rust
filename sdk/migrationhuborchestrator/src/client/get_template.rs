@@ -6,12 +6,17 @@ impl super::Client {
     ///   - [`id(impl Into<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_template::builders::GetTemplateFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the template.</p><br>
     /// - On success, responds with [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_template::GetTemplateOutput::id): <p>The ID of the template.</p>
+    ///   - [`template_arn(Option<String>)`](crate::operation::get_template::GetTemplateOutput::template_arn): <p>&gt;The Amazon Resource Name (ARN) of the migration workflow template. The format for an Migration Hub Orchestrator template ARN is <code>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_template::GetTemplateOutput::name): <p>The name of the template.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_template::GetTemplateOutput::description): <p>The time at which the template was last created.</p>
     ///   - [`inputs(Option<Vec::<TemplateInput>>)`](crate::operation::get_template::GetTemplateOutput::inputs): <p>The inputs provided for the creation of the migration workflow.</p>
     ///   - [`tools(Option<Vec::<Tool>>)`](crate::operation::get_template::GetTemplateOutput::tools): <p>List of AWS services utilized in a migration workflow.</p>
-    ///   - [`status(Option<TemplateStatus>)`](crate::operation::get_template::GetTemplateOutput::status): <p>The status of the template.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_template::GetTemplateOutput::creation_time): <p>The time at which the template was last created.</p>
+    ///   - [`owner(Option<String>)`](crate::operation::get_template::GetTemplateOutput::owner): <p>The owner of the migration workflow template.</p>
+    ///   - [`status(Option<TemplateStatus>)`](crate::operation::get_template::GetTemplateOutput::status): <p>The status of the template.</p>
+    ///   - [`status_message(Option<String>)`](crate::operation::get_template::GetTemplateOutput::status_message): <p>The status message of retrieving migration workflow templates.</p>
+    ///   - [`template_class(Option<String>)`](crate::operation::get_template::GetTemplateOutput::template_class): <p>The class of the migration workflow template. The available template classes are:</p> <ul>  <li>   <p>A2C</p></li>  <li>   <p>MGN</p></li>  <li>   <p>SAP_MULTI</p></li>  <li>   <p>SQL_EC2</p></li>  <li>   <p>SQL_RDS</p></li>  <li>   <p>VMIE</p></li> </ul>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_template::GetTemplateOutput::tags): <p>The tags added to the migration workflow template.</p>
     /// - On failure, responds with [`SdkError<GetTemplateError>`](crate::operation::get_template::GetTemplateError)
     pub fn get_template(&self) -> crate::operation::get_template::builders::GetTemplateFluentBuilder {
         crate::operation::get_template::builders::GetTemplateFluentBuilder::new(self.handle.clone())

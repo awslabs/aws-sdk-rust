@@ -22,7 +22,7 @@ impl GetClusterSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `GetClusterSnapshot`.
 ///
-/// <p>Returns information about a specific Elastic DocumentDB snapshot</p>
+/// <p>Returns information about a specific elastic cluster snapshot</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetClusterSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetClusterSnapshotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    /// <p>The ARN identifier of the elastic cluster snapshot.</p>
     pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_arn(input.into());
         self
     }
-    /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    /// <p>The ARN identifier of the elastic cluster snapshot.</p>
     pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_arn(input);
         self
     }
-    /// <p>The arn of the Elastic DocumentDB snapshot.</p>
+    /// <p>The ARN identifier of the elastic cluster snapshot.</p>
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_arn()
     }

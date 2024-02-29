@@ -8,6 +8,8 @@ pub struct SourceAlgorithm {
     /// <p>The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the algorithm.</p>
     /// </note>
     pub model_data_url: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
+    pub model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
     /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
     pub algorithm_name: ::std::option::Option<::std::string::String>,
 }
@@ -17,6 +19,10 @@ impl SourceAlgorithm {
     /// </note>
     pub fn model_data_url(&self) -> ::std::option::Option<&str> {
         self.model_data_url.as_deref()
+    }
+    /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
+    pub fn model_data_source(&self) -> ::std::option::Option<&crate::types::ModelDataSource> {
+        self.model_data_source.as_ref()
     }
     /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
     pub fn algorithm_name(&self) -> ::std::option::Option<&str> {
@@ -35,6 +41,7 @@ impl SourceAlgorithm {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct SourceAlgorithmBuilder {
     pub(crate) model_data_url: ::std::option::Option<::std::string::String>,
+    pub(crate) model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
     pub(crate) algorithm_name: ::std::option::Option<::std::string::String>,
 }
 impl SourceAlgorithmBuilder {
@@ -58,6 +65,20 @@ impl SourceAlgorithmBuilder {
     pub fn get_model_data_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_data_url
     }
+    /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
+    pub fn model_data_source(mut self, input: crate::types::ModelDataSource) -> Self {
+        self.model_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
+    pub fn set_model_data_source(mut self, input: ::std::option::Option<crate::types::ModelDataSource>) -> Self {
+        self.model_data_source = input;
+        self
+    }
+    /// <p>Specifies the location of ML model data to deploy during endpoint creation.</p>
+    pub fn get_model_data_source(&self) -> &::std::option::Option<crate::types::ModelDataSource> {
+        &self.model_data_source
+    }
     /// <p>The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
     /// This field is required.
     pub fn algorithm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -77,6 +98,7 @@ impl SourceAlgorithmBuilder {
     pub fn build(self) -> crate::types::SourceAlgorithm {
         crate::types::SourceAlgorithm {
             model_data_url: self.model_data_url,
+            model_data_source: self.model_data_source,
             algorithm_name: self.algorithm_name,
         }
     }

@@ -693,6 +693,8 @@ pub use crate::types::_tooltip_item::TooltipItem;
 
 pub use crate::types::_column_tooltip_item::ColumnTooltipItem;
 
+pub use crate::types::_tooltip_target::TooltipTarget;
+
 pub use crate::types::_field_tooltip_item::FieldTooltipItem;
 
 pub use crate::types::_tooltip_title_type::TooltipTitleType;
@@ -3678,6 +3680,8 @@ mod _time_range_filter_value;
 mod _tooltip_item;
 
 mod _tooltip_options;
+
+mod _tooltip_target;
 
 mod _tooltip_title_type;
 

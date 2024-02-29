@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClusterOutput {
-    /// <p>The new Elastic DocumentDB cluster that has been created.</p>
+    /// <p>The new elastic cluster that has been created.</p>
     pub cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }
 impl CreateClusterOutput {
-    /// <p>The new Elastic DocumentDB cluster that has been created.</p>
+    /// <p>The new elastic cluster that has been created.</p>
     pub fn cluster(&self) -> ::std::option::Option<&crate::types::Cluster> {
         self.cluster.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct CreateClusterOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateClusterOutputBuilder {
-    /// <p>The new Elastic DocumentDB cluster that has been created.</p>
+    /// <p>The new elastic cluster that has been created.</p>
     /// This field is required.
     pub fn cluster(mut self, input: crate::types::Cluster) -> Self {
         self.cluster = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The new Elastic DocumentDB cluster that has been created.</p>
+    /// <p>The new elastic cluster that has been created.</p>
     pub fn set_cluster(mut self, input: ::std::option::Option<crate::types::Cluster>) -> Self {
         self.cluster = input;
         self
     }
-    /// <p>The new Elastic DocumentDB cluster that has been created.</p>
+    /// <p>The new elastic cluster that has been created.</p>
     pub fn get_cluster(&self) -> &::std::option::Option<crate::types::Cluster> {
         &self.cluster
     }

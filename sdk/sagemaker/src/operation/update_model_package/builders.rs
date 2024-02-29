@@ -218,4 +218,56 @@ impl UpdateModelPackageFluentBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>> {
         self.inner.get_additional_inference_specifications_to_add()
     }
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
+    /// </ul>
+    pub fn inference_specification(mut self, input: crate::types::InferenceSpecification) -> Self {
+        self.inner = self.inner.inference_specification(input);
+        self
+    }
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
+    /// </ul>
+    pub fn set_inference_specification(mut self, input: ::std::option::Option<crate::types::InferenceSpecification>) -> Self {
+        self.inner = self.inner.set_inference_specification(input);
+        self
+    }
+    /// <p>Specifies details about inference jobs that you can run with models based on this model package, including the following information:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p></li>
+    /// <li>
+    /// <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p></li>
+    /// <li>
+    /// <p>The input and output content formats that the model package supports for inference.</p></li>
+    /// </ul>
+    pub fn get_inference_specification(&self) -> &::std::option::Option<crate::types::InferenceSpecification> {
+        self.inner.get_inference_specification()
+    }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_uri(input.into());
+        self
+    }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn set_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_source_uri(input);
+        self
+    }
+    /// <p>The URI of the source for the model package.</p>
+    pub fn get_source_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_source_uri()
+    }
 }

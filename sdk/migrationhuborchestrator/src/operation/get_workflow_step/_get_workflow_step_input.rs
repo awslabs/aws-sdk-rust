@@ -5,7 +5,7 @@
 pub struct GetWorkflowStepInput {
     /// <p>The ID of the migration workflow.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
-    /// <p>desThe ID of the step group.</p>
+    /// <p>The ID of the step group.</p>
     pub step_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl GetWorkflowStepInput {
     pub fn workflow_id(&self) -> ::std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
-    /// <p>desThe ID of the step group.</p>
+    /// <p>The ID of the step group.</p>
     pub fn step_group_id(&self) -> ::std::option::Option<&str> {
         self.step_group_id.as_deref()
     }
@@ -55,18 +55,18 @@ impl GetWorkflowStepInputBuilder {
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_id
     }
-    /// <p>desThe ID of the step group.</p>
+    /// <p>The ID of the step group.</p>
     /// This field is required.
     pub fn step_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>desThe ID of the step group.</p>
+    /// <p>The ID of the step group.</p>
     pub fn set_step_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_group_id = input;
         self
     }
-    /// <p>desThe ID of the step group.</p>
+    /// <p>The ID of the step group.</p>
     pub fn get_step_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.step_group_id
     }

@@ -12,6 +12,9 @@ pub fn ser_field_tooltip_item(
     if let Some(var_2) = &input.visibility {
         object.key("Visibility").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.tooltip_target {
+        object.key("TooltipTarget").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -48,6 +51,13 @@ where
                             builder = builder.set_visibility(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Visibility::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "TooltipTarget" => {
+                            builder = builder.set_tooltip_target(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TooltipTarget::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -68,6 +68,40 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError> for Error {
+    fn from(err: crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError) -> Self {
+        match err {
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster::CreateClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -372,6 +406,58 @@ impl From<crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSna
                 Error::ValidationException(inner)
             }
             crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_cluster::StartClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_cluster::StartClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_cluster::StartClusterError> for Error {
+    fn from(err: crate::operation::start_cluster::StartClusterError) -> Self {
+        match err {
+            crate::operation::start_cluster::StartClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_cluster::StartClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_cluster::StartClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_cluster::StartClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_cluster::StartClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_cluster::StartClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_cluster::StopClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_cluster::StopClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_cluster::StopClusterError> for Error {
+    fn from(err: crate::operation::stop_cluster::StopClusterError) -> Self {
+        match err {
+            crate::operation::stop_cluster::StopClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_cluster::StopClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_cluster::StopClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_cluster::StopClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_cluster::StopClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_cluster::StopClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

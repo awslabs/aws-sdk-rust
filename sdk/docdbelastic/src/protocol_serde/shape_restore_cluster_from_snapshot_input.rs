@@ -9,33 +9,45 @@ pub fn ser_restore_cluster_from_snapshot_input_input(
     if let Some(var_2) = &input.kms_key_id {
         object.key("kmsKeyId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.subnet_ids {
-        let mut array_4 = object.key("subnetIds").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.shard_capacity {
+        object.key("shardCapacity").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.shard_instance_count {
+        object.key("shardInstanceCount").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.subnet_ids {
+        let mut array_6 = object.key("subnetIds").start_array();
+        for item_7 in var_5 {
             {
-                array_4.value().string(item_5.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_4.finish();
+        array_6.finish();
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_8) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_9 = object.key("tags").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_7.finish();
+        object_9.finish();
     }
-    if let Some(var_10) = &input.vpc_security_group_ids {
-        let mut array_11 = object.key("vpcSecurityGroupIds").start_array();
-        for item_12 in var_10 {
+    if let Some(var_12) = &input.vpc_security_group_ids {
+        let mut array_13 = object.key("vpcSecurityGroupIds").start_array();
+        for item_14 in var_12 {
             {
-                array_11.value().string(item_12.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
     Ok(())
 }

@@ -12,6 +12,8 @@
 /// ```text
 /// # let amitypes = unimplemented!();
 /// match amitypes {
+///     AmiTypes::Al2023Arm64Standard => { /* ... */ },
+///     AmiTypes::Al2023X8664Standard => { /* ... */ },
 ///     AmiTypes::Al2Arm64 => { /* ... */ },
 ///     AmiTypes::Al2X8664 => { /* ... */ },
 ///     AmiTypes::Al2X8664Gpu => { /* ... */ },
@@ -52,6 +54,10 @@
 )]
 pub enum AmiTypes {
     #[allow(missing_docs)] // documentation missing in model
+    Al2023Arm64Standard,
+    #[allow(missing_docs)] // documentation missing in model
+    Al2023X8664Standard,
+    #[allow(missing_docs)] // documentation missing in model
     Al2Arm64,
     #[allow(missing_docs)] // documentation missing in model
     Al2X8664,
@@ -82,6 +88,8 @@ pub enum AmiTypes {
 impl ::std::convert::From<&str> for AmiTypes {
     fn from(s: &str) -> Self {
         match s {
+            "AL2023_ARM_64_STANDARD" => AmiTypes::Al2023Arm64Standard,
+            "AL2023_x86_64_STANDARD" => AmiTypes::Al2023X8664Standard,
             "AL2_ARM_64" => AmiTypes::Al2Arm64,
             "AL2_x86_64" => AmiTypes::Al2X8664,
             "AL2_x86_64_GPU" => AmiTypes::Al2X8664Gpu,
@@ -109,6 +117,8 @@ impl AmiTypes {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AmiTypes::Al2023Arm64Standard => "AL2023_ARM_64_STANDARD",
+            AmiTypes::Al2023X8664Standard => "AL2023_x86_64_STANDARD",
             AmiTypes::Al2Arm64 => "AL2_ARM_64",
             AmiTypes::Al2X8664 => "AL2_x86_64",
             AmiTypes::Al2X8664Gpu => "AL2_x86_64_GPU",
@@ -127,6 +137,8 @@ impl AmiTypes {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AL2023_ARM_64_STANDARD",
+            "AL2023_x86_64_STANDARD",
             "AL2_ARM_64",
             "AL2_x86_64",
             "AL2_x86_64_GPU",
@@ -162,6 +174,8 @@ impl AmiTypes {
 impl ::std::fmt::Display for AmiTypes {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AmiTypes::Al2023Arm64Standard => write!(f, "AL2023_ARM_64_STANDARD"),
+            AmiTypes::Al2023X8664Standard => write!(f, "AL2023_x86_64_STANDARD"),
             AmiTypes::Al2Arm64 => write!(f, "AL2_ARM_64"),
             AmiTypes::Al2X8664 => write!(f, "AL2_x86_64"),
             AmiTypes::Al2X8664Gpu => write!(f, "AL2_x86_64_GPU"),

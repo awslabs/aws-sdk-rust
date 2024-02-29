@@ -3,22 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClusterSnapshotsOutput {
-    /// <p>A list of Elastic DocumentDB snapshots for a specified cluster.</p>
+    /// <p>A list of snapshots for a specified elastic cluster.</p>
     pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>>,
-    /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>
-    /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListClusterSnapshotsOutput {
-    /// <p>A list of Elastic DocumentDB snapshots for a specified cluster.</p>
+    /// <p>A list of snapshots for a specified elastic cluster.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapshots.is_none()`.
     pub fn snapshots(&self) -> &[crate::types::ClusterSnapshotInList] {
         self.snapshots.as_deref().unwrap_or_default()
     }
-    /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>
-    /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -48,36 +48,36 @@ impl ListClusterSnapshotsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_snapshots`](Self::set_snapshots).
     ///
-    /// <p>A list of Elastic DocumentDB snapshots for a specified cluster.</p>
+    /// <p>A list of snapshots for a specified elastic cluster.</p>
     pub fn snapshots(mut self, input: crate::types::ClusterSnapshotInList) -> Self {
         let mut v = self.snapshots.unwrap_or_default();
         v.push(input);
         self.snapshots = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Elastic DocumentDB snapshots for a specified cluster.</p>
+    /// <p>A list of snapshots for a specified elastic cluster.</p>
     pub fn set_snapshots(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>>) -> Self {
         self.snapshots = input;
         self
     }
-    /// <p>A list of Elastic DocumentDB snapshots for a specified cluster.</p>
+    /// <p>A list of snapshots for a specified elastic cluster.</p>
     pub fn get_snapshots(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterSnapshotInList>> {
         &self.snapshots
     }
-    /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>
-    /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>
-    /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>
-    /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>
+    /// <p>A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by <code>max-results</code>.</p>
+    /// <p>If there is no more data in the responce, the <code>nextToken</code> will not be returned.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`workflow_id(impl Into<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::workflow_id) / [`set_workflow_id(Option<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::set_workflow_id):<br>required: **true**<br><p>The ID of the migration workflow.</p><br>
-    ///   - [`step_group_id(impl Into<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::step_group_id) / [`set_step_group_id(Option<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::set_step_group_id):<br>required: **true**<br><p>desThe ID of the step group.</p><br>
+    ///   - [`step_group_id(impl Into<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::step_group_id) / [`set_step_group_id(Option<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::set_step_group_id):<br>required: **true**<br><p>The ID of the step group.</p><br>
     ///   - [`id(impl Into<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_workflow_step::builders::GetWorkflowStepFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the step.</p><br>
     /// - On success, responds with [`GetWorkflowStepOutput`](crate::operation::get_workflow_step::GetWorkflowStepOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_workflow_step::GetWorkflowStepOutput::name): <p>The name of the step.</p>
