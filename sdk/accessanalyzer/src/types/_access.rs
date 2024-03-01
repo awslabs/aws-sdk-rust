@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Access {
-    /// <p>A list of actions for the access permissions.</p>
+    /// <p>A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be used in the list of actions to check.</p>
     pub actions: ::std::vec::Vec<::std::string::String>,
 }
 impl Access {
-    /// <p>A list of actions for the access permissions.</p>
+    /// <p>A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be used in the list of actions to check.</p>
     pub fn actions(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.actions.deref()
@@ -32,19 +32,19 @@ impl AccessBuilder {
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
-    /// <p>A list of actions for the access permissions.</p>
+    /// <p>A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be used in the list of actions to check.</p>
     pub fn actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input.into());
         self.actions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of actions for the access permissions.</p>
+    /// <p>A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be used in the list of actions to check.</p>
     pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.actions = input;
         self
     }
-    /// <p>A list of actions for the access permissions.</p>
+    /// <p>A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be used in the list of actions to check.</p>
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.actions
     }

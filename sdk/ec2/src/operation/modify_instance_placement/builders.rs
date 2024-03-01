@@ -25,7 +25,7 @@ impl ModifyInstancePlacementInputBuilder {
 /// <p>Modifies the placement attributes for a specified instance. You can do the following:</p>
 /// <ul>
 /// <li>
-/// <p>Modify the affinity between an instance and a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next time the instance is launched, it is automatically associated with the host on which it lands. If the instance is restarted or rebooted, this relationship persists.</p></li>
+/// <p>Modify the affinity between an instance and a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next time the instance is started, it is automatically associated with the host on which it lands. If the instance is restarted or rebooted, this relationship persists.</p></li>
 /// <li>
 /// <p>Change the Dedicated Host with which an instance is associated.</p></li>
 /// <li>
@@ -120,17 +120,17 @@ impl ModifyInstancePlacementFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The affinity setting for the instance.</p>
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn affinity(mut self, input: crate::types::Affinity) -> Self {
         self.inner = self.inner.affinity(input);
         self
     }
-    /// <p>The affinity setting for the instance.</p>
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_affinity(mut self, input: ::std::option::Option<crate::types::Affinity>) -> Self {
         self.inner = self.inner.set_affinity(input);
         self
     }
-    /// <p>The affinity setting for the instance.</p>
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_affinity(&self) -> &::std::option::Option<crate::types::Affinity> {
         self.inner.get_affinity()
     }

@@ -40,9 +40,9 @@ source_hash = '5aae7e764af0ae9156ea8921bb629f0df10691223f1ff67f0daf3cabe3744464'
 
 [crates.aws-sdk-accessanalyzer]
 category = 'AwsSdk'
-version = '1.16.0'
-source_hash = '1cfd900b8dd1cff6e4d15e1bddd6759d078619f9e02e951722069d856031addd'
-model_hash = 'ff369f678b6906b68e2b12f0d628a63ad1142ad9379e5258c976543052543e04'
+version = '1.16.1'
+source_hash = '95530d82a6e25581dc996d966bd73d47fb9b584c20951889677e3ce36a3d1d54'
+model_hash = '8030e051fd48928add57fcafce0e13ff9912e476e50fe5a34e5a6b5337c637ff'
 
 [crates.aws-sdk-account]
 category = 'AwsSdk'
@@ -214,9 +214,9 @@ model_hash = 'c07729a82666e5bfe3145b0c373b9942681081e39354f69083a1755adc502f76'
 
 [crates.aws-sdk-autoscaling]
 category = 'AwsSdk'
-version = '1.16.0'
-source_hash = '0f2c107d6963b12eab700743cbed8c8428b7d34a11b526ce9733461b6cf48b4c'
-model_hash = 'a6f609f99d4b94c1ef43ab9e73d90811d5d98cbcb4473314ece53913b5b44ccb'
+version = '1.16.1'
+source_hash = 'ec2039a10be9d36894332c65b5c9990e7311ff699e04cc6a5b64de839ad08aa6'
+model_hash = 'b39b5fc48bdba1eb7a4ce1f8dddc1a8caafc014cdbbb5005675c40c61e8b8b1f'
 
 [crates.aws-sdk-autoscalingplans]
 category = 'AwsSdk'
@@ -736,9 +736,9 @@ model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.22.0'
-source_hash = 'f74de3e702fb9ea4f6423e15072bc246ad4329234e9300fb59108605dcdb899b'
-model_hash = '1fb9c8c85536fe556cc642a0d9898ad5b605453bf286d49078473c82ad86f92e'
+version = '1.22.1'
+source_hash = '73411c2ff040ac21e2c7c95a29b81e1192355ad13b7d7e3fea73492d46145d56'
+model_hash = '290323809723820dfc42ea0155f7e4e03e81ef65cf6f19100ed9d85624ef8305'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -2425,15 +2425,7 @@ source_hash = '87fd76dbec199956d8f44cd6f3ffae7c8c5d5050f55280077c977345434fb951'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '7de1829d30f446753f3731c106f8665f9a49ef45a66b6d14ab7045f5e0aa2488'
-
-[release]
-tag = 'release-2024-02-29'
-
 [release.crates]
-aws-sdk-docdbelastic = '1.16.0'
-aws-sdk-eks = '1.17.0'
-aws-sdk-lexmodelsv2 = '1.17.0'
-aws-sdk-migrationhuborchestrator = '1.16.0'
-aws-sdk-quicksight = '1.17.0'
-aws-sdk-sagemaker = '1.25.0'
-aws-sdk-securitylake = '1.16.0'
+aws-sdk-accessanalyzer = '1.16.1'
+aws-sdk-autoscaling = '1.16.1'
+aws-sdk-ec2 = '1.22.1'

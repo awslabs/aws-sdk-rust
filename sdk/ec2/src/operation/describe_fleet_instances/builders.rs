@@ -22,8 +22,10 @@ impl DescribeFleetInstancesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeFleetInstances`.
 ///
-/// <p>Describes the running instances for the specified EC2 Fleet.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>Describes the running instances for the specified EC2 Fleet.</p><note>
+/// <p>Currently, <code>DescribeFleetInstances</code> does not support fleets of type <code>instant</code>. Instead, use <code>DescribeFleets</code>, specifying the <code>instant</code> fleet ID in the request.</p>
+/// </note>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFleetInstancesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

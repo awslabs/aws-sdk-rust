@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyInstancePlacementInput {
-    /// <p>The affinity setting for the instance.</p>
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub affinity: ::std::option::Option<crate::types::Affinity>,
     /// <p>The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
     /// <p>To remove an instance from a placement group, specify an empty string ("").</p>
@@ -24,7 +24,7 @@ pub struct ModifyInstancePlacementInput {
     pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyInstancePlacementInput {
-    /// <p>The affinity setting for the instance.</p>
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn affinity(&self) -> ::std::option::Option<&crate::types::Affinity> {
         self.affinity.as_ref()
     }
@@ -81,17 +81,17 @@ pub struct ModifyInstancePlacementInputBuilder {
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyInstancePlacementInputBuilder {
-    /// <p>The affinity setting for the instance.</p>
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn affinity(mut self, input: crate::types::Affinity) -> Self {
         self.affinity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The affinity setting for the instance.</p>
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_affinity(mut self, input: ::std::option::Option<crate::types::Affinity>) -> Self {
         self.affinity = input;
         self
     }
-    /// <p>The affinity setting for the instance.</p>
+    /// <p>The affinity setting for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_affinity(&self) -> &::std::option::Option<crate::types::Affinity> {
         &self.affinity
     }

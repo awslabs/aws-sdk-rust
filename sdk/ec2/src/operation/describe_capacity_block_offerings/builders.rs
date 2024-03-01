@@ -22,7 +22,7 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCapacityBlockOfferings`.
 ///
-/// <p>Describes Capacity Block offerings available for purchase. With Capacity Blocks, you purchase a specific instance type for a period of time.</p>
+/// <p>Describes Capacity Block offerings available for purchase in the Amazon Web Services Region that you're currently using. With Capacity Blocks, you purchase a specific instance type for a period of time.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCapacityBlockOfferingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

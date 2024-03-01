@@ -10,7 +10,7 @@ pub struct InstanceTopology {
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement group that the instance is in.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same droplet will return a different hashed list of strings.</p>
+    /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
     pub network_nodes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the Availability Zone or Local Zone that the instance is in.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl InstanceTopology {
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same droplet will return a different hashed list of strings.</p>
+    /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_nodes.is_none()`.
     pub fn network_nodes(&self) -> &[::std::string::String] {
@@ -110,19 +110,19 @@ impl InstanceTopologyBuilder {
     ///
     /// To override the contents of this collection use [`set_network_nodes`](Self::set_network_nodes).
     ///
-    /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same droplet will return a different hashed list of strings.</p>
+    /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
     pub fn network_nodes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_nodes.unwrap_or_default();
         v.push(input.into());
         self.network_nodes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same droplet will return a different hashed list of strings.</p>
+    /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
     pub fn set_network_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_nodes = input;
         self
     }
-    /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same droplet will return a different hashed list of strings.</p>
+    /// <p>The network nodes. The nodes are hashed based on your account. Instances from different accounts running under the same server will return a different hashed list of strings.</p>
     pub fn get_network_nodes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_nodes
     }
