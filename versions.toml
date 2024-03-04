@@ -2425,6 +2425,10 @@ source_hash = '87fd76dbec199956d8f44cd6f3ffae7c8c5d5050f55280077c977345434fb951'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '7de1829d30f446753f3731c106f8665f9a49ef45a66b6d14ab7045f5e0aa2488'
+
+[release]
+tag = 'release-2024-03-04'
+
 [release.crates]
 aws-sdk-cloudformation = '1.18.0'
 aws-sdk-fsx = '1.17.0'
