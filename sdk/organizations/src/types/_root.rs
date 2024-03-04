@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Root {
-    /// <p>The unique identifier (ID) for the root.</p>
+    /// <p>The unique identifier (ID) for the root. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the root.</p>
@@ -19,7 +19,7 @@ pub struct Root {
     pub policy_types: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
 }
 impl Root {
-    /// <p>The unique identifier (ID) for the root.</p>
+    /// <p>The unique identifier (ID) for the root. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
@@ -60,19 +60,19 @@ pub struct RootBuilder {
     pub(crate) policy_types: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeSummary>>,
 }
 impl RootBuilder {
-    /// <p>The unique identifier (ID) for the root.</p>
+    /// <p>The unique identifier (ID) for the root. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) for the root.</p>
+    /// <p>The unique identifier (ID) for the root. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The unique identifier (ID) for the root.</p>
+    /// <p>The unique identifier (ID) for the root. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id

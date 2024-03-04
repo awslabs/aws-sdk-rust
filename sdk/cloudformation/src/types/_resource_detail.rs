@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetail {
-    /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
+    /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The logical id for this resource in the final generated template.</p>
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
@@ -44,7 +44,7 @@ pub struct ResourceDetail {
     pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::WarningDetail>>,
 }
 impl ResourceDetail {
-    /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
+    /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -116,17 +116,17 @@ pub struct ResourceDetailBuilder {
     pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::WarningDetail>>,
 }
 impl ResourceDetailBuilder {
-    /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
+    /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
+    /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
+    /// <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC generator supported resource types</a> In the <i>CloudFormation User Guide</i></p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }

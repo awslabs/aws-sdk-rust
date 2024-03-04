@@ -220,6 +220,20 @@ pub fn de_stack_event(
                 builder = builder.set_hook_failure_mode(var_16);
             }
             ,
+            s if s.matches("DetailedStatus") /* DetailedStatus com.amazonaws.cloudformation#StackEvent$DetailedStatus */ =>  {
+                let var_17 =
+                    Some(
+                        Result::<crate::types::DetailedStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DetailedStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_detailed_status(var_17);
+            }
+            ,
             _ => {}
         }
     }

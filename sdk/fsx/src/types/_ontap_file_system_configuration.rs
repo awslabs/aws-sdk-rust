@@ -42,7 +42,7 @@ pub struct OntapFileSystemConfiguration {
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
-    /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p></li>
+    /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p></li>
     /// <li>
     /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.</p></li>
     /// </ul>
@@ -61,7 +61,7 @@ pub struct OntapFileSystemConfiguration {
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -130,7 +130,7 @@ impl OntapFileSystemConfiguration {
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
-    /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p></li>
+    /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p></li>
     /// <li>
     /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.</p></li>
     /// </ul>
@@ -151,7 +151,7 @@ impl OntapFileSystemConfiguration {
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -404,7 +404,7 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
-    /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p></li>
+    /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p></li>
     /// <li>
     /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.</p></li>
     /// </ul>
@@ -416,7 +416,7 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
-    /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p></li>
+    /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p></li>
     /// <li>
     /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.</p></li>
     /// </ul>
@@ -428,7 +428,7 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
-    /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 6.</p></li>
+    /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p></li>
     /// <li>
     /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.</p></li>
     /// </ul>
@@ -449,7 +449,7 @@ impl OntapFileSystemConfigurationBuilder {
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -471,7 +471,7 @@ impl OntapFileSystemConfigurationBuilder {
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -493,7 +493,7 @@ impl OntapFileSystemConfigurationBuilder {
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>

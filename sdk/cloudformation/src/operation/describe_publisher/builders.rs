@@ -27,7 +27,7 @@ impl DescribePublisherInputBuilder {
 /// <p>For more information about registering as a publisher, see:</p>
 /// <ul>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html"> <code>RegisterPublisher</code> </a></p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i></p></li>
 /// </ul>

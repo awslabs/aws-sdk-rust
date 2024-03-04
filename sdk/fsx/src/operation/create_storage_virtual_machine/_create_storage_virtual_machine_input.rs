@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateStorageVirtualMachineInput {
-    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
+    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS clients accessing the file system.</p>
     pub active_directory_configuration: ::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration>,
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -20,14 +20,15 @@ pub struct CreateStorageVirtualMachineInput {
     /// <li>
     /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
     /// <li>
-    /// <p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
+    /// <p><code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.</p></li>
     /// <li>
-    /// <p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
+    /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
     /// </ul>
+    /// <p></p>
     pub root_volume_security_style: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
 }
 impl CreateStorageVirtualMachineInput {
-    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
+    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS clients accessing the file system.</p>
     pub fn active_directory_configuration(&self) -> ::std::option::Option<&crate::types::CreateSvmActiveDirectoryConfiguration> {
         self.active_directory_configuration.as_ref()
     }
@@ -58,10 +59,11 @@ impl CreateStorageVirtualMachineInput {
     /// <li>
     /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
     /// <li>
-    /// <p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
+    /// <p><code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.</p></li>
     /// <li>
-    /// <p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
+    /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
     /// </ul>
+    /// <p></p>
     pub fn root_volume_security_style(&self) -> ::std::option::Option<&crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
         self.root_volume_security_style.as_ref()
     }
@@ -99,17 +101,17 @@ pub struct CreateStorageVirtualMachineInputBuilder {
     pub(crate) root_volume_security_style: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
 }
 impl CreateStorageVirtualMachineInputBuilder {
-    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
+    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS clients accessing the file system.</p>
     pub fn active_directory_configuration(mut self, input: crate::types::CreateSvmActiveDirectoryConfiguration) -> Self {
         self.active_directory_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
+    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS clients accessing the file system.</p>
     pub fn set_active_directory_configuration(mut self, input: ::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration>) -> Self {
         self.active_directory_configuration = input;
         self
     }
-    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS client accessing the file system.</p>
+    /// <p>Describes the self-managed Microsoft Active Directory to which you want to join the SVM. Joining an Active Directory provides user authentication and access control for SMB clients, including Microsoft Windows and macOS clients accessing the file system.</p>
     pub fn get_active_directory_configuration(&self) -> &::std::option::Option<crate::types::CreateSvmActiveDirectoryConfiguration> {
         &self.active_directory_configuration
     }
@@ -196,10 +198,11 @@ impl CreateStorageVirtualMachineInputBuilder {
     /// <li>
     /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
     /// <li>
-    /// <p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
+    /// <p><code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.</p></li>
     /// <li>
-    /// <p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
+    /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
     /// </ul>
+    /// <p></p>
     pub fn root_volume_security_style(mut self, input: crate::types::StorageVirtualMachineRootVolumeSecurityStyle) -> Self {
         self.root_volume_security_style = ::std::option::Option::Some(input);
         self
@@ -209,10 +212,11 @@ impl CreateStorageVirtualMachineInputBuilder {
     /// <li>
     /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
     /// <li>
-    /// <p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
+    /// <p><code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.</p></li>
     /// <li>
-    /// <p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
+    /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
     /// </ul>
+    /// <p></p>
     pub fn set_root_volume_security_style(
         mut self,
         input: ::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle>,
@@ -225,10 +229,11 @@ impl CreateStorageVirtualMachineInputBuilder {
     /// <li>
     /// <p><code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients, and an application accessing the data uses a UNIX user as the service account.</p></li>
     /// <li>
-    /// <p><code>NTFS</code> if the file system is managed by a Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Windows user as the service account.</p></li>
+    /// <p><code>NTFS</code> if the file system is managed by a Microsoft Windows administrator, the majority of users are SMB clients, and an application accessing the data uses a Microsoft Windows user as the service account.</p></li>
     /// <li>
-    /// <p><code>MIXED</code> if the file system is managed by both UNIX and Windows administrators and users consist of both NFS and SMB clients.</p></li>
+    /// <p><code>MIXED</code> This is an advanced setting. For more information, see <a href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p></li>
     /// </ul>
+    /// <p></p>
     pub fn get_root_volume_security_style(&self) -> &::std::option::Option<crate::types::StorageVirtualMachineRootVolumeSecurityStyle> {
         &self.root_volume_security_style
     }

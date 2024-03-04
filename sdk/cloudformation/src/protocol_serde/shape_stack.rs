@@ -295,6 +295,20 @@ pub fn de_stack(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
                 builder = builder.set_retain_except_on_create(var_23);
             }
             ,
+            s if s.matches("DetailedStatus") /* DetailedStatus com.amazonaws.cloudformation#Stack$DetailedStatus */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<crate::types::DetailedStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::DetailedStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_detailed_status(var_24);
+            }
+            ,
             _ => {}
         }
     }

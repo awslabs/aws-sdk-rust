@@ -17,7 +17,7 @@ pub struct StackInstance {
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
     /// <li>
-    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p></li>
+    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually. <code>INOPERABLE</code> can be returned here when the cause is a failed import. If it's due to a failed import, the operation can be retried once the failures are fixed. To see if this is due to a failed import, look at the <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code> member that is a peer to this <code>Status</code> member.</p></li>
     /// <li>
     /// <p><code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
@@ -34,7 +34,7 @@ pub struct StackInstance {
     pub stack_instance_status: ::std::option::Option<crate::types::StackInstanceComprehensiveStatus>,
     /// <p>The explanation for the specific status code that's assigned to this stack instance.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"> <code>DeploymentTargets</code> </a>.</p>
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
     /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
     /// <ul>
@@ -79,7 +79,7 @@ impl StackInstance {
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
     /// <li>
-    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p></li>
+    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually. <code>INOPERABLE</code> can be returned here when the cause is a failed import. If it's due to a failed import, the operation can be retried once the failures are fixed. To see if this is due to a failed import, look at the <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code> member that is a peer to this <code>Status</code> member.</p></li>
     /// <li>
     /// <p><code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
@@ -102,7 +102,7 @@ impl StackInstance {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"> <code>DeploymentTargets</code> </a>.</p>
     pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
     }
@@ -233,7 +233,7 @@ impl StackInstanceBuilder {
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
     /// <li>
-    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p></li>
+    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually. <code>INOPERABLE</code> can be returned here when the cause is a failed import. If it's due to a failed import, the operation can be retried once the failures are fixed. To see if this is due to a failed import, look at the <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code> member that is a peer to this <code>Status</code> member.</p></li>
     /// <li>
     /// <p><code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
@@ -252,7 +252,7 @@ impl StackInstanceBuilder {
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
     /// <li>
-    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p></li>
+    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually. <code>INOPERABLE</code> can be returned here when the cause is a failed import. If it's due to a failed import, the operation can be retried once the failures are fixed. To see if this is due to a failed import, look at the <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code> member that is a peer to this <code>Status</code> member.</p></li>
     /// <li>
     /// <p><code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
@@ -271,7 +271,7 @@ impl StackInstanceBuilder {
     /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
     /// <ul>
     /// <li>
-    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p></li>
+    /// <p><code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually. <code>INOPERABLE</code> can be returned here when the cause is a failed import. If it's due to a failed import, the operation can be retried once the failures are fixed. To see if this is due to a failed import, look at the <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code> member that is a peer to this <code>Status</code> member.</p></li>
     /// <li>
     /// <p><code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
     /// <ul>
@@ -314,17 +314,17 @@ impl StackInstanceBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"> <code>DeploymentTargets</code> </a>.</p>
     pub fn organizational_unit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.organizational_unit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"> <code>DeploymentTargets</code> </a>.</p>
     pub fn set_organizational_unit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.organizational_unit_id = input;
         self
     }
-    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+    /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"> <code>DeploymentTargets</code> </a>.</p>
     pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organizational_unit_id
     }

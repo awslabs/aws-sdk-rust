@@ -14,6 +14,7 @@
 /// match stackinstancedetailedstatus {
 ///     StackInstanceDetailedStatus::Cancelled => { /* ... */ },
 ///     StackInstanceDetailedStatus::Failed => { /* ... */ },
+///     StackInstanceDetailedStatus::FailedImport => { /* ... */ },
 ///     StackInstanceDetailedStatus::Inoperable => { /* ... */ },
 ///     StackInstanceDetailedStatus::Pending => { /* ... */ },
 ///     StackInstanceDetailedStatus::Running => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum StackInstanceDetailedStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    FailedImport,
+    #[allow(missing_docs)] // documentation missing in model
     Inoperable,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for StackInstanceDetailedStatus {
         match s {
             "CANCELLED" => StackInstanceDetailedStatus::Cancelled,
             "FAILED" => StackInstanceDetailedStatus::Failed,
+            "FAILED_IMPORT" => StackInstanceDetailedStatus::FailedImport,
             "INOPERABLE" => StackInstanceDetailedStatus::Inoperable,
             "PENDING" => StackInstanceDetailedStatus::Pending,
             "RUNNING" => StackInstanceDetailedStatus::Running,
@@ -91,6 +95,7 @@ impl StackInstanceDetailedStatus {
         match self {
             StackInstanceDetailedStatus::Cancelled => "CANCELLED",
             StackInstanceDetailedStatus::Failed => "FAILED",
+            StackInstanceDetailedStatus::FailedImport => "FAILED_IMPORT",
             StackInstanceDetailedStatus::Inoperable => "INOPERABLE",
             StackInstanceDetailedStatus::Pending => "PENDING",
             StackInstanceDetailedStatus::Running => "RUNNING",
@@ -104,6 +109,7 @@ impl StackInstanceDetailedStatus {
         &[
             "CANCELLED",
             "FAILED",
+            "FAILED_IMPORT",
             "INOPERABLE",
             "PENDING",
             "RUNNING",
@@ -134,6 +140,7 @@ impl ::std::fmt::Display for StackInstanceDetailedStatus {
         match self {
             StackInstanceDetailedStatus::Cancelled => write!(f, "CANCELLED"),
             StackInstanceDetailedStatus::Failed => write!(f, "FAILED"),
+            StackInstanceDetailedStatus::FailedImport => write!(f, "FAILED_IMPORT"),
             StackInstanceDetailedStatus::Inoperable => write!(f, "INOPERABLE"),
             StackInstanceDetailedStatus::Pending => write!(f, "PENDING"),
             StackInstanceDetailedStatus::Running => write!(f, "RUNNING"),

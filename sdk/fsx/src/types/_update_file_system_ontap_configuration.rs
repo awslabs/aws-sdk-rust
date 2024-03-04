@@ -44,7 +44,7 @@ pub struct UpdateFileSystemOntapConfiguration {
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -111,7 +111,7 @@ impl UpdateFileSystemOntapConfiguration {
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -324,7 +324,7 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -346,7 +346,7 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -368,7 +368,7 @@ impl UpdateFileSystemOntapConfigurationBuilder {
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskIopsConfiguration {
-    /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.</p>
+    /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.</p>
     pub mode: ::std::option::Option<crate::types::DiskIopsConfigurationMode>,
     /// <p>The total number of SSD IOPS provisioned for the file system.</p>
     /// <p>The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000 * <code>HAPairs</code>.</p>
@@ -12,7 +12,7 @@ pub struct DiskIopsConfiguration {
     pub iops: ::std::option::Option<i64>,
 }
 impl DiskIopsConfiguration {
-    /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.</p>
+    /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.</p>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::DiskIopsConfigurationMode> {
         self.mode.as_ref()
     }
@@ -38,17 +38,17 @@ pub struct DiskIopsConfigurationBuilder {
     pub(crate) iops: ::std::option::Option<i64>,
 }
 impl DiskIopsConfigurationBuilder {
-    /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.</p>
+    /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.</p>
     pub fn mode(mut self, input: crate::types::DiskIopsConfigurationMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.</p>
+    /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::DiskIopsConfigurationMode>) -> Self {
         self.mode = input;
         self
     }
-    /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, , or if it using a <code>USER_PROVISIONED</code> value.</p>
+    /// <p>Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::DiskIopsConfigurationMode> {
         &self.mode
     }

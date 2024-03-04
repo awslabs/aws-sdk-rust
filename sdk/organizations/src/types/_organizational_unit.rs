@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationalUnit {
-    /// <p>The unique identifier (ID) associated with this OU.</p>
+    /// <p>The unique identifier (ID) associated with this OU. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of this OU.</p>
@@ -15,7 +15,7 @@ pub struct OrganizationalUnit {
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationalUnit {
-    /// <p>The unique identifier (ID) associated with this OU.</p>
+    /// <p>The unique identifier (ID) associated with this OU. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
@@ -47,19 +47,19 @@ pub struct OrganizationalUnitBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationalUnitBuilder {
-    /// <p>The unique identifier (ID) associated with this OU.</p>
+    /// <p>The unique identifier (ID) associated with this OU. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) associated with this OU.</p>
+    /// <p>The unique identifier (ID) associated with this OU. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The unique identifier (ID) associated with this OU.</p>
+    /// <p>The unique identifier (ID) associated with this OU. The ID is unique to the organization only.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id

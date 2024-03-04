@@ -11,7 +11,7 @@ pub struct DescribeSnapshotsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
     pub include_shared: ::std::option::Option<bool>,
 }
 impl DescribeSnapshotsInput {
@@ -35,7 +35,7 @@ impl DescribeSnapshotsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
     pub fn include_shared(&self) -> ::std::option::Option<bool> {
         self.include_shared
     }
@@ -126,17 +126,17 @@ impl DescribeSnapshotsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
     pub fn include_shared(mut self, input: bool) -> Self {
         self.include_shared = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
     pub fn set_include_shared(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_shared = input;
         self
     }
-    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
     pub fn get_include_shared(&self) -> &::std::option::Option<bool> {
         &self.include_shared
     }

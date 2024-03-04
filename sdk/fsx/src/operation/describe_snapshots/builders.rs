@@ -187,17 +187,17 @@ impl DescribeSnapshotsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
     pub fn include_shared(mut self, input: bool) -> Self {
         self.inner = self.inner.include_shared(input);
         self
     }
-    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
     pub fn set_include_shared(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_shared(input);
         self
     }
-    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots owned by your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
     pub fn get_include_shared(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_shared()
     }

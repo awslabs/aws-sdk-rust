@@ -181,6 +181,8 @@ pub use crate::types::_stack_set::StackSet;
 
 pub use crate::types::_stack::Stack;
 
+pub use crate::types::_detailed_status::DetailedStatus;
+
 pub use crate::types::_stack_drift_information::StackDriftInformation;
 
 pub use crate::types::_output::Output;
@@ -314,6 +316,8 @@ mod _concurrency_mode;
 mod _deployment_targets;
 
 mod _deprecated_status;
+
+mod _detailed_status;
 
 mod _difference_type;
 

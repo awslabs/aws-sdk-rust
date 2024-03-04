@@ -376,9 +376,9 @@ model_hash = '3efd089f35a2a1b2bb697823c0e3438b63bb82f419d7aa21c622d872d14eef8f'
 
 [crates.aws-sdk-cloudformation]
 category = 'AwsSdk'
-version = '1.17.0'
-source_hash = '34d12a242ff877a39dfc6d8649720b9b9515a44412043f1831538aefb8c783fe'
-model_hash = '3383973a41d8b83228f30c46bbe90a81dc6868142d8557cdb8ef97de9b446e09'
+version = '1.18.0'
+source_hash = 'a5025d097a211a1b4224fa5a6bb15c0fec96cdabb34c046f92a931d22ddd6057'
+model_hash = 'b5a51e674acb02f8842af4921503bb33ac3bc08dd5cee2d9aa63c79492b409df'
 
 [crates.aws-sdk-cloudfront]
 category = 'AwsSdk'
@@ -916,9 +916,9 @@ model_hash = '4a7fa6312753c4f167f61399f428b49f35283a29bf54f8c0c128ff96dac00471'
 
 [crates.aws-sdk-fsx]
 category = 'AwsSdk'
-version = '1.16.0'
-source_hash = '1e51b6047520d06f2e7f06218b18051102fef5872d4e2105a1816ddacf93bc67'
-model_hash = '03faf731122ec0c5c77ba5fea01ec5a3fd56c4746f0a51069b21cf2c6786d7ba'
+version = '1.17.0'
+source_hash = '4885bf8fbeebf2e2b9beb2add94d83d72abb54e70679c5bebd0e59b87cc90341'
+model_hash = '1bea8408a4cd4c8a0bbcd8b6a461c5f3109bbdb63d06b1e7a41751fea6fabca6'
 
 [crates.aws-sdk-gamelift]
 category = 'AwsSdk'
@@ -1600,9 +1600,9 @@ model_hash = '94fae3de41f095f1626b2624ea61356b9e50a130845f08ed021b777cd63a0063'
 
 [crates.aws-sdk-organizations]
 category = 'AwsSdk'
-version = '1.15.0'
-source_hash = '4c969144a418616bfedac89f1863a8692ab4160ec1583e6768714b0177dff91e'
-model_hash = '7fd62cc5b2f3569750f5fd94d5fd40b388a4e891535a908fde89a723ff0a61e3'
+version = '1.16.0'
+source_hash = '0b2d247f68f94ba4b8af0243de57d3725db5d688d8fff8b152339d3c64272854'
+model_hash = '474759b816d12f49efee7e4d5089645149ce6de1f54966c13008b758c6a03703'
 
 [crates.aws-sdk-osis]
 category = 'AwsSdk'
@@ -2425,11 +2425,7 @@ source_hash = '87fd76dbec199956d8f44cd6f3ffae7c8c5d5050f55280077c977345434fb951'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '7de1829d30f446753f3731c106f8665f9a49ef45a66b6d14ab7045f5e0aa2488'
-
-[release]
-tag = 'release-2024-03-01'
-
 [release.crates]
-aws-sdk-accessanalyzer = '1.16.1'
-aws-sdk-autoscaling = '1.16.1'
-aws-sdk-ec2 = '1.22.1'
+aws-sdk-cloudformation = '1.18.0'
+aws-sdk-fsx = '1.17.0'
+aws-sdk-organizations = '1.16.0'

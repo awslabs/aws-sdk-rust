@@ -44,6 +44,16 @@ pub struct StackEvent {
     /// <p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub hook_failure_mode: ::std::option::Option<crate::types::HookFailureMode>,
+    /// <p>An optional field containing information about the detailed status of the stack event.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONFIGURATION_COMPLETE</code> - all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>VALIDATION_FAILED</code> - template validation failed because of invalid properties in the template. The <code>ResourceStatusReason</code> field shows what properties are defined incorrectly.</p></li>
+    /// </ul>
+    pub detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
 }
 impl StackEvent {
     /// <p>The unique ID name of the instance of the stack.</p>
@@ -118,6 +128,18 @@ impl StackEvent {
     pub fn hook_failure_mode(&self) -> ::std::option::Option<&crate::types::HookFailureMode> {
         self.hook_failure_mode.as_ref()
     }
+    /// <p>An optional field containing information about the detailed status of the stack event.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONFIGURATION_COMPLETE</code> - all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>VALIDATION_FAILED</code> - template validation failed because of invalid properties in the template. The <code>ResourceStatusReason</code> field shows what properties are defined incorrectly.</p></li>
+    /// </ul>
+    pub fn detailed_status(&self) -> ::std::option::Option<&crate::types::DetailedStatus> {
+        self.detailed_status.as_ref()
+    }
 }
 impl StackEvent {
     /// Creates a new builder-style object to manufacture [`StackEvent`](crate::types::StackEvent).
@@ -146,6 +168,7 @@ pub struct StackEventBuilder {
     pub(crate) hook_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) hook_invocation_point: ::std::option::Option<crate::types::HookInvocationPoint>,
     pub(crate) hook_failure_mode: ::std::option::Option<crate::types::HookFailureMode>,
+    pub(crate) detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
 }
 impl StackEventBuilder {
     /// <p>The unique ID name of the instance of the stack.</p>
@@ -400,6 +423,44 @@ impl StackEventBuilder {
     pub fn get_hook_failure_mode(&self) -> &::std::option::Option<crate::types::HookFailureMode> {
         &self.hook_failure_mode
     }
+    /// <p>An optional field containing information about the detailed status of the stack event.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONFIGURATION_COMPLETE</code> - all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>VALIDATION_FAILED</code> - template validation failed because of invalid properties in the template. The <code>ResourceStatusReason</code> field shows what properties are defined incorrectly.</p></li>
+    /// </ul>
+    pub fn detailed_status(mut self, input: crate::types::DetailedStatus) -> Self {
+        self.detailed_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An optional field containing information about the detailed status of the stack event.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONFIGURATION_COMPLETE</code> - all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>VALIDATION_FAILED</code> - template validation failed because of invalid properties in the template. The <code>ResourceStatusReason</code> field shows what properties are defined incorrectly.</p></li>
+    /// </ul>
+    pub fn set_detailed_status(mut self, input: ::std::option::Option<crate::types::DetailedStatus>) -> Self {
+        self.detailed_status = input;
+        self
+    }
+    /// <p>An optional field containing information about the detailed status of the stack event.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONFIGURATION_COMPLETE</code> - all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p></li>
+    /// </ul>
+    /// <ul>
+    /// <li>
+    /// <p><code>VALIDATION_FAILED</code> - template validation failed because of invalid properties in the template. The <code>ResourceStatusReason</code> field shows what properties are defined incorrectly.</p></li>
+    /// </ul>
+    pub fn get_detailed_status(&self) -> &::std::option::Option<crate::types::DetailedStatus> {
+        &self.detailed_status
+    }
     /// Consumes the builder and constructs a [`StackEvent`](crate::types::StackEvent).
     pub fn build(self) -> crate::types::StackEvent {
         crate::types::StackEvent {
@@ -419,6 +480,7 @@ impl StackEventBuilder {
             hook_status_reason: self.hook_status_reason,
             hook_invocation_point: self.hook_invocation_point,
             hook_failure_mode: self.hook_failure_mode,
+            detailed_status: self.detailed_status,
         }
     }
 }

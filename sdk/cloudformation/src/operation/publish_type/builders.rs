@@ -23,7 +23,7 @@ impl PublishTypeInputBuilder {
 /// Fluent builder constructing a request to `PublishType`.
 ///
 /// <p>Publishes the specified extension to the CloudFormation registry as a public extension in this Region. Public extensions are available for use by all CloudFormation users. For more information about publishing extensions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.</p>
-/// <p>To publish an extension, you must be registered as a publisher with CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.</p>
+/// <p>To publish an extension, you must be registered as a publisher with CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html"> <code>RegisterPublisher</code> </a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PublishTypeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

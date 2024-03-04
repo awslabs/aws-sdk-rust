@@ -7,10 +7,10 @@ pub struct TypeSummary {
     /// <p>The kind of extension.</p>
     pub r#type: ::std::option::Option<crate::types::RegistryType>,
     /// <p>The name of the extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and Region, CloudFormation considers that alias as the type name.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"> <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that alias as the type name.</p>
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
-    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"> <code>RegisterType</code> </a>.</p>
     /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
     pub default_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
@@ -18,9 +18,9 @@ pub struct TypeSummary {
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
     /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p></li>
+    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"> <code>RegisterType</code> </a>.</p></li>
     /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
+    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"> <code>ActivateType</code> </a>.</p></li>
     /// </ul>
     /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -52,12 +52,12 @@ impl TypeSummary {
         self.r#type.as_ref()
     }
     /// <p>The name of the extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and Region, CloudFormation considers that alias as the type name.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"> <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that alias as the type name.</p>
     pub fn type_name(&self) -> ::std::option::Option<&str> {
         self.type_name.as_deref()
     }
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
-    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"> <code>RegisterType</code> </a>.</p>
     /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
     pub fn default_version_id(&self) -> ::std::option::Option<&str> {
         self.default_version_id.as_deref()
@@ -69,9 +69,9 @@ impl TypeSummary {
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
     /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p></li>
+    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"> <code>RegisterType</code> </a>.</p></li>
     /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
+    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"> <code>ActivateType</code> </a>.</p></li>
     /// </ul>
     /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
     pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -156,38 +156,38 @@ impl TypeSummaryBuilder {
         &self.r#type
     }
     /// <p>The name of the extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and Region, CloudFormation considers that alias as the type name.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"> <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that alias as the type name.</p>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and Region, CloudFormation considers that alias as the type name.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"> <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that alias as the type name.</p>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
     }
     /// <p>The name of the extension.</p>
-    /// <p>If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this extension</a> in your account and Region, CloudFormation considers that alias as the type name.</p>
+    /// <p>If you specified a <code>TypeNameAlias</code> when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"> <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that alias as the type name.</p>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.type_name
     }
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
-    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"> <code>RegisterType</code> </a>.</p>
     /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
     pub fn default_version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
-    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"> <code>RegisterType</code> </a>.</p>
     /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
     pub fn set_default_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_version_id = input;
         self
     }
     /// <p>The ID of the default version of the extension. The default version is used when the extension version isn't specified.</p>
-    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+    /// <p>This applies only to private extensions you have registered in your account. For public extensions, both those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"> <code>RegisterType</code> </a>.</p>
     /// <p>To set the default version of an extension, use <code>SetTypeDefaultVersion</code>.</p>
     pub fn get_default_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_version_id
@@ -209,9 +209,9 @@ impl TypeSummaryBuilder {
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
     /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p></li>
+    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"> <code>RegisterType</code> </a>.</p></li>
     /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
+    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"> <code>ActivateType</code> </a>.</p></li>
     /// </ul>
     /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
     pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -221,9 +221,9 @@ impl TypeSummaryBuilder {
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
     /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p></li>
+    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"> <code>RegisterType</code> </a>.</p></li>
     /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
+    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"> <code>ActivateType</code> </a>.</p></li>
     /// </ul>
     /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
     pub fn set_last_updated(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
@@ -233,9 +233,9 @@ impl TypeSummaryBuilder {
     /// <p>When the specified extension version was registered. This applies only to:</p>
     /// <ul>
     /// <li>
-    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p></li>
+    /// <p>Private extensions you have registered in your account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"> <code>RegisterType</code> </a>.</p></li>
     /// <li>
-    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p></li>
+    /// <p>Public extensions you have activated in your account with auto-update specified. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"> <code>ActivateType</code> </a>.</p></li>
     /// </ul>
     /// <p>For all other extension types, CloudFormation returns <code>null</code>.</p>
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {

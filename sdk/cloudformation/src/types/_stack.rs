@@ -60,6 +60,8 @@ pub struct Stack {
     /// <p>When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
     /// <p>Default: <code>false</code></p>
     pub retain_except_on_create: ::std::option::Option<bool>,
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
 }
 impl Stack {
     /// <p>Unique identifier of the stack.</p>
@@ -174,6 +176,10 @@ impl Stack {
     pub fn retain_except_on_create(&self) -> ::std::option::Option<bool> {
         self.retain_except_on_create
     }
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn detailed_status(&self) -> ::std::option::Option<&crate::types::DetailedStatus> {
+        self.detailed_status.as_ref()
+    }
 }
 impl Stack {
     /// Creates a new builder-style object to manufacture [`Stack`](crate::types::Stack).
@@ -209,6 +215,7 @@ pub struct StackBuilder {
     pub(crate) root_id: ::std::option::Option<::std::string::String>,
     pub(crate) drift_information: ::std::option::Option<crate::types::StackDriftInformation>,
     pub(crate) retain_except_on_create: ::std::option::Option<bool>,
+    pub(crate) detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
 }
 impl StackBuilder {
     /// <p>Unique identifier of the stack.</p>
@@ -596,6 +603,20 @@ impl StackBuilder {
     pub fn get_retain_except_on_create(&self) -> &::std::option::Option<bool> {
         &self.retain_except_on_create
     }
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn detailed_status(mut self, input: crate::types::DetailedStatus) -> Self {
+        self.detailed_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn set_detailed_status(mut self, input: ::std::option::Option<crate::types::DetailedStatus>) -> Self {
+        self.detailed_status = input;
+        self
+    }
+    /// <p>The detailed status of the resource or stack. If <code>CONFIGURATION_COMPLETE</code> is present, the resource or resource configuration phase has completed and the stabilization of the resources is in progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the resources in the stack have reached that event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+    pub fn get_detailed_status(&self) -> &::std::option::Option<crate::types::DetailedStatus> {
+        &self.detailed_status
+    }
     /// Consumes the builder and constructs a [`Stack`](crate::types::Stack).
     pub fn build(self) -> crate::types::Stack {
         crate::types::Stack {
@@ -622,6 +643,7 @@ impl StackBuilder {
             root_id: self.root_id,
             drift_information: self.drift_information,
             retain_except_on_create: self.retain_except_on_create,
+            detailed_status: self.detailed_status,
         }
     }
 }

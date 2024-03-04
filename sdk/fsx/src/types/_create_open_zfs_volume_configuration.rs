@@ -32,7 +32,7 @@ pub struct CreateOpenZfsVolumeConfiguration {
     pub read_only: ::std::option::Option<bool>,
     /// <p>The configuration object for mounting a Network File System (NFS) file system.</p>
     pub nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
-    /// <p>An object specifying how much storage users or groups can use on the volume.</p>
+    /// <p>Configures how much storage users and groups can use on the volume.</p>
     pub user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
 }
 impl CreateOpenZfsVolumeConfiguration {
@@ -84,7 +84,7 @@ impl CreateOpenZfsVolumeConfiguration {
     pub fn nfs_exports(&self) -> &[crate::types::OpenZfsNfsExport] {
         self.nfs_exports.as_deref().unwrap_or_default()
     }
-    /// <p>An object specifying how much storage users or groups can use on the volume.</p>
+    /// <p>Configures how much storage users and groups can use on the volume.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_and_group_quotas.is_none()`.
     pub fn user_and_group_quotas(&self) -> &[crate::types::OpenZfsUserOrGroupQuota] {
@@ -281,19 +281,19 @@ impl CreateOpenZfsVolumeConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_user_and_group_quotas`](Self::set_user_and_group_quotas).
     ///
-    /// <p>An object specifying how much storage users or groups can use on the volume.</p>
+    /// <p>Configures how much storage users and groups can use on the volume.</p>
     pub fn user_and_group_quotas(mut self, input: crate::types::OpenZfsUserOrGroupQuota) -> Self {
         let mut v = self.user_and_group_quotas.unwrap_or_default();
         v.push(input);
         self.user_and_group_quotas = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An object specifying how much storage users or groups can use on the volume.</p>
+    /// <p>Configures how much storage users and groups can use on the volume.</p>
     pub fn set_user_and_group_quotas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>) -> Self {
         self.user_and_group_quotas = input;
         self
     }
-    /// <p>An object specifying how much storage users or groups can use on the volume.</p>
+    /// <p>Configures how much storage users and groups can use on the volume.</p>
     pub fn get_user_and_group_quotas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>> {
         &self.user_and_group_quotas
     }
