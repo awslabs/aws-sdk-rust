@@ -213,17 +213,17 @@ impl SendEmailFluentBuilder {
     pub fn get_feedback_forwarding_email_address_identity_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_feedback_forwarding_email_address_identity_arn()
     }
-    /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
+    /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
     pub fn content(mut self, input: crate::types::EmailContent) -> Self {
         self.inner = self.inner.content(input);
         self
     }
-    /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
+    /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
-    /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
+    /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::EmailContent> {
         self.inner.get_content()
     }

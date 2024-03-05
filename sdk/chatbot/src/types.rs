@@ -34,5 +34,5 @@ mod _teams_user_identity;
 /// Builders
 pub mod builders;
 
-/// Error types that chatbot can respond with.
+/// Error types that AWS Chatbot can respond with.
 pub mod error;

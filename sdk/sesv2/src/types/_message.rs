@@ -8,6 +8,8 @@ pub struct Message {
     pub subject: ::std::option::Option<crate::types::Content>,
     /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
     pub body: ::std::option::Option<crate::types::Body>,
+    /// <p>The list of message headers that will be added to the email message.</p>
+    pub headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
 }
 impl Message {
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
@@ -17,6 +19,12 @@ impl Message {
     /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
     pub fn body(&self) -> ::std::option::Option<&crate::types::Body> {
         self.body.as_ref()
+    }
+    /// <p>The list of message headers that will be added to the email message.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.headers.is_none()`.
+    pub fn headers(&self) -> &[crate::types::MessageHeader] {
+        self.headers.as_deref().unwrap_or_default()
     }
 }
 impl Message {
@@ -32,6 +40,7 @@ impl Message {
 pub struct MessageBuilder {
     pub(crate) subject: ::std::option::Option<crate::types::Content>,
     pub(crate) body: ::std::option::Option<crate::types::Body>,
+    pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
 }
 impl MessageBuilder {
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
@@ -64,11 +73,32 @@ impl MessageBuilder {
     pub fn get_body(&self) -> &::std::option::Option<crate::types::Body> {
         &self.body
     }
+    /// Appends an item to `headers`.
+    ///
+    /// To override the contents of this collection use [`set_headers`](Self::set_headers).
+    ///
+    /// <p>The list of message headers that will be added to the email message.</p>
+    pub fn headers(mut self, input: crate::types::MessageHeader) -> Self {
+        let mut v = self.headers.unwrap_or_default();
+        v.push(input);
+        self.headers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of message headers that will be added to the email message.</p>
+    pub fn set_headers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>) -> Self {
+        self.headers = input;
+        self
+    }
+    /// <p>The list of message headers that will be added to the email message.</p>
+    pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>> {
+        &self.headers
+    }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {
         crate::types::Message {
             subject: self.subject,
             body: self.body,
+            headers: self.headers,
         }
     }
 }

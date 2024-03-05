@@ -587,6 +587,8 @@ pub(crate) mod shape_export_metrics;
 
 pub(crate) mod shape_insights_events;
 
+pub(crate) mod shape_message_header;
+
 pub(crate) mod shape_message_insights_filters;
 
 pub(crate) mod shape_metric_value_list;

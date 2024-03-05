@@ -26,6 +26,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Budgets | [aws-sdk-budgets](https://crates.io/crates/aws-sdk-budgets) ([docs](https://docs.rs/aws-sdk-budgets)) |
 | AWS Certificate Manager | [aws-sdk-acm](https://crates.io/crates/aws-sdk-acm) ([docs](https://docs.rs/aws-sdk-acm)) |
 | AWS Certificate Manager Private Certificate Authority | [aws-sdk-acmpca](https://crates.io/crates/aws-sdk-acmpca) ([docs](https://docs.rs/aws-sdk-acmpca)) |
+| AWS Chatbot | [aws-sdk-chatbot](https://crates.io/crates/aws-sdk-chatbot) ([docs](https://docs.rs/aws-sdk-chatbot)) |
 | AWS Clean Rooms ML | [aws-sdk-cleanroomsml](https://crates.io/crates/aws-sdk-cleanroomsml) ([docs](https://docs.rs/aws-sdk-cleanroomsml)) |
 | AWS Clean Rooms Service | [aws-sdk-cleanrooms](https://crates.io/crates/aws-sdk-cleanrooms) ([docs](https://docs.rs/aws-sdk-cleanrooms)) |
 | AWS Cloud Control API | [aws-sdk-cloudcontrol](https://crates.io/crates/aws-sdk-cloudcontrol) ([docs](https://docs.rs/aws-sdk-cloudcontrol)) |
@@ -381,4 +382,3 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Service Quotas | [aws-sdk-servicequotas](https://crates.io/crates/aws-sdk-servicequotas) ([docs](https://docs.rs/aws-sdk-servicequotas)) |
 | Synthetics | [aws-sdk-synthetics](https://crates.io/crates/aws-sdk-synthetics) ([docs](https://docs.rs/aws-sdk-synthetics)) |
 | TrustedAdvisor Public API | [aws-sdk-trustedadvisor](https://crates.io/crates/aws-sdk-trustedadvisor) ([docs](https://docs.rs/aws-sdk-trustedadvisor)) |
-| chatbot | [aws-sdk-chatbot](https://crates.io/crates/aws-sdk-chatbot) ([docs](https://docs.rs/aws-sdk-chatbot)) |

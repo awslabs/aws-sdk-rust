@@ -33,6 +33,8 @@ pub use crate::types::_email_content::EmailContent;
 
 pub use crate::types::_template::Template;
 
+pub use crate::types::_message_header::MessageHeader;
+
 pub use crate::types::_raw_message::RawMessage;
 
 pub use crate::types::_message::Message;
@@ -418,6 +420,8 @@ mod _mail_from_domain_status;
 mod _mail_type;
 
 mod _message;
+
+mod _message_header;
 
 mod _message_insights_data_source;
 

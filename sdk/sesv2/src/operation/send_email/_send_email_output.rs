@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendEmailOutput {
     /// <p>A unique identifier for the message that is generated when the message is accepted.</p><note>
-    /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p>
+    /// <p>It's possible for Amazon SES to accept a message without sending it. For example, this can happen when the message that you're trying to send has an attachment that contains a virus, or when you send a templated email that contains invalid personalization content.</p>
     /// </note>
     pub message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SendEmailOutput {
     /// <p>A unique identifier for the message that is generated when the message is accepted.</p><note>
-    /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p>
+    /// <p>It's possible for Amazon SES to accept a message without sending it. For example, this can happen when the message that you're trying to send has an attachment that contains a virus, or when you send a templated email that contains invalid personalization content.</p>
     /// </note>
     pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
@@ -39,21 +39,21 @@ pub struct SendEmailOutputBuilder {
 }
 impl SendEmailOutputBuilder {
     /// <p>A unique identifier for the message that is generated when the message is accepted.</p><note>
-    /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p>
+    /// <p>It's possible for Amazon SES to accept a message without sending it. For example, this can happen when the message that you're trying to send has an attachment that contains a virus, or when you send a templated email that contains invalid personalization content.</p>
     /// </note>
     pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the message that is generated when the message is accepted.</p><note>
-    /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p>
+    /// <p>It's possible for Amazon SES to accept a message without sending it. For example, this can happen when the message that you're trying to send has an attachment that contains a virus, or when you send a templated email that contains invalid personalization content.</p>
     /// </note>
     pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }
     /// <p>A unique identifier for the message that is generated when the message is accepted.</p><note>
-    /// <p>It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're trying to send has an attachment contains a virus, or when you send a templated email that contains invalid personalization content, for example.</p>
+    /// <p>It's possible for Amazon SES to accept a message without sending it. For example, this can happen when the message that you're trying to send has an attachment that contains a virus, or when you send a templated email that contains invalid personalization content.</p>
     /// </note>
     pub fn get_message_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_id

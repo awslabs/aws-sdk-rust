@@ -22,7 +22,9 @@ impl UpdateContactInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateContact`.
 ///
-/// <p>Updates a contact's preferences for a list. It is not necessary to specify all existing topic preferences in the TopicPreferences object, just the ones that need updating.</p>
+/// <p>Updates a contact's preferences for a list.</p><note>
+/// <p>You must specify all existing topic preferences in the <code>TopicPreferences</code> object, not just the ones that need updating; otherwise, all your existing preferences will be removed.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

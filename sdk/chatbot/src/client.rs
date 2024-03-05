@@ -6,9 +6,9 @@ pub(crate) struct Handle {
     pub(crate) runtime_plugins: ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
 }
 
-/// Client for chatbot
+/// Client for AWS Chatbot
 ///
-/// Client for invoking operations on chatbot. Each operation on chatbot is a method on this
+/// Client for invoking operations on AWS Chatbot. Each operation on AWS Chatbot is a method on this
 /// this struct. `.send()` MUST be invoked on the generated operations to dispatch the request to the service.
 /// ## Constructing a `Client`
 ///

@@ -21,7 +21,7 @@ pub struct SendEmailInput {
     /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub feedback_forwarding_email_address_identity_arn: ::std::option::Option<::std::string::String>,
-    /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
+    /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
     pub content: ::std::option::Option<crate::types::EmailContent>,
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub email_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
@@ -62,7 +62,7 @@ impl SendEmailInput {
     pub fn feedback_forwarding_email_address_identity_arn(&self) -> ::std::option::Option<&str> {
         self.feedback_forwarding_email_address_identity_arn.as_deref()
     }
-    /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
+    /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::EmailContent> {
         self.content.as_ref()
     }
@@ -209,18 +209,18 @@ impl SendEmailInputBuilder {
     pub fn get_feedback_forwarding_email_address_identity_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.feedback_forwarding_email_address_identity_arn
     }
-    /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
+    /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
     /// This field is required.
     pub fn content(mut self, input: crate::types::EmailContent) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
+    /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
         self.content = input;
         self
     }
-    /// <p>An object that contains the body of the message. You can send either a Simple message Raw message or a template Message.</p>
+    /// <p>An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::EmailContent> {
         &self.content
     }

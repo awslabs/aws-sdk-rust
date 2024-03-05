@@ -27,6 +27,8 @@ pub use crate::types::_email_content::EmailContentBuilder;
 
 pub use crate::types::_template::TemplateBuilder;
 
+pub use crate::types::_message_header::MessageHeaderBuilder;
+
 pub use crate::types::_raw_message::RawMessageBuilder;
 
 pub use crate::types::_message::MessageBuilder;

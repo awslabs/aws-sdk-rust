@@ -15,5 +15,17 @@ pub fn ser_message(
         crate::protocol_serde::shape_body::ser_body(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.headers {
+        let mut array_6 = object.key("Headers").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_message_header::ser_message_header(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }

@@ -12,5 +12,17 @@ pub fn ser_template(
     if let Some(var_3) = &input.template_data {
         object.key("TemplateData").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.headers {
+        let mut array_5 = object.key("Headers").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_message_header::ser_message_header(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }

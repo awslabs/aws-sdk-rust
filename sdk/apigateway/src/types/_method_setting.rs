@@ -8,7 +8,7 @@ pub struct MethodSetting {
     pub metrics_enabled: bool,
     /// <p>Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. Valid values are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra informational events.</p>
     pub logging_level: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs.</p>
+    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs, but can result in logging sensitive data. We recommend that you don't enable this option for production APIs.</p>
     pub data_trace_enabled: bool,
     /// <p>Specifies the throttling burst limit.</p>
     pub throttling_burst_limit: i32,
@@ -34,7 +34,7 @@ impl MethodSetting {
     pub fn logging_level(&self) -> ::std::option::Option<&str> {
         self.logging_level.as_deref()
     }
-    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs.</p>
+    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs, but can result in logging sensitive data. We recommend that you don't enable this option for production APIs.</p>
     pub fn data_trace_enabled(&self) -> bool {
         self.data_trace_enabled
     }
@@ -118,17 +118,17 @@ impl MethodSettingBuilder {
     pub fn get_logging_level(&self) -> &::std::option::Option<::std::string::String> {
         &self.logging_level
     }
-    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs.</p>
+    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs, but can result in logging sensitive data. We recommend that you don't enable this option for production APIs.</p>
     pub fn data_trace_enabled(mut self, input: bool) -> Self {
         self.data_trace_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs.</p>
+    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs, but can result in logging sensitive data. We recommend that you don't enable this option for production APIs.</p>
     pub fn set_data_trace_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.data_trace_enabled = input;
         self
     }
-    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs.</p>
+    /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs, but can result in logging sensitive data. We recommend that you don't enable this option for production APIs.</p>
     pub fn get_data_trace_enabled(&self) -> &::std::option::Option<bool> {
         &self.data_trace_enabled
     }

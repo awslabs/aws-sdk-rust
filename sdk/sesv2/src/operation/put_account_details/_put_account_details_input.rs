@@ -15,7 +15,7 @@ pub struct PutAccountDetailsInput {
     /// <p>Additional email addresses that you would like to be notified regarding Amazon SES matters.</p>
     pub additional_contact_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
-    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub production_access_enabled: ::std::option::Option<bool>,
 }
@@ -43,7 +43,7 @@ impl PutAccountDetailsInput {
         self.additional_contact_email_addresses.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
-    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub fn production_access_enabled(&self) -> ::std::option::Option<bool> {
         self.production_access_enabled
@@ -160,21 +160,21 @@ impl PutAccountDetailsInputBuilder {
         &self.additional_contact_email_addresses
     }
     /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
-    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub fn production_access_enabled(mut self, input: bool) -> Self {
         self.production_access_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
-    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub fn set_production_access_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.production_access_enabled = input;
         self
     }
     /// <p>Indicates whether or not your account should have production access in the current Amazon Web Services Region.</p>
-    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
+    /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub fn get_production_access_enabled(&self) -> &::std::option::Option<bool> {
         &self.production_access_enabled
