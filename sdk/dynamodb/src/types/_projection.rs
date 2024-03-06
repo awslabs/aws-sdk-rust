@@ -13,6 +13,7 @@ pub struct Projection {
     /// <li>
     /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul>
+    /// <p>When using the DynamoDB console, <code>ALL</code> is selected by default.</p>
     pub projection_type: ::std::option::Option<crate::types::ProjectionType>,
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
@@ -28,6 +29,7 @@ impl Projection {
     /// <li>
     /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul>
+    /// <p>When using the DynamoDB console, <code>ALL</code> is selected by default.</p>
     pub fn projection_type(&self) -> ::std::option::Option<&crate::types::ProjectionType> {
         self.projection_type.as_ref()
     }
@@ -63,6 +65,7 @@ impl ProjectionBuilder {
     /// <li>
     /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul>
+    /// <p>When using the DynamoDB console, <code>ALL</code> is selected by default.</p>
     pub fn projection_type(mut self, input: crate::types::ProjectionType) -> Self {
         self.projection_type = ::std::option::Option::Some(input);
         self
@@ -76,6 +79,7 @@ impl ProjectionBuilder {
     /// <li>
     /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul>
+    /// <p>When using the DynamoDB console, <code>ALL</code> is selected by default.</p>
     pub fn set_projection_type(mut self, input: ::std::option::Option<crate::types::ProjectionType>) -> Self {
         self.projection_type = input;
         self
@@ -89,6 +93,7 @@ impl ProjectionBuilder {
     /// <li>
     /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul>
+    /// <p>When using the DynamoDB console, <code>ALL</code> is selected by default.</p>
     pub fn get_projection_type(&self) -> &::std::option::Option<crate::types::ProjectionType> {
         &self.projection_type
     }

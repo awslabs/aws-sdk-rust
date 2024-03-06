@@ -27,7 +27,7 @@ impl UpdatePolicyInputBuilder {
 /// <li>
 /// <p>If policy validation is enabled in the policy store, then updating a static policy causes Verified Permissions to validate the policy against the schema in the policy store. If the updated static policy doesn't pass validation, the operation fails and the update isn't stored.</p></li>
 /// <li>
-/// <p>When you edit a static policy, You can change only certain elements of a static policy:</p>
+/// <p>When you edit a static policy, you can change only certain elements of a static policy:</p>
 /// <ul>
 /// <li>
 /// <p>The action referenced by the policy.</p></li>
@@ -49,7 +49,7 @@ impl UpdatePolicyInputBuilder {
 /// <p>To update a template-linked policy, you must update the template instead.</p></li>
 /// </ul>
 /// </note> <note>
-/// <p>Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a> </i>. It can take a few seconds for a new or changed element to be propagate through the service and be visible in the results of other Verified Permissions operations.</p>
+/// <p>Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a> </i>. It can take a few seconds for a new or changed element to propagate through the service and be visible in the results of other Verified Permissions operations.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePolicyFluentBuilder {

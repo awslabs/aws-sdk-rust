@@ -6,6 +6,7 @@ pub struct GetIdentitySourceOutput {
     /// <p>The date and time that the identity source was originally created.</p>
     pub created_date: ::aws_smithy_types::DateTime,
     /// <p>A structure that describes the configuration of the identity source.</p>
+    #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration")]
     pub details: ::std::option::Option<crate::types::IdentitySourceDetails>,
     /// <p>The ID of the identity source.</p>
     pub identity_source_id: ::std::string::String,
@@ -15,6 +16,8 @@ pub struct GetIdentitySourceOutput {
     pub policy_store_id: ::std::string::String,
     /// <p>The data type of principals generated for identities authenticated by this identity source.</p>
     pub principal_entity_type: ::std::string::String,
+    /// <p>Contains configuration information about an identity source.</p>
+    pub configuration: ::std::option::Option<crate::types::ConfigurationDetail>,
     _request_id: Option<String>,
 }
 impl GetIdentitySourceOutput {
@@ -23,6 +26,7 @@ impl GetIdentitySourceOutput {
         &self.created_date
     }
     /// <p>A structure that describes the configuration of the identity source.</p>
+    #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration")]
     pub fn details(&self) -> ::std::option::Option<&crate::types::IdentitySourceDetails> {
         self.details.as_ref()
     }
@@ -45,6 +49,10 @@ impl GetIdentitySourceOutput {
         use std::ops::Deref;
         self.principal_entity_type.deref()
     }
+    /// <p>Contains configuration information about an identity source.</p>
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ConfigurationDetail> {
+        self.configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetIdentitySourceOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -55,6 +63,7 @@ impl ::std::fmt::Debug for GetIdentitySourceOutput {
         formatter.field("last_updated_date", &self.last_updated_date);
         formatter.field("policy_store_id", &self.policy_store_id);
         formatter.field("principal_entity_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("configuration", &self.configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -81,6 +90,7 @@ pub struct GetIdentitySourceOutputBuilder {
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) principal_entity_type: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration: ::std::option::Option<crate::types::ConfigurationDetail>,
     _request_id: Option<String>,
 }
 impl GetIdentitySourceOutputBuilder {
@@ -100,17 +110,19 @@ impl GetIdentitySourceOutputBuilder {
         &self.created_date
     }
     /// <p>A structure that describes the configuration of the identity source.</p>
-    /// This field is required.
+    #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration")]
     pub fn details(mut self, input: crate::types::IdentitySourceDetails) -> Self {
         self.details = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that describes the configuration of the identity source.</p>
+    #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration")]
     pub fn set_details(mut self, input: ::std::option::Option<crate::types::IdentitySourceDetails>) -> Self {
         self.details = input;
         self
     }
     /// <p>A structure that describes the configuration of the identity source.</p>
+    #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration")]
     pub fn get_details(&self) -> &::std::option::Option<crate::types::IdentitySourceDetails> {
         &self.details
     }
@@ -174,6 +186,20 @@ impl GetIdentitySourceOutputBuilder {
     pub fn get_principal_entity_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_entity_type
     }
+    /// <p>Contains configuration information about an identity source.</p>
+    pub fn configuration(mut self, input: crate::types::ConfigurationDetail) -> Self {
+        self.configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains configuration information about an identity source.</p>
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ConfigurationDetail>) -> Self {
+        self.configuration = input;
+        self
+    }
+    /// <p>Contains configuration information about an identity source.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ConfigurationDetail> {
+        &self.configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -225,6 +251,7 @@ impl GetIdentitySourceOutputBuilder {
                     "principal_entity_type was not specified but it is required when building GetIdentitySourceOutput",
                 )
             })?,
+            configuration: self.configuration,
             _request_id: self._request_id,
         })
     }
@@ -238,6 +265,7 @@ impl ::std::fmt::Debug for GetIdentitySourceOutputBuilder {
         formatter.field("last_updated_date", &self.last_updated_date);
         formatter.field("policy_store_id", &self.policy_store_id);
         formatter.field("principal_entity_type", &"*** Sensitive Data Redacted ***");
+        formatter.field("configuration", &self.configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

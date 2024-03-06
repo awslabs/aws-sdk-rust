@@ -571,7 +571,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -581,9 +581,9 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.</p></li>
+    /// <p>General Purpose (SSD) storage (gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -595,7 +595,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
@@ -609,7 +609,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
@@ -623,7 +623,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p></li>
     /// </ul>
@@ -637,7 +637,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
@@ -657,7 +657,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Web and Express editions: Must be an integer from 20 to 16384.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1):</p>
+    /// <p>Provisioned IOPS storage (io1, io2):</p>
     /// <ul>
     /// <li>
     /// <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p></li>
@@ -691,7 +691,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -701,9 +701,9 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.</p></li>
+    /// <p>General Purpose (SSD) storage (gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -715,7 +715,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
@@ -729,7 +729,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
@@ -743,7 +743,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p></li>
     /// </ul>
@@ -757,7 +757,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
@@ -777,7 +777,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Web and Express editions: Must be an integer from 20 to 16384.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1):</p>
+    /// <p>Provisioned IOPS storage (io1, io2):</p>
     /// <ul>
     /// <li>
     /// <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p></li>
@@ -811,7 +811,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -821,9 +821,9 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Constraints to the amount of storage for each storage type are the following:</p>
     /// <ul>
     /// <li>
-    /// <p>General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.</p></li>
+    /// <p>General Purpose (SSD) storage (gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -835,7 +835,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
@@ -849,7 +849,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
@@ -863,7 +863,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 10 to 3072.</p></li>
     /// </ul>
@@ -877,7 +877,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <li>
     /// <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 65536.</p></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p></li>
+    /// <p>Provisioned IOPS storage (io1, io2): Must be an integer from 100 to 65536.</p></li>
     /// <li>
     /// <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p></li>
     /// </ul>
@@ -897,7 +897,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>Web and Express editions: Must be an integer from 20 to 16384.</p></li>
     /// </ul></li>
     /// <li>
-    /// <p>Provisioned IOPS storage (io1):</p>
+    /// <p>Provisioned IOPS storage (io1, io2):</p>
     /// <ul>
     /// <li>
     /// <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p></li>
@@ -2110,27 +2110,27 @@ impl CreateDBInstanceFluentBuilder {
         self.inner.get_db_cluster_identifier()
     }
     /// <p>The storage type to associate with the DB instance.</p>
-    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
         self
     }
     /// <p>The storage type to associate with the DB instance.</p>
-    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
     /// <p>The storage type to associate with the DB instance.</p>
-    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
+    /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_type()

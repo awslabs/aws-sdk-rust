@@ -571,7 +571,13 @@ impl CreateClusterFluentBuilder {
     /// <p>The port number on which the cluster accepts incoming connections.</p>
     /// <p>The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.</p>
     /// <p>Default: <code>5439</code></p>
-    /// <p>Valid Values: <code>1150-65535</code></p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
+    /// <li>
+    /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
+    /// </ul>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
         self
@@ -579,7 +585,13 @@ impl CreateClusterFluentBuilder {
     /// <p>The port number on which the cluster accepts incoming connections.</p>
     /// <p>The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.</p>
     /// <p>Default: <code>5439</code></p>
-    /// <p>Valid Values: <code>1150-65535</code></p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
+    /// <li>
+    /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
+    /// </ul>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
@@ -587,7 +599,13 @@ impl CreateClusterFluentBuilder {
     /// <p>The port number on which the cluster accepts incoming connections.</p>
     /// <p>The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.</p>
     /// <p>Default: <code>5439</code></p>
-    /// <p>Valid Values: <code>1150-65535</code></p>
+    /// <p>Valid Values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p></li>
+    /// <li>
+    /// <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p></li>
+    /// </ul>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
     }

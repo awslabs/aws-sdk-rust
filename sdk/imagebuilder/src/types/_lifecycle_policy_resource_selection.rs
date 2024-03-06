@@ -6,7 +6,7 @@
 pub struct LifecyclePolicyResourceSelection {
     /// <p>A list of recipes that are used as selection criteria for the output images that the lifecycle policy applies to.</p>
     pub recipes: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyResourceSelectionRecipe>>,
-    /// <p>A list of tags that are used as selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.</p>
     pub tag_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LifecyclePolicyResourceSelection {
@@ -16,7 +16,7 @@ impl LifecyclePolicyResourceSelection {
     pub fn recipes(&self) -> &[crate::types::LifecyclePolicyResourceSelectionRecipe] {
         self.recipes.as_deref().unwrap_or_default()
     }
-    /// <p>A list of tags that are used as selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.</p>
     pub fn tag_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tag_map.as_ref()
     }
@@ -60,19 +60,19 @@ impl LifecyclePolicyResourceSelectionBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_map`](Self::set_tag_map).
     ///
-    /// <p>A list of tags that are used as selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.</p>
     pub fn tag_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tag_map.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tag_map = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of tags that are used as selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.</p>
     pub fn set_tag_map(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tag_map = input;
         self
     }
-    /// <p>A list of tags that are used as selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>A list of tags that are used as selection criteria for the Image Builder image resources that the lifecycle policy applies to.</p>
     pub fn get_tag_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tag_map
     }

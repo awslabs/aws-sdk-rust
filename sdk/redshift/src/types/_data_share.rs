@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataShare {
-    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>
     pub data_share_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
     pub producer_arn: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
     pub allow_publicly_accessible_consumers: ::std::option::Option<bool>,
@@ -15,11 +15,11 @@ pub struct DataShare {
     pub managed_by: ::std::option::Option<::std::string::String>,
 }
 impl DataShare {
-    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>
     pub fn data_share_arn(&self) -> ::std::option::Option<&str> {
         self.data_share_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
     pub fn producer_arn(&self) -> ::std::option::Option<&str> {
         self.producer_arn.as_deref()
     }
@@ -56,31 +56,31 @@ pub struct DataShareBuilder {
     pub(crate) managed_by: ::std::option::Option<::std::string::String>,
 }
 impl DataShareBuilder {
-    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>
     pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_share_arn = input;
         self
     }
-    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>
     pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_share_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
     pub fn producer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.producer_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
     pub fn set_producer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.producer_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
     pub fn get_producer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.producer_arn
     }

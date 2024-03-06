@@ -158,12 +158,12 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The storage type to associate with the DB instance.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
+    /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
     /// </ul>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
@@ -498,12 +498,12 @@ impl RestoreDbInstanceToPointInTimeInput {
         self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The storage type to associate with the DB instance.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
+    /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
     /// </ul>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
@@ -1373,36 +1373,36 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
         &self.tags
     }
     /// <p>The storage type to associate with the DB instance.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
+    /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
     /// </ul>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The storage type to associate with the DB instance.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
+    /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
     /// <p>The storage type to associate with the DB instance.</p>
-    /// <p>Valid Values: <code>gp2 | gp3 | io1 | standard</code></p>
+    /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
     /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
-    /// <p>If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
+    /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p></li>
     /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type

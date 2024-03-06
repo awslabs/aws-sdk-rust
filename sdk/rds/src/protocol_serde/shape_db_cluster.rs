@@ -1022,6 +1022,16 @@ pub fn de_db_cluster(
                 builder = builder.set_storage_throughput(var_78);
             }
             ,
+            s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.rds#DBCluster$CertificateDetails */ =>  {
+                let var_79 =
+                    Some(
+                        crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_certificate_details(var_79);
+            }
+            ,
             _ => {}
         }
     }

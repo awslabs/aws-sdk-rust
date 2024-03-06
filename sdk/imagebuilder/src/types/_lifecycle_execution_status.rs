@@ -16,6 +16,7 @@
 ///     LifecycleExecutionStatus::Cancelling => { /* ... */ },
 ///     LifecycleExecutionStatus::Failed => { /* ... */ },
 ///     LifecycleExecutionStatus::InProgress => { /* ... */ },
+///     LifecycleExecutionStatus::Pending => { /* ... */ },
 ///     LifecycleExecutionStatus::Success => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum LifecycleExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for LifecycleExecutionStatus {
             "CANCELLING" => LifecycleExecutionStatus::Cancelling,
             "FAILED" => LifecycleExecutionStatus::Failed,
             "IN_PROGRESS" => LifecycleExecutionStatus::InProgress,
+            "PENDING" => LifecycleExecutionStatus::Pending,
             "SUCCESS" => LifecycleExecutionStatus::Success,
             other => LifecycleExecutionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -85,13 +89,14 @@ impl LifecycleExecutionStatus {
             LifecycleExecutionStatus::Cancelling => "CANCELLING",
             LifecycleExecutionStatus::Failed => "FAILED",
             LifecycleExecutionStatus::InProgress => "IN_PROGRESS",
+            LifecycleExecutionStatus::Pending => "PENDING",
             LifecycleExecutionStatus::Success => "SUCCESS",
             LifecycleExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCELLED", "CANCELLING", "FAILED", "IN_PROGRESS", "SUCCESS"]
+        &["CANCELLED", "CANCELLING", "FAILED", "IN_PROGRESS", "PENDING", "SUCCESS"]
     }
 }
 impl ::std::convert::AsRef<str> for LifecycleExecutionStatus {
@@ -118,6 +123,7 @@ impl ::std::fmt::Display for LifecycleExecutionStatus {
             LifecycleExecutionStatus::Cancelling => write!(f, "CANCELLING"),
             LifecycleExecutionStatus::Failed => write!(f, "FAILED"),
             LifecycleExecutionStatus::InProgress => write!(f, "IN_PROGRESS"),
+            LifecycleExecutionStatus::Pending => write!(f, "PENDING"),
             LifecycleExecutionStatus::Success => write!(f, "SUCCESS"),
             LifecycleExecutionStatus::Unknown(value) => write!(f, "{}", value),
         }

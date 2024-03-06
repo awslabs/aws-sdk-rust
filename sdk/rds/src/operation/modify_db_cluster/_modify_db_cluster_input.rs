@@ -316,6 +316,9 @@ pub struct ModifyDbClusterInput {
     /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_limitless_database: ::std::option::Option<bool>,
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbClusterInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -720,6 +723,11 @@ impl ModifyDbClusterInput {
     pub fn enable_limitless_database(&self) -> ::std::option::Option<bool> {
         self.enable_limitless_database
     }
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
+        self.ca_certificate_identifier.as_deref()
+    }
 }
 impl ModifyDbClusterInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
@@ -776,6 +784,7 @@ pub struct ModifyDbClusterInputBuilder {
     pub(crate) enable_local_write_forwarding: ::std::option::Option<bool>,
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enable_limitless_database: ::std::option::Option<bool>,
+    pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbClusterInputBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -2073,6 +2082,23 @@ impl ModifyDbClusterInputBuilder {
     pub fn get_enable_limitless_database(&self) -> &::std::option::Option<bool> {
         &self.enable_limitless_database
     }
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = input;
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
+    }
     /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn build(
         self,
@@ -2122,6 +2148,7 @@ impl ModifyDbClusterInputBuilder {
             enable_local_write_forwarding: self.enable_local_write_forwarding,
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
             enable_limitless_database: self.enable_limitless_database,
+            ca_certificate_identifier: self.ca_certificate_identifier,
         })
     }
 }

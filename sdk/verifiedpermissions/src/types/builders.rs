@@ -43,11 +43,15 @@ pub use crate::types::_policy_filter::PolicyFilterBuilder;
 
 pub use crate::types::_update_cognito_user_pool_configuration::UpdateCognitoUserPoolConfigurationBuilder;
 
+pub use crate::types::_cognito_user_pool_configuration_detail::CognitoUserPoolConfigurationDetailBuilder;
+
 pub use crate::types::_identity_source_details::IdentitySourceDetailsBuilder;
 
 pub use crate::types::_cognito_user_pool_configuration::CognitoUserPoolConfigurationBuilder;
 
 pub use crate::types::_identity_source_item::IdentitySourceItemBuilder;
+
+pub use crate::types::_cognito_user_pool_configuration_item::CognitoUserPoolConfigurationItemBuilder;
 
 pub use crate::types::_identity_source_item_details::IdentitySourceItemDetailsBuilder;
 

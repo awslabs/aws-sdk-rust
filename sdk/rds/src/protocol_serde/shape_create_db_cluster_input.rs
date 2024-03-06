@@ -310,6 +310,11 @@ pub fn ser_create_db_cluster_input_input_input(
     if let Some(var_116) = &input.enable_local_write_forwarding {
         scope_115.boolean(*var_116);
     }
+    #[allow(unused_mut)]
+    let mut scope_117 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_118) = &input.ca_certificate_identifier {
+        scope_117.string(var_118);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

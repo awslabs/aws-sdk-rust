@@ -24,6 +24,9 @@ pub struct ClusterPendingModifiedValues {
     pub iops: ::std::option::Option<i32>,
     /// <p>The storage type for the DB cluster.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
+    /// <p>Returns the details of the DB instance’s server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
 }
 impl ClusterPendingModifiedValues {
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
@@ -66,6 +69,11 @@ impl ClusterPendingModifiedValues {
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
+    /// <p>Returns the details of the DB instance’s server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn certificate_details(&self) -> ::std::option::Option<&crate::types::CertificateDetails> {
+        self.certificate_details.as_ref()
+    }
 }
 impl ClusterPendingModifiedValues {
     /// Creates a new builder-style object to manufacture [`ClusterPendingModifiedValues`](crate::types::ClusterPendingModifiedValues).
@@ -88,6 +96,7 @@ pub struct ClusterPendingModifiedValuesBuilder {
     pub(crate) rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
 }
 impl ClusterPendingModifiedValuesBuilder {
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
@@ -230,6 +239,23 @@ impl ClusterPendingModifiedValuesBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
+    /// <p>Returns the details of the DB instance’s server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn certificate_details(mut self, input: crate::types::CertificateDetails) -> Self {
+        self.certificate_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns the details of the DB instance’s server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn set_certificate_details(mut self, input: ::std::option::Option<crate::types::CertificateDetails>) -> Self {
+        self.certificate_details = input;
+        self
+    }
+    /// <p>Returns the details of the DB instance’s server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
+    pub fn get_certificate_details(&self) -> &::std::option::Option<crate::types::CertificateDetails> {
+        &self.certificate_details
+    }
     /// Consumes the builder and constructs a [`ClusterPendingModifiedValues`](crate::types::ClusterPendingModifiedValues).
     pub fn build(self) -> crate::types::ClusterPendingModifiedValues {
         crate::types::ClusterPendingModifiedValues {
@@ -243,6 +269,7 @@ impl ClusterPendingModifiedValuesBuilder {
             rds_custom_cluster_configuration: self.rds_custom_cluster_configuration,
             iops: self.iops,
             storage_type: self.storage_type,
+            certificate_details: self.certificate_details,
         }
     }
 }

@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeauthorizeDataShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    /// <p>The namespace Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
     pub data_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
     pub consumer_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeauthorizeDataShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    /// <p>The namespace Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
     pub fn data_share_arn(&self) -> ::std::option::Option<&str> {
         self.data_share_arn.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DeauthorizeDataShareInputBuilder {
     pub(crate) consumer_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeauthorizeDataShareInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    /// <p>The namespace Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
     /// This field is required.
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    /// <p>The namespace Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
     pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_share_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    /// <p>The namespace Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
     pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_share_arn
     }

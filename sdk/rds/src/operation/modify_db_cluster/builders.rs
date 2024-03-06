@@ -1402,4 +1402,21 @@ impl ModifyDBClusterFluentBuilder {
     pub fn get_enable_limitless_database(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_limitless_database()
     }
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ca_certificate_identifier(input.into());
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ca_certificate_identifier(input);
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ca_certificate_identifier()
+    }
 }

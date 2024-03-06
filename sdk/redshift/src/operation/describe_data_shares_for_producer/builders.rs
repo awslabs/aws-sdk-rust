@@ -114,17 +114,17 @@ impl DescribeDataSharesForProducerFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_data_shares_for_producer::paginator::DescribeDataSharesForProducerPaginator {
         crate::operation::describe_data_shares_for_producer::paginator::DescribeDataSharesForProducerPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.</p>
     pub fn producer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.producer_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.</p>
     pub fn set_producer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_producer_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.</p>
     pub fn get_producer_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_producer_arn()
     }

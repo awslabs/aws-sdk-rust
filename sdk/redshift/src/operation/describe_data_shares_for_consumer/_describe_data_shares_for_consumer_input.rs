@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataSharesForConsumerInput {
-    /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares.</p>
     pub consumer_arn: ::std::option::Option<::std::string::String>,
     /// <p>An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
     pub status: ::std::option::Option<crate::types::DataShareStatusForConsumer>,
@@ -13,7 +13,7 @@ pub struct DescribeDataSharesForConsumerInput {
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataSharesForConsumerInput {
-    /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares.</p>
     pub fn consumer_arn(&self) -> ::std::option::Option<&str> {
         self.consumer_arn.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct DescribeDataSharesForConsumerInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataSharesForConsumerInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares.</p>
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares.</p>
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares.</p>
     pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.consumer_arn
     }

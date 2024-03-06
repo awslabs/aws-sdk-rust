@@ -170,17 +170,23 @@ impl ExportTableToPointInTimeFluentBuilder {
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_bucket()
     }
-    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p><note>
+    /// <p>S3BucketOwner is a required parameter when exporting to a S3 bucket in another account.</p>
+    /// </note>
     pub fn s3_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_bucket_owner(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p><note>
+    /// <p>S3BucketOwner is a required parameter when exporting to a S3 bucket in another account.</p>
+    /// </note>
     pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_s3_bucket_owner(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p><note>
+    /// <p>S3BucketOwner is a required parameter when exporting to a S3 bucket in another account.</p>
+    /// </note>
     pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_bucket_owner()
     }

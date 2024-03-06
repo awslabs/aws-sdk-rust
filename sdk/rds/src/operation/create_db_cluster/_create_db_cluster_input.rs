@@ -400,6 +400,9 @@ pub struct CreateDbClusterInput {
     /// <p>Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_local_write_forwarding: ::std::option::Option<bool>,
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of Availability Zones (AZs) where DB instances in the DB cluster can be created.</p>
@@ -910,6 +913,11 @@ impl CreateDbClusterInput {
     pub fn enable_local_write_forwarding(&self) -> ::std::option::Option<bool> {
         self.enable_local_write_forwarding
     }
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
+        self.ca_certificate_identifier.as_deref()
+    }
 }
 impl CreateDbClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
@@ -974,6 +982,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) enable_local_write_forwarding: ::std::option::Option<bool>,
+    pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbClusterInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -2606,6 +2615,23 @@ impl CreateDbClusterInputBuilder {
     pub fn get_enable_local_write_forwarding(&self) -> &::std::option::Option<bool> {
         &self.enable_local_write_forwarding
     }
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ca_certificate_identifier = input;
+        self
+    }
+    /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+    pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ca_certificate_identifier
+    }
     /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn build(
         self,
@@ -2663,6 +2689,7 @@ impl CreateDbClusterInputBuilder {
             manage_master_user_password: self.manage_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             enable_local_write_forwarding: self.enable_local_write_forwarding,
+            ca_certificate_identifier: self.ca_certificate_identifier,
         })
     }
 }

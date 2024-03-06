@@ -114,17 +114,17 @@ impl DescribeDataSharesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator {
         crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of the datashare to describe details of.</p>
+    /// <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_share_arn(input.into());
         self
     }
-    /// <p>The identifier of the datashare to describe details of.</p>
+    /// <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
     pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_share_arn(input);
         self
     }
-    /// <p>The identifier of the datashare to describe details of.</p>
+    /// <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
     pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_share_arn()
     }

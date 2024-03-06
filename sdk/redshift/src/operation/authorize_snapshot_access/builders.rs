@@ -137,17 +137,35 @@ impl AuthorizeSnapshotAccessFluentBuilder {
     pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_arn()
     }
-    /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The identifier of the cluster the snapshot was created from.</p>
+    /// <ul>
+    /// <li>
+    /// <p><i>If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*) snapshots</i> - This parameter is required. Otherwise, permissions aren't available to check if the snapshot exists.</p></li>
+    /// <li>
+    /// <p><i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster identifier and use it to validate snapshot authorization.</p></li>
+    /// </ul>
     pub fn snapshot_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_cluster_identifier(input.into());
         self
     }
-    /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The identifier of the cluster the snapshot was created from.</p>
+    /// <ul>
+    /// <li>
+    /// <p><i>If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*) snapshots</i> - This parameter is required. Otherwise, permissions aren't available to check if the snapshot exists.</p></li>
+    /// <li>
+    /// <p><i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster identifier and use it to validate snapshot authorization.</p></li>
+    /// </ul>
     pub fn set_snapshot_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_cluster_identifier(input);
         self
     }
-    /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The identifier of the cluster the snapshot was created from.</p>
+    /// <ul>
+    /// <li>
+    /// <p><i>If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*) snapshots</i> - This parameter is required. Otherwise, permissions aren't available to check if the snapshot exists.</p></li>
+    /// <li>
+    /// <p><i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster identifier and use it to validate snapshot authorization.</p></li>
+    /// </ul>
     pub fn get_snapshot_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_cluster_identifier()
     }

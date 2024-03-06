@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateDataShareConsumerInput {
-    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>
     pub data_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
     pub associate_entire_account: ::std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace associated with the datashare.</p>
     pub consumer_arn: ::std::option::Option<::std::string::String>,
     /// <p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>
     pub consumer_region: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct AssociateDataShareConsumerInput {
     pub allow_writes: ::std::option::Option<bool>,
 }
 impl AssociateDataShareConsumerInput {
-    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>
     pub fn data_share_arn(&self) -> ::std::option::Option<&str> {
         self.data_share_arn.as_deref()
     }
@@ -23,7 +23,7 @@ impl AssociateDataShareConsumerInput {
     pub fn associate_entire_account(&self) -> ::std::option::Option<bool> {
         self.associate_entire_account
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace associated with the datashare.</p>
     pub fn consumer_arn(&self) -> ::std::option::Option<&str> {
         self.consumer_arn.as_deref()
     }
@@ -54,18 +54,18 @@ pub struct AssociateDataShareConsumerInputBuilder {
     pub(crate) allow_writes: ::std::option::Option<bool>,
 }
 impl AssociateDataShareConsumerInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>
     /// This field is required.
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>
     pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_share_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>
     pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_share_arn
     }
@@ -83,17 +83,17 @@ impl AssociateDataShareConsumerInputBuilder {
     pub fn get_associate_entire_account(&self) -> &::std::option::Option<bool> {
         &self.associate_entire_account
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace associated with the datashare.</p>
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace associated with the datashare.</p>
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace associated with the datashare.</p>
     pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.consumer_arn
     }

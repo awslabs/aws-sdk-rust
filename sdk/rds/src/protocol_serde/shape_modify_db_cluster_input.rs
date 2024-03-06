@@ -252,6 +252,11 @@ pub fn ser_modify_db_cluster_input_input_input(
     if let Some(var_91) = &input.enable_limitless_database {
         scope_90.boolean(*var_91);
     }
+    #[allow(unused_mut)]
+    let mut scope_92 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_93) = &input.ca_certificate_identifier {
+        scope_92.string(var_93);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

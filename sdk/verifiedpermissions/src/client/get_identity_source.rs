@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`last_updated_date(DateTime)`](crate::operation::get_identity_source::GetIdentitySourceOutput::last_updated_date): <p>The date and time that the identity source was most recently updated.</p>
     ///   - [`policy_store_id(String)`](crate::operation::get_identity_source::GetIdentitySourceOutput::policy_store_id): <p>The ID of the policy store that contains the identity source.</p>
     ///   - [`principal_entity_type(String)`](crate::operation::get_identity_source::GetIdentitySourceOutput::principal_entity_type): <p>The data type of principals generated for identities authenticated by this identity source.</p>
+    ///   - [`configuration(Option<ConfigurationDetail>)`](crate::operation::get_identity_source::GetIdentitySourceOutput::configuration): <p>Contains configuration information about an identity source.</p>
     /// - On failure, responds with [`SdkError<GetIdentitySourceError>`](crate::operation::get_identity_source::GetIdentitySourceError)
     pub fn get_identity_source(&self) -> crate::operation::get_identity_source::builders::GetIdentitySourceFluentBuilder {
         crate::operation::get_identity_source::builders::GetIdentitySourceFluentBuilder::new(self.handle.clone())

@@ -13,7 +13,9 @@ pub struct ExportTableToPointInTimeInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p><note>
+    /// <p>S3BucketOwner is a required parameter when exporting to a S3 bucket in another account.</p>
+    /// </note>
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
     pub s3_prefix: ::std::option::Option<::std::string::String>,
@@ -53,7 +55,9 @@ impl ExportTableToPointInTimeInput {
     pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
-    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p><note>
+    /// <p>S3BucketOwner is a required parameter when exporting to a S3 bucket in another account.</p>
+    /// </note>
     pub fn s3_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_owner.as_deref()
     }
@@ -176,17 +180,23 @@ impl ExportTableToPointInTimeInputBuilder {
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket
     }
-    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p><note>
+    /// <p>S3BucketOwner is a required parameter when exporting to a S3 bucket in another account.</p>
+    /// </note>
     pub fn s3_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p><note>
+    /// <p>S3BucketOwner is a required parameter when exporting to a S3 bucket in another account.</p>
+    /// </note>
     pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_owner = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p><note>
+    /// <p>S3BucketOwner is a required parameter when exporting to a S3 bucket in another account.</p>
+    /// </note>
     pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_owner
     }

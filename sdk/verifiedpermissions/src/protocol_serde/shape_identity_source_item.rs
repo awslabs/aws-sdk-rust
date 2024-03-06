@@ -51,6 +51,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "configuration" => {
+                            builder = builder.set_configuration(crate::protocol_serde::shape_configuration_item::de_configuration_item(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

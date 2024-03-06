@@ -28,7 +28,7 @@ pub struct RestoreFromClusterSnapshotInput {
     pub snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The port number on which the cluster accepts connections.</p>
     /// <p>Default: The same port as the original cluster.</p>
-    /// <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    /// <p>Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-<code>65535</code>. For clusters with ra3 nodes, must be within the ranges <code>5431</code>-<code>5455</code> or <code>8191</code>-<code>8215</code>.</p>
     pub port: ::std::option::Option<i32>,
     /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
     /// <p>Default: A random, system-chosen Availability Zone.</p>
@@ -158,7 +158,7 @@ impl RestoreFromClusterSnapshotInput {
     }
     /// <p>The port number on which the cluster accepts connections.</p>
     /// <p>Default: The same port as the original cluster.</p>
-    /// <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    /// <p>Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-<code>65535</code>. For clusters with ra3 nodes, must be within the ranges <code>5431</code>-<code>5455</code> or <code>8191</code>-<code>8215</code>.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
@@ -478,21 +478,21 @@ impl RestoreFromClusterSnapshotInputBuilder {
     }
     /// <p>The port number on which the cluster accepts connections.</p>
     /// <p>Default: The same port as the original cluster.</p>
-    /// <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    /// <p>Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-<code>65535</code>. For clusters with ra3 nodes, must be within the ranges <code>5431</code>-<code>5455</code> or <code>8191</code>-<code>8215</code>.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number on which the cluster accepts connections.</p>
     /// <p>Default: The same port as the original cluster.</p>
-    /// <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    /// <p>Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-<code>65535</code>. For clusters with ra3 nodes, must be within the ranges <code>5431</code>-<code>5455</code> or <code>8191</code>-<code>8215</code>.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The port number on which the cluster accepts connections.</p>
     /// <p>Default: The same port as the original cluster.</p>
-    /// <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    /// <p>Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-<code>65535</code>. For clusters with ra3 nodes, must be within the ranges <code>5431</code>-<code>5455</code> or <code>8191</code>-<code>8215</code>.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }

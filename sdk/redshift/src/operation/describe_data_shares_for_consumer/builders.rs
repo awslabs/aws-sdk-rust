@@ -114,17 +114,17 @@ impl DescribeDataSharesForConsumerFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_data_shares_for_consumer::paginator::DescribeDataSharesForConsumerPaginator {
         crate::operation::describe_data_shares_for_consumer::paginator::DescribeDataSharesForConsumerPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares.</p>
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.consumer_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares.</p>
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_consumer_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares.</p>
     pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_consumer_arn()
     }

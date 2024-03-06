@@ -139,6 +139,16 @@ pub fn de_cluster_pending_modified_values(
                 builder = builder.set_storage_type(var_10);
             }
             ,
+            s if s.matches("CertificateDetails") /* CertificateDetails com.amazonaws.rds#ClusterPendingModifiedValues$CertificateDetails */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_certificate_details::de_certificate_details(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_certificate_details(var_11);
+            }
+            ,
             _ => {}
         }
     }

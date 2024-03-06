@@ -71,6 +71,10 @@ pub use crate::types::_update_configuration::UpdateConfiguration;
 
 pub use crate::types::_update_cognito_user_pool_configuration::UpdateCognitoUserPoolConfiguration;
 
+pub use crate::types::_configuration_detail::ConfigurationDetail;
+
+pub use crate::types::_cognito_user_pool_configuration_detail::CognitoUserPoolConfigurationDetail;
+
 pub use crate::types::_identity_source_details::IdentitySourceDetails;
 
 pub use crate::types::_open_id_issuer::OpenIdIssuer;
@@ -80,6 +84,10 @@ pub use crate::types::_configuration::Configuration;
 pub use crate::types::_cognito_user_pool_configuration::CognitoUserPoolConfiguration;
 
 pub use crate::types::_identity_source_item::IdentitySourceItem;
+
+pub use crate::types::_configuration_item::ConfigurationItem;
+
+pub use crate::types::_cognito_user_pool_configuration_item::CognitoUserPoolConfigurationItem;
 
 pub use crate::types::_identity_source_item_details::IdentitySourceItemDetails;
 
@@ -95,7 +103,15 @@ mod _batch_is_authorized_output_item;
 
 mod _cognito_user_pool_configuration;
 
+mod _cognito_user_pool_configuration_detail;
+
+mod _cognito_user_pool_configuration_item;
+
 mod _configuration;
+
+mod _configuration_detail;
+
+mod _configuration_item;
 
 mod _context_definition;
 

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataSharesInput {
-    /// <p>The identifier of the datashare to describe details of.</p>
+    /// <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
     pub data_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
     pub max_records: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct DescribeDataSharesInput {
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataSharesInput {
-    /// <p>The identifier of the datashare to describe details of.</p>
+    /// <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
     pub fn data_share_arn(&self) -> ::std::option::Option<&str> {
         self.data_share_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct DescribeDataSharesInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataSharesInputBuilder {
-    /// <p>The identifier of the datashare to describe details of.</p>
+    /// <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the datashare to describe details of.</p>
+    /// <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
     pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_share_arn = input;
         self
     }
-    /// <p>The identifier of the datashare to describe details of.</p>
+    /// <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
     pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_share_arn
     }

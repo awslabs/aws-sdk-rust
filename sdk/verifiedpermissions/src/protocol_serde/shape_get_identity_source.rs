@@ -169,6 +169,9 @@ pub(crate) fn de_get_identity_source(
                             .transpose()?,
                     );
                 }
+                "configuration" => {
+                    builder = builder.set_configuration(crate::protocol_serde::shape_configuration_detail::de_configuration_detail(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

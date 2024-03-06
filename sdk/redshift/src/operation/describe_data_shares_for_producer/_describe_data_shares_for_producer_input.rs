@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDataSharesForProducerInput {
-    /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.</p>
     pub producer_arn: ::std::option::Option<::std::string::String>,
     /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
     pub status: ::std::option::Option<crate::types::DataShareStatusForProducer>,
@@ -13,7 +13,7 @@ pub struct DescribeDataSharesForProducerInput {
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataSharesForProducerInput {
-    /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.</p>
     pub fn producer_arn(&self) -> ::std::option::Option<&str> {
         self.producer_arn.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct DescribeDataSharesForProducerInputBuilder {
     pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDataSharesForProducerInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.</p>
     pub fn producer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.producer_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.</p>
     pub fn set_producer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.producer_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    /// <p>The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.</p>
     pub fn get_producer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.producer_arn
     }

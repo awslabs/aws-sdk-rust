@@ -153,6 +153,8 @@ pub(crate) mod shape_batch_is_authorized_output_list;
 
 pub(crate) mod shape_configuration;
 
+pub(crate) mod shape_configuration_detail;
+
 pub(crate) mod shape_context_definition;
 
 pub(crate) mod shape_determining_policy_list;
@@ -203,6 +205,8 @@ pub(crate) mod shape_client_ids;
 
 pub(crate) mod shape_cognito_user_pool_configuration;
 
+pub(crate) mod shape_cognito_user_pool_configuration_detail;
+
 pub(crate) mod shape_determining_policy_item;
 
 pub(crate) mod shape_entity_item;
@@ -235,9 +239,13 @@ pub(crate) mod shape_update_static_policy_definition;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_configuration_item;
+
 pub(crate) mod shape_identity_source_item_details;
 
 pub(crate) mod shape_policy_definition_item;
+
+pub(crate) mod shape_cognito_user_pool_configuration_item;
 
 pub(crate) mod shape_static_policy_definition_item;
 

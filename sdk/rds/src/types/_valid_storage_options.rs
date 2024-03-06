@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidStorageOptions {
-    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.</p>
     pub storage_size: ::std::option::Option<::std::vec::Vec<crate::types::Range>>,
@@ -20,7 +20,7 @@ pub struct ValidStorageOptions {
     pub storage_throughput_to_iops_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
 }
 impl ValidStorageOptions {
-    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -79,17 +79,17 @@ pub struct ValidStorageOptionsBuilder {
     pub(crate) storage_throughput_to_iops_ratio: ::std::option::Option<::std::vec::Vec<crate::types::DoubleRange>>,
 }
 impl ValidStorageOptionsBuilder {
-    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
-    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+    /// <p>The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }

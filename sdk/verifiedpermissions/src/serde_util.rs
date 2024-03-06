@@ -164,12 +164,6 @@ pub(crate) fn get_identity_source_output_output_correct_errors(
     if builder.created_date.is_none() {
         builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
-    if builder.details.is_none() {
-        builder.details = {
-            let builder = crate::types::builders::IdentitySourceDetailsBuilder::default();
-            Some(builder.build())
-        }
-    }
     if builder.identity_source_id.is_none() {
         builder.identity_source_id = Some(Default::default())
     }
@@ -473,6 +467,21 @@ pub(crate) fn batch_is_authorized_output_item_correct_errors(
     builder
 }
 
+pub(crate) fn cognito_user_pool_configuration_detail_correct_errors(
+    mut builder: crate::types::builders::CognitoUserPoolConfigurationDetailBuilder,
+) -> crate::types::builders::CognitoUserPoolConfigurationDetailBuilder {
+    if builder.user_pool_arn.is_none() {
+        builder.user_pool_arn = Some(Default::default())
+    }
+    if builder.client_ids.is_none() {
+        builder.client_ids = Some(Default::default())
+    }
+    if builder.issuer.is_none() {
+        builder.issuer = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn determining_policy_item_correct_errors(
     mut builder: crate::types::builders::DeterminingPolicyItemBuilder,
 ) -> crate::types::builders::DeterminingPolicyItemBuilder {
@@ -496,12 +505,6 @@ pub(crate) fn identity_source_item_correct_errors(
 ) -> crate::types::builders::IdentitySourceItemBuilder {
     if builder.created_date.is_none() {
         builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.details.is_none() {
-        builder.details = {
-            let builder = crate::types::builders::IdentitySourceItemDetailsBuilder::default();
-            Some(builder.build())
-        }
     }
     if builder.identity_source_id.is_none() {
         builder.identity_source_id = Some(Default::default())
@@ -623,6 +626,21 @@ pub(crate) fn action_identifier_correct_errors(
     }
     if builder.action_id.is_none() {
         builder.action_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cognito_user_pool_configuration_item_correct_errors(
+    mut builder: crate::types::builders::CognitoUserPoolConfigurationItemBuilder,
+) -> crate::types::builders::CognitoUserPoolConfigurationItemBuilder {
+    if builder.user_pool_arn.is_none() {
+        builder.user_pool_arn = Some(Default::default())
+    }
+    if builder.client_ids.is_none() {
+        builder.client_ids = Some(Default::default())
+    }
+    if builder.issuer.is_none() {
+        builder.issuer = Some(Default::default())
     }
     builder
 }

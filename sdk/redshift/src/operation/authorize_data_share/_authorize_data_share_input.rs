@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizeDataShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.</p>
     pub data_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
     pub consumer_identifier: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct AuthorizeDataShareInput {
     pub allow_writes: ::std::option::Option<bool>,
 }
 impl AuthorizeDataShareInput {
-    /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.</p>
     pub fn data_share_arn(&self) -> ::std::option::Option<&str> {
         self.data_share_arn.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct AuthorizeDataShareInputBuilder {
     pub(crate) allow_writes: ::std::option::Option<bool>,
 }
 impl AuthorizeDataShareInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.</p>
     /// This field is required.
     pub fn data_share_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_share_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.</p>
     pub fn set_data_share_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_share_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.</p>
     pub fn get_data_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_share_arn
     }

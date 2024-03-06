@@ -7,7 +7,7 @@ pub struct DisassociateDataShareConsumerInput {
     pub data_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies whether association for the datashare is removed from the entire account.</p>
     pub disassociate_entire_account: ::std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.</p>
     pub consumer_arn: ::std::option::Option<::std::string::String>,
     /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
     pub consumer_region: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl DisassociateDataShareConsumerInput {
     pub fn disassociate_entire_account(&self) -> ::std::option::Option<bool> {
         self.disassociate_entire_account
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.</p>
     pub fn consumer_arn(&self) -> ::std::option::Option<&str> {
         self.consumer_arn.as_deref()
     }
@@ -76,17 +76,17 @@ impl DisassociateDataShareConsumerInputBuilder {
     pub fn get_disassociate_entire_account(&self) -> &::std::option::Option<bool> {
         &self.disassociate_entire_account
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.</p>
     pub fn consumer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.consumer_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.</p>
     pub fn set_consumer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.consumer_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
+    /// <p>The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.</p>
     pub fn get_consumer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.consumer_arn
     }

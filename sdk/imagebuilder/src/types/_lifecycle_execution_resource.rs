@@ -26,6 +26,10 @@ pub struct LifecycleExecutionResource {
     pub snapshots: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleExecutionSnapshotResource>>,
     /// <p>For an impacted container image, this identifies a list of URIs for associated container images distributed to ECR repositories.</p>
     pub image_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The starting timestamp from the lifecycle action that was applied to the resource.</p>
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ending timestamp from the lifecycle action that was applied to the resource.</p>
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LifecycleExecutionResource {
     /// <p>The account that owns the impacted resource.</p>
@@ -68,6 +72,14 @@ impl LifecycleExecutionResource {
     pub fn image_uris(&self) -> &[::std::string::String] {
         self.image_uris.as_deref().unwrap_or_default()
     }
+    /// <p>The starting timestamp from the lifecycle action that was applied to the resource.</p>
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>The ending timestamp from the lifecycle action that was applied to the resource.</p>
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
+    }
 }
 impl LifecycleExecutionResource {
     /// Creates a new builder-style object to manufacture [`LifecycleExecutionResource`](crate::types::LifecycleExecutionResource).
@@ -87,6 +99,8 @@ pub struct LifecycleExecutionResourceBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) snapshots: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleExecutionSnapshotResource>>,
     pub(crate) image_uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LifecycleExecutionResourceBuilder {
     /// <p>The account that owns the impacted resource.</p>
@@ -223,6 +237,34 @@ impl LifecycleExecutionResourceBuilder {
     pub fn get_image_uris(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.image_uris
     }
+    /// <p>The starting timestamp from the lifecycle action that was applied to the resource.</p>
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The starting timestamp from the lifecycle action that was applied to the resource.</p>
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input;
+        self
+    }
+    /// <p>The starting timestamp from the lifecycle action that was applied to the resource.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
+    /// <p>The ending timestamp from the lifecycle action that was applied to the resource.</p>
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ending timestamp from the lifecycle action that was applied to the resource.</p>
+    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_time = input;
+        self
+    }
+    /// <p>The ending timestamp from the lifecycle action that was applied to the resource.</p>
+    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_time
+    }
     /// Consumes the builder and constructs a [`LifecycleExecutionResource`](crate::types::LifecycleExecutionResource).
     pub fn build(self) -> crate::types::LifecycleExecutionResource {
         crate::types::LifecycleExecutionResource {
@@ -233,6 +275,8 @@ impl LifecycleExecutionResourceBuilder {
             region: self.region,
             snapshots: self.snapshots,
             image_uris: self.image_uris,
+            start_time: self.start_time,
+            end_time: self.end_time,
         }
     }
 }
