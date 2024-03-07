@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddPermissionInput {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -38,7 +38,7 @@ pub struct AddPermissionInput {
     pub function_url_auth_type: ::std::option::Option<crate::types::FunctionUrlAuthType>,
 }
 impl AddPermissionInput {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -118,7 +118,7 @@ pub struct AddPermissionInputBuilder {
     pub(crate) function_url_auth_type: ::std::option::Option<crate::types::FunctionUrlAuthType>,
 }
 impl AddPermissionInputBuilder {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -134,7 +134,7 @@ impl AddPermissionInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -149,7 +149,7 @@ impl AddPermissionInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

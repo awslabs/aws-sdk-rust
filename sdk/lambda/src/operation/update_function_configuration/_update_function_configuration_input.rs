@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFunctionConfigurationInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -54,7 +54,7 @@ pub struct UpdateFunctionConfigurationInput {
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
 }
 impl UpdateFunctionConfigurationInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -178,7 +178,7 @@ pub struct UpdateFunctionConfigurationInputBuilder {
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
 }
 impl UpdateFunctionConfigurationInputBuilder {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -194,7 +194,7 @@ impl UpdateFunctionConfigurationInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -209,7 +209,7 @@ impl UpdateFunctionConfigurationInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

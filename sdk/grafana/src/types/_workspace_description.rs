@@ -40,13 +40,19 @@ pub struct WorkspaceDescription {
     pub status: crate::types::WorkspaceStatus,
     /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
     pub workspace_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
+    /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub license_type: ::std::option::Option<crate::types::LicenseType>,
-    /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
+    /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub free_trial_consumed: ::std::option::Option<bool>,
-    /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
+    /// <p>If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services Marketplace, this specifies when the license ends and will need to be renewed. Purchasing the Enterprise plugins option through Amazon Managed Grafana does not have an expiration. It is valid until the license is removed.</p>
     pub license_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
+    /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub free_trial_expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
     pub authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
@@ -56,6 +62,8 @@ pub struct WorkspaceDescription {
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The configuration settings for network access to your workspace.</p>
     pub network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub grafana_token: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDescription {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
@@ -134,19 +142,25 @@ impl WorkspaceDescription {
     pub fn workspace_role_arn(&self) -> ::std::option::Option<&str> {
         self.workspace_role_arn.as_deref()
     }
-    /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
+    /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn license_type(&self) -> ::std::option::Option<&crate::types::LicenseType> {
         self.license_type.as_ref()
     }
-    /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
+    /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn free_trial_consumed(&self) -> ::std::option::Option<bool> {
         self.free_trial_consumed
     }
-    /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
+    /// <p>If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services Marketplace, this specifies when the license ends and will need to be renewed. Purchasing the Enterprise plugins option through Amazon Managed Grafana does not have an expiration. It is valid until the license is removed.</p>
     pub fn license_expiration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.license_expiration.as_ref()
     }
-    /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
+    /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn free_trial_expiration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.free_trial_expiration.as_ref()
     }
@@ -165,6 +179,10 @@ impl WorkspaceDescription {
     /// <p>The configuration settings for network access to your workspace.</p>
     pub fn network_access_control(&self) -> ::std::option::Option<&crate::types::NetworkAccessConfiguration> {
         self.network_access_control.as_ref()
+    }
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub fn grafana_token(&self) -> ::std::option::Option<&str> {
+        self.grafana_token.as_deref()
     }
 }
 impl ::std::fmt::Debug for WorkspaceDescription {
@@ -194,6 +212,7 @@ impl ::std::fmt::Debug for WorkspaceDescription {
         formatter.field("tags", &self.tags);
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("network_access_control", &self.network_access_control);
+        formatter.field("grafana_token", &self.grafana_token);
         formatter.finish()
     }
 }
@@ -232,6 +251,7 @@ pub struct WorkspaceDescriptionBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     pub(crate) network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
+    pub(crate) grafana_token: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDescriptionBuilder {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
@@ -494,59 +514,77 @@ impl WorkspaceDescriptionBuilder {
     pub fn get_workspace_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_role_arn
     }
-    /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
+    /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
         self.license_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
+    /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
         self.license_type = input;
         self
     }
-    /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
+    /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn get_license_type(&self) -> &::std::option::Option<crate::types::LicenseType> {
         &self.license_type
     }
-    /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
+    /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn free_trial_consumed(mut self, input: bool) -> Self {
         self.free_trial_consumed = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
+    /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn set_free_trial_consumed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.free_trial_consumed = input;
         self
     }
-    /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
+    /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn get_free_trial_consumed(&self) -> &::std::option::Option<bool> {
         &self.free_trial_consumed
     }
-    /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
+    /// <p>If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services Marketplace, this specifies when the license ends and will need to be renewed. Purchasing the Enterprise plugins option through Amazon Managed Grafana does not have an expiration. It is valid until the license is removed.</p>
     pub fn license_expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.license_expiration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
+    /// <p>If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services Marketplace, this specifies when the license ends and will need to be renewed. Purchasing the Enterprise plugins option through Amazon Managed Grafana does not have an expiration. It is valid until the license is removed.</p>
     pub fn set_license_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.license_expiration = input;
         self
     }
-    /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
+    /// <p>If this workspace has a full Grafana Enterprise license purchased through Amazon Web Services Marketplace, this specifies when the license ends and will need to be renewed. Purchasing the Enterprise plugins option through Amazon Managed Grafana does not have an expiration. It is valid until the license is removed.</p>
     pub fn get_license_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.license_expiration
     }
-    /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
+    /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn free_trial_expiration(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.free_trial_expiration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
+    /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn set_free_trial_expiration(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.free_trial_expiration = input;
         self
     }
-    /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
+    /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn get_free_trial_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.free_trial_expiration
     }
@@ -612,6 +650,20 @@ impl WorkspaceDescriptionBuilder {
     /// <p>The configuration settings for network access to your workspace.</p>
     pub fn get_network_access_control(&self) -> &::std::option::Option<crate::types::NetworkAccessConfiguration> {
         &self.network_access_control
+    }
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub fn grafana_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.grafana_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub fn set_grafana_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.grafana_token = input;
+        self
+    }
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub fn get_grafana_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grafana_token
     }
     /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::types::WorkspaceDescription).
     /// This method will fail if any of the following fields are not set:
@@ -683,6 +735,7 @@ impl WorkspaceDescriptionBuilder {
             tags: self.tags,
             vpc_configuration: self.vpc_configuration,
             network_access_control: self.network_access_control,
+            grafana_token: self.grafana_token,
         })
     }
 }
@@ -713,6 +766,7 @@ impl ::std::fmt::Debug for WorkspaceDescriptionBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("network_access_control", &self.network_access_control);
+        formatter.field("grafana_token", &self.grafana_token);
         formatter.finish()
     }
 }

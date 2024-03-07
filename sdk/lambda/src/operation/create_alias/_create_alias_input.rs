@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAliasInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -25,7 +25,7 @@ pub struct CreateAliasInput {
     pub routing_config: ::std::option::Option<crate::types::AliasRoutingConfiguration>,
 }
 impl CreateAliasInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -74,7 +74,7 @@ pub struct CreateAliasInputBuilder {
     pub(crate) routing_config: ::std::option::Option<crate::types::AliasRoutingConfiguration>,
 }
 impl CreateAliasInputBuilder {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -90,7 +90,7 @@ impl CreateAliasInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -105,7 +105,7 @@ impl CreateAliasInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

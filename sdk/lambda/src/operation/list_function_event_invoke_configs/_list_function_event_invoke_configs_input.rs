@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFunctionEventInvokeConfigsInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -21,7 +21,7 @@ pub struct ListFunctionEventInvokeConfigsInput {
     pub max_items: ::std::option::Option<i32>,
 }
 impl ListFunctionEventInvokeConfigsInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -60,7 +60,7 @@ pub struct ListFunctionEventInvokeConfigsInputBuilder {
     pub(crate) max_items: ::std::option::Option<i32>,
 }
 impl ListFunctionEventInvokeConfigsInputBuilder {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -76,7 +76,7 @@ impl ListFunctionEventInvokeConfigsInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -91,7 +91,7 @@ impl ListFunctionEventInvokeConfigsInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

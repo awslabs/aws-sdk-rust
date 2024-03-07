@@ -22,7 +22,9 @@ impl DescribeImageAttributeInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeImageAttribute`.
 ///
-/// <p>Describes the specified attribute of the specified AMI. You can specify only one attribute at a time.</p>
+/// <p>Describes the specified attribute of the specified AMI. You can specify only one attribute at a time.</p><note>
+/// <p>The order of the elements in the response, including those within nested structures, might vary. Applications should not assume the elements appear in a particular order.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImageAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

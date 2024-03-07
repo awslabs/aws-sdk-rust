@@ -15,18 +15,28 @@ pub fn ser_start_deployment_input_input(
     if let Some(var_4) = &input.description {
         object.key("Description").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.kms_key_identifier {
-        object.key("KmsKeyIdentifier").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_5) = &input.dynamic_extension_parameters {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_6 = object.key("DynamicExtensionParameters").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_7.finish();
+        object_6.finish();
+    }
+    if let Some(var_9) = &input.kms_key_identifier {
+        object.key("KmsKeyIdentifier").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("Tags").start_object();
+        for (key_12, value_13) in var_10 {
+            {
+                object_11.key(key_12.as_str()).string(value_13.as_str());
+            }
+        }
+        object_11.finish();
     }
     Ok(())
 }

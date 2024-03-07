@@ -9,6 +9,9 @@ pub fn ser_parameter(
     if input.required {
         object.key("Required").boolean(input.required);
     }
+    if input.dynamic {
+        object.key("Dynamic").boolean(input.dynamic);
+    }
     Ok(())
 }
 
@@ -36,6 +39,9 @@ where
                         }
                         "Required" => {
                             builder = builder.set_required(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "Dynamic" => {
+                            builder = builder.set_dynamic(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

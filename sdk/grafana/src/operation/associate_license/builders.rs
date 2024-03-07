@@ -122,18 +122,38 @@ impl AssociateLicenseFluentBuilder {
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }
-    /// <p>The type of license to associate with the workspace.</p>
+    /// <p>The type of license to associate with the workspace.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
         self.inner = self.inner.license_type(input);
         self
     }
-    /// <p>The type of license to associate with the workspace.</p>
+    /// <p>The type of license to associate with the workspace.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
         self.inner = self.inner.set_license_type(input);
         self
     }
-    /// <p>The type of license to associate with the workspace.</p>
+    /// <p>The type of license to associate with the workspace.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
     pub fn get_license_type(&self) -> &::std::option::Option<crate::types::LicenseType> {
         self.inner.get_license_type()
+    }
+    /// <p>A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub fn grafana_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.grafana_token(input.into());
+        self
+    }
+    /// <p>A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub fn set_grafana_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_grafana_token(input);
+        self
+    }
+    /// <p>A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub fn get_grafana_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_grafana_token()
     }
 }

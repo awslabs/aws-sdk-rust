@@ -33,8 +33,14 @@ pub struct JsonBody {
     /// <p>Extra colons: <code>{"key1"::"value1","key2""value2"}</code></p></li>
     /// </ul>
     pub invalid_fallback_behavior: ::std::option::Option<crate::types::BodyParsingFallbackBehavior>,
-    /// <p>What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.</p>
-    /// <p>The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p>
+    /// <p>What WAF should do if the body is larger than WAF can inspect.</p>
+    /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
+    /// <li>
+    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// </ul>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
     /// <li>
@@ -81,8 +87,14 @@ impl JsonBody {
     pub fn invalid_fallback_behavior(&self) -> ::std::option::Option<&crate::types::BodyParsingFallbackBehavior> {
         self.invalid_fallback_behavior.as_ref()
     }
-    /// <p>What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.</p>
-    /// <p>The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p>
+    /// <p>What WAF should do if the body is larger than WAF can inspect.</p>
+    /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
+    /// <li>
+    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// </ul>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
     /// <li>
@@ -219,8 +231,14 @@ impl JsonBodyBuilder {
     pub fn get_invalid_fallback_behavior(&self) -> &::std::option::Option<crate::types::BodyParsingFallbackBehavior> {
         &self.invalid_fallback_behavior
     }
-    /// <p>What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.</p>
-    /// <p>The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p>
+    /// <p>What WAF should do if the body is larger than WAF can inspect.</p>
+    /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
+    /// <li>
+    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// </ul>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
     /// <li>
@@ -236,8 +254,14 @@ impl JsonBodyBuilder {
         self.oversize_handling = ::std::option::Option::Some(input);
         self
     }
-    /// <p>What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.</p>
-    /// <p>The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p>
+    /// <p>What WAF should do if the body is larger than WAF can inspect.</p>
+    /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
+    /// <li>
+    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// </ul>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
     /// <li>
@@ -253,8 +277,14 @@ impl JsonBodyBuilder {
         self.oversize_handling = input;
         self
     }
-    /// <p>What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.</p>
-    /// <p>The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p>
+    /// <p>What WAF should do if the body is larger than WAF can inspect.</p>
+    /// <p>WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the resource type. When a web request body is larger than the limit, the underlying host service only forwards the contents that are within the limit to WAF for inspection.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
+    /// <li>
+    /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// </ul>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
     /// <li>

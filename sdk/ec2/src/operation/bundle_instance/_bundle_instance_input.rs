@@ -5,9 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BundleInstanceInput {
     /// <p>The ID of the instance to bundle.</p>
-    /// <p>Type: String</p>
     /// <p>Default: None</p>
-    /// <p>Required: Yes</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.</p>
     pub storage: ::std::option::Option<crate::types::Storage>,
@@ -16,9 +14,7 @@ pub struct BundleInstanceInput {
 }
 impl BundleInstanceInput {
     /// <p>The ID of the instance to bundle.</p>
-    /// <p>Type: String</p>
     /// <p>Default: None</p>
-    /// <p>Required: Yes</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -48,26 +44,20 @@ pub struct BundleInstanceInputBuilder {
 }
 impl BundleInstanceInputBuilder {
     /// <p>The ID of the instance to bundle.</p>
-    /// <p>Type: String</p>
     /// <p>Default: None</p>
-    /// <p>Required: Yes</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the instance to bundle.</p>
-    /// <p>Type: String</p>
     /// <p>Default: None</p>
-    /// <p>Required: Yes</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The ID of the instance to bundle.</p>
-    /// <p>Type: String</p>
     /// <p>Default: None</p>
-    /// <p>Required: Yes</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }

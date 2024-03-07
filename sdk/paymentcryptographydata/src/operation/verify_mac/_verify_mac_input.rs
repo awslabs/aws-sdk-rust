@@ -5,7 +5,7 @@
 pub struct VerifyMacInput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The data on for which MAC is under verification.</p>
+    /// <p>The data on for which MAC is under verification. This value must be hexBinary.</p>
     pub message_data: ::std::option::Option<::std::string::String>,
     /// <p>The MAC being verified.</p>
     pub mac: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ impl VerifyMacInput {
     pub fn key_identifier(&self) -> ::std::option::Option<&str> {
         self.key_identifier.as_deref()
     }
-    /// <p>The data on for which MAC is under verification.</p>
+    /// <p>The data on for which MAC is under verification. This value must be hexBinary.</p>
     pub fn message_data(&self) -> ::std::option::Option<&str> {
         self.message_data.as_deref()
     }
@@ -80,18 +80,18 @@ impl VerifyMacInputBuilder {
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_identifier
     }
-    /// <p>The data on for which MAC is under verification.</p>
+    /// <p>The data on for which MAC is under verification. This value must be hexBinary.</p>
     /// This field is required.
     pub fn message_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The data on for which MAC is under verification.</p>
+    /// <p>The data on for which MAC is under verification. This value must be hexBinary.</p>
     pub fn set_message_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_data = input;
         self
     }
-    /// <p>The data on for which MAC is under verification.</p>
+    /// <p>The data on for which MAC is under verification. This value must be hexBinary.</p>
     pub fn get_message_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_data
     }

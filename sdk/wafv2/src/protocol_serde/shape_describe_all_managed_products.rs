@@ -55,6 +55,26 @@ pub fn de_describe_all_managed_products_http_error(
                 tmp
             })
         }
+        "WAFInvalidParameterException" => {
+            crate::operation::describe_all_managed_products::DescribeAllManagedProductsError::WafInvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::WafInvalidParameterExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_waf_invalid_parameter_exception::de_waf_invalid_parameter_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::describe_all_managed_products::DescribeAllManagedProductsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::describe_all_managed_products::DescribeAllManagedProductsError::generic(generic),
     })
 }

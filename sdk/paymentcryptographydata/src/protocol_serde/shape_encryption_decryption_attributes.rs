@@ -22,6 +22,12 @@ pub fn ser_encryption_decryption_attributes(
             crate::protocol_serde::shape_dukpt_encryption_attributes::ser_dukpt_encryption_attributes(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::EncryptionDecryptionAttributes::Emv(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_3.key("Emv").start_object();
+            crate::protocol_serde::shape_emv_encryption_attributes::ser_emv_encryption_attributes(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::EncryptionDecryptionAttributes::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EncryptionDecryptionAttributes",

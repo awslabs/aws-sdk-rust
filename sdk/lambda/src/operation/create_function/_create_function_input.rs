@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFunctionInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -64,7 +64,7 @@ pub struct CreateFunctionInput {
     pub logging_config: ::std::option::Option<crate::types::LoggingConfig>,
 }
 impl CreateFunctionInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -215,7 +215,7 @@ pub struct CreateFunctionInputBuilder {
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
 }
 impl CreateFunctionInputBuilder {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -231,7 +231,7 @@ impl CreateFunctionInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -246,7 +246,7 @@ impl CreateFunctionInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

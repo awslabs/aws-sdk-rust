@@ -5,9 +5,10 @@
 pub struct DecryptDataOutput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.</p>
     pub key_arn: ::std::string::String,
-    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
+    /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
     pub key_check_value: ::std::string::String,
-    /// <p>The decrypted plaintext data.</p>
+    /// <p>The decrypted plaintext data in hexBinary format.</p>
     pub plain_text: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -17,12 +18,13 @@ impl DecryptDataOutput {
         use std::ops::Deref;
         self.key_arn.deref()
     }
-    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
+    /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
     pub fn key_check_value(&self) -> &str {
         use std::ops::Deref;
         self.key_check_value.deref()
     }
-    /// <p>The decrypted plaintext data.</p>
+    /// <p>The decrypted plaintext data in hexBinary format.</p>
     pub fn plain_text(&self) -> &str {
         use std::ops::Deref;
         self.plain_text.deref()
@@ -75,33 +77,36 @@ impl DecryptDataOutputBuilder {
     pub fn get_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_arn
     }
-    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
+    /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
     /// This field is required.
     pub fn key_check_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_check_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
+    /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
     pub fn set_key_check_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_check_value = input;
         self
     }
-    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed. Amazon Web Services Payment Cryptography calculates the KCV by using standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+    /// <p>The key check value (KCV) of the encryption key. The KCV is used to check if all parties holding a given key have the same key or to detect that a key has changed.</p>
+    /// <p>Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.</p>
     pub fn get_key_check_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_check_value
     }
-    /// <p>The decrypted plaintext data.</p>
+    /// <p>The decrypted plaintext data in hexBinary format.</p>
     /// This field is required.
     pub fn plain_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plain_text = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The decrypted plaintext data.</p>
+    /// <p>The decrypted plaintext data in hexBinary format.</p>
     pub fn set_plain_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.plain_text = input;
         self
     }
-    /// <p>The decrypted plaintext data.</p>
+    /// <p>The decrypted plaintext data in hexBinary format.</p>
     pub fn get_plain_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.plain_text
     }

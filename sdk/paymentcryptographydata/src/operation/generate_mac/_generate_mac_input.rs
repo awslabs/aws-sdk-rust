@@ -5,7 +5,7 @@
 pub struct GenerateMacInput {
     /// <p>The <code>keyARN</code> of the MAC generation encryption key.</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The data for which a MAC is under generation.</p>
+    /// <p>The data for which a MAC is under generation. This value must be hexBinary.</p>
     pub message_data: ::std::option::Option<::std::string::String>,
     /// <p>The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.</p>
     pub generation_attributes: ::std::option::Option<crate::types::MacAttributes>,
@@ -17,7 +17,7 @@ impl GenerateMacInput {
     pub fn key_identifier(&self) -> ::std::option::Option<&str> {
         self.key_identifier.as_deref()
     }
-    /// <p>The data for which a MAC is under generation.</p>
+    /// <p>The data for which a MAC is under generation. This value must be hexBinary.</p>
     pub fn message_data(&self) -> ::std::option::Option<&str> {
         self.message_data.as_deref()
     }
@@ -72,18 +72,18 @@ impl GenerateMacInputBuilder {
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_identifier
     }
-    /// <p>The data for which a MAC is under generation.</p>
+    /// <p>The data for which a MAC is under generation. This value must be hexBinary.</p>
     /// This field is required.
     pub fn message_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The data for which a MAC is under generation.</p>
+    /// <p>The data for which a MAC is under generation. This value must be hexBinary.</p>
     pub fn set_message_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_data = input;
         self
     }
-    /// <p>The data for which a MAC is under generation.</p>
+    /// <p>The data for which a MAC is under generation. This value must be hexBinary.</p>
     pub fn get_message_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.message_data
     }

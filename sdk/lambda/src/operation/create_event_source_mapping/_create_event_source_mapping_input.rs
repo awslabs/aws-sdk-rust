@@ -19,7 +19,7 @@ pub struct CreateEventSourceMappingInput {
     /// <p><b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p></li>
     /// </ul>
     pub event_source_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -114,7 +114,7 @@ impl CreateEventSourceMappingInput {
     pub fn event_source_arn(&self) -> ::std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -334,7 +334,7 @@ impl CreateEventSourceMappingInputBuilder {
     pub fn get_event_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_source_arn
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -352,7 +352,7 @@ impl CreateEventSourceMappingInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -369,7 +369,7 @@ impl CreateEventSourceMappingInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

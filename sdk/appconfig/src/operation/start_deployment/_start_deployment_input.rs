@@ -19,6 +19,8 @@ pub struct StartDeploymentInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to encrypt the configuration data using a customer managed key.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+    pub dynamic_extension_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartDeploymentInput {
     /// <p>The application ID.</p>
@@ -53,6 +55,10 @@ impl StartDeploymentInput {
     pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
         self.kms_key_identifier.as_deref()
     }
+    /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+    pub fn dynamic_extension_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.dynamic_extension_parameters.as_ref()
+    }
 }
 impl StartDeploymentInput {
     /// Creates a new builder-style object to manufacture [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
@@ -73,6 +79,7 @@ pub struct StartDeploymentInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) dynamic_extension_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartDeploymentInputBuilder {
     /// <p>The application ID.</p>
@@ -198,6 +205,35 @@ impl StartDeploymentInputBuilder {
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_identifier
     }
+    /// Adds a key-value pair to `dynamic_extension_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_dynamic_extension_parameters`](Self::set_dynamic_extension_parameters).
+    ///
+    /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+    pub fn dynamic_extension_parameters(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.dynamic_extension_parameters.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.dynamic_extension_parameters = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+    pub fn set_dynamic_extension_parameters(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.dynamic_extension_parameters = input;
+        self
+    }
+    /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+    pub fn get_dynamic_extension_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.dynamic_extension_parameters
+    }
     /// Consumes the builder and constructs a [`StartDeploymentInput`](crate::operation::start_deployment::StartDeploymentInput).
     pub fn build(
         self,
@@ -211,6 +247,7 @@ impl StartDeploymentInputBuilder {
             description: self.description,
             tags: self.tags,
             kms_key_identifier: self.kms_key_identifier,
+            dynamic_extension_parameters: self.dynamic_extension_parameters,
         })
     }
 }

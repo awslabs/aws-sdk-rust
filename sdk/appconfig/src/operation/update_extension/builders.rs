@@ -22,7 +22,7 @@ impl UpdateExtensionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateExtension`.
 ///
-/// <p>Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
+/// <p>Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending workflows</a> in the <i>AppConfig User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateExtensionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

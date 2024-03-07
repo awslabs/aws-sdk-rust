@@ -22,7 +22,7 @@ impl ListExtensionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListExtensions`.
 ///
-/// <p>Lists all custom and Amazon Web Services authored AppConfig extensions in the account. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
+/// <p>Lists all custom and Amazon Web Services authored AppConfig extensions in the account. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending workflows</a> in the <i>AppConfig User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListExtensionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

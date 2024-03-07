@@ -139,6 +139,8 @@ pub(crate) mod shape_dynamic_card_verification_code;
 
 pub(crate) mod shape_dynamic_card_verification_value;
 
+pub(crate) mod shape_emv_encryption_attributes;
+
 pub(crate) mod shape_ibm3624_natural_pin;
 
 pub(crate) mod shape_ibm3624_pin_from_offset;

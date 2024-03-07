@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SymmetricEncryptionAttributes {
-    /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size (for example, 128 bits). The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
+    /// <p>The block cipher method to use for encryption.</p>
     pub mode: crate::types::EncryptionMode,
-    /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
+    /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
     pub initialization_vector: ::std::option::Option<::std::string::String>,
     /// <p>The padding to be included with the data.</p>
     pub padding_type: ::std::option::Option<crate::types::PaddingType>,
 }
 impl SymmetricEncryptionAttributes {
-    /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size (for example, 128 bits). The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
+    /// <p>The block cipher method to use for encryption.</p>
     pub fn mode(&self) -> &crate::types::EncryptionMode {
         &self.mode
     }
-    /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
+    /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
     pub fn initialization_vector(&self) -> ::std::option::Option<&str> {
         self.initialization_vector.as_deref()
     }
@@ -50,32 +50,32 @@ pub struct SymmetricEncryptionAttributesBuilder {
     pub(crate) padding_type: ::std::option::Option<crate::types::PaddingType>,
 }
 impl SymmetricEncryptionAttributesBuilder {
-    /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size (for example, 128 bits). The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
+    /// <p>The block cipher method to use for encryption.</p>
     /// This field is required.
     pub fn mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size (for example, 128 bits). The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
+    /// <p>The block cipher method to use for encryption.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.mode = input;
         self
     }
-    /// <p>The block cipher mode of operation. Block ciphers are designed to encrypt a block of data of fixed size (for example, 128 bits). The size of the input block is usually same as the size of the encrypted output block, while the key length can be different. A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.</p>
+    /// <p>The block cipher method to use for encryption.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
         &self.mode
     }
-    /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
+    /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
     pub fn initialization_vector(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initialization_vector = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
+    /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
     pub fn set_initialization_vector(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initialization_vector = input;
         self
     }
-    /// <p>An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code> is typically required have a random or psuedo-random value, but sometimes it only needs to be unpredictable or unique. If a value is not provided, Amazon Web Services Payment Cryptography generates a random value.</p>
+    /// <p>An input used to provide the intial state. If no value is provided, Amazon Web Services Payment Cryptography defaults it to zero.</p>
     pub fn get_initialization_vector(&self) -> &::std::option::Option<::std::string::String> {
         &self.initialization_vector
     }

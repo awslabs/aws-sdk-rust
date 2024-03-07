@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFunctionEventInvokeConfigInput {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -36,7 +36,7 @@ pub struct UpdateFunctionEventInvokeConfigInput {
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
 }
 impl UpdateFunctionEventInvokeConfigInput {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -96,7 +96,7 @@ pub struct UpdateFunctionEventInvokeConfigInputBuilder {
     pub(crate) destination_config: ::std::option::Option<crate::types::DestinationConfig>,
 }
 impl UpdateFunctionEventInvokeConfigInputBuilder {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -112,7 +112,7 @@ impl UpdateFunctionEventInvokeConfigInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -127,7 +127,7 @@ impl UpdateFunctionEventInvokeConfigInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

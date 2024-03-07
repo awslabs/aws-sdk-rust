@@ -122,7 +122,7 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
     pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_code_signing_config_arn()
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -137,7 +137,7 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
         self.inner = self.inner.function_name(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -152,7 +152,7 @@ impl PutFunctionCodeSigningConfigFluentBuilder {
         self.inner = self.inner.set_function_name(input);
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

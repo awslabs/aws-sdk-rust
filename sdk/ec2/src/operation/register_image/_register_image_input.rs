@@ -52,6 +52,10 @@ pub struct RegisterImageInput {
     /// <p>If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.</p>
     /// </note>
     pub imds_support: ::std::option::Option<crate::types::ImdsSupportValues>,
+    /// <p>The tags to apply to the AMI.</p>
+    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>. If you specify another value for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI after it has been registered, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl RegisterImageInput {
     /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
@@ -140,6 +144,14 @@ impl RegisterImageInput {
     pub fn imds_support(&self) -> ::std::option::Option<&crate::types::ImdsSupportValues> {
         self.imds_support.as_ref()
     }
+    /// <p>The tags to apply to the AMI.</p>
+    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>. If you specify another value for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI after it has been registered, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
+    }
 }
 impl RegisterImageInput {
     /// Creates a new builder-style object to manufacture [`RegisterImageInput`](crate::operation::register_image::RegisterImageInput).
@@ -169,6 +181,7 @@ pub struct RegisterImageInputBuilder {
     pub(crate) tpm_support: ::std::option::Option<crate::types::TpmSupportValues>,
     pub(crate) uefi_data: ::std::option::Option<::std::string::String>,
     pub(crate) imds_support: ::std::option::Option<crate::types::ImdsSupportValues>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl RegisterImageInputBuilder {
     /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
@@ -464,6 +477,32 @@ impl RegisterImageInputBuilder {
     pub fn get_imds_support(&self) -> &::std::option::Option<crate::types::ImdsSupportValues> {
         &self.imds_support
     }
+    /// Appends an item to `tag_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>The tags to apply to the AMI.</p>
+    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>. If you specify another value for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI after it has been registered, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        let mut v = self.tag_specifications.unwrap_or_default();
+        v.push(input);
+        self.tag_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags to apply to the AMI.</p>
+    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>. If you specify another value for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI after it has been registered, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input;
+        self
+    }
+    /// <p>The tags to apply to the AMI.</p>
+    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>. If you specify another value for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI after it has been registered, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// Consumes the builder and constructs a [`RegisterImageInput`](crate::operation::register_image::RegisterImageInput).
     pub fn build(
         self,
@@ -486,6 +525,7 @@ impl RegisterImageInputBuilder {
             tpm_support: self.tpm_support,
             uefi_data: self.uefi_data,
             imds_support: self.imds_support,
+            tag_specifications: self.tag_specifications,
         })
     }
 }

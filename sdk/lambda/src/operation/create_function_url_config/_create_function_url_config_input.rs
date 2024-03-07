@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFunctionUrlConfigInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ pub struct CreateFunctionUrlConfigInput {
     pub invoke_mode: ::std::option::Option<crate::types::InvokeMode>,
 }
 impl CreateFunctionUrlConfigInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -86,7 +86,7 @@ pub struct CreateFunctionUrlConfigInputBuilder {
     pub(crate) invoke_mode: ::std::option::Option<crate::types::InvokeMode>,
 }
 impl CreateFunctionUrlConfigInputBuilder {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -102,7 +102,7 @@ impl CreateFunctionUrlConfigInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -117,7 +117,7 @@ impl CreateFunctionUrlConfigInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

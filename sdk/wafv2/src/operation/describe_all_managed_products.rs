@@ -255,6 +255,18 @@ pub enum DescribeAllManagedProductsError {
     WafInternalErrorException(crate::types::error::WafInternalErrorException),
     /// <p>The operation isn't valid.</p>
     WafInvalidOperationException(crate::types::error::WafInvalidOperationException),
+    /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You specified a parameter name or value that isn't valid.</p></li>
+    /// <li>
+    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.</p></li>
+    /// <li>
+    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p></li>
+    /// <li>
+    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p></li>
+    /// </ul>
+    WafInvalidParameterException(crate::types::error::WafInvalidParameterException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -290,6 +302,7 @@ impl DescribeAllManagedProductsError {
         match self {
             Self::WafInternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafInvalidOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::WafInvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -301,12 +314,17 @@ impl DescribeAllManagedProductsError {
     pub fn is_waf_invalid_operation_exception(&self) -> bool {
         matches!(self, Self::WafInvalidOperationException(_))
     }
+    /// Returns `true` if the error kind is `DescribeAllManagedProductsError::WafInvalidParameterException`.
+    pub fn is_waf_invalid_parameter_exception(&self) -> bool {
+        matches!(self, Self::WafInvalidParameterException(_))
+    }
 }
 impl ::std::error::Error for DescribeAllManagedProductsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::WafInternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafInvalidOperationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::WafInvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -316,6 +334,7 @@ impl ::std::fmt::Display for DescribeAllManagedProductsError {
         match self {
             Self::WafInternalErrorException(_inner) => _inner.fmt(f),
             Self::WafInvalidOperationException(_inner) => _inner.fmt(f),
+            Self::WafInvalidParameterException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -339,6 +358,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeAllMa
         match self {
             Self::WafInternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafInvalidOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::WafInvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFunctionInput {
-    /// <p>The name of the Lambda function or version.</p>
+    /// <p>The name or ARN of the Lambda function or version.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct DeleteFunctionInput {
     pub qualifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFunctionInput {
-    /// <p>The name of the Lambda function or version.</p>
+    /// <p>The name or ARN of the Lambda function or version.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -53,7 +53,7 @@ pub struct DeleteFunctionInputBuilder {
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFunctionInputBuilder {
-    /// <p>The name of the Lambda function or version.</p>
+    /// <p>The name or ARN of the Lambda function or version.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -69,7 +69,7 @@ impl DeleteFunctionInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function or version.</p>
+    /// <p>The name or ARN of the Lambda function or version.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -84,7 +84,7 @@ impl DeleteFunctionInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function or version.</p>
+    /// <p>The name or ARN of the Lambda function or version.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

@@ -26,6 +26,12 @@ pub struct WorkspaceSummary {
     pub authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
     /// <p>The list of tags associated with the workspace.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
+    pub license_type: ::std::option::Option<crate::types::LicenseType>,
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub grafana_token: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceSummary {
     /// <p>The date that the workspace was created.</p>
@@ -77,6 +83,16 @@ impl WorkspaceSummary {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
+    pub fn license_type(&self) -> ::std::option::Option<&crate::types::LicenseType> {
+        self.license_type.as_ref()
+    }
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub fn grafana_token(&self) -> ::std::option::Option<&str> {
+        self.grafana_token.as_deref()
+    }
 }
 impl ::std::fmt::Debug for WorkspaceSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -92,6 +108,8 @@ impl ::std::fmt::Debug for WorkspaceSummary {
         formatter.field("status", &self.status);
         formatter.field("authentication", &self.authentication);
         formatter.field("tags", &self.tags);
+        formatter.field("license_type", &self.license_type);
+        formatter.field("grafana_token", &self.grafana_token);
         formatter.finish()
     }
 }
@@ -117,6 +135,8 @@ pub struct WorkspaceSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::WorkspaceStatus>,
     pub(crate) authentication: ::std::option::Option<crate::types::AuthenticationSummary>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) license_type: ::std::option::Option<crate::types::LicenseType>,
+    pub(crate) grafana_token: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceSummaryBuilder {
     /// <p>The date that the workspace was created.</p>
@@ -292,6 +312,40 @@ impl WorkspaceSummaryBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
+    pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
+        self.license_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
+    pub fn set_license_type(mut self, input: ::std::option::Option<crate::types::LicenseType>) -> Self {
+        self.license_type = input;
+        self
+    }
+    /// <p>Specifies whether this workspace has a full Grafana Enterprise license.</p><note>
+    /// <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+    /// </note>
+    pub fn get_license_type(&self) -> &::std::option::Option<crate::types::LicenseType> {
+        &self.license_type
+    }
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub fn grafana_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.grafana_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub fn set_grafana_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.grafana_token = input;
+        self
+    }
+    /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register with Grafana Labs</a>.</p>
+    pub fn get_grafana_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.grafana_token
+    }
     /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::types::WorkspaceSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`created`](crate::types::builders::WorkspaceSummaryBuilder::created)
@@ -343,6 +397,8 @@ impl WorkspaceSummaryBuilder {
             })?,
             authentication: self.authentication,
             tags: self.tags,
+            license_type: self.license_type,
+            grafana_token: self.grafana_token,
         })
     }
 }
@@ -360,6 +416,8 @@ impl ::std::fmt::Debug for WorkspaceSummaryBuilder {
         formatter.field("status", &self.status);
         formatter.field("authentication", &self.authentication);
         formatter.field("tags", &self.tags);
+        formatter.field("license_type", &self.license_type);
+        formatter.field("grafana_token", &self.grafana_token);
         formatter.finish()
     }
 }

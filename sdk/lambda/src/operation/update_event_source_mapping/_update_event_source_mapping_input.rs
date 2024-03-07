@@ -5,7 +5,7 @@
 pub struct UpdateEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -72,7 +72,7 @@ impl UpdateEventSourceMappingInput {
     pub fn uuid(&self) -> ::std::option::Option<&str> {
         self.uuid.as_deref()
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -212,7 +212,7 @@ impl UpdateEventSourceMappingInputBuilder {
     pub fn get_uuid(&self) -> &::std::option::Option<::std::string::String> {
         &self.uuid
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -229,7 +229,7 @@ impl UpdateEventSourceMappingInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -246,7 +246,7 @@ impl UpdateEventSourceMappingInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

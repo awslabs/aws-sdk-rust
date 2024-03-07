@@ -224,4 +224,31 @@ impl StartDeploymentFluentBuilder {
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_identifier()
     }
+    /// Adds a key-value pair to `DynamicExtensionParameters`.
+    ///
+    /// To override the contents of this collection use [`set_dynamic_extension_parameters`](Self::set_dynamic_extension_parameters).
+    ///
+    /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+    pub fn dynamic_extension_parameters(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.dynamic_extension_parameters(k.into(), v.into());
+        self
+    }
+    /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+    pub fn set_dynamic_extension_parameters(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_dynamic_extension_parameters(input);
+        self
+    }
+    /// <p>A map of dynamic extension parameter names to values to pass to associated extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+    pub fn get_dynamic_extension_parameters(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_dynamic_extension_parameters()
+    }
 }

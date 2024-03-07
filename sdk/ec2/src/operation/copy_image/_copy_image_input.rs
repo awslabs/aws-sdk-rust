@@ -47,6 +47,16 @@ pub struct CopyImageInput {
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub copy_image_tags: ::std::option::Option<bool>,
+    /// <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots, or both.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To tag the new AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li>
+    /// <p>To tag the new snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all the new snapshots.</p></li>
+    /// </ul>
+    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CopyImageInput {
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
@@ -112,6 +122,20 @@ impl CopyImageInput {
     pub fn copy_image_tags(&self) -> ::std::option::Option<bool> {
         self.copy_image_tags
     }
+    /// <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots, or both.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To tag the new AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li>
+    /// <p>To tag the new snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all the new snapshots.</p></li>
+    /// </ul>
+    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
+    pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
+        self.tag_specifications.as_deref().unwrap_or_default()
+    }
 }
 impl CopyImageInput {
     /// Creates a new builder-style object to manufacture [`CopyImageInput`](crate::operation::copy_image::CopyImageInput).
@@ -134,6 +158,7 @@ pub struct CopyImageInputBuilder {
     pub(crate) destination_outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) copy_image_tags: ::std::option::Option<bool>,
+    pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CopyImageInputBuilder {
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
@@ -348,6 +373,50 @@ impl CopyImageInputBuilder {
     pub fn get_copy_image_tags(&self) -> &::std::option::Option<bool> {
         &self.copy_image_tags
     }
+    /// Appends an item to `tag_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots, or both.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To tag the new AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li>
+    /// <p>To tag the new snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all the new snapshots.</p></li>
+    /// </ul>
+    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        let mut v = self.tag_specifications.unwrap_or_default();
+        v.push(input);
+        self.tag_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots, or both.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To tag the new AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li>
+    /// <p>To tag the new snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all the new snapshots.</p></li>
+    /// </ul>
+    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input;
+        self
+    }
+    /// <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots, or both.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To tag the new AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li>
+    /// <p>To tag the new snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all the new snapshots.</p></li>
+    /// </ul>
+    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        &self.tag_specifications
+    }
     /// Consumes the builder and constructs a [`CopyImageInput`](crate::operation::copy_image::CopyImageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::copy_image::CopyImageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::copy_image::CopyImageInput {
@@ -361,6 +430,7 @@ impl CopyImageInputBuilder {
             destination_outpost_arn: self.destination_outpost_arn,
             dry_run: self.dry_run,
             copy_image_tags: self.copy_image_tags,
+            tag_specifications: self.tag_specifications,
         })
     }
 }

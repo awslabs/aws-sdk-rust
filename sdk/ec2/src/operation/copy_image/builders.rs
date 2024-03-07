@@ -314,4 +314,46 @@ impl CopyImageFluentBuilder {
     pub fn get_copy_image_tags(&self) -> &::std::option::Option<bool> {
         self.inner.get_copy_image_tags()
     }
+    /// Appends an item to `TagSpecifications`.
+    ///
+    /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
+    ///
+    /// <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots, or both.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To tag the new AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li>
+    /// <p>To tag the new snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all the new snapshots.</p></li>
+    /// </ul>
+    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
+        self.inner = self.inner.tag_specifications(input);
+        self
+    }
+    /// <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots, or both.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To tag the new AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li>
+    /// <p>To tag the new snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all the new snapshots.</p></li>
+    /// </ul>
+    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.inner = self.inner.set_tag_specifications(input);
+        self
+    }
+    /// <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the snapshots, or both.</p>
+    /// <ul>
+    /// <li>
+    /// <p>To tag the new AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li>
+    /// <p>To tag the new snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all the new snapshots.</p></li>
+    /// </ul>
+    /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
+    /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+    pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
+        self.inner.get_tag_specifications()
+    }
 }

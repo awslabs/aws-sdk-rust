@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InvokeInput {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -36,7 +36,7 @@ pub struct InvokeInput {
     pub qualifier: ::std::option::Option<::std::string::String>,
 }
 impl InvokeInput {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -111,7 +111,7 @@ pub struct InvokeInputBuilder {
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,
 }
 impl InvokeInputBuilder {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -127,7 +127,7 @@ impl InvokeInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -142,7 +142,7 @@ impl InvokeInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

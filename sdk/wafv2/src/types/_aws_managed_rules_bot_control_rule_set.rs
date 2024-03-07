@@ -89,7 +89,7 @@ impl AwsManagedRulesBotControlRuleSetBuilder {
                     "inspection_level was not specified but it is required when building AwsManagedRulesBotControlRuleSet",
                 )
             })?,
-            enable_machine_learning: self.enable_machine_learning.unwrap_or_default(),
+            enable_machine_learning: self.enable_machine_learning.unwrap_or(true),
         })
     }
 }

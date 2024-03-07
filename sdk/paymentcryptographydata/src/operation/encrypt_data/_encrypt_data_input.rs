@@ -5,7 +5,9 @@
 pub struct EncryptDataInput {
     /// <p>The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.</p>
     pub key_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The plaintext to be encrypted.</p>
+    /// <p>The plaintext to be encrypted.</p><note>
+    /// <p>For encryption using asymmetric keys, plaintext data length is constrained by encryption key strength that you define in <code>KeyAlgorithm</code> and padding type that you define in <code>AsymmetricEncryptionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+    /// </note>
     pub plain_text: ::std::option::Option<::std::string::String>,
     /// <p>The encryption key type and attributes for plaintext encryption.</p>
     pub encryption_attributes: ::std::option::Option<crate::types::EncryptionDecryptionAttributes>,
@@ -15,7 +17,9 @@ impl EncryptDataInput {
     pub fn key_identifier(&self) -> ::std::option::Option<&str> {
         self.key_identifier.as_deref()
     }
-    /// <p>The plaintext to be encrypted.</p>
+    /// <p>The plaintext to be encrypted.</p><note>
+    /// <p>For encryption using asymmetric keys, plaintext data length is constrained by encryption key strength that you define in <code>KeyAlgorithm</code> and padding type that you define in <code>AsymmetricEncryptionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+    /// </note>
     pub fn plain_text(&self) -> ::std::option::Option<&str> {
         self.plain_text.as_deref()
     }
@@ -64,18 +68,24 @@ impl EncryptDataInputBuilder {
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_identifier
     }
-    /// <p>The plaintext to be encrypted.</p>
+    /// <p>The plaintext to be encrypted.</p><note>
+    /// <p>For encryption using asymmetric keys, plaintext data length is constrained by encryption key strength that you define in <code>KeyAlgorithm</code> and padding type that you define in <code>AsymmetricEncryptionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+    /// </note>
     /// This field is required.
     pub fn plain_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.plain_text = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The plaintext to be encrypted.</p>
+    /// <p>The plaintext to be encrypted.</p><note>
+    /// <p>For encryption using asymmetric keys, plaintext data length is constrained by encryption key strength that you define in <code>KeyAlgorithm</code> and padding type that you define in <code>AsymmetricEncryptionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+    /// </note>
     pub fn set_plain_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.plain_text = input;
         self
     }
-    /// <p>The plaintext to be encrypted.</p>
+    /// <p>The plaintext to be encrypted.</p><note>
+    /// <p>For encryption using asymmetric keys, plaintext data length is constrained by encryption key strength that you define in <code>KeyAlgorithm</code> and padding type that you define in <code>AsymmetricEncryptionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+    /// </note>
     pub fn get_plain_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.plain_text
     }

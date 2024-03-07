@@ -83,6 +83,22 @@ pub fn de_get_decrypted_api_key_http_error(
             }
             tmp
         }),
+        "WAFNonexistentItemException" => crate::operation::get_decrypted_api_key::GetDecryptedAPIKeyError::WafNonexistentItemException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::WafNonexistentItemExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_waf_nonexistent_item_exception::de_waf_nonexistent_item_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_decrypted_api_key::GetDecryptedAPIKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::get_decrypted_api_key::GetDecryptedAPIKeyError::generic(generic),
     })
 }

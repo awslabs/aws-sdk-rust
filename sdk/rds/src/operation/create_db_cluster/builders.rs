@@ -1250,7 +1250,7 @@ impl CreateDBClusterFluentBuilder {
     /// <li>
     /// <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code></p></li>
     /// <li>
-    /// <p>Multi-AZ DB clusters - <code>io1</code></p></li>
+    /// <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
@@ -1275,7 +1275,7 @@ impl CreateDBClusterFluentBuilder {
     /// <li>
     /// <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code></p></li>
     /// <li>
-    /// <p>Multi-AZ DB clusters - <code>io1</code></p></li>
+    /// <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
@@ -1300,7 +1300,7 @@ impl CreateDBClusterFluentBuilder {
     /// <li>
     /// <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code></p></li>
     /// <li>
-    /// <p>Multi-AZ DB clusters - <code>io1</code></p></li>
+    /// <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code></p></li>
     /// </ul>
     /// <p>Default:</p>
     /// <ul>
@@ -1732,18 +1732,21 @@ impl CreateDBClusterFluentBuilder {
         self.inner.get_enable_local_write_forwarding()
     }
     /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
     pub fn ca_certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ca_certificate_identifier(input.into());
         self
     }
     /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
     pub fn set_ca_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ca_certificate_identifier(input);
         self
     }
     /// <p>The CA certificate identifier to use for the DB cluster's server certificate.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
     pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ca_certificate_identifier()

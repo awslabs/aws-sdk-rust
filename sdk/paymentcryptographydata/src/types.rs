@@ -107,6 +107,12 @@ pub use crate::types::_card_generation_attributes::CardGenerationAttributes;
 
 pub use crate::types::_encryption_decryption_attributes::EncryptionDecryptionAttributes;
 
+pub use crate::types::_emv_encryption_attributes::EmvEncryptionAttributes;
+
+pub use crate::types::_emv_encryption_mode::EmvEncryptionMode;
+
+pub use crate::types::_emv_major_key_derivation_mode::EmvMajorKeyDerivationMode;
+
 pub use crate::types::_asymmetric_encryption_attributes::AsymmetricEncryptionAttributes;
 
 mod _amex_card_security_code_version1;
@@ -148,6 +154,12 @@ mod _dukpt_key_variant;
 mod _dynamic_card_verification_code;
 
 mod _dynamic_card_verification_value;
+
+mod _emv_encryption_attributes;
+
+mod _emv_encryption_mode;
+
+mod _emv_major_key_derivation_mode;
 
 mod _encryption_decryption_attributes;
 

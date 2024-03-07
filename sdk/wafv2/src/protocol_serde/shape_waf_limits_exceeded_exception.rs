@@ -17,6 +17,13 @@ pub(crate) fn de_waf_limits_exceeded_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "SourceType" => {
+                    builder = builder.set_source_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

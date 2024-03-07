@@ -6,7 +6,7 @@ pub fn ser_aws_managed_rules_bot_control_rule_set(
     {
         object.key("InspectionLevel").string(input.inspection_level.as_str());
     }
-    if input.enable_machine_learning {
+    if !input.enable_machine_learning {
         object.key("EnableMachineLearning").boolean(input.enable_machine_learning);
     }
     Ok(())

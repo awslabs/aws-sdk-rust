@@ -8,6 +8,8 @@ pub enum EncryptionDecryptionAttributes {
     Asymmetric(crate::types::AsymmetricEncryptionAttributes),
     /// <p>Parameters that are required to encrypt plaintext data using DUKPT.</p>
     Dukpt(crate::types::DukptEncryptionAttributes),
+    /// <p>Parameters for plaintext encryption using EMV keys.</p>
+    Emv(crate::types::EmvEncryptionAttributes),
     /// <p>Parameters that are required to perform encryption and decryption using symmetric keys.</p>
     Symmetric(crate::types::SymmetricEncryptionAttributes),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -46,6 +48,19 @@ impl EncryptionDecryptionAttributes {
     /// Returns true if this is a [`Dukpt`](crate::types::EncryptionDecryptionAttributes::Dukpt).
     pub fn is_dukpt(&self) -> bool {
         self.as_dukpt().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Emv`](crate::types::EncryptionDecryptionAttributes::Emv), extracting the inner [`EmvEncryptionAttributes`](crate::types::EmvEncryptionAttributes).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_emv(&self) -> ::std::result::Result<&crate::types::EmvEncryptionAttributes, &Self> {
+        if let EncryptionDecryptionAttributes::Emv(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Emv`](crate::types::EncryptionDecryptionAttributes::Emv).
+    pub fn is_emv(&self) -> bool {
+        self.as_emv().is_ok()
     }
     /// Tries to convert the enum instance into [`Symmetric`](crate::types::EncryptionDecryptionAttributes::Symmetric), extracting the inner [`SymmetricEncryptionAttributes`](crate::types::SymmetricEncryptionAttributes).
     /// Returns `Err(&Self)` if it can't be converted.

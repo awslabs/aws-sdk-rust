@@ -268,6 +268,8 @@ pub enum GetDecryptedAPIKeyError {
     WafInvalidParameterException(crate::types::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
     WafInvalidResourceException(crate::types::error::WafInvalidResourceException),
+    /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate.</p>
+    WafNonexistentItemException(crate::types::error::WafNonexistentItemException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -305,6 +307,7 @@ impl GetDecryptedAPIKeyError {
             Self::WafInvalidOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafInvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WafInvalidResourceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::WafNonexistentItemException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -324,6 +327,10 @@ impl GetDecryptedAPIKeyError {
     pub fn is_waf_invalid_resource_exception(&self) -> bool {
         matches!(self, Self::WafInvalidResourceException(_))
     }
+    /// Returns `true` if the error kind is `GetDecryptedAPIKeyError::WafNonexistentItemException`.
+    pub fn is_waf_nonexistent_item_exception(&self) -> bool {
+        matches!(self, Self::WafNonexistentItemException(_))
+    }
 }
 impl ::std::error::Error for GetDecryptedAPIKeyError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -332,6 +339,7 @@ impl ::std::error::Error for GetDecryptedAPIKeyError {
             Self::WafInvalidOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafInvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::WafInvalidResourceException(_inner) => ::std::option::Option::Some(_inner),
+            Self::WafNonexistentItemException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -343,6 +351,7 @@ impl ::std::fmt::Display for GetDecryptedAPIKeyError {
             Self::WafInvalidOperationException(_inner) => _inner.fmt(f),
             Self::WafInvalidParameterException(_inner) => _inner.fmt(f),
             Self::WafInvalidResourceException(_inner) => _inner.fmt(f),
+            Self::WafNonexistentItemException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -368,6 +377,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetDecryptedA
             Self::WafInvalidOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafInvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WafInvalidResourceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::WafNonexistentItemException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

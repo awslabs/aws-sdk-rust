@@ -29,6 +29,8 @@ impl CreateWorkspacesInputBuilder {
 /// <p>The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p></li>
 /// <li>
 /// <p>You don't need to specify the <code>PCOIP</code> protocol for Linux bundles because <code>WSP</code> is the default protocol for those bundles.</p></li>
+/// <li>
+/// <p>User-decoupled WorkSpaces are only supported by Amazon WorkSpaces Core.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -716,6 +716,9 @@ impl From<crate::operation::describe_all_managed_products::DescribeAllManagedPro
             crate::operation::describe_all_managed_products::DescribeAllManagedProductsError::WafInvalidOperationException(inner) => {
                 Error::WafInvalidOperationException(inner)
             }
+            crate::operation::describe_all_managed_products::DescribeAllManagedProductsError::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
             crate::operation::describe_all_managed_products::DescribeAllManagedProductsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -904,6 +907,9 @@ impl From<crate::operation::get_decrypted_api_key::GetDecryptedAPIKeyError> for 
             }
             crate::operation::get_decrypted_api_key::GetDecryptedAPIKeyError::WafInvalidResourceException(inner) => {
                 Error::WafInvalidResourceException(inner)
+            }
+            crate::operation::get_decrypted_api_key::GetDecryptedAPIKeyError::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
             }
             crate::operation::get_decrypted_api_key::GetDecryptedAPIKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }

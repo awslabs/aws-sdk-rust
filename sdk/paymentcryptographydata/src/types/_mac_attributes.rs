@@ -10,7 +10,7 @@ pub enum MacAttributes {
     DukptCmac(crate::types::MacAlgorithmDukpt),
     /// <p>Parameters that are required for MAC generation or verification using DUKPT ISO 9797 algorithm1.</p>
     DukptIso9797Algorithm1(crate::types::MacAlgorithmDukpt),
-    /// <p>Parameters that are required for MAC generation or verification using DUKPT ISO 9797 algorithm2.</p>
+    /// <p>Parameters that are required for MAC generation or verification using DUKPT ISO 9797 algorithm3.</p>
     DukptIso9797Algorithm3(crate::types::MacAlgorithmDukpt),
     /// <p>Parameters that are required for MAC generation or verification using EMV MAC algorithm.</p>
     EmvMac(crate::types::MacAlgorithmEmv),

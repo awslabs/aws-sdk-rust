@@ -23,7 +23,7 @@ impl VerifyMacInputBuilder {
 /// Fluent builder constructing a request to `VerifyMac`.
 ///
 /// <p>Verifies a Message Authentication Code (MAC).</p>
-/// <p>You can use this operation when keys won't be shared but mutual data is present on both ends for validation. In this case, known data values are used to generate a MAC on both ends for verification without sending or receiving data in ciphertext or plaintext. You can use this operation to verify a DUPKT, HMAC or EMV MAC by setting generation attributes and algorithm to the associated values. Use the same encryption key for MAC verification as you use for <code>GenerateMac</code>.</p>
+/// <p>You can use this operation to verify MAC for message data authentication such as . In this operation, you must use the same message data, secret encryption key and MAC algorithm that was used to generate MAC. You can use this operation to verify a DUPKT, CMAC, HMAC or EMV MAC by setting generation attributes and algorithm to the associated values.</p>
 /// <p>For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
 /// <p><b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
@@ -124,17 +124,17 @@ impl VerifyMacFluentBuilder {
     pub fn get_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_identifier()
     }
-    /// <p>The data on for which MAC is under verification.</p>
+    /// <p>The data on for which MAC is under verification. This value must be hexBinary.</p>
     pub fn message_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_data(input.into());
         self
     }
-    /// <p>The data on for which MAC is under verification.</p>
+    /// <p>The data on for which MAC is under verification. This value must be hexBinary.</p>
     pub fn set_message_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_data(input);
         self
     }
-    /// <p>The data on for which MAC is under verification.</p>
+    /// <p>The data on for which MAC is under verification. This value must be hexBinary.</p>
     pub fn get_message_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_message_data()
     }

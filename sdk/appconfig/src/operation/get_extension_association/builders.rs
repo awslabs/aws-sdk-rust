@@ -22,7 +22,7 @@ impl GetExtensionAssociationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetExtensionAssociation`.
 ///
-/// <p>Returns information about an AppConfig extension association. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
+/// <p>Returns information about an AppConfig extension association. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending workflows</a> in the <i>AppConfig User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetExtensionAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

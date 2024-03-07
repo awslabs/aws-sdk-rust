@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProvisionedConcurrencyConfigInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -19,7 +19,7 @@ pub struct DeleteProvisionedConcurrencyConfigInput {
     pub qualifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProvisionedConcurrencyConfigInput {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -53,7 +53,7 @@ pub struct DeleteProvisionedConcurrencyConfigInputBuilder {
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProvisionedConcurrencyConfigInputBuilder {
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -69,7 +69,7 @@ impl DeleteProvisionedConcurrencyConfigInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -84,7 +84,7 @@ impl DeleteProvisionedConcurrencyConfigInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

@@ -112,25 +112,19 @@ impl BundleInstanceFluentBuilder {
         self
     }
     /// <p>The ID of the instance to bundle.</p>
-    /// <p>Type: String</p>
     /// <p>Default: None</p>
-    /// <p>Required: Yes</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
     /// <p>The ID of the instance to bundle.</p>
-    /// <p>Type: String</p>
     /// <p>Default: None</p>
-    /// <p>Required: Yes</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
     /// <p>The ID of the instance to bundle.</p>
-    /// <p>Type: String</p>
     /// <p>Default: None</p>
-    /// <p>Required: Yes</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }

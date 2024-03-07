@@ -55,6 +55,17 @@ pub fn ser_copy_image_input_input_input(
     if let Some(var_20) = &input.copy_image_tags {
         scope_19.boolean(*var_20);
     }
+    #[allow(unused_mut)]
+    let mut scope_21 = writer.prefix("TagSpecification");
+    if let Some(var_22) = &input.tag_specifications {
+        let mut list_24 = scope_21.start_list(true, Some("item"));
+        for item_23 in var_22 {
+            #[allow(unused_mut)]
+            let mut entry_25 = list_24.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_25, item_23)?;
+        }
+        list_24.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

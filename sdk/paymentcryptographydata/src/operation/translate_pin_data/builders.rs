@@ -23,10 +23,10 @@ impl TranslatePinDataInputBuilder {
 /// Fluent builder constructing a request to `TranslatePinData`.
 ///
 /// <p>Translates encrypted PIN block from and to ISO 9564 formats 0,1,3,4. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/translate-pin-data.html">Translate PIN data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
-/// <p>PIN block translation involves changing the encrytion of PIN block from one encryption key to another encryption key and changing PIN block format from one to another without PIN block data leaving Amazon Web Services Payment Cryptography. The encryption key transformation can be from PEK (Pin Encryption Key) to BDK (Base Derivation Key) for DUKPT or from BDK for DUKPT to PEK. Amazon Web Services Payment Cryptography supports <code>TDES</code> and <code>AES</code> key derivation type for DUKPT tranlations. You can use this operation for P2PE (Point to Point Encryption) use cases where the encryption keys should change but the processing system either does not need to, or is not permitted to, decrypt the data.</p>
+/// <p>PIN block translation involves changing the encrytion of PIN block from one encryption key to another encryption key and changing PIN block format from one to another without PIN block data leaving Amazon Web Services Payment Cryptography. The encryption key transformation can be from PEK (Pin Encryption Key) to BDK (Base Derivation Key) for DUKPT or from BDK for DUKPT to PEK. Amazon Web Services Payment Cryptography supports <code>TDES</code> and <code>AES</code> key derivation type for DUKPT translations.</p>
 /// <p>The allowed combinations of PIN block format translations are guided by PCI. It is important to note that not all encrypted PIN block formats (example, format 1) require PAN (Primary Account Number) as input. And as such, PIN block format that requires PAN (example, formats 0,3,4) cannot be translated to a format (format 1) that does not require a PAN for generation.</p>
 /// <p>For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p><note>
-/// <p>At this time, Amazon Web Services Payment Cryptography does not support translations to PIN format 4.</p>
+/// <p>Amazon Web Services Payment Cryptography currently supports ISO PIN block 4 translation for PIN block built using legacy PAN length. That is, PAN is the right most 12 digits excluding the check digits.</p>
 /// </note>
 /// <p><b>Cross-account use</b>: This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
@@ -149,31 +149,31 @@ impl TranslatePinDataFluentBuilder {
     pub fn get_outgoing_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_outgoing_key_identifier()
     }
-    /// <p>The format of the incoming PIN block data for tranlation within Amazon Web Services Payment Cryptography.</p>
+    /// <p>The format of the incoming PIN block data for translation within Amazon Web Services Payment Cryptography.</p>
     pub fn incoming_translation_attributes(mut self, input: crate::types::TranslationIsoFormats) -> Self {
         self.inner = self.inner.incoming_translation_attributes(input);
         self
     }
-    /// <p>The format of the incoming PIN block data for tranlation within Amazon Web Services Payment Cryptography.</p>
+    /// <p>The format of the incoming PIN block data for translation within Amazon Web Services Payment Cryptography.</p>
     pub fn set_incoming_translation_attributes(mut self, input: ::std::option::Option<crate::types::TranslationIsoFormats>) -> Self {
         self.inner = self.inner.set_incoming_translation_attributes(input);
         self
     }
-    /// <p>The format of the incoming PIN block data for tranlation within Amazon Web Services Payment Cryptography.</p>
+    /// <p>The format of the incoming PIN block data for translation within Amazon Web Services Payment Cryptography.</p>
     pub fn get_incoming_translation_attributes(&self) -> &::std::option::Option<crate::types::TranslationIsoFormats> {
         self.inner.get_incoming_translation_attributes()
     }
-    /// <p>The format of the outgoing PIN block data after tranlation by Amazon Web Services Payment Cryptography.</p>
+    /// <p>The format of the outgoing PIN block data after translation by Amazon Web Services Payment Cryptography.</p>
     pub fn outgoing_translation_attributes(mut self, input: crate::types::TranslationIsoFormats) -> Self {
         self.inner = self.inner.outgoing_translation_attributes(input);
         self
     }
-    /// <p>The format of the outgoing PIN block data after tranlation by Amazon Web Services Payment Cryptography.</p>
+    /// <p>The format of the outgoing PIN block data after translation by Amazon Web Services Payment Cryptography.</p>
     pub fn set_outgoing_translation_attributes(mut self, input: ::std::option::Option<crate::types::TranslationIsoFormats>) -> Self {
         self.inner = self.inner.set_outgoing_translation_attributes(input);
         self
     }
-    /// <p>The format of the outgoing PIN block data after tranlation by Amazon Web Services Payment Cryptography.</p>
+    /// <p>The format of the outgoing PIN block data after translation by Amazon Web Services Payment Cryptography.</p>
     pub fn get_outgoing_translation_attributes(&self) -> &::std::option::Option<crate::types::TranslationIsoFormats> {
         self.inner.get_outgoing_translation_attributes()
     }
@@ -191,17 +191,17 @@ impl TranslatePinDataFluentBuilder {
     pub fn get_encrypted_pin_block(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_encrypted_pin_block()
     }
-    /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block tranlation.</p>
+    /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block translation.</p>
     pub fn incoming_dukpt_attributes(mut self, input: crate::types::DukptDerivationAttributes) -> Self {
         self.inner = self.inner.incoming_dukpt_attributes(input);
         self
     }
-    /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block tranlation.</p>
+    /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block translation.</p>
     pub fn set_incoming_dukpt_attributes(mut self, input: ::std::option::Option<crate::types::DukptDerivationAttributes>) -> Self {
         self.inner = self.inner.set_incoming_dukpt_attributes(input);
         self
     }
-    /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block tranlation.</p>
+    /// <p>The attributes and values to use for incoming DUKPT encryption key for PIN block translation.</p>
     pub fn get_incoming_dukpt_attributes(&self) -> &::std::option::Option<crate::types::DukptDerivationAttributes> {
         self.inner.get_incoming_dukpt_attributes()
     }

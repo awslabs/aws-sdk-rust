@@ -6,7 +6,15 @@
 pub struct WafLimitsExceededException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>Source type for the exception.</p>
+    pub source_type: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl WafLimitsExceededException {
+    /// <p>Source type for the exception.</p>
+    pub fn source_type(&self) -> ::std::option::Option<&str> {
+        self.source_type.as_deref()
+    }
 }
 impl WafLimitsExceededException {
     /// Returns the error message.
@@ -49,6 +57,7 @@ impl WafLimitsExceededException {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct WafLimitsExceededExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) source_type: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl WafLimitsExceededExceptionBuilder {
@@ -66,6 +75,20 @@ impl WafLimitsExceededExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>Source type for the exception.</p>
+    pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Source type for the exception.</p>
+    pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_type = input;
+        self
+    }
+    /// <p>Source type for the exception.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_type
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -81,6 +104,7 @@ impl WafLimitsExceededExceptionBuilder {
     pub fn build(self) -> crate::types::error::WafLimitsExceededException {
         crate::types::error::WafLimitsExceededException {
             message: self.message,
+            source_type: self.source_type,
             meta: self.meta.unwrap_or_default(),
         }
     }

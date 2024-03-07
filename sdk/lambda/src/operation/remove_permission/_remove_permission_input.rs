@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemovePermissionInput {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ pub struct RemovePermissionInput {
     pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl RemovePermissionInput {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -67,7 +67,7 @@ pub struct RemovePermissionInputBuilder {
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
 }
 impl RemovePermissionInputBuilder {
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -83,7 +83,7 @@ impl RemovePermissionInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -98,7 +98,7 @@ impl RemovePermissionInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p>The name or ARN of the Lambda function, version, or alias.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>

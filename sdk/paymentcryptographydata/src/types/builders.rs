@@ -63,4 +63,6 @@ pub use crate::types::_visa_pin_verification_value::VisaPinVerificationValueBuil
 
 pub use crate::types::_visa_pin::VisaPinBuilder;
 
+pub use crate::types::_emv_encryption_attributes::EmvEncryptionAttributesBuilder;
+
 pub use crate::types::_asymmetric_encryption_attributes::AsymmetricEncryptionAttributesBuilder;

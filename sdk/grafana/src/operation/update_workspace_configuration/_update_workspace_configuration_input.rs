@@ -7,9 +7,9 @@ pub struct UpdateWorkspaceConfigurationInput {
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workspace to update.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Specifies the version of Grafana to support in the workspace. If not specified, keeps the current version of the workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
-    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a> operation.</p>
     pub grafana_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkspaceConfigurationInput {
@@ -21,9 +21,9 @@ impl UpdateWorkspaceConfigurationInput {
     pub fn workspace_id(&self) -> ::std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Specifies the version of Grafana to support in the workspace. If not specified, keeps the current version of the workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
-    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a> operation.</p>
     pub fn grafana_version(&self) -> ::std::option::Option<&str> {
         self.grafana_version.as_deref()
     }
@@ -74,23 +74,23 @@ impl UpdateWorkspaceConfigurationInputBuilder {
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workspace_id
     }
-    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Specifies the version of Grafana to support in the workspace. If not specified, keeps the current version of the workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
-    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a> operation.</p>
     pub fn grafana_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grafana_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Specifies the version of Grafana to support in the workspace. If not specified, keeps the current version of the workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
-    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a> operation.</p>
     pub fn set_grafana_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grafana_version = input;
         self
     }
-    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Specifies the version of Grafana to support in the workspace. If not specified, keeps the current version of the workspace.</p>
     /// <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p>
-    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
+    /// <p>To know what versions are available to upgrade to for a specific workspace, see the <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a> operation.</p>
     pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.grafana_version
     }

@@ -102,6 +102,17 @@ pub fn ser_register_image_input_input_input(
     if let Some(var_40) = &input.imds_support {
         scope_39.string(var_40.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_41 = writer.prefix("TagSpecification");
+    if let Some(var_42) = &input.tag_specifications {
+        let mut list_44 = scope_41.start_list(true, Some("item"));
+        for item_43 in var_42 {
+            #[allow(unused_mut)]
+            let mut entry_45 = list_44.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_45, item_43)?;
+        }
+        list_44.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

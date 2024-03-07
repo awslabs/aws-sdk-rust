@@ -5,7 +5,7 @@
 pub struct PutFunctionCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub code_signing_config_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -23,7 +23,7 @@ impl PutFunctionCodeSigningConfigInput {
     pub fn code_signing_config_arn(&self) -> ::std::option::Option<&str> {
         self.code_signing_config_arn.as_deref()
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -68,7 +68,7 @@ impl PutFunctionCodeSigningConfigInputBuilder {
     pub fn get_code_signing_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.code_signing_config_arn
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -84,7 +84,7 @@ impl PutFunctionCodeSigningConfigInputBuilder {
         self.function_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
@@ -99,7 +99,7 @@ impl PutFunctionCodeSigningConfigInputBuilder {
         self.function_name = input;
         self
     }
-    /// <p>The name of the Lambda function.</p>
+    /// <p>The name or ARN of the Lambda function.</p>
     /// <p class="title"><b>Name formats</b></p>
     /// <ul>
     /// <li>
