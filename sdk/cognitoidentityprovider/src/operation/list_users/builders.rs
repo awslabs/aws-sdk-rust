@@ -180,12 +180,12 @@ impl ListUsersFluentBuilder {
     pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_pagination_token()
     }
-    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
+    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
     /// <ul>
     /// <li>
     /// <p><i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p></li>
     /// <li>
-    /// <p><i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".</p></li>
+    /// <p><i>Filter-Type</i>: For an exact match, use <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^= \"Jon\"</code>".</p></li>
     /// <li>
     /// <p><i>AttributeValue</i>: The attribute value that must be matched for each user.</p></li>
     /// </ul>
@@ -222,12 +222,12 @@ impl ListUsersFluentBuilder {
         self.inner = self.inner.filter(input.into());
         self
     }
-    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
+    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
     /// <ul>
     /// <li>
     /// <p><i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p></li>
     /// <li>
-    /// <p><i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".</p></li>
+    /// <p><i>Filter-Type</i>: For an exact match, use <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^= \"Jon\"</code>".</p></li>
     /// <li>
     /// <p><i>AttributeValue</i>: The attribute value that must be matched for each user.</p></li>
     /// </ul>
@@ -264,12 +264,12 @@ impl ListUsersFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
+    /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (<code>\</code>) character. For example, <code>"family_name = \"Reddy\""</code>.</p>
     /// <ul>
     /// <li>
     /// <p><i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p></li>
     /// <li>
-    /// <p><i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"".</p></li>
+    /// <p><i>Filter-Type</i>: For an exact match, use <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^= \"Jon\"</code>".</p></li>
     /// <li>
     /// <p><i>AttributeValue</i>: The attribute value that must be matched for each user.</p></li>
     /// </ul>

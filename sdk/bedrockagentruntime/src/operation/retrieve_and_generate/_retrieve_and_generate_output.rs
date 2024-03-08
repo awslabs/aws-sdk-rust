@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RetrieveAndGenerateOutput {
-    /// Identifier of the session.
+    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub session_id: ::std::string::String,
-    /// Service response of the turn
+    /// <p>Contains the response generated from querying the knowledge base.</p>
     pub output: ::std::option::Option<crate::types::RetrieveAndGenerateOutput>,
-    /// List of citations
+    /// <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
     pub citations: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>,
     _request_id: Option<String>,
 }
 impl RetrieveAndGenerateOutput {
-    /// Identifier of the session.
+    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub fn session_id(&self) -> &str {
         use std::ops::Deref;
         self.session_id.deref()
     }
-    /// Service response of the turn
+    /// <p>Contains the response generated from querying the knowledge base.</p>
     pub fn output(&self) -> ::std::option::Option<&crate::types::RetrieveAndGenerateOutput> {
         self.output.as_ref()
     }
-    /// List of citations
+    /// <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.citations.is_none()`.
     pub fn citations(&self) -> &[crate::types::Citation] {
@@ -60,33 +60,33 @@ pub struct RetrieveAndGenerateOutputBuilder {
     _request_id: Option<String>,
 }
 impl RetrieveAndGenerateOutputBuilder {
-    /// Identifier of the session.
+    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier of the session.
+    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
-    /// Identifier of the session.
+    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// Service response of the turn
+    /// <p>Contains the response generated from querying the knowledge base.</p>
     /// This field is required.
     pub fn output(mut self, input: crate::types::RetrieveAndGenerateOutput) -> Self {
         self.output = ::std::option::Option::Some(input);
         self
     }
-    /// Service response of the turn
+    /// <p>Contains the response generated from querying the knowledge base.</p>
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateOutput>) -> Self {
         self.output = input;
         self
     }
-    /// Service response of the turn
+    /// <p>Contains the response generated from querying the knowledge base.</p>
     pub fn get_output(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateOutput> {
         &self.output
     }
@@ -94,19 +94,19 @@ impl RetrieveAndGenerateOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_citations`](Self::set_citations).
     ///
-    /// List of citations
+    /// <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
     pub fn citations(mut self, input: crate::types::Citation) -> Self {
         let mut v = self.citations.unwrap_or_default();
         v.push(input);
         self.citations = ::std::option::Option::Some(v);
         self
     }
-    /// List of citations
+    /// <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
     pub fn set_citations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Citation>>) -> Self {
         self.citations = input;
         self
     }
-    /// List of citations
+    /// <p>A list of segments of the generated response that are based on sources in the knowledge base, alongside information about the sources.</p>
     pub fn get_citations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Citation>> {
         &self.citations
     }

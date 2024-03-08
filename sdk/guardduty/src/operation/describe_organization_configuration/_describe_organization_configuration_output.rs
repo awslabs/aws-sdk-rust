@@ -16,14 +16,15 @@ pub struct DescribeOrganizationConfigurationOutput {
     pub features: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationFeatureConfigurationResult>>,
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization.</p>
+    /// <p>Indicates the auto-enablement configuration of GuardDuty or any of the corresponding protection plans for the member accounts in the organization.</p>
     /// <ul>
     /// <li>
-    /// <p><code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically.</p></li>
+    /// <p><code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty or any of the corresponding protection plans enabled automatically.</p></li>
     /// <li>
-    /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p></li>
+    /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty and any of the corresponding protection plans enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p></li>
     /// <li>
-    /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p></li>
+    /// <p><code>NONE</code>: Indicates that GuardDuty or any of the corresponding protection plans will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p>
+    /// <p>When you update the auto-enable setting from <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.</p></li>
     /// </ul>
     pub auto_enable_organization_members: ::std::option::Option<crate::types::AutoEnableMembers>,
     _request_id: Option<String>,
@@ -54,14 +55,15 @@ impl DescribeOrganizationConfigurationOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization.</p>
+    /// <p>Indicates the auto-enablement configuration of GuardDuty or any of the corresponding protection plans for the member accounts in the organization.</p>
     /// <ul>
     /// <li>
-    /// <p><code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically.</p></li>
+    /// <p><code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty or any of the corresponding protection plans enabled automatically.</p></li>
     /// <li>
-    /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p></li>
+    /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty and any of the corresponding protection plans enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p></li>
     /// <li>
-    /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p></li>
+    /// <p><code>NONE</code>: Indicates that GuardDuty or any of the corresponding protection plans will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p>
+    /// <p>When you update the auto-enable setting from <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.</p></li>
     /// </ul>
     pub fn auto_enable_organization_members(&self) -> ::std::option::Option<&crate::types::AutoEnableMembers> {
         self.auto_enable_organization_members.as_ref()
@@ -178,40 +180,43 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization.</p>
+    /// <p>Indicates the auto-enablement configuration of GuardDuty or any of the corresponding protection plans for the member accounts in the organization.</p>
     /// <ul>
     /// <li>
-    /// <p><code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically.</p></li>
+    /// <p><code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty or any of the corresponding protection plans enabled automatically.</p></li>
     /// <li>
-    /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p></li>
+    /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty and any of the corresponding protection plans enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p></li>
     /// <li>
-    /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p></li>
+    /// <p><code>NONE</code>: Indicates that GuardDuty or any of the corresponding protection plans will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p>
+    /// <p>When you update the auto-enable setting from <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.</p></li>
     /// </ul>
     pub fn auto_enable_organization_members(mut self, input: crate::types::AutoEnableMembers) -> Self {
         self.auto_enable_organization_members = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization.</p>
+    /// <p>Indicates the auto-enablement configuration of GuardDuty or any of the corresponding protection plans for the member accounts in the organization.</p>
     /// <ul>
     /// <li>
-    /// <p><code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically.</p></li>
+    /// <p><code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty or any of the corresponding protection plans enabled automatically.</p></li>
     /// <li>
-    /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p></li>
+    /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty and any of the corresponding protection plans enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p></li>
     /// <li>
-    /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p></li>
+    /// <p><code>NONE</code>: Indicates that GuardDuty or any of the corresponding protection plans will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p>
+    /// <p>When you update the auto-enable setting from <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.</p></li>
     /// </ul>
     pub fn set_auto_enable_organization_members(mut self, input: ::std::option::Option<crate::types::AutoEnableMembers>) -> Self {
         self.auto_enable_organization_members = input;
         self
     }
-    /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization.</p>
+    /// <p>Indicates the auto-enablement configuration of GuardDuty or any of the corresponding protection plans for the member accounts in the organization.</p>
     /// <ul>
     /// <li>
-    /// <p><code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically.</p></li>
+    /// <p><code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty or any of the corresponding protection plans enabled automatically.</p></li>
     /// <li>
-    /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p></li>
+    /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty and any of the corresponding protection plans enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p></li>
     /// <li>
-    /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p></li>
+    /// <p><code>NONE</code>: Indicates that GuardDuty or any of the corresponding protection plans will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p>
+    /// <p>When you update the auto-enable setting from <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.</p></li>
     /// </ul>
     pub fn get_auto_enable_organization_members(&self) -> &::std::option::Option<crate::types::AutoEnableMembers> {
         &self.auto_enable_organization_members

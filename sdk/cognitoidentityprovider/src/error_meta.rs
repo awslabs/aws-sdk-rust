@@ -3580,6 +3580,9 @@ where
 impl From<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError> for Error {
     fn from(err: crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError) -> Self {
         match err {
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::InternalErrorException(inner) => {
                 Error::InternalErrorException(inner)
             }

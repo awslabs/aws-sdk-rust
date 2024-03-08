@@ -3,6 +3,12 @@ pub use crate::types::_fairshare_policy::FairsharePolicy;
 
 pub use crate::types::_share_attributes::ShareAttributes;
 
+pub use crate::types::_job_state_time_limit_action::JobStateTimeLimitAction;
+
+pub use crate::types::_job_state_time_limit_actions_action::JobStateTimeLimitActionsAction;
+
+pub use crate::types::_job_state_time_limit_actions_state::JobStateTimeLimitActionsState;
+
 pub use crate::types::_compute_environment_order::ComputeEnvironmentOrder;
 
 pub use crate::types::_jq_state::JqState;
@@ -336,6 +342,12 @@ mod _job_dependency;
 mod _job_detail;
 
 mod _job_queue_detail;
+
+mod _job_state_time_limit_action;
+
+mod _job_state_time_limit_actions_action;
+
+mod _job_state_time_limit_actions_state;
 
 mod _job_status;
 

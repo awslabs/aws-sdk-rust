@@ -23,6 +23,16 @@ pub struct JobDetail {
     /// <p>A list of job attempts that are associated with this job.</p>
     pub attempts: ::std::option::Option<::std::vec::Vec<crate::types::AttemptDetail>>,
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient capacity to service the job.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a <code>maxVcpu</code> setting that is smaller than the job requirements.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected instances that meet the job requirements.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the service role permissions.</p></li>
+    /// </ul>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state. This is specifically at the time <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> was called. For array child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code> state.</p>
     pub created_at: ::std::option::Option<i64>,
@@ -105,6 +115,16 @@ impl JobDetail {
         self.attempts.as_deref().unwrap_or_default()
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient capacity to service the job.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a <code>maxVcpu</code> setting that is smaller than the job requirements.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected instances that meet the job requirements.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the service role permissions.</p></li>
+    /// </ul>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
@@ -368,16 +388,46 @@ impl JobDetailBuilder {
         &self.attempts
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient capacity to service the job.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a <code>maxVcpu</code> setting that is smaller than the job requirements.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected instances that meet the job requirements.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the service role permissions.</p></li>
+    /// </ul>
     pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient capacity to service the job.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a <code>maxVcpu</code> setting that is smaller than the job requirements.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected instances that meet the job requirements.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the service role permissions.</p></li>
+    /// </ul>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
     /// <p>A short, human-readable string to provide more details for the current status of the job.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments have insufficient capacity to service the job.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute environments have a <code>maxVcpu</code> setting that is smaller than the job requirements.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute environments have no connected instances that meet the job requirements.</p></li>
+    /// <li>
+    /// <p><code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All compute environments have problems with the service role permissions.</p></li>
+    /// </ul>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }

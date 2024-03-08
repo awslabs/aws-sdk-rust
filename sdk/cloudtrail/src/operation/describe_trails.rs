@@ -248,6 +248,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeTrail
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeTrailsError {
+    /// <p>This exception is thrown when an operation is called with an ARN that is not valid.</p>
+    /// <p>The following is the format of a trail ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
+    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code></p>
+    /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code></p>
+    CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
     /// <li>
@@ -301,12 +306,17 @@ impl DescribeTrailsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::CloudTrailArnInvalidException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidTrailNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoManagementAccountSlrExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DescribeTrailsError::CloudTrailArnInvalidException`.
+    pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
+        matches!(self, Self::CloudTrailArnInvalidException(_))
     }
     /// Returns `true` if the error kind is `DescribeTrailsError::InvalidTrailNameException`.
     pub fn is_invalid_trail_name_exception(&self) -> bool {
@@ -328,6 +338,7 @@ impl DescribeTrailsError {
 impl ::std::error::Error for DescribeTrailsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::CloudTrailArnInvalidException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTrailNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoManagementAccountSlrExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
@@ -339,6 +350,7 @@ impl ::std::error::Error for DescribeTrailsError {
 impl ::std::fmt::Display for DescribeTrailsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             Self::InvalidTrailNameException(_inner) => _inner.fmt(f),
             Self::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
@@ -364,6 +376,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DescribeTrailsError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeTrailsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::CloudTrailArnInvalidException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidTrailNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoManagementAccountSlrExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -12,9 +12,14 @@ pub struct As2ConnectorConfig {
     pub message_subject: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the AS2 file is compressed.</p>
     pub compression: ::std::option::Option<crate::types::CompressionEnum>,
-    /// <p>The algorithm that is used to encrypt the file.</p><note>
-    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
-    /// </note>
+    /// <p>The algorithm that is used to encrypt the file.</p>
+    /// <p>Note the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do not use the <code>DES_EDE3_CBC</code> algorithm unless you must support a legacy client that requires it, as it is a weak encryption algorithm.</p></li>
+    /// <li>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is sent in clear text.</p></li>
+    /// </ul>
     pub encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlg>,
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
     pub signing_algorithm: ::std::option::Option<crate::types::SigningAlg>,
@@ -63,9 +68,14 @@ impl As2ConnectorConfig {
     pub fn compression(&self) -> ::std::option::Option<&crate::types::CompressionEnum> {
         self.compression.as_ref()
     }
-    /// <p>The algorithm that is used to encrypt the file.</p><note>
-    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
-    /// </note>
+    /// <p>The algorithm that is used to encrypt the file.</p>
+    /// <p>Note the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do not use the <code>DES_EDE3_CBC</code> algorithm unless you must support a legacy client that requires it, as it is a weak encryption algorithm.</p></li>
+    /// <li>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is sent in clear text.</p></li>
+    /// </ul>
     pub fn encryption_algorithm(&self) -> ::std::option::Option<&crate::types::EncryptionAlg> {
         self.encryption_algorithm.as_ref()
     }
@@ -185,23 +195,38 @@ impl As2ConnectorConfigBuilder {
     pub fn get_compression(&self) -> &::std::option::Option<crate::types::CompressionEnum> {
         &self.compression
     }
-    /// <p>The algorithm that is used to encrypt the file.</p><note>
-    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
-    /// </note>
+    /// <p>The algorithm that is used to encrypt the file.</p>
+    /// <p>Note the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do not use the <code>DES_EDE3_CBC</code> algorithm unless you must support a legacy client that requires it, as it is a weak encryption algorithm.</p></li>
+    /// <li>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is sent in clear text.</p></li>
+    /// </ul>
     pub fn encryption_algorithm(mut self, input: crate::types::EncryptionAlg) -> Self {
         self.encryption_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The algorithm that is used to encrypt the file.</p><note>
-    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
-    /// </note>
+    /// <p>The algorithm that is used to encrypt the file.</p>
+    /// <p>Note the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do not use the <code>DES_EDE3_CBC</code> algorithm unless you must support a legacy client that requires it, as it is a weak encryption algorithm.</p></li>
+    /// <li>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is sent in clear text.</p></li>
+    /// </ul>
     pub fn set_encryption_algorithm(mut self, input: ::std::option::Option<crate::types::EncryptionAlg>) -> Self {
         self.encryption_algorithm = input;
         self
     }
-    /// <p>The algorithm that is used to encrypt the file.</p><note>
-    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
-    /// </note>
+    /// <p>The algorithm that is used to encrypt the file.</p>
+    /// <p>Note the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do not use the <code>DES_EDE3_CBC</code> algorithm unless you must support a legacy client that requires it, as it is a weak encryption algorithm.</p></li>
+    /// <li>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is sent in clear text.</p></li>
+    /// </ul>
     pub fn get_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlg> {
         &self.encryption_algorithm
     }

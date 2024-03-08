@@ -21,6 +21,8 @@
 ///     UsageFeature::FargateRuntimeMonitoring => { /* ... */ },
 ///     UsageFeature::FlowLogs => { /* ... */ },
 ///     UsageFeature::LambdaNetworkLogs => { /* ... */ },
+///     UsageFeature::RdsDbiProtectionProvisioned => { /* ... */ },
+///     UsageFeature::RdsDbiProtectionServerless => { /* ... */ },
 ///     UsageFeature::RdsLoginEvents => { /* ... */ },
 ///     UsageFeature::S3DataEvents => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -69,6 +71,10 @@ pub enum UsageFeature {
     #[allow(missing_docs)] // documentation missing in model
     LambdaNetworkLogs,
     #[allow(missing_docs)] // documentation missing in model
+    RdsDbiProtectionProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
+    RdsDbiProtectionServerless,
+    #[allow(missing_docs)] // documentation missing in model
     RdsLoginEvents,
     #[allow(missing_docs)] // documentation missing in model
     S3DataEvents,
@@ -88,6 +94,8 @@ impl ::std::convert::From<&str> for UsageFeature {
             "FARGATE_RUNTIME_MONITORING" => UsageFeature::FargateRuntimeMonitoring,
             "FLOW_LOGS" => UsageFeature::FlowLogs,
             "LAMBDA_NETWORK_LOGS" => UsageFeature::LambdaNetworkLogs,
+            "RDS_DBI_PROTECTION_PROVISIONED" => UsageFeature::RdsDbiProtectionProvisioned,
+            "RDS_DBI_PROTECTION_SERVERLESS" => UsageFeature::RdsDbiProtectionServerless,
             "RDS_LOGIN_EVENTS" => UsageFeature::RdsLoginEvents,
             "S3_DATA_EVENTS" => UsageFeature::S3DataEvents,
             other => UsageFeature::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -114,6 +122,8 @@ impl UsageFeature {
             UsageFeature::FargateRuntimeMonitoring => "FARGATE_RUNTIME_MONITORING",
             UsageFeature::FlowLogs => "FLOW_LOGS",
             UsageFeature::LambdaNetworkLogs => "LAMBDA_NETWORK_LOGS",
+            UsageFeature::RdsDbiProtectionProvisioned => "RDS_DBI_PROTECTION_PROVISIONED",
+            UsageFeature::RdsDbiProtectionServerless => "RDS_DBI_PROTECTION_SERVERLESS",
             UsageFeature::RdsLoginEvents => "RDS_LOGIN_EVENTS",
             UsageFeature::S3DataEvents => "S3_DATA_EVENTS",
             UsageFeature::Unknown(value) => value.as_str(),
@@ -131,6 +141,8 @@ impl UsageFeature {
             "FARGATE_RUNTIME_MONITORING",
             "FLOW_LOGS",
             "LAMBDA_NETWORK_LOGS",
+            "RDS_DBI_PROTECTION_PROVISIONED",
+            "RDS_DBI_PROTECTION_SERVERLESS",
             "RDS_LOGIN_EVENTS",
             "S3_DATA_EVENTS",
         ]
@@ -165,6 +177,8 @@ impl ::std::fmt::Display for UsageFeature {
             UsageFeature::FargateRuntimeMonitoring => write!(f, "FARGATE_RUNTIME_MONITORING"),
             UsageFeature::FlowLogs => write!(f, "FLOW_LOGS"),
             UsageFeature::LambdaNetworkLogs => write!(f, "LAMBDA_NETWORK_LOGS"),
+            UsageFeature::RdsDbiProtectionProvisioned => write!(f, "RDS_DBI_PROTECTION_PROVISIONED"),
+            UsageFeature::RdsDbiProtectionServerless => write!(f, "RDS_DBI_PROTECTION_SERVERLESS"),
             UsageFeature::RdsLoginEvents => write!(f, "RDS_LOGIN_EVENTS"),
             UsageFeature::S3DataEvents => write!(f, "S3_DATA_EVENTS"),
             UsageFeature::Unknown(value) => write!(f, "{}", value),

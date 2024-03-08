@@ -7,8 +7,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointDetails {
-    /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p><note>
-    /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in the <code>UpdateServer</code> API.</p>
+    /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p>
+    /// <p>An address allocation ID corresponds to the allocation ID of an Elastic IP address. This value can be retrieved from the <code>allocationId</code> field from the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Address.html">Address</a> data type. One way to retrieve this value is by calling the EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html">DescribeAddresses</a> API.</p>
+    /// <p>This parameter is optional. Set this parameter if you want to make your VPC endpoint public-facing. For details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#create-internet-facing-endpoint">Create an internet-facing endpoint for your server</a>.</p><note>
+    /// <p>This property can only be set as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EndpointType</code> must be set to <code>VPC</code></p></li>
+    /// <li>
+    /// <p>The Transfer Family server must be offline.</p></li>
+    /// <li>
+    /// <p>You cannot set this parameter for Transfer Family servers that use the FTP protocol.</p></li>
+    /// <li>
+    /// <p>The server must already have <code>SubnetIds</code> populated (<code>SubnetIds</code> and <code>AddressAllocationIds</code> cannot be updated simultaneously).</p></li>
+    /// <li>
+    /// <p><code>AddressAllocationIds</code> can't contain duplicates, and must be equal in length to <code>SubnetIds</code>. For example, if you have three subnet IDs, you must also specify three address allocation IDs.</p></li>
+    /// <li>
+    /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
+    /// </ul>
     /// </note>
     pub address_allocation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of subnet IDs that are required to host your server endpoint in your VPC.</p><note>
@@ -31,8 +47,24 @@ pub struct EndpointDetails {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EndpointDetails {
-    /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p><note>
-    /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in the <code>UpdateServer</code> API.</p>
+    /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p>
+    /// <p>An address allocation ID corresponds to the allocation ID of an Elastic IP address. This value can be retrieved from the <code>allocationId</code> field from the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Address.html">Address</a> data type. One way to retrieve this value is by calling the EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html">DescribeAddresses</a> API.</p>
+    /// <p>This parameter is optional. Set this parameter if you want to make your VPC endpoint public-facing. For details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#create-internet-facing-endpoint">Create an internet-facing endpoint for your server</a>.</p><note>
+    /// <p>This property can only be set as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EndpointType</code> must be set to <code>VPC</code></p></li>
+    /// <li>
+    /// <p>The Transfer Family server must be offline.</p></li>
+    /// <li>
+    /// <p>You cannot set this parameter for Transfer Family servers that use the FTP protocol.</p></li>
+    /// <li>
+    /// <p>The server must already have <code>SubnetIds</code> populated (<code>SubnetIds</code> and <code>AddressAllocationIds</code> cannot be updated simultaneously).</p></li>
+    /// <li>
+    /// <p><code>AddressAllocationIds</code> can't contain duplicates, and must be equal in length to <code>SubnetIds</code>. For example, if you have three subnet IDs, you must also specify three address allocation IDs.</p></li>
+    /// <li>
+    /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
+    /// </ul>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.address_allocation_ids.is_none()`.
@@ -92,8 +124,24 @@ impl EndpointDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_address_allocation_ids`](Self::set_address_allocation_ids).
     ///
-    /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p><note>
-    /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in the <code>UpdateServer</code> API.</p>
+    /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p>
+    /// <p>An address allocation ID corresponds to the allocation ID of an Elastic IP address. This value can be retrieved from the <code>allocationId</code> field from the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Address.html">Address</a> data type. One way to retrieve this value is by calling the EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html">DescribeAddresses</a> API.</p>
+    /// <p>This parameter is optional. Set this parameter if you want to make your VPC endpoint public-facing. For details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#create-internet-facing-endpoint">Create an internet-facing endpoint for your server</a>.</p><note>
+    /// <p>This property can only be set as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EndpointType</code> must be set to <code>VPC</code></p></li>
+    /// <li>
+    /// <p>The Transfer Family server must be offline.</p></li>
+    /// <li>
+    /// <p>You cannot set this parameter for Transfer Family servers that use the FTP protocol.</p></li>
+    /// <li>
+    /// <p>The server must already have <code>SubnetIds</code> populated (<code>SubnetIds</code> and <code>AddressAllocationIds</code> cannot be updated simultaneously).</p></li>
+    /// <li>
+    /// <p><code>AddressAllocationIds</code> can't contain duplicates, and must be equal in length to <code>SubnetIds</code>. For example, if you have three subnet IDs, you must also specify three address allocation IDs.</p></li>
+    /// <li>
+    /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
+    /// </ul>
     /// </note>
     pub fn address_allocation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.address_allocation_ids.unwrap_or_default();
@@ -101,15 +149,47 @@ impl EndpointDetailsBuilder {
         self.address_allocation_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p><note>
-    /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in the <code>UpdateServer</code> API.</p>
+    /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p>
+    /// <p>An address allocation ID corresponds to the allocation ID of an Elastic IP address. This value can be retrieved from the <code>allocationId</code> field from the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Address.html">Address</a> data type. One way to retrieve this value is by calling the EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html">DescribeAddresses</a> API.</p>
+    /// <p>This parameter is optional. Set this parameter if you want to make your VPC endpoint public-facing. For details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#create-internet-facing-endpoint">Create an internet-facing endpoint for your server</a>.</p><note>
+    /// <p>This property can only be set as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EndpointType</code> must be set to <code>VPC</code></p></li>
+    /// <li>
+    /// <p>The Transfer Family server must be offline.</p></li>
+    /// <li>
+    /// <p>You cannot set this parameter for Transfer Family servers that use the FTP protocol.</p></li>
+    /// <li>
+    /// <p>The server must already have <code>SubnetIds</code> populated (<code>SubnetIds</code> and <code>AddressAllocationIds</code> cannot be updated simultaneously).</p></li>
+    /// <li>
+    /// <p><code>AddressAllocationIds</code> can't contain duplicates, and must be equal in length to <code>SubnetIds</code>. For example, if you have three subnet IDs, you must also specify three address allocation IDs.</p></li>
+    /// <li>
+    /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
+    /// </ul>
     /// </note>
     pub fn set_address_allocation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.address_allocation_ids = input;
         self
     }
-    /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p><note>
-    /// <p>This property can only be set when <code>EndpointType</code> is set to <code>VPC</code> and it is only valid in the <code>UpdateServer</code> API.</p>
+    /// <p>A list of address allocation IDs that are required to attach an Elastic IP address to your server's endpoint.</p>
+    /// <p>An address allocation ID corresponds to the allocation ID of an Elastic IP address. This value can be retrieved from the <code>allocationId</code> field from the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Address.html">Address</a> data type. One way to retrieve this value is by calling the EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAddresses.html">DescribeAddresses</a> API.</p>
+    /// <p>This parameter is optional. Set this parameter if you want to make your VPC endpoint public-facing. For details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#create-internet-facing-endpoint">Create an internet-facing endpoint for your server</a>.</p><note>
+    /// <p>This property can only be set as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>EndpointType</code> must be set to <code>VPC</code></p></li>
+    /// <li>
+    /// <p>The Transfer Family server must be offline.</p></li>
+    /// <li>
+    /// <p>You cannot set this parameter for Transfer Family servers that use the FTP protocol.</p></li>
+    /// <li>
+    /// <p>The server must already have <code>SubnetIds</code> populated (<code>SubnetIds</code> and <code>AddressAllocationIds</code> cannot be updated simultaneously).</p></li>
+    /// <li>
+    /// <p><code>AddressAllocationIds</code> can't contain duplicates, and must be equal in length to <code>SubnetIds</code>. For example, if you have three subnet IDs, you must also specify three address allocation IDs.</p></li>
+    /// <li>
+    /// <p>Call the <code>UpdateServer</code> API to set or change this parameter.</p></li>
+    /// </ul>
     /// </note>
     pub fn get_address_allocation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.address_allocation_ids

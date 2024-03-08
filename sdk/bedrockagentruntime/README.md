@@ -1,6 +1,6 @@
 # aws-sdk-bedrockagentruntime
 
-Amazon Bedrock Agent
+Contains APIs related to model invocation and querying of knowledge bases.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-bedrockagentruntime = "1.13.0"
+aws-sdk-bedrockagentruntime = "1.13.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

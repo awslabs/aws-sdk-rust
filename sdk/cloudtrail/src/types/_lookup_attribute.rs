@@ -6,7 +6,8 @@
 pub struct LookupAttribute {
     /// <p>Specifies an attribute on which to filter the events returned.</p>
     pub attribute_key: crate::types::LookupAttributeKey,
-    /// <p>Specifies a value for the specified AttributeKey.</p>
+    /// <p>Specifies a value for the specified <code>AttributeKey</code>.</p>
+    /// <p>The maximum length for the <code>AttributeValue</code> is 2000 characters. The following characters ('<code>_</code>', '<code> </code>', '<code>,</code>', '<code>\\n</code>') count as two characters towards the 2000 character limit.</p>
     pub attribute_value: ::std::string::String,
 }
 impl LookupAttribute {
@@ -14,7 +15,8 @@ impl LookupAttribute {
     pub fn attribute_key(&self) -> &crate::types::LookupAttributeKey {
         &self.attribute_key
     }
-    /// <p>Specifies a value for the specified AttributeKey.</p>
+    /// <p>Specifies a value for the specified <code>AttributeKey</code>.</p>
+    /// <p>The maximum length for the <code>AttributeValue</code> is 2000 characters. The following characters ('<code>_</code>', '<code> </code>', '<code>,</code>', '<code>\\n</code>') count as two characters towards the 2000 character limit.</p>
     pub fn attribute_value(&self) -> &str {
         use std::ops::Deref;
         self.attribute_value.deref()
@@ -50,18 +52,21 @@ impl LookupAttributeBuilder {
     pub fn get_attribute_key(&self) -> &::std::option::Option<crate::types::LookupAttributeKey> {
         &self.attribute_key
     }
-    /// <p>Specifies a value for the specified AttributeKey.</p>
+    /// <p>Specifies a value for the specified <code>AttributeKey</code>.</p>
+    /// <p>The maximum length for the <code>AttributeValue</code> is 2000 characters. The following characters ('<code>_</code>', '<code> </code>', '<code>,</code>', '<code>\\n</code>') count as two characters towards the 2000 character limit.</p>
     /// This field is required.
     pub fn attribute_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies a value for the specified AttributeKey.</p>
+    /// <p>Specifies a value for the specified <code>AttributeKey</code>.</p>
+    /// <p>The maximum length for the <code>AttributeValue</code> is 2000 characters. The following characters ('<code>_</code>', '<code> </code>', '<code>,</code>', '<code>\\n</code>') count as two characters towards the 2000 character limit.</p>
     pub fn set_attribute_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_value = input;
         self
     }
-    /// <p>Specifies a value for the specified AttributeKey.</p>
+    /// <p>Specifies a value for the specified <code>AttributeKey</code>.</p>
+    /// <p>The maximum length for the <code>AttributeValue</code> is 2000 characters. The following characters ('<code>_</code>', '<code> </code>', '<code>,</code>', '<code>\\n</code>') count as two characters towards the 2000 character limit.</p>
     pub fn get_attribute_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_value
     }

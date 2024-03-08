@@ -235,6 +235,24 @@ pub(crate) fn ephemeral_storage_correct_errors(
     builder
 }
 
+pub(crate) fn job_state_time_limit_action_correct_errors(
+    mut builder: crate::types::builders::JobStateTimeLimitActionBuilder,
+) -> crate::types::builders::JobStateTimeLimitActionBuilder {
+    if builder.reason.is_none() {
+        builder.reason = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::JobStateTimeLimitActionsState>().ok()
+    }
+    if builder.max_time_seconds.is_none() {
+        builder.max_time_seconds = Some(Default::default())
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::JobStateTimeLimitActionsAction>().ok()
+    }
+    builder
+}
+
 pub(crate) fn log_configuration_correct_errors(
     mut builder: crate::types::builders::LogConfigurationBuilder,
 ) -> crate::types::builders::LogConfigurationBuilder {

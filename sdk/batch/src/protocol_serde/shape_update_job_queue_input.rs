@@ -18,17 +18,29 @@ pub fn ser_update_job_queue_input_input(
     if let Some(var_5) = &input.job_queue {
         object.key("jobQueue").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.priority {
+    if let Some(var_6) = &input.job_state_time_limit_actions {
+        let mut array_7 = object.key("jobStateTimeLimitActions").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_job_state_time_limit_action::ser_job_state_time_limit_action(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_7) = &input.scheduling_policy_arn {
-        object.key("schedulingPolicyArn").string(var_7.as_str());
+    if let Some(var_11) = &input.scheduling_policy_arn {
+        object.key("schedulingPolicyArn").string(var_11.as_str());
     }
-    if let Some(var_8) = &input.state {
-        object.key("state").string(var_8.as_str());
+    if let Some(var_12) = &input.state {
+        object.key("state").string(var_12.as_str());
     }
     Ok(())
 }

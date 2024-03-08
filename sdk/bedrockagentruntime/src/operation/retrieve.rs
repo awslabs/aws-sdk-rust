@@ -251,23 +251,23 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RetrieveEndpo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum RetrieveError {
-    /// This exception is thrown when a request is denied per access permissions
+    /// <p>The request is denied because of missing access permissions. Check your permissions and retry your request.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// This exception is thrown when a request fails due to dependency like Lambda, Bedrock, STS resource due to a customer fault (i.e. bad configuration)
+    /// <p>There was an issue with a dependency. Check the resource configurations and retry the request.</p>
     DependencyFailedException(crate::types::error::DependencyFailedException),
-    /// This exception is thrown when the request's input validation fails
+    /// <p>Input validation failed. Check your request parameters and retry the request.</p>
     ValidationException(crate::types::error::ValidationException),
-    /// This exception is thrown if there was an unexpected error during processing of request
+    /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// This exception is thrown when a resource referenced by the operation does not exist
+    /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// This exception is thrown when the number of requests exceeds the limit
+    /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// This exception is thrown when a request fails due to dependency like Lambda, Bedrock, STS resource
+    /// <p>There was an issue with a dependency due to a server issue. Retry your request.</p>
     BadGatewayException(crate::types::error::BadGatewayException),
-    /// This exception is thrown when there is a conflict performing an operation
+    /// <p>There was a conflict performing an operation. Resolve the conflict and retry your request.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// This exception is thrown when a request is made beyond the service quota
+    /// <p>The number of requests exceeds the service quota. Resubmit your request later.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

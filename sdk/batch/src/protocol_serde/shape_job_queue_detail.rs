@@ -71,6 +71,11 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(tokens)?);
                         }
+                        "jobStateTimeLimitActions" => {
+                            builder = builder.set_job_state_time_limit_actions(
+                                crate::protocol_serde::shape_job_state_time_limit_actions::de_job_state_time_limit_actions(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

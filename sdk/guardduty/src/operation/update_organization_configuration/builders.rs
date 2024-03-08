@@ -23,6 +23,7 @@ impl UpdateOrganizationConfigurationInputBuilder {
 /// Fluent builder constructing a request to `UpdateOrganizationConfiguration`.
 ///
 /// <p>Configures the delegated administrator account with the provided values. You must provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>, but not both.</p>
+/// <p>Specifying both EKS Runtime Monitoring (<code>EKS_RUNTIME_MONITORING</code>) and Runtime Monitoring (<code>RUNTIME_MONITORING</code>) will cause an error. You can add only one of these two features because Runtime Monitoring already includes the threat detection for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime Monitoring</a>.</p>
 /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationFluentBuilder {
@@ -187,7 +188,8 @@ impl UpdateOrganizationConfigurationFluentBuilder {
     /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p>
     /// <p>It may take up to 24 hours to update the configuration for all the member accounts.</p></li>
     /// <li>
-    /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p></li>
+    /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p>
+    /// <p>When you update the auto-enable setting from <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.</p></li>
     /// </ul>
     pub fn auto_enable_organization_members(mut self, input: crate::types::AutoEnableMembers) -> Self {
         self.inner = self.inner.auto_enable_organization_members(input);
@@ -202,7 +204,8 @@ impl UpdateOrganizationConfigurationFluentBuilder {
     /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p>
     /// <p>It may take up to 24 hours to update the configuration for all the member accounts.</p></li>
     /// <li>
-    /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p></li>
+    /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p>
+    /// <p>When you update the auto-enable setting from <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.</p></li>
     /// </ul>
     pub fn set_auto_enable_organization_members(mut self, input: ::std::option::Option<crate::types::AutoEnableMembers>) -> Self {
         self.inner = self.inner.set_auto_enable_organization_members(input);
@@ -217,7 +220,8 @@ impl UpdateOrganizationConfigurationFluentBuilder {
     /// <p><code>ALL</code>: Indicates that all accounts in the organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p>
     /// <p>It may take up to 24 hours to update the configuration for all the member accounts.</p></li>
     /// <li>
-    /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p></li>
+    /// <p><code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.</p>
+    /// <p>When you update the auto-enable setting from <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.</p></li>
     /// </ul>
     pub fn get_auto_enable_organization_members(&self) -> &::std::option::Option<crate::types::AutoEnableMembers> {
         self.inner.get_auto_enable_organization_members()

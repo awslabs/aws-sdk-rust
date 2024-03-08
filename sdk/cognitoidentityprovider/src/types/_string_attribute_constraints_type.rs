@@ -6,7 +6,7 @@
 pub struct StringAttributeConstraintsType {
     /// <p>The minimum length.</p>
     pub min_length: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum length.</p>
+    /// <p>The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub max_length: ::std::option::Option<::std::string::String>,
 }
 impl StringAttributeConstraintsType {
@@ -14,7 +14,7 @@ impl StringAttributeConstraintsType {
     pub fn min_length(&self) -> ::std::option::Option<&str> {
         self.min_length.as_deref()
     }
-    /// <p>The maximum length.</p>
+    /// <p>The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub fn max_length(&self) -> ::std::option::Option<&str> {
         self.max_length.as_deref()
     }
@@ -48,17 +48,17 @@ impl StringAttributeConstraintsTypeBuilder {
     pub fn get_min_length(&self) -> &::std::option::Option<::std::string::String> {
         &self.min_length
     }
-    /// <p>The maximum length.</p>
+    /// <p>The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub fn max_length(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_length = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum length.</p>
+    /// <p>The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub fn set_max_length(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_length = input;
         self
     }
-    /// <p>The maximum length.</p>
+    /// <p>The maximum length of a string attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub fn get_max_length(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_length
     }

@@ -15,6 +15,7 @@
 ///     EncryptionAlg::Aes128Cbc => { /* ... */ },
 ///     EncryptionAlg::Aes192Cbc => { /* ... */ },
 ///     EncryptionAlg::Aes256Cbc => { /* ... */ },
+///     EncryptionAlg::DesEde3Cbc => { /* ... */ },
 ///     EncryptionAlg::None => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum EncryptionAlg {
     #[allow(missing_docs)] // documentation missing in model
     Aes256Cbc,
     #[allow(missing_docs)] // documentation missing in model
+    DesEde3Cbc,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for EncryptionAlg {
             "AES128_CBC" => EncryptionAlg::Aes128Cbc,
             "AES192_CBC" => EncryptionAlg::Aes192Cbc,
             "AES256_CBC" => EncryptionAlg::Aes256Cbc,
+            "DES_EDE3_CBC" => EncryptionAlg::DesEde3Cbc,
             "NONE" => EncryptionAlg::None,
             other => EncryptionAlg::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -80,13 +84,14 @@ impl EncryptionAlg {
             EncryptionAlg::Aes128Cbc => "AES128_CBC",
             EncryptionAlg::Aes192Cbc => "AES192_CBC",
             EncryptionAlg::Aes256Cbc => "AES256_CBC",
+            EncryptionAlg::DesEde3Cbc => "DES_EDE3_CBC",
             EncryptionAlg::None => "NONE",
             EncryptionAlg::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AES128_CBC", "AES192_CBC", "AES256_CBC", "NONE"]
+        &["AES128_CBC", "AES192_CBC", "AES256_CBC", "DES_EDE3_CBC", "NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for EncryptionAlg {
@@ -112,6 +117,7 @@ impl ::std::fmt::Display for EncryptionAlg {
             EncryptionAlg::Aes128Cbc => write!(f, "AES128_CBC"),
             EncryptionAlg::Aes192Cbc => write!(f, "AES192_CBC"),
             EncryptionAlg::Aes256Cbc => write!(f, "AES256_CBC"),
+            EncryptionAlg::DesEde3Cbc => write!(f, "DES_EDE3_CBC"),
             EncryptionAlg::None => write!(f, "NONE"),
             EncryptionAlg::Unknown(value) => write!(f, "{}", value),
         }

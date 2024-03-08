@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RetrieveInput {
-    /// Identifier of the KnowledgeBase
+    /// <p>The unique identifier of the knowledge base to query.</p>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
-    /// Knowledge base input query.
+    /// <p>The query to send the knowledge base.</p>
     pub retrieval_query: ::std::option::Option<crate::types::KnowledgeBaseQuery>,
-    /// Search parameters for retrieving from knowledge base.
+    /// <p>Contains details about how the results should be returned.</p>
     pub retrieval_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>,
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl RetrieveInput {
-    /// Identifier of the KnowledgeBase
+    /// <p>The unique identifier of the knowledge base to query.</p>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
-    /// Knowledge base input query.
+    /// <p>The query to send the knowledge base.</p>
     pub fn retrieval_query(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseQuery> {
         self.retrieval_query.as_ref()
     }
-    /// Search parameters for retrieving from knowledge base.
+    /// <p>Contains details about how the results should be returned.</p>
     pub fn retrieval_configuration(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseRetrievalConfiguration> {
         self.retrieval_configuration.as_ref()
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -57,61 +57,61 @@ pub struct RetrieveInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl RetrieveInputBuilder {
-    /// Identifier of the KnowledgeBase
+    /// <p>The unique identifier of the knowledge base to query.</p>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.knowledge_base_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Identifier of the KnowledgeBase
+    /// <p>The unique identifier of the knowledge base to query.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
         self
     }
-    /// Identifier of the KnowledgeBase
+    /// <p>The unique identifier of the knowledge base to query.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
-    /// Knowledge base input query.
+    /// <p>The query to send the knowledge base.</p>
     /// This field is required.
     pub fn retrieval_query(mut self, input: crate::types::KnowledgeBaseQuery) -> Self {
         self.retrieval_query = ::std::option::Option::Some(input);
         self
     }
-    /// Knowledge base input query.
+    /// <p>The query to send the knowledge base.</p>
     pub fn set_retrieval_query(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseQuery>) -> Self {
         self.retrieval_query = input;
         self
     }
-    /// Knowledge base input query.
+    /// <p>The query to send the knowledge base.</p>
     pub fn get_retrieval_query(&self) -> &::std::option::Option<crate::types::KnowledgeBaseQuery> {
         &self.retrieval_query
     }
-    /// Search parameters for retrieving from knowledge base.
+    /// <p>Contains details about how the results should be returned.</p>
     pub fn retrieval_configuration(mut self, input: crate::types::KnowledgeBaseRetrievalConfiguration) -> Self {
         self.retrieval_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Search parameters for retrieving from knowledge base.
+    /// <p>Contains details about how the results should be returned.</p>
     pub fn set_retrieval_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>) -> Self {
         self.retrieval_configuration = input;
         self
     }
-    /// Search parameters for retrieving from knowledge base.
+    /// <p>Contains details about how the results should be returned.</p>
     pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration> {
         &self.retrieval_configuration
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -16,7 +16,7 @@
 #![allow(rustdoc::redundant_explicit_links)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! Amazon Bedrock Agent
+//! Contains APIs related to model invocation and querying of knowledge bases.
 //!
 //! ## Getting Started
 //!
@@ -30,7 +30,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrockagentruntime = "1.13.0"
+//! aws-sdk-bedrockagentruntime = "1.13.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

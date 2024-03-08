@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RetrieveOutput {
-    /// List of knowledge base retrieval results
+    /// <p>A list of results from querying the knowledge base.</p>
     pub retrieval_results: ::std::vec::Vec<crate::types::KnowledgeBaseRetrievalResult>,
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RetrieveOutput {
-    /// List of knowledge base retrieval results
+    /// <p>A list of results from querying the knowledge base.</p>
     pub fn retrieval_results(&self) -> &[crate::types::KnowledgeBaseRetrievalResult] {
         use std::ops::Deref;
         self.retrieval_results.deref()
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -54,33 +54,33 @@ impl RetrieveOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_retrieval_results`](Self::set_retrieval_results).
     ///
-    /// List of knowledge base retrieval results
+    /// <p>A list of results from querying the knowledge base.</p>
     pub fn retrieval_results(mut self, input: crate::types::KnowledgeBaseRetrievalResult) -> Self {
         let mut v = self.retrieval_results.unwrap_or_default();
         v.push(input);
         self.retrieval_results = ::std::option::Option::Some(v);
         self
     }
-    /// List of knowledge base retrieval results
+    /// <p>A list of results from querying the knowledge base.</p>
     pub fn set_retrieval_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseRetrievalResult>>) -> Self {
         self.retrieval_results = input;
         self
     }
-    /// List of knowledge base retrieval results
+    /// <p>A list of results from querying the knowledge base.</p>
     pub fn get_retrieval_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseRetrievalResult>> {
         &self.retrieval_results
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

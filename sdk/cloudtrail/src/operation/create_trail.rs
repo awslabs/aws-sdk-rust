@@ -269,6 +269,8 @@ pub enum CreateTrailError {
     InvalidKmsKeyIdException(crate::types::error::InvalidKmsKeyIdException),
     /// <p>This exception is thrown when the combination of parameters provided is not valid.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
+    /// <p>The request includes a parameter that is not valid.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>This exception is thrown when the provided S3 bucket name is not valid.</p>
     InvalidS3BucketNameException(crate::types::error::InvalidS3BucketNameException),
     /// <p>This exception is thrown when the provided S3 prefix is not valid.</p>
@@ -367,6 +369,7 @@ impl CreateTrailError {
             Self::InvalidCloudWatchLogsRoleArnException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidKmsKeyIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterCombinationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidS3BucketNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidS3PrefixException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSnsTopicNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -437,6 +440,10 @@ impl CreateTrailError {
     /// Returns `true` if the error kind is `CreateTrailError::InvalidParameterCombinationException`.
     pub fn is_invalid_parameter_combination_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterCombinationException(_))
+    }
+    /// Returns `true` if the error kind is `CreateTrailError::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateTrailError::InvalidS3BucketNameException`.
     pub fn is_invalid_s3_bucket_name_exception(&self) -> bool {
@@ -534,6 +541,7 @@ impl ::std::error::Error for CreateTrailError {
             Self::InvalidCloudWatchLogsRoleArnException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidKmsKeyIdException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterCombinationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidS3BucketNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidS3PrefixException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSnsTopicNameException(_inner) => ::std::option::Option::Some(_inner),
@@ -573,6 +581,7 @@ impl ::std::fmt::Display for CreateTrailError {
             Self::InvalidCloudWatchLogsRoleArnException(_inner) => _inner.fmt(f),
             Self::InvalidKmsKeyIdException(_inner) => _inner.fmt(f),
             Self::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidS3BucketNameException(_inner) => _inner.fmt(f),
             Self::InvalidS3PrefixException(_inner) => _inner.fmt(f),
             Self::InvalidSnsTopicNameException(_inner) => _inner.fmt(f),
@@ -628,6 +637,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateTrailEr
             Self::InvalidCloudWatchLogsRoleArnException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidKmsKeyIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidS3BucketNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidS3PrefixException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSnsTopicNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

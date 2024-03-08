@@ -161,6 +161,8 @@ pub(crate) mod shape_job_detail_list;
 
 pub(crate) mod shape_job_queue_detail_list;
 
+pub(crate) mod shape_job_state_time_limit_action;
+
 pub(crate) mod shape_job_summary_list;
 
 pub(crate) mod shape_job_timeout;
@@ -274,6 +276,8 @@ pub(crate) mod shape_eks_volume;
 pub(crate) mod shape_host;
 
 pub(crate) mod shape_job_dependency_list;
+
+pub(crate) mod shape_job_state_time_limit_actions;
 
 pub(crate) mod shape_node_details;
 

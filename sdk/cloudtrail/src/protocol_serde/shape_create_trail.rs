@@ -211,6 +211,21 @@ pub fn de_create_trail_http_error(
             }
             tmp
         }),
+        "InvalidParameterException" => crate::operation::create_trail::CreateTrailError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_trail::CreateTrailError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidS3BucketNameException" => crate::operation::create_trail::CreateTrailError::InvalidS3BucketNameException({
             #[allow(unused_mut)]
             let mut tmp = {

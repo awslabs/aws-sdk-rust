@@ -44,6 +44,8 @@ pub struct AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
     /// <li>
+    /// <p><code>AWS::AppConfig::Configuration</code></p></li>
+    /// <li>
     /// <p><code>AWS::B2BI::Transformer</code></p></li>
     /// <li>
     /// <p><code>AWS::Bedrock::AgentAlias</code></p></li>
@@ -72,7 +74,19 @@ pub struct AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::Glue::Table</code></p></li>
     /// <li>
+    /// <p><code>AWS::GreengrassV2::ComponentVersion</code></p></li>
+    /// <li>
+    /// <p><code>AWS::GreengrassV2::Deployment</code></p></li>
+    /// <li>
     /// <p><code>AWS::GuardDuty::Detector</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoT::Certificate</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoT::Thing</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTSiteWise::Asset</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTSiteWise::TimeSeries</code></p></li>
     /// <li>
     /// <p><code>AWS::IoTTwinMaker::Entity</code></p></li>
     /// <li>
@@ -102,6 +116,12 @@ pub struct AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::RDS::DBCluster</code></p></li>
     /// <li>
+    /// <p><code>AWS::S3::AccessPoint</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3ObjectLambda::AccessPoint</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3Outposts::Object</code></p></li>
+    /// <li>
     /// <p><code>AWS::SageMaker::Endpoint</code></p></li>
     /// <li>
     /// <p><code>AWS::SageMaker::ExperimentTrialComponent</code></p></li>
@@ -118,13 +138,9 @@ pub struct AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
     /// <li>
+    /// <p><code>AWS::SWF::Domain</code></p></li>
+    /// <li>
     /// <p><code>AWS::SQS::Queue</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3::AccessPoint</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3ObjectLambda::AccessPoint</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3Outposts::Object</code></p></li>
     /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
     /// <li>
@@ -185,6 +201,26 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :function:
     /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::AppConfig::Configuration</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :appconfig:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /environment/
+    /// <environment_id>
+    /// /configuration/
+    /// <configuration_profile_id></configuration_profile_id>
+    /// </environment_id>
+    /// </application_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -394,6 +430,34 @@ pub struct AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :greengrass:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :components/
+    /// <component_name></component_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :greengrass:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :deployments/
+    /// <deployment_id></deployment_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -404,6 +468,62 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :detector/
     /// <detector_id></detector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoT::Certificate</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iot:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :cert/
+    /// <certificate_id></certificate_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iot:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :thing/
+    /// <thing_id></thing_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iotsitewise:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :asset/
+    /// <asset_id></asset_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iotsitewise:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :timeseries/
+    /// <timeseries_id></timeseries_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -616,6 +736,62 @@ pub struct AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name>
+    /// /object/
+    /// <object_path></object_path>
+    /// </access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3-object-lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3-outposts:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SageMaker::Endpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -734,6 +910,20 @@ pub struct AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :swf:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :domain/
+    /// <domain_name></domain_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -744,62 +934,6 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :
     /// <queue_name></queue_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name></access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name>
-    /// /object/
-    /// <object_path></object_path>
-    /// </access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3-object-lambda:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name></access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3-outposts:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :
-    /// <object_path></object_path>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -947,6 +1081,8 @@ impl AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
     /// <li>
+    /// <p><code>AWS::AppConfig::Configuration</code></p></li>
+    /// <li>
     /// <p><code>AWS::B2BI::Transformer</code></p></li>
     /// <li>
     /// <p><code>AWS::Bedrock::AgentAlias</code></p></li>
@@ -975,7 +1111,19 @@ impl AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::Glue::Table</code></p></li>
     /// <li>
+    /// <p><code>AWS::GreengrassV2::ComponentVersion</code></p></li>
+    /// <li>
+    /// <p><code>AWS::GreengrassV2::Deployment</code></p></li>
+    /// <li>
     /// <p><code>AWS::GuardDuty::Detector</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoT::Certificate</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoT::Thing</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTSiteWise::Asset</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTSiteWise::TimeSeries</code></p></li>
     /// <li>
     /// <p><code>AWS::IoTTwinMaker::Entity</code></p></li>
     /// <li>
@@ -1005,6 +1153,12 @@ impl AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::RDS::DBCluster</code></p></li>
     /// <li>
+    /// <p><code>AWS::S3::AccessPoint</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3ObjectLambda::AccessPoint</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3Outposts::Object</code></p></li>
+    /// <li>
     /// <p><code>AWS::SageMaker::Endpoint</code></p></li>
     /// <li>
     /// <p><code>AWS::SageMaker::ExperimentTrialComponent</code></p></li>
@@ -1021,13 +1175,9 @@ impl AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
     /// <li>
+    /// <p><code>AWS::SWF::Domain</code></p></li>
+    /// <li>
     /// <p><code>AWS::SQS::Queue</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3::AccessPoint</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3ObjectLambda::AccessPoint</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3Outposts::Object</code></p></li>
     /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
     /// <li>
@@ -1088,6 +1238,26 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :function:
     /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::AppConfig::Configuration</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :appconfig:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /environment/
+    /// <environment_id>
+    /// /configuration/
+    /// <configuration_profile_id></configuration_profile_id>
+    /// </environment_id>
+    /// </application_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -1297,6 +1467,34 @@ impl AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :greengrass:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :components/
+    /// <component_name></component_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :greengrass:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :deployments/
+    /// <deployment_id></deployment_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -1307,6 +1505,62 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :detector/
     /// <detector_id></detector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoT::Certificate</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iot:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :cert/
+    /// <certificate_id></certificate_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iot:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :thing/
+    /// <thing_id></thing_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iotsitewise:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :asset/
+    /// <asset_id></asset_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iotsitewise:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :timeseries/
+    /// <timeseries_id></timeseries_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -1519,6 +1773,62 @@ impl AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name>
+    /// /object/
+    /// <object_path></object_path>
+    /// </access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3-object-lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3-outposts:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SageMaker::Endpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -1637,6 +1947,20 @@ impl AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :swf:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :domain/
+    /// <domain_name></domain_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -1647,62 +1971,6 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :
     /// <queue_name></queue_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name></access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name>
-    /// /object/
-    /// <object_path></object_path>
-    /// </access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3-object-lambda:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name></access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3-outposts:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :
-    /// <object_path></object_path>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -1896,6 +2164,8 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
     /// <li>
+    /// <p><code>AWS::AppConfig::Configuration</code></p></li>
+    /// <li>
     /// <p><code>AWS::B2BI::Transformer</code></p></li>
     /// <li>
     /// <p><code>AWS::Bedrock::AgentAlias</code></p></li>
@@ -1924,7 +2194,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::Glue::Table</code></p></li>
     /// <li>
+    /// <p><code>AWS::GreengrassV2::ComponentVersion</code></p></li>
+    /// <li>
+    /// <p><code>AWS::GreengrassV2::Deployment</code></p></li>
+    /// <li>
     /// <p><code>AWS::GuardDuty::Detector</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoT::Certificate</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoT::Thing</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTSiteWise::Asset</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTSiteWise::TimeSeries</code></p></li>
     /// <li>
     /// <p><code>AWS::IoTTwinMaker::Entity</code></p></li>
     /// <li>
@@ -1954,6 +2236,12 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::RDS::DBCluster</code></p></li>
     /// <li>
+    /// <p><code>AWS::S3::AccessPoint</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3ObjectLambda::AccessPoint</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3Outposts::Object</code></p></li>
+    /// <li>
     /// <p><code>AWS::SageMaker::Endpoint</code></p></li>
     /// <li>
     /// <p><code>AWS::SageMaker::ExperimentTrialComponent</code></p></li>
@@ -1970,13 +2258,9 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
     /// <li>
+    /// <p><code>AWS::SWF::Domain</code></p></li>
+    /// <li>
     /// <p><code>AWS::SQS::Queue</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3::AccessPoint</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3ObjectLambda::AccessPoint</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3Outposts::Object</code></p></li>
     /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
     /// <li>
@@ -2037,6 +2321,26 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :function:
     /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::AppConfig::Configuration</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :appconfig:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /environment/
+    /// <environment_id>
+    /// /configuration/
+    /// <configuration_profile_id></configuration_profile_id>
+    /// </environment_id>
+    /// </application_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -2246,6 +2550,34 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :greengrass:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :components/
+    /// <component_name></component_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :greengrass:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :deployments/
+    /// <deployment_id></deployment_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -2256,6 +2588,62 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :detector/
     /// <detector_id></detector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoT::Certificate</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iot:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :cert/
+    /// <certificate_id></certificate_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iot:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :thing/
+    /// <thing_id></thing_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iotsitewise:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :asset/
+    /// <asset_id></asset_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iotsitewise:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :timeseries/
+    /// <timeseries_id></timeseries_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -2468,6 +2856,62 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name>
+    /// /object/
+    /// <object_path></object_path>
+    /// </access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3-object-lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3-outposts:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SageMaker::Endpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -2586,6 +3030,20 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :swf:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :domain/
+    /// <domain_name></domain_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -2596,62 +3054,6 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :
     /// <queue_name></queue_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name></access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name>
-    /// /object/
-    /// <object_path></object_path>
-    /// </access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3-object-lambda:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name></access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3-outposts:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :
-    /// <object_path></object_path>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -2789,6 +3191,8 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
     /// <li>
+    /// <p><code>AWS::AppConfig::Configuration</code></p></li>
+    /// <li>
     /// <p><code>AWS::B2BI::Transformer</code></p></li>
     /// <li>
     /// <p><code>AWS::Bedrock::AgentAlias</code></p></li>
@@ -2817,7 +3221,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::Glue::Table</code></p></li>
     /// <li>
+    /// <p><code>AWS::GreengrassV2::ComponentVersion</code></p></li>
+    /// <li>
+    /// <p><code>AWS::GreengrassV2::Deployment</code></p></li>
+    /// <li>
     /// <p><code>AWS::GuardDuty::Detector</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoT::Certificate</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoT::Thing</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTSiteWise::Asset</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTSiteWise::TimeSeries</code></p></li>
     /// <li>
     /// <p><code>AWS::IoTTwinMaker::Entity</code></p></li>
     /// <li>
@@ -2847,6 +3263,12 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::RDS::DBCluster</code></p></li>
     /// <li>
+    /// <p><code>AWS::S3::AccessPoint</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3ObjectLambda::AccessPoint</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3Outposts::Object</code></p></li>
+    /// <li>
     /// <p><code>AWS::SageMaker::Endpoint</code></p></li>
     /// <li>
     /// <p><code>AWS::SageMaker::ExperimentTrialComponent</code></p></li>
@@ -2863,13 +3285,9 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
     /// <li>
+    /// <p><code>AWS::SWF::Domain</code></p></li>
+    /// <li>
     /// <p><code>AWS::SQS::Queue</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3::AccessPoint</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3ObjectLambda::AccessPoint</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3Outposts::Object</code></p></li>
     /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
     /// <li>
@@ -2930,6 +3348,26 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :function:
     /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::AppConfig::Configuration</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :appconfig:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /environment/
+    /// <environment_id>
+    /// /configuration/
+    /// <configuration_profile_id></configuration_profile_id>
+    /// </environment_id>
+    /// </application_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -3139,6 +3577,34 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :greengrass:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :components/
+    /// <component_name></component_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :greengrass:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :deployments/
+    /// <deployment_id></deployment_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -3149,6 +3615,62 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :detector/
     /// <detector_id></detector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoT::Certificate</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iot:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :cert/
+    /// <certificate_id></certificate_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iot:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :thing/
+    /// <thing_id></thing_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iotsitewise:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :asset/
+    /// <asset_id></asset_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iotsitewise:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :timeseries/
+    /// <timeseries_id></timeseries_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -3361,6 +3883,62 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name>
+    /// /object/
+    /// <object_path></object_path>
+    /// </access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3-object-lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3-outposts:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SageMaker::Endpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -3479,6 +4057,20 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :swf:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :domain/
+    /// <domain_name></domain_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -3489,62 +4081,6 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :
     /// <queue_name></queue_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name></access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name>
-    /// /object/
-    /// <object_path></object_path>
-    /// </access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3-object-lambda:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name></access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3-outposts:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :
-    /// <object_path></object_path>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -3681,6 +4217,8 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
     /// <li>
+    /// <p><code>AWS::AppConfig::Configuration</code></p></li>
+    /// <li>
     /// <p><code>AWS::B2BI::Transformer</code></p></li>
     /// <li>
     /// <p><code>AWS::Bedrock::AgentAlias</code></p></li>
@@ -3709,7 +4247,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::Glue::Table</code></p></li>
     /// <li>
+    /// <p><code>AWS::GreengrassV2::ComponentVersion</code></p></li>
+    /// <li>
+    /// <p><code>AWS::GreengrassV2::Deployment</code></p></li>
+    /// <li>
     /// <p><code>AWS::GuardDuty::Detector</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoT::Certificate</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoT::Thing</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTSiteWise::Asset</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTSiteWise::TimeSeries</code></p></li>
     /// <li>
     /// <p><code>AWS::IoTTwinMaker::Entity</code></p></li>
     /// <li>
@@ -3739,6 +4289,12 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::RDS::DBCluster</code></p></li>
     /// <li>
+    /// <p><code>AWS::S3::AccessPoint</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3ObjectLambda::AccessPoint</code></p></li>
+    /// <li>
+    /// <p><code>AWS::S3Outposts::Object</code></p></li>
+    /// <li>
     /// <p><code>AWS::SageMaker::Endpoint</code></p></li>
     /// <li>
     /// <p><code>AWS::SageMaker::ExperimentTrialComponent</code></p></li>
@@ -3755,13 +4311,9 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
     /// <li>
+    /// <p><code>AWS::SWF::Domain</code></p></li>
+    /// <li>
     /// <p><code>AWS::SQS::Queue</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3::AccessPoint</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3ObjectLambda::AccessPoint</code></p></li>
-    /// <li>
-    /// <p><code>AWS::S3Outposts::Object</code></p></li>
     /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
     /// <li>
@@ -3822,6 +4374,26 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :function:
     /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::AppConfig::Configuration</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :appconfig:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /environment/
+    /// <environment_id>
+    /// /configuration/
+    /// <configuration_profile_id></configuration_profile_id>
+    /// </environment_id>
+    /// </application_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -4031,6 +4603,34 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :greengrass:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :components/
+    /// <component_name></component_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :greengrass:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :deployments/
+    /// <deployment_id></deployment_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -4041,6 +4641,62 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :detector/
     /// <detector_id></detector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoT::Certificate</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iot:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :cert/
+    /// <certificate_id></certificate_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iot:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :thing/
+    /// <thing_id></thing_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iotsitewise:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :asset/
+    /// <asset_id></asset_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iotsitewise:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :timeseries/
+    /// <timeseries_id></timeseries_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -4253,6 +4909,62 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name>
+    /// /object/
+    /// <object_path></object_path>
+    /// </access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3-object-lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :s3-outposts:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SageMaker::Endpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -4371,6 +5083,20 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :swf:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :domain/
+    /// <domain_name></domain_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -4381,62 +5107,6 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :
     /// <queue_name></queue_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name></access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name>
-    /// /object/
-    /// <object_path></object_path>
-    /// </access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3-object-lambda:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :accesspoint/
-    /// <access_point_name></access_point_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code></p></li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>arn:<partition>
-    /// :s3-outposts:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :
-    /// <object_path></object_path>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>

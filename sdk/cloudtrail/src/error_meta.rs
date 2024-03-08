@@ -652,6 +652,7 @@ impl From<crate::operation::create_trail::CreateTrailError> for Error {
             crate::operation::create_trail::CreateTrailError::InvalidParameterCombinationException(inner) => {
                 Error::InvalidParameterCombinationException(inner)
             }
+            crate::operation::create_trail::CreateTrailError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_trail::CreateTrailError::InvalidS3BucketNameException(inner) => Error::InvalidS3BucketNameException(inner),
             crate::operation::create_trail::CreateTrailError::InvalidS3PrefixException(inner) => Error::InvalidS3PrefixException(inner),
             crate::operation::create_trail::CreateTrailError::InvalidSnsTopicNameException(inner) => Error::InvalidSnsTopicNameException(inner),
@@ -950,6 +951,9 @@ where
 impl From<crate::operation::describe_trails::DescribeTrailsError> for Error {
     fn from(err: crate::operation::describe_trails::DescribeTrailsError) -> Self {
         match err {
+            crate::operation::describe_trails::DescribeTrailsError::CloudTrailArnInvalidException(inner) => {
+                Error::CloudTrailArnInvalidException(inner)
+            }
             crate::operation::describe_trails::DescribeTrailsError::InvalidTrailNameException(inner) => Error::InvalidTrailNameException(inner),
             crate::operation::describe_trails::DescribeTrailsError::NoManagementAccountSlrExistsException(inner) => {
                 Error::NoManagementAccountSlrExistsException(inner)
@@ -1480,6 +1484,9 @@ impl From<crate::operation::list_import_failures::ListImportFailuresError> for E
         match err {
             crate::operation::list_import_failures::ListImportFailuresError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_import_failures::ListImportFailuresError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
             }
             crate::operation::list_import_failures::ListImportFailuresError::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)

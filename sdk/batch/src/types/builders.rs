@@ -3,6 +3,8 @@ pub use crate::types::_fairshare_policy::FairsharePolicyBuilder;
 
 pub use crate::types::_share_attributes::ShareAttributesBuilder;
 
+pub use crate::types::_job_state_time_limit_action::JobStateTimeLimitActionBuilder;
+
 pub use crate::types::_compute_environment_order::ComputeEnvironmentOrderBuilder;
 
 pub use crate::types::_update_policy::UpdatePolicyBuilder;

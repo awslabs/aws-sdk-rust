@@ -6,7 +6,7 @@
 pub struct NumberAttributeConstraintsType {
     /// <p>The minimum value of an attribute that is of the number data type.</p>
     pub min_value: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum value of an attribute that is of the number data type.</p>
+    /// <p>The maximum length of a number attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub max_value: ::std::option::Option<::std::string::String>,
 }
 impl NumberAttributeConstraintsType {
@@ -14,7 +14,7 @@ impl NumberAttributeConstraintsType {
     pub fn min_value(&self) -> ::std::option::Option<&str> {
         self.min_value.as_deref()
     }
-    /// <p>The maximum value of an attribute that is of the number data type.</p>
+    /// <p>The maximum length of a number attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub fn max_value(&self) -> ::std::option::Option<&str> {
         self.max_value.as_deref()
     }
@@ -48,17 +48,17 @@ impl NumberAttributeConstraintsTypeBuilder {
     pub fn get_min_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.min_value
     }
-    /// <p>The maximum value of an attribute that is of the number data type.</p>
+    /// <p>The maximum length of a number attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub fn max_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum value of an attribute that is of the number data type.</p>
+    /// <p>The maximum length of a number attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub fn set_max_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_value = input;
         self
     }
-    /// <p>The maximum value of an attribute that is of the number data type.</p>
+    /// <p>The maximum length of a number attribute value. Must be a number less than or equal to <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.</p>
     pub fn get_max_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_value
     }

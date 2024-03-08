@@ -22,7 +22,7 @@ impl RetrieveInputBuilder {
 }
 /// Fluent builder constructing a request to `Retrieve`.
 ///
-/// Retrieve from knowledge base.
+/// <p>Queries a knowledge base and retrieves information from it.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -105,59 +105,59 @@ impl RetrieveFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::retrieve::paginator::RetrievePaginator {
         crate::operation::retrieve::paginator::RetrievePaginator::new(self.handle, self.inner)
     }
-    /// Identifier of the KnowledgeBase
+    /// <p>The unique identifier of the knowledge base to query.</p>
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
-    /// Identifier of the KnowledgeBase
+    /// <p>The unique identifier of the knowledge base to query.</p>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
-    /// Identifier of the KnowledgeBase
+    /// <p>The unique identifier of the knowledge base to query.</p>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_knowledge_base_id()
     }
-    /// Knowledge base input query.
+    /// <p>The query to send the knowledge base.</p>
     pub fn retrieval_query(mut self, input: crate::types::KnowledgeBaseQuery) -> Self {
         self.inner = self.inner.retrieval_query(input);
         self
     }
-    /// Knowledge base input query.
+    /// <p>The query to send the knowledge base.</p>
     pub fn set_retrieval_query(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseQuery>) -> Self {
         self.inner = self.inner.set_retrieval_query(input);
         self
     }
-    /// Knowledge base input query.
+    /// <p>The query to send the knowledge base.</p>
     pub fn get_retrieval_query(&self) -> &::std::option::Option<crate::types::KnowledgeBaseQuery> {
         self.inner.get_retrieval_query()
     }
-    /// Search parameters for retrieving from knowledge base.
+    /// <p>Contains details about how the results should be returned.</p>
     pub fn retrieval_configuration(mut self, input: crate::types::KnowledgeBaseRetrievalConfiguration) -> Self {
         self.inner = self.inner.retrieval_configuration(input);
         self
     }
-    /// Search parameters for retrieving from knowledge base.
+    /// <p>Contains details about how the results should be returned.</p>
     pub fn set_retrieval_configuration(mut self, input: ::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration>) -> Self {
         self.inner = self.inner.set_retrieval_configuration(input);
         self
     }
-    /// Search parameters for retrieving from knowledge base.
+    /// <p>Contains details about how the results should be returned.</p>
     pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::KnowledgeBaseRetrievalConfiguration> {
         self.inner.get_retrieval_configuration()
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Opaque continuation token of previous paginated response.
+    /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

@@ -22,7 +22,9 @@ impl RetrieveAndGenerateInputBuilder {
 }
 /// Fluent builder constructing a request to `RetrieveAndGenerate`.
 ///
-/// RetrieveAndGenerate API
+/// <p>Queries a knowledge base and generates responses based on the retrieved results. The response cites up to five sources but only selects the ones that are relevant to the query.</p><note>
+/// <p>The <code>numberOfResults</code> field is currently unsupported for <code>RetrieveAndGenerate</code>. Don't include it in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_KnowledgeBaseVectorSearchConfiguration.html">vectorSearchConfiguration</a> object.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveAndGenerateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +110,59 @@ impl RetrieveAndGenerateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Identifier of the session.
+    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
         self
     }
-    /// Identifier of the session.
+    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
     }
-    /// Identifier of the session.
+    /// <p>The unique identifier of the session. Reuse the same value to continue the same session with the knowledge base.</p>
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_id()
     }
-    /// Customer input of the turn
+    /// <p>Contains the query made to the knowledge base.</p>
     pub fn input(mut self, input: crate::types::RetrieveAndGenerateInput) -> Self {
         self.inner = self.inner.input(input);
         self
     }
-    /// Customer input of the turn
+    /// <p>Contains the query made to the knowledge base.</p>
     pub fn set_input(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateInput>) -> Self {
         self.inner = self.inner.set_input(input);
         self
     }
-    /// Customer input of the turn
+    /// <p>Contains the query made to the knowledge base.</p>
     pub fn get_input(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateInput> {
         self.inner.get_input()
     }
-    /// Configures the retrieval and generation for the session.
+    /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
     pub fn retrieve_and_generate_configuration(mut self, input: crate::types::RetrieveAndGenerateConfiguration) -> Self {
         self.inner = self.inner.retrieve_and_generate_configuration(input);
         self
     }
-    /// Configures the retrieval and generation for the session.
+    /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
     pub fn set_retrieve_and_generate_configuration(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateConfiguration>) -> Self {
         self.inner = self.inner.set_retrieve_and_generate_configuration(input);
         self
     }
-    /// Configures the retrieval and generation for the session.
+    /// <p>Contains details about the resource being queried and the foundation model used for generation.</p>
     pub fn get_retrieve_and_generate_configuration(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateConfiguration> {
         self.inner.get_retrieve_and_generate_configuration()
     }
-    /// Configures common parameters of the session.
+    /// <p>Contains details about the session with the knowledge base.</p>
     pub fn session_configuration(mut self, input: crate::types::RetrieveAndGenerateSessionConfiguration) -> Self {
         self.inner = self.inner.session_configuration(input);
         self
     }
-    /// Configures common parameters of the session.
+    /// <p>Contains details about the session with the knowledge base.</p>
     pub fn set_session_configuration(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration>) -> Self {
         self.inner = self.inner.set_session_configuration(input);
         self
     }
-    /// Configures common parameters of the session.
+    /// <p>Contains details about the session with the knowledge base.</p>
     pub fn get_session_configuration(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration> {
         self.inner.get_session_configuration()
     }
