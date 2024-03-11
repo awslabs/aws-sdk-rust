@@ -13,6 +13,8 @@ pub struct CreateChannelGroupOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the channel group was modified.</p>
     pub modified_at: ::aws_smithy_types::DateTime,
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The description for your channel group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
@@ -42,6 +44,10 @@ impl CreateChannelGroupOutput {
     /// <p>The date and time the channel group was modified.</p>
     pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
         &self.modified_at
+    }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+        self.e_tag.as_deref()
     }
     /// <p>The description for your channel group.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -73,6 +79,7 @@ pub struct CreateChannelGroupOutputBuilder {
     pub(crate) egress_domain: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -152,6 +159,20 @@ impl CreateChannelGroupOutputBuilder {
     /// <p>The date and time the channel group was modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
+    }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e_tag = input;
+        self
+    }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// <p>The description for your channel group.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -238,6 +259,7 @@ impl CreateChannelGroupOutputBuilder {
                     "modified_at was not specified but it is required when building CreateChannelGroupOutput",
                 )
             })?,
+            e_tag: self.e_tag,
             description: self.description,
             tags: self.tags,
             _request_id: self._request_id,

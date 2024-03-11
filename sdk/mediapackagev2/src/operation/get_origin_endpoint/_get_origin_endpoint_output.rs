@@ -27,6 +27,8 @@ pub struct GetOriginEndpointOutput {
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>>,
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -88,6 +90,10 @@ impl GetOriginEndpointOutput {
     pub fn low_latency_hls_manifests(&self) -> &[crate::types::GetLowLatencyHlsManifestConfiguration] {
         self.low_latency_hls_manifests.as_deref().unwrap_or_default()
     }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
     /// <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -121,6 +127,7 @@ pub struct GetOriginEndpointOutputBuilder {
     pub(crate) startover_window_seconds: ::std::option::Option<i32>,
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>>,
     pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -316,6 +323,20 @@ impl GetOriginEndpointOutputBuilder {
     pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetLowLatencyHlsManifestConfiguration>> {
         &self.low_latency_hls_manifests
     }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e_tag = input;
+        self
+    }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -405,6 +426,7 @@ impl GetOriginEndpointOutputBuilder {
             startover_window_seconds: self.startover_window_seconds,
             hls_manifests: self.hls_manifests,
             low_latency_hls_manifests: self.low_latency_hls_manifests,
+            e_tag: self.e_tag,
             tags: self.tags,
             _request_id: self._request_id,
         })

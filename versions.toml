@@ -508,9 +508,9 @@ model_hash = 'c9a6612597a2e48003707036f12994ec6b0eaf4e39f100153647674b67a8c084'
 
 [crates.aws-sdk-codestarconnections]
 category = 'AwsSdk'
-version = '1.16.0'
-source_hash = 'c250426bd11f7e94a8d8a17edf53e06dac0f2b73a7ded3da620ae225878192c8'
-model_hash = '894d40d382b8c31051ab0dab96720cd27b66027ffa96e0f0b5f8dcf29fea5836'
+version = '1.17.0'
+source_hash = '22d6d0e9a42ae86fe5de3376b9734eb0057ce4f1597d2cea84805055633ee6e3'
+model_hash = '2f2267305388055154ccbe8246feeee77cfc1d0f9afb83d6c4572a8344c67c0a'
 
 [crates.aws-sdk-codestarnotifications]
 category = 'AwsSdk'
@@ -784,9 +784,9 @@ model_hash = '5625a9633fc7b484b461f531792a1dcfa447e92f65815e55ef86e028221dd038'
 
 [crates.aws-sdk-elasticache]
 category = 'AwsSdk'
-version = '1.16.0'
-source_hash = 'a5d070a170837c5dea8a43f09d0550fb85af52f8b304b6e64afd8a8381d6cd10'
-model_hash = 'a81cf95de918a279af50b0f5e619dab26afe9b15f87a11faf787f7b0b563470c'
+version = '1.16.1'
+source_hash = 'b5fffc9e03aea5755bbb9bb6a33dc2b4fa312db721a8943001378c61a86087a7'
+model_hash = '7a5319056317db6ee6c74acb5c0588f0f1e687174557841961636f666ee398d3'
 
 [crates.aws-sdk-elasticbeanstalk]
 category = 'AwsSdk'
@@ -1420,9 +1420,9 @@ model_hash = '6b1f33b67ca3b4d994b5180e1e84382e43a2e48852907d8628429009f5be0d00'
 
 [crates.aws-sdk-mediapackagev2]
 category = 'AwsSdk'
-version = '1.15.0'
-source_hash = 'a5d479506968d45b4ee54a4cd66b14c42e2d02f4434c5fb617741ec2ed574135'
-model_hash = 'b32272b05d6399def606b48da03cf2bbcbd57a343805cde5343effb056f89600'
+version = '1.16.0'
+source_hash = 'cdee441abc7a825297e3d4d7aad61774fd0b23da3c23ceebfa3a3a2b7f93e637'
+model_hash = '8b638d8156ebca4dc392df3fc8aecee31ff9aa2ebd42960176ef481335c5d5b3'
 
 [crates.aws-sdk-mediapackagevod]
 category = 'AwsSdk'
@@ -2425,15 +2425,7 @@ source_hash = '87fd76dbec199956d8f44cd6f3ffae7c8c5d5050f55280077c977345434fb951'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '7de1829d30f446753f3731c106f8665f9a49ef45a66b6d14ab7045f5e0aa2488'
-
-[release]
-tag = 'release-2024-03-08'
-
 [release.crates]
-aws-sdk-batch = '1.18.0'
-aws-sdk-bedrockagentruntime = '1.13.1'
-aws-sdk-cloudtrail = '1.17.0'
-aws-sdk-codebuild = '1.17.1'
-aws-sdk-cognitoidentityprovider = '1.18.0'
-aws-sdk-guardduty = '1.17.0'
-aws-sdk-transfer = '1.17.0'
+aws-sdk-codestarconnections = '1.17.0'
+aws-sdk-elasticache = '1.16.1'
+aws-sdk-mediapackagev2 = '1.16.0'

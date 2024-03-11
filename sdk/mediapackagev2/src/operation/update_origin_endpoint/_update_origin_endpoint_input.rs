@@ -21,6 +21,8 @@ pub struct UpdateOriginEndpointInput {
     pub hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     /// <p>A low-latency HLS manifest configuration.</p>
     pub low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub e_tag: ::std::option::Option<::std::string::String>,
 }
 impl UpdateOriginEndpointInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
@@ -63,6 +65,10 @@ impl UpdateOriginEndpointInput {
     pub fn low_latency_hls_manifests(&self) -> &[crate::types::CreateLowLatencyHlsManifestConfiguration] {
         self.low_latency_hls_manifests.as_deref().unwrap_or_default()
     }
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
 }
 impl UpdateOriginEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateOriginEndpointInput`](crate::operation::update_origin_endpoint::UpdateOriginEndpointInput).
@@ -84,6 +90,7 @@ pub struct UpdateOriginEndpointInputBuilder {
     pub(crate) startover_window_seconds: ::std::option::Option<i32>,
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateHlsManifestConfiguration>>,
     pub(crate) low_latency_hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
 }
 impl UpdateOriginEndpointInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
@@ -231,6 +238,20 @@ impl UpdateOriginEndpointInputBuilder {
     pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
         &self.low_latency_hls_manifests
     }
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e_tag = input;
+        self
+    }
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// Consumes the builder and constructs a [`UpdateOriginEndpointInput`](crate::operation::update_origin_endpoint::UpdateOriginEndpointInput).
     pub fn build(
         self,
@@ -246,6 +267,7 @@ impl UpdateOriginEndpointInputBuilder {
             startover_window_seconds: self.startover_window_seconds,
             hls_manifests: self.hls_manifests,
             low_latency_hls_manifests: self.low_latency_hls_manifests,
+            e_tag: self.e_tag,
         })
     }
 }

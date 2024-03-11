@@ -24,15 +24,15 @@ pub struct ServerlessCache {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the EC2 security groups associated with the serverless cache.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Represents the information required for client programs to connect to a cache node.</p>
+    /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
-    /// <p>Represents the information required for client programs to connect to a cache node.</p>
+    /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub reader_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The Amazon Resource Name (ARN) of the serverless cache.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user group associated with the serverless cache. Available for Redis only. Default is NULL.</p>
     pub user_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
+    /// <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The current setting for the number of serverless cache snapshots the system will retain. Available for Redis only.</p>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
@@ -82,11 +82,11 @@ impl ServerlessCache {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Represents the information required for client programs to connect to a cache node.</p>
+    /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.endpoint.as_ref()
     }
-    /// <p>Represents the information required for client programs to connect to a cache node.</p>
+    /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn reader_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.reader_endpoint.as_ref()
     }
@@ -98,7 +98,7 @@ impl ServerlessCache {
     pub fn user_group_id(&self) -> ::std::option::Option<&str> {
         self.user_group_id.as_deref()
     }
-    /// <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
+    /// <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
     pub fn subnet_ids(&self) -> &[::std::string::String] {
@@ -289,31 +289,31 @@ impl ServerlessCacheBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
-    /// <p>Represents the information required for client programs to connect to a cache node.</p>
+    /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the information required for client programs to connect to a cache node.</p>
+    /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.endpoint = input;
         self
     }
-    /// <p>Represents the information required for client programs to connect to a cache node.</p>
+    /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         &self.endpoint
     }
-    /// <p>Represents the information required for client programs to connect to a cache node.</p>
+    /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn reader_endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.reader_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the information required for client programs to connect to a cache node.</p>
+    /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn set_reader_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.reader_endpoint = input;
         self
     }
-    /// <p>Represents the information required for client programs to connect to a cache node.</p>
+    /// <p>Represents the information required for client programs to connect to a cache node. This value is read-only.</p>
     pub fn get_reader_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         &self.reader_endpoint
     }
@@ -349,19 +349,19 @@ impl ServerlessCacheBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
+    /// <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
+    /// <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
-    /// <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
+    /// <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across AZs in your default VPC.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }

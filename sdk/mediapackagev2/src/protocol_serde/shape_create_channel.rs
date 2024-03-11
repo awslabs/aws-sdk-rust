@@ -222,6 +222,13 @@ pub(crate) fn de_create_channel(
                             .transpose()?,
                     );
                 }
+                "ETag" => {
+                    builder = builder.set_e_tag(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "IngestEndpoints" => {
                     builder = builder.set_ingest_endpoints(crate::protocol_serde::shape_ingest_endpoint_list::de_ingest_endpoint_list(tokens)?);
                 }

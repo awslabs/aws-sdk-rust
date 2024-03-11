@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`egress_domain(String)`](crate::operation::create_channel_group::CreateChannelGroupOutput::egress_domain): <p>The output domain where the source stream should be sent. Integrate the egress domain with a downstream CDN (such as Amazon CloudFront) or playback device.</p>
     ///   - [`created_at(DateTime)`](crate::operation::create_channel_group::CreateChannelGroupOutput::created_at): <p>The date and time the channel group was created.</p>
     ///   - [`modified_at(DateTime)`](crate::operation::create_channel_group::CreateChannelGroupOutput::modified_at): <p>The date and time the channel group was modified.</p>
+    ///   - [`e_tag(Option<String>)`](crate::operation::create_channel_group::CreateChannelGroupOutput::e_tag): <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     ///   - [`description(Option<String>)`](crate::operation::create_channel_group::CreateChannelGroupOutput::description): <p>The description for your channel group.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::create_channel_group::CreateChannelGroupOutput::tags): <p>The comma-separated list of tag key:value pairs assigned to the channel group.</p>
     /// - On failure, responds with [`SdkError<CreateChannelGroupError>`](crate::operation::create_channel_group::CreateChannelGroupError)

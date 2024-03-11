@@ -21,5 +21,11 @@ pub fn ser_create_sync_configuration_input_input(
     if let Some(var_6) = &input.sync_type {
         object.key("SyncType").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.publish_deployment_status {
+        object.key("PublishDeploymentStatus").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.trigger_resource_update_on {
+        object.key("TriggerResourceUpdateOn").string(var_8.as_str());
+    }
     Ok(())
 }

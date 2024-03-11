@@ -192,4 +192,32 @@ impl UpdateSyncConfigurationFluentBuilder {
     pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncConfigurationType> {
         self.inner.get_sync_type()
     }
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub fn publish_deployment_status(mut self, input: crate::types::PublishDeploymentStatus) -> Self {
+        self.inner = self.inner.publish_deployment_status(input);
+        self
+    }
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub fn set_publish_deployment_status(mut self, input: ::std::option::Option<crate::types::PublishDeploymentStatus>) -> Self {
+        self.inner = self.inner.set_publish_deployment_status(input);
+        self
+    }
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub fn get_publish_deployment_status(&self) -> &::std::option::Option<crate::types::PublishDeploymentStatus> {
+        self.inner.get_publish_deployment_status()
+    }
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub fn trigger_resource_update_on(mut self, input: crate::types::TriggerResourceUpdateOn) -> Self {
+        self.inner = self.inner.trigger_resource_update_on(input);
+        self
+    }
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub fn set_trigger_resource_update_on(mut self, input: ::std::option::Option<crate::types::TriggerResourceUpdateOn>) -> Self {
+        self.inner = self.inner.set_trigger_resource_update_on(input);
+        self
+    }
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub fn get_trigger_resource_update_on(&self) -> &::std::option::Option<crate::types::TriggerResourceUpdateOn> {
+        self.inner.get_trigger_resource_update_on()
+    }
 }

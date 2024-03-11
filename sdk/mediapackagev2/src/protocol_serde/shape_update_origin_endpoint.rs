@@ -153,6 +153,26 @@ pub fn de_update_origin_endpoint_http_response(
     })
 }
 
+pub fn ser_update_origin_endpoint_headers(
+    input: &crate::operation::update_origin_endpoint::UpdateOriginEndpointInput,
+    mut builder: ::http::request::Builder,
+) -> std::result::Result<::http::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
+    if let ::std::option::Option::Some(inner_1) = &input.e_tag {
+        let formatted_2 = inner_1.as_str();
+        if !formatted_2.is_empty() {
+            let header_value = formatted_2;
+            let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
+                ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                    "e_tag",
+                    format!("`{}` cannot be used as a header value: {}", &header_value, err),
+                )
+            })?;
+            builder = builder.header("x-amzn-update-if-match", header_value);
+        }
+    }
+    Ok(builder)
+}
+
 pub fn ser_update_origin_endpoint_input(
     input: &crate::operation::update_origin_endpoint::UpdateOriginEndpointInput,
 ) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
@@ -213,6 +233,13 @@ pub(crate) fn de_update_origin_endpoint(
                 }
                 "Description" => {
                     builder = builder.set_description(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ETag" => {
+                    builder = builder.set_e_tag(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

@@ -5,6 +5,8 @@
 pub struct UpdateChannelGroupInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub channel_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>Any descriptive information that you want to add to the channel group for future identification purposes.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
@@ -12,6 +14,10 @@ impl UpdateChannelGroupInput {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn channel_group_name(&self) -> ::std::option::Option<&str> {
         self.channel_group_name.as_deref()
+    }
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+        self.e_tag.as_deref()
     }
     /// <p>Any descriptive information that you want to add to the channel group for future identification purposes.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -30,6 +36,7 @@ impl UpdateChannelGroupInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UpdateChannelGroupInputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateChannelGroupInputBuilder {
@@ -47,6 +54,20 @@ impl UpdateChannelGroupInputBuilder {
     /// <p>The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.</p>
     pub fn get_channel_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.channel_group_name
+    }
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e_tag = input;
+        self
+    }
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
     }
     /// <p>Any descriptive information that you want to add to the channel group for future identification purposes.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,6 +90,7 @@ impl UpdateChannelGroupInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::update_channel_group::UpdateChannelGroupInput {
             channel_group_name: self.channel_group_name,
+            e_tag: self.e_tag,
             description: self.description,
         })
     }

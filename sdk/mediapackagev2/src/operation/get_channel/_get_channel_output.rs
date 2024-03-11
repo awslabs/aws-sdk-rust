@@ -17,6 +17,8 @@ pub struct GetChannelOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of ingest endpoints.</p>
     pub ingest_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>>,
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The comma-separated list of tag key:value pairs assigned to the channel.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -55,6 +57,10 @@ impl GetChannelOutput {
     pub fn ingest_endpoints(&self) -> &[crate::types::IngestEndpoint] {
         self.ingest_endpoints.as_deref().unwrap_or_default()
     }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
+        self.e_tag.as_deref()
+    }
     /// <p>The comma-separated list of tag key:value pairs assigned to the channel.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -83,6 +89,7 @@ pub struct GetChannelOutputBuilder {
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) ingest_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -196,6 +203,20 @@ impl GetChannelOutputBuilder {
     pub fn get_ingest_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>> {
         &self.ingest_endpoints
     }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e_tag = input;
+        self
+    }
+    /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_tag
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -266,6 +287,7 @@ impl GetChannelOutputBuilder {
             })?,
             description: self.description,
             ingest_endpoints: self.ingest_endpoints,
+            e_tag: self.e_tag,
             tags: self.tags,
             _request_id: self._request_id,
         })

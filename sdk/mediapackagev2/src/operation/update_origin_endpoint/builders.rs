@@ -246,4 +246,18 @@ impl UpdateOriginEndpointFluentBuilder {
     pub fn get_low_latency_hls_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateLowLatencyHlsManifestConfiguration>> {
         self.inner.get_low_latency_hls_manifests()
     }
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.e_tag(input.into());
+        self
+    }
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_e_tag(input);
+        self
+    }
+    /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
+    pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_e_tag()
+    }
 }

@@ -169,6 +169,13 @@ pub(crate) fn de_get_origin_endpoint(
                             .transpose()?,
                     );
                 }
+                "ETag" => {
+                    builder = builder.set_e_tag(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "HlsManifests" => {
                     builder = builder.set_hls_manifests(crate::protocol_serde::shape_get_hls_manifests::de_get_hls_manifests(tokens)?);
                 }

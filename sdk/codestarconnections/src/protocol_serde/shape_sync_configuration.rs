@@ -77,6 +77,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PublishDeploymentStatus" => {
+                            builder = builder.set_publish_deployment_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PublishDeploymentStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "TriggerResourceUpdateOn" => {
+                            builder = builder.set_trigger_resource_update_on(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TriggerResourceUpdateOn::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

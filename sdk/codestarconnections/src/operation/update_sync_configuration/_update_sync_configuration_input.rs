@@ -15,6 +15,10 @@ pub struct UpdateSyncConfigurationInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The sync type for the sync configuration to be updated.</p>
     pub sync_type: ::std::option::Option<crate::types::SyncConfigurationType>,
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub publish_deployment_status: ::std::option::Option<crate::types::PublishDeploymentStatus>,
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub trigger_resource_update_on: ::std::option::Option<crate::types::TriggerResourceUpdateOn>,
 }
 impl UpdateSyncConfigurationInput {
     /// <p>The branch for the sync configuration to be updated.</p>
@@ -41,6 +45,14 @@ impl UpdateSyncConfigurationInput {
     pub fn sync_type(&self) -> ::std::option::Option<&crate::types::SyncConfigurationType> {
         self.sync_type.as_ref()
     }
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub fn publish_deployment_status(&self) -> ::std::option::Option<&crate::types::PublishDeploymentStatus> {
+        self.publish_deployment_status.as_ref()
+    }
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub fn trigger_resource_update_on(&self) -> ::std::option::Option<&crate::types::TriggerResourceUpdateOn> {
+        self.trigger_resource_update_on.as_ref()
+    }
 }
 impl UpdateSyncConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateSyncConfigurationInput`](crate::operation::update_sync_configuration::UpdateSyncConfigurationInput).
@@ -59,6 +71,8 @@ pub struct UpdateSyncConfigurationInputBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sync_type: ::std::option::Option<crate::types::SyncConfigurationType>,
+    pub(crate) publish_deployment_status: ::std::option::Option<crate::types::PublishDeploymentStatus>,
+    pub(crate) trigger_resource_update_on: ::std::option::Option<crate::types::TriggerResourceUpdateOn>,
 }
 impl UpdateSyncConfigurationInputBuilder {
     /// <p>The branch for the sync configuration to be updated.</p>
@@ -147,6 +161,34 @@ impl UpdateSyncConfigurationInputBuilder {
     pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncConfigurationType> {
         &self.sync_type
     }
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub fn publish_deployment_status(mut self, input: crate::types::PublishDeploymentStatus) -> Self {
+        self.publish_deployment_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub fn set_publish_deployment_status(mut self, input: ::std::option::Option<crate::types::PublishDeploymentStatus>) -> Self {
+        self.publish_deployment_status = input;
+        self
+    }
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub fn get_publish_deployment_status(&self) -> &::std::option::Option<crate::types::PublishDeploymentStatus> {
+        &self.publish_deployment_status
+    }
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub fn trigger_resource_update_on(mut self, input: crate::types::TriggerResourceUpdateOn) -> Self {
+        self.trigger_resource_update_on = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub fn set_trigger_resource_update_on(mut self, input: ::std::option::Option<crate::types::TriggerResourceUpdateOn>) -> Self {
+        self.trigger_resource_update_on = input;
+        self
+    }
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub fn get_trigger_resource_update_on(&self) -> &::std::option::Option<crate::types::TriggerResourceUpdateOn> {
+        &self.trigger_resource_update_on
+    }
     /// Consumes the builder and constructs a [`UpdateSyncConfigurationInput`](crate::operation::update_sync_configuration::UpdateSyncConfigurationInput).
     pub fn build(
         self,
@@ -161,6 +203,8 @@ impl UpdateSyncConfigurationInputBuilder {
             resource_name: self.resource_name,
             role_arn: self.role_arn,
             sync_type: self.sync_type,
+            publish_deployment_status: self.publish_deployment_status,
+            trigger_resource_update_on: self.trigger_resource_update_on,
         })
     }
 }

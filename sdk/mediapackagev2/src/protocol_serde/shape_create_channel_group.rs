@@ -222,6 +222,13 @@ pub(crate) fn de_create_channel_group(
                             .transpose()?,
                     );
                 }
+                "ETag" => {
+                    builder = builder.set_e_tag(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "EgressDomain" => {
                     builder = builder.set_egress_domain(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

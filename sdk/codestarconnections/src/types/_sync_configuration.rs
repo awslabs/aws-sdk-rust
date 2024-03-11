@@ -22,6 +22,10 @@ pub struct SyncConfiguration {
     pub role_arn: ::std::string::String,
     /// <p>The type of sync for a specific sync configuration.</p>
     pub sync_type: crate::types::SyncConfigurationType,
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub publish_deployment_status: ::std::option::Option<crate::types::PublishDeploymentStatus>,
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub trigger_resource_update_on: ::std::option::Option<crate::types::TriggerResourceUpdateOn>,
 }
 impl SyncConfiguration {
     /// <p>The branch associated with a specific sync configuration.</p>
@@ -66,6 +70,14 @@ impl SyncConfiguration {
     pub fn sync_type(&self) -> &crate::types::SyncConfigurationType {
         &self.sync_type
     }
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub fn publish_deployment_status(&self) -> ::std::option::Option<&crate::types::PublishDeploymentStatus> {
+        self.publish_deployment_status.as_ref()
+    }
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub fn trigger_resource_update_on(&self) -> ::std::option::Option<&crate::types::TriggerResourceUpdateOn> {
+        self.trigger_resource_update_on.as_ref()
+    }
 }
 impl SyncConfiguration {
     /// Creates a new builder-style object to manufacture [`SyncConfiguration`](crate::types::SyncConfiguration).
@@ -87,6 +99,8 @@ pub struct SyncConfigurationBuilder {
     pub(crate) resource_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sync_type: ::std::option::Option<crate::types::SyncConfigurationType>,
+    pub(crate) publish_deployment_status: ::std::option::Option<crate::types::PublishDeploymentStatus>,
+    pub(crate) trigger_resource_update_on: ::std::option::Option<crate::types::TriggerResourceUpdateOn>,
 }
 impl SyncConfigurationBuilder {
     /// <p>The branch associated with a specific sync configuration.</p>
@@ -223,6 +237,34 @@ impl SyncConfigurationBuilder {
     pub fn get_sync_type(&self) -> &::std::option::Option<crate::types::SyncConfigurationType> {
         &self.sync_type
     }
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub fn publish_deployment_status(mut self, input: crate::types::PublishDeploymentStatus) -> Self {
+        self.publish_deployment_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub fn set_publish_deployment_status(mut self, input: ::std::option::Option<crate::types::PublishDeploymentStatus>) -> Self {
+        self.publish_deployment_status = input;
+        self
+    }
+    /// <p>Whether to enable or disable publishing of deployment status to source providers.</p>
+    pub fn get_publish_deployment_status(&self) -> &::std::option::Option<crate::types::PublishDeploymentStatus> {
+        &self.publish_deployment_status
+    }
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub fn trigger_resource_update_on(mut self, input: crate::types::TriggerResourceUpdateOn) -> Self {
+        self.trigger_resource_update_on = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub fn set_trigger_resource_update_on(mut self, input: ::std::option::Option<crate::types::TriggerResourceUpdateOn>) -> Self {
+        self.trigger_resource_update_on = input;
+        self
+    }
+    /// <p>When to trigger Git sync to begin the stack update.</p>
+    pub fn get_trigger_resource_update_on(&self) -> &::std::option::Option<crate::types::TriggerResourceUpdateOn> {
+        &self.trigger_resource_update_on
+    }
     /// Consumes the builder and constructs a [`SyncConfiguration`](crate::types::SyncConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`branch`](crate::types::builders::SyncConfigurationBuilder::branch)
@@ -284,6 +326,8 @@ impl SyncConfigurationBuilder {
                     "sync_type was not specified but it is required when building SyncConfiguration",
                 )
             })?,
+            publish_deployment_status: self.publish_deployment_status,
+            trigger_resource_update_on: self.trigger_resource_update_on,
         })
     }
 }

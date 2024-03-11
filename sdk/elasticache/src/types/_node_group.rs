@@ -10,7 +10,7 @@ pub struct NodeGroup {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint of the primary node in this node group (shard).</p>
     pub primary_endpoint: ::std::option::Option<crate::types::Endpoint>,
-    /// <p>The endpoint of the replica nodes in this node group (shard).</p>
+    /// <p>The endpoint of the replica nodes in this node group (shard). This value is read-only.</p>
     pub reader_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The keyspace for this node group (shard).</p>
     pub slots: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ impl NodeGroup {
     pub fn primary_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.primary_endpoint.as_ref()
     }
-    /// <p>The endpoint of the replica nodes in this node group (shard).</p>
+    /// <p>The endpoint of the replica nodes in this node group (shard). This value is read-only.</p>
     pub fn reader_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.reader_endpoint.as_ref()
     }
@@ -106,17 +106,17 @@ impl NodeGroupBuilder {
     pub fn get_primary_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         &self.primary_endpoint
     }
-    /// <p>The endpoint of the replica nodes in this node group (shard).</p>
+    /// <p>The endpoint of the replica nodes in this node group (shard). This value is read-only.</p>
     pub fn reader_endpoint(mut self, input: crate::types::Endpoint) -> Self {
         self.reader_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The endpoint of the replica nodes in this node group (shard).</p>
+    /// <p>The endpoint of the replica nodes in this node group (shard). This value is read-only.</p>
     pub fn set_reader_endpoint(mut self, input: ::std::option::Option<crate::types::Endpoint>) -> Self {
         self.reader_endpoint = input;
         self
     }
-    /// <p>The endpoint of the replica nodes in this node group (shard).</p>
+    /// <p>The endpoint of the replica nodes in this node group (shard). This value is read-only.</p>
     pub fn get_reader_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         &self.reader_endpoint
     }
