@@ -5,7 +5,7 @@
 pub struct RevokeSecurityGroupIngressInput {
     /// <p>The CIDR IP address range. You can't specify this parameter when specifying a source security group.</p>
     pub cidr_ip: ::std::option::Option<::std::string::String>,
-    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types.</p>
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
     pub from_port: ::std::option::Option<i32>,
     /// <p>The ID of the security group.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
@@ -19,7 +19,7 @@ pub struct RevokeSecurityGroupIngressInput {
     pub source_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Not supported.</p>
     pub source_security_group_owner_id: ::std::option::Option<::std::string::String>,
-    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code or -1 (all ICMP codes).</p>
     pub to_port: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
@@ -31,7 +31,7 @@ impl RevokeSecurityGroupIngressInput {
     pub fn cidr_ip(&self) -> ::std::option::Option<&str> {
         self.cidr_ip.as_deref()
     }
-    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types.</p>
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
     pub fn from_port(&self) -> ::std::option::Option<i32> {
         self.from_port
     }
@@ -61,7 +61,7 @@ impl RevokeSecurityGroupIngressInput {
     pub fn source_security_group_owner_id(&self) -> ::std::option::Option<&str> {
         self.source_security_group_owner_id.as_deref()
     }
-    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code or -1 (all ICMP codes).</p>
     pub fn to_port(&self) -> ::std::option::Option<i32> {
         self.to_port
     }
@@ -114,17 +114,17 @@ impl RevokeSecurityGroupIngressInputBuilder {
     pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr_ip
     }
-    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types.</p>
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
     pub fn from_port(mut self, input: i32) -> Self {
         self.from_port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types.</p>
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.from_port = input;
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types.</p>
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
     pub fn get_from_port(&self) -> &::std::option::Option<i32> {
         &self.from_port
     }
@@ -218,17 +218,17 @@ impl RevokeSecurityGroupIngressInputBuilder {
     pub fn get_source_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_security_group_owner_id
     }
-    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code or -1 (all ICMP codes).</p>
     pub fn to_port(mut self, input: i32) -> Self {
         self.to_port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code or -1 (all ICMP codes).</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to_port = input;
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code or -1 (all ICMP codes).</p>
     pub fn get_to_port(&self) -> &::std::option::Option<i32> {
         &self.to_port
     }

@@ -23,7 +23,7 @@ impl ResetSnapshotAttributeInputBuilder {
 /// Fluent builder constructing a request to `ResetSnapshotAttribute`.
 ///
 /// <p>Resets permission settings for the specified snapshot.</p>
-/// <p>For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share a snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modifying-snapshot-permissions.html">Share a snapshot</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetSnapshotAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

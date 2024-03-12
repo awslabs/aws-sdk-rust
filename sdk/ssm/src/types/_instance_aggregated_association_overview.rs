@@ -6,7 +6,7 @@
 pub struct InstanceAggregatedAssociationOverview {
     /// <p>Detailed status information about the aggregated associations.</p>
     pub detailed_status: ::std::option::Option<::std::string::String>,
-    /// <p>The number of associations for the managed node(s).</p>
+    /// <p>The number of associations for the managed nodes.</p>
     pub instance_association_status_aggregated_count: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl InstanceAggregatedAssociationOverview {
@@ -14,7 +14,7 @@ impl InstanceAggregatedAssociationOverview {
     pub fn detailed_status(&self) -> ::std::option::Option<&str> {
         self.detailed_status.as_deref()
     }
-    /// <p>The number of associations for the managed node(s).</p>
+    /// <p>The number of associations for the managed nodes.</p>
     pub fn instance_association_status_aggregated_count(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.instance_association_status_aggregated_count.as_ref()
     }
@@ -52,14 +52,14 @@ impl InstanceAggregatedAssociationOverviewBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_association_status_aggregated_count`](Self::set_instance_association_status_aggregated_count).
     ///
-    /// <p>The number of associations for the managed node(s).</p>
+    /// <p>The number of associations for the managed nodes.</p>
     pub fn instance_association_status_aggregated_count(mut self, k: impl ::std::convert::Into<::std::string::String>, v: i32) -> Self {
         let mut hash_map = self.instance_association_status_aggregated_count.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.instance_association_status_aggregated_count = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The number of associations for the managed node(s).</p>
+    /// <p>The number of associations for the managed nodes.</p>
     pub fn set_instance_association_status_aggregated_count(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
@@ -67,7 +67,7 @@ impl InstanceAggregatedAssociationOverviewBuilder {
         self.instance_association_status_aggregated_count = input;
         self
     }
-    /// <p>The number of associations for the managed node(s).</p>
+    /// <p>The number of associations for the managed nodes.</p>
     pub fn get_instance_association_status_aggregated_count(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, i32>> {

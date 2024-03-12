@@ -56,7 +56,7 @@
 /// <p><b>State Manager association targets only</b>: <code>Key=InstanceIds,Values=*</code></p>
 /// <p>This example demonstrates how to target all managed instances in the Amazon Web Services Region where the association was created.</p></li>
 /// </ul>
-/// <p>For more information about how to send commands that target managed nodes using <code>Key,Value</code> parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting multiple instances</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+/// <p>For more information about how to send commands that target managed nodes using <code>Key,Value</code> parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting multiple managed nodes</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {

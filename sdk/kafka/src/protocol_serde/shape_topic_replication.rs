@@ -12,23 +12,29 @@ pub fn ser_topic_replication(
     if let Some(var_3) = &input.detect_and_copy_new_topics {
         object.key("detectAndCopyNewTopics").boolean(*var_3);
     }
-    if let Some(var_4) = &input.topics_to_exclude {
-        let mut array_5 = object.key("topicsToExclude").start_array();
-        for item_6 in var_4 {
-            {
-                array_5.value().string(item_6.as_str());
-            }
-        }
-        array_5.finish();
+    if let Some(var_4) = &input.starting_position {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("startingPosition").start_object();
+        crate::protocol_serde::shape_replication_starting_position::ser_replication_starting_position(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_7) = &input.topics_to_replicate {
-        let mut array_8 = object.key("topicsToReplicate").start_array();
-        for item_9 in var_7 {
+    if let Some(var_6) = &input.topics_to_exclude {
+        let mut array_7 = object.key("topicsToExclude").start_array();
+        for item_8 in var_6 {
             {
-                array_8.value().string(item_9.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_8.finish();
+        array_7.finish();
+    }
+    if let Some(var_9) = &input.topics_to_replicate {
+        let mut array_10 = object.key("topicsToReplicate").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
     }
     Ok(())
 }
@@ -59,6 +65,11 @@ where
                         "detectAndCopyNewTopics" => {
                             builder =
                                 builder.set_detect_and_copy_new_topics(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "startingPosition" => {
+                            builder = builder.set_starting_position(
+                                crate::protocol_serde::shape_replication_starting_position::de_replication_starting_position(tokens)?,
+                            );
                         }
                         "topicsToExclude" => {
                             builder =

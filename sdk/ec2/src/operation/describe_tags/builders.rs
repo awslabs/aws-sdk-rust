@@ -23,7 +23,9 @@ impl DescribeTagsInputBuilder {
 /// Fluent builder constructing a request to `DescribeTags`.
 ///
 /// <p>Describes the specified tags for your EC2 resources.</p>
-/// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><note>
+/// <p>The order of the elements in the response, including those within nested structures, might vary. Applications should not assume the elements appear in a particular order.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

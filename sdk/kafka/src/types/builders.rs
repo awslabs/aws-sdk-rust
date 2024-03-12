@@ -141,6 +141,8 @@ pub use crate::types::_replication_info_description::ReplicationInfoDescriptionB
 
 pub use crate::types::_topic_replication::TopicReplicationBuilder;
 
+pub use crate::types::_replication_starting_position::ReplicationStartingPositionBuilder;
+
 pub use crate::types::_consumer_group_replication::ConsumerGroupReplicationBuilder;
 
 pub use crate::types::_kafka_cluster_description::KafkaClusterDescriptionBuilder;

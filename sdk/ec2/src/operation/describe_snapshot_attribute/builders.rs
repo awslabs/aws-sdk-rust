@@ -23,7 +23,7 @@ impl DescribeSnapshotAttributeInputBuilder {
 /// Fluent builder constructing a request to `DescribeSnapshotAttribute`.
 ///
 /// <p>Describes the specified attribute of the specified snapshot. You can specify only one attribute at a time.</p>
-/// <p>For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSnapshotAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl DescribeStaleSecurityGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeStaleSecurityGroups`.
 ///
-/// <p>Describes the stale security group rules for security groups in a specified VPC. Rules are stale when they reference a deleted security group in the same VPC, peered VPC, or in separate VPCs attached to a transit gateway (with <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security group referencing support</a> enabled). Rules can also be stale if they reference a security group in a peer VPC for which the VPC peering connection has been deleted or if they reference a security group in a VPC that has been detached from a transit gateway.</p>
+/// <p>Describes the stale security group rules for security groups in a specified VPC. Rules are stale when they reference a deleted security group in the same VPC or peered VPC. Rules can also be stale if they reference a security group in a peer VPC for which the VPC peering connection has been deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStaleSecurityGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

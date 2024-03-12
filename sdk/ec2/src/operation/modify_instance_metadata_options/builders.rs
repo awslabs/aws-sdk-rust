@@ -220,19 +220,16 @@ impl ModifyInstanceMetadataOptionsFluentBuilder {
         self.inner.get_http_protocol_ipv6()
     }
     /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
-    /// <p>Default: <code>disabled</code></p>
     pub fn instance_metadata_tags(mut self, input: crate::types::InstanceMetadataTagsState) -> Self {
         self.inner = self.inner.instance_metadata_tags(input);
         self
     }
     /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
-    /// <p>Default: <code>disabled</code></p>
     pub fn set_instance_metadata_tags(mut self, input: ::std::option::Option<crate::types::InstanceMetadataTagsState>) -> Self {
         self.inner = self.inner.set_instance_metadata_tags(input);
         self
     }
     /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
-    /// <p>Default: <code>disabled</code></p>
     pub fn get_instance_metadata_tags(&self) -> &::std::option::Option<crate::types::InstanceMetadataTagsState> {
         self.inner.get_instance_metadata_tags()
     }

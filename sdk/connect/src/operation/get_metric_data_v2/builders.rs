@@ -264,7 +264,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Note the following limits:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p></li>
+    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p></li>
     /// <li>
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
@@ -297,7 +297,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Note the following limits:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p></li>
+    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p></li>
     /// <li>
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
@@ -330,7 +330,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Note the following limits:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p></li>
+    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p></li>
     /// <li>
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
@@ -346,21 +346,21 @@ impl GetMetricDataV2FluentBuilder {
     ///
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
     pub fn groupings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.groupings(input.into());
         self
     }
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
     pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_groupings(input);
         self
     }
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
     pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_groupings()
     }
@@ -376,6 +376,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#abandonment-rate-historical">Abandonment rate</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_ADHERENT_TIME
@@ -384,6 +385,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#adherent-time-historical">Adherent time</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_ANSWER_RATE
@@ -391,6 +393,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-answer-rate-historical">Agent answer rate</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_ADHERENT_TIME
@@ -398,6 +401,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#non-adherent-time">Non-adherent time</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_RESPONSE
@@ -405,6 +409,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-non-response">Agent non-response</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_RESPONSE_WITHOUT_CUSTOMER_ABANDONS
@@ -413,6 +418,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// <p>Data for this metric is available starting from October 1, 2023 0:00:00 GMT.</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-nonresponse-no-abandon-historical">Agent non-response without customer abandons</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_OCCUPANCY
@@ -420,6 +426,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#occupancy-historical">Occupancy</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_SCHEDULE_ADHERENCE
@@ -428,6 +435,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#adherence-historical">Adherence</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_SCHEDULED_TIME
@@ -436,6 +444,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#scheduled-time-historical">Scheduled time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_ABANDON_TIME
@@ -443,6 +452,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-queue-abandon-time-historical">Average queue abandon time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_ACTIVE_TIME
@@ -450,6 +460,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-active-time-historical">Average active time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_AFTER_CONTACT_WORK_TIME
@@ -457,7 +468,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-acw-time-historical">Average after contact work time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -467,7 +479,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#htm-avg-agent-api-connecting-time">Average agent API connecting time</a></p><note>
     /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
     /// </note>
     /// </dd>
@@ -477,13 +490,33 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-pause-time-historical">Average agent pause time</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_CASE_RELATED_CONTACTS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-contacts-case-historical">Average contacts per case</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_CASE_RESOLUTION_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-case-resolution-time-historical">Average case resolution time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_CONTACT_DURATION
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-contact-duration-historical">Average contact duration</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -493,6 +526,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-conversation-duration-historical">Average conversation duration</a></p>
     /// </dd>
     /// <dt>
     /// AVG_GREETING_TIME_AGENT
@@ -501,13 +535,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-greeting-time-agent-historical">Average greeting time agent </a></p>
     /// </dd>
     /// <dt>
     /// AVG_HANDLE_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-handle-time-historical">Average handle time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -516,7 +552,8 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-customer-hold-time-historical">Average customer hold time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -526,13 +563,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#avg-customer-hold-time-all-contacts-historical">Average customer hold time all contacts</a></p>
     /// </dd>
     /// <dt>
     /// AVG_HOLDS
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-holds-historical">Average holds</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -542,6 +581,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-interaction-customer-hold-time-historical">Average agent interaction and customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_INTERACTION_TIME
@@ -549,7 +589,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-interaction-time-historical">Average agent interaction time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -560,6 +601,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-interruptions-agent-historical">Average interruptions agent </a></p>
     /// </dd>
     /// <dt>
     /// AVG_INTERRUPTION_TIME_AGENT
@@ -568,6 +610,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-interruptions-time-agent-historical">Average interruption time agent</a></p>
     /// </dd>
     /// <dt>
     /// AVG_NON_TALK_TIME
@@ -576,13 +619,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##average-non-talk-time-historical">Average non-talk time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_QUEUE_ANSWER_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-queue-answer-time-historical">Average queue answer time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -592,6 +637,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-resolution-time-historical">Average resolution time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME
@@ -600,6 +646,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-historical">Average talk time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_AGENT
@@ -608,6 +655,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-agent-historical">Average talk time agent</a></p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_CUSTOMER
@@ -616,6 +664,16 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-customer-historical">Average talk time customer</a></p>
+    /// </dd>
+    /// <dt>
+    /// CASES_CREATED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##cases-created-historical">Cases created</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ABANDONED
@@ -623,6 +681,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-abandoned-historical">Contact abandoned</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CREATED
@@ -630,7 +689,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-created-historical">Contacts created</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -640,7 +700,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#api-contacts-handled-historical">API contacts handled</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -651,6 +712,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-handled-by-connected-to-agent-historical">Contacts handled by Connected to agent</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HOLD_ABANDONS
@@ -658,6 +720,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-handled-by-connected-to-agent-historical">Contacts hold disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ON_HOLD_AGENT_DISCONNECT
@@ -665,6 +728,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-hold-agent-disconnect-historical">Contacts hold agent disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ON_HOLD_CUSTOMER_DISCONNECT
@@ -672,6 +736,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-hold-customer-disconnect-historical">Contacts hold customer disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_PUT_ON_HOLD
@@ -679,6 +744,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-hold-customer-disconnect-historical">Contacts put on hold</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_EXTERNAL
@@ -686,6 +752,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-external-historical">Contacts transferred out external</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_INTERNAL
@@ -693,6 +760,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-internal-historical">Contacts transferred out internal</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_QUEUED
@@ -700,6 +768,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-queued-historical">Contacts queued</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_QUEUED_BY_ENQUEUE
@@ -707,6 +776,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-queued-by-enqueue-historical">Contacts queued by Enqueue</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_RESOLVED_IN_X
@@ -715,13 +785,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-resolved-historical">Contacts resolved in X</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-historical">Contacts transferred out</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -731,6 +803,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-by-agent-historical">Contacts transferred out by agent</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
@@ -738,6 +811,16 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-by-agent-historical">Contacts transferred out queue</a></p>
+    /// </dd>
+    /// <dt>
+    /// CURRENT_CASES
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#current-cases-historical">Current cases</a></p>
     /// </dd>
     /// <dt>
     /// MAX_QUEUED_TIME
@@ -745,6 +828,16 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#maximum-queued-time-historical">Maximum queued time</a></p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_CASES_FIRST_CONTACT_RESOLVED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-resolved-first-contact-historical">Cases resolved on first contact</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_CONTACTS_STEP_EXPIRED
@@ -752,6 +845,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, RoutingStepExpression</p>
+    /// <p>UI name: Not available</p>
     /// </dd>
     /// <dt>
     /// PERCENT_CONTACTS_STEP_JOINED
@@ -759,6 +853,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, RoutingStepExpression</p>
+    /// <p>UI name: Not available</p>
     /// </dd>
     /// <dt>
     /// PERCENT_NON_TALK_TIME
@@ -767,6 +862,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ntt-historical">Non-talk time percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME
@@ -775,6 +871,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#tt-historical">Talk time percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_AGENT
@@ -783,6 +880,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ttagent-historical">Talk time agent percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_CUSTOMER
@@ -791,6 +889,25 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ttcustomer-historical">Talk time customer percent</a></p>
+    /// </dd>
+    /// <dt>
+    /// REOPENED_CASE_ACTIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-reopened-historical">Cases reopened</a></p>
+    /// </dd>
+    /// <dt>
+    /// RESOLVED_CASE_ACTIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-resolved-historicall">Cases resolved</a></p>
     /// </dd>
     /// <dt>
     /// SERVICE_LEVEL
@@ -800,6 +917,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#service-level-historical">Service level X</a></p>
     /// </dd>
     /// <dt>
     /// STEP_CONTACTS_QUEUED
@@ -807,6 +925,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, RoutingStepExpression</p>
+    /// <p>UI name: Not available</p>
     /// </dd>
     /// <dt>
     /// SUM_AFTER_CONTACT_WORK_TIME
@@ -814,6 +933,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#acw-historical">After contact work time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONNECTING_TIME_AGENT
@@ -821,7 +941,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#htm-agent-api-connecting-time">Agent API connecting time</a></p><note>
     /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
     /// </note>
     /// </dd>
@@ -831,6 +952,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contact-flow-time-historical">Contact flow time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACT_TIME_AGENT
@@ -838,6 +960,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-on-contact-time-historical">Agent on contact time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ANSWERED_IN_X
@@ -846,6 +969,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-answered-x-historical">Contacts answered in X seconds</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ABANDONED_IN_X
@@ -854,6 +978,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-abandoned-x-historical">Contacts abandoned in X seconds</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_DISCONNECTED
@@ -862,6 +987,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid metric filter key: <code>DISCONNECT_REASON</code></p>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contact-disconnected-historical">Contact disconnected</a></p>
     /// </dd>
     /// <dt>
     /// SUM_ERROR_STATUS_TIME_AGENT
@@ -869,6 +995,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#error-status-time-historical">Error status time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_HANDLE_TIME
@@ -876,6 +1003,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contact-handle-time-historical">Contact handle time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_HOLD_TIME
@@ -883,6 +1011,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#customer-hold-time-historical">Customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_IDLE_TIME_AGENT
@@ -890,6 +1019,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-idle-time-historica">Agent idle time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_INTERACTION_AND_HOLD_TIME
@@ -897,6 +1027,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-interaction-hold-time-historical">Agent interaction and hold time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_INTERACTION_TIME
@@ -904,6 +1035,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-interaction-time-historical">Agent interaction time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_NON_PRODUCTIVE_TIME_AGENT
@@ -911,6 +1043,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#npt-historical">Non-Productive Time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_ONLINE_TIME_AGENT
@@ -918,6 +1051,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#online-time-historical">Online time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_RETRY_CALLBACK_ATTEMPTS
@@ -925,6 +1059,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#callback-attempts-historical">Callback attempts</a></p>
     /// </dd>
     /// </dl>
     pub fn metrics(mut self, input: crate::types::MetricV2) -> Self {
@@ -939,6 +1074,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#abandonment-rate-historical">Abandonment rate</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_ADHERENT_TIME
@@ -947,6 +1083,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#adherent-time-historical">Adherent time</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_ANSWER_RATE
@@ -954,6 +1091,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-answer-rate-historical">Agent answer rate</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_ADHERENT_TIME
@@ -961,6 +1099,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#non-adherent-time">Non-adherent time</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_RESPONSE
@@ -968,6 +1107,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-non-response">Agent non-response</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_RESPONSE_WITHOUT_CUSTOMER_ABANDONS
@@ -976,6 +1116,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// <p>Data for this metric is available starting from October 1, 2023 0:00:00 GMT.</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-nonresponse-no-abandon-historical">Agent non-response without customer abandons</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_OCCUPANCY
@@ -983,6 +1124,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#occupancy-historical">Occupancy</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_SCHEDULE_ADHERENCE
@@ -991,6 +1133,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#adherence-historical">Adherence</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_SCHEDULED_TIME
@@ -999,6 +1142,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#scheduled-time-historical">Scheduled time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_ABANDON_TIME
@@ -1006,6 +1150,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-queue-abandon-time-historical">Average queue abandon time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_ACTIVE_TIME
@@ -1013,6 +1158,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-active-time-historical">Average active time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_AFTER_CONTACT_WORK_TIME
@@ -1020,7 +1166,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-acw-time-historical">Average after contact work time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1030,7 +1177,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#htm-avg-agent-api-connecting-time">Average agent API connecting time</a></p><note>
     /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
     /// </note>
     /// </dd>
@@ -1040,13 +1188,33 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-pause-time-historical">Average agent pause time</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_CASE_RELATED_CONTACTS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-contacts-case-historical">Average contacts per case</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_CASE_RESOLUTION_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-case-resolution-time-historical">Average case resolution time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_CONTACT_DURATION
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-contact-duration-historical">Average contact duration</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1056,6 +1224,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-conversation-duration-historical">Average conversation duration</a></p>
     /// </dd>
     /// <dt>
     /// AVG_GREETING_TIME_AGENT
@@ -1064,13 +1233,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-greeting-time-agent-historical">Average greeting time agent </a></p>
     /// </dd>
     /// <dt>
     /// AVG_HANDLE_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-handle-time-historical">Average handle time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1079,7 +1250,8 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-customer-hold-time-historical">Average customer hold time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1089,13 +1261,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#avg-customer-hold-time-all-contacts-historical">Average customer hold time all contacts</a></p>
     /// </dd>
     /// <dt>
     /// AVG_HOLDS
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-holds-historical">Average holds</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1105,6 +1279,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-interaction-customer-hold-time-historical">Average agent interaction and customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_INTERACTION_TIME
@@ -1112,7 +1287,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-interaction-time-historical">Average agent interaction time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1123,6 +1299,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-interruptions-agent-historical">Average interruptions agent </a></p>
     /// </dd>
     /// <dt>
     /// AVG_INTERRUPTION_TIME_AGENT
@@ -1131,6 +1308,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-interruptions-time-agent-historical">Average interruption time agent</a></p>
     /// </dd>
     /// <dt>
     /// AVG_NON_TALK_TIME
@@ -1139,13 +1317,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##average-non-talk-time-historical">Average non-talk time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_QUEUE_ANSWER_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-queue-answer-time-historical">Average queue answer time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1155,6 +1335,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-resolution-time-historical">Average resolution time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME
@@ -1163,6 +1344,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-historical">Average talk time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_AGENT
@@ -1171,6 +1353,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-agent-historical">Average talk time agent</a></p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_CUSTOMER
@@ -1179,6 +1362,16 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-customer-historical">Average talk time customer</a></p>
+    /// </dd>
+    /// <dt>
+    /// CASES_CREATED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##cases-created-historical">Cases created</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ABANDONED
@@ -1186,6 +1379,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-abandoned-historical">Contact abandoned</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CREATED
@@ -1193,7 +1387,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-created-historical">Contacts created</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1203,7 +1398,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#api-contacts-handled-historical">API contacts handled</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1214,6 +1410,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-handled-by-connected-to-agent-historical">Contacts handled by Connected to agent</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HOLD_ABANDONS
@@ -1221,6 +1418,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-handled-by-connected-to-agent-historical">Contacts hold disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ON_HOLD_AGENT_DISCONNECT
@@ -1228,6 +1426,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-hold-agent-disconnect-historical">Contacts hold agent disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ON_HOLD_CUSTOMER_DISCONNECT
@@ -1235,6 +1434,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-hold-customer-disconnect-historical">Contacts hold customer disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_PUT_ON_HOLD
@@ -1242,6 +1442,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-hold-customer-disconnect-historical">Contacts put on hold</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_EXTERNAL
@@ -1249,6 +1450,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-external-historical">Contacts transferred out external</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_INTERNAL
@@ -1256,6 +1458,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-internal-historical">Contacts transferred out internal</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_QUEUED
@@ -1263,6 +1466,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-queued-historical">Contacts queued</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_QUEUED_BY_ENQUEUE
@@ -1270,6 +1474,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-queued-by-enqueue-historical">Contacts queued by Enqueue</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_RESOLVED_IN_X
@@ -1278,13 +1483,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-resolved-historical">Contacts resolved in X</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-historical">Contacts transferred out</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1294,6 +1501,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-by-agent-historical">Contacts transferred out by agent</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
@@ -1301,6 +1509,16 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-by-agent-historical">Contacts transferred out queue</a></p>
+    /// </dd>
+    /// <dt>
+    /// CURRENT_CASES
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#current-cases-historical">Current cases</a></p>
     /// </dd>
     /// <dt>
     /// MAX_QUEUED_TIME
@@ -1308,6 +1526,16 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#maximum-queued-time-historical">Maximum queued time</a></p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_CASES_FIRST_CONTACT_RESOLVED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-resolved-first-contact-historical">Cases resolved on first contact</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_CONTACTS_STEP_EXPIRED
@@ -1315,6 +1543,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, RoutingStepExpression</p>
+    /// <p>UI name: Not available</p>
     /// </dd>
     /// <dt>
     /// PERCENT_CONTACTS_STEP_JOINED
@@ -1322,6 +1551,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, RoutingStepExpression</p>
+    /// <p>UI name: Not available</p>
     /// </dd>
     /// <dt>
     /// PERCENT_NON_TALK_TIME
@@ -1330,6 +1560,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ntt-historical">Non-talk time percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME
@@ -1338,6 +1569,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#tt-historical">Talk time percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_AGENT
@@ -1346,6 +1578,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ttagent-historical">Talk time agent percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_CUSTOMER
@@ -1354,6 +1587,25 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ttcustomer-historical">Talk time customer percent</a></p>
+    /// </dd>
+    /// <dt>
+    /// REOPENED_CASE_ACTIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-reopened-historical">Cases reopened</a></p>
+    /// </dd>
+    /// <dt>
+    /// RESOLVED_CASE_ACTIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-resolved-historicall">Cases resolved</a></p>
     /// </dd>
     /// <dt>
     /// SERVICE_LEVEL
@@ -1363,6 +1615,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#service-level-historical">Service level X</a></p>
     /// </dd>
     /// <dt>
     /// STEP_CONTACTS_QUEUED
@@ -1370,6 +1623,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, RoutingStepExpression</p>
+    /// <p>UI name: Not available</p>
     /// </dd>
     /// <dt>
     /// SUM_AFTER_CONTACT_WORK_TIME
@@ -1377,6 +1631,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#acw-historical">After contact work time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONNECTING_TIME_AGENT
@@ -1384,7 +1639,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#htm-agent-api-connecting-time">Agent API connecting time</a></p><note>
     /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
     /// </note>
     /// </dd>
@@ -1394,6 +1650,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contact-flow-time-historical">Contact flow time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACT_TIME_AGENT
@@ -1401,6 +1658,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-on-contact-time-historical">Agent on contact time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ANSWERED_IN_X
@@ -1409,6 +1667,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-answered-x-historical">Contacts answered in X seconds</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ABANDONED_IN_X
@@ -1417,6 +1676,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-abandoned-x-historical">Contacts abandoned in X seconds</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_DISCONNECTED
@@ -1425,6 +1685,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid metric filter key: <code>DISCONNECT_REASON</code></p>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contact-disconnected-historical">Contact disconnected</a></p>
     /// </dd>
     /// <dt>
     /// SUM_ERROR_STATUS_TIME_AGENT
@@ -1432,6 +1693,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#error-status-time-historical">Error status time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_HANDLE_TIME
@@ -1439,6 +1701,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contact-handle-time-historical">Contact handle time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_HOLD_TIME
@@ -1446,6 +1709,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#customer-hold-time-historical">Customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_IDLE_TIME_AGENT
@@ -1453,6 +1717,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-idle-time-historica">Agent idle time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_INTERACTION_AND_HOLD_TIME
@@ -1460,6 +1725,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-interaction-hold-time-historical">Agent interaction and hold time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_INTERACTION_TIME
@@ -1467,6 +1733,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-interaction-time-historical">Agent interaction time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_NON_PRODUCTIVE_TIME_AGENT
@@ -1474,6 +1741,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#npt-historical">Non-Productive Time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_ONLINE_TIME_AGENT
@@ -1481,6 +1749,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#online-time-historical">Online time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_RETRY_CALLBACK_ATTEMPTS
@@ -1488,6 +1757,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#callback-attempts-historical">Callback attempts</a></p>
     /// </dd>
     /// </dl>
     pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricV2>>) -> Self {
@@ -1502,6 +1772,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#abandonment-rate-historical">Abandonment rate</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_ADHERENT_TIME
@@ -1510,6 +1781,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#adherent-time-historical">Adherent time</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_ANSWER_RATE
@@ -1517,6 +1789,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-answer-rate-historical">Agent answer rate</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_ADHERENT_TIME
@@ -1524,6 +1797,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#non-adherent-time">Non-adherent time</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_RESPONSE
@@ -1531,6 +1805,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-non-response">Agent non-response</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_NON_RESPONSE_WITHOUT_CUSTOMER_ABANDONS
@@ -1539,6 +1814,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// <p>Data for this metric is available starting from October 1, 2023 0:00:00 GMT.</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-nonresponse-no-abandon-historical">Agent non-response without customer abandons</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_OCCUPANCY
@@ -1546,6 +1822,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#occupancy-historical">Occupancy</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_SCHEDULE_ADHERENCE
@@ -1554,6 +1831,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#adherence-historical">Adherence</a></p>
     /// </dd>
     /// <dt>
     /// AGENT_SCHEDULED_TIME
@@ -1562,6 +1840,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only in Amazon Web Services Regions where <a href="https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region">Forecasting, capacity planning, and scheduling</a> is available.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#scheduled-time-historical">Scheduled time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_ABANDON_TIME
@@ -1569,6 +1848,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-queue-abandon-time-historical">Average queue abandon time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_ACTIVE_TIME
@@ -1576,6 +1856,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-active-time-historical">Average active time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_AFTER_CONTACT_WORK_TIME
@@ -1583,7 +1864,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-acw-time-historical">Average after contact work time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1593,7 +1875,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#htm-avg-agent-api-connecting-time">Average agent API connecting time</a></p><note>
     /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
     /// </note>
     /// </dd>
@@ -1603,13 +1886,33 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-pause-time-historical">Average agent pause time</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_CASE_RELATED_CONTACTS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-contacts-case-historical">Average contacts per case</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_CASE_RESOLUTION_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-case-resolution-time-historical">Average case resolution time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_CONTACT_DURATION
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-contact-duration-historical">Average contact duration</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1619,6 +1922,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-conversation-duration-historical">Average conversation duration</a></p>
     /// </dd>
     /// <dt>
     /// AVG_GREETING_TIME_AGENT
@@ -1627,13 +1931,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-greeting-time-agent-historical">Average greeting time agent </a></p>
     /// </dd>
     /// <dt>
     /// AVG_HANDLE_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-handle-time-historical">Average handle time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1642,7 +1948,8 @@ impl GetMetricDataV2FluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-customer-hold-time-historical">Average customer hold time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1652,13 +1959,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#avg-customer-hold-time-all-contacts-historical">Average customer hold time all contacts</a></p>
     /// </dd>
     /// <dt>
     /// AVG_HOLDS
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-holds-historical">Average holds</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1668,6 +1977,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-interaction-customer-hold-time-historical">Average agent interaction and customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_INTERACTION_TIME
@@ -1675,7 +1985,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-interaction-time-historical">Average agent interaction time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1686,6 +1997,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-interruptions-agent-historical">Average interruptions agent </a></p>
     /// </dd>
     /// <dt>
     /// AVG_INTERRUPTION_TIME_AGENT
@@ -1694,6 +2006,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-interruptions-time-agent-historical">Average interruption time agent</a></p>
     /// </dd>
     /// <dt>
     /// AVG_NON_TALK_TIME
@@ -1702,13 +2015,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##average-non-talk-time-historical">Average non-talk time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_QUEUE_ANSWER_TIME
     /// </dt>
     /// <dd>
     /// <p>Unit: Seconds</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-queue-answer-time-historical">Average queue answer time</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1718,6 +2033,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-resolution-time-historical">Average resolution time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME
@@ -1726,6 +2042,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-historical">Average talk time</a></p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_AGENT
@@ -1734,6 +2051,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-agent-historical">Average talk time agent</a></p>
     /// </dd>
     /// <dt>
     /// AVG_TALK_TIME_CUSTOMER
@@ -1742,6 +2060,16 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-customer-historical">Average talk time customer</a></p>
+    /// </dd>
+    /// <dt>
+    /// CASES_CREATED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html##cases-created-historical">Cases created</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ABANDONED
@@ -1749,6 +2077,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-abandoned-historical">Contact abandoned</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_CREATED
@@ -1756,7 +2085,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-created-historical">Contacts created</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1766,7 +2096,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#api-contacts-handled-historical">API contacts handled</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1777,6 +2108,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
     /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-handled-by-connected-to-agent-historical">Contacts handled by Connected to agent</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_HOLD_ABANDONS
@@ -1784,6 +2116,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-handled-by-connected-to-agent-historical">Contacts hold disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ON_HOLD_AGENT_DISCONNECT
@@ -1791,6 +2124,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-hold-agent-disconnect-historical">Contacts hold agent disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_ON_HOLD_CUSTOMER_DISCONNECT
@@ -1798,6 +2132,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-hold-customer-disconnect-historical">Contacts hold customer disconnect</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_PUT_ON_HOLD
@@ -1805,6 +2140,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-hold-customer-disconnect-historical">Contacts put on hold</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_EXTERNAL
@@ -1812,6 +2148,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-external-historical">Contacts transferred out external</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_INTERNAL
@@ -1819,6 +2156,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-internal-historical">Contacts transferred out internal</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_QUEUED
@@ -1826,6 +2164,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-queued-historical">Contacts queued</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_QUEUED_BY_ENQUEUE
@@ -1833,6 +2172,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-queued-by-enqueue-historical">Contacts queued by Enqueue</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_RESOLVED_IN_X
@@ -1841,13 +2181,15 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-resolved-historical">Contacts resolved in X</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT
     /// </dt>
     /// <dd>
     /// <p>Unit: Count</p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-historical">Contacts transferred out</a></p><note>
     /// <p>Feature is a valid filter but not a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -1857,6 +2199,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-by-agent-historical">Contacts transferred out by agent</a></p>
     /// </dd>
     /// <dt>
     /// CONTACTS_TRANSFERRED_OUT_FROM_QUEUE
@@ -1864,6 +2207,16 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-transferred-out-by-agent-historical">Contacts transferred out queue</a></p>
+    /// </dd>
+    /// <dt>
+    /// CURRENT_CASES
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#current-cases-historical">Current cases</a></p>
     /// </dd>
     /// <dt>
     /// MAX_QUEUED_TIME
@@ -1871,6 +2224,16 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#maximum-queued-time-historical">Maximum queued time</a></p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_CASES_FIRST_CONTACT_RESOLVED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-resolved-first-contact-historical">Cases resolved on first contact</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_CONTACTS_STEP_EXPIRED
@@ -1878,6 +2241,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, RoutingStepExpression</p>
+    /// <p>UI name: Not available</p>
     /// </dd>
     /// <dt>
     /// PERCENT_CONTACTS_STEP_JOINED
@@ -1885,6 +2249,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, RoutingStepExpression</p>
+    /// <p>UI name: Not available</p>
     /// </dd>
     /// <dt>
     /// PERCENT_NON_TALK_TIME
@@ -1893,6 +2258,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ntt-historical">Non-talk time percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME
@@ -1901,6 +2267,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#tt-historical">Talk time percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_AGENT
@@ -1909,6 +2276,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ttagent-historical">Talk time agent percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_TALK_TIME_CUSTOMER
@@ -1917,6 +2285,25 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>This metric is available only for contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p>Unit: Percentage</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ttcustomer-historical">Talk time customer percent</a></p>
+    /// </dd>
+    /// <dt>
+    /// REOPENED_CASE_ACTIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-reopened-historical">Cases reopened</a></p>
+    /// </dd>
+    /// <dt>
+    /// RESOLVED_CASE_ACTIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Required filter key: CASE_TEMPLATE_ARN</p>
+    /// <p>Valid groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-resolved-historicall">Cases resolved</a></p>
     /// </dd>
     /// <dt>
     /// SERVICE_LEVEL
@@ -1926,6 +2313,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#service-level-historical">Service level X</a></p>
     /// </dd>
     /// <dt>
     /// STEP_CONTACTS_QUEUED
@@ -1933,6 +2321,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, RoutingStepExpression</p>
+    /// <p>UI name: Not available</p>
     /// </dd>
     /// <dt>
     /// SUM_AFTER_CONTACT_WORK_TIME
@@ -1940,6 +2329,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#acw-historical">After contact work time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONNECTING_TIME_AGENT
@@ -1947,7 +2337,8 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code></p>
-    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p><note>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#htm-agent-api-connecting-time">Agent API connecting time</a></p><note>
     /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
     /// </note>
     /// </dd>
@@ -1957,6 +2348,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contact-flow-time-historical">Contact flow time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACT_TIME_AGENT
@@ -1964,6 +2356,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-on-contact-time-historical">Agent on contact time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ANSWERED_IN_X
@@ -1972,6 +2365,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-answered-x-historical">Contacts answered in X seconds</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_ABANDONED_IN_X
@@ -1980,6 +2374,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
     /// <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-abandoned-x-historical">Contacts abandoned in X seconds</a></p>
     /// </dd>
     /// <dt>
     /// SUM_CONTACTS_DISCONNECTED
@@ -1988,6 +2383,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid metric filter key: <code>DISCONNECT_REASON</code></p>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contact-disconnected-historical">Contact disconnected</a></p>
     /// </dd>
     /// <dt>
     /// SUM_ERROR_STATUS_TIME_AGENT
@@ -1995,6 +2391,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#error-status-time-historical">Error status time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_HANDLE_TIME
@@ -2002,6 +2399,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contact-handle-time-historical">Contact handle time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_HOLD_TIME
@@ -2009,6 +2407,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#customer-hold-time-historical">Customer hold time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_IDLE_TIME_AGENT
@@ -2016,6 +2415,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-idle-time-historica">Agent idle time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_INTERACTION_AND_HOLD_TIME
@@ -2023,6 +2423,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-interaction-hold-time-historical">Agent interaction and hold time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_INTERACTION_TIME
@@ -2030,6 +2431,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#agent-interaction-time-historical">Agent interaction time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_NON_PRODUCTIVE_TIME_AGENT
@@ -2037,6 +2439,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#npt-historical">Non-Productive Time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_ONLINE_TIME_AGENT
@@ -2044,6 +2447,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#online-time-historical">Online time</a></p>
     /// </dd>
     /// <dt>
     /// SUM_RETRY_CALLBACK_ATTEMPTS
@@ -2051,6 +2455,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#callback-attempts-historical">Callback attempts</a></p>
     /// </dd>
     /// </dl>
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricV2>> {

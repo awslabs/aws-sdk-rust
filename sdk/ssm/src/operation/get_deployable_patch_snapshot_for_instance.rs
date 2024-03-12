@@ -263,7 +263,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDeployable
 pub enum GetDeployablePatchSnapshotForInstanceError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>Patching for applications released by Microsoft is only available on EC2 instances and advanced instances. To patch applications released by Microsoft on on-premises servers and VMs, you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Patching for applications released by Microsoft is only available on EC2 instances and advanced instances. To patch applications released by Microsoft on on-premises servers and VMs, you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Turning on the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     UnsupportedFeatureRequiredException(crate::types::error::UnsupportedFeatureRequiredException),
     /// <p>The operating systems you specified isn't supported, or the operation isn't supported for the operating system.</p>
     UnsupportedOperatingSystem(crate::types::error::UnsupportedOperatingSystem),

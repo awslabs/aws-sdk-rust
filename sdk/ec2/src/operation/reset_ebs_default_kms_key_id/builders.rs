@@ -23,7 +23,7 @@ impl ResetEbsDefaultKmsKeyIdInputBuilder {
 /// Fluent builder constructing a request to `ResetEbsDefaultKmsKeyId`.
 ///
 /// <p>Resets the default KMS key for EBS encryption for your account in this Region to the Amazon Web Services managed KMS key for EBS.</p>
-/// <p>After resetting the default KMS key to the Amazon Web Services managed KMS key, you can continue to encrypt by a customer managed KMS key by specifying it when you create the volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>After resetting the default KMS key to the Amazon Web Services managed KMS key, you can continue to encrypt by a customer managed KMS key by specifying it when you create the volume. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetEbsDefaultKmsKeyIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

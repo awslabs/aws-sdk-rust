@@ -27,7 +27,7 @@ impl DeleteResourcePolicyInputBuilder {
 /// <li>
 /// <p><code>OpsItemGroup</code> - The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p></li>
 /// <li>
-/// <p><code>Parameter</code> - The resource policy is used to share a parameter with other accounts using Resource Access Manager (RAM). For more information about cross-account sharing of parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
+/// <p><code>Parameter</code> - The resource policy is used to share a parameter with other accounts using Resource Access Manager (RAM). For more information about cross-account sharing of parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyFluentBuilder {

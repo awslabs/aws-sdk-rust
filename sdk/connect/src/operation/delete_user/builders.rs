@@ -23,7 +23,17 @@ impl DeleteUserInputBuilder {
 /// Fluent builder constructing a request to `DeleteUser`.
 ///
 /// <p>Deletes a user account from the specified Amazon Connect instance.</p>
-/// <p>For information about what happens to a user's data when their account is deleted, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+/// <p>For information about what happens to a user's data when their account is deleted, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p><important>
+/// <p>After calling DeleteUser, call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteQuickConnect.html">DeleteQuickConnect</a> to delete any records related to the deleted users. This will help you:</p>
+/// <ul>
+/// <li>
+/// <p>Avoid dangling resources that impact your service quotas.</p></li>
+/// <li>
+/// <p>Remove deleted users so they don't appear to agents as transfer options.</p></li>
+/// <li>
+/// <p>Avoid the disruption of other Amazon Connect processes, such as instance replication and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon Connect Global Resiliency</a>.</p></li>
+/// </ul>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -10,7 +10,9 @@ pub struct AgentContactReference {
     pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p>How the contact was initiated.</p>
     pub initiation_method: ::std::option::Option<crate::types::ContactInitiationMethod>,
-    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p><note>
+    /// <p>When <code>AgentContactState</code> is set to <code>CONNECTED_ONHOLD</code>, <code>StateStartTimestamp</code> is not changed. Instead, <code>StateStartTimestamp</code> reflects the time the contact was <code>CONNECTED</code> to the agent.</p>
+    /// </note>
     pub agent_contact_state: ::std::option::Option<crate::types::ContactState>,
     /// <p>The epoch timestamp when the contact state started.</p>
     pub state_start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -32,7 +34,9 @@ impl AgentContactReference {
     pub fn initiation_method(&self) -> ::std::option::Option<&crate::types::ContactInitiationMethod> {
         self.initiation_method.as_ref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p><note>
+    /// <p>When <code>AgentContactState</code> is set to <code>CONNECTED_ONHOLD</code>, <code>StateStartTimestamp</code> is not changed. Instead, <code>StateStartTimestamp</code> reflects the time the contact was <code>CONNECTED</code> to the agent.</p>
+    /// </note>
     pub fn agent_contact_state(&self) -> ::std::option::Option<&crate::types::ContactState> {
         self.agent_contact_state.as_ref()
     }
@@ -111,17 +115,23 @@ impl AgentContactReferenceBuilder {
     pub fn get_initiation_method(&self) -> &::std::option::Option<crate::types::ContactInitiationMethod> {
         &self.initiation_method
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p><note>
+    /// <p>When <code>AgentContactState</code> is set to <code>CONNECTED_ONHOLD</code>, <code>StateStartTimestamp</code> is not changed. Instead, <code>StateStartTimestamp</code> reflects the time the contact was <code>CONNECTED</code> to the agent.</p>
+    /// </note>
     pub fn agent_contact_state(mut self, input: crate::types::ContactState) -> Self {
         self.agent_contact_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p><note>
+    /// <p>When <code>AgentContactState</code> is set to <code>CONNECTED_ONHOLD</code>, <code>StateStartTimestamp</code> is not changed. Instead, <code>StateStartTimestamp</code> reflects the time the contact was <code>CONNECTED</code> to the agent.</p>
+    /// </note>
     pub fn set_agent_contact_state(mut self, input: ::std::option::Option<crate::types::ContactState>) -> Self {
         self.agent_contact_state = input;
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state of the contact</a>.</p><note>
+    /// <p>When <code>AgentContactState</code> is set to <code>CONNECTED_ONHOLD</code>, <code>StateStartTimestamp</code> is not changed. Instead, <code>StateStartTimestamp</code> reflects the time the contact was <code>CONNECTED</code> to the agent.</p>
+    /// </note>
     pub fn get_agent_contact_state(&self) -> &::std::option::Option<crate::types::ContactState> {
         &self.agent_contact_state
     }

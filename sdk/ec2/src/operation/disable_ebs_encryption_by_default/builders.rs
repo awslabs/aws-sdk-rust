@@ -25,7 +25,7 @@ impl DisableEbsEncryptionByDefaultInputBuilder {
 /// <p>Disables EBS encryption by default for your account in the current Region.</p>
 /// <p>After you disable encryption by default, you can still create encrypted volumes by enabling encryption when you create each volume.</p>
 /// <p>Disabling encryption by default does not change the encryption status of your existing volumes.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableEbsEncryptionByDefaultFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

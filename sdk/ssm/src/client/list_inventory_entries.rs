@@ -11,9 +11,9 @@ impl super::Client {
     /// - On success, responds with [`ListInventoryEntriesOutput`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput) with field(s):
     ///   - [`type_name(Option<String>)`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput::type_name): <p>The type of inventory item returned by the request.</p>
     ///   - [`instance_id(Option<String>)`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput::instance_id): <p>The managed node ID targeted by the request to query inventory information.</p>
-    ///   - [`schema_version(Option<String>)`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput::schema_version): <p>The inventory schema version used by the managed node(s).</p>
-    ///   - [`capture_time(Option<String>)`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput::capture_time): <p>The time that inventory information was collected for the managed node(s).</p>
-    ///   - [`entries(Option<Vec::<HashMap::<String, String>>>)`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput::entries): <p>A list of inventory items on the managed node(s).</p>
+    ///   - [`schema_version(Option<String>)`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput::schema_version): <p>The inventory schema version used by the managed nodes.</p>
+    ///   - [`capture_time(Option<String>)`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput::capture_time): <p>The time that inventory information was collected for the managed nodes.</p>
+    ///   - [`entries(Option<Vec::<HashMap::<String, String>>>)`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput::entries): <p>A list of inventory items on the managed nodes.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_inventory_entries::ListInventoryEntriesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     /// - On failure, responds with [`SdkError<ListInventoryEntriesError>`](crate::operation::list_inventory_entries::ListInventoryEntriesError)
     pub fn list_inventory_entries(&self) -> crate::operation::list_inventory_entries::builders::ListInventoryEntriesFluentBuilder {

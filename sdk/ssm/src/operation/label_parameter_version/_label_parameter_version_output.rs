@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelParameterVersionOutput {
-    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Working with parameter labels</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub invalid_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The version of the parameter that has been labeled.</p>
     pub parameter_version: i64,
     _request_id: Option<String>,
 }
 impl LabelParameterVersionOutput {
-    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Working with parameter labels</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.invalid_labels.is_none()`.
     pub fn invalid_labels(&self) -> &[::std::string::String] {
@@ -46,19 +46,19 @@ impl LabelParameterVersionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_invalid_labels`](Self::set_invalid_labels).
     ///
-    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Working with parameter labels</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn invalid_labels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.invalid_labels.unwrap_or_default();
         v.push(input.into());
         self.invalid_labels = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Working with parameter labels</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_invalid_labels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.invalid_labels = input;
         self
     }
-    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Working with parameter labels</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_invalid_labels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.invalid_labels
     }

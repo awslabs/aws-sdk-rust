@@ -167,6 +167,10 @@ pub use crate::types::_replication_info_description::ReplicationInfoDescription;
 
 pub use crate::types::_topic_replication::TopicReplication;
 
+pub use crate::types::_replication_starting_position::ReplicationStartingPosition;
+
+pub use crate::types::_replication_starting_position_type::ReplicationStartingPositionType;
+
 pub use crate::types::_target_compression_type::TargetCompressionType;
 
 pub use crate::types::_consumer_group_replication::ConsumerGroupReplication;
@@ -320,6 +324,10 @@ mod _replication_info;
 mod _replication_info_description;
 
 mod _replication_info_summary;
+
+mod _replication_starting_position;
+
+mod _replication_starting_position_type;
 
 mod _replication_state_info;
 

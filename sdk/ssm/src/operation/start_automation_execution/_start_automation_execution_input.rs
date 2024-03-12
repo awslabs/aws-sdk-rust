@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartAutomationExecutionInput {
-    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub document_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Automation runbook to use for this execution.</p>
     pub document_version: ::std::option::Option<::std::string::String>,
@@ -41,7 +41,7 @@ pub struct StartAutomationExecutionInput {
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl StartAutomationExecutionInput {
-    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn document_name(&self) -> ::std::option::Option<&str> {
         self.document_name.as_deref()
     }
@@ -138,18 +138,18 @@ pub struct StartAutomationExecutionInputBuilder {
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl StartAutomationExecutionInputBuilder {
-    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// This field is required.
     pub fn document_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_document_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_name = input;
         self
     }
-    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_document_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_name
     }

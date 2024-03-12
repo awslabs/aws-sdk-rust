@@ -23,10 +23,11 @@ impl AuthorizeSecurityGroupIngressInputBuilder {
 /// Fluent builder constructing a request to `AuthorizeSecurityGroupIngress`.
 ///
 /// <p>Adds the specified inbound (ingress) rules to a security group.</p>
-/// <p>An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address range, or from the instances that are associated with the specified destination security groups. When specifying an inbound rule for your security group in a VPC, the <code>IpPermissions</code> must include a source for the traffic.</p>
-/// <p>You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must also specify the destination port or port range. For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1 to mean all types or all codes.</p>
-/// <p>Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.</p>
-/// <p>For more information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.</p>
+/// <p>An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 address range, the IP address ranges that are specified by a prefix list, or the instances that are associated with a destination security group. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html">Security group rules</a>.</p>
+/// <p>You must specify exactly one of the following sources: an IPv4 or IPv6 address range, a prefix list, or a security group. You must specify a protocol for each rule (for example, TCP). If the protocol is TCP or UDP, you must also specify a port or port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP/ICMPv6 type and code.</p>
+/// <p>Rule changes are propagated to instances associated with the security group as quickly as possible. However, a small delay might occur.</p>
+/// <p>For examples of rules that you can add to security groups for specific access scenarios, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html">Security group rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information about security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeSecurityGroupIngressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,65 +113,68 @@ impl AuthorizeSecurityGroupIngressFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group. To specify an IPv6 address range, use a set of IP permissions.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>The IPv4 address range, in CIDR format.</p>
+    /// <p>To specify an IPv6 address range, use IP permissions instead.</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn cidr_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr_ip(input.into());
         self
     }
-    /// <p>The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group. To specify an IPv6 address range, use a set of IP permissions.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>The IPv4 address range, in CIDR format.</p>
+    /// <p>To specify an IPv6 address range, use IP permissions instead.</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr_ip(input);
         self
     }
-    /// <p>The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group. To specify an IPv6 address range, use a set of IP permissions.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>The IPv4 address range, in CIDR format.</p>
+    /// <p>To specify an IPv6 address range, use IP permissions instead.</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cidr_ip()
     }
-    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types. If you specify all ICMP types, you must specify all ICMP codes.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn from_port(mut self, input: i32) -> Self {
         self.inner = self.inner.from_port(input);
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types. If you specify all ICMP types, you must specify all ICMP codes.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_from_port(input);
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the type number. A value of -1 indicates all ICMP types. If you specify all ICMP types, you must specify all ICMP codes.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>If the protocol is TCP or UDP, this is the start of the port range. If the protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn get_from_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_from_port()
     }
-    /// <p>The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>The ID of the security group.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
         self
     }
-    /// <p>The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>The ID of the security group.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
     }
-    /// <p>The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>The ID of the security group.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_id()
     }
-    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>[Default VPC] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
         self
     }
-    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>[Default VPC] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
     }
-    /// <p>[Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
+    /// <p>[Default VPC] The name of the security group. For security groups for a default VPC you can specify either the ID or the name of the security group. For security groups for a nondefault VPC, you must specify the ID of the security group.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_name()
     }
@@ -178,82 +182,91 @@ impl AuthorizeSecurityGroupIngressFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ip_permissions`](Self::set_ip_permissions).
     ///
-    /// <p>The sets of IP permissions.</p>
+    /// <p>The permissions for the security group rules.</p>
     pub fn ip_permissions(mut self, input: crate::types::IpPermission) -> Self {
         self.inner = self.inner.ip_permissions(input);
         self
     }
-    /// <p>The sets of IP permissions.</p>
+    /// <p>The permissions for the security group rules.</p>
     pub fn set_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.inner = self.inner.set_ip_permissions(input);
         self
     }
-    /// <p>The sets of IP permissions.</p>
+    /// <p>The permissions for the security group rules.</p>
     pub fn get_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         self.inner.get_ip_permissions()
     }
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
-    /// <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you specify.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify all protocols, use <code>-1</code>.</p>
+    /// <p>To specify <code>icmpv6</code>, use IP permissions instead.</p>
+    /// <p>If you specify a protocol other than one of the supported values, traffic is allowed on all ports, regardless of any ports that you specify.</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_protocol(input.into());
         self
     }
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
-    /// <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you specify.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify all protocols, use <code>-1</code>.</p>
+    /// <p>To specify <code>icmpv6</code>, use IP permissions instead.</p>
+    /// <p>If you specify a protocol other than one of the supported values, traffic is allowed on all ports, regardless of any ports that you specify.</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip_protocol(input);
         self
     }
-    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
-    /// <p>Use <code>-1</code> to specify all protocols. If you specify <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you specify.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). To specify all protocols, use <code>-1</code>.</p>
+    /// <p>To specify <code>icmpv6</code>, use IP permissions instead.</p>
+    /// <p>If you specify a protocol other than one of the supported values, traffic is allowed on all ports, regardless of any ports that you specify.</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ip_protocol()
     }
-    /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead. The source security group must be in the same VPC.</p>
+    /// <p>[Default VPC] The name of the source security group.</p>
+    /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, specify a set of IP permissions instead.</p>
     pub fn source_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_security_group_name(input.into());
         self
     }
-    /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead. The source security group must be in the same VPC.</p>
+    /// <p>[Default VPC] The name of the source security group.</p>
+    /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, specify a set of IP permissions instead.</p>
     pub fn set_source_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_security_group_name(input);
         self
     }
-    /// <p>[Default VPC] The name of the source security group. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead. The source security group must be in the same VPC.</p>
+    /// <p>[Default VPC] The name of the source security group.</p>
+    /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, specify a set of IP permissions instead.</p>
     pub fn get_source_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_security_group_name()
     }
-    /// <p>[Nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead.</p>
+    /// <p>The Amazon Web Services account ID for the source security group, if the source security group is in a different account.</p>
+    /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, use IP permissions instead.</p>
     pub fn source_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_security_group_owner_id(input.into());
         self
     }
-    /// <p>[Nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead.</p>
+    /// <p>The Amazon Web Services account ID for the source security group, if the source security group is in a different account.</p>
+    /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, use IP permissions instead.</p>
     pub fn set_source_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_security_group_owner_id(input);
         self
     }
-    /// <p>[Nondefault VPC] The Amazon Web Services account ID for the source security group, if the source security group is in a different account. You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP permissions instead.</p>
+    /// <p>The Amazon Web Services account ID for the source security group, if the source security group is in a different account.</p>
+    /// <p>The rule grants full ICMP, UDP, and TCP access. To create a rule with a specific protocol and port range, use IP permissions instead.</p>
     pub fn get_source_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_security_group_owner_id()
     }
-    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If you specify all ICMP types, you must specify all ICMP codes.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code or -1 (all ICMP codes). If the start port is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn to_port(mut self, input: i32) -> Self {
         self.inner = self.inner.to_port(input);
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If you specify all ICMP types, you must specify all ICMP codes.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code or -1 (all ICMP codes). If the start port is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_to_port(input);
         self
     }
-    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes. If you specify all ICMP types, you must specify all ICMP codes.</p>
-    /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>
+    /// <p>If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP, this is the ICMP code or -1 (all ICMP codes). If the start port is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).</p>
+    /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn get_to_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_to_port()
     }
@@ -275,17 +288,17 @@ impl AuthorizeSecurityGroupIngressFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
     ///
-    /// <p>[VPC Only] The tags applied to the security group rule.</p>
+    /// <p>The tags applied to the security group rule.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         self.inner = self.inner.tag_specifications(input);
         self
     }
-    /// <p>[VPC Only] The tags applied to the security group rule.</p>
+    /// <p>The tags applied to the security group rule.</p>
     pub fn set_tag_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
-    /// <p>[VPC Only] The tags applied to the security group rule.</p>
+    /// <p>The tags applied to the security group rule.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }

@@ -22,13 +22,12 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
 }
 /// Fluent builder constructing a request to `AuthorizeSecurityGroupEgress`.
 ///
-/// <p>Adds the specified outbound (egress) rules to a security group for use with a VPC.</p>
-/// <p>An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address ranges, or to the instances that are associated with the specified source security groups. When specifying an outbound rule for your security group in a VPC, the <code>IpPermissions</code> must include a destination for the traffic.</p>
-/// <p>You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use -1 for the type or code to mean all types or all codes.</p>
-/// <p>Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.</p>
-/// <p>For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.</p><note>
-/// <p>If you want to reference a security group across VPCs attached to a transit gateway using the <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security group referencing feature</a>, note that you can only reference security groups for ingress rules. You cannot reference a security group for egress rules.</p>
-/// </note>
+/// <p>Adds the specified outbound (egress) rules to a security group.</p>
+/// <p>An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 address ranges, the IP address ranges specified by a prefix list, or the instances that are associated with a source security group. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html">Security group rules</a>.</p>
+/// <p>You must specify exactly one of the following destinations: an IPv4 or IPv6 address range, a prefix list, or a security group. You must specify a protocol for each rule (for example, TCP). If the protocol is TCP or UDP, you must also specify a port or port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP type and code.</p>
+/// <p>Rule changes are propagated to instances associated with the security group as quickly as possible. However, a small delay might occur.</p>
+/// <p>For examples of rules that you can add to security groups for specific access scenarios, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html">Security group rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For information about security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AuthorizeSecurityGroupEgressFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -146,17 +145,17 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ip_permissions`](Self::set_ip_permissions).
     ///
-    /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
+    /// <p>The permissions for the security group rules.</p>
     pub fn ip_permissions(mut self, input: crate::types::IpPermission) -> Self {
         self.inner = self.inner.ip_permissions(input);
         self
     }
-    /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
+    /// <p>The permissions for the security group rules.</p>
     pub fn set_ip_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>) -> Self {
         self.inner = self.inner.set_ip_permissions(input);
         self
     }
-    /// <p>The sets of IP permissions. You can't specify a destination security group and a CIDR IP address range in the same set of permissions.</p>
+    /// <p>The permissions for the security group rules.</p>
     pub fn get_ip_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpPermission>> {
         self.inner.get_ip_permissions()
     }
@@ -178,87 +177,87 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn cidr_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr_ip(input.into());
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr_ip(input);
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the CIDR.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cidr_ip()
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn from_port(mut self, input: i32) -> Self {
         self.inner = self.inner.from_port(input);
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_from_port(input);
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn get_from_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_from_port()
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the protocol name or number.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn ip_protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_protocol(input.into());
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the protocol name or number.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn set_ip_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip_protocol(input);
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the protocol name or number.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn get_ip_protocol(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ip_protocol()
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn to_port(mut self, input: i32) -> Self {
         self.inner = self.inner.to_port(input);
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_to_port(input);
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify the port.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn get_to_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_to_port()
     }
-    /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn source_security_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_security_group_name(input.into());
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn set_source_security_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_security_group_name(input);
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn get_source_security_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_security_group_name()
     }
-    /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn source_security_group_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_security_group_owner_id(input.into());
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn set_source_security_group_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_security_group_owner_id(input);
         self
     }
-    /// <p>Not supported. Use a set of IP permissions to specify a destination security group.</p>
+    /// <p>Not supported. Use IP permissions instead.</p>
     pub fn get_source_security_group_owner_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_security_group_owner_id()
     }

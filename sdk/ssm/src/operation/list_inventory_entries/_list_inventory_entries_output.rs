@@ -7,11 +7,11 @@ pub struct ListInventoryEntriesOutput {
     pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID targeted by the request to query inventory information.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The inventory schema version used by the managed node(s).</p>
+    /// <p>The inventory schema version used by the managed nodes.</p>
     pub schema_version: ::std::option::Option<::std::string::String>,
-    /// <p>The time that inventory information was collected for the managed node(s).</p>
+    /// <p>The time that inventory information was collected for the managed nodes.</p>
     pub capture_time: ::std::option::Option<::std::string::String>,
-    /// <p>A list of inventory items on the managed node(s).</p>
+    /// <p>A list of inventory items on the managed nodes.</p>
     pub entries: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -26,15 +26,15 @@ impl ListInventoryEntriesOutput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The inventory schema version used by the managed node(s).</p>
+    /// <p>The inventory schema version used by the managed nodes.</p>
     pub fn schema_version(&self) -> ::std::option::Option<&str> {
         self.schema_version.as_deref()
     }
-    /// <p>The time that inventory information was collected for the managed node(s).</p>
+    /// <p>The time that inventory information was collected for the managed nodes.</p>
     pub fn capture_time(&self) -> ::std::option::Option<&str> {
         self.capture_time.as_deref()
     }
-    /// <p>A list of inventory items on the managed node(s).</p>
+    /// <p>A list of inventory items on the managed nodes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
     pub fn entries(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
@@ -98,31 +98,31 @@ impl ListInventoryEntriesOutputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The inventory schema version used by the managed node(s).</p>
+    /// <p>The inventory schema version used by the managed nodes.</p>
     pub fn schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The inventory schema version used by the managed node(s).</p>
+    /// <p>The inventory schema version used by the managed nodes.</p>
     pub fn set_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_version = input;
         self
     }
-    /// <p>The inventory schema version used by the managed node(s).</p>
+    /// <p>The inventory schema version used by the managed nodes.</p>
     pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_version
     }
-    /// <p>The time that inventory information was collected for the managed node(s).</p>
+    /// <p>The time that inventory information was collected for the managed nodes.</p>
     pub fn capture_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capture_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The time that inventory information was collected for the managed node(s).</p>
+    /// <p>The time that inventory information was collected for the managed nodes.</p>
     pub fn set_capture_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capture_time = input;
         self
     }
-    /// <p>The time that inventory information was collected for the managed node(s).</p>
+    /// <p>The time that inventory information was collected for the managed nodes.</p>
     pub fn get_capture_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.capture_time
     }
@@ -130,14 +130,14 @@ impl ListInventoryEntriesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>A list of inventory items on the managed node(s).</p>
+    /// <p>A list of inventory items on the managed nodes.</p>
     pub fn entries(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of inventory items on the managed node(s).</p>
+    /// <p>A list of inventory items on the managed nodes.</p>
     pub fn set_entries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
@@ -145,7 +145,7 @@ impl ListInventoryEntriesOutputBuilder {
         self.entries = input;
         self
     }
-    /// <p>A list of inventory items on the managed node(s).</p>
+    /// <p>A list of inventory items on the managed nodes.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
         &self.entries
     }

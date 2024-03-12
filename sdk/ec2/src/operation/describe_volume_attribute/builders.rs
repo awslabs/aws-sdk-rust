@@ -23,7 +23,7 @@ impl DescribeVolumeAttributeInputBuilder {
 /// Fluent builder constructing a request to `DescribeVolumeAttribute`.
 ///
 /// <p>Describes the specified attribute of the specified volume. You can specify only one attribute at a time.</p>
-/// <p>For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon EBS volumes</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVolumeAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

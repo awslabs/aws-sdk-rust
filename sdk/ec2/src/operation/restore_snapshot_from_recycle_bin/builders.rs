@@ -22,7 +22,7 @@ impl RestoreSnapshotFromRecycleBinInputBuilder {
 }
 /// Fluent builder constructing a request to `RestoreSnapshotFromRecycleBin`.
 ///
-/// <p>Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore snapshots from the Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreSnapshotFromRecycleBinFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

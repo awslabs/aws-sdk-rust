@@ -22,7 +22,7 @@ impl DescribeInstanceAssociationsStatusInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeInstanceAssociationsStatus`.
 ///
-/// <p>The status of the associations for the managed node(s).</p>
+/// <p>The status of the associations for the managed nodes.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceAssociationsStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

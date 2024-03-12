@@ -8,7 +8,7 @@ pub struct UserPhoneConfig {
     pub phone_type: crate::types::PhoneType,
     /// <p>The Auto accept setting.</p>
     pub auto_accept: bool,
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p><note>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose Close contact to end ACW.</p><note>
     /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.</p>
     /// </note>
     pub after_contact_work_time_limit: i32,
@@ -24,7 +24,7 @@ impl UserPhoneConfig {
     pub fn auto_accept(&self) -> bool {
         self.auto_accept
     }
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p><note>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose Close contact to end ACW.</p><note>
     /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.</p>
     /// </note>
     pub fn after_contact_work_time_limit(&self) -> i32 {
@@ -81,21 +81,21 @@ impl UserPhoneConfigBuilder {
     pub fn get_auto_accept(&self) -> &::std::option::Option<bool> {
         &self.auto_accept
     }
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p><note>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose Close contact to end ACW.</p><note>
     /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.</p>
     /// </note>
     pub fn after_contact_work_time_limit(mut self, input: i32) -> Self {
         self.after_contact_work_time_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p><note>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose Close contact to end ACW.</p><note>
     /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.</p>
     /// </note>
     pub fn set_after_contact_work_time_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.after_contact_work_time_limit = input;
         self
     }
-    /// <p>The After Call Work (ACW) timeout setting, in seconds.</p><note>
+    /// <p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose Close contact to end ACW.</p><note>
     /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.</p>
     /// </note>
     pub fn get_after_contact_work_time_limit(&self) -> &::std::option::Option<i32> {

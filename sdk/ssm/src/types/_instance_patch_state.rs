@@ -13,7 +13,7 @@ pub struct InstancePatchState {
     /// <p>The ID of the patch baseline snapshot used during the patching operation when this compliance data was collected.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
-    /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub install_override_list: ::std::option::Option<::std::string::String>,
     /// <p>Placeholder information. This field will always be empty in the current release of the service.</p>
     pub owner_information: ::std::option::Option<::std::string::String>,
@@ -87,7 +87,7 @@ impl InstancePatchState {
         self.snapshot_id.as_deref()
     }
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
-    /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn install_override_list(&self) -> ::std::option::Option<&str> {
         self.install_override_list.as_deref()
     }
@@ -299,19 +299,19 @@ impl InstancePatchStateBuilder {
         &self.snapshot_id
     }
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
-    /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn install_override_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.install_override_list = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
-    /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_install_override_list(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.install_override_list = input;
         self
     }
     /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch baseline.</p>
-    /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_install_override_list(&self) -> &::std::option::Option<::std::string::String> {
         &self.install_override_list
     }

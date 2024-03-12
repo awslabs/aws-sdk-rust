@@ -112,16 +112,43 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>Username can include @ only if used in an email format. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Correct: testuser</p></li>
+    /// <li>
+    /// <p>Correct: testuser@example.com</p></li>
+    /// <li>
+    /// <p>Incorrect: testuser@example</p></li>
+    /// </ul>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
         self
     }
     /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>Username can include @ only if used in an email format. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Correct: testuser</p></li>
+    /// <li>
+    /// <p>Correct: testuser@example.com</p></li>
+    /// <li>
+    /// <p>Incorrect: testuser@example</p></li>
+    /// </ul>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
     }
     /// <p>The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+    /// <p>Username can include @ only if used in an email format. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Correct: testuser</p></li>
+    /// <li>
+    /// <p>Correct: testuser@example.com</p></li>
+    /// <li>
+    /// <p>Incorrect: testuser@example</p></li>
+    /// </ul>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }

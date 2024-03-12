@@ -113,11 +113,11 @@ pub enum Error {
     /// <li>
     /// <p>You don't have permission to access the managed node.</p></li>
     /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p></li>
+    /// <p>Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.</p></li>
     /// <li>
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p></li>
     /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p></li>
+    /// <p>The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p></li>
     /// </ul>
     InvalidInstanceId(crate::types::error::InvalidInstanceId),
     /// <p>The specified filter value isn't valid.</p>
@@ -158,7 +158,7 @@ pub enum Error {
     InvalidResourceType(crate::types::error::InvalidResourceType),
     /// <p>The specified inventory item result attribute isn't valid.</p>
     InvalidResultAttributeException(crate::types::error::InvalidResultAttributeException),
-    /// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     InvalidRole(crate::types::error::InvalidRole),
     /// <p>The schedule is invalid. Verify your cron or rate expression and try again.</p>
     InvalidSchedule(crate::types::error::InvalidSchedule),
@@ -271,7 +271,7 @@ pub enum Error {
     TotalSizeLimitExceededException(crate::types::error::TotalSizeLimitExceededException),
     /// <p>The calendar entry contained in the specified SSM document isn't supported.</p>
     UnsupportedCalendarException(crate::types::error::UnsupportedCalendarException),
-    /// <p>Patching for applications released by Microsoft is only available on EC2 instances and advanced instances. To patch applications released by Microsoft on on-premises servers and VMs, you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Enabling the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Patching for applications released by Microsoft is only available on EC2 instances and advanced instances. To patch applications released by Microsoft on on-premises servers and VMs, you must enable advanced instances. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Turning on the advanced-instances tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     UnsupportedFeatureRequiredException(crate::types::error::UnsupportedFeatureRequiredException),
     /// <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> isn't allowed for this inventory type. You can only use the <code>Context</code> attribute with inventory types like <code>AWS:ComplianceItem</code>.</p>
     UnsupportedInventoryItemContextException(crate::types::error::UnsupportedInventoryItemContextException),
@@ -281,7 +281,7 @@ pub enum Error {
     UnsupportedOperatingSystem(crate::types::error::UnsupportedOperatingSystem),
     /// <p>The parameter type isn't supported.</p>
     UnsupportedParameterType(crate::types::error::UnsupportedParameterType),
-    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you sent an document for a Windows managed node to a Linux node.</p>
+    /// <p>The document doesn't support the platform type of the given managed node IDs. For example, you sent an document for a Windows managed node to a Linux node.</p>
     UnsupportedPlatformType(crate::types::error::UnsupportedPlatformType),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

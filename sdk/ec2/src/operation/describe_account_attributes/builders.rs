@@ -36,7 +36,9 @@ impl DescribeAccountAttributesInputBuilder {
 /// <p><code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that you can allocate.</p></li>
 /// <li>
 /// <p><code>vpc-max-security-groups-per-interface</code>: The maximum number of security groups that you can assign to a network interface.</p></li>
-/// </ul>
+/// </ul><note>
+/// <p>The order of the elements in the response, including those within nested structures, might vary. Applications should not assume the elements appear in a particular order.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

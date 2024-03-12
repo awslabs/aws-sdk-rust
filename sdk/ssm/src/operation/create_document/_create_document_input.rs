@@ -7,11 +7,11 @@ pub struct CreateDocumentInput {
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create an SSM document (console)</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create an SSM document (command line)</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
@@ -58,11 +58,11 @@ impl CreateDocumentInput {
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create an SSM document (console)</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create an SSM document (command line)</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
@@ -157,11 +157,11 @@ impl CreateDocumentInputBuilder {
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create an SSM document (console)</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create an SSM document (command line)</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create an SSM document (API)</a></p></li>
     /// </ul>
     /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,11 +172,11 @@ impl CreateDocumentInputBuilder {
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create an SSM document (console)</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create an SSM document (command line)</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
@@ -186,11 +186,11 @@ impl CreateDocumentInputBuilder {
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create an SSM document (console)</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create an SSM document (command line)</a></p></li>
     /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content

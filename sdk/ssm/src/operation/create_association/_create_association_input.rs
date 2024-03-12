@@ -11,7 +11,7 @@ pub struct CreateAssociationInput {
     /// <p><code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code></p>
     /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p><important>
+    /// <p>The document version you want to associate with the targets. Can be a specific version or the default version.</p><important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
     pub document_version: ::std::option::Option<::std::string::String>,
@@ -21,9 +21,9 @@ pub struct CreateAssociationInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the runtime configuration of the document.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
-    /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
-    /// <p>A cron expression when the association will be applied to the target(s).</p>
+    /// <p>A cron expression when the association will be applied to the targets.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the request.</p>
     pub output_location: ::std::option::Option<crate::types::InstanceAssociationOutputLocation>,
@@ -81,7 +81,7 @@ impl CreateAssociationInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p><important>
+    /// <p>The document version you want to associate with the targets. Can be a specific version or the default version.</p><important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
     pub fn document_version(&self) -> ::std::option::Option<&str> {
@@ -97,13 +97,13 @@ impl CreateAssociationInput {
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.parameters.as_ref()
     }
-    /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
     pub fn targets(&self) -> &[crate::types::Target] {
         self.targets.as_deref().unwrap_or_default()
     }
-    /// <p>A cron expression when the association will be applied to the target(s).</p>
+    /// <p>A cron expression when the association will be applied to the targets.</p>
     pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
@@ -284,21 +284,21 @@ impl CreateAssociationInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p><important>
+    /// <p>The document version you want to associate with the targets. Can be a specific version or the default version.</p><important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
     pub fn document_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.document_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p><important>
+    /// <p>The document version you want to associate with the targets. Can be a specific version or the default version.</p><important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
     pub fn set_document_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_version = input;
         self
     }
-    /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p><important>
+    /// <p>The document version you want to associate with the targets. Can be a specific version or the default version.</p><important>
     /// <p>State Manager doesn't support running associations that use a new version of a document if that document is shared from another account. State Manager always runs the <code>default</code> version of a document if shared from another account, even though the Systems Manager console shows that a new version was processed. If you want to run an association using a new version of a document shared form another account, you must set the document version to <code>default</code>.</p>
     /// </important>
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
@@ -353,33 +353,33 @@ impl CreateAssociationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input);
         self.targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>) -> Self {
         self.targets = input;
         self
     }
-    /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Target>> {
         &self.targets
     }
-    /// <p>A cron expression when the association will be applied to the target(s).</p>
+    /// <p>A cron expression when the association will be applied to the targets.</p>
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A cron expression when the association will be applied to the target(s).</p>
+    /// <p>A cron expression when the association will be applied to the targets.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
-    /// <p>A cron expression when the association will be applied to the target(s).</p>
+    /// <p>A cron expression when the association will be applied to the targets.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression
     }

@@ -373,6 +373,8 @@ pub(crate) mod shape_node_exporter_info;
 
 pub(crate) mod shape_prometheus;
 
+pub(crate) mod shape_replication_starting_position;
+
 pub(crate) mod shape_s3;
 
 pub(crate) mod shape_scram;

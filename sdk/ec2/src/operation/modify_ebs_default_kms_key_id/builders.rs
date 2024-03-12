@@ -25,7 +25,7 @@ impl ModifyEbsDefaultKmsKeyIdInputBuilder {
 /// <p>Changes the default KMS key for EBS encryption by default for your account in this Region.</p>
 /// <p>Amazon Web Services creates a unique Amazon Web Services managed KMS key in each Region for use with encryption by default. If you change the default KMS key to a symmetric customer managed KMS key, it is used instead of the Amazon Web Services managed KMS key. To reset the default KMS key to the Amazon Web Services managed KMS key for EBS, use <code>ResetEbsDefaultKmsKeyId</code>. Amazon EBS does not support asymmetric KMS keys.</p>
 /// <p>If you delete or disable the customer managed KMS key that you specified for use with encryption by default, your instances will fail to launch.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyEbsDefaultKmsKeyIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,6 +22,7 @@ pub struct InstanceMetadataOptionsRequest {
     /// <p>Default: <code>enabled</code></p>
     pub http_endpoint: ::std::option::Option<crate::types::InstanceMetadataEndpointState>,
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Default: <code>disabled</code></p>
     pub http_protocol_ipv6: ::std::option::Option<crate::types::InstanceMetadataProtocolState>,
     /// <p>Set to <code>enabled</code> to allow access to instance tags from the instance metadata. Set to <code>disabled</code> to turn off access to instance tags from the instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
     /// <p>Default: <code>disabled</code></p>
@@ -52,6 +53,7 @@ impl InstanceMetadataOptionsRequest {
         self.http_endpoint.as_ref()
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Default: <code>disabled</code></p>
     pub fn http_protocol_ipv6(&self) -> ::std::option::Option<&crate::types::InstanceMetadataProtocolState> {
         self.http_protocol_ipv6.as_ref()
     }
@@ -155,16 +157,19 @@ impl InstanceMetadataOptionsRequestBuilder {
         &self.http_endpoint
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Default: <code>disabled</code></p>
     pub fn http_protocol_ipv6(mut self, input: crate::types::InstanceMetadataProtocolState) -> Self {
         self.http_protocol_ipv6 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Default: <code>disabled</code></p>
     pub fn set_http_protocol_ipv6(mut self, input: ::std::option::Option<crate::types::InstanceMetadataProtocolState>) -> Self {
         self.http_protocol_ipv6 = input;
         self
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
+    /// <p>Default: <code>disabled</code></p>
     pub fn get_http_protocol_ipv6(&self) -> &::std::option::Option<crate::types::InstanceMetadataProtocolState> {
         &self.http_protocol_ipv6
     }

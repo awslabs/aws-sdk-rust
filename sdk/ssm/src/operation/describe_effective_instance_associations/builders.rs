@@ -22,7 +22,7 @@ impl DescribeEffectiveInstanceAssociationsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeEffectiveInstanceAssociations`.
 ///
-/// <p>All associations for the managed node(s).</p>
+/// <p>All associations for the managed nodes.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEffectiveInstanceAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

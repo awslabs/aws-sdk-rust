@@ -15,7 +15,7 @@ pub struct StackSetOperation {
     /// <li>
     /// <p><code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p></li>
     /// <li>
-    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p></li>
+    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation is currently being performed.</p></li>
     /// <li>
@@ -44,7 +44,7 @@ pub struct StackSetOperation {
     pub deployment_targets: ::std::option::Option<crate::types::DeploymentTargets>,
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
     pub stack_set_drift_detection_details: ::std::option::Option<crate::types::StackSetDriftDetectionDetails>,
     /// <p>The status of the operation in details.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
@@ -69,7 +69,7 @@ impl StackSetOperation {
     /// <li>
     /// <p><code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p></li>
     /// <li>
-    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p></li>
+    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation is currently being performed.</p></li>
     /// <li>
@@ -114,7 +114,7 @@ impl StackSetOperation {
     }
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn stack_set_drift_detection_details(&self) -> ::std::option::Option<&crate::types::StackSetDriftDetectionDetails> {
         self.stack_set_drift_detection_details.as_ref()
     }
@@ -201,7 +201,7 @@ impl StackSetOperationBuilder {
     /// <li>
     /// <p><code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p></li>
     /// <li>
-    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p></li>
+    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation is currently being performed.</p></li>
     /// <li>
@@ -220,7 +220,7 @@ impl StackSetOperationBuilder {
     /// <li>
     /// <p><code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p></li>
     /// <li>
-    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p></li>
+    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation is currently being performed.</p></li>
     /// <li>
@@ -239,7 +239,7 @@ impl StackSetOperationBuilder {
     /// <li>
     /// <p><code>FAILED</code>: The operation exceeded the specified failure tolerance. The failure tolerance value that you've set for an operation is applied for each Region during stack create and update operations. If the number of failed stacks within a Region exceeds the failure tolerance, the status of the operation in the Region is set to <code>FAILED</code>. This in turn sets the status of the operation as a whole to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining Regions.</p></li>
     /// <li>
-    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the CloudFormation User Guide.</p></li>
+    /// <p><code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of operations, the operation is queued to be performed. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// <li>
     /// <p><code>RUNNING</code>: The operation is currently being performed.</p></li>
     /// <li>
@@ -358,21 +358,21 @@ impl StackSetOperationBuilder {
     }
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn stack_set_drift_detection_details(mut self, input: crate::types::StackSetDriftDetectionDetails) -> Self {
         self.stack_set_drift_detection_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_stack_set_drift_detection_details(mut self, input: ::std::option::Option<crate::types::StackSetDriftDetectionDetails>) -> Self {
         self.stack_set_drift_detection_details = input;
         self
     }
     /// <p>Detailed information about the drift status of the stack set. This includes information about drift operations currently being performed on the stack set.</p>
     /// <p>This information will only be present for stack set operations whose <code>Action</code> type is <code>DETECT_DRIFT</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_stack_set_drift_detection_details(&self) -> &::std::option::Option<crate::types::StackSetDriftDetectionDetails> {
         &self.stack_set_drift_detection_details
     }

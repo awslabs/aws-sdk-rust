@@ -8,7 +8,7 @@ pub struct InstanceAssociation {
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The managed node ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The content of the association document for the managed node(s).</p>
+    /// <p>The content of the association document for the managed nodes.</p>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>Version information for the association on the managed node.</p>
     pub association_version: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl InstanceAssociation {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The content of the association document for the managed node(s).</p>
+    /// <p>The content of the association document for the managed nodes.</p>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -76,17 +76,17 @@ impl InstanceAssociationBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The content of the association document for the managed node(s).</p>
+    /// <p>The content of the association document for the managed nodes.</p>
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The content of the association document for the managed node(s).</p>
+    /// <p>The content of the association document for the managed nodes.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The content of the association document for the managed node(s).</p>
+    /// <p>The content of the association document for the managed nodes.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
     }

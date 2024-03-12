@@ -11,7 +11,7 @@ pub struct UserSearchCriteria {
     /// <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
     pub and_conditions: ::std::option::Option<::std::vec::Vec<crate::types::UserSearchCriteria>>,
     /// <p>A leaf node condition which can be used to specify a string condition.</p>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>username</code>, <code>firstname</code>, <code>lastname</code>, <code>resourceId</code>, <code>routingProfileId</code>, <code>securityProfileId</code>, <code>agentGroupId</code>, and <code>agentGroupPathIds</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>Username</code>, <code>FirstName</code>, <code>LastName</code>, <code>RoutingProfileId</code>, <code>SecurityProfileId</code>, <code>ResourceId</code>.</p>
     pub string_condition: ::std::option::Option<crate::types::StringCondition>,
     /// <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
     pub hierarchy_group_condition: ::std::option::Option<crate::types::HierarchyGroupCondition>,
@@ -30,7 +30,7 @@ impl UserSearchCriteria {
         self.and_conditions.as_deref().unwrap_or_default()
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>username</code>, <code>firstname</code>, <code>lastname</code>, <code>resourceId</code>, <code>routingProfileId</code>, <code>securityProfileId</code>, <code>agentGroupId</code>, and <code>agentGroupPathIds</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>Username</code>, <code>FirstName</code>, <code>LastName</code>, <code>RoutingProfileId</code>, <code>SecurityProfileId</code>, <code>ResourceId</code>.</p>
     pub fn string_condition(&self) -> ::std::option::Option<&crate::types::StringCondition> {
         self.string_condition.as_ref()
     }
@@ -97,19 +97,19 @@ impl UserSearchCriteriaBuilder {
         &self.and_conditions
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>username</code>, <code>firstname</code>, <code>lastname</code>, <code>resourceId</code>, <code>routingProfileId</code>, <code>securityProfileId</code>, <code>agentGroupId</code>, and <code>agentGroupPathIds</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>Username</code>, <code>FirstName</code>, <code>LastName</code>, <code>RoutingProfileId</code>, <code>SecurityProfileId</code>, <code>ResourceId</code>.</p>
     pub fn string_condition(mut self, input: crate::types::StringCondition) -> Self {
         self.string_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>username</code>, <code>firstname</code>, <code>lastname</code>, <code>resourceId</code>, <code>routingProfileId</code>, <code>securityProfileId</code>, <code>agentGroupId</code>, and <code>agentGroupPathIds</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>Username</code>, <code>FirstName</code>, <code>LastName</code>, <code>RoutingProfileId</code>, <code>SecurityProfileId</code>, <code>ResourceId</code>.</p>
     pub fn set_string_condition(mut self, input: ::std::option::Option<crate::types::StringCondition>) -> Self {
         self.string_condition = input;
         self
     }
     /// <p>A leaf node condition which can be used to specify a string condition.</p>
-    /// <p>The currently supported values for <code>FieldName</code> are <code>username</code>, <code>firstname</code>, <code>lastname</code>, <code>resourceId</code>, <code>routingProfileId</code>, <code>securityProfileId</code>, <code>agentGroupId</code>, and <code>agentGroupPathIds</code>.</p>
+    /// <p>The currently supported values for <code>FieldName</code> are <code>Username</code>, <code>FirstName</code>, <code>LastName</code>, <code>RoutingProfileId</code>, <code>SecurityProfileId</code>, <code>ResourceId</code>.</p>
     pub fn get_string_condition(&self) -> &::std::option::Option<crate::types::StringCondition> {
         &self.string_condition
     }

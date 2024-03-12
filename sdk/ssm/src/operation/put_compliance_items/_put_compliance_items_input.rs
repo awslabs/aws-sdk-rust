@@ -9,7 +9,7 @@ pub struct PutComplianceItemsInput {
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
     pub compliance_type: ::std::option::Option<::std::string::String>,
-    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p>
     pub execution_summary: ::std::option::Option<crate::types::ComplianceExecutionSummary>,
     /// <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceItemEntry>>,
@@ -34,7 +34,7 @@ impl PutComplianceItemsInput {
     pub fn compliance_type(&self) -> ::std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
-    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p>
     pub fn execution_summary(&self) -> ::std::option::Option<&crate::types::ComplianceExecutionSummary> {
         self.execution_summary.as_ref()
     }
@@ -121,18 +121,18 @@ impl PutComplianceItemsInputBuilder {
     pub fn get_compliance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.compliance_type
     }
-    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p>
     /// This field is required.
     pub fn execution_summary(mut self, input: crate::types::ComplianceExecutionSummary) -> Self {
         self.execution_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p>
     pub fn set_execution_summary(mut self, input: ::std::option::Option<crate::types::ComplianceExecutionSummary>) -> Self {
         self.execution_summary = input;
         self
     }
-    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code></p>
     pub fn get_execution_summary(&self) -> &::std::option::Option<crate::types::ComplianceExecutionSummary> {
         &self.execution_summary
     }

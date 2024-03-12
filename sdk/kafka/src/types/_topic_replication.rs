@@ -10,6 +10,8 @@ pub struct TopicReplication {
     pub copy_topic_configurations: ::std::option::Option<bool>,
     /// <p>Whether to periodically check for new topics and partitions.</p>
     pub detect_and_copy_new_topics: ::std::option::Option<bool>,
+    /// <p>Configuration for specifying the position in the topics to start replicating from.</p>
+    pub starting_position: ::std::option::Option<crate::types::ReplicationStartingPosition>,
     /// <p>List of regular expression patterns indicating the topics that should not be replicated.</p>
     pub topics_to_exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of regular expression patterns indicating the topics to copy.</p>
@@ -27,6 +29,10 @@ impl TopicReplication {
     /// <p>Whether to periodically check for new topics and partitions.</p>
     pub fn detect_and_copy_new_topics(&self) -> ::std::option::Option<bool> {
         self.detect_and_copy_new_topics
+    }
+    /// <p>Configuration for specifying the position in the topics to start replicating from.</p>
+    pub fn starting_position(&self) -> ::std::option::Option<&crate::types::ReplicationStartingPosition> {
+        self.starting_position.as_ref()
     }
     /// <p>List of regular expression patterns indicating the topics that should not be replicated.</p>
     ///
@@ -55,6 +61,7 @@ pub struct TopicReplicationBuilder {
     pub(crate) copy_access_control_lists_for_topics: ::std::option::Option<bool>,
     pub(crate) copy_topic_configurations: ::std::option::Option<bool>,
     pub(crate) detect_and_copy_new_topics: ::std::option::Option<bool>,
+    pub(crate) starting_position: ::std::option::Option<crate::types::ReplicationStartingPosition>,
     pub(crate) topics_to_exclude: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) topics_to_replicate: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -100,6 +107,20 @@ impl TopicReplicationBuilder {
     /// <p>Whether to periodically check for new topics and partitions.</p>
     pub fn get_detect_and_copy_new_topics(&self) -> &::std::option::Option<bool> {
         &self.detect_and_copy_new_topics
+    }
+    /// <p>Configuration for specifying the position in the topics to start replicating from.</p>
+    pub fn starting_position(mut self, input: crate::types::ReplicationStartingPosition) -> Self {
+        self.starting_position = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for specifying the position in the topics to start replicating from.</p>
+    pub fn set_starting_position(mut self, input: ::std::option::Option<crate::types::ReplicationStartingPosition>) -> Self {
+        self.starting_position = input;
+        self
+    }
+    /// <p>Configuration for specifying the position in the topics to start replicating from.</p>
+    pub fn get_starting_position(&self) -> &::std::option::Option<crate::types::ReplicationStartingPosition> {
+        &self.starting_position
     }
     /// Appends an item to `topics_to_exclude`.
     ///
@@ -147,6 +168,7 @@ impl TopicReplicationBuilder {
             copy_access_control_lists_for_topics: self.copy_access_control_lists_for_topics,
             copy_topic_configurations: self.copy_topic_configurations,
             detect_and_copy_new_topics: self.detect_and_copy_new_topics,
+            starting_position: self.starting_position,
             topics_to_exclude: self.topics_to_exclude,
             topics_to_replicate: self.topics_to_replicate,
         }

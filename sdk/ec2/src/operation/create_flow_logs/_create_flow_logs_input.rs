@@ -7,8 +7,8 @@ pub struct CreateFlowLogsInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account.</p>
-    /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code> and unsupported otherwise.</p>
+    /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the log destination.</p>
+    /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code>, or if the destination type is <code>kinesis-data-firehose</code> and the delivery stream and the resources to monitor are in different accounts.</p>
     pub deliver_logs_permission_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs across accounts.</p>
     pub deliver_cross_account_role: ::std::option::Option<::std::string::String>,
@@ -61,8 +61,8 @@ impl CreateFlowLogsInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account.</p>
-    /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code> and unsupported otherwise.</p>
+    /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the log destination.</p>
+    /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code>, or if the destination type is <code>kinesis-data-firehose</code> and the delivery stream and the resources to monitor are in different accounts.</p>
     pub fn deliver_logs_permission_arn(&self) -> ::std::option::Option<&str> {
         self.deliver_logs_permission_arn.as_deref()
     }
@@ -189,20 +189,20 @@ impl CreateFlowLogsInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account.</p>
-    /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code> and unsupported otherwise.</p>
+    /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the log destination.</p>
+    /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code>, or if the destination type is <code>kinesis-data-firehose</code> and the delivery stream and the resources to monitor are in different accounts.</p>
     pub fn deliver_logs_permission_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.deliver_logs_permission_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account.</p>
-    /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code> and unsupported otherwise.</p>
+    /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the log destination.</p>
+    /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code>, or if the destination type is <code>kinesis-data-firehose</code> and the delivery stream and the resources to monitor are in different accounts.</p>
     pub fn set_deliver_logs_permission_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.deliver_logs_permission_arn = input;
         self
     }
-    /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account.</p>
-    /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code> and unsupported otherwise.</p>
+    /// <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the log destination.</p>
+    /// <p>This parameter is required if the destination type is <code>cloud-watch-logs</code>, or if the destination type is <code>kinesis-data-firehose</code> and the delivery stream and the resources to monitor are in different accounts.</p>
     pub fn get_deliver_logs_permission_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.deliver_logs_permission_arn
     }

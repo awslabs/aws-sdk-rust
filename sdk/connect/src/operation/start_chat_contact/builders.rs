@@ -184,17 +184,17 @@ impl StartChatContactFluentBuilder {
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetails> {
         self.inner.get_participant_details()
     }
-    /// <p>The initial message to be sent to the newly created chat.</p>
+    /// <p>The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message is not delivered to the Lex bot.</p>
     pub fn initial_message(mut self, input: crate::types::ChatMessage) -> Self {
         self.inner = self.inner.initial_message(input);
         self
     }
-    /// <p>The initial message to be sent to the newly created chat.</p>
+    /// <p>The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message is not delivered to the Lex bot.</p>
     pub fn set_initial_message(mut self, input: ::std::option::Option<crate::types::ChatMessage>) -> Self {
         self.inner = self.inner.set_initial_message(input);
         self
     }
-    /// <p>The initial message to be sent to the newly created chat.</p>
+    /// <p>The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message is not delivered to the Lex bot.</p>
     pub fn get_initial_message(&self) -> &::std::option::Option<crate::types::ChatMessage> {
         self.inner.get_initial_message()
     }

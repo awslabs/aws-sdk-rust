@@ -17,13 +17,14 @@ pub struct InstanceMetadataOptionsResponse {
     /// </ul>
     pub http_tokens: ::std::option::Option<crate::types::HttpTokensState>,
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: 1</p>
-    /// <p>Possible values: Integers from 1 to 64</p>
+    /// <p>Default: <code>1</code></p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code></p>
     pub http_put_response_hop_limit: ::std::option::Option<i32>,
     /// <p>Indicates whether the HTTP metadata endpoint on your instances is enabled or disabled.</p>
     /// <p>If the value is <code>disabled</code>, you cannot access your instance metadata.</p>
     pub http_endpoint: ::std::option::Option<crate::types::InstanceMetadataEndpointState>,
     /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+    /// <p>Default: <code>disabled</code></p>
     pub http_protocol_ipv6: ::std::option::Option<crate::types::InstanceMetadataProtocolState>,
     /// <p>Indicates whether access to instance tags from the instance metadata is enabled or disabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags using the instance metadata</a>.</p>
     pub instance_metadata_tags: ::std::option::Option<crate::types::InstanceMetadataTagsState>,
@@ -46,8 +47,8 @@ impl InstanceMetadataOptionsResponse {
         self.http_tokens.as_ref()
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: 1</p>
-    /// <p>Possible values: Integers from 1 to 64</p>
+    /// <p>Default: <code>1</code></p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code></p>
     pub fn http_put_response_hop_limit(&self) -> ::std::option::Option<i32> {
         self.http_put_response_hop_limit
     }
@@ -57,6 +58,7 @@ impl InstanceMetadataOptionsResponse {
         self.http_endpoint.as_ref()
     }
     /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+    /// <p>Default: <code>disabled</code></p>
     pub fn http_protocol_ipv6(&self) -> ::std::option::Option<&crate::types::InstanceMetadataProtocolState> {
         self.http_protocol_ipv6.as_ref()
     }
@@ -137,22 +139,22 @@ impl InstanceMetadataOptionsResponseBuilder {
         &self.http_tokens
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: 1</p>
-    /// <p>Possible values: Integers from 1 to 64</p>
+    /// <p>Default: <code>1</code></p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code></p>
     pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
         self.http_put_response_hop_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: 1</p>
-    /// <p>Possible values: Integers from 1 to 64</p>
+    /// <p>Default: <code>1</code></p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code></p>
     pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_put_response_hop_limit = input;
         self
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel.</p>
-    /// <p>Default: 1</p>
-    /// <p>Possible values: Integers from 1 to 64</p>
+    /// <p>Default: <code>1</code></p>
+    /// <p>Possible values: Integers from <code>1</code> to <code>64</code></p>
     pub fn get_http_put_response_hop_limit(&self) -> &::std::option::Option<i32> {
         &self.http_put_response_hop_limit
     }
@@ -174,16 +176,19 @@ impl InstanceMetadataOptionsResponseBuilder {
         &self.http_endpoint
     }
     /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+    /// <p>Default: <code>disabled</code></p>
     pub fn http_protocol_ipv6(mut self, input: crate::types::InstanceMetadataProtocolState) -> Self {
         self.http_protocol_ipv6 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+    /// <p>Default: <code>disabled</code></p>
     pub fn set_http_protocol_ipv6(mut self, input: ::std::option::Option<crate::types::InstanceMetadataProtocolState>) -> Self {
         self.http_protocol_ipv6 = input;
         self
     }
     /// <p>Indicates whether the IPv6 endpoint for the instance metadata service is enabled or disabled.</p>
+    /// <p>Default: <code>disabled</code></p>
     pub fn get_http_protocol_ipv6(&self) -> &::std::option::Option<crate::types::InstanceMetadataProtocolState> {
         &self.http_protocol_ipv6
     }

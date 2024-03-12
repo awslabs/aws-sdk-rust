@@ -23,7 +23,7 @@ impl GetEbsDefaultKmsKeyIdInputBuilder {
 /// Fluent builder constructing a request to `GetEbsDefaultKmsKeyId`.
 ///
 /// <p>Describes the default KMS key for EBS encryption by default for your account in this Region. You can change the default KMS key for encryption by default using <code>ModifyEbsDefaultKmsKeyId</code> or <code>ResetEbsDefaultKmsKeyId</code>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEbsDefaultKmsKeyIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

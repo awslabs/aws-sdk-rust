@@ -259,11 +259,11 @@ pub enum SendCommandError {
     /// <li>
     /// <p>You don't have permission to access the managed node.</p></li>
     /// <li>
-    /// <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p></li>
+    /// <p>Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.</p></li>
     /// <li>
     /// <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p></li>
     /// <li>
-    /// <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p></li>
+    /// <p>The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p></li>
     /// </ul>
     InvalidInstanceId(crate::types::error::InvalidInstanceId),
     /// <p>One or more configuration items isn't valid. Verify that a valid Amazon Resource Name (ARN) was provided for an Amazon Simple Notification Service topic.</p>
@@ -272,11 +272,11 @@ pub enum SendCommandError {
     InvalidOutputFolder(crate::types::error::InvalidOutputFolder),
     /// <p>You must specify values for all required parameters in the Amazon Web Services Systems Manager document (SSM document). You can only supply values to parameters defined in the SSM document.</p>
     InvalidParameters(crate::types::error::InvalidParameters),
-    /// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>The role name can't contain invalid characters. Also verify that you specified an IAM role for notifications that includes the required trust policy. For information about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     InvalidRole(crate::types::error::InvalidRole),
     /// <p>The size limit of a document is 64 KB.</p>
     MaxDocumentSizeExceeded(crate::types::error::MaxDocumentSizeExceeded),
-    /// <p>The document doesn't support the platform type of the given managed node ID(s). For example, you sent an document for a Windows managed node to a Linux node.</p>
+    /// <p>The document doesn't support the platform type of the given managed node IDs. For example, you sent an document for a Windows managed node to a Linux node.</p>
     UnsupportedPlatformType(crate::types::error::UnsupportedPlatformType),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

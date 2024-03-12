@@ -26,7 +26,7 @@ pub struct UpdatePatchBaselineInput {
     /// <li>
     /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
     /// <li>
-    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <p><b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <i>InstalledRejected</i>.</p></li>
     /// </ul>
     pub rejected_patches_action: ::std::option::Option<crate::types::PatchAction>,
     /// <p>A description of the patch baseline.</p>
@@ -80,7 +80,7 @@ impl UpdatePatchBaselineInput {
     /// <li>
     /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
     /// <li>
-    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <p><b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <i>InstalledRejected</i>.</p></li>
     /// </ul>
     pub fn rejected_patches_action(&self) -> ::std::option::Option<&crate::types::PatchAction> {
         self.rejected_patches_action.as_ref()
@@ -261,7 +261,7 @@ impl UpdatePatchBaselineInputBuilder {
     /// <li>
     /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
     /// <li>
-    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <p><b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <i>InstalledRejected</i>.</p></li>
     /// </ul>
     pub fn rejected_patches_action(mut self, input: crate::types::PatchAction) -> Self {
         self.rejected_patches_action = ::std::option::Option::Some(input);
@@ -272,7 +272,7 @@ impl UpdatePatchBaselineInputBuilder {
     /// <li>
     /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
     /// <li>
-    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <p><b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <i>InstalledRejected</i>.</p></li>
     /// </ul>
     pub fn set_rejected_patches_action(mut self, input: ::std::option::Option<crate::types::PatchAction>) -> Self {
         self.rejected_patches_action = input;
@@ -283,7 +283,7 @@ impl UpdatePatchBaselineInputBuilder {
     /// <li>
     /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
     /// <li>
-    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <p><b>BLOCK</b>: Packages in the <b>Rejected patches</b> list, and packages that include them as dependencies, aren't installed by Patch Manager under any circumstances. If a package was installed before it was added to the <b>Rejected patches</b> list, or is installed outside of Patch Manager afterward, it's considered noncompliant with the patch baseline and its status is reported as <i>InstalledRejected</i>.</p></li>
     /// </ul>
     pub fn get_rejected_patches_action(&self) -> &::std::option::Option<crate::types::PatchAction> {
         &self.rejected_patches_action
