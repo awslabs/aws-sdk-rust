@@ -14,13 +14,17 @@ use crate::identity::IdentityCache;
 use crate::sso::cache::{
     load_cached_token, save_cached_token, CachedSsoToken, CachedSsoTokenError,
 };
+use aws_credential_types::provider::token::ProvideToken;
+use aws_credential_types::provider::{
+    error::TokenError, future::ProvideToken as ProvideTokenFuture,
+};
 use aws_sdk_ssooidc::error::DisplayErrorContext;
 use aws_sdk_ssooidc::operation::create_token::CreateTokenOutput;
 use aws_sdk_ssooidc::Client as SsoOidcClient;
 use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_runtime::expiring_cache::ExpiringCache;
 use aws_smithy_runtime_api::client::identity::http::Token;
-use aws_smithy_runtime_api::client::identity::{Identity, IdentityFuture, ResolveIdentity};
+use aws_smithy_runtime_api::client::identity::{IdentityFuture, ResolveIdentity};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_types::os_shim_internal::{Env, Fs};
@@ -148,8 +152,7 @@ impl SsoTokenProvider {
     pub(super) fn resolve_token(
         &self,
         time_source: SharedTimeSource,
-    ) -> impl std::future::Future<Output = Result<CachedSsoToken, SsoTokenProviderError>> + 'static
-    {
+    ) -> impl std::future::Future<Output = Result<CachedSsoToken, TokenError>> + 'static {
         let token_cache = self.token_cache.clone();
         let inner = self.inner.clone();
 
@@ -216,10 +219,32 @@ impl SsoTokenProvider {
                     let expires_at = token.expires_at;
                     Ok((token, expires_at))
                 })
-                .await?;
+                .await
+                .map_err(TokenError::provider_error)?;
 
             Ok(token)
         }
+    }
+}
+
+impl ProvideToken for SsoTokenProvider {
+    fn provide_token<'a>(&'a self) -> ProvideTokenFuture<'a>
+    where
+        Self: 'a,
+    {
+        let time_source = self
+            .inner
+            .sdk_config
+            .time_source()
+            .expect("a time source required by SsoTokenProvider");
+        let token_future = self.resolve_token(time_source);
+        ProvideTokenFuture::new(Box::pin(async move {
+            let token = token_future.await?;
+            Ok(Token::new(
+                token.access_token.as_str(),
+                Some(token.expires_at),
+            ))
+        }))
     }
 }
 
@@ -227,18 +252,13 @@ impl ResolveIdentity for SsoTokenProvider {
     fn resolve_identity<'a>(
         &'a self,
         runtime_components: &'a RuntimeComponents,
-        _config_bag: &'a ConfigBag,
+        config_bag: &'a ConfigBag,
     ) -> IdentityFuture<'a> {
-        let time_source = runtime_components
-            .time_source()
-            .expect("a time source required by SsoTokenProvider");
-        let token_future = self.resolve_token(time_source);
         IdentityFuture::new(Box::pin(async move {
-            let token = token_future.await?;
-            Ok(Identity::new(
-                Token::new(token.access_token.as_str(), Some(token.expires_at)),
-                Some(token.expires_at),
-            ))
+            self.provide_token()
+                .await?
+                .resolve_identity(runtime_components, config_bag)
+                .await
         }))
     }
 }
@@ -386,10 +406,11 @@ mod tests {
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_async::test_util::instant_time_and_sleep;
     use aws_smithy_async::time::{StaticTimeSource, TimeSource};
-    use aws_smithy_runtime::client::http::test_util::{
-        capture_request, ReplayEvent, StaticReplayClient,
-    };
     use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
+    use aws_smithy_runtime::{
+        assert_str_contains,
+        client::http::test_util::{capture_request, ReplayEvent, StaticReplayClient},
+    };
     use aws_smithy_runtime_api::client::http::HttpClient;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_types::body::SdkBody;
@@ -466,15 +487,15 @@ mod tests {
         }
 
         async fn expect_expired_token_err(&self) {
-            let err = self
-                .token_provider
-                .resolve_token(self.time_source.clone())
-                .await
-                .expect_err("expected failure");
-            assert!(
-                matches!(err, SsoTokenProviderError::ExpiredToken),
-                "expected {err:?} to be `ExpiredToken`"
-            );
+            let err = DisplayErrorContext(
+                &self
+                    .token_provider
+                    .resolve_token(self.time_source.clone())
+                    .await
+                    .expect_err("expected failure"),
+            )
+            .to_string();
+            assert_str_contains!(err, "the SSO token has expired");
         }
 
         fn last_refresh_attempt_time(&self) -> Option<String> {

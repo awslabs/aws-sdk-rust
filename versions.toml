@@ -1,4 +1,4 @@
-smithy_rs_revision = 'fceb914fb2413f2a4e21f2d1ee5cf31a691ce11c'
+smithy_rs_revision = '58a14caa79663792c20f899697ab0c95dafb4e6f'
 aws_doc_sdk_examples_revision = '67b3e390ad91f2c10235ae5f3ce3b297d0f325b4'
 
 [manual_interventions]
@@ -6,12 +6,12 @@ crates_to_remove = []
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.1.8'
-source_hash = '75c6f330a9079ebbd80c695c159e3849a8ded9c889912fcb93c6557d039080c7'
+source_hash = 'bbee04b9a20069e623dad3eb1a2a7202827705263f621118d180b14e59112426'
 
 [crates.aws-credential-types]
 category = 'AwsRuntime'
 version = '1.1.8'
-source_hash = 'e40a4e83a77d90c15d3ca61d8a5a9aa6fe45009bf15af078996ebbd7bd0d96ee'
+source_hash = '93b6b5e7736f9e98aae242615893265606fdb63073905b090162e6dd69ac42be'
 
 [crates.aws-endpoint]
 category = 'AwsRuntime'
@@ -461,7 +461,7 @@ model_hash = 'fabe0eb2075befdde4f1cfc15508c15c7efc80cb7a1464046b7893e79e7c245c'
 [crates.aws-sdk-codecatalyst]
 category = 'AwsSdk'
 version = '1.16.0'
-source_hash = '905bae9d495d57953e7cdd367e60a275697d8fdcdb12eb7898ad2823ef508747'
+source_hash = '19fd2f5c4fdbf58fd4d4affcd768a163074f01807cf34e9b2e07553e2739b67e'
 model_hash = '571183b4711cf2225a1f1d4f31b7e4205c58b3b3936566b71621e66ead49111c'
 
 [crates.aws-sdk-codecommit]
@@ -2394,7 +2394,7 @@ source_hash = 'b721fa1ca51a24c0b1184986dafca0e26f34378b2e8612c21db61bd0b448056a'
 [crates.aws-smithy-runtime-api]
 category = 'SmithyRuntime'
 version = '1.1.8'
-source_hash = 'de36120e06a26027add7c0b57ae9d175f5cbdc95a872ab75f8a7e52f73993ebf'
+source_hash = '075fab6fd1c12396331aab4b73d1c77f275fb0c21f1a3056fa74545599b30a8d'
 
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'
@@ -2403,8 +2403,8 @@ source_hash = 'b885424e1220bf59c4990f236007254f794f888c0441520c96dab47ca300709e'
 
 [crates.aws-smithy-types-convert]
 category = 'SmithyRuntime'
-version = '0.60.7'
-source_hash = '30fa0be6d896ebe9e86510b89168c08cc39498c7543d39bc9c049c4036977ae2'
+version = '0.60.8'
+source_hash = 'dd7b39e51a59ca04d74fb2652cca322ef3293fe3194081f613bad5108f16f13c'
 
 [crates.aws-smithy-types-fuzz]
 category = 'SmithyRuntime'
@@ -2424,7 +2424,7 @@ source_hash = '5bd586d7ef437b428bc065828b19ae3c08dc6b154defd4cf99975bc3970ef8b9'
 [crates.aws-types]
 category = 'AwsRuntime'
 version = '1.1.8'
-source_hash = '11ebe3d4e76148d5494850f8eec2d8cd533e2ca3330d55aeda2fbb09083c60af'
+source_hash = '763ccdac72387c79329808e3614b70010eb3cb0139effbf9f342e879fd37e609'
 
 [crates.aws-types-fuzz]
 category = 'AwsRuntime'
@@ -2824,7 +2824,7 @@ aws-smithy-query = '0.60.7'
 aws-smithy-runtime = '1.1.8'
 aws-smithy-runtime-api = '1.1.8'
 aws-smithy-types = '1.1.8'
-aws-smithy-types-convert = '0.60.7'
+aws-smithy-types-convert = '0.60.8'
 aws-smithy-wasm = '0.1.0'
 aws-smithy-xml = '0.60.7'
 aws-types = '1.1.8'

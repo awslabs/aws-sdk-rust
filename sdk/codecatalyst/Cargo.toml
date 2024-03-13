@@ -77,13 +77,54 @@ path = "../aws-credential-types"
 features = ["test-util"]
 version = "1.1.8"
 
+[dev-dependencies.aws-runtime]
+path = "../aws-runtime"
+features = ["test-util"]
+version = "1.1.8"
+
+[dev-dependencies.aws-smithy-async]
+path = "../aws-smithy-async"
+features = ["test-util"]
+version = "1.1.8"
+
+[dev-dependencies.aws-smithy-protocol-test]
+path = "../aws-smithy-protocol-test"
+version = "0.60.7"
+
+[dev-dependencies.aws-smithy-runtime]
+path = "../aws-smithy-runtime"
+features = ["test-util", "wire-mock"]
+version = "1.1.8"
+
+[dev-dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
+features = ["test-util"]
+version = "1.1.8"
+
+[dev-dependencies.aws-smithy-types]
+path = "../aws-smithy-types"
+features = ["test-util"]
+version = "1.1.8"
+
+[dev-dependencies.futures-util]
+version = "0.3.25"
+features = ["alloc"]
+default-features = false
+
+[dev-dependencies.serde_json]
+version = "1.0.0"
+
 [dev-dependencies.tokio]
 version = "1.23.1"
 features = ["macros", "test-util", "rt-multi-thread"]
+
+[dev-dependencies.tracing-subscriber]
+version = "0.3.16"
+features = ["env-filter", "json"]
 
 [features]
 behavior-version-latest = []
 rustls = ["aws-smithy-runtime/tls-rustls"]
 rt-tokio = ["aws-smithy-async/rt-tokio", "aws-smithy-types/rt-tokio"]
-test-util = ["aws-credential-types/test-util", "aws-smithy-runtime/test-util"]
+test-util = ["aws-smithy-runtime/test-util"]
 default = ["rustls", "rt-tokio"]

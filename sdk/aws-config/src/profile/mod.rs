@@ -23,6 +23,12 @@ pub mod credentials;
 pub mod profile_file;
 pub mod region;
 
+#[cfg(feature = "sso")]
+pub mod token;
+#[cfg(feature = "sso")]
+#[doc(inline)]
+pub use token::ProfileFileTokenProvider;
+
 #[doc(inline)]
 pub use credentials::ProfileFileCredentialsProvider;
 #[doc(inline)]

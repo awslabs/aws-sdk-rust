@@ -1,0 +1,5 @@
+{
+    "version": "V0",
+    "docs": "Load a SSO bearer token from the default profile with case insensitive keys",
+    "events": []
+}

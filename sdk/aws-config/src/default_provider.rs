@@ -47,3 +47,7 @@ pub mod use_fips;
 
 /// Default dual-stack provider chain
 pub mod use_dual_stack;
+
+/// Default access token provider chain
+#[cfg(feature = "sso")]
+pub mod token;

@@ -198,10 +198,8 @@ impl Builder {
 
 #[cfg(test)]
 mod test {
-    use crate::test_case::TestEnvironment;
-    use crate::{
-        default_provider::credentials::DefaultCredentialsChain, test_case::StaticTestProvider,
-    };
+    use crate::default_provider::credentials::DefaultCredentialsChain;
+    use crate::test_case::{StaticTestProvider, TestEnvironment};
     use aws_credential_types::provider::ProvideCredentials;
     use aws_smithy_async::time::StaticTimeSource;
     use std::time::UNIX_EPOCH;
@@ -246,7 +244,10 @@ mod test {
             #[tokio::test]
             async fn $name() {
                 let _ = crate::test_case::TestEnvironment::from_dir(
-                    concat!("./test-data/default-credential-provider-chain/", stringify!($name)),
+                    concat!(
+                        "./test-data/default-credential-provider-chain/",
+                        stringify!($name)
+                    ),
                     crate::test_case::test_credentials_provider(|config| {
                         async move {
                             crate::default_provider::credentials::Builder::default()
@@ -256,7 +257,7 @@ mod test {
                                 .provide_credentials()
                                 .await
                         }
-                    })
+                    }),
                 )
                 .await
                 .unwrap()

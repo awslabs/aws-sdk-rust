@@ -57,6 +57,8 @@ impl Debug for Credentials {
             } else {
                 creds.field("expires_after", &expiry);
             }
+        } else {
+            creds.field("expires_after", &"never");
         }
         creds.finish()
     }
