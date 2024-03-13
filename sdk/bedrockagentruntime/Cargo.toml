@@ -25,8 +25,13 @@ version = "1.1.8"
 path = "../aws-smithy-async"
 version = "1.1.8"
 
+[dependencies.aws-smithy-eventstream]
+path = "../aws-smithy-eventstream"
+version = "0.60.4"
+
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
+features = ["event-stream"]
 version = "0.60.7"
 
 [dependencies.aws-smithy-json]

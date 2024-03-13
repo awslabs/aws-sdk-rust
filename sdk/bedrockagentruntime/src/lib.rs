@@ -178,6 +178,10 @@ mod lens;
 
 mod serde_util;
 
+mod event_receiver;
+
+mod event_stream_serde;
+
 mod json_errors;
 
 #[doc(inline)]

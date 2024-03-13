@@ -166,3 +166,5 @@ pub mod customize;
 mod invoke_endpoint;
 
 mod invoke_endpoint_async;
+
+mod invoke_endpoint_with_response_stream;

@@ -32,3 +32,47 @@ pub use crate::types::_retrieve_and_generate_configuration::RetrieveAndGenerateC
 pub use crate::types::_knowledge_base_retrieve_and_generate_configuration::KnowledgeBaseRetrieveAndGenerateConfigurationBuilder;
 
 pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInputBuilder;
+
+pub use crate::types::_trace_part::TracePartBuilder;
+
+pub use crate::types::_failure_trace::FailureTraceBuilder;
+
+pub use crate::types::_post_processing_model_invocation_output::PostProcessingModelInvocationOutputBuilder;
+
+pub use crate::types::_post_processing_parsed_response::PostProcessingParsedResponseBuilder;
+
+pub use crate::types::_model_invocation_input::ModelInvocationInputBuilder;
+
+pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
+
+pub use crate::types::_observation::ObservationBuilder;
+
+pub use crate::types::_reprompt_response::RepromptResponseBuilder;
+
+pub use crate::types::_final_response::FinalResponseBuilder;
+
+pub use crate::types::_knowledge_base_lookup_output::KnowledgeBaseLookupOutputBuilder;
+
+pub use crate::types::_action_group_invocation_output::ActionGroupInvocationOutputBuilder;
+
+pub use crate::types::_invocation_input::InvocationInputBuilder;
+
+pub use crate::types::_knowledge_base_lookup_input::KnowledgeBaseLookupInputBuilder;
+
+pub use crate::types::_action_group_invocation_input::ActionGroupInvocationInputBuilder;
+
+pub use crate::types::_request_body::RequestBodyBuilder;
+
+pub use crate::types::_parameter::ParameterBuilder;
+
+pub use crate::types::_rationale::RationaleBuilder;
+
+pub use crate::types::_pre_processing_model_invocation_output::PreProcessingModelInvocationOutputBuilder;
+
+pub use crate::types::_pre_processing_parsed_response::PreProcessingParsedResponseBuilder;
+
+pub use crate::types::_payload_part::PayloadPartBuilder;
+
+pub use crate::types::_attribution::AttributionBuilder;
+
+pub use crate::types::_session_state::SessionStateBuilder;

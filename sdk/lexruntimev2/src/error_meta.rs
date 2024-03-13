@@ -216,6 +216,89 @@ impl From<crate::operation::recognize_utterance::RecognizeUtteranceError> for Er
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_conversation::StartConversationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_conversation::StartConversationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_conversation::StartConversationError> for Error {
+    fn from(err: crate::operation::start_conversation::StartConversationError) -> Self {
+        match err {
+            crate::operation::start_conversation::StartConversationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_conversation::StartConversationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_conversation::StartConversationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_conversation::StartConversationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_conversation::StartConversationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_conversation::StartConversationError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::start_conversation::StartConversationError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::start_conversation::StartConversationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_conversation::StartConversationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartConversationRequestEventStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartConversationRequestEventStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::StartConversationRequestEventStreamError> for Error {
+    fn from(err: crate::types::error::StartConversationRequestEventStreamError) -> Self {
+        match err {
+            crate::types::error::StartConversationRequestEventStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartConversationResponseEventStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartConversationResponseEventStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::StartConversationResponseEventStreamError> for Error {
+    fn from(err: crate::types::error::StartConversationResponseEventStreamError) -> Self {
+        match err {
+            crate::types::error::StartConversationResponseEventStreamError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::types::error::StartConversationResponseEventStreamError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::types::error::StartConversationResponseEventStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::types::error::StartConversationResponseEventStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::types::error::StartConversationResponseEventStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::types::error::StartConversationResponseEventStreamError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::types::error::StartConversationResponseEventStreamError::DependencyFailedException(inner) => {
+                Error::DependencyFailedException(inner)
+            }
+            crate::types::error::StartConversationResponseEventStreamError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::types::error::StartConversationResponseEventStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {

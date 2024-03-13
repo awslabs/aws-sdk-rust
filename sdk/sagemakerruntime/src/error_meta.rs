@@ -7,10 +7,28 @@ pub enum Error {
     InternalDependencyException(crate::types::error::InternalDependencyException),
     /// <p>An internal failure occurred.</p>
     InternalFailure(crate::types::error::InternalFailure),
+    /// <p>The stream processing failed because of an unknown error, exception or failure. Try your request again.</p>
+    InternalStreamFailure(crate::types::error::InternalStreamFailure),
     /// <p>Model (owned by the customer in the container) returned 4xx or 5xx error code.</p>
     ModelError(crate::types::error::ModelError),
     /// <p>Either a serverless endpoint variant's resources are still being provisioned, or a multi-model endpoint is still downloading or loading the target model. Wait and try your request again.</p>
     ModelNotReadyException(crate::types::error::ModelNotReadyException),
+    /// <p>An error occurred while streaming the response body. This error can have the following error codes:</p>
+    /// <dl>
+    /// <dt>
+    /// ModelInvocationTimeExceeded
+    /// </dt>
+    /// <dd>
+    /// <p>The model failed to finish sending the response within the timeout period allowed by Amazon SageMaker.</p>
+    /// </dd>
+    /// <dt>
+    /// StreamBroken
+    /// </dt>
+    /// <dd>
+    /// <p>The Transmission Control Protocol (TCP) connection between the client and the model was reset or closed.</p>
+    /// </dd>
+    /// </dl>
+    ModelStreamError(crate::types::error::ModelStreamError),
     /// <p>The service is unavailable. Try your call again.</p>
     ServiceUnavailable(crate::types::error::ServiceUnavailable),
     /// <p>Inspect your request and try again.</p>
@@ -29,8 +47,10 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::InternalDependencyException(inner) => inner.fmt(f),
             Error::InternalFailure(inner) => inner.fmt(f),
+            Error::InternalStreamFailure(inner) => inner.fmt(f),
             Error::ModelError(inner) => inner.fmt(f),
             Error::ModelNotReadyException(inner) => inner.fmt(f),
+            Error::ModelStreamError(inner) => inner.fmt(f),
             Error::ServiceUnavailable(inner) => inner.fmt(f),
             Error::ValidationError(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -56,8 +76,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::InternalDependencyException(inner) => inner.meta(),
             Self::InternalFailure(inner) => inner.meta(),
+            Self::InternalStreamFailure(inner) => inner.meta(),
             Self::ModelError(inner) => inner.meta(),
             Self::ModelNotReadyException(inner) => inner.meta(),
+            Self::ModelStreamError(inner) => inner.meta(),
             Self::ServiceUnavailable(inner) => inner.meta(),
             Self::ValidationError(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -115,13 +137,90 @@ impl From<crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError> for
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError> for Error {
+    fn from(err: crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError) -> Self {
+        match err {
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::InternalFailure(inner) => {
+                Error::InternalFailure(inner)
+            }
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ValidationError(inner) => {
+                Error::ValidationError(inner)
+            }
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ModelError(inner) => {
+                Error::ModelError(inner)
+            }
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ModelStreamError(inner) => {
+                Error::ModelStreamError(inner)
+            }
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::InternalStreamFailure(inner) => {
+                Error::InternalStreamFailure(inner)
+            }
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::ServiceUnavailable(inner) => {
+                Error::ServiceUnavailable(inner)
+            }
+            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ResponseStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::ResponseStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::ResponseStreamError> for Error {
+    fn from(err: crate::types::error::ResponseStreamError) -> Self {
+        match err {
+            crate::types::error::ResponseStreamError::ModelStreamError(inner) => Error::ModelStreamError(inner),
+            crate::types::error::ResponseStreamError::InternalStreamFailure(inner) => Error::InternalStreamFailure(inner),
+            crate::types::error::ResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::InternalDependencyException(inner) => inner.source(),
             Error::InternalFailure(inner) => inner.source(),
+            Error::InternalStreamFailure(inner) => inner.source(),
             Error::ModelError(inner) => inner.source(),
             Error::ModelNotReadyException(inner) => inner.source(),
+            Error::ModelStreamError(inner) => inner.source(),
             Error::ServiceUnavailable(inner) => inner.source(),
             Error::ValidationError(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -133,8 +232,10 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::InternalDependencyException(e) => e.request_id(),
             Self::InternalFailure(e) => e.request_id(),
+            Self::InternalStreamFailure(e) => e.request_id(),
             Self::ModelError(e) => e.request_id(),
             Self::ModelNotReadyException(e) => e.request_id(),
+            Self::ModelStreamError(e) => e.request_id(),
             Self::ServiceUnavailable(e) => e.request_id(),
             Self::ValidationError(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

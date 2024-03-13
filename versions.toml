@@ -1,4 +1,4 @@
-smithy_rs_revision = 'b2f15ce961b959c691a056d9f741066a4027101d'
+smithy_rs_revision = 'fceb914fb2413f2a4e21f2d1ee5cf31a691ce11c'
 aws_doc_sdk_examples_revision = '67b3e390ad91f2c10235ae5f3ce3b297d0f325b4'
 
 [manual_interventions]
@@ -6,7 +6,7 @@ crates_to_remove = []
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.1.8'
-source_hash = 'a296926631f99d47dd0371ca925452d47475e1f113efada0be23cd0aa9f50d58'
+source_hash = '75c6f330a9079ebbd80c695c159e3849a8ded9c889912fcb93c6557d039080c7'
 
 [crates.aws-credential-types]
 category = 'AwsRuntime'
@@ -275,7 +275,7 @@ model_hash = 'afb4e9ac532e7e08874607dd27ac1dccf943a1d45aa644b78333d88dc1ab6f20'
 [crates.aws-sdk-bedrockagentruntime]
 category = 'AwsSdk'
 version = '1.14.0'
-source_hash = '670275f719ed2947474002ddb0086ed3248936b6c40ed8135dcaa738f8e3d3de'
+source_hash = '645e1215de0d05964c52846ec8c7e92cf8fca52f8f6bdae19bad7857ad237bfb'
 model_hash = 'c921613dd1d1e9fb3f738641a29d086427749f8dc5c071cfc852c902cfc8c542'
 
 [crates.aws-sdk-bedrockruntime]
@@ -1247,7 +1247,7 @@ model_hash = 'c369605e133bfed7dcbd77a341abf08bd5a8b86573d2b7dacf6bc27cb475a9bb'
 [crates.aws-sdk-lambda]
 category = 'AwsSdk'
 version = '1.16.0'
-source_hash = 'f62ccdc687dac63fdfc648b156ca61e806862d7daa05e5c7a7ae981c549e4e6a'
+source_hash = '9f38a58f85810701e67da1a2d4075bc5660e6f3ff0f389745d079d9099dcada1'
 model_hash = '7d7b138ca90c53d3542303269795baac0c43a3b67947de9fb15dc80d78525a72'
 
 [crates.aws-sdk-launchwizard]
@@ -1277,7 +1277,7 @@ model_hash = '596a20ac4ea87fa620ce112c5335a475c8dce6ebd097c824fc284a59d8d9e664'
 [crates.aws-sdk-lexruntimev2]
 category = 'AwsSdk'
 version = '1.16.0'
-source_hash = 'c146f152646693f92afcaecaae290e3d7c7359ea4baf5198cc188d47f7e968a4'
+source_hash = '75c12c0dbf1e9d5b58071d0deb54cf446b9289f1d96b05412150ecb61d429c47'
 model_hash = 'd652b1bc3e185d17736cd4ee27d84dcd5ef073fb77edb09d8722872b64c097fd'
 
 [crates.aws-sdk-licensemanager]
@@ -1937,7 +1937,7 @@ model_hash = 'e03e606161d20458b3bfe1ee995e0c9ccc614458c6f4dcaaffbf778bdeab8f86'
 [crates.aws-sdk-sagemakerruntime]
 category = 'AwsSdk'
 version = '1.17.0'
-source_hash = '56a54803aade564fadd2ff7731050b856213e027c32d187649dada7c04e0c060'
+source_hash = '97d83457682375f68e28da11b2c13000709b0db1e7dd03dbfb4b5bf1ad5ce8c9'
 model_hash = '9cd9122d04c5618a143f895485313c45977e1b4cf415c43ff971b8f5246a19ec'
 
 [crates.aws-sdk-savingsplans]

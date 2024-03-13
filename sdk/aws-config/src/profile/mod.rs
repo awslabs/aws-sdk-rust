@@ -15,6 +15,7 @@ mod parser;
 // to Rust 1.60
 #[doc(inline)]
 pub use parser::ProfileParseError;
+pub(crate) use parser::PropertiesKey;
 #[doc(inline)]
 pub use parser::{load, Profile, ProfileFileLoadError, ProfileSet, Property};
 

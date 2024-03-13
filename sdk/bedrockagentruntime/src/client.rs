@@ -122,6 +122,8 @@ impl Client {
 ///
 pub mod customize;
 
+mod invoke_agent;
+
 mod retrieve;
 
 mod retrieve_and_generate;

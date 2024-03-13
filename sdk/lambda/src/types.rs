@@ -139,7 +139,15 @@ pub use crate::types::_event_source_mapping_configuration::EventSourceMappingCon
 
 pub use crate::types::_alias_configuration::AliasConfiguration;
 
+pub use crate::types::_invoke_with_response_stream_response_event::InvokeWithResponseStreamResponseEvent;
+
+pub use crate::types::_invoke_with_response_stream_complete_event::InvokeWithResponseStreamCompleteEvent;
+
+pub use crate::types::_invoke_response_stream_update::InvokeResponseStreamUpdate;
+
 pub use crate::types::_log_type::LogType;
+
+pub use crate::types::_response_streaming_invocation_type::ResponseStreamingInvocationType;
 
 pub use crate::types::_invocation_type::InvocationType;
 
@@ -233,6 +241,12 @@ mod _invocation_type;
 
 mod _invoke_mode;
 
+mod _invoke_response_stream_update;
+
+mod _invoke_with_response_stream_complete_event;
+
+mod _invoke_with_response_stream_response_event;
+
 mod _last_update_status;
 
 mod _last_update_status_reason_code;
@@ -262,6 +276,8 @@ mod _package_type;
 mod _provisioned_concurrency_config_list_item;
 
 mod _provisioned_concurrency_status_enum;
+
+mod _response_streaming_invocation_type;
 
 mod _runtime;
 

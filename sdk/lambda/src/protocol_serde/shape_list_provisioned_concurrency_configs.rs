@@ -20,15 +20,17 @@ pub fn de_list_provisioned_concurrency_configs_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => {
-            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::ResourceNotFoundException({
+        "InvalidParameterValueException" => {
+            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                    output =
-                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                            .map_err(crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::unhandled)?;
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -38,22 +40,15 @@ pub fn de_list_provisioned_concurrency_configs_http_error(
                 tmp
             })
         }
-        "TooManyRequestsException" => {
-            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::TooManyRequestsException({
+        "ResourceNotFoundException" => {
+            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     output =
-                        crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                             .map_err(crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::unhandled)?;
-                    output = output.set_retry_after_seconds(
-                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
-                            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::unhandled(
-                                "Failed to parse retryAfterSeconds from header `Retry-After",
-                            )
-                        })?,
-                    );
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -78,17 +73,22 @@ pub fn de_list_provisioned_concurrency_configs_http_error(
             }
             tmp
         }),
-        "InvalidParameterValueException" => {
-            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::InvalidParameterValueException({
+        "TooManyRequestsException" => {
+            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
-                        _response_body,
-                        output,
-                    )
-                    .map_err(crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::unhandled)?;
+                    let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::unhandled)?;
+                    output = output.set_retry_after_seconds(
+                        crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                            crate::operation::list_provisioned_concurrency_configs::ListProvisionedConcurrencyConfigsError::unhandled(
+                                "Failed to parse retryAfterSeconds from header `Retry-After",
+                            )
+                        })?,
+                    );
                     let output = output.meta(generic);
                     output.build()
                 };

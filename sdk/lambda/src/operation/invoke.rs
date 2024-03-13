@@ -254,66 +254,66 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeEndpoin
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InvokeError {
-    /// <p>The resource specified in the request does not exist.</p>
-    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>Lambda couldn't decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings.</p>
-    KmsNotFoundException(crate::types::error::KmsNotFoundException),
-    /// <p>Lambda has detected your function being invoked in a recursive loop with other Amazon Web Services resources and stopped your function's invocation.</p>
-    RecursiveInvocationException(crate::types::error::RecursiveInvocationException),
-    /// <p>The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.</p>
-    SnapStartException(crate::types::error::SnapStartException),
-    /// <p>The subnet ID provided in the Lambda function VPC configuration is not valid.</p>
-    InvalidSubnetIdException(crate::types::error::InvalidSubnetIdException),
-    /// <p>The Lambda service encountered an internal error.</p>
-    ServiceException(crate::types::error::ServiceException),
-    /// <p>Lambda couldn't decrypt the environment variables because the KMS key used is disabled. Check the Lambda function's KMS key settings.</p>
-    KmsDisabledException(crate::types::error::KmsDisabledException),
+    /// <p>Need additional permissions to configure VPC settings.</p>
+    Ec2AccessDeniedException(crate::types::error::Ec2AccessDeniedException),
+    /// <p>Amazon EC2 throttled Lambda during Lambda function initialization using the execution role provided for the function.</p>
+    Ec2ThrottledException(crate::types::error::Ec2ThrottledException),
+    /// <p>Lambda received an unexpected Amazon EC2 client exception while setting up for the Lambda function.</p>
+    Ec2UnexpectedException(crate::types::error::Ec2UnexpectedException),
     /// <p>An error occurred when reading from or writing to a connected file system.</p>
     EfsioException(crate::types::error::EfsioException),
     /// <p>The Lambda function couldn't make a network connection to the configured file system.</p>
     EfsMountConnectivityException(crate::types::error::EfsMountConnectivityException),
     /// <p>The Lambda function couldn't mount the configured file system due to a permission or configuration issue.</p>
     EfsMountFailureException(crate::types::error::EfsMountFailureException),
-    /// <p>The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda quotas</a>.</p>
-    TooManyRequestsException(crate::types::error::TooManyRequestsException),
-    /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
-    ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
-    /// <p>Lambda could not unzip the deployment package.</p>
-    InvalidZipFileException(crate::types::error::InvalidZipFileException),
-    /// <p>One of the parameters in the request is not valid.</p>
-    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>The request body could not be parsed as JSON.</p>
-    InvalidRequestContentException(crate::types::error::InvalidRequestContentException),
-    /// <p>Lambda couldn't restore the snapshot within the timeout limit.</p>
-    SnapStartTimeoutException(crate::types::error::SnapStartTimeoutException),
-    /// <p>Amazon EC2 throttled Lambda during Lambda function initialization using the execution role provided for the function.</p>
-    Ec2ThrottledException(crate::types::error::Ec2ThrottledException),
-    /// <p>Lambda couldn't set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
-    SubnetIpAddressLimitReachedException(crate::types::error::SubnetIpAddressLimitReachedException),
-    /// <p>The security group ID provided in the Lambda function VPC configuration is not valid.</p>
-    InvalidSecurityGroupIdException(crate::types::error::InvalidSecurityGroupIdException),
-    /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input quota. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
-    RequestTooLargeException(crate::types::error::RequestTooLargeException),
-    /// <p>The content type of the <code>Invoke</code> request body is not JSON.</p>
-    UnsupportedMediaTypeException(crate::types::error::UnsupportedMediaTypeException),
     /// <p>The Lambda function made a network connection to the configured file system, but the mount operation timed out.</p>
     EfsMountTimeoutException(crate::types::error::EfsMountTimeoutException),
     /// <p>Lambda couldn't create an elastic network interface in the VPC, specified as part of Lambda function configuration, because the limit for network interfaces has been reached. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
     EniLimitReachedException(crate::types::error::EniLimitReachedException),
-    /// <p>Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function state</a> becomes <code>Active</code>.</p>
-    SnapStartNotReadyException(crate::types::error::SnapStartNotReadyException),
-    /// <p>Lambda received an unexpected Amazon EC2 client exception while setting up for the Lambda function.</p>
-    Ec2UnexpectedException(crate::types::error::Ec2UnexpectedException),
-    /// <p>Need additional permissions to configure VPC settings.</p>
-    Ec2AccessDeniedException(crate::types::error::Ec2AccessDeniedException),
+    /// <p>One of the parameters in the request is not valid.</p>
+    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p>The request body could not be parsed as JSON.</p>
+    InvalidRequestContentException(crate::types::error::InvalidRequestContentException),
     /// <p>The runtime or runtime version specified is not supported.</p>
     InvalidRuntimeException(crate::types::error::InvalidRuntimeException),
+    /// <p>The security group ID provided in the Lambda function VPC configuration is not valid.</p>
+    InvalidSecurityGroupIdException(crate::types::error::InvalidSecurityGroupIdException),
+    /// <p>The subnet ID provided in the Lambda function VPC configuration is not valid.</p>
+    InvalidSubnetIdException(crate::types::error::InvalidSubnetIdException),
+    /// <p>Lambda could not unzip the deployment package.</p>
+    InvalidZipFileException(crate::types::error::InvalidZipFileException),
     /// <p>Lambda couldn't decrypt the environment variables because KMS access was denied. Check the Lambda function's KMS permissions.</p>
     KmsAccessDeniedException(crate::types::error::KmsAccessDeniedException),
+    /// <p>Lambda couldn't decrypt the environment variables because the KMS key used is disabled. Check the Lambda function's KMS key settings.</p>
+    KmsDisabledException(crate::types::error::KmsDisabledException),
     /// <p>Lambda couldn't decrypt the environment variables because the state of the KMS key used is not valid for Decrypt. Check the function's KMS key settings.</p>
     KmsInvalidStateException(crate::types::error::KmsInvalidStateException),
+    /// <p>Lambda couldn't decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings.</p>
+    KmsNotFoundException(crate::types::error::KmsNotFoundException),
+    /// <p>Lambda has detected your function being invoked in a recursive loop with other Amazon Web Services resources and stopped your function's invocation.</p>
+    RecursiveInvocationException(crate::types::error::RecursiveInvocationException),
+    /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input quota. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.</p>
+    RequestTooLargeException(crate::types::error::RequestTooLargeException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),
+    /// <p>The resource specified in the request does not exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
+    ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::types::error::ServiceException),
+    /// <p>The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.</p>
+    SnapStartException(crate::types::error::SnapStartException),
+    /// <p>Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function state</a> becomes <code>Active</code>.</p>
+    SnapStartNotReadyException(crate::types::error::SnapStartNotReadyException),
+    /// <p>Lambda couldn't restore the snapshot within the timeout limit.</p>
+    SnapStartTimeoutException(crate::types::error::SnapStartTimeoutException),
+    /// <p>Lambda couldn't set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
+    SubnetIpAddressLimitReachedException(crate::types::error::SubnetIpAddressLimitReachedException),
+    /// <p>The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda quotas</a>.</p>
+    TooManyRequestsException(crate::types::error::TooManyRequestsException),
+    /// <p>The content type of the <code>Invoke</code> request body is not JSON.</p>
+    UnsupportedMediaTypeException(crate::types::error::UnsupportedMediaTypeException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -347,66 +347,50 @@ impl InvokeError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::KmsNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::RecursiveInvocationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::SnapStartException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidSubnetIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::KmsDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Ec2AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Ec2ThrottledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Ec2UnexpectedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EfsioException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EfsMountConnectivityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EfsMountFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ResourceNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidZipFileException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidRequestContentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::SnapStartTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::Ec2ThrottledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::SubnetIpAddressLimitReachedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidSecurityGroupIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::RequestTooLargeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::UnsupportedMediaTypeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EfsMountTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EniLimitReachedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::SnapStartNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::Ec2UnexpectedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::Ec2AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRequestContentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRuntimeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidSecurityGroupIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidSubnetIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidZipFileException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::KmsInvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::KmsNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RecursiveInvocationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RequestTooLargeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SnapStartException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SnapStartNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SnapStartTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SubnetIpAddressLimitReachedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedMediaTypeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
-    /// Returns `true` if the error kind is `InvokeError::ResourceNotFoundException`.
-    pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(self, Self::ResourceNotFoundException(_))
+    /// Returns `true` if the error kind is `InvokeError::Ec2AccessDeniedException`.
+    pub fn is_ec2_access_denied_exception(&self) -> bool {
+        matches!(self, Self::Ec2AccessDeniedException(_))
     }
-    /// Returns `true` if the error kind is `InvokeError::KmsNotFoundException`.
-    pub fn is_kms_not_found_exception(&self) -> bool {
-        matches!(self, Self::KmsNotFoundException(_))
+    /// Returns `true` if the error kind is `InvokeError::Ec2ThrottledException`.
+    pub fn is_ec2_throttled_exception(&self) -> bool {
+        matches!(self, Self::Ec2ThrottledException(_))
     }
-    /// Returns `true` if the error kind is `InvokeError::RecursiveInvocationException`.
-    pub fn is_recursive_invocation_exception(&self) -> bool {
-        matches!(self, Self::RecursiveInvocationException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::SnapStartException`.
-    pub fn is_snap_start_exception(&self) -> bool {
-        matches!(self, Self::SnapStartException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::InvalidSubnetIdException`.
-    pub fn is_invalid_subnet_id_exception(&self) -> bool {
-        matches!(self, Self::InvalidSubnetIdException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::ServiceException`.
-    pub fn is_service_exception(&self) -> bool {
-        matches!(self, Self::ServiceException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::KmsDisabledException`.
-    pub fn is_kms_disabled_exception(&self) -> bool {
-        matches!(self, Self::KmsDisabledException(_))
+    /// Returns `true` if the error kind is `InvokeError::Ec2UnexpectedException`.
+    pub fn is_ec2_unexpected_exception(&self) -> bool {
+        matches!(self, Self::Ec2UnexpectedException(_))
     }
     /// Returns `true` if the error kind is `InvokeError::EfsioException`.
     pub fn is_efsio_exception(&self) -> bool {
@@ -420,17 +404,13 @@ impl InvokeError {
     pub fn is_efs_mount_failure_exception(&self) -> bool {
         matches!(self, Self::EfsMountFailureException(_))
     }
-    /// Returns `true` if the error kind is `InvokeError::TooManyRequestsException`.
-    pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(self, Self::TooManyRequestsException(_))
+    /// Returns `true` if the error kind is `InvokeError::EfsMountTimeoutException`.
+    pub fn is_efs_mount_timeout_exception(&self) -> bool {
+        matches!(self, Self::EfsMountTimeoutException(_))
     }
-    /// Returns `true` if the error kind is `InvokeError::ResourceNotReadyException`.
-    pub fn is_resource_not_ready_exception(&self) -> bool {
-        matches!(self, Self::ResourceNotReadyException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::InvalidZipFileException`.
-    pub fn is_invalid_zip_file_exception(&self) -> bool {
-        matches!(self, Self::InvalidZipFileException(_))
+    /// Returns `true` if the error kind is `InvokeError::EniLimitReachedException`.
+    pub fn is_eni_limit_reached_exception(&self) -> bool {
+        matches!(self, Self::EniLimitReachedException(_))
     }
     /// Returns `true` if the error kind is `InvokeError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -440,100 +420,120 @@ impl InvokeError {
     pub fn is_invalid_request_content_exception(&self) -> bool {
         matches!(self, Self::InvalidRequestContentException(_))
     }
-    /// Returns `true` if the error kind is `InvokeError::SnapStartTimeoutException`.
-    pub fn is_snap_start_timeout_exception(&self) -> bool {
-        matches!(self, Self::SnapStartTimeoutException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::Ec2ThrottledException`.
-    pub fn is_ec2_throttled_exception(&self) -> bool {
-        matches!(self, Self::Ec2ThrottledException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::SubnetIpAddressLimitReachedException`.
-    pub fn is_subnet_ip_address_limit_reached_exception(&self) -> bool {
-        matches!(self, Self::SubnetIpAddressLimitReachedException(_))
+    /// Returns `true` if the error kind is `InvokeError::InvalidRuntimeException`.
+    pub fn is_invalid_runtime_exception(&self) -> bool {
+        matches!(self, Self::InvalidRuntimeException(_))
     }
     /// Returns `true` if the error kind is `InvokeError::InvalidSecurityGroupIdException`.
     pub fn is_invalid_security_group_id_exception(&self) -> bool {
         matches!(self, Self::InvalidSecurityGroupIdException(_))
     }
-    /// Returns `true` if the error kind is `InvokeError::RequestTooLargeException`.
-    pub fn is_request_too_large_exception(&self) -> bool {
-        matches!(self, Self::RequestTooLargeException(_))
+    /// Returns `true` if the error kind is `InvokeError::InvalidSubnetIdException`.
+    pub fn is_invalid_subnet_id_exception(&self) -> bool {
+        matches!(self, Self::InvalidSubnetIdException(_))
     }
-    /// Returns `true` if the error kind is `InvokeError::UnsupportedMediaTypeException`.
-    pub fn is_unsupported_media_type_exception(&self) -> bool {
-        matches!(self, Self::UnsupportedMediaTypeException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::EfsMountTimeoutException`.
-    pub fn is_efs_mount_timeout_exception(&self) -> bool {
-        matches!(self, Self::EfsMountTimeoutException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::EniLimitReachedException`.
-    pub fn is_eni_limit_reached_exception(&self) -> bool {
-        matches!(self, Self::EniLimitReachedException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::SnapStartNotReadyException`.
-    pub fn is_snap_start_not_ready_exception(&self) -> bool {
-        matches!(self, Self::SnapStartNotReadyException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::Ec2UnexpectedException`.
-    pub fn is_ec2_unexpected_exception(&self) -> bool {
-        matches!(self, Self::Ec2UnexpectedException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::Ec2AccessDeniedException`.
-    pub fn is_ec2_access_denied_exception(&self) -> bool {
-        matches!(self, Self::Ec2AccessDeniedException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeError::InvalidRuntimeException`.
-    pub fn is_invalid_runtime_exception(&self) -> bool {
-        matches!(self, Self::InvalidRuntimeException(_))
+    /// Returns `true` if the error kind is `InvokeError::InvalidZipFileException`.
+    pub fn is_invalid_zip_file_exception(&self) -> bool {
+        matches!(self, Self::InvalidZipFileException(_))
     }
     /// Returns `true` if the error kind is `InvokeError::KmsAccessDeniedException`.
     pub fn is_kms_access_denied_exception(&self) -> bool {
         matches!(self, Self::KmsAccessDeniedException(_))
     }
+    /// Returns `true` if the error kind is `InvokeError::KmsDisabledException`.
+    pub fn is_kms_disabled_exception(&self) -> bool {
+        matches!(self, Self::KmsDisabledException(_))
+    }
     /// Returns `true` if the error kind is `InvokeError::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
         matches!(self, Self::KmsInvalidStateException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::KmsNotFoundException`.
+    pub fn is_kms_not_found_exception(&self) -> bool {
+        matches!(self, Self::KmsNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::RecursiveInvocationException`.
+    pub fn is_recursive_invocation_exception(&self) -> bool {
+        matches!(self, Self::RecursiveInvocationException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::RequestTooLargeException`.
+    pub fn is_request_too_large_exception(&self) -> bool {
+        matches!(self, Self::RequestTooLargeException(_))
     }
     /// Returns `true` if the error kind is `InvokeError::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(self, Self::ResourceConflictException(_))
     }
+    /// Returns `true` if the error kind is `InvokeError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::ResourceNotReadyException`.
+    pub fn is_resource_not_ready_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotReadyException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(self, Self::ServiceException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::SnapStartException`.
+    pub fn is_snap_start_exception(&self) -> bool {
+        matches!(self, Self::SnapStartException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::SnapStartNotReadyException`.
+    pub fn is_snap_start_not_ready_exception(&self) -> bool {
+        matches!(self, Self::SnapStartNotReadyException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::SnapStartTimeoutException`.
+    pub fn is_snap_start_timeout_exception(&self) -> bool {
+        matches!(self, Self::SnapStartTimeoutException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::SubnetIpAddressLimitReachedException`.
+    pub fn is_subnet_ip_address_limit_reached_exception(&self) -> bool {
+        matches!(self, Self::SubnetIpAddressLimitReachedException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::TooManyRequestsException`.
+    pub fn is_too_many_requests_exception(&self) -> bool {
+        matches!(self, Self::TooManyRequestsException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeError::UnsupportedMediaTypeException`.
+    pub fn is_unsupported_media_type_exception(&self) -> bool {
+        matches!(self, Self::UnsupportedMediaTypeException(_))
+    }
 }
 impl ::std::error::Error for InvokeError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::KmsNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::RecursiveInvocationException(_inner) => ::std::option::Option::Some(_inner),
-            Self::SnapStartException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidSubnetIdException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
-            Self::KmsDisabledException(_inner) => ::std::option::Option::Some(_inner),
+            Self::Ec2AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::Ec2ThrottledException(_inner) => ::std::option::Option::Some(_inner),
+            Self::Ec2UnexpectedException(_inner) => ::std::option::Option::Some(_inner),
             Self::EfsioException(_inner) => ::std::option::Option::Some(_inner),
             Self::EfsMountConnectivityException(_inner) => ::std::option::Option::Some(_inner),
             Self::EfsMountFailureException(_inner) => ::std::option::Option::Some(_inner),
-            Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ResourceNotReadyException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidZipFileException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidRequestContentException(_inner) => ::std::option::Option::Some(_inner),
-            Self::SnapStartTimeoutException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Ec2ThrottledException(_inner) => ::std::option::Option::Some(_inner),
-            Self::SubnetIpAddressLimitReachedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidSecurityGroupIdException(_inner) => ::std::option::Option::Some(_inner),
-            Self::RequestTooLargeException(_inner) => ::std::option::Option::Some(_inner),
-            Self::UnsupportedMediaTypeException(_inner) => ::std::option::Option::Some(_inner),
             Self::EfsMountTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::EniLimitReachedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::SnapStartNotReadyException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Ec2UnexpectedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::Ec2AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidRequestContentException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRuntimeException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidSecurityGroupIdException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidSubnetIdException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidZipFileException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsDisabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::KmsInvalidStateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::KmsNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RecursiveInvocationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RequestTooLargeException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotReadyException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SnapStartException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SnapStartNotReadyException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SnapStartTimeoutException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SubnetIpAddressLimitReachedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedMediaTypeException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -541,36 +541,36 @@ impl ::std::error::Error for InvokeError {
 impl ::std::fmt::Display for InvokeError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            Self::KmsNotFoundException(_inner) => _inner.fmt(f),
-            Self::RecursiveInvocationException(_inner) => _inner.fmt(f),
-            Self::SnapStartException(_inner) => _inner.fmt(f),
-            Self::InvalidSubnetIdException(_inner) => _inner.fmt(f),
-            Self::ServiceException(_inner) => _inner.fmt(f),
-            Self::KmsDisabledException(_inner) => _inner.fmt(f),
+            Self::Ec2AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::Ec2ThrottledException(_inner) => _inner.fmt(f),
+            Self::Ec2UnexpectedException(_inner) => _inner.fmt(f),
             Self::EfsioException(_inner) => _inner.fmt(f),
             Self::EfsMountConnectivityException(_inner) => _inner.fmt(f),
             Self::EfsMountFailureException(_inner) => _inner.fmt(f),
-            Self::TooManyRequestsException(_inner) => _inner.fmt(f),
-            Self::ResourceNotReadyException(_inner) => _inner.fmt(f),
-            Self::InvalidZipFileException(_inner) => _inner.fmt(f),
-            Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            Self::InvalidRequestContentException(_inner) => _inner.fmt(f),
-            Self::SnapStartTimeoutException(_inner) => _inner.fmt(f),
-            Self::Ec2ThrottledException(_inner) => _inner.fmt(f),
-            Self::SubnetIpAddressLimitReachedException(_inner) => _inner.fmt(f),
-            Self::InvalidSecurityGroupIdException(_inner) => _inner.fmt(f),
-            Self::RequestTooLargeException(_inner) => _inner.fmt(f),
-            Self::UnsupportedMediaTypeException(_inner) => _inner.fmt(f),
             Self::EfsMountTimeoutException(_inner) => _inner.fmt(f),
             Self::EniLimitReachedException(_inner) => _inner.fmt(f),
-            Self::SnapStartNotReadyException(_inner) => _inner.fmt(f),
-            Self::Ec2UnexpectedException(_inner) => _inner.fmt(f),
-            Self::Ec2AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::InvalidRequestContentException(_inner) => _inner.fmt(f),
             Self::InvalidRuntimeException(_inner) => _inner.fmt(f),
+            Self::InvalidSecurityGroupIdException(_inner) => _inner.fmt(f),
+            Self::InvalidSubnetIdException(_inner) => _inner.fmt(f),
+            Self::InvalidZipFileException(_inner) => _inner.fmt(f),
             Self::KmsAccessDeniedException(_inner) => _inner.fmt(f),
+            Self::KmsDisabledException(_inner) => _inner.fmt(f),
             Self::KmsInvalidStateException(_inner) => _inner.fmt(f),
+            Self::KmsNotFoundException(_inner) => _inner.fmt(f),
+            Self::RecursiveInvocationException(_inner) => _inner.fmt(f),
+            Self::RequestTooLargeException(_inner) => _inner.fmt(f),
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ResourceNotReadyException(_inner) => _inner.fmt(f),
+            Self::ServiceException(_inner) => _inner.fmt(f),
+            Self::SnapStartException(_inner) => _inner.fmt(f),
+            Self::SnapStartNotReadyException(_inner) => _inner.fmt(f),
+            Self::SnapStartTimeoutException(_inner) => _inner.fmt(f),
+            Self::SubnetIpAddressLimitReachedException(_inner) => _inner.fmt(f),
+            Self::TooManyRequestsException(_inner) => _inner.fmt(f),
+            Self::UnsupportedMediaTypeException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -592,36 +592,36 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for InvokeError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::KmsNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RecursiveInvocationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::SnapStartException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidSubnetIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::KmsDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Ec2AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Ec2ThrottledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Ec2UnexpectedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EfsioException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EfsMountConnectivityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EfsMountFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ResourceNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidZipFileException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidRequestContentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::SnapStartTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Ec2ThrottledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::SubnetIpAddressLimitReachedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidSecurityGroupIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::RequestTooLargeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::UnsupportedMediaTypeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EfsMountTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EniLimitReachedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::SnapStartNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Ec2UnexpectedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::Ec2AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRequestContentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRuntimeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidSecurityGroupIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidSubnetIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidZipFileException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::KmsInvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::KmsNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RecursiveInvocationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RequestTooLargeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SnapStartException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SnapStartNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SnapStartTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SubnetIpAddressLimitReachedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedMediaTypeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

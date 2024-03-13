@@ -214,6 +214,8 @@ pub mod types;
 
 mod auth_plugin;
 
+mod event_receiver;
+
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
@@ -223,6 +225,8 @@ mod endpoint_lib;
 mod lens;
 
 mod serde_util;
+
+mod event_stream_serde;
 
 mod json_errors;
 

@@ -186,6 +186,10 @@ pub mod types;
 
 mod auth_plugin;
 
+mod event_receiver;
+
+mod event_stream_serde;
+
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
