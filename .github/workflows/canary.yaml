@@ -49,6 +49,7 @@ jobs:
       LAMBDA_EXECUTION_ROLE_ARN: ${{ secrets.CANARY_LAMBDA_EXECUTION_ROLE_ARN }}
       LAMBDA_TEST_S3_MRAP_BUCKET_ARN: ${{ secrets.CANARY_LAMBDA_TEST_S3_MRAP_BUCKET_ARN }}
       LAMBDA_TEST_S3_EXPRESS_BUCKET_NAME: ${{ secrets.CANARY_LAMBDA_TEST_S3_EXPRESS_BUCKET_NAME }}
+      ENABLE_S3_EXPRESS_CANARY: true
     permissions:
       id-token: write
       contents: read
