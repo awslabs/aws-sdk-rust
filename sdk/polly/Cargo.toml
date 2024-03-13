@@ -23,7 +23,7 @@ version = "1.1.8"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
-version = "1.1.9"
+version = "1.2.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -45,7 +45,7 @@ version = "1.1.8"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-02x"]
-version = "1.1.8"
+version = "1.2.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
@@ -100,7 +100,7 @@ version = "1.1.8"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "1.1.8"
+version = "1.2.0"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"

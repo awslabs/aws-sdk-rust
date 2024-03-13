@@ -152,6 +152,31 @@ impl Builder {
     pub fn new() -> Self {
         Self::default()
     }
+    /// Constructs a config builder from the given `config_bag`, setting only fields stored in the config bag,
+    /// but not those in runtime components.
+    #[allow(unused)]
+    pub(crate) fn from_config_bag(config_bag: &::aws_smithy_types::config_bag::ConfigBag) -> Self {
+        let mut builder = Self::new();
+        builder.set_stalled_stream_protection(config_bag.load::<crate::config::StalledStreamProtectionConfig>().cloned());
+        builder.set_force_path_style(config_bag.load::<crate::config::ForcePathStyle>().map(|ty| ty.0));
+
+        builder.set_use_arn_region(config_bag.load::<crate::config::UseArnRegion>().map(|ty| ty.0));
+
+        builder.set_disable_multi_region_access_points(config_bag.load::<crate::config::DisableMultiRegionAccessPoints>().map(|ty| ty.0));
+
+        builder.set_accelerate(config_bag.load::<crate::config::Accelerate>().map(|ty| ty.0));
+
+        builder.set_disable_s3_express_session_auth(config_bag.load::<crate::config::DisableS3ExpressSessionAuth>().map(|ty| ty.0));
+        builder.set_retry_config(config_bag.load::<::aws_smithy_types::retry::RetryConfig>().cloned());
+        builder.set_timeout_config(config_bag.load::<::aws_smithy_types::timeout::TimeoutConfig>().cloned());
+        builder.set_retry_partition(config_bag.load::<::aws_smithy_runtime::client::retries::RetryPartition>().cloned());
+        builder.set_app_name(config_bag.load::<::aws_types::app_name::AppName>().cloned());
+        builder.set_endpoint_url(config_bag.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()));
+        builder.set_use_dual_stack(config_bag.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0));
+        builder.set_use_fips(config_bag.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0));
+        builder.set_region(config_bag.load::<crate::config::Region>().cloned());
+        builder
+    }
     /// Set the [`StalledStreamProtectionConfig`](crate::config::StalledStreamProtectionConfig)
     /// to configure protection for stalled streams.
     pub fn stalled_stream_protection(mut self, stalled_stream_protection_config: crate::config::StalledStreamProtectionConfig) -> Self {
@@ -911,6 +936,24 @@ impl Builder {
         self.config.store_or_unset(app_name);
         self
     }
+    /// Sets the credentials provider for S3 Express One Zone
+    pub fn express_credentials_provider(mut self, credentials_provider: impl crate::config::ProvideCredentials + 'static) -> Self {
+        self.set_express_credentials_provider(::std::option::Option::Some(crate::config::SharedCredentialsProvider::new(
+            credentials_provider,
+        )));
+        self
+    }
+    /// Sets the credentials provider for S3 Express One Zone
+    pub fn set_express_credentials_provider(
+        &mut self,
+        credentials_provider: ::std::option::Option<crate::config::SharedCredentialsProvider>,
+    ) -> &mut Self {
+        if let ::std::option::Option::Some(credentials_provider) = credentials_provider {
+            self.runtime_components
+                .set_identity_resolver(crate::s3_express::auth::SCHEME_ID, credentials_provider);
+        }
+        self
+    }
     /// Overrides the default invocation ID generator.
     ///
     /// The invocation ID generator generates ID values for the `amz-sdk-invocation-id` header. By default, this will be a random UUID. Overriding it may be useful in tests that examine the HTTP request and need to be deterministic.
@@ -1161,6 +1204,15 @@ impl ServiceRuntimePlugin {
         runtime_components.push_interceptor(::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::request_info::RequestInfoInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::user_agent::UserAgentInterceptor::new());
+        runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
+            crate::s3_express::auth::S3ExpressAuthScheme::new(),
+        ));
+        runtime_components.set_identity_resolver(
+            crate::s3_express::auth::SCHEME_ID,
+            crate::s3_express::identity_provider::DefaultS3ExpressIdentityProvider::builder()
+                .time_source(_service_config.time_source().unwrap_or_default())
+                .build(),
+        );
         runtime_components.push_interceptor(::aws_runtime::invocation_id::InvocationIdInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new());
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
@@ -1319,8 +1371,12 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
                                 .with_runtime_components(config.runtime_components.clone())
                         )
                         // codegen config
-                        .with_client_plugin(crate::config::ServiceRuntimePlugin::new(config))
+                        .with_client_plugin(crate::config::ServiceRuntimePlugin::new(config.clone()))
                         .with_client_plugin(::aws_smithy_runtime::client::auth::no_auth::NoAuthRuntimePlugin::new());
+
+    plugins = plugins.with_client_plugin(crate::s3_express::runtime_plugin::S3ExpressRuntimePlugin::new(
+        config.config.load::<crate::config::DisableS3ExpressSessionAuth>().cloned(),
+    ));
 
     for plugin in configured_plugins {
         plugins = plugins.with_client_plugin(plugin);
@@ -1349,10 +1405,6 @@ pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
 pub use ::aws_types::region::Region;
 
 pub use ::aws_credential_types::provider::SharedCredentialsProvider;
-
-pub use ::aws_smithy_runtime_api::client::http::HttpClient;
-
-pub use ::aws_smithy_runtime_api::shared::IntoShared;
 
 #[derive(Debug, Clone)]
 pub(crate) struct ForcePathStyle(pub(crate) bool);
@@ -1383,6 +1435,10 @@ pub(crate) struct DisableS3ExpressSessionAuth(pub(crate) bool);
 impl ::aws_smithy_types::config_bag::Storable for DisableS3ExpressSessionAuth {
     type Storer = ::aws_smithy_types::config_bag::StoreReplace<Self>;
 }
+
+pub use ::aws_smithy_runtime_api::client::http::HttpClient;
+
+pub use ::aws_smithy_runtime_api::shared::IntoShared;
 
 pub use ::aws_smithy_async::rt::sleep::AsyncSleep;
 

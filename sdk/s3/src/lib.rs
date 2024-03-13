@@ -203,6 +203,9 @@ pub(crate) mod protocol_serde;
 mod rest_xml_unwrapped_errors;
 
 ///
+mod s3_express;
+
+///
 mod s3_request_id;
 
 mod serialization_settings;

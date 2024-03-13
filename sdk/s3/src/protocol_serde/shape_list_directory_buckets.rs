@@ -48,12 +48,6 @@ pub fn de_list_directory_buckets(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !start_el.matches("ListDirectoryBucketsOutput") {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected ListDirectoryBucketsOutput but got {:?}. This is likely a bug in the SDK.",
-            start_el
-        )));
-    }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ContinuationToken") /* ContinuationToken com.amazonaws.s3.synthetic#ListDirectoryBucketsOutput$ContinuationToken */ =>  {

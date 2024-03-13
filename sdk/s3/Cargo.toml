@@ -13,6 +13,9 @@ codegen-version = "987024bfef597ed875809876f35dbf06c9d82e4c"
 [package.metadata.docs.rs]
 all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
+[dependencies.ahash]
+version = "0.8.11"
+
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
 version = "1.1.8"
@@ -24,7 +27,7 @@ version = "1.1.8"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
-version = "1.1.9"
+version = "1.2.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
@@ -55,7 +58,7 @@ version = "1.1.8"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-02x"]
-version = "1.1.8"
+version = "1.2.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
@@ -72,11 +75,23 @@ version = "1.1.8"
 [dependencies.bytes]
 version = "1.0.0"
 
+[dependencies.fastrand]
+version = "2.0.0"
+
+[dependencies.hex]
+version = "0.4.3"
+
+[dependencies.hmac]
+version = "0.12"
+
 [dependencies.http]
 version = "0.2.9"
 
 [dependencies.http-body]
 version = "0.4.4"
+
+[dependencies.lru]
+version = "0.12.2"
 
 [dependencies.once_cell]
 version = "1.16"
@@ -86,6 +101,9 @@ version = "2.0.0"
 
 [dependencies.regex-lite]
 version = "0.1.5"
+
+[dependencies.sha2]
+version = "0.10"
 
 [dependencies.tracing]
 version = "0.1"
@@ -132,7 +150,7 @@ version = "1.1.8"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util", "client", "http-02x"]
-version = "1.1.8"
+version = "1.2.0"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
@@ -141,9 +159,6 @@ version = "1.1.8"
 
 [dev-dependencies.bytes-utils]
 version = "0.1.0"
-
-[dev-dependencies.fastrand]
-version = "2.0.0"
 
 [dev-dependencies.futures-util]
 version = "0.3.25"

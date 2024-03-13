@@ -10,8 +10,8 @@ use crate::http_request::settings::UriPathNormalizationMode;
 use crate::http_request::sign::SignableRequest;
 use crate::http_request::uri_path_normalization::normalize_uri_path;
 use crate::http_request::url_escape::percent_encode_path;
-use crate::http_request::PercentEncodingMode;
 use crate::http_request::{PayloadChecksumKind, SignableBody, SignatureLocation, SigningParams};
+use crate::http_request::{PercentEncodingMode, SigningSettings};
 use crate::sign::v4::sha256_hex_string;
 use crate::SignatureVersion;
 use aws_smithy_http::query_writer::QueryWriter;
@@ -218,7 +218,7 @@ impl<'a> CanonicalRequest<'a> {
         let creq = CanonicalRequest {
             method: req.method(),
             path,
-            params: Self::params(req.uri(), &values),
+            params: Self::params(req.uri(), &values, params.settings()),
             headers: canonical_headers,
             values,
         };
@@ -250,6 +250,11 @@ impl<'a> CanonicalRequest<'a> {
 
         Self::insert_host_header(&mut canonical_headers, req.uri());
 
+        let token_header_name = params
+            .settings()
+            .session_token_name_override
+            .unwrap_or(header::X_AMZ_SECURITY_TOKEN);
+
         if params.settings().signature_location == SignatureLocation::Headers {
             let creds = params
                 .credentials()
@@ -259,7 +264,7 @@ impl<'a> CanonicalRequest<'a> {
             if let Some(security_token) = creds.session_token() {
                 let mut sec_header = HeaderValue::from_str(security_token)?;
                 sec_header.set_sensitive(true);
-                canonical_headers.insert(header::X_AMZ_SECURITY_TOKEN, sec_header);
+                canonical_headers.insert(token_header_name, sec_header);
             }
 
             if params.settings().payload_checksum_kind == PayloadChecksumKind::XAmzSha256 {
@@ -283,7 +288,7 @@ impl<'a> CanonicalRequest<'a> {
             }
 
             if params.settings().session_token_mode == SessionTokenMode::Exclude
-                && name == HeaderName::from_static(header::X_AMZ_SECURITY_TOKEN)
+                && name == HeaderName::from_static(token_header_name)
             {
                 continue;
             }
@@ -320,7 +325,11 @@ impl<'a> CanonicalRequest<'a> {
         }
     }
 
-    fn params(uri: &Uri, values: &SignatureValues<'_>) -> Option<String> {
+    fn params(
+        uri: &Uri,
+        values: &SignatureValues<'_>,
+        settings: &SigningSettings,
+    ) -> Option<String> {
         let mut params: Vec<(Cow<'_, str>, Cow<'_, str>)> =
             form_urlencoded::parse(uri.query().unwrap_or_default().as_bytes()).collect();
         fn add_param<'a>(params: &mut Vec<(Cow<'a, str>, Cow<'a, str>)>, k: &'a str, v: &'a str) {
@@ -345,7 +354,13 @@ impl<'a> CanonicalRequest<'a> {
             );
 
             if let Some(security_token) = values.security_token {
-                add_param(&mut params, param::X_AMZ_SECURITY_TOKEN, security_token);
+                add_param(
+                    &mut params,
+                    settings
+                        .session_token_name_override
+                        .unwrap_or(param::X_AMZ_SECURITY_TOKEN),
+                    security_token,
+                );
             }
         }
         // Sort by param name, and then by param value
