@@ -63,6 +63,7 @@ members = [
     "sdk/aws-smithy-runtime-api",
     "sdk/aws-smithy-types",
     "sdk/aws-smithy-types-convert",
+    "sdk/aws-smithy-wasm",
     "sdk/aws-smithy-xml",
     "sdk/aws-types",
     "sdk/b2bi",
