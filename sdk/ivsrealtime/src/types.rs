@@ -23,7 +23,17 @@ pub use crate::types::_destination_state::DestinationState;
 
 pub use crate::types::_layout_configuration::LayoutConfiguration;
 
+pub use crate::types::_pip_configuration::PipConfiguration;
+
+pub use crate::types::_pip_position::PipPosition;
+
+pub use crate::types::_pip_behavior::PipBehavior;
+
+pub use crate::types::_video_fill_mode::VideoFillMode;
+
 pub use crate::types::_grid_configuration::GridConfiguration;
+
+pub use crate::types::_video_aspect_ratio::VideoAspectRatio;
 
 pub use crate::types::_composition_state::CompositionState;
 
@@ -111,6 +121,12 @@ mod _participant_token_capability;
 
 mod _participant_token_configuration;
 
+mod _pip_behavior;
+
+mod _pip_configuration;
+
+mod _pip_position;
+
 mod _recording_configuration;
 
 mod _recording_configuration_format;
@@ -134,6 +150,10 @@ mod _storage_configuration;
 mod _storage_configuration_summary;
 
 mod _video;
+
+mod _video_aspect_ratio;
+
+mod _video_fill_mode;
 
 /// Builders
 pub mod builders;

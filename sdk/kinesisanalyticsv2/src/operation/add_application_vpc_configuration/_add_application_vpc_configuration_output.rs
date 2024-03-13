@@ -5,7 +5,7 @@
 pub struct AddApplicationVpcConfigurationOutput {
     /// <p>The ARN of the application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
+    /// <p>Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each time you update the application.</p>
     pub application_version_id: ::std::option::Option<i64>,
     /// <p>The parameters of the new VPC configuration.</p>
     pub vpc_configuration_description: ::std::option::Option<crate::types::VpcConfigurationDescription>,
@@ -16,7 +16,7 @@ impl AddApplicationVpcConfigurationOutput {
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
     }
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
+    /// <p>Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each time you update the application.</p>
     pub fn application_version_id(&self) -> ::std::option::Option<i64> {
         self.application_version_id
     }
@@ -61,17 +61,17 @@ impl AddApplicationVpcConfigurationOutputBuilder {
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
+    /// <p>Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each time you update the application.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
+    /// <p>Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each time you update the application.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
     }
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you update the application.</p>
+    /// <p>Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each time you update the application.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.application_version_id
     }

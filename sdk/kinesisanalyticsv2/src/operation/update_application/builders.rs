@@ -22,10 +22,8 @@ impl UpdateApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateApplication`.
 ///
-/// <p>Updates an existing Kinesis Data Analytics application. Using this operation, you can update application code, input configuration, and output configuration.</p>
-/// <p>Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application.</p><note>
-/// <p>You cannot update the <code>RuntimeEnvironment</code> of an existing application. If you need to update an application's <code>RuntimeEnvironment</code>, you must delete the application and create it again.</p>
-/// </note>
+/// <p>Updates an existing Managed Service for Apache Flink application. Using this operation, you can update application code, input configuration, and output configuration.</p>
+/// <p>Managed Service for Apache Flink updates the <code>ApplicationVersionId</code> each time you update your application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -215,5 +213,37 @@ impl UpdateApplicationFluentBuilder {
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn get_conditional_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_conditional_token()
+    }
+    /// <p>Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Ensure your new jar and dependencies are compatible with the new runtime selected.</p></li>
+    /// <li>
+    /// <p>Ensure your new code's state is compatible with the snapshot from which your application will start</p></li>
+    /// </ul>
+    pub fn runtime_environment_update(mut self, input: crate::types::RuntimeEnvironment) -> Self {
+        self.inner = self.inner.runtime_environment_update(input);
+        self
+    }
+    /// <p>Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Ensure your new jar and dependencies are compatible with the new runtime selected.</p></li>
+    /// <li>
+    /// <p>Ensure your new code's state is compatible with the snapshot from which your application will start</p></li>
+    /// </ul>
+    pub fn set_runtime_environment_update(mut self, input: ::std::option::Option<crate::types::RuntimeEnvironment>) -> Self {
+        self.inner = self.inner.set_runtime_environment_update(input);
+        self
+    }
+    /// <p>Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Ensure your new jar and dependencies are compatible with the new runtime selected.</p></li>
+    /// <li>
+    /// <p>Ensure your new code's state is compatible with the snapshot from which your application will start</p></li>
+    /// </ul>
+    pub fn get_runtime_environment_update(&self) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
+        self.inner.get_runtime_environment_update()
     }
 }

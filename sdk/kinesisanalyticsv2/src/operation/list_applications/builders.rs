@@ -22,7 +22,7 @@ impl ListApplicationsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListApplications`.
 ///
-/// <p>Returns a list of Kinesis Data Analytics applications in your account. For each application, the response includes the application name, Amazon Resource Name (ARN), and status.</p>
+/// <p>Returns a list of Managed Service for Apache Flink applications in your account. For each application, the response includes the application name, Amazon Resource Name (ARN), and status.</p>
 /// <p>If you want detailed information about a specific application, use <code>DescribeApplication</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationsFluentBuilder {

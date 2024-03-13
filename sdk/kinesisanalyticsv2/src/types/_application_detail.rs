@@ -16,13 +16,13 @@ pub struct ApplicationDetail {
     pub service_execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The status of the application.</p>
     pub application_status: crate::types::ApplicationStatus,
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    /// <p>Provides the current application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub application_version_id: i64,
     /// <p>The current timestamp when the application was created.</p>
     pub create_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current timestamp when the application was last updated.</p>
     pub last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
+    /// <p>Describes details about the application code and starting parameters for a Managed Service for Apache Flink application.</p>
     pub application_configuration_description: ::std::option::Option<crate::types::ApplicationConfigurationDescription>,
     /// <p>Describes the application Amazon CloudWatch logging options.</p>
     pub cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
@@ -36,7 +36,7 @@ pub struct ApplicationDetail {
     pub conditional_token: ::std::option::Option<::std::string::String>,
     /// <p>The version to which you want to roll back the application.</p>
     pub application_version_rolled_back_to: ::std::option::Option<i64>,
-    /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
+    /// <p>To create a Managed Service for Apache Flink Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache Flink application, the mode is optional.</p>
     pub application_mode: ::std::option::Option<crate::types::ApplicationMode>,
 }
 impl ApplicationDetail {
@@ -66,7 +66,7 @@ impl ApplicationDetail {
     pub fn application_status(&self) -> &crate::types::ApplicationStatus {
         &self.application_status
     }
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    /// <p>Provides the current application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub fn application_version_id(&self) -> i64 {
         self.application_version_id
     }
@@ -78,7 +78,7 @@ impl ApplicationDetail {
     pub fn last_update_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
-    /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
+    /// <p>Describes details about the application code and starting parameters for a Managed Service for Apache Flink application.</p>
     pub fn application_configuration_description(&self) -> ::std::option::Option<&crate::types::ApplicationConfigurationDescription> {
         self.application_configuration_description.as_ref()
     }
@@ -110,7 +110,7 @@ impl ApplicationDetail {
     pub fn application_version_rolled_back_to(&self) -> ::std::option::Option<i64> {
         self.application_version_rolled_back_to
     }
-    /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
+    /// <p>To create a Managed Service for Apache Flink Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache Flink application, the mode is optional.</p>
     pub fn application_mode(&self) -> ::std::option::Option<&crate::types::ApplicationMode> {
         self.application_mode.as_ref()
     }
@@ -233,18 +233,18 @@ impl ApplicationDetailBuilder {
     pub fn get_application_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
         &self.application_status
     }
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    /// <p>Provides the current application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     /// This field is required.
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    /// <p>Provides the current application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
     }
-    /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
+    /// <p>Provides the current application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.application_version_id
     }
@@ -276,12 +276,12 @@ impl ApplicationDetailBuilder {
     pub fn get_last_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_timestamp
     }
-    /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
+    /// <p>Describes details about the application code and starting parameters for a Managed Service for Apache Flink application.</p>
     pub fn application_configuration_description(mut self, input: crate::types::ApplicationConfigurationDescription) -> Self {
         self.application_configuration_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
+    /// <p>Describes details about the application code and starting parameters for a Managed Service for Apache Flink application.</p>
     pub fn set_application_configuration_description(
         mut self,
         input: ::std::option::Option<crate::types::ApplicationConfigurationDescription>,
@@ -289,7 +289,7 @@ impl ApplicationDetailBuilder {
         self.application_configuration_description = input;
         self
     }
-    /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
+    /// <p>Describes details about the application code and starting parameters for a Managed Service for Apache Flink application.</p>
     pub fn get_application_configuration_description(&self) -> &::std::option::Option<crate::types::ApplicationConfigurationDescription> {
         &self.application_configuration_description
     }
@@ -393,17 +393,17 @@ impl ApplicationDetailBuilder {
     pub fn get_application_version_rolled_back_to(&self) -> &::std::option::Option<i64> {
         &self.application_version_rolled_back_to
     }
-    /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
+    /// <p>To create a Managed Service for Apache Flink Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache Flink application, the mode is optional.</p>
     pub fn application_mode(mut self, input: crate::types::ApplicationMode) -> Self {
         self.application_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
+    /// <p>To create a Managed Service for Apache Flink Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache Flink application, the mode is optional.</p>
     pub fn set_application_mode(mut self, input: ::std::option::Option<crate::types::ApplicationMode>) -> Self {
         self.application_mode = input;
         self
     }
-    /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
+    /// <p>To create a Managed Service for Apache Flink Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache Flink application, the mode is optional.</p>
     pub fn get_application_mode(&self) -> &::std::option::Option<crate::types::ApplicationMode> {
         &self.application_mode
     }

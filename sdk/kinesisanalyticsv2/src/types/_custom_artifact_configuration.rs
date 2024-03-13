@@ -6,7 +6,7 @@
 pub struct CustomArtifactConfiguration {
     /// <p><code>UDF</code> stands for user-defined functions. This type of artifact must be in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.</p>
     pub artifact_type: crate::types::ArtifactType,
-    /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
+    /// <p>For a Managed Service for Apache Flink application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
     pub s3_content_location: ::std::option::Option<crate::types::S3ContentLocation>,
     /// <p>The parameters required to fully specify a Maven reference.</p>
     pub maven_reference: ::std::option::Option<crate::types::MavenReference>,
@@ -16,7 +16,7 @@ impl CustomArtifactConfiguration {
     pub fn artifact_type(&self) -> &crate::types::ArtifactType {
         &self.artifact_type
     }
-    /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
+    /// <p>For a Managed Service for Apache Flink application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
     pub fn s3_content_location(&self) -> ::std::option::Option<&crate::types::S3ContentLocation> {
         self.s3_content_location.as_ref()
     }
@@ -56,17 +56,17 @@ impl CustomArtifactConfigurationBuilder {
     pub fn get_artifact_type(&self) -> &::std::option::Option<crate::types::ArtifactType> {
         &self.artifact_type
     }
-    /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
+    /// <p>For a Managed Service for Apache Flink application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
     pub fn s3_content_location(mut self, input: crate::types::S3ContentLocation) -> Self {
         self.s3_content_location = ::std::option::Option::Some(input);
         self
     }
-    /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
+    /// <p>For a Managed Service for Apache Flink application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
     pub fn set_s3_content_location(mut self, input: ::std::option::Option<crate::types::S3ContentLocation>) -> Self {
         self.s3_content_location = input;
         self
     }
-    /// <p>For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
+    /// <p>For a Managed Service for Apache Flink application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.</p>
     pub fn get_s3_content_location(&self) -> &::std::option::Option<crate::types::S3ContentLocation> {
         &self.s3_content_location
     }

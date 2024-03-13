@@ -5,9 +5,9 @@
 pub struct AddApplicationCloudWatchLoggingOptionOutput {
     /// <p>The application's ARN.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
+    /// <p>The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
     pub application_version_id: ::std::option::Option<i64>,
-    /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
+    /// <p>The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.</p>
     pub cloud_watch_logging_option_descriptions: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
     _request_id: Option<String>,
 }
@@ -16,11 +16,11 @@ impl AddApplicationCloudWatchLoggingOptionOutput {
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
     }
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
+    /// <p>The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
     pub fn application_version_id(&self) -> ::std::option::Option<i64> {
         self.application_version_id
     }
-    /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
+    /// <p>The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_watch_logging_option_descriptions.is_none()`.
     pub fn cloud_watch_logging_option_descriptions(&self) -> &[crate::types::CloudWatchLoggingOptionDescription] {
@@ -63,17 +63,17 @@ impl AddApplicationCloudWatchLoggingOptionOutputBuilder {
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
+    /// <p>The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
         self.application_version_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
+    /// <p>The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
     pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
     }
-    /// <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
+    /// <p>The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.</p>
     pub fn get_application_version_id(&self) -> &::std::option::Option<i64> {
         &self.application_version_id
     }
@@ -81,14 +81,14 @@ impl AddApplicationCloudWatchLoggingOptionOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_watch_logging_option_descriptions`](Self::set_cloud_watch_logging_option_descriptions).
     ///
-    /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
+    /// <p>The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.</p>
     pub fn cloud_watch_logging_option_descriptions(mut self, input: crate::types::CloudWatchLoggingOptionDescription) -> Self {
         let mut v = self.cloud_watch_logging_option_descriptions.unwrap_or_default();
         v.push(input);
         self.cloud_watch_logging_option_descriptions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
+    /// <p>The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.</p>
     pub fn set_cloud_watch_logging_option_descriptions(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
@@ -96,7 +96,7 @@ impl AddApplicationCloudWatchLoggingOptionOutputBuilder {
         self.cloud_watch_logging_option_descriptions = input;
         self
     }
-    /// <p>The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.</p>
+    /// <p>The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.</p>
     pub fn get_cloud_watch_logging_option_descriptions(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>> {
