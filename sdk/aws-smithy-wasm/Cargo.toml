@@ -17,7 +17,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 bytes = "1"
 http = "1.0.0"
 tracing = "0.1.40"
-wasi = "0.12.0+wasi-0.2.0"
+wasi = "0.12.0"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
