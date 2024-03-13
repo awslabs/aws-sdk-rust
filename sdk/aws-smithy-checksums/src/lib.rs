@@ -304,6 +304,7 @@ mod tests {
     use aws_smithy_types::base64;
     use http::HeaderValue;
     use pretty_assertions::assert_eq;
+    use std::fmt::Write;
 
     const TEST_DATA: &str = r#"test data"#;
 
@@ -311,8 +312,10 @@ mod tests {
         let decoded_checksum = base64::decode(header_value.to_str().unwrap()).unwrap();
         let decoded_checksum = decoded_checksum
             .into_iter()
-            .map(|byte| format!("{:02X?}", byte))
-            .collect::<String>();
+            .fold(String::new(), |mut acc, byte| {
+                write!(acc, "{byte:02X?}").expect("string will always be writeable");
+                acc
+            });
 
         format!("0x{}", decoded_checksum)
     }

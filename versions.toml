@@ -1,4 +1,4 @@
-smithy_rs_revision = '07c8074ce58c7134d8612118b3b54bad4a149a9b'
+smithy_rs_revision = '5b9d0c0fffa45d9eece1371104a1e30c91ef4f95'
 aws_doc_sdk_examples_revision = '67b3e390ad91f2c10235ae5f3ce3b297d0f325b4'
 
 [manual_interventions]
@@ -2324,7 +2324,7 @@ source_hash = 'da77daa28865fc0ee3af57c15064489759946150f8d5630abe655d67d1ac0407'
 [crates.aws-smithy-checksums]
 category = 'SmithyRuntime'
 version = '0.60.6'
-source_hash = '087064547b22d59825702b2712023c77ace2541734deb23c337a2d7c1d327023'
+source_hash = 'ac87e9c7c0e55026f975d6d0a3b9d82451eb8e12d121f40371ddff1a4ef7ed98'
 
 [crates.aws-smithy-client]
 category = 'SmithyRuntime'
@@ -2364,7 +2364,7 @@ source_hash = '782efee1d7db47f5948d8e418c9c5803404ad87df09492a85c6409ed423870af'
 [crates.aws-smithy-json]
 category = 'SmithyRuntime'
 version = '0.60.6'
-source_hash = '31847a62a856ffca8c9279b4dae0b8ef9f724238b4640c1089c6889830674e78'
+source_hash = 'd2d9e14ff439420abc47e5d09703a507c6318fd6d7422ff424d4e7275abd7823'
 
 [crates.aws-smithy-json-fuzz]
 category = 'SmithyRuntime'
@@ -2373,8 +2373,8 @@ source_hash = '1646b66403387bbb8e4603f7217e0d8eca6159294492e7f10eb78761c3d5f395'
 
 [crates.aws-smithy-mocks-experimental]
 category = 'SmithyRuntime'
-version = '0.1.0'
-source_hash = '2f27f7b901c1dc831213fe27094ffd7c25e89ecd77d5337da65077a550670b55'
+version = '0.1.1'
+source_hash = '8869a28dc4b16ce5755d7ba4991f7e588e0f5da48890053f7063aa71d837b3b0'
 
 [crates.aws-smithy-protocol-test]
 category = 'SmithyRuntime'
@@ -2389,7 +2389,7 @@ source_hash = 'f3285a2dc2fba5f765ef1ae400c9af1c3208cb37a3e7e95b77eec6f02713442a'
 [crates.aws-smithy-runtime]
 category = 'SmithyRuntime'
 version = '1.1.7'
-source_hash = '6df97b9bec4e8723814f92844df08d9a2a20fa499534d8ee46d87dfc0573fe4a'
+source_hash = '0f307af2b55193b662980323de74c06ec872abbb823b5f37df71d9787ec5eb40'
 
 [crates.aws-smithy-runtime-api]
 category = 'SmithyRuntime'
@@ -2804,3 +2804,4 @@ aws-sdk-workspaces = '1.16.0'
 aws-sdk-workspacesthinclient = '1.14.0'
 aws-sdk-workspacesweb = '1.16.0'
 aws-sdk-xray = '1.16.0'
+aws-smithy-mocks-experimental = '0.1.1'

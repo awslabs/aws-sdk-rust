@@ -140,7 +140,7 @@ impl ThroughputLogs {
             .iter()
             .last()?
             .0
-            .duration_since(self.inner.get(0)?.0)
+            .duration_since(self.inner.front()?.0)
             .ok()?;
         // during a "healthy" request we'll only have a few milliseconds of logs (shorter than the check window)
         if total_length < time_window {
