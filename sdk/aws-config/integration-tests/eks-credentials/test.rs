@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_sdk_dynamodb::model::AttributeValue;
+use aws_sdk_dynamodb::types::AttributeValue;
 #[tokio::main]
 async fn main() {
     let conf = aws_config::load_from_env().await;
@@ -13,7 +13,7 @@ async fn main() {
         dynamo
             .get_item()
             .key("id", AttributeValue::S("foo".into()))
-            .table_name("EksCredentialsStack-TableCD117FA1-18ZPICQWXOPW")
+            .table_name(std::env::var("DYNAMO_TABLE").unwrap())
             .send()
             .await
     );
