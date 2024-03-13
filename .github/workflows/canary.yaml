@@ -94,4 +94,5 @@ jobs:
                 --lambda-test-s3-bucket-name ${LAMBDA_TEST_S3_BUCKET_NAME} \
                 --lambda-execution-role-arn ${LAMBDA_EXECUTION_ROLE_ARN} \
                 --lambda-test-s3-mrap-bucket-arn ${LAMBDA_TEST_S3_MRAP_BUCKET_ARN} \
+                --lambda-test-s3-express-bucket-name ${LAMBDA_TEST_S3_EXPRESS_BUCKET_NAME} \
                 --musl
