@@ -3,6 +3,9 @@ on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
+  push:
+    branches:
+    - 'canary*'
 env:
   tool_rust_version: 1.70.0
 
@@ -45,6 +48,7 @@ jobs:
       LAMBDA_TEST_S3_BUCKET_NAME: ${{ secrets.CANARY_LAMBDA_TEST_S3_BUCKET }}
       LAMBDA_EXECUTION_ROLE_ARN: ${{ secrets.CANARY_LAMBDA_EXECUTION_ROLE_ARN }}
       LAMBDA_TEST_S3_MRAP_BUCKET_ARN: ${{ secrets.CANARY_LAMBDA_TEST_S3_MRAP_BUCKET_ARN }}
+      LAMBDA_TEST_S3_EXPRESS_BUCKET_NAME: ${{ secrets.CANARY_LAMBDA_TEST_S3_EXPRESS_BUCKET_NAME }}
     permissions:
       id-token: write
       contents: read
