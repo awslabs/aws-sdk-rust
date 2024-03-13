@@ -3,9 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// TODO(msrvUpgrade): This can be removed once we upgrade the MSRV to Rust 1.69
-#![allow(unknown_lints)]
-
 use self::auth::orchestrate_auth;
 use crate::client::interceptors::Interceptors;
 use crate::client::orchestrator::endpoints::orchestrate_endpoint;
