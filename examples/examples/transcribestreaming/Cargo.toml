@@ -10,7 +10,7 @@ publish = false
 async-stream = "0.3"
 bytes = "1"
 hound = "3.4"
-aws-config= { version = "1.1.7", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.1.8", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-transcribestreaming= { version = "1.16.0", path = "../../../sdk/transcribestreaming" }
 
 [dependencies.clap]

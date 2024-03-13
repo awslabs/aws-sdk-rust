@@ -23,6 +23,53 @@ impl SdkBody {
     {
         SdkBody::from_body_0_4_internal(Http1toHttp04::new(body.map_err(Into::into)))
     }
+
+    pub(crate) fn poll_data_frame(
+        mut self: Pin<&mut Self>,
+        cx: &mut Context<'_>,
+    ) -> Poll<Option<Result<http_body_1_0::Frame<Bytes>, Error>>> {
+        match ready!(self.as_mut().poll_next(cx)) {
+            // if there's no more data, try to return trailers
+            None => match ready!(self.poll_next_trailers(cx)) {
+                Ok(Some(trailers)) => Poll::Ready(Some(Ok(http_body_1_0::Frame::trailers(
+                    convert_headers_0x_1x(trailers),
+                )))),
+                Ok(None) => Poll::Ready(None),
+                Err(e) => Poll::Ready(Some(Err(e))),
+            },
+            Some(result) => match result {
+                Err(err) => Poll::Ready(Some(Err(err))),
+                Ok(bytes) => Poll::Ready(Some(Ok(http_body_1_0::Frame::data(bytes)))),
+            },
+        }
+    }
+}
+
+#[cfg(feature = "http-body-1-x")]
+impl http_body_1_0::Body for SdkBody {
+    type Data = Bytes;
+    type Error = Error;
+
+    fn poll_frame(
+        self: Pin<&mut Self>,
+        cx: &mut Context<'_>,
+    ) -> Poll<Option<Result<http_body_1_0::Frame<Self::Data>, Self::Error>>> {
+        self.poll_data_frame(cx)
+    }
+
+    fn is_end_stream(&self) -> bool {
+        self.is_end_stream()
+    }
+
+    fn size_hint(&self) -> http_body_1_0::SizeHint {
+        let mut hint = http_body_1_0::SizeHint::default();
+        let (lower, upper) = self.bounds_on_remaining_length();
+        hint.set_lower(lower);
+        if let Some(upper) = upper {
+            hint.set_upper(upper);
+        }
+        hint
+    }
 }
 
 pin_project! {
@@ -83,7 +130,7 @@ where
         // already read everything
         let this = self.project();
         match this.trailers.take() {
-            Some(headers) => Poll::Ready(Ok(Some(convert_header_map(headers)))),
+            Some(headers) => Poll::Ready(Ok(Some(convert_headers_1x_0x(headers)))),
             None => Poll::Ready(Ok(None)),
         }
     }
@@ -107,7 +154,7 @@ where
     }
 }
 
-fn convert_header_map(input: http_1x::HeaderMap) -> http::HeaderMap {
+fn convert_headers_1x_0x(input: http_1x::HeaderMap) -> http::HeaderMap {
     let mut map = http::HeaderMap::with_capacity(input.capacity());
     let mut mem: Option<http_1x::HeaderName> = None;
     for (k, v) in input.into_iter() {
@@ -115,6 +162,20 @@ fn convert_header_map(input: http_1x::HeaderMap) -> http::HeaderMap {
         map.append(
             http::HeaderName::from_bytes(name.as_str().as_bytes()).expect("already validated"),
             http::HeaderValue::from_bytes(v.as_bytes()).expect("already validated"),
+        );
+        mem = Some(name);
+    }
+    map
+}
+
+fn convert_headers_0x_1x(input: http::HeaderMap) -> http_1x::HeaderMap {
+    let mut map = http_1x::HeaderMap::with_capacity(input.capacity());
+    let mut mem: Option<http::HeaderName> = None;
+    for (k, v) in input.into_iter() {
+        let name = k.or_else(|| mem.clone()).unwrap();
+        map.append(
+            http_1x::HeaderName::from_bytes(name.as_str().as_bytes()).expect("already validated"),
+            http_1x::HeaderValue::from_bytes(v.as_bytes()).expect("already validated"),
         );
         mem = Some(name);
     }
@@ -132,8 +193,9 @@ mod test {
     use http_1x::header::{CONTENT_LENGTH as CL1, CONTENT_TYPE as CT1};
     use http_1x::{HeaderMap, HeaderName, HeaderValue};
     use http_body_1_0::Frame;
+    use http_body_util::BodyExt;
 
-    use crate::body::http_body_1_x::convert_header_map;
+    use crate::body::http_body_1_x::{convert_headers_1x_0x, Http1toHttp04};
     use crate::body::{Error, SdkBody};
     use crate::byte_stream::ByteStream;
 
@@ -215,8 +277,44 @@ mod test {
         while let Some(_data) = http_body_0_4::Body::data(&mut body).await {}
         assert_eq!(
             http_body_0_4::Body::trailers(&mut body).await.unwrap(),
-            Some(convert_header_map(trailers()))
+            Some(convert_headers_1x_0x(trailers()))
         );
+    }
+
+    #[tokio::test]
+    async fn test_read_trailers_as_1x() {
+        let body = TestBody {
+            chunks: vec![
+                Chunk::Data("123"),
+                Chunk::Data("456"),
+                Chunk::Data("789"),
+                Chunk::Trailers(trailers()),
+            ]
+            .into(),
+        };
+        let body = SdkBody::from_body_1_x(body);
+
+        let collected = BodyExt::collect(body).await.expect("should succeed");
+        assert_eq!(collected.trailers(), Some(&trailers()));
+        assert_eq!(collected.to_bytes().as_ref(), b"123456789");
+    }
+
+    #[tokio::test]
+    async fn test_trailers_04x_to_1x() {
+        let body = TestBody {
+            chunks: vec![
+                Chunk::Data("123"),
+                Chunk::Data("456"),
+                Chunk::Data("789"),
+                Chunk::Trailers(trailers()),
+            ]
+            .into(),
+        };
+        let body = SdkBody::from_body_0_4(Http1toHttp04::new(body));
+
+        let collected = BodyExt::collect(body).await.expect("should succeed");
+        assert_eq!(collected.trailers(), Some(&trailers()));
+        assert_eq!(collected.to_bytes().as_ref(), b"123456789");
     }
 
     #[tokio::test]
@@ -235,6 +333,7 @@ mod test {
         let body = ByteStream::new(body);
         body.collect().await.expect_err("body returned an error");
     }
+
     #[tokio::test]
     async fn test_no_trailers() {
         let body = TestBody {
@@ -262,6 +361,21 @@ mod test {
 
         expect.insert(CL0, http::HeaderValue::from_static("1234"));
 
-        assert_eq!(convert_header_map(http1_headermap), expect);
+        assert_eq!(convert_headers_1x_0x(http1_headermap), expect);
+    }
+
+    #[test]
+    fn sdkbody_debug_dyn() {
+        let body = TestBody {
+            chunks: vec![
+                Chunk::Data("123"),
+                Chunk::Data("456"),
+                Chunk::Data("789"),
+                Chunk::Trailers(trailers()),
+            ]
+            .into(),
+        };
+        let body = SdkBody::from_body_1_x(body);
+        assert!(format!("{:?}", body).contains("BoxBody"));
     }
 }
