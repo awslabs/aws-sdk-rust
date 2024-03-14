@@ -17,6 +17,14 @@ pub struct UpdateApplicationInput {
     pub cloud_watch_logging_option_updates: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub conditional_token: ::std::option::Option<::std::string::String>,
+    /// <p>Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Ensure your new jar and dependencies are compatible with the new runtime selected.</p></li>
+    /// <li>
+    /// <p>Ensure your new code's state is compatible with the snapshot from which your application will start</p></li>
+    /// </ul>
+    pub runtime_environment_update: ::std::option::Option<crate::types::RuntimeEnvironment>,
 }
 impl UpdateApplicationInput {
     /// <p>The name of the application to update.</p>
@@ -49,6 +57,16 @@ impl UpdateApplicationInput {
     pub fn conditional_token(&self) -> ::std::option::Option<&str> {
         self.conditional_token.as_deref()
     }
+    /// <p>Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Ensure your new jar and dependencies are compatible with the new runtime selected.</p></li>
+    /// <li>
+    /// <p>Ensure your new code's state is compatible with the snapshot from which your application will start</p></li>
+    /// </ul>
+    pub fn runtime_environment_update(&self) -> ::std::option::Option<&crate::types::RuntimeEnvironment> {
+        self.runtime_environment_update.as_ref()
+    }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
@@ -68,6 +86,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) run_configuration_update: ::std::option::Option<crate::types::RunConfigurationUpdate>,
     pub(crate) cloud_watch_logging_option_updates: ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
     pub(crate) conditional_token: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime_environment_update: ::std::option::Option<crate::types::RuntimeEnvironment>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The name of the application to update.</p>
@@ -178,6 +197,38 @@ impl UpdateApplicationInputBuilder {
     pub fn get_conditional_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.conditional_token
     }
+    /// <p>Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Ensure your new jar and dependencies are compatible with the new runtime selected.</p></li>
+    /// <li>
+    /// <p>Ensure your new code's state is compatible with the snapshot from which your application will start</p></li>
+    /// </ul>
+    pub fn runtime_environment_update(mut self, input: crate::types::RuntimeEnvironment) -> Self {
+        self.runtime_environment_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Ensure your new jar and dependencies are compatible with the new runtime selected.</p></li>
+    /// <li>
+    /// <p>Ensure your new code's state is compatible with the snapshot from which your application will start</p></li>
+    /// </ul>
+    pub fn set_runtime_environment_update(mut self, input: ::std::option::Option<crate::types::RuntimeEnvironment>) -> Self {
+        self.runtime_environment_update = input;
+        self
+    }
+    /// <p>Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Ensure your new jar and dependencies are compatible with the new runtime selected.</p></li>
+    /// <li>
+    /// <p>Ensure your new code's state is compatible with the snapshot from which your application will start</p></li>
+    /// </ul>
+    pub fn get_runtime_environment_update(&self) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
+        &self.runtime_environment_update
+    }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
@@ -190,6 +241,7 @@ impl UpdateApplicationInputBuilder {
             run_configuration_update: self.run_configuration_update,
             cloud_watch_logging_option_updates: self.cloud_watch_logging_option_updates,
             conditional_token: self.conditional_token,
+            runtime_environment_update: self.runtime_environment_update,
         })
     }
 }

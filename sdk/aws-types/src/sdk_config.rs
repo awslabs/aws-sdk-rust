@@ -13,6 +13,7 @@ use crate::app_name::AppName;
 use crate::docs_for;
 use crate::region::Region;
 
+use aws_credential_types::provider::token::SharedTokenProvider;
 pub use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_smithy_async::rt::sleep::AsyncSleep;
 pub use aws_smithy_async::rt::sleep::SharedAsyncSleep;
@@ -55,6 +56,7 @@ pub struct SdkConfig {
     app_name: Option<AppName>,
     identity_cache: Option<SharedIdentityCache>,
     credentials_provider: Option<SharedCredentialsProvider>,
+    token_provider: Option<SharedTokenProvider>,
     region: Option<Region>,
     endpoint_url: Option<String>,
     retry_config: Option<RetryConfig>,
@@ -78,6 +80,7 @@ pub struct Builder {
     app_name: Option<AppName>,
     identity_cache: Option<SharedIdentityCache>,
     credentials_provider: Option<SharedCredentialsProvider>,
+    token_provider: Option<SharedTokenProvider>,
     region: Option<Region>,
     endpoint_url: Option<String>,
     retry_config: Option<RetryConfig>,
@@ -415,6 +418,55 @@ impl Builder {
         self
     }
 
+    /// Set the bearer auth token provider for the builder
+    ///
+    /// # Examples
+    /// ```rust
+    /// use aws_credential_types::provider::token::{ProvideToken, SharedTokenProvider};
+    /// use aws_types::SdkConfig;
+    ///
+    /// fn make_provider() -> impl ProvideToken {
+    ///   // ...
+    ///   # aws_credential_types::Token::new("example", None)
+    /// }
+    ///
+    /// let config = SdkConfig::builder()
+    ///     .token_provider(SharedTokenProvider::new(make_provider()))
+    ///     .build();
+    /// ```
+    pub fn token_provider(mut self, provider: SharedTokenProvider) -> Self {
+        self.set_token_provider(Some(provider));
+        self
+    }
+
+    /// Set the bearer auth token provider for the builder
+    ///
+    /// # Examples
+    /// ```rust
+    /// use aws_credential_types::provider::token::{ProvideToken, SharedTokenProvider};
+    /// use aws_types::SdkConfig;
+    ///
+    /// fn make_provider() -> impl ProvideToken {
+    ///   // ...
+    ///   # aws_credential_types::Token::new("example", None)
+    /// }
+    ///
+    /// fn override_provider() -> bool {
+    ///   // ...
+    ///   # true
+    /// }
+    ///
+    /// let mut builder = SdkConfig::builder();
+    /// if override_provider() {
+    ///     builder.set_token_provider(Some(SharedTokenProvider::new(make_provider())));
+    /// }
+    /// let config = builder.build();
+    /// ```
+    pub fn set_token_provider(&mut self, provider: Option<SharedTokenProvider>) -> &mut Self {
+        self.token_provider = provider;
+        self
+    }
+
     /// Sets the name of the app that is using the client.
     ///
     /// This _optional_ name is used to identify the application in the user agent that
@@ -560,6 +612,7 @@ impl Builder {
             app_name: self.app_name,
             identity_cache: self.identity_cache,
             credentials_provider: self.credentials_provider,
+            token_provider: self.token_provider,
             region: self.region,
             endpoint_url: self.endpoint_url,
             retry_config: self.retry_config,
@@ -682,6 +735,11 @@ impl SdkConfig {
         self.credentials_provider.clone()
     }
 
+    /// Configured bearer auth token provider
+    pub fn token_provider(&self) -> Option<SharedTokenProvider> {
+        self.token_provider.clone()
+    }
+
     /// Configured time source
     pub fn time_source(&self) -> Option<SharedTimeSource> {
         self.time_source.clone()
@@ -737,6 +795,7 @@ impl SdkConfig {
             app_name: self.app_name,
             identity_cache: self.identity_cache,
             credentials_provider: self.credentials_provider,
+            token_provider: self.token_provider,
             region: self.region,
             endpoint_url: self.endpoint_url,
             retry_config: self.retry_config,

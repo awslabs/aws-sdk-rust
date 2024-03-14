@@ -246,10 +246,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCodeSig
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateCodeSigningConfigError {
-    /// <p>The Lambda service encountered an internal error.</p>
-    ServiceException(crate::types::error::ServiceException),
     /// <p>One of the parameters in the request is not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::types::error::ServiceException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -283,25 +283,25 @@ impl CreateCodeSigningConfigError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
-    }
-    /// Returns `true` if the error kind is `CreateCodeSigningConfigError::ServiceException`.
-    pub fn is_service_exception(&self) -> bool {
-        matches!(self, Self::ServiceException(_))
     }
     /// Returns `true` if the error kind is `CreateCodeSigningConfigError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterValueException(_))
     }
+    /// Returns `true` if the error kind is `CreateCodeSigningConfigError::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(self, Self::ServiceException(_))
+    }
 }
 impl ::std::error::Error for CreateCodeSigningConfigError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -309,8 +309,8 @@ impl ::std::error::Error for CreateCodeSigningConfigError {
 impl ::std::fmt::Display for CreateCodeSigningConfigError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::ServiceException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::ServiceException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -332,8 +332,8 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateCodeSigningConfigErro
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateCodeSigningConfigError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

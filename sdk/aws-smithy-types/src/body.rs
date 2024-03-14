@@ -32,8 +32,6 @@ pin_project! {
     /// For handling responses, the type of the body will be controlled
     /// by the HTTP stack.
     ///
-    // TODO(naming): Consider renaming to simply `Body`, although I'm concerned about naming headaches
-    // between hyper::Body and our Body
     pub struct SdkBody {
         #[pin]
         inner: Inner,
@@ -191,10 +189,10 @@ impl SdkBody {
         }
     }
 
-    #[cfg(feature = "http-body-0-4-x")]
+    #[cfg(any(feature = "http-body-0-4-x", feature = "http-body-1-x",))]
     pub(crate) fn poll_next_trailers(
         self: Pin<&mut Self>,
-        #[allow(unused)] cx: &mut Context<'_>,
+        cx: &mut Context<'_>,
     ) -> Poll<Result<Option<http::HeaderMap<http::HeaderValue>>, Error>> {
         let this = self.project();
         match this.inner.project() {

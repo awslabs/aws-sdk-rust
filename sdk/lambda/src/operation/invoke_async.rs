@@ -252,16 +252,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeAsyncEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InvokeAsyncError {
-    /// <p>The resource specified in the request does not exist.</p>
-    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The runtime or runtime version specified is not supported.</p>
-    InvalidRuntimeException(crate::types::error::InvalidRuntimeException),
-    /// <p>The Lambda service encountered an internal error.</p>
-    ServiceException(crate::types::error::ServiceException),
     /// <p>The request body could not be parsed as JSON.</p>
     InvalidRequestContentException(crate::types::error::InvalidRequestContentException),
+    /// <p>The runtime or runtime version specified is not supported.</p>
+    InvalidRuntimeException(crate::types::error::InvalidRuntimeException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),
+    /// <p>The resource specified in the request does not exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The Lambda service encountered an internal error.</p>
+    ServiceException(crate::types::error::ServiceException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -295,43 +295,43 @@ impl InvokeAsyncError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidRuntimeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestContentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidRuntimeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
-    }
-    /// Returns `true` if the error kind is `InvokeAsyncError::ResourceNotFoundException`.
-    pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(self, Self::ResourceNotFoundException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeAsyncError::InvalidRuntimeException`.
-    pub fn is_invalid_runtime_exception(&self) -> bool {
-        matches!(self, Self::InvalidRuntimeException(_))
-    }
-    /// Returns `true` if the error kind is `InvokeAsyncError::ServiceException`.
-    pub fn is_service_exception(&self) -> bool {
-        matches!(self, Self::ServiceException(_))
     }
     /// Returns `true` if the error kind is `InvokeAsyncError::InvalidRequestContentException`.
     pub fn is_invalid_request_content_exception(&self) -> bool {
         matches!(self, Self::InvalidRequestContentException(_))
     }
+    /// Returns `true` if the error kind is `InvokeAsyncError::InvalidRuntimeException`.
+    pub fn is_invalid_runtime_exception(&self) -> bool {
+        matches!(self, Self::InvalidRuntimeException(_))
+    }
     /// Returns `true` if the error kind is `InvokeAsyncError::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
         matches!(self, Self::ResourceConflictException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeAsyncError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeAsyncError::ServiceException`.
+    pub fn is_service_exception(&self) -> bool {
+        matches!(self, Self::ServiceException(_))
     }
 }
 impl ::std::error::Error for InvokeAsyncError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidRuntimeException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestContentException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidRuntimeException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -339,11 +339,11 @@ impl ::std::error::Error for InvokeAsyncError {
 impl ::std::fmt::Display for InvokeAsyncError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            Self::InvalidRuntimeException(_inner) => _inner.fmt(f),
-            Self::ServiceException(_inner) => _inner.fmt(f),
             Self::InvalidRequestContentException(_inner) => _inner.fmt(f),
+            Self::InvalidRuntimeException(_inner) => _inner.fmt(f),
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ServiceException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -365,11 +365,11 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for InvokeAsyncError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeAsyncError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidRuntimeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestContentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidRuntimeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -22,7 +22,7 @@ impl DeleteApplicationVpcConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteApplicationVpcConfiguration`.
 ///
-/// <p>Removes a VPC configuration from a Kinesis Data Analytics application.</p>
+/// <p>Removes a VPC configuration from a Managed Service for Apache Flink application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationVpcConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

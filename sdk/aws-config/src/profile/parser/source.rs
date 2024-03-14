@@ -5,7 +5,7 @@
 
 use crate::fs_util::{home_dir, Os};
 
-use crate::profile::parser::{CouldNotReadProfileFile, ProfileFileLoadError};
+use super::error::{CouldNotReadProfileFile, ProfileFileLoadError};
 use crate::profile::profile_file::{ProfileFile, ProfileFileKind, ProfileFiles};
 
 use aws_smithy_types::error::display::DisplayErrorContext;

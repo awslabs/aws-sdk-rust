@@ -159,6 +159,30 @@ pub trait ResolveIdentity: Send + Sync + Debug {
     fn fallback_on_interrupt(&self) -> Option<Identity> {
         None
     }
+
+    /// Returns the location of an identity cache associated with this identity resolver.
+    ///
+    /// By default, identity resolvers will use the identity cache stored in runtime components.
+    /// Implementing types can change the cache location if they want to. Refer to [`IdentityCacheLocation`]
+    /// explaining why a concrete identity resolver might want to change the cache location.
+    fn cache_location(&self) -> IdentityCacheLocation {
+        IdentityCacheLocation::RuntimeComponents
+    }
+}
+
+/// Cache location for identity caching.
+///
+/// Identities are usually cached in the identity cache owned by [`RuntimeComponents`]. However,
+/// we do have identities whose caching mechanism is internally managed by their identity resolver,
+/// in which case we want to avoid the `RuntimeComponents`-owned identity cache interfering with
+/// the internal caching policy.
+#[non_exhaustive]
+#[derive(Copy, Clone, Debug, Eq, PartialEq)]
+pub enum IdentityCacheLocation {
+    /// Indicates the identity cache is owned by [`RuntimeComponents`].
+    RuntimeComponents,
+    /// Indicates the identity cache is internally managed by the identity resolver.
+    IdentityResolver,
 }
 
 /// Container for a shared identity resolver.
@@ -193,6 +217,10 @@ impl ResolveIdentity for SharedIdentityResolver {
         config_bag: &'a ConfigBag,
     ) -> IdentityFuture<'a> {
         self.inner.resolve_identity(runtime_components, config_bag)
+    }
+
+    fn cache_location(&self) -> IdentityCacheLocation {
+        self.inner.cache_location()
     }
 }
 

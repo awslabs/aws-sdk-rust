@@ -211,6 +211,8 @@ pub(crate) mod shape_participant_token_attributes;
 
 pub(crate) mod shape_participant_token_capabilities;
 
+pub(crate) mod shape_pip_configuration;
+
 pub(crate) mod shape_s3_destination_configuration;
 
 pub(crate) mod shape_stage_session_summary;

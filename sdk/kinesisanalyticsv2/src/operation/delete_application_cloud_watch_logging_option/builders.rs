@@ -22,7 +22,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteApplicationCloudWatchLoggingOption`.
 ///
-/// <p>Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics application.</p>
+/// <p>Deletes an Amazon CloudWatch log stream from an SQL-based Kinesis Data Analytics application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationCloudWatchLoggingOptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -20,6 +20,21 @@ pub fn de_delete_layer_version_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ServiceException" => crate::operation::delete_layer_version::DeleteLayerVersionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_layer_version::DeleteLayerVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "TooManyRequestsException" => crate::operation::delete_layer_version::DeleteLayerVersionError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -34,21 +49,6 @@ pub fn de_delete_layer_version_http_error(
                         )
                     })?,
                 );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceException" => crate::operation::delete_layer_version::DeleteLayerVersionError::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::delete_layer_version::DeleteLayerVersionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

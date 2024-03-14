@@ -30,7 +30,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-sagemakerruntime = "1.16.0"
+//! aws-sdk-sagemakerruntime = "1.17.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -181,18 +181,22 @@ pub mod operation;
 /// Primitives such as `Blob` or `DateTime` used by other types.
 pub mod primitives;
 
+/// Data structures used by operation inputs/outputs.
+pub mod types;
+
 mod auth_plugin;
+
+mod event_receiver;
 
 pub(crate) mod protocol_serde;
 
 mod serialization_settings;
 
-/// Data structures used by operation inputs/outputs.
-pub mod types;
-
 mod endpoint_lib;
 
 mod serde_util;
+
+mod event_stream_serde;
 
 mod json_errors;
 

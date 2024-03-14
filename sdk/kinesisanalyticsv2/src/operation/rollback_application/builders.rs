@@ -24,8 +24,8 @@ impl RollbackApplicationInputBuilder {
 ///
 /// <p>Reverts the application to the previous running version. You can roll back an application if you suspect it is stuck in a transient status.</p>
 /// <p>You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code> status.</p>
-/// <p>When you rollback an application, it loads state data from the last successful snapshot. If the application has no snapshots, Kinesis Data Analytics rejects the rollback request.</p>
-/// <p>This action is not supported for Kinesis Data Analytics for SQL applications.</p>
+/// <p>When you rollback an application, it loads state data from the last successful snapshot. If the application has no snapshots, Managed Service for Apache Flink rejects the rollback request.</p>
+/// <p>This action is not supported for Managed Service for Apache Flink for SQL applications.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RollbackApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

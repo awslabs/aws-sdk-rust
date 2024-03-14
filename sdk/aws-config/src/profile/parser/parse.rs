@@ -59,8 +59,8 @@ impl Error for ProfileParseError {}
 
 /// Validate that a line represents a valid subproperty
 ///
-/// - Subproperties looks like regular properties (`k=v`) that are nested within an existing property.
-/// - Subproperties must be validated for compatibility with other SDKs, but they are not actually
+/// - Sub-properties looks like regular properties (`k=v`) that are nested within an existing property.
+/// - Sub-properties must be validated for compatibility with other SDKs, but they are not actually
 /// parsed into structured data.
 fn validate_subproperty(value: &str, location: Location) -> Result<(), ProfileParseError> {
     if value.trim_matches(WHITESPACE).is_empty() {

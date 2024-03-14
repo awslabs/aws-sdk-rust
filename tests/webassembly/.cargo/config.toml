@@ -3,3 +3,9 @@ target = "wasm32-wasi"
 
 [target.wasm32-wasi]
 rustflags = ["-C", "opt-level=1"]
+runner = [
+    "wasmtime",
+    "-C", "cache=n",
+    "-S", "preview2=y",
+    "-S", "http=y"
+]

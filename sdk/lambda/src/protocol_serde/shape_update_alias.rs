@@ -17,13 +17,16 @@ pub fn de_update_alias_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::operation::update_alias::UpdateAliasError::ResourceNotFoundException({
+        "InvalidParameterValueException" => crate::operation::update_alias::UpdateAliasError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::update_alias::UpdateAliasError::unhandled)?;
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_alias::UpdateAliasError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -48,18 +51,28 @@ pub fn de_update_alias_http_error(
             }
             tmp
         }),
-        "TooManyRequestsException" => crate::operation::update_alias::UpdateAliasError::TooManyRequestsException({
+        "ResourceConflictException" => crate::operation::update_alias::UpdateAliasError::ResourceConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_alias::UpdateAliasError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
-                        crate::operation::update_alias::UpdateAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
-                    })?,
-                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::update_alias::UpdateAliasError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_alias::UpdateAliasError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -83,31 +96,18 @@ pub fn de_update_alias_http_error(
             }
             tmp
         }),
-        "InvalidParameterValueException" => crate::operation::update_alias::UpdateAliasError::InvalidParameterValueException({
+        "TooManyRequestsException" => crate::operation::update_alias::UpdateAliasError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::update_alias::UpdateAliasError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceConflictException" => crate::operation::update_alias::UpdateAliasError::ResourceConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_alias::UpdateAliasError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::update_alias::UpdateAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };

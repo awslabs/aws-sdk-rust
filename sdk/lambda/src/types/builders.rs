@@ -89,6 +89,10 @@ pub use crate::types::_event_source_mapping_configuration::EventSourceMappingCon
 
 pub use crate::types::_alias_configuration::AliasConfigurationBuilder;
 
+pub use crate::types::_invoke_with_response_stream_complete_event::InvokeWithResponseStreamCompleteEventBuilder;
+
+pub use crate::types::_invoke_response_stream_update::InvokeResponseStreamUpdateBuilder;
+
 pub use crate::types::_concurrency::ConcurrencyBuilder;
 
 pub use crate::types::_function_code_location::FunctionCodeLocationBuilder;

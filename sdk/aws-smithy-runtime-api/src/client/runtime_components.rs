@@ -386,6 +386,14 @@ impl RuntimeComponents {
         RuntimeComponentsBuilder::new(name)
     }
 
+    /// Clones and converts this [`RuntimeComponents`] into a [`RuntimeComponentsBuilder`].
+    pub fn to_builder(&self) -> RuntimeComponentsBuilder {
+        RuntimeComponentsBuilder::from_runtime_components(
+            self.clone(),
+            "RuntimeComponentsBuilder::from_runtime_components",
+        )
+    }
+
     /// Returns the auth scheme option resolver.
     pub fn auth_scheme_option_resolver(&self) -> SharedAuthSchemeOptionResolver {
         self.auth_scheme_option_resolver.value.clone()
@@ -498,6 +506,26 @@ impl RuntimeComponents {
 }
 
 impl RuntimeComponentsBuilder {
+    /// Creates a new [`RuntimeComponentsBuilder`], inheriting all fields from the given
+    /// [`RuntimeComponents`].
+    pub fn from_runtime_components(rc: RuntimeComponents, builder_name: &'static str) -> Self {
+        Self {
+            builder_name,
+            auth_scheme_option_resolver: Some(rc.auth_scheme_option_resolver),
+            http_client: rc.http_client,
+            endpoint_resolver: Some(rc.endpoint_resolver),
+            auth_schemes: rc.auth_schemes,
+            identity_cache: Some(rc.identity_cache),
+            identity_resolvers: Some(rc.identity_resolvers),
+            interceptors: rc.interceptors,
+            retry_classifiers: rc.retry_classifiers,
+            retry_strategy: Some(rc.retry_strategy),
+            time_source: rc.time_source,
+            sleep_impl: rc.sleep_impl,
+            config_validators: rc.config_validators,
+        }
+    }
+
     /// Returns the auth scheme option resolver.
     pub fn auth_scheme_option_resolver(&self) -> Option<SharedAuthSchemeOptionResolver> {
         self.auth_scheme_option_resolver

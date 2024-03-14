@@ -4,12 +4,14 @@
  */
 
 use crate::client::auth::no_auth::NO_AUTH_SCHEME_ID;
+use crate::client::identity::IdentityCache;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::{
     AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, AuthSchemeOptionResolverParams,
     ResolveAuthSchemeOptions,
 };
-use aws_smithy_runtime_api::client::identity::ResolveCachedIdentity;
+use aws_smithy_runtime_api::client::identity::ResolveIdentity;
+use aws_smithy_runtime_api::client::identity::{IdentityCacheLocation, ResolveCachedIdentity};
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
@@ -135,7 +137,13 @@ pub(super) async fn orchestrate_auth(
         if let Some(auth_scheme) = runtime_components.auth_scheme(scheme_id) {
             // Use the resolved auth scheme to resolve an identity
             if let Some(identity_resolver) = auth_scheme.identity_resolver(runtime_components) {
-                let identity_cache = runtime_components.identity_cache();
+                let identity_cache = if identity_resolver.cache_location()
+                    == IdentityCacheLocation::RuntimeComponents
+                {
+                    runtime_components.identity_cache()
+                } else {
+                    IdentityCache::no_cache()
+                };
                 let signer = auth_scheme.signer();
                 trace!(
                     auth_scheme = ?auth_scheme,

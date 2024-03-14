@@ -25,17 +25,17 @@ use aws_credential_types::Credentials;
 /// ProfileChain is a direct representation of the Profile. It can contain named providers
 /// that don't actually have implementations.
 #[derive(Debug)]
-pub(super) struct ProfileChain<'a> {
-    pub(super) base: BaseProvider<'a>,
-    pub(super) chain: Vec<RoleArn<'a>>,
+pub(crate) struct ProfileChain<'a> {
+    pub(crate) base: BaseProvider<'a>,
+    pub(crate) chain: Vec<RoleArn<'a>>,
 }
 
 impl<'a> ProfileChain<'a> {
-    pub(super) fn base(&self) -> &BaseProvider<'a> {
+    pub(crate) fn base(&self) -> &BaseProvider<'a> {
         &self.base
     }
 
-    pub(super) fn chain(&self) -> &[RoleArn<'a>] {
+    pub(crate) fn chain(&self) -> &[RoleArn<'a>] {
         self.chain.as_slice()
     }
 }
@@ -46,7 +46,7 @@ impl<'a> ProfileChain<'a> {
 /// e.g. IMDS, ECS, Environment variables
 #[derive(Clone, Debug)]
 #[non_exhaustive]
-pub(super) enum BaseProvider<'a> {
+pub(crate) enum BaseProvider<'a> {
     /// A profile that specifies a named credential source
     /// Eg: `credential_source = Ec2InstanceMetadata`
     ///
@@ -100,18 +100,18 @@ pub(super) enum BaseProvider<'a> {
 /// A RoleArn can only be created from either a profile with `source_profile`
 /// or one with `credential_source`.
 #[derive(Debug)]
-pub(super) struct RoleArn<'a> {
+pub(crate) struct RoleArn<'a> {
     /// Role to assume
-    pub(super) role_arn: &'a str,
+    pub(crate) role_arn: &'a str,
     /// external_id parameter to pass to the assume role provider
-    pub(super) external_id: Option<&'a str>,
+    pub(crate) external_id: Option<&'a str>,
 
     /// session name parameter to pass to the assume role provider
-    pub(super) session_name: Option<&'a str>,
+    pub(crate) session_name: Option<&'a str>,
 }
 
 /// Resolve a ProfileChain from a ProfileSet or return an error
-pub(super) fn resolve_chain(
+pub(crate) fn resolve_chain(
     profile_set: &ProfileSet,
 ) -> Result<ProfileChain<'_>, ProfileFileError> {
     // If there are no profiles, allow flowing into the next provider

@@ -15,6 +15,8 @@ where
         .map_err(::std::convert::Into::into)
 }
 
+pub(crate) mod shape_invoke_agent;
+
 pub fn parse_http_error_metadata(
     _response_status: u16,
     response_headers: &::aws_smithy_runtime_api::http::Headers,
@@ -45,6 +47,10 @@ pub(crate) mod shape_dependency_failed_exception;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_invoke_agent_input;
+
+pub(crate) mod shape_invoke_agent_output;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_retrieve_and_generate_input;
@@ -56,6 +62,13 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_validation_exception;
+
+pub fn parse_event_stream_error_metadata(
+    payload: &::bytes::Bytes,
+) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    // Note: HeaderMap::new() doesn't allocate
+    crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
+}
 
 pub(crate) mod shape_citations;
 
@@ -71,6 +84,8 @@ pub(crate) mod shape_retrieve_and_generate_output;
 
 pub(crate) mod shape_retrieve_and_generate_session_configuration;
 
+pub(crate) mod shape_session_state;
+
 pub(crate) mod shape_citation;
 
 pub(crate) mod shape_knowledge_base_retrieval_result;
@@ -78,6 +93,10 @@ pub(crate) mod shape_knowledge_base_retrieval_result;
 pub(crate) mod shape_knowledge_base_retrieve_and_generate_configuration;
 
 pub(crate) mod shape_knowledge_base_vector_search_configuration;
+
+pub(crate) mod shape_payload_part;
+
+pub(crate) mod shape_trace_part;
 
 pub(crate) mod shape_generated_response_part;
 
@@ -87,10 +106,62 @@ pub(crate) mod shape_retrieval_result_location;
 
 pub(crate) mod shape_retrieved_references;
 
+pub(crate) mod shape_attribution;
+
 pub(crate) mod shape_retrieval_result_s3_location;
 
 pub(crate) mod shape_retrieved_reference;
 
 pub(crate) mod shape_text_response_part;
 
+pub(crate) mod shape_trace;
+
+pub(crate) mod shape_failure_trace;
+
+pub(crate) mod shape_orchestration_trace;
+
+pub(crate) mod shape_post_processing_trace;
+
+pub(crate) mod shape_pre_processing_trace;
+
 pub(crate) mod shape_span;
+
+pub(crate) mod shape_invocation_input;
+
+pub(crate) mod shape_model_invocation_input;
+
+pub(crate) mod shape_observation;
+
+pub(crate) mod shape_post_processing_model_invocation_output;
+
+pub(crate) mod shape_pre_processing_model_invocation_output;
+
+pub(crate) mod shape_rationale;
+
+pub(crate) mod shape_action_group_invocation_input;
+
+pub(crate) mod shape_action_group_invocation_output;
+
+pub(crate) mod shape_final_response;
+
+pub(crate) mod shape_inference_configuration;
+
+pub(crate) mod shape_knowledge_base_lookup_input;
+
+pub(crate) mod shape_knowledge_base_lookup_output;
+
+pub(crate) mod shape_post_processing_parsed_response;
+
+pub(crate) mod shape_pre_processing_parsed_response;
+
+pub(crate) mod shape_reprompt_response;
+
+pub(crate) mod shape_parameters;
+
+pub(crate) mod shape_request_body;
+
+pub(crate) mod shape_stop_sequences;
+
+pub(crate) mod shape_content_map;
+
+pub(crate) mod shape_parameter;

@@ -35,6 +35,8 @@ pub(crate) mod shape_recognize_utterance;
 
 pub(crate) mod shape_recognize_utterance_input;
 
+pub(crate) mod shape_start_conversation;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -63,9 +65,28 @@ pub(crate) mod shape_recognize_utterance_output;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_start_conversation_output;
+
+pub(crate) mod shape_start_conversation_request_event_stream;
+
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_validation_exception;
+
+pub fn parse_event_stream_error_metadata(
+    payload: &::bytes::Bytes,
+) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    // Note: HeaderMap::new() doesn't allocate
+    crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
+}
+
+pub(crate) mod shape_audio_input_event;
+
+pub(crate) mod shape_configuration_event;
+
+pub(crate) mod shape_disconnection_event;
+
+pub(crate) mod shape_dtmf_input_event;
 
 pub(crate) mod shape_interpretations;
 
@@ -73,25 +94,41 @@ pub(crate) mod shape_message;
 
 pub(crate) mod shape_messages;
 
+pub(crate) mod shape_playback_completion_event;
+
 pub(crate) mod shape_recognized_bot_member;
 
 pub(crate) mod shape_session_state;
 
 pub(crate) mod shape_string_map;
 
+pub(crate) mod shape_text_input_event;
+
 pub(crate) mod shape_active_context;
 
 pub(crate) mod shape_active_contexts_list;
 
+pub(crate) mod shape_audio_response_event;
+
 pub(crate) mod shape_dialog_action;
+
+pub(crate) mod shape_heartbeat_event;
 
 pub(crate) mod shape_image_response_card;
 
 pub(crate) mod shape_intent;
 
+pub(crate) mod shape_intent_result_event;
+
 pub(crate) mod shape_interpretation;
 
+pub(crate) mod shape_playback_interruption_event;
+
 pub(crate) mod shape_runtime_hints;
+
+pub(crate) mod shape_text_response_event;
+
+pub(crate) mod shape_transcript_event;
 
 pub(crate) mod shape_active_context_time_to_live;
 

@@ -248,7 +248,7 @@ pin_project! {
     /// 3. **From an `SdkBody` directly**: For more advanced / custom use cases, a ByteStream can be created directly
     /// from an SdkBody. **When created from an SdkBody, care must be taken to ensure retriability.** An SdkBody is retryable
     /// when constructed from in-memory data or when using [`SdkBody::retryable`](crate::body::SdkBody::retryable).
-    ///     ```no_run
+    ///     ```ignore
     ///     # use hyper_0_14 as hyper;
     ///     use aws_smithy_types::byte_stream::ByteStream;
     ///     use aws_smithy_types::body::SdkBody;

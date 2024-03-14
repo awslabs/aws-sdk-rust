@@ -1,0 +1,126 @@
+{
+    "events": [
+        {
+            "connection_id": 0,
+            "action": {
+                "Request": {
+                    "request": {
+                        "uri": "https://codecatalyst.global.api.aws/v1/spaces",
+                        "headers": {
+                            "x-amz-user-agent": [
+                                "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0"
+                            ],
+                            "authorization": [
+                                "Bearer sso_bearer_auth_test"
+                            ],
+                            "content-length": [
+                                "2"
+                            ],
+                            "user-agent": [
+                                "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0"
+                            ],
+                            "content-type": [
+                                "application/json"
+                            ],
+                            "amz-sdk-request": [
+                                "attempt=1; max=1"
+                            ]
+                        },
+                        "method": "POST"
+                    }
+                }
+            }
+        },
+        {
+            "connection_id": 0,
+            "action": {
+                "Data": {
+                    "data": {
+                        "Utf8": "{}"
+                    },
+                    "direction": "Request"
+                }
+            }
+        },
+        {
+            "connection_id": 0,
+            "action": {
+                "Eof": {
+                    "ok": true,
+                    "direction": "Request"
+                }
+            }
+        },
+        {
+            "connection_id": 0,
+            "action": {
+                "Response": {
+                    "response": {
+                        "Ok": {
+                            "status": 200,
+                            "headers": {
+                                "x-amzn-served-from": [
+                                    "us-west-2,us-west-2"
+                                ],
+                                "access-control-allow-credentials": [
+                                    "true"
+                                ],
+                                "content-type": [
+                                    "application/json; charset=utf-8"
+                                ],
+                                "strict-transport-security": [
+                                    "max-age=63072000; includeSubDomains"
+                                ],
+                                "access-control-expose-headers": [
+                                    "anti-csrftoken-a2z,x-amzn-requestid"
+                                ],
+                                "date": [
+                                    "Tue, 27 Feb 2024 00:12:28 GMT"
+                                ],
+                                "vary": [
+                                    "Origin"
+                                ],
+                                "x-amzn-requestid": [
+                                    "some-request-id"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "connection_id": 0,
+            "action": {
+                "Data": {
+                    "data": {
+                        "Utf8": "{\"nextToken\":\"\",\"items\":[{\"name\":\"somespacename\",\"regionName\":\"us-west-2\",\"displayName\":\"somedisplayname\"}]}"
+                    },
+                    "direction": "Response"
+                }
+            }
+        },
+        {
+            "connection_id": 0,
+            "action": {
+                "Data": {
+                    "data": {
+                        "Utf8": ""
+                    },
+                    "direction": "Response"
+                }
+            }
+        },
+        {
+            "connection_id": 0,
+            "action": {
+                "Eof": {
+                    "ok": true,
+                    "direction": "Response"
+                }
+            }
+        }
+    ],
+    "docs": "traffic for codecatalyst sso_bearer_auth integration test",
+    "version": "V0"
+}

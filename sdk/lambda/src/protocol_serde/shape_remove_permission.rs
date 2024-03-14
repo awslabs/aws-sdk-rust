@@ -17,13 +17,16 @@ pub fn de_remove_permission_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::operation::remove_permission::RemovePermissionError::ResourceNotFoundException({
+        "InvalidParameterValueException" => crate::operation::remove_permission::RemovePermissionError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -48,20 +51,13 @@ pub fn de_remove_permission_http_error(
             }
             tmp
         }),
-        "TooManyRequestsException" => crate::operation::remove_permission::RemovePermissionError::TooManyRequestsException({
+        "ResourceNotFoundException" => crate::operation::remove_permission::RemovePermissionError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
-                        crate::operation::remove_permission::RemovePermissionError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
                 let output = output.meta(generic);
                 output.build()
             };
@@ -85,16 +81,20 @@ pub fn de_remove_permission_http_error(
             }
             tmp
         }),
-        "InvalidParameterValueException" => crate::operation::remove_permission::RemovePermissionError::InvalidParameterValueException({
+        "TooManyRequestsException" => crate::operation::remove_permission::RemovePermissionError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::remove_permission::RemovePermissionError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::remove_permission::RemovePermissionError::unhandled(
+                            "Failed to parse retryAfterSeconds from header `Retry-After",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };

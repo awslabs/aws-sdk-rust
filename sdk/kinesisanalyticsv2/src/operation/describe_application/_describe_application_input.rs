@@ -5,7 +5,7 @@
 pub struct DescribeApplicationInput {
     /// <p>The name of the application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
-    /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
     pub include_additional_details: ::std::option::Option<bool>,
 }
 impl DescribeApplicationInput {
@@ -13,7 +13,7 @@ impl DescribeApplicationInput {
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
     pub fn include_additional_details(&self) -> ::std::option::Option<bool> {
         self.include_additional_details
     }
@@ -48,17 +48,17 @@ impl DescribeApplicationInputBuilder {
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
-    /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
     pub fn include_additional_details(mut self, input: bool) -> Self {
         self.include_additional_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
     pub fn set_include_additional_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_additional_details = input;
         self
     }
-    /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
     pub fn get_include_additional_details(&self) -> &::std::option::Option<bool> {
         &self.include_additional_details
     }

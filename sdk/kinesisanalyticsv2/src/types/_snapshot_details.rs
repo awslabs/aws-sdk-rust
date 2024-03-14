@@ -12,6 +12,8 @@ pub struct SnapshotDetails {
     pub application_version_id: i64,
     /// <p>The timestamp of the application snapshot.</p>
     pub snapshot_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Flink Runtime for the application snapshot.</p>
+    pub runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
 }
 impl SnapshotDetails {
     /// <p>The identifier for the application snapshot.</p>
@@ -31,6 +33,10 @@ impl SnapshotDetails {
     pub fn snapshot_creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.snapshot_creation_timestamp.as_ref()
     }
+    /// <p>The Flink Runtime for the application snapshot.</p>
+    pub fn runtime_environment(&self) -> ::std::option::Option<&crate::types::RuntimeEnvironment> {
+        self.runtime_environment.as_ref()
+    }
 }
 impl SnapshotDetails {
     /// Creates a new builder-style object to manufacture [`SnapshotDetails`](crate::types::SnapshotDetails).
@@ -47,6 +53,7 @@ pub struct SnapshotDetailsBuilder {
     pub(crate) snapshot_status: ::std::option::Option<crate::types::SnapshotStatus>,
     pub(crate) application_version_id: ::std::option::Option<i64>,
     pub(crate) snapshot_creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
 }
 impl SnapshotDetailsBuilder {
     /// <p>The identifier for the application snapshot.</p>
@@ -108,6 +115,20 @@ impl SnapshotDetailsBuilder {
     pub fn get_snapshot_creation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.snapshot_creation_timestamp
     }
+    /// <p>The Flink Runtime for the application snapshot.</p>
+    pub fn runtime_environment(mut self, input: crate::types::RuntimeEnvironment) -> Self {
+        self.runtime_environment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Flink Runtime for the application snapshot.</p>
+    pub fn set_runtime_environment(mut self, input: ::std::option::Option<crate::types::RuntimeEnvironment>) -> Self {
+        self.runtime_environment = input;
+        self
+    }
+    /// <p>The Flink Runtime for the application snapshot.</p>
+    pub fn get_runtime_environment(&self) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
+        &self.runtime_environment
+    }
     /// Consumes the builder and constructs a [`SnapshotDetails`](crate::types::SnapshotDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`snapshot_name`](crate::types::builders::SnapshotDetailsBuilder::snapshot_name)
@@ -134,6 +155,7 @@ impl SnapshotDetailsBuilder {
                 )
             })?,
             snapshot_creation_timestamp: self.snapshot_creation_timestamp,
+            runtime_environment: self.runtime_environment,
         })
     }
 }

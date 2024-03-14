@@ -6,6 +6,21 @@ pub fn ser_grid_configuration(
     if let Some(var_1) = &input.featured_participant_attribute {
         object.key("featuredParticipantAttribute").string(var_1.as_str());
     }
+    if input.omit_stopped_video {
+        object.key("omitStoppedVideo").boolean(input.omit_stopped_video);
+    }
+    if let Some(var_2) = &input.video_aspect_ratio {
+        object.key("videoAspectRatio").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.video_fill_mode {
+        object.key("videoFillMode").string(var_3.as_str());
+    }
+    if input.grid_gap != 0 {
+        object.key("gridGap").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.grid_gap).into()),
+        );
+    }
     Ok(())
 }
 
@@ -28,6 +43,30 @@ where
                             builder = builder.set_featured_participant_attribute(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "omitStoppedVideo" => {
+                            builder = builder.set_omit_stopped_video(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "videoAspectRatio" => {
+                            builder = builder.set_video_aspect_ratio(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VideoAspectRatio::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "videoFillMode" => {
+                            builder = builder.set_video_fill_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VideoFillMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "gridGap" => {
+                            builder = builder.set_grid_gap(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

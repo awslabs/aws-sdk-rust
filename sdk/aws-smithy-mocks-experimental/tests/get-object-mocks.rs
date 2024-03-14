@@ -16,7 +16,7 @@ use aws_smithy_types::error::ErrorMetadata;
 
 use aws_smithy_mocks_experimental::{mock, MockResponseInterceptor};
 
-const S3_NO_SUCH_KEY: &'static str = r#"<?xml version="1.0" encoding="UTF-8"?>
+const S3_NO_SUCH_KEY: &str = r#"<?xml version="1.0" encoding="UTF-8"?>
 <Error>
   <Code>NoSuchKey</Code>
   <Message>The resource you requested does not exist</Message>

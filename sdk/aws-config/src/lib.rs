@@ -214,7 +214,10 @@ mod loader {
     use crate::meta::region::ProvideRegion;
     use crate::profile::profile_file::ProfileFiles;
     use crate::provider_config::ProviderConfig;
-    use aws_credential_types::provider::{ProvideCredentials, SharedCredentialsProvider};
+    use aws_credential_types::provider::{
+        token::{ProvideToken, SharedTokenProvider},
+        ProvideCredentials, SharedCredentialsProvider,
+    };
     use aws_credential_types::Credentials;
     use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
     use aws_smithy_async::time::{SharedTimeSource, TimeSource};
@@ -253,6 +256,7 @@ mod loader {
         app_name: Option<AppName>,
         identity_cache: Option<SharedIdentityCache>,
         credentials_provider: CredentialsProviderOption,
+        token_provider: Option<SharedTokenProvider>,
         endpoint_url: Option<String>,
         region: Option<Box<dyn ProvideRegion>>,
         retry_config: Option<RetryConfig>,
@@ -490,7 +494,36 @@ mod loader {
 
         /// Set test credentials for use when signing requests
         pub fn test_credentials(self) -> Self {
-            self.credentials_provider(Credentials::for_tests())
+            #[allow(unused_mut)]
+            let mut ret = self.credentials_provider(Credentials::for_tests());
+            #[cfg(all(feature = "sso", feature = "test-util"))]
+            {
+                use aws_smithy_runtime_api::client::identity::http::Token;
+                ret = ret.token_provider(Token::for_tests());
+            }
+            ret
+        }
+
+        /// Override the access token provider used to build [`SdkConfig`].
+        ///
+        /// # Examples
+        ///
+        /// Override the token provider but load the default value for region:
+        /// ```no_run
+        /// # use aws_credential_types::Token;
+        /// # fn create_my_token_provider() -> Token {
+        /// #     Token::new("example", None)
+        /// # }
+        /// # async fn create_config() {
+        /// let config = aws_config::from_env()
+        ///     .token_provider(create_my_token_provider())
+        ///     .load()
+        ///     .await;
+        /// # }
+        /// ```
+        pub fn token_provider(mut self, token_provider: impl ProvideToken + 'static) -> Self {
+            self.token_provider = Some(SharedTokenProvider::new(token_provider));
+            self
         }
 
         /// Override the name of the app used to build [`SdkConfig`].
@@ -754,6 +787,24 @@ mod loader {
                 CredentialsProviderOption::ExplicitlyUnset => None,
             };
 
+            let token_provider = match self.token_provider {
+                Some(provider) => Some(provider),
+                None => {
+                    #[cfg(feature = "sso")]
+                    {
+                        let mut builder =
+                            crate::default_provider::token::DefaultTokenChain::builder()
+                                .configure(conf.clone());
+                        builder.set_region(region.clone());
+                        Some(SharedTokenProvider::new(builder.build().await))
+                    }
+                    #[cfg(not(feature = "sso"))]
+                    {
+                        None
+                    }
+                }
+            };
+
             let mut builder = SdkConfig::builder()
                 .region(region)
                 .retry_config(retry_config)
@@ -765,6 +816,7 @@ mod loader {
             builder.set_app_name(app_name);
             builder.set_identity_cache(self.identity_cache);
             builder.set_credentials_provider(credentials_provider);
+            builder.set_token_provider(token_provider);
             builder.set_sleep_impl(sleep_impl);
             builder.set_endpoint_url(self.endpoint_url);
             builder.set_use_fips(use_fips);

@@ -11,7 +11,7 @@ use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::AuthSchemeEndpointConfig;
 use aws_smithy_runtime_api::client::identity::Identity;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
-use aws_smithy_types::config_bag::{Storable, StoreReplace};
+use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::Document;
 use aws_types::region::{Region, SigningRegion, SigningRegionSet};
 use aws_types::SigningName;
@@ -73,6 +73,52 @@ impl Default for SigningOptions {
             expires_in: None,
         }
     }
+}
+
+pub(crate) type SessionTokenNameOverrideFn = Box<
+    dyn Fn(&SigningSettings, &ConfigBag) -> Result<Option<&'static str>, BoxError>
+        + Send
+        + Sync
+        + 'static,
+>;
+
+/// Custom config that provides the alternative session token name for [`SigningSettings`]
+pub struct SigV4SessionTokenNameOverride {
+    name_override: SessionTokenNameOverrideFn,
+}
+
+impl SigV4SessionTokenNameOverride {
+    /// Creates a new `SigV4SessionTokenNameOverride`
+    pub fn new<F>(name_override: F) -> Self
+    where
+        F: Fn(&SigningSettings, &ConfigBag) -> Result<Option<&'static str>, BoxError>
+            + Send
+            + Sync
+            + 'static,
+    {
+        Self {
+            name_override: Box::new(name_override),
+        }
+    }
+
+    /// Provides a session token name override
+    pub fn name_override(
+        &self,
+        settings: &SigningSettings,
+        config_bag: &ConfigBag,
+    ) -> Result<Option<&'static str>, BoxError> {
+        (self.name_override)(settings, config_bag)
+    }
+}
+
+impl fmt::Debug for SigV4SessionTokenNameOverride {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("SessionTokenNameOverride").finish()
+    }
+}
+
+impl Storable for SigV4SessionTokenNameOverride {
+    type Storer = StoreReplace<Self>;
 }
 
 /// SigV4 signing configuration for an operation

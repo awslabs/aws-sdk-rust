@@ -137,12 +137,12 @@ impl DiscoverInputSchemaFluentBuilder {
     pub fn get_service_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_execution_role()
     }
-    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
+    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source for discovery purposes.</p>
     pub fn input_starting_position_configuration(mut self, input: crate::types::InputStartingPositionConfiguration) -> Self {
         self.inner = self.inner.input_starting_position_configuration(input);
         self
     }
-    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
+    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source for discovery purposes.</p>
     pub fn set_input_starting_position_configuration(
         mut self,
         input: ::std::option::Option<crate::types::InputStartingPositionConfiguration>,
@@ -150,7 +150,7 @@ impl DiscoverInputSchemaFluentBuilder {
         self.inner = self.inner.set_input_starting_position_configuration(input);
         self
     }
-    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source discovery purposes.</p>
+    /// <p>The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source for discovery purposes.</p>
     pub fn get_input_starting_position_configuration(&self) -> &::std::option::Option<crate::types::InputStartingPositionConfiguration> {
         self.inner.get_input_starting_position_configuration()
     }

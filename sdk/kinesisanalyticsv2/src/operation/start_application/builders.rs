@@ -22,7 +22,7 @@ impl StartApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `StartApplication`.
 ///
-/// <p>Starts the specified Kinesis Data Analytics application. After creating an application, you must exclusively call this operation to start your application.</p>
+/// <p>Starts the specified Managed Service for Apache Flink application. After creating an application, you must exclusively call this operation to start your application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl StartApplicationFluentBuilder {
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }
-    /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    /// <p>Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.</p>
     pub fn run_configuration(mut self, input: crate::types::RunConfiguration) -> Self {
         self.inner = self.inner.run_configuration(input);
         self
     }
-    /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    /// <p>Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.</p>
     pub fn set_run_configuration(mut self, input: ::std::option::Option<crate::types::RunConfiguration>) -> Self {
         self.inner = self.inner.set_run_configuration(input);
         self
     }
-    /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    /// <p>Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.</p>
     pub fn get_run_configuration(&self) -> &::std::option::Option<crate::types::RunConfiguration> {
         self.inner.get_run_configuration()
     }

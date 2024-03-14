@@ -60,6 +60,7 @@ impl PutBucketTagging {
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
         runtime_plugins = runtime_plugins.with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
+            crate::s3_express::auth::SCHEME_ID,
             ::aws_runtime::auth::sigv4::SCHEME_ID,
             #[cfg(feature = "sigv4a")]
             {
@@ -96,6 +97,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutBuck
         ));
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("PutBucketTagging", "s3"));
+        cfg.store_put(crate::s3_express::checksum::provide_default_checksum_algorithm());
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = false;
         signing_options.content_sha256_header = true;

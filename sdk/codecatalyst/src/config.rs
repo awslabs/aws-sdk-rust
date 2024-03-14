@@ -112,13 +112,6 @@ impl Config {
     pub fn region(&self) -> ::std::option::Option<&crate::config::Region> {
         self.config.load::<crate::config::Region>()
     }
-    /// This function was intended to be removed, and has been broken since release-2023-11-15 as it always returns a `None`. Do not use.
-    #[deprecated(
-        note = "This function was intended to be removed, and has been broken since release-2023-11-15 as it always returns a `None`. Do not use."
-    )]
-    pub fn credentials_provider(&self) -> Option<crate::config::SharedCredentialsProvider> {
-        ::std::option::Option::None
-    }
 }
 /// Builder for creating a `Config`.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -142,6 +135,21 @@ impl Builder {
     /// Constructs a config builder.
     pub fn new() -> Self {
         Self::default()
+    }
+    /// Constructs a config builder from the given `config_bag`, setting only fields stored in the config bag,
+    /// but not those in runtime components.
+    #[allow(unused)]
+    pub(crate) fn from_config_bag(config_bag: &::aws_smithy_types::config_bag::ConfigBag) -> Self {
+        let mut builder = Self::new();
+        builder.set_stalled_stream_protection(config_bag.load::<crate::config::StalledStreamProtectionConfig>().cloned());
+        builder.set_retry_config(config_bag.load::<::aws_smithy_types::retry::RetryConfig>().cloned());
+        builder.set_timeout_config(config_bag.load::<::aws_smithy_types::timeout::TimeoutConfig>().cloned());
+        builder.set_retry_partition(config_bag.load::<::aws_smithy_runtime::client::retries::RetryPartition>().cloned());
+        builder.set_app_name(config_bag.load::<::aws_types::app_name::AppName>().cloned());
+        builder.set_endpoint_url(config_bag.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()));
+        builder.set_use_fips(config_bag.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0));
+        builder.set_region(config_bag.load::<crate::config::Region>().cloned());
+        builder
     }
     /// Set the [`StalledStreamProtectionConfig`](crate::config::StalledStreamProtectionConfig)
     /// to configure protection for stalled streams.
@@ -250,7 +258,9 @@ impl Builder {
     pub fn bearer_token_resolver(mut self, bearer_token_resolver: impl crate::config::ResolveIdentity + 'static) -> Self {
         self.runtime_components.set_identity_resolver(
             ::aws_smithy_runtime_api::client::auth::http::HTTP_BEARER_AUTH_SCHEME_ID,
-            ::aws_smithy_runtime_api::client::identity::SharedIdentityResolver::new(bearer_token_resolver),
+            ::aws_smithy_runtime_api::shared::IntoShared::<::aws_smithy_runtime_api::client::identity::SharedIdentityResolver>::into_shared(
+                bearer_token_resolver,
+            ),
         );
         self
     }
@@ -875,6 +885,36 @@ impl Builder {
         self.config.store_or_unset(app_name);
         self
     }
+    /// Sets the access token provider for this service
+    ///
+    /// Note: the [`Self::bearer_token`] and [`Self::bearer_token_resolver`] methods are
+    /// equivalent to this method, but take the [`Token`] and [`ResolveIdentity`] types
+    /// respectively.
+    ///
+    /// [`Token`]: crate::config::Token
+    /// [`ResolveIdentity`]: crate::config::ResolveIdentity
+    pub fn token_provider(mut self, token_provider: impl crate::config::ProvideToken + 'static) -> Self {
+        self.set_token_provider(::std::option::Option::Some(::aws_smithy_runtime_api::shared::IntoShared::<
+            crate::config::SharedTokenProvider,
+        >::into_shared(token_provider)));
+        self
+    }
+
+    /// Sets the access token provider for this service
+    ///
+    /// Note: the [`Self::bearer_token`] and [`Self::bearer_token_resolver`] methods are
+    /// equivalent to this method, but take the [`Token`] and [`ResolveIdentity`] types
+    /// respectively.
+    ///
+    /// [`Token`]: crate::config::Token
+    /// [`ResolveIdentity`]: crate::config::ResolveIdentity
+    pub fn set_token_provider(&mut self, token_provider: ::std::option::Option<crate::config::SharedTokenProvider>) -> &mut Self {
+        if let Some(token_provider) = token_provider {
+            self.runtime_components
+                .set_identity_resolver(::aws_smithy_runtime_api::client::auth::http::HTTP_BEARER_AUTH_SCHEME_ID, token_provider);
+        }
+        self
+    }
     /// Overrides the default invocation ID generator.
     ///
     /// The invocation ID generator generates ID values for the `amz-sdk-invocation-id` header. By default, this will be a random UUID. Overriding it may be useful in tests that examine the HTTP request and need to be deterministic.
@@ -940,21 +980,6 @@ impl Builder {
     /// Sets the AWS region to use when making requests.
     pub fn set_region(&mut self, region: ::std::option::Option<crate::config::Region>) -> &mut Self {
         self.config.store_or_unset(region);
-        self
-    }
-    /// Sets the credentials provider for this service
-    pub fn credentials_provider(mut self, credentials_provider: impl crate::config::ProvideCredentials + 'static) -> Self {
-        self.set_credentials_provider(::std::option::Option::Some(crate::config::SharedCredentialsProvider::new(
-            credentials_provider,
-        )));
-        self
-    }
-    /// Sets the credentials provider for this service
-    pub fn set_credentials_provider(&mut self, credentials_provider: ::std::option::Option<crate::config::SharedCredentialsProvider>) -> &mut Self {
-        if let Some(credentials_provider) = credentials_provider {
-            self.runtime_components
-                .set_identity_resolver(::aws_runtime::auth::sigv4::SCHEME_ID, credentials_provider);
-        }
         self
     }
     /// Sets the [`behavior major version`](crate::config::BehaviorVersion).
@@ -1055,9 +1080,7 @@ impl Builder {
             ::aws_smithy_async::time::StaticTimeSource::new(::std::time::UNIX_EPOCH + ::std::time::Duration::from_secs(1234567890)),
         )));
         self.config.store_put(::aws_runtime::user_agent::AwsUserAgent::for_tests());
-        self.set_credentials_provider(Some(crate::config::SharedCredentialsProvider::new(
-            ::aws_credential_types::Credentials::for_tests(),
-        )));
+        self.set_token_provider(Some(crate::config::SharedTokenProvider::new(::aws_credential_types::Token::for_tests())));
         self.behavior_version = ::std::option::Option::Some(crate::config::BehaviorVersion::latest());
         self
     }
@@ -1116,9 +1139,6 @@ impl ServiceRuntimePlugin {
         runtime_components.push_interceptor(::aws_runtime::user_agent::UserAgentInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::invocation_id::InvocationIdInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new());
-        runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
-            ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
-        ));
         Self { config, runtime_components }
     }
 }
@@ -1192,12 +1212,9 @@ pub use ::aws_smithy_runtime::client::identity::IdentityCache;
 pub use ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 pub use ::aws_smithy_types::config_bag::ConfigBag;
 
-pub use ::aws_credential_types::Credentials;
-
 impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
     fn from(input: &::aws_types::sdk_config::SdkConfig) -> Self {
         let mut builder = Builder::default();
-        builder.set_credentials_provider(input.credentials_provider());
         builder = builder.region(input.region().cloned());
         builder.set_use_fips(input.use_fips());
         builder.set_endpoint_url(input.endpoint_url().map(|s| s.to_string()));
@@ -1217,6 +1234,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         if let Some(cache) = input.identity_cache() {
             builder.set_identity_cache(cache);
         }
+        builder.set_token_provider(input.token_provider());
         builder.set_app_name(input.app_name().cloned());
 
         builder
@@ -1259,7 +1277,7 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
                                 .with_runtime_components(config.runtime_components.clone())
                         )
                         // codegen config
-                        .with_client_plugin(crate::config::ServiceRuntimePlugin::new(config))
+                        .with_client_plugin(crate::config::ServiceRuntimePlugin::new(config.clone()))
                         .with_client_plugin(::aws_smithy_runtime::client::auth::no_auth::NoAuthRuntimePlugin::new());
 
     for plugin in configured_plugins {
@@ -1288,8 +1306,6 @@ pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
 
 pub use ::aws_types::region::Region;
 
-pub use ::aws_credential_types::provider::SharedCredentialsProvider;
-
 pub use ::aws_smithy_runtime_api::client::http::HttpClient;
 
 pub use ::aws_smithy_runtime_api::shared::IntoShared;
@@ -1304,7 +1320,9 @@ pub use ::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity;
 
 pub use ::aws_smithy_runtime_api::client::interceptors::Intercept;
 
-pub use ::aws_credential_types::provider::ProvideCredentials;
+pub use ::aws_credential_types::provider::token::ProvideToken;
+
+pub use ::aws_credential_types::provider::token::SharedTokenProvider;
 
 pub use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 

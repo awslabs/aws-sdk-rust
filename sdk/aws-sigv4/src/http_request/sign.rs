@@ -297,7 +297,10 @@ fn calculate_signing_params<'a>(
 
     if let Some(security_token) = creds.session_token() {
         signing_params.push((
-            param::X_AMZ_SECURITY_TOKEN,
+            params
+                .settings()
+                .session_token_name_override
+                .unwrap_or(param::X_AMZ_SECURITY_TOKEN),
             Cow::Owned(security_token.to_string()),
         ));
     }
@@ -368,7 +371,10 @@ fn calculate_signing_headers<'a>(
             if let Some(security_token) = creds.session_token() {
                 add_header(
                     &mut headers,
-                    header::X_AMZ_SECURITY_TOKEN,
+                    params
+                        .settings
+                        .session_token_name_override
+                        .unwrap_or(header::X_AMZ_SECURITY_TOKEN),
                     security_token,
                     true,
                 );

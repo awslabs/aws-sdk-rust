@@ -22,7 +22,7 @@ impl DescribeApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeApplication`.
 ///
-/// <p>Returns information about a specific Kinesis Data Analytics application.</p>
+/// <p>Returns information about a specific Managed Service for Apache Flink application.</p>
 /// <p>If you want to retrieve a list of all applications in your account, use the <code>ListApplications</code> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeApplicationFluentBuilder {
@@ -123,17 +123,17 @@ impl DescribeApplicationFluentBuilder {
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }
-    /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
     pub fn include_additional_details(mut self, input: bool) -> Self {
         self.inner = self.inner.include_additional_details(input);
         self
     }
-    /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
     pub fn set_include_additional_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_additional_details(input);
         self
     }
-    /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
+    /// <p>Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.</p>
     pub fn get_include_additional_details(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_additional_details()
     }

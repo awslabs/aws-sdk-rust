@@ -3,21 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::profile::parser::parse::{parse_profile_file, to_ascii_lowercase};
-use crate::profile::parser::source::Source;
-use crate::profile::profile_file::ProfileFiles;
+use self::parse::parse_profile_file;
+use self::section::{Section, SsoSession};
+use self::source::Source;
+use super::profile_file::ProfileFiles;
+use crate::profile::parser::section::Properties;
 use aws_types::os_shim_internal::{Env, Fs};
 use std::borrow::Cow;
 use std::collections::HashMap;
-use std::error::Error;
-use std::fmt::{Display, Formatter};
-use std::path::PathBuf;
-use std::sync::Arc;
 
+pub use self::error::ProfileFileLoadError;
 pub use self::parse::ProfileParseError;
+pub use self::section::Profile;
+pub use self::section::Property;
 
+pub(crate) use self::section::PropertiesKey;
+
+mod error;
 mod normalize;
 mod parse;
+mod section;
 mod source;
 
 /// Read & parse AWS config files
@@ -75,6 +80,7 @@ pub struct ProfileSet {
     profiles: HashMap<String, Profile>,
     selected_profile: Cow<'static, str>,
     sso_sessions: HashMap<String, SsoSession>,
+    other_sections: Properties,
 }
 
 impl ProfileSet {
@@ -153,6 +159,12 @@ impl ProfileSet {
         self.sso_sessions.get(name)
     }
 
+    /// Returns a struct allowing access to other sections in the profile config
+    #[allow(dead_code)] // Leaving this hidden for now.
+    pub(crate) fn other_sections(&self) -> &Properties {
+        &self.other_sections
+    }
+
     fn parse(source: Source) -> Result<Self, ProfileParseError> {
         let mut base = ProfileSet::empty();
         base.selected_profile = source.profile;
@@ -168,225 +180,15 @@ impl ProfileSet {
             profiles: Default::default(),
             selected_profile: "default".into(),
             sso_sessions: Default::default(),
+            other_sections: Default::default(),
         }
     }
-}
-
-/// Represents a top-level section (e.g., `[profile name]`) in a config file.
-pub(crate) trait Section {
-    /// The name of this section
-    fn name(&self) -> &str;
-
-    /// Returns all the properties in this section
-    fn properties(&self) -> &HashMap<String, Property>;
-
-    /// Returns a reference to the property named `name`
-    fn get(&self, name: &str) -> Option<&str>;
-
-    /// True if there are no properties in this section.
-    fn is_empty(&self) -> bool;
-
-    /// Insert a property into a section
-    fn insert(&mut self, name: String, value: Property);
-}
-
-#[derive(Debug, Clone, Eq, PartialEq)]
-struct SectionInner {
-    name: String,
-    properties: HashMap<String, Property>,
-}
-
-impl Section for SectionInner {
-    fn name(&self) -> &str {
-        &self.name
-    }
-
-    fn properties(&self) -> &HashMap<String, Property> {
-        &self.properties
-    }
-
-    fn get(&self, name: &str) -> Option<&str> {
-        self.properties
-            .get(to_ascii_lowercase(name).as_ref())
-            .map(|prop| prop.value())
-    }
-
-    fn is_empty(&self) -> bool {
-        self.properties.is_empty()
-    }
-
-    fn insert(&mut self, name: String, value: Property) {
-        self.properties
-            .insert(to_ascii_lowercase(&name).into(), value);
-    }
-}
-
-/// An individual configuration profile
-///
-/// An AWS config may be composed of a multiple named profiles within a [`ProfileSet`].
-#[derive(Debug, Clone, Eq, PartialEq)]
-pub struct Profile(SectionInner);
-
-impl Profile {
-    /// Create a new profile
-    pub fn new(name: impl Into<String>, properties: HashMap<String, Property>) -> Self {
-        Self(SectionInner {
-            name: name.into(),
-            properties,
-        })
-    }
-
-    /// The name of this profile
-    pub fn name(&self) -> &str {
-        self.0.name()
-    }
-
-    /// Returns a reference to the property named `name`
-    pub fn get(&self, name: &str) -> Option<&str> {
-        self.0.get(name)
-    }
-}
-
-impl Section for Profile {
-    fn name(&self) -> &str {
-        self.0.name()
-    }
-
-    fn properties(&self) -> &HashMap<String, Property> {
-        self.0.properties()
-    }
-
-    fn get(&self, name: &str) -> Option<&str> {
-        self.0.get(name)
-    }
-
-    fn is_empty(&self) -> bool {
-        self.0.is_empty()
-    }
-
-    fn insert(&mut self, name: String, value: Property) {
-        self.0.insert(name, value)
-    }
-}
-
-/// A `[sso-session name]` section in the config.
-#[derive(Debug, Clone, Eq, PartialEq)]
-pub(crate) struct SsoSession(SectionInner);
-
-impl SsoSession {
-    /// Create a new SSO session section.
-    pub(crate) fn new(name: impl Into<String>, properties: HashMap<String, Property>) -> Self {
-        Self(SectionInner {
-            name: name.into(),
-            properties,
-        })
-    }
-
-    /// Returns a reference to the property named `name`
-    pub(crate) fn get(&self, name: &str) -> Option<&str> {
-        self.0.get(name)
-    }
-}
-
-impl Section for SsoSession {
-    fn name(&self) -> &str {
-        self.0.name()
-    }
-
-    fn properties(&self) -> &HashMap<String, Property> {
-        self.0.properties()
-    }
-
-    fn get(&self, name: &str) -> Option<&str> {
-        self.0.get(name)
-    }
-
-    fn is_empty(&self) -> bool {
-        self.0.is_empty()
-    }
-
-    fn insert(&mut self, name: String, value: Property) {
-        self.0.insert(name, value)
-    }
-}
-
-/// Key-Value property pair
-#[derive(Debug, Clone, Eq, PartialEq)]
-pub struct Property {
-    key: String,
-    value: String,
-}
-
-impl Property {
-    /// Value of this property
-    pub fn value(&self) -> &str {
-        &self.value
-    }
-
-    /// Name of this property
-    pub fn key(&self) -> &str {
-        &self.key
-    }
-
-    /// Creates a new property
-    pub fn new(key: String, value: String) -> Self {
-        Property { key, value }
-    }
-}
-
-/// Failed to read or parse the profile file(s)
-#[derive(Debug, Clone)]
-pub enum ProfileFileLoadError {
-    /// The profile could not be parsed
-    #[non_exhaustive]
-    ParseError(ProfileParseError),
-
-    /// Attempt to read the AWS config file (`~/.aws/config` by default) failed with a filesystem error.
-    #[non_exhaustive]
-    CouldNotReadFile(CouldNotReadProfileFile),
-}
-
-impl Display for ProfileFileLoadError {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        match self {
-            ProfileFileLoadError::ParseError(_err) => {
-                write!(f, "could not parse profile file")
-            }
-            ProfileFileLoadError::CouldNotReadFile(err) => {
-                write!(f, "could not read file `{}`", err.path.display())
-            }
-        }
-    }
-}
-
-impl Error for ProfileFileLoadError {
-    fn source(&self) -> Option<&(dyn Error + 'static)> {
-        match self {
-            ProfileFileLoadError::ParseError(err) => Some(err),
-            ProfileFileLoadError::CouldNotReadFile(details) => Some(&details.cause),
-        }
-    }
-}
-
-impl From<ProfileParseError> for ProfileFileLoadError {
-    fn from(err: ProfileParseError) -> Self {
-        ProfileFileLoadError::ParseError(err)
-    }
-}
-
-/// An error encountered while reading the AWS config file
-#[derive(Debug, Clone)]
-pub struct CouldNotReadProfileFile {
-    pub(crate) path: PathBuf,
-    pub(crate) cause: Arc<std::io::Error>,
 }
 
 #[cfg(test)]
 mod test {
-    use crate::profile::parser::{
-        source::{File, Source},
-        Section,
-    };
+    use super::section::Section;
+    use super::source::{File, Source};
     use crate::profile::profile_file::ProfileFileKind;
     use crate::profile::ProfileSet;
     use arbitrary::{Arbitrary, Unstructured};
@@ -492,7 +294,7 @@ mod test {
                     section
                         .properties()
                         .values()
-                        .map(|prop| (prop.key.clone(), prop.value.clone()))
+                        .map(|prop| (prop.key().to_owned(), prop.value().to_owned()))
                         .collect(),
                 )
             })

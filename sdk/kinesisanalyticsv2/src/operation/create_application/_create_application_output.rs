@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationOutput {
-    /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
+    /// <p>In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a response with details of the application it created.</p>
     pub application_detail: ::std::option::Option<crate::types::ApplicationDetail>,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutput {
-    /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
+    /// <p>In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a response with details of the application it created.</p>
     pub fn application_detail(&self) -> ::std::option::Option<&crate::types::ApplicationDetail> {
         self.application_detail.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct CreateApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateApplicationOutputBuilder {
-    /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
+    /// <p>In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a response with details of the application it created.</p>
     /// This field is required.
     pub fn application_detail(mut self, input: crate::types::ApplicationDetail) -> Self {
         self.application_detail = ::std::option::Option::Some(input);
         self
     }
-    /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
+    /// <p>In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a response with details of the application it created.</p>
     pub fn set_application_detail(mut self, input: ::std::option::Option<crate::types::ApplicationDetail>) -> Self {
         self.application_detail = input;
         self
     }
-    /// <p>In response to your <code>CreateApplication</code> request, Kinesis Data Analytics returns a response with details of the application it created.</p>
+    /// <p>In response to your <code>CreateApplication</code> request, Managed Service for Apache Flink returns a response with details of the application it created.</p>
     pub fn get_application_detail(&self) -> &::std::option::Option<crate::types::ApplicationDetail> {
         &self.application_detail
     }
