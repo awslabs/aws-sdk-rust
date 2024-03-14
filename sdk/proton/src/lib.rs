@@ -114,7 +114,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-proton = "1.16.0"
+//! aws-sdk-proton = "1.17.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
