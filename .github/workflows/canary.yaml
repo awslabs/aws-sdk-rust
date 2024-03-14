@@ -7,7 +7,7 @@ on:
     branches:
     - 'canary*'
 env:
-  tool_rust_version: 1.70.0
+  tool_rust_version: 1.74.1
 
 jobs:
   generate-canary-matrix:
