@@ -9,6 +9,12 @@ pub fn ser_layout_configuration(
         crate::protocol_serde::shape_grid_configuration::ser_grid_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.pip {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("pip").start_object();
+        crate::protocol_serde::shape_pip_configuration::ser_pip_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +35,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "grid" => {
                             builder = builder.set_grid(crate::protocol_serde::shape_grid_configuration::de_grid_configuration(tokens)?);
+                        }
+                        "pip" => {
+                            builder = builder.set_pip(crate::protocol_serde::shape_pip_configuration::de_pip_configuration(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -1,6 +1,7 @@
 allowed_external_types = [
     "aws_credential_types::cache::CredentialsCache",
-    "aws_credential_types::provider::SharedCredentialsProvider",
+    "aws_credential_types::provider::credentials::SharedCredentialsProvider",
+    "aws_credential_types::provider::token::SharedTokenProvider",
     "aws_smithy_async::rt::sleep::AsyncSleep",
     "aws_smithy_async::rt::sleep::SharedAsyncSleep",
     "aws_smithy_async::time::SharedTimeSource",

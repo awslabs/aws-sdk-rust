@@ -19,6 +19,8 @@ pub use crate::types::_channel_destination_configuration::ChannelDestinationConf
 
 pub use crate::types::_layout_configuration::LayoutConfigurationBuilder;
 
+pub use crate::types::_pip_configuration::PipConfigurationBuilder;
+
 pub use crate::types::_grid_configuration::GridConfigurationBuilder;
 
 pub use crate::types::_storage_configuration_summary::StorageConfigurationSummaryBuilder;

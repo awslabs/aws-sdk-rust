@@ -53,6 +53,33 @@
       }
     },
     {
+      "docs": "ecs task role",
+      "env": {
+        "AWS_CONTAINER_CREDENTIALS_FULL_URI": "http://169.254.170.2/credentials"
+      },
+      "result": {
+        "Ok": "http://169.254.170.2/credentials"
+      }
+    },
+    {
+      "docs": "eks pod identity ipv4",
+      "env": {
+        "AWS_CONTAINER_CREDENTIALS_FULL_URI": "http://169.254.170.23/v1/credentials"
+      },
+      "result": {
+        "Ok": "http://169.254.170.23/v1/credentials"
+      }
+    },
+    {
+      "docs": "eks pod identity ipv6",
+      "env": {
+        "AWS_CONTAINER_CREDENTIALS_FULL_URI": "http://[fd00:ec2::23]/v1/credentials"
+      },
+      "result": {
+        "Ok": "http://[fd00:ec2::23]/v1/credentials"
+      }
+    },
+    {
       "docs": "relative takes precedence over full",
       "env": {
         "AWS_CONTAINER_CREDENTIALS_FULL_URI": "http://localhost:8080/credentials",

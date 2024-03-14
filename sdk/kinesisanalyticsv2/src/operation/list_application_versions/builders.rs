@@ -24,7 +24,7 @@ impl ListApplicationVersionsInputBuilder {
 ///
 /// <p>Lists all the versions for the specified application, including versions that were rolled back. The response also includes a summary of the configuration associated with each version.</p>
 /// <p>To get the complete description of a specific application version, invoke the <code>DescribeApplicationVersion</code> operation.</p><note>
-/// <p>This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
+/// <p>This operation is supported only for Managed Service for Apache Flink.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationVersionsFluentBuilder {

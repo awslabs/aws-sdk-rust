@@ -14,7 +14,7 @@ pub struct ApplicationSummary {
     pub application_version_id: i64,
     /// <p>The runtime environment for the application.</p>
     pub runtime_environment: crate::types::RuntimeEnvironment,
-    /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
+    /// <p>For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub application_mode: ::std::option::Option<crate::types::ApplicationMode>,
 }
 impl ApplicationSummary {
@@ -40,7 +40,7 @@ impl ApplicationSummary {
     pub fn runtime_environment(&self) -> &crate::types::RuntimeEnvironment {
         &self.runtime_environment
     }
-    /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
+    /// <p>For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub fn application_mode(&self) -> ::std::option::Option<&crate::types::ApplicationMode> {
         self.application_mode.as_ref()
     }
@@ -139,17 +139,17 @@ impl ApplicationSummaryBuilder {
     pub fn get_runtime_environment(&self) -> &::std::option::Option<crate::types::RuntimeEnvironment> {
         &self.runtime_environment
     }
-    /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
+    /// <p>For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub fn application_mode(mut self, input: crate::types::ApplicationMode) -> Self {
         self.application_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
+    /// <p>For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub fn set_application_mode(mut self, input: ::std::option::Option<crate::types::ApplicationMode>) -> Self {
         self.application_mode = input;
         self
     }
-    /// <p>For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.</p>
+    /// <p>For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.</p>
     pub fn get_application_mode(&self) -> &::std::option::Option<crate::types::ApplicationMode> {
         &self.application_mode
     }

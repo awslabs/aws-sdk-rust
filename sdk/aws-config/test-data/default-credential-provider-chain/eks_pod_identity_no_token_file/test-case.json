@@ -1,0 +1,7 @@
+{
+  "name": "ecs-pod-identity-no-token-file",
+  "docs": "fail to load credentials from EKS Pod Identity without a token file",
+  "result": {
+    "ErrorContains": "No such file or directory (os error 2)"
+  }
+}

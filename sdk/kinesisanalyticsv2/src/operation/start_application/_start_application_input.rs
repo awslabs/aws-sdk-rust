@@ -5,7 +5,7 @@
 pub struct StartApplicationInput {
     /// <p>The name of the application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
-    /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    /// <p>Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.</p>
     pub run_configuration: ::std::option::Option<crate::types::RunConfiguration>,
 }
 impl StartApplicationInput {
@@ -13,7 +13,7 @@ impl StartApplicationInput {
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    /// <p>Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.</p>
     pub fn run_configuration(&self) -> ::std::option::Option<&crate::types::RunConfiguration> {
         self.run_configuration.as_ref()
     }
@@ -48,17 +48,17 @@ impl StartApplicationInputBuilder {
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
-    /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    /// <p>Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.</p>
     pub fn run_configuration(mut self, input: crate::types::RunConfiguration) -> Self {
         self.run_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    /// <p>Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.</p>
     pub fn set_run_configuration(mut self, input: ::std::option::Option<crate::types::RunConfiguration>) -> Self {
         self.run_configuration = input;
         self
     }
-    /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
+    /// <p>Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.</p>
     pub fn get_run_configuration(&self) -> &::std::option::Option<crate::types::RunConfiguration> {
         &self.run_configuration
     }

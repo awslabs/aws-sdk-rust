@@ -42,5 +42,8 @@ pub fn ser_update_application_input_input(
     if let Some(var_12) = &input.conditional_token {
         object.key("ConditionalToken").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.runtime_environment_update {
+        object.key("RuntimeEnvironmentUpdate").string(var_13.as_str());
+    }
     Ok(())
 }

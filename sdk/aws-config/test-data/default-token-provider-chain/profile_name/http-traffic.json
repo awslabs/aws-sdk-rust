@@ -1,0 +1,5 @@
+{
+    "version": "V0",
+    "docs": "Load a SSO bearer token from a profile named correct-sso",
+    "events": []
+}

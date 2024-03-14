@@ -1,0 +1,10 @@
+{
+  "name": "profile_name",
+  "docs": "Load a SSO bearer token from a profile named correct-sso",
+  "result": {
+    "Ok": {
+      "token": "foobarbaz",
+      "expiration": "2080-10-16T03:56:45Z"
+    }
+  }
+}

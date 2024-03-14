@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckpointConfiguration {
-    /// <p>Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
+    /// <p>Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
     /// <li>
@@ -16,7 +16,7 @@ pub struct CheckpointConfiguration {
     /// </ul>
     /// </note>
     pub configuration_type: crate::types::ConfigurationType,
-    /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p><note>
+    /// <p>Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p><note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
     pub checkpointing_enabled: ::std::option::Option<bool>,
@@ -30,7 +30,7 @@ pub struct CheckpointConfiguration {
     pub min_pause_between_checkpoints: ::std::option::Option<i64>,
 }
 impl CheckpointConfiguration {
-    /// <p>Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
+    /// <p>Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
     /// <li>
@@ -44,7 +44,7 @@ impl CheckpointConfiguration {
     pub fn configuration_type(&self) -> &crate::types::ConfigurationType {
         &self.configuration_type
     }
-    /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p><note>
+    /// <p>Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p><note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
     pub fn checkpointing_enabled(&self) -> ::std::option::Option<bool> {
@@ -80,7 +80,7 @@ pub struct CheckpointConfigurationBuilder {
     pub(crate) min_pause_between_checkpoints: ::std::option::Option<i64>,
 }
 impl CheckpointConfigurationBuilder {
-    /// <p>Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
+    /// <p>Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
     /// <li>
@@ -96,7 +96,7 @@ impl CheckpointConfigurationBuilder {
         self.configuration_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
+    /// <p>Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
     /// <li>
@@ -111,7 +111,7 @@ impl CheckpointConfigurationBuilder {
         self.configuration_type = input;
         self
     }
-    /// <p>Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
+    /// <p>Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>, <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p><note>
     /// <p>If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they are set to other values using APIs or application code:</p>
     /// <ul>
     /// <li>
@@ -125,21 +125,21 @@ impl CheckpointConfigurationBuilder {
     pub fn get_configuration_type(&self) -> &::std::option::Option<crate::types::ConfigurationType> {
         &self.configuration_type
     }
-    /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p><note>
+    /// <p>Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p><note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
     pub fn checkpointing_enabled(mut self, input: bool) -> Self {
         self.checkpointing_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p><note>
+    /// <p>Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p><note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
     pub fn set_checkpointing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.checkpointing_enabled = input;
         self
     }
-    /// <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p><note>
+    /// <p>Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p><note>
     /// <p>If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another value using this API or in application code.</p>
     /// </note>
     pub fn get_checkpointing_enabled(&self) -> &::std::option::Option<bool> {

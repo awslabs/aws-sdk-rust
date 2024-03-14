@@ -56,6 +56,33 @@ impl Storable for RequestChecksumInterceptorState {
     type Storer = StoreReplace<Self>;
 }
 
+type CustomDefaultFn = Box<dyn Fn(Option<ChecksumAlgorithm>, &ConfigBag) -> Option<ChecksumAlgorithm> + Send + Sync + 'static>;
+
+pub(crate) struct DefaultRequestChecksumOverride {
+    custom_default: CustomDefaultFn,
+}
+impl fmt::Debug for DefaultRequestChecksumOverride {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("DefaultRequestChecksumOverride").finish()
+    }
+}
+impl Storable for DefaultRequestChecksumOverride {
+    type Storer = StoreReplace<Self>;
+}
+impl DefaultRequestChecksumOverride {
+    pub(crate) fn new<F>(custom_default: F) -> Self
+    where
+        F: Fn(Option<ChecksumAlgorithm>, &ConfigBag) -> Option<ChecksumAlgorithm> + Send + Sync + 'static,
+    {
+        Self {
+            custom_default: Box::new(custom_default),
+        }
+    }
+    pub(crate) fn custom_default(&self, original: Option<ChecksumAlgorithm>, config_bag: &ConfigBag) -> Option<ChecksumAlgorithm> {
+        (self.custom_default)(original, config_bag)
+    }
+}
+
 pub(crate) struct RequestChecksumInterceptor<AP> {
     algorithm_provider: AP,
 }
@@ -98,7 +125,7 @@ where
     /// Calculate a checksum and modify the request to include the checksum as a header
     /// (for in-memory request bodies) or a trailer (for streaming request bodies).
     /// Streaming bodies must be sized or this will return an error.
-    fn modify_before_retry_loop(
+    fn modify_before_signing(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,
         _runtime_components: &RuntimeComponents,
@@ -106,12 +133,20 @@ where
     ) -> Result<(), BoxError> {
         let state = cfg.load::<RequestChecksumInterceptorState>().expect("set in `read_before_serialization`");
 
-        if let Some(checksum_algorithm) = state.checksum_algorithm {
+        let checksum_algorithm = incorporate_custom_default(state.checksum_algorithm, cfg);
+        if let Some(checksum_algorithm) = checksum_algorithm {
             let request = context.request_mut();
             add_checksum_for_request_body(request, checksum_algorithm, cfg)?;
         }
 
         Ok(())
+    }
+}
+
+fn incorporate_custom_default(checksum: Option<ChecksumAlgorithm>, cfg: &ConfigBag) -> Option<ChecksumAlgorithm> {
+    match cfg.load::<DefaultRequestChecksumOverride>() {
+        Some(checksum_override) => checksum_override.custom_default(checksum, cfg),
+        None => checksum,
     }
 }
 

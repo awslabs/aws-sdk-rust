@@ -30,7 +30,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-ec2 = "1.23.1"
+//! aws-sdk-ec2 = "1.24.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

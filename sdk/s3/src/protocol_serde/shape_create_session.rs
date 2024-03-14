@@ -85,12 +85,6 @@ pub fn de_create_session(
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
-    if !start_el.matches("CreateSessionOutput") {
-        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "encountered invalid XML root: expected CreateSessionOutput but got {:?}. This is likely a bug in the SDK.",
-            start_el
-        )));
-    }
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Credentials") /* Credentials com.amazonaws.s3.synthetic#CreateSessionOutput$Credentials */ =>  {

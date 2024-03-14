@@ -24,21 +24,6 @@ pub fn de_list_code_signing_configs_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceException" => crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "InvalidParameterValueException" => {
             crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
@@ -59,6 +44,21 @@ pub fn de_list_code_signing_configs_http_error(
                 tmp
             })
         }
+        "ServiceException" => crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::list_code_signing_configs::ListCodeSigningConfigsError::generic(generic),
     })
 }

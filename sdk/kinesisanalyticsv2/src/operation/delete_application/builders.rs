@@ -22,7 +22,7 @@ impl DeleteApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteApplication`.
 ///
-/// <p>Deletes the specified application. Kinesis Data Analytics halts application execution and deletes the application.</p>
+/// <p>Deletes the specified application. Managed Service for Apache Flink halts application execution and deletes the application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -8,15 +8,15 @@ pub struct ApplicationConfigurationUpdate {
     pub sql_application_configuration_update: ::std::option::Option<crate::types::SqlApplicationConfigurationUpdate>,
     /// <p>Describes updates to an application's code configuration.</p>
     pub application_code_configuration_update: ::std::option::Option<crate::types::ApplicationCodeConfigurationUpdate>,
-    /// <p>Describes updates to a Flink-based Kinesis Data Analytics application's configuration.</p>
+    /// <p>Describes updates to a Managed Service for Apache Flink application's configuration.</p>
     pub flink_application_configuration_update: ::std::option::Option<crate::types::FlinkApplicationConfigurationUpdate>,
-    /// <p>Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.</p>
+    /// <p>Describes updates to the environment properties for a Managed Service for Apache Flink application.</p>
     pub environment_property_updates: ::std::option::Option<crate::types::EnvironmentPropertyUpdates>,
-    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub application_snapshot_configuration_update: ::std::option::Option<crate::types::ApplicationSnapshotConfigurationUpdate>,
     /// <p>Updates to the array of descriptions of VPC configurations available to the application.</p>
     pub vpc_configuration_updates: ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationUpdate>>,
-    /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+    /// <p>Updates to the configuration of a Managed Service for Apache Flink Studio notebook.</p>
     pub zeppelin_application_configuration_update: ::std::option::Option<crate::types::ZeppelinApplicationConfigurationUpdate>,
 }
 impl ApplicationConfigurationUpdate {
@@ -28,15 +28,15 @@ impl ApplicationConfigurationUpdate {
     pub fn application_code_configuration_update(&self) -> ::std::option::Option<&crate::types::ApplicationCodeConfigurationUpdate> {
         self.application_code_configuration_update.as_ref()
     }
-    /// <p>Describes updates to a Flink-based Kinesis Data Analytics application's configuration.</p>
+    /// <p>Describes updates to a Managed Service for Apache Flink application's configuration.</p>
     pub fn flink_application_configuration_update(&self) -> ::std::option::Option<&crate::types::FlinkApplicationConfigurationUpdate> {
         self.flink_application_configuration_update.as_ref()
     }
-    /// <p>Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.</p>
+    /// <p>Describes updates to the environment properties for a Managed Service for Apache Flink application.</p>
     pub fn environment_property_updates(&self) -> ::std::option::Option<&crate::types::EnvironmentPropertyUpdates> {
         self.environment_property_updates.as_ref()
     }
-    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn application_snapshot_configuration_update(&self) -> ::std::option::Option<&crate::types::ApplicationSnapshotConfigurationUpdate> {
         self.application_snapshot_configuration_update.as_ref()
     }
@@ -46,7 +46,7 @@ impl ApplicationConfigurationUpdate {
     pub fn vpc_configuration_updates(&self) -> &[crate::types::VpcConfigurationUpdate] {
         self.vpc_configuration_updates.as_deref().unwrap_or_default()
     }
-    /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+    /// <p>Updates to the configuration of a Managed Service for Apache Flink Studio notebook.</p>
     pub fn zeppelin_application_configuration_update(&self) -> ::std::option::Option<&crate::types::ZeppelinApplicationConfigurationUpdate> {
         self.zeppelin_application_configuration_update.as_ref()
     }
@@ -102,12 +102,12 @@ impl ApplicationConfigurationUpdateBuilder {
     pub fn get_application_code_configuration_update(&self) -> &::std::option::Option<crate::types::ApplicationCodeConfigurationUpdate> {
         &self.application_code_configuration_update
     }
-    /// <p>Describes updates to a Flink-based Kinesis Data Analytics application's configuration.</p>
+    /// <p>Describes updates to a Managed Service for Apache Flink application's configuration.</p>
     pub fn flink_application_configuration_update(mut self, input: crate::types::FlinkApplicationConfigurationUpdate) -> Self {
         self.flink_application_configuration_update = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes updates to a Flink-based Kinesis Data Analytics application's configuration.</p>
+    /// <p>Describes updates to a Managed Service for Apache Flink application's configuration.</p>
     pub fn set_flink_application_configuration_update(
         mut self,
         input: ::std::option::Option<crate::types::FlinkApplicationConfigurationUpdate>,
@@ -115,30 +115,30 @@ impl ApplicationConfigurationUpdateBuilder {
         self.flink_application_configuration_update = input;
         self
     }
-    /// <p>Describes updates to a Flink-based Kinesis Data Analytics application's configuration.</p>
+    /// <p>Describes updates to a Managed Service for Apache Flink application's configuration.</p>
     pub fn get_flink_application_configuration_update(&self) -> &::std::option::Option<crate::types::FlinkApplicationConfigurationUpdate> {
         &self.flink_application_configuration_update
     }
-    /// <p>Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.</p>
+    /// <p>Describes updates to the environment properties for a Managed Service for Apache Flink application.</p>
     pub fn environment_property_updates(mut self, input: crate::types::EnvironmentPropertyUpdates) -> Self {
         self.environment_property_updates = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.</p>
+    /// <p>Describes updates to the environment properties for a Managed Service for Apache Flink application.</p>
     pub fn set_environment_property_updates(mut self, input: ::std::option::Option<crate::types::EnvironmentPropertyUpdates>) -> Self {
         self.environment_property_updates = input;
         self
     }
-    /// <p>Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.</p>
+    /// <p>Describes updates to the environment properties for a Managed Service for Apache Flink application.</p>
     pub fn get_environment_property_updates(&self) -> &::std::option::Option<crate::types::EnvironmentPropertyUpdates> {
         &self.environment_property_updates
     }
-    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn application_snapshot_configuration_update(mut self, input: crate::types::ApplicationSnapshotConfigurationUpdate) -> Self {
         self.application_snapshot_configuration_update = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn set_application_snapshot_configuration_update(
         mut self,
         input: ::std::option::Option<crate::types::ApplicationSnapshotConfigurationUpdate>,
@@ -146,7 +146,7 @@ impl ApplicationConfigurationUpdateBuilder {
         self.application_snapshot_configuration_update = input;
         self
     }
-    /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
+    /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn get_application_snapshot_configuration_update(&self) -> &::std::option::Option<crate::types::ApplicationSnapshotConfigurationUpdate> {
         &self.application_snapshot_configuration_update
     }
@@ -170,12 +170,12 @@ impl ApplicationConfigurationUpdateBuilder {
     pub fn get_vpc_configuration_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationUpdate>> {
         &self.vpc_configuration_updates
     }
-    /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+    /// <p>Updates to the configuration of a Managed Service for Apache Flink Studio notebook.</p>
     pub fn zeppelin_application_configuration_update(mut self, input: crate::types::ZeppelinApplicationConfigurationUpdate) -> Self {
         self.zeppelin_application_configuration_update = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+    /// <p>Updates to the configuration of a Managed Service for Apache Flink Studio notebook.</p>
     pub fn set_zeppelin_application_configuration_update(
         mut self,
         input: ::std::option::Option<crate::types::ZeppelinApplicationConfigurationUpdate>,
@@ -183,7 +183,7 @@ impl ApplicationConfigurationUpdateBuilder {
         self.zeppelin_application_configuration_update = input;
         self
     }
-    /// <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+    /// <p>Updates to the configuration of a Managed Service for Apache Flink Studio notebook.</p>
     pub fn get_zeppelin_application_configuration_update(&self) -> &::std::option::Option<crate::types::ZeppelinApplicationConfigurationUpdate> {
         &self.zeppelin_application_configuration_update
     }

@@ -39,9 +39,95 @@ pub use crate::types::_retrieve_and_generate_type::RetrieveAndGenerateType;
 
 pub use crate::types::_retrieve_and_generate_input::RetrieveAndGenerateInput;
 
+pub use crate::types::_response_stream::ResponseStream;
+
+pub use crate::types::_trace_part::TracePart;
+
+pub use crate::types::_trace::Trace;
+
+pub use crate::types::_failure_trace::FailureTrace;
+
+pub use crate::types::_post_processing_trace::PostProcessingTrace;
+
+pub use crate::types::_post_processing_model_invocation_output::PostProcessingModelInvocationOutput;
+
+pub use crate::types::_post_processing_parsed_response::PostProcessingParsedResponse;
+
+pub use crate::types::_model_invocation_input::ModelInvocationInput;
+
+pub use crate::types::_creation_mode::CreationMode;
+
+pub use crate::types::_inference_configuration::InferenceConfiguration;
+
+pub use crate::types::_prompt_type::PromptType;
+
+pub use crate::types::_orchestration_trace::OrchestrationTrace;
+
+pub use crate::types::_observation::Observation;
+
+pub use crate::types::_reprompt_response::RepromptResponse;
+
+pub use crate::types::_source::Source;
+
+pub use crate::types::_final_response::FinalResponse;
+
+pub use crate::types::_knowledge_base_lookup_output::KnowledgeBaseLookupOutput;
+
+pub use crate::types::_action_group_invocation_output::ActionGroupInvocationOutput;
+
+pub use crate::types::_type_::Type;
+
+pub use crate::types::_invocation_input::InvocationInput;
+
+pub use crate::types::_knowledge_base_lookup_input::KnowledgeBaseLookupInput;
+
+pub use crate::types::_action_group_invocation_input::ActionGroupInvocationInput;
+
+pub use crate::types::_request_body::RequestBody;
+
+pub use crate::types::_parameter::Parameter;
+
+pub use crate::types::_invocation_type::InvocationType;
+
+pub use crate::types::_rationale::Rationale;
+
+pub use crate::types::_pre_processing_trace::PreProcessingTrace;
+
+pub use crate::types::_pre_processing_model_invocation_output::PreProcessingModelInvocationOutput;
+
+pub use crate::types::_pre_processing_parsed_response::PreProcessingParsedResponse;
+
+pub use crate::types::_payload_part::PayloadPart;
+
+pub use crate::types::_attribution::Attribution;
+
+pub use crate::types::_session_state::SessionState;
+
+mod _action_group_invocation_input;
+
+mod _action_group_invocation_output;
+
+mod _attribution;
+
 mod _citation;
 
+mod _creation_mode;
+
+mod _failure_trace;
+
+mod _final_response;
+
 mod _generated_response_part;
+
+mod _inference_configuration;
+
+mod _invocation_input;
+
+mod _invocation_type;
+
+mod _knowledge_base_lookup_input;
+
+mod _knowledge_base_lookup_output;
 
 mod _knowledge_base_query;
 
@@ -52,6 +138,38 @@ mod _knowledge_base_retrieval_result;
 mod _knowledge_base_retrieve_and_generate_configuration;
 
 mod _knowledge_base_vector_search_configuration;
+
+mod _model_invocation_input;
+
+mod _observation;
+
+mod _orchestration_trace;
+
+mod _parameter;
+
+mod _payload_part;
+
+mod _post_processing_model_invocation_output;
+
+mod _post_processing_parsed_response;
+
+mod _post_processing_trace;
+
+mod _pre_processing_model_invocation_output;
+
+mod _pre_processing_parsed_response;
+
+mod _pre_processing_trace;
+
+mod _prompt_type;
+
+mod _rationale;
+
+mod _reprompt_response;
+
+mod _request_body;
+
+mod _response_stream;
 
 mod _retrieval_result_content;
 
@@ -75,9 +193,19 @@ mod _retrieved_reference;
 
 mod _search_type;
 
+mod _session_state;
+
+mod _source;
+
 mod _span;
 
 mod _text_response_part;
+
+mod _trace;
+
+mod _trace_part;
+
+mod _type_;
 
 /// Builders
 pub mod builders;

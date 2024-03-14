@@ -173,8 +173,8 @@ mod test {
         let expected_retry_config = RetryConfig::standard();
 
         assert_eq!(actual_retry_config, expected_retry_config);
-        // This is redundant but it's really important to make sure that
-        // we're setting these exact values by default so we check twice
+        // This is redundant, but it's really important to make sure that
+        // we're setting these exact values by default, so we check twice
         assert_eq!(actual_retry_config.max_attempts(), 3);
         assert_eq!(actual_retry_config.mode(), RetryMode::Standard);
     }
@@ -255,7 +255,7 @@ retry_mode = standard
     }
 
     #[tokio::test]
-    #[should_panic = "failed to parse max attempts. source: profile `default`, key: `max_attempts`: invalid digit found in string"]
+    #[should_panic = "failed to parse max attempts. source: global profile (`default`) key: `max_attempts`: invalid digit found in string"]
     async fn test_invalid_profile_retry_config_panics() {
         let env = Env::from_slice(&[("AWS_CONFIG_FILE", "config")]);
         let fs = Fs::from_slice(&[(

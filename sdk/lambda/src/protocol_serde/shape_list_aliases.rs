@@ -17,13 +17,16 @@ pub fn de_list_aliases_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::operation::list_aliases::ListAliasesError::ResourceNotFoundException({
+        "InvalidParameterValueException" => crate::operation::list_aliases::ListAliasesError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::list_aliases::ListAliasesError::unhandled)?;
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::list_aliases::ListAliasesError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -32,18 +35,13 @@ pub fn de_list_aliases_http_error(
             }
             tmp
         }),
-        "TooManyRequestsException" => crate::operation::list_aliases::ListAliasesError::TooManyRequestsException({
+        "ResourceNotFoundException" => crate::operation::list_aliases::ListAliasesError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_aliases::ListAliasesError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
-                        crate::operation::list_aliases::ListAliasesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
-                    })?,
-                );
                 let output = output.meta(generic);
                 output.build()
             };
@@ -67,16 +65,18 @@ pub fn de_list_aliases_http_error(
             }
             tmp
         }),
-        "InvalidParameterValueException" => crate::operation::list_aliases::ListAliasesError::InvalidParameterValueException({
+        "TooManyRequestsException" => crate::operation::list_aliases::ListAliasesError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::list_aliases::ListAliasesError::unhandled)?;
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_aliases::ListAliasesError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::list_aliases::ListAliasesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };

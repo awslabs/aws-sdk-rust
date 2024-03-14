@@ -20,6 +20,26 @@ pub fn de_list_functions_by_code_signing_config_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidParameterValueException" => {
+            crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceNotFoundException" => {
             crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError::ResourceNotFoundException({
                 #[allow(unused_mut)]
@@ -53,26 +73,6 @@ pub fn de_list_functions_by_code_signing_config_http_error(
             }
             tmp
         }),
-        "InvalidParameterValueException" => {
-            crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError::InvalidParameterValueException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_json_err(
-                        _response_body,
-                        output,
-                    )
-                    .map_err(crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
         _ => crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError::generic(generic),
     })
 }

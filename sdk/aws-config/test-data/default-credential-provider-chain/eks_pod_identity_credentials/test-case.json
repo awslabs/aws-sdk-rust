@@ -1,0 +1,12 @@
+{
+  "name": "ecs-pod-identity-credentials",
+  "docs": "load credentials directly from EKS Pod Identity",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARCORRECT",
+      "secret_access_key": "secretkeycorrect",
+      "session_token": "tokencorrect",
+      "expiry": 1234567890
+    }
+  }
+}

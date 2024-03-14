@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationVpcConfigurationOutput {
-    /// <p>The ARN of the Kinesis Data Analytics application.</p>
+    /// <p>The ARN of the Managed Service for Apache Flink application.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated version ID of the application.</p>
     pub application_version_id: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl DeleteApplicationVpcConfigurationOutput {
-    /// <p>The ARN of the Kinesis Data Analytics application.</p>
+    /// <p>The ARN of the Managed Service for Apache Flink application.</p>
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct DeleteApplicationVpcConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteApplicationVpcConfigurationOutputBuilder {
-    /// <p>The ARN of the Kinesis Data Analytics application.</p>
+    /// <p>The ARN of the Managed Service for Apache Flink application.</p>
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Kinesis Data Analytics application.</p>
+    /// <p>The ARN of the Managed Service for Apache Flink application.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
-    /// <p>The ARN of the Kinesis Data Analytics application.</p>
+    /// <p>The ARN of the Managed Service for Apache Flink application.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }

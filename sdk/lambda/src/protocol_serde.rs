@@ -97,6 +97,10 @@ pub(crate) mod shape_invoke_async_input;
 
 pub(crate) mod shape_invoke_input;
 
+pub(crate) mod shape_invoke_with_response_stream;
+
+pub(crate) mod shape_invoke_with_response_stream_input;
+
 pub(crate) mod shape_list_aliases;
 
 pub(crate) mod shape_list_code_signing_configs;
@@ -217,6 +221,8 @@ pub(crate) mod shape_invalid_zip_file_exception;
 
 pub(crate) mod shape_invoke_output;
 
+pub(crate) mod shape_invoke_with_response_stream_output;
+
 pub(crate) mod shape_kms_access_denied_exception;
 
 pub(crate) mod shape_kms_disabled_exception;
@@ -286,6 +292,13 @@ pub(crate) mod shape_update_function_configuration_input;
 pub(crate) mod shape_update_function_event_invoke_config_input;
 
 pub(crate) mod shape_update_function_url_config_input;
+
+pub fn parse_event_stream_error_metadata(
+    payload: &::bytes::Bytes,
+) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    // Note: HeaderMap::new() doesn't allocate
+    crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
+}
 
 pub(crate) mod shape_account_limit;
 
@@ -426,6 +439,8 @@ pub(crate) mod shape_function_url_config;
 pub(crate) mod shape_headers_list;
 
 pub(crate) mod shape_image_config_error;
+
+pub(crate) mod shape_invoke_with_response_stream_complete_event;
 
 pub(crate) mod shape_layer;
 

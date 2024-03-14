@@ -37,6 +37,10 @@ pub struct SigningSettings {
     /// canonical request. Other services require only it to be added after
     /// calculating the signature.
     pub session_token_mode: SessionTokenMode,
+
+    /// Some services require an alternative session token header or query param instead of
+    /// `x-amz-security-token` or `X-Amz-Security-Token`.
+    pub session_token_name_override: Option<&'static str>,
 }
 
 /// HTTP payload checksum type
@@ -133,6 +137,7 @@ impl Default for SigningSettings {
             excluded_headers,
             uri_path_normalization_mode: UriPathNormalizationMode::Enabled,
             session_token_mode: SessionTokenMode::Include,
+            session_token_name_override: None,
         }
     }
 }

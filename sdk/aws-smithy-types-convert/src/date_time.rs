@@ -130,13 +130,13 @@ pub trait DateTimeExt {
 impl DateTimeExt for DateTime {
     #[cfg(feature = "convert-chrono")]
     fn to_chrono_utc(&self) -> Result<chrono::DateTime<chrono::Utc>, Error> {
-        match chrono::NaiveDateTime::from_timestamp_opt(self.secs(), self.subsec_nanos()) {
+        match chrono::DateTime::from_timestamp(self.secs(), self.subsec_nanos()) {
             None => Err(Error::out_of_range(format!(
                 "out-of-range seconds {} or invalid nanoseconds {}",
                 self.secs(),
                 self.subsec_nanos()
             ))),
-            Some(dt) => Ok(chrono::TimeZone::from_utc_datetime(&chrono::Utc, &dt)),
+            Some(dt) => Ok(dt),
         }
     }
 

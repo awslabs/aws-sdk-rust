@@ -30,7 +30,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-lexruntimev2 = "1.15.0"
+//! aws-sdk-lexruntimev2 = "1.16.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -185,6 +185,10 @@ pub mod primitives;
 pub mod types;
 
 mod auth_plugin;
+
+mod event_receiver;
+
+mod event_stream_serde;
 
 pub(crate) mod protocol_serde;
 

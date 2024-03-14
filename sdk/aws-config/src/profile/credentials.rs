@@ -40,7 +40,7 @@ use std::sync::Arc;
 use tracing::Instrument;
 
 mod exec;
-mod repr;
+pub(crate) mod repr;
 
 /// AWS Profile based credentials provider
 ///
@@ -564,20 +564,26 @@ impl ChainProvider {
 #[cfg(test)]
 mod test {
     use crate::profile::credentials::Builder;
-    use crate::test_case::TestEnvironment;
+    use aws_credential_types::provider::ProvideCredentials;
 
     macro_rules! make_test {
         ($name: ident) => {
             #[tokio::test]
             async fn $name() {
-                TestEnvironment::from_dir(concat!(
-                    "./test-data/profile-provider/",
-                    stringify!($name)
-                ))
+                let _ = crate::test_case::TestEnvironment::from_dir(
+                    concat!("./test-data/profile-provider/", stringify!($name)),
+                    crate::test_case::test_credentials_provider(|config| async move {
+                        Builder::default()
+                            .configure(&config)
+                            .build()
+                            .provide_credentials()
+                            .await
+                    }),
+                )
                 .await
                 .unwrap()
-                .execute(|conf| async move { Builder::default().configure(&conf).build() })
-                .await
+                .execute()
+                .await;
             }
         };
     }

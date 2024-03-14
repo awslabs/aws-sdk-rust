@@ -20,110 +20,6 @@ pub fn de_update_function_code_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::operation::update_function_code::UpdateFunctionCodeError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "PreconditionFailedException" => crate::operation::update_function_code::UpdateFunctionCodeError::PreconditionFailedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::PreconditionFailedExceptionBuilder::default();
-                output =
-                    crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "TooManyRequestsException" => crate::operation::update_function_code::UpdateFunctionCodeError::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
-                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
-                output = output.set_retry_after_seconds(
-                    crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
-                        crate::operation::update_function_code::UpdateFunctionCodeError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
-                );
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "CodeVerificationFailedException" => crate::operation::update_function_code::UpdateFunctionCodeError::CodeVerificationFailedException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::CodeVerificationFailedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_code_verification_failed_exception::de_code_verification_failed_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceException" => crate::operation::update_function_code::UpdateFunctionCodeError::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "InvalidCodeSignatureException" => crate::operation::update_function_code::UpdateFunctionCodeError::InvalidCodeSignatureException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidCodeSignatureExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_code_signature_exception::de_invalid_code_signature_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "CodeSigningConfigNotFoundException" => {
             crate::operation::update_function_code::UpdateFunctionCodeError::CodeSigningConfigNotFoundException({
                 #[allow(unused_mut)]
@@ -161,6 +57,42 @@ pub fn de_update_function_code_http_error(
             }
             tmp
         }),
+        "CodeVerificationFailedException" => crate::operation::update_function_code::UpdateFunctionCodeError::CodeVerificationFailedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::CodeVerificationFailedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_code_verification_failed_exception::de_code_verification_failed_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidCodeSignatureException" => crate::operation::update_function_code::UpdateFunctionCodeError::InvalidCodeSignatureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidCodeSignatureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_code_signature_exception::de_invalid_code_signature_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidParameterValueException" => crate::operation::update_function_code::UpdateFunctionCodeError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -179,6 +111,22 @@ pub fn de_update_function_code_http_error(
             }
             tmp
         }),
+        "PreconditionFailedException" => crate::operation::update_function_code::UpdateFunctionCodeError::PreconditionFailedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::PreconditionFailedExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_precondition_failed_exception::de_precondition_failed_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceConflictException" => crate::operation::update_function_code::UpdateFunctionCodeError::ResourceConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -186,6 +134,58 @@ pub fn de_update_function_code_http_error(
                 let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
                 output = crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::update_function_code::UpdateFunctionCodeError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::operation::update_function_code::UpdateFunctionCodeError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::operation::update_function_code::UpdateFunctionCodeError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TooManyRequestsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_function_code::UpdateFunctionCodeError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::update_function_code::UpdateFunctionCodeError::unhandled(
+                            "Failed to parse retryAfterSeconds from header `Retry-After",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };

@@ -1,0 +1,10 @@
+{
+  "name": "profile_keys",
+  "docs": "Load a SSO bearer token from the default profile",
+  "result": {
+    "Ok": {
+      "token": "foobarbaz",
+      "expiration": "2080-10-16T03:56:45Z"
+    }
+  }
+}

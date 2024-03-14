@@ -233,6 +233,8 @@ mod invoke;
 
 mod invoke_async;
 
+mod invoke_with_response_stream;
+
 mod list_aliases;
 
 mod list_code_signing_configs;
