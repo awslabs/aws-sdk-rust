@@ -94,8 +94,9 @@ jobs:
           role-to-assume: ${{ secrets.CANARY_GITHUB_ACTIONS_ROLE_ARN }}
           aws-region: us-west-2
       - name: Run the canary
-        working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: |
+          mv smithy-rs ../
+          cd ../smithy-rs/tools/ci-cdk/canary-runner
           cargo run -- \
             run --rust-version ${RUST_VERSION} \
                 --sdk-release-tag ${SDK_RELEASE_TAG} \
