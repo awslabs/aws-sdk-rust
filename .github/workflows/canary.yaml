@@ -94,8 +94,16 @@ jobs:
           role-to-assume: ${{ secrets.CANARY_GITHUB_ACTIONS_ROLE_ARN }}
           aws-region: us-west-2
       - name: Run the canary
-        working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: |
+          # If `smithy-rs` lives under `aws-sdk-rust`, the following `cargo run` will run into a workspace problem:
+          #   `cargo metadata` exited with an error: error: current package believes it's in a workspace when it's not:
+          #   current:   /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs/tools/ci-cdk/canary-wasm/Cargo.toml
+          #   workspace: /home/runner/work/aws-sdk-rust/aws-sdk-rust/Cargo.toml
+          # The checkout action does not allow us to clone a repo outside the github workspace, i.e. using `path: ../smithy-rs`
+          # (https://github.com/actions/checkout/issues/197).
+          # We work around it by manually moving `smithy-rs` outside of `aws-sdk-rust`.
+          mv smithy-rs ../
+          cd ../smithy-rs/tools/ci-cdk/canary-runner
           cargo run -- \
             run --rust-version ${RUST_VERSION} \
                 --sdk-release-tag ${SDK_RELEASE_TAG} \
