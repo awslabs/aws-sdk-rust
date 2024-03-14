@@ -61,15 +61,16 @@ jobs:
       matrix: ${{ fromJson(needs.generate-canary-matrix.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           repository: awslabs/smithy-rs
-          path: ../smithy-rs
+          path: smithy-rs
           # Fetch all history so that the runner can change to different commits
           fetch-depth: 0
       # Each canary run uses a different Rust version, and the `rust-toolchain.toml`
       # file interferes with that version selection.
       - name: Delete `rust-toolchain.toml`
-        working-directory: ../smithy-rs
+        working-directory: smithy-rs
         run: rm rust-toolchain.toml
       - uses: dtolnay/rust-toolchain@master
         with:
@@ -85,7 +86,7 @@ jobs:
           CARGO_COMPONENT_VERSION: 0.7.1
         run: cargo +${{ env.rust_nightly_version }} install cargo-component --locked --version ${CARGO_COMPONENT_VERSION}
       - name: Compile the canary runner
-        working-directory: ../smithy-rs/tools/ci-cdk/canary-runner
+        working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: cargo build
       - uses: aws-actions/configure-aws-credentials@v4
         name: Acquire credentials for running the canary
@@ -93,7 +94,7 @@ jobs:
           role-to-assume: ${{ secrets.CANARY_GITHUB_ACTIONS_ROLE_ARN }}
           aws-region: us-west-2
       - name: Run the canary
-        working-directory: ../smithy-rs/tools/ci-cdk/canary-runner
+        working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: |
           cargo run -- \
             run --rust-version ${RUST_VERSION} \
