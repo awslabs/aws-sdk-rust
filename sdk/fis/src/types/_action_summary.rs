@@ -6,6 +6,8 @@
 pub struct ActionSummary {
     /// <p>The ID of the action.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the action.</p>
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description for the action.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The targets for the action.</p>
@@ -17,6 +19,10 @@ impl ActionSummary {
     /// <p>The ID of the action.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the action.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>The description for the action.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -43,6 +49,7 @@ impl ActionSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ActionTarget>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -61,6 +68,20 @@ impl ActionSummaryBuilder {
     /// <p>The ID of the action.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the action.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the action.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the action.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The description for the action.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +144,7 @@ impl ActionSummaryBuilder {
     pub fn build(self) -> crate::types::ActionSummary {
         crate::types::ActionSummary {
             id: self.id,
+            arn: self.arn,
             description: self.description,
             targets: self.targets,
             tags: self.tags,

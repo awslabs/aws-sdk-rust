@@ -60,7 +60,7 @@ pub struct CreateDbInstanceInput {
     /// RDS for Db2
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
+    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance. In some cases, we recommend that you don't add a database name. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional considerations</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -883,7 +883,7 @@ impl CreateDbInstanceInput {
     /// RDS for Db2
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
+    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance. In some cases, we recommend that you don't add a database name. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional considerations</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -1916,7 +1916,7 @@ impl CreateDbInstanceInputBuilder {
     /// RDS for Db2
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
+    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance. In some cases, we recommend that you don't add a database name. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional considerations</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -2051,7 +2051,7 @@ impl CreateDbInstanceInputBuilder {
     /// RDS for Db2
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
+    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance. In some cases, we recommend that you don't add a database name. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional considerations</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -2186,7 +2186,7 @@ impl CreateDbInstanceInputBuilder {
     /// RDS for Db2
     /// </dt>
     /// <dd>
-    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance.</p>
+    /// <p>The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance. In some cases, we recommend that you don't add a database name. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional considerations</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>

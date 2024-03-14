@@ -277,6 +277,8 @@ pub enum SendSerialConsoleSSHPublicKeyError {
     SerialConsoleSessionLimitExceededException(crate::types::error::SerialConsoleSessionLimitExceededException),
     /// <p>Unable to start a serial console session. Please try again.</p>
     SerialConsoleSessionUnavailableException(crate::types::error::SerialConsoleSessionUnavailableException),
+    /// <p>Your instance's BIOS version is unsupported for serial console connection. Reboot your instance to update its BIOS, and then try again to connect.</p>
+    SerialConsoleSessionUnsupportedException(crate::types::error::SerialConsoleSessionUnsupportedException),
     /// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
@@ -323,6 +325,7 @@ impl SendSerialConsoleSSHPublicKeyError {
             Self::SerialConsoleAccessDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SerialConsoleSessionLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SerialConsoleSessionUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SerialConsoleSessionUnsupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -364,6 +367,10 @@ impl SendSerialConsoleSSHPublicKeyError {
     pub fn is_serial_console_session_unavailable_exception(&self) -> bool {
         matches!(self, Self::SerialConsoleSessionUnavailableException(_))
     }
+    /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyError::SerialConsoleSessionUnsupportedException`.
+    pub fn is_serial_console_session_unsupported_exception(&self) -> bool {
+        matches!(self, Self::SerialConsoleSessionUnsupportedException(_))
+    }
     /// Returns `true` if the error kind is `SendSerialConsoleSSHPublicKeyError::ServiceException`.
     pub fn is_service_exception(&self) -> bool {
         matches!(self, Self::ServiceException(_))
@@ -385,6 +392,7 @@ impl ::std::error::Error for SendSerialConsoleSSHPublicKeyError {
             Self::SerialConsoleAccessDisabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::SerialConsoleSessionLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::SerialConsoleSessionUnavailableException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SerialConsoleSessionUnsupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -403,6 +411,7 @@ impl ::std::fmt::Display for SendSerialConsoleSSHPublicKeyError {
             Self::SerialConsoleAccessDisabledException(_inner) => _inner.fmt(f),
             Self::SerialConsoleSessionLimitExceededException(_inner) => _inner.fmt(f),
             Self::SerialConsoleSessionUnavailableException(_inner) => _inner.fmt(f),
+            Self::SerialConsoleSessionUnsupportedException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -435,6 +444,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SendSerialCon
             Self::SerialConsoleAccessDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SerialConsoleSessionLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SerialConsoleSessionUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SerialConsoleSessionUnsupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

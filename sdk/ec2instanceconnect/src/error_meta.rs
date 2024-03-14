@@ -21,6 +21,8 @@ pub enum Error {
     SerialConsoleSessionLimitExceededException(crate::types::error::SerialConsoleSessionLimitExceededException),
     /// <p>Unable to start a serial console session. Please try again.</p>
     SerialConsoleSessionUnavailableException(crate::types::error::SerialConsoleSessionUnavailableException),
+    /// <p>Your instance's BIOS version is unsupported for serial console connection. Reboot your instance to update its BIOS, and then try again to connect.</p>
+    SerialConsoleSessionUnsupportedException(crate::types::error::SerialConsoleSessionUnsupportedException),
     /// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
@@ -46,6 +48,7 @@ impl ::std::fmt::Display for Error {
             Error::SerialConsoleAccessDisabledException(inner) => inner.fmt(f),
             Error::SerialConsoleSessionLimitExceededException(inner) => inner.fmt(f),
             Error::SerialConsoleSessionUnavailableException(inner) => inner.fmt(f),
+            Error::SerialConsoleSessionUnsupportedException(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
@@ -78,6 +81,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::SerialConsoleAccessDisabledException(inner) => inner.meta(),
             Self::SerialConsoleSessionLimitExceededException(inner) => inner.meta(),
             Self::SerialConsoleSessionUnavailableException(inner) => inner.meta(),
+            Self::SerialConsoleSessionUnsupportedException(inner) => inner.meta(),
             Self::ServiceException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
@@ -139,6 +143,9 @@ impl From<crate::operation::send_serial_console_ssh_public_key::SendSerialConsol
             crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::SerialConsoleSessionUnavailableException(
                 inner,
             ) => Error::SerialConsoleSessionUnavailableException(inner),
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::SerialConsoleSessionUnsupportedException(
+                inner,
+            ) => Error::SerialConsoleSessionUnsupportedException(inner),
             crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::ServiceException(inner) => {
                 Error::ServiceException(inner)
             }
@@ -195,6 +202,7 @@ impl ::std::error::Error for Error {
             Error::SerialConsoleAccessDisabledException(inner) => inner.source(),
             Error::SerialConsoleSessionLimitExceededException(inner) => inner.source(),
             Error::SerialConsoleSessionUnavailableException(inner) => inner.source(),
+            Error::SerialConsoleSessionUnsupportedException(inner) => inner.source(),
             Error::ServiceException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
@@ -213,6 +221,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::SerialConsoleAccessDisabledException(e) => e.request_id(),
             Self::SerialConsoleSessionLimitExceededException(e) => e.request_id(),
             Self::SerialConsoleSessionUnavailableException(e) => e.request_id(),
+            Self::SerialConsoleSessionUnsupportedException(e) => e.request_id(),
             Self::ServiceException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),

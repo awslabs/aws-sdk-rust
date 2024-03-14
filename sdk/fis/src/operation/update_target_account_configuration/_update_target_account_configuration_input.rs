@@ -5,7 +5,7 @@
 pub struct UpdateTargetAccountConfigurationInput {
     /// <p>The ID of the experiment template.</p>
     pub experiment_template_id: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role for the target account.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl UpdateTargetAccountConfigurationInput {
     pub fn experiment_template_id(&self) -> ::std::option::Option<&str> {
         self.experiment_template_id.as_deref()
     }
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -62,18 +62,18 @@ impl UpdateTargetAccountConfigurationInputBuilder {
     pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.experiment_template_id
     }
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     /// This field is required.
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

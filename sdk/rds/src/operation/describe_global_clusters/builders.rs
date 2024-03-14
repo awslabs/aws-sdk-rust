@@ -150,17 +150,23 @@ impl DescribeGlobalClustersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.</p>
+    /// <p>Currently, the only supported filter is <code>region</code>.</p>
+    /// <p>If used, the request returns information about any global cluster with at least one member (primary or secondary) in the specified Amazon Web Services Regions.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.</p>
+    /// <p>Currently, the only supported filter is <code>region</code>.</p>
+    /// <p>If used, the request returns information about any global cluster with at least one member (primary or secondary) in the specified Amazon Web Services Regions.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.</p>
+    /// <p>Currently, the only supported filter is <code>region</code>.</p>
+    /// <p>If used, the request returns information about any global cluster with at least one member (primary or secondary) in the specified Amazon Web Services Regions.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }

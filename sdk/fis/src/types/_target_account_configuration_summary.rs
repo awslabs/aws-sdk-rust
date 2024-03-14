@@ -6,7 +6,7 @@
 pub struct TargetAccountConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of an IAM role for the target account.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the target account.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl TargetAccountConfigurationSummary {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -55,17 +55,17 @@ impl TargetAccountConfigurationSummaryBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

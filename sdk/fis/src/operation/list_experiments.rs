@@ -192,6 +192,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListExperime
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
+                if let ::std::option::Option::Some(inner_3) = &_input.experiment_template_id {
+                    {
+                        query.push_kv("experimentTemplateId", &::aws_smithy_http::query::fmt_string(inner_3));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

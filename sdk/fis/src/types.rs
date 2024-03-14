@@ -43,6 +43,8 @@ pub use crate::types::_experiment::Experiment;
 
 pub use crate::types::_experiment_options::ExperimentOptions;
 
+pub use crate::types::_actions_mode::ActionsMode;
+
 pub use crate::types::_experiment_log_configuration::ExperimentLogConfiguration;
 
 pub use crate::types::_experiment_s3_log_configuration::ExperimentS3LogConfiguration;
@@ -64,6 +66,8 @@ pub use crate::types::_experiment_target_filter::ExperimentTargetFilter;
 pub use crate::types::_experiment_state::ExperimentState;
 
 pub use crate::types::_experiment_status::ExperimentStatus;
+
+pub use crate::types::_start_experiment_experiment_options_input::StartExperimentExperimentOptionsInput;
 
 pub use crate::types::_target_resource_type_summary::TargetResourceTypeSummary;
 
@@ -110,6 +114,8 @@ mod _action_parameter;
 mod _action_summary;
 
 mod _action_target;
+
+mod _actions_mode;
 
 mod _create_experiment_template_action_input;
 
@@ -182,6 +188,8 @@ mod _experiment_template_target_filter;
 mod _experiment_template_target_input_filter;
 
 mod _resolved_target;
+
+mod _start_experiment_experiment_options_input;
 
 mod _target_account_configuration;
 

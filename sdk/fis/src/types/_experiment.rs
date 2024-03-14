@@ -6,6 +6,8 @@
 pub struct Experiment {
     /// <p>The ID of the experiment.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the experiment template.</p>
     pub experiment_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
@@ -37,6 +39,10 @@ impl Experiment {
     /// <p>The ID of the experiment.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>The ID of the experiment template.</p>
     pub fn experiment_template_id(&self) -> ::std::option::Option<&str> {
@@ -105,6 +111,7 @@ impl Experiment {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) experiment_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ExperimentState>,
@@ -133,6 +140,20 @@ impl ExperimentBuilder {
     /// <p>The ID of the experiment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ID of the experiment template.</p>
     pub fn experiment_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -350,6 +371,7 @@ impl ExperimentBuilder {
     pub fn build(self) -> crate::types::Experiment {
         crate::types::Experiment {
             id: self.id,
+            arn: self.arn,
             experiment_template_id: self.experiment_template_id,
             role_arn: self.role_arn,
             state: self.state,

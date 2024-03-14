@@ -6,6 +6,8 @@
 pub struct ExperimentTemplateSummary {
     /// <p>The ID of the experiment template.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the experiment template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The time that the experiment template was created.</p>
@@ -19,6 +21,10 @@ impl ExperimentTemplateSummary {
     /// <p>The ID of the experiment template.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>The description of the experiment template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -49,6 +55,7 @@ impl ExperimentTemplateSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentTemplateSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -68,6 +75,20 @@ impl ExperimentTemplateSummaryBuilder {
     /// <p>The ID of the experiment template.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The description of the experiment template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,6 +156,7 @@ impl ExperimentTemplateSummaryBuilder {
     pub fn build(self) -> crate::types::ExperimentTemplateSummary {
         crate::types::ExperimentTemplateSummary {
             id: self.id,
+            arn: self.arn,
             description: self.description,
             creation_time: self.creation_time,
             last_update_time: self.last_update_time,
