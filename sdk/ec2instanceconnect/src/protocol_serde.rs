@@ -57,6 +57,8 @@ pub(crate) mod shape_serial_console_session_limit_exceeded_exception;
 
 pub(crate) mod shape_serial_console_session_unavailable_exception;
 
+pub(crate) mod shape_serial_console_session_unsupported_exception;
+
 pub(crate) mod shape_service_exception;
 
 pub(crate) mod shape_throttling_exception;

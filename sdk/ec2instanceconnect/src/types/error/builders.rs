@@ -13,6 +13,8 @@ pub use crate::types::error::_ec2_instance_not_found_exception::Ec2InstanceNotFo
 
 pub use crate::types::error::_auth_exception::AuthExceptionBuilder;
 
+pub use crate::types::error::_serial_console_session_unsupported_exception::SerialConsoleSessionUnsupportedExceptionBuilder;
+
 pub use crate::types::error::_serial_console_session_unavailable_exception::SerialConsoleSessionUnavailableExceptionBuilder;
 
 pub use crate::types::error::_serial_console_session_limit_exceeded_exception::SerialConsoleSessionLimitExceededExceptionBuilder;

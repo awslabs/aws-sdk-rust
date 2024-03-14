@@ -6,6 +6,8 @@
 pub struct ExperimentSummary {
     /// <p>The ID of the experiment.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the experiment template.</p>
     pub experiment_template_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the experiment.</p>
@@ -14,11 +16,17 @@ pub struct ExperimentSummary {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags for the experiment.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The experiment options for the experiment.</p>
+    pub experiment_options: ::std::option::Option<crate::types::ExperimentOptions>,
 }
 impl ExperimentSummary {
     /// <p>The ID of the experiment.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>The ID of the experiment template.</p>
     pub fn experiment_template_id(&self) -> ::std::option::Option<&str> {
@@ -36,6 +44,10 @@ impl ExperimentSummary {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The experiment options for the experiment.</p>
+    pub fn experiment_options(&self) -> ::std::option::Option<&crate::types::ExperimentOptions> {
+        self.experiment_options.as_ref()
+    }
 }
 impl ExperimentSummary {
     /// Creates a new builder-style object to manufacture [`ExperimentSummary`](crate::types::ExperimentSummary).
@@ -49,10 +61,12 @@ impl ExperimentSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) experiment_template_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ExperimentState>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) experiment_options: ::std::option::Option<crate::types::ExperimentOptions>,
 }
 impl ExperimentSummaryBuilder {
     /// <p>The ID of the experiment.</p>
@@ -68,6 +82,20 @@ impl ExperimentSummaryBuilder {
     /// <p>The ID of the experiment.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The ID of the experiment template.</p>
     pub fn experiment_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -131,14 +159,30 @@ impl ExperimentSummaryBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The experiment options for the experiment.</p>
+    pub fn experiment_options(mut self, input: crate::types::ExperimentOptions) -> Self {
+        self.experiment_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The experiment options for the experiment.</p>
+    pub fn set_experiment_options(mut self, input: ::std::option::Option<crate::types::ExperimentOptions>) -> Self {
+        self.experiment_options = input;
+        self
+    }
+    /// <p>The experiment options for the experiment.</p>
+    pub fn get_experiment_options(&self) -> &::std::option::Option<crate::types::ExperimentOptions> {
+        &self.experiment_options
+    }
     /// Consumes the builder and constructs a [`ExperimentSummary`](crate::types::ExperimentSummary).
     pub fn build(self) -> crate::types::ExperimentSummary {
         crate::types::ExperimentSummary {
             id: self.id,
+            arn: self.arn,
             experiment_template_id: self.experiment_template_id,
             state: self.state,
             creation_time: self.creation_time,
             tags: self.tags,
+            experiment_options: self.experiment_options,
         }
     }
 }

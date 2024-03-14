@@ -10,7 +10,9 @@ pub struct DescribeGlobalClustersInput {
     /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.</p>
+    /// <p>Currently, the only supported filter is <code>region</code>.</p>
+    /// <p>If used, the request returns information about any global cluster with at least one member (primary or secondary) in the specified Amazon Web Services Regions.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
@@ -29,7 +31,9 @@ impl DescribeGlobalClustersInput {
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.</p>
+    /// <p>Currently, the only supported filter is <code>region</code>.</p>
+    /// <p>If used, the request returns information about any global cluster with at least one member (primary or secondary) in the specified Amazon Web Services Regions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -96,19 +100,25 @@ impl DescribeGlobalClustersInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.</p>
+    /// <p>Currently, the only supported filter is <code>region</code>.</p>
+    /// <p>If used, the request returns information about any global cluster with at least one member (primary or secondary) in the specified Amazon Web Services Regions.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.</p>
+    /// <p>Currently, the only supported filter is <code>region</code>.</p>
+    /// <p>If used, the request returns information about any global cluster with at least one member (primary or secondary) in the specified Amazon Web Services Regions.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>This parameter isn't currently supported.</p>
+    /// <p>A filter that specifies one or more global database clusters to describe. This parameter is case-sensitive.</p>
+    /// <p>Currently, the only supported filter is <code>region</code>.</p>
+    /// <p>If used, the request returns information about any global cluster with at least one member (primary or secondary) in the specified Amazon Web Services Regions.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

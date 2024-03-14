@@ -7,6 +7,8 @@ pub struct ListExperimentsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the experiment template.</p>
+    pub experiment_template_id: ::std::option::Option<::std::string::String>,
 }
 impl ListExperimentsInput {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -16,6 +18,10 @@ impl ListExperimentsInput {
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The ID of the experiment template.</p>
+    pub fn experiment_template_id(&self) -> ::std::option::Option<&str> {
+        self.experiment_template_id.as_deref()
     }
 }
 impl ListExperimentsInput {
@@ -31,6 +37,7 @@ impl ListExperimentsInput {
 pub struct ListExperimentsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) experiment_template_id: ::std::option::Option<::std::string::String>,
 }
 impl ListExperimentsInputBuilder {
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -61,6 +68,20 @@ impl ListExperimentsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The ID of the experiment template.</p>
+    pub fn experiment_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.experiment_template_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the experiment template.</p>
+    pub fn set_experiment_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.experiment_template_id = input;
+        self
+    }
+    /// <p>The ID of the experiment template.</p>
+    pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.experiment_template_id
+    }
     /// Consumes the builder and constructs a [`ListExperimentsInput`](crate::operation::list_experiments::ListExperimentsInput).
     pub fn build(
         self,
@@ -68,6 +89,7 @@ impl ListExperimentsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_experiments::ListExperimentsInput {
             max_results: self.max_results,
             next_token: self.next_token,
+            experiment_template_id: self.experiment_template_id,
         })
     }
 }

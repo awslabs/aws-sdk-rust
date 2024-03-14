@@ -391,6 +391,7 @@ members = [
     "sdk/swf",
     "sdk/synthetics",
     "sdk/textract",
+    "sdk/timestreaminfluxdb",
     "sdk/timestreamquery",
     "sdk/timestreamwrite",
     "sdk/tnb",

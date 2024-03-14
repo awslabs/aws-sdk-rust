@@ -183,6 +183,22 @@ pub fn de_send_serial_console_ssh_public_key_http_error(
                 tmp
             })
         }
+        "SerialConsoleSessionUnsupportedException" => {
+            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::SerialConsoleSessionUnsupportedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::SerialConsoleSessionUnsupportedExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_serial_console_session_unsupported_exception::de_serial_console_session_unsupported_exception_json_err(_response_body, output).map_err(crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceException" => crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

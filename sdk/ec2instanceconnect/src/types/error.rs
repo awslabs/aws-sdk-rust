@@ -13,6 +13,8 @@ pub use crate::types::error::_ec2_instance_not_found_exception::Ec2InstanceNotFo
 
 pub use crate::types::error::_auth_exception::AuthException;
 
+pub use crate::types::error::_serial_console_session_unsupported_exception::SerialConsoleSessionUnsupportedException;
+
 pub use crate::types::error::_serial_console_session_unavailable_exception::SerialConsoleSessionUnavailableException;
 
 pub use crate::types::error::_serial_console_session_limit_exceeded_exception::SerialConsoleSessionLimitExceededException;
@@ -38,6 +40,8 @@ mod _serial_console_access_disabled_exception;
 mod _serial_console_session_limit_exceeded_exception;
 
 mod _serial_console_session_unavailable_exception;
+
+mod _serial_console_session_unsupported_exception;
 
 mod _service_exception;
 
