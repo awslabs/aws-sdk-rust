@@ -48,7 +48,9 @@ pub struct SpotFleetRequestConfigData {
     pub on_demand_fulfilled_capacity: ::std::option::Option<f64>,
     /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that grants the Spot Fleet the permission to request, launch, terminate, and tag instances on your behalf. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot Fleet prerequisites</a> in the <i>Amazon EC2 User Guide</i>. Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot Fleet request using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
     pub iam_fleet_role: ::std::option::Option<::std::string::String>,
-    /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
+    /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p><note>
+    /// <p>If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.</p>
+    /// </note>
     pub launch_specifications: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>>,
     /// <p>The launch template and overrides. If you specify <code>LaunchTemplateConfigs</code>, you can't specify <code>LaunchSpecifications</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
     pub launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateConfig>>,
@@ -155,7 +157,9 @@ impl SpotFleetRequestConfigData {
     pub fn iam_fleet_role(&self) -> ::std::option::Option<&str> {
         self.iam_fleet_role.as_deref()
     }
-    /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
+    /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p><note>
+    /// <p>If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.launch_specifications.is_none()`.
     pub fn launch_specifications(&self) -> &[crate::types::SpotFleetLaunchSpecification] {
@@ -483,19 +487,25 @@ impl SpotFleetRequestConfigDataBuilder {
     ///
     /// To override the contents of this collection use [`set_launch_specifications`](Self::set_launch_specifications).
     ///
-    /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
+    /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p><note>
+    /// <p>If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.</p>
+    /// </note>
     pub fn launch_specifications(mut self, input: crate::types::SpotFleetLaunchSpecification) -> Self {
         let mut v = self.launch_specifications.unwrap_or_default();
         v.push(input);
         self.launch_specifications = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
+    /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p><note>
+    /// <p>If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.</p>
+    /// </note>
     pub fn set_launch_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>>) -> Self {
         self.launch_specifications = input;
         self
     }
-    /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p>
+    /// <p>The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>, you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use <code>LaunchTemplateConfigs</code>.</p><note>
+    /// <p>If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.</p>
+    /// </note>
     pub fn get_launch_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SpotFleetLaunchSpecification>> {
         &self.launch_specifications
     }

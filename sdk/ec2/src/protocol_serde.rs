@@ -4263,6 +4263,8 @@ pub(crate) mod shape_local_gateway_virtual_interface_id_set;
 
 pub(crate) mod shape_local_storage_type_set;
 
+pub(crate) mod shape_media_accelerator_info;
+
 pub(crate) mod shape_memory_gib_per_v_cpu;
 
 pub(crate) mod shape_memory_info;
@@ -4288,6 +4290,8 @@ pub(crate) mod shape_network_interface_ipv6_address;
 pub(crate) mod shape_network_interface_private_ip_address;
 
 pub(crate) mod shape_network_nodes_list;
+
+pub(crate) mod shape_neuron_info;
 
 pub(crate) mod shape_nitro_tpm_info;
 
@@ -4521,9 +4525,13 @@ pub(crate) mod shape_launch_template_ena_srd_specification;
 
 pub(crate) mod shape_license_configuration;
 
+pub(crate) mod shape_media_device_info_list;
+
 pub(crate) mod shape_metric_point;
 
 pub(crate) mod shape_network_card_info_list;
+
+pub(crate) mod shape_neuron_device_info_list;
 
 pub(crate) mod shape_nitro_tpm_supported_versions_list;
 
@@ -4633,7 +4641,11 @@ pub(crate) mod shape_ipv6_prefix_specification_response;
 
 pub(crate) mod shape_launch_template_ena_srd_udp_specification;
 
+pub(crate) mod shape_media_device_info;
+
 pub(crate) mod shape_network_card_info;
+
+pub(crate) mod shape_neuron_device_info;
 
 pub(crate) mod shape_packet_header_statement;
 
@@ -4690,6 +4702,12 @@ pub(crate) mod shape_ipv4_prefix_list;
 pub(crate) mod shape_ipv6_prefix_list;
 
 pub(crate) mod shape_launch_template_overrides_list;
+
+pub(crate) mod shape_media_device_memory_info;
+
+pub(crate) mod shape_neuron_device_core_info;
+
+pub(crate) mod shape_neuron_device_memory_info;
 
 pub(crate) mod shape_phase1_dh_group_numbers_list_value;
 

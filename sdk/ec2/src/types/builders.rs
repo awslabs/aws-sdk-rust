@@ -1091,6 +1091,20 @@ pub use crate::types::_internet_gateway_attachment::InternetGatewayAttachmentBui
 
 pub use crate::types::_instance_type_info::InstanceTypeInfoBuilder;
 
+pub use crate::types::_neuron_info::NeuronInfoBuilder;
+
+pub use crate::types::_neuron_device_info::NeuronDeviceInfoBuilder;
+
+pub use crate::types::_neuron_device_memory_info::NeuronDeviceMemoryInfoBuilder;
+
+pub use crate::types::_neuron_device_core_info::NeuronDeviceCoreInfoBuilder;
+
+pub use crate::types::_media_accelerator_info::MediaAcceleratorInfoBuilder;
+
+pub use crate::types::_media_device_info::MediaDeviceInfoBuilder;
+
+pub use crate::types::_media_device_memory_info::MediaDeviceMemoryInfoBuilder;
+
 pub use crate::types::_nitro_tpm_info::NitroTpmInfoBuilder;
 
 pub use crate::types::_inference_accelerator_info::InferenceAcceleratorInfoBuilder;

@@ -185,9 +185,13 @@ pub use crate::types::_string_condition::StringConditionBuilder;
 
 pub use crate::types::_user_search_filter::UserSearchFilterBuilder;
 
-pub use crate::types::_control_plane_tag_filter::ControlPlaneTagFilterBuilder;
+pub use crate::types::_control_plane_user_attribute_filter::ControlPlaneUserAttributeFilterBuilder;
 
 pub use crate::types::_tag_condition::TagConditionBuilder;
+
+pub use crate::types::_attribute_and_condition::AttributeAndConditionBuilder;
+
+pub use crate::types::_control_plane_tag_filter::ControlPlaneTagFilterBuilder;
 
 pub use crate::types::_security_profile_search_summary::SecurityProfileSearchSummaryBuilder;
 

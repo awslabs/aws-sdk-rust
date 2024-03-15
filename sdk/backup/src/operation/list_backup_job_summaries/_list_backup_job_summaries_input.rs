@@ -11,6 +11,9 @@ pub struct ListBackupJobSummariesInput {
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message. To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED</p>
+    /// <p>GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
     pub state: ::std::option::Option<crate::types::BackupJobStatus>,
     /// <p>Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code> to obtain strings for supported resource types.</p>
     /// <p>The the value ANY returns count of all resource types.</p>
@@ -50,6 +53,9 @@ impl ListBackupJobSummariesInput {
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message. To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED</p>
+    /// <p>GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::BackupJobStatus> {
         self.state.as_ref()
     }
@@ -136,6 +142,9 @@ impl ListBackupJobSummariesInputBuilder {
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message. To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED</p>
+    /// <p>GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
     pub fn state(mut self, input: crate::types::BackupJobStatus) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
@@ -143,6 +152,9 @@ impl ListBackupJobSummariesInputBuilder {
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message. To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED</p>
+    /// <p>GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::BackupJobStatus>) -> Self {
         self.state = input;
         self
@@ -150,6 +162,9 @@ impl ListBackupJobSummariesInputBuilder {
     /// <p>This parameter returns the job count for jobs with the specified state.</p>
     /// <p>The the value ANY returns count of all states.</p>
     /// <p><code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message. To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED</p>
+    /// <p>GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::BackupJobStatus> {
         &self.state
     }

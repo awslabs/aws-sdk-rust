@@ -1603,6 +1603,20 @@ pub use crate::types::_internet_gateway_attachment::InternetGatewayAttachment;
 
 pub use crate::types::_instance_type_info::InstanceTypeInfo;
 
+pub use crate::types::_neuron_info::NeuronInfo;
+
+pub use crate::types::_neuron_device_info::NeuronDeviceInfo;
+
+pub use crate::types::_neuron_device_memory_info::NeuronDeviceMemoryInfo;
+
+pub use crate::types::_neuron_device_core_info::NeuronDeviceCoreInfo;
+
+pub use crate::types::_media_accelerator_info::MediaAcceleratorInfo;
+
+pub use crate::types::_media_device_info::MediaDeviceInfo;
+
+pub use crate::types::_media_device_memory_info::MediaDeviceMemoryInfo;
+
 pub use crate::types::_nitro_tpm_info::NitroTpmInfo;
 
 pub use crate::types::_nitro_tpm_support::NitroTpmSupport;
@@ -3301,6 +3315,12 @@ mod _managed_prefix_list;
 
 mod _market_type;
 
+mod _media_accelerator_info;
+
+mod _media_device_info;
+
+mod _media_device_memory_info;
+
 mod _membership_type;
 
 mod _memory_gib_per_v_cpu;
@@ -3404,6 +3424,14 @@ mod _network_interface_private_ip_address;
 mod _network_interface_status;
 
 mod _network_interface_type;
+
+mod _neuron_device_core_info;
+
+mod _neuron_device_info;
+
+mod _neuron_device_memory_info;
+
+mod _neuron_info;
 
 mod _new_dhcp_configuration;
 

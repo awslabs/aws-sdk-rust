@@ -10,6 +10,10 @@ pub struct ListBackupJobsInput {
     /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub by_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns only backup jobs that are in the specified state.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.</p>
+    /// <p>To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /backup-jobs/?state=COMPLETED</p>
+    /// <p>GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
     pub by_state: ::std::option::Option<crate::types::BackupJobState>,
     /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub by_backup_vault_name: ::std::option::Option<::std::string::String>,
@@ -83,6 +87,10 @@ impl ListBackupJobsInput {
         self.by_resource_arn.as_deref()
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.</p>
+    /// <p>To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /backup-jobs/?state=COMPLETED</p>
+    /// <p>GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
     pub fn by_state(&self) -> ::std::option::Option<&crate::types::BackupJobState> {
         self.by_state.as_ref()
     }
@@ -231,16 +239,28 @@ impl ListBackupJobsInputBuilder {
         &self.by_resource_arn
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.</p>
+    /// <p>To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /backup-jobs/?state=COMPLETED</p>
+    /// <p>GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
     pub fn by_state(mut self, input: crate::types::BackupJobState) -> Self {
         self.by_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.</p>
+    /// <p>To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /backup-jobs/?state=COMPLETED</p>
+    /// <p>GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
     pub fn set_by_state(mut self, input: ::std::option::Option<crate::types::BackupJobState>) -> Self {
         self.by_state = input;
         self
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.</p>
+    /// <p>To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /backup-jobs/?state=COMPLETED</p>
+    /// <p>GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
     pub fn get_by_state(&self) -> &::std::option::Option<crate::types::BackupJobState> {
         &self.by_state
     }

@@ -333,6 +333,26 @@ pub fn de_instance_type_info(
                 builder = builder.set_nitro_tpm_info(var_27);
             }
             ,
+            s if s.matches("mediaAcceleratorInfo") /* MediaAcceleratorInfo com.amazonaws.ec2#InstanceTypeInfo$MediaAcceleratorInfo */ =>  {
+                let var_28 =
+                    Some(
+                        crate::protocol_serde::shape_media_accelerator_info::de_media_accelerator_info(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_media_accelerator_info(var_28);
+            }
+            ,
+            s if s.matches("neuronInfo") /* NeuronInfo com.amazonaws.ec2#InstanceTypeInfo$NeuronInfo */ =>  {
+                let var_29 =
+                    Some(
+                        crate::protocol_serde::shape_neuron_info::de_neuron_info(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_neuron_info(var_29);
+            }
+            ,
             _ => {}
         }
     }

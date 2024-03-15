@@ -213,6 +213,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecovery
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }
+                if let ::std::option::Option::Some(inner_4) = &_input.managed_by_aws_backup_only {
+                    {
+                        query.push_kv("managedByAWSBackupOnly", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

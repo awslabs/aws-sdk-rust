@@ -1209,6 +1209,8 @@ pub(crate) mod shape_contact_tag_map;
 
 pub(crate) mod shape_control_plane_tag_filter;
 
+pub(crate) mod shape_control_plane_user_attribute_filter;
+
 pub(crate) mod shape_create_case_action_definition;
 
 pub(crate) mod shape_cross_channel_behavior;
@@ -1264,6 +1266,8 @@ pub(crate) mod shape_hierarchy_level;
 pub(crate) mod shape_hierarchy_level_update;
 
 pub(crate) mod shape_hierarchy_path;
+
+pub(crate) mod shape_hierarchy_restricted_resource_list;
 
 pub(crate) mod shape_historical_metric_result;
 
@@ -1422,6 +1426,8 @@ pub(crate) mod shape_agent_status_reference;
 pub(crate) mod shape_application_permissions;
 
 pub(crate) mod shape_attachment_reference;
+
+pub(crate) mod shape_attribute_and_condition;
 
 pub(crate) mod shape_channel_to_count_map;
 

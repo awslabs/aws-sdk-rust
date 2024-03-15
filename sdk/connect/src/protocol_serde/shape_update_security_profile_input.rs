@@ -3,48 +3,60 @@ pub fn ser_update_security_profile_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_security_profile::UpdateSecurityProfileInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.allowed_access_control_tags {
+    if let Some(var_1) = &input.allowed_access_control_hierarchy_group_id {
+        object.key("AllowedAccessControlHierarchyGroupId").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.allowed_access_control_tags {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("AllowedAccessControlTags").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_3 = object.key("AllowedAccessControlTags").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                object_2.key(key_3.as_str()).string(value_4.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_2.finish();
+        object_3.finish();
     }
-    if let Some(var_5) = &input.applications {
-        let mut array_6 = object.key("Applications").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.applications {
+        let mut array_7 = object.key("Applications").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_application::ser_application(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_application::ser_application(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_9) = &input.description {
-        object.key("Description").string(var_9.as_str());
+    if let Some(var_10) = &input.description {
+        object.key("Description").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.permissions {
-        let mut array_11 = object.key("Permissions").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.hierarchy_restricted_resources {
+        let mut array_12 = object.key("HierarchyRestrictedResources").start_array();
+        for item_13 in var_11 {
             {
-                array_11.value().string(item_12.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.tag_restricted_resources {
-        let mut array_14 = object.key("TagRestrictedResources").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.permissions {
+        let mut array_15 = object.key("Permissions").start_array();
+        for item_16 in var_14 {
             {
-                array_14.value().string(item_15.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        array_14.finish();
+        array_15.finish();
+    }
+    if let Some(var_17) = &input.tag_restricted_resources {
+        let mut array_18 = object.key("TagRestrictedResources").start_array();
+        for item_19 in var_17 {
+            {
+                array_18.value().string(item_19.as_str());
+            }
+        }
+        array_18.finish();
     }
     Ok(())
 }

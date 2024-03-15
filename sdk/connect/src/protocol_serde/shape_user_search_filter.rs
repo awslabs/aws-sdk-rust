@@ -9,5 +9,11 @@ pub fn ser_user_search_filter(
         crate::protocol_serde::shape_control_plane_tag_filter::ser_control_plane_tag_filter(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.user_attribute_filter {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("UserAttributeFilter").start_object();
+        crate::protocol_serde::shape_control_plane_user_attribute_filter::ser_control_plane_user_attribute_filter(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

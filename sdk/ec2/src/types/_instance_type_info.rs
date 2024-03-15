@@ -58,6 +58,10 @@ pub struct InstanceTypeInfo {
     pub nitro_tpm_support: ::std::option::Option<crate::types::NitroTpmSupport>,
     /// <p>Describes the supported NitroTPM versions for the instance type.</p>
     pub nitro_tpm_info: ::std::option::Option<crate::types::NitroTpmInfo>,
+    /// <p>Describes the media accelerator settings for the instance type.</p>
+    pub media_accelerator_info: ::std::option::Option<crate::types::MediaAcceleratorInfo>,
+    /// <p>Describes the Neuron accelerator settings for the instance type.</p>
+    pub neuron_info: ::std::option::Option<crate::types::NeuronInfo>,
 }
 impl InstanceTypeInfo {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -176,6 +180,14 @@ impl InstanceTypeInfo {
     pub fn nitro_tpm_info(&self) -> ::std::option::Option<&crate::types::NitroTpmInfo> {
         self.nitro_tpm_info.as_ref()
     }
+    /// <p>Describes the media accelerator settings for the instance type.</p>
+    pub fn media_accelerator_info(&self) -> ::std::option::Option<&crate::types::MediaAcceleratorInfo> {
+        self.media_accelerator_info.as_ref()
+    }
+    /// <p>Describes the Neuron accelerator settings for the instance type.</p>
+    pub fn neuron_info(&self) -> ::std::option::Option<&crate::types::NeuronInfo> {
+        self.neuron_info.as_ref()
+    }
 }
 impl InstanceTypeInfo {
     /// Creates a new builder-style object to manufacture [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
@@ -215,6 +227,8 @@ pub struct InstanceTypeInfoBuilder {
     pub(crate) nitro_enclaves_support: ::std::option::Option<crate::types::NitroEnclavesSupport>,
     pub(crate) nitro_tpm_support: ::std::option::Option<crate::types::NitroTpmSupport>,
     pub(crate) nitro_tpm_info: ::std::option::Option<crate::types::NitroTpmInfo>,
+    pub(crate) media_accelerator_info: ::std::option::Option<crate::types::MediaAcceleratorInfo>,
+    pub(crate) neuron_info: ::std::option::Option<crate::types::NeuronInfo>,
 }
 impl InstanceTypeInfoBuilder {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -619,6 +633,34 @@ impl InstanceTypeInfoBuilder {
     pub fn get_nitro_tpm_info(&self) -> &::std::option::Option<crate::types::NitroTpmInfo> {
         &self.nitro_tpm_info
     }
+    /// <p>Describes the media accelerator settings for the instance type.</p>
+    pub fn media_accelerator_info(mut self, input: crate::types::MediaAcceleratorInfo) -> Self {
+        self.media_accelerator_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the media accelerator settings for the instance type.</p>
+    pub fn set_media_accelerator_info(mut self, input: ::std::option::Option<crate::types::MediaAcceleratorInfo>) -> Self {
+        self.media_accelerator_info = input;
+        self
+    }
+    /// <p>Describes the media accelerator settings for the instance type.</p>
+    pub fn get_media_accelerator_info(&self) -> &::std::option::Option<crate::types::MediaAcceleratorInfo> {
+        &self.media_accelerator_info
+    }
+    /// <p>Describes the Neuron accelerator settings for the instance type.</p>
+    pub fn neuron_info(mut self, input: crate::types::NeuronInfo) -> Self {
+        self.neuron_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the Neuron accelerator settings for the instance type.</p>
+    pub fn set_neuron_info(mut self, input: ::std::option::Option<crate::types::NeuronInfo>) -> Self {
+        self.neuron_info = input;
+        self
+    }
+    /// <p>Describes the Neuron accelerator settings for the instance type.</p>
+    pub fn get_neuron_info(&self) -> &::std::option::Option<crate::types::NeuronInfo> {
+        &self.neuron_info
+    }
     /// Consumes the builder and constructs a [`InstanceTypeInfo`](crate::types::InstanceTypeInfo).
     pub fn build(self) -> crate::types::InstanceTypeInfo {
         crate::types::InstanceTypeInfo {
@@ -649,6 +691,8 @@ impl InstanceTypeInfoBuilder {
             nitro_enclaves_support: self.nitro_enclaves_support,
             nitro_tpm_support: self.nitro_tpm_support,
             nitro_tpm_info: self.nitro_tpm_info,
+            media_accelerator_info: self.media_accelerator_info,
+            neuron_info: self.neuron_info,
         }
     }
 }

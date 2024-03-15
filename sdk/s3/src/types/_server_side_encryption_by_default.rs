@@ -6,7 +6,7 @@
 pub struct ServerSideEncryptionByDefault {
     /// <p>Server-side encryption algorithm to use for the default encryption.</p>
     pub sse_algorithm: crate::types::ServerSideEncryption,
-    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p>
+    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or <code>aws:kms:dsse</code>.</p>
     /// <p>You can specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS key.</p>
     /// <ul>
     /// <li>
@@ -27,7 +27,7 @@ impl ServerSideEncryptionByDefault {
     pub fn sse_algorithm(&self) -> &crate::types::ServerSideEncryption {
         &self.sse_algorithm
     }
-    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p>
+    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or <code>aws:kms:dsse</code>.</p>
     /// <p>You can specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS key.</p>
     /// <ul>
     /// <li>
@@ -83,7 +83,7 @@ impl ServerSideEncryptionByDefaultBuilder {
     pub fn get_sse_algorithm(&self) -> &::std::option::Option<crate::types::ServerSideEncryption> {
         &self.sse_algorithm
     }
-    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p>
+    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or <code>aws:kms:dsse</code>.</p>
     /// <p>You can specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS key.</p>
     /// <ul>
     /// <li>
@@ -101,7 +101,7 @@ impl ServerSideEncryptionByDefaultBuilder {
         self.kms_master_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p>
+    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or <code>aws:kms:dsse</code>.</p>
     /// <p>You can specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS key.</p>
     /// <ul>
     /// <li>
@@ -119,7 +119,7 @@ impl ServerSideEncryptionByDefaultBuilder {
         self.kms_master_key_id = input;
         self
     }
-    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p>
+    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or <code>aws:kms:dsse</code>.</p>
     /// <p>You can specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS key.</p>
     /// <ul>
     /// <li>

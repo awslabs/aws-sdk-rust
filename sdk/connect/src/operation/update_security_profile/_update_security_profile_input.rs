@@ -18,6 +18,10 @@ pub struct UpdateSecurityProfileInput {
     /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
     /// <p>A list of the third-party application's metadata.</p>
     pub applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    pub hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecurityProfileInput {
     /// <p>The description of the security profile.</p>
@@ -55,6 +59,16 @@ impl UpdateSecurityProfileInput {
     pub fn applications(&self) -> &[crate::types::Application] {
         self.applications.as_deref().unwrap_or_default()
     }
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hierarchy_restricted_resources.is_none()`.
+    pub fn hierarchy_restricted_resources(&self) -> &[::std::string::String] {
+        self.hierarchy_restricted_resources.as_deref().unwrap_or_default()
+    }
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub fn allowed_access_control_hierarchy_group_id(&self) -> ::std::option::Option<&str> {
+        self.allowed_access_control_hierarchy_group_id.as_deref()
+    }
 }
 impl UpdateSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
@@ -74,6 +88,8 @@ pub struct UpdateSecurityProfileInputBuilder {
     pub(crate) allowed_access_control_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) applications: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
+    pub(crate) hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateSecurityProfileInputBuilder {
     /// <p>The description of the security profile.</p>
@@ -212,6 +228,40 @@ impl UpdateSecurityProfileInputBuilder {
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         &self.applications
     }
+    /// Appends an item to `hierarchy_restricted_resources`.
+    ///
+    /// To override the contents of this collection use [`set_hierarchy_restricted_resources`](Self::set_hierarchy_restricted_resources).
+    ///
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    pub fn hierarchy_restricted_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.hierarchy_restricted_resources.unwrap_or_default();
+        v.push(input.into());
+        self.hierarchy_restricted_resources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    pub fn set_hierarchy_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.hierarchy_restricted_resources = input;
+        self
+    }
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    pub fn get_hierarchy_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.hierarchy_restricted_resources
+    }
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub fn allowed_access_control_hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.allowed_access_control_hierarchy_group_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub fn set_allowed_access_control_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.allowed_access_control_hierarchy_group_id = input;
+        self
+    }
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub fn get_allowed_access_control_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allowed_access_control_hierarchy_group_id
+    }
     /// Consumes the builder and constructs a [`UpdateSecurityProfileInput`](crate::operation::update_security_profile::UpdateSecurityProfileInput).
     pub fn build(
         self,
@@ -225,6 +275,8 @@ impl UpdateSecurityProfileInputBuilder {
             allowed_access_control_tags: self.allowed_access_control_tags,
             tag_restricted_resources: self.tag_restricted_resources,
             applications: self.applications,
+            hierarchy_restricted_resources: self.hierarchy_restricted_resources,
+            allowed_access_control_hierarchy_group_id: self.allowed_access_control_hierarchy_group_id,
         })
     }
 }

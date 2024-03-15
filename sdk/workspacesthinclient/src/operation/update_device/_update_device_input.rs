@@ -11,8 +11,6 @@ pub struct UpdateDeviceInput {
     pub desired_software_set_id: ::std::option::Option<::std::string::String>,
     /// <p>An option to define if software updates should be applied within a maintenance window.</p>
     pub software_set_update_schedule: ::std::option::Option<crate::types::SoftwareSetUpdateSchedule>,
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.</p>
-    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDeviceInput {
     /// <p>The ID of the device to update.</p>
@@ -31,10 +29,6 @@ impl UpdateDeviceInput {
     pub fn software_set_update_schedule(&self) -> ::std::option::Option<&crate::types::SoftwareSetUpdateSchedule> {
         self.software_set_update_schedule.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.</p>
-    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
-        self.kms_key_arn.as_deref()
-    }
 }
 impl ::std::fmt::Debug for UpdateDeviceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -43,7 +37,6 @@ impl ::std::fmt::Debug for UpdateDeviceInput {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("desired_software_set_id", &self.desired_software_set_id);
         formatter.field("software_set_update_schedule", &self.software_set_update_schedule);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.finish()
     }
 }
@@ -62,7 +55,6 @@ pub struct UpdateDeviceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) desired_software_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) software_set_update_schedule: ::std::option::Option<crate::types::SoftwareSetUpdateSchedule>,
-    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDeviceInputBuilder {
     /// <p>The ID of the device to update.</p>
@@ -122,20 +114,6 @@ impl UpdateDeviceInputBuilder {
     pub fn get_software_set_update_schedule(&self) -> &::std::option::Option<crate::types::SoftwareSetUpdateSchedule> {
         &self.software_set_update_schedule
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.</p>
-    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.kms_key_arn = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.</p>
-    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.</p>
-    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.kms_key_arn
-    }
     /// Consumes the builder and constructs a [`UpdateDeviceInput`](crate::operation::update_device::UpdateDeviceInput).
     pub fn build(
         self,
@@ -145,7 +123,6 @@ impl UpdateDeviceInputBuilder {
             name: self.name,
             desired_software_set_id: self.desired_software_set_id,
             software_set_update_schedule: self.software_set_update_schedule,
-            kms_key_arn: self.kms_key_arn,
         })
     }
 }
@@ -156,7 +133,6 @@ impl ::std::fmt::Debug for UpdateDeviceInputBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("desired_software_set_id", &self.desired_software_set_id);
         formatter.field("software_set_update_schedule", &self.software_set_update_schedule);
-        formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.finish()
     }
 }
