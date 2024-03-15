@@ -289,9 +289,13 @@ pub use crate::types::_string_comparison_type::StringComparisonType;
 
 pub use crate::types::_user_search_filter::UserSearchFilter;
 
-pub use crate::types::_control_plane_tag_filter::ControlPlaneTagFilter;
+pub use crate::types::_control_plane_user_attribute_filter::ControlPlaneUserAttributeFilter;
 
 pub use crate::types::_tag_condition::TagCondition;
+
+pub use crate::types::_attribute_and_condition::AttributeAndCondition;
+
+pub use crate::types::_control_plane_tag_filter::ControlPlaneTagFilter;
 
 pub use crate::types::_security_profile_search_summary::SecurityProfileSearchSummary;
 
@@ -741,6 +745,8 @@ mod _attendee;
 
 mod _attribute;
 
+mod _attribute_and_condition;
+
 mod _audio_features;
 
 mod _available_number_summary;
@@ -802,6 +808,8 @@ mod _contact_search_summary_queue_info;
 mod _contact_state;
 
 mod _control_plane_tag_filter;
+
+mod _control_plane_user_attribute_filter;
 
 mod _create_case_action_definition;
 

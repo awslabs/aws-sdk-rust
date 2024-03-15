@@ -24,17 +24,20 @@ pub fn ser_create_fleet_input_input(
         crate::protocol_serde::shape_scaling_configuration_input::ser_scaling_configuration_input(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.tags {
-        let mut array_8 = object.key("tags").start_array();
-        for item_9 in var_7 {
+    if let Some(var_7) = &input.overflow_behavior {
+        object.key("overflowBehavior").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.tags {
+        let mut array_9 = object.key("tags").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
     Ok(())
 }

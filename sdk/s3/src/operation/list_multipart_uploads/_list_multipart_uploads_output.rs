@@ -7,7 +7,7 @@ pub struct ListMultipartUploadsOutput {
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The key at or after which the listing began.</p>
     pub key_marker: ::std::option::Option<::std::string::String>,
-    /// <p>Upload ID after which listing began.</p><note>
+    /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub upload_id_marker: ::std::option::Option<::std::string::String>,
@@ -55,7 +55,7 @@ impl ListMultipartUploadsOutput {
     pub fn key_marker(&self) -> ::std::option::Option<&str> {
         self.key_marker.as_deref()
     }
-    /// <p>Upload ID after which listing began.</p><note>
+    /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn upload_id_marker(&self) -> ::std::option::Option<&str> {
@@ -184,21 +184,21 @@ impl ListMultipartUploadsOutputBuilder {
     pub fn get_key_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_marker
     }
-    /// <p>Upload ID after which listing began.</p><note>
+    /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn upload_id_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upload_id_marker = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Upload ID after which listing began.</p><note>
+    /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_upload_id_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id_marker = input;
         self
     }
-    /// <p>Upload ID after which listing began.</p><note>
+    /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_upload_id_marker(&self) -> &::std::option::Option<::std::string::String> {

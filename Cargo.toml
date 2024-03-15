@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/examples",
-    "examples/lambda",
     "examples/cross_service",
     "examples/test-utils",
+    "examples/lambda",
+    "examples/examples",
     "tests/webassembly",
     "tests/no-default-features"
 ]
@@ -391,6 +391,7 @@ members = [
     "sdk/swf",
     "sdk/synthetics",
     "sdk/textract",
+    "sdk/timestreaminfluxdb",
     "sdk/timestreamquery",
     "sdk/timestreamwrite",
     "sdk/tnb",

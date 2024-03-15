@@ -164,18 +164,4 @@ impl UpdateDeviceFluentBuilder {
     pub fn get_software_set_update_schedule(&self) -> &::std::option::Option<crate::types::SoftwareSetUpdateSchedule> {
         self.inner.get_software_set_update_schedule()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.</p>
-    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.kms_key_arn(input.into());
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.</p>
-    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_kms_key_arn(input);
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.</p>
-    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_kms_key_arn()
-    }
 }

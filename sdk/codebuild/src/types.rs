@@ -99,6 +99,8 @@ pub use crate::types::_source_type::SourceType;
 
 pub use crate::types::_fleet::Fleet;
 
+pub use crate::types::_fleet_overflow_behavior::FleetOverflowBehavior;
+
 pub use crate::types::_scaling_configuration_output::ScalingConfigurationOutput;
 
 pub use crate::types::_target_tracking_scaling_configuration::TargetTrackingScalingConfiguration;
@@ -276,6 +278,8 @@ mod _file_system_type;
 mod _fleet;
 
 mod _fleet_context_code;
+
+mod _fleet_overflow_behavior;
 
 mod _fleet_scaling_metric_type;
 

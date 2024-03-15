@@ -310,6 +310,38 @@ impl CreateFleetFluentBuilder {
     pub fn get_scaling_configuration(&self) -> &::std::option::Option<crate::types::ScalingConfigurationInput> {
         self.inner.get_scaling_configuration()
     }
+    /// <p>The compute fleet overflow behavior.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to become available.</p></li>
+    /// <li>
+    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
+    /// </ul>
+    pub fn overflow_behavior(mut self, input: crate::types::FleetOverflowBehavior) -> Self {
+        self.inner = self.inner.overflow_behavior(input);
+        self
+    }
+    /// <p>The compute fleet overflow behavior.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to become available.</p></li>
+    /// <li>
+    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
+    /// </ul>
+    pub fn set_overflow_behavior(mut self, input: ::std::option::Option<crate::types::FleetOverflowBehavior>) -> Self {
+        self.inner = self.inner.set_overflow_behavior(input);
+        self
+    }
+    /// <p>The compute fleet overflow behavior.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to become available.</p></li>
+    /// <li>
+    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
+    /// </ul>
+    pub fn get_overflow_behavior(&self) -> &::std::option::Option<crate::types::FleetOverflowBehavior> {
+        self.inner.get_overflow_behavior()
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

@@ -6,14 +6,11 @@ pub fn ser_update_device_input_input(
     if let Some(var_1) = &input.desired_software_set_id {
         object.key("desiredSoftwareSetId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_2.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("name").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.software_set_update_schedule {
-        object.key("softwareSetUpdateSchedule").string(var_4.as_str());
+    if let Some(var_3) = &input.software_set_update_schedule {
+        object.key("softwareSetUpdateSchedule").string(var_3.as_str());
     }
     Ok(())
 }

@@ -32,7 +32,7 @@ impl CreateExperimentTemplateInputBuilder {
 /// <li>
 /// <p><b>Stop conditions</b>: If a stop condition is triggered while an experiment is running, the experiment is automatically stopped. You can define a stop condition as a CloudWatch alarm.</p></li>
 /// </ul>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment templates</a> in the <i>Fault Injection Service User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExperimentTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

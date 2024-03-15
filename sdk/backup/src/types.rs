@@ -65,13 +65,13 @@ pub use crate::types::_report_destination::ReportDestination;
 
 pub use crate::types::_recovery_point_by_resource::RecoveryPointByResource;
 
+pub use crate::types::_vault_type::VaultType;
+
 pub use crate::types::_recovery_point_status::RecoveryPointStatus;
 
 pub use crate::types::_recovery_point_member::RecoveryPointMember;
 
 pub use crate::types::_recovery_point_by_backup_vault::RecoveryPointByBackupVault;
-
-pub use crate::types::_vault_type::VaultType;
 
 pub use crate::types::_recovery_point_creator::RecoveryPointCreator;
 

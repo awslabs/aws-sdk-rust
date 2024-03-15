@@ -127,6 +127,8 @@ pub(crate) mod shape_experiment_template_summary_list;
 
 pub(crate) mod shape_resolved_target_list;
 
+pub(crate) mod shape_start_experiment_experiment_options_input;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_target_account_configuration;

@@ -112,34 +112,37 @@ impl CreateFeatureGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. The name:</p>
+    /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// <p>The name:</p>
     /// <ul>
     /// <li>
     /// <p>Must start and end with an alphanumeric character.</p></li>
     /// <li>
-    /// <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed.</p></li>
+    /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
     pub fn feature_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.feature_group_name(input.into());
         self
     }
-    /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. The name:</p>
+    /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// <p>The name:</p>
     /// <ul>
     /// <li>
     /// <p>Must start and end with an alphanumeric character.</p></li>
     /// <li>
-    /// <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed.</p></li>
+    /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
     pub fn set_feature_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_feature_group_name(input);
         self
     }
-    /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. The name:</p>
+    /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
+    /// <p>The name:</p>
     /// <ul>
     /// <li>
     /// <p>Must start and end with an alphanumeric character.</p></li>
     /// <li>
-    /// <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed.</p></li>
+    /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
     /// </ul>
     pub fn get_feature_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_feature_group_name()

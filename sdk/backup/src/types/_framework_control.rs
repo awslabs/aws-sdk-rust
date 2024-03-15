@@ -9,6 +9,7 @@ pub struct FrameworkControl {
     /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
     pub control_input_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlInputParameter>>,
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a></p>
     pub control_scope: ::std::option::Option<crate::types::ControlScope>,
 }
 impl FrameworkControl {
@@ -24,6 +25,7 @@ impl FrameworkControl {
         self.control_input_parameters.as_deref().unwrap_or_default()
     }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a></p>
     pub fn control_scope(&self) -> ::std::option::Option<&crate::types::ControlScope> {
         self.control_scope.as_ref()
     }
@@ -80,16 +82,19 @@ impl FrameworkControlBuilder {
         &self.control_input_parameters
     }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a></p>
     pub fn control_scope(mut self, input: crate::types::ControlScope) -> Self {
         self.control_scope = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a></p>
     pub fn set_control_scope(mut self, input: ::std::option::Option<crate::types::ControlScope>) -> Self {
         self.control_scope = input;
         self
     }
     /// <p>The scope of a control. The control scope defines what the control will evaluate. Three examples of control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a></p>
     pub fn get_control_scope(&self) -> &::std::option::Option<crate::types::ControlScope> {
         &self.control_scope
     }

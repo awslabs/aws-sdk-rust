@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "actionsMode" => {
+                            builder = builder.set_actions_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ActionsMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

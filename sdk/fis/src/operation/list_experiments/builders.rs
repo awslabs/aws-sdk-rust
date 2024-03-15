@@ -142,4 +142,18 @@ impl ListExperimentsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>The ID of the experiment template.</p>
+    pub fn experiment_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.experiment_template_id(input.into());
+        self
+    }
+    /// <p>The ID of the experiment template.</p>
+    pub fn set_experiment_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_experiment_template_id(input);
+        self
+    }
+    /// <p>The ID of the experiment template.</p>
+    pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_experiment_template_id()
+    }
 }

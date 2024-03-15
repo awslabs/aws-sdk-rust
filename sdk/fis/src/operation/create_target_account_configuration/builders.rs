@@ -22,7 +22,7 @@ impl CreateTargetAccountConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTargetAccountConfiguration`.
 ///
-/// <p>Creates a target account configuration for the experiment template. A target account configuration is required when <code>accountTargeting</code> of <code>experimentOptions</code> is set to <code>multi-account</code>. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment options</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
+/// <p>Creates a target account configuration for the experiment template. A target account configuration is required when <code>accountTargeting</code> of <code>experimentOptions</code> is set to <code>multi-account</code>. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment options</a> in the <i>Fault Injection Service User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTargetAccountConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl CreateTargetAccountConfigurationFluentBuilder {
     pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_experiment_template_id()
     }
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>The AWS account ID of the target account.</p>
+    /// <p>The Amazon Web Services account ID of the target account.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }

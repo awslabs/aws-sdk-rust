@@ -68,6 +68,14 @@ pub struct Fleet {
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>The scaling configuration of the compute fleet.</p>
     pub scaling_configuration: ::std::option::Option<crate::types::ScalingConfigurationOutput>,
+    /// <p>The compute fleet overflow behavior.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to become available.</p></li>
+    /// <li>
+    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
+    /// </ul>
+    pub overflow_behavior: ::std::option::Option<crate::types::FleetOverflowBehavior>,
     /// <p>A list of tag key and value pairs associated with this compute fleet.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -157,6 +165,16 @@ impl Fleet {
     pub fn scaling_configuration(&self) -> ::std::option::Option<&crate::types::ScalingConfigurationOutput> {
         self.scaling_configuration.as_ref()
     }
+    /// <p>The compute fleet overflow behavior.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to become available.</p></li>
+    /// <li>
+    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
+    /// </ul>
+    pub fn overflow_behavior(&self) -> ::std::option::Option<&crate::types::FleetOverflowBehavior> {
+        self.overflow_behavior.as_ref()
+    }
     /// <p>A list of tag key and value pairs associated with this compute fleet.</p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
     ///
@@ -186,6 +204,7 @@ pub struct FleetBuilder {
     pub(crate) environment_type: ::std::option::Option<crate::types::EnvironmentType>,
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
     pub(crate) scaling_configuration: ::std::option::Option<crate::types::ScalingConfigurationOutput>,
+    pub(crate) overflow_behavior: ::std::option::Option<crate::types::FleetOverflowBehavior>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl FleetBuilder {
@@ -461,6 +480,38 @@ impl FleetBuilder {
     pub fn get_scaling_configuration(&self) -> &::std::option::Option<crate::types::ScalingConfigurationOutput> {
         &self.scaling_configuration
     }
+    /// <p>The compute fleet overflow behavior.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to become available.</p></li>
+    /// <li>
+    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
+    /// </ul>
+    pub fn overflow_behavior(mut self, input: crate::types::FleetOverflowBehavior) -> Self {
+        self.overflow_behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute fleet overflow behavior.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to become available.</p></li>
+    /// <li>
+    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
+    /// </ul>
+    pub fn set_overflow_behavior(mut self, input: ::std::option::Option<crate::types::FleetOverflowBehavior>) -> Self {
+        self.overflow_behavior = input;
+        self
+    }
+    /// <p>The compute fleet overflow behavior.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to become available.</p></li>
+    /// <li>
+    /// <p>For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p></li>
+    /// </ul>
+    pub fn get_overflow_behavior(&self) -> &::std::option::Option<crate::types::FleetOverflowBehavior> {
+        &self.overflow_behavior
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -497,6 +548,7 @@ impl FleetBuilder {
             environment_type: self.environment_type,
             compute_type: self.compute_type,
             scaling_configuration: self.scaling_configuration,
+            overflow_behavior: self.overflow_behavior,
             tags: self.tags,
         }
     }

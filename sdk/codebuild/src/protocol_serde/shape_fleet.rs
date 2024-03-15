@@ -76,6 +76,13 @@ where
                                 crate::protocol_serde::shape_scaling_configuration_output::de_scaling_configuration_output(tokens)?,
                             );
                         }
+                        "overflowBehavior" => {
+                            builder = builder.set_overflow_behavior(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FleetOverflowBehavior::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
                         }

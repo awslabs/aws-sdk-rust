@@ -7,6 +7,8 @@ pub struct StartExperimentInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the experiment template.</p>
     pub experiment_template_id: ::std::option::Option<::std::string::String>,
+    /// <p>The experiment options for running the experiment.</p>
+    pub experiment_options: ::std::option::Option<crate::types::StartExperimentExperimentOptionsInput>,
     /// <p>The tags to apply to the experiment.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -18,6 +20,10 @@ impl StartExperimentInput {
     /// <p>The ID of the experiment template.</p>
     pub fn experiment_template_id(&self) -> ::std::option::Option<&str> {
         self.experiment_template_id.as_deref()
+    }
+    /// <p>The experiment options for running the experiment.</p>
+    pub fn experiment_options(&self) -> ::std::option::Option<&crate::types::StartExperimentExperimentOptionsInput> {
+        self.experiment_options.as_ref()
     }
     /// <p>The tags to apply to the experiment.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -37,6 +43,7 @@ impl StartExperimentInput {
 pub struct StartExperimentInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) experiment_template_id: ::std::option::Option<::std::string::String>,
+    pub(crate) experiment_options: ::std::option::Option<crate::types::StartExperimentExperimentOptionsInput>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartExperimentInputBuilder {
@@ -70,6 +77,20 @@ impl StartExperimentInputBuilder {
     pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.experiment_template_id
     }
+    /// <p>The experiment options for running the experiment.</p>
+    pub fn experiment_options(mut self, input: crate::types::StartExperimentExperimentOptionsInput) -> Self {
+        self.experiment_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The experiment options for running the experiment.</p>
+    pub fn set_experiment_options(mut self, input: ::std::option::Option<crate::types::StartExperimentExperimentOptionsInput>) -> Self {
+        self.experiment_options = input;
+        self
+    }
+    /// <p>The experiment options for running the experiment.</p>
+    pub fn get_experiment_options(&self) -> &::std::option::Option<crate::types::StartExperimentExperimentOptionsInput> {
+        &self.experiment_options
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -97,6 +118,7 @@ impl StartExperimentInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_experiment::StartExperimentInput {
             client_token: self.client_token,
             experiment_template_id: self.experiment_template_id,
+            experiment_options: self.experiment_options,
             tags: self.tags,
         })
     }

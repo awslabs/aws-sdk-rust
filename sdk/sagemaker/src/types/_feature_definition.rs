@@ -5,6 +5,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureDefinition {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+    /// <p>The name:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <li>
+    /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
+    /// </ul>
     pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
     pub feature_type: ::std::option::Option<crate::types::FeatureType>,
@@ -23,6 +30,13 @@ pub struct FeatureDefinition {
 }
 impl FeatureDefinition {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+    /// <p>The name:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <li>
+    /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
+    /// </ul>
     pub fn feature_name(&self) -> ::std::option::Option<&str> {
         self.feature_name.as_deref()
     }
@@ -65,17 +79,38 @@ pub struct FeatureDefinitionBuilder {
 }
 impl FeatureDefinitionBuilder {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+    /// <p>The name:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <li>
+    /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+    /// <p>The name:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <li>
+    /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
+    /// </ul>
     pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
     }
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+    /// <p>The name:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Must start and end with an alphanumeric character.</p></li>
+    /// <li>
+    /// <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.</p></li>
+    /// </ul>
     pub fn get_feature_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.feature_name
     }

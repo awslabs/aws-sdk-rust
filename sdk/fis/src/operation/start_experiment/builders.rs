@@ -136,6 +136,20 @@ impl StartExperimentFluentBuilder {
     pub fn get_experiment_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_experiment_template_id()
     }
+    /// <p>The experiment options for running the experiment.</p>
+    pub fn experiment_options(mut self, input: crate::types::StartExperimentExperimentOptionsInput) -> Self {
+        self.inner = self.inner.experiment_options(input);
+        self
+    }
+    /// <p>The experiment options for running the experiment.</p>
+    pub fn set_experiment_options(mut self, input: ::std::option::Option<crate::types::StartExperimentExperimentOptionsInput>) -> Self {
+        self.inner = self.inner.set_experiment_options(input);
+        self
+    }
+    /// <p>The experiment options for running the experiment.</p>
+    pub fn get_experiment_options(&self) -> &::std::option::Option<crate::types::StartExperimentExperimentOptionsInput> {
+        self.inner.get_experiment_options()
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

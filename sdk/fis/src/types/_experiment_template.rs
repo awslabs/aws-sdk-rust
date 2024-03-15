@@ -6,6 +6,8 @@
 pub struct ExperimentTemplate {
     /// <p>The ID of the experiment template.</p>
     pub id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description for the experiment template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The targets for the experiment.</p>
@@ -33,6 +35,10 @@ impl ExperimentTemplate {
     /// <p>The ID of the experiment template.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>The description for the experiment template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -93,6 +99,7 @@ impl ExperimentTemplate {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ExperimentTemplateBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) targets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ExperimentTemplateTarget>>,
     pub(crate) actions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ExperimentTemplateAction>>,
@@ -119,6 +126,20 @@ impl ExperimentTemplateBuilder {
     /// <p>The ID of the experiment template.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the experiment template.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.arn
     }
     /// <p>The description for the experiment template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -308,6 +329,7 @@ impl ExperimentTemplateBuilder {
     pub fn build(self) -> crate::types::ExperimentTemplate {
         crate::types::ExperimentTemplate {
             id: self.id,
+            arn: self.arn,
             description: self.description,
             targets: self.targets,
             actions: self.actions,

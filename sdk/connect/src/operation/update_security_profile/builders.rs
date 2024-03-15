@@ -234,4 +234,36 @@ impl UpdateSecurityProfileFluentBuilder {
     pub fn get_applications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Application>> {
         self.inner.get_applications()
     }
+    /// Appends an item to `HierarchyRestrictedResources`.
+    ///
+    /// To override the contents of this collection use [`set_hierarchy_restricted_resources`](Self::set_hierarchy_restricted_resources).
+    ///
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    pub fn hierarchy_restricted_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.hierarchy_restricted_resources(input.into());
+        self
+    }
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    pub fn set_hierarchy_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_hierarchy_restricted_resources(input);
+        self
+    }
+    /// <p>The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code>.</p>
+    pub fn get_hierarchy_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_hierarchy_restricted_resources()
+    }
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub fn allowed_access_control_hierarchy_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.allowed_access_control_hierarchy_group_id(input.into());
+        self
+    }
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub fn set_allowed_access_control_hierarchy_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_allowed_access_control_hierarchy_group_id(input);
+        self
+    }
+    /// <p>The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.</p>
+    pub fn get_allowed_access_control_hierarchy_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_allowed_access_control_hierarchy_group_id()
+    }
 }

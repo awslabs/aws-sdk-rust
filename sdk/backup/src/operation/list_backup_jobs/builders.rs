@@ -157,16 +157,28 @@ impl ListBackupJobsFluentBuilder {
         self.inner.get_by_resource_arn()
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.</p>
+    /// <p>To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /backup-jobs/?state=COMPLETED</p>
+    /// <p>GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
     pub fn by_state(mut self, input: crate::types::BackupJobState) -> Self {
         self.inner = self.inner.by_state(input);
         self
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.</p>
+    /// <p>To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /backup-jobs/?state=COMPLETED</p>
+    /// <p>GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
     pub fn set_by_state(mut self, input: ::std::option::Option<crate::types::BackupJobState>) -> Self {
         self.inner = self.inner.set_by_state(input);
         self
     }
     /// <p>Returns only backup jobs that are in the specified state.</p>
+    /// <p><code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.</p>
+    /// <p>To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second, smaller number:</p>
+    /// <p>GET /backup-jobs/?state=COMPLETED</p>
+    /// <p>GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
     pub fn get_by_state(&self) -> &::std::option::Option<crate::types::BackupJobState> {
         self.inner.get_by_state()
     }
