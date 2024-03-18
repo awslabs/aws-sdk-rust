@@ -3,8 +3,12 @@ on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
+  push:
+    branches:
+    - 'canary*'
 env:
-  tool_rust_version: 1.70.0
+  tool_rust_version: 1.74.1
+  rust_nightly_version: nightly-2024-02-07
 
 jobs:
   generate-canary-matrix:
@@ -45,6 +49,8 @@ jobs:
       LAMBDA_TEST_S3_BUCKET_NAME: ${{ secrets.CANARY_LAMBDA_TEST_S3_BUCKET }}
       LAMBDA_EXECUTION_ROLE_ARN: ${{ secrets.CANARY_LAMBDA_EXECUTION_ROLE_ARN }}
       LAMBDA_TEST_S3_MRAP_BUCKET_ARN: ${{ secrets.CANARY_LAMBDA_TEST_S3_MRAP_BUCKET_ARN }}
+      LAMBDA_TEST_S3_EXPRESS_BUCKET_NAME: ${{ secrets.CANARY_LAMBDA_TEST_S3_EXPRESS_BUCKET_NAME }}
+      ENABLE_S3_EXPRESS_CANARY: true
     permissions:
       id-token: write
       contents: read
@@ -72,6 +78,13 @@ jobs:
           targets: x86_64-unknown-linux-musl
       - name: Install musl-gcc
         run: sudo apt-get install -y musl-dev musl-tools
+      - name: Install nightly
+        run: rustup toolchain install ${{ env.rust_nightly_version }}
+      - name: Install cargo component for wasm canary
+        env:
+          # Must be in sync with that specified in `smithy-rs`
+          CARGO_COMPONENT_VERSION: 0.7.1
+        run: cargo +${{ env.rust_nightly_version }} install cargo-component --locked --version ${CARGO_COMPONENT_VERSION}
       - name: Compile the canary runner
         working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: cargo build
@@ -81,8 +94,16 @@ jobs:
           role-to-assume: ${{ secrets.CANARY_GITHUB_ACTIONS_ROLE_ARN }}
           aws-region: us-west-2
       - name: Run the canary
-        working-directory: smithy-rs/tools/ci-cdk/canary-runner
         run: |
+          # If `smithy-rs` lives under `aws-sdk-rust`, the following `cargo run` will run into a workspace problem:
+          #   `cargo metadata` exited with an error: error: current package believes it's in a workspace when it's not:
+          #   current:   /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs/tools/ci-cdk/canary-wasm/Cargo.toml
+          #   workspace: /home/runner/work/aws-sdk-rust/aws-sdk-rust/Cargo.toml
+          # The checkout action does not allow us to clone a repo outside the github workspace, i.e. using `path: ../smithy-rs`
+          # (https://github.com/actions/checkout/issues/197).
+          # We work around it by manually moving `smithy-rs` outside of `aws-sdk-rust`.
+          mv smithy-rs ../
+          cd ../smithy-rs/tools/ci-cdk/canary-runner
           cargo run -- \
             run --rust-version ${RUST_VERSION} \
                 --sdk-release-tag ${SDK_RELEASE_TAG} \
@@ -90,4 +111,5 @@ jobs:
                 --lambda-test-s3-bucket-name ${LAMBDA_TEST_S3_BUCKET_NAME} \
                 --lambda-execution-role-arn ${LAMBDA_EXECUTION_ROLE_ARN} \
                 --lambda-test-s3-mrap-bucket-arn ${LAMBDA_TEST_S3_MRAP_BUCKET_ARN} \
+                --lambda-test-s3-express-bucket-name ${LAMBDA_TEST_S3_EXPRESS_BUCKET_NAME} \
                 --musl
