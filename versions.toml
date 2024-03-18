@@ -1,5 +1,5 @@
 smithy_rs_revision = 'b43c7ad2e7733f0e1d62b8c959ac7ff47045804d'
-aws_doc_sdk_examples_revision = '67b3e390ad91f2c10235ae5f3ce3b297d0f325b4'
+aws_doc_sdk_examples_revision = 'b05a15969c3bbf11358241dd7a1ccfe7e21e246f'
 
 [manual_interventions]
 crates_to_remove = []
