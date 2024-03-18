@@ -16,6 +16,11 @@ pub struct CreateIntegrationInput {
     pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
+    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    pub data_filter: ::std::option::Option<::std::string::String>,
+    /// <p>A description of the integration.</p>
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl CreateIntegrationInput {
     /// <p>The Amazon Resource Name (ARN) of the database to use as the source for replication.</p>
@@ -45,6 +50,15 @@ impl CreateIntegrationInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
+    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    pub fn data_filter(&self) -> ::std::option::Option<&str> {
+        self.data_filter.as_deref()
+    }
+    /// <p>A description of the integration.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl CreateIntegrationInput {
     /// Creates a new builder-style object to manufacture [`CreateIntegrationInput`](crate::operation::create_integration::CreateIntegrationInput).
@@ -63,6 +77,8 @@ pub struct CreateIntegrationInputBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) data_filter: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl CreateIntegrationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the database to use as the source for replication.</p>
@@ -176,6 +192,37 @@ impl CreateIntegrationInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
+    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    pub fn data_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_filter = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
+    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    pub fn set_data_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_filter = input;
+        self
+    }
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
+    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    pub fn get_data_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_filter
+    }
+    /// <p>A description of the integration.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A description of the integration.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>A description of the integration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Consumes the builder and constructs a [`CreateIntegrationInput`](crate::operation::create_integration::CreateIntegrationInput).
     pub fn build(
         self,
@@ -187,6 +234,8 @@ impl CreateIntegrationInputBuilder {
             kms_key_id: self.kms_key_id,
             additional_encryption_context: self.additional_encryption_context,
             tags: self.tags,
+            data_filter: self.data_filter,
+            description: self.description,
         })
     }
 }

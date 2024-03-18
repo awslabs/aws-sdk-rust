@@ -527,6 +527,10 @@ pub(crate) mod shape_modify_global_cluster;
 
 pub(crate) mod shape_modify_global_cluster_input;
 
+pub(crate) mod shape_modify_integration;
+
+pub(crate) mod shape_modify_integration_input;
+
 pub(crate) mod shape_modify_option_group;
 
 pub(crate) mod shape_modify_option_group_input;

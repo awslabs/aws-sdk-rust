@@ -179,4 +179,18 @@ impl GetChannelScheduleFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>The single audience for GetChannelScheduleRequest.</p>
+    pub fn audience(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.audience(input.into());
+        self
+    }
+    /// <p>The single audience for GetChannelScheduleRequest.</p>
+    pub fn set_audience(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_audience(input);
+        self
+    }
+    /// <p>The single audience for GetChannelScheduleRequest.</p>
+    pub fn get_audience(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_audience()
+    }
 }

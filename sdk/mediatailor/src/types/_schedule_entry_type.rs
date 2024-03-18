@@ -12,6 +12,7 @@
 /// ```text
 /// # let scheduleentrytype = unimplemented!();
 /// match scheduleentrytype {
+///     ScheduleEntryType::AlternateMedia => { /* ... */ },
 ///     ScheduleEntryType::FillerSlate => { /* ... */ },
 ///     ScheduleEntryType::Program => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum ScheduleEntryType {
     #[allow(missing_docs)] // documentation missing in model
+    AlternateMedia,
+    #[allow(missing_docs)] // documentation missing in model
     FillerSlate,
     #[allow(missing_docs)] // documentation missing in model
     Program,
@@ -52,6 +55,7 @@ pub enum ScheduleEntryType {
 impl ::std::convert::From<&str> for ScheduleEntryType {
     fn from(s: &str) -> Self {
         match s {
+            "ALTERNATE_MEDIA" => ScheduleEntryType::AlternateMedia,
             "FILLER_SLATE" => ScheduleEntryType::FillerSlate,
             "PROGRAM" => ScheduleEntryType::Program,
             other => ScheduleEntryType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl ScheduleEntryType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ScheduleEntryType::AlternateMedia => "ALTERNATE_MEDIA",
             ScheduleEntryType::FillerSlate => "FILLER_SLATE",
             ScheduleEntryType::Program => "PROGRAM",
             ScheduleEntryType::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl ScheduleEntryType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FILLER_SLATE", "PROGRAM"]
+        &["ALTERNATE_MEDIA", "FILLER_SLATE", "PROGRAM"]
     }
 }
 impl ::std::convert::AsRef<str> for ScheduleEntryType {
@@ -99,6 +104,7 @@ impl ScheduleEntryType {
 impl ::std::fmt::Display for ScheduleEntryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ScheduleEntryType::AlternateMedia => write!(f, "ALTERNATE_MEDIA"),
             ScheduleEntryType::FillerSlate => write!(f, "FILLER_SLATE"),
             ScheduleEntryType::Program => write!(f, "PROGRAM"),
             ScheduleEntryType::Unknown(value) => write!(f, "{}", value),

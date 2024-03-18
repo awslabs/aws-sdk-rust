@@ -4761,6 +4761,34 @@ impl From<crate::operation::modify_global_cluster::ModifyGlobalClusterError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_integration::ModifyIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_integration::ModifyIntegrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_integration::ModifyIntegrationError> for Error {
+    fn from(err: crate::operation::modify_integration::ModifyIntegrationError) -> Self {
+        match err {
+            crate::operation::modify_integration::ModifyIntegrationError::IntegrationConflictOperationFault(inner) => {
+                Error::IntegrationConflictOperationFault(inner)
+            }
+            crate::operation::modify_integration::ModifyIntegrationError::IntegrationNotFoundFault(inner) => Error::IntegrationNotFoundFault(inner),
+            crate::operation::modify_integration::ModifyIntegrationError::InvalidIntegrationStateFault(inner) => {
+                Error::InvalidIntegrationStateFault(inner)
+            }
+            crate::operation::modify_integration::ModifyIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_option_group::ModifyOptionGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

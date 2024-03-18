@@ -24,7 +24,7 @@ lazy_static = "1.4.0"
 aws-config= { version = "1.1.8", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-credential-types= { version = "1.1.8", path = "../../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
 aws-sdk-iam= { version = "1.17.0", path = "../../../sdk/iam" }
-aws-sdk-s3= { version = "1.19.1", path = "../../../sdk/s3" }
+aws-sdk-s3= { version = "1.20.0", path = "../../../sdk/s3" }
 aws-sdk-sts= { version = "1.17.0", path = "../../../sdk/sts" }
 
 [dependencies.sdk-examples-test-utils]

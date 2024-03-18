@@ -15,20 +15,32 @@ pub fn ser_create_program_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.live_source_name {
-        object.key("LiveSourceName").string(var_5.as_str());
+    if let Some(var_5) = &input.audience_media {
+        let mut array_6 = object.key("AudienceMedia").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_audience_media::ser_audience_media(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
     }
-    if let Some(var_6) = &input.schedule_configuration {
+    if let Some(var_9) = &input.live_source_name {
+        object.key("LiveSourceName").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.schedule_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("ScheduleConfiguration").start_object();
-        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_11 = object.key("ScheduleConfiguration").start_object();
+        crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_8) = &input.source_location_name {
-        object.key("SourceLocationName").string(var_8.as_str());
+    if let Some(var_12) = &input.source_location_name {
+        object.key("SourceLocationName").string(var_12.as_str());
     }
-    if let Some(var_9) = &input.vod_source_name {
-        object.key("VodSourceName").string(var_9.as_str());
+    if let Some(var_13) = &input.vod_source_name {
+        object.key("VodSourceName").string(var_13.as_str());
     }
     Ok(())
 }

@@ -212,6 +212,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetChannelSc
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
+                if let ::std::option::Option::Some(inner_5) = &_input.audience {
+                    {
+                        query.push_kv("audience", &::aws_smithy_http::query::fmt_string(inner_5));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

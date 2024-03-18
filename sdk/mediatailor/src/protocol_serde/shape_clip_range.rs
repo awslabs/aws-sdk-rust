@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "StartOffsetMillis" => {
+                            builder = builder.set_start_offset_millis(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -31,9 +38,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::clip_range_correct_errors(builder).build().map_err(|err| {
-                ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err)
-            })?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -45,10 +50,16 @@ pub fn ser_clip_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClipRange,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
+    if input.end_offset_millis != 0 {
         object.key("EndOffsetMillis").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.end_offset_millis).into()),
+        );
+    }
+    if let Some(var_1) = &input.start_offset_millis {
+        object.key("StartOffsetMillis").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

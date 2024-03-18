@@ -3,29 +3,38 @@ pub fn ser_update_channel_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_channel::UpdateChannelInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.filler_slate {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("FillerSlate").start_object();
-        crate::protocol_serde::shape_slate_source::ser_slate_source(&mut object_2, var_1)?;
-        object_2.finish();
-    }
-    if let Some(var_3) = &input.outputs {
-        let mut array_4 = object.key("Outputs").start_array();
-        for item_5 in var_3 {
+    if let Some(var_1) = &input.audiences {
+        let mut array_2 = object.key("Audiences").start_array();
+        for item_3 in var_1 {
             {
-                #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_request_output_item::ser_request_output_item(&mut object_6, item_5)?;
-                object_6.finish();
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_4.finish();
+        array_2.finish();
     }
-    if let Some(var_7) = &input.time_shift_configuration {
+    if let Some(var_4) = &input.filler_slate {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("TimeShiftConfiguration").start_object();
-        crate::protocol_serde::shape_time_shift_configuration::ser_time_shift_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_5 = object.key("FillerSlate").start_object();
+        crate::protocol_serde::shape_slate_source::ser_slate_source(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.outputs {
+        let mut array_7 = object.key("Outputs").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_request_output_item::ser_request_output_item(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.time_shift_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("TimeShiftConfiguration").start_object();
+        crate::protocol_serde::shape_time_shift_configuration::ser_time_shift_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

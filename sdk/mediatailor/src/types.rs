@@ -93,7 +93,9 @@ pub use crate::types::_log_configuration_for_channel::LogConfigurationForChannel
 
 pub use crate::types::_channel::Channel;
 
-pub use crate::types::_clip_range::ClipRange;
+pub use crate::types::_audience_media::AudienceMedia;
+
+pub use crate::types::_alternate_media::AlternateMedia;
 
 pub use crate::types::_ad_break::AdBreak;
 
@@ -106,6 +108,8 @@ pub use crate::types::_segmentation_descriptor::SegmentationDescriptor;
 pub use crate::types::_splice_insert_message::SpliceInsertMessage;
 
 pub use crate::types::_message_type::MessageType;
+
+pub use crate::types::_clip_range::ClipRange;
 
 pub use crate::types::_update_program_schedule_configuration::UpdateProgramScheduleConfiguration;
 
@@ -136,6 +140,10 @@ mod _ad_markup_type;
 mod _alert;
 
 mod _alert_category;
+
+mod _alternate_media;
+
+mod _audience_media;
 
 mod _avail_matching_criteria;
 

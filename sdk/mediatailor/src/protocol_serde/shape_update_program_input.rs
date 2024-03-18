@@ -15,11 +15,23 @@ pub fn ser_update_program_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.schedule_configuration {
+    if let Some(var_5) = &input.audience_media {
+        let mut array_6 = object.key("AudienceMedia").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_audience_media::ser_audience_media(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.schedule_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("ScheduleConfiguration").start_object();
-        crate::protocol_serde::shape_update_program_schedule_configuration::ser_update_program_schedule_configuration(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_10 = object.key("ScheduleConfiguration").start_object();
+        crate::protocol_serde::shape_update_program_schedule_configuration::ser_update_program_schedule_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

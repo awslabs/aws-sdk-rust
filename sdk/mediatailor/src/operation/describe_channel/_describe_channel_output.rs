@@ -27,6 +27,8 @@ pub struct DescribeChannelOutput {
     pub log_configuration: ::std::option::Option<crate::types::LogConfigurationForChannel>,
     /// <p>The time-shifted viewing configuration for the channel.</p>
     pub time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
+    /// <p>The list of audiences defined in channel.</p>
+    pub audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeChannelOutput {
@@ -80,6 +82,12 @@ impl DescribeChannelOutput {
     pub fn time_shift_configuration(&self) -> ::std::option::Option<&crate::types::TimeShiftConfiguration> {
         self.time_shift_configuration.as_ref()
     }
+    /// <p>The list of audiences defined in channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audiences.is_none()`.
+    pub fn audiences(&self) -> &[::std::string::String] {
+        self.audiences.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeChannelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -109,6 +117,7 @@ pub struct DescribeChannelOutputBuilder {
     pub(crate) tier: ::std::option::Option<::std::string::String>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfigurationForChannel>,
     pub(crate) time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
+    pub(crate) audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeChannelOutputBuilder {
@@ -293,6 +302,26 @@ impl DescribeChannelOutputBuilder {
     pub fn get_time_shift_configuration(&self) -> &::std::option::Option<crate::types::TimeShiftConfiguration> {
         &self.time_shift_configuration
     }
+    /// Appends an item to `audiences`.
+    ///
+    /// To override the contents of this collection use [`set_audiences`](Self::set_audiences).
+    ///
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn audiences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.audiences.unwrap_or_default();
+        v.push(input.into());
+        self.audiences = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.audiences = input;
+        self
+    }
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.audiences
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -317,6 +346,7 @@ impl DescribeChannelOutputBuilder {
             tier: self.tier,
             log_configuration: self.log_configuration,
             time_shift_configuration: self.time_shift_configuration,
+            audiences: self.audiences,
             _request_id: self._request_id,
         }
     }

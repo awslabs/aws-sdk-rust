@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`channel_name(impl Into<String>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::set_channel_name):<br>required: **true**<br><p>The name of the channel for this Program.</p><br>
     ///   - [`program_name(impl Into<String>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::program_name) / [`set_program_name(Option<String>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::set_program_name):<br>required: **true**<br><p>The name of the Program.</p><br>
     ///   - [`schedule_configuration(UpdateProgramScheduleConfiguration)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::schedule_configuration) / [`set_schedule_configuration(Option<UpdateProgramScheduleConfiguration>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::set_schedule_configuration):<br>required: **true**<br><p>The schedule configuration settings.</p><br>
+    ///   - [`audience_media(AudienceMedia)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::audience_media) / [`set_audience_media(Option<Vec::<AudienceMedia>>)`](crate::operation::update_program::builders::UpdateProgramFluentBuilder::set_audience_media):<br>required: **false**<br><p>The list of AudienceMedia defined in program.</p><br>
     /// - On success, responds with [`UpdateProgramOutput`](crate::operation::update_program::UpdateProgramOutput) with field(s):
     ///   - [`ad_breaks(Option<Vec::<AdBreak>>)`](crate::operation::update_program::UpdateProgramOutput::ad_breaks): <p>The ad break configuration settings.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_program::UpdateProgramOutput::arn): <p>The ARN to assign to the program.</p>
@@ -19,6 +20,7 @@ impl super::Client {
     ///   - [`clip_range(Option<ClipRange>)`](crate::operation::update_program::UpdateProgramOutput::clip_range): <p>The clip range configuration settings.</p>
     ///   - [`duration_millis(Option<i64>)`](crate::operation::update_program::UpdateProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
     ///   - [`scheduled_start_time(Option<DateTime>)`](crate::operation::update_program::UpdateProgramOutput::scheduled_start_time): <p>The scheduled start time for this Program.</p>
+    ///   - [`audience_media(Option<Vec::<AudienceMedia>>)`](crate::operation::update_program::UpdateProgramOutput::audience_media): <p>The list of AudienceMedia defined in program.</p>
     /// - On failure, responds with [`SdkError<UpdateProgramError>`](crate::operation::update_program::UpdateProgramError)
     pub fn update_program(&self) -> crate::operation::update_program::builders::UpdateProgramFluentBuilder {
         crate::operation::update_program::builders::UpdateProgramFluentBuilder::new(self.handle.clone())

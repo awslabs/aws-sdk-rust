@@ -93,6 +93,8 @@ pub use crate::types::_operation_result_filter::OperationResultFilter;
 
 pub use crate::types::_operation_result_filter_name::OperationResultFilterName;
 
+pub use crate::types::_stack_set_auto_deployment_target_summary::StackSetAutoDeploymentTargetSummary;
+
 pub use crate::types::_stack_summary::StackSummary;
 
 pub use crate::types::_stack_drift_information_summary::StackDriftInformationSummary;
@@ -470,6 +472,8 @@ mod _stack_resource_drift_status;
 mod _stack_resource_summary;
 
 mod _stack_set;
+
+mod _stack_set_auto_deployment_target_summary;
 
 mod _stack_set_drift_detection_details;
 

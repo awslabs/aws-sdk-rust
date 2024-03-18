@@ -275,6 +275,8 @@ mod list_stack_instances;
 
 mod list_stack_resources;
 
+mod list_stack_set_auto_deployment_targets;
+
 mod list_stack_set_operation_results;
 
 mod list_stack_set_operations;

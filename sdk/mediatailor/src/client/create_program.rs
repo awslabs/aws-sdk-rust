@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`schedule_configuration(ScheduleConfiguration)`](crate::operation::create_program::builders::CreateProgramFluentBuilder::schedule_configuration) / [`set_schedule_configuration(Option<ScheduleConfiguration>)`](crate::operation::create_program::builders::CreateProgramFluentBuilder::set_schedule_configuration):<br>required: **true**<br><p>The schedule configuration settings.</p><br>
     ///   - [`source_location_name(impl Into<String>)`](crate::operation::create_program::builders::CreateProgramFluentBuilder::source_location_name) / [`set_source_location_name(Option<String>)`](crate::operation::create_program::builders::CreateProgramFluentBuilder::set_source_location_name):<br>required: **true**<br><p>The name of the source location.</p><br>
     ///   - [`vod_source_name(impl Into<String>)`](crate::operation::create_program::builders::CreateProgramFluentBuilder::vod_source_name) / [`set_vod_source_name(Option<String>)`](crate::operation::create_program::builders::CreateProgramFluentBuilder::set_vod_source_name):<br>required: **false**<br><p>The name that's used to refer to a VOD source.</p><br>
+    ///   - [`audience_media(AudienceMedia)`](crate::operation::create_program::builders::CreateProgramFluentBuilder::audience_media) / [`set_audience_media(Option<Vec::<AudienceMedia>>)`](crate::operation::create_program::builders::CreateProgramFluentBuilder::set_audience_media):<br>required: **false**<br><p>The list of AudienceMedia defined in program.</p><br>
     /// - On success, responds with [`CreateProgramOutput`](crate::operation::create_program::CreateProgramOutput) with field(s):
     ///   - [`ad_breaks(Option<Vec::<AdBreak>>)`](crate::operation::create_program::CreateProgramOutput::ad_breaks): <p>The ad break configuration settings.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_program::CreateProgramOutput::arn): <p>The ARN to assign to the program.</p>
@@ -22,6 +23,7 @@ impl super::Client {
     ///   - [`vod_source_name(Option<String>)`](crate::operation::create_program::CreateProgramOutput::vod_source_name): <p>The name that's used to refer to a VOD source.</p>
     ///   - [`clip_range(Option<ClipRange>)`](crate::operation::create_program::CreateProgramOutput::clip_range): <p>The clip range configuration settings.</p>
     ///   - [`duration_millis(Option<i64>)`](crate::operation::create_program::CreateProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
+    ///   - [`audience_media(Option<Vec::<AudienceMedia>>)`](crate::operation::create_program::CreateProgramOutput::audience_media): <p>The list of AudienceMedia defined in program.</p>
     /// - On failure, responds with [`SdkError<CreateProgramError>`](crate::operation::create_program::CreateProgramError)
     pub fn create_program(&self) -> crate::operation::create_program::builders::CreateProgramFluentBuilder {
         crate::operation::create_program::builders::CreateProgramFluentBuilder::new(self.handle.clone())

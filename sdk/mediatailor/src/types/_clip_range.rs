@@ -6,11 +6,17 @@
 pub struct ClipRange {
     /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
     pub end_offset_millis: i64,
+    /// <p>The start offset of the clip range, in milliseconds. This offset truncates the start at the number of milliseconds into the duration of the VOD source.</p>
+    pub start_offset_millis: ::std::option::Option<i64>,
 }
 impl ClipRange {
     /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
     pub fn end_offset_millis(&self) -> i64 {
         self.end_offset_millis
+    }
+    /// <p>The start offset of the clip range, in milliseconds. This offset truncates the start at the number of milliseconds into the duration of the VOD source.</p>
+    pub fn start_offset_millis(&self) -> ::std::option::Option<i64> {
+        self.start_offset_millis
     }
 }
 impl ClipRange {
@@ -25,10 +31,10 @@ impl ClipRange {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClipRangeBuilder {
     pub(crate) end_offset_millis: ::std::option::Option<i64>,
+    pub(crate) start_offset_millis: ::std::option::Option<i64>,
 }
 impl ClipRangeBuilder {
     /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
-    /// This field is required.
     pub fn end_offset_millis(mut self, input: i64) -> Self {
         self.end_offset_millis = ::std::option::Option::Some(input);
         self
@@ -42,17 +48,25 @@ impl ClipRangeBuilder {
     pub fn get_end_offset_millis(&self) -> &::std::option::Option<i64> {
         &self.end_offset_millis
     }
+    /// <p>The start offset of the clip range, in milliseconds. This offset truncates the start at the number of milliseconds into the duration of the VOD source.</p>
+    pub fn start_offset_millis(mut self, input: i64) -> Self {
+        self.start_offset_millis = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The start offset of the clip range, in milliseconds. This offset truncates the start at the number of milliseconds into the duration of the VOD source.</p>
+    pub fn set_start_offset_millis(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.start_offset_millis = input;
+        self
+    }
+    /// <p>The start offset of the clip range, in milliseconds. This offset truncates the start at the number of milliseconds into the duration of the VOD source.</p>
+    pub fn get_start_offset_millis(&self) -> &::std::option::Option<i64> {
+        &self.start_offset_millis
+    }
     /// Consumes the builder and constructs a [`ClipRange`](crate::types::ClipRange).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`end_offset_millis`](crate::types::builders::ClipRangeBuilder::end_offset_millis)
-    pub fn build(self) -> ::std::result::Result<crate::types::ClipRange, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::ClipRange {
-            end_offset_millis: self.end_offset_millis.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "end_offset_millis",
-                    "end_offset_millis was not specified but it is required when building ClipRange",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::ClipRange {
+        crate::types::ClipRange {
+            end_offset_millis: self.end_offset_millis.unwrap_or_default(),
+            start_offset_millis: self.start_offset_millis,
+        }
     }
 }

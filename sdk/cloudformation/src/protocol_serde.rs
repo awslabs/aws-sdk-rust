@@ -247,6 +247,10 @@ pub(crate) mod shape_list_stack_resources;
 
 pub(crate) mod shape_list_stack_resources_input;
 
+pub(crate) mod shape_list_stack_set_auto_deployment_targets;
+
+pub(crate) mod shape_list_stack_set_auto_deployment_targets_input;
+
 pub(crate) mod shape_list_stack_set_operation_results;
 
 pub(crate) mod shape_list_stack_set_operation_results_input;
@@ -495,6 +499,8 @@ pub(crate) mod shape_stack_resources;
 
 pub(crate) mod shape_stack_set;
 
+pub(crate) mod shape_stack_set_auto_deployment_target_summaries;
+
 pub(crate) mod shape_stack_set_operation;
 
 pub(crate) mod shape_stack_set_operation_result_summaries;
@@ -580,6 +586,8 @@ pub(crate) mod shape_stack_resource;
 pub(crate) mod shape_stack_resource_drift_information;
 
 pub(crate) mod shape_stack_resource_summary;
+
+pub(crate) mod shape_stack_set_auto_deployment_target_summary;
 
 pub(crate) mod shape_stack_set_drift_detection_details;
 

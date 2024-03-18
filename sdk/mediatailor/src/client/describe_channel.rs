@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`tier(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::tier): <p>The channel's tier.</p>
     ///   - [`log_configuration(Option<LogConfigurationForChannel>)`](crate::operation::describe_channel::DescribeChannelOutput::log_configuration): <p>The log configuration for the channel.</p>
     ///   - [`time_shift_configuration(Option<TimeShiftConfiguration>)`](crate::operation::describe_channel::DescribeChannelOutput::time_shift_configuration): <p>The time-shifted viewing configuration for the channel.</p>
+    ///   - [`audiences(Option<Vec::<String>>)`](crate::operation::describe_channel::DescribeChannelOutput::audiences): <p>The list of audiences defined in channel.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::operation::describe_channel::DescribeChannelError)
     pub fn describe_channel(&self) -> crate::operation::describe_channel::builders::DescribeChannelFluentBuilder {
         crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::new(self.handle.clone())

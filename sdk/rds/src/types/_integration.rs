@@ -24,6 +24,10 @@ pub struct Integration {
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any errors associated with the integration.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>,
+    /// <p>Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.</p>
+    pub data_filter: ::std::option::Option<::std::string::String>,
+    /// <p>A description of the integration.</p>
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl Integration {
     /// <p>The Amazon Resource Name (ARN) of the database used as the source for replication.</p>
@@ -70,6 +74,14 @@ impl Integration {
     pub fn errors(&self) -> &[crate::types::IntegrationError] {
         self.errors.as_deref().unwrap_or_default()
     }
+    /// <p>Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.</p>
+    pub fn data_filter(&self) -> ::std::option::Option<&str> {
+        self.data_filter.as_deref()
+    }
+    /// <p>A description of the integration.</p>
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl Integration {
     /// Creates a new builder-style object to manufacture [`Integration`](crate::types::Integration).
@@ -92,6 +104,8 @@ pub struct IntegrationBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>>,
+    pub(crate) data_filter: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl IntegrationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the database used as the source for replication.</p>
@@ -261,6 +275,34 @@ impl IntegrationBuilder {
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegrationError>> {
         &self.errors
     }
+    /// <p>Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.</p>
+    pub fn data_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_filter = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.</p>
+    pub fn set_data_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_filter = input;
+        self
+    }
+    /// <p>Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.</p>
+    pub fn get_data_filter(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_filter
+    }
+    /// <p>A description of the integration.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A description of the integration.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>A description of the integration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Consumes the builder and constructs a [`Integration`](crate::types::Integration).
     pub fn build(self) -> crate::types::Integration {
         crate::types::Integration {
@@ -274,6 +316,8 @@ impl IntegrationBuilder {
             tags: self.tags,
             create_time: self.create_time,
             errors: self.errors,
+            data_filter: self.data_filter,
+            description: self.description,
         }
     }
 }

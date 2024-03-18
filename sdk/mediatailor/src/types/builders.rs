@@ -69,7 +69,9 @@ pub use crate::types::_log_configuration_for_channel::LogConfigurationForChannel
 
 pub use crate::types::_channel::ChannelBuilder;
 
-pub use crate::types::_clip_range::ClipRangeBuilder;
+pub use crate::types::_audience_media::AudienceMediaBuilder;
+
+pub use crate::types::_alternate_media::AlternateMediaBuilder;
 
 pub use crate::types::_ad_break::AdBreakBuilder;
 
@@ -80,6 +82,8 @@ pub use crate::types::_time_signal_message::TimeSignalMessageBuilder;
 pub use crate::types::_segmentation_descriptor::SegmentationDescriptorBuilder;
 
 pub use crate::types::_splice_insert_message::SpliceInsertMessageBuilder;
+
+pub use crate::types::_clip_range::ClipRangeBuilder;
 
 pub use crate::types::_update_program_schedule_configuration::UpdateProgramScheduleConfigurationBuilder;
 

@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`vod_source_name(Option<String>)`](crate::operation::describe_program::DescribeProgramOutput::vod_source_name): <p>The name that's used to refer to a VOD source.</p>
     ///   - [`clip_range(Option<ClipRange>)`](crate::operation::describe_program::DescribeProgramOutput::clip_range): <p>The clip range configuration settings.</p>
     ///   - [`duration_millis(Option<i64>)`](crate::operation::describe_program::DescribeProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
+    ///   - [`audience_media(Option<Vec::<AudienceMedia>>)`](crate::operation::describe_program::DescribeProgramOutput::audience_media): <p>The list of AudienceMedia defined in program.</p>
     /// - On failure, responds with [`SdkError<DescribeProgramError>`](crate::operation::describe_program::DescribeProgramError)
     pub fn describe_program(&self) -> crate::operation::describe_program::builders::DescribeProgramFluentBuilder {
         crate::operation::describe_program::builders::DescribeProgramFluentBuilder::new(self.handle.clone())

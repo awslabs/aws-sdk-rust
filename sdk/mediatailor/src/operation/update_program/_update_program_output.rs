@@ -25,6 +25,8 @@ pub struct UpdateProgramOutput {
     pub duration_millis: ::std::option::Option<i64>,
     /// <p>The scheduled start time for this Program.</p>
     pub scheduled_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub audience_media: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>,
     _request_id: Option<String>,
 }
 impl UpdateProgramOutput {
@@ -74,6 +76,12 @@ impl UpdateProgramOutput {
     pub fn scheduled_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.scheduled_start_time.as_ref()
     }
+    /// <p>The list of AudienceMedia defined in program.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audience_media.is_none()`.
+    pub fn audience_media(&self) -> &[crate::types::AudienceMedia] {
+        self.audience_media.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateProgramOutput {
     fn request_id(&self) -> Option<&str> {
@@ -102,6 +110,7 @@ pub struct UpdateProgramOutputBuilder {
     pub(crate) clip_range: ::std::option::Option<crate::types::ClipRange>,
     pub(crate) duration_millis: ::std::option::Option<i64>,
     pub(crate) scheduled_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) audience_media: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>,
     _request_id: Option<String>,
 }
 impl UpdateProgramOutputBuilder {
@@ -265,6 +274,26 @@ impl UpdateProgramOutputBuilder {
     pub fn get_scheduled_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.scheduled_start_time
     }
+    /// Appends an item to `audience_media`.
+    ///
+    /// To override the contents of this collection use [`set_audience_media`](Self::set_audience_media).
+    ///
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn audience_media(mut self, input: crate::types::AudienceMedia) -> Self {
+        let mut v = self.audience_media.unwrap_or_default();
+        v.push(input);
+        self.audience_media = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn set_audience_media(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>) -> Self {
+        self.audience_media = input;
+        self
+    }
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn get_audience_media(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>> {
+        &self.audience_media
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -288,6 +317,7 @@ impl UpdateProgramOutputBuilder {
             clip_range: self.clip_range,
             duration_millis: self.duration_millis,
             scheduled_start_time: self.scheduled_start_time,
+            audience_media: self.audience_media,
             _request_id: self._request_id,
         }
     }

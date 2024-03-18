@@ -161,6 +161,10 @@ pub(crate) mod shape_ad_break;
 
 pub(crate) mod shape_ad_break_opportunities;
 
+pub(crate) mod shape_audience_media;
+
+pub(crate) mod shape_audiences;
+
 pub(crate) mod shape_avail_suppression;
 
 pub(crate) mod shape_bumper;
@@ -188,6 +192,8 @@ pub(crate) mod shape_http_package_configurations;
 pub(crate) mod shape_list_of_ad_break;
 
 pub(crate) mod shape_list_of_alert;
+
+pub(crate) mod shape_list_of_audience_media;
 
 pub(crate) mod shape_list_of_channel;
 
@@ -241,6 +247,8 @@ pub(crate) mod shape_ad_marker_passthrough;
 
 pub(crate) mod shape_alert;
 
+pub(crate) mod shape_alternate_media;
+
 pub(crate) mod shape_avail_matching_criteria;
 
 pub(crate) mod shape_channel;
@@ -278,6 +286,8 @@ pub(crate) mod shape_update_program_transition;
 pub(crate) mod shape_vod_source;
 
 pub(crate) mod shape_ad_break_metadata_list;
+
+pub(crate) mod shape_list_of_alternate_media;
 
 pub(crate) mod shape_list_of_schedule_ad_break;
 

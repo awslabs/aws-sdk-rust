@@ -81,6 +81,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Audiences" => {
+                            builder = builder.set_audiences(crate::protocol_serde::shape_audiences::de_audiences(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

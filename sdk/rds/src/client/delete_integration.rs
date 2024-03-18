@@ -15,6 +15,8 @@ impl super::Client {
     ///   - [`tags(Option<Vec::<Tag>>)`](crate::operation::delete_integration::DeleteIntegrationOutput::tags): <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i></p>
     ///   - [`create_time(Option<DateTime>)`](crate::operation::delete_integration::DeleteIntegrationOutput::create_time): <p>The time when the integration was created, in Universal Coordinated Time (UTC).</p>
     ///   - [`errors(Option<Vec::<IntegrationError>>)`](crate::operation::delete_integration::DeleteIntegrationOutput::errors): <p>Any errors associated with the integration.</p>
+    ///   - [`data_filter(Option<String>)`](crate::operation::delete_integration::DeleteIntegrationOutput::data_filter): <p>Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.</p>
+    ///   - [`description(Option<String>)`](crate::operation::delete_integration::DeleteIntegrationOutput::description): <p>A description of the integration.</p>
     /// - On failure, responds with [`SdkError<DeleteIntegrationError>`](crate::operation::delete_integration::DeleteIntegrationError)
     pub fn delete_integration(&self) -> crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder {
         crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::new(self.handle.clone())

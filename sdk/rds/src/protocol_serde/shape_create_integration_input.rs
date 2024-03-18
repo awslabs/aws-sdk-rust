@@ -49,6 +49,16 @@ pub fn ser_create_integration_input_input_input(
         }
         list_18.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("DataFilter");
+    if let Some(var_21) = &input.data_filter {
+        scope_20.string(var_21);
+    }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("Description");
+    if let Some(var_23) = &input.description {
+        scope_22.string(var_23);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

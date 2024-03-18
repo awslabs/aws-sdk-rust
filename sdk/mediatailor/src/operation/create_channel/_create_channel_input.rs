@@ -19,6 +19,8 @@ pub struct CreateChannelInput {
     pub tier: ::std::option::Option<crate::types::Tier>,
     /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
     pub time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
+    /// <p>The list of audiences defined in channel.</p>
+    pub audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateChannelInput {
     /// <p>The name of the channel.</p>
@@ -53,6 +55,12 @@ impl CreateChannelInput {
     pub fn time_shift_configuration(&self) -> ::std::option::Option<&crate::types::TimeShiftConfiguration> {
         self.time_shift_configuration.as_ref()
     }
+    /// <p>The list of audiences defined in channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audiences.is_none()`.
+    pub fn audiences(&self) -> &[::std::string::String] {
+        self.audiences.as_deref().unwrap_or_default()
+    }
 }
 impl CreateChannelInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
@@ -72,6 +80,7 @@ pub struct CreateChannelInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tier: ::std::option::Option<crate::types::Tier>,
     pub(crate) time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
+    pub(crate) audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateChannelInputBuilder {
     /// <p>The name of the channel.</p>
@@ -192,6 +201,26 @@ impl CreateChannelInputBuilder {
     pub fn get_time_shift_configuration(&self) -> &::std::option::Option<crate::types::TimeShiftConfiguration> {
         &self.time_shift_configuration
     }
+    /// Appends an item to `audiences`.
+    ///
+    /// To override the contents of this collection use [`set_audiences`](Self::set_audiences).
+    ///
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn audiences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.audiences.unwrap_or_default();
+        v.push(input.into());
+        self.audiences = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.audiences = input;
+        self
+    }
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.audiences
+    }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
@@ -204,6 +233,7 @@ impl CreateChannelInputBuilder {
             tags: self.tags,
             tier: self.tier,
             time_shift_configuration: self.time_shift_configuration,
+            audiences: self.audiences,
         })
     }
 }

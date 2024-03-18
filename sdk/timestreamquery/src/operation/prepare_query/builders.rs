@@ -22,7 +22,7 @@ impl PrepareQueryInputBuilder {
 }
 /// Fluent builder constructing a request to `PrepareQuery`.
 ///
-/// <p>A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later running. Timestream only supports using this operation with the <code>PrepareQueryRequest$ValidateOnly</code> set to <code>true</code>.</p>
+/// <p>A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later running. Timestream only supports using this operation with <code>ValidateOnly</code> set to <code>true</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PrepareQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

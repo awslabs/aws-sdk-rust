@@ -28,6 +28,8 @@ pub struct Channel {
     pub tier: ::std::string::String,
     /// <p>The log configuration.</p>
     pub log_configuration: ::std::option::Option<crate::types::LogConfigurationForChannel>,
+    /// <p>The list of audiences defined in channel.</p>
+    pub audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Channel {
     /// <p>The ARN of the channel.</p>
@@ -82,6 +84,12 @@ impl Channel {
     pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::LogConfigurationForChannel> {
         self.log_configuration.as_ref()
     }
+    /// <p>The list of audiences defined in channel.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audiences.is_none()`.
+    pub fn audiences(&self) -> &[::std::string::String] {
+        self.audiences.as_deref().unwrap_or_default()
+    }
 }
 impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::types::Channel).
@@ -105,6 +113,7 @@ pub struct ChannelBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tier: ::std::option::Option<::std::string::String>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfigurationForChannel>,
+    pub(crate) audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ChannelBuilder {
     /// <p>The ARN of the channel.</p>
@@ -285,6 +294,26 @@ impl ChannelBuilder {
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::LogConfigurationForChannel> {
         &self.log_configuration
     }
+    /// Appends an item to `audiences`.
+    ///
+    /// To override the contents of this collection use [`set_audiences`](Self::set_audiences).
+    ///
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn audiences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.audiences.unwrap_or_default();
+        v.push(input.into());
+        self.audiences = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.audiences = input;
+        self
+    }
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.audiences
+    }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ChannelBuilder::arn)
@@ -336,6 +365,7 @@ impl ChannelBuilder {
                 )
             })?,
             log_configuration: self.log_configuration,
+            audiences: self.audiences,
         })
     }
 }

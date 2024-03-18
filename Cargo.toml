@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "examples/cross_service",
     "examples/test-utils",
-    "examples/lambda",
     "examples/examples",
+    "examples/lambda",
+    "examples/cross_service",
     "tests/webassembly",
     "tests/no-default-features"
 ]
@@ -214,7 +214,6 @@ members = [
     "sdk/iotfleethub",
     "sdk/iotfleetwise",
     "sdk/iotjobsdataplane",
-    "sdk/iotroborunner",
     "sdk/iotsecuretunneling",
     "sdk/iotsitewise",
     "sdk/iotthingsgraph",

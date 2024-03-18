@@ -5,12 +5,18 @@
 pub struct GetKeyPolicyOutput {
     /// <p>A key policy document in JSON format.</p>
     pub policy: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+    pub policy_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetKeyPolicyOutput {
     /// <p>A key policy document in JSON format.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
+    }
+    /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+        self.policy_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetKeyPolicyOutput {
@@ -30,6 +36,7 @@ impl GetKeyPolicyOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetKeyPolicyOutputBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetKeyPolicyOutputBuilder {
@@ -47,6 +54,20 @@ impl GetKeyPolicyOutputBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
+    /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.policy_name = input;
+        self
+    }
+    /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl GetKeyPolicyOutputBuilder {
     pub fn build(self) -> crate::operation::get_key_policy::GetKeyPolicyOutput {
         crate::operation::get_key_policy::GetKeyPolicyOutput {
             policy: self.policy,
+            policy_name: self.policy_name,
             _request_id: self._request_id,
         }
     }

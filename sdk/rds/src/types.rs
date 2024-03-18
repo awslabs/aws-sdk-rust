@@ -141,6 +141,10 @@ pub use crate::types::_option_setting::OptionSetting;
 
 pub use crate::types::_option_configuration::OptionConfiguration;
 
+pub use crate::types::_integration_error::IntegrationError;
+
+pub use crate::types::_integration_status::IntegrationStatus;
+
 pub use crate::types::_db_snapshot_attributes_result::DbSnapshotAttributesResult;
 
 pub use crate::types::_db_snapshot_attribute::DbSnapshotAttribute;
@@ -254,10 +258,6 @@ pub use crate::types::_option_group_option_setting::OptionGroupOptionSetting;
 pub use crate::types::_minimum_engine_version_per_allowed_value::MinimumEngineVersionPerAllowedValue;
 
 pub use crate::types::_integration::Integration;
-
-pub use crate::types::_integration_error::IntegrationError;
-
-pub use crate::types::_integration_status::IntegrationStatus;
 
 pub use crate::types::_export_task::ExportTask;
 

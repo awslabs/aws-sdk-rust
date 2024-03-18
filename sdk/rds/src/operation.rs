@@ -379,6 +379,9 @@ pub mod modify_event_subscription;
 /// Types for the `ModifyGlobalCluster` operation.
 pub mod modify_global_cluster;
 
+/// Types for the `ModifyIntegration` operation.
+pub mod modify_integration;
+
 /// Types for the `ModifyOptionGroup` operation.
 pub mod modify_option_group;
 

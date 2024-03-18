@@ -17,6 +17,8 @@ pub struct CreateProgramInput {
     pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that's used to refer to a VOD source.</p>
     pub vod_source_name: ::std::option::Option<::std::string::String>,
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub audience_media: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>,
 }
 impl CreateProgramInput {
     /// <p>The ad break configuration settings.</p>
@@ -49,6 +51,12 @@ impl CreateProgramInput {
     pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
         self.vod_source_name.as_deref()
     }
+    /// <p>The list of AudienceMedia defined in program.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audience_media.is_none()`.
+    pub fn audience_media(&self) -> &[crate::types::AudienceMedia] {
+        self.audience_media.as_deref().unwrap_or_default()
+    }
 }
 impl CreateProgramInput {
     /// Creates a new builder-style object to manufacture [`CreateProgramInput`](crate::operation::create_program::CreateProgramInput).
@@ -68,6 +76,7 @@ pub struct CreateProgramInputBuilder {
     pub(crate) schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
+    pub(crate) audience_media: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>,
 }
 impl CreateProgramInputBuilder {
     /// Appends an item to `ad_breaks`.
@@ -178,6 +187,26 @@ impl CreateProgramInputBuilder {
     pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vod_source_name
     }
+    /// Appends an item to `audience_media`.
+    ///
+    /// To override the contents of this collection use [`set_audience_media`](Self::set_audience_media).
+    ///
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn audience_media(mut self, input: crate::types::AudienceMedia) -> Self {
+        let mut v = self.audience_media.unwrap_or_default();
+        v.push(input);
+        self.audience_media = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn set_audience_media(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>) -> Self {
+        self.audience_media = input;
+        self
+    }
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn get_audience_media(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>> {
+        &self.audience_media
+    }
     /// Consumes the builder and constructs a [`CreateProgramInput`](crate::operation::create_program::CreateProgramInput).
     pub fn build(
         self,
@@ -190,6 +219,7 @@ impl CreateProgramInputBuilder {
             schedule_configuration: self.schedule_configuration,
             source_location_name: self.source_location_name,
             vod_source_name: self.vod_source_name,
+            audience_media: self.audience_media,
         })
     }
 }

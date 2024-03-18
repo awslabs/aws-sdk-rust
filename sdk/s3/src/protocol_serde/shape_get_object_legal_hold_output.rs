@@ -15,9 +15,9 @@ pub fn de_legal_hold(inp: &[u8]) -> Result<crate::types::ObjectLockLegalHold, ::
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
-    if !(start_el.matches("ObjectLockLegalHold")) {
+    if !(start_el.matches("LegalHold")) {
         return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
-            "invalid root, expected ObjectLockLegalHold got {:?}",
+            "invalid root, expected LegalHold got {:?}",
             start_el
         )));
     }

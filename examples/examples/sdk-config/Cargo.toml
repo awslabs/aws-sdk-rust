@@ -12,7 +12,7 @@ async_once = "0.2.6"
 tracing = "0.1.37"
 aws-config= { version = "1.1.8", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-credential-types= { version = "1.1.8", path = "../../../sdk/aws-credential-types" }
-aws-sdk-s3= { version = "1.19.1", path = "../../../sdk/s3" }
+aws-sdk-s3= { version = "1.20.0", path = "../../../sdk/s3" }
 
 [dependencies.tokio]
 version = "1.20.1"

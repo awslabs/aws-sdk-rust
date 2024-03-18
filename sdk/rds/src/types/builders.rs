@@ -109,6 +109,8 @@ pub use crate::types::_option_setting::OptionSettingBuilder;
 
 pub use crate::types::_option_configuration::OptionConfigurationBuilder;
 
+pub use crate::types::_integration_error::IntegrationErrorBuilder;
+
 pub use crate::types::_db_snapshot_attributes_result::DbSnapshotAttributesResultBuilder;
 
 pub use crate::types::_db_snapshot_attribute::DbSnapshotAttributeBuilder;
@@ -206,8 +208,6 @@ pub use crate::types::_option_group_option_setting::OptionGroupOptionSettingBuil
 pub use crate::types::_minimum_engine_version_per_allowed_value::MinimumEngineVersionPerAllowedValueBuilder;
 
 pub use crate::types::_integration::IntegrationBuilder;
-
-pub use crate::types::_integration_error::IntegrationErrorBuilder;
 
 pub use crate::types::_export_task::ExportTaskBuilder;
 

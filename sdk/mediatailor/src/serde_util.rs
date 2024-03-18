@@ -20,13 +20,6 @@ pub(crate) fn describe_channel_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn clip_range_correct_errors(mut builder: crate::types::builders::ClipRangeBuilder) -> crate::types::builders::ClipRangeBuilder {
-    if builder.end_offset_millis.is_none() {
-        builder.end_offset_millis = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn http_configuration_correct_errors(
     mut builder: crate::types::builders::HttpConfigurationBuilder,
 ) -> crate::types::builders::HttpConfigurationBuilder {

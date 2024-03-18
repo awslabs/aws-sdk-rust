@@ -143,6 +143,10 @@ pub use crate::types::error::_tenant_database_already_exists_fault::TenantDataba
 
 pub use crate::types::error::_invalid_option_group_state_fault::InvalidOptionGroupStateFaultBuilder;
 
+pub use crate::types::error::_invalid_integration_state_fault::InvalidIntegrationStateFaultBuilder;
+
+pub use crate::types::error::_integration_conflict_operation_fault::IntegrationConflictOperationFaultBuilder;
+
 pub use crate::types::error::_subscription_category_not_found_fault::SubscriptionCategoryNotFoundFaultBuilder;
 
 pub use crate::types::error::_sns_topic_arn_not_found_fault::SnsTopicArnNotFoundFaultBuilder;
@@ -198,10 +202,6 @@ pub use crate::types::error::_export_task_not_found_fault::ExportTaskNotFoundFau
 pub use crate::types::error::_db_proxy_target_not_found_fault::DbProxyTargetNotFoundFaultBuilder;
 
 pub use crate::types::error::_db_cluster_backtrack_not_found_fault::DbClusterBacktrackNotFoundFaultBuilder;
-
-pub use crate::types::error::_invalid_integration_state_fault::InvalidIntegrationStateFaultBuilder;
-
-pub use crate::types::error::_integration_conflict_operation_fault::IntegrationConflictOperationFaultBuilder;
 
 pub use crate::types::error::_invalid_event_subscription_state_fault::InvalidEventSubscriptionStateFaultBuilder;
 

@@ -212,4 +212,35 @@ impl CreateIntegrationFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
+    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    pub fn data_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.data_filter(input.into());
+        self
+    }
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
+    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    pub fn set_data_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_data_filter(input);
+        self
+    }
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
+    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    pub fn get_data_filter(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_filter()
+    }
+    /// <p>A description of the integration.</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.description(input.into());
+        self
+    }
+    /// <p>A description of the integration.</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_description(input);
+        self
+    }
+    /// <p>A description of the integration.</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
 }

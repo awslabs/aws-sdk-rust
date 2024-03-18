@@ -220,4 +220,22 @@ impl CreateChannelFluentBuilder {
     pub fn get_time_shift_configuration(&self) -> &::std::option::Option<crate::types::TimeShiftConfiguration> {
         self.inner.get_time_shift_configuration()
     }
+    /// Appends an item to `Audiences`.
+    ///
+    /// To override the contents of this collection use [`set_audiences`](Self::set_audiences).
+    ///
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn audiences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.audiences(input.into());
+        self
+    }
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_audiences(input);
+        self
+    }
+    /// <p>The list of audiences defined in channel.</p>
+    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_audiences()
+    }
 }

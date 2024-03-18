@@ -41,6 +41,8 @@ pub use crate::types::_account_gate_result::AccountGateResultBuilder;
 
 pub use crate::types::_operation_result_filter::OperationResultFilterBuilder;
 
+pub use crate::types::_stack_set_auto_deployment_target_summary::StackSetAutoDeploymentTargetSummaryBuilder;
+
 pub use crate::types::_stack_summary::StackSummaryBuilder;
 
 pub use crate::types::_stack_drift_information_summary::StackDriftInformationSummaryBuilder;

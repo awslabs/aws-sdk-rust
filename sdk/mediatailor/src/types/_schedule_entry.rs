@@ -24,6 +24,8 @@ pub struct ScheduleEntry {
     pub source_location_name: ::std::string::String,
     /// <p>The name of the VOD source.</p>
     pub vod_source_name: ::std::option::Option<::std::string::String>,
+    /// <p>The list of audiences defined in ScheduleEntry.</p>
+    pub audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScheduleEntry {
     /// <p>The approximate duration of this program, in seconds.</p>
@@ -72,6 +74,12 @@ impl ScheduleEntry {
     pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
         self.vod_source_name.as_deref()
     }
+    /// <p>The list of audiences defined in ScheduleEntry.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audiences.is_none()`.
+    pub fn audiences(&self) -> &[::std::string::String] {
+        self.audiences.as_deref().unwrap_or_default()
+    }
 }
 impl ScheduleEntry {
     /// Creates a new builder-style object to manufacture [`ScheduleEntry`](crate::types::ScheduleEntry).
@@ -94,6 +102,7 @@ pub struct ScheduleEntryBuilder {
     pub(crate) schedule_entry_type: ::std::option::Option<crate::types::ScheduleEntryType>,
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
+    pub(crate) audiences: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScheduleEntryBuilder {
     /// <p>The approximate duration of this program, in seconds.</p>
@@ -246,6 +255,26 @@ impl ScheduleEntryBuilder {
     pub fn get_vod_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vod_source_name
     }
+    /// Appends an item to `audiences`.
+    ///
+    /// To override the contents of this collection use [`set_audiences`](Self::set_audiences).
+    ///
+    /// <p>The list of audiences defined in ScheduleEntry.</p>
+    pub fn audiences(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.audiences.unwrap_or_default();
+        v.push(input.into());
+        self.audiences = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of audiences defined in ScheduleEntry.</p>
+    pub fn set_audiences(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.audiences = input;
+        self
+    }
+    /// <p>The list of audiences defined in ScheduleEntry.</p>
+    pub fn get_audiences(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.audiences
+    }
     /// Consumes the builder and constructs a [`ScheduleEntry`](crate::types::ScheduleEntry).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ScheduleEntryBuilder::arn)
@@ -284,6 +313,7 @@ impl ScheduleEntryBuilder {
                 )
             })?,
             vod_source_name: self.vod_source_name,
+            audiences: self.audiences,
         })
     }
 }

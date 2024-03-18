@@ -57,6 +57,9 @@ pub(crate) fn de_create_channel(
                             .transpose()?,
                     );
                 }
+                "Audiences" => {
+                    builder = builder.set_audiences(crate::protocol_serde::shape_audiences::de_audiences(tokens)?);
+                }
                 "ChannelName" => {
                     builder = builder.set_channel_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

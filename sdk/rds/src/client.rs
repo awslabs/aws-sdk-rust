@@ -415,6 +415,8 @@ mod modify_event_subscription;
 
 mod modify_global_cluster;
 
+mod modify_integration;
+
 mod modify_option_group;
 
 mod modify_tenant_database;

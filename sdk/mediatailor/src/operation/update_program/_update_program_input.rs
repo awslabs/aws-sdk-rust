@@ -11,6 +11,8 @@ pub struct UpdateProgramInput {
     pub program_name: ::std::option::Option<::std::string::String>,
     /// <p>The schedule configuration settings.</p>
     pub schedule_configuration: ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub audience_media: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>,
 }
 impl UpdateProgramInput {
     /// <p>The ad break configuration settings.</p>
@@ -31,6 +33,12 @@ impl UpdateProgramInput {
     pub fn schedule_configuration(&self) -> ::std::option::Option<&crate::types::UpdateProgramScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
+    /// <p>The list of AudienceMedia defined in program.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audience_media.is_none()`.
+    pub fn audience_media(&self) -> &[crate::types::AudienceMedia] {
+        self.audience_media.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateProgramInput {
     /// Creates a new builder-style object to manufacture [`UpdateProgramInput`](crate::operation::update_program::UpdateProgramInput).
@@ -47,6 +55,7 @@ pub struct UpdateProgramInputBuilder {
     pub(crate) channel_name: ::std::option::Option<::std::string::String>,
     pub(crate) program_name: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_configuration: ::std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
+    pub(crate) audience_media: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>,
 }
 impl UpdateProgramInputBuilder {
     /// Appends an item to `ad_breaks`.
@@ -114,6 +123,26 @@ impl UpdateProgramInputBuilder {
     pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::UpdateProgramScheduleConfiguration> {
         &self.schedule_configuration
     }
+    /// Appends an item to `audience_media`.
+    ///
+    /// To override the contents of this collection use [`set_audience_media`](Self::set_audience_media).
+    ///
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn audience_media(mut self, input: crate::types::AudienceMedia) -> Self {
+        let mut v = self.audience_media.unwrap_or_default();
+        v.push(input);
+        self.audience_media = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn set_audience_media(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>) -> Self {
+        self.audience_media = input;
+        self
+    }
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn get_audience_media(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>> {
+        &self.audience_media
+    }
     /// Consumes the builder and constructs a [`UpdateProgramInput`](crate::operation::update_program::UpdateProgramInput).
     pub fn build(
         self,
@@ -123,6 +152,7 @@ impl UpdateProgramInputBuilder {
             channel_name: self.channel_name,
             program_name: self.program_name,
             schedule_configuration: self.schedule_configuration,
+            audience_media: self.audience_media,
         })
     }
 }

@@ -88,7 +88,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS IoT FleetWise | [aws-sdk-iotfleetwise](https://crates.io/crates/aws-sdk-iotfleetwise) ([docs](https://docs.rs/aws-sdk-iotfleetwise)) |
 | AWS IoT Greengrass V2 | [aws-sdk-greengrassv2](https://crates.io/crates/aws-sdk-greengrassv2) ([docs](https://docs.rs/aws-sdk-greengrassv2)) |
 | AWS IoT Jobs Data Plane | [aws-sdk-iotjobsdataplane](https://crates.io/crates/aws-sdk-iotjobsdataplane) ([docs](https://docs.rs/aws-sdk-iotjobsdataplane)) |
-| AWS IoT RoboRunner | [aws-sdk-iotroborunner](https://crates.io/crates/aws-sdk-iotroborunner) ([docs](https://docs.rs/aws-sdk-iotroborunner)) |
 | AWS IoT Secure Tunneling | [aws-sdk-iotsecuretunneling](https://crates.io/crates/aws-sdk-iotsecuretunneling) ([docs](https://docs.rs/aws-sdk-iotsecuretunneling)) |
 | AWS IoT SiteWise | [aws-sdk-iotsitewise](https://crates.io/crates/aws-sdk-iotsitewise) ([docs](https://docs.rs/aws-sdk-iotsitewise)) |
 | AWS IoT Things Graph | [aws-sdk-iotthingsgraph](https://crates.io/crates/aws-sdk-iotthingsgraph) ([docs](https://docs.rs/aws-sdk-iotthingsgraph)) |

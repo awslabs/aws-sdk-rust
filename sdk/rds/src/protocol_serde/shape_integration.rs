@@ -130,6 +130,32 @@ pub fn de_integration(
                 builder = builder.set_errors(var_10);
             }
             ,
+            s if s.matches("DataFilter") /* DataFilter com.amazonaws.rds#Integration$DataFilter */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_data_filter(var_11);
+            }
+            ,
+            s if s.matches("Description") /* Description com.amazonaws.rds#Integration$Description */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_description(var_12);
+            }
+            ,
             _ => {}
         }
     }

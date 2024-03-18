@@ -75,6 +75,9 @@ where
                                 crate::protocol_serde::shape_log_configuration_for_channel::de_log_configuration_for_channel(tokens)?,
                             );
                         }
+                        "Audiences" => {
+                            builder = builder.set_audiences(crate::protocol_serde::shape_audiences::de_audiences(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

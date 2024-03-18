@@ -50,6 +50,9 @@ pub(crate) fn de_describe_program(
                             .transpose()?,
                     );
                 }
+                "AudienceMedia" => {
+                    builder = builder.set_audience_media(crate::protocol_serde::shape_list_of_audience_media::de_list_of_audience_media(tokens)?);
+                }
                 "ChannelName" => {
                     builder = builder.set_channel_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

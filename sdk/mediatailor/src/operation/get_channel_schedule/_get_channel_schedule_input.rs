@@ -14,6 +14,8 @@ pub struct GetChannelScheduleInput {
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The single audience for GetChannelScheduleRequest.</p>
+    pub audience: ::std::option::Option<::std::string::String>,
 }
 impl GetChannelScheduleInput {
     /// <p>The name of the channel associated with this Channel Schedule.</p>
@@ -35,6 +37,10 @@ impl GetChannelScheduleInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The single audience for GetChannelScheduleRequest.</p>
+    pub fn audience(&self) -> ::std::option::Option<&str> {
+        self.audience.as_deref()
+    }
 }
 impl GetChannelScheduleInput {
     /// Creates a new builder-style object to manufacture [`GetChannelScheduleInput`](crate::operation::get_channel_schedule::GetChannelScheduleInput).
@@ -51,6 +57,7 @@ pub struct GetChannelScheduleInputBuilder {
     pub(crate) duration_minutes: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) audience: ::std::option::Option<::std::string::String>,
 }
 impl GetChannelScheduleInputBuilder {
     /// <p>The name of the channel associated with this Channel Schedule.</p>
@@ -119,6 +126,20 @@ impl GetChannelScheduleInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The single audience for GetChannelScheduleRequest.</p>
+    pub fn audience(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.audience = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The single audience for GetChannelScheduleRequest.</p>
+    pub fn set_audience(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.audience = input;
+        self
+    }
+    /// <p>The single audience for GetChannelScheduleRequest.</p>
+    pub fn get_audience(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audience
+    }
     /// Consumes the builder and constructs a [`GetChannelScheduleInput`](crate::operation::get_channel_schedule::GetChannelScheduleInput).
     pub fn build(
         self,
@@ -129,6 +150,7 @@ impl GetChannelScheduleInputBuilder {
             duration_minutes: self.duration_minutes,
             max_results: self.max_results,
             next_token: self.next_token,
+            audience: self.audience,
         })
     }
 }

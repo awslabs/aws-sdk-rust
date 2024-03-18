@@ -168,4 +168,22 @@ impl UpdateProgramFluentBuilder {
     pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::UpdateProgramScheduleConfiguration> {
         self.inner.get_schedule_configuration()
     }
+    /// Appends an item to `AudienceMedia`.
+    ///
+    /// To override the contents of this collection use [`set_audience_media`](Self::set_audience_media).
+    ///
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn audience_media(mut self, input: crate::types::AudienceMedia) -> Self {
+        self.inner = self.inner.audience_media(input);
+        self
+    }
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn set_audience_media(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>) -> Self {
+        self.inner = self.inner.set_audience_media(input);
+        self
+    }
+    /// <p>The list of AudienceMedia defined in program.</p>
+    pub fn get_audience_media(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>> {
+        self.inner.get_audience_media()
+    }
 }

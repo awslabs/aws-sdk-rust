@@ -169,6 +169,9 @@ pub mod list_stack_instances;
 /// Types for the `ListStackResources` operation.
 pub mod list_stack_resources;
 
+/// Types for the `ListStackSetAutoDeploymentTargets` operation.
+pub mod list_stack_set_auto_deployment_targets;
+
 /// Types for the `ListStackSetOperationResults` operation.
 pub mod list_stack_set_operation_results;
 
